@@ -1,119 +1,186 @@
-# ![AdAway logo](app/src/main/res/mipmap-mdpi/icon.png) AdAway
+# ![AdAway logo](app/src/main/res/mipmap-mdpi/icon.png) AdAway Community
 
-[![Build Status](https://github.com/adaway/adaway/actions/workflows/android-ci.yml/badge.svg)](https://github.com/AdAway/AdAway/actions/workflows/android-ci.yml) 
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=org.adaway&metric=security_rating)](https://sonarcloud.io/project/overview?id=org.adaway)
-[![GitHub Downloads](https://img.shields.io/github/downloads/adaway/adaway/total?logo=github)](https://github.com/AdAway/AdAway/releases)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/perfectslayer?logo=github)](https://github.com/sponsors/PerfectSlayer)
+> ⚠️ **Unofficial community-maintained fork of AdAway**  
+> Keeping AdAway usable with community fixes while upstream maintenance activity is limited.
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](/LICENSE.md)
+[![GitHub Downloads](https://img.shields.io/github/downloads/Victor-root/AdAway/total?logo=github)](https://github.com/Victor-root/AdAway/releases)
+[![Upstream PR](https://img.shields.io/badge/upstream%20PR-4255-blue?logo=github)](https://github.com/AdAway/AdAway/pull/4255)
 
-AdAway is an open source ad blocker for Android using the hosts file and local vpn.
+AdAway Community is an unofficial fork of [AdAway](https://github.com/AdAway/AdAway), an open source ad blocker for Android using the hosts file and a local VPN.
 
-[<img src="metadata/en-US/phoneScreenshots/screenshot1.png"
-    alt="Home screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot1.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot2.png"
-    alt="Preferences screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot2.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot3.png"
-    alt="Root based ad blocker screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot3.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot4.png"
-    alt="Backup and restore screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot4.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot5.png"
-    alt="Help screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot5.png)
+The official project is still the original source of AdAway, but upstream releases and PR reviews have been very limited for a while. The last stable upstream release is currently `v6.1.4`, published in October 2024.
 
-For more information visit https://adaway.org
+This fork exists to keep useful fixes available instead of letting them sit unused while waiting for upstream review.
 
-## Installing
+It is **not affiliated with, endorsed by, or signed by** the official AdAway maintainers.
 
-There are two kinds of release:
-* The preview builds: on the bleeding edge of development - for testers or adventurous
-* The stable builds: ready for every day usage - for end users
+If upstream becomes active again and equivalent fixes are merged/released, this fork may be deprecated or removed.
 
-### Preview builds
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/c34cb045-9054-4e2f-bea8-057263f581d3"
+    width="360"
+    alt="AdAway Community screenshot"
+  />
+</p>
 
-**Requirements:** Android 8 _Oreo_ or above
+---
 
-For users with bugs, there may be preview builds available from the [XDA development thread](https://forum.xda-developers.com/showthread.php?t=2190753) and [AdAway official website](https://app.adaway.org/beta.apk).
-It is recommended to try those builds to see if your issue is resolved before creating an issue.
-The preview builds may contain bug fixes or new features for new android versions.
+## 🚀 Goal
 
-[<img src="Resources/get-it-on-adaway.png"
-      alt="Get it on official AdAway website"
-      height="80">](https://app.adaway.org/beta.apk)
-[<img src="Resources/XDADevelopers.png"
-      raw="true"
-      alt="Get it on XDA forum"
-      height="60">](https://forum.xda-developers.com/showthread.php?t=2190753)
+This fork aims to:
 
-### Stable builds
+- 🧯 fix real bugs affecting daily usage;
+- 📱 improve compatibility with recent Android versions and OEM ROMs;
+- 🔄 provide tested builds while upstream review is pending;
+- 🛠️ keep changes practical, minimal and maintainable;
+- 🤝 remain compatible with upstream whenever possible.
 
-**Requirements:**
-* Android Android 8 _Oreo_ or above
+This is not a rewrite and not a hostile fork.  
+It is a best-effort community-maintained build.
 
-After preview builds have been tested by the more technical or responsive community within the forums, we will then post the stable build to F-Droid.
+---
 
-[<img src="Resources/get-it-on-adaway.png"
-    alt="Get it on official AdAway website"
-    height="80">](https://app.adaway.org/adaway.apk)
-[<img src="Resources/get-it-on-fdroid.png"
-      raw="true"
-      alt="Get it on F-Droid"
-      height="80">](https://f-droid.org/app/org.adaway)
+## 🛠️ Current focus
 
-For devices older than Android 8 _Oreo_, use the version 4 of AdAway.
+The current release mainly focuses on VPN-mode stability.
 
-## Get Host File Sources
+It improves cases where AdAway VPN could:
 
-See the [Wiki](https://github.com/AdAway/AdAway/wiki), in particular the page [HostsSources](https://github.com/AdAway/AdAway/wiki/HostsSources) for an assorted list of sources you can use in AdAway.
-Add the ones you like to the AdAway "Hosts sources" section.
+- restart after being manually disabled;
+- stop or desynchronize unexpectedly in the background;
+- enter unstable restart/reconnect loops;
+- rebuild the VPN tunnel too often during network changes;
+- show inconsistent states between the app UI, Android VPN status, notification and Quick Settings tile.
 
-## Getting Help
+Related upstream PR:
 
-You can post [Issues](https://github.com/AdAway/AdAway/issues) here or obtain more detailed community support via the [XDA developer thread](http://forum.xda-developers.com/showthread.php?t=2190753).
+https://github.com/AdAway/AdAway/pull/4255
 
-## Contributing
+---
 
-You want to be involved in the project? Welcome onboard!  
-Check [the contributing guide](CONTRIBUTING.md) to learn how to report bugs, suggest features and make you first code contribution :+1:
+## 🔧 Current changes
 
-If you are looking for translating the application in your language, [the translating guide](TRANSLATING.md) is for you.
+Main changes currently included:
 
-## Project Status
+- 🧠 separate VPN user intent from runtime VPN service state;
+- 🚫 prevent background/internal sync or update paths from silently restarting the VPN;
+- 🛑 prevent sticky service restart from resurrecting VPN mode against user intent;
+- 🔄 improve synchronization between VPN service state, app UI, notification and Quick Settings tile;
+- 📶 avoid unnecessary VPN tunnel rebuilds when secondary networks flicker;
+- ⚡ reset VPN reconnect throttling for explicit user starts;
+- 🧯 reduce unstable restart/reconnect behavior in VPN mode;
+- ✅ keep the welcome/setup flow working on first launch;
+- 🧩 include a small German XML resource fix needed during testing.
 
-AdAway is actively developed by:
-* Bruce Bujon ([@PerfectSlayer](https://github.com/PerfectSlayer)) - Developer  
-[PayPal](https://paypal.me/BruceBUJON) | [GitHub Sponsorship](https://github.com/sponsors/PerfectSlayer)
-* Daniel Mönch ([@Vankog](https://github.com/Vankog)) - Translations
-* Jawz101 ([@jawz101](https://github.com/jawz101)) - Hosts list
-* Anxhelo Lushka ([@AnXh3L0](https://github.com/AnXh3L0)) - Web site
+---
 
-We do not forget the past maintainers:
-* Dāvis Mošenkovs ([@DavisNT](https://github.com/DavisNT)) - Developer  
-[Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5GUHNXYE58RZS&lc=US&item_name=AdAway%20Donation&no_note=0&no_shipping=1)
-* [@0-kaladin](https://github.com/0-kaladin) - Developer and XDA OP
-* Sanjay Govind ([@sanjay900](https://github.com/sanjay900)) - Developer
+## 📱 Tested on
 
-And we thank a lot to the original author:
-* Dominik Schürmann ([@dschuermann](https://github.com/dschuermann)) - Original developer  
-[Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=android%40schuermann.eu&lc=US&item_name=AdAway%20Donation&no_note=0&no_shipping=1&currency_code=EUR) | [Flattr](https://flattr.com/thing/369138/AdAway-Ad-blocker-for-Android) | BTC: `173kZxbkKuvnF5fa5b7t21kqU5XfEvvwTs`
+Current release tested on:
 
-## Permissions
+- Oppo Reno 13 Pro;
+- Android 16 / ColorOS;
+- AdAway VPN mode;
+- daily usage for two weeks.
 
-AdAway requires the following permissions:
+Observed result:
 
-* `INTERNET` to download hosts files and application updates. It can send bug reports and telemetry [if the user wants to (opt-in only)](https://github.com/AdAway/AdAway/wiki/Telemetry)
-* `ACCESS_NETWORK_STATE` to restart VPN on network connection change
-* `RECEIVE_BOOT_COMPLETED` to start the VPN on boot
-* `FOREGROUND_SERVICE` to run the VPN service in foreground
-* `POST_NOTIFICATIONS` to post notifications about hosts source update, application update and VPN controls. All notifications can be enabled or disabled independently.
-* `REQUEST_INSTALL_PACKAGES` to update the application using the builtin updater
-* `QUERY_ALL_PACKAGES` to let the user pick the applications to exclude from VPN
+- ✅ VPN no longer restarted by itself after manual disable;
+- ✅ VPN stayed stable during normal background usage;
+- ✅ no visible VPN restart/reconnect loop during daily use;
+- ✅ Quick Settings tile stayed coherent;
+- ✅ app UI, Android VPN key icon and VPN state stayed consistent;
+- ✅ Wi-Fi / mobile data changes did not cause unwanted VPN restarts;
+- ✅ local-network IoT connectivity stayed stable;
+- ✅ Ecovacs Home robot vacuum stayed reachable through the patched VPN.
 
-## Licenses
+---
 
-AdAway is licensed under the GPLv3+.  
-The file LICENSE includes the full license text.
-For more details, check [the license notes](LICENSE.md).
+## 📦 Download
+
+Unofficial community builds:
+
+https://github.com/Victor-root/AdAway/releases
+
+---
+
+## ⚠️ Installation notes
+
+This APK is signed with my own signing key.
+
+Because of that, it **cannot be installed as an update over the official AdAway build**.
+
+You need to uninstall the official AdAway app before installing this APK.
+
+⚠️ Uninstalling the official app may remove local settings.  
+Check your configuration before doing it.
+
+---
+
+## 🧪 Feedback
+
+Feedback is welcome, especially for VPN-mode instability or recent Android compatibility issues.
+
+Useful details:
+
+- device model;
+- Android version;
+- ROM / manufacturer skin;
+- VPN mode or root mode;
+- autostart enabled or disabled;
+- battery/background restrictions;
+- whether the VPN restarts after manual disable;
+- whether UI / notification / Quick Settings tile stay coherent;
+- Logcat logs if the issue still happens.
+
+---
+
+## 🧱 Requirements
+
+- Android 8 Oreo or above;
+- VPN mode or root mode depending on your setup;
+- Android VPN permission for VPN mode.
+
+For devices older than Android 8 Oreo, use older official AdAway versions from upstream.
+
+---
+
+## 🔐 Permissions
+
+AdAway uses these permissions:
+
+- `INTERNET` to download hosts files and application updates;
+- `ACCESS_NETWORK_STATE` to monitor network changes;
+- `RECEIVE_BOOT_COMPLETED` to optionally start AdAway after boot;
+- `FOREGROUND_SERVICE` to run the VPN service in foreground;
+- `POST_NOTIFICATIONS` for source update, app update and VPN control notifications;
+- `REQUEST_INSTALL_PACKAGES` for the built-in updater;
+- `QUERY_ALL_PACKAGES` to let users exclude apps from VPN.
+
+---
+
+## 🤝 Credits
+
+AdAway was created and maintained by the official AdAway project contributors.
+
+Official project:
+
+https://github.com/AdAway/AdAway
+
+Official website:
+
+https://adaway.org
+
+Thanks to the original author, past maintainers, current maintainers, translators, hosts list maintainers and all contributors who made AdAway possible.
+
+This fork keeps the original license and credits.
+
+---
+
+## ⚖️ License
+
+AdAway is licensed under the GPLv3+.
+
+See [LICENSE.md](LICENSE.md) for the full license text.
