@@ -90,6 +90,10 @@ public class LogViewModel extends AndroidViewModel {
         return this.recording;
     }
 
+    public LiveData<Boolean> getVpnStatus() {
+        return this.adBlockModel.isApplied();
+    }
+
     public void toggleRecording() {
         boolean recording = !this.adBlockModel.isRecordingLogs();
         this.adBlockModel.setRecordingLogs(recording);

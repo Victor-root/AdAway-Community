@@ -8,6 +8,9 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
 
     <permission-group
         android:name="org.adaway.permission-group.API"
@@ -62,6 +65,23 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
+        <activity
+            android:name=".ui.home.TvHomeActivity"
+            android:exported="true"
+            android:banner="@drawable/tv_banner"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AdAway.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.log.TvLogActivity"
+            android:exported="false"
+            android:label="@string/shortcut_dns_requests"
+            android:parentActivityName=".ui.home.TvHomeActivity"
+            android:theme="@style/Theme.AdAway.NoActionBar" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="false"
