@@ -1,6 +1,9 @@
 package org.adaway.ui.help;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.adaway.BuildConfig;
 import org.adaway.R;
 
 public class AboutFragment extends Fragment {
@@ -28,7 +30,7 @@ public class AboutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         TextView versionTextView = view.findViewById(R.id.about_version);
-        versionTextView.setText(getString(R.string.about_version, BuildConfig.VERSION_NAME));
+        versionTextView.setText(getString(R.string.about_version, getVersionName(requireContext())));
 
         setLink(view, R.id.about_source_link, "https://github.com/Victor-root/AdAway-Community");
         setLink(view, R.id.about_issues_link, "https://github.com/Victor-root/AdAway-Community/issues");
@@ -40,5 +42,14 @@ public class AboutFragment extends Fragment {
         parent.findViewById(viewId).setOnClickListener(v ->
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         );
+    }
+
+    private static String getVersionName(Context context) {
+        try {
+            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            return info.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            return "";
+        }
     }
 }
