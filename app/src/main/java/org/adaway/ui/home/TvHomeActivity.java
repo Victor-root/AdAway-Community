@@ -3,10 +3,12 @@ package org.adaway.ui.home;
 import static org.adaway.model.adblocking.AdBlockMethod.VPN;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.net.VpnService;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import org.adaway.R;
@@ -27,6 +30,8 @@ import org.adaway.ui.log.TvLogActivity;
 public class TvHomeActivity extends AppCompatActivity {
 
     private HomeViewModel homeViewModel;
+    private View statusBadge;
+    private ImageView statusIcon;
     private TextView statusText;
     private TextView stateDetailText;
     private Button toggleButton;
@@ -49,6 +54,8 @@ public class TvHomeActivity extends AppCompatActivity {
             PreferenceHelper.setAbBlockMethod(this, VPN);
         }
 
+        statusBadge = findViewById(R.id.tv_status_badge);
+        statusIcon = findViewById(R.id.tv_status_icon);
         statusText = findViewById(R.id.tv_status_text);
         stateDetailText = findViewById(R.id.tv_state_detail);
         toggleButton = findViewById(R.id.btn_toggle);
@@ -82,6 +89,10 @@ public class TvHomeActivity extends AppCompatActivity {
     private void updateStatus(boolean isBlocked) {
         statusText.setText(isBlocked ? R.string.tv_status_enabled : R.string.tv_status_disabled);
         toggleButton.setText(isBlocked ? R.string.button_disable_hosts : R.string.button_enable_hosts);
+        int badgeColor = ContextCompat.getColor(this,
+                isBlocked ? R.color.cardEnabledBackground : R.color.cardBackground);
+        statusBadge.setBackgroundTintList(ColorStateList.valueOf(badgeColor));
+        statusIcon.setImageResource(isBlocked ? R.drawable.baseline_check_24 : R.drawable.baseline_block_24);
     }
 
     private void checkFirstStep() {
