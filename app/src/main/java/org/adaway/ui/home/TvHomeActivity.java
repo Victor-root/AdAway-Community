@@ -19,6 +19,7 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -177,32 +178,47 @@ public class TvHomeActivity extends AppCompatActivity {
                 + getString(R.string.tv_always_on_hint_message)
                 + "\n\n"
                 + getString(R.string.tv_persistence_adb_commands, getPackageName());
-        new MaterialAlertDialogBuilder(this)
+        // Build with null click listeners so the auto-dismiss-on-click is wired,
+        // then override the positive button after show(): if the Intent fails
+        // (Toast shown), keep the dialog up so the user can still read the ADB
+        // commands instead of having to re-open the dialog.
+        AlertDialog dialog = new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.tv_always_on_hint_title)
                 .setMessage(message)
-                .setPositiveButton(R.string.tv_always_on_hint_open_settings, (d, w) -> tryOpenVpnSettings())
+                .setPositiveButton(R.string.tv_always_on_hint_open_settings, null)
                 .setNegativeButton(R.string.tv_always_on_hint_later, null)
-                .show();
+                .create();
+        dialog.setOnShowListener(d -> dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                .setOnClickListener(v -> {
+                    if (tryOpenVpnSettings()) {
+                        dialog.dismiss();
+                    }
+                    // else: VPN settings are hidden, Toast already shown,
+                    // keep the dialog open so the ADB commands stay visible.
+                }));
+        dialog.show();
     }
 
     /**
      * Tries to open the system VPN settings via {@link Settings#ACTION_VPN_SETTINGS}.
      * Non-blocking: if the Activity is unresolved or {@code startActivity} throws,
-     * a Toast points the user back to the ADB commands that are already on screen
-     * in the persistence dialog.
+     * a Toast points the user back to the ADB commands. Returns {@code true} when
+     * the system Activity successfully started, {@code false} otherwise so the
+     * caller can decide whether to keep its UI on screen.
      */
-    private void tryOpenVpnSettings() {
+    private boolean tryOpenVpnSettings() {
         Intent intent = new Intent(Settings.ACTION_VPN_SETTINGS)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (intent.resolveActivity(getPackageManager()) != null) {
             try {
                 startActivity(intent);
-                return;
+                return true;
             } catch (ActivityNotFoundException | SecurityException e) {
                 Timber.w(e, "Failed to open VPN settings.");
             }
         }
         Toast.makeText(this, R.string.tv_persistence_intent_failed, Toast.LENGTH_LONG).show();
+        return false;
     }
 
     private void checkFirstStep() {

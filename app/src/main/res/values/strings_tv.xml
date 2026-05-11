@@ -27,7 +27,7 @@
     <!-- Dialog opened either on first VPN activation OR via the VPN
          persistence button. Status line + explanation + ADB commands. -->
     <string name="tv_always_on_hint_title">VPN persistence</string>
-    <string name="tv_always_on_hint_message">AdAway already handles reboots, low-memory kills and crashes on its own — no extra setup needed in most cases.\n\nIf the VPN ever stops unexpectedly, pin AdAway as the Android system Always-on VPN for the strongest guarantee.</string>
+    <string name="tv_always_on_hint_message">AdAway already handles reboots, low-memory kills and crashes on its own, no extra setup needed in most cases.\n\nIf the VPN ever stops unexpectedly, pin AdAway as the Android system Always-on VPN for the strongest guarantee.</string>
     <string name="tv_persistence_status_enabled">Always-on VPN is enabled for AdAway. ✓</string>
     <string name="tv_persistence_status_disabled">Always-on VPN not set — AdAway\'s built-in persistence handles it.</string>
     <string name="tv_persistence_adb_commands">If the system VPN screen is hidden on your TV, use ADB:\n\n• Enable always-on for AdAway:\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Disable always-on:\n  adb shell settings delete global always_on_vpn_app</string>

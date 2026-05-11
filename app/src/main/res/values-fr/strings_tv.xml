@@ -14,7 +14,7 @@
     <string name="tv_button_vpn_persistence">Persistance VPN</string>
     <string name="tv_persistence_indicator_active">Always-on VPN actif</string>
     <string name="tv_always_on_hint_title">Persistance VPN</string>
-    <string name="tv_always_on_hint_message">AdAway gère déjà les redémarrages, les kills système et les crashs — normalement aucune configuration n’est nécessaire.\n\nSi le VPN se coupe de façon inattendue, vous pouvez activer Always-on VPN au niveau Android pour renforcer la persistance.</string>
+    <string name="tv_always_on_hint_message">AdAway gère déjà les redémarrages, les kills système et les crashs, normalement aucune configuration n’est nécessaire.\n\nSi le VPN se coupe de façon inattendue, vous pouvez activer Always-on VPN au niveau Android pour renforcer la persistance.</string>
     <string name="tv_persistence_status_enabled">Always-on VPN activé pour AdAway. ✓</string>
     <string name="tv_persistence_status_disabled">Always-on VPN non configuré. AdAway gère via sa persistance interne.</string>
     <string name="tv_persistence_adb_commands">Si l’écran VPN système est caché sur votre TV, utilisez ADB :\n\n• Activer always-on pour AdAway :\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Désactiver always-on :\n  adb shell settings delete global always_on_vpn_app</string>
