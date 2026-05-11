@@ -19,4 +19,12 @@
     <string name="tv_dialog_copy_hostname">Copy hostname</string>
     <!-- TV log row content description -->
     <string name="tv_log_entry_status_description">Domain status</string>
+    <!-- TV Always-on VPN setup hint (one-time, shown after the first VPN activation) -->
+    <string name="tv_always_on_hint_title">Make AdAway VPN stick</string>
+    <string name="tv_always_on_hint_message">AdAway already keeps the VPN running across reboots and low-memory kills. For the strongest guarantee, also enable "Always-on VPN" for AdAway in the Android system settings.</string>
+    <string name="tv_always_on_hint_open_settings">Open VPN settings</string>
+    <string name="tv_always_on_hint_later">Got it</string>
+    <!-- Fallback when the Android TV launcher hides the VPN settings activity -->
+    <string name="tv_always_on_fallback_title">VPN settings hidden on this device</string>
+    <string name="tv_always_on_fallback_message">Your Android TV launcher does not expose the VPN settings screen. Always-on VPN can still be enabled over ADB:\n\nadb shell settings put global always_on_vpn_app %1$s\n\nOptional (block traffic when VPN is off):\nadb shell settings put global always_on_vpn_lockdown 1\n\nThe change persists across reboots and is equivalent to toggling the Always-on switch in the hidden UI.</string>
 </resources>

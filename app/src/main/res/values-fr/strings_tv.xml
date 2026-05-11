@@ -11,4 +11,10 @@
     <string name="tv_dialog_remove_from_blocked">Retirer des bloqués</string>
     <string name="tv_dialog_copy_hostname">Copier le nom du domaine</string>
     <string name="tv_log_entry_status_description">État du domaine</string>
+    <string name="tv_always_on_hint_title">Persistance maximale du VPN</string>
+    <string name="tv_always_on_hint_message">AdAway garde déjà le VPN actif après un redémarrage ou si Android tue le service pour manque de mémoire. Pour la garantie la plus forte, activez aussi « Always-on VPN » pour AdAway dans les réglages système Android.</string>
+    <string name="tv_always_on_hint_open_settings">Ouvrir les réglages VPN</string>
+    <string name="tv_always_on_hint_later">Compris</string>
+    <string name="tv_always_on_fallback_title">Réglages VPN inaccessibles sur cet appareil</string>
+    <string name="tv_always_on_fallback_message">Votre lanceur Android TV ne donne pas accès à l’écran des réglages VPN. Always-on VPN reste activable via ADB :\n\nadb shell settings put global always_on_vpn_app %1$s\n\nOptionnel (bloquer le trafic quand le VPN est coupé) :\nadb shell settings put global always_on_vpn_lockdown 1\n\nCe changement persiste au redémarrage et équivaut à activer le réglage dans l’UI cachée.</string>
 </resources>

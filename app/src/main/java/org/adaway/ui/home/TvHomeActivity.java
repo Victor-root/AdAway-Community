@@ -2,10 +2,12 @@ package org.adaway.ui.home;
 
 import static org.adaway.model.adblocking.AdBlockMethod.VPN;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.net.VpnService;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
@@ -26,6 +30,8 @@ import org.adaway.helper.ThemeHelper;
 import org.adaway.model.adblocking.AdBlockMethod;
 import org.adaway.ui.hosts.HostsSourcesActivity;
 import org.adaway.ui.log.TvLogActivity;
+
+import timber.log.Timber;
 
 public class TvHomeActivity extends AppCompatActivity {
 
@@ -42,6 +48,7 @@ public class TvHomeActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private ActivityResultLauncher<Intent> prepareVpnLauncher;
+    private boolean alwaysOnHintCheckedThisSession = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,6 +100,55 @@ public class TvHomeActivity extends AppCompatActivity {
                 isBlocked ? R.color.cardEnabledBackground : R.color.cardBackground);
         statusBadge.setBackgroundTintList(ColorStateList.valueOf(badgeColor));
         statusIcon.setImageResource(isBlocked ? R.drawable.baseline_check_24 : R.drawable.baseline_block_24);
+        // First time the user sees the VPN running on the TV, offer to enable the
+        // Android system "Always-on VPN" setting. One-shot per install (dismissible).
+        if (isBlocked && !alwaysOnHintCheckedThisSession) {
+            alwaysOnHintCheckedThisSession = true;
+            if (!PreferenceHelper.isTvAlwaysOnVpnHintShown(this)) {
+                showAlwaysOnVpnHint();
+            }
+        }
+    }
+
+    private void showAlwaysOnVpnHint() {
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.tv_always_on_hint_title)
+                .setMessage(R.string.tv_always_on_hint_message)
+                .setPositiveButton(R.string.tv_always_on_hint_open_settings, (dialog, which) -> {
+                    PreferenceHelper.setTvAlwaysOnVpnHintShown(this, true);
+                    tryOpenVpnSettings();
+                })
+                .setNegativeButton(R.string.tv_always_on_hint_later, (dialog, which) ->
+                        PreferenceHelper.setTvAlwaysOnVpnHintShown(this, true))
+                .show();
+    }
+
+    private void tryOpenVpnSettings() {
+        Intent intent = new Intent(Settings.ACTION_VPN_SETTINGS);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        // Some Android TV launchers (NVIDIA SHIELD, Google TV, …) hide the VPN
+        // settings activity. Resolve before launching, and fall back to ADB
+        // instructions if either the resolver or startActivity says no.
+        if (intent.resolveActivity(getPackageManager()) == null) {
+            Timber.i("VPN settings activity is not exposed by this Android TV launcher.");
+            showAdbFallbackDialog();
+            return;
+        }
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException | SecurityException e) {
+            Timber.w(e, "Failed to open VPN settings, showing ADB fallback.");
+            showAdbFallbackDialog();
+        }
+    }
+
+    private void showAdbFallbackDialog() {
+        String message = getString(R.string.tv_always_on_fallback_message, getPackageName());
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.tv_always_on_fallback_title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
     }
 
     private void checkFirstStep() {

@@ -51,6 +51,8 @@
     <bool name="pref_vpn_service_on_boot_def">true</bool>
     <string name="pref_vpn_watchdog_enabled_key" translatable="false">vpnWatchdog</string>
     <bool name="pref_vpn_watchdog_enabled_def">false</bool>
+    <string name="pref_tv_always_on_hint_shown_key" translatable="false">tvAlwaysOnVpnHintShown</string>
+    <bool name="pref_tv_always_on_hint_shown_def">false</bool>
     <string name="pref_enable_debug_key" translatable="false">debugEnabled</string>
     <bool name="pref_enable_debug_def">false</bool>
     <string name="pref_enable_telemetry_key" translatable="false">enableTelemetry</string>

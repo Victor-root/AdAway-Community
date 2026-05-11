@@ -308,6 +308,27 @@ public final class PreferenceHelper {
         );
     }
 
+    public static boolean isTvAlwaysOnVpnHintShown(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(
+                Constants.PREFS_NAME,
+                Context.MODE_PRIVATE
+        );
+        return prefs.getBoolean(
+                context.getString(R.string.pref_tv_always_on_hint_shown_key),
+                context.getResources().getBoolean(R.bool.pref_tv_always_on_hint_shown_def)
+        );
+    }
+
+    public static void setTvAlwaysOnVpnHintShown(Context context, boolean shown) {
+        SharedPreferences prefs = context.getApplicationContext().getSharedPreferences(
+                Constants.PREFS_NAME,
+                Context.MODE_PRIVATE
+        );
+        prefs.edit()
+                .putBoolean(context.getString(R.string.pref_tv_always_on_hint_shown_key), shown)
+                .apply();
+    }
+
     public static boolean getDebugEnabled(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(
                 Constants.PREFS_NAME,
