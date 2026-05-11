@@ -27,10 +27,10 @@
     <!-- Dialog opened either on first VPN activation OR via the VPN
          persistence button. Status line + explanation + ADB commands. -->
     <string name="tv_always_on_hint_title">VPN persistence</string>
-    <string name="tv_always_on_hint_message">AdAway already keeps the VPN running across reboots and low-memory kills. For the strongest guarantee, also enable "Always-on VPN" for AdAway in the Android system settings.</string>
+    <string name="tv_always_on_hint_message">AdAway\'s built-in persistence (foreground service, sticky restart, periodic heartbeat, auto-start on boot) already keeps the VPN running through reboots and low-memory kills — you normally don\'t need anything else.\n\nOnly if you ever notice the VPN stopping unexpectedly on this device, you can additionally pin AdAway as the Android system Always-on VPN for the strongest possible guarantee.</string>
     <string name="tv_persistence_status_enabled">Always-on VPN is enabled for AdAway. ✓</string>
-    <string name="tv_persistence_status_disabled">Always-on VPN is not configured for AdAway.</string>
-    <string name="tv_persistence_adb_commands">ADB commands (for reference):\n\n• Enable always-on for AdAway:\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Disable always-on:\n  adb shell settings delete global always_on_vpn_app</string>
+    <string name="tv_persistence_status_disabled">Always-on VPN is not configured — AdAway\'s built-in persistence is in charge.</string>
+    <string name="tv_persistence_adb_commands">If you want to enable Always-on VPN and the system VPN screen is hidden by your TV launcher, ADB works around that:\n\n• Enable always-on for AdAway:\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Disable always-on:\n  adb shell settings delete global always_on_vpn_app</string>
     <string name="tv_always_on_hint_open_settings">Open VPN settings</string>
     <string name="tv_always_on_hint_later">Got it</string>
     <!-- Toast shown when the Android TV launcher hides the VPN settings activity

@@ -14,10 +14,10 @@
     <string name="tv_button_vpn_persistence">Persistance VPN</string>
     <string name="tv_persistence_indicator_active">Always-on VPN actif</string>
     <string name="tv_always_on_hint_title">Persistance VPN</string>
-    <string name="tv_always_on_hint_message">AdAway garde déjà le VPN actif après un redémarrage ou si Android tue le service pour manque de mémoire. Pour la garantie la plus forte, activez aussi « Always-on VPN » pour AdAway dans les réglages système Android.</string>
+    <string name="tv_always_on_hint_message">La persistance interne d’AdAway (service au premier plan, redémarrage automatique, vérification périodique, démarrage au boot) maintient déjà le VPN actif après un redémarrage ou si Android tue le service pour manque de mémoire — normalement il n’y a rien d’autre à faire.\n\nUniquement si vous constatez que le VPN se coupe de façon inattendue sur cet appareil, vous pouvez forcer AdAway en VPN « Always-on » au niveau système Android pour la garantie maximale.</string>
     <string name="tv_persistence_status_enabled">Always-on VPN activé pour AdAway. ✓</string>
-    <string name="tv_persistence_status_disabled">Always-on VPN non configuré pour AdAway.</string>
-    <string name="tv_persistence_adb_commands">Commandes ADB (pour référence) :\n\n• Activer always-on pour AdAway :\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Désactiver always-on :\n  adb shell settings delete global always_on_vpn_app</string>
+    <string name="tv_persistence_status_disabled">Always-on VPN non configuré — la persistance interne d’AdAway s’en charge.</string>
+    <string name="tv_persistence_adb_commands">Si vous souhaitez activer Always-on VPN et que l’écran VPN système est caché par votre lanceur TV, ADB permet de contourner ça :\n\n• Activer always-on pour AdAway :\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Désactiver always-on :\n  adb shell settings delete global always_on_vpn_app</string>
     <string name="tv_always_on_hint_open_settings">Ouvrir les réglages VPN</string>
     <string name="tv_always_on_hint_later">Compris</string>
     <string name="tv_persistence_intent_failed">Réglages VPN cachés sur cet Android TV — utilisez les commandes ADB affichées.</string>
