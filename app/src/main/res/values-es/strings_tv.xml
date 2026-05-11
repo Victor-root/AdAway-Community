@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_button_update_block_lists">Actualizar listas de bloqueo</string>
+    <string name="tv_button_sync">Sincronizar listas</string>
+    <string name="tv_button_block_list_sources">Fuentes de las listas de bloqueo</string>
+</resources>

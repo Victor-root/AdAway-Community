@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_button_update_block_lists">Actualitza les llistes de bloqueig</string>
+    <string name="tv_button_sync">Sincronitza les llistes</string>
+    <string name="tv_button_block_list_sources">Fonts de les llistes de bloqueig</string>
+</resources>

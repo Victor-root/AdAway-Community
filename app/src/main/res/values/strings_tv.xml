@@ -3,8 +3,14 @@
     <!-- TV home status header -->
     <string name="tv_status_enabled">Ad-blocking: enabled</string>
     <string name="tv_status_disabled">Ad-blocking: disabled</string>
-    <!-- TV home buttons (others reuse menu_refresh, button_enable_hosts, button_disable_hosts, update_hosts_description, shortcut_dns_requests) -->
-    <string name="tv_button_sync">Sync</string>
+    <!-- TV home buttons. Block-list-centric wording is intentional: it stays accurate
+         whether ad-blocking runs in VPN mode (in-memory DNS filter) or in root mode
+         (system /etc/hosts file). The toggle and DNS-monitor buttons reuse the
+         existing button_enable_hosts / button_disable_hosts / shortcut_dns_requests
+         strings, which are already neutral. -->
+    <string name="tv_button_update_block_lists">Update block lists</string>
+    <string name="tv_button_sync">Sync block lists</string>
+    <string name="tv_button_block_list_sources">Block list sources</string>
     <!-- TV DNS log entry dialog -->
     <string name="tv_dialog_add_to_allowed">Add to allowed</string>
     <string name="tv_dialog_add_to_blocked">Add to blocked</string>

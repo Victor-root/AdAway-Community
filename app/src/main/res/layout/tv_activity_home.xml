@@ -43,7 +43,7 @@
             android:id="@+id/btn_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/update_hosts_description"
+            android:text="@string/tv_button_update_block_lists"
             android:focusable="true"
             android:nextFocusRight="@id/btn_sync"
             android:nextFocusUp="@id/btn_toggle"
@@ -75,7 +75,7 @@
         android:id="@+id/btn_sources"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hosts_title"
+        android:text="@string/tv_button_block_list_sources"
         android:focusable="true"
         android:nextFocusUp="@id/btn_dns_monitor"
         android:layout_marginTop="16dp"/>

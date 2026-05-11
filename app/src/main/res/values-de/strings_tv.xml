@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_button_update_block_lists">Sperrlisten aktualisieren</string>
+    <string name="tv_button_sync">Sperrlisten synchronisieren</string>
+    <string name="tv_button_block_list_sources">Sperrlisten-Quellen</string>
+</resources>

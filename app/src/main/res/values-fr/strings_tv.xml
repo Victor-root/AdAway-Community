@@ -2,7 +2,9 @@
 <resources>
     <string name="tv_status_enabled">Blocage des publicités : activé</string>
     <string name="tv_status_disabled">Blocage des publicités : désactivé</string>
-    <string name="tv_button_sync">Synchroniser</string>
+    <string name="tv_button_update_block_lists">Mettre à jour les listes de blocage</string>
+    <string name="tv_button_sync">Synchroniser les listes</string>
+    <string name="tv_button_block_list_sources">Sources des listes de blocage</string>
     <string name="tv_dialog_add_to_allowed">Ajouter aux autorisés</string>
     <string name="tv_dialog_add_to_blocked">Ajouter aux bloqués</string>
     <string name="tv_dialog_remove_from_allowed">Retirer des autorisés</string>
