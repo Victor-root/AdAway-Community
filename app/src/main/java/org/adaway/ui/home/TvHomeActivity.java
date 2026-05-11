@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.net.VpnService;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -21,6 +22,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -50,6 +52,7 @@ public class TvHomeActivity extends AppCompatActivity {
     private Button dnsMonitorButton;
     private Button sourcesButton;
     private Button persistenceButton;
+    private Button themeButton;
     private ProgressBar progressBar;
 
     private ActivityResultLauncher<Intent> prepareVpnLauncher;
@@ -77,7 +80,10 @@ public class TvHomeActivity extends AppCompatActivity {
         dnsMonitorButton = findViewById(R.id.btn_dns_monitor);
         sourcesButton = findViewById(R.id.btn_sources);
         persistenceButton = findViewById(R.id.btn_persistence);
+        themeButton = findViewById(R.id.btn_theme);
         progressBar = findViewById(R.id.progress_bar);
+
+        bindThemeButton();
 
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
@@ -104,6 +110,27 @@ public class TvHomeActivity extends AppCompatActivity {
         });
 
         checkFirstStep();
+    }
+
+    /**
+     * Wire the theme toggle button. The label reflects what tapping will switch
+     * TO, based on the effective ui-mode (UI_MODE_NIGHT_YES/NO from the current
+     * Configuration). Tapping persists the new value and lets AppCompatDelegate
+     * recreate the activity with the new theme applied.
+     */
+    private void bindThemeButton() {
+        boolean isNightNow = (getResources().getConfiguration().uiMode
+                & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        themeButton.setText(isNightNow
+                ? R.string.tv_button_theme_light
+                : R.string.tv_button_theme_dark);
+        themeButton.setOnClickListener(v -> {
+            String newMode = isNightNow ? "MODE_NIGHT_NO" : "MODE_NIGHT_YES";
+            PreferenceHelper.setDarkThemeMode(this, newMode);
+            AppCompatDelegate.setDefaultNightMode(isNightNow
+                    ? AppCompatDelegate.MODE_NIGHT_NO
+                    : AppCompatDelegate.MODE_NIGHT_YES);
+        });
     }
 
     private void updateStatus(boolean isBlocked) {

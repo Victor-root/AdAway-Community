@@ -23,6 +23,11 @@
          passive on-screen indicator that confirms the Android system has
          AdAway set as the Always-on VPN. -->
     <string name="tv_button_vpn_persistence">VPN persistence</string>
+    <!-- Theme toggle on the TV home screen. Label reflects the mode the user
+         will switch to when tapping (i.e. tv_button_theme_light is shown
+         while dark theme is currently active, and vice versa). -->
+    <string name="tv_button_theme_light">Light mode</string>
+    <string name="tv_button_theme_dark">Dark mode</string>
     <string name="tv_persistence_indicator_active">Always-on VPN active</string>
     <!-- Dialog opened either on first VPN activation OR via the VPN
          persistence button. Status line + explanation + ADB commands. -->

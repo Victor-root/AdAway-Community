@@ -57,6 +57,13 @@ public final class PreferenceHelper {
         }
     }
 
+    public static void setDarkThemeMode(Context context, String mode) {
+        context.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE)
+                .edit()
+                .putString(context.getString(R.string.pref_dark_theme_mode_key), mode)
+                .apply();
+    }
+
     public static boolean getUpdateCheck(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(
                 Constants.PREFS_NAME,

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android TV typically has no system light/dark mode, so MODE_NIGHT_FOLLOW_SYSTEM
+         from values/ would always resolve to light. Pin the default to dark on TV;
+         the user can still toggle from the home screen. -->
+    <string name="pref_dark_theme_mode_def">MODE_NIGHT_YES</string>
+</resources>
