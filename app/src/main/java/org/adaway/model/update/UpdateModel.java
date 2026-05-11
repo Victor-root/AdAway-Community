@@ -171,7 +171,7 @@ public class UpdateModel {
         Timber.i("Downloading " + manifest.version + ".");
         Uri uri = Uri.parse(DOWNLOAD_URL + manifest.versionCode);
         DownloadManager.Request request = new DownloadManager.Request(uri)
-                .setTitle("AdAway " + manifest.version)
+                .setTitle(this.context.getString(R.string.app_name) + " " + manifest.version)
                 .setDescription(this.context.getString(R.string.update_notification_description));
         DownloadManager downloadManager = this.context.getSystemService(DownloadManager.class);
         return downloadManager.enqueue(request);

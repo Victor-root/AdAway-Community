@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TV home status header -->
+    <string name="tv_status_enabled">Ad-blocking: enabled</string>
+    <string name="tv_status_disabled">Ad-blocking: disabled</string>
+    <!-- TV home buttons (others reuse menu_refresh, button_enable_hosts, button_disable_hosts, update_hosts_description, shortcut_dns_requests) -->
+    <string name="tv_button_sync">Sync</string>
+    <!-- TV DNS log entry dialog -->
+    <string name="tv_dialog_add_to_allowed">Add to allowed</string>
+    <string name="tv_dialog_add_to_blocked">Add to blocked</string>
+    <string name="tv_dialog_remove_from_allowed">Remove from allowed</string>
+    <string name="tv_dialog_remove_from_blocked">Remove from blocked</string>
+    <string name="tv_dialog_copy_hostname">Copy hostname</string>
+    <!-- TV log row content description -->
+    <string name="tv_log_entry_status_description">Domain status</string>
+</resources>

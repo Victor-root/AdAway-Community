@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_status_enabled">Blocage des publicités : activé</string>
+    <string name="tv_status_disabled">Blocage des publicités : désactivé</string>
+    <string name="tv_button_sync">Synchroniser</string>
+    <string name="tv_dialog_add_to_allowed">Ajouter aux autorisés</string>
+    <string name="tv_dialog_add_to_blocked">Ajouter aux bloqués</string>
+    <string name="tv_dialog_remove_from_allowed">Retirer des autorisés</string>
+    <string name="tv_dialog_remove_from_blocked">Retirer des bloqués</string>
+    <string name="tv_dialog_copy_hostname">Copier le nom du domaine</string>
+    <string name="tv_log_entry_status_description">État du domaine</string>
+</resources>

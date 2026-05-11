@@ -80,8 +80,8 @@ public class TvHomeActivity extends AppCompatActivity {
     }
 
     private void updateStatus(boolean isBlocked) {
-        statusText.setText(isBlocked ? "AdBlocking: Enabled" : "AdBlocking: Disabled");
-        toggleButton.setText(isBlocked ? "Disable AdBlocking" : "Enable AdBlocking");
+        statusText.setText(isBlocked ? R.string.tv_status_enabled : R.string.tv_status_disabled);
+        toggleButton.setText(isBlocked ? R.string.button_disable_hosts : R.string.button_enable_hosts);
     }
 
     private void checkFirstStep() {

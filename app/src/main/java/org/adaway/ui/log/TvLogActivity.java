@@ -131,18 +131,18 @@ public class TvLogActivity extends AppCompatActivity {
         builder.setTitle(entry.getHost());
 
         String[] options = {
-            "Add to Allowed",
-            "Add to Blocked",
-            "Copy Hostname"
+            getString(R.string.tv_dialog_add_to_allowed),
+            getString(R.string.tv_dialog_add_to_blocked),
+            getString(R.string.tv_dialog_copy_hostname)
         };
-        
+
         ListType type = entry.getType();
-        
+
         // Adjust options based on current status
         if (type == ListType.ALLOWED) {
-             options[0] = "Remove from Allowed";
+            options[0] = getString(R.string.tv_dialog_remove_from_allowed);
         } else if (type == ListType.BLOCKED) {
-             options[1] = "Remove from Blocked";
+            options[1] = getString(R.string.tv_dialog_remove_from_blocked);
         }
 
         builder.setItems(options, (dialog, which) -> {
@@ -167,7 +167,7 @@ public class TvLogActivity extends AppCompatActivity {
             }
         });
         
-        builder.setNegativeButton("Cancel", null);
+        builder.setNegativeButton(R.string.button_cancel, null);
         builder.show();
     }
 }
