@@ -409,7 +409,6 @@
         app:contentPaddingLeft="8dp"
         app:contentPaddingRight="8dp"
         app:contentPaddingTop="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/helpCardView"
         app:layout_constraintEnd_toStartOf="@+id/badge1Space"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_weight="1"
@@ -458,13 +457,11 @@
         app:contentPaddingLeft="8dp"
         app:contentPaddingRight="8dp"
         app:contentPaddingTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/badge2Space"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/badge1Space"
-        app:layout_constraintTop_toBottomOf="@+id/sourcesCardView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/sourcesCardView">
 
         <TextView
             android:id="@+id/helpTextView"
@@ -509,7 +506,6 @@
         app:contentPaddingLeft="8dp"
         app:contentPaddingRight="8dp"
         app:contentPaddingTop="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/helpCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_weight="1"
