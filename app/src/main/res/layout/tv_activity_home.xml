@@ -88,6 +88,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Status: idle" />
 
+    <!-- Passive Always-on VPN indicator: shown only when Android has AdAway set
+         as the system-level Always-on VPN. Acts as a "yes, ADB worked" confirmation. -->
+    <TextView
+        android:id="@+id/tv_always_on_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/tv_persistence_indicator_active"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="@color/cardEnabledBackground"
+        android:drawableStart="@drawable/baseline_check_24"
+        android:drawablePadding="6dp"
+        android:drawableTint="@color/cardEnabledBackground"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_state_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
+
     <!-- Primary toggle (centered, medium size) -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_toggle"
@@ -107,7 +126,7 @@
         app:iconGravity="textStart"
         app:iconPadding="10dp"
         app:iconSize="22dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_state_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_always_on_indicator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -183,6 +202,7 @@
             android:layout_marginEnd="12dp"
             android:nextFocusUp="@id/btn_update"
             android:nextFocusRight="@id/btn_sources"
+            android:nextFocusDown="@id/btn_persistence"
             app:icon="@drawable/ic_record_24dp"
             app:iconGravity="textStart"
             app:iconPadding="8dp"
@@ -199,11 +219,32 @@
             android:focusable="true"
             android:nextFocusUp="@id/btn_sync"
             android:nextFocusLeft="@id/btn_dns_monitor"
+            android:nextFocusDown="@id/btn_persistence"
             app:icon="@drawable/ic_collections_bookmark_24dp"
             app:iconGravity="textStart"
             app:iconPadding="8dp"
             app:iconSize="20dp" />
     </LinearLayout>
+
+    <!-- Third row: VPN persistence (system Always-on VPN setup helper) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_persistence"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_button_vpn_persistence"
+        android:textSize="13sp"
+        android:paddingHorizontal="16dp"
+        android:focusable="true"
+        android:nextFocusUp="@id/btn_dns_monitor"
+        app:icon="@drawable/ic_vpn_key_24dp"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_actions_row2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Progress indicator -->
     <ProgressBar
