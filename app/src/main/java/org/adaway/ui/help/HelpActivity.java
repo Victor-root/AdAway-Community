@@ -71,6 +71,8 @@ public class HelpActivity extends AppCompatActivity {
                 return R.string.help_tab_problems;
             case 2:
                 return R.string.help_tab_s_on_s_off;
+            case 3:
+                return R.string.help_tab_about;
             default:
                 throw new IllegalStateException("Position " + position + " is not supported.");
         }
@@ -80,6 +82,7 @@ public class HelpActivity extends AppCompatActivity {
         private final Fragment faqFragment = HelpFragmentHtml.newInstance(R.raw.help_faq);
         private final Fragment problemsFragment = HelpFragmentHtml.newInstance(R.raw.help_problems);
         private final Fragment sonSofFragment = HelpFragmentHtml.newInstance(R.raw.help_s_on_s_off);
+        private final Fragment aboutFragment = new AboutFragment();
 
         TabsAdapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
@@ -95,6 +98,8 @@ public class HelpActivity extends AppCompatActivity {
                     return this.problemsFragment;
                 case 2:
                     return this.sonSofFragment;
+                case 3:
+                    return this.aboutFragment;
                 default:
                     throw new IllegalStateException("Position " + position + " is not supported.");
             }
@@ -102,7 +107,7 @@ public class HelpActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 3;
+            return 4;
         }
     }
 }

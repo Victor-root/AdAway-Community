@@ -29,6 +29,17 @@
 
     <!-- Support card -->
 
+    <!-- About tab -->
+    <string name="help_tab_about">About</string>
+    <string name="about_app_name">AdAway Community</string>
+    <string name="about_version">Version %s</string>
+    <string name="about_description">Unofficial community-maintained fork of AdAway.</string>
+    <string name="about_source_label">Source code (GitHub)</string>
+    <string name="about_issues_label">Report an issue</string>
+    <string name="about_releases_label">Releases</string>
+    <string name="about_upstream_label">Official AdAway upstream</string>
+    <string name="about_license_label">License: GNU General Public License v3.0 or later (GPLv3+)</string>
+
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">GitHub project</string>
     <string name="preferences_drawer_item">Preferences</string>

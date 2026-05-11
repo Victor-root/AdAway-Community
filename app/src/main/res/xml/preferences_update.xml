@@ -2,13 +2,10 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     app:title="@string/pref_update_title">
 
-    <Preference
-        app:icon="@drawable/notifications_off_24"
-        app:key="@string/pref_update_open_notification_preferences_key"
-        app:title="@string/pref_update_enable_notifications"
-        app:summary="@string/pref_update_enable_notifications_summary" />
-
-    <PreferenceCategory app:title="@string/pref_update_app_category">
+    <!-- APK update checks are hidden in AdAway Community until a Community release updater is implemented. -->
+    <PreferenceCategory
+        app:title="@string/pref_update_app_category"
+        app:isPreferenceVisible="false">
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_update_check_app_startup_def"
             app:key="@string/pref_update_check_app_startup_key"
