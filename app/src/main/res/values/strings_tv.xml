@@ -30,7 +30,7 @@
     <string name="tv_always_on_hint_message">AdAway already keeps the VPN running across reboots and low-memory kills. For the strongest guarantee, also enable "Always-on VPN" for AdAway in the Android system settings.</string>
     <string name="tv_persistence_status_enabled">Always-on VPN is enabled for AdAway. ✓</string>
     <string name="tv_persistence_status_disabled">Always-on VPN is not configured for AdAway.</string>
-    <string name="tv_persistence_adb_commands">ADB commands (for reference):\n\n• Enable always-on for AdAway:\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Block traffic without VPN (optional):\n  adb shell settings put global always_on_vpn_lockdown 1\n\n• Disable always-on:\n  adb shell settings put global always_on_vpn_app \"\"</string>
+    <string name="tv_persistence_adb_commands">ADB commands (for reference):\n\n• Enable always-on for AdAway:\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Block traffic without VPN (optional):\n  adb shell settings put global always_on_vpn_lockdown 1\n\n• Disable always-on:\n  adb shell settings delete global always_on_vpn_app</string>
     <string name="tv_always_on_hint_open_settings">Open VPN settings</string>
     <string name="tv_always_on_hint_later">Got it</string>
     <!-- Toast shown when the Android TV launcher hides the VPN settings activity
