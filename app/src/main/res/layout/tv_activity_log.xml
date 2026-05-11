@@ -6,77 +6,114 @@
     android:orientation="vertical"
     android:background="?attr/colorSurface">
 
-    <!-- Header band: title + action buttons (refresh, toggle recording, clear) -->
+    <!--
+        Header band split in two rows so the action buttons never compete with
+        the title for horizontal space. With the title alone on row 1 and the
+        three buttons on row 2, even very long French translations like
+        "Démarrer l'enregistrement (VPN non actif)" stay on a single line.
+    -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:background="?attr/colorPrimary"
         android:paddingHorizontal="24dp"
-        android:paddingVertical="16dp"
-        android:gravity="center_vertical">
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_record_24dp"
-            android:contentDescription="@string/shortcut_dns_requests"
-            app:tint="?attr/colorOnPrimary" />
-
-        <TextView
-            android:layout_width="0dp"
+        <!-- Row 1: title -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/shortcut_dns_requests"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            android:textColor="?attr/colorOnPrimary" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_refresh"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="14dp"
+                android:src="@drawable/ic_record_24dp"
+                android:contentDescription="@string/shortcut_dns_requests"
+                app:tint="?attr/colorOnPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shortcut_dns_requests"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="?attr/colorOnPrimary" />
+        </LinearLayout>
+
+        <!-- Row 2: action buttons -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/menu_refresh"
-            android:textColor="?attr/colorOnPrimary"
-            android:focusable="true"
-            android:layout_marginEnd="8dp"
-            app:icon="@drawable/ic_sync_24dp"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="?attr/colorOnPrimary"
-            app:strokeColor="?attr/colorOnPrimary"
-            app:rippleColor="?attr/colorOnPrimary" />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_toggle_recording"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/log_start_recording_button"
-            android:textColor="?attr/colorOnPrimary"
-            android:focusable="true"
-            android:layout_marginEnd="8dp"
-            app:icon="@drawable/ic_record_24dp"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="?attr/colorOnPrimary"
-            app:strokeColor="?attr/colorOnPrimary"
-            app:rippleColor="?attr/colorOnPrimary" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_refresh"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_refresh"
+                android:textSize="13sp"
+                android:paddingHorizontal="16dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:focusable="true"
+                android:layout_marginEnd="8dp"
+                android:nextFocusRight="@id/btn_toggle_recording"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_sync_24dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="18dp"
+                app:iconTint="?attr/colorOnPrimary"
+                app:strokeColor="?attr/colorOnPrimary"
+                app:rippleColor="?attr/colorOnPrimary" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_clear"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tcpdump_menu_clear"
-            android:textColor="?attr/colorOnPrimary"
-            android:focusable="true"
-            app:icon="@drawable/baseline_clear_all_24"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="?attr/colorOnPrimary"
-            app:strokeColor="?attr/colorOnPrimary"
-            app:rippleColor="?attr/colorOnPrimary" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_toggle_recording"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/log_start_recording_button"
+                android:textSize="13sp"
+                android:paddingHorizontal="16dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:focusable="true"
+                android:layout_marginEnd="8dp"
+                android:nextFocusLeft="@id/btn_refresh"
+                android:nextFocusRight="@id/btn_clear"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_record_24dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="18dp"
+                app:iconTint="?attr/colorOnPrimary"
+                app:strokeColor="?attr/colorOnPrimary"
+                app:rippleColor="?attr/colorOnPrimary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_clear"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tcpdump_menu_clear"
+                android:textSize="13sp"
+                android:paddingHorizontal="16dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:focusable="true"
+                android:nextFocusLeft="@id/btn_toggle_recording"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/baseline_clear_all_24"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="18dp"
+                app:iconTint="?attr/colorOnPrimary"
+                app:strokeColor="?attr/colorOnPrimary"
+                app:rippleColor="?attr/colorOnPrimary" />
+        </LinearLayout>
     </LinearLayout>
 
     <FrameLayout
