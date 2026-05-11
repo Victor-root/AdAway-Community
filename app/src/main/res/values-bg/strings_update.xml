@@ -13,9 +13,6 @@
     <string name="update_complete_label">Готово</string>
     <string name="update_last_changelog_title">Последни промени</string>
     <string name="update_new_changelog_title">Дневник на промените</string>
-    <string name="update_support_title">Подкрепете разработката</string>
-    <string name="update_donate_button">Даряване</string>
-    <string name="update_sponsor_button">Подпомагане</string>
 
     <!-- Notification -->
     <string name="update_notification_description">Изтегляне на последната версия на AdAway…</string>

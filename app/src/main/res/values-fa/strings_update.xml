@@ -13,9 +13,6 @@
     <string name="update_complete_label">کامل</string>
     <string name="update_last_changelog_title">آخرین تغییرات</string>
     <string name="update_new_changelog_title">گزارش تغییرات</string>
-    <string name="update_support_title">پشتیبانی از توسعه</string>
-    <string name="update_donate_button">حمایت مالی</string>
-    <string name="update_sponsor_button">حامی مالی</string>
 
     <!-- Notification -->
     <string name="update_notification_description">در حال دانلود آخرین نسخه AdAway …</string>

@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">Nó có thể gửi thông báo để hiển thị trạng thái và kiểm soát khối quảng cáo cũng như thông báo về bản cập nhật ứng dụng có sẵn (một vài bản cập nhật mỗi năm). Kích hoạt chúng nếu bạn muốn luôn cập nhật.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Hỗ trợ</string>
-    <string name="welcome_support_header">Ủng hộ AdAway!</string>
-    <string name="welcome_support_summary">AdAway là ứng dụng mã nguồn mở hoàn toàn miễn phí. Nếu bạn muốn, hãy ủng hộ chúng tôi tại đây:</string>
-    <string name="welcome_support_button">Ủng hộ qua PayPal</string>
-    <string name="welcome_support_telemetry_summary">Có lỗi xảy ra?</string>
-    <string name="welcome_support_telemetry_button">Báo lỗi cho chúng tôi qua</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Quay lại</string>

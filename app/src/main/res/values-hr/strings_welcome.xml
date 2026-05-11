@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">Neuspjelo usklađivanje: %1$s Ponovno pokušaj odmah?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Podrška</string>
-    <string name="welcome_support_header">Podrži me!</string>
-    <string name="welcome_support_summary">Ovo je besplatna aplikacija otvorenog kôda. Razvijam ju u slobodno vrijeme. Stoga ako uživate u njoj, slobodno iskažite svoju podršku:</string>
-    <string name="welcome_support_button">Donirajte na PayPalu</string>
-    <string name="welcome_support_telemetry_summary">Volite li greške? Ni ja isto.</string>
-    <string name="welcome_support_telemetry_button">Omogući telemetriju kako bi mi poslali izvještaj rušenja</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Natrag</string>

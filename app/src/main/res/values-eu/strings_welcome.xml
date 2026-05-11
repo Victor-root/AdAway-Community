@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">Jakinarazpenak bidal ditzakezu iragarkien eta kontrolaren blokeo-egoera erakusteko, bai eta eskuragarri dagoen aplikazioaren eguneratzearen berri emateko ere (gutxi batzuk urtean). Gaitu egunean egon nahi baduzu.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Lagundu</string>
-    <string name="welcome_support_header">Lagundu nazazu!</string>
-    <string name="welcome_support_summary">AdAway doako aplikazioa da, kode irekikoa, eta aisialdian garatzen dudana. Gogoko baduzu, erakutsi zure babesa:</string>
-    <string name="welcome_support_button">Lagundu PayPal-en bidez</string>
-    <string name="welcome_support_telemetry_summary">Zorriak gogoko al dituzu? Nik ere ez.</string>
-    <string name="welcome_support_telemetry_button">Gaitu telemetria erroreen erregistroak bidaltzeko</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Atzera</string>

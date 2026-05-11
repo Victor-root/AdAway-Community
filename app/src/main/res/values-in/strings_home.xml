@@ -26,7 +26,6 @@
     <string name="project_label">Buka GitHub Page</string>
 
     <!-- Support card -->
-    <string name="support_label">Dukung proyek</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">Proyek GitHub</string>

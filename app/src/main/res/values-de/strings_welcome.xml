@@ -44,12 +44,6 @@
     <string name="welcome_sync_notifications">Es kann Benachrichtigungen anzeigen, die Informationen sowohl über den Status und das Blockieren von Werbung enthalten als auch über anstehende App-Aktualisierungen (einige pro Jahr). Diese einschalten, um immer auf dem Laufenden zu bleiben.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Support</string>
-    <string name="welcome_support_header">Unterstützt mich!</string>
-    <string name="welcome_support_summary">AdAway ist eine kostenlose Open-Source-App, die ich in meiner Freizeit entwickle. Wenn sie Ihnen gefällt, können Sie mich gerne unterstützen:</string>
-    <string name="welcome_support_button">Über PayPal spenden</string>
-    <string name="welcome_support_telemetry_summary">Mögen Sie Fehler? Ich auch nicht</string>
-    <string name="welcome_support_telemetry_button">Telemetrie aktivieren, um Absturzberichte zu senden.</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Zurück</string>

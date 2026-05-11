@@ -37,15 +37,6 @@
     <string name="welcome_sync_retry_logo">Reîncearcă sincronizarea</string>
     <string name="welcome_sync_error">Imposibil de sincronizat: %1$s Reîncercați acum?</string>
 
-    <!-- Support -->
-    <string name="welcome_support_logo">Suport</string>
-    <string name="welcome_support_header">Susține-mă!</string>
-    <string name="welcome_support_summary">Este un program cu sursă deschisă. Îl programez în timpul meu liber.
-Dacă ți-a plăcut, îți poți arăta recunoștința astfel:</string>
-    <string name="welcome_support_button">Donează pe PayPal</string>
-    <string name="welcome_support_telemetry_summary">Îți plac erorile? Nici mie.</string>
-    <string name="welcome_support_telemetry_button">Activare serviciu de urmărire pentru trimiterea de rapoarte cu erori.</string>
-
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Înapoi</string>
     <string name="welcome_next_button">Următorul</string>

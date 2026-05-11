@@ -12,13 +12,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 public class WelcomePagerAdapter extends FragmentStateAdapter {
     private final WelcomeMethodFragment welcomeMethodFragment;
     private final WelcomeSyncFragment welcomeSyncFragment;
-    private final WelcomeSupportFragment welcomeSupportFragment;
 
     WelcomePagerAdapter(@NonNull FragmentActivity fragmentManager) {
         super(fragmentManager);
         this.welcomeMethodFragment = new WelcomeMethodFragment();
         this.welcomeSyncFragment = new WelcomeSyncFragment();
-        this.welcomeSupportFragment = new WelcomeSupportFragment();
     }
 
     @NonNull
@@ -29,8 +27,6 @@ public class WelcomePagerAdapter extends FragmentStateAdapter {
                 return this.welcomeMethodFragment;
             case 1:
                 return this.welcomeSyncFragment;
-            case 2:
-                return this.welcomeSupportFragment;
             default:
                 throw new IllegalStateException("Position " + position + " is not supported.");
         }
@@ -38,6 +34,6 @@ public class WelcomePagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 2;
     }
 }

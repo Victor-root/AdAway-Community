@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">동기화 실패 됨: %1$s 재시도하시겠습니까?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">지원</string>
-    <string name="welcome_support_header">지원해주세요!</string>
-    <string name="welcome_support_summary">이 앱은 무료이면서 오픈 소스입니다. 저는 여가 시간에 개발하고 있습니다. 만약 만족하신다면, 여러분의 지원을 자유롭게 보내주세요:</string>
-    <string name="welcome_support_button">PayPal로 기부하기</string>
-    <string name="welcome_support_telemetry_summary">버그 좋아하시나요? 전 싫어합니다.</string>
-    <string name="welcome_support_telemetry_button">충돌 보고서를 전송하려면, 원격 분석을 활성화 해야합니다.</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">뒤로</string>

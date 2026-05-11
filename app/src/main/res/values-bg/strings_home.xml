@@ -28,7 +28,6 @@
     <string name="project_label">Страница в GitHub</string>
 
     <!-- Support card -->
-    <string name="support_label">Даряване</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">Проект в GitHub</string>

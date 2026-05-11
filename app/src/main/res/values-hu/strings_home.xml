@@ -28,7 +28,6 @@
     <string name="project_label">GitHub oldal megnyitása</string>
 
     <!-- Support card -->
-    <string name="support_label">Projekt támogatása</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">GitHub projekt</string>

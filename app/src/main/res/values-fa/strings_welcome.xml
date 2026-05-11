@@ -44,12 +44,6 @@
     <string name="welcome_sync_notifications">این گزینه اعلان‌ هایی را برای نمایش وضعیت مسدود کردن تبلیغات و مدیریت و اطلاع‌ رسانی در مورد به‌ روز رسانی برنامه (تا چندین سال) ارسال کند اگر می‌خواهید به‌ روز بمانید آن‌ها را فعال کنید</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">حمایت</string>
-    <string name="welcome_support_header">حمایت از من</string>
-    <string name="welcome_support_summary">AdAway یک برنامه رایگان و منبع باز است که در اوقات فراغت خود توسعه می دهم اگر از آن لذت می برید‌ با کمک مالی از طریق پی پال از توسعه برنامه حمایت کنید</string>
-    <string name="welcome_support_button">کمک مالی در پی پال</string>
-    <string name="welcome_support_telemetry_summary">آیا شما اشکالات را دوست دارید؟ من هم نه</string>
-    <string name="welcome_support_telemetry_button">فعال کردن ارسال گزارش‌ های خرابی تله‌ متری</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">بازگشت</string>

@@ -28,7 +28,6 @@
     <string name="project_label">Avaa GitHub-sivu</string>
 
     <!-- Support card -->
-    <string name="support_label">Tue projektia</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">GitHub-projekti</string>

@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">Det gick inte att synkronisera: %1$s Försöka igen?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Support</string>
-    <string name="welcome_support_header">Stöd mig!</string>
-    <string name="welcome_support_summary">Detta är en app som är gratis och öppen källkod. Jag utvecklar den på min fritid. Så om du tycker om den, för du gärna visa ditt stöd:</string>
-    <string name="welcome_support_button">Donera på PayPal</string>
-    <string name="welcome_support_telemetry_summary">Gillar du fel? Inte jag heller.</string>
-    <string name="welcome_support_telemetry_button">Aktivera telemetri för att skicka mig kraschrapporter</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Bakåt</string>

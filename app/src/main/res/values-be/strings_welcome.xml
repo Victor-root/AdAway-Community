@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">Сінхранізацыя не ўдалася: %1$s nПаўтарыць зараз?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Падтрымаць</string>
-    <string name="welcome_support_header">Падтрымай мяне!</string>
-    <string name="welcome_support_summary">Гэта бясплатная праграма з адкрытым зыходным кодам.  Я займаюся гэтым у вольны час.  Так што, калі вам гэта падабаецца, не саромейцеся паказаць сваю падтрымку:</string>
-    <string name="welcome_support_button">Ахвяраваць на PayPal</string>
-    <string name="welcome_support_telemetry_summary">Вам не падабаюцца памылкі? Мне таксама.</string>
-    <string name="welcome_support_telemetry_button">Уключыць тэлеметрыю для адпраўкі мне справаздач аб збоях</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Назад</string>

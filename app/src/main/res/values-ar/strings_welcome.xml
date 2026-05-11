@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">يمكنه إرسال إشعارات لعرض حالة حظر الإعلانات والتحكم فيها، وإعلامك بتحديث التطبيق المتاح (عدد قليل في السنة). قم بتمكينها إذا كنت ترغب في البقاء على اطلاع دائم.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">الدعم</string>
-    <string name="welcome_support_header">إدعمني!</string>
-    <string name="welcome_support_summary">Adaway هو برنامج مفتوح المصدر اقوم بتطويره في وقت فراغي. اذا أعجبك. كُن حر بإظهار دعمك:</string>
-    <string name="welcome_support_button">تبرع على PayPal</string>
-    <string name="welcome_support_telemetry_summary">هل وجدت مشاكل في التطبيق؟ ولا أنا.</string>
-    <string name="welcome_support_telemetry_button">قم بتفعيل إرسال تقارير مشاكل التطبيق</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">رجوع</string>

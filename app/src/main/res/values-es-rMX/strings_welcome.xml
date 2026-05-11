@@ -34,12 +34,6 @@
     <string name="welcome_sync_error">No se pudo sincronizar : %1$s ¿Quieres volver a intentarlo?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Apoyo</string>
-    <string name="welcome_support_header">¡Apóyame!</string>
-    <string name="welcome_support_summary">Esta es una app gratuita y de código libre. La desarrollo en mi tiempo libre. Si la disfrutas, puedes demostrar tu apoyo:</string>
-    <string name="welcome_support_button">Dona en PayPal</string>
-    <string name="welcome_support_telemetry_summary">A nadie le gustan los errores.</string>
-    <string name="welcome_support_telemetry_button">Habilita la telemetría para enviarme informes de fallas</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Atrás</string>

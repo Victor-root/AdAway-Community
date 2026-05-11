@@ -36,7 +36,6 @@
     <string name="project_label">إفتح صفحة GitHub</string>
 
     <!-- Support card -->
-    <string name="support_label">إدعم المشروع</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">مشروع جيثب</string>

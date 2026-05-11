@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">Reklam bloğu durumunu ve kontrolünü görüntülemek ve mevcut uygulama güncellemesi hakkında bilgi vermek için (yılda birkaç kez) bildirimler gönderebilir. Güncel kalmak istiyorsanız bunları etkinleştirin.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Destek</string>
-    <string name="welcome_support_header">Beni destekle!</string>
-    <string name="welcome_support_summary">AdAway, boş zamanlarımda geliştirdiğim ücretsiz ve açık kaynaklı bir uygulamadır. Beğendiyseniz, desteğinizi göstermekten çekinmeyin:</string>
-    <string name="welcome_support_button">PayPal\'da bağış yapın</string>
-    <string name="welcome_support_telemetry_summary">Hataları sever misin? Ben de sevmem.</string>
-    <string name="welcome_support_telemetry_button">Bana kilitlenme raporları göndermek için metriği etkinleştir</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Geri</string>

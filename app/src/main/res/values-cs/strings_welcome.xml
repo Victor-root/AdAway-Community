@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">Může zasílat oznámení k zobrazení stavu blokování reklam a ovládání, zznamovat nové aktualizace aplikace (několikrát ročně). Povolte je, pokud chcete zůstat informováni.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Podpořit</string>
-    <string name="welcome_support_header">Podpořte mě!</string>
-    <string name="welcome_support_summary">AdAway je aplikace se svobodným zdrojovým kódem, kterou jsem vyvinul ve svém volném čase. Pokud se vám líbí, můžete mě podpořit:</string>
-    <string name="welcome_support_button">Darovat přes PayPal</string>
-    <string name="welcome_support_telemetry_summary">Máte rádi chyby? Ani já ne.</string>
-    <string name="welcome_support_telemetry_button">Povolit temeterii, aby mi posílala zprávy o selhání</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Zpět</string>

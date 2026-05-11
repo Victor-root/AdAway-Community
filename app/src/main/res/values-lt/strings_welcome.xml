@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">Sinchronizacija nepavyko %1$s Bandyti iš naujo?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Palaikymas</string>
-    <string name="welcome_support_header">Palaikyk mane!</string>
-    <string name="welcome_support_summary">Tai yra nemokama atviro kodo programa. Aš ją sukūriau mano laisvu laiku. Jeigu jums ji patinka, galite mane palaikyti:</string>
-    <string name="welcome_support_button">Donuoti per PayPal</string>
-    <string name="welcome_support_telemetry_summary">Ar jums patinka klaidos? Man irgi ne.</string>
-    <string name="welcome_support_telemetry_button">Įjungti telemetiją kad man atsiūstu užstrigusios programos įrašus</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Atgal</string>

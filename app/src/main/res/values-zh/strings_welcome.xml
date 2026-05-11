@@ -44,12 +44,6 @@
     <string name="welcome_sync_notifications">它可以发送通知展示广告拦截状态和控制，并提示可用的应用更新（每年几次）。如你想保持最新版本，请启用它们。</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">支持</string>
-    <string name="welcome_support_header">支持我！</string>
-    <string name="welcome_support_summary">AdAway 是一款我利用业余时间开发的自由开源应用。如果你喜欢它，请随时表达你的支持：</string>
-    <string name="welcome_support_button">通过 PayPal 捐赠</string>
-    <string name="welcome_support_telemetry_summary">你喜欢 bug 吗？我也不喜欢。</string>
-    <string name="welcome_support_telemetry_button">启用遥测，向我发送崩溃报告</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">后退</string>

@@ -45,12 +45,6 @@ Het synchroniseren is mislukt: %1$s Wilt u het opnieuw proberen?</string>
     <string name="welcome_sync_notifications">Het kan notificaties sturen om de blokkeerstatus te laten zien en te controleren, je op de hoogte stellen van een bestaande app update (een paar per jaar). Schakel in als je up-to-date wilt blijven.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Ondersteuning</string>
-    <string name="welcome_support_header">Ondersteun mij!</string>
-    <string name="welcome_support_summary">AdAway is een gratis en open-source app dat ik ontwikkel in mijn vrije tijd. Als je het dus leuk vindt, voel je vrij om je support te laten zien:</string>
-    <string name="welcome_support_button">Doneren via PayPal</string>
-    <string name="welcome_support_telemetry_summary">Houdt u van bugs? Nee, ik ook niet.</string>
-    <string name="welcome_support_telemetry_button">Schakel telemetrie in om crashverslagen te sturen</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Vorige</string>

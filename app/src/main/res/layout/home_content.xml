@@ -497,56 +497,6 @@
             app:srcCompat="@drawable/ic_help_24dp" />
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/supportCardView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="16dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="8dp"
-        app:contentPaddingBottom="16dp"
-        app:contentPaddingLeft="8dp"
-        app:contentPaddingRight="8dp"
-        app:contentPaddingTop="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/helpCardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/badge2Space"
-        app:layout_constraintTop_toBottomOf="@+id/sourcesCardView">
-
-        <TextView
-            android:id="@+id/supportTextView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/support_label" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:elevation="10dp"
-        android:shape="ring"
-        app:cardCornerRadius="75dp"
-        app:layout_constraintBottom_toTopOf="@+id/supportCardView"
-        app:layout_constraintEnd_toEndOf="@+id/supportCardView"
-        app:layout_constraintStart_toStartOf="@+id/supportCardView"
-        app:layout_constraintTop_toTopOf="@+id/supportCardView">
-
-        <ImageView
-            android:id="@+id/supportImageView"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_margin="5dp"
-            android:contentDescription="@string/support_label"
-            android:elevation="15dp"
-            app:srcCompat="@drawable/baseline_favorite_24" />
-    </androidx.cardview.widget.CardView>
-
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
         android:layout_width="wrap_content"

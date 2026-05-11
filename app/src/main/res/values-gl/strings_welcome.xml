@@ -17,7 +17,5 @@
     <string name="welcome_root_missing_title">Precisa ter Android rooteado</string>
     <string name="welcome_root_missile_description">Podería ser que non se atopara o arquivo su binary ou que AdAway non teña autorización dos permisos root.\n\nIsto sucede cando o teu dispositivo non está rooteado. Podes atopar información sobre como rootear o teu dispositivo en wiki.lineageos.org ou noutros sitios web Android.</string>
 
-    <string name="welcome_support_button">Doar en PayPal</string>
-    <string name="welcome_support_telemetry_summary">Gústanche os bugs? A min tampouco.</string>
     <string name="welcome_next_button">Seguinte</string>
     </resources>

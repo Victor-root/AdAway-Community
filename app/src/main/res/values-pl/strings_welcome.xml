@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">Może wyświetlać powiadomienia o statusie AdAway i jego ustawieniach oraz informować o dostępnych aktualizacjach aplikacji (kilka w ciągu roku). Włącz, aby być na bieżąco.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Wsparcie</string>
-    <string name="welcome_support_header">Wesprzyj mnie!</string>
-    <string name="welcome_support_summary">AdAway jest darmową aplikacją open-source, którą rozwijam w wolnym czasie. Jeśli podoba Ci się, pomyśl nad wsparciem projektu:</string>
-    <string name="welcome_support_button">Darowizna na PayPal</string>
-    <string name="welcome_support_telemetry_summary">Lubisz błędy? Ja też nie.</string>
-    <string name="welcome_support_telemetry_button">Włącz telemetrię, aby wysyłać mi raporty o awariach</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Wstecz</string>

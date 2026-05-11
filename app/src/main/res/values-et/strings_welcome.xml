@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">Sünkroonimine ebaõnnestus: %1$s Proovid uuesti?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Tugi</string>
-    <string name="welcome_support_header">Toeta mind!</string>
-    <string name="welcome_support_summary">See on tasuta ja avatud lähtekoodiga rakendus. Ma arendan seda oma vabast ajast. Seega, kui see sulle meeldib võid vabalt oma toetust näidata:</string>
-    <string name="welcome_support_button">Anneta PayPalis</string>
-    <string name="welcome_support_telemetry_summary">Kas sulle meeldivad vead? Mulle ka mitte.</string>
-    <string name="welcome_support_telemetry_button">Luba krahhiaruannete saatmiseks telemeetria</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Tagasi</string>

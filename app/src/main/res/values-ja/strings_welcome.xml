@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">同期失敗: %1$s リトライしますか?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Support</string>
-    <string name="welcome_support_header">サポートしてね!</string>
-    <string name="welcome_support_summary">これは無料のオープンソースアプリです。私は自由な時間を使って開発しています。ですから、もし楽しんでいただけたなら遠慮なくサポートしてください。</string>
-    <string name="welcome_support_button">PayPalで寄付する</string>
-    <string name="welcome_support_telemetry_summary">バグは嫌いですよね？私もです。</string>
-    <string name="welcome_support_telemetry_button">クラッシュレポートの収集と報告を有効にする</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">戻る</string>

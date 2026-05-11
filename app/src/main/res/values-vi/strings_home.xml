@@ -26,7 +26,6 @@
     <string name="project_label">Mở GitHub</string>
 
     <!-- Support card -->
-    <string name="support_label">Ủng hộ dự án</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">Dự án GitHub</string>

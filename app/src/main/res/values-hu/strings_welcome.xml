@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">Nem sikerült a szinkronizálás: %1$s Újrapróbálkozás?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Támogatás</string>
-    <string name="welcome_support_header">Támogass engem!</string>
-    <string name="welcome_support_summary">Ez egy ingyenes és nyílt forráskódú alkalmazás. A szabadidőmben fejlesztem, ezért ha tetszik a projekt, és megteheted, támogass:</string>
-    <string name="welcome_support_button">Támogatás PayPal-on keresztül</string>
-    <string name="welcome_support_telemetry_summary">Szereted a bugokat? Én se.</string>
-    <string name="welcome_support_telemetry_button">Telemetria engedélyezése összeomlási jelentések küldéséhez</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Vissza</string>

@@ -13,9 +13,6 @@
     <string name="update_complete_label">Completo</string>
     <string name="update_last_changelog_title">Últimos cambios</string>
     <string name="update_new_changelog_title">Registro de cambios</string>
-    <string name="update_support_title">Apoyar el desarrollo</string>
-    <string name="update_donate_button">Donar</string>
-    <string name="update_sponsor_button">Patrocinador</string>
 
     <!-- Notification -->
     <string name="update_notification_description">Descargando la última versión de AdAway…</string>

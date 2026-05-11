@@ -26,7 +26,6 @@
     <string name="project_label">GitHub ページを開く</string>
 
     <!-- Support card -->
-    <string name="support_label">プロジェクト サポート</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">GitHub プロジェクト</string>

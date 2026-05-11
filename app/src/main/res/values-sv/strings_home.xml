@@ -28,7 +28,6 @@
     <string name="project_label">Öppna GitHub-sidan</string>
 
     <!-- Support card -->
-    <string name="support_label">Stöd projektet</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">GitHub project</string>

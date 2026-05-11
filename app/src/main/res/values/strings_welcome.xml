@@ -44,12 +44,6 @@
     <string name="welcome_sync_notifications">It can send notifications to display ad block status and control, and to notify about available app update (a few per year). Enable them if you want to stay up-to-date.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Support</string>
-    <string name="welcome_support_header">Support me!</string>
-    <string name="welcome_support_summary">AdAway is a free and open-source app that I develop on my free time. If you enjoy it, feel free to show your support:</string>
-    <string name="welcome_support_button">Donate on PayPal</string>
-    <string name="welcome_support_telemetry_summary">Do you like bugs? Me neither.</string>
-    <string name="welcome_support_telemetry_button">Enable telemetry to send me crash reports</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Back</string>

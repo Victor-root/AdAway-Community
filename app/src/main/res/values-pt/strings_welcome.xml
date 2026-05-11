@@ -44,12 +44,6 @@
     <string name="welcome_sync_notifications">Pode enviar notificações para exibir o estado e o controle do bloqueio de anúncios e notificar sobre atualizações disponíveis para a aplicação (algumas por ano). Ativa-as se quiseres manter-te atualizado(a).</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Apoio</string>
-    <string name="welcome_support_header">Apoie-me!</string>
-    <string name="welcome_support_summary">O AdAway é uma aplicação de código aberto e gratuito que eu desenvolvo no meu tempo livre. Se aprecia a aplicação, fique à vontade para mostrar o seu apoio:</string>
-    <string name="welcome_support_button">Doar com PayPal</string>
-    <string name="welcome_support_telemetry_summary">Gostas de erros? Eu também não.</string>
-    <string name="welcome_support_telemetry_button">Ative a telemetria para enviar-me os relatórios de erros.</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Anterior</string>

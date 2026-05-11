@@ -13,9 +13,6 @@
     <string name="update_complete_label">完毕</string>
     <string name="update_last_changelog_title">最近更改</string>
     <string name="update_new_changelog_title">更新日志</string>
-    <string name="update_support_title">支持开发</string>
-    <string name="update_donate_button">捐赠</string>
-    <string name="update_sponsor_button">赞助者</string>
 
     <!-- Notification -->
     <string name="update_notification_description">正在下载最新AdAway版本…</string>

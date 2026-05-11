@@ -3,9 +3,6 @@ package org.adaway.ui.update;
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
-import static org.adaway.ui.support.SupportActivity.SPONSORSHIP_LINK;
-import static org.adaway.ui.support.SupportActivity.SUPPORT_LINK;
-import static org.adaway.ui.support.SupportActivity.bindLink;
 
 import android.os.Bundle;
 import android.view.View;
@@ -43,8 +40,6 @@ public class UpdateActivity extends AppCompatActivity {
 
     private void bindListeners() {
         this.binding.updateButton.setOnClickListener(this::startUpdate);
-        bindLink(this, this.binding.updateDonateButton, SUPPORT_LINK);
-        bindLink(this, this.binding.updateSponsorButton, SPONSORSHIP_LINK);
     }
 
     private void bindManifest() {

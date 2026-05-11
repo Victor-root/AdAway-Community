@@ -23,7 +23,6 @@
     <string name="project_label">Ava GitHubi leht</string>
 
     <!-- Support card -->
-    <string name="support_label">Toeta projekti</string>
 
     <!-- App bar drawer -->
     <string name="preferences_drawer_item">Eelistused</string>

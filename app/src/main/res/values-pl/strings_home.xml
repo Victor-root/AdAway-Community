@@ -32,7 +32,6 @@
     <string name="project_label">Otwórz stronę GitHub</string>
 
     <!-- Support card -->
-    <string name="support_label">Wsparcie projektu</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">Projekt GitHub</string>

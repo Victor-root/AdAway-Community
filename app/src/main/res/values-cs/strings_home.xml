@@ -32,7 +32,6 @@
     <string name="project_label">Otevřít stránku GitHub</string>
 
     <!-- Support card -->
-    <string name="support_label">Podpořit projekt</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">GitHub projekt</string>

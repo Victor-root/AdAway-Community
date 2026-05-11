@@ -13,9 +13,6 @@
     <string name="update_complete_label">Τελείωσε</string>
     <string name="update_last_changelog_title">Τελευταίες αλλαγές</string>
     <string name="update_new_changelog_title">Καταγραφή αλλαγών</string>
-    <string name="update_support_title">Υποστήριξη ανάπτυξης</string>
-    <string name="update_donate_button">Δωρίστε</string>
-    <string name="update_sponsor_button">Sponsor</string>
 
     <!-- Notification -->
     <string name="update_notification_description">Λήψη της τελευταίας έκδοσης AdAway…</string>

@@ -28,7 +28,6 @@
     <string name="project_label">GitHub sayfasını aç</string>
 
     <!-- Support card -->
-    <string name="support_label">Projeyi destekle</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">GitHub projesi</string>

@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">Pošilja lahko obvestila prikaza stanja in nadzora zaviranja oglasov ter za obveščanje o razpoložljivih posodobitvah aplikacije (nekaj na leto). Omogočite jih, če želite biti na tekočem.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Podpora</string>
-    <string name="welcome_support_header">Podprite me!</string>
-    <string name="welcome_support_summary">AdAway je brezplačna in odprtokodna aplikacija, ki jo razvijam v prostem času. Če vam je všeč, vas prosim, da izkažete svojo podporo:</string>
-    <string name="welcome_support_button">Darujte na PayPal</string>
-    <string name="welcome_support_telemetry_summary">Ali imate radi programske napake? Jaz tudi ne.</string>
-    <string name="welcome_support_telemetry_button">Omogočite telemetrijo, da mi pošiljate poročila o zrušitvah</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Nazaj</string>

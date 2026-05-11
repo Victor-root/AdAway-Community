@@ -38,12 +38,6 @@
     <string name="welcome_sync_error">No s\'ha pogut sincronitzar: %1$s Voleu provar-ho de nou?</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Ajuda</string>
-    <string name="welcome_support_header">Ajudeu-me!</string>
-    <string name="welcome_support_summary">És una aplicació gratuïta i de codi obert. Ho desenvolupo en el meu temps lliure. Així que si us agrada, no dubteu a mostrar el vostre suport:</string>
-    <string name="welcome_support_button">Feu un donatiu al PayPal</string>
-    <string name="welcome_support_telemetry_summary">Us agraden els errors? A mi tampoc.</string>
-    <string name="welcome_support_telemetry_button">Activeu la telemetria per enviar-me informes d\'error</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Enrere</string>

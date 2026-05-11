@@ -39,12 +39,6 @@
     <string name="welcome_sync_notifications">Это поможет отправлять уведомления для отображения статуса блокировки рекламы и управления, а также уведомит, когда будет доступно обновление приложения (несколько раз в год). Включите, если хотите быть в курсе событий.</string>
 
     <!-- Support -->
-    <string name="welcome_support_logo">Поддержать</string>
-    <string name="welcome_support_header">Поддержать меня!</string>
-    <string name="welcome_support_summary">AdAway — это бесплатное приложение с открытым исходным кодом, которое я разрабатываю в свободное время. Если она вам нравится, не стесняйтесь оказать свою поддержку:</string>
-    <string name="welcome_support_button">Пожертвовать на PayPal</string>
-    <string name="welcome_support_telemetry_summary">Вам не нравятся ошибки? Мне тоже.</string>
-    <string name="welcome_support_telemetry_button">Включить телеметрию для отправки мне отчетов о сбоях</string>
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Назад</string>

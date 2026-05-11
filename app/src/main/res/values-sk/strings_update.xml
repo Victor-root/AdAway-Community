@@ -13,9 +13,6 @@
     <string name="update_complete_label">Hotovo</string>
     <string name="update_last_changelog_title">Posledné zmeny</string>
     <string name="update_new_changelog_title">Zoznam zmien</string>
-    <string name="update_support_title">Podpora vývoja</string>
-    <string name="update_donate_button">Podporiť</string>
-    <string name="update_sponsor_button">Sponzor</string>
 
     <!-- Notification -->
     <string name="update_notification_description">Sťahovanie najnovšej verzie AdAway</string>

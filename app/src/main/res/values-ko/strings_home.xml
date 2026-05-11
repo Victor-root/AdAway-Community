@@ -26,7 +26,6 @@
     <string name="project_label">GitHub 접속</string>
 
     <!-- Support card -->
-    <string name="support_label">지원하기</string>
 
     <!-- App bar drawer -->
     <string name="github_project_drawer_item">Github 프로젝트</string>
