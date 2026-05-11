@@ -1,7 +1,5 @@
 package org.adaway.ui.home;
 
-import static com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_HALF_EXPANDED;
-import static com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_HIDDEN;
 import static org.adaway.model.adblocking.AdBlockMethod.UNDEFINED;
 import static org.adaway.model.adblocking.AdBlockMethod.VPN;
 import static org.adaway.ui.Animations.removeView;
@@ -18,24 +16,19 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.net.VpnService;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult;
-import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.adaway.R;
@@ -62,14 +55,7 @@ import timber.log.Timber;
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
 public class HomeActivity extends AppCompatActivity {
-    /**
-     * The project link.
-     */
-    private static final String PROJECT_LINK = "https://github.com/Victor-root/AdAway-Community";
-
     private HomeActivityBinding binding;
-    private BottomSheetBehavior<View> drawerBehavior;
-    private OnBackPressedCallback onBackPressedCallback;
     private HomeViewModel homeViewModel;
     private ActivityResultLauncher<Intent> prepareVpnLauncher;
 
@@ -103,15 +89,7 @@ public class HomeActivity extends AppCompatActivity {
         bindPending();
         bindState();
         bindClickListeners();
-        setUpBottomDrawer();
         bindFab();
-
-        this.binding.navigationView.setNavigationItemSelectedListener(item -> {
-            if (showFragment(item.getItemId())) {
-                this.drawerBehavior.setState(STATE_HIDDEN);
-            }
-            return false; // TODO Handle selection
-        });
 
         this.prepareVpnLauncher = registerForActivityResult(new StartActivityForResult(), result -> {
 
@@ -126,11 +104,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         checkFirstStep();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return showFragment(item.getItemId());
     }
 
     private void checkFirstStep() {
@@ -240,45 +213,11 @@ public class HomeActivity extends AppCompatActivity {
         this.binding.content.updateImageView.setOnClickListener(v -> this.homeViewModel.sync());
         this.binding.content.logCardView.setOnClickListener(this::startDnsLogActivity);
         this.binding.content.helpCardView.setOnClickListener(this::startHelpActivity);
-    }
-
-    private void setUpBottomDrawer() {
-        this.drawerBehavior = BottomSheetBehavior.from(this.binding.bottomDrawer);
-        this.drawerBehavior.setState(STATE_HIDDEN);
-
-        this.onBackPressedCallback = new OnBackPressedCallback(false) {
-            @Override
-            public void handleOnBackPressed() {
-                // Hide drawer if expanded
-                HomeActivity.this.drawerBehavior.setState(STATE_HIDDEN);
-                HomeActivity.this.onBackPressedCallback.setEnabled(false);
-            }
-        };
-        getOnBackPressedDispatcher().addCallback(this.onBackPressedCallback);
-
-        this.binding.bar.setNavigationOnClickListener(v -> {
-            this.drawerBehavior.setState(STATE_HALF_EXPANDED);
-            this.onBackPressedCallback.setEnabled(true);
-        });
-//        this.binding.bar.setNavigationIcon(R.drawable.ic_menu_24dp);
-//        this.binding.bar.replaceMenu(R.menu.next_actions);
+        this.binding.content.preferencesCardView.setOnClickListener(this::startPrefsActivity);
     }
 
     private void bindFab() {
         this.binding.fab.setOnClickListener(v -> this.homeViewModel.toggleAdBlocking());
-    }
-
-    private boolean showFragment(@IdRes int actionId) {
-        if (actionId == R.id.drawer_preferences) {
-            startPrefsActivity();
-            this.drawerBehavior.setState(STATE_HIDDEN);
-            return true;
-        } else if (actionId == R.id.drawer_github_project) {
-            showProjectPage();
-            this.drawerBehavior.setState(STATE_HIDDEN);
-            return true;
-        }
-        return false;
     }
 
     /**
@@ -311,18 +250,11 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     /**
-     * Show development project page.
-     */
-    private void showProjectPage() {
-        // Show development page
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(PROJECT_LINK));
-        startActivity(browserIntent);
-    }
-
-    /**
      * Start preferences activity.
+     *
+     * @param view The source event view.
      */
-    private void startPrefsActivity() {
+    private void startPrefsActivity(View view) {
         startActivity(new Intent(this, PrefsActivity.class));
     }
 

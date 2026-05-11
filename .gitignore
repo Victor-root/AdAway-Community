@@ -7,6 +7,9 @@ local.properties
 .gradle
 build
 
+# Signed/unsigned release artifacts produced by Android Studio
+app/release
+
 # IntelliJ IDEA
 .idea
 *.iml
