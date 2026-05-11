@@ -16,14 +16,14 @@
         android:gravity="center_vertical"
         android:background="?attr/colorPrimary"
         android:paddingHorizontal="24dp"
-        android:paddingVertical="12dp"
+        android:paddingVertical="14dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:src="@drawable/logo"
             android:contentDescription="@string/app_name"
             app:tint="?attr/colorOnPrimary" />
@@ -31,95 +31,87 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="14dp"
             android:text="@string/app_name"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="?attr/colorOnPrimary" />
     </LinearLayout>
 
-    <!-- Horizontal status row: badge (left) + status text (right) -->
-    <LinearLayout
-        android:id="@+id/tv_status_row"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="24dp"
+    <!-- Centered vertical hero stack: badge -> status -> state detail -->
+    <FrameLayout
+        android:id="@+id/tv_status_badge_container"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintTop_toBottomOf="@id/tv_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <FrameLayout
-            android:layout_width="64dp"
-            android:layout_height="64dp">
+        <View
+            android:id="@+id/tv_status_badge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/tv_status_circle"
+            android:backgroundTint="@color/cardBackground" />
 
-            <View
-                android:id="@+id/tv_status_badge"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/tv_status_circle"
-                android:backgroundTint="@color/cardBackground" />
+        <ImageView
+            android:id="@+id/tv_status_icon"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:src="@drawable/baseline_block_24"
+            android:contentDescription="@string/tv_log_entry_status_description"
+            app:tint="@android:color/white" />
+    </FrameLayout>
 
-            <ImageView
-                android:id="@+id/tv_status_icon"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_gravity="center"
-                android:src="@drawable/baseline_block_24"
-                android:contentDescription="@string/tv_log_entry_status_description"
-                app:tint="@android:color/white" />
-        </FrameLayout>
+    <TextView
+        android:id="@+id/tv_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintTop_toBottomOf="@id/tv_status_badge_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Ad-blocking: disabled" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="16dp">
+    <TextView
+        android:id="@+id/tv_state_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="?attr/colorOnSurface"
+        android:alpha="0.7"
+        app:layout_constraintTop_toBottomOf="@id/tv_status_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Status: idle" />
 
-            <TextView
-                android:id="@+id/tv_status_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                tools:text="Ad-blocking: disabled" />
-
-            <TextView
-                android:id="@+id/tv_state_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?attr/colorOnSurface"
-                android:alpha="0.7"
-                tools:text="Status: idle" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Primary toggle button (compact) -->
+    <!-- Primary toggle (centered, medium size) -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_toggle"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="8dp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="10dp"
         android:text="@string/button_enable_hosts"
-        android:textSize="14sp"
-        android:singleLine="true"
+        android:textSize="15sp"
         android:focusable="true"
         android:focusedByDefault="true"
         android:nextFocusDown="@id/btn_update"
-        app:cornerRadius="24dp"
+        app:cornerRadius="26dp"
         app:icon="@drawable/ic_tv_power_24"
         app:iconGravity="textStart"
-        app:iconPadding="8dp"
-        app:iconSize="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_status_row"
+        app:iconPadding="10dp"
+        app:iconSize="22dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_state_detail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Secondary actions: 4 buttons in a single row -->
+    <!-- Secondary actions row 1: Update + Sync -->
     <LinearLayout
         android:id="@+id/tv_actions_row"
         android:layout_width="wrap_content"
@@ -136,19 +128,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_button_update_block_lists"
-            android:textSize="12sp"
-            android:singleLine="true"
-            android:paddingHorizontal="14dp"
+            android:textSize="13sp"
+            android:paddingHorizontal="18dp"
             android:focusable="true"
-            android:layout_marginEnd="10dp"
-            android:nextFocusLeft="@id/btn_toggle"
+            android:layout_marginEnd="12dp"
             android:nextFocusRight="@id/btn_sync"
             android:nextFocusUp="@id/btn_toggle"
-            app:cornerRadius="20dp"
+            android:nextFocusDown="@id/btn_dns_monitor"
+            app:cornerRadius="22dp"
             app:icon="@drawable/ic_get_app_24dp"
             app:iconGravity="textStart"
-            app:iconPadding="6dp"
-            app:iconSize="18dp" />
+            app:iconPadding="8dp"
+            app:iconSize="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sync"
@@ -156,57 +147,62 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_button_sync"
-            android:textSize="12sp"
-            android:singleLine="true"
-            android:paddingHorizontal="14dp"
+            android:textSize="13sp"
+            android:paddingHorizontal="18dp"
             android:focusable="true"
-            android:layout_marginEnd="10dp"
             android:nextFocusLeft="@id/btn_update"
-            android:nextFocusRight="@id/btn_dns_monitor"
             android:nextFocusUp="@id/btn_toggle"
-            app:cornerRadius="20dp"
+            android:nextFocusDown="@id/btn_sources"
+            app:cornerRadius="22dp"
             app:icon="@drawable/ic_sync_24dp"
             app:iconGravity="textStart"
-            app:iconPadding="6dp"
-            app:iconSize="18dp" />
+            app:iconPadding="8dp"
+            app:iconSize="20dp" />
+    </LinearLayout>
+
+    <!-- Secondary actions row 2: DNS Monitor + Sources -->
+    <LinearLayout
+        android:id="@+id/tv_actions_row2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_actions_row"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_dns_monitor"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/shortcut_dns_requests"
-            android:textSize="12sp"
-            android:singleLine="true"
-            android:paddingHorizontal="14dp"
+            android:textSize="13sp"
+            android:paddingHorizontal="16dp"
             android:focusable="true"
-            android:layout_marginEnd="10dp"
-            android:nextFocusLeft="@id/btn_sync"
+            android:layout_marginEnd="12dp"
+            android:nextFocusUp="@id/btn_update"
             android:nextFocusRight="@id/btn_sources"
-            android:nextFocusUp="@id/btn_toggle"
-            app:cornerRadius="20dp"
             app:icon="@drawable/ic_record_24dp"
             app:iconGravity="textStart"
-            app:iconPadding="6dp"
-            app:iconSize="18dp" />
+            app:iconPadding="8dp"
+            app:iconSize="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sources"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_button_block_list_sources"
-            android:textSize="12sp"
-            android:singleLine="true"
-            android:paddingHorizontal="14dp"
+            android:textSize="13sp"
+            android:paddingHorizontal="16dp"
             android:focusable="true"
+            android:nextFocusUp="@id/btn_sync"
             android:nextFocusLeft="@id/btn_dns_monitor"
-            android:nextFocusUp="@id/btn_toggle"
-            app:cornerRadius="20dp"
             app:icon="@drawable/ic_collections_bookmark_24dp"
             app:iconGravity="textStart"
-            app:iconPadding="6dp"
-            app:iconSize="18dp" />
+            app:iconPadding="8dp"
+            app:iconSize="20dp" />
     </LinearLayout>
 
     <!-- Progress indicator -->
