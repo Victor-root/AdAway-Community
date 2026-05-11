@@ -33,7 +33,7 @@
     <string name="help_tab_about">À propos</string>
     <string name="about_app_name">AdAway Community</string>
     <string name="about_version">Version %s</string>
-    <string name="about_description">Fork communautaire non officiel d'AdAway.</string>
+    <string name="about_description">Fork communautaire non officiel d’AdAway.</string>
     <string name="about_source_label">Code source (GitHub)</string>
     <string name="about_issues_label">Signaler un problème</string>
     <string name="about_releases_label">Versions publiées</string>
