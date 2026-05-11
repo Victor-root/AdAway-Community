@@ -11,7 +11,10 @@ import static org.adaway.ui.lists.ListsActivity.BLOCKED_HOSTS_TAB;
 import static org.adaway.ui.lists.ListsActivity.REDIRECTED_HOSTS_TAB;
 import static org.adaway.ui.lists.ListsActivity.TAB;
 
+import android.app.UiModeManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -74,6 +77,16 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // On Android TV, hand off to the Leanback-friendly home activity. The Leanback
+        // launcher already targets TvHomeActivity directly, but the mobile HomeActivity
+        // can still be the resolved entry point when launched via shortcuts, intents
+        // or "open app" from non-launcher contexts.
+        UiModeManager uiModeManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
+        if (uiModeManager != null && uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
+            startActivity(new Intent(this, TvHomeActivity.class));
+            finish();
+            return;
+        }
         ThemeHelper.applyTheme(this);
         NotificationHelper.clearUpdateNotifications(this);
         Timber.i("Starting main activity");
