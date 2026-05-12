@@ -1,115 +1,273 @@
-# ![AdAway logo](app/src/main/res/mipmap-mdpi/icon.png) AdAway
+# ![AdAway logo](app/src/main/res/mipmap-mdpi/icon.png) AdAway Community
 
-[![Build Status](https://github.com/adaway/adaway/actions/workflows/android-ci.yml/badge.svg)](https://github.com/AdAway/AdAway/actions/workflows/android-ci.yml) 
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=org.adaway&metric=security_rating)](https://sonarcloud.io/project/overview?id=org.adaway)
-[![GitHub Downloads](https://img.shields.io/github/downloads/adaway/adaway/total?logo=github)](https://github.com/AdAway/AdAway/releases)
+> ⚠️ **Unofficial community-maintained fork of AdAway**  
+> A practical community fork focused on keeping AdAway usable on recent Android versions, with mobile VPN stability fixes and Android TV support.
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](/LICENSE.md)
+[![Community Build](https://img.shields.io/badge/build-community-orange?logo=android)](https://github.com/Victor-root/AdAway-Community/releases)
 
-AdAway is an open source ad blocker for Android using the hosts file and local vpn.
+AdAway Community is an unofficial fork of [AdAway](https://github.com/AdAway/AdAway), an open source ad blocker for Android using hosts sources and a local VPN / root-based blocking depending on the selected mode.
 
-[<img src="metadata/en-US/phoneScreenshots/screenshot1.png"
-    alt="Home screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot1.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot2.png"
-    alt="Preferences screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot2.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot3.png"
-    alt="Root based ad blocker screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot3.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot4.png"
-    alt="Backup and restore screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot4.png)
-[<img src="metadata/en-US/phoneScreenshots/screenshot5.png"
-    alt="Help screen"
-    height="256">](metadata/en-US/phoneScreenshots/screenshot5.png)
+This fork is **not affiliated with, endorsed by, or signed by** the official AdAway maintainers.
 
-For more information visit https://adaway.org
+---
 
-## Installing
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/5bd9cce9-b488-435b-a008-578b126238b1"
+    width="360"
+    alt="AdAway Community screenshot"
+  />
+    <img width="960" height="540" alt="Capture d&#39;écran 2026-05-12 020737" src="https://github.com/user-attachments/assets/f4c2e33b-7d72-4af1-ae60-aea3dad09f9a" />
+</p>
 
-There are two kinds of release:
-* The preview builds: on the bleeding edge of development - for testers or adventurous
-* The stable builds: ready for every day usage - for end users
+---
 
-### Preview builds
+## 🚀 Why this fork exists
 
-**Requirements:** Android 8 _Oreo_ or above
+AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.
 
-For users with bugs, there may be preview builds available from the [XDA development thread](https://forum.xda-developers.com/showthread.php?t=2190753) and [AdAway official website](https://app.adaway.org/beta.apk).
-It is recommended to try those builds to see if your issue is resolved before creating an issue.
-The preview builds may contain bug fixes or new features for new android versions.
+Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.
 
-[<img src="Resources/get-it-on-adaway.png"
-      alt="Get it on official AdAway website"
-      height="80">](https://app.adaway.org/beta.apk)
-[<img src="Resources/XDADevelopers.png"
-      raw="true"
-      alt="Get it on XDA forum"
-      height="60">](https://forum.xda-developers.com/showthread.php?t=2190753)
+This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.
 
-### Stable builds
+The goal is simple:
 
-**Requirements:**
-* Android Android 8 _Oreo_ or above
+- 🧯 fix real bugs affecting daily usage;
+- 📱 keep the mobile Android experience stable;
+- 📺 maintain Android TV support in the same codebase;
+- 🔄 publish tested community builds;
+- 🛠️ keep changes practical and maintainable;
+- 🤝 stay compatible with upstream whenever possible.
 
-After preview builds have been tested by the more technical or responsive community within the forums, we will then post the stable build to F-Droid.
+This is not a hostile fork and not a claim of ownership over the original project.
 
-[<img src="Resources/get-it-on-adaway.png"
-    alt="Get it on official AdAway website"
-    height="80">](https://app.adaway.org/adaway.apk)
-[<img src="Resources/get-it-on-fdroid.png"
-      raw="true"
-      alt="Get it on F-Droid"
-      height="80">](https://f-droid.org/app/org.adaway)
+If the official project becomes actively maintained again and equivalent fixes are merged/released, this fork may be deprecated, archived, or re-aligned with upstream.
 
-For devices older than Android 8 _Oreo_, use the version 4 of AdAway.
+---
 
-## Get Host File Sources
+## 🆕 Current community version
 
-See the [Wiki](https://github.com/AdAway/AdAway/wiki), in particular the page [HostsSources](https://github.com/AdAway/AdAway/wiki/HostsSources) for an assorted list of sources you can use in AdAway.
-Add the ones you like to the AdAway "Hosts sources" section.
+Current community version:
 
-## Getting Help
+`6.5.0-c`
 
-You can post [Issues](https://github.com/AdAway/AdAway/issues) here or obtain more detailed community support via the [XDA developer thread](http://forum.xda-developers.com/showthread.php?t=2190753).
+The `c` stands for **Community**.
 
-## Contributing
+This version includes:
 
-You want to be involved in the project? Welcome onboard!  
-Check [the contributing guide](CONTRIBUTING.md) to learn how to report bugs, suggest features and make you first code contribution :+1:
+- 📱 mobile VPN stability fixes;
+- 📺 Android TV integration;
+- 🧩 small build/runtime fixes needed during testing;
+- 🔧 version naming separated from the official AdAway releases.
 
-If you are looking for translating the application in your language, [the translating guide](TRANSLATING.md) is for you.
+---
 
-## Project Status
+## 📱 Mobile / VPN stability
 
-AdAway is actively developed by:
-* Bruce Bujon ([@PerfectSlayer](https://github.com/PerfectSlayer)) - Developer
-* Daniel Mönch ([@Vankog](https://github.com/Vankog)) - Translations
-* Jawz101 ([@jawz101](https://github.com/jawz101)) - Hosts list
-* Anxhelo Lushka ([@AnXh3L0](https://github.com/AnXh3L0)) - Web site
+This fork includes a VPN-mode stability patch originally proposed upstream here:
 
-We do not forget the past maintainers:
-* Dāvis Mošenkovs ([@DavisNT](https://github.com/DavisNT)) - Developer
-* [@0-kaladin](https://github.com/0-kaladin) - Developer and XDA OP
-* Sanjay Govind ([@sanjay900](https://github.com/sanjay900)) - Developer
+https://github.com/AdAway/AdAway/pull/4255
 
-And we thank a lot to the original author:
-* Dominik Schürmann ([@dschuermann](https://github.com/dschuermann)) - Original developer
+It is intended to improve cases where AdAway VPN could:
 
-## Permissions
+- restart after being manually disabled;
+- stop or desynchronize unexpectedly in the background;
+- enter unstable restart/reconnect loops;
+- rebuild the VPN tunnel too often during network changes;
+- show inconsistent states between the app UI, Android VPN status, notification and Quick Settings tile.
 
-AdAway requires the following permissions:
+Main VPN-related changes:
 
-* `INTERNET` to download hosts files and application updates. It can send bug reports and telemetry [if the user wants to (opt-in only)](https://github.com/AdAway/AdAway/wiki/Telemetry)
-* `ACCESS_NETWORK_STATE` to restart VPN on network connection change
-* `RECEIVE_BOOT_COMPLETED` to start the VPN on boot
-* `FOREGROUND_SERVICE` to run the VPN service in foreground
-* `POST_NOTIFICATIONS` to post notifications about hosts source update, application update and VPN controls. All notifications can be enabled or disabled independently.
-* `REQUEST_INSTALL_PACKAGES` to update the application using the builtin updater
-* `QUERY_ALL_PACKAGES` to let the user pick the applications to exclude from VPN
+- 🧠 separate VPN user intent from runtime VPN service state;
+- 🚫 prevent background/internal sync or update paths from silently restarting the VPN;
+- 🛑 prevent sticky service restart from resurrecting VPN mode against user intent;
+- 🔄 improve synchronization between VPN service state, app UI, notification and Quick Settings tile;
+- 📶 avoid unnecessary VPN tunnel rebuilds when secondary networks flicker;
+- ⚡ reset VPN reconnect throttling for explicit user starts;
+- 🧯 reduce unstable restart/reconnect behavior in VPN mode;
+- ✅ keep the welcome/setup flow working on first launch;
+- 🧪 add focused testable decision logic for VPN start behavior.
 
-## Licenses
+---
 
-AdAway is licensed under the GPLv3+.  
-The file LICENSE includes the full license text.
-For more details, check [the license notes](LICENSE.md).
+## 📺 Android TV support
+
+This fork also includes Android TV support, based on community work from:
+
+https://github.com/sunmasters/Adaway-For-TV
+
+Thanks to the author of that fork for the original Android TV work.
+
+Current TV-related features:
+
+- 📺 Android TV / Leanback launcher support;
+- 🖼️ TV banner resource;
+- 🎮 D-pad / remote-friendly TV home screen;
+- 🧭 automatic redirect to the TV UI when running on Android TV;
+- 📋 TV-friendly DNS log screen;
+- 🔘 TV actions for toggle, update, sync, DNS monitor and host sources.
+
+Android TV support has been tested on my Android TV setup. More feedback from other TV devices is still welcome, especially for different remotes, launchers, boxes and network setups.
+
+Known points where more feedback is useful:
+
+- D-pad navigation with different remotes;
+- VPN permission flow on different Android TV builds;
+- DNS monitor behavior on TV;
+- host sources screen usability on TV;
+- Ethernet behavior on Android TV boxes.
+
+---
+
+## ✅ Tested
+
+Current mobile testing:
+
+- Oppo Reno 13 Pro;
+- Android 16 / ColorOS;
+- AdAway VPN mode;
+- daily usage for multiple weeks.
+
+Observed result on mobile:
+
+- ✅ VPN no longer restarted by itself after manual disable;
+- ✅ VPN stayed stable during normal background usage;
+- ✅ no visible VPN restart/reconnect loop during daily use;
+- ✅ Quick Settings tile stayed coherent;
+- ✅ app UI, Android VPN key icon and VPN state stayed consistent;
+- ✅ Wi-Fi / mobile data changes did not cause unwanted VPN restarts;
+- ✅ local-network IoT connectivity stayed stable;
+- ✅ Ecovacs Home robot vacuum stayed reachable through the patched VPN.
+
+Android TV testing:
+
+- ✅ Android TV UI launches correctly;
+- ✅ TV home screen is usable with a remote;
+- ✅ core TV navigation works on my setup.
+
+More device feedback is welcome.
+
+---
+
+## 📦 Download
+
+Unofficial community builds are available here:
+
+https://github.com/Victor-root/AdAway-Community/releases
+
+---
+
+## ⚠️ Installation notes
+
+This APK is signed with my own signing key.
+
+Because of that, it **cannot be installed as an update over the official AdAway build**.
+
+You need to uninstall the official AdAway app before installing this APK.
+
+⚠️ Uninstalling the official app may remove local settings.  
+Check your configuration before doing it.
+
+Future AdAway Community updates should install normally as long as they are signed with the same Community signing key.
+
+---
+
+## 🧪 Feedback
+
+Feedback is welcome, especially for:
+
+- VPN-mode instability;
+- recent Android compatibility issues;
+- Android TV behavior;
+- D-pad / remote navigation;
+- network changes;
+- Quick Settings tile / notification state synchronization.
+
+Please include as many details as possible. The more precise the report is, the easier it is to reproduce, understand and fix the issue.
+
+Useful details when reporting feedback:
+
+- device model;
+- Android version;
+- ROM / manufacturer skin;
+- phone, tablet, TV or TV box;
+- VPN mode or root mode;
+- Wi-Fi, mobile data or Ethernet;
+- autostart enabled or disabled;
+- battery/background restrictions;
+- exact steps to reproduce the issue;
+- what you expected to happen;
+- what actually happened;
+- whether the VPN restarts after manual disable;
+- whether UI / notification / Quick Settings tile stay coherent;
+- screenshots or screen recordings if useful;
+- Logcat logs if the issue still happens.
+
+For Logcat, useful filters may include:
+
+- `AdAway`
+- `VpnService`
+- `VpnModel`
+- `VpnWorker`
+- `VpnConnectionMonitor`
+- `AdBlockingTileService`
+
+---
+
+## 🧱 Requirements
+
+- Android 8 Oreo or above;
+- VPN mode or root mode depending on your setup;
+- Android VPN permission for VPN mode.
+
+For devices older than Android 8 Oreo, use older official AdAway versions from upstream.
+
+---
+
+## 🔐 Permissions
+
+AdAway uses these permissions:
+
+- `INTERNET` to download hosts files and application updates;
+- `ACCESS_NETWORK_STATE` to monitor network changes;
+- `RECEIVE_BOOT_COMPLETED` to optionally start AdAway after boot;
+- `FOREGROUND_SERVICE` to run the VPN service in foreground;
+- `POST_NOTIFICATIONS` for source update, app update and VPN control notifications;
+- `REQUEST_INSTALL_PACKAGES` for the built-in updater;
+- `QUERY_ALL_PACKAGES` to let users exclude apps from VPN.
+
+---
+
+## 🧾 Legal / license compliance
+
+AdAway Community is based on AdAway and remains licensed under the GPLv3+.
+
+This fork keeps the original license and credits.
+
+When distributing APK builds, the corresponding source code is made available through this repository and its release tags/commits.
+
+This fork does not claim to be the official AdAway project.
+
+---
+
+## 🤝 Credits
+
+AdAway was created and maintained by the official AdAway project contributors.
+
+Official project:
+https://github.com/AdAway/AdAway | Official website: https://adaway.org
+
+Thanks to the original author, past maintainers, current maintainers, translators, hosts list maintainers and all contributors who made AdAway possible.
+
+Special thanks also to the Android TV community fork work that helped bootstrap the TV integration:
+
+https://github.com/sunmasters/Adaway-For-TV
+
+---
+
+## ⚖️ License
+
+AdAway is licensed under the GPLv3+.
+
+See [LICENSE.md](LICENSE.md) for the full license text.
