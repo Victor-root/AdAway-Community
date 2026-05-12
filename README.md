@@ -12,15 +12,20 @@ This fork is **not affiliated with, endorsed by, or signed by** the official AdA
 
 ---
 
+<p align="center"><strong>📱 Mobile</strong></p>
 <p align="center">
   <img
     src="https://github.com/user-attachments/assets/5bd9cce9-b488-435b-a008-578b126238b1"
-    height="500"
+    width="360"
     alt="AdAway Community — mobile home screen"
   />
+</p>
+
+<p align="center"><strong>📺 Android TV</strong></p>
+<p align="center">
   <img
     src="https://github.com/user-attachments/assets/f4c2e33b-7d72-4af1-ae60-aea3dad09f9a"
-    height="500"
+    width="720"
     alt="AdAway Community — Android TV home screen"
   />
 </p>
