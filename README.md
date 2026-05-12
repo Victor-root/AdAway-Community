@@ -15,10 +15,14 @@ This fork is **not affiliated with, endorsed by, or signed by** the official AdA
 <p align="center">
   <img
     src="https://github.com/user-attachments/assets/5bd9cce9-b488-435b-a008-578b126238b1"
-    width="360"
-    alt="AdAway Community screenshot"
+    height="500"
+    alt="AdAway Community — mobile home screen"
   />
-    <img width="960" height="540" alt="Capture d&#39;écran 2026-05-12 020737" src="https://github.com/user-attachments/assets/f4c2e33b-7d72-4af1-ae60-aea3dad09f9a" />
+  <img
+    src="https://github.com/user-attachments/assets/f4c2e33b-7d72-4af1-ae60-aea3dad09f9a"
+    height="500"
+    alt="AdAway Community — Android TV home screen"
+  />
 </p>
 
 ---
