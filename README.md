@@ -3,9 +3,19 @@
 > ⚠️ **Unofficial community-maintained fork of AdAway**  
 > A practical community fork focused on keeping AdAway usable on recent Android versions, with mobile VPN stability fixes and Android TV support.
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](/LICENSE.md)
-[![Community Build](https://img.shields.io/badge/build-community-orange?logo=android)](https://github.com/Victor-root/AdAway-Community/releases)
+<div align="center">
 
+[![Latest release](https://img.shields.io/github/v/release/Victor-root/AdAway-Community?style=for-the-badge&logo=github&label=release)](https://github.com/Victor-root/AdAway-Community/releases)
+[![Downloads](https://img.shields.io/github/downloads/Victor-root/AdAway-Community/total?style=for-the-badge&logo=github&label=downloads)](https://github.com/Victor-root/AdAway-Community/releases)
+[![Last update](https://img.shields.io/github/last-commit/Victor-root/AdAway-Community/main?style=for-the-badge&logo=git&label=last%20update)](https://github.com/Victor-root/AdAway-Community/commits/main)
+
+[![Unofficial fork](https://img.shields.io/badge/Unofficial-community%20fork-f59e0b?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Victor-root/AdAway-Community)
+[![Android APK](https://img.shields.io/badge/Android-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Victor-root/AdAway-Community/releases)
+[![Android TV](https://img.shields.io/badge/Android%20TV-supported-3DDC84?style=for-the-badge&logo=androidtv&logoColor=white)](https://github.com/Victor-root/AdAway-Community#android-tv-support)
+[![VPN stability](https://img.shields.io/badge/VPN-stability%20fixes-2563eb?style=for-the-badge&logo=wireguard&logoColor=white)](https://github.com/Victor-root/AdAway-Community#mobile--vpn-stability)
+
+
+</div>
 AdAway Community is an unofficial fork of [AdAway](https://github.com/AdAway/AdAway), an open source ad blocker for Android using hosts sources and a local VPN / root-based blocking depending on the selected mode.
 
 This fork is **not affiliated with, endorsed by, or signed by** the official AdAway maintainers.
