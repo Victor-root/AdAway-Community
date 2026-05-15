@@ -1,169 +1,170 @@
-# Contributing to AdAway
+# 🤝 Contributing to AdAway Community
 
-:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+Thanks for your interest in contributing to **AdAway Community**! 🚀
 
-The following is a set of guidelines for contributing to AdAway.
-These are mostly guidelines, not rules.
-It will help you to understand the project, find answers, deal with the source code and interact with maitainers.
-The project is open to any kind of contribution so feel free to share your ideas and participate to the development.
+AdAway Community is an unofficial community-maintained fork of [AdAway](https://github.com/AdAway/AdAway).
 
-#### Table of contents
+The goal is simple: keep the app usable, stable and modern with practical fixes for recent Android versions, VPN stability and Android TV support while upstream activity is limited.
 
-[I don't want to read this whole thing, I just have a question!!!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
+---
 
-[What should I know before I get started?](#what-should-i-know-before-i-get-started)
-* [Discovering the project structure](#discovering-the-project-structure)
-* [Building the project](#building-the-project)
+## 🐛 Before opening an issue
 
-[How can I contribute?](#how-can-i-contribute)
-* [Reporting bugs](#reporting-bugs)
-* [Suggesting enhancements](#suggesting-enhancements)
-* [Translating to your language](#translating-to-your-language)
-* [Your first code contribution](#your-first-code-contribution)
+Please check whether your problem is already reported.
 
-[Styleguides](#styleguides)
-* [Git commit messages](#git-commit-messages)
-* [Java styleguide](#java-styleguide)
-* [XML styleguide](#xml-styleguide)
+When reporting a bug, include **as many details as possible**.
+The more precise your report is, the easier it is to reproduce, understand and fix. 🙏
 
-[Additional notes](#additional-notes)
-* [tcpdump and webserver modules](#tcpdump-and-webserver-modules)
+Useful details:
 
-## I don't want to read this whole thing I just have a question!!!
+* 📱 Device model
+* 🤖 Android version
+* 🧩 ROM / manufacturer skin
+* 📺 Device type: phone, tablet, TV or TV box
+* 🛡️ AdAway mode: VPN mode or root mode
+* 🌐 Network type: Wi-Fi, mobile data or Ethernet
+* 🚀 Autostart enabled or disabled
+* 🔋 Battery/background restrictions
+* 🔁 Exact steps to reproduce the issue
+* ✅ What you expected to happen
+* ❌ What actually happened
+* 🔄 Whether the VPN restarts after manual disable
+* 🧭 Whether UI / notification / Quick Settings tile stay coherent
+* 🖼️ Screenshots or screen recordings if useful
+* 📜 Logcat logs if the issue still happens
 
-> **Note:** Please don't file an issue to ask a question. You'll get faster results by using the resources below.
+Useful Logcat filters:
 
-We have a dedicated forum with a welcoming community and a wiki to answer your questions:
+```text
+AdAway
+VpnService
+VpnModel
+VpnWorker
+VpnConnectionMonitor
+AdBlockingTileService
+```
 
-* [Check the common issues and solutions on the wiki](https://github.com/AdAway/AdAway/wiki/Solutions)
-* [Read and post on the dedicated developer forum](https://forum.xda-developers.com/showthread.php?t=2190753)
+---
 
-## What should I know before I get started?
+## 🛡️ Reporting VPN issues
 
-### Discovering the project structure
+For VPN stability bugs, please describe:
 
-The AdAway source code is an Android project organized in modules.
-There are four main modules:
-* `app`: The Android application itself
-* `tcpdump`: A module dedicated to build the `pcap` library and the `tcpdump` binary
-* `webserver`: A module dedicated to build a simple HTTP server binary based on `mongoose`
-* `libraries/RootCommands`: A vendorize Android library to run root shell commands
+* 🔁 Does the VPN start by itself?
+* 🛑 Does the VPN stop by itself?
+* 🔄 Does the VPN enter a reconnect loop?
+* 📶 Does it happen after Wi-Fi / mobile data / Ethernet changes?
+* 🔐 Is Always-on VPN enabled?
+* 🧩 Is another VPN app installed or active?
+* 🔋 Are battery optimizations disabled for AdAway Community?
+* 🆚 Does the issue happen on official AdAway, AdAway Community, or both?
 
-The three last modules are independent and used by the `app` module.
-Modularizing the application allows for faster build times and simplier maintainance.
+The more context you provide, the less guesswork is needed.
 
-### Building the project
+---
 
-Building the project will require the latest versions of the Android SDK (Software Development Kit) and NDK (Native Development kit).
-They can easily be installed or updated using [Android Studio](https://developer.android.com/studio/).
+## 📺 Reporting Android TV issues
 
-#### Building with Gradle
-1. Ensure you have Android SDK and NDK installed.
-If not:
-    * Option 1: [Install Android Studio](https://developer.android.com/studio/index.html) or,
-    * Option 2: Install command line tools, build tools and ndk bundle with sdk manager:  
-    `tools/bin/sdkmanager "build-tools;x.y.z" ndk-bundle` where `x.y.z` is the latest version
-2. Export `ANDROID_HOME` environment variable pointing to your Android SDK:  
-`export ANDROID_HOME=/path/to/your/sdk`
-3. Launch a build:  
-`./gradlew assembleRelease`
+For Android TV bugs, please include:
 
-The first full build of the apk can take a lot of time, about 20 minutes, whereas an incremental build of the `app` module takes less than a dozen seconds.
+* 📺 TV / box model
+* 🤖 Android TV / Google TV version
+* 🎮 Remote type if relevant
+* 🏠 Whether the app appears in the launcher
+* ⬆️⬇️ Whether D-pad navigation works
+* 🔐 Whether the VPN permission prompt appears correctly
+* 📋 Whether the DNS monitor works
+* 🌐 Whether the device uses Wi-Fi or Ethernet
 
-#### Running on an emulator
+Android TV setups vary a lot, so device-specific details are very useful.
 
-In order to test the application on an emulator, disable [the root check in the Constants source file](https://github.com/AdAway/AdAway/blob/c90336cb9b062220540317bc6c7cfedb19927c63/app/src/main/java/org/adaway/util/Constants.java#L28).
+---
 
-## How can I contribute?
+## 🔧 Pull requests
 
-### Reporting bugs
+Pull requests are welcome! 🎉
 
-> **Note:** Before submitting a bug report, please use [the GitHub search on Issues page](https://github.com/AdAway/AdAway/issues) to check if there is already similar reports.
+Please keep them focused and easy to review.
 
-#### How do I submit a (good) bug report?
+Good pull requests:
 
-* **Use a clear and descriptive title** for the issue to identify the problem.
-* **Describe the exact steps which reproduce the problem** in the most detailed way possible.
-* **Provide specific examples to demonstrate the steps**.
-Include hosts sources or domains you use, web pages URL you test.
-* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.
-* **Explain which behavior you expected to see instead and why.**
-* **If you're reporting that AdAway crashed**, include a logcat.
-Use `adb logcat` if you have developer settings enabled on your device or use any application like [CatLog](https://play.google.com/store/apps/details?id=com.nolanlawson.logcat) to save logs.
-Include the crash report in the issue in a [code block](https://help.github.com/articles/markdown-basics/#multiple-lines), a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests/), or put it in a [gist](https://gist.github.com/) and provide link to it.
-* **Specify which version of AdAway you're using.**
-You can get the exact version by opening in-app help and checking the _About_ tab.
-* **Specify the Android version and the ROM you're using.**
-You can also include any root or customization related information like _Magisk_ or _SuperSU_ version and _Xposed_ modules is installed.
+* 🎯 fix one clear problem
+* 🧹 avoid unrelated refactors
+* 📱 keep mobile behavior working
+* 📺 keep Android TV behavior working
+* 🛡️ avoid breaking VPN mode
+* #️⃣ avoid breaking root mode
+* 🧪 include tests when practical
+* ✅ explain what was tested manually
 
+Please avoid mixing unrelated changes in the same pull request.
 
-### Suggesting enhancements
+Examples:
 
-#### How do I submit a (good) enhancement suggestion?
+* ✅ good: VPN restart fix
+* ✅ good: Android TV layout fix
+* ✅ good: translation fix
+* ⚠️ not ideal: VPN fix + UI redesign + dependency bump + donation changes in one PR
 
-Enhancement suggestions are welcome.
-After refining your idea or discussing it on the [development forum](https://forum.xda-developers.com/showthread.php?t=2190753), create an issue and provide the following information:
+Small, focused PRs are much easier to review and merge.
 
-* **Use a clear and descriptive title** for the issue to identify the suggestion.
-* **Provide a step-by-step description of the suggested enhancement** in the most detailed way possible, including specific examples.
-* **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
-* **Explain why this enhancement would be useful** to most users.
+---
 
-### Translating to your language
+## 🧑‍💻 Coding guidelines
 
-Translations are also welcome.
-Moreover, they do not require a development environment, only a web browser.
-So if you want to complete or edit your language support for the application, check [the translation guide](TRANSLATING.md).
+Try to follow the style already used in the project.
 
-### Your first code contribution
+Before submitting changes, run what you can:
 
-Unsure where to begin contributing?
- You can start by looking through these `good first issue` and `help wanted` issues:
+```bash
+./gradlew test
+./gradlew assembleDebug
+```
 
-* [Good first issues](https://github.com/AdAway/AdAway/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) - issues which should only require a few lines of code, and a test or two.
-* [Help wanted issues](https://github.com/AdAway/AdAway/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) - issues which should be a bit more involved than `beginner` issues.
+On Windows:
 
-Both issue lists are sorted by total number of comments. While not perfect, the number of comments is a reasonable way of determining the impact a given change will have.
+```powershell
+.\gradlew.bat test
+.\gradlew.bat assembleDebug
+```
 
-## Style guidelines
+If the build or tests fail because of your local environment, mention it clearly.
 
-### Git commit messages
+Useful things to mention in a PR:
 
-* Use the present tense ("Add feature" not "Added feature")
-* Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 80 characters or less
-* Reference issues and pull requests liberally after the first line
+* 🧪 tests run
+* 📱 device used for manual testing
+* 🤖 Android version
+* 📺 whether Android TV was tested
+* 🛡️ whether VPN mode was tested
+* #️⃣ whether root mode was tested, if relevant
 
-### Java style guidelines
-* Indentation: 4 spaces, no tabs
-* Maximum line width for code and comments: 100
-* Opening braces don't go on their own line
-* Field names: Non-public, non-static fields start with m.
-* Acronyms are words: Treat acronyms as words in names, yielding !XmlHttpRequest, getUrl(), etc.
+---
 
-See https://source.android.com/source/code-style.html
+## 📦 APK updater
 
-### XML style guidelines
-* No maximum line width
-* Split multiple attributes each on a new line 
-* Indent using spaces with Indention size 4
+The old APK self-updater UI is hidden in AdAway Community for now because it originally pointed to official AdAway infrastructure.
 
-## Additional notes
+Host source / block-list updates are still part of the app and should not be confused with APK updates.
 
-### `tcpdump` and `webserver` modules
+If you work on app updates, please keep the Community fork separate from the official AdAway update infrastructure.
 
-#### Origin
+Future updater work should ideally use AdAway Community GitHub releases.
 
-Forked from the following sources and slightly modified to compile:
+---
 
-* dnsmasq: https://github.com/CyanogenMod/android_external_dnsmasq
-* libpcap: https://github.com/the-tcpdump-group/libpcap/tree/libpcap-1.7.4
-* tcpdump: https://github.com/the-tcpdump-group/tcpdump/tree/tcpdump-4.7.4
+## 🧹 Donations / sponsorship links
 
-#### Changes
+Donation and sponsor references have been removed from the app UI in this fork.
 
-Please review the following commits for the changes made to the sources above in order for them to compile in this project:
+Please do not reintroduce donation dialogs, sponsor buttons, crypto QR codes or similar funding UI without prior discussion.
 
-* Commit: https://github.com/AdAway/AdAway/commit/1f4ccb3cec3758757341ad90813506fc2a8fdf7b
-* Commit: https://github.com/AdAway/AdAway/commit/289df896c0ac4f96bd862e8a5054f1011ec07cac
-* Commit: https://github.com/AdAway/AdAway/commit/08da0745b0732b94221c0f5746160fef8126fd99
+Credits and license notices must remain. ❤️
+
+---
+
+## 🙏 Thanks
+
+Every useful bug report, test result, translation, fix or review helps.
+
+Even small contributions matter. 🚀
