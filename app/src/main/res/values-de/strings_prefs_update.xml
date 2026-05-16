@@ -7,7 +7,6 @@
     <string name="pref_update_app_category">App-Aktualisierungen</string>
     <string name="pref_update_check_app_startup">Beim Start nach Aktualisierungen suchen</string>
     <string name="pref_update_check_app_daily">Täglich nach Aktualisierungen suchen</string>
-    <string name="pref_update_include_beta_releases">Beta-Versionen einbeziehen</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">Hosts-Aktualisierungen</string>
     <string name="pref_update_check">Beim Start nach Aktualisierungen suchen</string>

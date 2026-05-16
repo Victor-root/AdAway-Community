@@ -1,9 +1,6 @@
 package org.adaway.model.update;
 
 import static android.app.DownloadManager.ACTION_DOWNLOAD_COMPLETE;
-import static android.os.Build.VERSION.SDK_INT;
-import static org.adaway.model.update.UpdateStore.getApkStore;
-import static java.util.Objects.requireNonNull;
 
 import android.app.DownloadManager;
 import android.content.Context;
@@ -12,16 +9,16 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import org.adaway.R;
-import org.adaway.helper.PreferenceHelper;
 import org.json.JSONException;
 
+import java.io.File;
 import java.io.IOException;
 
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -29,150 +26,118 @@ import okhttp3.ResponseBody;
 import timber.log.Timber;
 
 /**
- * This class is the model in charge of updating the application.
- *
- * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
+ * Model in charge of checking for application updates and triggering the install flow.
+ * <p>
+ * Polls the AdAway-Community GitHub repository for the latest release, exposes the
+ * resulting {@link Manifest} as LiveData, downloads the matching APK asset into the
+ * app's external cache directory, and hands off to the system installer via
+ * {@link ApkDownloadReceiver}.
  */
 public class UpdateModel {
-    private static final String MANIFEST_URL = "https://app.adaway.org/manifest.json";
-    private static final String DOWNLOAD_URL = "https://app.adaway.org/adaway.apk?versionCode=";
+    /** GitHub REST API endpoint for the latest release of the fork. */
+    private static final String LATEST_RELEASE_URL =
+            "https://api.github.com/repos/Victor-root/AdAway-Community/releases/latest";
+    /** File name of the downloaded APK in the app's external cache dir. */
+    static final String APK_FILE_NAME = "adaway-community-update.apk";
+
     private final Context context;
     private final VersionInfo versionInfo;
     private final OkHttpClient client;
     private final MutableLiveData<Manifest> manifest;
     private ApkDownloadReceiver receiver;
 
-    /**
-     * Constructor.
-     *
-     * @param context The application context.
-     */
     public UpdateModel(Context context) {
         this.context = context;
         this.versionInfo = VersionInfo.get(context);
         this.manifest = new MutableLiveData<>();
-        this.client = buildHttpClient();
+        this.client = new OkHttpClient.Builder().build();
         ApkUpdateService.syncPreferences(context);
     }
 
-    /**
-     * Get the current version code.
-     *
-     * @return The current version code.
-     */
     public int getVersionCode() {
         return this.versionInfo.code;
     }
 
-    /**
-     * Get the current version name.
-     *
-     * @return The current version name.
-     */
     public String getVersionName() {
         return this.versionInfo.name;
     }
 
-    /**
-     * Get the last version manifest.
-     *
-     * @return The last version manifest.
-     */
     public LiveData<Manifest> getManifest() {
         return this.manifest;
     }
 
     /**
-     * Get the application update store.
-     *
-     * @return The application update store.
-     */
-    public UpdateStore getStore() {
-        return getApkStore(this.context);
-    }
-
-    /**
-     * Get the application update channel.
-     *
-     * @return The application update channel.
-     */
-    public String getChannel() {
-        return PreferenceHelper.getIncludeBetaReleases(this.context) ? "beta" : "stable";
-    }
-
-    /**
-     * Check if there is an update available.
+     * Fetch the latest release and publish the resulting manifest. Safe to call from
+     * any background thread.
      */
     public void checkForUpdate() {
-        Manifest manifest = downloadManifest();
-        // Notify update
-        if (manifest != null) {
-            this.manifest.postValue(manifest);
+        Manifest fetched = downloadManifest();
+        if (fetched != null) {
+            this.manifest.postValue(fetched);
         }
-    }
-
-    private OkHttpClient buildHttpClient() {
-        return new OkHttpClient.Builder().build();
     }
 
     private Manifest downloadManifest() {
         if (!this.versionInfo.isValid()) {
             return null;
         }
-        HttpUrl httpUrl = requireNonNull(HttpUrl.parse(MANIFEST_URL), "Failed to parse manifest URL")
-                .newBuilder()
-                .addQueryParameter("versionCode", Integer.toString(this.versionInfo.code))
-                .addQueryParameter("sdkCode", Integer.toString(SDK_INT))
-                .addQueryParameter("channel", getChannel())
-                .addQueryParameter("store", getStore().getName())
-                .build();
         Request request = new Request.Builder()
-                .url(httpUrl)
+                .url(LATEST_RELEASE_URL)
+                .header("Accept", "application/vnd.github+json")
+                .header("X-GitHub-Api-Version", "2022-11-28")
                 .build();
-        try (Response execute = this.client.newCall(request).execute();
-             ResponseBody body = execute.body()) {
-            if (execute.isSuccessful() && body != null) {
-                return new Manifest(body.string(), this.versionInfo.code);
-            } else {
-                return null;
+        try (Response response = this.client.newCall(request).execute();
+             ResponseBody body = response.body()) {
+            if (response.isSuccessful() && body != null) {
+                return new Manifest(body.string(), this.versionInfo.name);
             }
+            Timber.w("GitHub release endpoint returned HTTP %d.", response.code());
+            return null;
         } catch (IOException | JSONException exception) {
-            Timber.e(exception, "Unable to download manifest.");
-            // Return failed
+            Timber.e(exception, "Unable to fetch latest release.");
             return null;
         }
     }
 
     /**
-     * Update the application to the latest version.
+     * Start downloading the APK of the latest known manifest.
      *
-     * @return The download identifier ({@code -1} if download was not started).
+     * @return The DownloadManager id, or {@code -1} if no download was queued.
      */
     public long update() {
-        // Check manifest
-        Manifest manifest = this.manifest.getValue();
-        if (manifest == null) {
+        Manifest current = this.manifest.getValue();
+        if (current == null || current.apkUrl == null) {
             return -1;
         }
-        // Check previous broadcast receiver
         if (this.receiver != null) {
-            this.context.unregisterReceiver(this.receiver);
+            try {
+                this.context.unregisterReceiver(this.receiver);
+            } catch (IllegalArgumentException ignored) {
+                // Receiver was already unregistered.
+            }
         }
-        // Queue download
-        long downloadId = download(manifest);
-        // Register new broadcast receiver
+        long downloadId = download(current);
         this.receiver = new ApkDownloadReceiver(downloadId);
-        this.context.registerReceiver(this.receiver, new IntentFilter(ACTION_DOWNLOAD_COMPLETE));
-        // Return download identifier
+        ContextCompat.registerReceiver(
+                this.context,
+                this.receiver,
+                new IntentFilter(ACTION_DOWNLOAD_COMPLETE),
+                ContextCompat.RECEIVER_NOT_EXPORTED);
         return downloadId;
     }
 
-    private long download(Manifest manifest) {
-        Timber.i("Downloading " + manifest.version + ".");
-        Uri uri = Uri.parse(DOWNLOAD_URL + manifest.versionCode);
-        DownloadManager.Request request = new DownloadManager.Request(uri)
-                .setTitle(this.context.getString(R.string.app_name) + " " + manifest.version)
-                .setDescription(this.context.getString(R.string.update_notification_description));
+    private long download(Manifest current) {
+        Timber.i("Downloading %s from %s.", current.version, current.apkUrl);
+        File apkFile = new File(this.context.getExternalCacheDir(), APK_FILE_NAME);
+        if (apkFile.exists() && !apkFile.delete()) {
+            Timber.w("Failed to delete previous APK at %s.", apkFile.getAbsolutePath());
+        }
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(current.apkUrl))
+                .setTitle(this.context.getString(R.string.app_name) + " " + current.version)
+                .setDescription(this.context.getString(R.string.update_notification_description))
+                .setDestinationUri(Uri.fromFile(apkFile))
+                .setMimeType("application/vnd.android.package-archive")
+                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         DownloadManager downloadManager = this.context.getSystemService(DownloadManager.class);
         return downloadManager.enqueue(request);
     }
@@ -186,7 +151,7 @@ public class UpdateModel {
             this.name = name;
         }
 
-        public static VersionInfo get(Context context) {
+        static VersionInfo get(Context context) {
             try {
                 PackageInfo packageInfo = context.getPackageManager()
                         .getPackageInfo(context.getPackageName(), 0);
@@ -196,7 +161,7 @@ public class UpdateModel {
             }
         }
 
-        public boolean isValid() {
+        boolean isValid() {
             return this.code > 0;
         }
     }

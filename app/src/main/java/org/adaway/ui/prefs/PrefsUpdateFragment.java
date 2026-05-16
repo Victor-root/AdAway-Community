@@ -7,6 +7,8 @@ import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.TIRAMISU;
 import static android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS;
 import static android.provider.Settings.EXTRA_APP_PACKAGE;
+import static org.adaway.ui.prefs.PrefsActivity.PREFERENCE_NOT_FOUND;
+import static org.adaway.util.Constants.PREFS_NAME;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,34 +19,19 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
-import org.adaway.AdAwayApplication;
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.model.source.SourceUpdateService;
 import org.adaway.model.update.ApkUpdateService;
-import org.adaway.model.update.UpdateStore;
 
-import static org.adaway.model.update.UpdateStore.ADAWAY;
-import static org.adaway.ui.prefs.PrefsActivity.PREFERENCE_NOT_FOUND;
-import static org.adaway.util.Constants.PREFS_NAME;
-
-/**
- * This fragment is the preferences fragment for update settings.
- *
- * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
- */
 public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        // Configure preferences
         getPreferenceManager().setSharedPreferencesName(PREFS_NAME);
         addPreferencesFromResource(R.xml.preferences_update);
-        // Bind pref actions
         bindNotificationPreferencesAction();
         bindAppUpdatePrefAction();
-        bindAppChannelPrefAction();
         bindHostsUpdatePrefAction();
-        // Update current state
         updateNotificationPreferencesState();
     }
 
@@ -85,15 +72,6 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
             }
             return true;
         });
-    }
-
-    private void bindAppChannelPrefAction() {
-        Context context = requireContext();
-        AdAwayApplication application = (AdAwayApplication) context.getApplicationContext();
-        UpdateStore store = application.getUpdateModel().getStore();
-        Preference includeBetaReleasesPref = findPreference(getString(R.string.pref_update_include_beta_releases_key));
-        assert includeBetaReleasesPref != null : PREFERENCE_NOT_FOUND;
-        includeBetaReleasesPref.setEnabled(store == ADAWAY);
     }
 
     private void bindHostsUpdatePrefAction() {

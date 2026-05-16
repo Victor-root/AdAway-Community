@@ -4,6 +4,7 @@
 
 - Remove leftover donation page from onboarding wizard
 - Polish all settings screens: titles no longer truncated with "…" and items align flush left when no icon is present
+- Restore in-app auto-update: the app now checks the Community fork's GitHub releases and downloads the latest APK directly, without opening the browser (Android still asks the user to confirm the install)
 
 ## [6.5.0-c] - 2026-05-12
 

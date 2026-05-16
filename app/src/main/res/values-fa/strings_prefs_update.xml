@@ -7,7 +7,6 @@
     <string name="pref_update_app_category">به روز رسانی های برنامه</string>
     <string name="pref_update_check_app_startup">بررسی به روز رسانی در استارت آپ</string>
     <string name="pref_update_check_app_daily">به صورت دوره ای به روز رسانی را بررسی کنید</string>
-    <string name="pref_update_include_beta_releases">شامل نسخه های بتا</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">به روز رسانی های Hosts</string>
     <string name="pref_update_check">بررسی به روز رسانی در استارت آپ</string>

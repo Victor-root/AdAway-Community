@@ -7,7 +7,6 @@
     <string name="pref_update_app_category">Update aplikasi</string>
     <string name="pref_update_check_app_startup">Periksa update tiap mulai</string>
     <string name="pref_update_check_app_daily">Periksa pembaruan setiap hari</string>
-    <string name="pref_update_include_beta_releases">menyertakan rilisan beta</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">Update hosts</string>
     <string name="pref_update_check">Periksa update tiap mulai</string>

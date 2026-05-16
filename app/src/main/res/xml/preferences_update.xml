@@ -12,10 +12,8 @@
         app:summary="@string/pref_update_enable_notifications_summary"
         app:title="@string/pref_update_enable_notifications" />
 
-    <!-- APK update checks are hidden in AdAway Community until a Community release updater is implemented. -->
     <PreferenceCategory
         app:iconSpaceReserved="false"
-        app:isPreferenceVisible="false"
         app:title="@string/pref_update_app_category">
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_update_check_app_startup_def"
@@ -29,12 +27,6 @@
             app:key="@string/pref_update_check_app_daily_key"
             app:singleLineTitle="false"
             app:title="@string/pref_update_check_app_daily" />
-        <SwitchPreferenceCompat
-            app:defaultValue="@bool/pref_update_include_beta_releases_def"
-            app:iconSpaceReserved="false"
-            app:key="@string/pref_update_include_beta_releases_key"
-            app:singleLineTitle="false"
-            app:title="@string/pref_update_include_beta_releases" />
     </PreferenceCategory>
 
     <PreferenceCategory

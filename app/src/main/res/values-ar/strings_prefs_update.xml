@@ -7,7 +7,6 @@
     <string name="pref_update_app_category">تحديثات التطبيق</string>
     <string name="pref_update_check_app_startup">تحقق من التحديث عند بدء التشغيل</string>
     <string name="pref_update_check_app_daily">تحقق بشكل دوري من التحديثات</string>
-    <string name="pref_update_include_beta_releases">تضمين إصدارات بيتا</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">تحديثات المضيفين</string>
     <string name="pref_update_check">تحقق من التحديث عند بدء التشغيل</string>

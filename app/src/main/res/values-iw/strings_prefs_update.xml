@@ -7,7 +7,6 @@
     <string name="pref_update_app_category">עידכוני יישום</string>
     <string name="pref_update_check_app_startup">בדיקת קיום עדכונים בהפעלה</string>
     <string name="pref_update_check_app_daily">בדיקת קיום עדכונים מידי פעם</string>
-    <string name="pref_update_include_beta_releases">כולל גרסת בטא</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">עדכוני מארחים</string>
     <string name="pref_update_check">בדיקת עדכונים בהפעלה</string>

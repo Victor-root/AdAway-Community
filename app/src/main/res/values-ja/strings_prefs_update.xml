@@ -7,7 +7,6 @@
     <string name="pref_update_app_category">アプリケーションの更新</string>
     <string name="pref_update_check_app_startup">起動時にアップデートを確認する</string>
     <string name="pref_update_check_app_daily">定期的なアップデートの確認</string>
-    <string name="pref_update_include_beta_releases">ベータ版のリリースを含める</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">hostsの更新</string>
     <string name="pref_update_check">起動時にアップデートを確認する</string>
