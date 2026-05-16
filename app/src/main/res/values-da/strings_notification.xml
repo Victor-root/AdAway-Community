@@ -5,4 +5,6 @@
     <string name="notification_update_hosts_channel_description">Notifikation når der er nyere hosts-kildefiler tilgængelige.</string>
     <string name="notification_update_app_channel_name">App-opdateringer</string>
     <string name="notification_update_app_channel_description">Notifikation når en ny version af appen er tilgængelig. Slå denne kanal fra for at skjule notifikationer om app-opdateringer uden at påvirke andre notifikationer.</string>
+    <string name="notification_app_installed_title">AdAway opdateret</string>
+    <string name="notification_app_installed_text">Genstart appen</string>
 </resources>

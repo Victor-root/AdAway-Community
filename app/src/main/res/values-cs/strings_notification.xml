@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Oznámení, když jsou k dispozici novější zdrojové soubory hosts.</string>
     <string name="notification_update_app_channel_name">Aktualizace aplikace</string>
     <string name="notification_update_app_channel_description">Oznámení o nové verzi aplikace. Ztlumte tento kanál, abyste skryli upozornění na aktualizace aplikace bez ovlivnění ostatních oznámení.</string>
+    <string name="notification_app_installed_title">AdAway aktualizován</string>
+    <string name="notification_app_installed_text">Spusťte aplikaci znovu</string>
 </resources>

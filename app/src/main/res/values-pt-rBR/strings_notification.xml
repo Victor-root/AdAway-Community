@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Notificação quando há arquivos hosts mais recentes disponíveis.</string>
     <string name="notification_update_app_channel_name">Atualizações do aplicativo</string>
     <string name="notification_update_app_channel_description">Notificação quando há uma nova versão do aplicativo disponível. Silencie este canal para ocultar alertas de atualização do aplicativo sem afetar outras notificações.</string>
+    <string name="notification_app_installed_title">AdAway atualizado</string>
+    <string name="notification_app_installed_text">Reabra o aplicativo</string>
 </resources>

@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Ilmoitus, kun uudempia hosts-lähdetiedostoja on saatavilla.</string>
     <string name="notification_update_app_channel_name">Sovelluspäivitykset</string>
     <string name="notification_update_app_channel_description">Ilmoitus, kun sovelluksen uusi versio on saatavilla. Mykistä tämä kanava piilottaaksesi sovelluspäivitysilmoitukset vaikuttamatta muihin ilmoituksiin.</string>
+    <string name="notification_app_installed_title">AdAway päivitetty</string>
+    <string name="notification_app_installed_text">Käynnistä sovellus uudelleen</string>
 </resources>

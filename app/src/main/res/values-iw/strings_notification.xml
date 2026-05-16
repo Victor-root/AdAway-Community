@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">התראה כאשר קבצי מקור hosts חדשים יותר זמינים.</string>
     <string name="notification_update_app_channel_name">עדכוני אפליקציה</string>
     <string name="notification_update_app_channel_description">התראה כאשר גרסה חדשה של האפליקציה זמינה. השתק ערוץ זה כדי להסתיר התראות על עדכוני אפליקציה מבלי להשפיע על התראות אחרות.</string>
+    <string name="notification_app_installed_title">AdAway עודכן</string>
+    <string name="notification_app_installed_text">פתחו את האפליקציה מחדש</string>
 </resources>

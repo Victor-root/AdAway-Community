@@ -4,4 +4,6 @@
     <string name="notification_update_hosts_channel_description">नई hosts स्रोत फाइलें उपलब्ध होने पर सूचना।</string>
     <string name="notification_update_app_channel_name">ऐप अद्यतन</string>
     <string name="notification_update_app_channel_description">ऐप का नया संस्करण उपलब्ध होने पर सूचना। अन्य सूचनाओं को प्रभावित किए बिना ऐप-अद्यतन अलर्ट छिपाने के लिए इस चैनल को म्यूट करें।</string>
+    <string name="notification_app_installed_title">AdAway अद्यतन हो गया</string>
+    <string name="notification_app_installed_text">ऐप पुनः खोलें</string>
 </resources>

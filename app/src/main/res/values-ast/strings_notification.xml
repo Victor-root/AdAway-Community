@@ -7,4 +7,6 @@
     <string name="notification_update_hosts_channel_description">Avisu cuando hai ficheros fonte hosts más recientes.</string>
     <string name="notification_update_app_channel_name">Anovamientos de l’aplicación</string>
     <string name="notification_update_app_channel_description">Avisu cuando hai una nueva versión de l’aplicación. Silencia esta canal pa anubrir los avisos d’anovamientu de l’aplicación ensin afectar a otres notificaciones.</string>
+    <string name="notification_app_installed_title">AdAway anováu</string>
+    <string name="notification_app_installed_text">Reabre l\'aplicación</string>
 </resources>

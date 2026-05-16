@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Notifikasi saat file sumber hosts yang lebih baru tersedia.</string>
     <string name="notification_update_app_channel_name">Pembaruan aplikasi</string>
     <string name="notification_update_app_channel_description">Notifikasi saat versi baru aplikasi tersedia. Bisukan kanal ini untuk menyembunyikan peringatan pembaruan aplikasi tanpa memengaruhi notifikasi lain.</string>
+    <string name="notification_app_installed_title">AdAway diperbarui</string>
+    <string name="notification_app_installed_text">Buka kembali aplikasi</string>
 </resources>

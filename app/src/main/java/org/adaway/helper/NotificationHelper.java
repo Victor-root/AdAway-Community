@@ -42,6 +42,7 @@ public final class NotificationHelper {
 
     private static final int UPDATE_HOSTS_NOTIFICATION_ID = 10;
     private static final int UPDATE_APP_NOTIFICATION_ID = 11;
+    private static final int APP_INSTALLED_NOTIFICATION_ID = 12;
     public static final int VPN_RUNNING_SERVICE_NOTIFICATION_ID = 20;
     public static final int VPN_RESUME_SERVICE_NOTIFICATION_ID = 21;
 
@@ -126,6 +127,42 @@ public final class NotificationHelper {
         notificationManager.notify(UPDATE_APP_NOTIFICATION_ID, builder.build());
     }
 
+    /**
+     * Notification posted from {@link org.adaway.broadcast.UpdateReceiver} after the
+     * system replaces the running APK. Workaround for the Android TV / Shield bug
+     * where the system installer's "Open" button caches the pre-install APK path
+     * and silently fails to launch the app once the path has changed. Tapping the
+     * notification routes through the package's launch Intent, which Android
+     * re-resolves at click time, so it correctly picks LEANBACK_LAUNCHER on TV
+     * and LAUNCHER on mobile.
+     */
+    public static void showAppInstalledNotification(@NonNull Context context) {
+        NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
+        if (notificationManager == null || !notificationManager.areNotificationsEnabled()) {
+            return;
+        }
+        Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+        if (intent == null) {
+            return;
+        }
+        intent.setFlags(FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = getActivity(context, 0, intent, FLAG_IMMUTABLE);
+        int color = context.getColor(R.color.notification);
+        String title = context.getString(R.string.notification_app_installed_title);
+        String text = context.getString(R.string.notification_app_installed_text);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, UPDATE_APP_NOTIFICATION_CHANNEL)
+                .setSmallIcon(R.drawable.logo)
+                .setColorized(true)
+                .setColor(color)
+                .setShowWhen(false)
+                .setContentTitle(title)
+                .setContentText(text)
+                .setContentIntent(pendingIntent)
+                .setPriority(PRIORITY_LOW)
+                .setAutoCancel(true);
+        notificationManager.notify(APP_INSTALLED_NOTIFICATION_ID, builder.build());
+    }
+
     public static void clearUpdateNotifications(@NonNull Context context) {
         NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
         if (notificationManager == null) {
@@ -133,5 +170,6 @@ public final class NotificationHelper {
         }
         notificationManager.cancel(UPDATE_HOSTS_NOTIFICATION_ID);
         notificationManager.cancel(UPDATE_APP_NOTIFICATION_ID);
+        notificationManager.cancel(APP_INSTALLED_NOTIFICATION_ID);
     }
 }

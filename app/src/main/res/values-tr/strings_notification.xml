@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Daha yeni hosts kaynak dosyaları olduğunda bildirim.</string>
     <string name="notification_update_app_channel_name">Uygulama güncellemeleri</string>
     <string name="notification_update_app_channel_description">Uygulamanın yeni bir sürümü olduğunda bildirim. Diğer bildirimleri etkilemeden uygulama güncelleme uyarılarını gizlemek için bu kanalı sessize alın.</string>
+    <string name="notification_app_installed_title">AdAway güncellendi</string>
+    <string name="notification_app_installed_text">Uygulamayı yeniden başlatın</string>
 </resources>

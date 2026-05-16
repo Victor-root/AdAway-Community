@@ -8,4 +8,6 @@
     <string name="notification_update_hosts_channel_description">การแจ้งเตือนเมื่อมีไฟล์ต้นทาง hosts ใหม่กว่า</string>
     <string name="notification_update_app_channel_name">อัปเดตแอป</string>
     <string name="notification_update_app_channel_description">การแจ้งเตือนเมื่อมีแอปเวอร์ชันใหม่ ปิดเสียงช่องนี้เพื่อซ่อนการแจ้งเตือนการอัปเดตแอปโดยไม่กระทบการแจ้งเตือนอื่น</string>
+    <string name="notification_app_installed_title">อัปเดต AdAway แล้ว</string>
+    <string name="notification_app_installed_text">เปิดแอปอีกครั้ง</string>
 </resources>

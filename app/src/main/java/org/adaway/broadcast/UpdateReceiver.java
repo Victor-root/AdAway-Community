@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import org.adaway.AdAwayApplication;
+import org.adaway.helper.NotificationHelper;
 
 import timber.log.Timber;
 
@@ -23,6 +24,7 @@ public class UpdateReceiver extends BroadcastReceiver {
             String versionName = application.getUpdateModel().getVersionName();
             Timber.d("UpdateReceiver invoked");
             Timber.i("Application update to version %s", versionName);
+            NotificationHelper.showAppInstalledNotification(context);
         }
     }
 }

@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Thông báo khi có tệp nguồn hosts mới hơn.</string>
     <string name="notification_update_app_channel_name">Cập nhật ứng dụng</string>
     <string name="notification_update_app_channel_description">Thông báo khi có phiên bản mới của ứng dụng. Tắt tiếng kênh này để ẩn cảnh báo cập nhật ứng dụng mà không ảnh hưởng đến các thông báo khác.</string>
+    <string name="notification_app_installed_title">AdAway đã được cập nhật</string>
+    <string name="notification_app_installed_text">Khởi động lại ứng dụng</string>
 </resources>

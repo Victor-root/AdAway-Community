@@ -5,4 +5,6 @@
     <string name="notification_update_hosts_channel_description">Обавештење када су доступне новије изворне датотеке hosts.</string>
     <string name="notification_update_app_channel_name">Ажурирања апликације</string>
     <string name="notification_update_app_channel_description">Обавештење када је доступна нова верзија апликације. Утишајте овај канал да бисте сакрили упозорења о ажурирању апликације без утицаја на друга обавештења.</string>
+    <string name="notification_app_installed_title">AdAway ажуриран</string>
+    <string name="notification_app_installed_text">Поново покрените апликацију</string>
 </resources>

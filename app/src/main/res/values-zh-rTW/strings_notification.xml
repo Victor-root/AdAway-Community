@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">當有較新的 hosts 來源檔案可用時的通知。</string>
     <string name="notification_update_app_channel_name">應用程式更新</string>
     <string name="notification_update_app_channel_description">當有新版本應用程式可用時的通知。靜音此頻道可隱藏應用程式更新提醒，而不影響其他通知。</string>
+    <string name="notification_app_installed_title">AdAway 已更新</string>
+    <string name="notification_app_installed_text">請重新啟動應用程式</string>
 </resources>

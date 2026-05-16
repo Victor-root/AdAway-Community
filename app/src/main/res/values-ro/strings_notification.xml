@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Notificare când sunt disponibile fișiere sursă hosts mai noi.</string>
     <string name="notification_update_app_channel_name">Actualizări aplicație</string>
     <string name="notification_update_app_channel_description">Notificare când este disponibilă o nouă versiune a aplicației. Dezactivează sunetul acestui canal pentru a ascunde alertele de actualizare a aplicației fără a afecta alte notificări.</string>
+    <string name="notification_app_installed_title">AdAway actualizat</string>
+    <string name="notification_app_installed_text">Reporneste aplicația</string>
 </resources>

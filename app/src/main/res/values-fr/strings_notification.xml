@@ -12,4 +12,6 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">RPV/VPN</string>
     <string name="notification_vpn_channel_description">Notifications de l’exécution du RPV/VPN</string>
+    <string name="notification_app_installed_title">AdAway mis à jour</string>
+    <string name="notification_app_installed_text">Relancez l’app</string>
 </resources>

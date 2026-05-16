@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">新しい hosts ソースファイルが利用可能になったときの通知。</string>
     <string name="notification_update_app_channel_name">アプリの更新</string>
     <string name="notification_update_app_channel_description">アプリの新しいバージョンが利用可能になったときの通知。このチャンネルをミュートすると、他の通知に影響を与えずにアプリ更新の通知のみを無効化できます。</string>
+    <string name="notification_app_installed_title">AdAway を更新しました</string>
+    <string name="notification_app_installed_text">アプリを再起動してください</string>
 </resources>

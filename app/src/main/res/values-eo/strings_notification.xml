@@ -4,4 +4,6 @@
     <string name="notification_update_hosts_channel_description">Sciigo kiam pli novaj hosts-fontdosieroj disponeblas.</string>
     <string name="notification_update_app_channel_name">Ĝisdatigoj de aplikaĵo</string>
     <string name="notification_update_app_channel_description">Sciigo kiam nova versio de la aplikaĵo disponeblas. Silentigu ĉi tiun kanalon por kaŝi avertojn pri aplikaĵaj ĝisdatigoj sen efiki aliajn sciigojn.</string>
+    <string name="notification_app_installed_title">AdAway estas ĝisdatigita</string>
+    <string name="notification_app_installed_text">Restartigi la aplikaĵon</string>
 </resources>

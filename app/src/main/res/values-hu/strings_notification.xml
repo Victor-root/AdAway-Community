@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Értesítés, ha újabb hosts forrásfájlok érhetők el.</string>
     <string name="notification_update_app_channel_name">Alkalmazás frissítései</string>
     <string name="notification_update_app_channel_description">Értesítés, ha az alkalmazás új verziója érhető el. Némítsa el ezt a csatornát az alkalmazásfrissítési értesítések elrejtéséhez anélkül, hogy a többi értesítést befolyásolná.</string>
+    <string name="notification_app_installed_title">AdAway frissítve</string>
+    <string name="notification_app_installed_text">Indítsa újra az alkalmazást</string>
 </resources>

@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Melding wanneer er nieuwere hosts-bronbestanden beschikbaar zijn.</string>
     <string name="notification_update_app_channel_name">App-updates</string>
     <string name="notification_update_app_channel_description">Melding wanneer er een nieuwe versie van de app beschikbaar is. Dempt dit kanaal om meldingen over app-updates te verbergen zonder andere meldingen te beïnvloeden.</string>
+    <string name="notification_app_installed_title">AdAway bijgewerkt</string>
+    <string name="notification_app_installed_text">Herstart de app</string>
 </resources>

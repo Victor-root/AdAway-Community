@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Notificació quan hi ha fitxers font hosts més recents disponibles.</string>
     <string name="notification_update_app_channel_name">Actualitzacions de l’aplicació</string>
     <string name="notification_update_app_channel_description">Notificació quan hi ha una nova versió de l’aplicació disponible. Silencia aquest canal per amagar les alertes d’actualització de l’aplicació sense afectar altres notificacions.</string>
+    <string name="notification_app_installed_title">AdAway actualitzat</string>
+    <string name="notification_app_installed_text">Reobre l\'aplicació</string>
 </resources>

@@ -4,4 +4,6 @@
     <string name="notification_update_hosts_channel_description">Pemberitahuan apabila fail sumber hosts yang lebih baharu tersedia.</string>
     <string name="notification_update_app_channel_name">Kemas kini aplikasi</string>
     <string name="notification_update_app_channel_description">Pemberitahuan apabila versi baharu aplikasi tersedia. Bisukan saluran ini untuk menyembunyikan amaran kemas kini aplikasi tanpa menjejaskan pemberitahuan lain.</string>
+    <string name="notification_app_installed_title">AdAway dikemas kini</string>
+    <string name="notification_app_installed_text">Buka semula aplikasi</string>
 </resources>

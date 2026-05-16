@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Obvestilo, ko so na voljo novejše izvorne datoteke hosts.</string>
     <string name="notification_update_app_channel_name">Posodobitve aplikacije</string>
     <string name="notification_update_app_channel_description">Obvestilo, ko je na voljo nova različica aplikacije. Utišajte ta kanal, da skrijete opozorila o posodobitvi aplikacije, ne da bi vplivali na druga obvestila.</string>
+    <string name="notification_app_installed_title">AdAway posodobljen</string>
+    <string name="notification_app_installed_text">Znova zaženite aplikacijo</string>
 </resources>

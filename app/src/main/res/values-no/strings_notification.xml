@@ -4,4 +4,6 @@
     <string name="notification_update_hosts_channel_description">Varsel når nyere hosts-kildefiler er tilgjengelige.</string>
     <string name="notification_update_app_channel_name">App-oppdateringer</string>
     <string name="notification_update_app_channel_description">Varsel når en ny versjon av appen er tilgjengelig. Demp denne kanalen for å skjule varsler om app-oppdateringer uten å påvirke andre varsler.</string>
+    <string name="notification_app_installed_title">AdAway oppdatert</string>
+    <string name="notification_app_installed_text">Start appen på nytt</string>
 </resources>

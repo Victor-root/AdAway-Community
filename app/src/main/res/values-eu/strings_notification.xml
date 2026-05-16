@@ -8,4 +8,6 @@
     <string name="notification_update_hosts_channel_description">Jakinarazpena hosts iturburu-fitxategi berriagoak erabilgarri daudenean.</string>
     <string name="notification_update_app_channel_name">Aplikazioaren eguneraketak</string>
     <string name="notification_update_app_channel_description">Jakinarazpena aplikazioaren bertsio berri bat erabilgarri dagoenean. Mututu kanal hau aplikazio-eguneraketen abisuak ezkutatzeko beste jakinarazpenei eragin gabe.</string>
+    <string name="notification_app_installed_title">AdAway eguneratuta</string>
+    <string name="notification_app_installed_text">Berrabiarazi aplikazioa</string>
 </resources>

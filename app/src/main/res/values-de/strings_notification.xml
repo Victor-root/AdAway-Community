@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Benachrichtigung, wenn neuere Hosts-Quelldateien verfügbar sind.</string>
     <string name="notification_update_app_channel_name">App-Aktualisierungen</string>
     <string name="notification_update_app_channel_description">Benachrichtigung, wenn eine neue Version der App verfügbar ist. Diesen Kanal stummschalten, um App-Aktualisierungshinweise auszublenden, ohne andere Benachrichtigungen zu beeinträchtigen.</string>
+    <string name="notification_app_installed_title">AdAway aktualisiert</string>
+    <string name="notification_app_installed_text">App neu starten</string>
 </resources>

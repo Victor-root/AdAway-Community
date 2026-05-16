@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">Уведомление о наличии более новых файлов hosts.</string>
     <string name="notification_update_app_channel_name">Обновления приложения</string>
     <string name="notification_update_app_channel_description">Уведомление о выходе новой версии приложения. Отключите этот канал, чтобы скрыть оповещения об обновлениях приложения, не затрагивая другие уведомления.</string>
+    <string name="notification_app_installed_title">AdAway обновлён</string>
+    <string name="notification_app_installed_text">Перезапустите приложение</string>
 </resources>

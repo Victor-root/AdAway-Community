@@ -12,4 +12,6 @@
     <string name="notification_update_hosts_channel_description">当有更新的 hosts 源文件可用时的通知。</string>
     <string name="notification_update_app_channel_name">应用更新</string>
     <string name="notification_update_app_channel_description">当有新版本应用可用时的通知。静音此通道可隐藏应用更新提醒，而不影响其他通知。</string>
+    <string name="notification_app_installed_title">AdAway 已更新</string>
+    <string name="notification_app_installed_text">请重新启动应用</string>
 </resources>
