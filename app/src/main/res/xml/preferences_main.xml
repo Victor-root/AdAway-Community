@@ -10,10 +10,12 @@
             app:entryValues="@array/pref_dark_theme_mode_entry_values"
             app:icon="@drawable/ic_brightness_medium_24dp"
             app:key="@string/pref_dark_theme_mode_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_dark_theme" />
         <Preference
             app:fragment="org.adaway.ui.prefs.PrefsUpdateFragment"
             app:icon="@drawable/ic_sync_24dp"
+            app:singleLineTitle="false"
             app:title="@string/pref_update_configuration" />
     </PreferenceCategory>
 
@@ -22,20 +24,24 @@
             app:fragment="org.adaway.ui.prefs.PrefsRootFragment"
             app:icon="@drawable/ic_superuser_24dp"
             app:key="@string/pref_root_ad_block_method_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_root_ad_blocker_configuration" />
         <Preference
             app:fragment="org.adaway.ui.prefs.PrefsVpnFragment"
             app:icon="@drawable/ic_vpn_key_24dp"
             app:key="@string/pref_vpn_ad_block_method_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_vpn_ad_blocker_configuration" />
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_enable_ipv6_def"
             app:icon="@drawable/ic_ipv6_24dp"
             app:key="@string/pref_enable_ipv6_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_enable_ipv6" />
         <Preference
             app:fragment="org.adaway.ui.prefs.PrefsBackupRestoreFragment"
             app:icon="@drawable/ic_sd_storage_24dp"
+            app:singleLineTitle="false"
             app:title="@string/pref_backup_restore" />
     </PreferenceCategory>
 
@@ -44,12 +50,14 @@
             app:defaultValue="@bool/pref_enable_telemetry_def"
             app:icon="@drawable/outline_cloud_upload_24"
             app:key="@string/pref_enable_telemetry_key"
+            app:singleLineTitle="false"
             app:summary="@string/pref_enable_telemetry_summary"
             app:title="@string/pref_enable_telemetry" />
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_enable_debug_def"
             app:icon="@drawable/ic_bug_report_24dp"
             app:key="@string/pref_enable_debug_key"
+            app:singleLineTitle="false"
             app:summary="@string/pref_enable_debug_summary"
             app:title="@string/pref_enable_debug" />
     </PreferenceCategory>

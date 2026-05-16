@@ -3,7 +3,7 @@
 ## [6.5.1-c] - 2026-05-16
 
 - Remove leftover donation page from onboarding wizard
-- Fix Updates settings screen: titles no longer truncated with "…" and items align flush left when no icon is present
+- Polish all settings screens: titles no longer truncated with "…" and items align flush left when no icon is present
 
 ## [6.5.0-c] - 2026-05-12
 

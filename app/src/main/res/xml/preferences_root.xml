@@ -1,58 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:iconSpaceReserved="false"
     app:title="@string/pref_root_title">
 
-    <PreferenceCategory app:title="@string/pref_hosts_installation">
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_hosts_installation">
         <Preference
+            app:iconSpaceReserved="false"
             app:key="@string/pref_open_hosts_key"
             app:persistent="false"
+            app:singleLineTitle="false"
             app:title="@string/pref_root_open_hosts" />
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_never_reboot_def"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_never_reboot_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_never_reboot" />
     </PreferenceCategory>
 
     <PreferenceCategory
+        app:iconSpaceReserved="false"
         app:summary="@string/pref_hosts_redirection_summary"
         app:title="@string/pref_hosts_redirection">
         <EditTextPreference
             app:defaultValue="@string/pref_redirection_ipv4_def"
             app:dialogLayout="@layout/pref_edittext_dialog"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_redirection_ipv4_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_redirection_ipv4" />
         <EditTextPreference
             app:defaultValue="@string/pref_redirection_ipv6_def"
             app:dialogLayout="@layout/pref_edittext_dialog"
             app:enabled="false"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_redirection_ipv6_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_redirection_ipv6" />
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/pref_webserver">
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_webserver">
         <Preference
+            app:iconSpaceReserved="false"
             app:persistent="false"
             app:selectable="false"
+            app:singleLineTitle="false"
             app:summary="@string/pref_webserver_summary" />
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_webserver_enabled_def"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_webserver_enabled_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_webserver_enabled" />
         <Preference
             app:dependency="@string/pref_webserver_enabled_key"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_webserver_test_key"
             app:persistent="false"
+            app:singleLineTitle="false"
             app:summary="@string/pref_webserver_state_checking"
             app:title="@string/pref_webserver_test" />
         <Preference
             app:dependency="@string/pref_webserver_enabled_key"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_webserver_certificate_key"
             app:persistent="false"
+            app:singleLineTitle="false"
             app:title="@string/pref_webserver_certificate" />
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_webserver_icon_def"
             app:dependency="@string/pref_webserver_enabled_key"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_webserver_icon_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_webserver_icon" />
     </PreferenceCategory>
 

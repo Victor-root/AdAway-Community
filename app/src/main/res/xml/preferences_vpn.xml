@@ -1,39 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:iconSpaceReserved="false"
     app:title="@string/pref_root_title">
 
-    <PreferenceCategory app:title="@string/pref_general_category">
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_general_category">
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_vpn_service_on_boot_def"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_vpn_service_on_boot_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_vpn_service_on_boot" />
 
         <SwitchPreferenceCompat
             app:defaultValue="@bool/pref_vpn_watchdog_enabled_def"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_vpn_watchdog_enabled_key"
-            app:title="@string/pref_vpn_service_monitor"
-            app:summary="@string/pref_vpn_service_monitor_description"/>
+            app:singleLineTitle="false"
+            app:summary="@string/pref_vpn_service_monitor_description"
+            app:title="@string/pref_vpn_service_monitor" />
     </PreferenceCategory>
 
     <!-- App bypass-->
-    <PreferenceCategory app:title="@string/pref_vpn_excluded_apps">
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_vpn_excluded_apps">
         <Preference
+            app:iconSpaceReserved="false"
             app:persistent="false"
             app:selectable="false"
+            app:singleLineTitle="false"
             app:summary="@string/pref_vpn_excluded_apps_description" />
 
         <ListPreference
             app:defaultValue="@string/pref_vpn_excluded_system_apps_default"
             app:entries="@array/pref_vpn_excluded_system_apps_entries"
             app:entryValues="@array/pref_vpn_excluded_system_apps_values"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_vpn_excluded_system_apps_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_vpn_exclude_system_apps"
             app:useSimpleSummaryProvider="true" />
 
         <Preference
             app:defaultValue="@string/pref_vpn_excluded_user_apps_default"
             app:fragment="org.adaway.ui.prefs.PrefsVpnExcludedAppsFragment"
+            app:iconSpaceReserved="false"
             app:key="@string/pref_vpn_excluded_user_apps_key"
+            app:singleLineTitle="false"
             app:title="@string/pref_vpn_exclude_user_apps" />
     </PreferenceCategory>
 
