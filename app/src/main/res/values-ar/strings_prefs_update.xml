@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">تحقق بشكل دوري من التحديثات</string>
     <string name="pref_update_sync_on_update">مزامنة عند التحديث</string>
     <string name="pref_update_sync_unmetered_only">المزامنة على شبكة غير مقيَّدة فقط</string>
+    <string name="pref_update_check_now">التحقق الآن</string>
+    <string name="pref_update_check_now_update_available">إصدار جديد متوفر: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">لا يوجد تحديث متوفر</string>
+    <string name="pref_update_install">التحديث الآن</string>
+    <string name="pref_update_install_summary">تثبيت الإصدار %1$s</string>
 </resources>

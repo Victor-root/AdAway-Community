@@ -3,4 +3,8 @@
     <string name="notification_update_host_available_title">د سرچينې اوسمهاليز شته</string>
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">اوڅاریز ځاني جال (VPN)</string>
-    </resources>
+        <string name="notification_update_hosts_channel_name">Hosts updates</string>
+    <string name="notification_update_hosts_channel_description">Notification when newer hosts source files are available.</string>
+    <string name="notification_update_app_channel_name">App updates</string>
+    <string name="notification_update_app_channel_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+</resources>

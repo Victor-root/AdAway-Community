@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">定期檢查更新</string>
     <string name="pref_update_sync_on_update">同步更新</string>
     <string name="pref_update_sync_unmetered_only">僅在不限流量的網路上同步</string>
+    <string name="pref_update_check_now">立即檢查</string>
+    <string name="pref_update_check_now_update_available">新版本可用：%1$s</string>
+    <string name="pref_update_check_now_up_to_date">沒有可用的更新</string>
+    <string name="pref_update_install">立即更新</string>
+    <string name="pref_update_install_summary">安裝版本 %1$s</string>
 </resources>

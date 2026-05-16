@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Mengunduh AdAway versi terbaru… </string>
+    <string name="update_banner_title">Pembaruan tersedia</string>
+    <string name="update_banner_subtitle">Ketuk untuk memasang %1$s</string>
 </resources>

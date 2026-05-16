@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    </resources>
+        <string name="notification_update_hosts_channel_name">Kemas kini hosts</string>
+    <string name="notification_update_hosts_channel_description">Pemberitahuan apabila fail sumber hosts yang lebih baharu tersedia.</string>
+    <string name="notification_update_app_channel_name">Kemas kini aplikasi</string>
+    <string name="notification_update_app_channel_description">Pemberitahuan apabila versi baharu aplikasi tersedia. Bisukan saluran ini untuk menyembunyikan amaran kemas kini aplikasi tanpa menjejaskan pemberitahuan lain.</string>
+</resources>

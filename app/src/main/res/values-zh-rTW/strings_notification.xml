@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">VPN 執行通知</string>
+    <string name="notification_update_hosts_channel_name">Hosts 更新</string>
+    <string name="notification_update_hosts_channel_description">當有較新的 hosts 來源檔案可用時的通知。</string>
+    <string name="notification_update_app_channel_name">應用程式更新</string>
+    <string name="notification_update_app_channel_description">當有新版本應用程式可用時的通知。靜音此頻道可隱藏應用程式更新提醒，而不影響其他通知。</string>
 </resources>

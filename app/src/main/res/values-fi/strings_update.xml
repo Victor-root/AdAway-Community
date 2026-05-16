@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Ladataan uusinta versiota AdAwaystä… </string>
+    <string name="update_banner_title">Päivitys saatavilla</string>
+    <string name="update_banner_subtitle">Asenna %1$s napauttamalla</string>
 </resources>

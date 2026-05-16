@@ -7,12 +7,11 @@
 - Restore in-app auto-update: the app now checks the Community fork's GitHub releases and downloads the latest APK directly, without opening the browser (Android still asks the user to confirm the install)
 - Download the update APK silently in the background, without the system DownloadManager notification cluttering the status bar
 - Automatically purge the downloaded APK from the cache after the update is installed, on the next app launch
-- Add a "Mettre à jour" entry in Settings → Updates that appears as soon as a new version is detected, mirroring the home-screen banner
+- Add an "Update now" entry in Settings → Updates that appears as soon as a new version is detected, mirroring the home-screen banner
 - Add a dedicated "App updates" notification channel so users can mute the new-version alert from system settings without affecting other notifications
 - Add an in-app banner on the home screen that surfaces a new version when one is found
 - Polish the update screen: restyled outlined update button, cleaner constraint layout so the progress bar and changelog flow naturally during install
 - Fix welcome screen text overflow: right-side word clipping and bottom cutoff on smaller displays, with a scrollable container when content does not fit
-- Fix SecurityException crash when downloading an update on Android 12+ by declaring the required DOWNLOAD_WITHOUT_NOTIFICATION permission
 
 ## [6.5.0-c] - 2026-05-12
 

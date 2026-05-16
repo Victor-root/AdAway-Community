@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">התראות ריצת VPN</string>
+    <string name="notification_update_hosts_channel_name">עדכוני hosts</string>
+    <string name="notification_update_hosts_channel_description">התראה כאשר קבצי מקור hosts חדשים יותר זמינים.</string>
+    <string name="notification_update_app_channel_name">עדכוני אפליקציה</string>
+    <string name="notification_update_app_channel_description">התראה כאשר גרסה חדשה של האפליקציה זמינה. השתק ערוץ זה כדי להסתיר התראות על עדכוני אפליקציה מבלי להשפיע על התראות אחרות.</string>
 </resources>

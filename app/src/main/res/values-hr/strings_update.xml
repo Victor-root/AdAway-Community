@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Preuzimanje posljednje AdAway inačice…</string>
+    <string name="update_banner_title">Dostupno je ažuriranje</string>
+    <string name="update_banner_subtitle">Dodirnite za instalaciju %1$s</string>
 </resources>

@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">定期的なアップデートの確認</string>
     <string name="pref_update_sync_on_update">更新時に同期する</string>
     <string name="pref_update_sync_unmetered_only">非課金ネットワークでのみ同期</string>
+    <string name="pref_update_check_now">今すぐ確認</string>
+    <string name="pref_update_check_now_update_available">新しいバージョンが利用可能です: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">利用可能な更新はありません</string>
+    <string name="pref_update_install">今すぐ更新</string>
+    <string name="pref_update_install_summary">バージョン %1$s をインストール</string>
 </resources>

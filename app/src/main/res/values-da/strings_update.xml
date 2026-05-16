@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="update_update_available_header">Opdatering fundet</string>
-    </resources>
+        <string name="update_banner_title">Opdatering tilgængelig</string>
+    <string name="update_banner_subtitle">Tryk for at installere %1$s</string>
+</resources>

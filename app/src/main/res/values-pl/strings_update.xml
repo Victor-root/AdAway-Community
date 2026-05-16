@@ -16,4 +16,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Pobieram najnowszą wersję AdAway…</string>
+    <string name="update_banner_title">Dostępna aktualizacja</string>
+    <string name="update_banner_subtitle">Dotknij, aby zainstalować %1$s</string>
 </resources>

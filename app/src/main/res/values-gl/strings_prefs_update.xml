@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_update_title">Unha nova versión de AdAway está dispoñibel para descargar</string>
-    </resources>
+        <string name="pref_update_check_now">Comprobar agora</string>
+    <string name="pref_update_check_now_update_available">Nova versión dispoñible: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Non hai actualizacións dispoñibles</string>
+    <string name="pref_update_install">Actualizar agora</string>
+    <string name="pref_update_install_summary">Instalar a versión %1$s</string>
+</resources>

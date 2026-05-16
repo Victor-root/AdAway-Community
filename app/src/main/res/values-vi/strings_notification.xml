@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">Thông báo khi mở VPN</string>
+    <string name="notification_update_hosts_channel_name">Cập nhật hosts</string>
+    <string name="notification_update_hosts_channel_description">Thông báo khi có tệp nguồn hosts mới hơn.</string>
+    <string name="notification_update_app_channel_name">Cập nhật ứng dụng</string>
+    <string name="notification_update_app_channel_description">Thông báo khi có phiên bản mới của ứng dụng. Tắt tiếng kênh này để ẩn cảnh báo cập nhật ứng dụng mà không ảnh hưởng đến các thông báo khác.</string>
 </resources>

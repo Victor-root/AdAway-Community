@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">اعلان در حال اجرای VPN</string>
+    <string name="notification_update_hosts_channel_name">به‌روزرسانی‌های hosts</string>
+    <string name="notification_update_hosts_channel_description">اعلان وقتی فایل‌های منبع hosts جدیدتری در دسترس هستند.</string>
+    <string name="notification_update_app_channel_name">به‌روزرسانی‌های برنامه</string>
+    <string name="notification_update_app_channel_description">اعلان وقتی نسخه جدیدی از برنامه در دسترس است. این کانال را بی‌صدا کنید تا هشدارهای به‌روزرسانی برنامه را بدون تأثیر بر اعلان‌های دیگر پنهان کنید.</string>
 </resources>

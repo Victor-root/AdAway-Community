@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">VPN çalışma bildirimleri</string>
+    <string name="notification_update_hosts_channel_name">Hosts güncellemeleri</string>
+    <string name="notification_update_hosts_channel_description">Daha yeni hosts kaynak dosyaları olduğunda bildirim.</string>
+    <string name="notification_update_app_channel_name">Uygulama güncellemeleri</string>
+    <string name="notification_update_app_channel_description">Uygulamanın yeni bir sürümü olduğunda bildirim. Diğer bildirimleri etkilemeden uygulama güncelleme uyarılarını gizlemek için bu kanalı sessize alın.</string>
 </resources>

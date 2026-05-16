@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="update_update_available_header">Anovamientu disponible</string>
-    </resources>
+        <string name="update_banner_title">Anovamientu disponible</string>
+    <string name="update_banner_subtitle">Toca pa instalar %1$s</string>
+</resources>

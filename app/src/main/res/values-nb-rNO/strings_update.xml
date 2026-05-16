@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="update_update_available_header">Oppdatering tilgjengelig</string>
-    </resources>
+        <string name="update_banner_title">Oppdatering tilgjengelig</string>
+    <string name="update_banner_subtitle">Trykk for å installere %1$s</string>
+</resources>

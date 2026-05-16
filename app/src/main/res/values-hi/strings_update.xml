@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    </resources>
+        <string name="update_banner_title">अद्यतन उपलब्ध</string>
+    <string name="update_banner_subtitle">%1$s स्थापित करने के लिए टैप करें</string>
+</resources>

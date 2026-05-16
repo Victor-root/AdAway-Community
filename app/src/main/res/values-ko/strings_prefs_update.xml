@@ -11,4 +11,9 @@
     <string name="pref_update_check_hosts_daily">주기적으로 업데이트 확인</string>
     <string name="pref_update_sync_on_update">업데이트 시 동기화</string>
     <string name="pref_update_sync_unmetered_only">무제한 네트워크 환경에서만 동기화</string>
+    <string name="pref_update_check_now">지금 확인</string>
+    <string name="pref_update_check_now_update_available">새 버전 사용 가능: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">사용 가능한 업데이트가 없습니다</string>
+    <string name="pref_update_install">지금 업데이트</string>
+    <string name="pref_update_install_summary">버전 %1$s 설치</string>
 </resources>

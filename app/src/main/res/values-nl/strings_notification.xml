@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">VPN-meldingen</string>
+    <string name="notification_update_hosts_channel_name">Hosts-updates</string>
+    <string name="notification_update_hosts_channel_description">Melding wanneer er nieuwere hosts-bronbestanden beschikbaar zijn.</string>
+    <string name="notification_update_app_channel_name">App-updates</string>
+    <string name="notification_update_app_channel_description">Melding wanneer er een nieuwe versie van de app beschikbaar is. Dempt dit kanaal om meldingen over app-updates te verbergen zonder andere meldingen te beïnvloeden.</string>
 </resources>

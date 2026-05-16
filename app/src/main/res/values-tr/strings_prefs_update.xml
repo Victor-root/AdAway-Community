@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">Güncellemeleri günlük denetle</string>
     <string name="pref_update_sync_on_update">Güncellemede eşitle</string>
     <string name="pref_update_sync_unmetered_only">Yalnızca ölçülmemiş ağda eşitle</string>
+    <string name="pref_update_check_now">Şimdi denetle</string>
+    <string name="pref_update_check_now_update_available">Yeni sürüm var: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Güncelleme yok</string>
+    <string name="pref_update_install">Şimdi güncelle</string>
+    <string name="pref_update_install_summary">%1$s sürümünü yükle</string>
 </resources>

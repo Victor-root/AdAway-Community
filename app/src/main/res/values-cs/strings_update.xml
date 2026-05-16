@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Stahování poslední verze AdAway…</string>
+    <string name="update_banner_title">K dispozici je aktualizace</string>
+    <string name="update_banner_subtitle">Klepnutím nainstalujte %1$s</string>
 </resources>

@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Đang tải xuống bản mới nhất của AdAway…</string>
+    <string name="update_banner_title">Đã có bản cập nhật</string>
+    <string name="update_banner_subtitle">Nhấn để cài đặt %1$s</string>
 </resources>

@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">최신 AdAway 버전을 다운로드 중…</string>
+    <string name="update_banner_title">업데이트 사용 가능</string>
+    <string name="update_banner_subtitle">탭하여 %1$s 설치</string>
 </resources>

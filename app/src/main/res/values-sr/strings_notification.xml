@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="notification_update_host_available_title">Ažuriranje dostupno</string>
-    </resources>
+        <string name="notification_update_hosts_channel_name">Ажурирања hosts</string>
+    <string name="notification_update_hosts_channel_description">Обавештење када су доступне новије изворне датотеке hosts.</string>
+    <string name="notification_update_app_channel_name">Ажурирања апликације</string>
+    <string name="notification_update_app_channel_description">Обавештење када је доступна нова верзија апликације. Утишајте овај канал да бисте сакрили упозорења о ажурирању апликације без утицаја на друга обавештења.</string>
+</resources>

@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">VPN 실행 알림</string>
+    <string name="notification_update_hosts_channel_name">Hosts 업데이트</string>
+    <string name="notification_update_hosts_channel_description">더 새로운 hosts 소스 파일이 있을 때 알림.</string>
+    <string name="notification_update_app_channel_name">앱 업데이트</string>
+    <string name="notification_update_app_channel_description">앱의 새 버전이 있을 때 알림. 이 채널을 음소거하면 다른 알림에 영향을 주지 않고 앱 업데이트 알림만 끌 수 있습니다.</string>
 </resources>

@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">VPN käynnissä ilmoitukset</string>
+    <string name="notification_update_hosts_channel_name">Hosts-päivitykset</string>
+    <string name="notification_update_hosts_channel_description">Ilmoitus, kun uudempia hosts-lähdetiedostoja on saatavilla.</string>
+    <string name="notification_update_app_channel_name">Sovelluspäivitykset</string>
+    <string name="notification_update_app_channel_description">Ilmoitus, kun sovelluksen uusi versio on saatavilla. Mykistä tämä kanava piilottaaksesi sovelluspäivitysilmoitukset vaikuttamatta muihin ilmoituksiin.</string>
 </resources>

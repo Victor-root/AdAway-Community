@@ -4,4 +4,8 @@
     <string name="notification_update_host_available_title">Uuendus saadaval</string>
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
-    </resources>
+        <string name="notification_update_hosts_channel_name">Hosts uuendused</string>
+    <string name="notification_update_hosts_channel_description">Teavitus, kui uuemad hosts lähtefailid on saadaval.</string>
+    <string name="notification_update_app_channel_name">Rakenduse uuendused</string>
+    <string name="notification_update_app_channel_description">Teavitus, kui rakenduse uus versioon on saadaval. Vaigista see kanal, et peita rakenduse uuendushoiatused ilma teisi teavitusi mõjutamata.</string>
+</resources>

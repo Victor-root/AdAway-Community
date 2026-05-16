@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">Notifikasi VPN berjalan</string>
+    <string name="notification_update_hosts_channel_name">Pembaruan hosts</string>
+    <string name="notification_update_hosts_channel_description">Notifikasi saat file sumber hosts yang lebih baru tersedia.</string>
+    <string name="notification_update_app_channel_name">Pembaruan aplikasi</string>
+    <string name="notification_update_app_channel_description">Notifikasi saat versi baru aplikasi tersedia. Bisukan kanal ini untuk menyembunyikan peringatan pembaruan aplikasi tanpa memengaruhi notifikasi lain.</string>
 </resources>

@@ -9,4 +9,9 @@
     <string name="pref_update_check_hosts_daily">Periodiškai ieškoti atnaujinimų</string>
     <string name="pref_update_sync_on_update">Sinchronizuoti atnaujinimo metu</string>
     <string name="pref_update_sync_unmetered_only">Sinchronizuoti tik neribotu tinklu</string>
+    <string name="pref_update_check_now">Tikrinti dabar</string>
+    <string name="pref_update_check_now_update_available">Nauja versija prieinama: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Atnaujinimų nėra</string>
+    <string name="pref_update_install">Atnaujinti dabar</string>
+    <string name="pref_update_install_summary">Įdiegti versiją %1$s</string>
 </resources>

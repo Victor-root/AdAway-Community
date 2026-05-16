@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    </resources>
+        <string name="pref_update_check_now">Kontroli nun</string>
+    <string name="pref_update_check_now_update_available">Nova versio disponebla: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Neniu ĝisdatigo disponebla</string>
+    <string name="pref_update_install">Ĝisdatigi nun</string>
+    <string name="pref_update_install_summary">Instali version %1$s</string>
+</resources>

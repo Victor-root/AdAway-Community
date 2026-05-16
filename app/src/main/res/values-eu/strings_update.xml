@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">AdAway-ren azken bertsioa deskargatzen…</string>
+    <string name="update_banner_title">Eguneraketa erabilgarri</string>
+    <string name="update_banner_subtitle">Sakatu %1$s instalatzeko</string>
 </resources>

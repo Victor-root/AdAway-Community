@@ -11,4 +11,9 @@
     <string name="pref_update_check_hosts_daily">Säännöllisesti tarkista päivityksiä </string>
     <string name="pref_update_sync_on_update">Synkronoi päivittäessä</string>
     <string name="pref_update_sync_unmetered_only">Synkronoi ainoastaan rajattomalla yhteydellä</string>
+    <string name="pref_update_check_now">Tarkista nyt</string>
+    <string name="pref_update_check_now_update_available">Uusi versio saatavilla: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Ei päivityksiä saatavilla</string>
+    <string name="pref_update_install">Päivitä nyt</string>
+    <string name="pref_update_install_summary">Asenna versio %1$s</string>
 </resources>

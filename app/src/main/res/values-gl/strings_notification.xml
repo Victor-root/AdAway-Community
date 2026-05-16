@@ -7,4 +7,8 @@
     <string name="notification_update_app_available_text">Unha nova versión de AdAway está dispoñíbel para descargar</string>
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
-    </resources>
+        <string name="notification_update_hosts_channel_name">Actualizacións de hosts</string>
+    <string name="notification_update_hosts_channel_description">Notificación cando hai ficheiros fonte hosts máis recentes dispoñibles.</string>
+    <string name="notification_update_app_channel_name">Actualizacións da aplicación</string>
+    <string name="notification_update_app_channel_description">Notificación cando hai unha nova versión da aplicación dispoñible. Silencia esta canle para ocultar avisos de actualización da aplicación sen afectar outras notificacións.</string>
+</resources>

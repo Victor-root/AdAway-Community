@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">Notificări în timpul rulării VPN</string>
+    <string name="notification_update_hosts_channel_name">Actualizări hosts</string>
+    <string name="notification_update_hosts_channel_description">Notificare când sunt disponibile fișiere sursă hosts mai noi.</string>
+    <string name="notification_update_app_channel_name">Actualizări aplicație</string>
+    <string name="notification_update_app_channel_description">Notificare când este disponibilă o nouă versiune a aplicației. Dezactivează sunetul acestui canal pentru a ascunde alertele de actualizare a aplicației fără a afecta alte notificări.</string>
 </resources>

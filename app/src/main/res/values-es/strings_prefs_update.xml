@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">Buscar actualizaciones diariamente</string>
     <string name="pref_update_sync_on_update">Sincronizar durante la actualización</string>
     <string name="pref_update_sync_unmetered_only">Sincronizar sólo en redes sin limitaciones</string>
+    <string name="pref_update_check_now">Comprobar ahora</string>
+    <string name="pref_update_check_now_update_available">Nueva versión disponible: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">No hay actualizaciones disponibles</string>
+    <string name="pref_update_install">Actualizar ahora</string>
+    <string name="pref_update_install_summary">Instalar versión %1$s</string>
 </resources>

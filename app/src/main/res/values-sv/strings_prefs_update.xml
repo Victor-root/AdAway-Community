@@ -11,4 +11,9 @@
     <string name="pref_update_check_hosts_daily">Sök regelbundet efter uppdateringar</string>
     <string name="pref_update_sync_on_update">Synkronisera vid uppdatering</string>
     <string name="pref_update_sync_unmetered_only">Synkronisera endast på nätverk med obegränsad data</string>
+    <string name="pref_update_check_now">Sök nu</string>
+    <string name="pref_update_check_now_update_available">Ny version tillgänglig: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Inga uppdateringar tillgängliga</string>
+    <string name="pref_update_install">Uppdatera nu</string>
+    <string name="pref_update_install_summary">Installera version %1$s</string>
 </resources>

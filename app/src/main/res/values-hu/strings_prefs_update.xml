@@ -11,4 +11,9 @@
     <string name="pref_update_check_hosts_daily">Frissítések keresése naponta</string>
     <string name="pref_update_sync_on_update">Szinkronizálás frissítéskor</string>
     <string name="pref_update_sync_unmetered_only">Szinkronizálás csak nem mért hálózaton</string>
+    <string name="pref_update_check_now">Ellenőrzés most</string>
+    <string name="pref_update_check_now_update_available">Új verzió érhető el: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nincs elérhető frissítés</string>
+    <string name="pref_update_install">Frissítés most</string>
+    <string name="pref_update_install_summary">%1$s verzió telepítése</string>
 </resources>

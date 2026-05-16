@@ -11,4 +11,9 @@
     <string name="pref_update_check_hosts_daily">Періодично перевіряти наявність оновлень</string>
     <string name="pref_update_sync_on_update">Синхронізувати при оновленні</string>
     <string name="pref_update_sync_unmetered_only">Синхронізувати лише коли W-iFi</string>
+    <string name="pref_update_check_now">Перевірити зараз</string>
+    <string name="pref_update_check_now_update_available">Доступна нова версія: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Немає доступних оновлень</string>
+    <string name="pref_update_install">Оновити зараз</string>
+    <string name="pref_update_install_summary">Встановити версію %1$s</string>
 </resources>

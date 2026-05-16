@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    </resources>
+        <string name="notification_update_hosts_channel_name">Hosts-oppdateringer</string>
+    <string name="notification_update_hosts_channel_description">Varsel når nyere hosts-kildefiler er tilgjengelige.</string>
+    <string name="notification_update_app_channel_name">App-oppdateringer</string>
+    <string name="notification_update_app_channel_description">Varsel når en ny versjon av appen er tilgjengelig. Demp denne kanalen for å skjule varsler om app-oppdateringer uten å påvirke andre varsler.</string>
+</resources>

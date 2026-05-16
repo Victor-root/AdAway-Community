@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">Το VPN εκτελεί ειδοποιήσεις</string>
+    <string name="notification_update_hosts_channel_name">Ενημερώσεις hosts</string>
+    <string name="notification_update_hosts_channel_description">Ειδοποίηση όταν υπάρχουν νεότερα αρχεία πηγής hosts.</string>
+    <string name="notification_update_app_channel_name">Ενημερώσεις εφαρμογής</string>
+    <string name="notification_update_app_channel_description">Ειδοποίηση όταν είναι διαθέσιμη νέα έκδοση της εφαρμογής. Σιγάστε αυτό το κανάλι για να αποκρύψετε ειδοποιήσεις ενημέρωσης της εφαρμογής χωρίς να επηρεάσετε άλλες ειδοποιήσεις.</string>
 </resources>

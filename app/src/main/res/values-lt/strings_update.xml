@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Atsisunčiame naujausią AdAway versiją…</string>
+    <string name="update_banner_title">Yra atnaujinimas</string>
+    <string name="update_banner_subtitle">Bakstelėkite, kad įdiegtumėte %1$s</string>
 </resources>

@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">AdAway\'in en son sürümü indiriliyor…</string>
+    <string name="update_banner_title">Güncelleme var</string>
+    <string name="update_banner_subtitle">%1$s sürümünü yüklemek için dokunun</string>
 </resources>

@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">Уведомления за работещ VPN</string>
+    <string name="notification_update_hosts_channel_name">Актуализации на hosts</string>
+    <string name="notification_update_hosts_channel_description">Известие, когато са налични по-нови файлове hosts.</string>
+    <string name="notification_update_app_channel_name">Актуализации на приложението</string>
+    <string name="notification_update_app_channel_description">Известие, когато е налична нова версия на приложението. Заглушете този канал, за да скриете известията за актуализация на приложението, без да засягате други известия.</string>
 </resources>

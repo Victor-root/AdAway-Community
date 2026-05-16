@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">Kiểm tra cập nhật mỗi ngày</string>
     <string name="pref_update_sync_on_update">Đồng bộ khi cập nhật</string>
     <string name="pref_update_sync_unmetered_only">Chỉ đồng bộ bằng wi-fi </string>
+    <string name="pref_update_check_now">Kiểm tra ngay</string>
+    <string name="pref_update_check_now_update_available">Đã có phiên bản mới: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Không có bản cập nhật</string>
+    <string name="pref_update_install">Cập nhật ngay</string>
+    <string name="pref_update_install_summary">Cài đặt phiên bản %1$s</string>
 </resources>

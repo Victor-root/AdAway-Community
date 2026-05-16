@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">Pravidelně kontrolovat aktualizace</string>
     <string name="pref_update_sync_on_update">Při aktualizaci synchronizovat</string>
     <string name="pref_update_sync_unmetered_only">Synchronizovat pouze na neměřených sítích</string>
+    <string name="pref_update_check_now">Zkontrolovat nyní</string>
+    <string name="pref_update_check_now_update_available">K dispozici je nová verze: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Žádná aktualizace není k dispozici</string>
+    <string name="pref_update_install">Aktualizovat nyní</string>
+    <string name="pref_update_install_summary">Nainstalovat verzi %1$s</string>
 </resources>

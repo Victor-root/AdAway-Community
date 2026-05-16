@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Скачивание последней версии AdAway…</string>
+    <string name="update_banner_title">Доступно обновление</string>
+    <string name="update_banner_subtitle">Нажмите, чтобы установить %1$s</string>
 </resources>

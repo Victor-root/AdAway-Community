@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    </resources>
+        <string name="pref_update_check_now">Comprobar agora</string>
+    <string name="pref_update_check_now_update_available">Nueva versión disponible: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nun hai anovamientos disponibles</string>
+    <string name="pref_update_install">Anovar agora</string>
+    <string name="pref_update_install_summary">Instalar la versión %1$s</string>
+</resources>

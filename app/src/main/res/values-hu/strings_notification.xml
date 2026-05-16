@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">VPN futása értesítések</string>
+    <string name="notification_update_hosts_channel_name">Hosts frissítések</string>
+    <string name="notification_update_hosts_channel_description">Értesítés, ha újabb hosts forrásfájlok érhetők el.</string>
+    <string name="notification_update_app_channel_name">Alkalmazás frissítései</string>
+    <string name="notification_update_app_channel_description">Értesítés, ha az alkalmazás új verziója érhető el. Némítsa el ezt a csatornát az alkalmazásfrissítési értesítések elrejtéséhez anélkül, hogy a többi értesítést befolyásolná.</string>
 </resources>

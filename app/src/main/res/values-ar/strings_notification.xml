@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">في بي إن</string>
     <string name="notification_vpn_channel_description">إشعارات تشغيل VPN</string>
+    <string name="notification_update_hosts_channel_name">تحديثات Hosts</string>
+    <string name="notification_update_hosts_channel_description">إشعار عند توفر ملفات مصدر hosts أحدث.</string>
+    <string name="notification_update_app_channel_name">تحديثات التطبيق</string>
+    <string name="notification_update_app_channel_description">إشعار عند توفر إصدار جديد من التطبيق. أوقف صوت هذه القناة لإخفاء تنبيهات تحديث التطبيق دون التأثير على الإشعارات الأخرى.</string>
 </resources>

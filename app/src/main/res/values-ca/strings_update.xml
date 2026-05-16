@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">S\'està baixant la darrera versió d\'AdAway…</string>
+    <string name="update_banner_title">Actualització disponible</string>
+    <string name="update_banner_subtitle">Toca per instal·lar %1$s</string>
 </resources>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_update_title">Yeniləmələr</string>
-    </resources>
+        <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">No update available</string>
+    <string name="pref_update_install">Update now</string>
+    <string name="pref_update_install_summary">Install version %1$s</string>
+</resources>

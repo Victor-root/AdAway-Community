@@ -15,4 +15,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">Legutóbbi AdAway verzió letöltése…</string>
+    <string name="update_banner_title">Frissítés érhető el</string>
+    <string name="update_banner_subtitle">Koppintson a(z) %1$s telepítéséhez</string>
 </resources>

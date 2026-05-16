@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN </string>
     <string name="notification_vpn_channel_description">VPN paleisti pranešimai</string>
+    <string name="notification_update_hosts_channel_name">Hosts atnaujinimai</string>
+    <string name="notification_update_hosts_channel_description">Pranešimas, kai prieinami naujesni hosts šaltinio failai.</string>
+    <string name="notification_update_app_channel_name">Programėlės atnaujinimai</string>
+    <string name="notification_update_app_channel_description">Pranešimas, kai prieinama nauja programėlės versija. Nutildykite šį kanalą, kad paslėptumėte programėlės atnaujinimų įspėjimus, nepaveikdami kitų pranešimų.</string>
 </resources>

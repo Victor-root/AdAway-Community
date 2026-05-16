@@ -16,4 +16,6 @@
 
     <!-- Notification -->
     <string name="update_notification_description">正在下載最新的 AdAway 版本…</string>
+    <string name="update_banner_title">更新可用</string>
+    <string name="update_banner_subtitle">點按以安裝 %1$s</string>
 </resources>

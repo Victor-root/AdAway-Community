@@ -13,4 +13,9 @@
     <string name="pref_update_check_hosts_daily">Občasno preveri obstoj posodobitev</string>
     <string name="pref_update_sync_on_update">Sinhroniziraj ob posodobitvi</string>
     <string name="pref_update_sync_unmetered_only">Sinhroniziraj samo v neomejenem omrežju</string>
+    <string name="pref_update_check_now">Preveri zdaj</string>
+    <string name="pref_update_check_now_update_available">Na voljo je nova različica: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Posodobitev ni na voljo</string>
+    <string name="pref_update_install">Posodobi zdaj</string>
+    <string name="pref_update_install_summary">Namesti različico %1$s</string>
 </resources>

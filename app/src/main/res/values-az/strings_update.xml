@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="update_update_available_header">Yeniləmə var</string>
-    </resources>
+        <string name="update_banner_title">Update available</string>
+    <string name="update_banner_subtitle">Tap to install %1$s</string>
+</resources>

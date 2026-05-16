@@ -8,4 +8,8 @@
     <!-- VPN notification -->
     <string name="notification_vpn_channel_name">VPN</string>
     <string name="notification_vpn_channel_description">VPN-aviseringar</string>
+    <string name="notification_update_hosts_channel_name">Hosts-uppdateringar</string>
+    <string name="notification_update_hosts_channel_description">Avisering när nyare hosts-källfiler är tillgängliga.</string>
+    <string name="notification_update_app_channel_name">App-uppdateringar</string>
+    <string name="notification_update_app_channel_description">Avisering när en ny version av appen är tillgänglig. Stäng av ljudet för den här kanalen för att dölja aviseringar om app-uppdateringar utan att påverka andra aviseringar.</string>
 </resources>
