@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -34,7 +32,6 @@ import timber.log.Timber;
 public class UpdateActivity extends AppCompatActivity {
     private UpdateActityBinding binding;
     private UpdateViewModel updateViewModel;
-    private ActivityResultLauncher<Intent> unknownSourcesLauncher;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,25 +40,38 @@ public class UpdateActivity extends AppCompatActivity {
         this.binding = UpdateActityBinding.inflate(getLayoutInflater());
         setContentView(this.binding.getRoot());
 
-        this.unknownSourcesLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (getPackageManager().canRequestPackageInstalls()) {
-                        launchInstaller();
-                    } else {
-                        // User came back without granting; restore the UI so they
-                        // can retry from the Update button instead of being stuck
-                        // on a frozen progress bar.
-                        this.binding.downloadProgressBar.setVisibility(GONE);
-                        this.binding.progressTextView.setText("");
-                        this.binding.updateButton.setVisibility(VISIBLE);
-                    }
-                });
-
         this.updateViewModel = new ViewModelProvider(this).get(UpdateViewModel.class);
         bindListeners();
         bindManifest();
         bindProgress();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Resume an install that was interrupted by the "install unknown apps"
+        // permission screen. Two paths land here:
+        //   1. Process survived: we set the flag in launchInstaller() before
+        //      starting the settings Activity, and onResume runs when the user
+        //      comes back.
+        //   2. Process was killed while in Settings (common on memory-tight
+        //      devices like Shield TV): UpdateModel skipped APK cleanup at
+        //      startup because the flag was still set, the Activity is
+        //      recreated, and onResume sees the same flag.
+        if (!UpdateModel.isInstallPending(this)) {
+            return;
+        }
+        UpdateModel.setInstallPending(this, false);
+        if (getPackageManager().canRequestPackageInstalls()) {
+            launchInstaller();
+        } else {
+            // User came back without granting; restore the UI so they can retry
+            // from the Update button instead of being stuck on a frozen progress bar.
+            this.binding.downloadProgressBar.setVisibility(GONE);
+            this.binding.progressTextView.setText("");
+            // updateButton visibility is restored by the manifest LiveData observer
+            // re-emitting on resume.
+        }
     }
 
     private void bindListeners() {
@@ -103,12 +113,16 @@ public class UpdateActivity extends AppCompatActivity {
         // granted before ACTION_VIEW on an APK opens the system installer. Without
         // this check, the first attempt only prompts the user to grant the
         // permission; the install Intent itself is never re-fired, so the user
-        // grants the permission and then nothing happens. Request the permission
-        // here and let the launcher callback retry the install on return.
+        // grants the permission and then nothing happens. Route through the
+        // permission screen via startActivity (not ActivityResultLauncher: the
+        // result callback is lost if the process is killed while Settings is in
+        // the foreground, which happens on memory-tight TVs). The pendingInstall
+        // flag bridges across process death so onResume can complete the install.
         if (!getPackageManager().canRequestPackageInstalls()) {
+            UpdateModel.setInstallPending(this, true);
             Intent settings = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)
                     .setData(Uri.parse("package:" + getPackageName()));
-            this.unknownSourcesLauncher.launch(settings);
+            startActivity(settings);
             return;
         }
         Uri apkUri = FileProvider.getUriForFile(
@@ -135,6 +149,14 @@ public class UpdateActivity extends AppCompatActivity {
 
     private void startUpdate(View view) {
         this.binding.updateButton.setVisibility(GONE);
+        // If a previous attempt left the APK on disk (e.g. the user denied the
+        // "install unknown apps" permission and is now retrying), skip the
+        // download and jump straight to the install flow.
+        File apkFile = new File(getExternalCacheDir(), UpdateModel.APK_FILE_NAME);
+        if (apkFile.exists()) {
+            launchInstaller();
+            return;
+        }
         this.binding.downloadProgressBar.setVisibility(VISIBLE);
         this.updateViewModel.update();
     }
