@@ -25,7 +25,7 @@ This fork is **not affiliated with, endorsed by, or signed by** the official AdA
 <p align="center"><strong>📱 Mobile</strong></p>
 <p align="center">
   <img
-    src="https://github.com/user-attachments/assets/5bd9cce9-b488-435b-a008-578b126238b1"
+    src="https://github.com/user-attachments/assets/83c8261b-fab2-49a8-b0f6-c8e2f02c8386"
     width="360"
     alt="AdAway Community — mobile home screen"
   />
@@ -34,7 +34,7 @@ This fork is **not affiliated with, endorsed by, or signed by** the official AdA
 <p align="center"><strong>📺 Android TV</strong></p>
 <p align="center">
   <img
-    src="https://github.com/user-attachments/assets/f4c2e33b-7d72-4af1-ae60-aea3dad09f9a"
+    src="https://github.com/user-attachments/assets/a534a45d-1482-49b9-a856-073c3db57e6d"
     width="720"
     alt="AdAway Community — Android TV home screen"
   />
