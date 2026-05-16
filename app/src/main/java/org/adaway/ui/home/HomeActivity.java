@@ -73,6 +73,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         ThemeHelper.applyTheme(this);
         NotificationHelper.clearUpdateNotifications(this);
+        org.adaway.broadcast.UpdateReceiver.clearInstallToast(this);
         Timber.i("Starting main activity");
         this.binding = HomeActivityBinding.inflate(getLayoutInflater());
         setContentView(this.binding.getRoot());

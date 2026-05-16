@@ -68,6 +68,7 @@ public class TvHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ThemeHelper.applyTheme(this);
         NotificationHelper.clearUpdateNotifications(this);
+        org.adaway.broadcast.UpdateReceiver.clearInstallToast(this);
         setContentView(R.layout.tv_activity_home);
 
         if (PreferenceHelper.getAdBlockMethod(this) == AdBlockMethod.UNDEFINED) {
