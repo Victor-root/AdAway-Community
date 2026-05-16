@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Frissítések</string>
-    <string name="notification_update_channel_description">Új frissítés értesítések</string>
     <string name="notification_update_host_available_title">Frissítés érhető el</string>
     <string name="notification_update_host_available_text">Újabb hosts fájl elérhető.</string>
     <string name="notification_update_app_available_title">Alkalmazás frissítés elérhető</string>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Actualizaciones</string>
-    <string name="notification_update_channel_description">Notificaciones de actualizaciones nuevas</string>
     <string name="notification_update_host_available_title">Actualización disponible</string>
     <string name="notification_update_host_available_text">Hay archivos hosts más nuevos disponibles para descargar.</string>
     <string name="notification_update_app_available_title">Hay una actualización de la app</string>

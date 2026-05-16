@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Actualitzacions</string>
-    <string name="notification_update_channel_description">Noves notificacions d\'actualització</string>
     <string name="notification_update_host_available_title">Actualització disponible</string>
     <string name="notification_update_host_available_text">Fitxers d\'amfitrió més nous disponibles per baixar.</string>
     <string name="notification_update_app_available_title">Actualització de l\'aplicació disponible</string>

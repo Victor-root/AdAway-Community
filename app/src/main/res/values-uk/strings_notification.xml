@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Оновлення</string>
-    <string name="notification_update_channel_description">Сповіщення про нові оновлення</string>
     <string name="notification_update_host_available_title">Доступне оновлення</string>
     <string name="notification_update_host_available_text">Нові файли hosts доступні для завантаження.</string>
     <string name="notification_update_app_available_title">Оновлення додатку вже доступно</string>

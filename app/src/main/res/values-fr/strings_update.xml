@@ -3,6 +3,8 @@
     <string name="update_title">Mise à jour d’AdAway</string>
     <!-- Home screen -->
     <string name="update_available">Une mise à jour est proposée</string>
+    <string name="update_banner_title">Mise à jour disponible</string>
+    <string name="update_banner_subtitle">Touchez pour installer %1$s</string>
 
     <!-- Update activity -->
     <string name="update_up_to_date_header">AdAway est à jour</string>

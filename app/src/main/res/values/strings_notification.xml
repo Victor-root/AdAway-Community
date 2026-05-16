@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Updates</string>
-    <string name="notification_update_channel_description">New update notifications</string>
+    <string name="notification_update_hosts_channel_name">Hosts updates</string>
+    <string name="notification_update_hosts_channel_description">Notification when newer hosts source files are available.</string>
+    <string name="notification_update_app_channel_name">App updates</string>
+    <string name="notification_update_app_channel_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
     <string name="notification_update_host_available_title">Source update available</string>
     <string name="notification_update_host_available_text">Newer hosts files available for download.</string>
     <string name="notification_update_app_available_title">App update available</string>

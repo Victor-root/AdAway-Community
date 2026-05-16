@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Mises à jour</string>
-    <string name="notification_update_channel_description">Notification de nouvelles mises à jour</string>
+    <string name="notification_update_hosts_channel_name">Mises à jour des hôtes</string>
+    <string name="notification_update_hosts_channel_description">Notification quand de nouvelles sources de fichiers hosts sont disponibles.</string>
+    <string name="notification_update_app_channel_name">Mises à jour de l’app</string>
+    <string name="notification_update_app_channel_description">Notification quand une nouvelle version de l’app est disponible. Désactivez ce canal pour ne plus recevoir ces alertes sans toucher aux autres notifications.</string>
     <string name="notification_update_host_available_title">Une mise à jour des sources est proposée</string>
     <string name="notification_update_host_available_text">Des fichiers hosts plus récents peuvent être téléchargés.</string>
     <string name="notification_update_app_available_title">Une mise à jour de l’appli est proposée</string>

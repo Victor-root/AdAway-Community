@@ -15,7 +15,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.net.VpnService;
 import android.os.Bundle;
 import android.view.View;
@@ -84,6 +83,7 @@ public class HomeActivity extends AppCompatActivity {
 
         applyActionBar();
         bindAppVersion();
+        bindUpdateBanner();
         bindHostCounter();
         bindSourceCounter();
         bindPending();
@@ -138,16 +138,20 @@ public class HomeActivity extends AppCompatActivity {
         TextView versionTextView = this.binding.content.versionTextView;
         versionTextView.setText(this.homeViewModel.getVersionName());
         versionTextView.setOnClickListener(this::showUpdate);
+    }
 
-        this.homeViewModel.getAppManifest().observe(
-                this,
-                manifest -> {
-                    if (manifest.updateAvailable) {
-                        versionTextView.setTypeface(versionTextView.getTypeface(), Typeface.BOLD);
-                        versionTextView.setText(R.string.update_available);
-                    }
-                }
-        );
+    private void bindUpdateBanner() {
+        View banner = this.binding.content.updateAvailableCardView;
+        TextView subtitle = this.binding.content.updateBannerSubtitle;
+        banner.setOnClickListener(this::showUpdate);
+        this.homeViewModel.getAppManifest().observe(this, manifest -> {
+            if (manifest != null && manifest.updateAvailable) {
+                subtitle.setText(getString(R.string.update_banner_subtitle, manifest.version));
+                banner.setVisibility(View.VISIBLE);
+            } else {
+                banner.setVisibility(View.GONE);
+            }
+        });
     }
 
     private void bindHostCounter() {

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">アップデート</string>
-    <string name="notification_update_channel_description">新しいアップデートの通知</string>
     <string name="notification_update_host_available_title">更新があります</string>
     <string name="notification_update_host_available_text">新しいhostsファイルがダウンロード可能になりました</string>
     <string name="notification_update_app_available_title">アプリを更新できます</string>

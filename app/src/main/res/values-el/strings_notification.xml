@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Ενημερώσεις</string>
-    <string name="notification_update_channel_description">Νέες ειδοποιήσεις ενημέρωσης</string>
     <string name="notification_update_host_available_title">Διαθέσιμη ενημέρωση πηγής</string>
     <string name="notification_update_host_available_text">Νεότερα hosts files διαθέσιμα για λήψη.</string>
     <string name="notification_update_app_available_title">Ενημέρωση εφαρμογής διαθέσιμη</string>

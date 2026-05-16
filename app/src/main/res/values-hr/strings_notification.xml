@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Ažuriranja</string>
-    <string name="notification_update_channel_description">Nova obavijest ažuriranja</string>
     <string name="notification_update_host_available_title">Dostupno je ažuriranje izvora</string>
     <string name="notification_update_host_available_text">Nove datoteke poslužitelja su dostupne za preuzimanje.</string>
     <string name="notification_update_app_available_title">Dostupno je ažuriranje aplikacije</string>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">به روز رسانی ها</string>
-    <string name="notification_update_channel_description">اطلاعیه های به روز رسانی جدید</string>
     <string name="notification_update_host_available_title">به روز رسانی منبع موجود است</string>
     <string name="notification_update_host_available_text">فایل های hosts جدید برای دانلود در دسترس هستند</string>
     <string name="notification_update_app_available_title">به روز رسانی برنامه موجود است</string>

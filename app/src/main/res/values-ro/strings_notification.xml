@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">Actualizări</string>
-    <string name="notification_update_channel_description">Notificări pentru actualizări noi</string>
     <string name="notification_update_host_available_title">Sursele au actualizări disponibile</string>
     <string name="notification_update_host_available_text">Sunt disponibile fișiere noi hosts pentru descărcare.</string>
     <string name="notification_update_app_available_title">Este disponibilă o actualizare aplicației</string>

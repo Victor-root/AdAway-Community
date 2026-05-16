@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">更新</string>
-    <string name="notification_update_channel_description">新的更新通知</string>
     <string name="notification_update_host_available_title">有更新</string>
     <string name="notification_update_host_available_text">較新的 hosts 檔案可供下載。</string>
     <string name="notification_update_app_available_title">應用程式更新可用</string>

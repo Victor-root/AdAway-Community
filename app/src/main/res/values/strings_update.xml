@@ -3,6 +3,8 @@
     <string name="update_title">AdAway update</string>
     <!-- Home screen -->
     <string name="update_available">Update available!</string>
+    <string name="update_banner_title">Update available</string>
+    <string name="update_banner_subtitle">Tap to install %1$s</string>
 
     <!-- Update activity -->
     <string name="update_up_to_date_header">You are up-to-date</string>

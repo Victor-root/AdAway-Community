@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Update notification -->
-    <string name="notification_update_channel_name">업데이트</string>
-    <string name="notification_update_channel_description">새 업데이트 알림</string>
     <string name="notification_update_host_available_title">업데이트 가능</string>
     <string name="notification_update_host_available_text">다운로드 가능한 새 호스트 파일이 있습니다.</string>
     <string name="notification_update_app_available_title">앱 업데이트 사용가능</string>
