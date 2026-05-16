@@ -2,21 +2,30 @@
 
 ## [6.5.1-c] - 2026-05-16
 
+### ➕ Added
+
+* ⚡ Add an "Update now" entry in Settings → Updates that appears as soon as a new version is detected, mirroring the home-screen banner
+* 🔔 Add a dedicated "App updates" notification channel so users can mute the new-version alert from system settings without affecting other notifications
+* 🏠 Add an in-app banner on the home screen that surfaces a new version when one is found
+* 📺 Extend the app-update banner to the Android TV home screen and trigger the manifest fetch on launch so it appears the same way as on mobile
+* 🏷️ Show the running app version on the right of the Android TV home header so users can confirm at a glance which build they are on
+* ⚙️ Add a Settings entry on the Android TV home screen that opens the existing preferences screen via D-pad
+
+### 🔄 Changed
+
 * 🧹 Remove leftover donation page from onboarding wizard
 * 🎨 Polish all settings screens: titles no longer truncated with "…" and items align flush left when no icon is present
 * 🔄 Restore in-app auto-update: the app now checks the Community fork's GitHub releases and downloads the latest APK directly, without opening the browser (Android still asks the user to confirm the install)
 * 📥 Download the update APK silently in the background, without the system DownloadManager notification cluttering the status bar
 * 🗑️ Automatically purge the downloaded APK from the cache after the update is installed, on the next app launch
-* ⚡ Add an "Update now" entry in Settings → Updates that appears as soon as a new version is detected, mirroring the home-screen banner
-* 🔔 Add a dedicated "App updates" notification channel so users can mute the new-version alert from system settings without affecting other notifications
-* 🏠 Add an in-app banner on the home screen that surfaces a new version when one is found
 * 🧩 Polish the update screen: restyled outlined update button, cleaner constraint layout so the progress bar and changelog flow naturally during install
 * 📺 Show a post-install toast + notification ("AdAway updated — Relaunch the app") on devices where the system installer's "Open" button silently fails (typically Android TV / Shield); skipped automatically when the app actually opens within 5 seconds of the install
-* 📺 Extend the app-update banner to the Android TV home screen and trigger the manifest fetch on launch so it appears the same way as on mobile
-* 🏷️ Show the running app version on the right of the Android TV home header so users can confirm at a glance which build they are on
-* ⚙️ Add a Settings entry on the Android TV home screen that opens the existing preferences screen via D-pad
+
+### 🐛 Fixed
+
 * 🛡️ Fix the Android TV launch flow showing the VpnService consent dialog twice: only run the VPN prep check on a fresh start, not on a configuration-change recreation triggered by the first theme application
 * 📐 Fix welcome screen text overflow: right-side word clipping and bottom cutoff on smaller displays, with a scrollable container when content does not fit
+
 
 ## [6.5.0-c] - 2026-05-12
 
