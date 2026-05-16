@@ -28,6 +28,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.adaway.BuildConfig;
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
@@ -73,6 +74,8 @@ public class TvHomeActivity extends AppCompatActivity {
         if (PreferenceHelper.getAdBlockMethod(this) == AdBlockMethod.UNDEFINED) {
             PreferenceHelper.setAbBlockMethod(this, VPN);
         }
+
+        ((TextView) findViewById(R.id.tv_version)).setText("v" + BuildConfig.VERSION_NAME);
 
         statusBadge = findViewById(R.id.tv_status_badge);
         statusIcon = findViewById(R.id.tv_status_icon);
