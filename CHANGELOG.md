@@ -2,6 +2,10 @@
 
 ## [6.5.1-c] - 2026-05-16
 
+- Remove leftover donation page from onboarding wizard
+
+## [6.5.0-c] - 2026-05-12
+
 - Add light/dark theme toggle on Android TV home screen (dark by default on TV)
 - Add Always-on VPN detection and persistent status indicator on Android TV
 - Add VPN troubleshooting dialog with ADB command fallback on Android TV
@@ -16,14 +20,6 @@
 - Align native libraries to 16 KB page size for modern Android compatibility
 - Fix notification preference crash in settings
 - Fix app version detection in About screen
-
-## [6.5.0-c] - 2026-05-12
-
-Initial community release based on upstream AdAway 6.5.0.
-
-- Add Android TV UI with Leanback support
-- Redirect to dedicated TV interface on Android TV devices
-- Fix VPN unintended restarts and sync state issues
 
 ## [6.1.5] - Unreleased
 
