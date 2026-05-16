@@ -7,6 +7,9 @@
     <string name="pref_update_app_category">Mises à jour de l’application</string>
     <string name="pref_update_check_app_startup">Vérifier la présence d’une mise à jour au démarrage</string>
     <string name="pref_update_check_app_daily">Vérifier régulièrement la présence de mises à jour</string>
+    <string name="pref_update_check_now">Vérifier maintenant</string>
+    <string name="pref_update_check_now_update_available">Nouvelle version disponible : %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Aucune mise à jour disponible</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">Mises à jour des hôtes</string>
     <string name="pref_update_check">Vérifier la présence d’une mise à jour au démarrage</string>

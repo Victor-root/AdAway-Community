@@ -27,6 +27,11 @@
             app:key="@string/pref_update_check_app_daily_key"
             app:singleLineTitle="false"
             app:title="@string/pref_update_check_app_daily" />
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="@string/pref_update_check_now_key"
+            app:singleLineTitle="false"
+            app:title="@string/pref_update_check_now" />
     </PreferenceCategory>
 
     <PreferenceCategory

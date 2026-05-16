@@ -18,6 +18,7 @@
     <string name="pref_update_open_notification_preferences_key" translatable="false">openNotificationPreferences</string>
     <string name="pref_update_check_app_daily_key" translatable="false">updateCheckAppDaily</string>
     <bool name="pref_update_check_app_daily_def">true</bool>
+    <string name="pref_update_check_now_key" translatable="false">updateCheckNow</string>
     <string name="pref_update_check_hosts_daily_key" translatable="false">updateCheckHostsDaily</string>
     <bool name="pref_update_check_hosts_daily_def">true</bool>
     <string name="pref_automatic_update_daily_key" translatable="false">automaticUpdateDaily</string>

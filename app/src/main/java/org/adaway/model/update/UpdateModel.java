@@ -77,6 +77,20 @@ public class UpdateModel {
         }
     }
 
+    /**
+     * Fetch the latest release, publish the manifest, and return it directly.
+     * Safe to call from any background thread.
+     *
+     * @return The fetched manifest, or {@code null} on network/parse failure.
+     */
+    public Manifest checkForUpdateNow() {
+        Manifest fetched = downloadManifest();
+        if (fetched != null) {
+            this.manifest.postValue(fetched);
+        }
+        return fetched;
+    }
+
     private Manifest downloadManifest() {
         if (!this.versionInfo.isValid()) {
             return null;

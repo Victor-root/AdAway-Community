@@ -13,16 +13,21 @@ import static org.adaway.util.Constants.PREFS_NAME;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
+import org.adaway.AdAwayApplication;
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.model.source.SourceUpdateService;
 import org.adaway.model.update.ApkUpdateService;
+import org.adaway.model.update.Manifest;
+import org.adaway.model.update.UpdateModel;
+import org.adaway.util.AppExecutors;
 
 public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     @Override
@@ -31,6 +36,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
         addPreferencesFromResource(R.xml.preferences_update);
         bindNotificationPreferencesAction();
         bindAppUpdatePrefAction();
+        bindCheckNowAction();
         bindHostsUpdatePrefAction();
         updateNotificationPreferencesState();
     }
@@ -70,6 +76,30 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
             } else {
                 ApkUpdateService.disable(context);
             }
+            return true;
+        });
+    }
+
+    private void bindCheckNowAction() {
+        Context context = requireContext();
+        Preference checkNowPref = findPreference(getString(R.string.pref_update_check_now_key));
+        assert checkNowPref != null : PREFERENCE_NOT_FOUND;
+        UpdateModel updateModel = ((AdAwayApplication) context.getApplicationContext()).getUpdateModel();
+        checkNowPref.setOnPreferenceClickListener(preference -> {
+            preference.setEnabled(false);
+            AppExecutors.getInstance().networkIO().execute(() -> {
+                Manifest result = updateModel.checkForUpdateNow();
+                AppExecutors.getInstance().mainThread().execute(() -> {
+                    preference.setEnabled(true);
+                    String message;
+                    if (result != null && result.updateAvailable) {
+                        message = getString(R.string.pref_update_check_now_update_available, result.version);
+                    } else {
+                        message = getString(R.string.pref_update_check_now_up_to_date);
+                    }
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                });
+            });
             return true;
         });
     }
