@@ -138,11 +138,17 @@ public final class NotificationHelper {
      */
     public static void showAppInstalledNotification(@NonNull Context context) {
         NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
-        if (notificationManager == null || !notificationManager.areNotificationsEnabled()) {
+        if (notificationManager == null) {
+            timber.log.Timber.w("showAppInstalledNotification: NotificationManager null.");
+            return;
+        }
+        if (!notificationManager.areNotificationsEnabled()) {
+            timber.log.Timber.i("showAppInstalledNotification: notifications disabled; relying on toast.");
             return;
         }
         Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
         if (intent == null) {
+            timber.log.Timber.w("showAppInstalledNotification: no launch Intent for package.");
             return;
         }
         intent.setFlags(FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK);
