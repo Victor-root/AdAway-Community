@@ -2,46 +2,46 @@
 
 ## [6.5.1-c] - 2026-05-16
 
-- Remove leftover donation page from onboarding wizard
-- Polish all settings screens: titles no longer truncated with "…" and items align flush left when no icon is present
-- Restore in-app auto-update: the app now checks the Community fork's GitHub releases and downloads the latest APK directly, without opening the browser (Android still asks the user to confirm the install)
-- Download the update APK silently in the background, without the system DownloadManager notification cluttering the status bar
-- Automatically purge the downloaded APK from the cache after the update is installed, on the next app launch
-- Add an "Update now" entry in Settings → Updates that appears as soon as a new version is detected, mirroring the home-screen banner
-- Add a dedicated "App updates" notification channel so users can mute the new-version alert from system settings without affecting other notifications
-- Add an in-app banner on the home screen that surfaces a new version when one is found
-- Polish the update screen: restyled outlined update button, cleaner constraint layout so the progress bar and changelog flow naturally during install
-- Show a post-install toast + notification ("AdAway updated — Relaunch the app") on devices where the system installer's "Open" button silently fails (typically Android TV / Shield); skipped automatically when the app actually opens within 5 seconds of the install
-- Extend the app-update banner to the Android TV home screen and trigger the manifest fetch on launch so it appears the same way as on mobile
-- Show the running app version on the right of the Android TV home header so users can confirm at a glance which build they are on
-- Add a Settings entry on the Android TV home screen that opens the existing preferences screen via D-pad
-- Fix the Android TV launch flow showing the VpnService consent dialog twice: only run the VPN prep check on a fresh start, not on a configuration-change recreation triggered by the first theme application
-- Fix welcome screen text overflow: right-side word clipping and bottom cutoff on smaller displays, with a scrollable container when content does not fit
+* 🧹 Remove leftover donation page from onboarding wizard
+* 🎨 Polish all settings screens: titles no longer truncated with "…" and items align flush left when no icon is present
+* 🔄 Restore in-app auto-update: the app now checks the Community fork's GitHub releases and downloads the latest APK directly, without opening the browser (Android still asks the user to confirm the install)
+* 📥 Download the update APK silently in the background, without the system DownloadManager notification cluttering the status bar
+* 🗑️ Automatically purge the downloaded APK from the cache after the update is installed, on the next app launch
+* ⚡ Add an "Update now" entry in Settings → Updates that appears as soon as a new version is detected, mirroring the home-screen banner
+* 🔔 Add a dedicated "App updates" notification channel so users can mute the new-version alert from system settings without affecting other notifications
+* 🏠 Add an in-app banner on the home screen that surfaces a new version when one is found
+* 🧩 Polish the update screen: restyled outlined update button, cleaner constraint layout so the progress bar and changelog flow naturally during install
+* 📺 Show a post-install toast + notification ("AdAway updated — Relaunch the app") on devices where the system installer's "Open" button silently fails (typically Android TV / Shield); skipped automatically when the app actually opens within 5 seconds of the install
+* 📺 Extend the app-update banner to the Android TV home screen and trigger the manifest fetch on launch so it appears the same way as on mobile
+* 🏷️ Show the running app version on the right of the Android TV home header so users can confirm at a glance which build they are on
+* ⚙️ Add a Settings entry on the Android TV home screen that opens the existing preferences screen via D-pad
+* 🛡️ Fix the Android TV launch flow showing the VpnService consent dialog twice: only run the VPN prep check on a fresh start, not on a configuration-change recreation triggered by the first theme application
+* 📐 Fix welcome screen text overflow: right-side word clipping and bottom cutoff on smaller displays, with a scrollable container when content does not fit
 
 ## [6.5.0-c] - 2026-05-12
 
-- Add light/dark theme toggle on Android TV home screen (dark by default on TV)
-- Add Always-on VPN detection and persistent status indicator on Android TV
-- Add VPN troubleshooting dialog with ADB command fallback on Android TV
-- Improve Android TV home UI with brand header, hero status badge and icons
-- Fix Android TV layout so all controls fit on screen without clipping
-- Fix persistence dialog staying open when VPN settings are hidden on Android TV
-- Inline Preferences card on home screen, remove hamburger drawer
-- Add community branding and "Why this fork exists" FAQ section on home screen
-- Set default theme to follow system on mobile
-- Add dedicated About tab, remove built-in APK updater UI
-- Remove all donation and sponsorship prompts (onboarding page, home card, links)
-- Align native libraries to 16 KB page size for modern Android compatibility
-- Fix notification preference crash in settings
-- Fix app version detection in About screen
+* 🌗 Add light/dark theme toggle on Android TV home screen (dark by default on TV)
+* 🛡️ Add Always-on VPN detection and persistent status indicator on Android TV
+* 🧰 Add VPN troubleshooting dialog with ADB command fallback on Android TV
+* 📺 Improve Android TV home UI with brand header, hero status badge and icons
+* 📐 Fix Android TV layout so all controls fit on screen without clipping
+* 🔒 Fix persistence dialog staying open when VPN settings are hidden on Android TV
+* ⚙️ Inline Preferences card on home screen, remove hamburger drawer
+* 🏷️ Add community branding and "Why this fork exists" FAQ section on home screen
+* 🎨 Set default theme to follow system on mobile
+* ℹ️ Add dedicated About tab, remove built-in APK updater UI
+* 🧹 Remove all donation and sponsorship prompts (onboarding page, home card, links)
+* 🧱 Align native libraries to 16 KB page size for modern Android compatibility
+* 🔔 Fix notification preference crash in settings
+* ℹ️ Fix app version detection in About screen
 
 ## [6.1.5] - Unreleased
 
-- Add always-on VPN detection during setup
-- Improve web signal handling and OOM killer
-- Update mongoose web server
-- Update Android gradle plugin
-- Update NDK
+* 🛡️ Add always-on VPN detection during setup
+* 🌐 Improve web signal handling and OOM killer
+* 🕸️ Update mongoose web server
+* 🧰 Update Android gradle plugin
+* 🧱 Update NDK
 
 Special thanks to El-Virus, Fry-kun for its contribution.
 
