@@ -32,6 +32,11 @@
             app:key="@string/pref_update_check_now_key"
             app:singleLineTitle="false"
             app:title="@string/pref_update_check_now" />
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="@string/pref_update_install_key"
+            app:singleLineTitle="false"
+            app:title="@string/pref_update_install" />
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -10,6 +10,8 @@
     <string name="pref_update_check_now">Check now</string>
     <string name="pref_update_check_now_update_available">New version available: %1$s</string>
     <string name="pref_update_check_now_up_to_date">No update available</string>
+    <string name="pref_update_install">Update now</string>
+    <string name="pref_update_install_summary">Install version %1$s</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">Hosts updates</string>
     <string name="pref_update_check">Check for update at startup</string>

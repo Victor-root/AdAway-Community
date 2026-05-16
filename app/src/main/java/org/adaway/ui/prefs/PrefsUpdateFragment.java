@@ -27,6 +27,7 @@ import org.adaway.model.source.SourceUpdateService;
 import org.adaway.model.update.ApkUpdateService;
 import org.adaway.model.update.Manifest;
 import org.adaway.model.update.UpdateModel;
+import org.adaway.ui.update.UpdateActivity;
 import org.adaway.util.AppExecutors;
 
 public class PrefsUpdateFragment extends PreferenceFragmentCompat {
@@ -37,6 +38,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
         bindNotificationPreferencesAction();
         bindAppUpdatePrefAction();
         bindCheckNowAction();
+        bindInstallUpdateAction();
         bindHostsUpdatePrefAction();
         updateNotificationPreferencesState();
     }
@@ -101,6 +103,26 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
                 });
             });
             return true;
+        });
+    }
+
+    private void bindInstallUpdateAction() {
+        Context context = requireContext();
+        Preference installPref = findPreference(getString(R.string.pref_update_install_key));
+        assert installPref != null : PREFERENCE_NOT_FOUND;
+        UpdateModel updateModel = ((AdAwayApplication) context.getApplicationContext()).getUpdateModel();
+        installPref.setVisible(false);
+        installPref.setOnPreferenceClickListener(preference -> {
+            startActivity(new Intent(context, UpdateActivity.class));
+            return true;
+        });
+        updateModel.getManifest().observe(this, manifest -> {
+            if (manifest != null && manifest.updateAvailable) {
+                installPref.setSummary(getString(R.string.pref_update_install_summary, manifest.version));
+                installPref.setVisible(true);
+            } else {
+                installPref.setVisible(false);
+            }
         });
     }
 
