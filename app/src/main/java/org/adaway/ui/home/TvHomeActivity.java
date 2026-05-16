@@ -28,7 +28,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import org.adaway.BuildConfig;
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
@@ -75,7 +74,7 @@ public class TvHomeActivity extends AppCompatActivity {
             PreferenceHelper.setAbBlockMethod(this, VPN);
         }
 
-        ((TextView) findViewById(R.id.tv_version)).setText("v" + BuildConfig.VERSION_NAME);
+        ((TextView) findViewById(R.id.tv_version)).setText("v" + getCurrentVersionName());
 
         statusBadge = findViewById(R.id.tv_status_badge);
         statusIcon = findViewById(R.id.tv_status_icon);
@@ -269,6 +268,14 @@ public class TvHomeActivity extends AppCompatActivity {
         Intent prepareIntent;
         if (adBlockMethod == VPN && (prepareIntent = VpnService.prepare(this)) != null) {
             prepareVpnLauncher.launch(prepareIntent);
+        }
+    }
+
+    private String getCurrentVersionName() {
+        try {
+            return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+            return "?";
         }
     }
 
