@@ -121,7 +121,14 @@ public class TvHomeActivity extends AppCompatActivity {
             }
         });
 
-        checkFirstStep();
+        // Only on a true fresh start. On a configuration-change recreation
+        // (theme application during the first launch is the usual trigger here)
+        // savedInstanceState is non-null, and re-running checkFirstStep would
+        // queue a second VpnService consent dialog, forcing the user to click
+        // "OK" twice.
+        if (savedInstanceState == null) {
+            checkFirstStep();
+        }
 
         if (savedInstanceState == null && PreferenceHelper.getUpdateCheckAppStartup(this)) {
             homeViewModel.checkForAppUpdate();
