@@ -98,19 +98,26 @@
         app:srcCompat="@drawable/ic_sync_24dp"
         tools:visibility="invisible" />
 
-    <TextView
-        android:id="@+id/notificationsTextView"
+    <ScrollView
+        android:id="@+id/notificationsScrollView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/welcome_sync_notifications"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:fillViewport="true"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/errorTextView"
-        app:layout_constraintVertical_bias="0.0"/>
+        app:layout_constraintTop_toBottomOf="@+id/summaryTextView">
+
+        <TextView
+            android:id="@+id/notificationsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_sync_notifications"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

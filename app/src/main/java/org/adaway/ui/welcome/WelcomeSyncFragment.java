@@ -69,7 +69,7 @@ public class WelcomeSyncFragment extends WelcomeFragment {
         if (SDK_INT < TIRAMISU || requireActivity().checkSelfPermission(POST_NOTIFICATIONS) == PERMISSION_GRANTED) {
             this.requestPostNotificationsPermission = false;
         } else {
-            this.binding.notificationsTextView.setVisibility(VISIBLE);
+            this.binding.notificationsScrollView.setVisibility(VISIBLE);
             this.requestPostNotificationsPermission = true;
             new Timer(true).schedule(new TimerTask() {
                 @Override
