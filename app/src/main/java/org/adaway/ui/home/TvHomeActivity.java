@@ -33,8 +33,10 @@ import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.helper.ThemeHelper;
 import org.adaway.model.adblocking.AdBlockMethod;
+import org.adaway.model.update.Manifest;
 import org.adaway.ui.hosts.HostsSourcesActivity;
 import org.adaway.ui.log.TvLogActivity;
+import org.adaway.ui.update.UpdateActivity;
 
 import timber.log.Timber;
 
@@ -47,6 +49,7 @@ public class TvHomeActivity extends AppCompatActivity {
     private TextView stateDetailText;
     private TextView alwaysOnIndicator;
     private Button toggleButton;
+    private Button appUpdateButton;
     private Button updateButton;
     private Button syncButton;
     private Button dnsMonitorButton;
@@ -75,6 +78,7 @@ public class TvHomeActivity extends AppCompatActivity {
         stateDetailText = findViewById(R.id.tv_state_detail);
         alwaysOnIndicator = findViewById(R.id.tv_always_on_indicator);
         toggleButton = findViewById(R.id.btn_toggle);
+        appUpdateButton = findViewById(R.id.btn_app_update);
         updateButton = findViewById(R.id.btn_update);
         syncButton = findViewById(R.id.btn_sync);
         dnsMonitorButton = findViewById(R.id.btn_dns_monitor);
@@ -90,6 +94,7 @@ public class TvHomeActivity extends AppCompatActivity {
         homeViewModel.isAdBlocked().observe(this, this::updateStatus);
         homeViewModel.getState().observe(this, text -> stateDetailText.setText(text));
         homeViewModel.getPending().observe(this, pending -> progressBar.setVisibility(pending ? View.VISIBLE : View.GONE));
+        homeViewModel.getAppManifest().observe(this, this::bindAppUpdateBanner);
 
         toggleButton.setOnClickListener(v -> homeViewModel.toggleAdBlocking());
         updateButton.setOnClickListener(v -> homeViewModel.update());
@@ -253,6 +258,20 @@ public class TvHomeActivity extends AppCompatActivity {
         Intent prepareIntent;
         if (adBlockMethod == VPN && (prepareIntent = VpnService.prepare(this)) != null) {
             prepareVpnLauncher.launch(prepareIntent);
+        }
+    }
+
+    private void bindAppUpdateBanner(@Nullable Manifest manifest) {
+        if (manifest != null && manifest.updateAvailable) {
+            appUpdateButton.setText(getString(R.string.pref_update_install_summary, manifest.version));
+            appUpdateButton.setVisibility(View.VISIBLE);
+            appUpdateButton.setOnClickListener(v -> startActivity(new Intent(this, UpdateActivity.class)));
+            toggleButton.setNextFocusDownId(R.id.btn_app_update);
+            updateButton.setNextFocusUpId(R.id.btn_app_update);
+        } else {
+            appUpdateButton.setVisibility(View.GONE);
+            toggleButton.setNextFocusDownId(R.id.btn_update);
+            updateButton.setNextFocusUpId(R.id.btn_toggle);
         }
     }
 }
