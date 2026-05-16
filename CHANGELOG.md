@@ -1,5 +1,30 @@
 # Changelog
 
+## [6.5.1-c] - 2026-05-16
+
+- Add light/dark theme toggle on Android TV home screen (dark by default on TV)
+- Add Always-on VPN detection and persistent status indicator on Android TV
+- Add VPN troubleshooting dialog with ADB command fallback on Android TV
+- Improve Android TV home UI with brand header, hero status badge and icons
+- Fix Android TV layout so all controls fit on screen without clipping
+- Fix persistence dialog staying open when VPN settings are hidden on Android TV
+- Inline Preferences card on home screen, remove hamburger drawer
+- Add community branding and "Why this fork exists" FAQ section on home screen
+- Set default theme to follow system on mobile
+- Add dedicated About tab, remove built-in APK updater UI
+- Remove all donation and sponsorship prompts (onboarding page, home card, links)
+- Align native libraries to 16 KB page size for modern Android compatibility
+- Fix notification preference crash in settings
+- Fix app version detection in About screen
+
+## [6.5.0-c] - 2026-05-12
+
+Initial community release based on upstream AdAway 6.5.0.
+
+- Add Android TV UI with Leanback support
+- Redirect to dedicated TV interface on Android TV devices
+- Fix VPN unintended restarts and sync state issues
+
 ## [6.1.5] - Unreleased
 
 - Add always-on VPN detection during setup

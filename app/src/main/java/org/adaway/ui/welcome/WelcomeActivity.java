@@ -56,8 +56,7 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeNavigab
     private void bindDots() {
         this.dotImageViews = new ImageView[]{
                 this.binding.dot1ImageView,
-                this.binding.dot2ImageView,
-                this.binding.dot3ImageView
+                this.binding.dot2ImageView
         };
         highlightDot(this.binding.viewPager.getCurrentItem());
         this.binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {

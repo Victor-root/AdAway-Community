@@ -3,7 +3,6 @@
     <string name="welcome_title">欢迎</string>
     <string name="welcome_first_step">向导第一步</string>
     <string name="welcome_second_step">向导第二部</string>
-    <string name="welcome_last_step">向导最后一步</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">欢迎使用 AdAway！</string>

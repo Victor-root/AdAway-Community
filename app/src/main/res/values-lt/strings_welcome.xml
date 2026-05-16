@@ -3,7 +3,6 @@
     <string name="welcome_title">Sveiki</string>
     <string name="welcome_first_step">Pirmas žingsnis</string>
     <string name="welcome_second_step">Antras žingsnis</string>
-    <string name="welcome_last_step">Paskutinis žingsnis</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Sveiki, čia AdAway!</string>

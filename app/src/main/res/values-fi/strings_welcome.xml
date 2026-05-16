@@ -3,7 +3,6 @@
     <string name="welcome_title">Tervetuloa</string>
     <string name="welcome_first_step">Määrityksen ensimmäinen vaihe</string>
     <string name="welcome_second_step">Määrityksen toinen vaihe</string>
-    <string name="welcome_last_step">Määrityksen viimeinen vaihe</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Tervetuloa käyttämään AdAwaytä!</string>

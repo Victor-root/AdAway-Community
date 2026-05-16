@@ -3,7 +3,6 @@
     <string name="welcome_title">Ongi etorri</string>
     <string name="welcome_first_step">Laguntzailearen lehen pausua</string>
     <string name="welcome_second_step">Laguntzailearen bigarren pausua</string>
-    <string name="welcome_last_step">Laguntzailearen azken pausua</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Ongi etorri AdAway-ra!</string>

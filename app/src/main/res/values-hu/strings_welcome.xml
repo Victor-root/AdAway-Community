@@ -3,7 +3,6 @@
     <string name="welcome_title">Üdv</string>
     <string name="welcome_first_step">A varázsló első lépése</string>
     <string name="welcome_second_step">A varázsló második lépése</string>
-    <string name="welcome_last_step">A varázsló utolsó lépése</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Üdv az AdAway alkalmazásban!</string>

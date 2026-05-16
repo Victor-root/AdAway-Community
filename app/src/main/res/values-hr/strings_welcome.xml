@@ -3,7 +3,6 @@
     <string name="welcome_title">Dobrodošli</string>
     <string name="welcome_first_step">Prvi korak instalacije</string>
     <string name="welcome_second_step">Drugi korak instalacije</string>
-    <string name="welcome_last_step">Posljednji korak instalacije</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Dobrodošli u AdAway!</string>

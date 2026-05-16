@@ -3,7 +3,6 @@
     <string name="welcome_title">Сардэчна запрашаем</string>
     <string name="welcome_first_step">Першы крок</string>
     <string name="welcome_second_step">Другі крок</string>
-    <string name="welcome_last_step">Апошні крок</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Сардэчна запрашаем у AdAway!</string>

@@ -3,7 +3,6 @@
     <string name="welcome_title">ようこそ</string>
     <string name="welcome_first_step">最初のウィザード</string>
     <string name="welcome_second_step">次のウィザード</string>
-    <string name="welcome_last_step">最後のウィザード</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">AdAwayへようこそ!</string>

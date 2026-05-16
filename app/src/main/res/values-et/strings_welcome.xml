@@ -3,7 +3,6 @@
     <string name="welcome_title">Tere tulemast</string>
     <string name="welcome_first_step">Viisardi esimene samm</string>
     <string name="welcome_second_step">Viisardi teine samm</string>
-    <string name="welcome_last_step">Viisardi viimane samm</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Tere tulemast AdAwaysse!</string>

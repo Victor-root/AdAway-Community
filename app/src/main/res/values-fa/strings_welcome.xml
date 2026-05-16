@@ -3,7 +3,6 @@
     <string name="welcome_title">خوش آمدید</string>
     <string name="welcome_first_step">اولین قدم جادوگر</string>
     <string name="welcome_second_step">گام دوم جادوگر</string>
-    <string name="welcome_last_step">آخرین مرحله جادوگر</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">به برنامه AdAway مسدود کننده تبلیغات خوش آمدید</string>

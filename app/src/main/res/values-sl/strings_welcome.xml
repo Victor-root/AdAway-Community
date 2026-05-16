@@ -3,7 +3,6 @@
     <string name="welcome_title">Dobrodošli</string>
     <string name="welcome_first_step">Prvi korak čarovnika</string>
     <string name="welcome_second_step">Drugi korak čarovnika</string>
-    <string name="welcome_last_step">Zadnji korak čarovnika</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Dobrodošli v AdAway!</string>

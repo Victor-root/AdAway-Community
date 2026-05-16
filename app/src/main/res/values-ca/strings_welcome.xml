@@ -3,7 +3,6 @@
     <string name="welcome_title">Us donem la benvinguda</string>
     <string name="welcome_first_step">Primer pas de l\'assistent</string>
     <string name="welcome_second_step">Segon pas de l\'assistent</string>
-    <string name="welcome_last_step">Últim pas de l\'assistent</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Sigueu benvinguts a l\'AdAway!</string>

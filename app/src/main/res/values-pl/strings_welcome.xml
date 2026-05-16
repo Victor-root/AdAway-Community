@@ -3,7 +3,6 @@
     <string name="welcome_title">Zapraszamy</string>
     <string name="welcome_first_step">Kreator pierwszy krok</string>
     <string name="welcome_second_step">Drugi krok kreatora</string>
-    <string name="welcome_last_step">Ostatni krok kreatora</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Witamy w AdAway!</string>

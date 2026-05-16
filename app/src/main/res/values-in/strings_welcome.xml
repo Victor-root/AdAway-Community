@@ -3,7 +3,6 @@
     <string name="welcome_title">Selamat datang</string>
     <string name="welcome_first_step">Langkah pertama</string>
     <string name="welcome_second_step">Langkah Kedua</string>
-    <string name="welcome_last_step">Langkah ketiga</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Selamat datang di AdAway!</string>

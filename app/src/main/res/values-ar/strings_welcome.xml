@@ -3,7 +3,6 @@
     <string name="welcome_title">مرحبا </string>
     <string name="welcome_first_step">أول خطوة لتحضير التطبيق</string>
     <string name="welcome_second_step">ثاني خطوة لتحضير التطبيق</string>
-    <string name="welcome_last_step">آخر خطوة لتحضير التطبيق</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">مرحبًا بك في AdAway !</string>

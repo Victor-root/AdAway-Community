@@ -3,7 +3,6 @@
     <string name="welcome_title">Welcome</string>
     <string name="welcome_first_step">Wizard first step</string>
     <string name="welcome_second_step">Wizard second step</string>
-    <string name="welcome_last_step">Wizard last step</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Welcome to AdAway!</string>
@@ -42,8 +41,6 @@
     <string name="welcome_sync_retry_logo">Retry sync</string>
     <string name="welcome_sync_error">Failed to sync: %1$s Retry now?</string>
     <string name="welcome_sync_notifications">It can send notifications to display ad block status and control, and to notify about available app update (a few per year). Enable them if you want to stay up-to-date.</string>
-
-    <!-- Support -->
 
     <!-- Navigation buttons -->
     <string name="welcome_back_button">Back</string>
