@@ -178,6 +178,12 @@ public class TvHomeActivity extends AppCompatActivity {
         if (alwaysOnIndicator != null) {
             updateAlwaysOnIndicator();
         }
+        // Resume an APK install that was queued before the user was sent to the
+        // "install unknown apps" Settings screen. On Shield TV the AdAway process
+        // is often killed during that screen and Android restores only this
+        // launcher Activity (not UpdateActivity), so we have to drive the
+        // resume from here.
+        UpdateActivity.tryResumePendingInstall(this);
     }
 
     /**

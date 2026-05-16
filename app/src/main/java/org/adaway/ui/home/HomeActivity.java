@@ -104,6 +104,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         checkFirstStep();
+        UpdateActivity.tryResumePendingInstall(this);
     }
 
     private void checkFirstStep() {
