@@ -36,6 +36,7 @@ import org.adaway.model.adblocking.AdBlockMethod;
 import org.adaway.model.update.Manifest;
 import org.adaway.ui.hosts.HostsSourcesActivity;
 import org.adaway.ui.log.TvLogActivity;
+import org.adaway.ui.prefs.PrefsActivity;
 import org.adaway.ui.update.UpdateActivity;
 
 import timber.log.Timber;
@@ -56,6 +57,7 @@ public class TvHomeActivity extends AppCompatActivity {
     private Button sourcesButton;
     private Button persistenceButton;
     private Button themeButton;
+    private Button settingsButton;
     private ProgressBar progressBar;
 
     private ActivityResultLauncher<Intent> prepareVpnLauncher;
@@ -85,6 +87,7 @@ public class TvHomeActivity extends AppCompatActivity {
         sourcesButton = findViewById(R.id.btn_sources);
         persistenceButton = findViewById(R.id.btn_persistence);
         themeButton = findViewById(R.id.btn_theme);
+        settingsButton = findViewById(R.id.btn_settings);
         progressBar = findViewById(R.id.progress_bar);
 
         bindThemeButton();
@@ -107,6 +110,7 @@ public class TvHomeActivity extends AppCompatActivity {
             PreferenceHelper.setTvAlwaysOnVpnHintShown(this, true);
             showAlwaysOnVpnDialog();
         });
+        settingsButton.setOnClickListener(v -> startActivity(new Intent(this, PrefsActivity.class)));
 
         prepareVpnLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == RESULT_OK) {

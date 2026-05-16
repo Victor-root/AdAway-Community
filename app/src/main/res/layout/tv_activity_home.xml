@@ -314,6 +314,7 @@
                 android:layout_marginEnd="12dp"
                 android:nextFocusUp="@id/btn_dns_monitor"
                 android:nextFocusRight="@id/btn_theme"
+                android:nextFocusDown="@id/btn_settings"
                 app:icon="@drawable/ic_vpn_key_24dp"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp"
@@ -329,12 +330,34 @@
                 android:focusable="true"
                 android:nextFocusUp="@id/btn_sources"
                 android:nextFocusLeft="@id/btn_persistence"
+                android:nextFocusDown="@id/btn_settings"
                 app:icon="@drawable/ic_brightness_medium_24dp"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp"
                 app:iconSize="20dp"
                 tools:text="Dark mode" />
         </LinearLayout>
+
+        <!-- Fourth row: Settings entry. Centered and alone so the layout stays
+             balanced without crowding row 3. -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_settings"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/preferences_drawer_item"
+            android:textSize="13sp"
+            android:paddingHorizontal="16dp"
+            android:focusable="true"
+            android:nextFocusUp="@id/btn_persistence"
+            app:icon="@drawable/ic_settings_24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_actions_row3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
