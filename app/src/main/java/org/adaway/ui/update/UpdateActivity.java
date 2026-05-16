@@ -4,17 +4,25 @@ import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 import androidx.lifecycle.ViewModelProvider;
 
 import org.adaway.R;
 import org.adaway.databinding.UpdateActityBinding;
 import org.adaway.helper.ThemeHelper;
 import org.adaway.model.update.Manifest;
+import org.adaway.model.update.UpdateModel;
+
+import java.io.File;
+
+import timber.log.Timber;
 
 /**
  * This class is the application main activity.
@@ -54,11 +62,33 @@ public class UpdateActivity extends AppCompatActivity {
 
     private void bindProgress() {
         this.updateViewModel.getDownloadProgress().observe(this, progress -> {
+            if (progress == null) {
+                return;
+            }
             this.binding.updateButton.setVisibility(INVISIBLE);
             this.binding.downloadProgressBar.setVisibility(VISIBLE);
             this.binding.downloadProgressBar.setProgress(progress.getProgress(), true);
             this.binding.progressTextView.setText(progress.format(this));
+            if (progress instanceof CompleteDownloadStatus) {
+                launchInstaller();
+            }
         });
+    }
+
+    private void launchInstaller() {
+        File apkFile = new File(getExternalCacheDir(), UpdateModel.APK_FILE_NAME);
+        if (!apkFile.exists()) {
+            Timber.w("APK file not found after download.");
+            return;
+        }
+        Uri apkUri = FileProvider.getUriForFile(
+                this,
+                getPackageName() + ".fileprovider",
+                apkFile);
+        Intent install = new Intent(Intent.ACTION_VIEW)
+                .setDataAndType(apkUri, "application/vnd.android.package-archive")
+                .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivity(install);
     }
 
     private void markUpToDate(Manifest manifest) {
