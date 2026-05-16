@@ -69,7 +69,7 @@ If the official project becomes actively maintained again and equivalent fixes a
 
 Current community version:
 
-`6.5.0-c`
+`6.5.1-c`
 
 The `c` stands for **Community**.
 
