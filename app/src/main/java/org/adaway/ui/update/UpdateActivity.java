@@ -6,8 +6,11 @@ import static android.view.View.VISIBLE;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
@@ -31,6 +34,7 @@ import timber.log.Timber;
 public class UpdateActivity extends AppCompatActivity {
     private UpdateActityBinding binding;
     private UpdateViewModel updateViewModel;
+    private ActivityResultLauncher<Intent> unknownSourcesLauncher;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +42,21 @@ public class UpdateActivity extends AppCompatActivity {
         ThemeHelper.applyTheme(this);
         this.binding = UpdateActityBinding.inflate(getLayoutInflater());
         setContentView(this.binding.getRoot());
+
+        this.unknownSourcesLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (getPackageManager().canRequestPackageInstalls()) {
+                        launchInstaller();
+                    } else {
+                        // User came back without granting; restore the UI so they
+                        // can retry from the Update button instead of being stuck
+                        // on a frozen progress bar.
+                        this.binding.downloadProgressBar.setVisibility(GONE);
+                        this.binding.progressTextView.setText("");
+                        this.binding.updateButton.setVisibility(VISIBLE);
+                    }
+                });
 
         this.updateViewModel = new ViewModelProvider(this).get(UpdateViewModel.class);
         bindListeners();
@@ -78,6 +97,18 @@ public class UpdateActivity extends AppCompatActivity {
         File apkFile = new File(getExternalCacheDir(), UpdateModel.APK_FILE_NAME);
         if (!apkFile.exists()) {
             Timber.w("APK file not found after download.");
+            return;
+        }
+        // Android 8+ requires the per-app "install unknown apps" permission to be
+        // granted before ACTION_VIEW on an APK opens the system installer. Without
+        // this check, the first attempt only prompts the user to grant the
+        // permission; the install Intent itself is never re-fired, so the user
+        // grants the permission and then nothing happens. Request the permission
+        // here and let the launcher callback retry the install on return.
+        if (!getPackageManager().canRequestPackageInstalls()) {
+            Intent settings = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)
+                    .setData(Uri.parse("package:" + getPackageName()));
+            this.unknownSourcesLauncher.launch(settings);
             return;
         }
         Uri apkUri = FileProvider.getUriForFile(
