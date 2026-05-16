@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.lifecycle.ViewModelProvider;
 
+import io.noties.markwon.Markwon;
 import org.adaway.R;
 import org.adaway.databinding.UpdateActityBinding;
 import org.adaway.helper.ThemeHelper;
@@ -33,6 +34,7 @@ import timber.log.Timber;
 public class UpdateActivity extends AppCompatActivity {
     private UpdateActityBinding binding;
     private UpdateViewModel updateViewModel;
+    private Markwon markwon;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class UpdateActivity extends AppCompatActivity {
         this.binding = UpdateActityBinding.inflate(getLayoutInflater());
         setContentView(this.binding.getRoot());
 
+        this.markwon = Markwon.create(this);
         this.updateViewModel = new ViewModelProvider(this).get(UpdateViewModel.class);
         bindListeners();
         bindManifest();
@@ -172,13 +175,13 @@ public class UpdateActivity extends AppCompatActivity {
     private void markUpToDate(Manifest manifest) {
         this.binding.headerTextView.setText(R.string.update_up_to_date_header);
         this.binding.updateButton.setVisibility(GONE);
-        this.binding.changelogTextView.setText(manifest.changelog);
+        this.markwon.setMarkdown(this.binding.changelogTextView, manifest.changelog);
     }
 
     private void showUpdate(Manifest manifest) {
         this.binding.headerTextView.setText(R.string.update_update_available_header);
         this.binding.updateButton.setVisibility(VISIBLE);
-        this.binding.changelogTextView.setText(manifest.changelog);
+        this.markwon.setMarkdown(this.binding.changelogTextView, manifest.changelog);
     }
 
     private void startUpdate(View view) {

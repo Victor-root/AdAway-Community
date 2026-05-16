@@ -123,6 +123,8 @@ dependencies {
     implementation libs.okhttp3.okhttp
     // Logging related
     implementation libs.timber
+    // Markdown rendering for the GitHub release changelog
+    implementation libs.markwon.core
     if (keyStoreDefined) {
         implementation project(':sentrystub')
     } else {
