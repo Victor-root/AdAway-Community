@@ -38,7 +38,7 @@ public class UpdateModel {
     private static final String LATEST_RELEASE_URL =
             "https://api.github.com/repos/Victor-root/AdAway-Community/releases/latest";
     /** File name of the downloaded APK in the app's external cache dir. */
-    static final String APK_FILE_NAME = "adaway-community-update.apk";
+    public static final String APK_FILE_NAME = "adaway-community-update.apk";
 
     private final Context context;
     private final VersionInfo versionInfo;
