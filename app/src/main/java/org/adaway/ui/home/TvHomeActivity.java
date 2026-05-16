@@ -115,6 +115,10 @@ public class TvHomeActivity extends AppCompatActivity {
         });
 
         checkFirstStep();
+
+        if (savedInstanceState == null && PreferenceHelper.getUpdateCheckAppStartup(this)) {
+            homeViewModel.checkForAppUpdate();
+        }
     }
 
     /**
