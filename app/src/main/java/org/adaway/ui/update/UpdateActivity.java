@@ -1,7 +1,6 @@
 package org.adaway.ui.update;
 
 import static android.view.View.GONE;
-import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 import android.content.Intent;
@@ -65,7 +64,7 @@ public class UpdateActivity extends AppCompatActivity {
             if (progress == null) {
                 return;
             }
-            this.binding.updateButton.setVisibility(INVISIBLE);
+            this.binding.updateButton.setVisibility(GONE);
             this.binding.downloadProgressBar.setVisibility(VISIBLE);
             this.binding.downloadProgressBar.setProgress(progress.getProgress(), true);
             this.binding.progressTextView.setText(progress.format(this));
@@ -104,7 +103,7 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     private void startUpdate(View view) {
-        this.binding.updateButton.setVisibility(INVISIBLE);
+        this.binding.updateButton.setVisibility(GONE);
         this.binding.downloadProgressBar.setVisibility(VISIBLE);
         this.updateViewModel.update();
     }

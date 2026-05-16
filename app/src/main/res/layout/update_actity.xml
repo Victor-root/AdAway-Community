@@ -19,8 +19,10 @@
 
     <TextView
         android:id="@+id/headerTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/update_up_to_date_header"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -28,18 +30,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerImageView" />
 
+    <!-- Outlined white button matching the welcome screen design language -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/update_button"
-        android:layout_width="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp"
         android:text="@string/update_update_button"
+        android:textColor="?attr/colorControlNormal"
         android:visibility="gone"
+        app:backgroundTint="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerTextView"
-        app:strokeColor="@color/cardview_light_background"
-        app:strokeWidth="3dp" />
+        app:rippleColor="?attr/colorControlNormal"
+        app:strokeColor="?attr/colorControlNormal"
+        app:strokeWidth="2dp" />
 
     <ProgressBar
         android:id="@+id/downloadProgressBar"
@@ -47,16 +56,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:indeterminate="false"
         android:max="100"
         android:min="0"
         android:progress="0"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/update_button"
+        app:layout_goneMarginTop="24dp" />
 
     <TextView
         android:id="@+id/progressTextView"
@@ -79,7 +89,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_button">
+        app:layout_constraintTop_toBottomOf="@+id/progressTextView"
+        app:layout_goneMarginTop="24dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -92,7 +103,6 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
-                android:justificationMode="inter_word"
                 android:text="@string/update_last_changelog_title"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -105,7 +115,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-
                 android:layout_marginEnd="32dp"
                 android:justificationMode="inter_word"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"

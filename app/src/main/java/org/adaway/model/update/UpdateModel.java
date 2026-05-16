@@ -52,6 +52,14 @@ public class UpdateModel {
         this.manifest = new MutableLiveData<>();
         this.client = new OkHttpClient.Builder().build();
         ApkUpdateService.syncPreferences(context);
+        cleanUpPreviousDownload();
+    }
+
+    private void cleanUpPreviousDownload() {
+        File apkFile = new File(this.context.getExternalCacheDir(), APK_FILE_NAME);
+        if (apkFile.exists() && apkFile.delete()) {
+            Timber.i("Cleaned up previous APK download.");
+        }
     }
 
     public int getVersionCode() {
@@ -151,7 +159,7 @@ public class UpdateModel {
                 .setDescription(this.context.getString(R.string.update_notification_description))
                 .setDestinationUri(Uri.fromFile(apkFile))
                 .setMimeType("application/vnd.android.package-archive")
-                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
         DownloadManager downloadManager = this.context.getSystemService(DownloadManager.class);
         return downloadManager.enqueue(request);
     }
