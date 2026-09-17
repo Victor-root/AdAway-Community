@@ -200,11 +200,13 @@ public class DnsServerMapper {
         dumpNetworkInfo(connectivityManager);
         Network activeNetwork = connectivityManager.getActiveNetwork();
         if (activeNetwork == null) {
+            Timber.i("getNetworkDnsServers: no active network reported, falling back to any non-VPN network.");
             return getAnyNonVpnNetworkDns(connectivityManager);
         } else if (isNotVpnNetwork(connectivityManager, activeNetwork)) {
-            Timber.d("Get DNS servers from active network %s", activeNetwork);
+            Timber.i("Get DNS servers from active network %s", activeNetwork);
             return getNetworkDnsServers(connectivityManager, activeNetwork);
         } else {
+            Timber.i("getNetworkDnsServers: active network %s is our own VPN, falling back to a matching-transport network.", activeNetwork);
             return getDnsFromNonVpnNetworkWithMatchingTransportType(connectivityManager, activeNetwork);
         }
     }
@@ -222,7 +224,7 @@ public class DnsServerMapper {
     @SuppressWarnings("deprecation")
     private void dumpNetworkInfo(ConnectivityManager connectivityManager) {
         Network activeNetwork = connectivityManager.getActiveNetwork();
-        Timber.d("Dumping network and dns configuration:");
+        Timber.i("Dumping network and dns configuration:");
         for (Network network : connectivityManager.getAllNetworks()) {
             NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(network);
             boolean cellular = networkCapabilities != null && networkCapabilities.hasTransport(TRANSPORT_CELLULAR);
@@ -233,7 +235,7 @@ public class DnsServerMapper {
                     .stream()
                     .map(InetAddress::toString)
                     .collect(Collectors.joining(", "));
-            Timber.d(
+            Timber.i(
                     "Network %s %s: %s%s%s with dns %s",
                     network,
                     network.equals(activeNetwork) ? "[default]" : "[other]",
@@ -256,7 +258,7 @@ public class DnsServerMapper {
             if (isNotVpnNetwork(connectivityManager, network)) {
                 List<InetAddress> dnsServers = getNetworkDnsServers(connectivityManager, network);
                 if (!dnsServers.isEmpty()) {
-                    Timber.d("Get DNS servers from non VPN network %s", network);
+                    Timber.i("Get DNS servers from non VPN network %s", network);
                     return dnsServers;
                 }
             }
@@ -296,11 +298,12 @@ public class DnsServerMapper {
             if (networkCapabilities.hasTransport(activeNetworkTransport) && !networkCapabilities.hasTransport(TRANSPORT_VPN)) {
                 List<InetAddress> dns = getNetworkDnsServers(connectivityManager, network);
                 if (!dns.isEmpty()) {
-                    Timber.d("Get DNS servers from non VPN matching type network %s", network);
+                    Timber.i("Get DNS servers from non VPN matching type network %s", network);
                     return dns;
                 }
             }
         }
+        Timber.i("getDnsFromNonVpnNetworkWithMatchingTransportType: no matching-transport network found for transport %d.", activeNetworkTransport);
         return emptyList();
     }
 
