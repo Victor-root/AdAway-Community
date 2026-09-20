@@ -28,6 +28,13 @@ public class DnsQueryQueue {
      */
     private static final long DNS_TIMEOUT_SEC = 10;
     /**
+     * The number of consecutive unanswered queries after which the resolver is considered
+     * unresponsive (see {@link #isResolverUnresponsive()}). Deliberately more than one: an
+     * occasional dropped UDP packet is normal and must not trigger a reconnect on its own, only a
+     * resolver that answers nothing at all across several distinct queries.
+     */
+    private static final int MAX_CONSECUTIVE_TIMEOUTS = 5;
+    /**
      * The packet queue (older packets first, in the queue head).
      * <p>
      * Every access is synchronized on the queue itself. The worker thread that owns this queue
@@ -39,12 +46,21 @@ public class DnsQueryQueue {
      * could be established and then immediately die, over and over, until the app was restarted.
      */
     private final Queue<DnsQuery> queries;
+    /**
+     * The number of queries that timed out with no reply since the last one that did get a reply
+     * (or since the queue was last {@link #clear()}ed). Reset to <code>0</code> as soon as any
+     * query is answered, so a resolver that works at all keeps this at <code>0</code> regardless
+     * of how quiet the tunnel is otherwise; only a resolver that answers nothing across several
+     * distinct queries grows it. Guarded by the same lock as {@link #queries}.
+     */
+    private int consecutiveTimeouts;
 
     /**
      * Constructor.
      */
     public DnsQueryQueue() {
         this.queries = new LinkedList<>();
+        this.consecutiveTimeouts = 0;
     }
 
     /**
@@ -81,6 +97,25 @@ public class DnsQueryQueue {
             DnsQuery timedOutQuery = this.queries.remove();
             Timber.d("Query %s timed out.", timedOutQuery);
             timedOutQuery.close();
+            this.consecutiveTimeouts++;
+        }
+    }
+
+    /**
+     * Check whether the resolver looks unresponsive: {@link #MAX_CONSECUTIVE_TIMEOUTS} or more
+     * distinct queries timed out in a row with no reply to any of them in between.
+     * <p>
+     * Unlike {@link org.adaway.vpn.worker.VpnWatchdog}'s idle keep-alive (which only proves the
+     * local send path still works, since its empty probe is never meant to be answered), this
+     * looks at queries real apps actually made and waited on, so it stays quiet on a tunnel that
+     * is merely idle and only fires when traffic is being attempted and genuinely going
+     * unanswered.
+     *
+     * @return <code>true</code> if the resolver appears unresponsive, <code>false</code> otherwise.
+     */
+    public boolean isResolverUnresponsive() {
+        synchronized (this.queries) {
+            return this.consecutiveTimeouts >= MAX_CONSECUTIVE_TIMEOUTS;
         }
     }
 
@@ -122,6 +157,11 @@ public class DnsQueryQueue {
                     answered.add(query);
                 }
             }
+            // Proof the resolver is actually answering: whatever run of timeouts came before
+            // this does not matter any more.
+            if (!answered.isEmpty()) {
+                this.consecutiveTimeouts = 0;
+            }
         }
         // Reading the datagram and handing it to the packet proxy happens outside the lock: it
         // is the only part of this class that does I/O, and nothing it calls comes back here.
@@ -142,6 +182,9 @@ public class DnsQueryQueue {
         synchronized (this.queries) {
             pending = new ArrayList<>(this.queries);
             this.queries.clear();
+            // A fresh tunnel deserves a fresh count: any run of timeouts on the previous tunnel
+            // says nothing about whether the new one's resolver will answer.
+            this.consecutiveTimeouts = 0;
         }
         if (!pending.isEmpty()) {
             Timber.d("Dropping %d query(ies) left from the previous tunnel.", pending.size());

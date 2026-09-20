@@ -380,6 +380,14 @@ public class VpnWorker implements DnsPacketProxy.EventLoop {
         // invalidate one of the sockets we want to read from either due to size or time out
         // constraints
         this.dnsQueryQueue.handleResponses();
+        if (this.dnsQueryQueue.isResolverUnresponsive()) {
+            // The local send path is fine (nothing threw), but real queries keep going
+            // unanswered: the tunnel looks up but is not actually working. Force a reconnect
+            // through the same path a network error takes, which re-reads the DNS servers from
+            // the active network from scratch instead of insisting on the one that stopped
+            // answering.
+            throw new VpnNetworkException("No DNS reply received for several consecutive queries; the resolver looks unresponsive.");
+        }
         if (deviceReadyToWrite) {
             writeToDevice(fileOutputStream);
         }
