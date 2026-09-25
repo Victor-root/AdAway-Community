@@ -31,6 +31,7 @@ import android.system.Os;
 import android.system.StructPollfd;
 
 import org.adaway.helper.PreferenceHelper;
+import org.adaway.util.log.SystemRestrictionsLog;
 import org.adaway.vpn.VpnService;
 import org.adaway.vpn.dns.DnsPacketProxy;
 import org.adaway.vpn.dns.DnsQueryQueue;
@@ -154,7 +155,11 @@ public class VpnWorker implements DnsPacketProxy.EventLoop {
         this.stopping.set(false);
         // Re-arm the monitor: if a previous monitor cycle called stop() (running=false) before
         // triggering this restart via VpnServiceControls.start(), the new monitor task would
-        // exit immediately on the while(running.get()) check without this reset.
+        // exit immediately on the while(running.get()) check without this reset. Forget the
+        // previous tunnel's interface too: the tunnel was just closed above and the new one is
+        // not up yet, so a monitor still watching the old one would find no tunnel at its first
+        // check, misfire and stop itself for the whole life of the new tunnel.
+        this.connectionMonitor.reset();
         this.connectionMonitor.activate();
         ExecutorService executor = Executors.newFixedThreadPool(2);
         executor.submit(() -> work(runNumber));
@@ -288,6 +293,9 @@ public class VpnWorker implements DnsPacketProxy.EventLoop {
                     break;
                 }
                 Timber.w(e, "Network exception in vpn thread, reconnecting…");
+                // An EPERM here comes from the system firewall, not the network: record whether
+                // a power or data restriction is what cut the app off.
+                SystemRestrictionsLog.log(this.vpnService, "VPN network exception.");
                 // If an exception was thrown, notify status and try again
                 this.vpnService.notifyVpnStatus(RECONNECTING_NETWORK_ERROR);
             } catch (RuntimeException e) {

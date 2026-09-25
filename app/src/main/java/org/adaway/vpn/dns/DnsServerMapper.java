@@ -1,6 +1,7 @@
 package org.adaway.vpn.dns;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
+import static android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET;
 import static android.net.NetworkCapabilities.TRANSPORT_CELLULAR;
 import static android.net.NetworkCapabilities.TRANSPORT_VPN;
 import static android.net.NetworkCapabilities.TRANSPORT_WIFI;
@@ -213,11 +214,6 @@ public class DnsServerMapper {
 
     /**
      * Dump all network properties to logs.
-     * <p>
-     * Public so other components can log the same network snapshot {@link #configureVpn} uses
-     * when they hit a DNS failure of their own outside the tunnel's own establish path (e.g. a
-     * background job's plain {@link java.net.UnknownHostException}), to tell whether the tunnel
-     * was in a similarly confusing state at that exact moment.
      *
      * @param connectivityManager The connectivity manager.
      */
@@ -227,7 +223,7 @@ public class DnsServerMapper {
     // out to be unusable. getActiveNetwork() returns a single network and cannot answer that, so
     // there is no non-deprecated replacement for what these methods do.
     @SuppressWarnings("deprecation")
-    public static void dumpNetworkInfo(ConnectivityManager connectivityManager) {
+    private void dumpNetworkInfo(ConnectivityManager connectivityManager) {
         Network activeNetwork = connectivityManager.getActiveNetwork();
         Timber.i("Dumping network and dns configuration:");
         for (Network network : connectivityManager.getAllNetworks()) {
@@ -238,7 +234,7 @@ public class DnsServerMapper {
             LinkProperties linkProperties = connectivityManager.getLinkProperties(network);
             String dnsList = linkProperties == null ? "none" : linkProperties.getDnsServers()
                     .stream()
-                    .map(InetAddress::toString)
+                    .map(DnsServerMapper::redactForLog)
                     .collect(Collectors.joining(", "));
             Timber.i(
                     "Network %s %s: %s%s%s with dns %s",
@@ -252,6 +248,27 @@ public class DnsServerMapper {
     }
 
     /**
+     * Render a DNS server address for the shareable diagnostic log. IPv6 addresses keep only their
+     * first 32 bits: enough to tell resolvers apart (the provider shows there), while the rest can
+     * embed the router's hardware address and pinpoint the user's home connection.
+     *
+     * @param address The address to render.
+     * @return The address as safe to log.
+     */
+    private static String redactForLog(InetAddress address) {
+        if (!(address instanceof Inet6Address)) {
+            return address.getHostAddress();
+        }
+        if (address.isLinkLocalAddress()) {
+            return "fe80::(hidden)";
+        }
+        byte[] bytes = address.getAddress();
+        int firstGroup = (bytes[0] & 0xff) << 8 | (bytes[1] & 0xff);
+        int secondGroup = (bytes[2] & 0xff) << 8 | (bytes[3] & 0xff);
+        return Integer.toHexString(firstGroup) + ':' + Integer.toHexString(secondGroup) + "::(hidden)";
+    }
+
+    /**
      * Get the DNS server addresses of any network without VPN capability.
      *
      * @param connectivityManager The connectivity manager.
@@ -260,7 +277,7 @@ public class DnsServerMapper {
     @SuppressWarnings("deprecation") // getAllNetworks(), see dumpNetworkInfo().
     private List<InetAddress> getAnyNonVpnNetworkDns(ConnectivityManager connectivityManager) {
         for (Network network : connectivityManager.getAllNetworks()) {
-            if (isNotVpnNetwork(connectivityManager, network)) {
+            if (isNotVpnNetwork(connectivityManager, network) && hasInternet(connectivityManager.getNetworkCapabilities(network))) {
                 List<InetAddress> dnsServers = getNetworkDnsServers(connectivityManager, network);
                 if (!dnsServers.isEmpty()) {
                     Timber.i("Get DNS servers from non VPN network %s", network);
@@ -300,7 +317,9 @@ public class DnsServerMapper {
             if (networkCapabilities == null) {
                 continue;
             }
-            if (networkCapabilities.hasTransport(activeNetworkTransport) && !networkCapabilities.hasTransport(TRANSPORT_VPN)) {
+            if (networkCapabilities.hasTransport(activeNetworkTransport)
+                    && !networkCapabilities.hasTransport(TRANSPORT_VPN)
+                    && hasInternet(networkCapabilities)) {
                 List<InetAddress> dns = getNetworkDnsServers(connectivityManager, network);
                 if (!dns.isEmpty()) {
                     Timber.i("Get DNS servers from non VPN matching type network %s", network);
@@ -340,6 +359,20 @@ public class DnsServerMapper {
         }
         NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(network);
         return networkCapabilities != null && !networkCapabilities.hasTransport(TRANSPORT_VPN);
+    }
+
+    /**
+     * Check a network is meant to carry internet traffic. Carriers bring up extra cellular
+     * networks that are not (IMS for calls and SMS, MMS...), some of which publish DNS servers of
+     * their own: picking one of those when falling back would hand the tunnel a resolver ordinary
+     * traffic cannot reach. This is the capability the network declares, not its validation, so a
+     * freshly joined network qualifies straight away.
+     *
+     * @param networkCapabilities The network capabilities, <code>null</code> if unknown.
+     * @return <code>true</code> if the network carries internet traffic, <code>false</code> otherwise.
+     */
+    private static boolean hasInternet(NetworkCapabilities networkCapabilities) {
+        return networkCapabilities != null && networkCapabilities.hasCapability(NET_CAPABILITY_INTERNET);
     }
 
     /**

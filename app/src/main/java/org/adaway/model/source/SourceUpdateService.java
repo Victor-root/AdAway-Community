@@ -15,6 +15,7 @@ import org.adaway.AdAwayApplication;
 import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.model.adblocking.AdBlockModel;
+import org.adaway.model.error.HostError;
 import org.adaway.model.error.HostErrorException;
 
 import static androidx.work.ExistingPeriodicWorkPolicy.KEEP;
@@ -23,6 +24,8 @@ import static androidx.work.ListenableWorker.Result.failure;
 import static androidx.work.ListenableWorker.Result.retry;
 import static androidx.work.ListenableWorker.Result.success;
 import static java.util.concurrent.TimeUnit.HOURS;
+import static org.adaway.model.error.HostError.DOWNLOAD_FAILED;
+import static org.adaway.model.error.HostError.NO_CONNECTION;
 
 import timber.log.Timber;
 
@@ -143,9 +146,12 @@ public final class SourceUpdateService {
                 try {
                     doUpdate(application);
                 } catch (HostErrorException exception) {
-                    // Installation failed. Worker failed.
                     Timber.e(exception, "Failed to apply hosts file during background update.");
-                    return failure();
+                    // Not being able to reach the sources is usually a passing network outage:
+                    // retry with backoff rather than waiting for the next 6-hour period, as the
+                    // update check above already does.
+                    HostError error = exception.getError();
+                    return error == NO_CONNECTION || error == DOWNLOAD_FAILED ? retry() : failure();
                 }
             }
             // Return as success

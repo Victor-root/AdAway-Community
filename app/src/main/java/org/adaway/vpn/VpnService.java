@@ -63,6 +63,7 @@ import org.adaway.broadcast.Command;
 import org.adaway.broadcast.CommandReceiver;
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.ui.home.HomeActivity;
+import org.adaway.util.log.SystemRestrictionsLog;
 import org.adaway.vpn.dns.DnsServerMapper;
 import org.adaway.vpn.worker.VpnWorker;
 
@@ -642,6 +643,17 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
             // roam, captive-portal login), which reconcile() cannot see. onDnsServersMaybeChanged()
             // filters this down to a genuine change on the tunnel's own transport before rebuilding.
             onDnsServersMaybeChanged(this.monitoredType, linkProperties.getDnsServers());
+        }
+
+        @Override
+        public void onBlockedStatusChanged(@NonNull Network network, boolean blocked) {
+            // Diagnostic only: the system reports it cut (or restored) this app's own access to
+            // the network the tunnel forwards through, which turns every forwarded query into
+            // EPERM while the network itself looks fine.
+            Timber.i("%s network %s: access blocked for this app = %s.", this.monitoredType, network, blocked);
+            if (blocked) {
+                SystemRestrictionsLog.log(VpnService.this, "Network access blocked.");
+            }
         }
     }
 
