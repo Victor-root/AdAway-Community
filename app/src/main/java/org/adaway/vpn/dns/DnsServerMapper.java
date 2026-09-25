@@ -213,6 +213,11 @@ public class DnsServerMapper {
 
     /**
      * Dump all network properties to logs.
+     * <p>
+     * Public so other components can log the same network snapshot {@link #configureVpn} uses
+     * when they hit a DNS failure of their own outside the tunnel's own establish path (e.g. a
+     * background job's plain {@link java.net.UnknownHostException}), to tell whether the tunnel
+     * was in a similarly confusing state at that exact moment.
      *
      * @param connectivityManager The connectivity manager.
      */
@@ -222,7 +227,7 @@ public class DnsServerMapper {
     // out to be unusable. getActiveNetwork() returns a single network and cannot answer that, so
     // there is no non-deprecated replacement for what these methods do.
     @SuppressWarnings("deprecation")
-    private void dumpNetworkInfo(ConnectivityManager connectivityManager) {
+    public static void dumpNetworkInfo(ConnectivityManager connectivityManager) {
         Network activeNetwork = connectivityManager.getActiveNetwork();
         Timber.i("Dumping network and dns configuration:");
         for (Network network : connectivityManager.getAllNetworks()) {

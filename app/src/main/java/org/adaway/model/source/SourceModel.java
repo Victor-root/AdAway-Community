@@ -36,6 +36,7 @@ import org.adaway.db.entity.HostListItem;
 import org.adaway.db.entity.HostsSource;
 import org.adaway.model.error.HostErrorException;
 import org.adaway.model.git.GitHostsSource;
+import org.adaway.vpn.dns.DnsServerMapper;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,6 +44,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.MalformedURLException;
+import java.net.UnknownHostException;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -216,7 +218,7 @@ public class SourceModel {
      * @return returns {@code true} if device is offline, {@code false} otherwise.
      */
     private boolean isDeviceOffline() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) this.context.getSystemService(CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = getConnectivityManager();
         if (connectivityManager == null) {
             return false;
         }
@@ -230,6 +232,11 @@ public class SourceModel {
         }
         NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
         return capabilities == null || !capabilities.hasCapability(NET_CAPABILITY_INTERNET);
+    }
+
+    @Nullable
+    private ConnectivityManager getConnectivityManager() {
+        return (ConnectivityManager) this.context.getSystemService(CONNECTIVITY_SERVICE);
     }
 
     /**
@@ -280,6 +287,18 @@ public class SourceModel {
             return ZonedDateTime.parse(lastModified, RFC_1123_DATE_TIME);
         } catch (IOException | DateTimeParseException e) {
             Timber.e(e, "Exception while fetching last modified date of source %s.", url);
+            if (e instanceof UnknownHostException) {
+                // This ran because isDeviceOffline() found a network reporting internet
+                // capability, so a plain DNS failure right after is unexpected. Dump the same
+                // network snapshot the VPN reconnect path logs, to see what that network (and,
+                // if the ad-block method is VPN, the tunnel riding on it) looked like at this
+                // exact moment.
+                ConnectivityManager connectivityManager = getConnectivityManager();
+                if (connectivityManager != null) {
+                    Timber.w("DNS resolution failed for our own background sync despite a capable network; dumping network state.");
+                    DnsServerMapper.dumpNetworkInfo(connectivityManager);
+                }
+            }
             return null;
         }
     }
