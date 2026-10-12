@@ -26,11 +26,11 @@ libsu = "6.0.0"
 # VPN
 pcap4jCore = "1.8.2"
 pcap4jPacketfactoryStatic = "1.8.2"
-dnsjava = "3.5.3"
+dnsjava = "3.6.5"
 slf4j = "1.7.36"
 # Test
 junit = "4.13.2"
-json = "20220320"
+json = "20260814"
 androidxTestCore = "1.6.1"
 androidXCoreTesting = "2.2.0"
 
@@ -48,6 +48,7 @@ androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
 androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "work" }
 material = { module = "com.google.android.material:material", version.ref = "material" }

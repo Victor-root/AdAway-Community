@@ -1,3 +1,5 @@
+import javax.inject.Inject
+
 /**
  * Packages the executables built by ndk-build as lib<name>_exec.so.
  * If they look like libraries, they are packaged in the apk and deployed on the device in the lib folder!
@@ -11,41 +13,51 @@
  *
  * Help with files: https://docs.gradle.org/current/userguide/working_with_files.html
  */
-['Debug', 'Release'].each { buildType ->
-    def objFolders = [
-            layout.buildDirectory.dir("intermediates/ndkBuild/${buildType.toLowerCase()}/obj/local"),
-    ]
+abstract class RenameNativeExecutablesTask extends DefaultTask {
+    /**
+     * The module intermediates directory.
+     */
+    @Internal
+    abstract DirectoryProperty getIntermediatesDirectory()
 
-    def renameTask = tasks.register("renameJniLibAsExecutable${buildType}") {
-        dependsOn "externalNativeBuild${buildType}"
+    /**
+     * The build type, capitalized (Debug or Release).
+     */
+    @Input
+    abstract Property<String> getBuildType()
 
-        doLast {
-            def cxxFolder = layout.buildDirectory.dir("intermediates/cxx/${buildType}").get().asFile
-            def folders = objFolders.collect { it.get().asFile }
-            if (cxxFolder.isDirectory()) {
-                cxxFolder.eachDir { hashFolder ->
-                    folders.add(new File(hashFolder, 'obj/local'))
-                }
-            }
-            folders.findAll { it.isDirectory() }.each { objFolder ->
-                project.copy {
-                    from(objFolder) {
-                        // Only the executables, at <abi>/<name>
-                        include '*/*'
-                        exclude '**/*.a'
-                        exclude '**/*.d'
-                        exclude '**/*.o'
-                        exclude '**/*.so'
-                        exclude '**/*.txt'
-                    }
-                    into objFolder
-                    rename '(.+)', 'lib$1_exec.so'
-                    eachFile {
-                        logger.info("Packaging ${it.path} from ${objFolder}")
-                    }
-                }
-            }
+    @Inject
+    abstract FileSystemOperations getFileSystemOperations()
+
+    @TaskAction
+    void rename() {
+        File intermediates = intermediatesDirectory.get().asFile
+        String buildType = this.buildType.get()
+        List<File> objFolders = [new File(intermediates, "ndkBuild/${buildType.toLowerCase()}/obj/local")]
+        File cxxFolder = new File(intermediates, "cxx/${buildType}")
+        if (cxxFolder.isDirectory()) {
+            cxxFolder.eachDir { File hashFolder -> objFolders.add(new File(hashFolder, 'obj/local')) }
         }
+        objFolders.findAll { it.isDirectory() }.each { File objFolder ->
+            fileSystemOperations.copy { CopySpec spec ->
+                spec.from(objFolder) { CopySpec from ->
+                    // Only the executables, at <abi>/<name>
+                    from.include '*/*'
+                    from.exclude '**/*.a', '**/*.d', '**/*.o', '**/*.so', '**/*.txt'
+                }
+                spec.into objFolder
+                spec.rename '(.+)', 'lib$1_exec.so'
+            }
+            logger.info("Packaged the executables of ${objFolder}")
+        }
+    }
+}
+
+['Debug', 'Release'].each { String buildType ->
+    def renameTask = tasks.register("renameJniLibAsExecutable${buildType}", RenameNativeExecutablesTask) {
+        dependsOn "externalNativeBuild${buildType}"
+        intermediatesDirectory = layout.buildDirectory.dir('intermediates')
+        it.buildType = buildType
     }
 
     // merge<BuildType>NativeLibs, copy<BuildType>JniLibsProjectOnly and copy<BuildType>JniLibsProjectAndLocalJars

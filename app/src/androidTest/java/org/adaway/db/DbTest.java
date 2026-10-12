@@ -30,6 +30,7 @@ import org.junit.runner.RunWith;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * This class is a base class for testing database feature.
@@ -51,12 +52,12 @@ public abstract class DbTest {
     protected HostsSource externalHostSource;
 
     protected static <T> T getOrAwaitValue(final LiveData<T> liveData) throws InterruptedException {
-        final Object[] data = new Object[1];
+        final AtomicReference<T> data = new AtomicReference<>();
         final CountDownLatch latch = new CountDownLatch(1);
         Observer<T> observer = new Observer<T>() {
             @Override
             public void onChanged(@Nullable T o) {
-                data[0] = o;
+                data.set(o);
                 latch.countDown();
                 liveData.removeObserver(this);
             }
@@ -65,8 +66,7 @@ public abstract class DbTest {
         if (!latch.await(2, TimeUnit.SECONDS)) {
             fail("Failed to get LiveData value in time");
         }
-        //noinspection unchecked
-        return (T) data[0];
+        return data.get();
     }
 
     @Before

@@ -66,6 +66,11 @@ android {
         buildTypes.release.signingConfig = signingConfigs.release
     }
 
+    sourceSets {
+        // Exported Room schemas, for the migration tests
+        androidTest.assets.srcDirs += files("$projectDir/schemas")
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -150,4 +155,5 @@ dependencies {
     testImplementation libs.json
     androidTestImplementation libs.bundles.androidx.test
     androidTestImplementation libs.junit
+    androidTestImplementation libs.androidx.room.testing
 }

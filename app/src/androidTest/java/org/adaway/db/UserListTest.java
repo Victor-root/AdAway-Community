@@ -9,7 +9,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import org.adaway.db.entity.HostEntry;
+import org.adaway.db.entity.HostListItem;
 import org.junit.Test;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * This class the user lists use case where user can freely add blocked, allowed and redirected hosts.
@@ -153,5 +157,17 @@ public class UserListTest extends DbTest {
         assertEquals("ads.yahoo.com", entry.getHost());
         assertEquals(REDIRECTED, entry.getType());
         assertEquals("1.2.3.4", entry.getRedirection());
+    }
+
+    @Test
+    public void testUpsertUserItemReplacesSameHost() {
+        this.hostListItemDao.upsertUserItem(HostListItem.userItem(BLOCKED, "upsert.example.com", null));
+        this.hostListItemDao.upsertUserItem(HostListItem.userItem(ALLOWED, "upsert.example.com", null));
+
+        List<HostListItem> userItems = this.hostListItemDao.getUserList().stream()
+                .filter(item -> "upsert.example.com".equals(item.getHost()))
+                .collect(Collectors.toList());
+        assertEquals(1, userItems.size());
+        assertEquals(ALLOWED, userItems.get(0).getType());
     }
 }
