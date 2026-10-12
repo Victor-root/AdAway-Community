@@ -36,11 +36,21 @@ public final class ShellUtils {
         return Shell.cmd("ps -A | grep " + EXECUTABLE_PREFIX + executable + EXECUTABLE_SUFFIX).exec().isSuccess();
     }
 
+    /**
+     * Quote a path for a shell command.
+     *
+     * @param path The path to quote.
+     * @return The quoted path, safe to use as a single shell word.
+     */
+    public static String quote(String path) {
+        return escapedString(path);
+    }
+
     public static boolean runBundledExecutable(Context context, String executable, String parameters) {
+        // The bundled executables only link against system libraries: no LD_LIBRARY_PATH needed
         String nativeLibraryDir = context.getApplicationInfo().nativeLibraryDir;
-        String command = "LD_LIBRARY_PATH=" + nativeLibraryDir + " " +
-                nativeLibraryDir + File.separator + EXECUTABLE_PREFIX + executable + EXECUTABLE_SUFFIX + " " +
-                parameters + " &";
+        String command = quote(nativeLibraryDir + File.separator + EXECUTABLE_PREFIX + executable + EXECUTABLE_SUFFIX) +
+                " " + parameters + " &";
         return Shell.cmd(command).exec().isSuccess();
     }
 
@@ -61,7 +71,7 @@ public final class ShellUtils {
         if (file.canWrite()) {
             return true;
         }
-        return Shell.cmd("test -w " + escapedString(file.getAbsolutePath()))
+        return Shell.cmd("test -w " + quote(file.getAbsolutePath()))
                 .exec()
                 .isSuccess();
     }
@@ -72,7 +82,7 @@ public final class ShellUtils {
             return false;
         }
         String partition = partitionOptional.get();
-        Shell.Result result = Shell.cmd("mount -o " + type.getOption() + ",remount " + partition).exec();
+        Shell.Result result = Shell.cmd("mount -o " + type.getOption() + ",remount " + quote(partition)).exec();
         boolean success = result.isSuccess();
         if (!success) {
             Timber.w("Failed to remount partition %s as %s: %s.", partition, type.getOption(), mergeAllLines(result.getErr()));

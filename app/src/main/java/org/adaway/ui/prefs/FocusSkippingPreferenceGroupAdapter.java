@@ -25,7 +25,7 @@ import java.util.List;
  * same relationship every other disabled control (a plain disabled {@code Button}, for one)
  * already has by default.
  * <p>
- * Used by every {@code PreferenceFragmentCompat} in this package via {@code onCreateAdapter}, not
+ * Used by every {@link PrefsFragment} via {@code onCreateAdapter}, not
  * only the one this was reported on: the same stock behaviour, and the same fix, apply wherever a
  * preference is conditionally disabled (a category here, individual rows behind
  * {@code app:dependency} or a manual {@code setEnabled(false)} in {@link PrefsUpdateFragment}).

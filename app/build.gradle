@@ -108,6 +108,13 @@ android {
         unitTests.returnDefaultValues = true
     }
 
+    // F-Droid flags the dependency metadata block AGP adds to signed APKs, which only Google can
+    // read: leave it out of the APK and the bundle
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
     // Translations are managed on Transifex and may lag behind the default locale
     lint {
         disable 'MissingTranslation'

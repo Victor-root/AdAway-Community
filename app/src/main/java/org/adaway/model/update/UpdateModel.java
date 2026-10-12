@@ -1,11 +1,11 @@
 package org.adaway.model.update;
 
 import static android.app.DownloadManager.ACTION_DOWNLOAD_COMPLETE;
+import static org.adaway.util.Constants.GITHUB_REPOSITORY;
 
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -16,7 +16,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import org.adaway.R;
-import org.adaway.util.Constants;
+import org.adaway.helper.PreferenceHelper;
 import org.json.JSONException;
 
 import java.io.File;
@@ -39,17 +39,9 @@ import timber.log.Timber;
 public class UpdateModel {
     /** GitHub REST API endpoint for the latest release of the fork. */
     private static final String LATEST_RELEASE_URL =
-            "https://api.github.com/repos/Victor-root/AdAway-Community/releases/latest";
+            "https://api.github.com/repos/" + GITHUB_REPOSITORY + "/releases/latest";
     /** File name of the downloaded APK in the app's external cache dir. */
     public static final String APK_FILE_NAME = "adaway-community-update.apk";
-    /**
-     * SharedPreferences key set by {@link org.adaway.ui.update.UpdateActivity} while the
-     * user is in the system "install unknown apps" permission screen. The flag prevents
-     * {@link #cleanUpPreviousDownload()} from deleting the downloaded APK if the app
-     * process is killed for memory while that screen is in the foreground, so the
-     * install flow can resume on next launch instead of forcing a fresh download.
-     */
-    private static final String PREF_INSTALL_PENDING = "updateInstallPending";
 
     private final Context context;
     private final VersionInfo versionInfo;
@@ -79,26 +71,20 @@ public class UpdateModel {
     /**
      * Returns whether an install was started but the system installer has not yet
      * been launched. Set by {@link org.adaway.ui.update.UpdateActivity} while it
-     * routes the user through the "install unknown apps" permission screen.
+     * routes the user through the "install unknown apps" permission screen. The flag prevents
+     * {@link #cleanUpPreviousDownload()} from deleting the downloaded APK if the app
+     * process is killed for memory while that screen is in the foreground, so the
+     * install flow can resume on next launch instead of forcing a fresh download.
      */
     public static boolean isInstallPending(Context context) {
-        return context.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE)
-                .getBoolean(PREF_INSTALL_PENDING, false);
+        return PreferenceHelper.isInstallPending(context);
     }
 
     /**
      * @see #isInstallPending(Context)
      */
     public static void setInstallPending(Context context, boolean pending) {
-        SharedPreferences.Editor editor = context
-                .getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE)
-                .edit();
-        if (pending) {
-            editor.putBoolean(PREF_INSTALL_PENDING, true);
-        } else {
-            editor.remove(PREF_INSTALL_PENDING);
-        }
-        editor.apply();
+        PreferenceHelper.setInstallPending(context, pending);
     }
 
     public String getVersionName() {

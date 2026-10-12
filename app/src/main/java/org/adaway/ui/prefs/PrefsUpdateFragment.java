@@ -16,12 +16,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreferenceCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
 import org.adaway.AdAwayApplication;
 import org.adaway.R;
@@ -33,7 +29,7 @@ import org.adaway.model.update.UpdateModel;
 import org.adaway.ui.update.UpdateActivity;
 import org.adaway.util.AppExecutors;
 
-public class PrefsUpdateFragment extends PreferenceFragmentCompat {
+public class PrefsUpdateFragment extends PrefsFragment {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         getPreferenceManager().setSharedPreferencesName(PREFS_NAME);
@@ -46,16 +42,9 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
         updateNotificationPreferencesState();
     }
 
-    @NonNull
     @Override
-    public RecyclerView.Adapter<?> onCreateAdapter(@NonNull PreferenceScreen preferenceScreen) {
-        return new FocusSkippingPreferenceGroupAdapter(super.onCreateAdapter(preferenceScreen));
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        PrefsActivity.setAppBarTitle(this, R.string.pref_update_title);
+    protected int getTitle() {
+        return R.string.pref_update_title;
     }
 
     @Override

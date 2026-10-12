@@ -36,6 +36,10 @@ import java.util.Collections;
 import java.util.Set;
 
 public final class PreferenceHelper {
+    // Internal state, not user settings, so not declared in the preferences resources
+    private static final String INSTALL_PENDING_KEY = "updateInstallPending";
+    private static final String INSTALL_TOAST_TIMESTAMP_KEY = "updateInstallToastTimestamp";
+
     private PreferenceHelper() {
 
     }
@@ -224,6 +228,39 @@ public final class PreferenceHelper {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putStringSet(context.getString(R.string.pref_vpn_excluded_user_apps_key), excludedApplicationPackageNames);
         editor.apply();
+    }
+
+    /**
+     * Get whether an app update install was started but the system installer was not launched
+     * yet, while the user goes through the "install unknown apps" permission screen.
+     */
+    public static boolean isInstallPending(Context context) {
+        return prefs(context).getBoolean(INSTALL_PENDING_KEY, false);
+    }
+
+    public static void setInstallPending(Context context, boolean pending) {
+        SharedPreferences.Editor editor = prefs(context).edit();
+        if (pending) {
+            editor.putBoolean(INSTALL_PENDING_KEY, true);
+        } else {
+            editor.remove(INSTALL_PENDING_KEY);
+        }
+        editor.apply();
+    }
+
+    /**
+     * Get the time the post-install toast was scheduled at, {@code 0} if none is pending.
+     */
+    public static long getInstallToastTimestamp(Context context) {
+        return prefs(context).getLong(INSTALL_TOAST_TIMESTAMP_KEY, 0L);
+    }
+
+    public static void setInstallToastTimestamp(Context context, long timestamp) {
+        prefs(context).edit().putLong(INSTALL_TOAST_TIMESTAMP_KEY, timestamp).apply();
+    }
+
+    public static void clearInstallToastTimestamp(Context context) {
+        prefs(context).edit().remove(INSTALL_TOAST_TIMESTAMP_KEY).apply();
     }
 
     private static SharedPreferences prefs(Context context) {

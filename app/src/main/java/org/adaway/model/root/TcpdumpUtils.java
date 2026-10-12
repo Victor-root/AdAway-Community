@@ -40,6 +40,7 @@ import static java.util.Collections.emptyList;
 import static org.adaway.model.root.ShellUtils.isBundledExecutableRunning;
 import static org.adaway.model.root.ShellUtils.killBundledExecutable;
 import static org.adaway.model.root.ShellUtils.mergeAllLines;
+import static org.adaway.model.root.ShellUtils.quote;
 import static org.adaway.model.root.ShellUtils.runBundledExecutable;
 
 import timber.log.Timber;
@@ -94,7 +95,7 @@ class TcpdumpUtils {
         // "-v": verbose
         // "-t": don't print a timestamp
         // "-s 0": capture first 512 bit of packet to get DNS content
-        String parameters = "-i any -p -l -v -t -s 512 'udp dst port 53' >> " + file + " 2>&1";
+        String parameters = "-i any -p -l -v -t -s 512 'udp dst port 53' >> " + quote(file.getAbsolutePath()) + " 2>&1";
 
         return runBundledExecutable(context, TCPDUMP_EXECUTABLE, parameters);
     }

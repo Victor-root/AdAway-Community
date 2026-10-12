@@ -1,5 +1,7 @@
 package org.adaway.ui.help;
 
+import static org.adaway.util.Constants.GITHUB_REPOSITORY_URL;
+
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
@@ -34,9 +36,9 @@ public class AboutFragment extends Fragment {
         TextView versionTextView = view.findViewById(R.id.about_version);
         versionTextView.setText(getString(R.string.about_version, getVersionName()));
 
-        setLink(view, R.id.about_source_link, "https://github.com/Victor-root/AdAway-Community");
-        setLink(view, R.id.about_issues_link, "https://github.com/Victor-root/AdAway-Community/issues");
-        setLink(view, R.id.about_releases_link, "https://github.com/Victor-root/AdAway-Community/releases");
+        setLink(view, R.id.about_source_link, GITHUB_REPOSITORY_URL);
+        setLink(view, R.id.about_issues_link, GITHUB_REPOSITORY_URL + "/issues");
+        setLink(view, R.id.about_releases_link, GITHUB_REPOSITORY_URL + "/releases");
         setLink(view, R.id.about_upstream_link, "https://github.com/AdAway/AdAway");
 
         if (isTv(requireContext())) {

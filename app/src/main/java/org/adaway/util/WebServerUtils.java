@@ -53,6 +53,7 @@ import timber.log.Timber;
 
 import static org.adaway.model.root.ShellUtils.isBundledExecutableRunning;
 import static org.adaway.model.root.ShellUtils.killBundledExecutable;
+import static org.adaway.model.root.ShellUtils.quote;
 import static org.adaway.model.root.ShellUtils.runBundledExecutable;
 
 /**
@@ -86,7 +87,7 @@ public final class WebServerUtils {
         Path resourcePath = context.getFilesDir().toPath().resolve(WEB_SERVER_EXECUTABLE);
         inflateResources(context, resourcePath);
 
-        String parameters = "--resources " + resourcePath.toAbsolutePath() +
+        String parameters = "--resources " + quote(resourcePath.toAbsolutePath().toString()) +
                 (PreferenceHelper.getWebServerIcon(context) ? " --icon" : "") +
                 " > /dev/null 2>&1";
         runBundledExecutable(context, WEB_SERVER_EXECUTABLE, parameters);

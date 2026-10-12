@@ -1,15 +1,10 @@
 package org.adaway.ui.prefs;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceScreen;
-import androidx.recyclerview.widget.RecyclerView;
 
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
@@ -31,7 +26,7 @@ import static org.adaway.util.Constants.PREFS_NAME;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class PrefsMainFragment extends PreferenceFragmentCompat
+public class PrefsMainFragment extends PrefsFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
     private VpnPrefsBinder vpnPrefs;
     private RootPrefsBinder rootPrefs;
@@ -53,22 +48,15 @@ public class PrefsMainFragment extends PreferenceFragmentCompat
         getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
     }
 
-    @NonNull
     @Override
-    public RecyclerView.Adapter<?> onCreateAdapter(@NonNull PreferenceScreen preferenceScreen) {
-        return new FocusSkippingPreferenceGroupAdapter(super.onCreateAdapter(preferenceScreen));
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        PrefsActivity.setAppBarTitle(this, R.string.pref_main_title);
+    protected int getTitle() {
+        return R.string.pref_main_title;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        PrefsActivity.setAppBarTitle(this, R.string.pref_main_title);
+        PrefsActivity.setAppBarTitle(this, getTitle());
         this.rootPrefs.onResume();
     }
 

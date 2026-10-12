@@ -23,5 +23,7 @@
 -dontwarn org.openjsse.**
 
 ### dnsjava ###
+# Java 18+ InetAddressResolverProvider, only in the jar's META-INF/versions/18: Android never loads it
+-dontwarn org.xbill.DNS.spi.DnsjavaInetAddressResolverProvider
 -dontwarn lombok.Generated
 -dontwarn sun.net.spi.nameservice.NameServiceDescriptor

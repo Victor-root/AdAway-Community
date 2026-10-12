@@ -124,7 +124,7 @@ public class TvHomeActivity extends AppCompatActivity {
         VpnServiceControls.resurrectIfKilledExternally(this);
 
         String versionName = ((AdAwayApplication) getApplication()).getUpdateModel().getVersionName();
-        ((TextView) findViewById(R.id.tv_version)).setText("v" + versionName);
+        ((TextView) findViewById(R.id.tv_version)).setText(getString(R.string.tv_version, versionName));
 
         statusBadge = findViewById(R.id.tv_status_badge);
         statusIcon = findViewById(R.id.tv_status_icon);

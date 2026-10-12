@@ -5,7 +5,7 @@
 ### Lint checks
 
 Android development tools provide linter to check common errors.
-Use `./gradlew :app:lint` to run the linter and produce (human readable) reports as HTML file located at `app/build/reports/lint-results.html`.
+Use `./gradlew :app:lintRelease` to run the linter and produce (human readable) reports as HTML file located at `app/build/reports/lint-results-release.html`.
 
 > [!IMPORTANT] 
 > Check no new warning was introduced before releasing.
@@ -27,12 +27,10 @@ The AdAway project provides [a global changelog](CHANGELOG.md).
 ## 4. Building release APK
 
 The release apk must be built using the `release` flavor (not `debug`).
-Check the [contributing guide for building instructions](CONTRIBUTING.md#building-the-project).  
+Building needs JDK 17 or later (CI uses JDK 21), the Android SDK with platform 34 and NDK `27.2.12479018` (the native tcpdump and web server modules), with `sdk.dir` set in `local.properties`.
+Run `./gradlew test assembleRelease`; the APK is written to `app/build/outputs/apk/release/`.
 
-> [!IMPORTANT]
-> Rename to release apk file to follow the format: `AdAway-<version_name>-<yyyymmdd>.apk`
- 
-Example: _AdAway-6.1.2-20220817.apk_ for the version 6.1.2 built the 08/17/22.
+The build already names the APK `AdAway.Community.v<version_name>.apk`, the format of the published GitHub releases (e.g. _AdAway.Community.v6.6.1-c.apk_).
 
 ## 5. Distributing release
 

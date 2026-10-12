@@ -15,9 +15,6 @@ import androidx.activity.result.contract.ActivityResultContracts.CreateDocument;
 import androidx.activity.result.contract.ActivityResultContracts.OpenDocument;
 import androidx.annotation.NonNull;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceScreen;
-import androidx.recyclerview.widget.RecyclerView;
 
 import org.adaway.R;
 import org.adaway.model.backup.BackupExporter;
@@ -28,7 +25,7 @@ import org.adaway.model.backup.BackupImporter;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class PrefsBackupRestoreFragment extends PreferenceFragmentCompat {
+public class PrefsBackupRestoreFragment extends PrefsFragment {
     /**
      * The backup mime type.
      */
@@ -59,16 +56,9 @@ public class PrefsBackupRestoreFragment extends PreferenceFragmentCompat {
         bindRestorePref();
     }
 
-    @NonNull
     @Override
-    public RecyclerView.Adapter<?> onCreateAdapter(@NonNull PreferenceScreen preferenceScreen) {
-        return new FocusSkippingPreferenceGroupAdapter(super.onCreateAdapter(preferenceScreen));
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        PrefsActivity.setAppBarTitle(this, R.string.pref_backup_restore_title);
+    protected int getTitle() {
+        return R.string.pref_backup_restore_title;
     }
 
     private void registerForImportActivity() {

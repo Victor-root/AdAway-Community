@@ -52,7 +52,7 @@ static void signal_handler(int sig_num) {
     s_sig_num = sig_num;
 }
 
-void setup_signal_handler() {
+static void setup_signal_handler(void) {
     struct sigaction sa;
     memset(&sa, 0, sizeof(sa));
     sa.sa_handler = signal_handler;
@@ -63,7 +63,7 @@ void setup_signal_handler() {
 /*
  * Tells the kernel's out-of-memory killer to avoid this process.
  */
-void oom_adjust_setup(void) {
+static void oom_adjust_setup(void) {
     FILE *fp;
     char buf[32];
     if ((fp = fopen(OOM_ADJ_PATH, "r+")) == NULL) {
@@ -74,6 +74,7 @@ void oom_adjust_setup(void) {
     if (fgets(buf, sizeof(buf), fp) == NULL) {
         __android_log_print(ANDROID_LOG_INFO, THIS_FILE, "error reading %s: %s", OOM_ADJ_PATH,
                             strerror(errno));
+        fclose(fp);
         return;
     }
     char *end_ptr;
@@ -95,10 +96,9 @@ void oom_adjust_setup(void) {
     fclose(fp);
 }
 
-struct settings parse_cli_parameters(int argc, char *argv[]) {
+static struct settings parse_cli_parameters(int argc, char *argv[]) {
     struct settings s = {
             .init = false,
-            .tls_opts = { 0 },
             .icon = false,
             .debug = false
     };
@@ -141,7 +141,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (s.debug) {
-        __android_log_print(ANDROID_LOG_FATAL, THIS_FILE, "Debug mode activated.");
+        __android_log_print(ANDROID_LOG_INFO, THIS_FILE, "Debug mode activated.");
         mg_log_set(MG_LL_DEBUG);
     }
 

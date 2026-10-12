@@ -5,7 +5,6 @@ import static android.content.Intent.ACTION_MY_PACKAGE_REPLACED;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
@@ -13,7 +12,7 @@ import android.widget.Toast;
 import org.adaway.AdAwayApplication;
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
-import org.adaway.util.Constants;
+import org.adaway.helper.PreferenceHelper;
 
 import timber.log.Timber;
 
@@ -23,14 +22,6 @@ import timber.log.Timber;
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
 public class UpdateReceiver extends BroadcastReceiver {
-    /**
-     * SharedPreferences key stamped right after the install. A launcher Activity
-     * clears it via {@link #clearInstallToast(Context)} when it comes up, so the
-     * delayed toast is skipped on devices where the system installer's "Open"
-     * button actually launches the app (typically mobile) and only fires on
-     * devices where it silently fails (typically Android TV).
-     */
-    private static final String PREF_INSTALL_TOAST_TIMESTAMP = "updateInstallToastTimestamp";
     /**
      * Delay before the post-install toast fires. Tuned to comfortably outlast a
      * working "Open" button click (mobile launches in well under a second) while
@@ -50,11 +41,14 @@ public class UpdateReceiver extends BroadcastReceiver {
 
         long stamp = System.currentTimeMillis();
         Context appContext = context.getApplicationContext();
-        SharedPreferences prefs = appContext.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE);
-        prefs.edit().putLong(PREF_INSTALL_TOAST_TIMESTAMP, stamp).apply();
+        // Stamped right after the install. A launcher Activity clears it via clearInstallToast()
+        // when it comes up, so the delayed toast is skipped on devices where the system
+        // installer's "Open" button actually launches the app (typically mobile) and only fires
+        // on devices where it silently fails (typically Android TV).
+        PreferenceHelper.setInstallToastTimestamp(appContext, stamp);
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            long stored = prefs.getLong(PREF_INSTALL_TOAST_TIMESTAMP, 0L);
+            long stored = PreferenceHelper.getInstallToastTimestamp(appContext);
             if (stored != stamp) {
                 // A launcher Activity cleared the stamp (the app was opened, so
                 // the user already has a foreground view of the new version) or
@@ -62,7 +56,7 @@ public class UpdateReceiver extends BroadcastReceiver {
                 Timber.d("Skipping post-install toast; app was opened.");
                 return;
             }
-            prefs.edit().remove(PREF_INSTALL_TOAST_TIMESTAMP).apply();
+            PreferenceHelper.clearInstallToastTimestamp(appContext);
             String message = appContext.getString(R.string.notification_app_installed_title)
                     + ": "
                     + appContext.getString(R.string.notification_app_installed_text);
@@ -77,9 +71,6 @@ public class UpdateReceiver extends BroadcastReceiver {
      * the system installer's "Open" button don't get a redundant toast on top.
      */
     public static void clearInstallToast(Context context) {
-        context.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE)
-                .edit()
-                .remove(PREF_INSTALL_TOAST_TIMESTAMP)
-                .apply();
+        PreferenceHelper.clearInstallToastTimestamp(context);
     }
 }

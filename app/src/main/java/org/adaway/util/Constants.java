@@ -37,6 +37,12 @@ public final class Constants {
 
     public static final String ANDROID_SYSTEM_ETC_HOSTS = "/system/etc/" + HOSTS_FILENAME;
 
+    /**
+     * The GitHub repository the app is built and released from.
+     */
+    public static final String GITHUB_REPOSITORY = "Victor-root/AdAway-Community";
+    public static final String GITHUB_REPOSITORY_URL = "https://github.com/" + GITHUB_REPOSITORY;
+
     private Constants() {
 
     }

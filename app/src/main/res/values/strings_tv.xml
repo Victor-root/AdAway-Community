@@ -54,4 +54,5 @@
          clearing whatever filter is currently active. -->
     <string name="tv_dialog_search">Search</string>
     <string name="tv_dialog_clear_search">Clear</string>
+    <string name="tv_version" translatable="false">v%s</string>
 </resources>

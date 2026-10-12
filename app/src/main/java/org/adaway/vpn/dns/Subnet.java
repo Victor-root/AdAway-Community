@@ -55,7 +55,7 @@ class Subnet {
         try {
             return InetAddress.getByAddress(address);
         } catch (UnknownHostException e) {
-            throw new IllegalStateException("Failed to create address " + index + " in subnet " + this);
+            throw new IllegalStateException("Failed to create address " + index + " in subnet " + this, e);
         }
     }
 

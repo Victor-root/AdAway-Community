@@ -204,7 +204,7 @@
 
         <receiver
             android:name=".broadcast.BootReceiver"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -219,7 +219,7 @@
         </receiver>
         <receiver
             android:name=".broadcast.UpdateReceiver"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>

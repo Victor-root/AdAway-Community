@@ -8,6 +8,7 @@ import static org.adaway.model.error.HostError.NOT_ENOUGH_SPACE;
 import static org.adaway.model.error.HostError.PRIVATE_FILE_FAILED;
 import static org.adaway.model.error.HostError.REVERT_FAIL;
 import static org.adaway.model.root.ShellUtils.isWritable;
+import static org.adaway.model.root.ShellUtils.quote;
 import static org.adaway.util.Constants.ANDROID_SYSTEM_ETC_HOSTS;
 import static org.adaway.util.Constants.COMMAND_CHMOD_644;
 import static org.adaway.util.Constants.COMMAND_CHOWN;
@@ -155,7 +156,7 @@ public class RootModel extends AdBlockModel {
     private void checkApplied() {
         boolean applied = false;
 
-        Shell.Result result = Shell.cmd("head -n 1 " + ANDROID_SYSTEM_ETC_HOSTS).exec();
+        Shell.Result result = Shell.cmd("head -n 1 " + quote(ANDROID_SYSTEM_ETC_HOSTS)).exec();
         if (!result.isSuccess()) {
             Timber.e("Failed to read first line of hosts file. Error code: %s", result.getCode());
         } else {
@@ -302,9 +303,9 @@ public class RootModel extends AdBlockModel {
             }
             // Copy hosts file then set owner and permissions
             Shell.Result result = Shell.cmd(
-                    "dd if=" + privateFile + " of=" + target,
-                    COMMAND_CHOWN + " " + target,
-                    COMMAND_CHMOD_644 + " " + target
+                    "dd if=" + quote(privateFile) + " of=" + quote(target),
+                    COMMAND_CHOWN + " " + quote(target),
+                    COMMAND_CHMOD_644 + " " + quote(target)
             ).exec();
             if (!result.isSuccess()) {
                 throw new CommandException("Failed to copy hosts file: " + mergeAllLines(result.getErr()));

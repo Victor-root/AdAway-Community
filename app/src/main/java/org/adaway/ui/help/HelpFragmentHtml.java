@@ -50,7 +50,6 @@ import static android.text.Html.FROM_HTML_MODE_LEGACY;
 import timber.log.Timber;
 
 public class HelpFragmentHtml extends Fragment {
-    private static final String TAG = "Help";
     private static final String ARG_HTML_FILE = "htmlFile";
 
     /**
