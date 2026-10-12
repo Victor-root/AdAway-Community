@@ -26,7 +26,7 @@ android {
 
     defaultConfig {
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode libs.versions.appCode.get() as int
         versionName libs.versions.appName.get()
 

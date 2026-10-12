@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdk 33
+    compileSdk 34
     ndkVersion '27.2.12479018'
     namespace 'org.adaway.webserver'
 
     defaultConfig {
         minSdk 26
-        targetSdk 33
     }
 
     externalNativeBuild {
