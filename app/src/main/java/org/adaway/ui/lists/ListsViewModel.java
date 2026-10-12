@@ -25,7 +25,6 @@ import kotlinx.coroutines.CoroutineScope;
 import static androidx.lifecycle.Transformations.switchMap;
 import static androidx.paging.PagingLiveData.cachedIn;
 import static androidx.paging.PagingLiveData.getLiveData;
-import static org.adaway.db.entity.HostsSource.USER_SOURCE_ID;
 import static org.adaway.db.entity.ListType.ALLOWED;
 import static org.adaway.db.entity.ListType.BLOCKED;
 import static org.adaway.db.entity.ListType.REDIRECTED;
@@ -103,12 +102,7 @@ public class ListsViewModel extends AndroidViewModel {
     }
 
     public void addListItem(@NonNull ListType type, @NonNull String host, String redirection) {
-        HostListItem item = new HostListItem();
-        item.setType(type);
-        item.setHost(host);
-        item.setRedirection(redirection);
-        item.setEnabled(true);
-        item.setSourceId(USER_SOURCE_ID);
+        HostListItem item = HostListItem.userItem(type, host, redirection);
         EXECUTOR.execute(() -> {
             this.hostListItemDao.upsertUserItem(item);
             this.modelChanged.postValue(true);

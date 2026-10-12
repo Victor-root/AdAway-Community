@@ -42,6 +42,24 @@ public class HostListItem {
     @ColumnInfo(name = "source_id")
     private int sourceId;
 
+    /**
+     * Create an enabled item of the user list.
+     *
+     * @param type        The list type.
+     * @param host        The host name.
+     * @param redirection The redirection IP, {@code null} unless redirected.
+     * @return The user list item.
+     */
+    public static HostListItem userItem(@NonNull ListType type, @NonNull String host, String redirection) {
+        HostListItem item = new HostListItem();
+        item.setType(type);
+        item.setHost(host);
+        item.setRedirection(redirection);
+        item.setEnabled(true);
+        item.setSourceId(HostsSource.USER_SOURCE_ID);
+        return item;
+    }
+
     public int getId() {
         return id;
     }

@@ -23,7 +23,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.adaway.db.entity.HostsSource.USER_SOURCE_ID;
 
 /**
  * This class is an {@link AndroidViewModel} for the {@link LogActivity}.
@@ -102,12 +101,7 @@ public class LogViewModel extends AndroidViewModel {
 
     public void addListItem(@NonNull String host, @NonNull ListType type, String redirection) {
         // Create new host list item
-        HostListItem item = new HostListItem();
-        item.setType(type);
-        item.setHost(host);
-        item.setRedirection(redirection);
-        item.setEnabled(true);
-        item.setSourceId(USER_SOURCE_ID);
+        HostListItem item = HostListItem.userItem(type, host, redirection);
         // Insert host list item
         AppExecutors.getInstance().diskIO().execute(() -> this.hostListItemDao.upsertUserItem(item));
         // Update log entries
