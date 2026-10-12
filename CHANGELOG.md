@@ -6,6 +6,8 @@
 
 * Stop the update screen from scanning every installed app in the background for a feature that no longer exists
 * Fix adding a host from the DNS log creating a second, conflicting entry when the host was already in one of your lists
+* Fix sources with 1,000 to 1,099 hosts showing a raw count instead of "1k"
+* Update dnsjava, which parses the DNS queries in VPN mode, to 3.6.5 for its security fixes
 
 ### Changed
 
