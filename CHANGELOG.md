@@ -5,6 +5,7 @@
 ### Fixed
 
 * Stop the update screen from scanning every installed app in the background for a feature that no longer exists
+* Fix adding a host from the DNS log creating a second, conflicting entry when the host was already in one of your lists
 
 ### Changed
 

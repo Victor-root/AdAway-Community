@@ -20,11 +20,11 @@
 
 package org.adaway.ui.lists.type;
 
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.lifecycle.LiveData;
 import androidx.paging.PagingData;
@@ -55,80 +55,50 @@ public class RedirectedHostsFragment extends AbstractListFragment {
 
     @Override
     public void addItem() {
-        // Create dialog view
-        LayoutInflater factory = LayoutInflater.from(this.mActivity);
-        View view = factory.inflate(R.layout.lists_redirected_dialog, null);
-        EditText hostnameEditText = view.findViewById(R.id.list_dialog_hostname);
-        EditText ipEditText = view.findViewById(R.id.list_dialog_ip);
-        // Create dialog
-        AlertDialog alertDialog = new MaterialAlertDialogBuilder(this.mActivity)
-                .setCancelable(true)
-                .setTitle(R.string.list_add_dialog_redirect)
-                .setView(view)
-                // Setup buttons
-                .setPositiveButton(
-                        R.string.button_add,
-                        (dialog, which) -> {
-                            // Close dialog
-                            dialog.dismiss();
-                            // Check if hostname and IP are valid
-                            String hostname = hostnameEditText.getText().toString();
-                            String ip = ipEditText.getText().toString();
-                            if (RegexUtils.isValidHostname(hostname) && RegexUtils.isValidIP(ip)) {
-                                // Insert host to redirection list
-                                this.mViewModel.addListItem(ListType.REDIRECTED, hostname, ip);
-                            }
-                        }
-                )
-                .setNegativeButton(
-                        R.string.button_cancel,
-                        (dialog, which) -> dialog.dismiss()
-                )
-                .create();
-        // Show dialog
-        alertDialog.show();
-        // Set button validation behavior
-        AlertDialogValidator validator = new AlertDialogValidator(
-                alertDialog,
-                input -> {
-                    String hostname = hostnameEditText.getText().toString();
-                    String ip = ipEditText.getText().toString();
-                    return RegexUtils.isValidHostname(hostname) && RegexUtils.isValidIP(ip);
-                },
-                false
-        );
-        hostnameEditText.addTextChangedListener(validator);
-        ipEditText.addTextChangedListener(validator);
+        showDialog(null);
     }
 
     @Override
     protected void editItem(HostListItem item) {
+        showDialog(item);
+    }
+
+    /**
+     * Show the add or edit dialog.
+     *
+     * @param item The item to edit, {@code null} to add a new one.
+     */
+    private void showDialog(@Nullable HostListItem item) {
         // Create dialog view
-        LayoutInflater factory = LayoutInflater.from(this.mActivity);
-        View view = factory.inflate(R.layout.lists_redirected_dialog, null);
-        // Set hostname and IP
+        View view = LayoutInflater.from(this.mActivity).inflate(R.layout.lists_redirected_dialog, null);
         EditText hostnameEditText = view.findViewById(R.id.list_dialog_hostname);
         EditText ipEditText = view.findViewById(R.id.list_dialog_ip);
-        hostnameEditText.setText(item.getHost());
-        ipEditText.setText(item.getRedirection());
-        // Move cursor to end of EditText
-        Editable hostnameEditContent = hostnameEditText.getText();
-        hostnameEditText.setSelection(hostnameEditContent.length());
+        if (item != null) {
+            hostnameEditText.setText(item.getHost());
+            ipEditText.setText(item.getRedirection());
+            // Move cursor to end of EditText
+            hostnameEditText.setSelection(hostnameEditText.getText().length());
+        }
         // Create dialog
         AlertDialog alertDialog = new MaterialAlertDialogBuilder(this.mActivity)
                 .setCancelable(true)
-                .setTitle(getString(R.string.list_edit_dialog_redirect))
+                .setTitle(item == null ? R.string.list_add_dialog_redirect : R.string.list_edit_dialog_redirect)
                 .setView(view)
-                // Set buttons
-                .setPositiveButton(R.string.button_save,
+                // Setup buttons
+                .setPositiveButton(
+                        item == null ? R.string.button_add : R.string.button_save,
                         (dialog, which) -> {
                             // Close dialog
                             dialog.dismiss();
                             // Check hostname and IP validity
                             String hostname = hostnameEditText.getText().toString();
                             String ip = ipEditText.getText().toString();
-                            if (RegexUtils.isValidHostname(hostname) && RegexUtils.isValidIP(ip)) {
-                                // Update list item
+                            if (!isValid(hostname, ip)) {
+                                return;
+                            }
+                            if (item == null) {
+                                this.mViewModel.addListItem(ListType.REDIRECTED, hostname, ip);
+                            } else {
                                 this.mViewModel.updateListItem(item, hostname, ip);
                             }
                         }
@@ -140,17 +110,17 @@ public class RedirectedHostsFragment extends AbstractListFragment {
                 .create();
         // Show dialog
         alertDialog.show();
-        // Set button validation behavior
+        // Set button validation behavior: an edited item starts from a valid redirection
         AlertDialogValidator validator = new AlertDialogValidator(
                 alertDialog,
-                input -> {
-                    String hostname = hostnameEditText.getText().toString();
-                    String ip = ipEditText.getText().toString();
-                    return RegexUtils.isValidHostname(hostname) && RegexUtils.isValidIP(ip);
-                },
-                true
+                input -> isValid(hostnameEditText.getText().toString(), ipEditText.getText().toString()),
+                item != null
         );
         hostnameEditText.addTextChangedListener(validator);
         ipEditText.addTextChangedListener(validator);
+    }
+
+    private static boolean isValid(String hostname, String ip) {
+        return RegexUtils.isValidHostname(hostname) && RegexUtils.isValidIP(ip);
     }
 }

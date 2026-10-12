@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.core.app.NotificationCompat;
 
 import org.adaway.R;
@@ -84,23 +85,9 @@ public final class NotificationHelper {
         if (notificationManager == null || !notificationManager.areNotificationsEnabled()) {
             return;
         }
-        int color = context.getColor(R.color.notification);
-        String title = context.getString(R.string.notification_update_host_available_title);
-        String text = context.getString(R.string.notification_update_host_available_text);
         Intent intent = new Intent(context, HomeActivity.class);
-        intent.setFlags(FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = getActivity(context, 0, intent, FLAG_IMMUTABLE);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, UPDATE_HOSTS_NOTIFICATION_CHANNEL)
-                .setSmallIcon(R.drawable.logo)
-                .setColorized(true)
-                .setColor(color)
-                .setShowWhen(false)
-                .setContentTitle(title)
-                .setContentText(text)
-                .setContentIntent(pendingIntent)
-                .setPriority(PRIORITY_LOW)
-                .setAutoCancel(true);
-        notificationManager.notify(UPDATE_HOSTS_NOTIFICATION_ID, builder.build());
+        notify(context, notificationManager, UPDATE_HOSTS_NOTIFICATION_CHANNEL, UPDATE_HOSTS_NOTIFICATION_ID, intent,
+                R.string.notification_update_host_available_title, R.string.notification_update_host_available_text);
     }
 
     public static void showUpdateApplicationNotification(@NonNull Context context) {
@@ -108,23 +95,9 @@ public final class NotificationHelper {
         if (notificationManager == null || !notificationManager.areNotificationsEnabled()) {
             return;
         }
-        int color = context.getColor(R.color.notification);
-        String title = context.getString(R.string.notification_update_app_available_title);
-        String text = context.getString(R.string.notification_update_app_available_text);
         Intent intent = new Intent(context, UpdateActivity.class);
-        intent.setFlags(FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = getActivity(context, 0, intent, FLAG_IMMUTABLE);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, UPDATE_APP_NOTIFICATION_CHANNEL)
-                .setSmallIcon(R.drawable.logo)
-                .setColorized(true)
-                .setColor(color)
-                .setShowWhen(false)
-                .setContentTitle(title)
-                .setContentText(text)
-                .setContentIntent(pendingIntent)
-                .setPriority(PRIORITY_LOW)
-                .setAutoCancel(true);
-        notificationManager.notify(UPDATE_APP_NOTIFICATION_ID, builder.build());
+        notify(context, notificationManager, UPDATE_APP_NOTIFICATION_CHANNEL, UPDATE_APP_NOTIFICATION_ID, intent,
+                R.string.notification_update_app_available_title, R.string.notification_update_app_available_text);
     }
 
     /**
@@ -151,22 +124,37 @@ public final class NotificationHelper {
             timber.log.Timber.w("showAppInstalledNotification: no launch Intent for package.");
             return;
         }
+        notify(context, notificationManager, UPDATE_APP_NOTIFICATION_CHANNEL, APP_INSTALLED_NOTIFICATION_ID, intent,
+                R.string.notification_app_installed_title, R.string.notification_app_installed_text);
+    }
+
+    /**
+     * Post an auto-cancelling notification opening an activity.
+     *
+     * @param intent The intent of the activity to open when the notification is tapped.
+     */
+    private static void notify(
+            @NonNull Context context,
+            @NonNull NotificationManager notificationManager,
+            @NonNull String channel,
+            int notificationId,
+            @NonNull Intent intent,
+            @StringRes int title,
+            @StringRes int text
+    ) {
         intent.setFlags(FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = getActivity(context, 0, intent, FLAG_IMMUTABLE);
-        int color = context.getColor(R.color.notification);
-        String title = context.getString(R.string.notification_app_installed_title);
-        String text = context.getString(R.string.notification_app_installed_text);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, UPDATE_APP_NOTIFICATION_CHANNEL)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channel)
                 .setSmallIcon(R.drawable.logo)
                 .setColorized(true)
-                .setColor(color)
+                .setColor(context.getColor(R.color.notification))
                 .setShowWhen(false)
-                .setContentTitle(title)
-                .setContentText(text)
+                .setContentTitle(context.getString(title))
+                .setContentText(context.getString(text))
                 .setContentIntent(pendingIntent)
                 .setPriority(PRIORITY_LOW)
                 .setAutoCancel(true);
-        notificationManager.notify(APP_INSTALLED_NOTIFICATION_ID, builder.build());
+        notificationManager.notify(notificationId, builder.build());
     }
 
     public static void clearUpdateNotifications(@NonNull Context context) {

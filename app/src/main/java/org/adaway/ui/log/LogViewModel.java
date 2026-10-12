@@ -109,7 +109,7 @@ public class LogViewModel extends AndroidViewModel {
         item.setEnabled(true);
         item.setSourceId(USER_SOURCE_ID);
         // Insert host list item
-        AppExecutors.getInstance().diskIO().execute(() -> this.hostListItemDao.insert(item));
+        AppExecutors.getInstance().diskIO().execute(() -> this.hostListItemDao.upsertUserItem(item));
         // Update log entries
         updateLogEntryType(host, type);
     }

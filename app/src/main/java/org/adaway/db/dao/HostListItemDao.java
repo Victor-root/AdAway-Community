@@ -6,6 +6,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 
 import org.adaway.db.entity.HostListItem;
@@ -42,6 +43,23 @@ public interface HostListItemDao {
 
     @Query("SELECT id FROM hosts_lists WHERE host = :host AND source_id = 1 LIMIT 1")
     Optional<Integer> getHostId(String host);
+
+    /**
+     * Add a host to the user list, replacing the user list item of the same host if any, so a
+     * host can't end up in two user lists (both allowed and blocked) at once.
+     *
+     * @param item The user list item to add.
+     */
+    @Transaction
+    default void upsertUserItem(HostListItem item) {
+        Optional<Integer> id = getHostId(item.getHost());
+        if (id.isPresent()) {
+            item.setId(id.get());
+            update(item);
+        } else {
+            insert(item);
+        }
+    }
 
     @Query("SELECT COUNT(DISTINCT host) FROM hosts_lists WHERE type = 0 AND enabled = 1")
     LiveData<Integer> getBlockedHostCount();

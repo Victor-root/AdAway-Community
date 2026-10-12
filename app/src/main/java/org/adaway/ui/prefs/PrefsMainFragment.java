@@ -2,7 +2,6 @@ package org.adaway.ui.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.model.adblocking.AdBlockMethod;
+import org.adaway.util.log.ApplicationLog;
 
 import static java.util.Objects.requireNonNull;
 import static org.adaway.model.adblocking.AdBlockMethod.ROOT;
@@ -132,8 +132,7 @@ public class PrefsMainFragment extends PreferenceFragmentCompat
      * A release APK is not flagged debuggable, which is what we test.
      */
     private void hideDebugCategoryOnReleaseBuild() {
-        boolean debuggable = (requireContext().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
-        if (debuggable) {
+        if (ApplicationLog.isApplicationDebuggable(requireContext())) {
             return;
         }
         PreferenceCategory debugCategory = findPreference(getString(R.string.pref_debug_category_key));

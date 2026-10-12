@@ -18,7 +18,6 @@ import org.adaway.db.entity.ListType;
 import org.adaway.ui.lists.type.AbstractListFragment;
 import org.adaway.util.AppExecutors;
 
-import java.util.Optional;
 import java.util.concurrent.Executor;
 
 import kotlinx.coroutines.CoroutineScope;
@@ -111,13 +110,7 @@ public class ListsViewModel extends AndroidViewModel {
         item.setEnabled(true);
         item.setSourceId(USER_SOURCE_ID);
         EXECUTOR.execute(() -> {
-            Optional<Integer> id = this.hostListItemDao.getHostId(host);
-            if (id.isPresent()) {
-                item.setId(id.get());
-                this.hostListItemDao.update(item);
-            } else {
-                this.hostListItemDao.insert(item);
-            }
+            this.hostListItemDao.upsertUserItem(item);
             this.modelChanged.postValue(true);
         });
     }

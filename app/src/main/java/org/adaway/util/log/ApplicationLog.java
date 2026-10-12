@@ -40,7 +40,13 @@ public final class ApplicationLog {
         }
     }
 
-    private static boolean isApplicationDebuggable(Context context) {
+    /**
+     * Check whether the application is a debuggable (debug) build.
+     *
+     * @param context The application context.
+     * @return {@code true} for a debug build, {@code false} for a release build.
+     */
+    public static boolean isApplicationDebuggable(Context context) {
         return (context.getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
     }
 }
