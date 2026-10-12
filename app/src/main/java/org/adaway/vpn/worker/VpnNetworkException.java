@@ -1,6 +1,8 @@
 package org.adaway.vpn.worker;
 
 public class VpnNetworkException extends Exception {
+    private static final long serialVersionUID = 1L;
+
     public VpnNetworkException(String s) {
         super(s);
     }

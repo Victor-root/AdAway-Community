@@ -6,6 +6,8 @@ package org.adaway.model.error;
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
 public class HostErrorException extends Exception {
+    private static final long serialVersionUID = 1L;
+
     /**
      * The exception error type.
      */

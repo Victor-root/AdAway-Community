@@ -85,17 +85,6 @@ public class DnsQueryQueue {
     }
 
     /**
-     * Get the number of pending DNS queries.
-     *
-     * @return The number of pending DNS queries.
-     */
-    public int size() {
-        synchronized (this.queries) {
-            return this.queries.size();
-        }
-    }
-
-    /**
      * Get the query pollfds.
      *
      * @return The query pollfds.

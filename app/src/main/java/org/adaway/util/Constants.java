@@ -20,7 +20,7 @@
 
 package org.adaway.util;
 
-public class Constants {
+public final class Constants {
     public static final String PREFS_NAME = "preferences";
 
     public static final String LOCALHOST_IPV4 = "127.0.0.1";
@@ -36,4 +36,8 @@ public class Constants {
     public static final String COMMAND_CHMOD_644 = "chmod 644";
 
     public static final String ANDROID_SYSTEM_ETC_HOSTS = "/system/etc/" + HOSTS_FILENAME;
+
+    private Constants() {
+
+    }
 }

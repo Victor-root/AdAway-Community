@@ -6,6 +6,10 @@
 
 * Stop the update screen from scanning every installed app in the background for a feature that no longer exists
 
+### Changed
+
+* Shrink the APK by about 1.6 MB by no longer bundling an unused native C++ library
+
 ### Removed
 
 * Remove the "Hide reboot dialog after apply" setting, which had no effect since the reboot dialog was removed

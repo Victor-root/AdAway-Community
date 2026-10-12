@@ -40,7 +40,11 @@ import timber.log.Timber;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class MissingAppDialog {
+public final class MissingAppDialog {
+    private MissingAppDialog() {
+
+    }
+
     /**
      * Show a dialog to install a text editor.
      *

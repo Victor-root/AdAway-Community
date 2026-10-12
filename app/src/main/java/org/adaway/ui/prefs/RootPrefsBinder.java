@@ -3,6 +3,7 @@ package org.adaway.ui.prefs;
 import static android.os.Build.VERSION.SDK_INT;
 import static android.provider.Settings.ACTION_SECURITY_SETTINGS;
 import static android.widget.Toast.LENGTH_SHORT;
+import static java.util.Objects.requireNonNull;
 import static org.adaway.model.root.MountType.READ_ONLY;
 import static org.adaway.model.root.MountType.READ_WRITE;
 import static org.adaway.model.root.ShellUtils.isWritable;
@@ -130,7 +131,7 @@ final class RootPrefsBinder {
 
     private <T extends Preference> T require(int keyResId) {
         T preference = this.fragment.findPreference(this.fragment.getString(keyResId));
-        assert preference != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(preference, PREFERENCE_NOT_FOUND);
         return preference;
     }
 

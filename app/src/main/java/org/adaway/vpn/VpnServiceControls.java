@@ -51,16 +51,6 @@ public final class VpnServiceControls {
     }
 
     /**
-     * Check if the VPN service is started.
-     *
-     * @param context The application context.
-     * @return {@code true} if the VPN service is started, {@code false} otherwise.
-     */
-    public static boolean isStarted(Context context) {
-        return PreferenceHelper.getVpnServiceStatus(context).isStarted();
-    }
-
-    /**
      * Check whether this application's {@link VpnService} is actually alive, as seen by the
      * system, regardless of what the persisted status claims. Survives external process kills:
      * a fresh process asks the system, it does not trust its own memory.

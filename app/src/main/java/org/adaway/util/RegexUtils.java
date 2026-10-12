@@ -28,8 +28,12 @@ import java.util.regex.Pattern;
 
 import timber.log.Timber;
 
-public class RegexUtils {
+public final class RegexUtils {
     private static final Pattern WILDCARD_PATTERN = Pattern.compile("[*?]");
+
+    private RegexUtils() {
+
+    }
 
     /**
      * Check whether a hostname is valid.

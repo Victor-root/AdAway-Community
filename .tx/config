@@ -100,13 +100,6 @@ source_file = app/src/main/res/values/strings_source_edit.xml
 source_lang = en
 type = ANDROID
 
-[adaway.app-src-main-res-values-strings-support-xml--master]
-file_filter = app/src/main/res/values-<lang>/strings_support.xml
-minimum_perc = 0
-source_file = app/src/main/res/values/strings_support.xml
-source_lang = en
-type = ANDROID
-
 [adaway.app-src-main-res-values-strings-update-xml--master]
 file_filter = app/src/main/res/values-<lang>/strings_update.xml
 minimum_perc = 0

@@ -15,7 +15,7 @@ class LogEntry implements Comparable<LogEntry> {
     private final String host;
 
     @Nullable
-    private ListType type;
+    private final ListType type;
 
     LogEntry(@NonNull String host, @Nullable ListType type) {
         this.host = host;
@@ -30,10 +30,6 @@ class LogEntry implements Comparable<LogEntry> {
     @Nullable
     public ListType getType() {
         return this.type;
-    }
-
-    public void setType(@Nullable ListType type) {
-        this.type = type;
     }
 
     @Override

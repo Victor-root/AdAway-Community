@@ -245,7 +245,6 @@ class SourceLoader {
             // Check IP address validity or while list entry (if allowed)
             String ip = matcher.group(1);
             String hostname = matcher.group(2);
-            assert hostname != null;
             // Skip localhost name
             if (LOCALHOST_HOSTNAME.equals(hostname)) {
                 return null;

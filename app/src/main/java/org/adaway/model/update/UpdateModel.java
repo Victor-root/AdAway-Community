@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 
 import androidx.core.content.ContextCompat;
+import androidx.core.content.pm.PackageInfoCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -199,10 +200,10 @@ public class UpdateModel {
     }
 
     private static class VersionInfo {
-        private final int code;
+        private final long code;
         private final String name;
 
-        private VersionInfo(int code, String name) {
+        private VersionInfo(long code, String name) {
             this.code = code;
             this.name = name;
         }
@@ -214,7 +215,7 @@ public class UpdateModel {
             try {
                 PackageInfo packageInfo = context.getPackageManager()
                         .getPackageInfo(context.getPackageName(), 0);
-                return new VersionInfo(packageInfo.versionCode, packageInfo.versionName);
+                return new VersionInfo(PackageInfoCompat.getLongVersionCode(packageInfo), packageInfo.versionName);
             } catch (PackageManager.NameNotFoundException e) {
                 return new VersionInfo(0, "development");
             }

@@ -60,11 +60,15 @@ import static org.adaway.model.root.ShellUtils.runBundledExecutable;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class WebServerUtils {
+public final class WebServerUtils {
     public static final String TEST_URL = "https://localhost/internal-test";
     private static final String WEB_SERVER_EXECUTABLE = "webserver";
     private static final String LOCALHOST_CERTIFICATE = "localhost-2410.crt";
     private static final String LOCALHOST_CERTIFICATE_KEY = "localhost-2410.key";
+
+    private WebServerUtils() {
+
+    }
 
     /**
      * Start the web server in new thread with RootTools

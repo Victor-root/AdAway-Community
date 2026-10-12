@@ -86,10 +86,6 @@ public class SourceModel {
      */
     private final HostEntryDao hostEntryDao;
     /**
-     * The update available status.
-     */
-    private final MutableLiveData<Boolean> updateAvailable;
-    /**
      * The model state.
      */
     private final MutableLiveData<String> state;
@@ -110,8 +106,6 @@ public class SourceModel {
         this.hostListItemDao = database.hostsListItemDao();
         this.hostEntryDao = database.hostEntryDao();
         this.state = new MutableLiveData<>("");
-        this.updateAvailable = new MutableLiveData<>();
-        this.updateAvailable.setValue(false);
         SourceUpdateService.syncPreferences(context);
     }
 
@@ -122,15 +116,6 @@ public class SourceModel {
      */
     public LiveData<String> getState() {
         return this.state;
-    }
-
-    /**
-     * Get the update available status.
-     *
-     * @return {@code true} if source update is available, {@code false} otherwise.
-     */
-    public LiveData<Boolean> isUpdateAvailable() {
-        return this.updateAvailable;
     }
 
     /**
@@ -152,7 +137,6 @@ public class SourceModel {
         List<HostsSource> sources = this.hostsSourceDao.getEnabled();
         if (sources.isEmpty()) {
             // Return no update as no source
-            this.updateAvailable.postValue(false);
             return false;
         }
         // Update state
@@ -191,7 +175,6 @@ public class SourceModel {
         } else {
             setState(R.string.status_no_update_found);
         }
-        this.updateAvailable.postValue(updateAvailable);
         return updateAvailable;
     }
 
@@ -404,8 +387,6 @@ public class SourceModel {
         }
         // Synchronize hosts entries
         syncHostEntries();
-        // Mark no update available
-        this.updateAvailable.postValue(false);
     }
 
     /**

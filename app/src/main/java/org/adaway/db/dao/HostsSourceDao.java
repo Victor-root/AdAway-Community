@@ -5,7 +5,6 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
-import androidx.room.Update;
 
 import org.adaway.db.entity.HostsSource;
 
@@ -24,9 +23,6 @@ import static androidx.room.OnConflictStrategy.IGNORE;
 public interface HostsSourceDao {
     @Insert(onConflict = IGNORE)
     void insert(HostsSource source);
-
-    @Update
-    void update(HostsSource source);
 
     @Delete
     void delete(HostsSource source);

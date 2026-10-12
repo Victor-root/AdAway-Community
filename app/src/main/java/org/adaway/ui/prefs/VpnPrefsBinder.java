@@ -1,5 +1,6 @@
 package org.adaway.ui.prefs;
 
+import static java.util.Objects.requireNonNull;
 import static org.adaway.ui.prefs.PrefsActivity.PREFERENCE_NOT_FOUND;
 
 import android.content.ClipData;
@@ -58,7 +59,7 @@ final class VpnPrefsBinder {
 
     private <T extends Preference> T require(int keyResId) {
         T preference = this.fragment.findPreference(this.fragment.getString(keyResId));
-        assert preference != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(preference, PREFERENCE_NOT_FOUND);
         return preference;
     }
 

@@ -84,23 +84,7 @@ public class ApplyConfigurationSnackbar {
      * @return The observer instance.
      */
     public <T> Observer<T> createObserver() {
-        return new Observer<T>() {
-            boolean firstUpdate = true;
-
-            @Override
-            public void onChanged(@Nullable T t) {
-                // Check new data
-                if (t == null || (t instanceof Collection && ((Collection<?>) t).isEmpty())) {
-                    return;
-                }
-                // First update
-                if (this.firstUpdate) {
-                    this.firstUpdate = false;
-                    return;
-                }
-                ApplyConfigurationSnackbar.this.notifyUpdateAvailable();
-            }
-        };
+        return createPendingObserver(this::notifyUpdateAvailable);
     }
 
     /**

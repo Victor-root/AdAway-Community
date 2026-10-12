@@ -7,6 +7,7 @@ import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.TIRAMISU;
 import static android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS;
 import static android.provider.Settings.EXTRA_APP_PACKAGE;
+import static java.util.Objects.requireNonNull;
 import static org.adaway.ui.prefs.PrefsActivity.PREFERENCE_NOT_FOUND;
 import static org.adaway.util.Constants.PREFS_NAME;
 
@@ -66,7 +67,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     private void bindNotificationPreferencesAction() {
         Context context = requireContext();
         Preference openNotificationPref = findPreference(getString(R.string.pref_update_open_notification_preferences_key));
-        assert openNotificationPref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(openNotificationPref, PREFERENCE_NOT_FOUND);
         openNotificationPref.setOnPreferenceClickListener(preference -> {
             Intent settingsIntent = new Intent(ACTION_APP_NOTIFICATION_SETTINGS)
                     .addFlags(FLAG_ACTIVITY_NEW_TASK)
@@ -79,7 +80,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     private void bindAppUpdatePrefAction() {
         Context context = requireContext();
         SwitchPreferenceCompat checkAppDailyPref = findPreference(getString(R.string.pref_update_check_app_daily_key));
-        assert checkAppDailyPref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(checkAppDailyPref, PREFERENCE_NOT_FOUND);
         checkAppDailyPref.setOnPreferenceChangeListener((preference, newValue) -> {
             if (Boolean.TRUE.equals(newValue)) {
                 ApkUpdateService.enable(context);
@@ -93,7 +94,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     private void bindCheckNowAction() {
         Context context = requireContext();
         Preference checkNowPref = findPreference(getString(R.string.pref_update_check_now_key));
-        assert checkNowPref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(checkNowPref, PREFERENCE_NOT_FOUND);
         UpdateModel updateModel = ((AdAwayApplication) context.getApplicationContext()).getUpdateModel();
         checkNowPref.setOnPreferenceClickListener(preference -> {
             preference.setEnabled(false);
@@ -117,7 +118,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     private void bindInstallUpdateAction() {
         Context context = requireContext();
         Preference installPref = findPreference(getString(R.string.pref_update_install_key));
-        assert installPref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(installPref, PREFERENCE_NOT_FOUND);
         UpdateModel updateModel = ((AdAwayApplication) context.getApplicationContext()).getUpdateModel();
         installPref.setVisible(false);
         installPref.setOnPreferenceClickListener(preference -> {
@@ -137,7 +138,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     private void bindHostsUpdatePrefAction() {
         Context context = requireContext();
         Preference checkHostsDailyPref = findPreference(getString(R.string.pref_update_check_hosts_daily_key));
-        assert checkHostsDailyPref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(checkHostsDailyPref, PREFERENCE_NOT_FOUND);
         checkHostsDailyPref.setOnPreferenceChangeListener((preference, newValue) -> {
             if (Boolean.TRUE.equals(newValue)) {
                 boolean unmeteredNetworkOnly = PreferenceHelper.getUpdateOnlyOnWifi(context);
@@ -148,7 +149,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
             return true;
         });
         Preference updateOnlyOnWifiPref = findPreference(this.getString(R.string.pref_update_only_on_wifi_key));
-        assert updateOnlyOnWifiPref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(updateOnlyOnWifiPref, PREFERENCE_NOT_FOUND);
         updateOnlyOnWifiPref.setOnPreferenceChangeListener((preference, newValue) -> {
             SourceUpdateService.enable(context, Boolean.TRUE.equals(newValue));
             return true;
@@ -158,7 +159,7 @@ public class PrefsUpdateFragment extends PreferenceFragmentCompat {
     private void updateNotificationPreferencesState() {
         Context context = requireContext();
         Preference openNotificationPref = findPreference(getString(R.string.pref_update_open_notification_preferences_key));
-        assert openNotificationPref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(openNotificationPref, PREFERENCE_NOT_FOUND);
         boolean notificationsDisabled = SDK_INT >= TIRAMISU && context.checkSelfPermission(POST_NOTIFICATIONS) != PERMISSION_GRANTED;
         openNotificationPref.setVisible(notificationsDisabled);
     }

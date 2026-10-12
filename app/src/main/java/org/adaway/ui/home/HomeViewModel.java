@@ -83,10 +83,6 @@ public class HomeViewModel extends AndroidViewModel {
         return this.enableCompleted;
     }
 
-    public LiveData<Boolean> isUpdateAvailable() {
-        return this.sourceModel.isUpdateAvailable();
-    }
-
     public String getVersionName() {
         return this.updateModel.getVersionName();
     }

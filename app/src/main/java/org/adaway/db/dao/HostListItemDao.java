@@ -25,9 +25,6 @@ public interface HostListItemDao {
     @Insert(onConflict = REPLACE)
     void insert(HostListItem... item);
 
-    @Insert(onConflict = REPLACE)
-    void insert(List<HostListItem> items);
-
     @Update
     void update(HostListItem item);
 
@@ -39,9 +36,6 @@ public interface HostListItemDao {
 
     @Query("SELECT * FROM hosts_lists WHERE type = :type AND host LIKE :query AND ((:includeSources == 0 AND source_id == 1) || (:includeSources == 1)) GROUP BY host ORDER BY host ASC")
     PagingSource<Integer, HostListItem> loadList(int type, boolean includeSources, String query);
-
-    @Query("SELECT * FROM hosts_lists ORDER BY host ASC")
-    List<HostListItem> getAll();
 
     @Query("SELECT * FROM hosts_lists WHERE source_id = 1")
     List<HostListItem> getUserList();

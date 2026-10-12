@@ -171,10 +171,9 @@ class TcpdumpUtils {
         if (!file.exists()) {
             return true;
         }
-        // Truncate the file content
-        try (FileOutputStream outputStream = new FileOutputStream(file, false)) {
-            // Only truncate the file
-            outputStream.close();   // Useless but help lint
+        // Truncate the file content: opening it without append mode is enough
+        try {
+            new FileOutputStream(file, false).close();
         } catch (IOException exception) {
             Timber.e(exception, "Error while truncating the tcpdump file!");
             // Return failed to clear the log file

@@ -127,6 +127,9 @@ public final class ApkInstaller {
         }
     }
 
+    // PackageInfo.signatures is deprecated in favour of signingInfo, which only exists from
+    // Android 9 on: it stays the fallback for Android 8 and for a missing signingInfo.
+    @SuppressWarnings("deprecation")
     private static Set<String> signaturesOf(PackageInfo info) {
         Signature[] signatures;
         if (SDK_INT >= P && info.signingInfo != null) {

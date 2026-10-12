@@ -78,6 +78,10 @@ android {
     packaging {
         jniLibs {
             useLegacyPackaging = true
+            // The OpenSSL prefab package used by :webserver forces APP_STL := c++_shared, but
+            // none of the packaged native binaries links against libc++ (no NEEDED entry):
+            // don't ship the unused ~1.3 MB library for every ABI
+            excludes += ['**/libc++_shared.so']
         }
     }
 

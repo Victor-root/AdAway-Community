@@ -3,7 +3,7 @@ name: Android locale validation
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'app/src/main/res/values*/string*.xml'
 

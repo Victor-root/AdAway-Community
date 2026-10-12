@@ -16,6 +16,7 @@ import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.model.adblocking.AdBlockMethod;
 
+import static java.util.Objects.requireNonNull;
 import static org.adaway.model.adblocking.AdBlockMethod.ROOT;
 import static org.adaway.model.adblocking.AdBlockMethod.VPN;
 import static org.adaway.ui.prefs.PrefsActivity.PREFERENCE_NOT_FOUND;
@@ -84,7 +85,7 @@ public class PrefsMainFragment extends PreferenceFragmentCompat
 
     private void bindThemePrefAction() {
         Preference darkThemePref = findPreference(getString(R.string.pref_dark_theme_mode_key));
-        assert darkThemePref != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(darkThemePref, PREFERENCE_NOT_FOUND);
         darkThemePref.setOnPreferenceChangeListener((preference, newValue) -> {
             requireActivity().recreate();
             // Allow preference change
@@ -112,7 +113,7 @@ public class PrefsMainFragment extends PreferenceFragmentCompat
      */
     private void setCategoryEnabled(int keyResId, boolean enabled) {
         PreferenceCategory category = findPreference(getString(keyResId));
-        assert category != null : PREFERENCE_NOT_FOUND;
+        requireNonNull(category, PREFERENCE_NOT_FOUND);
         category.setEnabled(enabled);
         if (enabled) {
             // Deliberately not touching the children here. Several of them are governed by a

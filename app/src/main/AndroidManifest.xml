@@ -137,6 +137,7 @@
             android:parentActivityName=".ui.hosts.HostsSourcesActivity" />
         <activity
             android:name=".ui.log.LogActivity"
+            android:exported="false"
             android:label="@string/shortcut_dns_requests"
             android:parentActivityName=".ui.home.HomeActivity" />
         <activity
