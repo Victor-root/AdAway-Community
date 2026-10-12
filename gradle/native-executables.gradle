@@ -1,0 +1,57 @@
+/**
+ * Packages the executables built by ndk-build as lib<name>_exec.so.
+ * If they look like libraries, they are packaged in the apk and deployed on the device in the lib folder!
+ * Each module builds a stub lib<name>_exec.so shared library to declare it, which this replaces.
+ *
+ * AGP reads the native libraries from two places depending on the variant and the consumer: the
+ * ndk-build output (intermediates/cxx/<BuildType>/<hash>/obj/local/<abi>) and its legacy copy
+ * (intermediates/ndkBuild/<buildType>/obj/local/<abi>). The stub is replaced in both, by one task
+ * per build type wired to that build type's own consumers, so every variant packages its own
+ * executables whatever other tasks run in the same build.
+ *
+ * Help with files: https://docs.gradle.org/current/userguide/working_with_files.html
+ */
+['Debug', 'Release'].each { buildType ->
+    def objFolders = [
+            layout.buildDirectory.dir("intermediates/ndkBuild/${buildType.toLowerCase()}/obj/local"),
+    ]
+
+    def renameTask = tasks.register("renameJniLibAsExecutable${buildType}") {
+        dependsOn "externalNativeBuild${buildType}"
+
+        doLast {
+            def cxxFolder = layout.buildDirectory.dir("intermediates/cxx/${buildType}").get().asFile
+            def folders = objFolders.collect { it.get().asFile }
+            if (cxxFolder.isDirectory()) {
+                cxxFolder.eachDir { hashFolder ->
+                    folders.add(new File(hashFolder, 'obj/local'))
+                }
+            }
+            folders.findAll { it.isDirectory() }.each { objFolder ->
+                project.copy {
+                    from(objFolder) {
+                        // Only the executables, at <abi>/<name>
+                        include '*/*'
+                        exclude '**/*.a'
+                        exclude '**/*.d'
+                        exclude '**/*.o'
+                        exclude '**/*.so'
+                        exclude '**/*.txt'
+                    }
+                    into objFolder
+                    rename '(.+)', 'lib$1_exec.so'
+                    eachFile {
+                        logger.info("Packaging ${it.path} from ${objFolder}")
+                    }
+                }
+            }
+        }
+    }
+
+    // merge<BuildType>NativeLibs, copy<BuildType>JniLibsProjectOnly and copy<BuildType>JniLibsProjectAndLocalJars
+    tasks.matching {
+        it.name == "merge${buildType}NativeLibs" || it.name.startsWith("copy${buildType}JniLibsProject")
+    }.configureEach {
+        dependsOn renameTask
+    }
+}
