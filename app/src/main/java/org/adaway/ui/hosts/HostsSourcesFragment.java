@@ -43,7 +43,7 @@ import org.adaway.db.entity.HostsSource;
 import org.adaway.ui.adblocking.ApplyConfigurationSnackbar;
 import org.adaway.ui.source.SourceEditActivity;
 
-import static org.adaway.ui.source.SourceEditActivity.SOURCE_ID;
+import static org.adaway.ui.source.AbstractSourceEditActivity.SOURCE_ID;
 
 /**
  * This class is a {@link Fragment} to display and manage hosts sources.

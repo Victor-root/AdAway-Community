@@ -22,7 +22,7 @@ import org.adaway.helper.ThemeHelper;
 import org.adaway.ui.adblocking.ApplyConfigurationSnackbar;
 import org.adaway.ui.source.TvSourceEditActivity;
 
-import static org.adaway.ui.source.SourceEditActivity.SOURCE_ID;
+import static org.adaway.ui.source.AbstractSourceEditActivity.SOURCE_ID;
 
 /**
  * The Android TV screen for the hosts sources, built the same way {@link
