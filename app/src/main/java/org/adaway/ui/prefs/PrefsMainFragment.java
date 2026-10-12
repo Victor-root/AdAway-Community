@@ -55,8 +55,8 @@ public class PrefsMainFragment extends PreferenceFragmentCompat
 
     @NonNull
     @Override
-    public RecyclerView.Adapter onCreateAdapter(PreferenceScreen preferenceScreen) {
-        return new FocusSkippingPreferenceGroupAdapter(preferenceScreen);
+    public RecyclerView.Adapter<?> onCreateAdapter(@NonNull PreferenceScreen preferenceScreen) {
+        return new FocusSkippingPreferenceGroupAdapter(super.onCreateAdapter(preferenceScreen));
     }
 
     @Override
