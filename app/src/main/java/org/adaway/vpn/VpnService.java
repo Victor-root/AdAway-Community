@@ -56,12 +56,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import org.adaway.AdAwayApplication;
 import org.adaway.R;
 import org.adaway.broadcast.Command;
 import org.adaway.broadcast.CommandReceiver;
 import org.adaway.helper.PreferenceHelper;
+import org.adaway.model.adblocking.AdBlockModel;
+import org.adaway.model.vpn.VpnModel;
 import org.adaway.ui.home.HomeActivity;
 import org.adaway.vpn.dns.DnsServerMapper;
 import org.adaway.vpn.worker.VpnWorker;
@@ -87,8 +89,6 @@ import timber.log.Timber;
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
 public class VpnService extends android.net.VpnService implements Handler.Callback {
-    public static final String VPN_UPDATE_STATUS_INTENT = "org.jak_linux.dns66.VPN_UPDATE_STATUS";
-    public static final String VPN_UPDATE_STATUS_EXTRA = "VPN_STATUS";
     /*
      * Notification intent related.
      */
@@ -335,9 +335,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
                     // stop so the UI reflects the real state instead of staying stuck on "pause".
                     Timber.e(e, "startForeground denied, forcing VPN stop.");
                     PreferenceHelper.setVpnServiceStatus(this, STOPPED);
-                    Intent stoppedIntent = new Intent(VPN_UPDATE_STATUS_INTENT);
-                    stoppedIntent.putExtra(VPN_UPDATE_STATUS_EXTRA, STOPPED);
-                    LocalBroadcastManager.getInstance(this).sendBroadcast(stoppedIntent);
+                    notifyVpnModel(STOPPED);
                     stopSelf();
                     return;
                 }
@@ -348,11 +346,14 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
                 }
         }
 
-        // TODO BUG - Nobody is listening to this intent
-        // TODO BUG - VpnModel can lister to it to update the MainActivity according its current state
-        Intent intent = new Intent(VPN_UPDATE_STATUS_INTENT);
-        intent.putExtra(VPN_UPDATE_STATUS_EXTRA, status);
-        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+        notifyVpnModel(status);
+    }
+
+    private void notifyVpnModel(VpnStatus status) {
+        AdBlockModel model = ((AdAwayApplication) getApplication()).getAdBlockModel();
+        if (model instanceof VpnModel) {
+            ((VpnModel) model).onVpnStatusChanged(status);
+        }
     }
 
     private Notification getNotification(VpnStatus status) {

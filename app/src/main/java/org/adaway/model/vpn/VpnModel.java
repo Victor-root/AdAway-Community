@@ -3,13 +3,8 @@ package org.adaway.model.vpn;
 import static org.adaway.model.adblocking.AdBlockMethod.VPN;
 import static org.adaway.model.error.HostError.ENABLE_VPN_FAIL;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.util.LruCache;
-
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.adaway.R;
 import org.adaway.db.AppDatabase;
@@ -74,7 +69,6 @@ public class VpnModel extends AdBlockModel {
         this.recordingLogs = false;
         this.requestCount = 0;
         this.applied.postValue(VpnServiceControls.isRunning(context));
-        registerVpnStatusReceiver();
     }
 
     @Override
@@ -190,37 +184,25 @@ public class VpnModel extends AdBlockModel {
     }
 
     /**
-     * Listen to status broadcasts from {@link VpnService} and keep the {@code applied}
-     * LiveData consistent with the real service state. Without this the tile and main UI
-     * could remain stuck on "active" if the service is killed externally.
+     * Keep the {@code applied} LiveData consistent with the real service state, as reported by
+     * {@link VpnService} on every status change. Without this the tile and main UI could remain
+     * stuck on "active" if the service is killed externally.
+     *
+     * @param status The new VPN service status.
      */
-    private void registerVpnStatusReceiver() {
-        BroadcastReceiver receiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context ctx, Intent intent) {
-                Object extra = intent.getSerializableExtra(VpnService.VPN_UPDATE_STATUS_EXTRA);
-                if (!(extra instanceof VpnStatus)) {
-                    return;
-                }
-                VpnStatus status = (VpnStatus) extra;
-                Timber.d("VpnModel: received VPN status broadcast: %s.", status);
-                switch (status) {
-                    case RUNNING:
-                        applied.postValue(true);
-                        break;
-                    case STOPPED:
-                        applied.postValue(false);
-                        break;
-                    default:
-                        // STARTING / STOPPING / RECONNECTING / WAITING_FOR_NETWORK don't
-                        // change applied state; service is still considered active.
-                        break;
-                }
-            }
-        };
-        LocalBroadcastManager.getInstance(this.context).registerReceiver(
-                receiver,
-                new IntentFilter(VpnService.VPN_UPDATE_STATUS_INTENT)
-        );
+    public void onVpnStatusChanged(VpnStatus status) {
+        Timber.d("VpnModel: VPN status changed to %s.", status);
+        switch (status) {
+            case RUNNING:
+                this.applied.postValue(true);
+                break;
+            case STOPPED:
+                this.applied.postValue(false);
+                break;
+            default:
+                // STARTING / STOPPING / RECONNECTING / WAITING_FOR_NETWORK don't
+                // change applied state; service is still considered active.
+                break;
+        }
     }
 }
