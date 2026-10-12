@@ -28,7 +28,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.adaway.R;
 import org.adaway.databinding.HomeActivityBinding;
@@ -37,6 +36,7 @@ import org.adaway.helper.PreferenceHelper;
 import org.adaway.helper.ThemeHelper;
 import org.adaway.model.adblocking.AdBlockMethod;
 import org.adaway.model.error.HostError;
+import org.adaway.ui.dialog.HostErrorDialog;
 import org.adaway.ui.dialog.VpnPersistenceDialog;
 import org.adaway.ui.help.HelpActivity;
 import org.adaway.ui.hosts.HostsSourcesActivity;
@@ -304,28 +304,7 @@ public class HomeActivity extends AppCompatActivity {
             return;
         }
 
-        String message = getString(error.getDetailsKey()) + "\n\n" + getString(R.string.error_dialog_help);
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle(error.getMessageKey())
-                .setMessage(message)
-                .setNegativeButton(R.string.button_help, (dialog, id) -> {
-                    dialog.dismiss();
-                    startActivity(new Intent(this, HelpActivity.class));
-                });
-        if (error == HostError.DOWNLOAD_FAILED || error == HostError.NO_CONNECTION) {
-            // Both mean the last hosts sources fetch could not complete. Retrying is the
-            // one thing to actually do about it, so offer it right where the error shows
-            // up, the same "Retry sync" action the welcome screen already offers for this
-            // exact case, instead of sending the user hunting for the sync button elsewhere.
-            builder.setPositiveButton(R.string.welcome_sync_retry_logo, (dialog, id) -> {
-                dialog.dismiss();
-                this.homeViewModel.sync();
-            });
-        } else {
-            builder.setPositiveButton(R.string.button_close, (dialog, id) -> dialog.dismiss());
-        }
-        builder.create().show();
+        HostErrorDialog.show(this, error, this.homeViewModel::sync);
     }
 
     private void showUpdate(View view) {
