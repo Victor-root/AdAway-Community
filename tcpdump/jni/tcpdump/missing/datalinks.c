@@ -31,11 +31,9 @@
  * SUCH DAMAGE.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include <config.h>
 
-#include <tcpdump-stdinc.h>
+#include <netdissect-stdinc.h>
 
 #include <pcap.h>
 #include <stdlib.h>

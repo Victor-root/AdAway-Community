@@ -1,3 +1,49 @@
+/*
+ * We want a reentrant parser.
+ */
+%define api.pure
+
+/*
+ * We also want a reentrant scanner, so we have to pass the
+ * handle for the reentrant scanner to the parser, and the
+ * parser has to pass it to the lexical analyzer.
+ *
+ * We use void * rather than yyscan_t because, at least with some
+ * versions of Flex and Bison, if you use yyscan_t in %parse-param and
+ * %lex-param, you have to include scanner.h before grammar.h to get
+ * yyscan_t declared, and you have to include grammar.h before scanner.h
+ * to get YYSTYPE declared.  Using void * breaks the cycle; the Flex
+ * documentation says yyscan_t is just a void *.
+ */
+%parse-param   {void *yyscanner}
+%lex-param   {void *yyscanner}
+
+/*
+ * According to bison documentation, shift/reduce conflicts are not an issue
+ * in most parsers as long as the number does not evolve over time:
+ * https://www.gnu.org/software/bison/manual/html_node/Expect-Decl.html
+ * So, following the advice use %expect to check the amount of shift/reduce
+ * warnings.
+ *
+ * This doesn't appear to work in Berkeley YACC - 1.9 20170709; it still
+ * warns of 38 shift/reduce conflicts.
+ *
+ * The Berkeley YACC documentation:
+ *
+ *    https://invisible-island.net/byacc/manpage/yacc.html
+ *
+ * claims that "Bison's support for "%expect" is broken in more than one
+ * release.", but doesn't give details.  Hopefully, that only means that
+ * you get warnings even if you have the expected number of shift/reduce
+ * conflicts, not that anything else fails.
+ */
+%expect 38
+
+/*
+ * And we need to pass the compiler state to the scanner.
+ */
+%parse-param { compiler_state_t *cstate }
+
 %{
 /*
  * Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996
@@ -21,50 +67,68 @@
  *
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include <config.h>
 
-#ifdef WIN32
-#include <pcap-stdinc.h>
-#else /* WIN32 */
-#include <sys/types.h>
-#include <sys/socket.h>
-#endif /* WIN32 */
+/*
+ * grammar.h requires gencode.h and sometimes breaks in a polluted namespace
+ * (see ftmacros.h), so include it early.
+ */
+#include "gencode.h"
+#include "grammar.h"
 
 #include <stdlib.h>
 
-#ifndef WIN32
-#if __STDC__
-struct mbuf;
-struct rtentry;
-#endif
-
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#endif /* WIN32 */
-
 #include <stdio.h>
+
+#include "diag-control.h"
 
 #include "pcap-int.h"
 
-#include "gencode.h"
-#ifdef HAVE_NET_PFVAR_H
-#include <net/if.h>
-#include <net/pfvar.h>
-#include <net/if_pflog.h>
-#endif
+#include "scanner.h"
+
 #include "llc.h"
 #include "ieee80211.h"
+#include "pflog.h"
 #include <pcap/namedb.h>
 
 #ifdef HAVE_OS_PROTO_H
 #include "os-proto.h"
 #endif
 
-#define QSET(q, p, d, a) (q).proto = (p),\
-			 (q).dir = (d),\
-			 (q).addr = (a)
+/*
+ * Work around some bugs in Berkeley YACC prior to the 2017-07-09
+ * release.
+ *
+ * The 2005-05-05 release was the first one to define YYPATCH, so
+ * we treat any release that either 1) doesn't define YYPATCH or
+ * 2) defines it to a value < 20170709 as being buggy.
+ */
+#if defined(YYBYACC) && (!defined(YYPATCH) || YYPATCH < 20170709)
+/*
+ * Both Berkeley YACC and Bison define yydebug (under whatever name
+ * it has) as a global, but Bison does so only if YYDEBUG is defined.
+ * Berkeley YACC, prior to the 2017-07-09 release, defines it even if
+ * YYDEBUG isn't defined; declare it here to suppress a warning.  The
+ * 2017-07-09 release fixes that.
+ */
+#if !defined(YYDEBUG)
+extern int yydebug;
+#endif
+
+/*
+ * In Berkeley YACC, prior to the 2017-07-09 release, yynerrs (under
+ * whatever name it has) is global, even if it's building a reentrant
+ * parser.  In Bison, and in the Berkeley YACC 2017-07-09 release and
+ * later, it's local in reentrant parsers.
+ *
+ * Declare it to squelch a warning.
+ */
+extern int yynerrs;
+#endif
+
+#define QSET(q, p, d, a) (q).proto = (unsigned char)(p),\
+			 (q).dir = (unsigned char)(d),\
+			 (q).addr = (unsigned char)(a)
 
 struct tok {
 	int v;			/* value */
@@ -163,100 +227,123 @@ str2tok(const char *str, const struct tok *toks)
 	int i;
 
 	for (i = 0; toks[i].s != NULL; i++) {
-		if (pcap_strcasecmp(toks[i].s, str) == 0)
+		if (pcapint_strcasecmp(toks[i].s, str) == 0) {
+			/*
+			 * Just in case somebody is using this to
+			 * generate values of -1/0xFFFFFFFF.
+			 * That won't work, as it's indistinguishable
+			 * from an error.
+			 */
+			if (toks[i].v == -1)
+				abort();
 			return (toks[i].v);
+		}
 	}
 	return (-1);
 }
 
-int n_errors = 0;
-
-static struct qual qerr = { Q_UNDEF, Q_UNDEF, Q_UNDEF, Q_UNDEF };
+static const struct qual qerr = { Q_UNDEF, Q_UNDEF, Q_UNDEF, Q_UNDEF };
 
 static void
-yyerror(const char *msg)
+yyerror(void *yyscanner _U_, compiler_state_t *cstate, const char *msg)
 {
-	++n_errors;
-	bpf_error("%s", msg);
-	/* NOTREACHED */
+	bpf_set_error(cstate, "can't parse filter expression: %s", msg);
 }
 
-#ifdef NEED_YYPARSE_WRAPPER
-int yyparse(void);
-
-int
-pcap_parse()
-{
-	return (yyparse());
-}
+static const struct tok pflog_reasons[] = {
+	{ PFRES_MATCH,		"match" },
+	{ PFRES_BADOFF,		"bad-offset" },
+	{ PFRES_FRAG,		"fragment" },
+	{ PFRES_SHORT,		"short" },
+	{ PFRES_NORM,		"normalize" },
+	{ PFRES_MEMORY,		"memory" },
+	{ PFRES_TS,		"bad-timestamp" },
+	{ PFRES_CONGEST,	"congestion" },
+	{ PFRES_IPOPTIONS,	"ip-option" },
+	{ PFRES_PROTCKSUM,	"proto-cksum" },
+	{ PFRES_BADSTATE,	"state-mismatch" },
+	{ PFRES_STATEINS,	"state-insert" },
+	{ PFRES_MAXSTATES,	"state-limit" },
+	{ PFRES_SRCLIMIT,	"src-limit" },
+	{ PFRES_SYNPROXY,	"synproxy" },
+#if defined(__FreeBSD__)
+	{ PFRES_MAPFAILED,	"map-failed" },
+#elif defined(__NetBSD__)
+	{ PFRES_STATELOCKED,	"state-locked" },
+#elif defined(__OpenBSD__)
+	{ PFRES_TRANSLATE,	"translate" },
+	{ PFRES_NOROUTE,	"no-route" },
+#elif defined(__APPLE__)
+	{ PFRES_DUMMYNET,	"dummynet" },
 #endif
+	{ 0, NULL }
+};
 
-#ifdef HAVE_NET_PFVAR_H
 static int
-pfreason_to_num(const char *reason)
+pfreason_to_num(compiler_state_t *cstate, const char *reason)
 {
-	const char *reasons[] = PFRES_NAMES;
 	int i;
 
-	for (i = 0; reasons[i]; i++) {
-		if (pcap_strcasecmp(reason, reasons[i]) == 0)
-			return (i);
-	}
-	bpf_error("unknown PF reason");
-	/*NOTREACHED*/
+	i = str2tok(reason, pflog_reasons);
+	if (i == -1)
+		bpf_set_error(cstate, "unknown PF reason \"%s\"", reason);
+	return (i);
 }
 
-static int
-pfaction_to_num(const char *action)
-{
-	if (pcap_strcasecmp(action, "pass") == 0 ||
-	    pcap_strcasecmp(action, "accept") == 0)
-		return (PF_PASS);
-	else if (pcap_strcasecmp(action, "drop") == 0 ||
-		pcap_strcasecmp(action, "block") == 0)
-		return (PF_DROP);
-#if HAVE_PF_NAT_THROUGH_PF_NORDR
-	else if (pcap_strcasecmp(action, "rdr") == 0)
-		return (PF_RDR);
-	else if (pcap_strcasecmp(action, "nat") == 0)
-		return (PF_NAT);
-	else if (pcap_strcasecmp(action, "binat") == 0)
-		return (PF_BINAT);
-	else if (pcap_strcasecmp(action, "nordr") == 0)
-		return (PF_NORDR);
+static const struct tok pflog_actions[] = {
+	{ PF_PASS,		"pass" },
+	{ PF_PASS,		"accept" },	/* alias for "pass" */
+	{ PF_DROP,		"drop" },
+	{ PF_DROP,		"block" },	/* alias for "drop" */
+	{ PF_SCRUB,		"scrub" },
+	{ PF_NOSCRUB,		"noscrub" },
+	{ PF_NAT,		"nat" },
+	{ PF_NONAT,		"nonat" },
+	{ PF_BINAT,		"binat" },
+	{ PF_NOBINAT,		"nobinat" },
+	{ PF_RDR,		"rdr" },
+	{ PF_NORDR,		"nordr" },
+	{ PF_SYNPROXY_DROP,	"synproxy-drop" },
+#if defined(__FreeBSD__)
+	{ PF_DEFER,		"defer" },
+#elif defined(__OpenBSD__)
+	{ PF_DEFER,		"defer" },
+	{ PF_MATCH,		"match" },
+	{ PF_DIVERT,		"divert" },
+	{ PF_RT,		"rt" },
+	{ PF_AFRT,		"afrt" },
+#elif defined(__APPLE__)
+	{ PF_DUMMYNET,		"dummynet" },
+	{ PF_NODUMMYNET,	"nodummynet" },
+	{ PF_NAT64,		"nat64" },
+	{ PF_NONAT64,		"nonat64" },
 #endif
-	else {
-		bpf_error("unknown PF action");
-		/*NOTREACHED*/
-	}
-}
-#else /* !HAVE_NET_PFVAR_H */
-static int
-pfreason_to_num(const char *reason)
-{
-	bpf_error("libpcap was compiled on a machine without pf support");
-	/*NOTREACHED*/
-
-	/* this is to make the VC compiler happy */
-	return -1;
-}
+	{ 0, NULL },
+};
 
 static int
-pfaction_to_num(const char *action)
+pfaction_to_num(compiler_state_t *cstate, const char *action)
 {
-	bpf_error("libpcap was compiled on a machine without pf support");
-	/*NOTREACHED*/
+	int i;
 
-	/* this is to make the VC compiler happy */
-	return -1;
+	i = str2tok(action, pflog_actions);
+	if (i == -1)
+		bpf_set_error(cstate, "unknown PF action \"%s\"", action);
+	return (i);
 }
-#endif /* HAVE_NET_PFVAR_H */
+
+/*
+ * For calls that might return an "an error occurred" value.
+ */
+#define CHECK_INT_VAL(val)	if (val == -1) YYABORT
+#define CHECK_PTR_VAL(val)	if (val == NULL) YYABORT
+
+DIAG_OFF_BISON_BYACC
 %}
 
 %union {
 	int i;
 	bpf_u_int32 h;
-	u_char *e;
 	char *s;
 	struct stmt *stmt;
 	struct arth *a;
@@ -273,7 +360,8 @@ pfaction_to_num(const char *action)
 %type	<blk>	head
 %type	<i>	pqual dqual aqual ndaqual
 %type	<a>	arth narth
-%type	<i>	byteop pname pnum relop irelop
+%type	<i>	byteop pname relop irelop
+%type	<h>	pnum
 %type	<blk>	and or paren not null prog
 %type	<rblk>	other pfvar p80211 pllc
 %type	<i>	atmtype atmmultitype
@@ -290,6 +378,7 @@ pfaction_to_num(const char *action)
 %token  ATALK AARP DECNET LAT SCA MOPRC MOPDL
 %token  TK_BROADCAST TK_MULTICAST
 %token  NUM INBOUND OUTBOUND
+%token  IFINDEX
 %token  PF_IFNAME PF_RSET PF_RNR PF_SRNR PF_REASON PF_ACTION
 %token	TYPE SUBTYPE DIR ADDR1 ADDR2 ADDR3 ADDR4 RA TA
 %token  LINK
@@ -310,13 +399,12 @@ pfaction_to_num(const char *action)
 %token	RADIO
 %token	FISU LSSU MSU HFISU HLSSU HMSU
 %token	SIO OPC DPC SLS HSIO HOPC HDPC HSLS
+%token	LEX_ERROR
 
-
-%type	<s> ID
-%type	<e> EID
-%type	<e> AID
+%type	<s> ID EID AID
 %type	<s> HID HID6
-%type	<i> NUM action reason type subtype type_subtype dir
+%type	<h> NUM
+%type	<i> action reason type subtype type_subtype dir
 
 %left OR AND
 %nonassoc  '!'
@@ -329,7 +417,15 @@ pfaction_to_num(const char *action)
 %%
 prog:	  null expr
 {
-	finish_parse($2.b);
+	/*
+	 * I'm not sure we have a reason to use yynerrs, but it's
+	 * declared, and incremented, whether we need it or not,
+	 * which means that Clang 15 will give a "used but not
+	 * set" warning.  This should suppress the warning for
+	 * yynerrs without suppressing it for other variables.
+	 */
+	(void) yynerrs;
+	CHECK_INT_VAL(finish_parse(cstate, $2.b));
 }
 	| null
 	;
@@ -346,64 +442,121 @@ and:	  AND			{ $$ = $<blk>0; }
 or:	  OR			{ $$ = $<blk>0; }
 	;
 id:	  nid
-	| pnum			{ $$.b = gen_ncode(NULL, (bpf_u_int32)$1,
-						   $$.q = $<blk>0.q); }
+	| pnum			{ CHECK_PTR_VAL(($$.b = gen_ncode(cstate, NULL, $1,
+						   $$.q = $<blk>0.q))); }
 	| paren pid ')'		{ $$ = $2; }
 	;
-nid:	  ID			{ $$.b = gen_scode($1, $$.q = $<blk>0.q); }
-	| HID '/' NUM		{ $$.b = gen_mcode($1, NULL, $3,
-				    $$.q = $<blk>0.q); }
-	| HID NETMASK HID	{ $$.b = gen_mcode($1, $3, 0,
-				    $$.q = $<blk>0.q); }
-	| HID			{
-				  /* Decide how to parse HID based on proto */
+nid:	  ID			{ CHECK_PTR_VAL($1); CHECK_PTR_VAL(($$.b = gen_scode(cstate, $1, $$.q = $<blk>0.q))); }
+	| HID '/' NUM		{
+				  CHECK_PTR_VAL($1);
+				  /* Check whether HID/NUM is being used when appropriate */
 				  $$.q = $<blk>0.q;
-				  if ($$.q.addr == Q_PORT)
-				  	bpf_error("'port' modifier applied to ip host");
-				  else if ($$.q.addr == Q_PORTRANGE)
-				  	bpf_error("'portrange' modifier applied to ip host");
-				  else if ($$.q.addr == Q_PROTO)
-				  	bpf_error("'proto' modifier applied to ip host");
-				  else if ($$.q.addr == Q_PROTOCHAIN)
-				  	bpf_error("'protochain' modifier applied to ip host");
-				  $$.b = gen_ncode($1, 0, $$.q);
+				  if ($$.q.addr == Q_PORT) {
+					bpf_set_error(cstate, "'port' modifier applied to IP address and prefix length");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PORTRANGE) {
+					bpf_set_error(cstate, "'portrange' modifier applied to IP address and prefix length");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTO) {
+					bpf_set_error(cstate, "'proto' modifier applied to IP address and prefix length");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTOCHAIN) {
+					bpf_set_error(cstate, "'protochain' modifier applied to IP address and prefix length");
+					YYABORT;
+				  }
+				  CHECK_PTR_VAL(($$.b = gen_mcode(cstate, $1, NULL, $3, $$.q)));
+				}
+	| HID NETMASK HID	{
+				  CHECK_PTR_VAL($1);
+				  CHECK_PTR_VAL($3);
+				  /* Check whether HID mask HID is being used when appropriate */
+				  $$.q = $<blk>0.q;
+				  if ($$.q.addr == Q_PORT) {
+					bpf_set_error(cstate, "'port' modifier applied to IP address and netmask");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PORTRANGE) {
+					bpf_set_error(cstate, "'portrange' modifier applied to IP address and netmask");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTO) {
+					bpf_set_error(cstate, "'proto' modifier applied to IP address and netmask");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTOCHAIN) {
+					bpf_set_error(cstate, "'protochain' modifier applied to IP address and netmask");
+					YYABORT;
+				  }
+				  CHECK_PTR_VAL(($$.b = gen_mcode(cstate, $1, $3, 0, $$.q)));
+				}
+	| HID			{
+				  CHECK_PTR_VAL($1);
+				  /* Check whether HID is being used when appropriate */
+				  $$.q = $<blk>0.q;
+				  if ($$.q.addr == Q_PORT) {
+					bpf_set_error(cstate, "'port' modifier applied to IP address");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PORTRANGE) {
+					bpf_set_error(cstate, "'portrange' modifier applied to IP address");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTO) {
+					bpf_set_error(cstate, "'proto' modifier applied to IP address");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTOCHAIN) {
+					bpf_set_error(cstate, "'protochain' modifier applied to IP address");
+					YYABORT;
+				  }
+				  CHECK_PTR_VAL(($$.b = gen_ncode(cstate, $1, 0, $$.q)));
 				}
 	| HID6 '/' NUM		{
+				  CHECK_PTR_VAL($1);
 #ifdef INET6
-				  $$.b = gen_mcode6($1, NULL, $3,
-				    $$.q = $<blk>0.q);
+				  /* Check whether HID6/NUM is being used when appropriate */
+				  $$.q = $<blk>0.q;
+				  if ($$.q.addr == Q_PORT) {
+					bpf_set_error(cstate, "'port' modifier applied to IP address and prefix length");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PORTRANGE) {
+					bpf_set_error(cstate, "'portrange' modifier applied to IP address and prefix length");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTO) {
+					bpf_set_error(cstate, "'proto' modifier applied to IP address and prefix length ");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTOCHAIN) {
+					bpf_set_error(cstate, "'protochain' modifier applied to IP address and prefix length");
+					YYABORT;
+				  }
+				  CHECK_PTR_VAL(($$.b = gen_mcode6(cstate, $1, $3, $$.q)));
 #else
-				  bpf_error("'ip6addr/prefixlen' not supported "
+				  bpf_set_error(cstate, "IPv6 addresses not supported "
 					"in this configuration");
+				  YYABORT;
 #endif /*INET6*/
 				}
 	| HID6			{
+				  CHECK_PTR_VAL($1);
 #ifdef INET6
-				  $$.b = gen_mcode6($1, 0, 128,
-				    $$.q = $<blk>0.q);
+				  /* Check whether HID6 is being used when appropriate */
+				  $$.q = $<blk>0.q;
+				  if ($$.q.addr == Q_PORT) {
+					bpf_set_error(cstate, "'port' modifier applied to IP address");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PORTRANGE) {
+					bpf_set_error(cstate, "'portrange' modifier applied to IP address");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTO) {
+					bpf_set_error(cstate, "'proto' modifier applied to 'ip6addr/prefixlen");
+					YYABORT;
+				  } else if ($$.q.addr == Q_PROTOCHAIN) {
+					bpf_set_error(cstate, "'protochain' modifier applied to IP address");
+					YYABORT;
+				  }
+				  CHECK_PTR_VAL(($$.b = gen_mcode6(cstate, $1, 128, $$.q)));
 #else
-				  bpf_error("'ip6addr' not supported "
+				  bpf_set_error(cstate, "IPv6 addresses not supported "
 					"in this configuration");
+				  YYABORT;
 #endif /*INET6*/
 				}
-	| EID			{
-				  $$.b = gen_ecode($1, $$.q = $<blk>0.q);
-				  /*
-				   * $1 was allocated by "pcap_ether_aton()",
-				   * so we must free it now that we're done
-				   * with it.
-				   */
-				  free($1);
-				}
-	| AID			{
-				  $$.b = gen_acode($1, $$.q = $<blk>0.q);
-				  /*
-				   * $1 was allocated by "pcap_ether_aton()",
-				   * so we must free it now that we're done
-				   * with it.
-				   */
-				  free($1);
-				}
+	| EID			{ CHECK_PTR_VAL($1); CHECK_PTR_VAL(($$.b = gen_ecode(cstate, $1, $$.q = $<blk>0.q))); }
+	| AID			{ CHECK_PTR_VAL($1); CHECK_PTR_VAL(($$.b = gen_acode(cstate, $1, $$.q = $<blk>0.q))); }
 	| not id		{ gen_not($2.b); $$ = $2; }
 	;
 not:	  '!'			{ $$ = $<blk>0; }
@@ -414,8 +567,8 @@ pid:	  nid
 	| qid and id		{ gen_and($1.b, $3.b); $$ = $3; }
 	| qid or id		{ gen_or($1.b, $3.b); $$ = $3; }
 	;
-qid:	  pnum			{ $$.b = gen_ncode(NULL, (bpf_u_int32)$1,
-						   $$.q = $<blk>0.q); }
+qid:	  pnum			{ CHECK_PTR_VAL(($$.b = gen_ncode(cstate, NULL, $1,
+						   $$.q = $<blk>0.q))); }
 	| pid
 	;
 term:	  rterm
@@ -425,21 +578,28 @@ head:	  pqual dqual aqual	{ QSET($$.q, $1, $2, $3); }
 	| pqual dqual		{ QSET($$.q, $1, $2, Q_DEFAULT); }
 	| pqual aqual		{ QSET($$.q, $1, Q_DEFAULT, $2); }
 	| pqual PROTO		{ QSET($$.q, $1, Q_DEFAULT, Q_PROTO); }
-	| pqual PROTOCHAIN	{ QSET($$.q, $1, Q_DEFAULT, Q_PROTOCHAIN); }
+	| pqual PROTOCHAIN	{
+#ifdef NO_PROTOCHAIN
+				  bpf_set_error(cstate, "protochain not supported");
+				  YYABORT;
+#else
+				  QSET($$.q, $1, Q_DEFAULT, Q_PROTOCHAIN);
+#endif
+				}
 	| pqual ndaqual		{ QSET($$.q, $1, Q_DEFAULT, $2); }
 	;
 rterm:	  head id		{ $$ = $2; }
 	| paren expr ')'	{ $$.b = $2.b; $$.q = $1.q; }
-	| pname			{ $$.b = gen_proto_abbrev($1); $$.q = qerr; }
-	| arth relop arth	{ $$.b = gen_relation($2, $1, $3, 0);
+	| pname			{ CHECK_PTR_VAL(($$.b = gen_proto_abbrev(cstate, $1))); $$.q = qerr; }
+	| arth relop arth	{ CHECK_PTR_VAL(($$.b = gen_relation(cstate, $2, $1, $3, 0)));
 				  $$.q = qerr; }
-	| arth irelop arth	{ $$.b = gen_relation($2, $1, $3, 1);
+	| arth irelop arth	{ CHECK_PTR_VAL(($$.b = gen_relation(cstate, $2, $1, $3, 1)));
 				  $$.q = qerr; }
 	| other			{ $$.b = $1; $$.q = qerr; }
-	| atmtype		{ $$.b = gen_atmtype_abbrev($1); $$.q = qerr; }
-	| atmmultitype		{ $$.b = gen_atmmulti_abbrev($1); $$.q = qerr; }
+	| atmtype		{ CHECK_PTR_VAL(($$.b = gen_atmtype_abbrev(cstate, $1))); $$.q = qerr; }
+	| atmmultitype		{ CHECK_PTR_VAL(($$.b = gen_atmmulti_abbrev(cstate, $1))); $$.q = qerr; }
 	| atmfield atmvalue	{ $$.b = $2.b; $$.q = qerr; }
-	| mtp2type		{ $$.b = gen_mtp2type_abbrev($1); $$.q = qerr; }
+	| mtp2type		{ CHECK_PTR_VAL(($$.b = gen_mtp2type_abbrev(cstate, $1))); $$.q = qerr; }
 	| mtp3field mtp3value	{ $$.b = $2.b; $$.q = qerr; }
 	;
 /* protocol level qualifiers */
@@ -481,7 +641,7 @@ pname:	  LINK			{ $$ = Q_LINK; }
 	| IGRP			{ $$ = Q_IGRP; }
 	| PIM			{ $$ = Q_PIM; }
 	| VRRP			{ $$ = Q_VRRP; }
-	| CARP 			{ $$ = Q_CARP; }
+	| CARP			{ $$ = Q_CARP; }
 	| ATALK			{ $$ = Q_ATALK; }
 	| AARP			{ $$ = Q_AARP; }
 	| DECNET		{ $$ = Q_DECNET; }
@@ -509,65 +669,80 @@ pname:	  LINK			{ $$ = Q_LINK; }
 	| NETBEUI		{ $$ = Q_NETBEUI; }
 	| RADIO			{ $$ = Q_RADIO; }
 	;
-other:	  pqual TK_BROADCAST	{ $$ = gen_broadcast($1); }
-	| pqual TK_MULTICAST	{ $$ = gen_multicast($1); }
-	| LESS NUM		{ $$ = gen_less($2); }
-	| GREATER NUM		{ $$ = gen_greater($2); }
-	| CBYTE NUM byteop NUM	{ $$ = gen_byteop($3, $2, $4); }
-	| INBOUND		{ $$ = gen_inbound(0); }
-	| OUTBOUND		{ $$ = gen_inbound(1); }
-	| VLAN pnum		{ $$ = gen_vlan($2); }
-	| VLAN			{ $$ = gen_vlan(-1); }
-	| MPLS pnum		{ $$ = gen_mpls($2); }
-	| MPLS			{ $$ = gen_mpls(-1); }
-	| PPPOED		{ $$ = gen_pppoed(); }
-	| PPPOES pnum		{ $$ = gen_pppoes($2); }
-	| PPPOES		{ $$ = gen_pppoes(-1); }
-	| GENEVE pnum		{ $$ = gen_geneve($2); }
-	| GENEVE		{ $$ = gen_geneve(-1); }
+other:	  pqual TK_BROADCAST	{ CHECK_PTR_VAL(($$ = gen_broadcast(cstate, $1))); }
+	| pqual TK_MULTICAST	{ CHECK_PTR_VAL(($$ = gen_multicast(cstate, $1))); }
+	| LESS NUM		{ CHECK_PTR_VAL(($$ = gen_less(cstate, $2))); }
+	| GREATER NUM		{ CHECK_PTR_VAL(($$ = gen_greater(cstate, $2))); }
+	| CBYTE NUM byteop NUM	{ CHECK_PTR_VAL(($$ = gen_byteop(cstate, $3, $2, $4))); }
+	| INBOUND		{ CHECK_PTR_VAL(($$ = gen_inbound(cstate, 0))); }
+	| OUTBOUND		{ CHECK_PTR_VAL(($$ = gen_inbound(cstate, 1))); }
+	| IFINDEX NUM		{ CHECK_PTR_VAL(($$ = gen_ifindex(cstate, $2))); }
+	| VLAN pnum		{ CHECK_PTR_VAL(($$ = gen_vlan(cstate, $2, 1))); }
+	| VLAN			{ CHECK_PTR_VAL(($$ = gen_vlan(cstate, 0, 0))); }
+	| MPLS pnum		{ CHECK_PTR_VAL(($$ = gen_mpls(cstate, $2, 1))); }
+	| MPLS			{ CHECK_PTR_VAL(($$ = gen_mpls(cstate, 0, 0))); }
+	| PPPOED		{ CHECK_PTR_VAL(($$ = gen_pppoed(cstate))); }
+	| PPPOES pnum		{ CHECK_PTR_VAL(($$ = gen_pppoes(cstate, $2, 1))); }
+	| PPPOES		{ CHECK_PTR_VAL(($$ = gen_pppoes(cstate, 0, 0))); }
+	| GENEVE pnum		{ CHECK_PTR_VAL(($$ = gen_geneve(cstate, $2, 1))); }
+	| GENEVE		{ CHECK_PTR_VAL(($$ = gen_geneve(cstate, 0, 0))); }
 	| pfvar			{ $$ = $1; }
 	| pqual p80211		{ $$ = $2; }
 	| pllc			{ $$ = $1; }
 	;
 
-pfvar:	  PF_IFNAME ID		{ $$ = gen_pf_ifname($2); }
-	| PF_RSET ID		{ $$ = gen_pf_ruleset($2); }
-	| PF_RNR NUM		{ $$ = gen_pf_rnr($2); }
-	| PF_SRNR NUM		{ $$ = gen_pf_srnr($2); }
-	| PF_REASON reason	{ $$ = gen_pf_reason($2); }
-	| PF_ACTION action	{ $$ = gen_pf_action($2); }
+pfvar:	  PF_IFNAME ID		{ CHECK_PTR_VAL($2); CHECK_PTR_VAL(($$ = gen_pf_ifname(cstate, $2))); }
+	| PF_RSET ID		{ CHECK_PTR_VAL($2); CHECK_PTR_VAL(($$ = gen_pf_ruleset(cstate, $2))); }
+	| PF_RNR NUM		{ CHECK_PTR_VAL(($$ = gen_pf_rnr(cstate, $2))); }
+	| PF_SRNR NUM		{ CHECK_PTR_VAL(($$ = gen_pf_srnr(cstate, $2))); }
+	| PF_REASON reason	{ CHECK_PTR_VAL(($$ = gen_pf_reason(cstate, $2))); }
+	| PF_ACTION action	{ CHECK_PTR_VAL(($$ = gen_pf_action(cstate, $2))); }
 	;
 
 p80211:   TYPE type SUBTYPE subtype
-				{ $$ = gen_p80211_type($2 | $4,
+				{ CHECK_PTR_VAL(($$ = gen_p80211_type(cstate, $2 | $4,
 					IEEE80211_FC0_TYPE_MASK |
-					IEEE80211_FC0_SUBTYPE_MASK);
+					IEEE80211_FC0_SUBTYPE_MASK)));
 				}
-	| TYPE type		{ $$ = gen_p80211_type($2,
-					IEEE80211_FC0_TYPE_MASK);
+	| TYPE type		{ CHECK_PTR_VAL(($$ = gen_p80211_type(cstate, $2,
+					IEEE80211_FC0_TYPE_MASK)));
 				}
-	| SUBTYPE type_subtype	{ $$ = gen_p80211_type($2,
+	| SUBTYPE type_subtype	{ CHECK_PTR_VAL(($$ = gen_p80211_type(cstate, $2,
 					IEEE80211_FC0_TYPE_MASK |
-					IEEE80211_FC0_SUBTYPE_MASK);
+					IEEE80211_FC0_SUBTYPE_MASK)));
 				}
-	| DIR dir		{ $$ = gen_p80211_fcdir($2); }
+	| DIR dir		{ CHECK_PTR_VAL(($$ = gen_p80211_fcdir(cstate, $2))); }
 	;
 
-type:	  NUM
-	| ID			{ $$ = str2tok($1, ieee80211_types);
-				  if ($$ == -1)
-				  	bpf_error("unknown 802.11 type name");
+type:	  NUM			{ if (($1 & (~IEEE80211_FC0_TYPE_MASK)) != 0) {
+					bpf_set_error(cstate, "invalid 802.11 type value 0x%02x", $1);
+					YYABORT;
+				  }
+				  $$ = (int)$1;
+				}
+	| ID			{ CHECK_PTR_VAL($1);
+				  $$ = str2tok($1, ieee80211_types);
+				  if ($$ == -1) {
+					bpf_set_error(cstate, "unknown 802.11 type name \"%s\"", $1);
+					YYABORT;
+				  }
 				}
 	;
 
-subtype:  NUM
+subtype:  NUM			{ if (($1 & (~IEEE80211_FC0_SUBTYPE_MASK)) != 0) {
+					bpf_set_error(cstate, "invalid 802.11 subtype value 0x%02x", $1);
+					YYABORT;
+				  }
+				  $$ = (int)$1;
+				}
 	| ID			{ const struct tok *types = NULL;
 				  int i;
+				  CHECK_PTR_VAL($1);
 				  for (i = 0;; i++) {
-				  	if (ieee80211_type_subtypes[i].tok == NULL) {
-				  		/* Ran out of types */
-						bpf_error("unknown 802.11 type");
-						break;
+					if (ieee80211_type_subtypes[i].tok == NULL) {
+						/* Ran out of types */
+						bpf_set_error(cstate, "unknown 802.11 type");
+						YYABORT;
 					}
 					if ($<i>-1 == ieee80211_type_subtypes[i].type) {
 						types = ieee80211_type_subtypes[i].tok;
@@ -576,17 +751,20 @@ subtype:  NUM
 				  }
 
 				  $$ = str2tok($1, types);
-				  if ($$ == -1)
-					bpf_error("unknown 802.11 subtype name");
+				  if ($$ == -1) {
+					bpf_set_error(cstate, "unknown 802.11 subtype name \"%s\"", $1);
+					YYABORT;
+				  }
 				}
 	;
 
 type_subtype:	ID		{ int i;
+				  CHECK_PTR_VAL($1);
 				  for (i = 0;; i++) {
-				  	if (ieee80211_type_subtypes[i].tok == NULL) {
-				  		/* Ran out of types */
-						bpf_error("unknown 802.11 type name");
-						break;
+					if (ieee80211_type_subtypes[i].tok == NULL) {
+						/* Ran out of types */
+						bpf_set_error(cstate, "unknown 802.11 type name");
+						YYABORT;
 					}
 					$$ = str2tok($1, ieee80211_type_subtypes[i].tok);
 					if ($$ != -1) {
@@ -597,50 +775,56 @@ type_subtype:	ID		{ int i;
 				}
 		;
 
-pllc:	LLC			{ $$ = gen_llc(); }
-	| LLC ID		{ if (pcap_strcasecmp($2, "i") == 0)
-					$$ = gen_llc_i();
-				  else if (pcap_strcasecmp($2, "s") == 0)
-					$$ = gen_llc_s();
-				  else if (pcap_strcasecmp($2, "u") == 0)
-					$$ = gen_llc_u();
-				  else {
-				  	u_int subtype;
+pllc:	LLC			{ CHECK_PTR_VAL(($$ = gen_llc(cstate))); }
+	| LLC ID		{ CHECK_PTR_VAL($2);
+				  if (pcapint_strcasecmp($2, "i") == 0) {
+					CHECK_PTR_VAL(($$ = gen_llc_i(cstate)));
+				  } else if (pcapint_strcasecmp($2, "s") == 0) {
+					CHECK_PTR_VAL(($$ = gen_llc_s(cstate)));
+				  } else if (pcapint_strcasecmp($2, "u") == 0) {
+					CHECK_PTR_VAL(($$ = gen_llc_u(cstate)));
+				  } else {
+					int subtype;
 
 					subtype = str2tok($2, llc_s_subtypes);
-					if (subtype != -1)
-						$$ = gen_llc_s_subtype(subtype);
-					else {
+					if (subtype != -1) {
+						CHECK_PTR_VAL(($$ = gen_llc_s_subtype(cstate, subtype)));
+					} else {
 						subtype = str2tok($2, llc_u_subtypes);
-						if (subtype == -1)
-					  		bpf_error("unknown LLC type name \"%s\"", $2);
-						$$ = gen_llc_u_subtype(subtype);
+						if (subtype == -1) {
+							bpf_set_error(cstate, "unknown LLC type name \"%s\"", $2);
+							YYABORT;
+						}
+						CHECK_PTR_VAL(($$ = gen_llc_u_subtype(cstate, subtype)));
 					}
 				  }
 				}
 				/* sigh, "rnr" is already a keyword for PF */
-	| LLC PF_RNR		{ $$ = gen_llc_s_subtype(LLC_RNR); }
+	| LLC PF_RNR		{ CHECK_PTR_VAL(($$ = gen_llc_s_subtype(cstate, LLC_RNR))); }
 	;
 
-dir:	  NUM
-	| ID			{ if (pcap_strcasecmp($1, "nods") == 0)
+dir:	  NUM			{ $$ = (int)$1; }
+	| ID			{ CHECK_PTR_VAL($1);
+				  if (pcapint_strcasecmp($1, "nods") == 0)
 					$$ = IEEE80211_FC1_DIR_NODS;
-				  else if (pcap_strcasecmp($1, "tods") == 0)
+				  else if (pcapint_strcasecmp($1, "tods") == 0)
 					$$ = IEEE80211_FC1_DIR_TODS;
-				  else if (pcap_strcasecmp($1, "fromds") == 0)
+				  else if (pcapint_strcasecmp($1, "fromds") == 0)
 					$$ = IEEE80211_FC1_DIR_FROMDS;
-				  else if (pcap_strcasecmp($1, "dstods") == 0)
+				  else if (pcapint_strcasecmp($1, "dstods") == 0)
 					$$ = IEEE80211_FC1_DIR_DSTODS;
-				  else
-					bpf_error("unknown 802.11 direction");
+				  else {
+					bpf_set_error(cstate, "unknown 802.11 direction");
+					YYABORT;
+				  }
 				}
 	;
 
 reason:	  NUM			{ $$ = $1; }
-	| ID			{ $$ = pfreason_to_num($1); }
+	| ID			{ CHECK_PTR_VAL($1); CHECK_INT_VAL(($$ = pfreason_to_num(cstate, $1))); }
 	;
 
-action:	  ID			{ $$ = pfaction_to_num($1); }
+action:	  ID			{ CHECK_PTR_VAL($1); CHECK_INT_VAL(($$ = pfaction_to_num(cstate, $1))); }
 	;
 
 relop:	  '>'			{ $$ = BPF_JGT; }
@@ -651,24 +835,24 @@ irelop:	  LEQ			{ $$ = BPF_JGT; }
 	| '<'			{ $$ = BPF_JGE; }
 	| NEQ			{ $$ = BPF_JEQ; }
 	;
-arth:	  pnum			{ $$ = gen_loadi($1); }
+arth:	  pnum			{ CHECK_PTR_VAL(($$ = gen_loadi(cstate, $1))); }
 	| narth
 	;
-narth:	  pname '[' arth ']'		{ $$ = gen_load($1, $3, 1); }
-	| pname '[' arth ':' NUM ']'	{ $$ = gen_load($1, $3, $5); }
-	| arth '+' arth			{ $$ = gen_arth(BPF_ADD, $1, $3); }
-	| arth '-' arth			{ $$ = gen_arth(BPF_SUB, $1, $3); }
-	| arth '*' arth			{ $$ = gen_arth(BPF_MUL, $1, $3); }
-	| arth '/' arth			{ $$ = gen_arth(BPF_DIV, $1, $3); }
-	| arth '%' arth			{ $$ = gen_arth(BPF_MOD, $1, $3); }
-	| arth '&' arth			{ $$ = gen_arth(BPF_AND, $1, $3); }
-	| arth '|' arth			{ $$ = gen_arth(BPF_OR, $1, $3); }
-	| arth '^' arth			{ $$ = gen_arth(BPF_XOR, $1, $3); }
-	| arth LSH arth			{ $$ = gen_arth(BPF_LSH, $1, $3); }
-	| arth RSH arth			{ $$ = gen_arth(BPF_RSH, $1, $3); }
-	| '-' arth %prec UMINUS		{ $$ = gen_neg($2); }
+narth:	  pname '[' arth ']'		{ CHECK_PTR_VAL(($$ = gen_load(cstate, $1, $3, 1))); }
+	| pname '[' arth ':' NUM ']'	{ CHECK_PTR_VAL(($$ = gen_load(cstate, $1, $3, $5))); }
+	| arth '+' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_ADD, $1, $3))); }
+	| arth '-' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_SUB, $1, $3))); }
+	| arth '*' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_MUL, $1, $3))); }
+	| arth '/' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_DIV, $1, $3))); }
+	| arth '%' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_MOD, $1, $3))); }
+	| arth '&' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_AND, $1, $3))); }
+	| arth '|' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_OR, $1, $3))); }
+	| arth '^' arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_XOR, $1, $3))); }
+	| arth LSH arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_LSH, $1, $3))); }
+	| arth RSH arth			{ CHECK_PTR_VAL(($$ = gen_arth(cstate, BPF_RSH, $1, $3))); }
+	| '-' arth %prec UMINUS		{ CHECK_PTR_VAL(($$ = gen_neg(cstate, $2))); }
 	| paren narth ')'		{ $$ = $2; }
-	| LEN				{ $$ = gen_loadlen(); }
+	| LEN				{ CHECK_PTR_VAL(($$ = gen_loadlen(cstate))); }
 	;
 byteop:	  '&'			{ $$ = '&'; }
 	| '|'			{ $$ = '|'; }
@@ -697,15 +881,15 @@ atmfield: VPI			{ $$.atmfieldtype = A_VPI; }
 	| VCI			{ $$.atmfieldtype = A_VCI; }
 	;
 atmvalue: atmfieldvalue
-	| relop NUM		{ $$.b = gen_atmfield_code($<blk>0.atmfieldtype, (bpf_int32)$2, (bpf_u_int32)$1, 0); }
-	| irelop NUM		{ $$.b = gen_atmfield_code($<blk>0.atmfieldtype, (bpf_int32)$2, (bpf_u_int32)$1, 1); }
+	| relop NUM		{ CHECK_PTR_VAL(($$.b = gen_atmfield_code(cstate, $<blk>0.atmfieldtype, $2, $1, 0))); }
+	| irelop NUM		{ CHECK_PTR_VAL(($$.b = gen_atmfield_code(cstate, $<blk>0.atmfieldtype, $2, $1, 1))); }
 	| paren atmlistvalue ')' { $$.b = $2.b; $$.q = qerr; }
 	;
 atmfieldvalue: NUM {
 	$$.atmfieldtype = $<blk>0.atmfieldtype;
 	if ($$.atmfieldtype == A_VPI ||
 	    $$.atmfieldtype == A_VCI)
-		$$.b = gen_atmfield_code($$.atmfieldtype, (bpf_int32) $1, BPF_JEQ, 0);
+		CHECK_PTR_VAL(($$.b = gen_atmfield_code(cstate, $$.atmfieldtype, $1, BPF_JEQ, 0)));
 	}
 	;
 atmlistvalue: atmfieldvalue
@@ -730,8 +914,8 @@ mtp3field: SIO			{ $$.mtp3fieldtype = M_SIO; }
 	| HSLS                  { $$.mtp3fieldtype = MH_SLS; }
 	;
 mtp3value: mtp3fieldvalue
-	| relop NUM		{ $$.b = gen_mtp3field_code($<blk>0.mtp3fieldtype, (u_int)$2, (u_int)$1, 0); }
-	| irelop NUM		{ $$.b = gen_mtp3field_code($<blk>0.mtp3fieldtype, (u_int)$2, (u_int)$1, 1); }
+	| relop NUM		{ CHECK_PTR_VAL(($$.b = gen_mtp3field_code(cstate, $<blk>0.mtp3fieldtype, $2, $1, 0))); }
+	| irelop NUM		{ CHECK_PTR_VAL(($$.b = gen_mtp3field_code(cstate, $<blk>0.mtp3fieldtype, $2, $1, 1))); }
 	| paren mtp3listvalue ')' { $$.b = $2.b; $$.q = qerr; }
 	;
 mtp3fieldvalue: NUM {
@@ -744,7 +928,7 @@ mtp3fieldvalue: NUM {
 	    $$.mtp3fieldtype == MH_OPC ||
 	    $$.mtp3fieldtype == MH_DPC ||
 	    $$.mtp3fieldtype == MH_SLS)
-		$$.b = gen_mtp3field_code($$.mtp3fieldtype, (u_int) $1, BPF_JEQ, 0);
+		CHECK_PTR_VAL(($$.b = gen_mtp3field_code(cstate, $$.mtp3fieldtype, $1, BPF_JEQ, 0)));
 	}
 	;
 mtp3listvalue: mtp3fieldvalue

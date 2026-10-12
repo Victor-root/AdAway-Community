@@ -31,16 +31,15 @@
  * SUCH DAMAGE.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include <config.h>
 
-#include <tcpdump-stdinc.h>
+#include <netdissect-stdinc.h>
 
 #include <pcap.h>
 #include <string.h>
 
 #include "pcap-missing.h"
+#include "ascii_strcasecmp.h"
 
 struct dlt_choice {
 	const char *name;
@@ -118,9 +117,6 @@ static struct dlt_choice dlt_choices[] = {
 #ifdef DLT_LINUX_IRDA
 	DLT_CHOICE(DLT_LINUX_IRDA, "Linux IrDA"),
 #endif
-#ifdef DLT_LANE8023
-	DLT_CHOICE(DLT_LANE8023, "Linux 802.3 LANE"),
-#endif
 #ifdef DLT_CIP
 	DLT_CHOICE(DLT_CIP, "Linux Classical IP-over-ATM"),
 #endif
@@ -137,7 +133,7 @@ pcap_datalink_name_to_val(const char *name)
 	int i;
 
 	for (i = 0; dlt_choices[i].name != NULL; i++) {
-		if (strcasecmp(dlt_choices[i].name + sizeof("DLT_") - 1,
+		if (ascii_strcasecmp(dlt_choices[i].name + sizeof("DLT_") - 1,
 		    name) == 0)
 			return (dlt_choices[i].dlt);
 	}

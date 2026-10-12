@@ -1,6 +1,6 @@
 /*
  *  This file is part of DOS-libpcap
- *  Ported to DOS/DOSX by G. Vanem <gvanem@broadpark.no>
+ *  Ported to DOS/DOSX by G. Vanem <gvanem@yahoo.no>
  *
  *  pcap-dos.c: Interface to PKTDRVR, NDIS2 and 32-bit pmode
  *              network drivers.
@@ -12,6 +12,7 @@
 #include <signal.h>
 #include <float.h>
 #include <fcntl.h>
+#include <limits.h> /* for INT_MAX */
 #include <io.h>
 
 #if defined(USE_32BIT_DRIVERS)
@@ -91,7 +92,7 @@ static int ref_count = 0;
 static u_long mac_count    = 0;
 static u_long filter_count = 0;
 
-static volatile BOOL exc_occured = 0;
+static volatile BOOL exc_occurred = 0;
 
 static struct device *handle_to_device [20];
 
@@ -145,15 +146,15 @@ static struct device *get_device (int fd)
  * Private data for capturing on MS-DOS.
  */
 struct pcap_dos {
-	void (*wait_proc)(void); /*          call proc while waiting */
+	void (*wait_proc)(void); /* call proc while waiting */
 	struct pcap_stat stat;
 };
 
-pcap_t *pcap_create_interface (const char *device, char *ebuf)
+pcap_t *pcap_create_interface (const char *device _U_, char *ebuf)
 {
 	pcap_t *p;
 
-	p = pcap_create_common(device, ebuf, sizeof (struct pcap_dos));
+	p = PCAP_CREATE_COMMON(ebuf, struct pcap_dos);
 	if (p == NULL)
 		return (NULL);
 
@@ -167,14 +168,23 @@ pcap_t *pcap_create_interface (const char *device, char *ebuf)
  */
 static int pcap_activate_dos (pcap_t *pcap)
 {
-  struct pcap_dos *pcapd = pcap->priv;
-
   if (pcap->opt.rfmon) {
     /*
      * No monitor mode on DOS.
      */
     return (PCAP_ERROR_RFMON_NOTSUP);
   }
+
+  /*
+   * Turn a negative snapshot value (invalid), a snapshot value of
+   * 0 (unspecified), or a value bigger than the normal maximum
+   * value, into the maximum allowed value.
+   *
+   * If some application really *needs* a bigger snapshot
+   * length, we should just increase MAXIMUM_SNAPLEN.
+   */
+  if (pcap->snapshot <= 0 || pcap->snapshot > MAXIMUM_SNAPLEN)
+    pcap->snapshot = MAXIMUM_SNAPLEN;
 
   if (pcap->snapshot < ETH_MIN+8)
       pcap->snapshot = ETH_MIN+8;
@@ -188,23 +198,28 @@ static int pcap_activate_dos (pcap_t *pcap)
   pcap->stats_op          = pcap_stats_dos;
   pcap->inject_op         = pcap_sendpacket_dos;
   pcap->setfilter_op      = pcap_setfilter_dos;
-  pcap->setdirection_op   = NULL; /* Not implemented.*/
+  pcap->setdirection_op   = NULL;  /* Not implemented.*/
   pcap->fd                = ++ref_count;
+
+  pcap->bufsize = ETH_MAX+100;     /* add some margin */
+  pcap->buffer = calloc (pcap->bufsize, 1);
 
   if (pcap->fd == 1)  /* first time we're called */
   {
-    if (!init_watt32(pcap, pcap->opt.source, pcap->errbuf) ||
-        !first_init(pcap->opt.source, pcap->errbuf, pcap->opt.promisc))
+    if (!init_watt32(pcap, pcap->opt.device, pcap->errbuf) ||
+        !first_init(pcap->opt.device, pcap->errbuf, pcap->opt.promisc))
     {
+      /* XXX - free pcap->buffer? */
       return (PCAP_ERROR);
     }
     atexit (close_driver);
   }
-  else if (stricmp(active_dev->name,pcap->opt.source))
+  else if (stricmp(active_dev->name,pcap->opt.device))
   {
     snprintf (pcap->errbuf, PCAP_ERRBUF_SIZE,
-              "Cannot use different devices simultaneously "
-              "(`%s' vs. `%s')", active_dev->name, pcap->opt.source);
+                   "Cannot use different devices simultaneously "
+                   "(`%s' vs. `%s')", active_dev->name, pcap->opt.device);
+    /* XXX - free pcap->buffer? */
     return (PCAP_ERROR);
   }
   handle_to_device [pcap->fd-1] = active_dev;
@@ -221,7 +236,6 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
   struct pcap_dos *pd = p->priv;
   struct pcap_pkthdr pcap;
   struct timeval     now, expiry = { 0,0 };
-  BYTE  *rx_buf;
   int    rx_len = 0;
 
   if (p->opt.timeout > 0)
@@ -236,7 +250,7 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
     }
   }
 
-  while (!exc_occured)
+  while (!exc_occurred)
   {
     volatile struct device *dev; /* might be reset by sig_handler */
 
@@ -253,13 +267,11 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
     if (dev->peek_rx_buf)
     {
       PCAP_ASSERT (dev->release_rx_buf);
-      rx_len = (*dev->peek_rx_buf) (&rx_buf);
+      rx_len = (*dev->peek_rx_buf) (&p->buffer);
     }
     else
     {
-      BYTE buf [ETH_MAX+100]; /* add some margin */
-      rx_len = (*dev->copy_rx_buf) (buf, p->snapshot);
-      rx_buf = buf;
+      rx_len = (*dev->copy_rx_buf) (p->buffer, p->snapshot);
     }
 
     if (rx_len > 0)  /* got a packet */
@@ -272,7 +284,7 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
       pcap.len    = rx_len;
 
       if (callback &&
-          (!p->fcode.bf_insns || bpf_filter(p->fcode.bf_insns, rx_buf, pcap.len, pcap.caplen)))
+          (!p->fcode.bf_insns || pcap_filter(p->fcode.bf_insns, p->buffer, pcap.len, pcap.caplen)))
       {
         filter_count++;
 
@@ -280,11 +292,11 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
          * capture.
          */
         gettimeofday2 (&pcap.ts, NULL);
-        (*callback) (data, &pcap, rx_buf);
+        (*callback) (data, &pcap, p->buffer);
       }
 
       if (dev->release_rx_buf)
-        (*dev->release_rx_buf) (rx_buf);
+        (*dev->release_rx_buf) (p->buffer);
 
       if (pcap_pkt_debug > 0)
       {
@@ -294,6 +306,18 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
       }
       FLUSHK();
       return (1);
+    }
+
+    /* Has "pcap_breakloop()" been called?
+     */
+    if (p->break_loop) {
+      /*
+       * Yes - clear the flag that indicates that it
+       * has, and return -2 to indicate that we were
+       * told to break out of the loop.
+       */
+      p->break_loop = 0;
+      return (-2);
     }
 
     /* If not to wait for a packet or pcap_cleanup_dos() called from
@@ -311,8 +335,8 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
     kbhit();    /* a real CPU hog */
 #endif
 
-    if (p->wait_proc)
-      (*p->wait_proc)();     /* call yield func */
+    if (pd->wait_proc)
+      (*pd->wait_proc)();     /* call yield func */
   }
 
   if (rx_len < 0)            /* receive error */
@@ -330,10 +354,24 @@ pcap_read_one (pcap_t *p, pcap_handler callback, u_char *data)
 static int
 pcap_read_dos (pcap_t *p, int cnt, pcap_handler callback, u_char *data)
 {
-  struct pcap_dos *pd = p->priv;
   int rc, num = 0;
 
-  while (num <= cnt || PACKET_COUNT_IS_UNLIMITED(cnt))
+  /*
+   * This can conceivably process more than INT_MAX packets,
+   * which would overflow the packet count, causing it either
+   * to look like a negative number, and thus cause us to
+   * return a value that looks like an error, or overflow
+   * back into positive territory, and thus cause us to
+   * return a too-low count.
+   *
+   * Therefore, if the packet count is unlimited, we clip
+   * it at INT_MAX; this routine is not expected to
+   * process packets indefinitely, so that's not an issue.
+   */
+  if (PACKET_COUNT_IS_UNLIMITED(cnt))
+    cnt = INT_MAX;
+
+  while (num <= cnt)
   {
     if (p->fd <= 0)
        return (-1);
@@ -391,14 +429,14 @@ int pcap_stats_ex (pcap_t *p, struct pcap_stat_ex *se)
 
   if (!dev || !dev->get_stats)
   {
-    strlcpy (p->errbuf, "detailed device statistics not available",
+    pcap_strlcpy (p->errbuf, "detailed device statistics not available",
              PCAP_ERRBUF_SIZE);
     return (-1);
   }
 
   if (!strnicmp(dev->name,"pkt",3))
   {
-    strlcpy (p->errbuf, "pktdrvr doesn't have detailed statistics",
+    pcap_strlcpy (p->errbuf, "pktdrvr doesn't have detailed statistics",
              PCAP_ERRBUF_SIZE);
     return (-1);
   }
@@ -442,7 +480,7 @@ static void pcap_cleanup_dos (pcap_t *p)
 {
   struct pcap_dos *pd;
 
-  if (p && !exc_occured)
+  if (!exc_occurred)
   {
     pd = p->priv;
     if (pcap_stats(p,NULL) < 0)
@@ -458,6 +496,7 @@ static void pcap_cleanup_dos (pcap_t *p)
        return;
   }
   close_driver();
+  /* XXX - call pcap_cleanup_live_common? */
 }
 
 /*
@@ -495,6 +534,8 @@ char *pcap_lookupdev (char *ebuf)
 int pcap_lookupnet (const char *device, bpf_u_int32 *localnet,
                     bpf_u_int32 *netmask, char *errbuf)
 {
+  DWORD mask, net;
+
   if (!_watt_is_init)
   {
     strcpy (errbuf, "pcap_open_offline() or pcap_activate() must be "
@@ -502,22 +543,25 @@ int pcap_lookupnet (const char *device, bpf_u_int32 *localnet,
     return (-1);
   }
 
-  *netmask  = _w32_sin_mask;
-  *localnet = my_ip_addr & *netmask;
-  if (*localnet == 0)
+  mask  = _w32_sin_mask;
+  net = my_ip_addr & mask;
+  if (net == 0)
   {
     if (IN_CLASSA(*netmask))
-       *localnet = IN_CLASSA_NET;
+       net = IN_CLASSA_NET;
     else if (IN_CLASSB(*netmask))
-       *localnet = IN_CLASSB_NET;
+       net = IN_CLASSB_NET;
     else if (IN_CLASSC(*netmask))
-       *localnet = IN_CLASSC_NET;
+       net = IN_CLASSC_NET;
     else
     {
-      sprintf (errbuf, "inet class for 0x%lx unknown", *netmask);
+      snprintf (errbuf, PCAP_ERRBUF_SIZE, "inet class for 0x%lx unknown", mask);
       return (-1);
     }
   }
+  *localnet = htonl (net);
+  *netmask = htonl (mask);
+
   ARGSUSED (device);
   return (0);
 }
@@ -525,17 +569,18 @@ int pcap_lookupnet (const char *device, bpf_u_int32 *localnet,
 /*
  * Get a list of all interfaces that are present and that we probe okay.
  * Returns -1 on error, 0 otherwise.
- * The list, as returned through "alldevsp", may be null if no interfaces
- * were up and could be opened.
+ * The list may be NULL empty if no interfaces were up and could be opened.
  */
-int pcap_findalldevs (pcap_if_t **alldevsp, char *errbuf)
+int pcap_platform_finddevs  (pcap_if_list_t *devlistp, char *errbuf)
 {
   struct device     *dev;
-  struct sockaddr_ll sa_ll_1, sa_ll_2;
+  pcap_if_t *curdev;
+#if 0   /* Pkt drivers should have no addresses */
+  struct sockaddr_in sa_ll_1, sa_ll_2;
   struct sockaddr   *addr, *netmask, *broadaddr, *dstaddr;
-  pcap_if_t *devlist = NULL;
+#endif
   int       ret = 0;
-  size_t    addr_size = sizeof(struct sockaddr_ll);
+  int       found = 0;
 
   for (dev = (struct device*)dev_base; dev; dev = dev->next)
   {
@@ -548,42 +593,45 @@ int pcap_findalldevs (pcap_if_t **alldevsp, char *errbuf)
     FLUSHK();
     (*dev->close) (dev);
 
+    /*
+     * XXX - find out whether it's up or running?  Does that apply here?
+     * Can we find out if anything's plugged into the adapter, if it's
+     * a wired device, and set PCAP_IF_CONNECTION_STATUS_CONNECTED
+     * or PCAP_IF_CONNECTION_STATUS_DISCONNECTED?
+     */
+    if ((curdev = pcap_add_dev(devlistp, dev->name, 0,
+                dev->long_name, errbuf)) == NULL)
+    {
+      ret = -1;
+      break;
+    }
+    found = 1;
+#if 0   /* Pkt drivers should have no addresses */
     memset (&sa_ll_1, 0, sizeof(sa_ll_1));
     memset (&sa_ll_2, 0, sizeof(sa_ll_2));
-    sa_ll_1.sll_family = AF_PACKET;
-    sa_ll_2.sll_family = AF_PACKET;
+    sa_ll_1.sin_family = AF_INET;
+    sa_ll_2.sin_family = AF_INET;
 
     addr      = (struct sockaddr*) &sa_ll_1;
     netmask   = (struct sockaddr*) &sa_ll_1;
     dstaddr   = (struct sockaddr*) &sa_ll_1;
     broadaddr = (struct sockaddr*) &sa_ll_2;
-    memset (&sa_ll_2.sll_addr, 0xFF, sizeof(sa_ll_2.sll_addr));
+    memset (&sa_ll_2.sin_addr, 0xFF, sizeof(sa_ll_2.sin_addr));
 
-    if (pcap_add_if(&devlist, dev->name, dev->flags,
-                    dev->long_name, errbuf) < 0)
+    if (pcap_add_addr_to_dev(curdev, addr, sizeof(*addr),
+                        netmask, sizeof(*netmask),
+                        broadaddr, sizeof(*broadaddr),
+                        dstaddr, sizeof(*dstaddr), errbuf) < 0)
     {
       ret = -1;
       break;
     }
-    if (add_addr_to_iflist(&devlist,dev->name, dev->flags, addr, addr_size,
-                           netmask, addr_size, broadaddr, addr_size,
-                           dstaddr, addr_size, errbuf) < 0)
-    {
-      ret = -1;
-      break;
-    }
+#endif
   }
 
-  if (devlist && ret < 0)
-  {
-    pcap_freealldevs (devlist);
-    devlist = NULL;
-  }
-  else
-  if (!devlist)
+  if (ret == 0 && !found)
      strcpy (errbuf, "No drivers found");
 
-  *alldevsp = devlist;
   return (ret);
 }
 
@@ -605,17 +653,17 @@ void pcap_assert (const char *what, const char *file, unsigned line)
  */
 void pcap_set_wait (pcap_t *p, void (*yield)(void), int wait)
 {
-  struct pcap_dos *pd;
   if (p)
   {
-    pd                   = p->priv;
-    pd->wait_proc        = yield;
-    p->opt.timeout        = wait;
+    struct pcap_dos *pd = p->priv;
+
+    pd->wait_proc  = yield;
+    p->opt.timeout = wait;
   }
 }
 
 /*
- * Initialise a named network device.
+ * Initialize a named network device.
  */
 static struct device *
 open_driver (const char *dev_name, char *ebuf, int promisc)
@@ -635,7 +683,7 @@ open_driver (const char *dev_name, char *ebuf, int promisc)
 
       if (!(*dev->probe)(dev))    /* call the xx_probe() function */
       {
-        sprintf (ebuf, "failed to detect device `%s'", dev_name);
+        snprintf (ebuf, PCAP_ERRBUF_SIZE, "failed to detect device `%s'", dev_name);
         return (NULL);
       }
       probed_dev = dev;  /* device is probed okay and may be used */
@@ -657,7 +705,7 @@ open_driver (const char *dev_name, char *ebuf, int promisc)
 
     if (!(*dev->open)(dev))
     {
-      sprintf (ebuf, "failed to activate device `%s'", dev_name);
+      snprintf (ebuf, PCAP_ERRBUF_SIZE, "failed to activate device `%s'", dev_name);
       if (pktInfo.error && !strncmp(dev->name,"pkt",3))
       {
         strcat (ebuf, ": ");
@@ -666,7 +714,7 @@ open_driver (const char *dev_name, char *ebuf, int promisc)
       return (NULL);
     }
 
-    /* Some devices need this to operate in promiscous mode
+    /* Some devices need this to operate in promiscuous mode
      */
     if (promisc && dev->set_multicast_list)
        (*dev->set_multicast_list) (dev);
@@ -679,21 +727,21 @@ open_driver (const char *dev_name, char *ebuf, int promisc)
    */
   if (!dev)
   {
-    sprintf (ebuf, "device `%s' not supported", dev_name);
+    snprintf (ebuf, PCAP_ERRBUF_SIZE, "device `%s' not supported", dev_name);
     return (NULL);
   }
 
 not_probed:
   if (!probed_dev)
   {
-    sprintf (ebuf, "device `%s' not probed", dev_name);
+    snprintf (ebuf, PCAP_ERRBUF_SIZE, "device `%s' not probed", dev_name);
     return (NULL);
   }
   return (dev);
 }
 
 /*
- * Deinitialise MAC driver.
+ * Deinitialize MAC driver.
  * Set receive mode back to default mode.
  */
 static void close_driver (void)
@@ -755,8 +803,8 @@ static void exc_handler (int sig)
     default:
          fprintf (stderr, "Catching signal %d.\n", sig);
   }
-  exc_occured = 1;
-  pcap_cleanup_dos (NULL);
+  exc_occurred = 1;
+  close_driver();
 }
 #endif  /* __DJGPP__ */
 
@@ -802,7 +850,7 @@ static int first_init (const char *name, char *ebuf, int promisc)
 #ifdef USE_32BIT_DRIVERS
   /*
    * If driver is NOT a 16-bit "pkt/ndis" driver (having a 'copy_rx_buf'
-   * set in it's probe handler), initialise near-memory ring-buffer for
+   * set in it's probe handler), initialize near-memory ring-buffer for
    * the 32-bit device.
    */
   if (dev->copy_rx_buf == NULL)
@@ -911,7 +959,7 @@ static void pcap_init_hook (void)
 }
 
 /*
- * Supress PRINT message from Watt-32's sock_init()
+ * Suppress PRINT message from Watt-32's sock_init()
  */
 static void null_print (void) {}
 
@@ -933,7 +981,7 @@ static int init_watt32 (struct pcap *pcap, const char *dev_name, char *err_buf)
   if (_watt_is_init)
      sock_exit();
 
-  env = getenv ("PCAP_DEBUG");
+  env = getenv ("PCAP_TRACE");
   if (env && atoi(env) > 0 &&
       pcap_pkt_debug < 0)   /* if not already set */
   {
@@ -953,7 +1001,7 @@ static int init_watt32 (struct pcap *pcap, const char *dev_name, char *err_buf)
   has_ip_addr = (rc != 8);  /* IP-address assignment failed */
 
   /* if pcap is using a 32-bit driver w/o a pktdrvr loaded, we
-   * just pretend Watt-32 is initialised okay.
+   * just pretend Watt-32 is initialized okay.
    *
    * !! fix-me: The Watt-32 config isn't done if no pktdrvr
    *            was found. In that case my_ip_addr + sin_mask
@@ -973,7 +1021,7 @@ static int init_watt32 (struct pcap *pcap, const char *dev_name, char *err_buf)
   }
   else if (rc && using_pktdrv)
   {
-    sprintf (err_buf, "sock_init() failed, code %d", rc);
+    snprintf (err_buf, PCAP_ERRBUF_SIZE, "sock_init() failed, code %d", rc);
     return (0);
   }
 
@@ -999,11 +1047,9 @@ static int init_watt32 (struct pcap *pcap, const char *dev_name, char *err_buf)
   pcap_save.linktype       = _eth_get_hwtype (NULL, NULL);
   pcap_save.snapshot       = MTU > 0 ? MTU : ETH_MAX; /* assume 1514 */
 
-#if 1
   /* prevent use of resolve() and resolve_ip()
    */
   last_nameserver = 0;
-#endif
   return (1);
 }
 
@@ -1053,9 +1099,9 @@ static const struct config_table debug_tab[] = {
  * pcap_config_hook() is an extension to application's config
  * handling. Uses Watt-32's config-table function.
  */
-int pcap_config_hook (const char *name, const char *value)
+int pcap_config_hook (const char *keyword, const char *value)
 {
-  return parse_config_table (debug_tab, NULL, name, value);
+  return parse_config_table (debug_tab, NULL, keyword, value);
 }
 
 /*
@@ -1158,14 +1204,14 @@ static void ndis_close (struct device *dev)
 
 static int ndis_open (struct device *dev)
 {
-  int promis = (dev->flags & IFF_PROMISC);
+  int promisc = (dev->flags & IFF_PROMISC);
 
 #ifdef USE_NDIS2
-  if (!NdisInit(promis))
+  if (!NdisInit(promisc))
      return (0);
   return (1);
 #else
-  ARGSUSED (promis);
+  ARGSUSED (promisc);
   return (0);
 #endif
 }
@@ -1249,7 +1295,7 @@ struct device tc90xbc_dev LOCKED_VAR = {
 
 struct device wd_dev LOCKED_VAR = {
               "wd",
-              "Westen Digital",
+              "Western Digital",
               0,
               0,0,0,0,0,0,
               &tc90xbc_dev,
@@ -1494,3 +1540,11 @@ static void pktq_clear (struct rx_ringbuf *q)
 
 #endif /* USE_32BIT_DRIVERS */
 
+/*
+ * Libpcap version string.
+ */
+const char *
+pcap_lib_version(void)
+{
+  return ("DOS-" PCAP_VERSION_STRING);
+}

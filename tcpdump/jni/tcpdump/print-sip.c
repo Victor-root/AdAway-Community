@@ -10,20 +10,18 @@
  * LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
  * FOR A PARTICULAR PURPOSE.
  *
- * Original code by Hannes Gredler (hannes@juniper.net)
+ * Original code by Hannes Gredler (hannes@gredler.at)
  * Turned into common "text protocol" code, which this uses, by
  * Guy Harris.
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Session Initiation Protocol (SIP) printer */
 
-#include <tcpdump-stdinc.h>
+#include <config.h>
 
-#include "interface.h"
-#include "extract.h"
+#include "netdissect-stdinc.h"
+
+#include "netdissect.h"
 
 static const char *sipcmds[] = {
 	"ACK",
@@ -49,5 +47,6 @@ static const char *sipcmds[] = {
 void
 sip_print(netdissect_options *ndo, const u_char *pptr, u_int len)
 {
-	txtproto_print(ndo, pptr, len, "sip", sipcmds, RESP_CODE_SECOND_TOKEN);
+	ndo->ndo_protocol = "sip";
+	txtproto_print(ndo, pptr, len, sipcmds, RESP_CODE_SECOND_TOKEN);
 }

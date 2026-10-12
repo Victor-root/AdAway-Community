@@ -24,19 +24,17 @@
  *	Guy Harris <guy@alum.mit.edu>
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Token Ring printer */
 
-#include <tcpdump-stdinc.h>
+#include <config.h>
+
+#include "netdissect-stdinc.h"
 
 #include <string.h>
 
-#include "interface.h"
+#include "netdissect.h"
 #include "extract.h"
 #include "addrtoname.h"
-#include "ether.h"
 
 /*
  * Copyright (c) 1998, Larry Lile
@@ -67,33 +65,31 @@
  */
 
 #define TOKEN_HDRLEN		14
-#define TOKEN_RING_MAC_LEN	6
 #define ROUTING_SEGMENT_MAX	16
 #define IS_SOURCE_ROUTED(trp)	((trp)->token_shost[0] & 0x80)
-#define FRAME_TYPE(trp)		(((trp)->token_fc & 0xC0) >> 6)
+#define FRAME_TYPE(trp)		((GET_U_1((trp)->token_fc) & 0xC0) >> 6)
 #define TOKEN_FC_LLC		1
 
-#define BROADCAST(trp)		((EXTRACT_16BITS(&(trp)->token_rcf) & 0xE000) >> 13)
-#define RIF_LENGTH(trp)		((EXTRACT_16BITS(&(trp)->token_rcf) & 0x1f00) >> 8)
-#define DIRECTION(trp)		((EXTRACT_16BITS(&(trp)->token_rcf) & 0x0080) >> 7)
-#define LARGEST_FRAME(trp)	((EXTRACT_16BITS(&(trp)->token_rcf) & 0x0070) >> 4)
-#define RING_NUMBER(trp, x)	((EXTRACT_16BITS(&(trp)->token_rseg[x]) & 0xfff0) >> 4)
-#define BRIDGE_NUMBER(trp, x)	((EXTRACT_16BITS(&(trp)->token_rseg[x]) & 0x000f))
+#define BROADCAST(trp)		((GET_BE_U_2((trp)->token_rcf) & 0xE000) >> 13)
+#define RIF_LENGTH(trp)		((GET_BE_U_2((trp)->token_rcf) & 0x1f00) >> 8)
+#define DIRECTION(trp)		((GET_BE_U_2((trp)->token_rcf) & 0x0080) >> 7)
+#define LARGEST_FRAME(trp)	((GET_BE_U_2((trp)->token_rcf) & 0x0070) >> 4)
+#define RING_NUMBER(trp, x)	((GET_BE_U_2((trp)->token_rseg[x]) & 0xfff0) >> 4)
+#define BRIDGE_NUMBER(trp, x)	(GET_BE_U_2((trp)->token_rseg[x]) & 0x000f)
 #define SEGMENT_COUNT(trp)	((int)((RIF_LENGTH(trp) - 2) / 2))
 
 struct token_header {
-	uint8_t  token_ac;
-	uint8_t  token_fc;
-	uint8_t  token_dhost[TOKEN_RING_MAC_LEN];
-	uint8_t  token_shost[TOKEN_RING_MAC_LEN];
-	uint16_t token_rcf;
-	uint16_t token_rseg[ROUTING_SEGMENT_MAX];
+	nd_uint8_t   token_ac;
+	nd_uint8_t   token_fc;
+	nd_mac_addr  token_dhost;
+	nd_mac_addr  token_shost;
+	nd_uint16_t  token_rcf;
+	nd_uint16_t  token_rseg[ROUTING_SEGMENT_MAX];
 };
 
-static const char tstr[] = "[|token-ring]";
 
 /* Extract src, dst addresses */
-static inline void
+static void
 extract_token_addrs(const struct token_header *trp, char *fsrc, char *fdst)
 {
 	memcpy(fdst, (const char *)trp->token_dhost, 6);
@@ -103,24 +99,23 @@ extract_token_addrs(const struct token_header *trp, char *fsrc, char *fdst)
 /*
  * Print the TR MAC header
  */
-static inline void
+static void
 token_hdr_print(netdissect_options *ndo,
-                register const struct token_header *trp, register u_int length,
-                register const u_char *fsrc, register const u_char *fdst)
+                const struct token_header *trp, u_int length,
+                const u_char *fsrc, const u_char *fdst)
 {
 	const char *srcname, *dstname;
 
 	srcname = etheraddr_string(ndo, fsrc);
 	dstname = etheraddr_string(ndo, fdst);
 
-	if (ndo->ndo_vflag)
-		ND_PRINT((ndo, "%02x %02x %s %s %d: ",
-		       trp->token_ac,
-		       trp->token_fc,
-		       srcname, dstname,
-		       length));
-	else
-		ND_PRINT((ndo, "%s %s %d: ", srcname, dstname, length));
+	if (!ndo->ndo_qflag)
+		ND_PRINT("%02x %02x ",
+		       GET_U_1(trp->token_ac),
+		       GET_U_1(trp->token_fc));
+	ND_PRINT("%s > %s, length %u: ",
+	       srcname, dstname,
+	       length);
 }
 
 static const char *broadcast_indicator[] = {
@@ -149,59 +144,67 @@ u_int
 token_print(netdissect_options *ndo, const u_char *p, u_int length, u_int caplen)
 {
 	const struct token_header *trp;
-	u_short extracted_ethertype;
-	struct ether_header ehdr;
+	int llc_hdrlen;
+	nd_mac_addr srcmac, dstmac;
+	struct lladdr_info src, dst;
 	u_int route_len = 0, hdr_len = TOKEN_HDRLEN;
 	int seg;
 
+	ndo->ndo_protocol = "token-ring";
 	trp = (const struct token_header *)p;
 
 	if (caplen < TOKEN_HDRLEN) {
-		ND_PRINT((ndo, "%s", tstr));
+		nd_print_trunc(ndo);
 		return hdr_len;
 	}
 
 	/*
 	 * Get the TR addresses into a canonical form
 	 */
-	extract_token_addrs(trp, (char*)ESRC(&ehdr), (char*)EDST(&ehdr));
+	extract_token_addrs(trp, (char*)srcmac, (char*)dstmac);
 
 	/* Adjust for source routing information in the MAC header */
 	if (IS_SOURCE_ROUTED(trp)) {
 		/* Clear source-routed bit */
-		*ESRC(&ehdr) &= 0x7f;
+		srcmac[0] &= 0x7f;
 
 		if (ndo->ndo_eflag)
-			token_hdr_print(ndo, trp, length, ESRC(&ehdr), EDST(&ehdr));
+			token_hdr_print(ndo, trp, length, srcmac, dstmac);
 
 		if (caplen < TOKEN_HDRLEN + 2) {
-			ND_PRINT((ndo, "%s", tstr));
+			nd_print_trunc(ndo);
 			return hdr_len;
 		}
 		route_len = RIF_LENGTH(trp);
 		hdr_len += route_len;
 		if (caplen < hdr_len) {
-			ND_PRINT((ndo, "%s", tstr));
+			nd_print_trunc(ndo);
 			return hdr_len;
 		}
 		if (ndo->ndo_vflag) {
-			ND_PRINT((ndo, "%s ", broadcast_indicator[BROADCAST(trp)]));
-			ND_PRINT((ndo, "%s", direction[DIRECTION(trp)]));
+			ND_PRINT("%s ", broadcast_indicator[BROADCAST(trp)]);
+			ND_PRINT("%s", direction[DIRECTION(trp)]);
 
 			for (seg = 0; seg < SEGMENT_COUNT(trp); seg++)
-				ND_PRINT((ndo, " [%d:%d]", RING_NUMBER(trp, seg),
-				    BRIDGE_NUMBER(trp, seg)));
+				ND_PRINT(" [%u:%u]", RING_NUMBER(trp, seg),
+				    BRIDGE_NUMBER(trp, seg));
 		} else {
-			ND_PRINT((ndo, "rt = %x", EXTRACT_16BITS(&trp->token_rcf)));
+			ND_PRINT("rt = %x", GET_BE_U_2(trp->token_rcf));
 
 			for (seg = 0; seg < SEGMENT_COUNT(trp); seg++)
-				ND_PRINT((ndo, ":%x", EXTRACT_16BITS(&trp->token_rseg[seg])));
+				ND_PRINT(":%x",
+					 GET_BE_U_2(trp->token_rseg[seg]));
 		}
-		ND_PRINT((ndo, " (%s) ", largest_frame[LARGEST_FRAME(trp)]));
+		ND_PRINT(" (%s) ", largest_frame[LARGEST_FRAME(trp)]);
 	} else {
 		if (ndo->ndo_eflag)
-			token_hdr_print(ndo, trp, length, ESRC(&ehdr), EDST(&ehdr));
+			token_hdr_print(ndo, trp, length, srcmac, dstmac);
 	}
+
+	src.addr = srcmac;
+	src.addr_string = etheraddr_string;
+	dst.addr = dstmac;
+	dst.addr_string = etheraddr_string;
 
 	/* Skip over token ring MAC header and routing information */
 	length -= hdr_len;
@@ -211,26 +214,20 @@ token_print(netdissect_options *ndo, const u_char *p, u_int length, u_int caplen
 	/* Frame Control field determines interpretation of packet */
 	if (FRAME_TYPE(trp) == TOKEN_FC_LLC) {
 		/* Try to print the LLC-layer header & higher layers */
-		if (llc_print(ndo, p, length, caplen, ESRC(&ehdr), EDST(&ehdr),
-		    &extracted_ethertype) == 0) {
-			/* ether_type not known, print raw packet */
-			if (!ndo->ndo_eflag)
-				token_hdr_print(ndo, trp,
-				    length + TOKEN_HDRLEN + route_len,
-				    ESRC(&ehdr), EDST(&ehdr));
-			if (extracted_ethertype) {
-				ND_PRINT((ndo, "(LLC %s) ",
-			etherproto_string(htons(extracted_ethertype))));
-			}
+		llc_hdrlen = llc_print(ndo, p, length, caplen, &src, &dst);
+		if (llc_hdrlen < 0) {
+			/* packet type not known, print raw packet */
 			if (!ndo->ndo_suppress_default_print)
 				ND_DEFAULTPRINT(p, caplen);
+			llc_hdrlen = -llc_hdrlen;
 		}
+		hdr_len += llc_hdrlen;
 	} else {
 		/* Some kinds of TR packet we cannot handle intelligently */
 		/* XXX - dissect MAC packets if frame type is 0 */
 		if (!ndo->ndo_eflag)
 			token_hdr_print(ndo, trp, length + TOKEN_HDRLEN + route_len,
-			    ESRC(&ehdr), EDST(&ehdr));
+			    srcmac, dstmac);
 		if (!ndo->ndo_suppress_default_print)
 			ND_DEFAULTPRINT(p, caplen);
 	}
@@ -243,8 +240,9 @@ token_print(netdissect_options *ndo, const u_char *p, u_int length, u_int caplen
  * 'h->len' is the length of the packet off the wire, and 'h->caplen'
  * is the number of bytes actually captured.
  */
-u_int
+void
 token_if_print(netdissect_options *ndo, const struct pcap_pkthdr *h, const u_char *p)
 {
-	return (token_print(ndo, p, h->len, h->caplen));
+	ndo->ndo_protocol = "token-ring";
+	ndo->ndo_ll_hdr_len += token_print(ndo, p, h->len, h->caplen);
 }

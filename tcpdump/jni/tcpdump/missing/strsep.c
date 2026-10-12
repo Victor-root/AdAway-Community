@@ -31,15 +31,13 @@
  * SUCH DAMAGE.
  */
 
-#ifdef HAVE_CONFIG_H 
 #include <config.h>
-#endif
 
-#include <tcpdump-stdinc.h>
+#include <netdissect-stdinc.h>
 
 #include <string.h>
 
-#include "interface.h"
+#include "netdissect.h"
 
 /*
  * Get next token from string *stringp, where tokens are possibly-empty
@@ -55,9 +53,9 @@
 char *
 strsep(char **stringp, const char *delim)
 {
-	register char *s;
-	register const char *spanp;
-	register int c, sc;
+	char *s;
+	const char *spanp;
+	int c, sc;
 	char *tok;
 
 	if ((s = *stringp) == NULL)

@@ -19,26 +19,25 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Raw IP printer */
 
-#include <tcpdump-stdinc.h>
+#include <config.h>
 
-#include "interface.h"
+#include "netdissect-stdinc.h"
+
+#include "netdissect.h"
 
 /*
- * The DLT_RAW packet has no header. It contains a raw IP packet.
+ * The DLT_RAW packet has no header. It contains a raw IPv4 or IPv6 packet.
  */
 
-u_int
+void
 raw_if_print(netdissect_options *ndo, const struct pcap_pkthdr *h, const u_char *p)
 {
+	ndo->ndo_protocol = "raw";
+	ndo->ndo_ll_hdr_len += 0;
 	if (ndo->ndo_eflag)
-		ND_PRINT((ndo, "ip: "));
+		ND_PRINT("ip: ");
 
 	ipN_print(ndo, p, h->len);
-
-	return (0);
 }

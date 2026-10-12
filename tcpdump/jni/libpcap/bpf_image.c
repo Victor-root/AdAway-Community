@@ -19,294 +19,403 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include <config.h>
 
-#ifdef WIN32
-#include <pcap-stdinc.h>
-#else /* WIN32 */
-#if HAVE_INTTYPES_H
-#include <inttypes.h>
-#elif HAVE_STDINT_H
-#include <stdint.h>
-#endif
-#ifdef HAVE_SYS_BITYPES_H
-#include <sys/bitypes.h>
-#endif
-#include <sys/types.h>
-#endif /* WIN32 */
+#include <pcap-types.h>
 
 #include <stdio.h>
 #include <string.h>
 
+#ifdef __linux__
+#include <linux/types.h>
+#include <linux/if_packet.h>
+#include <linux/filter.h>
+
+/*
+ * We want our versions of these #defines, not Linux's version.
+ * (The two should be the same; if not, we have a problem; all BPF
+ * implementations *should* be source-compatible supersets of ours.)
+ */
+#undef BPF_STMT
+#undef BPF_JUMP
+#endif
+
 #include "pcap-int.h"
+
+#include "thread-local.h"
 
 #ifdef HAVE_OS_PROTO_H
 #include "os-proto.h"
 #endif
 
-char *
-bpf_image(p, n)
-	const struct bpf_insn *p;
-	int n;
-{
-	int v;
-	const char *fmt, *op;
-	static char image[256];
-	char operand[64];
+#ifdef SKF_AD_OFF
+/*
+ * Symbolic names for offsets that refer to the special Linux BPF locations.
+ */
+static const char *offsets[SKF_AD_MAX] = {
+#ifdef SKF_AD_PROTOCOL
+	[SKF_AD_PROTOCOL] = "proto",
+#endif
+#ifdef SKF_AD_PKTTYPE
+	[SKF_AD_PKTTYPE] = "type",
+#endif
+#ifdef SKF_AD_IFINDEX
+	[SKF_AD_IFINDEX] = "ifidx",
+#endif
+#ifdef SKF_AD_NLATTR
+	[SKF_AD_NLATTR] = "nla",
+#endif
+#ifdef SKF_AD_NLATTR_NEST
+	[SKF_AD_NLATTR_NEST] = "nlan",
+#endif
+#ifdef SKF_AD_MARK
+	[SKF_AD_MARK] = "mark",
+#endif
+#ifdef SKF_AD_QUEUE
+	[SKF_AD_QUEUE] = "queue",
+#endif
+#ifdef SKF_AD_HATYPE
+	[SKF_AD_HATYPE] = "hatype",
+#endif
+#ifdef SKF_AD_RXHASH
+	[SKF_AD_RXHASH] = "rxhash",
+#endif
+#ifdef SKF_AD_CPU
+	[SKF_AD_CPU] = "cpu",
+#endif
+#ifdef SKF_AD_ALU_XOR_X
+	[SKF_AD_ALU_XOR_X] = "xor_x",
+#endif
+#ifdef SKF_AD_VLAN_TAG
+	[SKF_AD_VLAN_TAG] = "vlan_tci",
+#endif
+#ifdef SKF_AD_VLAN_TAG_PRESENT
+	[SKF_AD_VLAN_TAG_PRESENT] = "vlanp",
+#endif
+#ifdef SKF_AD_PAY_OFFSET
+	[SKF_AD_PAY_OFFSET] = "poff",
+#endif
+#ifdef SKF_AD_RANDOM
+	[SKF_AD_RANDOM] = "random",
+#endif
+#ifdef SKF_AD_VLAN_TPID
+	[SKF_AD_VLAN_TPID] = "vlan_tpid"
+#endif
+};
+#endif
 
-	v = p->k;
+static void
+bpf_print_abs_load_operand(char *buf, size_t bufsize, const struct bpf_insn *p)
+{
+#ifdef SKF_AD_OFF
+	const char *sym;
+
+	/*
+	 * It's an absolute load.
+	 * Is the offset a special Linux offset that we know about?
+	 */
+	if (p->k >= (bpf_u_int32)SKF_AD_OFF &&
+	    p->k < (bpf_u_int32)(SKF_AD_OFF + SKF_AD_MAX) &&
+	    (sym = offsets[p->k - (bpf_u_int32)SKF_AD_OFF]) != NULL) {
+		/*
+		 * Yes.  Print the offset symbolically.
+		 */
+		(void)snprintf(buf, bufsize, "[%s]", sym);
+	} else
+#endif
+		(void)snprintf(buf, bufsize, "[%d]", p->k);
+}
+
+char *
+bpf_image(const struct bpf_insn *p, int n)
+{
+	const char *op;
+	static thread_local char image[256];
+	char operand_buf[64];
+	const char *operand;
+
 	switch (p->code) {
 
 	default:
 		op = "unimp";
-		fmt = "0x%x";
-		v = p->code;
+		(void)snprintf(operand_buf, sizeof operand_buf, "0x%x", p->code);
+		operand = operand_buf;
 		break;
 
 	case BPF_RET|BPF_K:
 		op = "ret";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_RET|BPF_A:
 		op = "ret";
-		fmt = "";
+		operand = "";
 		break;
 
 	case BPF_LD|BPF_W|BPF_ABS:
 		op = "ld";
-		fmt = "[%d]";
+		bpf_print_abs_load_operand(operand_buf, sizeof operand_buf, p);
+		operand = operand_buf;
 		break;
 
 	case BPF_LD|BPF_H|BPF_ABS:
 		op = "ldh";
-		fmt = "[%d]";
+		bpf_print_abs_load_operand(operand_buf, sizeof operand_buf, p);
+		operand = operand_buf;
 		break;
 
 	case BPF_LD|BPF_B|BPF_ABS:
 		op = "ldb";
-		fmt = "[%d]";
+		bpf_print_abs_load_operand(operand_buf, sizeof operand_buf, p);
+		operand = operand_buf;
 		break;
 
 	case BPF_LD|BPF_W|BPF_LEN:
 		op = "ld";
-		fmt = "#pktlen";
+		operand = "#pktlen";
+		break;
+
+	case BPF_LDX|BPF_W|BPF_LEN:
+		op = "ldx";
+		operand = "#pktlen";
 		break;
 
 	case BPF_LD|BPF_W|BPF_IND:
 		op = "ld";
-		fmt = "[x + %d]";
+		(void)snprintf(operand_buf, sizeof operand_buf, "[x + %d]", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_LD|BPF_H|BPF_IND:
 		op = "ldh";
-		fmt = "[x + %d]";
+		(void)snprintf(operand_buf, sizeof operand_buf, "[x + %d]", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_LD|BPF_B|BPF_IND:
 		op = "ldb";
-		fmt = "[x + %d]";
+		(void)snprintf(operand_buf, sizeof operand_buf, "[x + %d]", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_LD|BPF_IMM:
 		op = "ld";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_LDX|BPF_IMM:
 		op = "ldx";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_LDX|BPF_MSH|BPF_B:
 		op = "ldxb";
-		fmt = "4*([%d]&0xf)";
+		(void)snprintf(operand_buf, sizeof operand_buf, "4*([%d]&0xf)", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_LD|BPF_MEM:
 		op = "ld";
-		fmt = "M[%d]";
+		(void)snprintf(operand_buf, sizeof operand_buf, "M[%d]", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_LDX|BPF_MEM:
 		op = "ldx";
-		fmt = "M[%d]";
+		(void)snprintf(operand_buf, sizeof operand_buf, "M[%d]", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ST:
 		op = "st";
-		fmt = "M[%d]";
+		(void)snprintf(operand_buf, sizeof operand_buf, "M[%d]", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_STX:
 		op = "stx";
-		fmt = "M[%d]";
+		(void)snprintf(operand_buf, sizeof operand_buf, "M[%d]", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_JMP|BPF_JA:
 		op = "ja";
-		fmt = "%d";
-		v = n + 1 + p->k;
+		(void)snprintf(operand_buf, sizeof operand_buf, "%d", n + 1 + p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_JMP|BPF_JGT|BPF_K:
 		op = "jgt";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_JMP|BPF_JGE|BPF_K:
 		op = "jge";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_JMP|BPF_JEQ|BPF_K:
 		op = "jeq";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_JMP|BPF_JSET|BPF_K:
 		op = "jset";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_JMP|BPF_JGT|BPF_X:
 		op = "jgt";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_JMP|BPF_JGE|BPF_X:
 		op = "jge";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_JMP|BPF_JEQ|BPF_X:
 		op = "jeq";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_JMP|BPF_JSET|BPF_X:
 		op = "jset";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_ADD|BPF_X:
 		op = "add";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_SUB|BPF_X:
 		op = "sub";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_MUL|BPF_X:
 		op = "mul";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_DIV|BPF_X:
 		op = "div";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_MOD|BPF_X:
 		op = "mod";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_AND|BPF_X:
 		op = "and";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_OR|BPF_X:
 		op = "or";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_XOR|BPF_X:
 		op = "xor";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_LSH|BPF_X:
 		op = "lsh";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_RSH|BPF_X:
 		op = "rsh";
-		fmt = "x";
+		operand = "x";
 		break;
 
 	case BPF_ALU|BPF_ADD|BPF_K:
 		op = "add";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_SUB|BPF_K:
 		op = "sub";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_MUL|BPF_K:
 		op = "mul";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_DIV|BPF_K:
 		op = "div";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_MOD|BPF_K:
 		op = "mod";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_AND|BPF_K:
 		op = "and";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_OR|BPF_K:
 		op = "or";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_XOR|BPF_K:
 		op = "xor";
-		fmt = "#0x%x";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#0x%x", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_LSH|BPF_K:
 		op = "lsh";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_RSH|BPF_K:
 		op = "rsh";
-		fmt = "#%d";
+		(void)snprintf(operand_buf, sizeof operand_buf, "#%d", p->k);
+		operand = operand_buf;
 		break;
 
 	case BPF_ALU|BPF_NEG:
 		op = "neg";
-		fmt = "";
+		operand = "";
 		break;
 
 	case BPF_MISC|BPF_TAX:
 		op = "tax";
-		fmt = "";
+		operand = "";
 		break;
 
 	case BPF_MISC|BPF_TXA:
 		op = "txa";
-		fmt = "";
+		operand = "";
 		break;
 	}
-	(void)snprintf(operand, sizeof operand, fmt, v);
 	if (BPF_CLASS(p->code) == BPF_JMP && BPF_OP(p->code) != BPF_JA) {
 		(void)snprintf(image, sizeof image,
 			      "(%03d) %-8s %-16s jt %d\tjf %d",

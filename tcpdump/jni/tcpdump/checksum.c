@@ -14,22 +14,18 @@
  *
  * miscellaneous checksumming routines
  *
- * Original code by Hannes Gredler (hannes@juniper.net)
+ * Original code by Hannes Gredler (hannes@gredler.at)
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include <config.h>
 
-#include <tcpdump-stdinc.h>
+#include "netdissect-stdinc.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <assert.h>
 
-#include "interface.h"
+#include "netdissect.h"
 
 /*
  * CRC-10 table generated using the following Python snippet:
@@ -45,7 +41,7 @@ for i in range(256):
 			accum ^= 0x633
 	crc_table.append(accum)
 
-for i in range(len(crc_table)/8):
+for i in range(int(len(crc_table)/8)):
 	for j in range(8):
 		sys.stdout.write("0x%04x, " % crc_table[i*8+j])
 	sys.stdout.write("\n")
@@ -87,49 +83,17 @@ static const uint16_t crc10_table[256] =
 	0x021e, 0x002d, 0x004b, 0x0278, 0x0087, 0x02b4, 0x02d2, 0x00e1
 };
 
-static void
-init_crc10_table(void)
-{
-#define CRC10_POLYNOMIAL 0x633
-    register int i, j;
-    register uint16_t accum;
-    uint16_t verify_crc10_table[256];
-
-    for ( i = 0;  i < 256;  i++ )
-    {
-        accum = ((unsigned short) i << 2);
-        for ( j = 0;  j < 8;  j++ )
-        {
-            if ((accum <<= 1) & 0x400) accum ^= CRC10_POLYNOMIAL;
-        }
-        verify_crc10_table[i] = accum;
-    }
-    assert(memcmp(verify_crc10_table,
-				  crc10_table,
-				  sizeof(verify_crc10_table)) == 0);
-#undef CRC10_POLYNOMIAL
-}
-
 uint16_t
 verify_crc10_cksum(uint16_t accum, const u_char *p, int length)
 {
-    register int i;
+    int i;
 
-    for ( i = 0;  i < length;  i++ )
-    {
+    for ( i = 0;  i < length;  i++ ) {
         accum = ((accum << 8) & 0x3ff)
             ^ crc10_table[( accum >> 2) & 0xff]
             ^ *p++;
     }
     return accum;
-}
-
-/* precompute checksum tables */
-void
-init_checksum(void) {
-
-    init_crc10_table();
-
 }
 
 /*
@@ -142,21 +106,21 @@ create_osi_cksum (const uint8_t *pptr, int checksum_offset, int length)
 
     int x;
     int y;
-    uint32_t mul;
+    int32_t mul;
     uint32_t c0;
-    uint32_t c1;
+    uint64_t c1;
     uint16_t checksum;
-    int index;
+    int idx;
 
     c0 = 0;
     c1 = 0;
 
-    for (index = 0; index < length; index++) {
+    for (idx = 0; idx < length; idx++) {
         /*
          * Ignore the contents of the checksum field.
          */
-        if (index == checksum_offset ||
-            index == checksum_offset+1) {
+        if (idx == checksum_offset ||
+            idx == checksum_offset+1) {
             c1 += c0;
             pptr++;
         } else {
@@ -170,21 +134,23 @@ create_osi_cksum (const uint8_t *pptr, int checksum_offset, int length)
 
     mul = (length - checksum_offset)*(c0);
 
-    x = mul - c0 - c1;
-    y = c1 - mul - 1;
-
-    if ( y >= 0 ) y++;
-    if ( x < 0 ) x--;
+    /*
+     * Casting c0 and c1 here is guaranteed to be safe, because we know
+     * they have values between 0 and 254 inclusive.  These casts are
+     * done to ensure that all of the arithmetic operations are
+     * well-defined (i.e., not mixing signed and unsigned integers).
+     */
+    x = mul - (int)c0 - (int)c1;
+    y = (int)c1 - mul;
 
     x %= 255;
     y %= 255;
 
-
-    if (x == 0) x = 255;
-    if (y == 0) y = 255;
+    if (x <= 0) x += 255;
+    if (y <= 0) y += 255;
 
     y &= 0x00FF;
-    checksum = ((x << 8) | y);
+    checksum = (uint16_t)((x << 8) | y);
 
     return checksum;
 }

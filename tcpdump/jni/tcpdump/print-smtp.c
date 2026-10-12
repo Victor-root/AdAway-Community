@@ -11,20 +11,17 @@
  * FOR A PARTICULAR PURPOSE.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Simple Mail Transfer Protocol (SMTP) printer */
 
-#include <tcpdump-stdinc.h>
+#include <config.h>
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "netdissect-stdinc.h"
 
 #include "netdissect.h"
-#include "extract.h"
 
 void
 smtp_print(netdissect_options *ndo, const u_char *pptr, u_int len)
 {
-	txtproto_print(ndo, pptr, len, "smtp", NULL, 0);
+	ndo->ndo_protocol = "smtp";
+	txtproto_print(ndo, pptr, len, NULL, 0);
 }

@@ -10,7 +10,8 @@
 ### Changed
 
 * Move the built-in web server from OpenSSL 1.1.1, end of life since 2023, to Mbed TLS 3.6 LTS (TLS 1.2 and 1.3, same certificate)
-* Shrink the APK from 15 MB to 8.6 MB by no longer bundling OpenSSL and an unused native C++ library
+* Update the bundled tcpdump and libpcap used by the root DNS log from 4.5.1 and 1.5.2 (2014) to 4.99.7 and 1.10.7
+* Shrink the APK from 15 MB to 9.1 MB by no longer bundling OpenSSL and an unused native C++ library
 
 ### Removed
 

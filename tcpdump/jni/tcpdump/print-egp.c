@@ -18,27 +18,29 @@
  * Initial contribution from Jeff Honig (jch@MITCHELL.CIT.CORNELL.EDU).
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Exterior Gateway Protocol (EGP) printer */
 
-#include <tcpdump-stdinc.h>
+/* specification: RFC 827 */
 
-#include "interface.h"
+#include <config.h>
+
+#include "netdissect-stdinc.h"
+
+#define ND_LONGJMP_FROM_TCHECK
+#include "netdissect.h"
 #include "addrtoname.h"
 #include "extract.h"
 
 struct egp_packet {
-	uint8_t  egp_version;
+	nd_uint8_t  egp_version;
 #define	EGP_VERSION	2
-	uint8_t  egp_type;
+	nd_uint8_t  egp_type;
 #define  EGPT_ACQUIRE	3
 #define  EGPT_REACH	5
 #define  EGPT_POLL	2
 #define  EGPT_UPDATE	1
 #define  EGPT_ERROR	8
-	uint8_t  egp_code;
+	nd_uint8_t  egp_code;
 #define  EGPC_REQUEST	0
 #define  EGPC_CONFIRM	1
 #define  EGPC_REFUSE	2
@@ -46,7 +48,7 @@ struct egp_packet {
 #define  EGPC_CEASEACK	4
 #define  EGPC_HELLO	0
 #define  EGPC_HEARDU	1
-	uint8_t  egp_status;
+	nd_uint8_t  egp_status;
 #define  EGPS_UNSPEC	0
 #define  EGPS_ACTIVE	1
 #define  EGPS_PASSIVE	2
@@ -59,13 +61,13 @@ struct egp_packet {
 #define  EGPS_UP	1
 #define  EGPS_DOWN	2
 #define  EGPS_UNSOL	0x80
-	uint16_t  egp_checksum;
-	uint16_t  egp_as;
-	uint16_t  egp_sequence;
+	nd_uint16_t  egp_checksum;
+	nd_uint16_t  egp_as;
+	nd_uint16_t  egp_sequence;
 	union {
-		uint16_t  egpu_hello;
-		uint8_t egpu_gws[2];
-		uint16_t  egpu_reason;
+		nd_uint16_t egpu_hello;
+		nd_uint8_t  egpu_gws[2];
+		nd_uint16_t egpu_reason;
 #define  EGPR_UNSPEC	0
 #define  EGPR_BADHEAD	1
 #define  EGPR_BADDATA	2
@@ -79,66 +81,80 @@ struct egp_packet {
 #define  egp_extgw  egp_handg.egpu_gws[1]
 #define  egp_reason  egp_handg.egpu_reason
 	union {
-		uint16_t  egpu_poll;
-		uint32_t egpu_sourcenet;
+		nd_uint16_t egpu_poll;
+		nd_ipv4 egpu_sourcenet;
 	} egp_pands;
 #define  egp_poll  egp_pands.egpu_poll
 #define  egp_sourcenet  egp_pands.egpu_sourcenet
 };
 
-static const char *egp_acquire_codes[] = {
-	"request",
-	"confirm",
-	"refuse",
-	"cease",
-	"cease_ack"
+static const struct tok egp_type_str[] = {
+	{ EGPT_ACQUIRE, "acquire" },
+	{ EGPT_REACH,   "reach"   },
+	{ EGPT_POLL,    "poll"    },
+	{ EGPT_UPDATE,  "update"  },
+	{ EGPT_ERROR,   "error"   },
+	{ 0, NULL }
 };
 
-static const char *egp_acquire_status[] = {
-	"unspecified",
-	"active_mode",
-	"passive_mode",
-	"insufficient_resources",
-	"administratively_prohibited",
-	"going_down",
-	"parameter_violation",
-	"protocol_violation"
+static const struct tok egp_acquire_codes_str[] = {
+	{ EGPC_REQUEST,  "request"   },
+	{ EGPC_CONFIRM,  "confirm"   },
+	{ EGPC_REFUSE,   "refuse"    },
+	{ EGPC_CEASE,    "cease"     },
+	{ EGPC_CEASEACK, "cease_ack" },
+	{ 0, NULL }
 };
 
-static const char *egp_reach_codes[] = {
-	"hello",
-	"i-h-u"
+static const struct tok egp_acquire_status_str[] = {
+	{ EGPS_UNSPEC,  "unspecified"                 },
+	{ EGPS_ACTIVE,  "active_mode"                 },
+	{ EGPS_PASSIVE, "passive_mode"                },
+	{ EGPS_NORES,   "insufficient_resources"      },
+	{ EGPS_ADMIN,   "administratively_prohibited" },
+	{ EGPS_GODOWN,  "going_down"                  },
+	{ EGPS_PARAM,   "parameter_violation"         },
+	{ EGPS_PROTO,   "protocol_violation"          },
+	{ 0, NULL }
 };
 
-static const char *egp_status_updown[] = {
-	"indeterminate",
-	"up",
-	"down"
+static const struct tok egp_reach_codes_str[] = {
+	{ EGPC_HELLO,  "hello" },
+	{ EGPC_HEARDU, "i-h-u" },
+	{ 0, NULL }
 };
 
-static const char *egp_reasons[] = {
-	"unspecified",
-	"bad_EGP_header_format",
-	"bad_EGP_data_field_format",
-	"reachability_info_unavailable",
-	"excessive_polling_rate",
-	"no_response",
-	"unsupported_version"
+static const struct tok egp_status_updown_str[] = {
+	{ EGPS_INDET, "indeterminate" },
+	{ EGPS_UP,    "up"            },
+	{ EGPS_DOWN,  "down"          },
+	{ 0, NULL }
+};
+
+static const struct tok egp_reasons_str[] = {
+	{ EGPR_UNSPEC,   "unspecified"                   },
+	{ EGPR_BADHEAD,  "bad_EGP_header_format"         },
+	{ EGPR_BADDATA,  "bad_EGP_data_field_format"     },
+	{ EGPR_NOREACH,  "reachability_info_unavailable" },
+	{ EGPR_XSPOLL,   "excessive_polling_rate"        },
+	{ EGPR_NORESP,   "no_response"                   },
+	{ EGPR_UVERSION, "unsupported_version"           },
+	{ 0, NULL }
 };
 
 static void
-egpnrprint(netdissect_options *ndo,
-           register const struct egp_packet *egp)
+egpnr_print(netdissect_options *ndo,
+           const struct egp_packet *egp, u_int length)
 {
-	register const uint8_t *cp;
+	const uint8_t *cp;
 	uint32_t addr;
-	register uint32_t net;
-	register u_int netlen;
-	int gateways, distances, networks;
-	int t_gateways;
+	uint32_t net;
+	u_int netlen;
+	u_int gateways, distances, networks;
+	u_int intgw, extgw, t_gateways;
 	const char *comma;
 
-	addr = egp->egp_sourcenet;
+	addr = GET_IPV4_TO_NETWORK_ORDER(egp->egp_sourcenet);
 	if (IN_CLASSA(addr)) {
 		net = addr & IN_CLASSA_NET;
 		netlen = 1;
@@ -152,123 +168,144 @@ egpnrprint(netdissect_options *ndo,
 		net = 0;
 		netlen = 0;
 	}
-	cp = (uint8_t *)(egp + 1);
+	cp = (const uint8_t *)(egp + 1);
+	length -= sizeof(*egp);
 
-	t_gateways = egp->egp_intgw + egp->egp_extgw;
+	intgw = GET_U_1(egp->egp_intgw);
+	extgw = GET_U_1(egp->egp_extgw);
+	t_gateways = intgw + extgw;
 	for (gateways = 0; gateways < t_gateways; ++gateways) {
 		/* Pickup host part of gateway address */
 		addr = 0;
-		ND_TCHECK2(cp[0], 4 - netlen);
+		ND_ICHECK_U(length, <, 4 - netlen);
+		ND_TCHECK_LEN(cp, 4 - netlen);
 		switch (netlen) {
 
 		case 1:
-			addr = *cp++;
+			addr = GET_U_1(cp);
+			cp++;
 			/* fall through */
 		case 2:
-			addr = (addr << 8) | *cp++;
+			addr = (addr << 8) | GET_U_1(cp);
+			cp++;
 			/* fall through */
 		case 3:
-			addr = (addr << 8) | *cp++;
+			addr = (addr << 8) | GET_U_1(cp);
+			cp++;
+			break;
 		}
 		addr |= net;
-		ND_TCHECK2(cp[0], 1);
-		distances = *cp++;
-		ND_PRINT((ndo, " %s %s ",
-		       gateways < (int)egp->egp_intgw ? "int" : "ext",
-		       ipaddr_string(ndo, &addr)));
+		length -= 4 - netlen;
+		ND_ICHECK_U(length, <, 1);
+		distances = GET_U_1(cp);
+		cp++;
+		length--;
+		ND_PRINT(" %s %s ",
+		       gateways < intgw ? "int" : "ext",
+		       ipaddr_string(ndo, (const u_char *)&addr)); /* local buffer, not packet data; don't use GET_IPADDR_STRING() */
 
 		comma = "";
-		ND_PRINT((ndo, "("));
-		while (--distances >= 0) {
-			ND_TCHECK2(cp[0], 2);
-			ND_PRINT((ndo, "%sd%d:", comma, (int)*cp++));
+		ND_PRINT("(");
+		while (distances != 0) {
+			ND_ICHECK_U(length, <, 2);
+			ND_PRINT("%sd%u:", comma, GET_U_1(cp));
+			cp++;
 			comma = ", ";
-			networks = *cp++;
-			while (--networks >= 0) {
+			networks = GET_U_1(cp);
+			cp++;
+			length -= 2;
+			while (networks != 0) {
 				/* Pickup network number */
-				ND_TCHECK2(cp[0], 1);
-				addr = (uint32_t)*cp++ << 24;
+				ND_ICHECK_U(length, <, 1);
+				addr = ((uint32_t) GET_U_1(cp)) << 24;
+				cp++;
+				length--;
 				if (IN_CLASSB(addr)) {
-					ND_TCHECK2(cp[0], 1);
-					addr |= (uint32_t)*cp++ << 16;
+					ND_ICHECK_U(length, <, 1);
+					addr |= ((uint32_t) GET_U_1(cp)) << 16;
+					cp++;
+					length--;
 				} else if (!IN_CLASSA(addr)) {
-					ND_TCHECK2(cp[0], 2);
-					addr |= (uint32_t)*cp++ << 16;
-					addr |= (uint32_t)*cp++ << 8;
+					ND_ICHECK_U(length, <, 2);
+					addr |= ((uint32_t) GET_U_1(cp)) << 16;
+					cp++;
+					addr |= ((uint32_t) GET_U_1(cp)) << 8;
+					cp++;
+					length -= 2;
 				}
-				ND_PRINT((ndo, " %s", ipaddr_string(ndo, &addr)));
+				ND_PRINT(" %s", ipaddr_string(ndo, (const u_char *)&addr)); /* local buffer, not packet data; don't use GET_IPADDR_STRING() */
+				networks--;
 			}
+			distances--;
 		}
-		ND_PRINT((ndo, ")"));
+		ND_PRINT(")");
 	}
 	return;
-trunc:
-	ND_PRINT((ndo, "[|]"));
+invalid:
+	nd_print_invalid(ndo);
 }
 
 void
 egp_print(netdissect_options *ndo,
-          register const uint8_t *bp, register u_int length)
+          const uint8_t *bp, u_int length)
 {
-	register const struct egp_packet *egp;
-	register int status;
-	register int code;
-	register int type;
+	const struct egp_packet *egp;
+	u_int version;
+	u_int type;
+	u_int code;
+	u_int status;
 
-	egp = (struct egp_packet *)bp;
-        if (!ND_TTEST2(*egp, length)) {
-		ND_PRINT((ndo, "[|egp]"));
+	ndo->ndo_protocol = "egp";
+	nd_print_protocol_caps(ndo);
+
+	egp = (const struct egp_packet *)bp;
+	ND_ICHECK_ZU(length, <, sizeof(*egp));
+
+	version = GET_U_1(egp->egp_version);
+	ND_ICHECK_U(version, !=, EGP_VERSION);
+	ND_TCHECK_SIZE(egp);
+
+	ND_PRINT("v%u", version);
+	if (ndo->ndo_vflag) {
+		ND_PRINT(", AS %u, seq %u, length %u",
+			 GET_BE_U_2(egp->egp_as),
+			 GET_BE_U_2(egp->egp_sequence),
+			 length);
+	} else {
+		ND_PRINT(", length %u", length);
 		return;
 	}
 
-        if (!ndo->ndo_vflag) {
-            ND_PRINT((ndo, "EGPv%u, AS %u, seq %u, length %u",
-                   egp->egp_version,
-                   EXTRACT_16BITS(&egp->egp_as),
-                   EXTRACT_16BITS(&egp->egp_sequence),
-                   length));
-            return;
-        } else
-            ND_PRINT((ndo, "EGPv%u, length %u",
-                   egp->egp_version,
-                   length));
-
-	if (egp->egp_version != EGP_VERSION) {
-		ND_PRINT((ndo, "[version %d]", egp->egp_version));
-		return;
-	}
-
-	type = egp->egp_type;
-	code = egp->egp_code;
-	status = egp->egp_status;
+	type = GET_U_1(egp->egp_type);
+	ND_PRINT(", %s", tok2str(egp_type_str, "[type %u]", type));
+	code = GET_U_1(egp->egp_code);
+	status = GET_U_1(egp->egp_status);
 
 	switch (type) {
 	case EGPT_ACQUIRE:
-		ND_PRINT((ndo, " acquire"));
+		ND_PRINT(" %s", tok2str(egp_acquire_codes_str, "[code %u]", code));
 		switch (code) {
 		case EGPC_REQUEST:
 		case EGPC_CONFIRM:
-			ND_PRINT((ndo, " %s", egp_acquire_codes[code]));
 			switch (status) {
 			case EGPS_UNSPEC:
 			case EGPS_ACTIVE:
 			case EGPS_PASSIVE:
-				ND_PRINT((ndo, " %s", egp_acquire_status[status]));
+				ND_PRINT(" %s", tok2str(egp_acquire_status_str, "%u", status));
 				break;
 
 			default:
-				ND_PRINT((ndo, " [status %d]", status));
+				ND_PRINT(" [status %u]", status);
 				break;
 			}
-			ND_PRINT((ndo, " hello:%d poll:%d",
-			       EXTRACT_16BITS(&egp->egp_hello),
-			       EXTRACT_16BITS(&egp->egp_poll)));
+			ND_PRINT(" hello:%u poll:%u",
+			       GET_BE_U_2(egp->egp_hello),
+			       GET_BE_U_2(egp->egp_poll));
 			break;
 
 		case EGPC_REFUSE:
 		case EGPC_CEASE:
 		case EGPC_CEASEACK:
-			ND_PRINT((ndo, " %s", egp_acquire_codes[code]));
 			switch (status ) {
 			case EGPS_UNSPEC:
 			case EGPS_NORES:
@@ -276,81 +313,52 @@ egp_print(netdissect_options *ndo,
 			case EGPS_GODOWN:
 			case EGPS_PARAM:
 			case EGPS_PROTO:
-				ND_PRINT((ndo, " %s", egp_acquire_status[status]));
+				ND_PRINT(" %s", tok2str(egp_acquire_status_str, "%u", status));
 				break;
 
 			default:
-				ND_PRINT((ndo, "[status %d]", status));
+				ND_PRINT("[status %u]", status);
 				break;
 			}
-			break;
-
-		default:
-			ND_PRINT((ndo, "[code %d]", code));
 			break;
 		}
 		break;
 
 	case EGPT_REACH:
+		ND_PRINT(" %s", tok2str(egp_reach_codes_str, "[reach code %u]", code));
 		switch (code) {
-
 		case EGPC_HELLO:
 		case EGPC_HEARDU:
-			ND_PRINT((ndo, " %s", egp_reach_codes[code]));
-			if (status <= EGPS_DOWN)
-				ND_PRINT((ndo, " state:%s", egp_status_updown[status]));
-			else
-				ND_PRINT((ndo, " [status %d]", status));
-			break;
-
-		default:
-			ND_PRINT((ndo, "[reach code %d]", code));
+			ND_PRINT(" state:%s", tok2str(egp_status_updown_str, "%u", status));
 			break;
 		}
 		break;
 
 	case EGPT_POLL:
-		ND_PRINT((ndo, " poll"));
-		if (egp->egp_status <= EGPS_DOWN)
-			ND_PRINT((ndo, " state:%s", egp_status_updown[status]));
-		else
-			ND_PRINT((ndo, " [status %d]", status));
-		ND_PRINT((ndo, " net:%s", ipaddr_string(ndo, &egp->egp_sourcenet)));
+		ND_PRINT(" state:%s", tok2str(egp_status_updown_str, "%u", status));
+		ND_PRINT(" net:%s", GET_IPADDR_STRING(egp->egp_sourcenet));
 		break;
 
 	case EGPT_UPDATE:
-		ND_PRINT((ndo, " update"));
 		if (status & EGPS_UNSOL) {
 			status &= ~EGPS_UNSOL;
-			ND_PRINT((ndo, " unsolicited"));
+			ND_PRINT(" unsolicited");
 		}
-		if (status <= EGPS_DOWN)
-			ND_PRINT((ndo, " state:%s", egp_status_updown[status]));
-		else
-			ND_PRINT((ndo, " [status %d]", status));
-		ND_PRINT((ndo, " %s int %d ext %d",
-		       ipaddr_string(ndo, &egp->egp_sourcenet),
-		       egp->egp_intgw,
-		       egp->egp_extgw));
+		ND_PRINT(" state:%s", tok2str(egp_status_updown_str, "%u", status));
+		ND_PRINT(" %s int %u ext %u",
+		       GET_IPADDR_STRING(egp->egp_sourcenet),
+		       GET_U_1(egp->egp_intgw),
+		       GET_U_1(egp->egp_extgw));
 		if (ndo->ndo_vflag)
-			egpnrprint(ndo, egp);
+			egpnr_print(ndo, egp, length);
 		break;
 
 	case EGPT_ERROR:
-		ND_PRINT((ndo, " error"));
-		if (status <= EGPS_DOWN)
-			ND_PRINT((ndo, " state:%s", egp_status_updown[status]));
-		else
-			ND_PRINT((ndo, " [status %d]", status));
-
-		if (EXTRACT_16BITS(&egp->egp_reason) <= EGPR_UVERSION)
-			ND_PRINT((ndo, " %s", egp_reasons[EXTRACT_16BITS(&egp->egp_reason)]));
-		else
-			ND_PRINT((ndo, " [reason %d]", EXTRACT_16BITS(&egp->egp_reason)));
-		break;
-
-	default:
-		ND_PRINT((ndo, "[type %d]", type));
+		ND_PRINT(" state:%s", tok2str(egp_status_updown_str, "%u", status));
+		ND_PRINT(" %s", tok2str(egp_reasons_str, "[reason %u]", GET_BE_U_2(egp->egp_reason)));
 		break;
 	}
+	return;
+invalid:
+	nd_print_invalid(ndo);
 }

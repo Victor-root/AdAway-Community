@@ -19,52 +19,48 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: IP over Fibre Channel printer */
 
-#include <tcpdump-stdinc.h>
+/* specification: RFC 2625 */
+
+#include <config.h>
+
+#include "netdissect-stdinc.h"
 
 #include <string.h>
 
-#include "interface.h"
+#define ND_LONGJMP_FROM_TCHECK
+#include "netdissect.h"
 #include "addrtoname.h"
 
-#include "ether.h"
-
-/*
- * RFC 2625 IP-over-Fibre Channel.
- */
 
 struct ipfc_header {
-	u_char  ipfc_dhost[8];
-	u_char  ipfc_shost[8];
+	nd_byte ipfc_dhost[2+MAC_ADDR_LEN];
+	nd_byte ipfc_shost[2+MAC_ADDR_LEN];
 };
 
 #define IPFC_HDRLEN 16
 
 /* Extract src, dst addresses */
-static inline void
+static void
 extract_ipfc_addrs(const struct ipfc_header *ipfcp, char *ipfcsrc,
-    char *ipfcdst)
+		   char *ipfcdst)
 {
 	/*
 	 * We assume that, as per RFC 2625, the lower 48 bits of the
 	 * source and destination addresses are MAC addresses.
 	 */
-	memcpy(ipfcdst, (const char *)&ipfcp->ipfc_dhost[2], 6);
-	memcpy(ipfcsrc, (const char *)&ipfcp->ipfc_shost[2], 6);
+	memcpy(ipfcdst, (const char *)&ipfcp->ipfc_dhost[2], MAC_ADDR_LEN);
+	memcpy(ipfcsrc, (const char *)&ipfcp->ipfc_shost[2], MAC_ADDR_LEN);
 }
 
 /*
  * Print the Network_Header
  */
-static inline void
+static void
 ipfc_hdr_print(netdissect_options *ndo,
-	   register const struct ipfc_header *ipfcp _U_,
-	   register u_int length, register const u_char *ipfcsrc,
-	   register const u_char *ipfcdst)
+	       const struct ipfc_header *ipfcp _U_, u_int length,
+	       const u_char *ipfcsrc, const u_char *ipfcdst)
 {
 	const char *srcname, *dstname;
 
@@ -72,29 +68,45 @@ ipfc_hdr_print(netdissect_options *ndo,
 	dstname = etheraddr_string(ndo, ipfcdst);
 
 	/*
-	 * XXX - show the upper 16 bits?  Do so only if "vflag" is set?
+	 * XXX - should we show the upper 16 bits of the addresses?
+	 * Do so only if "vflag" is set?
+	 * Section 3.3 "FC Port and Node Network Addresses" says that
+	 *
+	 *    In this specification, both the Source and Destination
+	 *    4-bit NAA identifiers SHALL be set to binary '0001'
+	 *    indicating that an IEEE 48-bit MAC address is contained
+	 *    in the lower 48 bits of the network address fields. The
+	 *    high order 12 bits in the network address fields SHALL
+	 *    be set to 0x0000.
+	 *
+	 * so, for captures following this specification, the upper 16
+	 * bits should be 0x1000, followed by a MAC address.
 	 */
-	ND_PRINT((ndo, "%s %s %d: ", srcname, dstname, length));
+	ND_PRINT("%s > %s, length %u: ", srcname, dstname, length);
 }
 
-static void
+static u_int
 ipfc_print(netdissect_options *ndo, const u_char *p, u_int length, u_int caplen)
 {
 	const struct ipfc_header *ipfcp = (const struct ipfc_header *)p;
-	struct ether_header ehdr;
-	u_short extracted_ethertype;
+	nd_mac_addr srcmac, dstmac;
+	struct lladdr_info src, dst;
+	int llc_hdrlen;
 
-	if (caplen < IPFC_HDRLEN) {
-		ND_PRINT((ndo, "[|ipfc]"));
-		return;
-	}
+	ndo->ndo_protocol = "ipfc";
+	ND_TCHECK_LEN(p, IPFC_HDRLEN);
 	/*
 	 * Get the network addresses into a canonical form
 	 */
-	extract_ipfc_addrs(ipfcp, (char *)ESRC(&ehdr), (char *)EDST(&ehdr));
+	extract_ipfc_addrs(ipfcp, (char *)srcmac, (char *)dstmac);
 
 	if (ndo->ndo_eflag)
-		ipfc_hdr_print(ndo, ipfcp, length, ESRC(&ehdr), EDST(&ehdr));
+		ipfc_hdr_print(ndo, ipfcp, length, srcmac, dstmac);
+
+	src.addr = srcmac;
+	src.addr_string = etheraddr_string;
+	dst.addr = dstmac;
+	dst.addr_string = etheraddr_string;
 
 	/* Skip over Network_Header */
 	length -= IPFC_HDRLEN;
@@ -102,22 +114,17 @@ ipfc_print(netdissect_options *ndo, const u_char *p, u_int length, u_int caplen)
 	caplen -= IPFC_HDRLEN;
 
 	/* Try to print the LLC-layer header & higher layers */
-	if (llc_print(ndo, p, length, caplen, ESRC(&ehdr), EDST(&ehdr),
-	    &extracted_ethertype) == 0) {
+	llc_hdrlen = llc_print(ndo, p, length, caplen, &src, &dst);
+	if (llc_hdrlen < 0) {
 		/*
 		 * Some kinds of LLC packet we cannot
 		 * handle intelligently
 		 */
-		if (!ndo->ndo_eflag)
-			ipfc_hdr_print(ndo, ipfcp, length + IPFC_HDRLEN,
-			    ESRC(&ehdr), EDST(&ehdr));
-		if (extracted_ethertype) {
-			ND_PRINT((ndo, "(LLC %s) ",
-		etherproto_string(htons(extracted_ethertype))));
-		}
 		if (!ndo->ndo_suppress_default_print)
 			ND_DEFAULTPRINT(p, caplen);
+		llc_hdrlen = -llc_hdrlen;
 	}
+	return (IPFC_HDRLEN + llc_hdrlen);
 }
 
 /*
@@ -126,10 +133,9 @@ ipfc_print(netdissect_options *ndo, const u_char *p, u_int length, u_int caplen)
  * 'h->len' is the length of the packet off the wire, and 'h->caplen'
  * is the number of bytes actually captured.
  */
-u_int
-ipfc_if_print(netdissect_options *ndo, const struct pcap_pkthdr *h, register const u_char *p)
+void
+ipfc_if_print(netdissect_options *ndo, const struct pcap_pkthdr *h, const u_char *p)
 {
-	ipfc_print(ndo, p, h->len, h->caplen);
-
-	return (IPFC_HDRLEN);
+	ndo->ndo_protocol = "ipfc";
+	ndo->ndo_ll_hdr_len += ipfc_print(ndo, p, h->len, h->caplen);
 }

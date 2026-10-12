@@ -28,9 +28,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include <config.h>
 
 #include <string.h>
 
@@ -51,7 +49,7 @@ struct pcap_dbus {
 };
 
 static int
-dbus_read(pcap_t *handle, int max_packets, pcap_handler callback, u_char *user)
+dbus_read(pcap_t *handle, int max_packets _U_, pcap_handler callback, u_char *user)
 {
 	struct pcap_dbus *handlep = handle->priv;
 
@@ -66,7 +64,7 @@ dbus_read(pcap_t *handle, int max_packets, pcap_handler callback, u_char *user)
 	message = dbus_connection_pop_message(handlep->conn);
 
 	while (!message) {
-		// XXX handle->opt.timeout = timeout_ms;
+		/* XXX handle->opt.timeout = timeout_ms; */
 		if (!dbus_connection_read_write(handlep->conn, 100)) {
 			snprintf(handle->errbuf, PCAP_ERRBUF_SIZE, "Connection closed");
 			return -1;
@@ -82,6 +80,7 @@ dbus_read(pcap_t *handle, int max_packets, pcap_handler callback, u_char *user)
 
 	if (dbus_message_is_signal(message, DBUS_INTERFACE_LOCAL, "Disconnected")) {
 		snprintf(handle->errbuf, PCAP_ERRBUF_SIZE, "Disconnected");
+		dbus_message_unref(message);
 		return -1;
 	}
 
@@ -91,7 +90,8 @@ dbus_read(pcap_t *handle, int max_packets, pcap_handler callback, u_char *user)
 
 		gettimeofday(&pkth.ts, NULL);
 		if (handle->fcode.bf_insns == NULL ||
-		    bpf_filter(handle->fcode.bf_insns, (u_char *)raw_msg, pkth.len, pkth.caplen)) {
+		    pcapint_filter(handle->fcode.bf_insns, handle->fcode.bf_len,
+		                   (u_char *)raw_msg, pkth.len, pkth.caplen)) {
 			handlep->packets_read++;
 			callback(user, &pkth, (u_char *)raw_msg);
 			count++;
@@ -99,11 +99,14 @@ dbus_read(pcap_t *handle, int max_packets, pcap_handler callback, u_char *user)
 
 		dbus_free(raw_msg);
 	}
+
+	dbus_message_unref(message);
+
 	return count;
 }
 
 static int
-dbus_write(pcap_t *handle, const void *buf, size_t size)
+dbus_write(pcap_t *handle, const void *buf, int size)
 {
 	/* XXX, not tested */
 	struct pcap_dbus *handlep = handle->priv;
@@ -142,7 +145,29 @@ dbus_cleanup(pcap_t *handle)
 
 	dbus_connection_unref(handlep->conn);
 
-	pcap_cleanup_live_common(handle);
+	pcapint_cleanup_live_common(handle);
+}
+
+/*
+ * We don't support non-blocking mode.  I'm not sure what we'd
+ * do to support it and, given that we don't support select()/
+ * poll()/epoll_wait()/kevent() etc., it probably doesn't
+ * matter.
+ */
+static int
+dbus_getnonblock(pcap_t *p)
+{
+	snprintf(p->errbuf, PCAP_ERRBUF_SIZE,
+	    "Non-blocking mode isn't supported for capturing on D-Bus");
+	return (-1);
+}
+
+static int
+dbus_setnonblock(pcap_t *p, int nonblock _U_)
+{
+	snprintf(p->errbuf, PCAP_ERRBUF_SIZE,
+	    "Non-blocking mode isn't supported for capturing on D-Bus");
+	return (-1);
 }
 
 static int
@@ -160,10 +185,10 @@ dbus_activate(pcap_t *handle)
 	#define N_RULES sizeof(rules)/sizeof(rules[0])
 
 	struct pcap_dbus *handlep = handle->priv;
-	const char *dev = handle->opt.source;
+	const char *dev = handle->opt.device;
 
 	DBusError error = DBUS_ERROR_INIT;
-	int i;
+	u_int i;
 
 	if (strcmp(dev, "dbus-system") == 0) {
 		if (!(handlep->conn = dbus_bus_get(DBUS_BUS_SYSTEM, &error))) {
@@ -195,7 +220,7 @@ dbus_activate(pcap_t *handle)
 		}
 
 	} else {
-		snprintf(handle->errbuf, PCAP_ERRBUF_SIZE, "Can't get bus address from %s", handle->opt.source);
+		snprintf(handle->errbuf, PCAP_ERRBUF_SIZE, "Can't get bus address from %s", handle->opt.device);
 		return PCAP_ERROR;
 	}
 
@@ -205,14 +230,39 @@ dbus_activate(pcap_t *handle)
 	handle->linktype = DLT_DBUS;
 	handle->read_op = dbus_read;
 	handle->inject_op = dbus_write;
-	handle->setfilter_op = install_bpf_program; /* XXX, later add support for dbus_bus_add_match() */
+	handle->setfilter_op = pcapint_install_bpf_program; /* XXX, later add support for dbus_bus_add_match() */
 	handle->setdirection_op = NULL;
 	handle->set_datalink_op = NULL;      /* can't change data link type */
-	handle->getnonblock_op = pcap_getnonblock_fd;
-	handle->setnonblock_op = pcap_setnonblock_fd;
+	handle->getnonblock_op = dbus_getnonblock;
+	handle->setnonblock_op = dbus_setnonblock;
 	handle->stats_op = dbus_stats;
+	handle->cleanup_op = dbus_cleanup;
 
+#ifndef _WIN32
+	/*
+	 * Unfortunately, trying to do a select()/poll()/epoll_wait()/
+	 * kevent()/etc. on a D-Bus connection isn't a simple
+	 * case of "give me an FD on which to wait".
+	 *
+	 * Apparently, you have to register "add watch", "remove watch",
+	 * and "toggle watch" functions with
+	 * dbus_connection_set_watch_functions(),
+	 * keep a *set* of FDs, add to that set in the "add watch"
+	 * function, subtract from it in the "remove watch" function,
+	 * and either add to or subtract from that set in the "toggle
+	 * watch" function, and do the wait on *all* of the FDs in the
+	 * set.  (Yes, you need the "toggle watch" function, so that
+	 * the main loop doesn't itself need to check for whether
+	 * a given watch is enabled or disabled - most libpcap programs
+	 * know nothing about D-Bus and shouldn't *have* to know anything
+	 * about D-Bus other than how to decode D-Bus messages.)
+	 *
+	 * Implementing that would require considerable changes in
+	 * the way libpcap exports "selectable FDs" to its client.
+	 * Until that's done, we just say "you can't do that".
+	 */
 	handle->selectable_fd = handle->fd = -1;
+#endif
 
 	if (handle->opt.rfmon) {
 		/*
@@ -221,6 +271,14 @@ dbus_activate(pcap_t *handle)
 		dbus_cleanup(handle);
 		return PCAP_ERROR_RFMON_NOTSUP;
 	}
+
+	/*
+	 * Turn a negative snapshot value (invalid), a snapshot value of
+	 * 0 (unspecified), or a value bigger than the normal maximum
+	 * value, into the maximum message length for D-Bus (128MB).
+	 */
+	if (handle->snapshot <= 0 || handle->snapshot > 134217728)
+		handle->snapshot = 134217728;
 
 	/* dbus_connection_set_max_message_size(handlep->conn, handle->snapshot); */
 	if (handle->opt.buffer_size != 0)
@@ -259,20 +317,37 @@ dbus_create(const char *device, char *ebuf, int *is_ours)
 	}
 
 	*is_ours = 1;
-	p = pcap_create_common(device, ebuf, sizeof (struct pcap_dbus));
+	p = PCAP_CREATE_COMMON(ebuf, struct pcap_dbus);
 	if (p == NULL)
 		return (NULL);
 
 	p->activate_op = dbus_activate;
+	/*
+	 * Set these up front, so that, even if our client tries
+	 * to set non-blocking mode before we're activated, or
+	 * query the state of non-blocking mode, they get an error,
+	 * rather than having the non-blocking mode option set
+	 * for use later.
+	 */
+	p->getnonblock_op = dbus_getnonblock;
+	p->setnonblock_op = dbus_setnonblock;
 	return (p);
 }
 
 int
-dbus_findalldevs(pcap_if_t **alldevsp, char *err_str)
+dbus_findalldevs(pcap_if_list_t *devlistp, char *err_str)
 {
-	if (pcap_add_if(alldevsp, "dbus-system", 0, "D-Bus system bus", err_str) < 0)
+	/*
+	 * The notion of "connected" vs. "disconnected" doesn't apply.
+	 * XXX - what about the notions of "up" and "running"?
+	 */
+	if (pcapint_add_dev(devlistp, "dbus-system",
+	    PCAP_IF_CONNECTION_STATUS_NOT_APPLICABLE, "D-Bus system bus",
+	    err_str) == NULL)
 		return -1;
-	if (pcap_add_if(alldevsp, "dbus-session", 0, "D-Bus session bus", err_str) < 0)
+	if (pcapint_add_dev(devlistp, "dbus-session",
+	    PCAP_IF_CONNECTION_STATUS_NOT_APPLICABLE, "D-Bus session bus",
+	    err_str) == NULL)
 		return -1;
 	return 0;
 }

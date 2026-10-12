@@ -34,6 +34,10 @@
 #ifndef lib_pcap_namedb_h
 #define lib_pcap_namedb_h
 
+#include <stdio.h>		/* FILE */
+
+#include <pcap/funcattrs.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -43,7 +47,10 @@ extern "C" {
  * XXX this stuff doesn't belong in this interface, but this
  * library already must do name to address translation, so
  * on systems that don't have support for /etc/ethers, we
- * export these hooks since they'll
+ * export these hooks since they're already being used by
+ * some applications (such as tcpdump) and already being
+ * marked as exported in some OSes offering libpcap (such
+ * as Debian).
  */
 struct pcap_etherent {
 	u_char addr[6];
@@ -52,33 +59,49 @@ struct pcap_etherent {
 #ifndef PCAP_ETHERS_FILE
 #define PCAP_ETHERS_FILE "/etc/ethers"
 #endif
-struct	pcap_etherent *pcap_next_etherent(FILE *);
-u_char *pcap_ether_hostton(const char*);
-u_char *pcap_ether_aton(const char *);
 
+PCAP_AVAILABLE_0_4
+PCAP_API struct	pcap_etherent *pcap_next_etherent(FILE *);
+
+PCAP_AVAILABLE_0_4
+PCAP_API u_char *pcap_ether_hostton(const char*);
+
+PCAP_AVAILABLE_0_4
+PCAP_API u_char *pcap_ether_aton(const char *);
+
+PCAP_AVAILABLE_0_4
+PCAP_API
+PCAP_DEPRECATED("this is not reentrant; use 'pcap_nametoaddrinfo' instead")
 bpf_u_int32 **pcap_nametoaddr(const char *);
-#ifdef INET6
-struct addrinfo *pcap_nametoaddrinfo(const char *);
-#endif
-bpf_u_int32 pcap_nametonetaddr(const char *);
 
-int	pcap_nametoport(const char *, int *, int *);
-int	pcap_nametoportrange(const char *, int *, int *, int *);
-int	pcap_nametoproto(const char *);
-int	pcap_nametoeproto(const char *);
-int	pcap_nametollc(const char *);
+PCAP_AVAILABLE_0_7
+PCAP_API struct addrinfo *pcap_nametoaddrinfo(const char *);
+
+PCAP_AVAILABLE_0_4
+PCAP_API bpf_u_int32 pcap_nametonetaddr(const char *);
+
+PCAP_AVAILABLE_0_4
+PCAP_API int	pcap_nametoport(const char *, int *, int *);
+
+PCAP_AVAILABLE_0_9
+PCAP_API int	pcap_nametoportrange(const char *, int *, int *, int *);
+
+PCAP_AVAILABLE_0_4
+PCAP_API int	pcap_nametoproto(const char *);
+
+PCAP_AVAILABLE_0_4
+PCAP_API int	pcap_nametoeproto(const char *);
+
+PCAP_AVAILABLE_0_9
+PCAP_API int	pcap_nametollc(const char *);
+
 /*
  * If a protocol is unknown, PROTO_UNDEF is returned.
  * Also, pcap_nametoport() returns the protocol along with the port number.
- * If there are ambiguous entried in /etc/services (i.e. domain
+ * If there are ambiguous entries in /etc/services (i.e. domain
  * can be either tcp or udp) PROTO_UNDEF is returned.
  */
 #define PROTO_UNDEF		-1
-
-/* XXX move these to pcap-int.h? */
-int __pcap_atodn(const char *, bpf_u_int32 *);
-int __pcap_atoin(const char *, bpf_u_int32 *);
-u_short	__pcap_nametodnaddr(const char *);
 
 #ifdef __cplusplus
 }

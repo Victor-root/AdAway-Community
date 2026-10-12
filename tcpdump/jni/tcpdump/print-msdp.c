@@ -16,14 +16,14 @@
  * FOR A PARTICULAR PURPOSE.
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Multicast Source Discovery Protocol (MSDP) printer */
 
-#include <tcpdump-stdinc.h>
+#include <config.h>
 
-#include "interface.h"
+#define ND_LONGJMP_FROM_TCHECK
+#include "netdissect-stdinc.h"
+
+#include "netdissect.h"
 #include "addrtoname.h"
 #include "extract.h"
 
@@ -34,69 +34,93 @@ msdp_print(netdissect_options *ndo, const u_char *sp, u_int length)
 {
 	unsigned int type, len;
 
-	ND_TCHECK2(*sp, 3);
+	ndo->ndo_protocol = "msdp";
+	ND_PRINT(": ");
+	nd_print_protocol(ndo);
 	/* See if we think we're at the beginning of a compound packet */
-	type = *sp;
-	len = EXTRACT_16BITS(sp + 1);
+	type = GET_U_1(sp);
+	len = GET_BE_U_2(sp + 1);
 	if (len > 1500 || len < 3 || type == 0 || type > MSDP_TYPE_MAX)
 		goto trunc;	/* not really truncated, but still not decodable */
-	ND_PRINT((ndo, " msdp:"));
-	while (length > 0) {
-		ND_TCHECK2(*sp, 3);
-		type = *sp;
-		len = EXTRACT_16BITS(sp + 1);
+	while (length != 0) {
+		unsigned int entry_count;
+
+		if (length < 3)
+			goto trunc;
+		type = GET_U_1(sp);
+		len = GET_BE_U_2(sp + 1);
 		if (len > 1400 || ndo->ndo_vflag)
-			ND_PRINT((ndo, " [len %u]", len));
+			ND_PRINT(" [len %u]", len);
 		if (len < 3)
 			goto trunc;
-		sp += 3;
-		length -= 3;
+		if (length < len)
+			goto trunc;
 		switch (type) {
 		case 1:	/* IPv4 Source-Active */
 		case 3: /* IPv4 Source-Active Response */
 			if (type == 1)
-				ND_PRINT((ndo, " SA"));
+				ND_PRINT(" SA");
 			else
-				ND_PRINT((ndo, " SA-Response"));
-			ND_TCHECK(*sp);
-			ND_PRINT((ndo, " %u entries", *sp));
-			if ((u_int)((*sp * 12) + 8) < len) {
-				ND_PRINT((ndo, " [w/data]"));
+				ND_PRINT(" SA-Response");
+
+			/* Entry Count */
+			if (len < 4)
+				goto trunc;
+			entry_count = GET_U_1(sp + 3);
+			ND_PRINT(" %u entries", entry_count);
+
+			/* RP Address */
+			if (len < 8)
+				goto trunc;
+			/* XXX -print this based on ndo_vflag? */
+			ND_TCHECK_LEN(sp + 4, 4);
+
+			/* Entries */
+			ND_TCHECK_LEN(sp + 8, entry_count*12);
+
+			if (len > (8 + entry_count*12)) {
+				/* Encapsulated IP packet */
+				ND_PRINT(" [w/data]");
 				if (ndo->ndo_vflag > 1) {
-					ND_PRINT((ndo, " "));
-					ip_print(ndo, sp + *sp * 12 + 8 - 3,
-					         len - (*sp * 12 + 8));
+					ND_PRINT(" ");
+					ip_print(ndo, sp + (8 + entry_count*12),
+					    len - (8 + entry_count*12));
 				}
 			}
 			break;
 		case 2:
-			ND_PRINT((ndo, " SA-Request"));
-			ND_TCHECK2(*sp, 5);
-			ND_PRINT((ndo, " for %s", ipaddr_string(ndo, sp + 1)));
+			/* draft-ietf-msdp-spec-13 */
+			ND_PRINT(" SA-Request");
+
+			/* Reserved */
+			if (len < 4)
+				goto trunc;
+			ND_TCHECK_1(sp + 3);
+
+			/* Group Address */
+			if (len < 8)
+				goto trunc;
+			if (len != 8)
+				ND_PRINT("[len=%u] ", len);
+			ND_PRINT(" for %s", GET_IPADDR_STRING(sp + 4));
 			break;
 		case 4:
-			ND_PRINT((ndo, " Keepalive"));
+			ND_PRINT(" Keepalive");
 			if (len != 3)
-				ND_PRINT((ndo, "[len=%d] ", len));
+				ND_PRINT("[len=%u] ", len);
 			break;
 		case 5:
-			ND_PRINT((ndo, " Notification"));
+			ND_PRINT(" Notification");
 			break;
 		default:
-			ND_PRINT((ndo, " [type=%d len=%d]", type, len));
+			ND_PRINT(" [type=%u len=%u]", type, len);
 			break;
 		}
-		sp += (len - 3);
-		length -= (len - 3);
+		ND_TCHECK_LEN(sp, len);
+		sp += len;
+		length -= len;
 	}
 	return;
 trunc:
-	ND_PRINT((ndo, " [|msdp]"));
+	nd_print_trunc(ndo);
 }
-
-/*
- * Local Variables:
- * c-style: whitesmith
- * c-basic-offset: 8
- * End:
- */

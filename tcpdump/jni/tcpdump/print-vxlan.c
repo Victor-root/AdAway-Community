@@ -13,15 +13,23 @@
  * Original code by Francesco Fondelli (francesco dot fondelli, gmail dot com)
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Virtual eXtensible Local Area Network (VXLAN) printer */
 
-#include <tcpdump-stdinc.h>
+/* specification: RFC 7348 */
 
-#include "interface.h"
+#include <config.h>
+
+#include "netdissect-stdinc.h"
+
+#define ND_LONGJMP_FROM_TCHECK
+#include "netdissect.h"
 #include "extract.h"
+
+static const struct tok vxlan_flags [] = {
+    { 0x08, "I" },
+    { 0, NULL }
+};
+#define VXLAN_HDR_LEN 8
 
 /*
  * VXLAN header, RFC7348
@@ -43,20 +51,31 @@ vxlan_print(netdissect_options *ndo, const u_char *bp, u_int len)
     uint8_t flags;
     uint32_t vni;
 
-    if (len < 8) {
-        ND_PRINT((ndo, "[|VXLAN]"));
-        return;
-    }
+    ndo->ndo_protocol = "vxlan";
+    nd_print_protocol_caps(ndo);
+    if (len < VXLAN_HDR_LEN)
+        goto invalid;
 
-    flags = *bp;
-    bp += 4;
+    flags = GET_U_1(bp);
+    bp += 1;
+    ND_PRINT(", flags [%s] (0x%02x), ",
+             bittok2str_nosep(vxlan_flags, "invalid", flags), flags);
 
-    vni = EXTRACT_24BITS(bp);
-    bp += 4;
+    /* 1st Reserved */
+    bp += 3;
 
-    ND_PRINT((ndo, "VXLAN, "));
-    ND_PRINT((ndo, "flags [%s] (0x%02x), ", flags & 0x08 ? "I" : ".", flags));
-    ND_PRINT((ndo, "vni %u\n", vni));
+    vni = GET_BE_U_3(bp);
+    bp += 3;
+    ND_PRINT("vni %u\n", vni);
 
-    ether_print(ndo, bp, len - 8, len - 8, NULL, NULL);
+    /* 2nd Reserved */
+    ND_TCHECK_1(bp);
+    bp += 1;
+
+    ether_print(ndo, bp, len - VXLAN_HDR_LEN, ND_BYTES_AVAILABLE_AFTER(bp), NULL, NULL);
+
+    return;
+
+invalid:
+    nd_print_invalid(ndo);
 }

@@ -102,6 +102,13 @@ AC_DEFUN(AC_LBL_C_INIT,
 	    # -Werror forces warnings to be errors.
 	    #
 	    ac_lbl_cc_force_warning_errors=-Werror
+
+	    #
+	    # Try to have the compiler default to hiding symbols,
+	    # so that only symbols explicitly exported with
+	    # PCAP_API will be visible outside (shared) libraries.
+	    #
+	    AC_LBL_CHECK_COMPILER_OPT($1, -fvisibility=hidden)
     else
 	    $2="$$2 -I/usr/local/include"
 	    LDFLAGS="$LDFLAGS -L/usr/local/lib"
@@ -114,6 +121,13 @@ AC_DEFUN(AC_LBL_C_INIT,
 		    # of which use -Werror to force warnings to be errors.
 		    #
 		    ac_lbl_cc_force_warning_errors=-Werror
+
+		    #
+		    # Try to have the compiler default to hiding symbols,
+		    # so that only symbols explicitly exported with
+		    # PCAP_API will be visible outside (shared) libraries.
+		    #
+		    AC_LBL_CHECK_COMPILER_OPT($1, -fvisibility=hidden)
 		    ;;
 
 	    hpux*)
@@ -188,6 +202,13 @@ AC_DEFUN(AC_LBL_C_INIT,
 		    # warnings to be treated as errors.
 		    #
 		    ac_lbl_cc_force_warning_errors=-errwarn
+
+		    #
+		    # Try to have the compiler default to hiding symbols,
+		    # so that only symbols explicitly exported with
+		    # PCAP_API will be visible outside (shared) libraries.
+		    #
+		    AC_LBL_CHECK_COMPILER_OPT($1, -xldscope=hidden)
 		    ;;
 
 	    ultrix*)
@@ -211,57 +232,114 @@ AC_DEFUN(AC_LBL_C_INIT,
 ])
 
 dnl
-dnl Check whether, if you pass an unknown warning option to the
-dnl compiler, it fails or just prints a warning message and succeeds.
-dnl Set ac_lbl_unknown_warning_option_error to the appropriate flag
-dnl to force an error if it would otherwise just print a warning message
-dnl and succeed.
+dnl Save the values of various variables that affect compilation and
+dnl linking, and that we don't ourselves modify persistently; done
+dnl before a test involving compiling or linking is done, so that we
+dnl can restore those variables after the test is done.
 dnl
-AC_DEFUN(AC_LBL_CHECK_UNKNOWN_WARNING_OPTION_ERROR,
-    [
-	AC_MSG_CHECKING([whether the compiler fails when given an unknown warning option])
+AC_DEFUN(AC_LBL_SAVE_CHECK_STATE,
+[
 	save_CFLAGS="$CFLAGS"
-	CFLAGS="$CFLAGS -Wxyzzy-this-will-never-succeed-xyzzy"
-	AC_TRY_COMPILE(
-	    [],
-	    [return 0],
-	    [
-		AC_MSG_RESULT([no])
-		#
-		# We're assuming this is clang, where
-		# -Werror=unknown-warning-option is the appropriate
-		# option to force the compiler to fail.
-		#
-		ac_lbl_unknown_warning_option_error="-Werror=unknown-warning-option"
-	    ],
-	    [
-		AC_MSG_RESULT([yes])
-	    ])
+	save_LIBS="$LIBS"
+	save_LDFLAGS="$LDFLAGS"
+])
+
+dnl
+dnl Restore the values of variables saved by AC_LBL_SAVE_CHECK_STATE.
+dnl
+AC_DEFUN(AC_LBL_RESTORE_CHECK_STATE,
+[
 	CFLAGS="$save_CFLAGS"
-    ])
+	LIBS="$save_LIBS"
+	LDFLAGS="$save_LDFLAGS"
+])
 
 dnl
 dnl Check whether the compiler option specified as the second argument
 dnl is supported by the compiler and, if so, add it to the macro
 dnl specified as the first argument
 dnl
+dnl If a third argument is supplied, treat it as C code to be compiled
+dnl with the flag in question, and the "treat warnings as errors" flag
+dnl set, and don't add the flag to the first argument if the compile
+dnl fails; this is for warning options cause problems that can't be
+dnl worked around.  If a third argument is supplied, a fourth argument
+dnl should also be supplied; it's a message describing what the test
+dnl program is checking.
+dnl
 AC_DEFUN(AC_LBL_CHECK_COMPILER_OPT,
     [
 	AC_MSG_CHECKING([whether the compiler supports the $2 option])
 	save_CFLAGS="$CFLAGS"
-	CFLAGS="$CFLAGS $ac_lbl_unknown_warning_option_error $2"
-	AC_TRY_COMPILE(
-	    [],
-	    [return 0],
+	CFLAGS="$CFLAGS $2"
+	#
+	# XXX - yes, this depends on the way AC_LANG_WERROR works,
+	# but no mechanism is provided to turn AC_LANG_WERROR on
+	# *and then turn it back off*, so that we *only* do it when
+	# testing compiler options - 15 years after somebody asked
+	# for it:
+	#
+	#     https://autoconf.gnu.narkive.com/gTAVmfKD/how-to-cancel-flags-set-by-ac-lang-werror
+	#
+	save_ac_c_werror_flag="$ac_c_werror_flag"
+	ac_c_werror_flag=yes
+	#
+	# We use AC_LANG_SOURCE() so that we can control the complete
+	# content of the program being compiled.  We do not, for example,
+	# want the default "int main()" that AC_LANG_PROGRAM() generates,
+	# as it will generate a warning with -Wold-style-definition, meaning
+	# that we would treat it as not working, as the test will fail if
+	# *any* error output, including a warning due to the flag we're
+	# testing, is generated; see
+	#
+	#    https://www.postgresql.org/message-id/2192993.1591682589%40sss.pgh.pa.us
+	#    https://www.postgresql.org/message-id/2192993.1591682589%40sss.pgh.pa.us
+	#
+	# This may, as per those two messages, be fixed in autoconf 2.70,
+	# but we only require 2.69 or newer for now.
+	#
+	AC_COMPILE_IFELSE(
+	    [AC_LANG_SOURCE([[int main(void) { return 0; }]])],
 	    [
 		AC_MSG_RESULT([yes])
+		can_add_to_cflags=yes
+		#
+		# The compile supports this; do we have some C code for
+		# which the warning should *not* appear?
+		# We test the fourth argument because the third argument
+		# could contain quotes, breaking the test.
+		#
+		if test "x$4" != "x"
+		then
+		    CFLAGS="$CFLAGS $ac_lbl_cc_force_warning_errors"
+		    AC_MSG_CHECKING(whether $2 $4)
+		    AC_COMPILE_IFELSE(
+		      [AC_LANG_SOURCE($3)],
+		      [
+			#
+			# Not a problem.
+			#
+			AC_MSG_RESULT(no)
+		      ],
+		      [
+			#
+			# A problem.
+			#
+			AC_MSG_RESULT(yes)
+			can_add_to_cflags=no
+		      ])
+		fi
 		CFLAGS="$save_CFLAGS"
-		$1="$$1 $2"
+		if test x"$can_add_to_cflags" = "xyes"
+		then
+		    $1="$$1 $2"
+		fi
 	    ],
 	    [
 		AC_MSG_RESULT([no])
 		CFLAGS="$save_CFLAGS"
 	    ])
+	ac_c_werror_flag="$save_ac_c_werror_flag"
     ])
 
 dnl
@@ -352,18 +430,17 @@ AC_DEFUN(AC_LBL_CHECK_DEPENDENCY_GENERATION_OPT,
 	if test ! -z "$ac_lbl_dependency_flag"; then
 		AC_LANG_CONFTEST(
 		    [AC_LANG_SOURCE([[int main(void) { return 0; }]])])
-		echo "$CC" $ac_lbl_dependency_flag conftest.c >&5
-		if "$CC" $ac_lbl_dependency_flag conftest.c >/dev/null 2>&1; then
+		if AC_RUN_LOG([eval "$CC $ac_lbl_dependency_flag conftest.c >/dev/null 2>&1"]); then
 			AC_MSG_RESULT([yes, with $ac_lbl_dependency_flag])
 			DEPENDENCY_CFLAG="$ac_lbl_dependency_flag"
-			MKDEP='${srcdir}/mkdep'
+			MKDEP='${top_srcdir}/mkdep'
 		else
 			AC_MSG_RESULT([no])
 			#
 			# We can't run mkdep, so have "make depend" do
 			# nothing.
 			#
-			MKDEP=:
+			MKDEP='${top_srcdir}/nomkdep'
 		fi
 		rm -rf conftest*
 	else
@@ -372,7 +449,7 @@ AC_DEFUN(AC_LBL_CHECK_DEPENDENCY_GENERATION_OPT,
 		# We can't run mkdep, so have "make depend" do
 		# nothing.
 		#
-		MKDEP=:
+		MKDEP='${top_srcdir}/nomkdep'
 	fi
 	AC_SUBST(DEPENDENCY_CFLAG)
 	AC_SUBST(MKDEP)
@@ -387,11 +464,10 @@ dnl	AC_LBL_SHLIBS_INIT
 dnl
 dnl results:
 dnl
-dnl	V_CCOPT (modified to build position-independent code)
+dnl	V_SHLIB_CCOPT (modified to build position-independent code)
 dnl	V_SHLIB_CMD
 dnl	V_SHLIB_OPT
 dnl	V_SONAME_OPT
-dnl	V_RPATH_OPT
 dnl
 AC_DEFUN(AC_LBL_SHLIBS_INIT,
     [AC_PREREQ(2.50)
@@ -400,7 +476,7 @@ AC_DEFUN(AC_LBL_SHLIBS_INIT,
 	    # On platforms where we build a shared library:
 	    #
 	    #	add options to generate position-independent code,
-	    #	if necessary (it's the default in AIX and Darwin/OS X);
+	    #	if necessary (it's the default in AIX and Darwin/macOS);
 	    #
 	    #	define option to set the soname of the shared library,
 	    #	if the OS supports that;
@@ -415,11 +491,12 @@ AC_DEFUN(AC_LBL_SHLIBS_INIT,
 	    aix*)
 		    ;;
 
-	    freebsd*|netbsd*|openbsd*|dragonfly*|linux*|osf*)
-	    	    #
-		    # Platforms where the linker is the GNU linker
-		    # or accepts command-line arguments like
-		    # those the GNU linker accepts.
+	    freebsd*|netbsd*|openbsd*|dragonfly*|linux*|osf*|haiku*|midipix*)
+		    #
+		    # Platforms where the C compiler is GCC or accepts
+		    # compatible command-line arguments, and the linker
+		    # is the GNU linker or accepts compatible command-line
+		    # arguments.
 		    #
 		    # Some instruction sets require -fPIC on some
 		    # operating systems.  Check for them.  If you
@@ -432,20 +509,19 @@ AC_DEFUN(AC_LBL_SHLIBS_INIT,
 		    sparc64*)
 			case "$host_os" in
 
-			freebsd*|openbsd*)
+			freebsd*|openbsd*|linux*)
 			    PIC_OPT=-fPIC
 			    ;;
 			esac
 			;;
 		    esac
-		    V_CCOPT="$V_CCOPT $PIC_OPT"
+		    V_SHLIB_CCOPT="$V_SHLIB_CCOPT $PIC_OPT"
 		    V_SONAME_OPT="-Wl,-soname,"
-		    V_RPATH_OPT="-Wl,-rpath,"
 		    ;;
 
 	    hpux*)
-		    V_CCOPT="$V_CCOPT -fpic"
-	    	    #
+		    V_SHLIB_CCOPT="$V_SHLIB_CCOPT -fpic"
+		    #
 		    # XXX - this assumes GCC is using the HP linker,
 		    # rather than the GNU linker, and that the "+h"
 		    # option is used on all HP-UX platforms, both .sl
@@ -453,20 +529,21 @@ AC_DEFUN(AC_LBL_SHLIBS_INIT,
 		    #
 		    V_SONAME_OPT="-Wl,+h,"
 		    #
-		    # By default, directories specifed with -L
+		    # By default, directories specified with -L
 		    # are added to the run-time search path, so
 		    # we don't add them in pcap-config.
 		    #
 		    ;;
 
 	    solaris*)
-		    V_CCOPT="$V_CCOPT -fpic"
+		    V_SHLIB_CCOPT="$V_SHLIB_CCOPT -fpic"
 		    #
-		    # XXX - this assumes GCC is using the Sun linker,
-		    # rather than the GNU linker.
+		    # Sun/Oracle's C compiler, GCC, and GCC-compatible
+		    # compilers support -Wl,{comma-separated list of options},
+		    # and we use the C compiler, not ld, for all linking,
+		    # including linking to produce a shared library.
 		    #
 		    V_SONAME_OPT="-Wl,-h,"
-		    V_RPATH_OPT="-Wl,-R,"
 		    ;;
 	    esac
     else
@@ -475,7 +552,7 @@ AC_DEFUN(AC_LBL_SHLIBS_INIT,
 	    # where we build a shared library:
 	    #
 	    #	add options to generate position-independent code,
-	    #	if necessary (it's the default in Darwin/OS X);
+	    #	if necessary (it's the default in Darwin/macOS);
 	    #
 	    #	if we generate ".so" shared libraries, define the
 	    #	appropriate options for building the shared library;
@@ -488,7 +565,7 @@ AC_DEFUN(AC_LBL_SHLIBS_INIT,
 	    # "-Wl,-soname,{soname}" option, with the soname part
 	    # of the option, while on other platforms the C compiler
 	    # driver takes it as a regular option with the soname
-	    # following the option.  The same applies to V_RPATH_OPT.
+	    # following the option.
 	    #
 	    case "$host_os" in
 
@@ -499,44 +576,52 @@ AC_DEFUN(AC_LBL_SHLIBS_INIT,
 
 	    freebsd*|netbsd*|openbsd*|dragonfly*|linux*)
 		    #
-		    # "cc" is GCC.
+		    # Platforms where the C compiler is GCC or accepts
+		    # compatible command-line arguments, and the linker
+		    # is the GNU linker or accepts compatible command-line
+		    # arguments.
 		    #
-		    V_CCOPT="$V_CCOPT -fpic"
+		    # XXX - does 64-bit SPARC require -fPIC?
+		    #
+		    V_SHLIB_CCOPT="$V_SHLIB_CCOPT -fpic"
 		    V_SHLIB_CMD="\$(CC)"
 		    V_SHLIB_OPT="-shared"
 		    V_SONAME_OPT="-Wl,-soname,"
-		    V_RPATH_OPT="-Wl,-rpath,"
 		    ;;
 
 	    hpux*)
-		    V_CCOPT="$V_CCOPT +z"
+		    V_SHLIB_CCOPT="$V_SHLIB_CCOPT +z"
 		    V_SHLIB_CMD="\$(LD)"
 		    V_SHLIB_OPT="-b"
 		    V_SONAME_OPT="+h "
 		    #
-		    # By default, directories specifed with -L
+		    # By default, directories specified with -L
 		    # are added to the run-time search path, so
 		    # we don't add them in pcap-config.
 		    #
 		    ;;
 
 	    osf*)
-	    	    #
+		    #
 		    # Presumed to be DEC OSF/1, Digital UNIX, or
 		    # Tru64 UNIX.
 		    #
 		    V_SHLIB_CMD="\$(CC)"
 		    V_SHLIB_OPT="-shared"
 		    V_SONAME_OPT="-soname "
-		    V_RPATH_OPT="-rpath "
 		    ;;
 
 	    solaris*)
-		    V_CCOPT="$V_CCOPT -Kpic"
+		    V_SHLIB_CCOPT="$V_SHLIB_CCOPT -Kpic"
 		    V_SHLIB_CMD="\$(CC)"
 		    V_SHLIB_OPT="-G"
-		    V_SONAME_OPT="-h "
-		    V_RPATH_OPT="-R"
+		    #
+		    # Sun/Oracle's C compiler, GCC, and GCC-compatible
+		    # compilers support -Wl,{comma-separated list of options},
+		    # and we use the C compiler, not ld, for all linking,
+		    # including linking to produce a shared library.
+		    #
+		    V_SONAME_OPT="-Wl,-h,"
 		    ;;
 	    esac
     fi
@@ -593,6 +678,46 @@ AC_DEFUN(AC_LBL_C_INLINE,
     fi
     AC_DEFINE_UNQUOTED(inline, $ac_cv_lbl_inline, [Define as token for inline if inlining supported])])
 
+#
+# Test whether we have __atomic_load_n() and __atomic_store_n().
+#
+# We use AC_TRY_LINK because AC_TRY_COMPILE will succeed, as the
+# compiler will just think that those functions are undefined,
+# and perhaps warn about that, but not fail to compile.
+#
+AC_DEFUN(AC_PCAP_C___ATOMICS,
+    [
+	AC_MSG_CHECKING(for __atomic_load_n)
+	AC_CACHE_VAL(ac_cv_have___atomic_load_n,
+	    AC_TRY_LINK([],
+		[
+		    int i = 17;
+		    int j;
+		    j = __atomic_load_n(&i, __ATOMIC_RELAXED);
+		],
+		ac_have___atomic_load_n=yes,
+		ac_have___atomic_load_n=no))
+	AC_MSG_RESULT($ac_have___atomic_load_n)
+	if test $ac_have___atomic_load_n = yes ; then
+	    AC_DEFINE(HAVE___ATOMIC_LOAD_N, 1,
+		[define if __atomic_load_n is supported by the compiler])
+	fi
+
+	AC_MSG_CHECKING(for __atomic_store_n)
+	AC_CACHE_VAL(ac_cv_have___atomic_store_n,
+	    AC_TRY_LINK([],
+		[
+		    int i;
+		    __atomic_store_n(&i, 17, __ATOMIC_RELAXED);
+		],
+		ac_have___atomic_store_n=yes,
+		ac_have___atomic_store_n=no))
+	AC_MSG_RESULT($ac_have___atomic_store_n)
+	if test $ac_have___atomic_store_n = yes ; then
+	    AC_DEFINE(HAVE___ATOMIC_STORE_N, 1,
+		[define if __atomic_store_n is supported by the compiler])
+	fi])
+
 dnl
 dnl If using gcc, make sure we have ANSI ioctl definitions
 dnl
@@ -630,82 +755,6 @@ AC_DEFUN(AC_LBL_FIXINCLUDES,
     fi])
 
 dnl
-dnl Check for flex, default to lex
-dnl Require flex 2.4 or higher
-dnl Check for bison, default to yacc
-dnl Default to lex/yacc if both flex and bison are not available
-dnl
-dnl If we're using flex and bison, pass -P to flex and -p to bison
-dnl to define a prefix string for the lexer and parser
-dnl
-dnl If we're not using flex and bison, don't pass those options
-dnl (as they might not work - although if "lex" is a wrapper for
-dnl Flex and "yacc" is a wrapper for Bison, they will work), and
-dnl define NEED_YYPARSE_WRAPPER (we *CANNOT* use YYBISON to check
-dnl whether the wrapper is needed, as some people apparently, for
-dnl some unknown reason, choose to use --without-flex and
-dnl --without-bison on systems that have Flex and Bison, which
-dnl means that the "yacc" they end up using is a wrapper that
-dnl runs "bison -y", and at least some versions of Bison define
-dnl YYBISON even if run with "-y", so we end up not compiling
-dnl the yyparse wrapper and end up with a libpcap that doesn't
-dnl define pcap_parse())
-dnl
-dnl usage:
-dnl
-dnl	AC_LBL_LEX_AND_YACC(lex, yacc, yyprefix)
-dnl
-dnl results:
-dnl
-dnl	$1 (lex set)
-dnl	$2 (yacc appended)
-dnl	$3 (optional flex and bison -P prefix)
-dnl
-AC_DEFUN(AC_LBL_LEX_AND_YACC,
-    [AC_ARG_WITH(flex, [  --without-flex          don't use flex])
-    AC_ARG_WITH(bison, [  --without-bison         don't use bison])
-    if test "$with_flex" = no ; then
-	    $1=lex
-    else
-	    AC_CHECK_PROGS($1, flex, lex)
-    fi
-    if test "$$1" = flex ; then
-	    # The -V flag was added in 2.4
-	    AC_MSG_CHECKING(for flex 2.4 or higher)
-	    AC_CACHE_VAL(ac_cv_lbl_flex_v24,
-		if flex -V >/dev/null 2>&1; then
-			ac_cv_lbl_flex_v24=yes
-		else
-			ac_cv_lbl_flex_v24=no
-		fi)
-	    AC_MSG_RESULT($ac_cv_lbl_flex_v24)
-	    if test $ac_cv_lbl_flex_v24 = no ; then
-		    s="2.4 or higher required"
-		    AC_MSG_WARN(ignoring obsolete flex executable ($s))
-		    $1=lex
-	    fi
-    fi
-    if test "$with_bison" = no ; then
-	    $2=yacc
-    else
-	    AC_CHECK_PROGS($2, bison, yacc)
-    fi
-    if test "$$2" = bison ; then
-	    $2="$$2 -y"
-    fi
-    if test "$$1" != lex -a "$$2" = yacc -o "$$1" = lex -a "$$2" != yacc ; then
-	    AC_MSG_WARN(don't have both flex and bison; reverting to lex/yacc)
-	    $1=lex
-	    $2=yacc
-    fi
-    if test "$$1" = flex -a -n "$3" ; then
-	    $1="$$1 -P$3"
-	    $2="$$2 -p $3"
-    else
-	    AC_DEFINE(NEED_YYPARSE_WRAPPER,1,[if we need a pcap_parse wrapper around yyparse])
-    fi])
-
-dnl
 dnl Checks to see if union wait is used with WEXITSTATUS()
 dnl
 dnl usage:
@@ -735,90 +784,6 @@ AC_DEFUN(AC_LBL_UNION_WAIT,
     fi])
 
 dnl
-dnl Checks to see if the sockaddr struct has the 4.4 BSD sa_len member
-dnl
-dnl usage:
-dnl
-dnl	AC_LBL_SOCKADDR_SA_LEN
-dnl
-dnl results:
-dnl
-dnl	HAVE_SOCKADDR_SA_LEN (defined)
-dnl
-AC_DEFUN(AC_LBL_SOCKADDR_SA_LEN,
-    [AC_MSG_CHECKING(if sockaddr struct has the sa_len member)
-    AC_CACHE_VAL(ac_cv_lbl_sockaddr_has_sa_len,
-	AC_TRY_COMPILE([
-#	include <sys/types.h>
-#	include <sys/socket.h>],
-	[u_int i = sizeof(((struct sockaddr *)0)->sa_len)],
-	ac_cv_lbl_sockaddr_has_sa_len=yes,
-	ac_cv_lbl_sockaddr_has_sa_len=no))
-    AC_MSG_RESULT($ac_cv_lbl_sockaddr_has_sa_len)
-    if test $ac_cv_lbl_sockaddr_has_sa_len = yes ; then
-	    AC_DEFINE(HAVE_SOCKADDR_SA_LEN,1,[if struct sockaddr has the sa_len member])
-    fi])
-
-dnl
-dnl Checks to see if there's a sockaddr_storage structure
-dnl
-dnl usage:
-dnl
-dnl	AC_LBL_SOCKADDR_STORAGE
-dnl
-dnl results:
-dnl
-dnl	HAVE_SOCKADDR_STORAGE (defined)
-dnl
-AC_DEFUN(AC_LBL_SOCKADDR_STORAGE,
-    [AC_MSG_CHECKING(if sockaddr_storage struct exists)
-    AC_CACHE_VAL(ac_cv_lbl_has_sockaddr_storage,
-	AC_TRY_COMPILE([
-#	include <sys/types.h>
-#	include <sys/socket.h>],
-	[u_int i = sizeof (struct sockaddr_storage)],
-	ac_cv_lbl_has_sockaddr_storage=yes,
-	ac_cv_lbl_has_sockaddr_storage=no))
-    AC_MSG_RESULT($ac_cv_lbl_has_sockaddr_storage)
-    if test $ac_cv_lbl_has_sockaddr_storage = yes ; then
-	    AC_DEFINE(HAVE_SOCKADDR_STORAGE,1,[if struct sockaddr_storage exists])
-    fi])
-
-dnl
-dnl Checks to see if the dl_hp_ppa_info_t struct has the HP-UX 11.00
-dnl dl_module_id_1 member
-dnl
-dnl usage:
-dnl
-dnl	AC_LBL_HP_PPA_INFO_T_DL_MODULE_ID_1
-dnl
-dnl results:
-dnl
-dnl	HAVE_HP_PPA_INFO_T_DL_MODULE_ID_1 (defined)
-dnl
-dnl NOTE: any compile failure means we conclude that it doesn't have
-dnl that member, so if we don't have DLPI, don't have a <sys/dlpi_ext.h>
-dnl header, or have one that doesn't declare a dl_hp_ppa_info_t type,
-dnl we conclude it doesn't have that member (which is OK, as either we
-dnl won't be using code that would use that member, or we wouldn't
-dnl compile in any case).
-dnl
-AC_DEFUN(AC_LBL_HP_PPA_INFO_T_DL_MODULE_ID_1,
-    [AC_MSG_CHECKING(if dl_hp_ppa_info_t struct has dl_module_id_1 member)
-    AC_CACHE_VAL(ac_cv_lbl_dl_hp_ppa_info_t_has_dl_module_id_1,
-	AC_TRY_COMPILE([
-#	include <sys/types.h>
-#	include <sys/dlpi.h>
-#	include <sys/dlpi_ext.h>],
-	[u_int i = sizeof(((dl_hp_ppa_info_t *)0)->dl_module_id_1)],
-	ac_cv_lbl_dl_hp_ppa_info_t_has_dl_module_id_1=yes,
-	ac_cv_lbl_dl_hp_ppa_info_t_has_dl_module_id_1=no))
-    AC_MSG_RESULT($ac_cv_lbl_dl_hp_ppa_info_t_has_dl_module_id_1)
-    if test $ac_cv_lbl_dl_hp_ppa_info_t_has_dl_module_id_1 = yes ; then
-	    AC_DEFINE(HAVE_HP_PPA_INFO_T_DL_MODULE_ID_1,1,[if ppa_info_t_dl_module_id exists])
-    fi])
-
-dnl
 dnl Checks to see if -R is used
 dnl
 dnl usage:
@@ -844,106 +809,6 @@ AC_DEFUN(AC_LBL_HAVE_RUN_PATH,
     ])
 
 dnl
-dnl Checks to see if unaligned memory accesses fail
-dnl
-dnl usage:
-dnl
-dnl	AC_LBL_UNALIGNED_ACCESS
-dnl
-dnl results:
-dnl
-dnl	LBL_ALIGN (DEFINED)
-dnl
-AC_DEFUN(AC_LBL_UNALIGNED_ACCESS,
-    [AC_MSG_CHECKING(if unaligned accesses fail)
-    AC_CACHE_VAL(ac_cv_lbl_unaligned_fail,
-	[case "$host_cpu" in
-
-	#
-	# These are CPU types where:
-	#
-	#	the CPU faults on an unaligned access, but at least some
-	#	OSes that support that CPU catch the fault and simulate
-	#	the unaligned access (e.g., Alpha/{Digital,Tru64} UNIX) -
-	#	the simulation is slow, so we don't want to use it;
-	#
-	#	the CPU, I infer (from the old
-	#
-	# XXX: should also check that they don't do weird things (like on arm)
-	#
-	#	comment) doesn't fault on unaligned accesses, but doesn't
-	#	do a normal unaligned fetch, either (e.g., presumably, ARM);
-	#
-	#	for whatever reason, the test program doesn't work
-	#	(this has been claimed to be the case for several of those
-	#	CPUs - I don't know what the problem is; the problem
-	#	was reported as "the test program dumps core" for SuperH,
-	#	but that's what the test program is *supposed* to do -
-	#	it dumps core before it writes anything, so the test
-	#	for an empty output file should find an empty output
-	#	file and conclude that unaligned accesses don't work).
-	#
-	# This run-time test won't work if you're cross-compiling, so
-	# in order to support cross-compiling for a particular CPU,
-	# we have to wire in the list of CPU types anyway, as far as
-	# I know, so perhaps we should just have a set of CPUs on
-	# which we know it doesn't work, a set of CPUs on which we
-	# know it does work, and have the script just fail on other
-	# cpu types and update it when such a failure occurs.
-	#
-	alpha*|arm*|bfin*|hp*|mips*|sh*|sparc*|ia64|nv1)
-		ac_cv_lbl_unaligned_fail=yes
-		;;
-
-	*)
-		cat >conftest.c <<EOF
-#		include <sys/types.h>
-#		include <sys/wait.h>
-#		include <stdio.h>
-		unsigned char a[[5]] = { 1, 2, 3, 4, 5 };
-		main() {
-		unsigned int i;
-		pid_t pid;
-		int status;
-		/* avoid "core dumped" message */
-		pid = fork();
-		if (pid <  0)
-			exit(2);
-		if (pid > 0) {
-			/* parent */
-			pid = waitpid(pid, &status, 0);
-			if (pid < 0)
-				exit(3);
-			exit(!WIFEXITED(status));
-		}
-		/* child */
-		i = *(unsigned int *)&a[[1]];
-		printf("%d\n", i);
-		exit(0);
-		}
-EOF
-		${CC-cc} -o conftest $CFLAGS $CPPFLAGS $LDFLAGS \
-		    conftest.c $LIBS >/dev/null 2>&1
-		if test ! -x conftest ; then
-			dnl failed to compile for some reason
-			ac_cv_lbl_unaligned_fail=yes
-		else
-			./conftest >conftest.out
-			if test ! -s conftest.out ; then
-				ac_cv_lbl_unaligned_fail=yes
-			else
-				ac_cv_lbl_unaligned_fail=no
-			fi
-		fi
-		rm -f -r conftest* core core.conftest
-		;;
-	esac])
-    AC_MSG_RESULT($ac_cv_lbl_unaligned_fail)
-    if test $ac_cv_lbl_unaligned_fail = yes ; then
-	    AC_DEFINE(LBL_ALIGN,1,[if unaligned access fails])
-    fi])
-
-dnl
 dnl If the file .devel exists:
 dnl	Add some warning flags if the compiler supports them
 dnl	If an os prototype include exists, symlink os-proto.h to it
@@ -960,6 +825,11 @@ dnl	os-proto.h (symlinked)
 dnl
 AC_DEFUN(AC_LBL_DEVEL,
     [rm -f os-proto.h
+    #
+    # MKDEP defaults to no-op (":") if we don't test whether the compiler
+    # supports generating dependencies
+    #
+    MKDEP=:
     if test "${LBL_CFLAGS+set}" = set; then
 	    $1="$$1 ${LBL_CFLAGS}"
     fi
@@ -968,10 +838,64 @@ AC_DEFUN(AC_LBL_DEVEL,
 	    # Skip all the warning option stuff on some compilers.
 	    #
 	    if test "$ac_lbl_cc_dont_try_gcc_dashW" != yes; then
-		    AC_LBL_CHECK_UNKNOWN_WARNING_OPTION_ERROR()
+		    AC_LBL_CHECK_COMPILER_OPT($1, -W)
 		    AC_LBL_CHECK_COMPILER_OPT($1, -Wall)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wcomma)
+		    # Warns about safeguards added in case the enums are
+		    # extended
+		    # AC_LBL_CHECK_COMPILER_OPT($1, -Wcovered-switch-default)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wdocumentation)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wformat-nonliteral)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wmissing-noreturn)
 		    AC_LBL_CHECK_COMPILER_OPT($1, -Wmissing-prototypes)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wmissing-variable-declarations)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wnull-pointer-subtraction)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wpointer-arith)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wpointer-sign)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wshadow)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wshorten-64-to-32)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wsign-compare)
 		    AC_LBL_CHECK_COMPILER_OPT($1, -Wstrict-prototypes)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wundef)
+		    #
+		    # This can cause problems with ntohs(), ntohl(),
+		    # htons(), and htonl() on some platforms, such
+		    # as OpenBSD 6.3 with Clang 5.0.1.  I guess the
+		    # problem is that the macro that ultimately does
+		    # the byte-swapping involves a conditional
+		    # expression that tests whether the value being
+		    # swapped is a compile-time constant or not,
+		    # using __builtin_constant_p(), and, depending
+		    # on whether it is, does a compile-time swap or
+		    # a run-time swap; perhaps the compiler always
+		    # considers one of the two results of the
+		    # conditional expression is never evaluated,
+		    # because the conditional check is done at
+		    # compile time, and thus always says "that
+		    # expression is never executed".
+		    #
+		    # (Perhaps there should be a way of flagging
+		    # an expression that you *want* evaluated at
+		    # compile time, so that the compiler 1) warns
+		    # if it *can't* be evaluated at compile time
+		    # and 2) *doesn't* warn that the true or false
+		    # branch will never be reached.)
+		    #
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wunreachable-code,
+		      [
+#include <arpa/inet.h>
+
+unsigned short
+testme(unsigned short a)
+{
+	return ntohs(a);
+}
+		      ],
+		      [generates warnings from ntohs()])
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wunused-but-set-parameter)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wunused-but-set-variable)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wunused-parameter)
+		    AC_LBL_CHECK_COMPILER_OPT($1, -Wused-but-marked-unused)
 	    fi
 	    AC_LBL_CHECK_DEPENDENCY_GENERATION_OPT()
 	    #
@@ -982,14 +906,16 @@ AC_DEFUN(AC_LBL_DEVEL,
 	    # .devel file; why should the ABI for which we produce code
 	    # depend on .devel?
 	    #
+	    AC_MSG_CHECKING([whether to use an os-proto.h header])
 	    os=`echo $host_os | sed -e 's/\([[0-9]][[0-9]]*\)[[^0-9]].*$/\1/'`
 	    name="lbl/os-$os.h"
 	    if test -f $name ; then
+		    AC_MSG_RESULT([yes, at "$name"])
 		    ln -s $name os-proto.h
 		    AC_DEFINE(HAVE_OS_PROTO_H, 1,
-			[if there's an os_proto.h for this platform, to use additional prototypes])
+			[if there's an os-proto.h for this platform, to use additional prototypes])
 	    else
-		    AC_MSG_WARN(can't find $name)
+		    AC_MSG_RESULT([no])
 	    fi
     fi])
 
@@ -1060,234 +986,383 @@ fi
 dnl
 dnl AC_LBL_LIBRARY_NET
 dnl
-dnl This test is for network applications that need socket() and
-dnl gethostbyname() -ish functions.  Under Solaris, those applications
-dnl need to link with "-lsocket -lnsl".  Under IRIX, they need to link
-dnl with "-lnsl" but should *not* link with "-lsocket" because
-dnl libsocket.a breaks a number of things (for instance:
-dnl gethostbyname() under IRIX 5.2, and snoop sockets under most
-dnl versions of IRIX).
+dnl Look for various networking-related libraries that we may need.
 dnl
-dnl Unfortunately, many application developers are not aware of this,
-dnl and mistakenly write tests that cause -lsocket to be used under
-dnl IRIX.  It is also easy to write tests that cause -lnsl to be used
-dnl under operating systems where neither are necessary (or useful),
-dnl such as SunOS 4.1.4, which uses -lnsl for TLI.
+dnl We need getaddrinfo() to translate host names in filters to IP
+dnl addresses. We use getaddrinfo() because we want a portable
+dnl thread-safe way of getting information for a host name or port;
+dnl there exist _r versions of gethostbyname() and getservbyname() on
+dnl some platforms, but not on all platforms.
 dnl
-dnl This test exists so that every application developer does not test
-dnl this in a different, and subtly broken fashion.
-
-dnl It has been argued that this test should be broken up into two
-dnl seperate tests, one for the resolver libraries, and one for the
-dnl libraries necessary for using Sockets API. Unfortunately, the two
-dnl are carefully intertwined and allowing the autoconf user to use
-dnl them independantly potentially results in unfortunate ordering
-dnl dependancies -- as such, such component macros would have to
-dnl carefully use indirection and be aware if the other components were
-dnl executed. Since other autoconf macros do not go to this trouble,
-dnl and almost no applications use sockets without the resolver, this
-dnl complexity has not been implemented.
+dnl We may also need socket() and other socket functions to support:
 dnl
-dnl The check for libresolv is in case you are attempting to link
-dnl statically and happen to have a libresolv.a lying around (and no
-dnl libnsl.a).
+dnl   Local packet capture with capture mechanisms that use sockets.
+dnl
+dnl   Local capture device enumeration if a socket call is needed to
+dnl   enumerate devices or get device attributes.
+dnl
+dnl   Packet capture from services that put captured packets on the
+dnl   network, such as rpcap servers.
+dnl
+dnl We may also need getnameinfo() for packet capture from services
+dnl that put packets on the network.
 dnl
 AC_DEFUN(AC_LBL_LIBRARY_NET, [
-    # Most operating systems have gethostbyname() in the default searched
-    # libraries (i.e. libc):
-    # Some OSes (eg. Solaris) place it in libnsl
-    # Some strange OSes (SINIX) have it in libsocket:
-    AC_SEARCH_LIBS(gethostbyname, nsl socket resolv)
-    # Unfortunately libsocket sometimes depends on libnsl and
-    # AC_SEARCH_LIBS isn't up to the task of handling dependencies like this.
-    if test "$ac_cv_search_gethostbyname" = "no"
-    then
-	AC_CHECK_LIB(socket, gethostbyname,
-                     LIBS="-lsocket -lnsl $LIBS", , -lnsl)
-    fi
-    AC_SEARCH_LIBS(socket, socket, ,
-	AC_CHECK_LIB(socket, socket, LIBS="-lsocket -lnsl $LIBS", , -lnsl))
-    # DLPI needs putmsg under HPUX so test for -lstr while we're at it
-    AC_SEARCH_LIBS(putmsg, str)
+    #
+    # Most operating systems have getaddrinfo(), and the other routines
+    # we may need, in the default searched libraries (e.g., libc).
+    # Check there first.
+    #
+    AC_CHECK_FUNC(getaddrinfo,,
+    [
+	#
+	# Not found in the standard system libraries.
+	#
+	# In some versions of Solaris, we need to link with libsocket
+	# and libnsl, so check in libsocket and also link with liblnsl
+	# when doing this test.
+	#
+	# Linking with libsocket and libnsl will find all the routines
+	# we need.
+	#
+	AC_CHECK_LIB(socket, getaddrinfo,
+	[
+	    #
+	    # OK, we found it in libsocket.
+	    #
+	    LIBS="-lsocket -lnsl $LIBS"
+	],
+	[
+	    #
+	    # Not found in libsocket; test for it in libnetwork, which
+	    # is where it is in Haiku.
+	    #
+	    # Linking with libnetwork will find all the routines we
+	    # need.
+	    #
+	    AC_CHECK_LIB(network, getaddrinfo,
+	    [
+		#
+		# OK, we found it in libnetwork.
+		#
+		LIBS="-lnetwork $LIBS"
+	    ],
+	    [
+		#
+		# If this is QNX 8.0, getaddrinfo() and related functions are
+		# in libsocket, but there is no libnsl, hence the check result
+		# above for getaddrinfo() in libsocket with libnsl is negative.
+		# Autoconf caches the result, but does take libnsl into account
+		# as a caching factor, so remove the cached result to prevent
+		# an erroneous "cache hit" in the check below.
+		#
+		AS_UNSET(ac_cv_lib_socket_getaddrinfo)
+		AC_CHECK_LIB(socket, getaddrinfo,
+		[
+		    LIBS="-lsocket $LIBS"
+		],
+		[
+		    #
+		    # We didn't find it.
+		    #
+		    AC_MSG_ERROR([getaddrinfo is required, but wasn't found])
+		])
+	    ])
+	], -lnsl)
+
+	#
+	# We require a version of recvmsg() that conforms to the Single
+	# UNIX Specification, so that we can check whether a datagram
+	# received with recvmsg() was truncated when received due to the
+	# buffer being too small.
+	#
+	# On most systems, the version of recvmsg() in the libraries
+	# found above conforms to the SUS.
+	#
+	# On at least some versions of Solaris, it does not conform to
+	# the SUS, and we need the version in libxnet, which does
+	# conform.
+	#
+	# Check whether libxnet exists and has a version of recvmsg();
+	# if it does, link with libxnet before we link with libsocket,
+	# to get that version.
+	#
+	# This test also links with libsocket and libnsl.
+	#
+	AC_CHECK_LIB(xnet, recvmsg,
+	[
+	    #
+	    # libxnet has recvmsg(); link with it as well.
+	    #
+	    LIBS="-lxnet $LIBS"
+	], , -lsocket -lnsl)
     ])
 
+    #
+    # DLPI needs putmsg under HP-UX, so test for -lstr while we're at it.
+    #
+    AC_SEARCH_LIBS(putmsg, str)
+])
+
+m4_ifndef([AC_CONFIG_MACRO_DIRS], [m4_defun([_AM_CONFIG_MACRO_DIRS], [])m4_defun([AC_CONFIG_MACRO_DIRS], [_AM_CONFIG_MACRO_DIRS($@)])])
+dnl pkg.m4 - Macros to locate and utilise pkg-config.   -*- Autoconf -*-
+dnl serial 11 (pkg-config-0.29)
 dnl
-dnl Test for __attribute__
+dnl Copyright © 2004 Scott James Remnant <scott@netsplit.com>.
+dnl Copyright © 2012-2015 Dan Nicholson <dbn.lists@gmail.com>
 dnl
+dnl This program is free software; you can redistribute it and/or modify
+dnl it under the terms of the GNU General Public License as published by
+dnl the Free Software Foundation; either version 2 of the License, or
+dnl (at your option) any later version.
+dnl
+dnl This program is distributed in the hope that it will be useful, but
+dnl WITHOUT ANY WARRANTY; without even the implied warranty of
+dnl MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+dnl General Public License for more details.
+dnl
+dnl You should have received a copy of the GNU General Public License
+dnl along with this program; if not, write to the Free Software
+dnl Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+dnl 02111-1307, USA.
+dnl
+dnl As a special exception to the GNU General Public License, if you
+dnl distribute this file as part of a program that contains a
+dnl configuration script generated by Autoconf, you may include it under
+dnl the same distribution terms that you use for the rest of that
+dnl program.
 
-AC_DEFUN(AC_C___ATTRIBUTE__, [
-AC_MSG_CHECKING(for __attribute__)
-AC_CACHE_VAL(ac_cv___attribute__, [
-AC_COMPILE_IFELSE([
-  AC_LANG_SOURCE([[
-#include <stdlib.h>
+dnl PKG_PREREQ(MIN-VERSION)
+dnl -----------------------
+dnl Since: 0.29
+dnl
+dnl Verify that the version of the pkg-config macros are at least
+dnl MIN-VERSION. Unlike PKG_PROG_PKG_CONFIG, which checks the user's
+dnl installed version of pkg-config, this checks the developer's version
+dnl of pkg.m4 when generating configure.
+dnl
+dnl To ensure that this macro is defined, also add:
+dnl m4_ifndef([PKG_PREREQ],
+dnl     [m4_fatal([must install pkg-config 0.29 or later before running autoconf/autogen])])
+dnl
+dnl See the "Since" comment for each macro you use to see what version
+dnl of the macros you require.
+m4_defun([PKG_PREREQ],
+[m4_define([PKG_MACROS_VERSION], [0.29])
+m4_if(m4_version_compare(PKG_MACROS_VERSION, [$1]), -1,
+    [m4_fatal([pkg.m4 version $1 or higher is required but ]PKG_MACROS_VERSION[ found])])
+])dnl PKG_PREREQ
 
-static void foo(void) __attribute__ ((noreturn));
+dnl PKG_PROG_PKG_CONFIG([MIN-VERSION])
+dnl ----------------------------------
+dnl Since: 0.16
+dnl
+dnl Search for the pkg-config tool and set the PKG_CONFIG variable to
+dnl first found in the path. Checks that the version of pkg-config found
+dnl is at least MIN-VERSION. If MIN-VERSION is not specified, 0.17.0 is
+dnl used since that's the first version where --static was supported.
+AC_DEFUN([PKG_PROG_PKG_CONFIG],
+[m4_pattern_forbid([^_?PKG_[A-Z_]+$])
+m4_pattern_allow([^PKG_CONFIG(_(PATH|LIBDIR|SYSROOT_DIR|ALLOW_SYSTEM_(CFLAGS|LIBS)))?$])
+m4_pattern_allow([^PKG_CONFIG_(DISABLE_UNINSTALLED|TOP_BUILD_DIR|DEBUG_SPEW)$])
+AC_ARG_VAR([PKG_CONFIG], [path to pkg-config utility])
+AC_ARG_VAR([PKG_CONFIG_PATH], [directories to add to pkg-config's search path])
+AC_ARG_VAR([PKG_CONFIG_LIBDIR], [path overriding pkg-config's built-in search path])
 
-static void
-foo(void)
-{
-  exit(1);
-}
+if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+	AC_PATH_TOOL([PKG_CONFIG], [pkg-config])
+fi
+if test -n "$PKG_CONFIG"; then
+	_pkg_min_version=m4_default([$1], [0.17.0])
+	AC_MSG_CHECKING([pkg-config is at least version $_pkg_min_version])
+	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
+		AC_MSG_RESULT([yes])
+	else
+		AC_MSG_RESULT([no])
+		PKG_CONFIG=""
+	fi
+fi[]dnl
+])dnl PKG_PROG_PKG_CONFIG
 
-int
-main(int argc, char **argv)
-{
-  foo();
-}
-  ]])],
-ac_cv___attribute__=yes,
-ac_cv___attribute__=no)])
-if test "$ac_cv___attribute__" = "yes"; then
-  AC_DEFINE(HAVE___ATTRIBUTE__, 1, [define if your compiler has __attribute__])
+dnl PKG_CHECK_EXISTS(MODULE, [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND])
+dnl -------------------------------------------------------------------
+dnl Since: 0.18
+dnl
+dnl Check to see whether a particular module exists. Similar to
+dnl PKG_CHECK_MODULE(), but does not set variables or print errors.
+AC_DEFUN([PKG_CHECK_EXISTS],
+[
+if test -n "$PKG_CONFIG" && \
+    AC_RUN_LOG([$PKG_CONFIG --exists --print-errors "$1"]); then
+  m4_default([$2], [:])
+m4_ifvaln([$3], [else
+  $3])dnl
+fi])
+
+dnl _PKG_CONFIG_WITH_FLAGS([VARIABLE], [FLAGS], [MODULE])
+dnl ---------------------------------------------
+dnl Internal wrapper calling pkg-config via PKG_CONFIG and, if
+dnl pkg-config fails, reporting the error and quitting.
+m4_define([_PKG_CONFIG_WITH_FLAGS],
+[if test ! -n "$$1"; then
+    $1=`$PKG_CONFIG $2 "$3" 2>/dev/null`
+    if test "x$?" != "x0"; then
+        #
+        # That failed - report an error.
+        # Re-run the command, telling pkg-config to print an error
+        # message, capture the error message, and report it.
+        # This causes the configuration script to fail, as it means
+        # the script is almost certainly doing something wrong.
+        #
+        _PKG_SHORT_ERRORS_SUPPORTED
+	if test $_pkg_short_errors_supported = yes; then
+	    _pkg_error_string=`$PKG_CONFIG --short-errors --print-errors $2 "$3" 2>&1`
+	else
+	    _pkg_error_string=`$PKG_CONFIG --print-errors $2 "$3" 2>&1`
+	fi
+        AC_MSG_ERROR([$PKG_CONFIG $2 "$3" failed: $_pkg_error_string])
+    fi
+ fi[]dnl
+])dnl _PKG_CONFIG_WITH_FLAGS
+
+
+dnl _PKG_CONFIG([VARIABLE], [FLAGS], [MODULE])
+dnl ---------------------------------------------
+dnl Internal wrapper calling pkg-config via PKG_CONFIG and setting
+dnl pkg_failed based on the result.
+m4_define([_PKG_CONFIG],
+[if test -n "$$1"; then
+    pkg_cv_[]$1="$$1"
+ elif test -n "$PKG_CONFIG"; then
+    PKG_CHECK_EXISTS([$3],
+                     [pkg_cv_[]$1=`$PKG_CONFIG $2 "$3" 2>/dev/null`
+		      test "x$?" != "x0" && pkg_failed=yes ],
+		     [pkg_failed=yes])
+ else
+    pkg_failed=untried
+fi[]dnl
+])dnl _PKG_CONFIG
+
+dnl _PKG_SHORT_ERRORS_SUPPORTED
+dnl ---------------------------
+dnl Internal check to see if pkg-config supports short errors.
+AC_DEFUN([_PKG_SHORT_ERRORS_SUPPORTED],
+[
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
 else
-  #
-  # We can't use __attribute__, so we can't use __attribute__((unused)),
-  # so we define _U_ to an empty string.
-  #
-  V_DEFS="$V_DEFS -D_U_=\"\""
-fi
-AC_MSG_RESULT($ac_cv___attribute__)
-])
+        _pkg_short_errors_supported=no
+fi[]dnl
+])dnl _PKG_SHORT_ERRORS_SUPPORTED
 
-dnl
-dnl Test whether __attribute__((unused)) can be used without warnings
-dnl
 
-AC_DEFUN(AC_C___ATTRIBUTE___UNUSED, [
-AC_MSG_CHECKING([whether __attribute__((unused)) can be used without warnings])
-AC_CACHE_VAL(ac_cv___attribute___unused, [
-save_CFLAGS="$CFLAGS"
-CFLAGS="$CFLAGS $ac_lbl_cc_force_warning_errors"
-AC_COMPILE_IFELSE([
-  AC_LANG_SOURCE([[
-#include <stdlib.h>
-#include <stdio.h>
+dnl PKG_CHECK_MODULE(VARIABLE-PREFIX, MODULE, [ACTION-IF-FOUND],
+dnl   [ACTION-IF-NOT-FOUND])
+dnl --------------------------------------------------------------
+dnl Since: 0.4.0
+AC_DEFUN([PKG_CHECK_MODULE],
+[
+AC_MSG_CHECKING([for $2 with pkg-config])
+if test -n "$PKG_CONFIG"; then
+    AC_ARG_VAR([$1][_CFLAGS], [C compiler flags for $2, overriding pkg-config])dnl
+    AC_ARG_VAR([$1][_LIBS], [linker flags for $2, overriding pkg-config])dnl
+    AC_ARG_VAR([$1][_LIBS_STATIC], [static-link linker flags for $2, overriding pkg-config])dnl
 
-int
-main(int argc  __attribute((unused)), char **argv __attribute((unused)))
-{
-  printf("Hello, world!\n");
-  return 0;
-}
-  ]])],
-ac_cv___attribute___unused=yes,
-ac_cv___attribute___unused=no)])
-CFLAGS="$save_CFLAGS"
-if test "$ac_cv___attribute___unused" = "yes"; then
-  V_DEFS="$V_DEFS -D_U_=\"__attribute__((unused))\""
+    if AC_RUN_LOG([$PKG_CONFIG --exists --print-errors "$2"]); then
+	#
+	# The package was found, so try to get its C flags and
+	# libraries.
+	#
+        AC_MSG_RESULT([found])
+	_PKG_CONFIG_WITH_FLAGS([$1][_CFLAGS], [--cflags], [$2])
+	_PKG_CONFIG_WITH_FLAGS([$1][_LIBS], [--libs], [$2])
+	_PKG_CONFIG_WITH_FLAGS([$1][_LIBS_STATIC], [--libs --static], [$2])
+        m4_default([$3], [:])
+    else
+        AC_MSG_RESULT([not found])
+        m4_default([$4], [:])
+    fi
 else
-  V_DEFS="$V_DEFS -D_U_=\"\""
+    # No pkg-config, so obviously not found with pkg-config.
+    AC_MSG_RESULT([pkg-config not found])
+    m4_default([$4], [:])
 fi
-AC_MSG_RESULT($ac_cv___attribute___unused)
-])
+])dnl PKG_CHECK_MODULE
 
-dnl
-dnl Test whether __attribute__((format)) can be used without warnings
-dnl
 
-AC_DEFUN(AC_C___ATTRIBUTE___FORMAT, [
-AC_MSG_CHECKING([whether __attribute__((format)) can be used without warnings])
-AC_CACHE_VAL(ac_cv___attribute___format, [
-save_CFLAGS="$CFLAGS"
-CFLAGS="$CFLAGS $ac_lbl_cc_force_warning_errors"
-AC_COMPILE_IFELSE([
-  AC_LANG_SOURCE([[
-#include <stdlib.h>
+dnl PKG_CHECK_MODULE_STATIC(VARIABLE-PREFIX, MODULE, [ACTION-IF-FOUND],
+dnl   [ACTION-IF-NOT-FOUND])
+dnl ---------------------------------------------------------------------
+dnl Since: 0.29
+dnl
+dnl Checks for existence of MODULE and gathers its build flags with
+dnl static libraries enabled. Sets VARIABLE-PREFIX_CFLAGS from --cflags
+dnl and VARIABLE-PREFIX_LIBS from --libs.
+AC_DEFUN([PKG_CHECK_MODULE_STATIC],
+[
+_save_PKG_CONFIG=$PKG_CONFIG
+PKG_CONFIG="$PKG_CONFIG --static"
+PKG_CHECK_MODULE($@)
+PKG_CONFIG=$_save_PKG_CONFIG[]dnl
+])dnl PKG_CHECK_MODULE_STATIC
 
-extern int foo(const char *fmt, ...)
-		  __attribute__ ((format (printf, 1, 2)));
 
-int
-main(int argc, char **argv)
-{
-  foo("%s", "test");
-}
-  ]])],
-ac_cv___attribute___format=yes,
-ac_cv___attribute___format=no)])
-CFLAGS="$save_CFLAGS"
-if test "$ac_cv___attribute___format" = "yes"; then
-  AC_DEFINE(__ATTRIBUTE___FORMAT_OK, 1,
-    [define if your compiler allows __attribute__((format)) without a warning])
-fi
-AC_MSG_RESULT($ac_cv___attribute___format)
-])
+dnl PKG_INSTALLDIR([DIRECTORY])
+dnl -------------------------
+dnl Since: 0.27
+dnl
+dnl Substitutes the variable pkgconfigdir as the location where a module
+dnl should install pkg-config .pc files. By default the directory is
+dnl $libdir/pkgconfig, but the default can be changed by passing
+dnl DIRECTORY. The user can override through the --with-pkgconfigdir
+dnl parameter.
+AC_DEFUN([PKG_INSTALLDIR],
+[m4_pushdef([pkg_default], [m4_default([$1], ['${libdir}/pkgconfig'])])
+m4_pushdef([pkg_description],
+    [pkg-config installation directory @<:@]pkg_default[@:>@])
+AC_ARG_WITH([pkgconfigdir],
+    [AS_HELP_STRING([--with-pkgconfigdir], pkg_description)],,
+    [with_pkgconfigdir=]pkg_default)
+AC_SUBST([pkgconfigdir], [$with_pkgconfigdir])
+m4_popdef([pkg_default])
+m4_popdef([pkg_description])
+])dnl PKG_INSTALLDIR
 
-dnl
-dnl Checks to see if tpacket_stats is defined in linux/if_packet.h
-dnl If so then pcap-linux.c can use this to report proper statistics.
-dnl
-dnl -Scott Barron
-dnl
-AC_DEFUN(AC_LBL_TPACKET_STATS,
-   [AC_MSG_CHECKING(if if_packet.h has tpacket_stats defined)
-   AC_CACHE_VAL(ac_cv_lbl_tpacket_stats,
-   AC_TRY_COMPILE([
-#  include <linux/if_packet.h>],
-   [struct tpacket_stats stats],
-   ac_cv_lbl_tpacket_stats=yes,
-   ac_cv_lbl_tpacket_stats=no))
-   AC_MSG_RESULT($ac_cv_lbl_tpacket_stats)
-   if test $ac_cv_lbl_tpacket_stats = yes; then
-       AC_DEFINE(HAVE_TPACKET_STATS,1,[if if_packet.h has tpacket_stats defined])
-   fi])
 
+dnl PKG_NOARCH_INSTALLDIR([DIRECTORY])
+dnl --------------------------------
+dnl Since: 0.27
 dnl
-dnl Checks to see if the tpacket_auxdata struct has a tp_vlan_tci member.
-dnl
-dnl usage:
-dnl
-dnl	AC_LBL_LINUX_TPACKET_AUXDATA_TP_VLAN_TCI
-dnl
-dnl results:
-dnl
-dnl	HAVE_LINUX_TPACKET_AUXDATA_TP_VLAN_TCI (defined)
-dnl
-dnl NOTE: any compile failure means we conclude that it doesn't have
-dnl that member, so if we don't have tpacket_auxdata, we conclude it
-dnl doesn't have that member (which is OK, as either we won't be using
-dnl code that would use that member, or we wouldn't compile in any case).
-dnl
-AC_DEFUN(AC_LBL_LINUX_TPACKET_AUXDATA_TP_VLAN_TCI,
-    [AC_MSG_CHECKING(if tpacket_auxdata struct has tp_vlan_tci member)
-    AC_CACHE_VAL(ac_cv_lbl_linux_tpacket_auxdata_tp_vlan_tci,
-	AC_TRY_COMPILE([
-#	include <sys/types.h>
-#	include <linux/if_packet.h>],
-	[u_int i = sizeof(((struct tpacket_auxdata *)0)->tp_vlan_tci)],
-	ac_cv_lbl_linux_tpacket_auxdata_tp_vlan_tci=yes,
-	ac_cv_lbl_linux_tpacket_auxdata_tp_vlan_tci=no))
-    AC_MSG_RESULT($ac_cv_lbl_linux_tpacket_auxdata_tp_vlan_tci)
-    if test $ac_cv_lbl_linux_tpacket_auxdata_tp_vlan_tci = yes ; then
-	    HAVE_LINUX_TPACKET_AUXDATA=tp_vlan_tci
-	    AC_SUBST(HAVE_LINUX_TPACKET_AUXDATA)
-	    AC_DEFINE(HAVE_LINUX_TPACKET_AUXDATA_TP_VLAN_TCI,1,[if tp_vlan_tci exists])
-    fi])
+dnl Substitutes the variable noarch_pkgconfigdir as the location where a
+dnl module should install arch-independent pkg-config .pc files. By
+dnl default the directory is $datadir/pkgconfig, but the default can be
+dnl changed by passing DIRECTORY. The user can override through the
+dnl --with-noarch-pkgconfigdir parameter.
+AC_DEFUN([PKG_NOARCH_INSTALLDIR],
+[m4_pushdef([pkg_default], [m4_default([$1], ['${datadir}/pkgconfig'])])
+m4_pushdef([pkg_description],
+    [pkg-config arch-independent installation directory @<:@]pkg_default[@:>@])
+AC_ARG_WITH([noarch-pkgconfigdir],
+    [AS_HELP_STRING([--with-noarch-pkgconfigdir], pkg_description)],,
+    [with_noarch_pkgconfigdir=]pkg_default)
+AC_SUBST([noarch_pkgconfigdir], [$with_noarch_pkgconfigdir])
+m4_popdef([pkg_default])
+m4_popdef([pkg_description])
+])dnl PKG_NOARCH_INSTALLDIR
 
+
+dnl PKG_CHECK_VAR(VARIABLE, MODULE, CONFIG-VARIABLE,
+dnl [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND])
+dnl -------------------------------------------
+dnl Since: 0.28
 dnl
-dnl Checks to see if Solaris has the dl_passive_req_t struct defined
-dnl in <sys/dlpi.h>.
-dnl
-dnl usage:
-dnl
-dnl	AC_LBL_DL_PASSIVE_REQ_T
-dnl
-dnl results:
-dnl
-dnl 	HAVE_DLPI_PASSIVE (defined)
-dnl
-AC_DEFUN(AC_LBL_DL_PASSIVE_REQ_T,
-        [AC_MSG_CHECKING(if dl_passive_req_t struct exists)
-       AC_CACHE_VAL(ac_cv_lbl_has_dl_passive_req_t,
-                AC_TRY_COMPILE([
-#       include <sys/types.h>
-#       include <sys/dlpi.h>],
-        [u_int i = sizeof(dl_passive_req_t)],
-        ac_cv_lbl_has_dl_passive_req_t=yes,
-        ac_cv_lbl_has_dl_passive_req_t=no))
-    AC_MSG_RESULT($ac_cv_lbl_has_dl_passive_req_t)
-    if test $ac_cv_lbl_has_dl_passive_req_t = yes ; then
-            AC_DEFINE(HAVE_DLPI_PASSIVE,1,[if passive_req_t primitive
-		exists])
-    fi])
+dnl Retrieves the value of the pkg-config variable for the given module.
+AC_DEFUN([PKG_CHECK_VAR],
+[
+AC_ARG_VAR([$1], [value of $3 for $2, overriding pkg-config])dnl
+
+_PKG_CONFIG([$1], [--variable="][$3]["], [$2])
+AS_VAR_COPY([$1], [pkg_cv_][$1])
+
+AS_VAR_IF([$1], [""], [$5], [$4])dnl
+])dnl PKG_CHECK_VAR

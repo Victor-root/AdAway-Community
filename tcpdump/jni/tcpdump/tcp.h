@@ -33,24 +33,25 @@
  *	@(#)tcp.h	8.1 (Berkeley) 6/10/93
  */
 
-typedef	uint32_t	tcp_seq;
 /*
  * TCP header.
  * Per RFC 793, September, 1981.
  */
 struct tcphdr {
-	uint16_t	th_sport;		/* source port */
-	uint16_t	th_dport;		/* destination port */
-	tcp_seq		th_seq;			/* sequence number */
-	tcp_seq		th_ack;			/* acknowledgement number */
-	uint8_t		th_offx2;		/* data offset, rsvd */
-	uint8_t		th_flags;
-	uint16_t	th_win;			/* window */
-	uint16_t	th_sum;			/* checksum */
-	uint16_t	th_urp;			/* urgent pointer */
-} UNALIGNED;
+	nd_uint16_t	th_sport;		/* source port */
+	nd_uint16_t	th_dport;		/* destination port */
+	nd_uint32_t	th_seq;			/* sequence number */
+	nd_uint32_t	th_ack;			/* acknowledgement number */
+	nd_uint8_t	th_offx2;		/* data offset, rsvd */
+	nd_uint8_t	th_flags;
+	nd_uint16_t	th_win;			/* window */
+	nd_uint16_t	th_sum;			/* checksum */
+	nd_uint16_t	th_urp;			/* urgent pointer */
+};
 
-#define TH_OFF(th)	(((th)->th_offx2 & 0xf0) >> 4)
+#define TH_OFF(th)	((GET_U_1((th)->th_offx2) & 0xf0) >> 4)
+#define tcp_get_flags(th)	((GET_U_1((th)->th_flags)) | \
+			((GET_U_1((th)->th_offx2) & 0x0f) << 8))
 
 /* TCP flags */
 #define	TH_FIN     0x01
@@ -61,6 +62,8 @@ struct tcphdr {
 #define	TH_URG	   0x20
 #define TH_ECNECHO 0x40	/* ECN Echo */
 #define TH_CWR	   0x80	/* ECN Cwnd Reduced */
+#define	TH_AE	  0x100	/* AccECN (draft-ietf-tcpm-accurate-ecn;rfc7560) part of L4S (rfc9330) */
+extern const struct tok tcp_flag_values[];
 
 
 #define	TCPOPT_EOL		0
@@ -81,56 +84,80 @@ struct tcphdr {
 #define TCPOPT_SIGNATURE	19	/* Keyed MD5 (rfc2385) */
 #define    TCPOLEN_SIGNATURE		18
 #define TCP_SIGLEN 16			/* length of an option 19 digest */
-#define TCPOPT_AUTH             20      /* Enhanced AUTH option */
+#define TCPOPT_SCPS		20	/* SCPS-TP (CCSDS 714.0-B-2) */
 #define	TCPOPT_UTO		28	/* tcp user timeout (rfc5482) */
 #define	   TCPOLEN_UTO			4
+#define TCPOPT_TCPAO		29	/* TCP authentication option (rfc5925) */
 #define	TCPOPT_MPTCP		30	/* MPTCP options */
+#define TCPOPT_FASTOPEN		34	/* TCP Fast Open (rfc7413) */
 #define TCPOPT_EXPERIMENT2	254	/* experimental headers (rfc4727) */
 
 #define TCPOPT_TSTAMP_HDR	\
     (TCPOPT_NOP<<24|TCPOPT_NOP<<16|TCPOPT_TIMESTAMP<<8|TCPOLEN_TIMESTAMP)
 
+#ifndef FTP_PORT
+#define FTP_PORT		21
+#endif
+#ifndef SSH_PORT
+#define SSH_PORT		22
+#endif
 #ifndef TELNET_PORT
-#define TELNET_PORT             23
+#define TELNET_PORT		23
 #endif
 #ifndef SMTP_PORT
 #define SMTP_PORT		25
 #endif
-#ifndef BGP_PORT
-#define BGP_PORT                179
+#ifndef WHOIS_PORT
+#define WHOIS_PORT		43
 #endif
-#define NETBIOS_SSN_PORT        139
-#ifndef OPENFLOW_PORT_OLD
-#define OPENFLOW_PORT_OLD       6633
-#endif
-#ifndef OPENFLOW_PORT_IANA
-#define OPENFLOW_PORT_IANA      6653
-#endif
-#ifndef PPTP_PORT
-#define PPTP_PORT	        1723
-#endif
-#define BEEP_PORT               10288
-#ifndef NFS_PORT
-#define NFS_PORT	        2049
-#endif
-#define MSDP_PORT	        639
-#define RPKI_RTR_PORT	        323
-#define LDP_PORT                646
-#ifndef SMB_PORT
-#define SMB_PORT                445
+#ifndef NAMESERVER_PORT
+#define NAMESERVER_PORT		53
 #endif
 #ifndef HTTP_PORT
 #define HTTP_PORT		80
 #endif
-#ifndef HTTP_PORT_ALT
-#define HTTP_PORT_ALT		8080
+#ifndef NETBIOS_SSN_PORT
+#define NETBIOS_SSN_PORT	139	/* RFC 1001, RFC 1002 */
+#endif
+#ifndef BGP_PORT
+#define BGP_PORT		179
+#endif
+#ifndef RPKI_RTR_PORT
+#define RPKI_RTR_PORT		323
+#endif
+#ifndef SMB_PORT
+#define SMB_PORT		445
 #endif
 #ifndef RTSP_PORT
 #define RTSP_PORT		554
 #endif
+#ifndef MSDP_PORT
+#define MSDP_PORT		639
+#endif
+#ifndef LDP_PORT
+#define LDP_PORT		646
+#endif
+#ifndef PPTP_PORT
+#define PPTP_PORT		1723
+#endif
+#ifndef NFS_PORT
+#define NFS_PORT		2049
+#endif
+#ifndef REDIS_PORT
+#define REDIS_PORT		6379
+#endif
+#ifndef OPENFLOW_PORT_OLD
+#define OPENFLOW_PORT_OLD	6633
+#endif
+#ifndef OPENFLOW_PORT_IANA
+#define OPENFLOW_PORT_IANA	6653
+#endif
+#ifndef HTTP_PORT_ALT
+#define HTTP_PORT_ALT		8080
+#endif
 #ifndef RTSP_PORT_ALT
 #define RTSP_PORT_ALT		8554
 #endif
-#ifndef FTP_PORT
-#define FTP_PORT		21
+#ifndef BEEP_PORT
+#define BEEP_PORT		10288
 #endif

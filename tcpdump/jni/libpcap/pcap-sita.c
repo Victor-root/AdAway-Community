@@ -24,9 +24,7 @@
  *  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include <config.h>
 
 #include <stdio.h>
 #include <string.h>
@@ -42,7 +40,7 @@
 
 #include "pcap-sita.h"
 
-	/* non-configureable manifests follow */
+	/* non-configurable manifests follow */
 
 #define IOP_SNIFFER_PORT	49152			/* TCP port on the IOP used for 'distributed pcap' usage */
 #define MAX_LINE_SIZE		255				/* max size of a buffer/line in /etc/hosts we allow */
@@ -71,6 +69,14 @@ typedef struct unit {
 	char			*imsg;		/* a pointer to an inbound message */
 	int			len;		/* the current size of the inbound message */
 } unit_t;
+
+/*
+ * Private data.
+ * Currently contains nothing.
+ */
+struct pcap_sita {
+	int	dummy;
+};
 
 static unit_t		units[MAX_CHASSIS+1][MAX_GEOSLOT+1];	/* we use indexes of 1 through 8, but we reserve/waste index 0 */
 static fd_set		readfds;				/* a place to store the file descriptors for the connections to the IOPs */
@@ -208,10 +214,14 @@ static void empty_unit(int chassis, int geoslot) {
 
 	empty_unit_iface(u);
 	if (u->imsg) {											/* then if an inbound message buffer exists */
-		u->imsg = (char *)realloc(u->imsg, 1);				/* and re-allocate the old large buffer into a new small one */
-		if (u->imsg == NULL) {	/* oops, realloc call failed */
-			fprintf(stderr, "Warning...call to realloc() failed, value of errno is %d\n", errno);
+		void *bigger_buffer;
 
+		bigger_buffer = (char *)realloc(u->imsg, 1);				/* and re-allocate the old large buffer into a new small one */
+		if (bigger_buffer == NULL) {	/* oops, realloc call failed */
+			fprintf(stderr, "Warning...call to realloc() failed, value of errno is %d\n", errno);
+			return;
+		}
+		u->imsg = bigger_buffer;
 	}
 }
 
@@ -288,11 +298,12 @@ int acn_parse_hosts_file(char *errbuf) {				/* returns: -1 = error, 0 = OK */
 			snprintf(errbuf, PCAP_ERRBUF_SIZE, "Invalid ACN name in '/etc/hosts'.");	/* warn the user */
 			continue;																	/* and ignore the entry */
 		}
-		if ((ptr2 = (char *)malloc(strlen(ptr) + 1)) == NULL) {
-			snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+		ptr2 = strdup(ptr);					/* copy the IP address into our malloc'ed memory */
+		if (ptr2 == NULL) {
+			pcapint_fmt_errmsg_for_errno(errbuf, PCAP_ERRBUF_SIZE,
+			    errno, "malloc");
 			continue;
 		}
-		strcpy(ptr2, ptr);								/* copy the IP address into our malloc'ed memory */
 		u = &units[chassis][geoslot];
 		u->ip = ptr2;									/* and remember the whole shebang */
 		u->chassis = chassis;
@@ -359,7 +370,7 @@ static void pcap_cleanup_acn(pcap_t *handle) {
 	close_with_IOP(chassis, geoslot, LIVE);
 	if (u)
 		u->first_time = 0;
-	pcap_cleanup_live_common(handle);
+	pcapint_cleanup_live_common(handle);
 }
 
 static void send_to_fd(int fd, int len, unsigned char *str) {
@@ -414,7 +425,6 @@ static void unified_IOP_port_name(char *buf, size_t bufsize, const char *proto, 
 
 static char *translate_IOP_to_pcap_name(unit_t *u, char *IOPname, bpf_u_int32 iftype) {
 	iface_t		*iface_ptr, *iface;
-	char		*name;
 	char		buf[32];
 	char		*proto;
 	char		*port;
@@ -429,14 +439,11 @@ static char *translate_IOP_to_pcap_name(unit_t *u, char *IOPname, bpf_u_int32 if
 
 	iface->iftype = iftype;					/* remember the interface type of this interface */
 
-	name = malloc(strlen(IOPname) + 1);		/* get memory for the IOP's name */
-        if (name == NULL) {    /* oops, we didn't get the memory requested     */
+	iface->IOPname = strdup(IOPname);			/* copy it and stick it into the structure */
+        if (iface->IOPname == NULL) {    /* oops, we didn't get the memory requested     */
                 fprintf(stderr, "Error...couldn't allocate memory for IOPname...value of errno is: %d\n", errno);
                 return NULL;
         }
-
-	strcpy(name, IOPname);					/* and copy it in */
-	iface->IOPname = name;					/* and stick it into the structure */
 
 	if (strncmp(IOPname, "lo", 2) == 0) {
 		IOPportnum = atoi(&IOPname[2]);
@@ -473,20 +480,17 @@ static char *translate_IOP_to_pcap_name(unit_t *u, char *IOPname, bpf_u_int32 if
 		return NULL;
 	}
 
-	name = malloc(strlen(buf) + 1);			/* get memory for that name */
-        if (name == NULL) {    /* oops, we didn't get the memory requested     */
+	iface->name = strdup(buf);					/* make a copy and stick it into the structure */
+        if (iface->name == NULL) {    /* oops, we didn't get the memory requested     */
                 fprintf(stderr, "Error...couldn't allocate memory for IOP port name...value of errno is: %d\n", errno);
                 return NULL;
         }
-
-	strcpy(name, buf);						/* and copy it in */
-	iface->name = name;						/* and stick it into the structure */
 
 	if (u->iface == 0) {					/* if this is the first name */
 		u->iface = iface;					/* stick this entry at the head of the list */
 	} else {
 		iface_ptr = u->iface;
-		while (iface_ptr->next) {			/* othewise scan the list */
+		while (iface_ptr->next) {			/* otherwise scan the list */
 			iface_ptr = iface_ptr->next;	/* till we're at the last entry */
 		}
 		iface_ptr->next = iface;			/* then tack this entry on the end of the list */
@@ -568,6 +572,7 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 	char				*newname;
 	bpf_u_int32				interfaceType;
 	unsigned char		flags;
+	void *bigger_buffer;
 
 	prev_iff = 0;
 	for (chassis = 0; chassis <= MAX_CHASSIS; chassis++) {
@@ -577,7 +582,8 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 			ptr = u->imsg;													/* point to the start of the msg for this IOP */
 			while (ptr < (u->imsg + u->len)) {
 				if ((iff = malloc(sizeof(pcap_if_t))) == NULL) {
-					snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+					pcapint_fmt_errmsg_for_errno(errbuf,
+					    PCAP_ERRBUF_SIZE, errno, "malloc");
 					return -1;
 				}
 				memset((char *)iff, 0, sizeof(pcap_if_t)); /* bzero() is deprecated, replaced with memset() */
@@ -586,7 +592,9 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 
 				if (*ptr) {													/* if there is a count for the name */
 					if ((iff->name = malloc(*ptr + 1)) == NULL) {			/* get that amount of space */
-						snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+						pcapint_fmt_errmsg_for_errno(errbuf,
+						    PCAP_ERRBUF_SIZE, errno,
+						    "malloc");
 						return -1;
 					}
 					memcpy(iff->name, (ptr + 1), *ptr);						/* copy the name into the malloc'ed space */
@@ -597,7 +605,9 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 
 				if (*ptr) {													/* if there is a count for the description */
 					if ((iff->description = malloc(*ptr + 1)) == NULL) {	/* get that amount of space */
-						snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+						pcapint_fmt_errmsg_for_errno(errbuf,
+						    PCAP_ERRBUF_SIZE, errno,
+						    "malloc");
 						return -1;
 					}
 					memcpy(iff->description, (ptr + 1), *ptr);				/* copy the name into the malloc'ed space */
@@ -617,15 +627,19 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 				prev_addr = 0;
 				while (address_count--) {
 					if ((addr = malloc(sizeof(pcap_addr_t))) == NULL) {
-						snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+						pcapint_fmt_errmsg_for_errno(errbuf,
+						    PCAP_ERRBUF_SIZE, errno,
+						    "malloc");
 						return -1;
 					}
-+					memset((char *)addr, 0, sizeof(pcap_addr_t)); /* bzero() is deprecated, replaced with memset() */
+					memset((char *)addr, 0, sizeof(pcap_addr_t)); /* bzero() is deprecated, replaced with memset() */
 					if (iff->addresses == 0) iff->addresses = addr;
 					if (prev_addr) prev_addr->next = addr;							/* insert a forward link */
 					if (*ptr) {														/* if there is a count for the address */
 						if ((s = malloc(sizeof(struct sockaddr_in))) == NULL) {		/* get that amount of space */
-							snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+							pcapint_fmt_errmsg_for_errno(errbuf,
+							    PCAP_ERRBUF_SIZE,
+							    errno, "malloc");
 							return -1;
 						}
 						memset((char *)s, 0, sizeof(struct sockaddr_in)); /* bzero() is deprecated, replaced with memset() */
@@ -637,7 +651,9 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 					ptr++;													/* then forwards one more for the 'length of the address' field */
 					if (*ptr) {												/* process any netmask */
 						if ((s = malloc(sizeof(struct sockaddr_in))) == NULL) {
-							snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+							pcapint_fmt_errmsg_for_errno(errbuf,
+							    PCAP_ERRBUF_SIZE,
+							    errno, "malloc");
 							return -1;
 						}
 						/* bzero() is deprecated, replaced with memset() */
@@ -651,7 +667,9 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 					ptr++;
 					if (*ptr) {												/* process any broadcast address */
 						if ((s = malloc(sizeof(struct sockaddr_in))) == NULL) {
-							snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+							pcapint_fmt_errmsg_for_errno(errbuf,
+							    PCAP_ERRBUF_SIZE,
+							    errno, "malloc");
 							return -1;
 						}
 						/* bzero() is deprecated, replaced with memset() */
@@ -665,7 +683,9 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 					ptr++;
 					if (*ptr) {												/* process any destination address */
 						if ((s = malloc(sizeof(struct sockaddr_in))) == NULL) {
-							snprintf(errbuf, PCAP_ERRBUF_SIZE, "malloc: %s", pcap_strerror(errno));
+							pcapint_fmt_errmsg_for_errno(errbuf,
+							    PCAP_ERRBUF_SIZE,
+							    errno, "malloc");
 							return -1;
 						}
 						/* bzero() is deprecated, replaced with memset() */
@@ -682,10 +702,13 @@ static int process_client_data (char *errbuf) {								/* returns: -1 = error, 0
 				prev_iff = iff;
 
 				newname = translate_IOP_to_pcap_name(u, iff->name, interfaceType);		/* add a translation entry and get a point to the mangled name */
-				if ((iff->name = realloc(iff->name, strlen(newname) + 1)) == NULL) {	/* we now re-write the name stored in the interface list */
-					snprintf(errbuf, PCAP_ERRBUF_SIZE, "realloc: %s", pcap_strerror(errno));
+				bigger_buffer = realloc(iff->name, strlen(newname) + 1);
+				if (bigger_buffer == NULL) {	/* we now re-write the name stored in the interface list */
+					pcapint_fmt_errmsg_for_errno(errbuf,
+					    PCAP_ERRBUF_SIZE, errno, "realloc");
 					return -1;
 				}
+				iff->name = bigger_buffer;
 				strcpy(iff->name, newname);												/* to this new name */
 			}
 		}
@@ -730,9 +753,9 @@ static void wait_for_all_answers(void) {
 
 		memcpy(&working_set, &readfds, sizeof(readfds));				/* otherwise, we still have to listen for more stuff, till we timeout */
 		retval = select(max_fs + 1, &working_set, NULL, NULL, &tv);
-		if (retval == -1) {												/* an error occured !!!!! */
+		if (retval == -1) {												/* an error occurred !!!!! */
 			return;
-		} else if (retval == 0) {										/* timeout occured, so process what we've got sofar and return */
+		} else if (retval == 0) {										/* timeout occurred, so process what we've got sofar and return */
 			printf("timeout\n");
 			return;
 		} else {
@@ -814,9 +837,9 @@ static int acn_open_live(const char *name, char *errbuf, int *linktype) {		/* re
 	int			chassis, geoslot;
 	unit_t		*u;
 	iface_t		*p;
-	pcap_if_t	*alldevsp;
+	pcap_if_list_t	devlist;
 
-	pcap_findalldevs_interfaces(&alldevsp, errbuf);
+	pcapint_platform_finddevs(&devlist, errbuf);
 	for (chassis = 0; chassis <= MAX_CHASSIS; chassis++) {										/* scan the table... */
 		for (geoslot = 0; geoslot <= MAX_GEOSLOT; geoslot++) {
 			u = &units[chassis][geoslot];
@@ -859,8 +882,8 @@ static void acn_start_monitor(int fd, int snaplen, int timeout, int promiscuous,
 	//printf("acn_start_monitor() complete\n");				// fulko
 }
 
-static int pcap_inject_acn(pcap_t *p, const void *buf _U_, size_t size _U_) {
-	strlcpy(p->errbuf, "Sending packets isn't supported on ACN adapters",
+static int pcap_inject_acn(pcap_t *p, const void *buf _U_, int size _U_) {
+	pcapint_strlcpy(p->errbuf, "Sending packets isn't supported on ACN adapters",
 	    PCAP_ERRBUF_SIZE);
 	return (-1);
 }
@@ -891,12 +914,6 @@ static int pcap_setfilter_acn(pcap_t *handle, struct bpf_program *bpf) {
 	return 0;
 }
 
-static int pcap_setdirection_acn(pcap_t *handle, pcap_direction_t d) {
-	snprintf(handle->errbuf, sizeof(handle->errbuf),
-	    "Setting direction is not supported on ACN adapters");
-	return -1;
-}
-
 static int acn_read_n_bytes_with_timeout(pcap_t *handle, int count) {
 	struct		timeval tv;
 	int			retval, fd;
@@ -916,10 +933,10 @@ static int acn_read_n_bytes_with_timeout(pcap_t *handle, int count) {
 	bp = handle->bp;
 	while (count) {
 		retval = select(fd + 1, &w_fds, NULL, NULL, &tv);
-		if (retval == -1) {											/* an error occured !!!!! */
+		if (retval == -1) {											/* an error occurred !!!!! */
 //			fprintf(stderr, "error during packet data read\n");
-			return -1;												/* but we need to return a good indication to prevent unneccessary popups */
-		} else if (retval == 0) {									/* timeout occured, so process what we've got sofar and return */
+			return -1;										/* but we need to return a good indication to prevent unnecessary popups */
+		} else if (retval == 0) {									/* timeout occurred, so process what we've got sofar and return */
 //			fprintf(stderr, "timeout during packet data read\n");
 			return -1;
 		} else {
@@ -951,7 +968,7 @@ static int pcap_read_acn(pcap_t *handle, int max_packets, pcap_handler callback,
 	pcap_header.caplen		= ntohl(*(uint32_t *)&packet_header[8]);				/* caplen */
 	pcap_header.len			= ntohl(*(uint32_t *)&packet_header[12]);				/* len */
 
-	handle->bp = handle->buffer + handle->offset;									/* start off the receive pointer at the right spot */
+	handle->bp = (u_char *)handle->buffer + handle->offset;									/* start off the receive pointer at the right spot */
 	if (acn_read_n_bytes_with_timeout(handle, pcap_header.caplen) == -1) return 0;	/* then try to read in the rest of the data */
 
 	callback(user, &pcap_header, handle->bp);										/* call the user supplied callback function */
@@ -973,18 +990,30 @@ static int pcap_activate_sita(pcap_t *handle) {
 
 	handle->inject_op = pcap_inject_acn;
 	handle->setfilter_op = pcap_setfilter_acn;
-	handle->setdirection_op = pcap_setdirection_acn;
+	handle->setdirection_op = NULL; /* Not implemented */
 	handle->set_datalink_op = NULL;	/* can't change data link type */
-	handle->getnonblock_op = pcap_getnonblock_fd;
-	handle->setnonblock_op = pcap_setnonblock_fd;
+	handle->getnonblock_op = pcapint_getnonblock_fd;
+	handle->setnonblock_op = pcapint_setnonblock_fd;
 	handle->cleanup_op = pcap_cleanup_acn;
 	handle->read_op = pcap_read_acn;
 	handle->stats_op = pcap_stats_acn;
 
-	fd = acn_open_live(handle->opt.source, handle->errbuf,
+	fd = acn_open_live(handle->opt.device, handle->errbuf,
 	    &handle->linktype);
 	if (fd == -1)
 		return PCAP_ERROR;
+
+	/*
+	 * Turn a negative snapshot value (invalid), a snapshot value of
+	 * 0 (unspecified), or a value bigger than the normal maximum
+	 * value, into the maximum allowed value.
+	 *
+	 * If some application really *needs* a bigger snapshot
+	 * length, we should just increase MAXIMUM_SNAPLEN.
+	 */
+	if (handle->snapshot <= 0 || handle->snapshot > MAXIMUM_SNAPLEN)
+		handle->snapshot = MAXIMUM_SNAPLEN;
+
 	handle->fd = fd;
 	handle->bufsize = handle->snapshot;
 
@@ -992,8 +1021,8 @@ static int pcap_activate_sita(pcap_t *handle) {
 
 	handle->buffer	 = malloc(handle->bufsize + handle->offset);
 	if (!handle->buffer) {
-	        snprintf(handle->errbuf, PCAP_ERRBUF_SIZE,
-			 "malloc: %s", pcap_strerror(errno));
+		pcapint_fmt_errmsg_for_errno(handle->errbuf, PCAP_ERRBUF_SIZE,
+		    errno, "malloc");
 		pcap_cleanup_acn(handle);
 		return PCAP_ERROR;
 	}
@@ -1007,13 +1036,45 @@ static int pcap_activate_sita(pcap_t *handle) {
 	return 0;
 }
 
-pcap_t *pcap_create_interface(const char *device, char *ebuf) {
+pcap_t *pcapint_create_interface(const char *device _U_, char *ebuf) {
 	pcap_t *p;
 
-	p = pcap_create_common(device, ebuf, 0);
+	p = PCAP_CREATE_COMMON(ebuf, struct pcap_sita);
 	if (p == NULL)
 		return (NULL);
 
 	p->activate_op = pcap_activate_sita;
 	return (p);
+}
+
+int pcapint_platform_finddevs(pcap_if_list_t *devlistp, char *errbuf) {
+
+	//printf("pcap_findalldevs()\n");				// fulko
+
+	*alldevsp = 0;												/* initialize the returned variables before we do anything */
+	strcpy(errbuf, "");
+	if (acn_parse_hosts_file(errbuf))							/* scan the hosts file for potential IOPs */
+		{
+		//printf("pcap_findalldevs() returning BAD after parse_hosts\n");				// fulko
+		return -1;
+		}
+	//printf("pcap_findalldevs() got hostlist now finding devs\n");				// fulko
+	if (acn_findalldevs(errbuf))								/* then ask the IOPs for their monitorable devices */
+		{
+		//printf("pcap_findalldevs() returning BAD after findalldevs\n");				// fulko
+		return -1;
+		}
+	devlistp->beginning = acn_if_list;
+	acn_if_list = 0;											/* then forget our list head, because someone will call pcap_freealldevs() to empty the malloc'ed stuff */
+	//printf("pcap_findalldevs() returning ZERO OK\n");				// fulko
+	return 0;
+}
+
+/*
+ * Libpcap version string.
+ */
+const char *
+pcap_lib_version(void)
+{
+	return PCAP_VERSION_STRING " (SITA-only)";
 }

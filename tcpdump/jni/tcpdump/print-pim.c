@@ -19,18 +19,19 @@
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+/* \summary: Protocol Independent Multicast (PIM) printer */
 
-#include <tcpdump-stdinc.h>
+#include <config.h>
 
-#include "interface.h"
+#include "netdissect-stdinc.h"
+
+#include "netdissect.h"
 #include "addrtoname.h"
 #include "extract.h"
 
 #include "ip.h"
+#include "ip6.h"
+#include "ipproto.h"
 
 #define PIMV1_TYPE_QUERY           0
 #define PIMV1_TYPE_REGISTER        1
@@ -115,13 +116,30 @@ static const struct tok pimv2_register_flag_values[] = {
     { 0, NULL}
 };
 
+#define PIMV2_DF_ELECTION_OFFER                  1
+#define PIMV2_DF_ELECTION_WINNER                 2
+#define PIMV2_DF_ELECTION_BACKOFF                3
+#define PIMV2_DF_ELECTION_PASS                   4
+
+static const struct tok pimv2_df_election_flag_values[] = {
+    { PIMV2_DF_ELECTION_OFFER, "Offer" },
+    { PIMV2_DF_ELECTION_WINNER, "Winner" },
+    { PIMV2_DF_ELECTION_BACKOFF, "Backoff" },
+    { PIMV2_DF_ELECTION_PASS, "Pass" },
+    { 0, NULL}
+};
+
+#define PIMV2_DF_ELECTION_PASS_BACKOFF_STR(x)   ( \
+      x == PIMV2_DF_ELECTION_BACKOFF ? "offer" : "new winner" )
+
+
 /*
  * XXX: We consider a case where IPv6 is not ready yet for portability,
- * but PIM dependent defintions should be independent of IPv6...
+ * but PIM dependent definitions should be independent of IPv6...
  */
 
 struct pim {
-	uint8_t pim_typever;
+	nd_uint8_t	pim_typever;
 			/* upper 4bit: PIM version number; 2 for PIMv2 */
 			/* lower 4bit: the PIM message type, currently they are:
 			 * Hello, Register, Register-Stop, Join/Prune,
@@ -130,76 +148,89 @@ struct pim {
 			 */
 #define PIM_VER(x)	(((x) & 0xf0) >> 4)
 #define PIM_TYPE(x)	((x) & 0x0f)
-	u_char  pim_rsv;	/* Reserved */
-	u_short	pim_cksum;	/* IP style check sum */
+	nd_uint8_t	pim_rsv;	/* Reserved in v1, subtype+address length in v2 */
+#define PIM_SUBTYPE(x)  (((x) & 0xf0) >> 4)
+	nd_uint16_t	pim_cksum;	/* IP style check sum */
 };
 
-static void pimv2_print(netdissect_options *, register const u_char *bp, register u_int len, u_int cksum);
+static void pimv2_print(netdissect_options *, const u_char *bp, u_int len, const u_char *);
 
 static void
 pimv1_join_prune_print(netdissect_options *ndo,
-                       register const u_char *bp, register u_int len)
+                       const u_char *bp, u_int len)
 {
-	int ngroups, njoin, nprune;
-	int njp;
+	u_int ngroups, njoin, nprune;
+	u_int njp;
 
 	/* If it's a single group and a single source, use 1-line output. */
-	if (ND_TTEST2(bp[0], 30) && bp[11] == 1 &&
-	    ((njoin = EXTRACT_16BITS(&bp[20])) + EXTRACT_16BITS(&bp[22])) == 1) {
-		int hold;
+	if (ND_TTEST_LEN(bp, 30) && GET_U_1(bp + 11) == 1 &&
+	    ((njoin = GET_BE_U_2(bp + 20)) + GET_BE_U_2(bp + 22)) == 1) {
+		u_int hold;
 
-		ND_PRINT((ndo, " RPF %s ", ipaddr_string(ndo, bp)));
-		hold = EXTRACT_16BITS(&bp[6]);
+		ND_PRINT(" RPF %s ", GET_IPADDR_STRING(bp));
+		hold = GET_BE_U_2(bp + 6);
 		if (hold != 180) {
-			ND_PRINT((ndo, "Hold "));
-			relts_print(ndo, hold);
+			ND_PRINT("Hold ");
+			unsigned_relts_print(ndo, hold);
 		}
-		ND_PRINT((ndo, "%s (%s/%d, %s", njoin ? "Join" : "Prune",
-		ipaddr_string(ndo, &bp[26]), bp[25] & 0x3f,
-		ipaddr_string(ndo, &bp[12])));
-		if (EXTRACT_32BITS(&bp[16]) != 0xffffffff)
-			ND_PRINT((ndo, "/%s", ipaddr_string(ndo, &bp[16])));
-		ND_PRINT((ndo, ") %s%s %s",
-		    (bp[24] & 0x01) ? "Sparse" : "Dense",
-		    (bp[25] & 0x80) ? " WC" : "",
-		    (bp[25] & 0x40) ? "RP" : "SPT"));
+		ND_PRINT("%s (%s/%u, %s", njoin ? "Join" : "Prune",
+		GET_IPADDR_STRING(bp + 26), GET_U_1(bp + 25) & 0x3f,
+		GET_IPADDR_STRING(bp + 12));
+		if (GET_BE_U_4(bp + 16) != 0xffffffff)
+			ND_PRINT("/%s", GET_IPADDR_STRING(bp + 16));
+		ND_PRINT(") %s%s %s",
+		    (GET_U_1(bp + 24) & 0x01) ? "Sparse" : "Dense",
+		    (GET_U_1(bp + 25) & 0x80) ? " WC" : "",
+		    (GET_U_1(bp + 25) & 0x40) ? "RP" : "SPT");
 		return;
 	}
 
-	ND_TCHECK2(bp[0], sizeof(struct in_addr));
+	if (len < sizeof(nd_ipv4))
+		goto trunc;
 	if (ndo->ndo_vflag > 1)
-		ND_PRINT((ndo, "\n"));
-	ND_PRINT((ndo, " Upstream Nbr: %s", ipaddr_string(ndo, bp)));
-	ND_TCHECK2(bp[6], 2);
-	if (ndo->ndo_vflag > 1)
-		ND_PRINT((ndo, "\n"));
-	ND_PRINT((ndo, " Hold time: "));
-	relts_print(ndo, EXTRACT_16BITS(&bp[6]));
-	if (ndo->ndo_vflag < 2)
-		return;
-	bp += 8;
-	len -= 8;
-
-	ND_TCHECK2(bp[0], 4);
-	ngroups = bp[3];
+		ND_PRINT("\n");
+	ND_PRINT(" Upstream Nbr: %s", GET_IPADDR_STRING(bp));
 	bp += 4;
 	len -= 4;
-	while (ngroups--) {
+	if (len < 4)
+		goto trunc;
+	if (ndo->ndo_vflag > 1)
+		ND_PRINT("\n");
+	ND_PRINT(" Hold time: ");
+	unsigned_relts_print(ndo, GET_BE_U_2(bp + 2));
+	if (ndo->ndo_vflag < 2)
+		return;
+	bp += 4;
+	len -= 4;
+
+	if (len < 4)
+		goto trunc;
+	ngroups = GET_U_1(bp + 3);
+	bp += 4;
+	len -= 4;
+	while (ngroups != 0) {
 		/*
 		 * XXX - does the address have length "addrlen" and the
 		 * mask length "maddrlen"?
 		 */
-		ND_TCHECK2(bp[0], sizeof(struct in_addr));
-		ND_PRINT((ndo, "\n\tGroup: %s", ipaddr_string(ndo, bp)));
-		ND_TCHECK2(bp[4], sizeof(struct in_addr));
-		if (EXTRACT_32BITS(&bp[4]) != 0xffffffff)
-			ND_PRINT((ndo, "/%s", ipaddr_string(ndo, &bp[4])));
-		ND_TCHECK2(bp[8], 4);
-		njoin = EXTRACT_16BITS(&bp[8]);
-		nprune = EXTRACT_16BITS(&bp[10]);
-		ND_PRINT((ndo, " joined: %d pruned: %d", njoin, nprune));
-		bp += 12;
-		len -= 12;
+		if (len < 4)
+			goto trunc;
+		ND_PRINT("\n\tGroup: %s", GET_IPADDR_STRING(bp));
+		bp += 4;
+		len -= 4;
+		if (len < 4)
+			goto trunc;
+		if (GET_BE_U_4(bp) != 0xffffffff)
+			ND_PRINT("/%s", GET_IPADDR_STRING(bp));
+		bp += 4;
+		len -= 4;
+		if (len < 4)
+			goto trunc;
+		njoin = GET_BE_U_2(bp);
+		nprune = GET_BE_U_2(bp + 2);
+		ND_PRINT(" joined: %u pruned: %u", njoin, nprune);
+		bp += 4;
+		len -= 4;
 		for (njp = 0; njp < (njoin + nprune); njp++) {
 			const char *type;
 
@@ -207,109 +238,103 @@ pimv1_join_prune_print(netdissect_options *ndo,
 				type = "Join ";
 			else
 				type = "Prune";
-			ND_TCHECK2(bp[0], 6);
-			ND_PRINT((ndo, "\n\t%s %s%s%s%s/%d", type,
-			    (bp[0] & 0x01) ? "Sparse " : "Dense ",
-			    (bp[1] & 0x80) ? "WC " : "",
-			    (bp[1] & 0x40) ? "RP " : "SPT ",
-			ipaddr_string(ndo, &bp[2]), bp[1] & 0x3f));
+			if (len < 6)
+				goto trunc;
+			ND_PRINT("\n\t%s %s%s%s%s/%u", type,
+			    (GET_U_1(bp) & 0x01) ? "Sparse " : "Dense ",
+			    (GET_U_1(bp + 1) & 0x80) ? "WC " : "",
+			    (GET_U_1(bp + 1) & 0x40) ? "RP " : "SPT ",
+			    GET_IPADDR_STRING(bp + 2),
+			    GET_U_1(bp + 1) & 0x3f);
 			bp += 6;
 			len -= 6;
 		}
+		ngroups--;
 	}
 	return;
 trunc:
-	ND_PRINT((ndo, "[|pim]"));
-	return;
+	nd_print_trunc(ndo);
 }
 
 void
 pimv1_print(netdissect_options *ndo,
-            register const u_char *bp, register u_int len)
+            const u_char *bp, u_int len)
 {
-	register const u_char *ep;
-	register u_char type;
+	u_char type;
 
-	ep = (const u_char *)ndo->ndo_snapend;
-	if (bp >= ep)
-		return;
+	ndo->ndo_protocol = "pimv1";
+	type = GET_U_1(bp + 1);
 
-	ND_TCHECK(bp[1]);
-	type = bp[1];
-
-	ND_PRINT((ndo, " %s", tok2str(pimv1_type_str, "[type %u]", type)));
+	ND_PRINT(" %s", tok2str(pimv1_type_str, "[type %u]", type));
 	switch (type) {
 	case PIMV1_TYPE_QUERY:
-		if (ND_TTEST(bp[8])) {
-			switch (bp[8] >> 4) {
+		if (ND_TTEST_1(bp + 8)) {
+			switch (GET_U_1(bp + 8) >> 4) {
 			case 0:
-				ND_PRINT((ndo, " Dense-mode"));
+				ND_PRINT(" Dense-mode");
 				break;
 			case 1:
-				ND_PRINT((ndo, " Sparse-mode"));
+				ND_PRINT(" Sparse-mode");
 				break;
 			case 2:
-				ND_PRINT((ndo, " Sparse-Dense-mode"));
+				ND_PRINT(" Sparse-Dense-mode");
 				break;
 			default:
-				ND_PRINT((ndo, " mode-%d", bp[8] >> 4));
+				ND_PRINT(" mode-%u", GET_U_1(bp + 8) >> 4);
 				break;
 			}
 		}
 		if (ndo->ndo_vflag) {
-			ND_TCHECK2(bp[10],2);
-			ND_PRINT((ndo, " (Hold-time "));
-			relts_print(ndo, EXTRACT_16BITS(&bp[10]));
-			ND_PRINT((ndo, ")"));
+			ND_PRINT(" (Hold-time ");
+			unsigned_relts_print(ndo, GET_BE_U_2(bp + 10));
+			ND_PRINT(")");
 		}
 		break;
 
 	case PIMV1_TYPE_REGISTER:
-		ND_TCHECK2(bp[8], 20);			/* ip header */
-		ND_PRINT((ndo, " for %s > %s", ipaddr_string(ndo, &bp[20]),
-		    ipaddr_string(ndo, &bp[24])));
+		ND_TCHECK_LEN(bp + 8, 20);			/* ip header */
+		ND_PRINT(" for %s > %s", GET_IPADDR_STRING(bp + 20),
+			  GET_IPADDR_STRING(bp + 24));
 		break;
 	case PIMV1_TYPE_REGISTER_STOP:
-		ND_TCHECK2(bp[12], sizeof(struct in_addr));
-		ND_PRINT((ndo, " for %s > %s", ipaddr_string(ndo, &bp[8]),
-		    ipaddr_string(ndo, &bp[12])));
+		ND_PRINT(" for %s > %s", GET_IPADDR_STRING(bp + 8),
+			  GET_IPADDR_STRING(bp + 12));
 		break;
 	case PIMV1_TYPE_RP_REACHABILITY:
 		if (ndo->ndo_vflag) {
-			ND_TCHECK2(bp[22], 2);
-			ND_PRINT((ndo, " group %s", ipaddr_string(ndo, &bp[8])));
-			if (EXTRACT_32BITS(&bp[12]) != 0xffffffff)
-				ND_PRINT((ndo, "/%s", ipaddr_string(ndo, &bp[12])));
-			ND_PRINT((ndo, " RP %s hold ", ipaddr_string(ndo, &bp[16])));
-			relts_print(ndo, EXTRACT_16BITS(&bp[22]));
+			ND_PRINT(" group %s", GET_IPADDR_STRING(bp + 8));
+			if (GET_BE_U_4(bp + 12) != 0xffffffff)
+				ND_PRINT("/%s", GET_IPADDR_STRING(bp + 12));
+			ND_PRINT(" RP %s hold ", GET_IPADDR_STRING(bp + 16));
+			unsigned_relts_print(ndo, GET_BE_U_2(bp + 22));
 		}
 		break;
 	case PIMV1_TYPE_ASSERT:
-		ND_TCHECK2(bp[16], sizeof(struct in_addr));
-		ND_PRINT((ndo, " for %s > %s", ipaddr_string(ndo, &bp[16]),
-		    ipaddr_string(ndo, &bp[8])));
-		if (EXTRACT_32BITS(&bp[12]) != 0xffffffff)
-			ND_PRINT((ndo, "/%s", ipaddr_string(ndo, &bp[12])));
-		ND_TCHECK2(bp[24], 4);
-		ND_PRINT((ndo, " %s pref %d metric %d",
-		    (bp[20] & 0x80) ? "RP-tree" : "SPT",
-		EXTRACT_32BITS(&bp[20]) & 0x7fffffff,
-		EXTRACT_32BITS(&bp[24])));
+		ND_PRINT(" for %s > %s", GET_IPADDR_STRING(bp + 16),
+			  GET_IPADDR_STRING(bp + 8));
+		if (GET_BE_U_4(bp + 12) != 0xffffffff)
+			ND_PRINT("/%s", GET_IPADDR_STRING(bp + 12));
+		ND_PRINT(" %s pref %u metric %u",
+		    (GET_U_1(bp + 20) & 0x80) ? "RP-tree" : "SPT",
+		    GET_BE_U_4(bp + 20) & 0x7fffffff,
+		    GET_BE_U_4(bp + 24));
 		break;
 	case PIMV1_TYPE_JOIN_PRUNE:
 	case PIMV1_TYPE_GRAFT:
 	case PIMV1_TYPE_GRAFT_ACK:
-		if (ndo->ndo_vflag)
-			pimv1_join_prune_print(ndo, &bp[8], len - 8);
+		if (ndo->ndo_vflag) {
+			if (len < 8)
+				goto trunc;
+			pimv1_join_prune_print(ndo, bp + 8, len - 8);
+		}
 		break;
 	}
-	if ((bp[4] >> 4) != 1)
-		ND_PRINT((ndo, " [v%d]", bp[4] >> 4));
+	if ((GET_U_1(bp + 4) >> 4) != 1)
+		ND_PRINT(" [v%u]", GET_U_1(bp + 4) >> 4);
 	return;
 
 trunc:
-	ND_PRINT((ndo, "[|pim]"));
-	return;
+	nd_print_trunc(ndo);
 }
 
 /*
@@ -320,37 +345,37 @@ trunc:
  */
 void
 cisco_autorp_print(netdissect_options *ndo,
-                   register const u_char *bp, register u_int len)
+                   const u_char *bp, u_int len)
 {
-	int type;
-	int numrps;
-	int hold;
+	u_int type;
+	u_int numrps;
+	u_int hold;
 
-	ND_TCHECK(bp[0]);
-	ND_PRINT((ndo, " auto-rp "));
-	type = bp[0];
+	ndo->ndo_protocol = "cisco_autorp";
+	if (len < 8)
+		goto trunc;
+	ND_PRINT(" auto-rp ");
+	type = GET_U_1(bp);
 	switch (type) {
 	case 0x11:
-		ND_PRINT((ndo, "candidate-advert"));
+		ND_PRINT("candidate-advert");
 		break;
 	case 0x12:
-		ND_PRINT((ndo, "mapping"));
+		ND_PRINT("mapping");
 		break;
 	default:
-		ND_PRINT((ndo, "type-0x%02x", type));
+		ND_PRINT("type-0x%02x", type);
 		break;
 	}
 
-	ND_TCHECK(bp[1]);
-	numrps = bp[1];
+	numrps = GET_U_1(bp + 1);
 
-	ND_TCHECK2(bp[2], 2);
-	ND_PRINT((ndo, " Hold "));
-	hold = EXTRACT_16BITS(&bp[2]);
+	ND_PRINT(" Hold ");
+	hold = GET_BE_U_2(bp + 2);
 	if (hold)
-		relts_print(ndo, EXTRACT_16BITS(&bp[2]));
+		unsigned_relts_print(ndo, GET_BE_U_2(bp + 2));
 	else
-		ND_PRINT((ndo, "FOREVER"));
+		ND_PRINT("FOREVER");
 
 	/* Next 4 bytes are reserved. */
 
@@ -369,87 +394,92 @@ cisco_autorp_print(netdissect_options *ndo,
 	 *	       8 bits: mask 32 bits: source
 	 * lather, rinse, repeat.
 	 */
-	while (numrps--) {
-		int nentries;
+	while (numrps != 0) {
+		u_int nentries;
 		char s;
 
-		ND_TCHECK2(bp[0], 4);
-		ND_PRINT((ndo, " RP %s", ipaddr_string(ndo, bp)));
-		ND_TCHECK(bp[4]);
-		switch (bp[4] & 0x3) {
-		case 0: ND_PRINT((ndo, " PIMv?"));
+		if (len < 4)
+			goto trunc;
+		ND_PRINT(" RP %s", GET_IPADDR_STRING(bp));
+		bp += 4;
+		len -= 4;
+		if (len < 1)
+			goto trunc;
+		switch (GET_U_1(bp) & 0x3) {
+		case 0: ND_PRINT(" PIMv?");
 			break;
-		case 1:	ND_PRINT((ndo, " PIMv1"));
+		case 1:	ND_PRINT(" PIMv1");
 			break;
-		case 2:	ND_PRINT((ndo, " PIMv2"));
+		case 2:	ND_PRINT(" PIMv2");
 			break;
-		case 3:	ND_PRINT((ndo, " PIMv1+2"));
+		case 3:	ND_PRINT(" PIMv1+2");
 			break;
 		}
-		if (bp[4] & 0xfc)
-			ND_PRINT((ndo, " [rsvd=0x%02x]", bp[4] & 0xfc));
-		ND_TCHECK(bp[5]);
-		nentries = bp[5];
-		bp += 6; len -= 6;
+		if (GET_U_1(bp) & 0xfc)
+			ND_PRINT(" [rsvd=0x%02x]", GET_U_1(bp) & 0xfc);
+		bp += 1;
+		len -= 1;
+		if (len < 1)
+			goto trunc;
+		nentries = GET_U_1(bp);
+		bp += 1;
+		len -= 1;
 		s = ' ';
-		for (; nentries; nentries--) {
-			ND_TCHECK2(bp[0], 6);
-			ND_PRINT((ndo, "%c%s%s/%d", s, bp[0] & 1 ? "!" : "",
-			          ipaddr_string(ndo, &bp[2]), bp[1]));
-			if (bp[0] & 0x02) {
-				ND_PRINT((ndo, " bidir"));
+		while (nentries != 0) {
+			if (len < 6)
+				goto trunc;
+			ND_PRINT("%c%s%s/%u", s, GET_U_1(bp) & 1 ? "!" : "",
+			          GET_IPADDR_STRING(bp + 2), GET_U_1(bp + 1));
+			if (GET_U_1(bp) & 0x02) {
+				ND_PRINT(" bidir");
 			}
-			if (bp[0] & 0xfc) {
-				ND_PRINT((ndo, "[rsvd=0x%02x]", bp[0] & 0xfc));
+			if (GET_U_1(bp) & 0xfc) {
+				ND_PRINT("[rsvd=0x%02x]", GET_U_1(bp) & 0xfc);
 			}
 			s = ',';
 			bp += 6; len -= 6;
+			nentries--;
 		}
+		numrps--;
 	}
 	return;
 
 trunc:
-	ND_PRINT((ndo, "[|autorp]"));
-	return;
+	nd_print_trunc(ndo);
 }
 
 void
 pim_print(netdissect_options *ndo,
-          register const u_char *bp, register u_int len, u_int cksum)
+          const u_char *bp, u_int len, const u_char *bp2)
 {
-	register const u_char *ep;
-	register struct pim *pim = (struct pim *)bp;
+	const struct pim *pim = (const struct pim *)bp;
+	uint8_t pim_typever;
 
-	ep = (const u_char *)ndo->ndo_snapend;
-	if (bp >= ep)
-		return;
-#ifdef notyet			/* currently we see only version and type */
-	ND_TCHECK(pim->pim_rsv);
-#endif
+	ndo->ndo_protocol = "pim";
 
-	switch (PIM_VER(pim->pim_typever)) {
+	pim_typever = GET_U_1(pim->pim_typever);
+	switch (PIM_VER(pim_typever)) {
 	case 2:
 		if (!ndo->ndo_vflag) {
-			ND_PRINT((ndo, "PIMv%u, %s, length %u",
-			          PIM_VER(pim->pim_typever),
-			          tok2str(pimv2_type_values,"Unknown Type",PIM_TYPE(pim->pim_typever)),
-			          len));
+			ND_PRINT("PIMv%u, %s, length %u",
+			          PIM_VER(pim_typever),
+			          tok2str(pimv2_type_values,"Unknown Type",PIM_TYPE(pim_typever)),
+			          len);
 			return;
 		} else {
-			ND_PRINT((ndo, "PIMv%u, length %u\n\t%s",
-			          PIM_VER(pim->pim_typever),
+			ND_PRINT("PIMv%u, length %u\n\t%s",
+			          PIM_VER(pim_typever),
 			          len,
-			          tok2str(pimv2_type_values,"Unknown Type",PIM_TYPE(pim->pim_typever))));
-			pimv2_print(ndo, bp, len, cksum);
+			          tok2str(pimv2_type_values,"Unknown Type",PIM_TYPE(pim_typever)));
+			pimv2_print(ndo, bp, len, bp2);
 		}
 		break;
 	default:
-		ND_PRINT((ndo, "PIMv%u, length %u",
-		          PIM_VER(pim->pim_typever),
-		          len));
+		ND_PRINT("PIMv%u, length %u",
+		          PIM_VER(pim_typever),
+		          len);
 		break;
 	}
-	return;
 }
 
 /*
@@ -492,8 +522,6 @@ pim_print(netdissect_options *ndo,
  *
  */
 
-static int pimv2_addr_len;
-
 enum pimv2_addrtype {
 	pimv2_unicast, pimv2_group, pimv2_source
 };
@@ -520,99 +548,94 @@ enum pimv2_addrtype {
  */
 static int
 pimv2_addr_print(netdissect_options *ndo,
-                 const u_char *bp, enum pimv2_addrtype at, int silent)
+                 const u_char *bp, u_int len, enum pimv2_addrtype at,
+                 u_int addr_len, int silent)
 {
-	int af;
-	int len, hdrlen;
+	u_int af;
+	int hdrlen;
 
-	ND_TCHECK(bp[0]);
-
-	if (pimv2_addr_len == 0) {
-		ND_TCHECK(bp[1]);
-		switch (bp[0]) {
+	if (addr_len == 0) {
+		if (len < 2)
+			goto trunc;
+		switch (GET_U_1(bp)) {
 		case 1:
 			af = AF_INET;
-			len = sizeof(struct in_addr);
+			addr_len = (u_int)sizeof(nd_ipv4);
 			break;
-#ifdef INET6
 		case 2:
 			af = AF_INET6;
-			len = sizeof(struct in6_addr);
+			addr_len = (u_int)sizeof(nd_ipv6);
 			break;
-#endif
 		default:
 			return -1;
 		}
-		if (bp[1] != 0)
+		if (GET_U_1(bp + 1) != 0)
 			return -1;
 		hdrlen = 2;
 	} else {
-		switch (pimv2_addr_len) {
-		case sizeof(struct in_addr):
+		switch (addr_len) {
+		case sizeof(nd_ipv4):
 			af = AF_INET;
 			break;
-#ifdef INET6
-		case sizeof(struct in6_addr):
+		case sizeof(nd_ipv6):
 			af = AF_INET6;
 			break;
-#endif
 		default:
 			return -1;
 			break;
 		}
-		len = pimv2_addr_len;
 		hdrlen = 0;
 	}
 
 	bp += hdrlen;
+	len -= hdrlen;
 	switch (at) {
 	case pimv2_unicast:
-		ND_TCHECK2(bp[0], len);
+		if (len < addr_len)
+			goto trunc;
+		ND_TCHECK_LEN(bp, addr_len);
 		if (af == AF_INET) {
 			if (!silent)
-				ND_PRINT((ndo, "%s", ipaddr_string(ndo, bp)));
-		}
-#ifdef INET6
-		else if (af == AF_INET6) {
+				ND_PRINT("%s", GET_IPADDR_STRING(bp));
+		} else if (af == AF_INET6) {
 			if (!silent)
-				ND_PRINT((ndo, "%s", ip6addr_string(ndo, bp)));
+				ND_PRINT("%s", GET_IP6ADDR_STRING(bp));
 		}
-#endif
-		return hdrlen + len;
+		return hdrlen + addr_len;
 	case pimv2_group:
 	case pimv2_source:
-		ND_TCHECK2(bp[0], len + 2);
+		if (len < addr_len + 2)
+			goto trunc;
+		ND_TCHECK_LEN(bp, addr_len + 2);
 		if (af == AF_INET) {
 			if (!silent) {
-				ND_PRINT((ndo, "%s", ipaddr_string(ndo, bp + 2)));
-				if (bp[1] != 32)
-					ND_PRINT((ndo, "/%u", bp[1]));
+				ND_PRINT("%s", GET_IPADDR_STRING(bp + 2));
+				if (GET_U_1(bp + 1) != 32)
+					ND_PRINT("/%u", GET_U_1(bp + 1));
 			}
-		}
-#ifdef INET6
-		else if (af == AF_INET6) {
+		} else if (af == AF_INET6) {
 			if (!silent) {
-				ND_PRINT((ndo, "%s", ip6addr_string(ndo, bp + 2)));
-				if (bp[1] != 128)
-					ND_PRINT((ndo, "/%u", bp[1]));
+				ND_PRINT("%s", GET_IP6ADDR_STRING(bp + 2));
+				if (GET_U_1(bp + 1) != 128)
+					ND_PRINT("/%u", GET_U_1(bp + 1));
 			}
 		}
-#endif
-		if (bp[0] && !silent) {
+		if (GET_U_1(bp) && !silent) {
 			if (at == pimv2_group) {
-				ND_PRINT((ndo, "(0x%02x)", bp[0]));
+				ND_PRINT("(0x%02x)", GET_U_1(bp));
 			} else {
-				ND_PRINT((ndo, "(%s%s%s",
-					bp[0] & 0x04 ? "S" : "",
-					bp[0] & 0x02 ? "W" : "",
-					bp[0] & 0x01 ? "R" : ""));
-				if (bp[0] & 0xf8) {
-					ND_PRINT((ndo, "+0x%02x", bp[0] & 0xf8));
+				ND_PRINT("(%s%s%s",
+					GET_U_1(bp) & 0x04 ? "S" : "",
+					GET_U_1(bp) & 0x02 ? "W" : "",
+					GET_U_1(bp) & 0x01 ? "R" : "");
+				if (GET_U_1(bp) & 0xf8) {
+					ND_PRINT("+0x%02x",
+						 GET_U_1(bp) & 0xf8);
 				}
-				ND_PRINT((ndo, ")"));
+				ND_PRINT(")");
 			}
 		}
-		return hdrlen + 2 + len;
+		return hdrlen + 2 + addr_len;
 	default:
 		return -1;
 	}
@@ -620,64 +643,158 @@ trunc:
 	return -1;
 }
 
+enum checksum_status {
+	CORRECT,
+	INCORRECT,
+	UNVERIFIED
+};
+
+static enum checksum_status
+pimv2_check_checksum(netdissect_options *ndo, const u_char *bp,
+		     const u_char *bp2, u_int len)
+{
+	const struct ip *ip;
+	u_int cksum;
+
+	if (!ND_TTEST_LEN(bp, len)) {
+		/* We don't have all the data. */
+		return (UNVERIFIED);
+	}
+	ip = (const struct ip *)bp2;
+	if (IP_V(ip) == 4) {
+		struct cksum_vec vec[1];
+
+		vec[0].ptr = bp;
+		vec[0].len = len;
+		cksum = in_cksum(vec, 1);
+		return (cksum ? INCORRECT : CORRECT);
+	} else if (IP_V(ip) == 6) {
+		const struct ip6_hdr *ip6;
+
+		ip6 = (const struct ip6_hdr *)bp2;
+		cksum = nextproto6_cksum(ndo, ip6, bp, len, len, IPPROTO_PIM);
+		return (cksum ? INCORRECT : CORRECT);
+	} else {
+		return (UNVERIFIED);
+	}
+}
+
 static void
 pimv2_print(netdissect_options *ndo,
-            register const u_char *bp, register u_int len, u_int cksum)
+            const u_char *bp, u_int len, const u_char *bp2)
 {
-	register const u_char *ep;
-	register struct pim *pim = (struct pim *)bp;
+	const struct pim *pim = (const struct pim *)bp;
 	int advance;
+	int subtype;
+	enum checksum_status cksum_status;
+	u_int pim_typever;
+	u_int pimv2_addr_len;
 
-	ep = (const u_char *)ndo->ndo_snapend;
-	if (bp >= ep)
+	ndo->ndo_protocol = "pimv2";
+	if (len < 2) {
+		ND_PRINT("[length %u < 2]", len);
+		nd_print_invalid(ndo);
 		return;
-	if (ep > bp + len)
-		ep = bp + len;
-	ND_TCHECK(pim->pim_rsv);
-	pimv2_addr_len = pim->pim_rsv;
-	if (pimv2_addr_len != 0)
-		ND_PRINT((ndo, ", RFC2117-encoding"));
-
-	ND_PRINT((ndo, ", cksum 0x%04x ", EXTRACT_16BITS(&pim->pim_cksum)));
-	if (EXTRACT_16BITS(&pim->pim_cksum) == 0) {
-		ND_PRINT((ndo, "(unverified)"));
-	} else {
-		ND_PRINT((ndo, "(%scorrect)", ND_TTEST2(bp[0], len) && cksum ? "in" : "" ));
 	}
+	pim_typever = GET_U_1(pim->pim_typever);
+	/* RFC5015 allocates the high 4 bits of pim_rsv for "subtype". */
+	pimv2_addr_len = GET_U_1(pim->pim_rsv) & 0x0f;
+	if (pimv2_addr_len != 0)
+		ND_PRINT(", RFC2117-encoding");
 
-	switch (PIM_TYPE(pim->pim_typever)) {
+	if (len < 4) {
+		ND_PRINT("[length %u < 4]", len);
+		nd_print_invalid(ndo);
+		return;
+	}
+	ND_PRINT(", cksum 0x%04x ", GET_BE_U_2(pim->pim_cksum));
+	if (GET_BE_U_2(pim->pim_cksum) == 0) {
+		ND_PRINT("(unverified)");
+	} else {
+		if (PIM_TYPE(pim_typever) == PIMV2_TYPE_REGISTER) {
+			/*
+			 * The checksum only covers the packet header,
+			 * not the encapsulated packet.
+			 */
+			cksum_status = pimv2_check_checksum(ndo, bp, bp2, 8);
+			if (cksum_status == INCORRECT) {
+				/*
+				 * To quote RFC 4601, "For interoperability
+				 * reasons, a message carrying a checksum
+				 * calculated over the entire PIM Register
+				 * message should also be accepted."
+				 */
+				cksum_status = pimv2_check_checksum(ndo, bp, bp2, len);
+			}
+		} else {
+			/*
+			 * The checksum covers the entire packet.
+			 */
+			cksum_status = pimv2_check_checksum(ndo, bp, bp2, len);
+		}
+		switch (cksum_status) {
+
+		case CORRECT:
+			ND_PRINT("(correct)");
+			break;
+
+		case INCORRECT:
+			ND_PRINT("(incorrect)");
+			break;
+
+		case UNVERIFIED:
+			ND_PRINT("(unverified)");
+			break;
+		}
+	}
+	bp += 4;
+	len -= 4;
+
+	switch (PIM_TYPE(pim_typever)) {
 	case PIMV2_TYPE_HELLO:
 	    {
 		uint16_t otype, olen;
-		bp += 4;
-		while (bp < ep) {
-			ND_TCHECK2(bp[0], 4);
-			otype = EXTRACT_16BITS(&bp[0]);
-			olen = EXTRACT_16BITS(&bp[2]);
-			ND_TCHECK2(bp[0], 4 + olen);
-			ND_PRINT((ndo, "\n\t  %s Option (%u), length %u, Value: ",
+		while (len > 0) {
+			if (len < 4)
+				goto trunc;
+			otype = GET_BE_U_2(bp);
+			olen = GET_BE_U_2(bp + 2);
+			ND_PRINT("\n\t  %s Option (%u), length %u, Value: ",
 			          tok2str(pimv2_hello_option_values, "Unknown", otype),
 			          otype,
-			          olen));
+			          olen);
 			bp += 4;
+			len -= 4;
 
+			if (len < olen)
+				goto trunc;
+			ND_TCHECK_LEN(bp, olen);
 			switch (otype) {
 			case PIMV2_HELLO_OPTION_HOLDTIME:
-				relts_print(ndo, EXTRACT_16BITS(bp));
+				if (olen != 2) {
+					ND_PRINT("[option length %u != 2]", olen);
+					nd_print_invalid(ndo);
+					return;
+				} else {
+					unsigned_relts_print(ndo,
+							     GET_BE_U_2(bp));
+				}
 				break;
 
 			case PIMV2_HELLO_OPTION_LANPRUNEDELAY:
 				if (olen != 4) {
-					ND_PRINT((ndo, "ERROR: Option Length != 4 Bytes (%u)", olen));
+					ND_PRINT("[option length %u != 4]", olen);
+					nd_print_invalid(ndo);
+					return;
 				} else {
 					char t_bit;
 					uint16_t lan_delay, override_interval;
-					lan_delay = EXTRACT_16BITS(bp);
-					override_interval = EXTRACT_16BITS(bp+2);
+					lan_delay = GET_BE_U_2(bp);
+					override_interval = GET_BE_U_2(bp + 2);
 					t_bit = (lan_delay & 0x8000)? 1 : 0;
 					lan_delay &= ~0x8000;
-					ND_PRINT((ndo, "\n\t    T-bit=%d, LAN delay %dms, Override interval %dms",
-					t_bit, lan_delay, override_interval));
+					ND_PRINT("\n\t    T-bit=%u, LAN delay %ums, Override interval %ums",
+					t_bit, lan_delay, override_interval);
 				}
 				break;
 
@@ -685,29 +802,45 @@ pimv2_print(netdissect_options *ndo,
 			case PIMV2_HELLO_OPTION_DR_PRIORITY:
 				switch (olen) {
 				case 0:
-					ND_PRINT((ndo, "Bi-Directional Capability (Old)"));
+					ND_PRINT("Bi-Directional Capability (Old)");
 					break;
 				case 4:
-					ND_PRINT((ndo, "%u", EXTRACT_32BITS(bp)));
+					ND_PRINT("%u", GET_BE_U_4(bp));
 					break;
 				default:
-					ND_PRINT((ndo, "ERROR: Option Length != 4 Bytes (%u)", olen));
+					ND_PRINT("[option length %u != 4]", olen);
+					nd_print_invalid(ndo);
+					return;
 					break;
 				}
 				break;
 
 			case PIMV2_HELLO_OPTION_GENID:
-				ND_PRINT((ndo, "0x%08x", EXTRACT_32BITS(bp)));
+				if (olen != 4) {
+					ND_PRINT("[option length %u != 4]", olen);
+					nd_print_invalid(ndo);
+					return;
+				} else {
+					ND_PRINT("0x%08x", GET_BE_U_4(bp));
+				}
 				break;
 
 			case PIMV2_HELLO_OPTION_REFRESH_CAP:
-				ND_PRINT((ndo, "v%d", *bp));
-				if (*(bp+1) != 0) {
-					ND_PRINT((ndo, ", interval "));
-					relts_print(ndo, *(bp+1));
-				}
-				if (EXTRACT_16BITS(bp+2) != 0) {
-					ND_PRINT((ndo, " ?0x%04x?", EXTRACT_16BITS(bp+2)));
+				if (olen != 4) {
+					ND_PRINT("[option length %u != 4]", olen);
+					nd_print_invalid(ndo);
+					return;
+				} else {
+					ND_PRINT("v%u", GET_U_1(bp));
+					if (GET_U_1(bp + 1) != 0) {
+						ND_PRINT(", interval ");
+						unsigned_relts_print(ndo,
+								     GET_U_1(bp + 1));
+					}
+					if (GET_BE_U_2(bp + 2) != 0) {
+						ND_PRINT(" ?0x%04x?",
+							 GET_BE_U_2(bp + 2));
+					}
 				}
 				break;
 
@@ -718,16 +851,14 @@ pimv2_print(netdissect_options *ndo,
 			case PIMV2_HELLO_OPTION_ADDRESS_LIST:
 				if (ndo->ndo_vflag > 1) {
 					const u_char *ptr = bp;
+					u_int plen = len;
 					while (ptr < (bp+olen)) {
-						int advance;
-
-						ND_PRINT((ndo, "\n\t    "));
-						advance = pimv2_addr_print(ndo, ptr, pimv2_unicast, 0);
-						if (advance < 0) {
-							ND_PRINT((ndo, "..."));
-							break;
-						}
+						ND_PRINT("\n\t    ");
+						advance = pimv2_addr_print(ndo, ptr, plen, pimv2_unicast, pimv2_addr_len, 0);
+						if (advance < 0)
+							goto trunc;
 						ptr += advance;
+						plen -= advance;
 					}
 				}
 				break;
@@ -740,29 +871,34 @@ pimv2_print(netdissect_options *ndo,
 			if (ndo->ndo_vflag> 1)
 				print_unknown_data(ndo, bp, "\n\t    ", olen);
 			bp += olen;
+			len -= olen;
 		}
 		break;
 	    }
 
 	case PIMV2_TYPE_REGISTER:
 	{
-		struct ip *ip;
+		const struct ip *ip;
 
-		ND_TCHECK2(*(bp + 4), PIMV2_REGISTER_FLAG_LEN);
+		if (len < 4)
+			goto trunc;
+		ND_TCHECK_LEN(bp, PIMV2_REGISTER_FLAG_LEN);
 
-		ND_PRINT((ndo, ", Flags [ %s ]\n\t",
+		ND_PRINT(", Flags [ %s ]\n\t",
 		          tok2str(pimv2_register_flag_values,
 		          "none",
-		          EXTRACT_32BITS(bp+4))));
+		          GET_BE_U_4(bp)));
 
-		bp += 8; len -= 8;
+		bp += 4; len -= 4;
 		/* encapsulated multicast packet */
-		ip = (struct ip *)bp;
+		if (len == 0)
+			goto trunc;
+		ip = (const struct ip *)bp;
 		switch (IP_V(ip)) {
                 case 0: /* Null header */
-			ND_PRINT((ndo, "IP-Null-header %s > %s",
-			          ipaddr_string(ndo, &ip->ip_src),
-			          ipaddr_string(ndo, &ip->ip_dst)));
+			ND_PRINT("IP-Null-header %s > %s",
+			          GET_IPADDR_STRING(ip->ip_src),
+			          GET_IPADDR_STRING(ip->ip_dst));
 			break;
 
 		case 4:	/* IPv4 */
@@ -774,29 +910,20 @@ pimv2_print(netdissect_options *ndo,
 			break;
 
 		default:
-			ND_PRINT((ndo, "IP ver %d", IP_V(ip)));
+			ND_PRINT("IP ver %u", IP_V(ip));
 			break;
 		}
 		break;
 	}
 
 	case PIMV2_TYPE_REGISTER_STOP:
-		bp += 4; len -= 4;
-		if (bp >= ep)
-			break;
-		ND_PRINT((ndo, " group="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_group, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		ND_PRINT(" group=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_group, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance; len -= advance;
-		if (bp >= ep)
-			break;
-		ND_PRINT((ndo, " source="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_unicast, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		ND_PRINT(" source=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance; len -= advance;
 		break;
 
@@ -845,249 +972,259 @@ pimv2_print(netdissect_options *ndo,
 		uint16_t holdtime;
 		uint16_t njoin;
 		uint16_t nprune;
-		int i, j;
+		u_int i, j;
 
-		bp += 4; len -= 4;
-		if (PIM_TYPE(pim->pim_typever) != 7) {	/*not for Graft-ACK*/
-			if (bp >= ep)
-				break;
-			ND_PRINT((ndo, ", upstream-neighbor: "));
-			if ((advance = pimv2_addr_print(ndo, bp, pimv2_unicast, 0)) < 0) {
-				ND_PRINT((ndo, "..."));
-				break;
-			}
+		if (PIM_TYPE(pim_typever) != 7) {	/*not for Graft-ACK*/
+			ND_PRINT(", upstream-neighbor: ");
+			if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0)
+				goto trunc;
 			bp += advance; len -= advance;
 		}
-		if (bp + 4 > ep)
-			break;
-		ngroup = bp[1];
-		holdtime = EXTRACT_16BITS(&bp[2]);
-		ND_PRINT((ndo, "\n\t  %u group(s)", ngroup));
-		if (PIM_TYPE(pim->pim_typever) != 7) {	/*not for Graft-ACK*/
-			ND_PRINT((ndo, ", holdtime: "));
+		if (len < 4)
+			goto trunc;
+		ND_TCHECK_4(bp);
+		ngroup = GET_U_1(bp + 1);
+		holdtime = GET_BE_U_2(bp + 2);
+		ND_PRINT("\n\t  %u group(s)", ngroup);
+		if (PIM_TYPE(pim_typever) != 7) {	/*not for Graft-ACK*/
+			ND_PRINT(", holdtime: ");
 			if (holdtime == 0xffff)
-				ND_PRINT((ndo, "infinite"));
+				ND_PRINT("infinite");
 			else
-				relts_print(ndo, holdtime);
+				unsigned_relts_print(ndo, holdtime);
 		}
 		bp += 4; len -= 4;
 		for (i = 0; i < ngroup; i++) {
-			if (bp >= ep)
-				goto jp_done;
-			ND_PRINT((ndo, "\n\t    group #%u: ", i+1));
-			if ((advance = pimv2_addr_print(ndo, bp, pimv2_group, 0)) < 0) {
-				ND_PRINT((ndo, "...)"));
-				goto jp_done;
-			}
+			ND_PRINT("\n\t    group #%u: ", i+1);
+			if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_group, pimv2_addr_len, 0)) < 0)
+				goto trunc;
 			bp += advance; len -= advance;
-			if (bp + 4 > ep) {
-				ND_PRINT((ndo, "...)"));
-				goto jp_done;
-			}
-			njoin = EXTRACT_16BITS(&bp[0]);
-			nprune = EXTRACT_16BITS(&bp[2]);
-			ND_PRINT((ndo, ", joined sources: %u, pruned sources: %u", njoin, nprune));
+			if (len < 4)
+				goto trunc;
+			ND_TCHECK_4(bp);
+			njoin = GET_BE_U_2(bp);
+			nprune = GET_BE_U_2(bp + 2);
+			ND_PRINT(", joined sources: %u, pruned sources: %u", njoin, nprune);
 			bp += 4; len -= 4;
 			for (j = 0; j < njoin; j++) {
-				ND_PRINT((ndo, "\n\t      joined source #%u: ", j+1));
-				if ((advance = pimv2_addr_print(ndo, bp, pimv2_source, 0)) < 0) {
-					ND_PRINT((ndo, "...)"));
-					goto jp_done;
-				}
+				ND_PRINT("\n\t      joined source #%u: ", j+1);
+				if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_source, pimv2_addr_len, 0)) < 0)
+					goto trunc;
 				bp += advance; len -= advance;
 			}
 			for (j = 0; j < nprune; j++) {
-				ND_PRINT((ndo, "\n\t      pruned source #%u: ", j+1));
-				if ((advance = pimv2_addr_print(ndo, bp, pimv2_source, 0)) < 0) {
-					ND_PRINT((ndo, "...)"));
-					goto jp_done;
-				}
+				ND_PRINT("\n\t      pruned source #%u: ", j+1);
+				if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_source, pimv2_addr_len, 0)) < 0)
+					goto trunc;
 				bp += advance; len -= advance;
 			}
 		}
-	jp_done:
 		break;
 	    }
 
 	case PIMV2_TYPE_BOOTSTRAP:
 	{
-		int i, j, frpcnt;
-		bp += 4;
+		u_int i, j, frpcnt;
 
 		/* Fragment Tag, Hash Mask len, and BSR-priority */
-		if (bp + sizeof(uint16_t) >= ep) break;
-		ND_PRINT((ndo, " tag=%x", EXTRACT_16BITS(bp)));
-		bp += sizeof(uint16_t);
-		if (bp >= ep) break;
-		ND_PRINT((ndo, " hashmlen=%d", bp[0]));
-		if (bp + 1 >= ep) break;
-		ND_PRINT((ndo, " BSRprio=%d", bp[1]));
+		if (len < 2)
+			goto trunc;
+		ND_PRINT(" tag=%x", GET_BE_U_2(bp));
 		bp += 2;
+		len -= 2;
+		if (len < 1)
+			goto trunc;
+		ND_PRINT(" hashmlen=%u", GET_U_1(bp));
+		if (len < 2)
+			goto trunc;
+		ND_TCHECK_1(bp + 2);
+		ND_PRINT(" BSRprio=%u", GET_U_1(bp + 1));
+		bp += 2;
+		len -= 2;
 
 		/* Encoded-Unicast-BSR-Address */
-		if (bp >= ep) break;
-		ND_PRINT((ndo, " BSR="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_unicast, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		ND_PRINT(" BSR=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance;
+		len -= advance;
 
-		for (i = 0; bp < ep; i++) {
+		for (i = 0; len > 0; i++) {
 			/* Encoded-Group Address */
-			ND_PRINT((ndo, " (group%d: ", i));
-			if ((advance = pimv2_addr_print(ndo, bp, pimv2_group, 0))
-			    < 0) {
-				ND_PRINT((ndo, "...)"));
-				goto bs_done;
-			}
+			ND_PRINT(" (group%u: ", i);
+			if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_group, pimv2_addr_len, 0)) < 0)
+				goto trunc;
 			bp += advance;
+			len -= advance;
 
 			/* RP-Count, Frag RP-Cnt, and rsvd */
-			if (bp >= ep) {
-				ND_PRINT((ndo, "...)"));
-				goto bs_done;
-			}
-			ND_PRINT((ndo, " RPcnt=%d", bp[0]));
-			if (bp + 1 >= ep) {
-				ND_PRINT((ndo, "...)"));
-				goto bs_done;
-			}
-			ND_PRINT((ndo, " FRPcnt=%d", frpcnt = bp[1]));
+			if (len < 1)
+				goto trunc;
+			ND_PRINT(" RPcnt=%u", GET_U_1(bp));
+			if (len < 2)
+				goto trunc;
+			frpcnt = GET_U_1(bp + 1);
+			ND_PRINT(" FRPcnt=%u", frpcnt);
+			if (len < 4)
+				goto trunc;
 			bp += 4;
+			len -= 4;
 
-			for (j = 0; j < frpcnt && bp < ep; j++) {
+			for (j = 0; j < frpcnt && len > 0; j++) {
 				/* each RP info */
-				ND_PRINT((ndo, " RP%d=", j));
-				if ((advance = pimv2_addr_print(ndo, bp,
+				ND_PRINT(" RP%u=", j);
+				if ((advance = pimv2_addr_print(ndo, bp, len,
 								pimv2_unicast,
-								0)) < 0) {
-					ND_PRINT((ndo, "...)"));
-					goto bs_done;
-				}
+								pimv2_addr_len,
+								0)) < 0)
+					goto trunc;
 				bp += advance;
+				len -= advance;
 
-				if (bp + 1 >= ep) {
-					ND_PRINT((ndo, "...)"));
-					goto bs_done;
-				}
-				ND_PRINT((ndo, ",holdtime="));
-				relts_print(ndo, EXTRACT_16BITS(bp));
-				if (bp + 2 >= ep) {
-					ND_PRINT((ndo, "...)"));
-					goto bs_done;
-				}
-				ND_PRINT((ndo, ",prio=%d", bp[2]));
+				if (len < 2)
+					goto trunc;
+				ND_PRINT(",holdtime=");
+				unsigned_relts_print(ndo,
+						     GET_BE_U_2(bp));
+				if (len < 3)
+					goto trunc;
+				ND_PRINT(",prio=%u", GET_U_1(bp + 2));
+				if (len < 4)
+					goto trunc;
 				bp += 4;
+				len -= 4;
 			}
-			ND_PRINT((ndo, ")"));
+			ND_PRINT(")");
 		}
-	   bs_done:
 		break;
 	}
 	case PIMV2_TYPE_ASSERT:
-		bp += 4; len -= 4;
-		if (bp >= ep)
-			break;
-		ND_PRINT((ndo, " group="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_group, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		ND_PRINT(" group=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_group, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance; len -= advance;
-		if (bp >= ep)
-			break;
-		ND_PRINT((ndo, " src="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_unicast, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		ND_PRINT(" src=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance; len -= advance;
-		if (bp + 8 > ep)
-			break;
-		if (bp[0] & 0x80)
-			ND_PRINT((ndo, " RPT"));
-		ND_PRINT((ndo, " pref=%u", EXTRACT_32BITS(&bp[0]) & 0x7fffffff));
-		ND_PRINT((ndo, " metric=%u", EXTRACT_32BITS(&bp[4])));
+		if (len < 8)
+			goto trunc;
+		ND_TCHECK_8(bp);
+		if (GET_U_1(bp) & 0x80)
+			ND_PRINT(" RPT");
+		ND_PRINT(" pref=%u", GET_BE_U_4(bp) & 0x7fffffff);
+		ND_PRINT(" metric=%u", GET_BE_U_4(bp + 4));
 		break;
 
 	case PIMV2_TYPE_CANDIDATE_RP:
 	{
-		int i, pfxcnt;
-		bp += 4;
+		u_int i, pfxcnt;
 
 		/* Prefix-Cnt, Priority, and Holdtime */
-		if (bp >= ep) break;
-		ND_PRINT((ndo, " prefix-cnt=%d", bp[0]));
-		pfxcnt = bp[0];
-		if (bp + 1 >= ep) break;
-		ND_PRINT((ndo, " prio=%d", bp[1]));
-		if (bp + 3 >= ep) break;
-		ND_PRINT((ndo, " holdtime="));
-		relts_print(ndo, EXTRACT_16BITS(&bp[2]));
+		if (len < 1)
+			goto trunc;
+		ND_PRINT(" prefix-cnt=%u", GET_U_1(bp));
+		pfxcnt = GET_U_1(bp);
+		if (len < 2)
+			goto trunc;
+		ND_PRINT(" prio=%u", GET_U_1(bp + 1));
+		if (len < 4)
+			goto trunc;
+		ND_PRINT(" holdtime=");
+		unsigned_relts_print(ndo, GET_BE_U_2(bp + 2));
 		bp += 4;
+		len -= 4;
 
 		/* Encoded-Unicast-RP-Address */
-		if (bp >= ep) break;
-		ND_PRINT((ndo, " RP="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_unicast, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		ND_PRINT(" RP=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance;
+		len -= advance;
 
 		/* Encoded-Group Addresses */
-		for (i = 0; i < pfxcnt && bp < ep; i++) {
-			ND_PRINT((ndo, " Group%d=", i));
-			if ((advance = pimv2_addr_print(ndo, bp, pimv2_group, 0))
-			    < 0) {
-				ND_PRINT((ndo, "..."));
-				break;
-			}
+		for (i = 0; i < pfxcnt && len > 0; i++) {
+			ND_PRINT(" Group%u=", i);
+			if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_group, pimv2_addr_len, 0)) < 0)
+				goto trunc;
 			bp += advance;
+			len -= advance;
 		}
 		break;
 	}
 
 	case PIMV2_TYPE_PRUNE_REFRESH:
-		ND_PRINT((ndo, " src="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_unicast, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		ND_PRINT(" src=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance;
-		ND_PRINT((ndo, " grp="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_group, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		len -= advance;
+		ND_PRINT(" grp=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_group, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance;
-		ND_PRINT((ndo, " forwarder="));
-		if ((advance = pimv2_addr_print(ndo, bp, pimv2_unicast, 0)) < 0) {
-			ND_PRINT((ndo, "..."));
-			break;
-		}
+		len -= advance;
+		ND_PRINT(" forwarder=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0)
+			goto trunc;
 		bp += advance;
-		ND_TCHECK2(bp[0], 2);
-		ND_PRINT((ndo, " TUNR "));
-		relts_print(ndo, EXTRACT_16BITS(bp));
+		len -= advance;
+		if (len < 2)
+			goto trunc;
+		ND_PRINT(" TUNR ");
+		unsigned_relts_print(ndo, GET_BE_U_2(bp));
 		break;
 
+	case PIMV2_TYPE_DF_ELECTION:
+		subtype = PIM_SUBTYPE(GET_U_1(pim->pim_rsv));
+		ND_PRINT("\n\t  %s,", tok2str( pimv2_df_election_flag_values,
+			 "Unknown", subtype) );
+
+		ND_PRINT(" rpa=");
+		if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0) {
+			goto trunc;
+		}
+		bp += advance;
+		len -= advance;
+		ND_PRINT(" sender pref=%u", GET_BE_U_4(bp) );
+		ND_PRINT(" sender metric=%u", GET_BE_U_4(bp + 4));
+
+		bp += 8;
+		len -= 8;
+
+		switch (subtype) {
+		case PIMV2_DF_ELECTION_BACKOFF:
+		case PIMV2_DF_ELECTION_PASS:
+			ND_PRINT("\n\t  %s addr=", PIMV2_DF_ELECTION_PASS_BACKOFF_STR(subtype));
+			if ((advance = pimv2_addr_print(ndo, bp, len, pimv2_unicast, pimv2_addr_len, 0)) < 0) {
+				goto trunc;
+			}
+			bp += advance;
+			len -= advance;
+
+			ND_PRINT(" %s pref=%u", PIMV2_DF_ELECTION_PASS_BACKOFF_STR(subtype), GET_BE_U_4(bp) );
+			ND_PRINT(" %s metric=%u", PIMV2_DF_ELECTION_PASS_BACKOFF_STR(subtype), GET_BE_U_4(bp + 4));
+
+			bp += 8;
+			len -= 8;
+
+			if (subtype == PIMV2_DF_ELECTION_BACKOFF) {
+				ND_PRINT(" interval %dms", GET_BE_U_2(bp));
+			}
+
+			break;
+		default:
+			break;
+		}
+		break;
 
 	 default:
-		ND_PRINT((ndo, " [type %d]", PIM_TYPE(pim->pim_typever)));
+		ND_PRINT(" [type %u]", PIM_TYPE(pim_typever));
 		break;
 	}
 
 	return;
 
 trunc:
-	ND_PRINT((ndo, "[|pim]"));
+	nd_print_trunc(ndo);
 }
-
-/*
- * Local Variables:
- * c-style: whitesmith
- * c-basic-offset: 8
- * End:
- */

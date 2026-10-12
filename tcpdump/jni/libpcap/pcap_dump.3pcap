@@ -17,7 +17,7 @@
 .\" WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
 .\" MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 .\"
-.TH PCAP_DUMP 3PCAP "5 April 2008"
+.TH PCAP_DUMP 3PCAP "8 March 2015"
 .SH NAME
 pcap_dump \- write a packet to a capture file
 .SH SYNOPSIS
@@ -28,24 +28,22 @@ pcap_dump \- write a packet to a capture file
 .LP
 .ft B
 void pcap_dump(u_char *user, struct pcap_pkthdr *h,
-.ti +8
-u_char *sp);
+    u_char *sp);
 .ft
 .fi
 .SH DESCRIPTION
-.B pcap_dump()
+.BR pcap_dump ()
 outputs a packet to the ``savefile'' opened with
-.BR pcap_dump_open() .
+.BR pcap_dump_open (3PCAP).
 Note that its calling arguments are suitable for use with
-.B pcap_dispatch()
+.BR pcap_dispatch (3PCAP)
 or
-.BR pcap_loop() .
+.BR pcap_loop (3PCAP).
 If called directly, the
 .I user
 parameter is of type
 .B pcap_dumper_t
 as returned by
-.BR pcap_dump_open() .
+.BR pcap_dump_open ().
 .SH SEE ALSO
-pcap(3PCAP), pcap_dump_open(3PCAP), pcap_dispatch(3PCAP),
-pcap_loop(3PCAP)
+.BR pcap (3PCAP)

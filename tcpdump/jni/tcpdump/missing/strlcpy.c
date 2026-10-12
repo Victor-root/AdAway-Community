@@ -1,5 +1,5 @@
 /*	$NetBSD: strlcpy.c,v 1.5 1999/09/20 04:39:47 lukem Exp $	*/
-/*	from OpenBSD: strlcpy.c,v 1.4 1999/05/01 18:56:41 millert Exp 	*/
+/*	from OpenBSD: strlcpy.c,v 1.4 1999/05/01 18:56:41 millert Exp	*/
 
 /*
  * Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
@@ -28,15 +28,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifdef HAVE_CONFIG_H 
 #include <config.h>
-#endif
 
-#include <tcpdump-stdinc.h>
+#include <netdissect-stdinc.h>
 
 #include <string.h>
 
-#include "interface.h"
+#include "netdissect.h"
 
 /*
  * Copy src to string dst of size siz.  At most siz-1 characters
@@ -46,9 +44,9 @@
 size_t
 strlcpy(char *dst, const char *src, size_t siz)
 {
-	register char *d = dst;
-	register const char *s = src;
-	register size_t n = siz;
+	char *d = dst;
+	const char *s = src;
+	size_t n = siz;
 
 	/* Copy as many bytes as will fit */
 	if (n != 0 && --n != 0) {

@@ -1,97 +1,58 @@
 /*
  * Oracle
  */
-#define NETDISSECT_REWORKED
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
 
-#include <tcpdump-stdinc.h>
+/* \summary: Per-Packet Information (DLT_PPI) printer */
 
-#include "interface.h"
+/* Specification:
+ * Per-Packet Information Header Specification - Version 1.0.7
+ * https://web.archive.org/web/20160328114748/http://www.cacetech.com/documents/PPI%20Header%20format%201.0.7.pdf
+ */
+
+#include <config.h>
+
+#include "netdissect-stdinc.h"
+
+#include "netdissect.h"
 #include "extract.h"
 
+
 typedef struct ppi_header {
-	uint8_t		ppi_ver;
-	uint8_t		ppi_flags;
-	uint16_t	ppi_len;
-	uint32_t	ppi_dlt;
+	nd_uint8_t	ppi_ver;	/* Version.  Currently 0 */
+	nd_uint8_t	ppi_flags;	/* Flags. */
+	nd_uint16_t	ppi_len;	/* Length of entire message, including
+					 * this header and TLV payload. */
+	nd_uint32_t	ppi_dlt;	/* Data Link Type of the captured
+					 * packet data. */
 } ppi_header_t;
 
 #define	PPI_HDRLEN	8
 
 #ifdef DLT_PPI
 
-static inline void
+static void
 ppi_header_print(netdissect_options *ndo, const u_char *bp, u_int length)
 {
 	const ppi_header_t *hdr;
 	uint16_t len;
 	uint32_t dlt;
+	const char *dltname;
 
 	hdr = (const ppi_header_t *)bp;
 
-	len = EXTRACT_LE_16BITS(&hdr->ppi_len);
-	dlt = EXTRACT_LE_32BITS(&hdr->ppi_dlt);
+	len = GET_LE_U_2(hdr->ppi_len);
+	dlt = GET_LE_U_4(hdr->ppi_dlt);
+	dltname = pcap_datalink_val_to_name(dlt);
 
 	if (!ndo->ndo_qflag) {
-		ND_PRINT((ndo, "V.%d DLT %s (%d) len %d", hdr->ppi_ver,
-			  pcap_datalink_val_to_name(dlt), dlt,
-                          len));
+		ND_PRINT("V.%u DLT %s (%u) len %u", GET_U_1(hdr->ppi_ver),
+			  (dltname != NULL ? dltname : "UNKNOWN"), dlt,
+                          len);
         } else {
-		ND_PRINT((ndo, "%s", pcap_datalink_val_to_name(dlt)));
+		ND_PRINT("%s", (dltname != NULL ? dltname : "UNKNOWN"));
         }
 
-	ND_PRINT((ndo, ", length %u: ", length));
-}
-
-static void
-ppi_print(netdissect_options *ndo,
-               const struct pcap_pkthdr *h, const u_char *p)
-{
-	if_ndo_printer ndo_printer;
-        if_printer printer;
-	ppi_header_t *hdr;
-	u_int caplen = h->caplen;
-	u_int length = h->len;
-	uint16_t len;
-	uint32_t dlt;
-
-	if (caplen < sizeof(ppi_header_t)) {
-		ND_PRINT((ndo, "[|ppi]"));
-		return;
-	}
-
-	hdr = (ppi_header_t *)p;
-	len = EXTRACT_LE_16BITS(&hdr->ppi_len);
-	if (len < sizeof(ppi_header_t)) {
-		ND_PRINT((ndo, "[|ppi]"));
-		return;
-	}
-	if (caplen < len) {
-		ND_PRINT((ndo, "[|ppi]"));
-		return;
-	}
-	dlt = EXTRACT_LE_32BITS(&hdr->ppi_dlt);
-
-	if (ndo->ndo_eflag)
-		ppi_header_print(ndo, p, length);
-
-	length -= len;
-	caplen -= len;
-	p += len;
-
-	if ((printer = lookup_printer(dlt)) != NULL) {
-		printer(h, p);
-	} else if ((ndo_printer = lookup_ndo_printer(dlt)) != NULL) {
-		ndo_printer(ndo, h, p);
-	} else {
-		if (!ndo->ndo_eflag)
-			ppi_header_print(ndo, (u_char *)hdr, length + len);
-
-		if (!ndo->ndo_suppress_default_print)
-			ND_DEFAULTPRINT(p, caplen);
-	}
+	ND_PRINT(", length %u: ", length);
 }
 
 /*
@@ -100,20 +61,69 @@ ppi_print(netdissect_options *ndo,
  * 'h->len' is the length of the packet off the wire, and 'h->caplen'
  * is the number of bytes actually captured.
  */
-u_int
+void
 ppi_if_print(netdissect_options *ndo,
-               const struct pcap_pkthdr *h, const u_char *p)
+	     const struct pcap_pkthdr *h, const u_char *p)
 {
-	ppi_print(ndo, h, p);
+	if_printer printer;
+	const ppi_header_t *hdr;
+	u_int caplen = h->caplen;
+	u_int length = h->len;
+	uint16_t len;
+	uint32_t dlt;
+	uint32_t hdrlen;
+	struct pcap_pkthdr nhdr;
 
-	return (sizeof(ppi_header_t));
+	ndo->ndo_protocol = "ppi";
+	if (caplen < sizeof(ppi_header_t)) {
+		nd_print_trunc(ndo);
+		ndo->ndo_ll_hdr_len += caplen;
+		return;
+	}
+
+	hdr = (const ppi_header_t *)p;
+	len = GET_LE_U_2(hdr->ppi_len);
+	if (len < sizeof(ppi_header_t) || len > 65532) {
+		/* It MUST be between 8 and 65,532 inclusive (spec 3.1.3) */
+		ND_PRINT(" [length %u < %zu or > 65532]", len,
+			 sizeof(ppi_header_t));
+		nd_print_invalid(ndo);
+		ndo->ndo_ll_hdr_len += caplen;
+		return;
+	}
+	if (caplen < len) {
+		/*
+		 * If we don't have the entire PPI header, don't
+		 * bother.
+		 */
+		nd_print_trunc(ndo);
+		ndo->ndo_ll_hdr_len += caplen;
+		return;
+	}
+	dlt = GET_LE_U_4(hdr->ppi_dlt);
+
+	if (ndo->ndo_eflag)
+		ppi_header_print(ndo, p, length);
+
+	length -= len;
+	caplen -= len;
+	p += len;
+
+	printer = lookup_printer(dlt);
+	if (printer != NULL) {
+		nhdr = *h;
+		nhdr.caplen = caplen;
+		nhdr.len = length;
+		printer(ndo, &nhdr, p);
+		hdrlen = ndo->ndo_ll_hdr_len;
+	} else {
+		if (!ndo->ndo_eflag)
+			ppi_header_print(ndo, (const u_char *)hdr, length + len);
+
+		if (!ndo->ndo_suppress_default_print)
+			ND_DEFAULTPRINT(p, caplen);
+		hdrlen = 0;
+	}
+	ndo->ndo_ll_hdr_len += len + hdrlen;
 }
-
-/*
- * Local Variables:
- * c-style: whitesmith
- * c-basic-offset: 8
- * End:
- */
-
 #endif /* DLT_PPI */
