@@ -4,5 +4,5 @@
 # Translation related files
 app/src/main/res/values-*/ @Vankog
 app/src/main/res/raw-*/ @Vankog
-metadata/android/ @Vankog
+metadata/ @Vankog
 .tx/ @Vankog
