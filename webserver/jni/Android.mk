@@ -20,10 +20,10 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS	       := -D MG_ENABLE_IPV6 -DMG_TLS=MG_TLS_OPENSSL -std=c99 -O2 -W -Wall -pipe $(COPT)
+LOCAL_CFLAGS	       := -D MG_ENABLE_IPV6 -DMG_TLS=MG_TLS_MBED -std=c99 -O2 -W -Wall -pipe $(COPT)
 LOCAL_MODULE           := webserver
 LOCAL_SRC_FILES        := webserver.c mongoose/mongoose.c
-LOCAL_SHARED_LIBRARIES := ssl crypto
+LOCAL_STATIC_LIBRARIES := mbedtls
 LOCAL_LDLIBS           := -llog
 
 include $(BUILD_EXECUTABLE)
@@ -34,6 +34,6 @@ include $(BUILD_EXECUTABLE)
 
 
 #
-# Import OpenSSL (ssl and crypto) libraries from prefab
+# Build Mbed TLS static library
 #
-$(call import-module,prefab/openssl)
+include $(LOCAL_PATH)/mbedtls/Android.mk

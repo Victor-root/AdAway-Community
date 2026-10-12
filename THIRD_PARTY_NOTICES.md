@@ -41,6 +41,10 @@ If not, see <https://www.gnu.org/licenses/>.
   https://github.com/material-components/material-components-android  
   Apache License v2
 
+* Mbed TLS  
+  https://github.com/Mbed-TLS/mbedtls  
+  Apache License v2 (dual licensed Apache-2.0 OR GPL-2.0-or-later)
+
 * Mongoose Webserver  
   https://github.com/cesanta/mongoose  
   GPLv2 License
@@ -48,10 +52,6 @@ If not, see <https://www.gnu.org/licenses/>.
 * OkHttp  
   https://github.com/square/okhttp  
   Apache License v2
-
-* Openssl  
-  https://www.openssl.org/  
-  [OpenSSL license](https://www.openssl.org/source/license-openssl-ssleay.txt)
 
 * Pcap4J  
   https://github.com/kaitoy/pcap4j  

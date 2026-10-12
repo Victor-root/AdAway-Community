@@ -23,7 +23,6 @@ timber = "5.0.1"
 markwon = "4.6.2"
 # Root
 libsu = "6.0.0"
-openssl = "1.1.1q-beta-1"
 # VPN
 pcap4jCore = "1.8.2"
 pcap4jPacketfactoryStatic = "1.8.2"
@@ -59,7 +58,6 @@ timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 markwon-core = { module = "io.noties.markwon:core", version.ref = "markwon" }
 # Root
 libsu = { module = "com.github.topjohnwu.libsu:core", version.ref = "libsu" }
-openssl = { module = "com.android.ndk.thirdparty:openssl", version.ref = "openssl" }
 # VPN
 pcap4j-core = { module = "org.pcap4j:pcap4j-core", version.ref = "pcap4jCore" }
 pcap4j-pcap4j-packetfactory-static = { module = "org.pcap4j:pcap4j-packetfactory-static", version.ref = "pcap4jPacketfactoryStatic" }

@@ -10,19 +10,11 @@ android {
         targetSdk 33
     }
 
-    buildFeatures {
-        prefab = true
-    }
-
     externalNativeBuild {
         ndkBuild {
             path 'jni/Android.mk'
         }
     }
-}
-
-dependencies {
-    implementation libs.openssl
 }
 
 apply from: rootProject.file('gradle/native-executables.gradle')
