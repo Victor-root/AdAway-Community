@@ -23,6 +23,8 @@ package org.adaway.helper;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import androidx.annotation.BoolRes;
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import org.adaway.R;
@@ -39,10 +41,7 @@ public final class PreferenceHelper {
     }
 
     public static int getDarkThemeMode(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         String pref = prefs.getString(
                 context.getString(R.string.pref_dark_theme_mode_key),
                 context.getResources().getString(R.string.pref_dark_theme_mode_def)
@@ -58,138 +57,58 @@ public final class PreferenceHelper {
     }
 
     public static void setDarkThemeMode(Context context, String mode) {
-        context.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE)
+        prefs(context)
                 .edit()
                 .putString(context.getString(R.string.pref_dark_theme_mode_key), mode)
                 .apply();
     }
 
     public static boolean getUpdateCheck(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_update_check_key),
-                context.getResources().getBoolean(R.bool.pref_update_check_def)
-        );
+        return getBoolean(context, R.string.pref_update_check_key, R.bool.pref_update_check_def);
     }
 
     public static boolean getEnableIpv6(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_enable_ipv6_key),
-                context.getResources().getBoolean(R.bool.pref_enable_ipv6_def)
-        );
+        return getBoolean(context, R.string.pref_enable_ipv6_key, R.bool.pref_enable_ipv6_def);
     }
 
     public static boolean getUpdateCheckAppStartup(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_update_check_app_startup_key),
-                context.getResources().getBoolean(R.bool.pref_update_check_app_startup_def)
-        );
+        return getBoolean(context, R.string.pref_update_check_app_startup_key, R.bool.pref_update_check_app_startup_def);
     }
 
     public static boolean getUpdateCheckAppDaily(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_update_check_app_daily_key),
-                context.getResources().getBoolean(R.bool.pref_update_check_app_daily_def)
-        );
+        return getBoolean(context, R.string.pref_update_check_app_daily_key, R.bool.pref_update_check_app_daily_def);
     }
 
     public static boolean getUpdateCheckHostsDaily(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_update_check_hosts_daily_key),
-                context.getResources().getBoolean(R.bool.pref_update_check_hosts_daily_def)
-        );
+        return getBoolean(context, R.string.pref_update_check_hosts_daily_key, R.bool.pref_update_check_hosts_daily_def);
     }
 
     public static boolean getAutomaticUpdateDaily(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_automatic_update_daily_key),
-                context.getResources().getBoolean(R.bool.pref_automatic_update_daily_def)
-        );
+        return getBoolean(context, R.string.pref_automatic_update_daily_key, R.bool.pref_automatic_update_daily_def);
     }
 
     public static boolean getUpdateOnlyOnWifi(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_update_only_on_wifi_key),
-                context.getResources().getBoolean(R.bool.pref_update_only_on_wifi_def)
-        );
+        return getBoolean(context, R.string.pref_update_only_on_wifi_key, R.bool.pref_update_only_on_wifi_def);
     }
 
     public static String getRedirectionIpv4(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getString(
-                context.getString(R.string.pref_redirection_ipv4_key),
-                context.getString(R.string.pref_redirection_ipv4_def)
-        );
+        return getString(context, R.string.pref_redirection_ipv4_key, R.string.pref_redirection_ipv4_def);
     }
 
     public static String getRedirectionIpv6(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getString(
-                context.getString(R.string.pref_redirection_ipv6_key),
-                context.getString(R.string.pref_redirection_ipv6_def)
-        );
+        return getString(context, R.string.pref_redirection_ipv6_key, R.string.pref_redirection_ipv6_def);
     }
 
     public static boolean getWebServerEnabled(Context context) {
-        SharedPreferences prefs = context.getApplicationContext().getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_webserver_enabled_key),
-                context.getResources().getBoolean(R.bool.pref_webserver_enabled_def)
-        );
+        return getBoolean(context, R.string.pref_webserver_enabled_key, R.bool.pref_webserver_enabled_def);
     }
 
     public static boolean getWebServerIcon(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_webserver_icon_key),
-                context.getResources().getBoolean(R.bool.pref_webserver_icon_def)
-        );
+        return getBoolean(context, R.string.pref_webserver_icon_key, R.bool.pref_webserver_icon_def);
     }
 
     public static AdBlockMethod getAdBlockMethod(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         return AdBlockMethod.fromCode(prefs.getInt(
                 context.getString(R.string.pref_ad_block_method_key),
                 context.getResources().getInteger(R.integer.pref_ad_block_method_key_def)
@@ -197,20 +116,14 @@ public final class PreferenceHelper {
     }
 
     public static void setAbBlockMethod(Context context, AdBlockMethod method) {
-        SharedPreferences prefs = context.getApplicationContext().getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(context.getString(R.string.pref_ad_block_method_key), method.toCode());
         editor.apply();
     }
 
     public static VpnStatus getVpnServiceStatus(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         return VpnStatus.fromCode(prefs.getInt(
                 context.getString(R.string.pref_vpn_service_status_key),
                 context.getResources().getInteger(R.integer.pref_vpn_service_status_def)
@@ -218,10 +131,7 @@ public final class PreferenceHelper {
     }
 
     public static void setVpnServiceStatus(Context context, VpnStatus status) {
-        SharedPreferences prefs = context.getApplicationContext().getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(context.getString(R.string.pref_vpn_service_status_key), status.toCode());
         editor.apply();
@@ -239,10 +149,7 @@ public final class PreferenceHelper {
      * status to avoid breaking users who already had the VPN running.
      */
     public static boolean getVpnServiceUserEnabled(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         String key = context.getString(R.string.pref_vpn_service_user_enabled_key);
         if (prefs.contains(key)) {
             return prefs.getBoolean(key, false);
@@ -252,35 +159,18 @@ public final class PreferenceHelper {
     }
 
     public static void setVpnServiceUserEnabled(Context context, boolean userEnabled) {
-        SharedPreferences prefs = context.getApplicationContext().getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         prefs.edit()
                 .putBoolean(context.getString(R.string.pref_vpn_service_user_enabled_key), userEnabled)
                 .apply();
     }
 
     public static boolean getVpnServiceOnBoot(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_vpn_service_on_boot_key),
-                context.getResources().getBoolean(R.bool.pref_vpn_service_on_boot_def)
-        );
+        return getBoolean(context, R.string.pref_vpn_service_on_boot_key, R.bool.pref_vpn_service_on_boot_def);
     }
 
     public static boolean getVpnWatchdogEnabled(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_vpn_watchdog_enabled_key),
-                context.getResources().getBoolean(R.bool.pref_vpn_watchdog_enabled_def)
-        );
+        return getBoolean(context, R.string.pref_vpn_watchdog_enabled_key, R.bool.pref_vpn_watchdog_enabled_def);
     }
 
     /**
@@ -288,14 +178,7 @@ public final class PreferenceHelper {
      * explicitly opt in (Preferences > VPN > Record diagnostic log) before anything is captured.
      */
     public static boolean getVpnDiagnosticLogEnabled(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_vpn_diagnostic_log_enabled_key),
-                context.getResources().getBoolean(R.bool.pref_vpn_diagnostic_log_enabled_def)
-        );
+        return getBoolean(context, R.string.pref_vpn_diagnostic_log_enabled_key, R.bool.pref_vpn_diagnostic_log_enabled_def);
     }
 
     /**
@@ -310,53 +193,26 @@ public final class PreferenceHelper {
      * {@code TvHomeActivity} whether the wizard actually finished - only this flag can.
      */
     public static boolean isTvWelcomeDone(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_tv_welcome_done_key),
-                context.getResources().getBoolean(R.bool.pref_tv_welcome_done_def)
-        );
+        return getBoolean(context, R.string.pref_tv_welcome_done_key, R.bool.pref_tv_welcome_done_def);
     }
 
     public static void setTvWelcomeDone(Context context, boolean done) {
-        SharedPreferences prefs = context.getApplicationContext().getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         prefs.edit()
                 .putBoolean(context.getString(R.string.pref_tv_welcome_done_key), done)
                 .apply();
     }
 
     public static boolean getDebugEnabled(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getBoolean(
-                context.getString(R.string.pref_enable_debug_key),
-                context.getResources().getBoolean(R.bool.pref_enable_debug_def)
-        );
+        return getBoolean(context, R.string.pref_enable_debug_key, R.bool.pref_enable_debug_def);
     }
 
     public static String getVpnExcludedSystemApps(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return prefs.getString(
-                context.getString(R.string.pref_vpn_excluded_system_apps_key),
-                context.getString(R.string.pref_vpn_excluded_system_apps_default)
-        );
+        return getString(context, R.string.pref_vpn_excluded_system_apps_key, R.string.pref_vpn_excluded_system_apps_default);
     }
 
     public static Set<String> getVpnExcludedApps(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         return prefs.getStringSet(
                 context.getString(R.string.pref_vpn_excluded_user_apps_key),
                 Collections.emptySet()
@@ -364,12 +220,24 @@ public final class PreferenceHelper {
     }
 
     public static void setVpnExcludedApps(Context context, Set<String> excludedApplicationPackageNames) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
+        SharedPreferences prefs = prefs(context);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putStringSet(context.getString(R.string.pref_vpn_excluded_user_apps_key), excludedApplicationPackageNames);
         editor.apply();
+    }
+
+    private static SharedPreferences prefs(Context context) {
+        return context.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE);
+    }
+
+    private static boolean getBoolean(Context context, @StringRes int key, @BoolRes int defaultValue) {
+        return prefs(context).getBoolean(
+                context.getString(key),
+                context.getResources().getBoolean(defaultValue)
+        );
+    }
+
+    private static String getString(Context context, @StringRes int key, @StringRes int defaultValue) {
+        return prefs(context).getString(context.getString(key), context.getString(defaultValue));
     }
 }
