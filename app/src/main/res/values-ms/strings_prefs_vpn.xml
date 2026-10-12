@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Penyelesaian masalah</string>
     <string name="pref_vpn_reset">Tetapkan semula VPN</string>
     <string name="pref_vpn_reset_description">Bina semula sambungan VPN dari awal. Gunakan ini jika VPN berhenti berfungsi (tiada akses internet atau ralat DNS).</string>
     <string name="pref_vpn_reset_done">Sambungan VPN telah dibina semula.</string>

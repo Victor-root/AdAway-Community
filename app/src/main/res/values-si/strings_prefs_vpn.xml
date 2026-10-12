@@ -6,7 +6,6 @@
         <item>All</item>
     </string-array>
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">දෝෂ නිරාකරණය</string>
     <string name="pref_vpn_reset">VPN යළි සකසන්න</string>
     <string name="pref_vpn_reset_description">VPN සම්බන්ධතාවය මුල සිට නැවත ගොඩනඟන්න. VPN ක්‍රියා විරහිත වුවහොත් (අන්තර්ජාල ප්‍රවේශයක් නැති හෝ DNS දෝෂ) මෙය භාවිත කරන්න.</string>
     <string name="pref_vpn_reset_done">VPN සම්බන්ධතාවය නැවත ගොඩනඟන ලදී.</string>

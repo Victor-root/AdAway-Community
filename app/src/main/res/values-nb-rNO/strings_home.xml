@@ -19,9 +19,7 @@
     <string name="blocked_hosts_description">Reklame og sporere</string>
     <string name="allowed_hosts_description">Unntak</string>
     <string name="redirect_hosts_description">Egendefinerte regler</string>
-    <string name="home_log_title">DNS-forespørselslogg</string>
     <string name="home_log_subtitle">Se hva som blokkeres i sanntid</string>
-    <string name="home_help_title">Hjelp og tips</string>
     <string name="home_help_subtitle">Veiledninger og feilsøking</string>
     <string name="home_preferences_subtitle">Konfigurer AdAway</string>
     <string name="home_tile_log">DNS-logg</string>

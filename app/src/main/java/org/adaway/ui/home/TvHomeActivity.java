@@ -32,6 +32,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import org.adaway.AdAwayApplication;
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
@@ -122,7 +123,8 @@ public class TvHomeActivity extends AppCompatActivity {
         // and broadcasts until then), so restart the VPN here if it was killed.
         VpnServiceControls.resurrectIfKilledExternally(this);
 
-        ((TextView) findViewById(R.id.tv_version)).setText("v" + getCurrentVersionName());
+        String versionName = ((AdAwayApplication) getApplication()).getUpdateModel().getVersionName();
+        ((TextView) findViewById(R.id.tv_version)).setText("v" + versionName);
 
         statusBadge = findViewById(R.id.tv_status_badge);
         statusIcon = findViewById(R.id.tv_status_icon);
@@ -362,17 +364,6 @@ public class TvHomeActivity extends AppCompatActivity {
         Intent prepareIntent;
         if (adBlockMethod == VPN && (prepareIntent = VpnService.prepare(this)) != null) {
             prepareVpnLauncher.launch(prepareIntent);
-        }
-    }
-
-    // getPackageInfo(String, int) is deprecated in favour of a PackageInfoFlags overload that
-    // only exists from Android 13 on, and the minimum supported here is Android 8.
-    @SuppressWarnings("deprecation")
-    private String getCurrentVersionName() {
-        try {
-            return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
-            return "?";
         }
     }
 

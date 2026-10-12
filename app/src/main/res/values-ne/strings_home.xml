@@ -9,9 +9,7 @@
     <string name="redirect_hosts_description">कस्टम नियमहरू</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS अनुरोध लग</string>
     <string name="home_log_subtitle">के रोकिएको छ भनी वास्तविक समयमा हेर्नुहोस्</string>
-    <string name="home_help_title">मद्दत र सुझावहरू</string>
     <string name="home_help_subtitle">गाइडहरू र समस्या समाधान</string>
     <string name="home_preferences_subtitle">AdAway कन्फिगर गर्नुहोस्</string>
 

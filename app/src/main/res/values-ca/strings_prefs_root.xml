@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="pref_root_title">Bloquejador d\'anuncis basat en root</string>
     <!-- Hosts install category -->
-    <string name="pref_hosts_installation">Instal·lació hosts</string>
     <string name="pref_root_open_hosts">Obriu el fitxer de hosts</string>
-    <string name="pref_apply_method">Fitxer hosts objectiu</string>
-    <string name="pref_apply_method_summary">Llegiu l\'ajuda abans d\'utilitzar aquesta funció</string>
-    <string-array name="pref_apply_method_entries">
-        <item>/system/etc/hosts</item>
-        <item>/data/hosts</item>
-        <item>/data/data/hosts</item>
-        <item>Objectiu personalitzt</item>
-    </string-array>
-    <string name="pref_custom_target">Ubicació destí personalitzada</string>
-    <string name="pref_never_reboot">Amaga el diàleg de reinici després d\'aplicar</string>
     <!-- Redirection category -->
-    <string name="pref_hosts_redirection">Redirecció</string>
     <string name="pref_hosts_redirection_summary">Defineix on redirigir els amfitrions bloquejats</string>
     <string name="pref_redirection_ipv4">Configura la redirecció IPv4</string>
     <string name="pref_redirection_ipv6">Configura la redirecció IPv6</string>
     <string name="pref_redirection_invalid">Redirecció no vàlida</string>
     <!-- Web server category -->
-    <string name="pref_webserver">Servidor web local</string>
     <string name="pref_webserver_summary">El servidor web local escolta les adreces IP locals per respondre a les sol·licituds de nom d\'amfitrió bloquejades. Pot ser útil amb la congelació de l\'aplicació en connexió bloquejada.</string>
     <string name="pref_webserver_enabled">Activa el servidor web</string>
     <string name="pref_webserver_test">Prova el servidor web</string>

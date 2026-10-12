@@ -7,11 +7,7 @@
     <string name="hosts_stevenblack_source">Единые списки от StevenBlack</string>
     <string name="hosts_peterlowe_source">Списки блокировки от Pete Lowe</string>
     <!-- List -->
-    <string name="hosts_not_available">недоступен</string>
     <string name="hosts_count">%s списки</string>
     <!-- Edition dialog -->
     <string name="hosts_add_dialog_title">Добавить источник</string>
-    <string name="hosts_edit_dialog_title">Редактировать источник</string>
-    <string name="hosts_dialog_url">URL: (ресурс https:// или file://)</string>
-    <string name="hosts_dialog_url_hint">URL-адрес источника хостов</string>
 </resources>

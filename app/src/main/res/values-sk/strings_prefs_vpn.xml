@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">Blokovač reklám pomocou VPN</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Povoliť pri štarte</string>
     <string name="pref_vpn_service_monitor">Sledovanie pripojenia</string>
     <string name="pref_vpn_service_monitor_description">Pravidelne kontrolovať stav siete, pri odpojení reštartovať VPN.</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Vylúčené aplikácie</string>
     <string name="pref_vpn_excluded_apps_description">Nastavte, ktoré aplikácie by nemali používať VPN a nebudú sa blokovať žiadne ich pripojenia.</string>
     <string name="pref_vpn_exclude_system_apps">Vylúčiť systémové aplikácie</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -22,7 +20,6 @@
     <string name="pref_vpn_exclude_user_apps_deselect_all">Nevybrať nič</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikácie</string>
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Riešenie problémov</string>
     <string name="pref_vpn_reset">Resetovať VPN</string>
     <string name="pref_vpn_reset_description">Znovu vytvorí pripojenie VPN od začiatku. Použite, ak VPN prestane fungovať (žiadny prístup na internet alebo chyby DNS).</string>
     <string name="pref_vpn_reset_done">Pripojenie VPN bolo znovu vytvorené.</string>

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_button_update_block_lists">Actualizar listas de bloqueo</string>
-    <string name="tv_button_sync">Sincronizar listas</string>
-    <string name="tv_button_block_list_sources">Fuentes de las listas de bloqueo</string>
     <string name="tv_status_enabled">Bloqueo de anuncios: activado</string>
     <string name="tv_status_disabled">Bloqueo de anuncios: desactivado</string>
     <string name="tv_dialog_add_to_allowed">Añadir a permitidos</string>

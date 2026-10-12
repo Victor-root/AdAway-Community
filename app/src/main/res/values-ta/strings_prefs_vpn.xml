@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">சிக்கல் தீர்வு</string>
     <string name="pref_vpn_reset">VPN ஐ மீட்டமை</string>
     <string name="pref_vpn_reset_description">VPN இணைப்பை முதலிலிருந்து மீண்டும் உருவாக்கவும். VPN வேலை செய்வதை நிறுத்தினால் (இணைய அணுகல் இல்லை அல்லது DNS பிழைகள்) இதைப் பயன்படுத்தவும்.</string>
     <string name="pref_vpn_reset_done">VPN இணைப்பு மீண்டும் உருவாக்கப்பட்டது.</string>

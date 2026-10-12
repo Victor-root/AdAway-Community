@@ -16,16 +16,10 @@
         <item quantity="other">%d outdated sources</item>
     </plurals>
 
-    <!-- Help card -->
-    <string name="help_label">Amosar axuda</string>
-
     <!-- Project card -->
-    <string name="project_label">Abrir páxina de GitHub</string>
 
     <string name="preferences_drawer_item">Preferences</string>
 
-    <string name="update_button">Actualizar dominios bloqueados</string>
-    <string name="show_log_button">Amosar dominios solicitados</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Por favor ler Axuda para máis información.</string>
@@ -36,9 +30,7 @@
     <string name="redirect_hosts_description">Regras personalizadas</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Rexistro de solicitudes DNS</string>
     <string name="home_log_subtitle">Ve en tempo real o que se bloquea</string>
-    <string name="home_help_title">Axuda e consellos</string>
     <string name="home_help_subtitle">Guías e resolución de problemas</string>
     <string name="home_preferences_subtitle">Configurar AdAway</string>
 

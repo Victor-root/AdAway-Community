@@ -75,18 +75,13 @@ android {
         viewBinding true
     }
 
-    packagingOptions {
+    packaging {
         jniLibs {
             useLegacyPackaging = true
         }
     }
 
     buildTypes {
-//        debug {
-//            shrinkResources false
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
         release {
             minifyEnabled true
             shrinkResources true
@@ -102,7 +97,13 @@ android {
         }
     }
 
-    // Do not abort build if lint finds errors
+    testOptions {
+        // pcap4j logs through slf4j-android, which calls android.util.Log: let the JVM unit
+        // tests (DnsPacketProxyTest) use the stub's default return values instead of throwing
+        unitTests.returnDefaultValues = true
+    }
+
+    // Translations are managed on Transifex and may lag behind the default locale
     lint {
         disable 'MissingTranslation'
     }
@@ -146,7 +147,6 @@ dependencies {
     implementation libs.bundles.pcap4j
     implementation libs.dnsjava
     implementation libs.slf4j.android
-    implementation libs.okhttp.dnsoverhttps
 
     // Test related
     testImplementation libs.junit

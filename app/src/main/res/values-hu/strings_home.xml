@@ -15,29 +15,13 @@
         <item quantity="one">%d outdated source</item>
         <item quantity="other">%d elavult forrás</item>
     </plurals>
-    <string name="check_hosts_update_description">Hosts frissítések ellenőrzése</string>
     <string name="update_hosts_description">Hosztok frissítése</string>
 
-    <!-- Log card -->
-    <string name="log_label">Mutassa a DNS kérések naplót</string>
-
-    <!-- Help card -->
-    <string name="help_label">Mutassa a súgó\nand tippeket</string>
-
-    <!-- Project card -->
-    <string name="project_label">GitHub oldal megnyitása</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub projekt</string>
     <string name="preferences_drawer_item">Beállítások</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Navigációs fiók megnyitása</string>
     <string name="adblock_pause_button_description">Reklámblokkolás szünet/folytat</string>
-    <string name="update_button">Blokkolt domainek frissítése</string>
-    <string name="show_log_button">A kért domainek megjelenítése</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Kérlek olvassa el a Súgót további információkért!</string>
@@ -48,9 +32,7 @@
     <string name="redirect_hosts_description">Egyéni szabályok</string>
 
     <!-- Home action rows (redesigned home screen) -->
-    <string name="home_log_title">DNS-kérések naplója</string>
     <string name="home_log_subtitle">Nézze meg valós időben, mi van blokkolva</string>
-    <string name="home_help_title">Súgó és tippek</string>
     <string name="home_help_subtitle">Útmutatók és hibaelhárítás</string>
     <string name="home_preferences_subtitle">Az AdAway beállítása</string>
 

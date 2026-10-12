@@ -19,29 +19,13 @@
         <item quantity="many">%d застарілих джерел</item>
         <item quantity="other">%d застарілих джерел</item>
     </plurals>
-    <string name="check_hosts_update_description">Перевірити оновлення хостів</string>
     <string name="update_hosts_description">Оновити хости</string>
 
-    <!-- Log card -->
-    <string name="log_label">Показати журнал DNS запитів</string>
-
-    <!-- Help card -->
-    <string name="help_label">Показати підказки</string>
-
-    <!-- Project card -->
-    <string name="project_label">Відкрити сторінку GitHub</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">Проєкт на GitHub</string>
     <string name="preferences_drawer_item">Налаштування</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Відкрити навігаційне меню</string>
     <string name="adblock_pause_button_description">Зупинити/продовжити блокування реклами</string>
-    <string name="update_button">Оновити заблоковані домени</string>
-    <string name="show_log_button">Показати запитувані домени</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Будь ласка, читайте Довідку для отримання додаткової інформації.</string>
@@ -50,9 +34,7 @@
     <string name="blocked_hosts_description">Реклама та трекери</string>
     <string name="allowed_hosts_description">Винятки</string>
     <string name="redirect_hosts_description">Власні правила</string>
-    <string name="home_log_title">Журнал DNS запитів</string>
     <string name="home_log_subtitle">Дивіться, що блокується, у реальному часі</string>
-    <string name="home_help_title">Довідка та поради</string>
     <string name="home_help_subtitle">Посібники та усунення несправностей</string>
     <string name="home_preferences_subtitle">Налаштувати AdAway</string>
     <string name="home_tile_log">Журнал DNS</string>

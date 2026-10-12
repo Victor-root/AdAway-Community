@@ -7,11 +7,7 @@
     <string name="hosts_stevenblack_source">StevenBlackin yhtenäinen hosts-lähde</string>
     <string name="hosts_peterlowe_source">Pete Lowen estolista hosts-lähde</string>
     <!-- List -->
-    <string name="hosts_not_available">ei saatavilla</string>
     <string name="hosts_count">%shostia</string>
     <!-- Edition dialog -->
     <string name="hosts_add_dialog_title">Lisää lähde</string>
-    <string name="hosts_edit_dialog_title">Muokkaa lähdettä</string>
-    <string name="hosts_dialog_url">Osoite: (https:// tai file:// -resurssi)</string>
-    <string name="hosts_dialog_url_hint">Isännän lähde URL</string>
 </resources>

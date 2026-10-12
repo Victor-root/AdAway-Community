@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Zgjidhje problemesh</string>
     <string name="pref_vpn_reset">Rivendos VPN-në</string>
     <string name="pref_vpn_reset_description">Rindërto nga e para lidhjen VPN. Përdoreni nëse VPN-ja ndalon së punuari (nuk ka qasje në internet ose ka gabime DNS).</string>
     <string name="pref_vpn_reset_done">Lidhja VPN u rindërtua.</string>

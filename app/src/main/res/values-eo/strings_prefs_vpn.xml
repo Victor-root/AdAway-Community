@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Problemsolvado</string>
     <string name="pref_vpn_reset">Restarigi VPN</string>
     <string name="pref_vpn_reset_description">Rekonstrui la VPN-konekton de nulo. Uzu ĉi tion se la VPN ĉesas funkcii (neniu interreta aliro aŭ DNS-eraroj).</string>
     <string name="pref_vpn_reset_done">VPN-konekto rekonstruita.</string>

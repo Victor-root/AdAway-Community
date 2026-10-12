@@ -6,7 +6,6 @@
     <color name="onPrimary">#ffffff</color>
     <color name="blocked">#EF9A9A</color>
     <color name="allowed">#80CBC4</color>
-    <color name="redirected">#9FA8DA</color>
 
     <!-- Home screen redesign (lower zone) - dark theme -->
     <color name="homeBackground">#121212</color>

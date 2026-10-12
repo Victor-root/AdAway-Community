@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">कस्टम नियम</string>
 
     <!-- Home action rows (redesigned home screen) -->
-    <string name="home_log_title">DNS अनुरोध लॉग</string>
     <string name="home_log_subtitle">वास्तविक समय में देखें कि क्या अवरोधित हो रहा है</string>
-    <string name="home_help_title">सहायता और सुझाव</string>
     <string name="home_help_subtitle">गाइड और समस्या निवारण</string>
     <string name="home_preferences_subtitle">AdAway कॉन्फ़िगर करें</string>
 

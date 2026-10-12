@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">ਸਮੱਸਿਆ ਨਿਪਟਾਰਾ</string>
     <string name="pref_vpn_reset">VPN ਰੀਸੈੱਟ ਕਰੋ</string>
     <string name="pref_vpn_reset_description">VPN ਕਨੈਕਸ਼ਨ ਨੂੰ ਸ਼ੁਰੂ ਤੋਂ ਦੁਬਾਰਾ ਬਣਾਓ। ਜੇ VPN ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦਿੰਦਾ ਹੈ (ਇੰਟਰਨੈੱਟ ਪਹੁੰਚ ਨਹੀਂ ਜਾਂ DNS ਗਲਤੀਆਂ) ਤਾਂ ਇਸਦੀ ਵਰਤੋਂ ਕਰੋ।</string>
     <string name="pref_vpn_reset_done">VPN ਕਨੈਕਸ਼ਨ ਦੁਬਾਰਾ ਬਣਾਇਆ ਗਿਆ।</string>

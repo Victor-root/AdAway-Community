@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">समस्या समाधान</string>
     <string name="pref_vpn_reset">VPN रिसेट गर्नुहोस्</string>
     <string name="pref_vpn_reset_description">VPN जडानलाई सुरुदेखि पुनर्निर्माण गर्नुहोस्। VPN ले काम गर्न छाडेमा (इन्टरनेट पहुँच नभएमा वा DNS त्रुटिहरू) यो प्रयोग गर्नुहोस्।</string>
     <string name="pref_vpn_reset_done">VPN जडान पुनर्निर्माण गरियो।</string>

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="pref_vpn_title">VPNan oinarritutako iragarkien blokeoa</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Gaitu sistemaren abioan</string>
     <string name="pref_vpn_service_monitor">Egin konexioaren segimendua</string>
     <string name="pref_vpn_service_monitor_description">Egiaztatu noizean behin sarearen egoera VPNa deskonektatzen denean berrabiarazteko.</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Alde batera utzitako aplikazioak</string>
     <string name="pref_vpn_excluded_apps_description">Ezarri zein aplikaziok ez lukeen VPNa erabili beharko konexioa ez blokeatzeko.</string>
     <string name="pref_vpn_exclude_system_apps">Alde batera utzitako sistemaren aplikazioak</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">Aplikazioaren ikonoa</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Arazoen konponketa</string>
     <string name="pref_vpn_reset">Berrezarri VPNa</string>
     <string name="pref_vpn_reset_description">Berreraiki VPN konexioa hutsetik. Erabili hau VPNak funtzionatzeari uzten badio (internet sarbiderik ez edo DNS erroreak).</string>
     <string name="pref_vpn_reset_done">VPN konexioa berreraiki da.</string>

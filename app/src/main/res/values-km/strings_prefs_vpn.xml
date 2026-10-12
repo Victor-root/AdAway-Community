@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">ការដោះស្រាយបញ្ហា</string>
     <string name="pref_vpn_reset">កំណត់ VPN ឡើងវិញ</string>
     <string name="pref_vpn_reset_description">បង្កើតការតភ្ជាប់ VPN ឡើងវិញពីដំបូង។ ប្រើវានេះ ប្រសិនបើ VPN ឈប់ដំណើរការ (គ្មានការតភ្ជាប់អ៊ីនធឺណិត ឬមានកំហុស DNS)។</string>
     <string name="pref_vpn_reset_done">បានបង្កើតការតភ្ជាប់ VPN ឡើងវិញ។</string>

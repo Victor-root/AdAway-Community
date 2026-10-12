@@ -9,8 +9,6 @@
     </string-array>
     <string name="pref_update_check_key" translatable="false">updateCheck</string>
     <bool name="pref_update_check_def">true</bool>
-    <string name="pref_never_reboot_key" translatable="false">neverReboot</string>
-    <bool name="pref_never_reboot_def">false</bool>
     <string name="pref_enable_ipv6_key" translatable="false">enableIpv6</string>
     <bool name="pref_enable_ipv6_def">false</bool>
     <string name="pref_update_check_app_startup_key" translatable="false">updateCheckAppStartup</string>
@@ -31,9 +29,6 @@
     <string name="pref_redirection_ipv6_key" translatable="false">redirectionIPv6</string>
     <string name="pref_redirection_ipv6_def" translatable="false">::1</string>
     <string name="pref_open_hosts_key" translatable="false">openHosts</string>
-    <string name="pref_apply_method_def" translatable="false">writeToSystem</string>
-    <string name="pref_custom_target_key" translatable="false">customTarget</string>
-    <string name="pref_custom_target_def" translatable="false">/data/etc/hosts</string>
     <string name="pref_webserver_enabled_key" translatable="false">webserverEnabled</string>
     <bool name="pref_webserver_enabled_def">false</bool>
     <string name="pref_webserver_test_key" translatable="false">webserverTest</string>

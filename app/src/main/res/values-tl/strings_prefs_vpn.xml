@@ -2,7 +2,6 @@
 <resources>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Pag-troubleshoot</string>
     <string name="pref_vpn_reset">I-reset ang VPN</string>
     <string name="pref_vpn_reset_description">Muling itayo ang koneksyon ng VPN mula sa simula. Gamitin ito kung huminto sa paggana ang VPN (walang access sa internet o may mga error sa DNS).</string>
     <string name="pref_vpn_reset_done">Muling naitayo ang koneksyon ng VPN.</string>

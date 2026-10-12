@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Tõrkeotsing</string>
     <string name="pref_vpn_reset">Lähtesta VPN</string>
     <string name="pref_vpn_reset_description">Ehita VPN-ühendus nullist üles. Kasuta seda, kui VPN lakkab töötamast (puudub internetiühendus või esineb DNS-i vigu).</string>
     <string name="pref_vpn_reset_done">VPN-ühendus taastati.</string>

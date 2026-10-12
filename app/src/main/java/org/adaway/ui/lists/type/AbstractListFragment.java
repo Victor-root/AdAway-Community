@@ -217,7 +217,7 @@ public abstract class AbstractListFragment extends Fragment implements ListsView
     }
 
     /**
-     * Give focus to the first visible row.
+     * Give focus to the last visible row.
      * <p>
      * Used by {@link org.adaway.ui.lists.ListsActivity} to give a D-pad a sensible place to land
      * when it enters the list from the add button, rather than wherever the platform's default
@@ -225,27 +225,12 @@ public abstract class AbstractListFragment extends Fragment implements ListsView
      *
      * @return <code>true</code> if a row took focus, <code>false</code> if the list is empty.
      */
-    public boolean focusFirstItem() {
-        return focusVisibleItem(true);
-    }
-
-    /**
-     * Give focus to the last visible row. See {@link #focusFirstItem()}.
-     *
-     * @return <code>true</code> if a row took focus, <code>false</code> if the list is empty.
-     */
     public boolean focusLastItem() {
-        return focusVisibleItem(false);
-    }
-
-    private boolean focusVisibleItem(boolean first) {
         if (this.mRecyclerView == null || !(this.mRecyclerView.getLayoutManager() instanceof LinearLayoutManager)) {
             return false;
         }
         LinearLayoutManager layoutManager = (LinearLayoutManager) this.mRecyclerView.getLayoutManager();
-        int position = first
-                ? layoutManager.findFirstVisibleItemPosition()
-                : layoutManager.findLastVisibleItemPosition();
+        int position = layoutManager.findLastVisibleItemPosition();
         if (position == RecyclerView.NO_POSITION) {
             return false;
         }

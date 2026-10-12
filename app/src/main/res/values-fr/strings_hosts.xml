@@ -7,11 +7,7 @@
     <string name="hosts_stevenblack_source">Fichier hosts unifié de StevenBlack</string>
     <string name="hosts_peterlowe_source">Fichier hosts unifié de Pete Lowe</string>
     <!-- List -->
-    <string name="hosts_not_available">non disponibles</string>
     <string name="hosts_count">Fichier(s) hosts de %s</string>
     <!-- Edition dialog -->
     <string name="hosts_add_dialog_title">Ajouter une source</string>
-    <string name="hosts_edit_dialog_title">Modifier une source</string>
-    <string name="hosts_dialog_url">URL : (une ressource https:// ou file://)</string>
-    <string name="hosts_dialog_url_hint">L’URL de la source du fichier hosts</string>
 </resources>

@@ -23,29 +23,13 @@
         <item quantity="many">%d المصادر بحاجة لتحديث</item>
         <item quantity="other">%d المصادر بحاجة لتحديث</item>
     </plurals>
-    <string name="check_hosts_update_description">تحقق من وجود تحديثات المضيفين</string>
     <string name="update_hosts_description">تحديث ملفات المضيف</string>
 
-    <!-- Log card -->
-    <string name="log_label">إظهار سجل طلب DNS</string>
-
-    <!-- Help card -->
-    <string name="help_label">إظهار التعليمات n والنصائح</string>
-
-    <!-- Project card -->
-    <string name="project_label">إفتح صفحة GitHub</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">مشروع جيثب</string>
     <string name="preferences_drawer_item">الخيارات</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">إفتح قائمة التوجيه</string>
     <string name="adblock_pause_button_description">إيقاف/إستئناف منع الإعلانات</string>
-    <string name="update_button">تحديث الروابط المحظورة</string>
-    <string name="show_log_button">أظهر الروابط التي تم طلبها</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">يرجى قراءة التعليمات للمزيد من المعلومات.</string>
@@ -56,9 +40,7 @@
     <string name="redirect_hosts_description">قواعد مخصّصة</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">سجل طلبات DNS</string>
     <string name="home_log_subtitle">شاهد ما يُحظر في الوقت الفعلي</string>
-    <string name="home_help_title">المساعدة والنصائح</string>
     <string name="home_help_subtitle">أدلة واستكشاف الأخطاء</string>
     <string name="home_preferences_subtitle">إعداد AdAway</string>
 

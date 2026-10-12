@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">ਕਸਟਮ ਨਿਯਮ</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS ਬੇਨਤੀ ਲੌਗ</string>
     <string name="home_log_subtitle">ਅਸਲ ਸਮੇਂ ਵਿੱਚ ਵੇਖੋ ਕਿ ਕੀ ਬਲਾਕ ਹੋ ਰਿਹਾ ਹੈ</string>
-    <string name="home_help_title">ਮਦਦ ਅਤੇ ਸੁਝਾਅ</string>
     <string name="home_help_subtitle">ਗਾਈਡਾਂ ਅਤੇ ਸਮੱਸਿਆ ਨਿਪਟਾਰਾ</string>
     <string name="home_preferences_subtitle">AdAway ਕੌਂਫਿਗਰ ਕਰੋ</string>
 

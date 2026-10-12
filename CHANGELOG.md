@@ -1,5 +1,15 @@
 # 📋 Changelog
 
+## [Unreleased]
+
+### Fixed
+
+* Stop the update screen from scanning every installed app in the background for a feature that no longer exists
+
+### Removed
+
+* Remove the "Hide reboot dialog after apply" setting, which had no effect since the reboot dialog was removed
+
 ## [6.6.1-c] - 2026-09-11
 
 ### 🐛 Fixed

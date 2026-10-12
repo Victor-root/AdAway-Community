@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Feilsøking</string>
     <string name="pref_vpn_reset">Tilbakestill VPN</string>
     <string name="pref_vpn_reset_description">Bygg VPN-tilkoblingen opp på nytt fra bunnen av. Bruk dette hvis VPN-en slutter å fungere (ingen internettilgang eller DNS-feil).</string>
     <string name="pref_vpn_reset_done">VPN-tilkoblingen er gjenoppbygd.</string>

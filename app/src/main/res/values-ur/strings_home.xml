@@ -7,9 +7,7 @@
     <string name="blocked_hosts_description">اشتہارات اور ٹریکرز</string>
     <string name="allowed_hosts_description">مستثنیات</string>
     <string name="redirect_hosts_description">حسب ضرورت قواعد</string>
-    <string name="home_log_title">DNS درخواست لاگ</string>
     <string name="home_log_subtitle">حقیقی وقت میں دیکھیں کہ کیا مسدود ہو رہا ہے</string>
-    <string name="home_help_title">مدد اور تجاویز</string>
     <string name="home_help_subtitle">رہنمائی اور مسائل کا حل</string>
     <string name="home_preferences_subtitle">AdAway کو ترتیب دیں</string>
     <string name="home_tile_log">DNS لاگ</string>

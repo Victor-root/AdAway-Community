@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Probleemoplossing</string>
     <string name="pref_vpn_reset">Herstel VPN</string>
     <string name="pref_vpn_reset_description">Herbou die VPN-verbinding van voor af. Gebruik dit as die VPN ophou werk (geen internettoegang of DNS-foute).</string>
     <string name="pref_vpn_reset_done">VPN-verbinding herbou.</string>

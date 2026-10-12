@@ -12,9 +12,7 @@
     <string name="redirect_hosts_description">Prilagođena pravila</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Dnevnik DNS zahteva</string>
     <string name="home_log_subtitle">Pogledajte šta se blokira u realnom vremenu</string>
-    <string name="home_help_title">Pomoć i saveti</string>
     <string name="home_help_subtitle">Vodiči i rešavanje problema</string>
     <string name="home_preferences_subtitle">Podesite AdAway</string>
 

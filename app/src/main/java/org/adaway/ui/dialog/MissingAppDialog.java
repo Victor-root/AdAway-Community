@@ -56,21 +56,6 @@ public class MissingAppDialog {
         );
     }
 
-    /**
-     * Show a dialog to install a file manager.
-     *
-     * @param context The application context.
-     */
-    public static void showFileManagerMissingDialog(Context context) {
-        showMissingAppDialog(
-                context,
-                R.string.no_file_manager_title,
-                R.string.no_file_manager,
-                "market://details?id=org.openintents.filemanager",
-                "OI File Manager"
-        );
-    }
-
     private static void showMissingAppDialog(
             Context context,
             @StringRes int title,

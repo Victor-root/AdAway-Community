@@ -7,11 +7,7 @@
     <string name="hosts_stevenblack_source">Хости від StevenBlack</string>
     <string name="hosts_peterlowe_source">Хости від Pete Lowe</string>
     <!-- List -->
-    <string name="hosts_not_available">недоступно</string>
     <string name="hosts_count">%s хостів</string>
     <!-- Edition dialog -->
     <string name="hosts_add_dialog_title">Додати джерело</string>
-    <string name="hosts_edit_dialog_title">Редагувати джерело</string>
-    <string name="hosts_dialog_url">URL: (ресурс https:// або file://)</string>
-    <string name="hosts_dialog_url_hint">URL джерела хостів</string>
 </resources>

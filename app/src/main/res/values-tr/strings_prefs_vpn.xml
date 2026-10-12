@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">VPN tabanlı reklam engelleyici</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Başlangıçta etkinleştir</string>
     <string name="pref_vpn_service_monitor">Ekran bağlantısı</string>
     <string name="pref_vpn_service_monitor_description">VPN bağlantısı bulunmadığı durumlarda düzenli olarak VPN bağlantısının tekrar sağlanabilmesi için bağlantıyı kontrol et</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Hariç tutulan uygulamalar</string>
     <string name="pref_vpn_excluded_apps_description">Hangi uygulamaların VPN\'yi kullanmaması gerektiğini yapılandırın, böylece bağlantı engellenmez.</string>
     <string name="pref_vpn_exclude_system_apps">Sistem uygulamalarını hariç tut</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">Uygulama simgesi</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Sorun giderme</string>
     <string name="pref_vpn_reset">VPN\'yi sıfırla</string>
     <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yeniden oluşturun. VPN çalışmayı durdurursa (internet erişimi yok veya DNS hataları) bunu kullanın.</string>
     <string name="pref_vpn_reset_done">VPN bağlantısı yeniden oluşturuldu.</string>

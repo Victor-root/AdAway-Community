@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">අභිරුචි නීති</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS ඉල්ලීම් ලොගය</string>
     <string name="home_log_subtitle">අවහිර වන දේ තත්කාලීනව බලන්න</string>
-    <string name="home_help_title">උදව් සහ ඉඟි</string>
     <string name="home_help_subtitle">මාර්ගෝපදේශ සහ දෝෂ නිරාකරණය</string>
     <string name="home_preferences_subtitle">AdAway වින්‍යාස කරන්න</string>
 

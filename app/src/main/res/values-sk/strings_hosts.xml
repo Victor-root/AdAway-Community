@@ -7,11 +7,7 @@
     <string name="hosts_stevenblack_source">Hosts StevenBlack Unified</string>
     <string name="hosts_peterlowe_source">Hosts Pete Lowe blocklist</string>
     <!-- List -->
-    <string name="hosts_not_available">nie je dostupné</string>
     <string name="hosts_count">Hosts %s</string>
     <!-- Edition dialog -->
     <string name="hosts_add_dialog_title">Pridať zdroj</string>
-    <string name="hosts_edit_dialog_title">Upraviť zdroj</string>
-    <string name="hosts_dialog_url">URL: (https:// alebo file:// zdroja)</string>
-    <string name="hosts_dialog_url_hint">URL zdroja hosts súboru</string>
 </resources>

@@ -82,44 +82,4 @@ public class RegexUtils {
             return false;
         }
     }
-
-    /*
-     * Transforms String with * and ? characters to regex String, convert "example*.*" to regex
-     * "^example.*\\..*$", from http://www.rgagnon.com/javadetails/java-0515.html
-     */
-    public static String wildcardToRegex(String wildcard) {
-        StringBuilder regex = new StringBuilder(wildcard.length());
-        regex.append('^');
-        for (int i = 0, is = wildcard.length(); i < is; i++) {
-            char c = wildcard.charAt(i);
-            switch (c) {
-                case '*':
-                    regex.append(".*");
-                    break;
-                case '?':
-                    regex.append(".");
-                    break;
-                // escape special regex-characters
-                case '(':
-                case ')':
-                case '[':
-                case ']':
-                case '$':
-                case '^':
-                case '.':
-                case '{':
-                case '}':
-                case '|':
-                case '\\':
-                    regex.append("\\");
-                    regex.append(c);
-                    break;
-                default:
-                    regex.append(c);
-                    break;
-            }
-        }
-        regex.append('$');
-        return regex.toString();
-    }
 }

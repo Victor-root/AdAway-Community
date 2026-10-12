@@ -21,10 +21,6 @@ android {
             path 'jni/Android.mk'
         }
     }
-
-    sonarqube {
-        skipProject = true
-    }
 }
 
 dependencies {

@@ -91,14 +91,4 @@ public final class Animations {
         view.setVisibility(INVISIBLE);
         view.setAlpha(0f);
     }
-
-    /**
-     * Immediately set view to gone state.
-     *
-     * @param view The view to set.
-     */
-    public static void setRemoved(View view) {
-        view.setVisibility(GONE);
-        view.setAlpha(0f);
-    }
 }

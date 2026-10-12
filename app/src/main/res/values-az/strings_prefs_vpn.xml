@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Nasazlıqların aradan qaldırılması</string>
     <string name="pref_vpn_reset">VPN-i sıfırla</string>
     <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yenidən qurun. VPN işləməyi dayandırarsa (internet girişi yoxdursa və ya DNS xətaları varsa) bundan istifadə edin.</string>
     <string name="pref_vpn_reset_done">VPN bağlantısı yenidən quruldu.</string>

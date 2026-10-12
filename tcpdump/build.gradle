@@ -3,18 +3,12 @@ import com.android.build.gradle.internal.tasks.LibraryJniLibsTask
 apply plugin: 'com.android.library'
 
 android {
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-    }
-
     compileSdk 33
     ndkVersion '27.2.12479018'
     namespace 'org.adaway.libpcap'
 
     defaultConfig {
-        minSdkVersion 26
+        minSdk 26
         targetSdk 33
     }
 
@@ -22,10 +16,6 @@ android {
         ndkBuild {
             path 'jni/Android.mk'
         }
-    }
-
-    sonarqube {
-        skipProject = true
     }
 }
 

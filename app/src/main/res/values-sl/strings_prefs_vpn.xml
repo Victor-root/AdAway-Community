@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="pref_vpn_title">Zaviralec oglasov na osnovi VPN</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Omogoči ob zagonu</string>
     <string name="pref_vpn_service_monitor">Spremljaj povezavo</string>
     <string name="pref_vpn_service_monitor_description">Občasno preveri stanje omrežja za ponovni zagon VPN ob prekinitvi povezave.</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Izključene aplikacije</string>
     <string name="pref_vpn_excluded_apps_description">Nastavite, katere aplikacije ne smejo uporabljati VPN, da nobena povezava ne bo onemogočena.</string>
     <string name="pref_vpn_exclude_system_apps">Izključi sistemske aplikacije</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikacije</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Odpravljanje težav</string>
     <string name="pref_vpn_reset">Ponastavi VPN</string>
     <string name="pref_vpn_reset_description">Znova vzpostavite povezavo VPN iz nič. Uporabite to, če VPN preneha delovati (ni dostopa do interneta ali napake DNS).</string>
     <string name="pref_vpn_reset_done">Povezava VPN je znova vzpostavljena.</string>

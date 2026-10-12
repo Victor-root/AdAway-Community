@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">কাস্টম নিয়ম</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS অনুরোধের লগ</string>
     <string name="home_log_subtitle">রিয়েল টাইমে কী ব্লক হচ্ছে তা দেখুন</string>
-    <string name="home_help_title">সহায়তা ও পরামর্শ</string>
     <string name="home_help_subtitle">নির্দেশিকা ও সমস্যা সমাধান</string>
     <string name="home_preferences_subtitle">AdAway কনফিগার করুন</string>
 

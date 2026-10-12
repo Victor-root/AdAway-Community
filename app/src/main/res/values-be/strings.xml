@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!--Buttons-->
-    <string name="button_exit">Выйсці</string>
     <string name="button_close">Закрыць</string>
     <string name="button_yes">Так</string>
     <string name="button_no">Не</string>
@@ -11,25 +10,9 @@
     <string name="button_help">Дапамога</string>
 
     <!--Home-->
-    <string name="header_help">Сярдэчна запрашаем!</string>
-    <string name="text_help">AdAway - гэта бясплатная праграма з адкрытым зыходным кодам для блакіроўкі рэкламы. Яна збірае адрасы з рэкламнай сеткі і блакуе іх на вашай прыладзе.\nХочаце даведацца больш? Чытайце даведку!</string>
-    <string name="button_show_help">Паказаць дадатковую дапамогу</string>
     <string name="icon_update_status">Статус абнаўленняў</string>
-    <string name="text_update">Усе файлы hosts, спампаваных з пэўных крыніц, зліваюцца з вашым уласным спісам і ўсталёўваюцца ў вашай сістэме ў выглядзе аднаго файла host</string>
     <string name="button_enable_hosts">Уключыць блакаванне рэкламы</string>
     <string name="button_disable_hosts">Адключыць блакаванне рэкламы</string>
-    <string name="header_webserver">Вэб-сервер</string>
-    <string name="webserver_status_running">Працуе</string>
-    <string name="webserver_status_stopped">Прыпынена</string>
-    <string name="webserver_toggle_text">Запусціце або спыніце вэб-сервер у лакальнай сеткі, каб адказваць на запыты на заблакаваныя імёны host.</string>
-    <string name="button_enable_webserver">Уключыць вэб-сервер</string>
-    <string name="button_disable_webserver">Адключыць вэб-сервер</string>
-    <string name="header_vpn">VPN</string>
-    <string name="vpn_status_running">Запушчана</string>
-    <string name="vpn_status_stopped">Спынена</string>
-    <string name="vpn_toggle_text">Запусціць або спыніць VPN для фільтрацыі запытаў.</string>
-    <string name="button_enable_vpn">Уключыць VPN</string>
-    <string name="button_disable_vpn">Адключыць VPN</string>
 
     <!--Checkbox List-->
     <string name="checkbox_list_context_title">Рэдагаваць запіс</string>
@@ -38,18 +21,10 @@
     <string name="checkbox_list_context_delete">Выдаліць</string>
 
     <!--Your lists-->
-    <string name="import_dialog">Імпарт…</string>
     <string name="import_success">Рэзервовая копія паспяхова імпартавана з вашага знешняга сховішча.</string>
     <string name="import_failed">Не ўдалося імпартаваць рэзервовую копію. Магчыма яе фармат не дакладны? Праверце logcat для падрабязнасцяў.</string>
-    <string name="export_dialog">Экспарт…</string>
     <string name="export_success">Рэзервовае капіраванне паспяхова экспартавана ў файл \'%s\' на вашым знешнім сховішчы.</string>
     <string name="export_failed">Не атрымалася экспартаваць файл рэзервовай копіі \'%s\'.</string>
-
-    <!--Hosts content-->
-    <string name="hosts_header">Файл hosts</string>
-    <string name="hosts_description">Файл hosts - гэта сістэмны файл, супастаўляючы імёны вузлоў з IP-адрасамі. Гэта звычайны тэкставы файл, змесціва якога апрацоўвае AdAway. Вось яго першыя радкі:</string>
-    <string name="hosts_content">Загрузка змесціва файла hosts</string>
-    <string name="hosts_open_button">Адкрыць файл hosts</string>
 
     <!--Status Notification-->
     <string name="status_check">Праверка абнаўленняў</string>
@@ -61,22 +36,8 @@
     <string name="status_sync_database">Сінхранізацыя базы дадзеных з правіламі</string>
     <string name="status_revert">Аднаўленне стандартнага файла hosts</string>
     <string name="status_revert_done">Стандартны файл hosts адноўлены</string>
-    <string name="status_reverting_subtitle">Стварэнне стандартнага файла hosts</string>
     <string name="status_update_available">Даступна абнаўленне</string>
-    <string name="status_update_available_subtitle">Даступны новыя файлы host</string>
     <string name="status_no_update_found">Абнаўленняў крыніц не знойдзены</string>
-    <string name="status_no_connection">Няма злучэння з інтэрнэтам</string>
-    <string name="status_no_connection_subtitle">Няма падлучэння да Інтэрнэту</string>
-    <string name="status_download_fail">Недаступныя крыніцы</string>
-    <string name="status_download_fail_subtitle_new">Няма даступных крыніц host!</string>
-    <string name="status_root_access_denied">Доступ root быў адхілены</string>
-    <string name="status_root_access_denied_subtitle">Дазвольце root-доступ з вашай праграмы для root</string>
-    <string name="status_failure">Нешта пайшло не так</string>
-    <string name="status_failure_subtitle">Праверце logcat для атрымання больш падрабязнай інфармацыі</string>
-    <string name="status_enabled">Уключана</string>
-    <string name="status_enabled_subtitle">Выкарыстоўваюцца новыя спісы host</string>
-    <string name="status_disabled">Выключана</string>
-    <string name="status_disabled_subtitle">Усталяваны стандартны файл hosts</string>
     <string name="status_apply_sources">Прымяніць свежыя крыніцы</string>
     <string name="status_create_new_hosts">Стварэнне новага файла hosts</string>
     <string name="status_copy_new_hosts">Капіяванне новага файла hosts</string>
@@ -88,124 +49,25 @@
     <string name="notification_configuration_installing">Прымяненне новай канфігурацыі</string>
     <string name="notification_configuration_failed">Не атрымалася прымяніць новую канфігурацыю.</string>
 
-    <!--Apply and Revert Dialogs-->
-    <string name="apply_symlink_missing_status">Адсутнічае сімвалічная спасылка на мэтавай файл hosts</string>
-    <string name="apply_symlink_missing">Спасылка на ваш /system/etc/hosts няправільная або не існуе! AdAway не будзе працаваць, калі не паказаць правільны файл. Вы хочаце паспрабаваць стварыць спасылку?</string>
-    <string name="apply_symlink_missing_title">Спасылка адсутнічае</string>
-    <string name="apply_not_enough_space">Не хапае месца на раздзеле! Паспрабуйце змяніць шлях да файла ў наладах на /data/data/hosts.</string>
-    <string name="apply_not_enough_space_title">Не хапае месца</string>
-    <string name="apply_private_file_fail">Спампаваны файл не можа быць прачытаны.</string>
-    <string name="apply_private_file_fail_title">Збой файла</string>
-    <string name="apply_remount_fail">Не атрымалася перамантаваць раздзел для чытання/запісу!</string>
-    <string name="apply_remount_fail_title">Перамантаваць не ўдалося</string>
-    <string name="apply_copy_fail_status">Не атрымалася скапіяваць файл hosts</string>
-    <string name="apply_copy_fail">Капіяванне файла hosts не ўдалося!</string>
-    <string name="apply_copy_fail_title">Капіяванне не ўдалося</string>
-    <string name="apply_success_subtitle">Выкарыстоўваюцца крыніцы hosts</string>
-    <string name="apply_success_title">Прымяненне прайшло паспяхова</string>
-    <string name="apply_success_dialog">Прымяненне прайшло паспяхова.\nМагчыма, спатрэбіцца перазагрузіць Android, каб змены ўступілі ў сілу.\n\nВы хочаце перагрузіць Android?\n(Для прадухілення страты дадзеных пераканайцеся, што ніякія праграмы ў дадзены момант не выкарыстоўваюць карту памяці!)</string>
-    <string name="apply_symlink_successful">Спасылка створана паспяхова.\nМагчыма, спатрэбіцца перазагрузіць Android, каб змены ўступілі ў сілу.\n\nВы хочаце перагрузіць Android?\n(Для прадухілення страты дадзеных пераканайцеся, што ніякія праграмы ў дадзены момант не выкарыстоўваюць карту памяці!)</string>
-    <string name="apply_symlink_successful_title">Спасылка створана паспяхова</string>
-    <string name="apply_symlink_fail">Android не змог стварыць спасылку.\nМагчыма гэта з-за асаблівасці тэлефонаў HTC, званай S-ON!\n\nРашэнне заключаецца ў загрузцы тэлефона ў рэжыме аднаўлення і стварэння спасылкі пры дапамозе \'ln -s /data/data/hosts /system/etc/hosts\'.\n\nКалі гэта не дапаможа, то трэба шукаць інфармацыю ў інтэрнэце па S-OFF і вашаму тэлефоне.</string>
-    <string name="apply_symlink_fail_title">Памылка стварэння спасылкі</string>
-    <string name="apply_help">Калі ласка, чытайце Даведку для атрымання большай інфармацыі.</string>
-    <string name="apply_apn_proxy">У наладах APN вашага Android паказаны проксі-сервер!\nAdAway не будзе працаваць у мабільных сетках, такіх як 3G. Вы можаце адключыць гэты сервер проксі у наладах выкарыстаннай APN (з праграмы Налад: Сетка і Інтэрнэт -&gt; Мабільная сетка -&gt; Дадаткова -&gt; Кропкі доступу APN) і выдаліць значэнне ў полі Проксі.</string>
-    <string name="apply_apn_proxy_title">Выкарыстоўваная кропка доступу працуе праз проксі-сервер!</string>
-    <string name="no_connection">Адсутнічае падключэнне да інтэрнэту.</string>
-    <string name="no_connection_title">Няма злучэння</string>
-    <string name="download_dialog">Спампоўка…</string>
-    <string name="apply_dialog">Прымяненне…</string>
-    <string name="apply_dialog_lists">Прымяніць чорны і белы спіс</string>
-    <string name="apply_dialog_hostnames">Разбор і аб\'яднанне файлаў са спісамі hosts</string>
-    <string name="apply_dialog_hosts">Пабудова файла hosts</string>
-    <string name="apply_dialog_apply">Прымяненне файла hosts</string>
-    <string name="apply_fail_status">Не атрымалася прымяніць новы файл hosts.</string>
-    <string name="apply_fail">Не атрымалася прымяніць файл Hosts на вашай сістэме! 
-Паспрабуйце змяніць шлях да файла Hosts ў наладах на /data/data/hosts</string>
-    <string name="apply_fail_title">Прымяненне не ўдалося</string>
-    <string name="root_access_fail">Калі ласка, праверце, вашу праграму, якая прадастаўляе root-доступ.</string>
-    <string name="revert_successful">Вы вярнуліся да файла Hosts па змаўчанні.\nМагчыма, спатрэбіцца перазагрузіць Android, каб змены ўступілі ў сілу.\n\nВы хочаце перагрузіць Android?\n(Для прадухілення страты дадзеных пераканайцеся, што ніякія праграмы ў дадзены момант не выкарыстоўваюць карту памяці!)</string>
-    <string name="revert_successful_title">Вяртанне адбылося паспяхова</string>
-    <string name="revert_failed_status">Не атрымалася аднавіць файл hosts</string>
-    <string name="revert_problem">Аднаўленне не атрымалася па невядомых прычынах.</string>
-    <string name="revert_problem_title">Аднаўленне не атрымалася!</string>
-    <string name="download_fail_dialog">Ніводная з вашых актыўных крыніц host недаступная! Вы правільна падлучаныя да інтэрнэту?</string>
-    <string name="download_fail_title">Памылка спампоўкі</string>
-    <string name="no_private_file_status">Не атрымалася запісаць новы файл hosts</string>
-    <string name="no_private_file">Файл не можа быць створаны.</string>
-    <string name="no_private_file_title">Не атрымалася стварыць файл</string>
-    <string name="enable_systemless_successful">Вы актывавалі бессістэмны рэжым.\nМагчыма, спатрэбіцца перазагрузіць Android, каб змены ўступілі ў сілу.\n\nВы хочаце перагрузіць Android?\n(Для прадухілення страты дадзеных пераканайцеся, што ніякія праграмы ў дадзены момант не выкарыстоўваюць карту памяці!)</string>
-    <string name="enable_systemless_successful_title">Актывацыя прайшла паспяхова</string>
-    <string name="disable_systemless_successful">Вы адключылі бессістэмны рэжым.\nМагчыма, спатрэбіцца перазагрузіць Android, каб змены ўступілі ў сілу.\n\nВы хочаце перагрузіць Android?\n(Для прадухілення страты дадзеных пераканайцеся, што ніякія праграмы ў дадзены момант не выкарыстоўваюць карту памяці!)</string>
-    <string name="disable_systemless_successful_title">Паспяхова адключана</string>
-    <string name="enable_vpn_fail">Не атрымалася ўключыць VPN блакаванне рэкламы.</string>
-    <string name="disable_vpn_fail">Не атрымалася адключыць VPN блакаванне рэкламы.</string>
-    <string name="enable_systemless_magisk_title">Уключыць модуль hosts Magisk</string>
-    <string name="enable_systemless_magisk">Уключыць бессістэмную функцыю hosts з мэнэджара Magisk. Сярод яго налад уключыце параметр <cite>Бессістемны hosts</cite>, затым перазагрузіце вашу прыладу.</string>
-    <string name="disable_systemless_magisk_title">Адключыць модуль Magisk hosts</string>
-    <string name="disable_systemless_magisk">Адключыць бессістэмную функцыю hosts з мэнэджара Magisk. Сярод яго налад выдаліце ​​модуль <cite>Бессістемны hosts</cite>, затым перазагрузіце вашу прыладу.</string>
-
-    <!--Other Dialogs-->
-    <string name="hosts_add_dialog">Устаўце URL у файл hosts:</string>
-    <string name="no_hostname">Гэта недапушчальнае імя крыніцы!</string>
-    <string name="no_hostname_title">Няправільна адфарматаванае імя host</string>
-    <string name="no_ip">Гэта недапушчальны IP-адрас!</string>
-    <string name="no_ip_title">Няправільна адфарматаваны IP-адрас</string>
-    <string name="reboot_never_reboot">Ня перазагружаць і не паказваць гэтае пытанне ў далейшым</string>
-    <string name="loading">Загрузка…</string>
-
     <!--Menu entries-->
     <string name="menu_refresh">Абнавіць</string>
-    <string name="menu_add">Дадаць</string>
     <string name="menu_help">Дапамога</string>
-    <string name="menu_import">Імпартаваць рэзервовую копію</string>
-    <string name="menu_export">Экспарт рэзервовай копіі</string>
 
     <!--Help-->
     <string name="help_tab_faq">FAQ</string>
     <string name="help_tab_problems">Праблемы</string>
 
-    <!--Adware-->
-    <string name="adware_header">Праграмы з рэкламай</string>
-    <string name="adware_description">Пошук праграм з рэкламай, званыя Adware, і якія AdAway не можа заблакаваць. Гэтыя праграмы выкарыстоўваюць, напрыклад, сістэму апавяшчэнняў Airpush, якая паказвае рэкламу нават тады, калі праграма не працуе, ці нават можа змяніць мелодыю вашага званка. Пазбавіцца ад такой рэкламы можна толькі выдаліўшы праграму, названыя ў выніках сканавання, шляхам націску на складнікі спісаў.</string>
-    <string name="adware_scanning">Сканаванне…</string>
-    <string name="adware_empty">Праграм з рэкламай не знойдзена!</string>
-
     <!--Other-->
-    <string name="app_subtitle">Блакавальнік рэкламы</string>
     <string name="no_text_editor_title">Не ўсталяваны тэкставы рэдактар</string>
     <string name="no_text_editor">Не знойдзены тэкставы рэдактар ​​для адкрыцця файла hosts. Вы можаце ўсталяваць рэдактар ​​Jota ці іншай тэкставы рэдактар, каб гэта выправіць.\n\nВы жадаеце ўсталяваць рэдактар ​​Jota?</string>
-    <string name="no_file_manager_title">Не ўсталяваны файлавы менеджэр</string>
-    <string name="no_file_manager">Няма файлавага мэнэджара для адкрыцця файла. Вы можаце ўсталяваць OI File Manager ці іншы файлавы менеджэр, каб гэта выправіць.\n\nВы жадаеце ўсталяваць OI File Manager?</string>
 
     <!--Tcpdump-->
-    <string name="tcpdump_header">Tcpdump</string>
-    <string name="tcpdump_description">Tcpdump гэта інструмент для маніторынгу запытаў DNS і іх захавання ў файле журнала. Запусціце Tcpdump, ён будзе працаваць у фонавым рэжыме да перазагрузкі прылады - запусціце праграму, у якой на экране паказваецца рэклама - прааналізуйце запыты DNS, выкарыстоўваючы файл журнала. Знойдзеныя ў ім падазроныя сервера, магчымыя як крыніцы рэкламы, могуць быць унесены ў чорны спіс.</string>
-    <string name="tcpdump_disable_monitoring">Адключыць маніторынг</string>
-    <string name="tcpdump_enable_monitoring">Уключыць маніторынг</string>
-    <string name="tcpdump_show_results">Паказаць вынікі</string>
     <string name="tcpdump_menu_sort">Сартаваць дамены</string>
     <string name="tcpdump_menu_clear">Ачысціць журнал</string>
     <string name="tcpdump_entry_add_blacklist">Дадаць запіс у Чорны спіс</string>
     <string name="tcpdump_entry_add_whitelist">Дадаць запіс у Белы спіс</string>
-    <string name="tcpdump_entry_add_redirection_list">Дадаць запіс у спіс перанакіраванняў</string>
 
     <string name="pref_edit_text_value">Рэдагаваць значэнне тэкставай перавагі</string>
-    <string name="drawer_open">Адкрыць меню</string>
-    <string name="drawer_close">Закрыць меню</string>
-
-    <!-- !!! Attention, always translate all items from this array !!! - Drawer menu items -->
-    <string-array name="drawer_items">
-        <item>Галоўная</item>
-        <item>Крыніцы hosts</item>
-        <item>Вашы спісы</item>
-        <item>Адкрыць файл hosts</item>
-        <item>Запісваць запыты DNS</item>
-        <item>Сканаванне Adware</item>
-        <item>Налады</item>
-        <item>Дапамога</item>
-    </string-array>
-    <!--Drawer menu labels-->
 
     <!--Shortcuts-->
     <string name="shortcut_dns_requests">Запыты DNS</string>
@@ -220,12 +82,6 @@
     <string name="hosts_source_unknown_status">Невядомы статус абнаўлення</string>
     <string name="hosts_source_disabled">Выключана</string>
     <string name="hosts_source_few_minutes">некалькі хвілін</string>
-    <plurals name="hosts_source_minutes">
-        <item quantity="one">%d хвіліна</item>
-        <item quantity="few">%d хвіліны</item>
-        <item quantity="many">%d хвілін</item>
-        <item quantity="other">%d хвілін</item>
-    </plurals>
     <plurals name="hosts_source_hours">
         <item quantity="one">%d гадзіна</item>
         <item quantity="few">%d гадзіны</item>
@@ -255,7 +111,6 @@
     <string name="vpn_notification_waiting_for_net">чаканне сеткі</string>
     <string name="vpn_notification_reconnecting">перападключэнне</string>
     <string name="vpn_notification_reconnecting_error">памылка перападключэнне</string>
-    <string name="vpn_notification_paused">прыпынена</string>
     <string name="vpn_notification_stopped">спынена</string>
     <string name="vpn_notification_title">VPN блакіроўшчыка %1$s</string>
     <string name="vpn_notification_action_pause">Паўза</string>

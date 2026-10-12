@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Muammolarni bartaraf etish</string>
     <string name="pref_vpn_reset">VPNni tiklash</string>
     <string name="pref_vpn_reset_description">VPN ulanishini noldan qayta quring. Agar VPN ishlamay qolsa (internet yoʻq yoki DNS xatolari) shundan foydalaning.</string>
     <string name="pref_vpn_reset_done">VPN ulanishi qayta qurildi.</string>

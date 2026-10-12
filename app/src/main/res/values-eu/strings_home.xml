@@ -15,29 +15,13 @@
         <item quantity="one">%d outdated source</item>
         <item quantity="other">%diturri zaharkitu</item>
     </plurals>
-    <string name="check_hosts_update_description">Egiaztatu ostalarien eguneraketak</string>
     <string name="update_hosts_description">Eguneratu ostalariak</string>
 
-    <!-- Log card -->
-    <string name="log_label">Erakutsi DNS eskariak</string>
-
-    <!-- Help card -->
-    <string name="help_label">Erakutsi Laguntza\neta aholkuak</string>
-
-    <!-- Project card -->
-    <string name="project_label">Ireki GitHub-en orria</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub proiektua</string>
     <string name="preferences_drawer_item">Hobespenak</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Ireki nabigazio-tiradera</string>
     <string name="adblock_pause_button_description">Eten/Jarraitu irakargien blokeoa</string>
-    <string name="update_button">Eguneratu blokeatutako domeinuak</string>
-    <string name="show_log_button">Erakutsi eskatutako domeinuak</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Irakurri Laguntza argibide gehiagorako.</string>
@@ -48,9 +32,7 @@
     <string name="redirect_hosts_description">Arau pertsonalizatuak</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS eskarien erregistroa</string>
     <string name="home_log_subtitle">Ikusi zer blokeatzen den denbora errealean</string>
-    <string name="home_help_title">Laguntza eta aholkuak</string>
     <string name="home_help_subtitle">Gidak eta arazoen konponketa</string>
     <string name="home_preferences_subtitle">Konfiguratu AdAway</string>
 

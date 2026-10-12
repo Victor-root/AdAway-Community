@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">Propraj reguloj</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Protokolo de DNS-petoj</string>
     <string name="home_log_subtitle">Vidu kio estas blokata en reala tempo</string>
-    <string name="home_help_title">Helpo kaj konsiloj</string>
     <string name="home_help_subtitle">Gvidiloj kaj problemsolvado</string>
     <string name="home_preferences_subtitle">Agordu AdAway</string>
 

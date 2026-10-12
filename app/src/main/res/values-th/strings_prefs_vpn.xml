@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">การแก้ไขปัญหา</string>
     <string name="pref_vpn_reset">รีเซ็ต VPN</string>
     <string name="pref_vpn_reset_description">สร้างการเชื่อมต่อ VPN ขึ้นใหม่ตั้งแต่ต้น ใช้สิ่งนี้หาก VPN หยุดทำงาน (ไม่มีการเข้าถึงอินเทอร์เน็ตหรือเกิดข้อผิดพลาด DNS)</string>
     <string name="pref_vpn_reset_done">สร้างการเชื่อมต่อ VPN ขึ้นใหม่แล้ว</string>

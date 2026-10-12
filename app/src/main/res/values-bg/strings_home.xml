@@ -15,29 +15,13 @@
         <item quantity="one">%d източник за обновяване</item>
         <item quantity="other">%d източника за обновяване</item>
     </plurals>
-    <string name="check_hosts_update_description">Проверка за актуализации на хостовете</string>
     <string name="update_hosts_description">Актуализиране на хостовете</string>
 
-    <!-- Log card -->
-    <string name="log_label">Заявки към DNS</string>
-
-    <!-- Help card -->
-    <string name="help_label">Помощ</string>
-
-    <!-- Project card -->
-    <string name="project_label">Страница в GitHub</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">Проект в GitHub</string>
     <string name="preferences_drawer_item">Настройки</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Отваряне на чекмеджето за навигация</string>
     <string name="adblock_pause_button_description">Пауза/възобновяване на блокирането на реклами</string>
-    <string name="update_button">Актуализиране на блокирани домейни</string>
-    <string name="show_log_button">Показване на заявените домейни</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Моля, прочетете Помощ за повече информация.</string>
@@ -48,9 +32,7 @@
     <string name="redirect_hosts_description">Персонализирани правила</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Дневник на DNS заявките</string>
     <string name="home_log_subtitle">Вижте какво се блокира в реално време</string>
-    <string name="home_help_title">Помощ и съвети</string>
     <string name="home_help_subtitle">Ръководства и отстраняване на проблеми</string>
     <string name="home_preferences_subtitle">Конфигуриране на AdAway</string>
 

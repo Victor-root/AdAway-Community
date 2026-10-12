@@ -5,7 +5,6 @@
         <item>All except browsers</item>
         <item>All</item>
     </string-array>
-        <string name="pref_vpn_troubleshooting">Bilanaleit</string>
     <string name="pref_vpn_reset">Endurstilla VPN</string>
     <string name="pref_vpn_reset_description">Endurbyggja VPN-tenginguna frá grunni. Notaðu þetta ef VPN hættir að virka (enginn internetaðgangur eða DNS-villur).</string>
     <string name="pref_vpn_reset_done">VPN-tenging endurbyggð.</string>

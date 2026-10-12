@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">Fərdi qaydalar</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS sorğu jurnalı</string>
     <string name="home_log_subtitle">Real vaxtda nəyin bloklandığını görün</string>
-    <string name="home_help_title">Kömək və məsləhətlər</string>
     <string name="home_help_subtitle">Bələdçilər və nasazlıqların aradan qaldırılması</string>
     <string name="home_preferences_subtitle">AdAway-i tənzimləyin</string>
 

@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">ပြဿနာဖြေရှင်းခြင်း</string>
     <string name="pref_vpn_reset">VPN ကို ပြန်လည်သတ်မှတ်ပါ</string>
     <string name="pref_vpn_reset_description">VPN ချိတ်ဆက်မှုကို အစမှ ပြန်လည်တည်ဆောက်ပါ။ VPN အလုပ်မလုပ်တော့ပါက (အင်တာနက်မရ သို့မဟုတ် DNS အမှားများ) ဤအရာကို သုံးပါ။</string>
     <string name="pref_vpn_reset_done">VPN ချိတ်ဆက်မှုကို ပြန်လည်တည်ဆောက်ပြီးပါပြီ။</string>

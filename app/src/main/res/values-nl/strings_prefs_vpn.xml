@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">Advertentieblokkering op basis van VPN</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Inschakelen bij opstarten</string>
     <string name="pref_vpn_service_monitor">Controleer verbinding</string>
     <string name="pref_vpn_service_monitor_description">Controleer periodiek de netwerkstatus om VPN te herstarten bij disconnectie</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Uitgesloten applicaties</string>
     <string name="pref_vpn_excluded_apps_description">Geef aan welke applicaties niet VPN mogen gebruiken zodat er geen connecties zullen worden geblokkeerd.</string>
     <string name="pref_vpn_exclude_system_apps">Uitgesloten systeem applicaties</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">Applicatie icon</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Probleemoplossing</string>
     <string name="pref_vpn_reset">VPN opnieuw instellen</string>
     <string name="pref_vpn_reset_description">Bouw de VPN-verbinding volledig opnieuw op. Gebruik dit als de VPN niet meer werkt (geen internettoegang of DNS-fouten).</string>
     <string name="pref_vpn_reset_done">VPN-verbinding opnieuw opgebouwd.</string>

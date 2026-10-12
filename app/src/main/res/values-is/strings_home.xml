@@ -15,9 +15,7 @@
     <string name="blocked_hosts_description">Auglýsingar og rekjarar</string>
     <string name="allowed_hosts_description">Undantekningar</string>
     <string name="redirect_hosts_description">Sérsniðnar reglur</string>
-    <string name="home_log_title">Annáll DNS-fyrirspurna</string>
     <string name="home_log_subtitle">Sjáðu hvað er lokað á í rauntíma</string>
-    <string name="home_help_title">Hjálp og ráð</string>
     <string name="home_help_subtitle">Leiðbeiningar og bilanaleit</string>
     <string name="home_preferences_subtitle">Stilltu AdAway</string>
     <string name="home_tile_log">DNS-annáll</string>

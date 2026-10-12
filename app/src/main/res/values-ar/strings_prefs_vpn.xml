@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">مانع إعلانات يعتمد على ال VPN</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">التمكين عند بدء تشغيل الجهاز</string>
     <string name="pref_vpn_service_monitor">مراقبة الاتصال</string>
     <string name="pref_vpn_service_monitor_description">تحقق بشكل دوري من حالة الشبكة لإعادة تشغيل VPN عند قطع الاتصال.</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">التطبيقات المستبعدة</string>
     <string name="pref_vpn_excluded_apps_description">إعداد التطبيقات التي يجب ألا تستخدم VPN حتى لا يتم حظر أي اتصالات.</string>
     <string name="pref_vpn_exclude_system_apps">استبعد تطبيقات النظام</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">أيقونة التطبيق</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">استكشاف الأخطاء وإصلاحها</string>
     <string name="pref_vpn_reset">إعادة تعيين VPN</string>
     <string name="pref_vpn_reset_description">إعادة بناء اتصال VPN من الصفر. استخدم هذا إذا توقّف VPN عن العمل (لا يوجد وصول إلى الإنترنت أو أخطاء DNS).</string>
     <string name="pref_vpn_reset_done">تمت إعادة بناء اتصال VPN.</string>

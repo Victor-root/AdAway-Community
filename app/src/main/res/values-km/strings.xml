@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!--Buttons-->
-    <string name="button_exit">ចាកចេញ</string>
     <string name="button_close">បិទ</string>
     <string name="button_yes">បាទ</string>
     <string name="button_no">ទេ</string>
@@ -13,44 +12,9 @@
     <string name="checkbox_list_context_delete">លុបចេញ</string>
 
     <string name="status_update_available">រកឃើញមានជំនាន់ថ្មី</string>
-    <string name="status_no_connection">ពុំមានតំនរភ្ជាប់អ៊ិនធឺណែត</string>
-    <string name="status_no_connection_subtitle">ពុំមានឃើញមានតំនរភ្ជាប់អ៊ិនធឺណែត</string>
-    <string name="status_download_fail_subtitle_new">គ្មានប្រភពឯកសារម៉ាស៊ីនណាអាចទាក់ទងបាន</string>
-    <string name="status_enabled">ត្រូវបានបញ្ចូល</string>
-    <string name="status_disabled">ត្រូវបានបណ្តាច់</string>
-    <string name="apply_not_enough_space_title">ពុំមានប្រលោះទំនេរគ្រប់គ្រាន់</string>
-    <string name="apply_copy_fail_title">ចម្លងបរាជ័យ</string>
-    <string name="apply_success_title">ស្នើរសុំជោគជ័យ</string>
-    <string name="apply_help">សូមអាន \"ជំនួយ\" សម្រាប់ព័តមានបន្ថែម</string>
-    <string name="apply_apn_proxy_title">បានកំណត់ APN ប្រូកស៊ី!</string>
-    <string name="no_connection">ការភ្ជាប់អ៊ិនធឺណែតគឺមិនដំនើរការ</string>
-    <string name="no_connection_title">គ្មានការតភ្ជាប់</string>
-    <string name="apply_dialog_lists">កំពុងអនុវត្តបញ្ជីខ្មៅ និង បញ្ជីស</string>
-    <string name="apply_dialog_hosts">កំពុងបង្កើតឯកសារ</string>
-    <string name="apply_dialog_apply">កំពុងអនុវត្តឯកសារ</string>
-    <string name="apply_fail_title">ការអនុវត្តបានបរាជ័យ</string>
-    <string name="revert_successful_title">ត្រឡប់ដូចដើមជោគជ័យ</string>
-    <string name="revert_problem_title">ធ្វើឲ្យដូចដើមបរាជ័យ</string>
-    <string name="download_fail_title">ទាញយកបរាជ័យ</string>
-    <string name="loading">កំពុងផ្ទុកទិន្ន័យ…</string>
 
-    <string name="menu_add">បន្ថែម</string>
     <string name="menu_help">ជំនួយ</string>
-    <!--Help-->
-    <!--Other-->
-    <string name="app_subtitle">អ្នកបំបិទការឃោសនា</string>
-    <string name="no_file_manager_title">ពុំមានកម្មវិធីគ្រប់គ្រងឯកសារត្រូវបានបញ្ចូល</string>
     <!-- !!! Attention, always translate all items from this array !!! - Drawer menu items -->
-    <string-array name="drawer_items">
-        <item>Home</item>
-        <item>Hosts sources</item>
-        <item>Your lists</item>
-        <item>Open hosts file</item>
-        <item>Log DNS requests</item>
-        <item>Scan for adware</item>
-        <item>ការកំណត់</item>
-        <item>ជំនួយ</item>
-    </string-array>
     <string name="shortcut_preferences">ការកំណត់</string>
 
     </resources>

@@ -15,7 +15,6 @@
 package org.adaway.vpn;
 
 import static android.Manifest.permission.POST_NOTIFICATIONS;
-import static android.app.NotificationManager.IMPORTANCE_LOW;
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
@@ -24,6 +23,7 @@ import static android.net.NetworkCapabilities.NET_CAPABILITY_VALIDATED;
 import static android.net.NetworkCapabilities.TRANSPORT_CELLULAR;
 import static android.net.NetworkCapabilities.TRANSPORT_VPN;
 import static android.net.NetworkCapabilities.TRANSPORT_WIFI;
+import static androidx.core.app.NotificationCompat.PRIORITY_LOW;
 import static org.adaway.broadcast.Command.START;
 import static org.adaway.broadcast.Command.STOP;
 import static org.adaway.broadcast.CommandReceiver.SEND_COMMAND_ACTION;
@@ -363,7 +363,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
         PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, VPN_SERVICE_NOTIFICATION_CHANNEL)
-                .setPriority(IMPORTANCE_LOW)
+                .setPriority(PRIORITY_LOW)
                 .setContentIntent(contentIntent)
                 .setSmallIcon(R.drawable.logo)
                 .setColorized(true)

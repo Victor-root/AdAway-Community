@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <!--Buttons-->
-    <string name="button_exit">終了</string>
     <string name="button_close">閉じる</string>
     <string name="button_yes">はい</string>
     <string name="button_no">いいえ</string>
@@ -11,25 +10,9 @@
     <string name="button_help">ヘルプ</string>
 
     <!--Home-->
-    <string name="header_help">ようこそ！</string>
-    <string name="text_help">AdAwayは、広告をブロックするためのフリーでオープンソースのソフトウェアです。広告用ネットワークアドレスを取得して、あなたのデバイス上で遮断します。\nもっと知りたいですか？ 以下のヘルプをチェックしてください！</string>
-    <string name="button_show_help">詳しいヘルプを表示</string>
     <string name="icon_update_status">最新状況</string>
-    <string name="text_update">定義されたソースからhostsファイルをダウンロードし、システムのhostsファイルに統合してインストールします</string>
     <string name="button_enable_hosts">広告ブロックを有効にする</string>
     <string name="button_disable_hosts">広告ブロックを無効にする</string>
-    <string name="header_webserver">ウェブサーバー</string>
-    <string name="webserver_status_running">実行中</string>
-    <string name="webserver_status_stopped">停止中</string>
-    <string name="webserver_toggle_text">ブロックしたホスト名に返答するローカルホストのウェブサーバーを開始/停止します</string>
-    <string name="button_enable_webserver">Webサーバーを有効にする</string>
-    <string name="button_disable_webserver">Webサーバーを無効にする</string>
-    <string name="header_vpn">VPN</string>
-    <string name="vpn_status_running">実行中</string>
-    <string name="vpn_status_stopped">停止中</string>
-    <string name="vpn_toggle_text">VPNによるフィルタリングを開始/停止します</string>
-    <string name="button_enable_vpn">VPN 有効</string>
-    <string name="button_disable_vpn">VPN 無効</string>
 
     <!--Checkbox List-->
     <string name="checkbox_list_context_title">項目を編集する</string>
@@ -38,18 +21,10 @@
     <string name="checkbox_list_context_delete">削除</string>
 
     <!--Your lists-->
-    <string name="import_dialog">インポート中…</string>
     <string name="import_success">外部ストレージからバックアップが正常にインポートされました。</string>
     <string name="import_failed">バックアップのインポートに失敗しました。 バックアップの形式は正しいですか? 詳細は、 logcat を確認してください。</string>
-    <string name="export_dialog">エクスポート中…</string>
     <string name="export_success">バックアップは、外部ストレージ上の \'%s\' へ正常にエクスポートされました。</string>
     <string name="export_failed">バックアップ\'%s\'のエクスポートに失敗しました。</string>
-
-    <!--Hosts content-->
-    <string name="hosts_header">hostsファイル</string>
-    <string name="hosts_description">hostsファイルはホスト名をIPアドレスに対応させるシステムファイルです。 AdAwayが処理する設定が書かれたただのテキストファイルです。 最初の数行はこんな感じです：</string>
-    <string name="hosts_content">hostsファイルの内容を読み込み中…</string>
-    <string name="hosts_open_button">hostsファイルを開く</string>
 
     <!--Status Notification-->
     <string name="status_check">更新を確認中</string>
@@ -61,22 +36,8 @@
     <string name="status_sync_database">ルールデータベースを同期</string>
     <string name="status_revert">デフォルトhostsファイルに戻す</string>
     <string name="status_revert_done">デフォルトhostsファイルをリストアしました</string>
-    <string name="status_reverting_subtitle">標準hostsファイルを作成中</string>
     <string name="status_update_available">更新があります</string>
-    <string name="status_update_available_subtitle">新しいhostsファイルがあります</string>
     <string name="status_no_update_found">ソースの更新はありません</string>
-    <string name="status_no_connection">ネット接続なし</string>
-    <string name="status_no_connection_subtitle">ネットに接続されていません</string>
-    <string name="status_download_fail">取得先が利用できません</string>
-    <string name="status_download_fail_subtitle_new">どのhosts 取得先にも接続できません！</string>
-    <string name="status_root_access_denied">ルートアクセスが拒否されました</string>
-    <string name="status_root_access_denied_subtitle">ルートアプリからのルート アクセスを許可する</string>
-    <string name="status_failure">何らかの不具合が起きました</string>
-    <string name="status_failure_subtitle">詳細は logcat をチェックしてください</string>
-    <string name="status_enabled">有効です</string>
-    <string name="status_enabled_subtitle">最新の hosts ファイルが有効になりました</string>
-    <string name="status_disabled">無効になっています</string>
-    <string name="status_disabled_subtitle">デフォルトの hosts ファイルがインストールされました</string>
     <string name="status_apply_sources">最新のソースを適用</string>
     <string name="status_create_new_hosts">新しいhostsファイルの作成</string>
     <string name="status_copy_new_hosts">新しいhostsファイルをコピー</string>
@@ -88,123 +49,25 @@
     <string name="notification_configuration_installing">新しい設定を適用しています…</string>
     <string name="notification_configuration_failed">新しい設定の適用に失敗しました</string>
 
-    <!--Apply and Revert Dialogs-->
-    <string name="apply_symlink_missing_status">hostsファイルターゲットへのシンボリックリンクが不明です</string>
-    <string name="apply_symlink_missing">/system/etc/hostsへのシンボリックリンクは存在しないか不正です! AdAwayは正しいファイルが指定されていないと動作しません。\n\nシンボリックリンクを作成しますか？</string>
-    <string name="apply_symlink_missing_title">シンボリックリンクが見つかりません</string>
-    <string name="apply_not_enough_space">このパーティションに十分な容量がありません!\n設定で対象とする hosts ファイルを /data/data/hosts に変更してみてください。</string>
-    <string name="apply_not_enough_space_title">空き容量不足</string>
-    <string name="apply_private_file_fail">ダウンロードしたファイルが読み込めません</string>
-    <string name="apply_private_file_fail_title">プライベートファイル失敗</string>
-    <string name="apply_remount_fail">パーティションの 読み/書き での再マウントに失敗しました！</string>
-    <string name="apply_remount_fail_title">再マウント失敗</string>
-    <string name="apply_copy_fail_status">hostsファイルのコピーに失敗</string>
-    <string name="apply_copy_fail">hostsファイルのコピー失敗！</string>
-    <string name="apply_copy_fail_title">コピー失敗</string>
-    <string name="apply_success_subtitle">hosts のソースを適用しました</string>
-    <string name="apply_success_title">適用しました</string>
-    <string name="apply_success_dialog">適用に成功しました。\n実際に変更されるには Android の再起動が必要なことがあります。\n\n再起動しますか？\n(データの損傷を防ぐため、現在 SDカードを使っているアプリが無いのを確認してください！)</string>
-    <string name="apply_symlink_successful">シンボリックリンク作成に成功しました。\n実際に変更されるには Android の再起動が必要なことがあります。\n\n再起動しますか？\n(データの損傷を防ぐため、現在 SDカードを使っているアプリが無いのを確認してください！)</string>
-    <string name="apply_symlink_successful_title">シンボリックリンク作成成功</string>
-    <string name="apply_symlink_fail">Android が シンボリックリンクを作成できません。\nHTC 製端末にある S-ON という「機能」が原因です。\n\n解決するにはリカバリモードで起動し、コマンド 「 ln -s /data/data/hosts /system/etc/hosts 」 でシンボリックリンクを作成してください。\n\nそれでも動作しない場合 S-OFF について検索してください。</string>
-    <string name="apply_symlink_fail_title">シンボリックリンク作成失敗</string>
-    <string name="apply_help">詳しくはヘルプをご覧ください</string>
-    <string name="apply_apn_proxy">ご使用の端末に APN プロキシが設定されています! 3G等のモバイルネットワークで AdAway がうまく動作しない場合があります。プロキシを無効にするには、選択されている APN (設定アプリから: ネットワーク → インターネット → モバイルネットワーク → 詳細設定 → アクセスポイント名) を選択して、「プロキシ」の欄を空白にしてください。</string>
-    <string name="apply_apn_proxy_title">APNプロキシがセットされました！</string>
-    <string name="no_connection">ネット接続がありません</string>
-    <string name="no_connection_title">接続なし</string>
-    <string name="download_dialog">ダウンロード中…</string>
-    <string name="apply_dialog">適用中…</string>
-    <string name="apply_dialog_lists">ブラック/ホワイトリストを適用中</string>
-    <string name="apply_dialog_hostnames">hostsファイルの解析･統合中…</string>
-    <string name="apply_dialog_hosts">hostsファイルを構築中…</string>
-    <string name="apply_dialog_apply">hostsファイルを適用中</string>
-    <string name="apply_fail_status">新しいhostsファイルの適用に失敗</string>
-    <string name="apply_fail">hostsファイルの適用に失敗しました!\n設定で対象とする hosts ファイルを /data/data/hosts に変更してみてください。</string>
-    <string name="apply_fail_title">適用に失敗</string>
-    <string name="root_access_fail">ルート管理アプリをチェックして、ルートアクセスが許可されていることを確認してください。</string>
-    <string name="revert_successful">デフォルトの hosts ファイルに差し戻しました。\n実際に変更されるには Android の再起動が必要なことがあります。\n\n再起動しますか？\n(データの損傷を防ぐため、現在 SDカードを使っているアプリが無いのを確認してください！)</string>
-    <string name="revert_successful_title">元に戻しました</string>
-    <string name="revert_failed_status">hostsファイルを元に戻せません</string>
-    <string name="revert_problem">何らかの理由により元に戻せませんでした</string>
-    <string name="revert_problem_title">元に戻せません！</string>
-    <string name="download_fail_dialog">どの hosts 取得先にも接続できません！ インターネットに接続されていますか？</string>
-    <string name="download_fail_title">ダウンロード失敗</string>
-    <string name="no_private_file_status">新しいプライベートhostsファイルの書き込みに失敗しました</string>
-    <string name="no_private_file">プライベートファイルが作成できません</string>
-    <string name="no_private_file_title">プライベートファイルの作成失敗</string>
-    <string name="enable_systemless_successful">システムレスモードを有効にしました。\n実際に変更されるには Android の再起動が必要なことがあります。\n\n再起動しますか？\n(データの損傷を防ぐため、現在 SDカードを使っているアプリが無いのを確認してください！)</string>
-    <string name="enable_systemless_successful_title">有効化は成功です</string>
-    <string name="disable_systemless_successful">システムレスモードを無効にしました。\n実際に変更されるには Android の再起動が必要なことがあります。\n\n再起動しますか？\n(データの損傷を防ぐため、現在 SDカードを使っているアプリが無いのを確認してください！)</string>
-    <string name="disable_systemless_successful_title">無効化は成功です</string>
-    <string name="enable_vpn_fail">VPN広告ブロックの有効化に失敗しました</string>
-    <string name="disable_vpn_fail">VPN広告ブロックの無効化に失敗しました</string>
-    <string name="enable_systemless_magisk_title">Magisk の hosts モジュールの有効化</string>
-    <string name="enable_systemless_magisk">Magisk マネージャーから Systemless hosts 機能を有効にします。設定から Systemless hosts オプションを有効にしてから、デバイスを再起動します。</string>
-    <string name="disable_systemless_magisk_title">Magisk の hosts モジュールの無効化</string>
-    <string name="disable_systemless_magisk">Magisk マネージャー から Systemless hosts 機能を無効にします。モジュールリストから、 Systemless hosts モジュールをアンインストールしてから、デバイスを再起動します。</string>
-
-    <!--Other Dialogs-->
-    <string name="hosts_add_dialog">hostsファイルのURLを入力:</string>
-    <string name="no_hostname">正しいホスト名ではありません！</string>
-    <string name="no_hostname_title">ホスト名が正しくありません</string>
-    <string name="no_ip">不正なIPです！</string>
-    <string name="no_ip_title">IPが正しくありません</string>
-    <string name="reboot_never_reboot">再起動せずに、この質問を二度と表示しない</string>
-    <string name="loading">読み込み中…</string>
-
     <!--Menu entries-->
     <string name="menu_refresh">更新</string>
-    <string name="menu_add">追加</string>
     <string name="menu_help">ヘルプ</string>
-    <string name="menu_import">バックアップのインポート</string>
-    <string name="menu_export">バックアップのエクスポート</string>
 
     <!--Help-->
     <string name="help_tab_faq">FAQ</string>
     <string name="help_tab_problems">問題</string>
 
-    <!--Adware-->
-    <string name="adware_header">アドウェア</string>
-    <string name="adware_description">ここではAdAway によってブロックできない、インストール済みの有害アプリ (アドウェア) を一覧化しています。 これらのアプリは例えば、プッシュ通知を使用してアプリが実行されていないときにもポップアップしたり、着信音を無断で変更したりします。 対策はリスト項目をタップして、アプリをアンインストールすることだけです。</string>
-    <string name="adware_scanning">スキャン中…</string>
-    <string name="adware_empty">アドウェアは検出されませんでした！</string>
-
     <!--Other-->
-    <string name="app_subtitle">広告排除！</string>
     <string name="no_text_editor_title">テキストエディタがありません</string>
     <string name="no_text_editor">hostsファイルを開くためのテキストエディタが見つかりません。Jotaなどテキストエディタをインストールしてください。\n\nJotaをインストールしますか？</string>
-    <string name="no_file_manager_title">ファイルマネージャがインストールされていません</string>
-    <string name="no_file_manager">ファイルマネージャが見つかりません。OI File ManagerやTetraなどをインストールしてください。\n\nOI File Managerをインストールしますか？</string>
 
     <!--Tcpdump-->
-    <string name="tcpdump_header">TCPダンプ</string>
-    <string name="tcpdump_description">TCPダンプはDNS要求を監視してログファイルに保存する機能です。 バックグラウンドで開始して、広告を表示するアプリを起動するとログファイルでDNS要求を調べられます。広告のサーバーだと思われるものはブラックリストに追加出来ます</string>
-    <string name="tcpdump_disable_monitoring">監視を無効にする</string>
-    <string name="tcpdump_enable_monitoring">監視を有効にする</string>
-    <string name="tcpdump_show_results">結果を表示</string>
     <string name="tcpdump_menu_sort">ドメインを並べ替える</string>
     <string name="tcpdump_menu_clear">ログを消去</string>
     <string name="tcpdump_entry_add_blacklist">ブラックリストにエントリーを追加する</string>
     <string name="tcpdump_entry_add_whitelist">ホワイトリストにエントリーを追加する</string>
-    <string name="tcpdump_entry_add_redirection_list">リダイレクトリストにエントリを追加する</string>
 
     <string name="pref_edit_text_value">テキスト設定値を編集する</string>
-    <string name="drawer_open">メニューを開く</string>
-    <string name="drawer_close">メニューを閉じる</string>
-
-    <!-- !!! Attention, always translate all items from this array !!! - Drawer menu items -->
-    <string-array name="drawer_items">
-        <item>ホーム</item>
-        <item>hosts 取得先</item>
-        <item>あなたのリスト</item>
-        <item>hostsファイルを開く</item>
-        <item>DNS 要求のログ</item>
-        <item>アドウェアをスキャン</item>
-        <item>設定</item>
-        <item>ヘルプ</item>
-    </string-array>
-    <!--Drawer menu labels-->
 
     <!--Shortcuts-->
     <string name="shortcut_dns_requests">DNSリクエスト</string>
@@ -219,9 +82,6 @@
     <string name="hosts_source_unknown_status">更新ステータスが不明</string>
     <string name="hosts_source_disabled">無効になっています</string>
     <string name="hosts_source_few_minutes">数分前</string>
-    <plurals name="hosts_source_minutes">
-        <item quantity="other">%d 分</item>
-    </plurals>
     <plurals name="hosts_source_hours">
         <item quantity="other">%d 時間</item>
     </plurals>
@@ -242,7 +102,6 @@
     <string name="vpn_notification_waiting_for_net">ネットワークを待機中</string>
     <string name="vpn_notification_reconnecting">再接続</string>
     <string name="vpn_notification_reconnecting_error">再接続エラー</string>
-    <string name="vpn_notification_paused">一時停止</string>
     <string name="vpn_notification_stopped">停止</string>
     <string name="vpn_notification_title">Ad-blocker VPN %1$s</string>
     <string name="vpn_notification_action_pause">一時停止</string>

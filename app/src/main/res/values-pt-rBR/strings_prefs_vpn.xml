@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">Bloqueador de anúncios baseado em VPN</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Ativar na inicialização</string>
     <string name="pref_vpn_service_monitor">Monitore a conexão</string>
     <string name="pref_vpn_service_monitor_description">Verifique periodicamente o estado da rede para reiniciar a VPN em caso de desconexão.</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Aplicativos excluídos</string>
     <string name="pref_vpn_excluded_apps_description">Configure quais aplicativos não devem usar a VPN para que nenhuma conexão seja bloqueada.</string>
     <string name="pref_vpn_exclude_system_apps">Excluir aplicativos do sistema</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -22,7 +20,6 @@
     <string name="pref_vpn_exclude_user_apps_deselect_all">Remover todos</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ícone do aplicativo</string>
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Solução de problemas</string>
     <string name="pref_vpn_reset">Redefinir VPN</string>
     <string name="pref_vpn_reset_description">Reconstruir a conexão VPN do zero. Use isto se a VPN parar de funcionar (sem acesso à internet ou erros de DNS).</string>
     <string name="pref_vpn_reset_done">Conexão VPN reconstruída.</string>

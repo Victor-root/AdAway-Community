@@ -12,9 +12,7 @@
     <string name="redirect_hosts_description">Pasgemaakte reëls</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS-versoeklogboek</string>
     <string name="home_log_subtitle">Sien wat in reële tyd geblokkeer word</string>
-    <string name="home_help_title">Hulp en wenke</string>
     <string name="home_help_subtitle">Gidse en probleemoplossing</string>
     <string name="home_preferences_subtitle">Stel AdAway op</string>
 

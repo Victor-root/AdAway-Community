@@ -3,8 +3,6 @@ package org.adaway.ui.help;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import org.adaway.AdAwayApplication;
 import org.adaway.R;
 
 public class AboutFragment extends Fragment {
@@ -33,7 +32,7 @@ public class AboutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         TextView versionTextView = view.findViewById(R.id.about_version);
-        versionTextView.setText(getString(R.string.about_version, getVersionName(requireContext())));
+        versionTextView.setText(getString(R.string.about_version, getVersionName()));
 
         setLink(view, R.id.about_source_link, "https://github.com/Victor-root/AdAway-Community");
         setLink(view, R.id.about_issues_link, "https://github.com/Victor-root/AdAway-Community/issues");
@@ -73,15 +72,7 @@ public class AboutFragment extends Fragment {
         return uiModeManager != null && uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
     }
 
-    // getPackageInfo(String, int) is deprecated in favour of a PackageInfoFlags overload that
-    // only exists from Android 13 on, and the minimum supported here is Android 8.
-    @SuppressWarnings("deprecation")
-    private static String getVersionName(Context context) {
-        try {
-            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-            return info.versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            return "";
-        }
+    private String getVersionName() {
+        return ((AdAwayApplication) requireActivity().getApplication()).getUpdateModel().getVersionName();
     }
 }

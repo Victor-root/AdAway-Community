@@ -18,19 +18,10 @@
         <item quantity="one">%d outdated source</item>
         <item quantity="other">%d outdated sources</item>
     </plurals>
-    <string name="check_hosts_update_description">Check for hosts updates</string>
     <string name="update_hosts_description">Update hosts</string>
 
-    <!-- Log card -->
-    <string name="log_label">Show DNS request log</string>
-
-    <!-- Help card -->
-    <string name="help_label">Show help\nand tips</string>
-
     <!-- Home action rows (redesigned home screen) -->
-    <string name="home_log_title">DNS request log</string>
     <string name="home_log_subtitle">See what\'s blocked in real time</string>
-    <string name="home_help_title">Help &amp; tips</string>
     <string name="home_help_subtitle">Guides and troubleshooting</string>
     <string name="home_preferences_subtitle">Configure AdAway</string>
 
@@ -42,11 +33,6 @@
          vpn_persistence_* strings, since the TV home screen shows that same dialog. -->
     <string name="home_persistence_subtitle">Keep ad blocking running in the background</string>
     <string name="home_persistence_settings_unavailable">VPN settings are not available on this device.</string>
-
-    <!-- Project card -->
-    <string name="project_label">Open GitHub page</string>
-
-    <!-- Support card -->
 
     <!-- About tab -->
     <string name="help_tab_about">About</string>
@@ -60,14 +46,10 @@
     <string name="about_license_label">License: GNU General Public License v3.0 or later (GPLv3+)</string>
 
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub project</string>
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Open navigation drawer</string>
     <string name="adblock_pause_button_description">Pause/resume ad blocking</string>
-    <string name="update_button">Update blocked domains</string>
-    <string name="show_log_button">Show requested domains</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Please read Help for more information.</string>

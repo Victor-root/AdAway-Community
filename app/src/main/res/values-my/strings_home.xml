@@ -9,9 +9,7 @@
     <string name="redirect_hosts_description">စိတ်ကြိုက်စည်းမျဉ်းများ</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS တောင်းဆိုမှု မှတ်တမ်း</string>
     <string name="home_log_subtitle">ပိတ်ဆို့ထားသည့်အရာများကို အချိန်နှင့်တစ်ပြေးညီ ကြည့်ရှုပါ</string>
-    <string name="home_help_title">အကူအညီနှင့် အကြံပြုချက်များ</string>
     <string name="home_help_subtitle">လမ်းညွှန်များနှင့် ပြဿနာဖြေရှင်းခြင်း</string>
     <string name="home_preferences_subtitle">AdAway ကို ပြင်ဆင်သတ်မှတ်ပါ</string>
 

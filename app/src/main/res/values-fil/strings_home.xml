@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">Mga custom na panuntunan</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Log ng mga kahilingan sa DNS</string>
     <string name="home_log_subtitle">Tingnan kung ano ang naka-block nang real time</string>
-    <string name="home_help_title">Tulong at mga tip</string>
     <string name="home_help_subtitle">Mga gabay at pag-troubleshoot</string>
     <string name="home_preferences_subtitle">I-configure ang AdAway</string>
 

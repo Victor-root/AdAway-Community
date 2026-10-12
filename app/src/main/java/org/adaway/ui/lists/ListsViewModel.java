@@ -144,10 +144,6 @@ public class ListsViewModel extends AndroidViewModel {
         setFilter(newFilter);
     }
 
-    public boolean isSearching() {
-        return !getFilter().query.isEmpty();
-    }
-
     public void clearSearch() {
         ListsFilter currentFilter = getFilter();
         ListsFilter newFilter = new ListsFilter(currentFilter.sourcesIncluded, "");

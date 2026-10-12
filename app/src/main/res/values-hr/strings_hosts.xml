@@ -7,11 +7,7 @@
     <string name="hosts_stevenblack_source">StevenBlack objedinjeni poslužitelji</string>
     <string name="hosts_peterlowe_source">Pete Lowe blokirani poslužitelji</string>
     <!-- List -->
-    <string name="hosts_not_available">nedostupno</string>
     <string name="hosts_count">%sposlužitelj(a)</string>
     <!-- Edition dialog -->
     <string name="hosts_add_dialog_title">Dodaj izvor</string>
-    <string name="hosts_edit_dialog_title">Uredi izvor</string>
-    <string name="hosts_dialog_url">URL: (https:// ili file:// izvor)</string>
-    <string name="hosts_dialog_url_hint">URL izvora poslužitelja</string>
 </resources>

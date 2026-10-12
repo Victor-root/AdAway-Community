@@ -7,11 +7,7 @@
     <string name="hosts_stevenblack_source">Hosts unificados de StevenBlack</string>
     <string name="hosts_peterlowe_source">Hosts de listas de bloqueio de Pete Lowe</string>
     <!-- List -->
-    <string name="hosts_not_available">não disponível</string>
     <string name="hosts_count">%s hosts</string>
     <!-- Edition dialog -->
     <string name="hosts_add_dialog_title">Adicionar fonte</string>
-    <string name="hosts_edit_dialog_title">Editar fonte</string>
-    <string name="hosts_dialog_url">URL: (um recurso https:// ou file://)</string>
-    <string name="hosts_dialog_url_hint">O URL fonte de hosts</string>
 </resources>

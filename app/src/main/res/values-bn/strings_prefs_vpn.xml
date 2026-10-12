@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">সমস্যা সমাধান</string>
     <string name="pref_vpn_reset">VPN রিসেট করুন</string>
     <string name="pref_vpn_reset_description">VPN সংযোগ একদম নতুন করে তৈরি করুন। VPN কাজ করা বন্ধ করলে (ইন্টারনেট অ্যাক্সেস না থাকলে বা DNS ত্রুটি হলে) এটি ব্যবহার করুন।</string>
     <string name="pref_vpn_reset_done">VPN সংযোগ পুনর্নির্মাণ করা হয়েছে।</string>

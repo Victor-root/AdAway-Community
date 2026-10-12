@@ -15,29 +15,13 @@
         <item quantity="one">%d inaktuell källa</item>
         <item quantity="other">%d inaktuella källor</item>
     </plurals>
-    <string name="check_hosts_update_description">Check for hosts updates</string>
     <string name="update_hosts_description">Uppdatera värdar</string>
 
-    <!-- Log card -->
-    <string name="log_label">Show DNS request log</string>
-
-    <!-- Help card -->
-    <string name="help_label">Show help\nand tips</string>
-
-    <!-- Project card -->
-    <string name="project_label">Öppna GitHub-sidan</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub project</string>
     <string name="preferences_drawer_item">Inställningar</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Öppna navigeringsmapp</string>
     <string name="adblock_pause_button_description">Pausa/återuppta annonsblockering</string>
-    <string name="update_button">Uppdatera blockerade domäner</string>
-    <string name="show_log_button">Visa begärda domäner</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Läs Hjälp för mer information.</string>
@@ -48,9 +32,7 @@
     <string name="redirect_hosts_description">Anpassade regler</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Logg över DNS-förfrågningar</string>
     <string name="home_log_subtitle">Se vad som blockeras i realtid</string>
-    <string name="home_help_title">Hjälp och tips</string>
     <string name="home_help_subtitle">Guider och felsökning</string>
     <string name="home_preferences_subtitle">Konfigurera AdAway</string>
 

@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">مسائل کا حل</string>
     <string name="pref_vpn_reset">VPN ری سیٹ کریں</string>
     <string name="pref_vpn_reset_description">VPN کنکشن کو نئے سرے سے دوبارہ بنائیں۔ اگر VPN کام کرنا بند کر دے (انٹرنیٹ تک رسائی نہ ہو یا DNS کی خرابیاں ہوں) تو اسے استعمال کریں۔</string>
     <string name="pref_vpn_reset_done">VPN کنکشن دوبارہ بنا دیا گیا۔</string>

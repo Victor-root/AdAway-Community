@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">Bloqueador de publicidade baseado en VPN</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Habilitar no arranque</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Aplicacións excluídas</string>
     <string name="pref_vpn_excluded_apps_description">Configure cales aplicacións non deberían utilizar a VPN para que non se bloqueen súas conexións.</string>
     <string name="pref_vpn_exclude_system_apps">Excluír aplicacións do sistema</string>
     <string name="pref_vpn_exclude_user_apps">Excluír aplicacións do usuario</string>
@@ -16,7 +14,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">Icona da aplicación</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Resolución de problemas</string>
     <string name="pref_vpn_reset">Restablecer a VPN</string>
     <string name="pref_vpn_reset_description">Reconstrúe a conexión VPN desde cero. Usa isto se a VPN deixa de funcionar (sen acceso a internet ou con erros de DNS).</string>
     <string name="pref_vpn_reset_done">Conexión VPN reconstruída.</string>

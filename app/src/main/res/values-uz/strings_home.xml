@@ -7,9 +7,7 @@
     <string name="blocked_hosts_description">Reklama va kuzatuvchilar</string>
     <string name="allowed_hosts_description">Istisnolar</string>
     <string name="redirect_hosts_description">Maxsus qoidalar</string>
-    <string name="home_log_title">DNS soʻrovlari jurnali</string>
     <string name="home_log_subtitle">Nima bloklanayotganini real vaqtda koʻring</string>
-    <string name="home_help_title">Yordam va maslahatlar</string>
     <string name="home_help_subtitle">Qoʻllanmalar va muammolarni bartaraf etish</string>
     <string name="home_preferences_subtitle">AdAwayni sozlash</string>
     <string name="home_tile_log">DNS jurnali</string>

@@ -15,29 +15,13 @@
         <item quantity="one">%d outdated source</item>
         <item quantity="other">%d ξεπερασμένες πηγές</item>
     </plurals>
-    <string name="check_hosts_update_description">Έλεγχος για ενημερώσεις αρχείου hosts</string>
     <string name="update_hosts_description">Ενημέρωση του αρχείου hosts</string>
 
-    <!-- Log card -->
-    <string name="log_label">Εμφάνιση αρχείου καταγραφής αιτήσεων DNS</string>
-
-    <!-- Help card -->
-    <string name="help_label">Εμφάνιση βοήθειας\nκαι συμβουλών</string>
-
-    <!-- Project card -->
-    <string name="project_label">Ανοίξτε τη σελίδα GitHub </string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub project</string>
     <string name="preferences_drawer_item">Προτιμήσεις</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Ανοίξτε το συρτάρι πλοήγησης</string>
     <string name="adblock_pause_button_description">Παύση/συνέχιση αποκλεισμού διαφημίσεων</string>
-    <string name="update_button">Ενημέρωση αποκλεισμένων domains</string>
-    <string name="show_log_button">Εμφάνιση ζητημένων domains</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Παρακαλούμε ανατρέξτε στην Βοήθεια για περισσότερες πληροφορίες</string>
@@ -48,9 +32,7 @@
     <string name="redirect_hosts_description">Προσαρμοσμένοι κανόνες</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Αρχείο καταγραφής αιτήσεων DNS</string>
     <string name="home_log_subtitle">Δείτε τι αποκλείεται σε πραγματικό χρόνο</string>
-    <string name="home_help_title">Βοήθεια και συμβουλές</string>
     <string name="home_help_subtitle">Οδηγοί και αντιμετώπιση προβλημάτων</string>
     <string name="home_preferences_subtitle">Διαμόρφωση του AdAway</string>
 

@@ -10,14 +10,6 @@ Use `./gradlew :app:lint` to run the linter and produce (human readable) reports
 > [!IMPORTANT] 
 > Check no new warning was introduced before releasing.
 
-### SonarCloud analysis
-
-The AdAway application source code is [analyzed by SonarCloud](https://sonarcloud.io/dashboard?id=org.adaway) to find bugs, code smells and compute technical debt.
-While the overall score may be not perfect, each new release should not increase it.  
-
-> [!IMPORTANT]
-> Check no new bug nor debt was introduced before releasing.
-
 ## 2. Updating application version
 
 Each version has its own number that follows the [Semantic Versioning](https://semver.org/) principle (starting from version 4).

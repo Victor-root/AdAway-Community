@@ -7,9 +7,7 @@
     <string name="blocked_hosts_description">Iklan &amp; penjejak</string>
     <string name="allowed_hosts_description">Pengecualian</string>
     <string name="redirect_hosts_description">Peraturan tersuai</string>
-    <string name="home_log_title">Log permintaan DNS</string>
     <string name="home_log_subtitle">Lihat perkara yang disekat secara masa nyata</string>
-    <string name="home_help_title">Bantuan &amp; petua</string>
     <string name="home_help_subtitle">Panduan dan penyelesaian masalah</string>
     <string name="home_preferences_subtitle">Konfigurasikan AdAway</string>
     <string name="home_tile_log">Log DNS</string>

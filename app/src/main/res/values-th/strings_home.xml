@@ -12,9 +12,7 @@
     <string name="redirect_hosts_description">กฎที่กำหนดเอง</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">บันทึกคำขอ DNS</string>
     <string name="home_log_subtitle">ดูสิ่งที่ถูกบล็อกแบบเรียลไทม์</string>
-    <string name="home_help_title">ความช่วยเหลือและเคล็ดลับ</string>
     <string name="home_help_subtitle">คู่มือและการแก้ไขปัญหา</string>
     <string name="home_preferences_subtitle">กำหนดค่า AdAway</string>
 

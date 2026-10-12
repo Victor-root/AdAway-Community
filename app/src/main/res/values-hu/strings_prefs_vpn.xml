@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">VPN alapú hirdetésblokkolás</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Engedélyezés indításkor</string>
     <string name="pref_vpn_service_monitor">Kapcsolat figyelő</string>
     <string name="pref_vpn_service_monitor_description">Rendszeresen ellenőrzi a hálózat állapotát a VPN újraindításához a szétkapcsoláskor.</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Kizárt alkalmazások</string>
     <string name="pref_vpn_excluded_apps_description">Állítsa be, mely alkalmazások ne használják a VPN-t. Így egyetlen kapcsolat sem lesz blokkolva.</string>
     <string name="pref_vpn_exclude_system_apps">Rendszeralkalmazások kizárása</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">Application icon</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Hibaelhárítás</string>
     <string name="pref_vpn_reset">VPN visszaállítása</string>
     <string name="pref_vpn_reset_description">A VPN-kapcsolat teljes újraépítése. Használja, ha a VPN nem működik többé (nincs internet-hozzáférés vagy DNS-hibák).</string>
     <string name="pref_vpn_reset_done">A VPN-kapcsolat újraépítve.</string>

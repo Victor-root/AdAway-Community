@@ -8,7 +8,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Resolución de problemes</string>
     <string name="pref_vpn_reset">Reaniciar la VPN</string>
     <string name="pref_vpn_reset_description">Reconstruyi la conexón VPN dende cero. Usa esto si la VPN dexa de furrular (ensin accesu a internet o con errores DNS).</string>
     <string name="pref_vpn_reset_done">Reconstruyóse la conexón VPN.</string>

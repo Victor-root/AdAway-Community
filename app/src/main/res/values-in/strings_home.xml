@@ -13,29 +13,13 @@
     <plurals name="outdated_source_label">
         <item quantity="other">%d sumber usang</item>
     </plurals>
-    <string name="check_hosts_update_description">Mengecek pembaruan host</string>
     <string name="update_hosts_description">Perbaharui daftar</string>
 
-    <!-- Log card -->
-    <string name="log_label">Perlihatkan log DNS requests</string>
-
-    <!-- Help card -->
-    <string name="help_label">Tampilkan bantuan\ndan tips</string>
-
-    <!-- Project card -->
-    <string name="project_label">Buka GitHub Page</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">Proyek GitHub</string>
     <string name="preferences_drawer_item">Pengaturan</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Buka laci navigasi</string>
     <string name="adblock_pause_button_description">Jeda / lanjutkan pemblokiran iklan</string>
-    <string name="update_button">Perbarui domain yang diblokir</string>
-    <string name="show_log_button">Tampilkan domain yang diminta</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Silahkan baca Help untuk informasi lebih lanjut.</string>
@@ -46,9 +30,7 @@
     <string name="redirect_hosts_description">Aturan khusus</string>
 
     <!-- Home action rows (redesigned home screen) -->
-    <string name="home_log_title">Log permintaan DNS</string>
     <string name="home_log_subtitle">Lihat apa yang diblokir secara real-time</string>
-    <string name="home_help_title">Bantuan &amp; tips</string>
     <string name="home_help_subtitle">Panduan dan pemecahan masalah</string>
     <string name="home_preferences_subtitle">Konfigurasikan AdAway</string>
 

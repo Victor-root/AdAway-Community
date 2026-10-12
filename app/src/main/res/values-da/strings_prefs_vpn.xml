@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Fejlfinding</string>
     <string name="pref_vpn_reset">Nulstil VPN</string>
     <string name="pref_vpn_reset_description">Genopbyg VPN-forbindelsen helt fra bunden. Brug dette, hvis VPN\'en holder op med at virke (ingen internetadgang eller DNS-fejl).</string>
     <string name="pref_vpn_reset_done">VPN-forbindelsen er genopbygget.</string>

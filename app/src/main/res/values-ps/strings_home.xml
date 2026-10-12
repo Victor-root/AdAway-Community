@@ -5,7 +5,6 @@
     <string name="blocked_hosts_label">تړلی </string>
     <string name="allowed_hosts_label">پرېښلی</string>
     <!-- Help card -->
-    <string name="help_label">مرسته ښودل</string>
 
     <string name="preferences_drawer_item">غورتياوې</string>
 
@@ -18,9 +17,7 @@
     <string name="redirect_hosts_description">دودیز قواعد</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">د DNS غوښتنو یادښت</string>
     <string name="home_log_subtitle">وګورئ چې په ریښتیني وخت کې څه بند شوي دي</string>
-    <string name="home_help_title">مرسته او لارښوونې</string>
     <string name="home_help_subtitle">لارښودونه او د ستونزو حل</string>
     <string name="home_preferences_subtitle">AdAway تنظیم کړئ</string>
 

@@ -19,7 +19,6 @@ import androidx.lifecycle.MutableLiveData;
 import org.adaway.AdAwayApplication;
 import org.adaway.model.update.Manifest;
 import org.adaway.model.update.UpdateModel;
-import org.adaway.ui.adware.AdwareViewModel;
 import org.adaway.util.AppExecutors;
 
 import java.util.concurrent.Executor;
@@ -31,7 +30,7 @@ import timber.log.Timber;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class UpdateViewModel extends AdwareViewModel {
+public class UpdateViewModel extends AndroidViewModel {
     private static final Executor NETWORK_IO = AppExecutors.getInstance().networkIO();
     private final UpdateModel updateModel;
     private final MutableLiveData<DownloadStatus> downloadProgress;

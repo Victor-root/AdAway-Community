@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">Egendefinerte regler</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Logg over DNS-forespørsler</string>
     <string name="home_log_subtitle">Se hva som blokkeres i sanntid</string>
-    <string name="home_help_title">Hjelp og tips</string>
     <string name="home_help_subtitle">Veiledninger og feilsøking</string>
     <string name="home_preferences_subtitle">Konfigurer AdAway</string>
 

@@ -7,7 +7,6 @@
     </string-array>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Rešavanje problema</string>
     <string name="pref_vpn_reset">Resetuj VPN</string>
     <string name="pref_vpn_reset_description">Ponovo izgradite VPN vezu od nule. Koristite ovo ako VPN prestane da radi (nema pristupa internetu ili postoje DNS greške).</string>
     <string name="pref_vpn_reset_done">VPN veza je ponovo uspostavljena.</string>

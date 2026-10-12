@@ -16,14 +16,6 @@
         <item quantity="other">%d aegunud allikat</item>
     </plurals>
 
-    <!-- Help card -->
-    <string name="help_label">Kuva abi</string>
-
-    <!-- Project card -->
-    <string name="project_label">Ava GitHubi leht</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
     <string name="preferences_drawer_item">Eelistused</string>
 
@@ -37,9 +29,7 @@
     <string name="redirect_hosts_description">Kohandatud reeglid</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">DNS-päringute logi</string>
     <string name="home_log_subtitle">Vaata reaalajas, mis on blokeeritud</string>
-    <string name="home_help_title">Abi ja näpunäited</string>
     <string name="home_help_subtitle">Juhendid ja tõrkeotsing</string>
     <string name="home_preferences_subtitle">Seadista AdAway</string>
 

@@ -100,10 +100,6 @@ public class UpdateModel {
         editor.apply();
     }
 
-    public int getVersionCode() {
-        return this.versionInfo.code;
-    }
-
     public String getVersionName() {
         return this.versionInfo.name;
     }

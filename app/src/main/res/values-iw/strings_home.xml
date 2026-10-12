@@ -19,29 +19,13 @@
         <item quantity="many">%d outdated sources</item>
         <item quantity="other">%d מקורות לא מעודכנים</item>
     </plurals>
-    <string name="check_hosts_update_description">בדוק אחר עדכוני מארחים</string>
     <string name="update_hosts_description">עדכן מארחים</string>
 
-    <!-- Log card -->
-    <string name="log_label">הצג יומן בקשות DNS</string>
-
-    <!-- Help card -->
-    <string name="help_label">הצג טיפים/עזרה</string>
-
-    <!-- Project card -->
-    <string name="project_label">פתיחת דף GitHub</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">פרויקט ה־GitHub</string>
     <string name="preferences_drawer_item">העדפות</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">פתיחת מגירת הניווט</string>
     <string name="adblock_pause_button_description">השהה/המשך חוסם פרסומות</string>
-    <string name="update_button">עדכון דומיינים חסומים</string>
-    <string name="show_log_button">הצגת דומיינים מבוקשים</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">קרא את העזרה למידע נוסף.</string>
@@ -52,9 +36,7 @@
     <string name="redirect_hosts_description">כללים מותאמים אישית</string>
 
     <!-- Home action rows (redesigned home screen) -->
-    <string name="home_log_title">יומן בקשות DNS</string>
     <string name="home_log_subtitle">לראות מה נחסם בזמן אמת</string>
-    <string name="home_help_title">עזרה וטיפים</string>
     <string name="home_help_subtitle">מדריכים ופתרון בעיות</string>
     <string name="home_preferences_subtitle">להגדיר את AdAway</string>
 

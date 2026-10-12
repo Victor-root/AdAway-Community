@@ -19,29 +19,13 @@
         <item quantity="many">%d zastaralé zdroje</item>
         <item quantity="other">%d zastaralých zdrojů</item>
     </plurals>
-    <string name="check_hosts_update_description">Zkontrolovat aktualizace hostitelů</string>
     <string name="update_hosts_description">Aktualizovat hostitele</string>
 
-    <!-- Log card -->
-    <string name="log_label">Zobrazit záznam DNS požadavků</string>
-
-    <!-- Help card -->
-    <string name="help_label">Zobrazit nápovědu\na tipy</string>
-
-    <!-- Project card -->
-    <string name="project_label">Otevřít stránku GitHub</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub projekt</string>
     <string name="preferences_drawer_item">Nastavení</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Otevřít navigační panel</string>
     <string name="adblock_pause_button_description">Pozastavit/pokračovat v blokování reklam</string>
-    <string name="update_button">Aktualizovat zablokované domény</string>
-    <string name="show_log_button">Zobrazit požadované domény</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Pro více informací si prosím přečtěte nápovědu.</string>
@@ -52,9 +36,7 @@
     <string name="redirect_hosts_description">Vlastní pravidla</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Záznam DNS požadavků</string>
     <string name="home_log_subtitle">Sledujte, co se blokuje, v reálném čase</string>
-    <string name="home_help_title">Nápověda a tipy</string>
     <string name="home_help_subtitle">Návody a řešení problémů</string>
     <string name="home_preferences_subtitle">Nastavte AdAway</string>
 

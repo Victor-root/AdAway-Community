@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">Блакавальнік рэкламы на аснове VPN</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">Уключыць пры запуску</string>
     <string name="pref_vpn_service_monitor">Праверка злучэнне</string>
     <string name="pref_vpn_service_monitor_description">Перыядычна правярайце стан сеткі, каб перазапусціць VPN пры адключэнні.</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">Выключаныя праграмы</string>
     <string name="pref_vpn_excluded_apps_description">Наладзьце, якія праграмы не павінны выкарыстоўваць VPN, каб злучэнні не былі заблакаваныя.</string>
     <string name="pref_vpn_exclude_system_apps">Выключыць сістэмныя праграмы</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">Значок праграмы</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">Выпраўленне непаладак</string>
     <string name="pref_vpn_reset">Скінуць VPN</string>
     <string name="pref_vpn_reset_description">Перабудаваць злучэнне VPN з нуля. Скарыстайцеся гэтым, калі VPN перастаў працаваць (няма доступу да інтэрнэту або памылкі DNS).</string>
     <string name="pref_vpn_reset_done">Злучэнне VPN перабудавана.</string>

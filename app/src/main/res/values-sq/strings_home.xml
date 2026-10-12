@@ -19,9 +19,7 @@
     <string name="redirect_hosts_description">Rregulla të personalizuara</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Regjistri i kërkesave DNS</string>
     <string name="home_log_subtitle">Shikoni çfarë bllokohet në kohë reale</string>
-    <string name="home_help_title">Ndihmë dhe këshilla</string>
     <string name="home_help_subtitle">Udhëzues dhe zgjidhje problemesh</string>
     <string name="home_preferences_subtitle">Konfiguroni AdAway</string>
 

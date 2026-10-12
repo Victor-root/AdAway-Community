@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">د ستونزو حل</string>
     <string name="pref_vpn_reset">VPN بیا تنظیم کړئ</string>
     <string name="pref_vpn_reset_description">د VPN اړیکه له سره جوړه کړئ. دا هغه وخت وکاروئ چې VPN کار ودروي (د انټرنیټ لاسرسی نشته یا د DNS تېروتنې).</string>
     <string name="pref_vpn_reset_done">د VPN اړیکه بیا جوړه شوه.</string>

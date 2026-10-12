@@ -13,29 +13,13 @@
     <plurals name="outdated_source_label">
         <item quantity="other">%d 個過時來源</item>
     </plurals>
-    <string name="check_hosts_update_description">檢查 hosts 更新</string>
     <string name="update_hosts_description">更新 hosts</string>
 
-    <!-- Log card -->
-    <string name="log_label">顯示 DNS 請求記錄</string>
-
-    <!-- Help card -->
-    <string name="help_label">顯示說明\n與提示</string>
-
-    <!-- Project card -->
-    <string name="project_label">打開 GitHub 頁面</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub 專案</string>
     <string name="preferences_drawer_item">偏好設定</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">打開導覽抽屜</string>
     <string name="adblock_pause_button_description">暫停 / 恢復廣告阻擋</string>
-    <string name="update_button">更新阻擋網域</string>
-    <string name="show_log_button">顯示要求的網域</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">請閱讀說明以獲得更多訊息。</string>
@@ -44,9 +28,7 @@
     <string name="blocked_hosts_description">廣告與追蹤器</string>
     <string name="allowed_hosts_description">例外</string>
     <string name="redirect_hosts_description">自訂規則</string>
-    <string name="home_log_title">DNS 請求記錄</string>
     <string name="home_log_subtitle">即時查看被阻擋的內容</string>
-    <string name="home_help_title">說明與提示</string>
     <string name="home_help_subtitle">指南與疑難排解</string>
     <string name="home_preferences_subtitle">設定 AdAway</string>
     <string name="home_tile_log">DNS 記錄</string>

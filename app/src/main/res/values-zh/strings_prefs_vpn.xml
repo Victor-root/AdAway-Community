@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_vpn_title">基于 VPN 的广告拦截器</string>
     <!-- Service configuration -->
     <string name="pref_vpn_service_on_boot">启动时启用</string>
     <string name="pref_vpn_service_monitor">监视连接</string>
     <string name="pref_vpn_service_monitor_description">定期检查网络状态以便在断开连接时重新启动 VPN。</string>
     <!-- Excluded applications -->
-    <string name="pref_vpn_excluded_apps">排除的应用</string>
     <string name="pref_vpn_excluded_apps_description">配置哪些应用程序不应使用 VPN，以防止其连接被错误阻止。</string>
     <string name="pref_vpn_exclude_system_apps">排除系统应用程序</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
@@ -23,7 +21,6 @@
     <string name="pref_vpn_exclude_user_apps_icon">应用程序图标</string>
 
     <!-- Troubleshooting -->
-    <string name="pref_vpn_troubleshooting">故障排除</string>
     <string name="pref_vpn_reset">重置 VPN</string>
     <string name="pref_vpn_reset_description">从头重建 VPN 连接。如果 VPN 停止工作（无法访问互联网或出现 DNS 错误），请使用此功能。</string>
     <string name="pref_vpn_reset_done">VPN 连接已重建。</string>

@@ -15,29 +15,13 @@
         <item quantity="one">%d outdated source</item>
         <item quantity="other">%d kaynaklar güncel değil</item>
     </plurals>
-    <string name="check_hosts_update_description">Hosts güncellemelerini kontrol et</string>
     <string name="update_hosts_description">Host\'u güncelle</string>
 
-    <!-- Log card -->
-    <string name="log_label">DNS istek günlüğünü göster</string>
-
-    <!-- Help card -->
-    <string name="help_label">Yardım\ipuçlarını göster</string>
-
-    <!-- Project card -->
-    <string name="project_label">GitHub sayfasını aç</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">GitHub projesi</string>
     <string name="preferences_drawer_item">Tercihler</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Gezinme çekmecesini aç</string>
     <string name="adblock_pause_button_description">Reklam engellemeyi duraklat/devam ettir</string>
-    <string name="update_button">Engellenen alan adlarını güncelle</string>
-    <string name="show_log_button">Alan adlarının isteklerini göster</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Daha fazla bilgi için Yardım\'ı okuyunuz.</string>
@@ -46,9 +30,7 @@
     <string name="blocked_hosts_description">Reklamlar ve izleyiciler</string>
     <string name="allowed_hosts_description">İstisnalar</string>
     <string name="redirect_hosts_description">Özel kurallar</string>
-    <string name="home_log_title">DNS istek günlüğü</string>
     <string name="home_log_subtitle">Neyin engellendiğini gerçek zamanlı görün</string>
-    <string name="home_help_title">Yardım ve ipuçları</string>
     <string name="home_help_subtitle">Kılavuzlar ve sorun giderme</string>
     <string name="home_preferences_subtitle">AdAway\'i yapılandırın</string>
     <string name="home_tile_log">DNS günlüğü</string>

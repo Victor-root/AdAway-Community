@@ -20,9 +20,7 @@
     <string name="blocked_hosts_description">പരസ്യങ്ങളും ട്രാക്കറുകളും</string>
     <string name="allowed_hosts_description">ഒഴിവാക്കലുകൾ</string>
     <string name="redirect_hosts_description">ഇഷ്‌ടാനുസൃത നിയമങ്ങൾ</string>
-    <string name="home_log_title">DNS അഭ്യർത്ഥന ലോഗ്</string>
     <string name="home_log_subtitle">തടയുന്നത് തത്സമയം കാണുക</string>
-    <string name="home_help_title">സഹായവും നുറുങ്ങുകളും</string>
     <string name="home_help_subtitle">ഗൈഡുകളും പ്രശ്നപരിഹാരവും</string>
     <string name="home_preferences_subtitle">AdAway കോൺഫിഗർ ചെയ്യുക</string>
     <string name="home_tile_log">DNS ലോഗ്</string>

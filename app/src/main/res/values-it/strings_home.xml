@@ -17,29 +17,13 @@
         <item quantity="many">%d sorgenti obsolete</item>
         <item quantity="other">%d sorgenti obsolete</item>
     </plurals>
-    <string name="check_hosts_update_description">Controlla aggiornamenti host</string>
     <string name="update_hosts_description">Aggiorna gli hosts</string>
 
-    <!-- Log card -->
-    <string name="log_label">Registro richieste DNS</string>
-
-    <!-- Help card -->
-    <string name="help_label">Aiuto</string>
-
-    <!-- Project card -->
-    <string name="project_label">GitHub</string>
-
-    <!-- Support card -->
-
     <!-- App bar drawer -->
-    <string name="github_project_drawer_item">Progetto GitHub</string>
     <string name="preferences_drawer_item">Preferenze</string>
 
     <!-- App bar buttons -->
-    <string name="open_drawer_button_description">Apri menù di navigazione</string>
     <string name="adblock_pause_button_description">Metti in pausa/riprendi blocco pubblicità</string>
-    <string name="update_button">Aggiorna domini bloccati</string>
-    <string name="show_log_button">Mostra domini richiesti</string>
 
     <!-- Error dialog -->
     <string name="error_dialog_help">Leggi l\'aiuto per maggiori informazioni</string>
@@ -50,9 +34,7 @@
     <string name="redirect_hosts_description">Regole personalizzate</string>
 
     <!-- Home action rows (redesigned home screen) -->
-    <string name="home_log_title">Registro richieste DNS</string>
     <string name="home_log_subtitle">Vedi cosa viene bloccato in tempo reale</string>
-    <string name="home_help_title">Aiuto e consigli</string>
     <string name="home_help_subtitle">Guide e risoluzione dei problemi</string>
     <string name="home_preferences_subtitle">Configura AdAway</string>
 

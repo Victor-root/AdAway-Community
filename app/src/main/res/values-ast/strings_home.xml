@@ -22,9 +22,7 @@
     <string name="redirect_hosts_description">Regles personalizaes</string>
 
     <!-- Home action rows -->
-    <string name="home_log_title">Rexistru de solicitúes DNS</string>
     <string name="home_log_subtitle">Mira lo que se bloquia en tiempu real</string>
-    <string name="home_help_title">Ayuda y conseyos</string>
     <string name="home_help_subtitle">Guíes y resolución de problemes</string>
     <string name="home_preferences_subtitle">Configurar AdAway</string>
 

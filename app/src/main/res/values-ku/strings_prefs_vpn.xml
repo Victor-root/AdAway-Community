@@ -5,7 +5,6 @@
         <item>All except browsers</item>
         <item>All</item>
     </string-array>
-        <string name="pref_vpn_troubleshooting">Çareserkirina pirsgirêkan</string>
     <string name="pref_vpn_reset">VPN ji nû ve saz bike</string>
     <string name="pref_vpn_reset_description">Girêdana VPN ji nû ve ava bike. Vê bikar bîne heke VPN bêkar bibe (gihîştina înternetê tune an xeletiyên DNS).</string>
     <string name="pref_vpn_reset_done">Girêdana VPN ji nû ve hate avakirin.</string>
