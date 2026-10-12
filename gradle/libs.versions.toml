@@ -3,6 +3,18 @@
 appName = "6.6.1-c"
 appCode = "60601" # Read x.yy.zz to match version name (suffix "-c" = community fork, ignored by code)
 gradle = "8.7.2"
+# AndroidX
+appcompat = "1.7.0"
+cardview = "1.0.0"
+constraintlayout = "2.1.4"
+fragment = "1.8.1"
+paging = "3.3.0"
+preference = "1.2.1"
+recyclerview = "1.3.2"
+room = "2.6.1"
+swiperefreshlayout = "1.1.0"
+work = "2.8.1"
+material = "1.9.0"
 # Common
 guava = "32.0.1-android"
 junitVersion = "1.2.1"
@@ -26,6 +38,20 @@ androidXCoreTesting = "2.2.0"
 [libraries]
 # Build
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+# AndroidX
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "fragment" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
+androidx-preference = { module = "androidx.preference:preference", version.ref = "preference" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "work" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
 # Common
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 okhttp3-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }

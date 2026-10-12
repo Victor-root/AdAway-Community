@@ -1,5 +1,6 @@
 package org.adaway.ui.prefs;
 
+import android.annotation.SuppressLint;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -106,6 +107,7 @@ class FocusSkippingPreferenceGroupAdapter extends RecyclerView.Adapter<RecyclerV
      * shown) to the list.
      */
     private class ForwardingObserver extends RecyclerView.AdapterDataObserver {
+        @SuppressLint("NotifyDataSetChanged") // Forwards the stock adapter's own full refresh
         @Override
         public void onChanged() {
             notifyDataSetChanged();
