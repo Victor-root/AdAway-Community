@@ -90,7 +90,7 @@ import timber.log.Timber;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class VpnService extends android.net.VpnService implements Handler.Callback {
+public final class VpnService extends android.net.VpnService implements Handler.Callback {
     /*
      * Notification intent related.
      */
@@ -101,6 +101,11 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
      */
     private static final int VPN_STATUS_UPDATE_MESSAGE_TYPE = 0;
 
+    /**
+     * Whether the service exists in this process. The service runs in the application process,
+     * so an external kill of the process clears it with the service.
+     */
+    private static volatile boolean alive;
     private final MyHandler handler;
     private final NetworkTypeCallback wifiNetworkCallback;
     private final NetworkTypeCallback cellularNetworkCallback;
@@ -180,6 +185,15 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
     }
 
     /**
+     * Check whether the service is alive, created and not destroyed yet.
+     *
+     * @return {@code true} if the service is alive, {@code false} otherwise.
+     */
+    static boolean isAlive() {
+        return alive;
+    }
+
+    /**
      * Set the transport the tunnel is currently built for, resetting the observed DNS snapshot so
      * the next {@link NetworkTypeCallback#onLinkPropertiesChanged} for the new transport is recorded
      * fresh instead of being compared against the previous transport's (or a stale session's) DNS.
@@ -198,6 +212,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
     @Override
     public void onCreate() {
         Timber.i("Creating VPN service…");
+        alive = true;
         registerNetworkCallback();
     }
 
@@ -238,6 +253,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
     public void onDestroy() {
         Timber.i("Destroying VPN service…");
         unregisterNetworkCallback();
+        alive = false;
         Timber.d("Destroyed VPN service.");
     }
 

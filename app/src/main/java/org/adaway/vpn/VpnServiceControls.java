@@ -1,13 +1,10 @@
 package org.adaway.vpn;
 
-import static android.content.Context.ACTIVITY_SERVICE;
-import static java.lang.Integer.MAX_VALUE;
 import static org.adaway.broadcast.Command.START;
 import static org.adaway.broadcast.Command.STOP;
 import static org.adaway.model.adblocking.AdBlockMethod.VPN;
 import static org.adaway.vpn.VpnStatus.STOPPED;
 
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 
@@ -36,7 +33,7 @@ public final class VpnServiceControls {
      */
     public static boolean isRunning(Context context) {
         VpnStatus status = PreferenceHelper.getVpnServiceStatus(context);
-        if (status.isStarted() && !isVpnServiceAlive(context)) {
+        if (status.isStarted() && !isVpnServiceAlive()) {
             // The process was killed externally (OEM battery manager force-stop, crash)
             // without a chance to persist the stop: the stored status lies. Fix it so the
             // UI shows the truth. The check targets OUR service specifically, not "any
@@ -51,23 +48,12 @@ public final class VpnServiceControls {
     }
 
     /**
-     * Check whether this application's {@link VpnService} is actually alive, as seen by the
-     * system, regardless of what the persisted status claims. Survives external process kills:
-     * a fresh process asks the system, it does not trust its own memory.
-     * <p>
-     * {@link ActivityManager#getRunningServices(int)} is deprecated but still returns the
-     * caller's own services, which is the only use here.
+     * Check whether this application's {@link VpnService} is actually alive, regardless of what
+     * the persisted status claims. Survives external process kills: a fresh process has no
+     * service.
      */
-    @SuppressWarnings("deprecation")
-    public static boolean isVpnServiceAlive(Context context) {
-        String serviceName = VpnService.class.getName();
-        ActivityManager manager = (ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
-        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(MAX_VALUE)) {
-            if (serviceName.equals(service.service.getClassName())) {
-                return true;
-            }
-        }
-        return false;
+    public static boolean isVpnServiceAlive() {
+        return VpnService.isAlive();
     }
 
     /**
@@ -90,7 +76,7 @@ public final class VpnServiceControls {
         if (!VpnStartDecision.mayBackgroundStart(userEnabled)) {
             return;
         }
-        if (isVpnServiceAlive(context)) {
+        if (isVpnServiceAlive()) {
             return;
         }
         Timber.i("VPN was killed externally while user-enabled; restarting it.");

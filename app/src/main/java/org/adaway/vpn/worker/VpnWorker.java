@@ -54,11 +54,13 @@ import java.util.function.Consumer;
 
 import timber.log.Timber;
 
-// TODO Write document
-// TODO It is thread safe
-// TODO Rework status notification
-// TODO Improve exception handling in work()
-public class VpnWorker implements DnsPacketProxy.EventLoop {
+/**
+ * This class runs the VPN tunnel: it establishes the VPN interface, reads the DNS queries the
+ * device sends to it, hands them to the {@link DnsPacketProxy} and writes the answers back. It
+ * runs on its own executor, rebuilds the tunnel on errors (throttled by
+ * {@link VpnConnectionThrottler}) and reports the tunnel status to the {@link VpnService}.
+ */
+public final class VpnWorker implements DnsPacketProxy.EventLoop {
     /**
      * Maximum packet size is constrained by the MTU, which is given as a signed short.
      */
@@ -82,7 +84,7 @@ public class VpnWorker implements DnsPacketProxy.EventLoop {
     // The object where we actually handle packets.
     private final DnsPacketProxy dnsPacketProxy;
 
-    // TODO Comment
+    // Limits how often the tunnel is rebuilt after errors.
     private final VpnConnectionThrottler connectionThrottler;
     private final VpnConnectionMonitor connectionMonitor;
 
@@ -407,7 +409,7 @@ public class VpnWorker implements DnsPacketProxy.EventLoop {
         // Read the outgoing packet from the input stream.
         int length = inputStream.read(packet);
         if (length < 0) {
-            // TODO Stream closed. Is there anything else to do?
+            // The tunnel was closed: the caller stops the loop
             Timber.d("Tunnel input stream closed.");
         } else if (length == 0) {
             Timber.d("Read empty packet from tunnel.");
@@ -463,10 +465,6 @@ public class VpnWorker implements DnsPacketProxy.EventLoop {
 
     @Override
     public void queueDeviceWrite(IpPacket ipOutPacket) {
-        byte[] rawData = ipOutPacket.getRawData();
-        // TODO Check why data could be null
-        if (rawData != null) {
-            this.deviceWrites.add(rawData);
-        }
+        this.deviceWrites.add(ipOutPacket.getRawData());
     }
 }

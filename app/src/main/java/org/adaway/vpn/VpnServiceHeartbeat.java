@@ -49,7 +49,7 @@ public class VpnServiceHeartbeat extends Worker {
         // from. Gating on it would disable the recovery it exists for.
         boolean userEnabled = PreferenceHelper.getVpnServiceUserEnabled(context);
         if (VpnStartDecision.mayBackgroundStart(userEnabled)
-                && !VpnServiceControls.isVpnServiceAlive(context)) {
+                && !VpnServiceControls.isVpnServiceAlive()) {
             Timber.i("VPN service is not running while user-enabled. Starting VPN service…");
             VpnServiceControls.start(context);
             Timber.i("VPN service started.");
