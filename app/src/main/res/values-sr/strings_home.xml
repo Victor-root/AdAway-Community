@@ -7,9 +7,6 @@
     <string name="error_dialog_help">Molimo da pročitate Pomoć za više informacija.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Reklame i pratioci</string>
-    <string name="allowed_hosts_description">Izuzeci</string>
-    <string name="redirect_hosts_description">Prilagođena pravila</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Pogledajte šta se blokira u realnom vremenu</string>

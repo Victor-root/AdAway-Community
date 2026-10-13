@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="welcome_title">Welcome</string>
-    <string name="welcome_first_step">Wizard first step</string>
-    <string name="welcome_second_step">Wizard second step</string>
-    <string name="welcome_third_step">Wizard third step</string>
-    <string name="welcome_fourth_step">Wizard fourth step</string>
+    <string name="welcome_first_step">Step 1</string>
+    <string name="welcome_second_step">Step 2</string>
+    <string name="welcome_third_step">Step 3</string>
+    <string name="welcome_fourth_step">Step 4</string>
 
     <!-- Method UI -->
     <string name="welcome_method_header">Welcome to AdAway!</string>
-    <string name="welcome_method_summary">AdAway provides two ad blocking methods. Pick the one you like:</string>
+    <string name="welcome_method_summary">Choose how AdAway blocks ads:</string>
 
     <string name="welcome_root_method_logo">Root logo</string>
-    <string name="welcome_root_method_title">Root based\nad blocking</string>
+    <string name="welcome_root_method_title">Root-based\nad blocking</string>
     <string name="welcome_root_method_text1">Faster</string>
-    <string name="welcome_root_method_text2">Battery friendly</string>
+    <string name="welcome_root_method_text2">Battery-friendly</string>
     <string name="welcome_root_method_text3">Root required</string>
 
     <string name="welcome_vpn_method_logo">VPN logo</string>
-    <string name="welcome_vpn_method_title">VPN based\nad blocking</string>
+    <string name="welcome_vpn_method_title">VPN-based\nad blocking</string>
     <string name="welcome_vpn_method_text1">Slower</string>
-    <string name="welcome_vpn_method_text2">Run in background</string>
-    <string name="welcome_vpn_method_text3">Compatibility</string>
+    <string name="welcome_vpn_method_text2">Always running</string>
+    <string name="welcome_vpn_method_text3">No root needed</string>
 
-    <string name="welcome_root_missing_title">Rooted Android required</string>
-    <string name="welcome_root_missile_description">Either the su binary could not be found or you did not allow root permission for AdAway.\n\nThis can happen when your device is not rooted. You can find information about how to root your device on wiki.lineageos.org or other Android websites.</string>
+    <string name="welcome_root_missing_title">Root access required</string>
+    <string name="welcome_root_missile_description">AdAway could not get root access. Either your device is not rooted, or root access was denied.\n\nIf your device is rooted, grant AdAway root access in your root manager (such as Magisk) and try again.</string>
 
     <string name="welcome_vpn_alwayson_title">Always-on VPN enabled</string>
-    <string name="welcome_vpn_alwayson_description">AdAway detected that another VPN has the "Always-on VPN" setting active.\n\nThis prevents AdAway from requesting VPN access. Please disable "Always-on VPN" on the correspondent VPN and try again.</string>
-    <string name="welcome_vpn_alwayson_blocked_description">AdAway failed to request VPN access.\n\nThis might be caused because another VPN has the "Always-on VPN" setting active. Please, check if any VPN has this setting enabled and disable it before trying again.</string>
-    <string name="welcome_vpn_alwayson_settings_action">Open "VPN" Settings</string>
+    <string name="welcome_vpn_alwayson_description">Another VPN app has \"Always-on VPN\" turned on, which prevents AdAway from starting its VPN.\n\nTurn off \"Always-on VPN\" for that app and try again.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway could not get VPN access.\n\nAnother VPN app may have \"Always-on VPN\" turned on. Turn it off for that app and try again.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Open VPN settings</string>
 
     <string name="welcome_method_pro_logo">Pro</string>
     <string name="welcome_method_con_logo">Con</string>
@@ -41,8 +41,8 @@
     <string name="welcome_synced_header">Synced!</string>
     <string name="welcome_sync_summary">AdAway blocks ads using lists of known ad and tracking domains from trusted online sources. You can change these lists at any time under Hosts sources.</string>
     <string name="welcome_sync_retry_logo">Retry sync</string>
-    <string name="welcome_sync_error">Failed to sync: %1$s Retry now?</string>
-    <string name="welcome_sync_notifications">It can send notifications to display ad block status and control, and to notify about available app update (a few per year). Enable them if you want to stay up-to-date.</string>
+    <string name="welcome_sync_error">Sync failed: %1$s. Retry?</string>
+    <string name="welcome_sync_notifications">AdAway can show notifications for the ad blocking status and controls, and for new app versions (a few times a year). Turn them on to stay up to date.</string>
     <string name="welcome_sync_leave_early_title">Sync not finished yet</string>
     <string name="welcome_sync_leave_early_message">The block lists haven\'t finished downloading. You can continue now and it will keep going in the background, or wait here until it\'s done.</string>
     <string name="welcome_sync_leave_early_wait">Wait</string>
@@ -126,7 +126,7 @@
     <string name="tv_welcome_method_root_button">Use root</string>
     <string name="tv_welcome_method_root_body">Faster and battery-friendly. Requires a rooted device.</string>
     <string name="tv_welcome_method_vpn_button">Use VPN</string>
-    <string name="tv_welcome_method_vpn_body">Works without root, compatible with any Android TV device.</string>
+    <string name="tv_welcome_method_vpn_body">Works without root on any Android TV device.</string>
     <string name="tv_welcome_activate_header">Turn on ad blocking</string>
     <string name="tv_welcome_activate_body">It\'s a local VPN: it filters ads on this device, without routing your traffic through an outside server.</string>
 </resources>

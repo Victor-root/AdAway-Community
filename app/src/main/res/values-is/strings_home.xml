@@ -12,9 +12,6 @@
     </plurals>
 
     <string name="preferences_drawer_item">Preferences</string>
-    <string name="blocked_hosts_description">Auglýsingar og rekjarar</string>
-    <string name="allowed_hosts_description">Undantekningar</string>
-    <string name="redirect_hosts_description">Sérsniðnar reglur</string>
     <string name="home_log_subtitle">Sjáðu hvað er lokað á í rauntíma</string>
     <string name="home_help_subtitle">Leiðbeiningar og bilanaleit</string>
     <string name="home_preferences_subtitle">Stilltu AdAway</string>

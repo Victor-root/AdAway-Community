@@ -139,20 +139,6 @@
                 android:layout_gravity="center_horizontal"
                 android:text="@string/blocked_hosts_label" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:maxLines="2"
-                android:text="@string/blocked_hosts_description"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textColor="@color/homeCardSubtitle"
-                app:autoSizeMaxTextSize="12sp"
-                app:autoSizeMinTextSize="8sp"
-                app:autoSizeStepGranularity="1sp"
-                app:autoSizeTextType="uniform" />
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.cardview.widget.CardView>
@@ -220,20 +206,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/allowed_hosts_label" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:maxLines="2"
-                android:text="@string/allowed_hosts_description"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textColor="@color/homeCardSubtitle"
-                app:autoSizeMaxTextSize="12sp"
-                app:autoSizeMinTextSize="8sp"
-                app:autoSizeStepGranularity="1sp"
-                app:autoSizeTextType="uniform" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -303,20 +275,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/redirect_hosts_label" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:maxLines="2"
-                android:text="@string/redirect_hosts_description"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                android:textColor="@color/homeCardSubtitle"
-                app:autoSizeMaxTextSize="12sp"
-                app:autoSizeMinTextSize="8sp"
-                app:autoSizeStepGranularity="1sp"
-                app:autoSizeTextType="uniform" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

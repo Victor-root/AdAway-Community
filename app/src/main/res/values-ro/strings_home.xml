@@ -28,9 +28,6 @@
     <string name="error_dialog_help">Citește secțiunea de Ajutor pentru mai multe informații!</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Reclame și urmăritoare</string>
-    <string name="allowed_hosts_description">Excepții</string>
-    <string name="redirect_hosts_description">Reguli personalizate</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Vezi ce este blocat în timp real</string>

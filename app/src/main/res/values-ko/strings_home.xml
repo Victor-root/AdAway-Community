@@ -25,9 +25,6 @@
     <string name="error_dialog_help">더 많은 정보는 도움말을 참조해주세요.</string>
 
     <!-- Home action rows / About tab -->
-    <string name="blocked_hosts_description">광고 및 추적기</string>
-    <string name="allowed_hosts_description">예외</string>
-    <string name="redirect_hosts_description">사용자 지정 규칙</string>
     <string name="home_log_subtitle">차단된 항목을 실시간으로 확인</string>
     <string name="home_help_subtitle">가이드 및 문제 해결</string>
     <string name="home_preferences_subtitle">AdAway 구성</string>

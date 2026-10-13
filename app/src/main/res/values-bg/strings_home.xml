@@ -27,9 +27,6 @@
     <string name="error_dialog_help">Моля, прочетете Помощ за повече информация.</string>
 
     <!-- Hosts card -->
-    <string name="blocked_hosts_description">Реклами и тракери</string>
-    <string name="allowed_hosts_description">Изключения</string>
-    <string name="redirect_hosts_description">Персонализирани правила</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Вижте какво се блокира в реално време</string>

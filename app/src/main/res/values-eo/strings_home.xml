@@ -14,9 +14,6 @@
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Reklamoj kaj spuriloj</string>
-    <string name="allowed_hosts_description">Esceptoj</string>
-    <string name="redirect_hosts_description">Propraj reguloj</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Vidu kio estas blokata en reala tempo</string>

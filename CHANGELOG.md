@@ -27,6 +27,7 @@
 * Skip the battery steps of the welcome wizard in root mode, where nothing runs in the background
 * Center the welcome screens, align the home screen tiles and add a back button to the update screen
 * Rename the "Dark theme" setting to "Theme", as it offers light, dark and system modes
+* Rewrite the English text of the app and its help pages for clarity and consistency
 
 ### Removed
 

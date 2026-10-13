@@ -31,9 +31,6 @@
     <string name="error_dialog_help">Пожалуйста, прочтите Справку, чтобы узнать больше.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Реклама и трекеры</string>
-    <string name="allowed_hosts_description">Исключения</string>
-    <string name="redirect_hosts_description">Пользовательские правила</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Смотрите, что блокируется, в реальном времени</string>

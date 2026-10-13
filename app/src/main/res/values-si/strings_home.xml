@@ -14,9 +14,6 @@
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">දැන්වීම් සහ ලුහුබැඳීම්</string>
-    <string name="allowed_hosts_description">ව්‍යතිරේක</string>
-    <string name="redirect_hosts_description">අභිරුචි නීති</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">අවහිර වන දේ තත්කාලීනව බලන්න</string>

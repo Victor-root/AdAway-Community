@@ -3,11 +3,8 @@
 
     <!-- Hosts card -->
     <string name="blocked_hosts_label">Bloqués</string>
-    <string name="blocked_hosts_description">Pubs &amp; traqueurs</string>
     <string name="allowed_hosts_label">Autorisés</string>
-    <string name="allowed_hosts_description">Exceptions</string>
     <string name="redirect_hosts_label">Redirigés</string>
-    <string name="redirect_hosts_description">Règles personnalisées</string>
 
     <!-- Source card -->
     <plurals name="up_to_date_source_label">

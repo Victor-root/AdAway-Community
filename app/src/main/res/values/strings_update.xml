@@ -7,14 +7,14 @@
     <string name="update_banner_subtitle">Tap to install %1$s</string>
 
     <!-- Update activity -->
-    <string name="update_up_to_date_header">You are up-to-date</string>
+    <string name="update_up_to_date_header">You are up to date</string>
     <string name="update_update_available_header">Update available</string>
     <string name="update_update_button">Update now</string>
     <string name="update_progress_label">%1$s / %2$s</string>
     <string name="update_complete_label">Complete</string>
     <string name="update_failed_label">Download failed</string>
-    <string name="update_last_changelog_title">Last changes</string>
+    <string name="update_last_changelog_title">What\'s new</string>
 
     <!-- Notification -->
-    <string name="update_notification_description">Downloading latest AdAway version…</string>
+    <string name="update_notification_description">Downloading the latest version of AdAway…</string>
 </resources>

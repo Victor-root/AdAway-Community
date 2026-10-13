@@ -17,9 +17,6 @@
     <string name="error_dialog_help">Llei l\'ayuda pa más información, por favor.</string>
 
     <!-- Hosts card -->
-    <string name="blocked_hosts_description">Anuncios y rastreadores</string>
-    <string name="allowed_hosts_description">Esceiciones</string>
-    <string name="redirect_hosts_description">Regles personalizaes</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Mira lo que se bloquia en tiempu real</string>

@@ -13,9 +13,6 @@
 
     <string name="preferences_drawer_item">Preferences</string>
 
-        <string name="blocked_hosts_description">Reklam û şopîner</string>
-    <string name="allowed_hosts_description">Îstîsna</string>
-    <string name="redirect_hosts_description">Rêzikên taybet</string>
     <string name="home_log_subtitle">Bibîne çi tê astengkirin bi dema rast</string>
     <string name="home_help_subtitle">Rênîşan û çareserkirina pirsgirêkan</string>
     <string name="home_preferences_subtitle">AdAway mîheng bike</string>

@@ -30,9 +30,6 @@
     <!-- Error dialog -->
     <string name="error_dialog_help">Proszę przeczytać Pomoc, aby uzyskać więcej informacji.</string>
 
-    <string name="blocked_hosts_description">Reklamy i trackery</string>
-    <string name="allowed_hosts_description">Wyjątki</string>
-    <string name="redirect_hosts_description">Reguły niestandardowe</string>
     <string name="home_log_subtitle">Zobacz na żywo, co jest blokowane</string>
     <string name="home_help_subtitle">Poradniki i rozwiązywanie problemów</string>
     <string name="home_preferences_subtitle">Skonfiguruj AdAway</string>

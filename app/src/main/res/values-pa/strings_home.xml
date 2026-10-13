@@ -14,9 +14,6 @@
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">ਇਸ਼ਤਿਹਾਰ ਅਤੇ ਟ੍ਰੈਕਰ</string>
-    <string name="allowed_hosts_description">ਅਪਵਾਦ</string>
-    <string name="redirect_hosts_description">ਕਸਟਮ ਨਿਯਮ</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">ਅਸਲ ਸਮੇਂ ਵਿੱਚ ਵੇਖੋ ਕਿ ਕੀ ਬਲਾਕ ਹੋ ਰਿਹਾ ਹੈ</string>

@@ -14,9 +14,6 @@
     <string name="preferences_drawer_item">Tənzimləmələr</string>
 
     <!-- Hosts card -->
-    <string name="blocked_hosts_description">Reklam və izləyicilər</string>
-    <string name="allowed_hosts_description">İstisnalar</string>
-    <string name="redirect_hosts_description">Fərdi qaydalar</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Real vaxtda nəyin bloklandığını görün</string>

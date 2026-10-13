@@ -4,9 +4,6 @@
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">विज्ञापन र ट्र्याकरहरू</string>
-    <string name="allowed_hosts_description">अपवादहरू</string>
-    <string name="redirect_hosts_description">कस्टम नियमहरू</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">के रोकिएको छ भनी वास्तविक समयमा हेर्नुहोस्</string>

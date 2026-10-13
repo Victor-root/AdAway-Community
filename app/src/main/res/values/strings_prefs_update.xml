@@ -2,20 +2,20 @@
 <resources>
     <string name="pref_update_title">Updates</string>
     <string name="pref_update_enable_notifications">Notifications are disabled</string>
-    <string name="pref_update_enable_notifications_summary">Application notifications won\'t show. Tap to enable them.</string>
+    <string name="pref_update_enable_notifications_summary">AdAway notifications are turned off. Tap to turn them on.</string>
     <!-- Application category -->
-    <string name="pref_update_app_category">Application updates</string>
-    <string name="pref_update_check_app_startup">Check for update at startup</string>
-    <string name="pref_update_check_app_daily">Periodically check for update</string>
+    <string name="pref_update_app_category">App updates</string>
+    <string name="pref_update_check_app_startup">Check for updates at startup</string>
+    <string name="pref_update_check_app_daily">Check for updates daily</string>
     <string name="pref_update_check_now">Check now</string>
     <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
+    <string name="pref_update_check_now_up_to_date">You have the latest version</string>
     <string name="pref_update_install">Update now</string>
     <string name="pref_update_install_summary">Install version %1$s</string>
     <!-- Application hosts -->
     <string name="pref_update_hosts_category">Hosts updates</string>
-    <string name="pref_update_check">Check for update at startup</string>
-    <string name="pref_update_check_hosts_daily">Periodically check for update</string>
-    <string name="pref_update_sync_on_update">Sync on update</string>
-    <string name="pref_update_sync_unmetered_only">Sync on unmetered network only</string>
+    <string name="pref_update_check">Check for updates at startup</string>
+    <string name="pref_update_check_hosts_daily">Check for updates daily</string>
+    <string name="pref_update_sync_on_update">Download updates automatically</string>
+    <string name="pref_update_sync_unmetered_only">Download only on unmetered networks</string>
 </resources>

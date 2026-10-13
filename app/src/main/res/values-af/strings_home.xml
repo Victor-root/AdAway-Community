@@ -7,9 +7,6 @@
     <string name="error_dialog_help">Lees asb. help vir meer informasie.</string>
 
     <!-- Hosts card -->
-    <string name="blocked_hosts_description">Advertensies &amp; spoorders</string>
-    <string name="allowed_hosts_description">Uitsonderings</string>
-    <string name="redirect_hosts_description">Pasgemaakte reëls</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Sien wat in reële tyd geblokkeer word</string>

@@ -27,9 +27,6 @@
     <string name="error_dialog_help">Läs Hjälp för mer information.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Annonser och spårare</string>
-    <string name="allowed_hosts_description">Undantag</string>
-    <string name="redirect_hosts_description">Anpassade regler</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Se vad som blockeras i realtid</string>

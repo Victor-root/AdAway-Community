@@ -27,9 +27,6 @@
     <string name="error_dialog_help">Lue lisätietoja ohjeista.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Mainokset ja seuraimet</string>
-    <string name="allowed_hosts_description">Poikkeukset</string>
-    <string name="redirect_hosts_description">Mukautetut säännöt</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Katso reaaliajassa, mitä estetään</string>

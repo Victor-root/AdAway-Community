@@ -30,9 +30,6 @@
     <string name="error_dialog_help">Detalesnę informaciją rasite skiltyje Pagalba</string>
 
     <!-- Home action rows / About tab -->
-    <string name="blocked_hosts_description">Reklamos ir stebėjimo priemonės</string>
-    <string name="allowed_hosts_description">Išimtys</string>
-    <string name="redirect_hosts_description">Tinkintos taisyklės</string>
     <string name="home_log_subtitle">Matykite, kas blokuojama realiuoju laiku</string>
     <string name="home_help_subtitle">Vadovai ir trikčių šalinimas</string>
     <string name="home_preferences_subtitle">Konfigūruoti AdAway</string>

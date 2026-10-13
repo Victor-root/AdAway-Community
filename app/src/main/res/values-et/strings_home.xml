@@ -24,9 +24,6 @@
     <string name="error_dialog_help">Palun loe abi rohkema teabe saamiseks.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Reklaamid ja jälgijad</string>
-    <string name="allowed_hosts_description">Erandid</string>
-    <string name="redirect_hosts_description">Kohandatud reeglid</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Vaata reaalajas, mis on blokeeritud</string>

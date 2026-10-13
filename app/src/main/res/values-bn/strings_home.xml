@@ -14,9 +14,6 @@
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- Hosts card -->
-    <string name="blocked_hosts_description">বিজ্ঞাপন ও ট্র্যাকার</string>
-    <string name="allowed_hosts_description">ব্যতিক্রমসমূহ</string>
-    <string name="redirect_hosts_description">কাস্টম নিয়ম</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">রিয়েল টাইমে কী ব্লক হচ্ছে তা দেখুন</string>

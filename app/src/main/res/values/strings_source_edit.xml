@@ -4,18 +4,18 @@
     <string name="source_edit_add_title">Add source</string>
     <!-- Hosts source edition -->
     <string name="source_edit_label">Label</string>
-    <string name="source_edit_label_required">Label required</string>
+    <string name="source_edit_label_required">Enter a label</string>
     <string name="source_edit_type">Type</string>
     <string name="source_edit_url">URL</string>
     <string name="source_edit_file">File</string>
     <string name="source_edit_url_location">Location</string>
     <string name="source_edit_url_location_default">https://</string>
-    <string name="source_edit_url_location_required">Location required</string>
-    <string name="source_edit_file_hint">Press File to select source file</string>
+    <string name="source_edit_url_location_required">Enter a location</string>
+    <string name="source_edit_file_hint">Tap File to choose a hosts file</string>
     <string name="source_edit_location_invalid">Invalid location</string>
     <string name="source_edit_format">List format</string>
     <string name="source_edit_format_block_list">Block</string>
     <string name="source_edit_format_allow_list">Allow</string>
-    <string name="source_edit_redirected_hosts">Apply redirected hosts</string>
-    <string name="source_edit_redirected_hosts_warning">Allowing redirected hosts may cause security issues. Only use this settings on a trusted source as it could redirect some sensitive traffic to whatever server it wants.</string>
+    <string name="source_edit_redirected_hosts">Use redirected hosts</string>
+    <string name="source_edit_redirected_hosts_warning">Redirected hosts can send your traffic to any server. Only enable this for sources you trust.</string>
 </resources>

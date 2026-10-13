@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- TV home status header -->
-    <string name="tv_status_enabled">Ad-blocking: enabled</string>
-    <string name="tv_status_disabled">Ad-blocking: disabled</string>
+    <string name="tv_status_enabled">Ad blocking: on</string>
+    <string name="tv_status_disabled">Ad blocking: off</string>
     <!-- TV home buttons. Block-list-centric wording is intentional: it stays accurate
          whether ad-blocking runs in VPN mode (in-memory DNS filter) or in root mode
          (system /etc/hosts file). The toggle and DNS-monitor buttons reuse the
@@ -31,14 +31,14 @@
     <string name="vpn_persistence_title">VPN persistence</string>
     <string name="vpn_persistence_message">AdAway already handles reboots, low-memory kills and crashes on its own, so no extra setup is needed in most cases.\n\nIf the VPN ever stops unexpectedly, pin AdAway as the Android system Always-on VPN for the strongest guarantee.</string>
     <string name="vpn_persistence_status_enabled">Always-on VPN is enabled for AdAway. ✓</string>
-    <string name="vpn_persistence_status_disabled">Always-on VPN not set. AdAway\'s built-in persistence handles it.</string>
+    <string name="vpn_persistence_status_disabled">Always-on VPN is not set. AdAway keeps the VPN running on its own.</string>
     <string name="tv_persistence_adb_commands">If the system VPN screen is hidden on your TV, use ADB:\n\n• Enable always-on for AdAway:\n  adb shell settings put global always_on_vpn_app %1$s\n\n• Disable always-on:\n  adb shell settings delete global always_on_vpn_app</string>
     <string name="vpn_persistence_open_settings">Open VPN settings</string>
     <string name="vpn_persistence_dismiss">Got it</string>
     <!-- Toast shown when the Android TV launcher hides the VPN settings activity
          and the Intent cannot be resolved. The ADB commands stay visible in the
          dialog so the user always has a fallback. -->
-    <string name="tv_persistence_intent_failed">VPN settings hidden on this Android TV. Use the ADB commands shown.</string>
+    <string name="tv_persistence_intent_failed">The VPN settings are hidden on this Android TV. Use the ADB commands below.</string>
     <!-- TV "Vos listes" screen: the dialog opened by clicking a user-added entry
          (edit_action/delete_action reuse the existing checkbox_list_context_* strings,
          and copy reuses tv_dialog_copy_hostname; only the enable/disable toggle, which

@@ -27,9 +27,6 @@
     <string name="error_dialog_help">Bitte die Hilfe für mehr Informationen lesen.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Werbung &amp; Tracker</string>
-    <string name="allowed_hosts_description">Ausnahmen</string>
-    <string name="redirect_hosts_description">Eigene Regeln</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">In Echtzeit sehen, was blockiert wird</string>

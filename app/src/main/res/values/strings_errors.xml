@@ -2,21 +2,21 @@
 <resources>
     <!-- Source model errors -->
     <string name="error_no_connection_message">No Internet connection</string>
-    <string name="error_no_connection_details">Unable to establish a connection to the Internet. Please check your device connectivity.</string>
-    <string name="error_download_failed_message">Failed to download hosts source</string>
-    <string name="error_download_failed_details">None of your enabled hosts sources are reachable. Please check you are properly connected to the Internet.</string>
+    <string name="error_no_connection_details">Could not connect to the internet. Check your network connection and try again.</string>
+    <string name="error_download_failed_message">Could not download hosts sources</string>
+    <string name="error_download_failed_details">None of your enabled hosts sources could be reached. Check your internet connection and try again.</string>
     <!-- Hosts install model error -->
-    <string name="error_private_file_failed_message">Failed to create private file</string>
-    <string name="error_private_file_failed_details">Unable to create a private file to build a new hosts source. Please check the free space available on your device.</string>
+    <string name="error_private_file_failed_message">Could not create the hosts file</string>
+    <string name="error_private_file_failed_details">The new hosts file could not be created in the app storage. Check that your device has enough free space.</string>
     <string name="error_not_enough_space_message">Not enough space</string>
-    <string name="error_not_enough_space_details">Unable to copy hosts file to your system partition. Please check Magisk "systemless hosts" module is enabled then reboot.</string>
-    <string name="error_copy_failed_message">Failed to install new hosts file</string>
-    <string name="error_copy_failed_details">Unable to copy hosts file to /system partition. Please check Magisk "systemless hosts" module is enabled then reboot.</string>
-    <string name="error_revert_failed_message">Failed to revert hosts file</string>
-    <string name="error_revert_failed_details">Unable to restore default hosts file configuration.</string>
+    <string name="error_not_enough_space_details">There is not enough space on the system partition for the hosts file. Enable the Magisk \"Systemless hosts\" module, then restart your device.</string>
+    <string name="error_copy_failed_message">Could not install the new hosts file</string>
+    <string name="error_copy_failed_details">The hosts file could not be written to the system partition. Enable the Magisk \"Systemless hosts\" module, then restart your device.</string>
+    <string name="error_revert_failed_message">Could not restore the hosts file</string>
+    <string name="error_revert_failed_details">The default hosts file could not be restored.</string>
     <!-- VPN model error -->
-    <string name="error_enable_vpn_failed_message">Failed to enable VPN ad blocking.</string>
-    <string name="error_enable_vpn_failed_details">Please check your VPN settings to authorize the application VPN to start.</string>
-    <string name="error_disable_vpn_failed_message">Failed to disable VPN ad blocking.</string>
-    <string name="error_disable_vpn_failed_details">Please check your VPN settings to disable it manually.</string>
+    <string name="error_enable_vpn_failed_message">Could not start VPN ad blocking</string>
+    <string name="error_enable_vpn_failed_details">Make sure AdAway is allowed to use the VPN in your device\'s VPN settings.</string>
+    <string name="error_disable_vpn_failed_message">Could not stop VPN ad blocking</string>
+    <string name="error_disable_vpn_failed_details">Turn off the VPN manually in your device\'s VPN settings.</string>
 </resources>

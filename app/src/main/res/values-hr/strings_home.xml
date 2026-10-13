@@ -29,9 +29,6 @@
     <string name="error_dialog_help">Pročitajte pomoć za više informacija.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Oglasi i pratitelji</string>
-    <string name="allowed_hosts_description">Iznimke</string>
-    <string name="redirect_hosts_description">Prilagođena pravila</string>
 
     <!-- Home action rows (redesigned home screen) -->
     <string name="home_log_subtitle">Pogledajte što je blokirano u stvarnom vremenu</string>

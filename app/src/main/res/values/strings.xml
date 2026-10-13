@@ -11,43 +11,43 @@
 
     <!--Home-->
     <string name="icon_update_status">Update status</string>
-    <string name="button_enable_hosts">Enable ad-blocking</string>
-    <string name="button_disable_hosts">Disable ad-blocking</string>
+    <string name="button_enable_hosts">Enable ad blocking</string>
+    <string name="button_disable_hosts">Disable ad blocking</string>
 
     <!--Checkbox List-->
-    <string name="checkbox_list_context_title">Edit Entry</string>
+    <string name="checkbox_list_context_title">Edit entry</string>
     <string name="checkbox_list_context_apply">Apply</string>
     <string name="checkbox_list_context_edit">Edit</string>
     <string name="checkbox_list_context_delete">Delete</string>
 
     <!--Your lists-->
-    <string name="import_success">Backup successfully imported from your external storage.</string>
-    <string name="import_failed">Failed to import backup. Is its format correct? Check logcat for more details.</string>
-    <string name="export_success">Backup successfully exported to file \'%s\' on your external storage.</string>
-    <string name="export_failed">Failed to export backup file \'%s\'.</string>
+    <string name="import_success">Backup restored.</string>
+    <string name="import_failed">Could not restore the backup. Make sure the file is a valid AdAway backup.</string>
+    <string name="export_success">Backup saved to \'%s\'.</string>
+    <string name="export_failed">Could not save the backup to \'%s\'.</string>
 
     <!--Status Notification-->
-    <string name="status_check">Checking for update</string>
-    <string name="status_check_source">Checking %s source for update</string>
-    <string name="status_retrieve">Retrieving sources</string>
-    <string name="status_download_source">Downloading source %s</string>
-    <string name="status_read_source">Reading source %s</string>
-    <string name="status_parse_source">Parsing %s source</string>
-    <string name="status_sync_database">Syncing rule database</string>
-    <string name="status_revert">Reverting to default hosts file</string>
+    <string name="status_check">Checking for updates…</string>
+    <string name="status_check_source">Checking %s for updates…</string>
+    <string name="status_retrieve">Downloading hosts sources…</string>
+    <string name="status_download_source">Downloading %s…</string>
+    <string name="status_read_source">Reading %s…</string>
+    <string name="status_parse_source">Processing %s…</string>
+    <string name="status_sync_database">Updating the rule database…</string>
+    <string name="status_revert">Restoring the default hosts file…</string>
     <string name="status_revert_done">Default hosts file restored</string>
-    <string name="status_update_available">Source update available</string>
-    <string name="status_no_update_found">No source update found</string>
-    <string name="status_apply_sources">Apply latest sources</string>
-    <string name="status_create_new_hosts">Creating a new hosts file</string>
-    <string name="status_copy_new_hosts">Copying a new hosts file</string>
-    <string name="status_check_copy">Checking hosts file copy</string>
+    <string name="status_update_available">Hosts source updates available</string>
+    <string name="status_no_update_found">All hosts sources are up to date</string>
+    <string name="status_apply_sources">Applying the latest sources…</string>
+    <string name="status_create_new_hosts">Creating the new hosts file…</string>
+    <string name="status_copy_new_hosts">Installing the new hosts file…</string>
+    <string name="status_check_copy">Verifying the hosts file…</string>
     <string name="status_hosts_updated">Hosts file successfully updated</string>
     <string name="status_vpn_configuration_updated">VPN configuration successfully updated</string>
-    <string name="notification_configuration_changed">Your configuration changed. You need to apply it.</string>
+    <string name="notification_configuration_changed">Your changes need to be applied.</string>
     <string name="notification_configuration_changed_action">Apply</string>
     <string name="notification_configuration_installing">Applying new configuration…</string>
-    <string name="notification_configuration_failed">Failed to apply new configuration.</string>
+    <string name="notification_configuration_failed">Could not apply the new configuration.</string>
 
     <!--Menu entries-->
     <string name="menu_refresh">Refresh</string>
@@ -55,19 +55,19 @@
 
     <!--Help-->
     <string name="help_tab_faq">FAQ</string>
-    <string name="help_tab_problems">Problems</string>
+    <string name="help_tab_problems">Troubleshooting</string>
 
     <!--Other-->
     <string name="no_text_editor_title">No text editor installed</string>
-    <string name="no_text_editor">No text editor could be found to open the hosts file. You can install Jota or other text editors to handle this.\n\nDo you want to install Jota?</string>
+    <string name="no_text_editor">No app was found to open the hosts file. Install a text editor, such as Jota, to view it.\n\nDo you want to install Jota?</string>
 
     <!--Tcpdump-->
     <string name="tcpdump_menu_sort">Sort domains</string>
     <string name="tcpdump_menu_clear">Clear log</string>
-    <string name="tcpdump_entry_add_blacklist">Add entry to black list</string>
-    <string name="tcpdump_entry_add_whitelist">Add entry to white list</string>
+    <string name="tcpdump_entry_add_blacklist">Add to blocked hosts</string>
+    <string name="tcpdump_entry_add_whitelist">Add to allowed hosts</string>
 
-    <string name="pref_edit_text_value">Edit text preference value</string>
+    <string name="pref_edit_text_value">Edit value</string>
 
     <!--Shortcuts-->
     <string name="shortcut_dns_requests">DNS requests</string>
@@ -75,14 +75,14 @@
     <string name="shortcut_preferences">Preferences</string>
 
     <!--Hosts source status-->
-    <string name="hosts_source_installed">Installed %1$s ago</string>
-    <string name="hosts_source_up_to_date">Up-to-date for %1$s</string>
-    <string name="hosts_source_need_update">Need update for %1$s</string>
-    <string name="hosts_source_last_update">Last update %1$s ago</string>
+    <string name="hosts_source_installed">Downloaded %1$s ago</string>
+    <string name="hosts_source_up_to_date">Up to date, last changed %1$s ago</string>
+    <string name="hosts_source_need_update">Update available, changed %1$s ago</string>
+    <string name="hosts_source_last_update">Last changed %1$s ago</string>
     <string name="hosts_source_unknown_status">Unknown update status</string>
     <string name="hosts_source_disabled">Disabled</string>
     <string name="hosts_source_sync_failed">Last download failed</string>
-    <string name="hosts_source_few_minutes">few minutes</string>
+    <string name="hosts_source_few_minutes">a few minutes</string>
     <plurals name="hosts_source_hours">
         <item quantity="one">%d hour</item>
         <item quantity="other">%d hours</item>
@@ -98,24 +98,24 @@
 
     <!-- Clipboard -->
     <string name="clipboard_host_copied">Host copied to clipboard</string>
-    <string name="no_application_found">No application found to open it</string>
+    <string name="no_application_found">No app found to open this.</string>
 
     <!--VPN notification-->
     <string name="vpn_notification_starting">starting</string>
     <string name="vpn_notification_running">active</string>
     <string name="vpn_notification_stopping">stopping</string>
-    <string name="vpn_notification_waiting_for_net">wait for network</string>
+    <string name="vpn_notification_waiting_for_net">waiting for network</string>
     <string name="vpn_notification_reconnecting">reconnecting</string>
-    <string name="vpn_notification_reconnecting_error">reconnecting error</string>
+    <string name="vpn_notification_reconnecting_error">connection error</string>
     <string name="vpn_notification_stopped">stopped</string>
-    <string name="vpn_notification_title">Ad-blocker VPN %1$s</string>
+    <string name="vpn_notification_title">Ad-blocking VPN %1$s</string>
     <string name="vpn_notification_action_pause">Pause</string>
     <string name="vpn_notification_action_resume">Resume</string>
 
     <!-- Permission -->
     <string name="permission_group_api_label">AdAway permissions</string>
-    <string name="permission_group_api_description">Allow to interact with AdAway</string>
+    <string name="permission_group_api_description">Interact with AdAway</string>
     <string name="permission_send_command_label">Send commands to AdAway</string>
-    <string name="permission_send_command_description">Allow to send commands to AdAway like enabling or disabling the system-wide ad-blocking</string>
+    <string name="permission_send_command_description">Send commands to AdAway, such as turning ad blocking on or off.</string>
 
 </resources>

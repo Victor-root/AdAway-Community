@@ -26,9 +26,6 @@
     <string name="error_dialog_help">மேலும் தகவலுக்கு உதவியைப் படிக்கவும்</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">விளம்பரங்கள் &amp; கண்காணிப்பான்கள்</string>
-    <string name="allowed_hosts_description">விதிவிலக்குகள்</string>
-    <string name="redirect_hosts_description">தனிப்பயன் விதிகள்</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">எது தடுக்கப்படுகிறது என்பதை நிகழ்நேரத்தில் காணுங்கள்</string>

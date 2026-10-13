@@ -35,9 +35,6 @@
     <string name="error_dialog_help">يرجى قراءة التعليمات للمزيد من المعلومات.</string>
 
     <!-- Hosts card -->
-    <string name="blocked_hosts_description">إعلانات ومتعقّبات</string>
-    <string name="allowed_hosts_description">استثناءات</string>
-    <string name="redirect_hosts_description">قواعد مخصّصة</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">شاهد ما يُحظر في الوقت الفعلي</string>

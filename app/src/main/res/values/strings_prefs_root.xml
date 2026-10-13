@@ -3,21 +3,21 @@
     <!-- Hosts install category -->
     <string name="pref_root_open_hosts">Open hosts file</string>
     <!-- Redirection category -->
-    <string name="pref_hosts_redirection_summary">Define where to redirect blocked hosts</string>
-    <string name="pref_redirection_ipv4">Configure IPv4 redirection</string>
-    <string name="pref_redirection_ipv6">Configure IPv6 redirection</string>
-    <string name="pref_redirection_invalid">Invalid redirection</string>
+    <string name="pref_hosts_redirection_summary">Choose the address that blocked hosts resolve to</string>
+    <string name="pref_redirection_ipv4">IPv4 redirection address</string>
+    <string name="pref_redirection_ipv6">IPv6 redirection address</string>
+    <string name="pref_redirection_invalid">Invalid IP address</string>
     <!-- Web server category -->
-    <string name="pref_webserver_summary">The local web server listens on local IP addresses to answer to blocked hostname requests. It may help with app freezing on blocked connection.</string>
+    <string name="pref_webserver_summary">A local web server answers requests to blocked hosts. This can stop apps from hanging while they wait for a blocked connection.</string>
     <string name="pref_webserver_enabled">Enable web server</string>
     <string name="pref_webserver_test">Test web server</string>
     <string name="pref_webserver_certificate">Install self-signed certificate</string>
-    <string name="pref_webserver_certificate_dialog_title">Certificate manual install</string>
-    <string name="pref_webserver_certificate_dialog_content">Starting from Android 11 (R), application can no more automatically install certificate authority (CA).\n\nGo to \"Security\" settings, \"Encryption &amp; credentials\" then \"Install a certificate\". From there, choose \"CA certificate\" and select the newly exported certificate file.</string>
-    <string name="pref_webserver_certificate_dialog_action">Open "Security" settings</string>
+    <string name="pref_webserver_certificate_dialog_title">Install the certificate manually</string>
+    <string name="pref_webserver_certificate_dialog_content">Since Android 11, apps can no longer install certificate authorities (CA) automatically.\n\nOpen the \"Security\" settings, go to \"Encryption &amp; credentials\" › \"Install a certificate\", choose \"CA certificate\" and select the certificate file you just saved.</string>
+    <string name="pref_webserver_certificate_dialog_action">Open security settings</string>
     <string name="pref_webserver_state_checking">Checking…</string>
     <string name="pref_webserver_state_not_running">Not running</string>
-    <string name="pref_webserver_state_running_not_installed">Running but certificate not installed</string>
-    <string name="pref_webserver_state_running_and_installed">Running and certificate installed</string>
-    <string name="pref_webserver_icon">Replace blank ad space by app icon</string>
+    <string name="pref_webserver_state_running_not_installed">Running, certificate not installed</string>
+    <string name="pref_webserver_state_running_and_installed">Running, certificate installed</string>
+    <string name="pref_webserver_icon">Show the AdAway icon in place of blocked ads</string>
 </resources>

@@ -14,9 +14,6 @@
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Reklama dhe gjurmues</string>
-    <string name="allowed_hosts_description">Përjashtime</string>
-    <string name="redirect_hosts_description">Rregulla të personalizuara</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Shikoni çfarë bllokohet në kohë reale</string>

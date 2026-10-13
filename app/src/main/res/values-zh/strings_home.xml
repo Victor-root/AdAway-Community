@@ -25,9 +25,6 @@
     <string name="error_dialog_help">请阅读帮助以获取更多信息。</string>
 
     <!-- Home action rows (redesigned home screen) -->
-    <string name="blocked_hosts_description">广告和追踪器</string>
-    <string name="allowed_hosts_description">例外</string>
-    <string name="redirect_hosts_description">自定义规则</string>
     <string name="home_log_subtitle">实时查看被拦截的内容</string>
     <string name="home_help_subtitle">指南与故障排除</string>
     <string name="home_preferences_subtitle">配置 AdAway</string>

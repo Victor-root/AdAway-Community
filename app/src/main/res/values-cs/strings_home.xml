@@ -31,9 +31,6 @@
     <string name="error_dialog_help">Pro více informací si prosím přečtěte nápovědu.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Reklamy a sledovače</string>
-    <string name="allowed_hosts_description">Výjimky</string>
-    <string name="redirect_hosts_description">Vlastní pravidla</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Sledujte, co se blokuje, v reálném čase</string>

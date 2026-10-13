@@ -7,9 +7,6 @@
     <string name="error_dialog_help">សូមអាន \"ជំនួយ\" សម្រាប់ព័តមានបន្ថែម</string>
 
     <!-- Home action rows / About tab -->
-    <string name="blocked_hosts_description">ការផ្សាយពាណិជ្ជកម្ម និងកម្មវិធីតាមដាន</string>
-    <string name="allowed_hosts_description">ការលើកលែង</string>
-    <string name="redirect_hosts_description">ច្បាប់ផ្ទាល់ខ្លួន</string>
     <string name="home_log_subtitle">មើលអ្វីដែលត្រូវបានទប់ស្កាត់ក្នុងពេលវេលាជាក់ស្តែង</string>
     <string name="home_help_subtitle">មគ្គុទេសក៍ និងការដោះស្រាយបញ្ហា</string>
     <string name="home_preferences_subtitle">កំណត់រចនាសម្ព័ន្ធ AdAway</string>

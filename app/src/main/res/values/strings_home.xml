@@ -3,11 +3,8 @@
 
     <!-- Hosts card -->
     <string name="blocked_hosts_label">Blocked</string>
-    <string name="blocked_hosts_description">Ads &amp; trackers</string>
     <string name="allowed_hosts_label">Allowed</string>
-    <string name="allowed_hosts_description">Exceptions</string>
     <string name="redirect_hosts_label">Redirected</string>
-    <string name="redirect_hosts_description">Custom rules</string>
 
     <!-- Source card -->
     <plurals name="up_to_date_source_label">
@@ -22,10 +19,10 @@
         <item quantity="one">%d unreachable source</item>
         <item quantity="other">%d unreachable sources</item>
     </plurals>
-    <string name="update_hosts_description">Update hosts</string>
+    <string name="update_hosts_description">Sync hosts sources</string>
 
     <!-- Home action rows (redesigned home screen) -->
-    <string name="home_log_subtitle">See what\'s blocked in real time</string>
+    <string name="home_log_subtitle">Monitor DNS requests</string>
     <string name="home_help_subtitle">Guides and troubleshooting</string>
     <string name="home_preferences_subtitle">Configure AdAway</string>
 
@@ -46,16 +43,16 @@
     <string name="about_source_label">Source code (GitHub)</string>
     <string name="about_issues_label">Report an issue</string>
     <string name="about_releases_label">Releases</string>
-    <string name="about_upstream_label">Official AdAway upstream</string>
+    <string name="about_upstream_label">Official AdAway project</string>
     <string name="about_license_label">License: GNU General Public License v3.0 or later (GPLv3+)</string>
 
     <!-- App bar drawer -->
     <string name="preferences_drawer_item">Preferences</string>
 
     <!-- App bar buttons -->
-    <string name="adblock_pause_button_description">Pause/resume ad blocking</string>
+    <string name="adblock_pause_button_description">Pause or resume ad blocking</string>
 
     <!-- Error dialog -->
-    <string name="error_dialog_help">Please read Help for more information.</string>
+    <string name="error_dialog_help">See Help for more information.</string>
 
 </resources>

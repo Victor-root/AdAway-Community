@@ -12,9 +12,6 @@
     <string name="error_dialog_help">مهرباني وکړئ، د لا نورو معلوماتو لپاره مرسته ولولئ.</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">اعلانونه او څارونکي</string>
-    <string name="allowed_hosts_description">استثناوې</string>
-    <string name="redirect_hosts_description">دودیز قواعد</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">وګورئ چې په ریښتیني وخت کې څه بند شوي دي</string>

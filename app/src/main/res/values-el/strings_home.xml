@@ -27,9 +27,6 @@
     <string name="error_dialog_help">Παρακαλούμε ανατρέξτε στην Βοήθεια για περισσότερες πληροφορίες</string>
 
     <!-- Hosts card descriptions -->
-    <string name="blocked_hosts_description">Διαφημίσεις και ιχνηλάτες</string>
-    <string name="allowed_hosts_description">Εξαιρέσεις</string>
-    <string name="redirect_hosts_description">Προσαρμοσμένοι κανόνες</string>
 
     <!-- Home action rows -->
     <string name="home_log_subtitle">Δείτε τι αποκλείεται σε πραγματικό χρόνο</string>
