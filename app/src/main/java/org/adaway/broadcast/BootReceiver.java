@@ -27,6 +27,7 @@ import static org.adaway.model.adblocking.AdBlockMethod.VPN;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.VpnService;
 
 import org.adaway.helper.PreferenceHelper;
 import org.adaway.model.adblocking.AdBlockMethod;
@@ -57,7 +58,7 @@ public class BootReceiver extends BroadcastReceiver {
                 // monitor, sticky resurrection) authoritative.
                 PreferenceHelper.setVpnServiceUserEnabled(context, true);
                 // Ensure VPN is prepared
-                Intent prepareIntent = android.net.VpnService.prepare(context);
+                Intent prepareIntent = VpnService.prepare(context);
                 if (prepareIntent != null) {
                     // A BroadcastReceiver is not an Activity context: starting an activity from
                     // here requires FLAG_ACTIVITY_NEW_TASK, otherwise Android throws on API 28+.

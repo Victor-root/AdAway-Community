@@ -160,7 +160,7 @@ public abstract class AbstractListFragment extends Fragment implements ListsView
         this.mActionItem = item;
         this.mActionSourceView = sourceView;
         // Get current item background color
-        int currentItemBackgroundColor = getResources().getColor(R.color.selected_background, null);
+        int currentItemBackgroundColor = requireContext().getColor(R.color.selected_background);
         // Apply background color to view
         this.mActionSourceView.setBackgroundColor(currentItemBackgroundColor);
         // Start action mode and store it

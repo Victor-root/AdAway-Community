@@ -77,10 +77,10 @@ public class TvLogAdapter extends ListAdapter<LogEntry, TvLogAdapter.ViewHolder>
             ListType type = entry.getType();
             if (type != null && type == ListType.BLOCKED) {
                 statusIcon.setImageResource(R.drawable.baseline_block_24);
-                statusIcon.setColorFilter(context.getResources().getColor(R.color.blocked, null));
+                statusIcon.setColorFilter(context.getColor(R.color.blocked));
             } else if (type != null && type == ListType.ALLOWED) {
                 statusIcon.setImageResource(R.drawable.baseline_check_24);
-                statusIcon.setColorFilter(context.getResources().getColor(R.color.allowed, null));
+                statusIcon.setColorFilter(context.getColor(R.color.allowed));
             } else {
                 statusIcon.setImageResource(R.drawable.dot_outline);
                 statusIcon.clearColorFilter();

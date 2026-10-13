@@ -20,6 +20,8 @@ import org.adaway.R;
 import org.adaway.ui.home.HomeActivity;
 import org.adaway.ui.update.UpdateActivity;
 
+import timber.log.Timber;
+
 /**
  * Helper class for application notifications.
  * <p>
@@ -112,16 +114,16 @@ public final class NotificationHelper {
     public static void showAppInstalledNotification(@NonNull Context context) {
         NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
         if (notificationManager == null) {
-            timber.log.Timber.w("showAppInstalledNotification: NotificationManager null.");
+            Timber.w("showAppInstalledNotification: NotificationManager null.");
             return;
         }
         if (!notificationManager.areNotificationsEnabled()) {
-            timber.log.Timber.i("showAppInstalledNotification: notifications disabled; relying on toast.");
+            Timber.i("showAppInstalledNotification: notifications disabled; relying on toast.");
             return;
         }
         Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
         if (intent == null) {
-            timber.log.Timber.w("showAppInstalledNotification: no launch Intent for package.");
+            Timber.w("showAppInstalledNotification: no launch Intent for package.");
             return;
         }
         notify(context, notificationManager, UPDATE_APP_NOTIFICATION_CHANNEL, APP_INSTALLED_NOTIFICATION_ID, intent,

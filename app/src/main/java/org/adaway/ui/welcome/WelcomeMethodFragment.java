@@ -60,8 +60,8 @@ public class WelcomeMethodFragment extends WelcomeFragment {
         this.binding.rootCardView.setOnClickListener(this::checkRoot);
         this.binding.vpnCardView.setOnClickListener(this::enableVpnService);
 
-        this.cardColor = getResources().getColor(R.color.cardBackground, null);
-        this.cardEnabledColor = getResources().getColor(R.color.cardEnabledBackground, null);
+        this.cardColor = requireContext().getColor(R.color.cardBackground);
+        this.cardEnabledColor = requireContext().getColor(R.color.cardEnabledBackground);
         return this.binding.getRoot();
     }
 

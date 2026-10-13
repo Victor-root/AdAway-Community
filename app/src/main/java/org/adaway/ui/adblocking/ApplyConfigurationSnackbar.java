@@ -28,7 +28,7 @@ import static com.google.android.material.snackbar.Snackbar.LENGTH_LONG;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class ApplyConfigurationSnackbar {
+public final class ApplyConfigurationSnackbar {
     /**
      * The view to bind the snackbar to.
      */
@@ -162,9 +162,9 @@ public class ApplyConfigurationSnackbar {
                 // The "Apply" snackbar applies a configuration change; if the user has
                 // explicitly turned ad-blocking off it must not be silently re-enabled.
                 adBlockModel.applyIfActive();
-                endLoading(true);
+                AppExecutors.getInstance().mainThread().execute(() -> endLoading(true));
             } catch (HostErrorException exception) {
-                endLoading(false);
+                AppExecutors.getInstance().mainThread().execute(() -> endLoading(false));
             }
         });
     }
@@ -177,12 +177,6 @@ public class ApplyConfigurationSnackbar {
     }
 
     private void endLoading(boolean successfulInstall) {
-        // Ensure the snackbar has time to display
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
         // Clear snackbars
         this.waitSnackbar.dismiss();
         // Check install failure

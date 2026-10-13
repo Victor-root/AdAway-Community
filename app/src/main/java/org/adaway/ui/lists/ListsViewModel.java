@@ -35,7 +35,7 @@ import static org.adaway.ui.lists.ListsFilter.ALL;
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
-public class ListsViewModel extends AndroidViewModel {
+public final class ListsViewModel extends AndroidViewModel {
     private static final Executor EXECUTOR = AppExecutors.getInstance().diskIO();
     private final HostListItemDao hostListItemDao;
     private final MutableLiveData<ListsFilter> filter;

@@ -34,7 +34,7 @@ import org.adaway.R;
  * the crest of the swell, the lower half nestled into the bar and the upper half emerging
  * above it.
  */
-public class BumpBottomBar extends FrameLayout {
+public final class BumpBottomBar extends FrameLayout {
     // All geometry is expressed in dp and converted to px at construction time.
     private static final float BAR_HEIGHT_DP = 26f;     // flat ledge thickness at the sides
     private static final float BUMP_HEIGHT_DP = 10f;    // how high the central crest rises above the ledge
@@ -80,8 +80,8 @@ public class BumpBottomBar extends FrameLayout {
         this.shadowDyPx = SHADOW_DY_DP * density;
         float strokeWidthPx = STROKE_WIDTH_DP * density;
 
-        int barColor = context.getResources().getColor(R.color.bumpBarBackground, context.getTheme());
-        int strokeColor = context.getResources().getColor(R.color.bumpBarStroke, context.getTheme());
+        int barColor = context.getColor(R.color.bumpBarBackground);
+        int strokeColor = context.getColor(R.color.bumpBarStroke);
 
         this.fillPaint.setStyle(Paint.Style.FILL);
         this.fillPaint.setColor(barColor);

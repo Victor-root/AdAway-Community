@@ -5,6 +5,8 @@ import static org.adaway.ui.Animations.showView;
 import static java.lang.Boolean.TRUE;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,7 +37,7 @@ public class TvLogActivity extends AppCompatActivity {
     private boolean vpnStatusInitialized = false;
     private boolean isRecordingLogs = false;
 
-    private final android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
+    private final Handler handler = new Handler(Looper.getMainLooper());
     private final Runnable updateRunnable = new Runnable() {
         @Override
         public void run() {

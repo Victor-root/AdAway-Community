@@ -210,9 +210,9 @@
                 android:text="@string/tv_persistence_indicator_active"
                 android:textAppearance="?attr/textAppearanceCaption"
                 android:textColor="@color/cardEnabledBackground"
-                android:drawableStart="@drawable/baseline_check_24"
                 android:drawablePadding="4dp"
-                android:drawableTint="@color/cardEnabledBackground"
+                app:drawableStartCompat="@drawable/baseline_check_24"
+                app:drawableTint="@color/cardEnabledBackground"
                 android:visibility="gone"
                 tools:visibility="visible" />
 

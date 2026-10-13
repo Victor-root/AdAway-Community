@@ -34,7 +34,7 @@ public final class ShellUtils {
     }
 
     public static boolean isBundledExecutableRunning(String executable) {
-        return Shell.cmd("ps -A | grep " + EXECUTABLE_PREFIX + executable + EXECUTABLE_SUFFIX).exec().isSuccess();
+        return Shell.cmd("pidof " + EXECUTABLE_PREFIX + executable + EXECUTABLE_SUFFIX).exec().isSuccess();
     }
 
     /**
@@ -58,8 +58,6 @@ public final class ShellUtils {
     public static void killBundledExecutable(String executable) {
         Shell.cmd("killall " + EXECUTABLE_PREFIX + executable + EXECUTABLE_SUFFIX).exec();
     }
-
-
 
     /**
      * Check if a path is writable.
