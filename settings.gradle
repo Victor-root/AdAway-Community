@@ -1,1 +1,24 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://jitpack.io'
+            content {
+                // Only libsu is published there
+                includeGroup 'com.github.topjohnwu.libsu'
+            }
+        }
+    }
+}
+
 include ':app', ':tcpdump', ':webserver'

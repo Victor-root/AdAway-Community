@@ -2,7 +2,11 @@
 # Build
 appName = "6.6.1-c"
 appCode = "60601" # Read x.yy.zz to match version name (suffix "-c" = community fork, ignored by code)
-gradle = "8.7.2"
+agp = "8.7.2"
+compileSdk = "34"
+targetSdk = "34"
+minSdk = "26"
+ndk = "27.2.12479018"
 # AndroidX
 appcompat = "1.7.0"
 cardview = "1.0.0"
@@ -35,8 +39,6 @@ androidxTestCore = "1.6.1"
 androidXCoreTesting = "2.2.0"
 
 [libraries]
-# Build
-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 # AndroidX
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
@@ -77,4 +79,5 @@ pcap4j = ["pcap4j-core", "pcap4j-pcap4j-packetfactory-static"]
 androidx-test = ["androidx-test-core", "androidx-test-core-testing", "androidx-test-ext-junit", "androidx-test-runner"]
 
 [plugins]
-
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }

@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    alias(libs.plugins.android.application)
 }
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -13,29 +13,20 @@ if (keystorePropertiesFile.exists()) {
             keystoreProperties['keyPassword']
 }
 
-repositories {
-    maven {
-        url 'https://jitpack.io'
-    }
-}
-
 android {
-    compileSdk 34
-    ndkVersion '27.2.12479018'
+    compileSdk libs.versions.compileSdk.get() as int
+    ndkVersion libs.versions.ndk.get()
     namespace 'org.adaway'
 
     defaultConfig {
-        minSdk 26
-        targetSdk 34
+        minSdk libs.versions.minSdk.get() as int
+        targetSdk libs.versions.targetSdk.get() as int
         versionCode libs.versions.appCode.get() as int
         versionName libs.versions.appName.get()
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [
-                        "room.schemaLocation": "$projectDir/schemas".toString(),
-                        "room.incremental"   : "true"
-                ]
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
 
@@ -77,6 +68,7 @@ android {
     }
 
     buildFeatures {
+        buildConfig true
         viewBinding true
     }
 
@@ -90,7 +82,7 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
