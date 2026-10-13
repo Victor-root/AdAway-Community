@@ -237,6 +237,12 @@ public class TvHomeActivity extends AppCompatActivity {
         homeViewModel.getOutdatedSourceCount().observe(this, count ->
                 outdatedSourcesTextView.setText(resources.getQuantityString(R.plurals.outdated_source_label, count, count))
         );
+
+        TextView failedSourcesTextView = findViewById(R.id.tv_failed_sources);
+        homeViewModel.getFailedSourceCount().observe(this, count -> {
+            failedSourcesTextView.setText(resources.getQuantityString(R.plurals.failed_source_label, count, count));
+            failedSourcesTextView.setVisibility(count > 0 ? View.VISIBLE : View.GONE);
+        });
     }
 
     /**

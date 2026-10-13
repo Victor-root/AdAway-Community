@@ -120,4 +120,15 @@ final class Migrations {
             database.execSQL("ALTER TABLE `hosts_sources` ADD `entityTag` TEXT DEFAULT NULL");
         }
     };
+
+    /**
+     * Migration script from v7 to v8.
+     */
+    static final Migration MIGRATION_7_8 = new Migration(7, 8) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            // Track the sources whose last retrieval failed
+            database.execSQL("ALTER TABLE `hosts_sources` ADD `last_sync_failed` INTEGER NOT NULL DEFAULT 0");
+        }
+    };
 }

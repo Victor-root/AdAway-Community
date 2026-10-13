@@ -223,6 +223,12 @@ public class HomeActivity extends AppCompatActivity {
         outdatedSourceCount.observe(this, count ->
                 outdatedSourcesTextView.setText(resources.getQuantityString(R.plurals.outdated_source_label, count, count))
         );
+
+        TextView failedSourcesTextView = this.binding.content.failedSourcesTextView;
+        this.homeViewModel.getFailedSourceCount().observe(this, count -> {
+            failedSourcesTextView.setText(resources.getQuantityString(R.plurals.failed_source_label, count, count));
+            failedSourcesTextView.setVisibility(count > 0 ? View.VISIBLE : View.GONE);
+        });
     }
 
     private void bindPending() {

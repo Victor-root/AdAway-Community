@@ -480,11 +480,26 @@
                         android:layout_marginStart="16dp"
                         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
                         android:textColor="@color/homeCardSubtitle"
-                        app:layout_constraintBottom_toBottomOf="@+id/sourceImageView"
+                        app:layout_constraintBottom_toTopOf="@+id/failedSourcesTextView"
                         app:layout_constraintEnd_toStartOf="@+id/syncSourcesImageView"
                         app:layout_constraintStart_toEndOf="@+id/sourceImageView"
                         app:layout_constraintTop_toBottomOf="@+id/upToDateSourcesTextView"
                         tools:text="0 outdated source" />
+
+                    <TextView
+                        android:id="@+id/failedSourcesTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                        android:textColor="@color/blocked"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/sourceImageView"
+                        app:layout_constraintEnd_toStartOf="@+id/syncSourcesImageView"
+                        app:layout_constraintStart_toEndOf="@+id/sourceImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/outdatedSourcesTextView"
+                        tools:text="1 unreachable source"
+                        tools:visibility="visible" />
 
                     <!--
                         Single action: checking and downloading were two separate buttons before,
@@ -512,7 +527,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:barrierDirection="bottom"
-                        app:constraint_referenced_ids="sourceImageView,outdatedSourcesTextView,syncSourcesImageView" />
+                        app:constraint_referenced_ids="sourceImageView,outdatedSourcesTextView,failedSourcesTextView,syncSourcesImageView" />
 
                     <com.google.android.material.progressindicator.LinearProgressIndicator
                         android:id="@+id/sourcesProgressBar"
@@ -557,14 +572,14 @@
                     android:id="@+id/logCardView"
                     style="@style/Widget.AdAway.HomeCard"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal|top"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -611,14 +626,14 @@
                     android:id="@+id/helpCardView"
                     style="@style/Widget.AdAway.HomeCard"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal|top"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -665,13 +680,13 @@
                     android:id="@+id/preferencesCardView"
                     style="@style/Widget.AdAway.HomeCard"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal|top"
                         android:orientation="vertical"
                         android:padding="12dp">
 

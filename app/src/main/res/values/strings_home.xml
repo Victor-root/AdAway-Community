@@ -18,6 +18,10 @@
         <item quantity="one">%d outdated source</item>
         <item quantity="other">%d outdated sources</item>
     </plurals>
+    <plurals name="failed_source_label">
+        <item quantity="one">%d unreachable source</item>
+        <item quantity="other">%d unreachable sources</item>
+    </plurals>
     <string name="update_hosts_description">Update hosts</string>
 
     <!-- Home action rows (redesigned home screen) -->

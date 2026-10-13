@@ -51,6 +51,10 @@ final class HostsSourceFormat {
         if (!source.isEnabled()) {
             return context.getString(R.string.hosts_source_disabled);
         }
+        // Check if the last retrieval failed
+        if (source.isSyncFailed()) {
+            return context.getString(R.string.hosts_source_sync_failed);
+        }
         // Check modification dates
         boolean lastOnlineModificationDefined = source.getOnlineModificationDate() != null;
         boolean lastLocalModificationDefined = source.getLocalModificationDate() != null;

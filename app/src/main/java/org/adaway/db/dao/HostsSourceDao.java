@@ -65,12 +65,18 @@ public interface HostsSourceDao {
     @Query("UPDATE hosts_sources SET size = (SELECT count(id) FROM hosts_lists WHERE source_id = :id) WHERE id = :id")
     void updateSize(int id);
 
-    @Query("SELECT count(id) FROM hosts_sources WHERE enabled = 1 AND last_modified_online > last_modified_local")
+    @Query("UPDATE hosts_sources SET last_sync_failed = :failed WHERE id = :id")
+    void setSyncFailed(int id, boolean failed);
+
+    @Query("SELECT count(id) FROM hosts_sources WHERE enabled = 1 AND last_sync_failed = 0 AND last_modified_online > last_modified_local")
     LiveData<Integer> countOutdated();
 
-    @Query("SELECT count(id) FROM hosts_sources WHERE enabled = 1 AND last_modified_online <= last_modified_local")
+    @Query("SELECT count(id) FROM hosts_sources WHERE enabled = 1 AND last_sync_failed = 0 AND last_modified_online <= last_modified_local")
     LiveData<Integer> countUpToDate();
 
-    @Query("UPDATE hosts_sources SET last_modified_local = NULL, last_modified_online = NULL, entityTag = NULL, size = 0 WHERE id = :id")
+    @Query("SELECT count(id) FROM hosts_sources WHERE enabled = 1 AND last_sync_failed = 1 AND id != 1")
+    LiveData<Integer> countSyncFailed();
+
+    @Query("UPDATE hosts_sources SET last_modified_local = NULL, last_modified_online = NULL, entityTag = NULL, size = 0, last_sync_failed = 0 WHERE id = :id")
     void clearProperties(int id);
 }

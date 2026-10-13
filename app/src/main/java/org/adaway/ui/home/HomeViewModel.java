@@ -107,6 +107,10 @@ public class HomeViewModel extends AndroidViewModel {
         return this.hostsSourceDao.countOutdated();
     }
 
+    public LiveData<Integer> getFailedSourceCount() {
+        return this.hostsSourceDao.countSyncFailed();
+    }
+
     public LiveData<Boolean> getPending() {
         return this.pending;
     }

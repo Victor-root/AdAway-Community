@@ -6,6 +6,7 @@ import static org.adaway.db.Migrations.MIGRATION_3_4;
 import static org.adaway.db.Migrations.MIGRATION_4_5;
 import static org.adaway.db.Migrations.MIGRATION_5_6;
 import static org.adaway.db.Migrations.MIGRATION_6_7;
+import static org.adaway.db.Migrations.MIGRATION_7_8;
 
 import androidx.room.migration.Migration;
 import androidx.room.testing.MigrationTestHelper;
@@ -24,9 +25,9 @@ import java.io.IOException;
 @RunWith(AndroidJUnit4.class)
 public class MigrationTest {
     private static final String TEST_DB = "migration-test";
-    private static final int LATEST_VERSION = 7;
+    private static final int LATEST_VERSION = 8;
     private static final Migration[] ALL_MIGRATIONS = {
-            MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7
+            MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8
     };
 
     @Rule

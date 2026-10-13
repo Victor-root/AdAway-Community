@@ -369,11 +369,13 @@ public class SourceModel {
                 this.hostsSourceDao.updateModificationDates(sourceId, localModificationDate, onlineModificationDate);
                 // Update size
                 this.hostsSourceDao.updateSize(sourceId);
+                this.hostsSourceDao.setSyncFailed(sourceId, false);
                 Timber.d("Source %s retrieved successfully.", source.getLabel());
             } catch (IOException e) {
                 Timber.w(e, "Failed to retrieve host source %s.", source.getUrl());
                 // Increment number of failed copy
                 numberOfFailedCopies++;
+                this.hostsSourceDao.setSyncFailed(sourceId, true);
             }
         }
         Timber.d("retrieveHostsSources: %d attempted, %d failed.", numberOfCopies, numberOfFailedCopies);

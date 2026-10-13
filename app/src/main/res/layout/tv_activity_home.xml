@@ -606,11 +606,26 @@
                         android:layout_marginStart="12dp"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="@color/homeCardSubtitle"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_failed_sources"
                         app:layout_constraintEnd_toStartOf="@+id/tv_sync_sources_icon"
                         app:layout_constraintStart_toEndOf="@+id/tv_source_icon"
                         app:layout_constraintTop_toBottomOf="@+id/tv_up_to_date_sources"
                         tools:text="0 outdated source" />
+
+                    <TextView
+                        android:id="@+id/tv_failed_sources"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/blocked"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_sync_sources_icon"
+                        app:layout_constraintStart_toEndOf="@+id/tv_source_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_outdated_sources"
+                        tools:text="1 unreachable source"
+                        tools:visibility="visible" />
 
                     <ImageView
                         android:id="@+id/tv_sync_sources_icon"

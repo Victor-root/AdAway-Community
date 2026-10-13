@@ -59,7 +59,7 @@ to apply the hosts file, run the web server and record the DNS log.
 ## 1. Automated tests
 
 - [x] `./gradlew connectedDebugAndroidTest` passes, in particular:
-  - `MigrationTest`: every database migration (1 → 7) against the exported schemas.
+  - `MigrationTest`: every database migration (1 → 8) against the exported schemas.
   - `UserListTest.testUpsertUserItemReplacesSameHost`: adding a host already in a user list
     replaces it instead of adding a second entry.
 

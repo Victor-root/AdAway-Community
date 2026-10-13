@@ -55,6 +55,11 @@ public class HostsSource {
      * The number of hosts list items (<code>0</code> until synced).
      */
     private int size;
+    /**
+     * Whether the last retrieval of the source failed (unreachable, HTTP error, lost file access).
+     */
+    @ColumnInfo(name = "last_sync_failed")
+    private boolean syncFailed;
 
     /**
      * Check whether an URL is valid for as host source.<br>
@@ -159,6 +164,14 @@ public class HostsSource {
         this.size = size;
     }
 
+    public boolean isSyncFailed() {
+        return this.syncFailed;
+    }
+
+    public void setSyncFailed(boolean syncFailed) {
+        this.syncFailed = syncFailed;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -168,6 +181,9 @@ public class HostsSource {
 
         if (id != that.id) return false;
         if (enabled != that.enabled) return false;
+        if (size != that.size) return false;
+        if (syncFailed != that.syncFailed) return false;
+        if (!label.equals(that.label)) return false;
         if (!url.equals(that.url)) return false;
         if (!Objects.equals(localModificationDate, that.localModificationDate))
             return false;
@@ -178,8 +194,11 @@ public class HostsSource {
     @Override
     public int hashCode() {
         int result = id;
+        result = 31 * result + label.hashCode();
         result = 31 * result + url.hashCode();
         result = 31 * result + (enabled ? 1 : 0);
+        result = 31 * result + size;
+        result = 31 * result + (syncFailed ? 1 : 0);
         result = 31 * result + (localModificationDate != null ? localModificationDate.hashCode() : 0);
         result = 31 * result + (onlineModificationDate != null ? onlineModificationDate.hashCode() : 0);
         return result;
