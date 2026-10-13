@@ -4,10 +4,6 @@ import static android.os.Build.VERSION.SDK_INT;
 import static android.provider.Settings.ACTION_SECURITY_SETTINGS;
 import static android.widget.Toast.LENGTH_SHORT;
 import static java.util.Objects.requireNonNull;
-import static org.adaway.model.root.MountType.READ_ONLY;
-import static org.adaway.model.root.MountType.READ_WRITE;
-import static org.adaway.model.root.ShellUtils.isWritable;
-import static org.adaway.model.root.ShellUtils.remountPartition;
 import static org.adaway.ui.prefs.PrefsActivity.PREFERENCE_NOT_FOUND;
 import static org.adaway.util.Constants.ANDROID_SYSTEM_ETC_HOSTS;
 import static org.adaway.util.WebServerUtils.TEST_URL;
@@ -27,7 +23,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult;
+import androidx.core.content.FileProvider;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
@@ -40,6 +36,7 @@ import org.adaway.helper.PreferenceHelper;
 import org.adaway.model.adblocking.AdBlockMethod;
 import org.adaway.ui.dialog.MissingAppDialog;
 import org.adaway.util.AppExecutors;
+import org.adaway.util.ActivityStarter;
 
 import java.io.File;
 import java.io.IOException;
@@ -66,10 +63,6 @@ final class RootPrefsBinder {
 
     private final PreferenceFragmentCompat fragment;
     /**
-     * The launcher to start open hosts file activity.
-     */
-    private ActivityResultLauncher<Intent> openHostsFileLauncher;
-    /**
      * The launcher to prepare web service certificate activity.
      */
     private ActivityResultLauncher<String> prepareCertificateLauncher;
@@ -83,7 +76,6 @@ final class RootPrefsBinder {
      * the fragment is being created, since registering a launcher later is not allowed.
      */
     void bind() {
-        registerForOpenHostActivity();
         registerForPrepareCertificateActivity();
         bindOpenHostsFile();
         bindRedirection();
@@ -135,18 +127,6 @@ final class RootPrefsBinder {
         return preference;
     }
 
-    private void registerForOpenHostActivity() {
-        this.openHostsFileLauncher = this.fragment.registerForActivityResult(
-                new StartActivityForResult(), result -> {
-                    try {
-                        File hostFile = new File(ANDROID_SYSTEM_ETC_HOSTS).getCanonicalFile();
-                        remountPartition(hostFile, READ_ONLY);
-                    } catch (IOException e) {
-                        Timber.e(e, "Failed to get hosts canonical file.");
-                    }
-                });
-    }
-
     private void registerForPrepareCertificateActivity() {
         this.prepareCertificateLauncher = this.fragment.registerForActivityResult(
                 new ActivityResultContracts.CreateDocument(CERTIFICATE_MIME_TYPE),
@@ -160,23 +140,20 @@ final class RootPrefsBinder {
     }
 
     private boolean openHostsFile(Preference preference) {
+        Context context = this.fragment.requireContext();
         try {
+            // Read-only: another app cannot write the root owned hosts file
             File hostFile = new File(ANDROID_SYSTEM_ETC_HOSTS).getCanonicalFile();
-            boolean remount = !isWritable(hostFile) && remountPartition(hostFile, READ_WRITE);
-            Intent intent = new Intent()
-                    .setAction(Intent.ACTION_VIEW)
-                    .setDataAndType(Uri.parse("file://" + hostFile.getAbsolutePath()), "text/plain");
-            if (remount) {
-                this.openHostsFileLauncher.launch(intent);
-            } else {
-                this.fragment.startActivity(intent);
-            }
+            Uri hostsUri = FileProvider.getUriForFile(context, context.getPackageName() + ".fileprovider", hostFile);
+            Intent intent = new Intent(Intent.ACTION_VIEW)
+                    .setDataAndType(hostsUri, "text/plain")
+                    .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            this.fragment.startActivity(intent);
             return true;
-        } catch (IOException e) {
-            Timber.e(e, "Failed to get hosts canonical file.");
+        } catch (IOException | IllegalArgumentException e) {
+            Timber.e(e, "Failed to share the hosts file.");
         } catch (ActivityNotFoundException e) {
-            MissingAppDialog.showTextEditorMissingDialog(this.fragment.getContext());
-            return false;
+            MissingAppDialog.showTextEditorMissingDialog(context);
         }
         return false;
     }
@@ -246,7 +223,7 @@ final class RootPrefsBinder {
         Preference webServerTest = require(R.string.pref_webserver_test_key);
         webServerTest.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(TEST_URL));
-            this.fragment.startActivity(intent);
+            ActivityStarter.startActivity(this.fragment.requireContext(), intent);
             return true;
         });
     }
@@ -279,7 +256,7 @@ final class RootPrefsBinder {
                         (dialog, which) -> {
                             dialog.dismiss();
                             Intent intent = new Intent(ACTION_SECURITY_SETTINGS);
-                            this.fragment.startActivity(intent);
+                            ActivityStarter.startActivity(this.fragment.requireContext(), intent);
                         })
                 .create()
                 .show();

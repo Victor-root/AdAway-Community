@@ -33,7 +33,6 @@ import androidx.annotation.StringRes;
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -41,10 +40,11 @@ import java.net.ConnectException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
 
 import javax.net.ssl.SSLHandshakeException;
-import javax.security.cert.CertificateException;
-import javax.security.cert.X509Certificate;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -143,19 +143,12 @@ public final class WebServerUtils {
      */
     public static void installCertificate(Context context) {
         AssetManager assetManager = context.getAssets();
-        try (InputStream inputStream = assetManager.open(LOCALHOST_CERTIFICATE);
-             ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
-            byte[] buffer = new byte[1024];
-            int read;
-            while ((read = inputStream.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, read);
-            }
-            byte[] bytes = outputStream.toByteArray();
-            X509Certificate x509 = X509Certificate.getInstance(bytes);
+        try (InputStream inputStream = assetManager.open(LOCALHOST_CERTIFICATE)) {
+            Certificate certificate = CertificateFactory.getInstance("X.509").generateCertificate(inputStream);
             Intent intent = KeyChain.createInstallIntent();
-            intent.putExtra(KeyChain.EXTRA_CERTIFICATE, x509.getEncoded());
+            intent.putExtra(KeyChain.EXTRA_CERTIFICATE, certificate.getEncoded());
             intent.putExtra(KeyChain.EXTRA_NAME, "AdAway");
-            context.startActivity(intent);
+            ActivityStarter.startActivity(context, intent);
         } catch (IOException e) {
             Timber.w(e, "Failed to read certificate.");
         } catch (CertificateException e) {

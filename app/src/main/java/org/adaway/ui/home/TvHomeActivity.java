@@ -31,6 +31,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.button.MaterialButton;
 
+import org.adaway.broadcast.UpdateReceiver;
 import org.adaway.AdAwayApplication;
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
@@ -51,6 +52,8 @@ import org.adaway.ui.welcome.TvWelcomeActivity;
 import org.adaway.vpn.VpnServiceControls;
 
 import kotlin.jvm.functions.Function1;
+
+import java.text.NumberFormat;
 
 public class TvHomeActivity extends AppCompatActivity {
 
@@ -115,7 +118,7 @@ public class TvHomeActivity extends AppCompatActivity {
         }
 
         NotificationHelper.clearUpdateNotifications(this);
-        org.adaway.broadcast.UpdateReceiver.clearInstallToast(this);
+        UpdateReceiver.clearInstallToast(this);
         setContentView(R.layout.tv_activity_home);
 
         // Opening the app is the first moment recovery is possible after an OEM
@@ -202,7 +205,9 @@ public class TvHomeActivity extends AppCompatActivity {
      * source and formatting as {@code HomeActivity.bindHostCounter()} on mobile.
      */
     private void bindHostCounter() {
-        Function1<Integer, CharSequence> stringMapper = count -> Integer.toString(count);
+        // Group the digits the locale way (e.g. 123,456)
+        NumberFormat numberFormat = NumberFormat.getIntegerInstance();
+        Function1<Integer, CharSequence> stringMapper = numberFormat::format;
 
         TextView blockedCountTextView = findViewById(R.id.tv_blocked_count);
         Transformations.map(homeViewModel.getBlockedHostCount(), stringMapper)

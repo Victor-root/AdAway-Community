@@ -47,10 +47,14 @@ public class UpdateViewModel extends AndroidViewModel {
 
     public void update() {
         long downloadId = this.updateModel.update();
+        if (downloadId == -1) {
+            this.downloadProgress.setValue(null);
+            return;
+        }
         NETWORK_IO.execute(() -> trackProgress(downloadId));
     }
 
-    public MutableLiveData<DownloadStatus> getDownloadProgress() {
+    public LiveData<DownloadStatus> getDownloadProgress() {
         return this.downloadProgress;
     }
 
@@ -71,8 +75,10 @@ public class UpdateViewModel extends AndroidViewModel {
             // Query download manager
             try (Cursor cursor = downloadManager.query(query)) {
                 if (!cursor.moveToFirst()) {
+                    // The download was cancelled (removed from the download manager)
                     Timber.d("Download item was not found");
-                    continue;
+                    this.downloadProgress.postValue(null);
+                    return;
                 }
                 // Check download status
                 int statusColumnIndex = cursor.getColumnIndex(COLUMN_STATUS);

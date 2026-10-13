@@ -28,6 +28,7 @@ import org.adaway.model.update.Manifest;
 import org.adaway.model.update.UpdateModel;
 import org.adaway.ui.update.UpdateActivity;
 import org.adaway.util.AppExecutors;
+import org.adaway.util.ActivityStarter;
 
 public class PrefsUpdateFragment extends PrefsFragment {
     @Override
@@ -61,7 +62,7 @@ public class PrefsUpdateFragment extends PrefsFragment {
             Intent settingsIntent = new Intent(ACTION_APP_NOTIFICATION_SETTINGS)
                     .addFlags(FLAG_ACTIVITY_NEW_TASK)
                     .putExtra(EXTRA_APP_PACKAGE, context.getPackageName());
-            context.startActivity(settingsIntent);
+            ActivityStarter.startActivity(context, settingsIntent);
             return true;
         });
     }

@@ -86,8 +86,8 @@ public class PrefsActivity extends AppCompatActivity implements PreferenceFragme
         // Replace the existing Fragment with the new Fragment
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(
-                        R.animator.fragment_open_enter, R.animator.fragment_open_exit,
-                        R.animator.fragment_close_enter, R.animator.fragment_close_exit
+                        R.animator.prefs_fragment_open_enter, R.animator.prefs_fragment_open_exit,
+                        R.animator.prefs_fragment_close_enter, R.animator.prefs_fragment_close_exit
                 )
                 .replace(R.id.settings_container, fragment)
                 .addToBackStack(null)

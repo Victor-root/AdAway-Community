@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
@@ -29,6 +30,7 @@ import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import org.adaway.broadcast.UpdateReceiver;
 import org.adaway.R;
 import org.adaway.databinding.HomeActivityBinding;
 import org.adaway.helper.NotificationHelper;
@@ -50,15 +52,19 @@ import org.adaway.vpn.VpnServiceControls;
 import kotlin.jvm.functions.Function1;
 import timber.log.Timber;
 
+import java.text.NumberFormat;
+
 /**
  * This class is the application main activity.
  *
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
 public class HomeActivity extends AppCompatActivity {
+    private static final String VPN_CONSENT_REQUESTED_STATE = "vpnConsentRequested";
     private HomeActivityBinding binding;
     private HomeViewModel homeViewModel;
     private ActivityResultLauncher<Intent> prepareVpnLauncher;
+    private boolean vpnConsentRequested;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -75,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         ThemeHelper.applyTheme(this);
         NotificationHelper.clearUpdateNotifications(this);
-        org.adaway.broadcast.UpdateReceiver.clearInstallToast(this);
+        UpdateReceiver.clearInstallToast(this);
         Timber.i("Starting main activity");
         // Opening the app is the first moment recovery is possible after an OEM
         // battery-manager force-stop (which blocks sticky resurrection, the heartbeat
@@ -103,7 +109,15 @@ public class HomeActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             checkUpdateAtStartup();
+        } else {
+            this.vpnConsentRequested = savedInstanceState.getBoolean(VPN_CONSENT_REQUESTED_STATE);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(VPN_CONSENT_REQUESTED_STATE, this.vpnConsentRequested);
     }
 
     @Override
@@ -134,8 +148,10 @@ public class HomeActivity extends AppCompatActivity {
             // Start welcome activity
             startActivity(new Intent(this, WelcomeActivity.class));
             finish();
-        } else if (adBlockMethod == VPN && (prepareIntent = VpnService.prepare(this)) != null) {
-            // Prepare VPN
+        } else if (adBlockMethod == VPN && !this.vpnConsentRequested
+                && (prepareIntent = VpnService.prepare(this)) != null) {
+            // Prepare VPN, once: asking again on each resume would loop on a declined request
+            this.vpnConsentRequested = true;
             this.prepareVpnLauncher.launch(prepareIntent);
         }
     }
@@ -172,7 +188,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void bindHostCounter() {
-        Function1<Integer, CharSequence> stringMapper = count -> Integer.toString(count);
+        // Group the digits the locale way (e.g. 123,456)
+        NumberFormat numberFormat = NumberFormat.getIntegerInstance();
+        Function1<Integer, CharSequence> stringMapper = numberFormat::format;
 
         TextView blockedHostCountTextView = this.binding.content.blockedHostCounterTextView;
         LiveData<Integer> blockedHostCount = this.homeViewModel.getBlockedHostCount();

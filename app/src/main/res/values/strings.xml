@@ -97,6 +97,7 @@
 
     <!-- Clipboard -->
     <string name="clipboard_host_copied">Host copied to clipboard</string>
+    <string name="no_application_found">No application found to open it</string>
 
     <!--VPN notification-->
     <string name="vpn_notification_starting">starting</string>

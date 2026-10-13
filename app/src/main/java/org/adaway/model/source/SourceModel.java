@@ -358,7 +358,7 @@ public class SourceModel {
                         readSourceFile(source);
                         break;
                     default:
-                        Timber.w("Hosts source type  is not supported.");
+                        Timber.w("Hosts source type %s is not supported.", source.getType());
                 }
                 // Update local and online modification dates to now
                 localModificationDate = onlineModificationDate.isAfter(now) ? onlineModificationDate : now;
@@ -454,6 +454,10 @@ public class SourceModel {
                 Timber.d("Source %s was not updated since last fetch.", source.getUrl());
                 return;
             }
+            // An error page is not a hosts file: parsing it would wipe the source hosts
+            if (!response.isSuccessful()) {
+                throw new IOException("Unexpected HTTP status " + response.code() + ".");
+            }
             // Extract ETag if present
             String entityTag = response.header(ENTITY_TAG_HEADER);
             if (entityTag != null) {
@@ -513,7 +517,7 @@ public class SourceModel {
         long startTime = System.currentTimeMillis();
         new SourceLoader(hostsSource).parse(reader, this.hostListItemDao);
         long endTime = System.currentTimeMillis();
-        Timber.i("Parsed " + hostsSource.getUrl() + " in " + (endTime - startTime) / 1000 + "s");
+        Timber.i("Parsed %s in %ds.", hostsSource.getUrl(), (endTime - startTime) / 1000);
     }
 
     /**

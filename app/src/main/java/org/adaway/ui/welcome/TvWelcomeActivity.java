@@ -179,6 +179,10 @@ public class TvWelcomeActivity extends AppCompatActivity {
             boolean granted = TRUE.equals(Shell.isAppGrantedRoot());
             Timber.d("TvWelcomeActivity.chooseRoot: granted=%s.", granted);
             runOnUiThread(() -> {
+                // The root prompt can outlive the activity
+                if (isFinishing() || isDestroyed()) {
+                    return;
+                }
                 this.rootButton.setEnabled(true);
                 if (granted) {
                     HomeViewModel viewModel = homeViewModel(ROOT);

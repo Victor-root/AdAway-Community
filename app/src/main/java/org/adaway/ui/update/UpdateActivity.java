@@ -115,6 +115,10 @@ public class UpdateActivity extends AppCompatActivity {
     private void bindProgress() {
         this.updateViewModel.getDownloadProgress().observe(this, progress -> {
             if (progress == null) {
+                // The download failed or was cancelled: let the user retry
+                this.binding.downloadProgressBar.setVisibility(GONE);
+                this.binding.progressTextView.setText(R.string.update_failed_label);
+                this.binding.updateButton.setVisibility(VISIBLE);
                 return;
             }
             this.binding.updateButton.setVisibility(GONE);

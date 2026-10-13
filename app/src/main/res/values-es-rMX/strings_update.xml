@@ -5,7 +5,7 @@
     <string name="update_up_to_date_header">Estás al día</string>
     <string name="update_update_available_header">Actualización disponible</string>
     <string name="update_update_button">Actualizar ahora</string>
-    <string name="update_last_changelog_title">Ultimos cambios:</string>
+    <string name="update_last_changelog_title">Últimos cambios:</string>
 
     <!-- Notification -->
     <string name="update_notification_description">Descargando la ultima version de AdAway</string>

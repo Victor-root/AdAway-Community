@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import org.adaway.AdAwayApplication;
 import org.adaway.R;
+import org.adaway.util.ActivityStarter;
 
 public class AboutFragment extends Fragment {
     @Nullable
@@ -59,7 +60,7 @@ public class AboutFragment extends Fragment {
     private void setLink(View parent, int viewId, String url) {
         View link = parent.findViewById(viewId);
         link.setOnClickListener(v ->
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                ActivityStarter.startActivity(v.getContext(), new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
         );
         if (isTv(link.getContext())) {
             // A click listener makes this row D-pad-focusable by default, so D-pad

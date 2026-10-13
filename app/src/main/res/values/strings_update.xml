@@ -11,6 +11,7 @@
     <string name="update_update_button">Update now</string>
     <string name="update_progress_label">%1$s / %2$s</string>
     <string name="update_complete_label">Complete</string>
+    <string name="update_failed_label">Download failed</string>
     <string name="update_last_changelog_title">Last changes</string>
 
     <!-- Notification -->

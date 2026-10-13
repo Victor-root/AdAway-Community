@@ -29,6 +29,7 @@ import com.topjohnwu.superuser.Shell;
 import org.adaway.R;
 import org.adaway.databinding.WelcomeMethodLayoutBinding;
 import org.adaway.helper.PreferenceHelper;
+import org.adaway.util.ActivityStarter;
 
 /**
  * This class is a fragment to setup the ad blocking method.
@@ -68,15 +69,18 @@ public class WelcomeMethodFragment extends WelcomeFragment {
         notifyVpnDisabled();
         this.binding.rootCardView.setClickable(false);
         Shell.getShell(shell -> {
+            // The callback runs on the main thread, possibly after the fragment view is gone
+            // (the root prompt can take a while, the user can leave or rotate meanwhile)
+            if (this.binding == null || !isAdded()) {
+                return;
+            }
             boolean granted = TRUE.equals(Shell.isAppGrantedRoot());
-            requireActivity().runOnUiThread(() -> {
-                this.binding.rootCardView.setClickable(true);
-                if (granted) {
-                    notifyRootEnabled();
-                } else {
-                    notifyRootDisabled(true);
-                }
-            });
+            this.binding.rootCardView.setClickable(true);
+            if (granted) {
+                notifyRootEnabled();
+            } else {
+                notifyRootDisabled(true);
+            }
         });
     }
 
@@ -151,7 +155,7 @@ public class WelcomeMethodFragment extends WelcomeFragment {
                         (dialog, which) -> {
                             dialog.dismiss();
                             Intent intent = new Intent(ACTION_VPN_SETTINGS);
-                            startActivity(intent);
+                            ActivityStarter.startActivity(requireContext(), intent);
                         })
                 .create()
                 .show();

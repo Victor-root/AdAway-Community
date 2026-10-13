@@ -50,6 +50,7 @@ import org.adaway.ui.adblocking.ApplyConfigurationSnackbar;
 import org.adaway.ui.dialog.AlertDialogValidator;
 import org.adaway.util.Clipboard;
 import org.adaway.util.RegexUtils;
+import org.adaway.util.ActivityStarter;
 
 /**
  * This class is an {@link android.app.Activity} to show DNS request log entries.
@@ -225,7 +226,7 @@ public class LogActivity extends AppCompatActivity implements LogViewCallback {
     public void openHostInBrowser(@NonNull String hostName) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("http://" + hostName));
-        startActivity(intent);
+        ActivityStarter.startActivity(this, intent);
     }
 
     @Override

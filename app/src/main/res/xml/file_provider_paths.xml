@@ -12,4 +12,11 @@
     <external-cache-path
         name="external_cache"
         path="." />
+    <!--
+        The system hosts file, for "Open hosts file": apps cannot be handed a file:// URI (it
+        throws FileUriExposedException) and the hosts file is world readable.
+    -->
+    <root-path
+        name="system_etc"
+        path="system/etc/" />
 </paths>
