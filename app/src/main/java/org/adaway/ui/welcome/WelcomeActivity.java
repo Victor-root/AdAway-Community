@@ -11,12 +11,15 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
+import org.adaway.model.adblocking.AdBlockMethod;
 import org.adaway.databinding.WelcomeActivityBinding;
 import org.adaway.ui.home.HomeActivity;
 
 import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 import static org.adaway.model.adblocking.AdBlockMethod.ROOT;
+import static org.adaway.model.adblocking.AdBlockMethod.UNDEFINED;
 import static org.adaway.ui.Animations.hideView;
 import static org.adaway.ui.Animations.showView;
 
@@ -40,6 +43,7 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeNavigab
         bindBackButton();
         bindNextButton();
         bindDots();
+        updateSteps();
         bindBackPress();
     }
 
@@ -113,18 +117,25 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeNavigab
     }
 
     /**
-     * Show the battery steps for the VPN method only.
+     * Show the battery steps for the VPN method only, and the step dots once a method is chosen:
+     * the number of steps depends on it.
      */
     private void updateSteps() {
-        boolean batterySteps = PreferenceHelper.getAdBlockMethod(this) != ROOT;
+        AdBlockMethod method = PreferenceHelper.getAdBlockMethod(this);
+        boolean batterySteps = method != ROOT;
         this.pagerAdapter.setBatterySteps(batterySteps);
-        int visibility = batterySteps ? VISIBLE : GONE;
-        this.binding.dot3ImageView.setVisibility(visibility);
-        this.binding.dot4ImageView.setVisibility(visibility);
+        boolean methodChosen = method != UNDEFINED;
+        int visibility = methodChosen ? VISIBLE : INVISIBLE;
+        this.binding.dot1ImageView.setVisibility(visibility);
+        this.binding.dot2ImageView.setVisibility(visibility);
+        int batteryVisibility = !methodChosen ? INVISIBLE : batterySteps ? VISIBLE : GONE;
+        this.binding.dot3ImageView.setVisibility(batteryVisibility);
+        this.binding.dot4ImageView.setVisibility(batteryVisibility);
     }
 
     @Override
     public void blockNext() {
+        updateSteps();
         hideView(this.binding.nextButton);
     }
 

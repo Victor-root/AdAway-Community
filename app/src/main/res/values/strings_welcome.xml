@@ -39,7 +39,7 @@
 
     <string name="welcome_sync_header">Syncing</string>
     <string name="welcome_synced_header">Synced!</string>
-    <string name="welcome_sync_summary">AdAway downloads ad networks to block from online sources. You can customize them later in the settings.</string>
+    <string name="welcome_sync_summary">AdAway blocks ads using lists of known ad and tracking domains from trusted online sources. You can change these lists at any time under Hosts sources.</string>
     <string name="welcome_sync_retry_logo">Retry sync</string>
     <string name="welcome_sync_error">Failed to sync: %1$s Retry now?</string>
     <string name="welcome_sync_notifications">It can send notifications to display ad block status and control, and to notify about available app update (a few per year). Enable them if you want to stay up-to-date.</string>
