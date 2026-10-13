@@ -30,6 +30,7 @@ import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import org.adaway.BuildConfig;
 import org.adaway.broadcast.UpdateReceiver;
 import org.adaway.R;
 import org.adaway.databinding.HomeActivityBinding;
@@ -172,7 +173,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void bindAppVersion() {
         TextView versionTextView = this.binding.content.versionTextView;
-        versionTextView.setText(this.homeViewModel.getVersionName());
+        versionTextView.setText(BuildConfig.VERSION_NAME);
         versionTextView.setOnClickListener(this::showUpdate);
     }
 
@@ -313,7 +314,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void notifyAdBlocked(boolean adBlocked) {
-        int color = adBlocked ? getResources().getColor(R.color.primary, null) : Color.GRAY;
+        int color = adBlocked ? getColor(R.color.primary) : Color.GRAY;
         this.binding.content.headerFrameLayout.setBackgroundColor(color);
         getWindow().setStatusBarColor(color);
         this.binding.fab.setImageResource(adBlocked ? R.drawable.ic_pause_24dp : R.drawable.logo);

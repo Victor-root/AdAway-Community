@@ -1,20 +1,15 @@
 package org.adaway.model.update;
 
-import static android.app.DownloadManager.ACTION_DOWNLOAD_COMPLETE;
 import static org.adaway.util.Constants.GITHUB_REPOSITORY;
 
 import android.app.DownloadManager;
 import android.content.Context;
-import android.content.IntentFilter;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 
-import androidx.core.content.ContextCompat;
-import androidx.core.content.pm.PackageInfoCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import org.adaway.BuildConfig;
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
 import org.json.JSONException;
@@ -33,8 +28,8 @@ import timber.log.Timber;
  * <p>
  * Polls the AdAway-Community GitHub repository for the latest release, exposes the
  * resulting {@link Manifest} as LiveData, downloads the matching APK asset into the
- * app's external cache directory, and hands off to the system installer via
- * {@link ApkDownloadReceiver}.
+ * app's external cache directory. {@link org.adaway.ui.update.UpdateActivity} tracks the
+ * download and hands the verified APK to the system installer.
  */
 public class UpdateModel {
     /** GitHub REST API endpoint for the latest release of the fork. */
@@ -44,14 +39,11 @@ public class UpdateModel {
     public static final String APK_FILE_NAME = "adaway-community-update.apk";
 
     private final Context context;
-    private final VersionInfo versionInfo;
     private final OkHttpClient client;
     private final MutableLiveData<Manifest> manifest;
-    private ApkDownloadReceiver receiver;
 
     public UpdateModel(Context context) {
         this.context = context;
-        this.versionInfo = VersionInfo.get(context);
         this.manifest = new MutableLiveData<>();
         this.client = new OkHttpClient.Builder().build();
         ApkUpdateService.syncPreferences(context);
@@ -59,7 +51,7 @@ public class UpdateModel {
     }
 
     private void cleanUpPreviousDownload() {
-        if (isInstallPending(this.context)) {
+        if (PreferenceHelper.isInstallPending(this.context)) {
             // App was killed while the user was in the "install unknown apps" settings
             // screen. Keep the APK so UpdateActivity can resume the install on resume.
             Timber.i("Skipping APK cleanup; install pending.");
@@ -68,51 +60,17 @@ public class UpdateModel {
         ApkInstaller.clearDownloads(this.context);
     }
 
-    /**
-     * Returns whether an install was started but the system installer has not yet
-     * been launched. Set by {@link org.adaway.ui.update.UpdateActivity} while it
-     * routes the user through the "install unknown apps" permission screen. The flag prevents
-     * {@link #cleanUpPreviousDownload()} from deleting the downloaded APK if the app
-     * process is killed for memory while that screen is in the foreground, so the
-     * install flow can resume on next launch instead of forcing a fresh download.
-     */
-    public static boolean isInstallPending(Context context) {
-        return PreferenceHelper.isInstallPending(context);
-    }
-
-    /**
-     * @see #isInstallPending(Context)
-     */
-    public static void setInstallPending(Context context, boolean pending) {
-        PreferenceHelper.setInstallPending(context, pending);
-    }
-
-    public String getVersionName() {
-        return this.versionInfo.name;
-    }
-
     public LiveData<Manifest> getManifest() {
         return this.manifest;
     }
 
     /**
-     * Fetch the latest release and publish the resulting manifest. Safe to call from
-     * any background thread.
-     */
-    public void checkForUpdate() {
-        Manifest fetched = downloadManifest();
-        if (fetched != null) {
-            this.manifest.postValue(fetched);
-        }
-    }
-
-    /**
-     * Fetch the latest release, publish the manifest, and return it directly.
-     * Safe to call from any background thread.
+     * Fetch the latest release and publish the resulting manifest. Safe to call from any
+     * background thread.
      *
      * @return The fetched manifest, or {@code null} on network/parse failure.
      */
-    public Manifest checkForUpdateNow() {
+    public Manifest checkForUpdate() {
         Manifest fetched = downloadManifest();
         if (fetched != null) {
             this.manifest.postValue(fetched);
@@ -121,9 +79,6 @@ public class UpdateModel {
     }
 
     private Manifest downloadManifest() {
-        if (!this.versionInfo.isValid()) {
-            return null;
-        }
         Request request = new Request.Builder()
                 .url(LATEST_RELEASE_URL)
                 .header("Accept", "application/vnd.github+json")
@@ -132,7 +87,7 @@ public class UpdateModel {
         try (Response response = this.client.newCall(request).execute();
              ResponseBody body = response.body()) {
             if (response.isSuccessful() && body != null) {
-                return new Manifest(body.string(), this.versionInfo.name);
+                return new Manifest(body.string(), BuildConfig.VERSION_NAME);
             }
             Timber.w("GitHub release endpoint returned HTTP %d.", response.code());
             return null;
@@ -152,21 +107,7 @@ public class UpdateModel {
         if (current == null || current.apkUrl == null) {
             return -1;
         }
-        if (this.receiver != null) {
-            try {
-                this.context.unregisterReceiver(this.receiver);
-            } catch (IllegalArgumentException ignored) {
-                // Receiver was already unregistered.
-            }
-        }
-        long downloadId = download(current);
-        this.receiver = new ApkDownloadReceiver(downloadId);
-        ContextCompat.registerReceiver(
-                this.context,
-                this.receiver,
-                new IntentFilter(ACTION_DOWNLOAD_COMPLETE),
-                ContextCompat.RECEIVER_NOT_EXPORTED);
-        return downloadId;
+        return download(current);
     }
 
     private long download(Manifest current) {
@@ -183,32 +124,5 @@ public class UpdateModel {
                 .setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN);
         DownloadManager downloadManager = this.context.getSystemService(DownloadManager.class);
         return downloadManager.enqueue(request);
-    }
-
-    private static class VersionInfo {
-        private final long code;
-        private final String name;
-
-        private VersionInfo(long code, String name) {
-            this.code = code;
-            this.name = name;
-        }
-
-        // getPackageInfo(String, int) is deprecated in favour of a PackageInfoFlags overload that
-        // only exists from Android 13 on, and the minimum supported here is Android 8.
-        @SuppressWarnings("deprecation")
-        static VersionInfo get(Context context) {
-            try {
-                PackageInfo packageInfo = context.getPackageManager()
-                        .getPackageInfo(context.getPackageName(), 0);
-                return new VersionInfo(PackageInfoCompat.getLongVersionCode(packageInfo), packageInfo.versionName);
-            } catch (PackageManager.NameNotFoundException e) {
-                return new VersionInfo(0, "development");
-            }
-        }
-
-        boolean isValid() {
-            return this.code > 0;
-        }
     }
 }

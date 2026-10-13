@@ -14,6 +14,7 @@
 * Fix crashes when opening the hosts file, or a link on a device without a browser
 * Fix the update screen staying stuck after a cancelled or failed download
 * Fix the VPN permission being asked again and again on the home screen when declined
+* Fix the daily app update check never showing its notification
 
 ### Changed
 

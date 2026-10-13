@@ -32,8 +32,13 @@ import timber.log.Timber;
  */
 public class UpdateViewModel extends AndroidViewModel {
     private static final Executor NETWORK_IO = AppExecutors.getInstance().networkIO();
+    /**
+     * The delay between two download progress checks, as DownloadManager has no progress callback.
+     */
+    private static final long PROGRESS_POLL_DELAY_MS = 250;
     private final UpdateModel updateModel;
     private final MutableLiveData<DownloadStatus> downloadProgress;
+    private volatile boolean cleared;
 
     public UpdateViewModel(@NonNull Application application) {
         super(application);
@@ -54,6 +59,11 @@ public class UpdateViewModel extends AndroidViewModel {
         NETWORK_IO.execute(() -> trackProgress(downloadId));
     }
 
+    @Override
+    protected void onCleared() {
+        this.cleared = true;
+    }
+
     public LiveData<DownloadStatus> getDownloadProgress() {
         return this.downloadProgress;
     }
@@ -62,10 +72,11 @@ public class UpdateViewModel extends AndroidViewModel {
         DownloadManager downloadManager = getApplication().getSystemService(DownloadManager.class);
         DownloadManager.Query query = new DownloadManager.Query().setFilterById(downloadId);
         boolean finishDownload = false;
-        while (!finishDownload) {
+        // Stop tracking once the screen is gone: nobody observes the progress any more
+        while (!finishDownload && !this.cleared) {
             // Add wait before querying download manager
             try {
-                Thread.sleep(100);
+                Thread.sleep(PROGRESS_POLL_DELAY_MS);
             } catch (InterruptedException e) {
                 Timber.d(e, "Failed to wait before querying download manager.");
                 Thread.currentThread().interrupt();

@@ -15,12 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import io.noties.markwon.Markwon;
+import org.adaway.helper.PreferenceHelper;
 import org.adaway.R;
 import org.adaway.databinding.UpdateActityBinding;
 import org.adaway.helper.ThemeHelper;
 import org.adaway.model.update.ApkInstaller;
 import org.adaway.model.update.Manifest;
-import org.adaway.model.update.UpdateModel;
 
 import java.io.File;
 
@@ -57,7 +57,7 @@ public class UpdateActivity extends AppCompatActivity {
         // apps" permission screen. If permission was not granted, restore the UI
         // so the user can retry from the Update button instead of being stuck on
         // a frozen progress bar.
-        if (UpdateModel.isInstallPending(this) && !getPackageManager().canRequestPackageInstalls()) {
+        if (PreferenceHelper.isInstallPending(this) && !getPackageManager().canRequestPackageInstalls()) {
             this.binding.downloadProgressBar.setVisibility(GONE);
             this.binding.progressTextView.setText("");
             // updateButton visibility is restored by the manifest LiveData
@@ -86,10 +86,10 @@ public class UpdateActivity extends AppCompatActivity {
      * @return {@code true} when the install Intent was started.
      */
     public static boolean tryResumePendingInstall(Activity activity) {
-        if (!UpdateModel.isInstallPending(activity)) {
+        if (!PreferenceHelper.isInstallPending(activity)) {
             return false;
         }
-        UpdateModel.setInstallPending(activity, false);
+        PreferenceHelper.setInstallPending(activity, false);
         if (!activity.getPackageManager().canRequestPackageInstalls()) {
             return false;
         }
@@ -149,7 +149,7 @@ public class UpdateActivity extends AppCompatActivity {
         // either from this Activity or from the launcher Activity if Android
         // didn't restore us.
         if (!getPackageManager().canRequestPackageInstalls()) {
-            UpdateModel.setInstallPending(this, true);
+            PreferenceHelper.setInstallPending(this, true);
             Intent settings = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)
                     .setData(Uri.parse("package:" + getPackageName()));
             startActivity(settings);

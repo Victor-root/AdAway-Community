@@ -18,7 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.adaway.AdAwayApplication;
+import org.adaway.BuildConfig;
 import org.adaway.R;
 import org.adaway.util.ActivityStarter;
 
@@ -35,7 +35,7 @@ public class AboutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         TextView versionTextView = view.findViewById(R.id.about_version);
-        versionTextView.setText(getString(R.string.about_version, getVersionName()));
+        versionTextView.setText(getString(R.string.about_version, BuildConfig.VERSION_NAME));
 
         setLink(view, R.id.about_source_link, GITHUB_REPOSITORY_URL);
         setLink(view, R.id.about_issues_link, GITHUB_REPOSITORY_URL + "/issues");
@@ -73,9 +73,5 @@ public class AboutFragment extends Fragment {
     private static boolean isTv(Context context) {
         UiModeManager uiModeManager = (UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE);
         return uiModeManager != null && uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
-    }
-
-    private String getVersionName() {
-        return ((AdAwayApplication) requireActivity().getApplication()).getUpdateModel().getVersionName();
     }
 }

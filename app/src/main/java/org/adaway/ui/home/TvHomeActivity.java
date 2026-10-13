@@ -31,8 +31,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.button.MaterialButton;
 
+import org.adaway.BuildConfig;
 import org.adaway.broadcast.UpdateReceiver;
-import org.adaway.AdAwayApplication;
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
@@ -126,8 +126,7 @@ public class TvHomeActivity extends AppCompatActivity {
         // and broadcasts until then), so restart the VPN here if it was killed.
         VpnServiceControls.resurrectIfKilledExternally(this);
 
-        String versionName = ((AdAwayApplication) getApplication()).getUpdateModel().getVersionName();
-        ((TextView) findViewById(R.id.tv_version)).setText(getString(R.string.tv_version, versionName));
+        ((TextView) findViewById(R.id.tv_version)).setText(getString(R.string.tv_version, BuildConfig.VERSION_NAME));
 
         statusBadge = findViewById(R.id.tv_status_badge);
         statusIcon = findViewById(R.id.tv_status_icon);

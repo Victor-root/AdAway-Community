@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
-import org.adaway.AdAwayApplication;
+import org.adaway.BuildConfig;
 import org.adaway.R;
 import org.adaway.helper.NotificationHelper;
 import org.adaway.helper.PreferenceHelper;
@@ -34,10 +34,7 @@ public class UpdateReceiver extends BroadcastReceiver {
         if (!ACTION_MY_PACKAGE_REPLACED.equals(intent.getAction())) {
             return;
         }
-        AdAwayApplication application = (AdAwayApplication) context.getApplicationContext();
-        String versionName = application.getUpdateModel().getVersionName();
-        Timber.d("UpdateReceiver invoked");
-        Timber.i("Application update to version %s", versionName);
+        Timber.i("Application update to version %s", BuildConfig.VERSION_NAME);
 
         long stamp = System.currentTimeMillis();
         Context appContext = context.getApplicationContext();

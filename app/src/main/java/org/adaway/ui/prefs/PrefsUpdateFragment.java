@@ -89,7 +89,7 @@ public class PrefsUpdateFragment extends PrefsFragment {
         checkNowPref.setOnPreferenceClickListener(preference -> {
             preference.setEnabled(false);
             AppExecutors.getInstance().networkIO().execute(() -> {
-                Manifest result = updateModel.checkForUpdateNow();
+                Manifest result = updateModel.checkForUpdate();
                 AppExecutors.getInstance().mainThread().execute(() -> {
                     preference.setEnabled(true);
                     String message;

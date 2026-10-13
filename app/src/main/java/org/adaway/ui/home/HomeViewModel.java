@@ -83,10 +83,6 @@ public class HomeViewModel extends AndroidViewModel {
         return this.enableCompleted;
     }
 
-    public String getVersionName() {
-        return this.updateModel.getVersionName();
-    }
-
     public LiveData<Manifest> getAppManifest() {
         return this.updateModel.getManifest();
     }
