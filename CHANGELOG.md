@@ -10,6 +10,7 @@
 * Update dnsjava, which parses the DNS queries in VPN mode, to 3.6.5 for its security fixes
 * Fix VPN mode stopping on Ethernet connected devices when Wi-Fi went away
 * Fix a hosts source losing its hosts when its server answered with an error
+* Fix the AdAway and Pete Lowe default sources staying empty after a fresh install
 * Fix crashes when opening the hosts file, or a link on a device without a browser
 * Fix the update screen staying stuck after a cancelled or failed download
 * Fix the VPN permission being asked again and again on the home screen when declined
