@@ -311,6 +311,7 @@ public class SourceModel {
         // Update state to downloading
         setState(R.string.status_retrieve);
         // Initialize copy counters
+        int numberOfEnabledSources = 0;
         int numberOfCopies = 0;
         int numberOfFailedCopies = 0;
         // Compute current date in UTC timezone
@@ -327,6 +328,7 @@ public class SourceModel {
                 this.hostsSourceDao.clearProperties(sourceId);
                 continue;
             }
+            numberOfEnabledSources++;
             // Get hosts source last update
             ZonedDateTime onlineModificationDate = getHostsSourceLastUpdate(source);
             if (onlineModificationDate == null) {
@@ -334,7 +336,9 @@ public class SourceModel {
             }
             // Check if update available
             ZonedDateTime localModificationDate = source.getLocalModificationDate();
-            if (localModificationDate != null && localModificationDate.isAfter(onlineModificationDate)) {
+            // An empty source is retrieved again: it may have been wrongly stamped as up to date
+            if (localModificationDate != null && localModificationDate.isAfter(onlineModificationDate)
+                    && source.getSize() > 0) {
                 Timber.i("Skip source %s: no update.", source.getLabel());
                 // Debug level only (below the always-on diagnostic log's INFO+ floor, so this
                 // never reaches a release build's exportable log): a source stamped "up to date"
@@ -373,16 +377,14 @@ public class SourceModel {
             }
         }
         Timber.d("retrieveHostsSources: %d attempted, %d failed.", numberOfCopies, numberOfFailedCopies);
-        // A partial failure (some sources succeeded, some didn't) falls through here silently:
-        // only "every attempted source failed" throws below. That lets the welcome screen see
-        // a "successful" sync that actually merged only some of the configured sources. Flag it
-        // loudly until this is properly handled instead of just logged.
-        if (numberOfFailedCopies > 0 && numberOfFailedCopies < numberOfCopies) {
-            Timber.w("retrieveHostsSources: PARTIAL FAILURE, %d of %d attempted source(s) failed but the sync is proceeding as if it succeeded. Blocked host count so far: %d.",
-                    numberOfFailedCopies, numberOfCopies, this.hostListItemDao.countBlockedHosts());
+        // Only report the sync as failed if no enabled source is usable: sources skipped as up to
+        // date still hold their hosts, so one broken source among them is not "none reachable".
+        // The failed sources keep their previous hosts and are retried on the next sync.
+        if (numberOfFailedCopies > 0 && numberOfFailedCopies < numberOfEnabledSources) {
+            Timber.w("retrieveHostsSources: %d of %d enabled source(s) failed, keeping their previous hosts. Blocked host count: %d.",
+                    numberOfFailedCopies, numberOfEnabledSources, this.hostListItemDao.countBlockedHosts());
         }
-        // Check if all copies failed
-        if (numberOfCopies == numberOfFailedCopies && numberOfCopies != 0) {
+        if (numberOfFailedCopies != 0 && numberOfFailedCopies == numberOfEnabledSources) {
             throw new HostErrorException(DOWNLOAD_FAILED);
         }
         // Synchronize hosts entries
@@ -414,13 +416,19 @@ public class SourceModel {
 
     /**
      * Get request builder for an hosts source.
-     * All cache data available are filled into the headers.
+     * All cache data available are filled into the headers, if the source holds hosts.
      *
      * @param source The hosts source to get request builder.
      * @return The hosts source request builder.
      */
     private Request.Builder getRequestFor(HostsSource source) {
         Request.Builder request = new Request.Builder().url(source.getUrl());
+        // Only ask for changes when there is a local copy to keep: the online date is also
+        // stored by the update check, before the first download, and a "not modified" answer
+        // would then leave the source empty for good
+        if (source.getSize() <= 0) {
+            return request;
+        }
         if (source.getEntityTag() != null) {
             request = request.header(IF_NONE_MATCH_HEADER, source.getEntityTag());
         }

@@ -104,7 +104,10 @@ public class HomeActivity extends AppCompatActivity {
         bindFab();
 
         this.prepareVpnLauncher = registerForActivityResult(new StartActivityForResult(), result -> {
-
+            // The consent was missing (revoked, or lost): restart ad blocking if it was on
+            if (result.getResultCode() == RESULT_OK && PreferenceHelper.getVpnServiceUserEnabled(this)) {
+                VpnServiceControls.start(this);
+            }
         });
 
         if (savedInstanceState == null) {
