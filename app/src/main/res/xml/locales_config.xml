@@ -16,7 +16,6 @@
     <locale android:name="de"/>
     <locale android:name="el"/>
     <locale android:name="en"/>
-    <locale android:name="en-US"/>
     <locale android:name="eo"/>
     <locale android:name="es"/>
     <locale android:name="es-MX"/>
