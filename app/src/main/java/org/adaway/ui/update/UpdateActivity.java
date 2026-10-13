@@ -99,6 +99,7 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     private void bindListeners() {
+        this.binding.backButton.setOnClickListener(view -> getOnBackPressedDispatcher().onBackPressed());
         this.binding.updateButton.setOnClickListener(this::startUpdate);
     }
 

@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:padding="20dp">
 
         <androidx.constraintlayout.widget.Guideline
@@ -19,8 +20,8 @@
 
         <ImageView
             android:id="@+id/headerImageView"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
             android:contentDescription="@string/app_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +32,7 @@
             android:id="@+id/headerTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/welcome_method_header"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AdAway.Welcome.Header"
@@ -44,7 +45,7 @@
             android:id="@+id/summaryTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:text="@string/welcome_method_summary"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AdAway.Welcome.Body"
@@ -62,7 +63,7 @@
             android:id="@+id/rootCardView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:clickable="true"
             android:focusable="true"
@@ -176,7 +177,7 @@
             android:id="@+id/vpnCardView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="32dp"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:clickable="true"

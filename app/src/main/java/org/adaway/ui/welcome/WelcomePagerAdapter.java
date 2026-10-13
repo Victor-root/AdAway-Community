@@ -10,10 +10,17 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
  * @author Bruce BUJON (bruce.bujon(at)gmail(dot)com)
  */
 public class WelcomePagerAdapter extends FragmentStateAdapter {
+    private static final int BATTERY_STEPS_POSITION = 2;
+    private static final int BATTERY_STEPS_COUNT = 2;
     private final WelcomeMethodFragment welcomeMethodFragment;
     private final WelcomeSyncFragment welcomeSyncFragment;
     private final WelcomeBatteryFragment welcomeBatteryFragment;
     private final WelcomeOemBatteryFragment welcomeOemBatteryFragment;
+    /**
+     * Whether the battery steps are shown: they only matter to the VPN, which runs in the
+     * background, whereas root mode only installs the hosts file.
+     */
+    private boolean batterySteps;
 
     WelcomePagerAdapter(@NonNull FragmentActivity fragmentManager) {
         super(fragmentManager);
@@ -21,6 +28,24 @@ public class WelcomePagerAdapter extends FragmentStateAdapter {
         this.welcomeSyncFragment = new WelcomeSyncFragment();
         this.welcomeBatteryFragment = new WelcomeBatteryFragment();
         this.welcomeOemBatteryFragment = new WelcomeOemBatteryFragment();
+        this.batterySteps = true;
+    }
+
+    /**
+     * Show or hide the battery steps.
+     *
+     * @param batterySteps {@code true} to show the battery steps, {@code false} to hide them.
+     */
+    void setBatterySteps(boolean batterySteps) {
+        if (this.batterySteps == batterySteps) {
+            return;
+        }
+        this.batterySteps = batterySteps;
+        if (batterySteps) {
+            notifyItemRangeInserted(BATTERY_STEPS_POSITION, BATTERY_STEPS_COUNT);
+        } else {
+            notifyItemRangeRemoved(BATTERY_STEPS_POSITION, BATTERY_STEPS_COUNT);
+        }
     }
 
     @NonNull
@@ -42,6 +67,6 @@ public class WelcomePagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return this.batterySteps ? BATTERY_STEPS_POSITION + BATTERY_STEPS_COUNT : BATTERY_STEPS_POSITION;
     }
 }

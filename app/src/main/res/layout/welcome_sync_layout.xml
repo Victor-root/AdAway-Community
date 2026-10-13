@@ -14,7 +14,10 @@
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/headerTextView"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -57,7 +60,8 @@
         android:textColor="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loadingFrameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/loadingFrameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/summaryTextView" />
 
     <TextView
         android:id="@+id/summaryTextView"
@@ -71,7 +75,8 @@
         android:textColor="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView"
+        app:layout_constraintBottom_toTopOf="@+id/errorTextView" />
 
     <TextView
         android:id="@+id/errorTextView"
@@ -81,6 +86,7 @@
         android:text="@string/welcome_sync_error"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/summaryTextView"

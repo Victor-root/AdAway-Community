@@ -3,7 +3,7 @@
     <string name="pref_main_title">Preferences</string>
     <!-- General category -->
     <string name="pref_general_category">General</string>
-    <string name="pref_dark_theme">Dark theme</string>
+    <string name="pref_dark_theme">Theme</string>
     <string-array name="pref_dark_theme_modes">
         <item>Light</item>
         <item>Dark</item>

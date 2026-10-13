@@ -10,9 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import org.adaway.R;
+import org.adaway.helper.PreferenceHelper;
 import org.adaway.databinding.WelcomeActivityBinding;
 import org.adaway.ui.home.HomeActivity;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+import static org.adaway.model.adblocking.AdBlockMethod.ROOT;
 import static org.adaway.ui.Animations.hideView;
 import static org.adaway.ui.Animations.showView;
 
@@ -99,12 +103,24 @@ public class WelcomeActivity extends AppCompatActivity implements WelcomeNavigab
 
     @Override
     public void allowNext() {
+        updateSteps();
         if (this.binding.viewPager.getCurrentItem() == this.pagerAdapter.getItemCount() - 1) {
             this.binding.nextButton.setText(R.string.welcome_finish_button);
         } else {
             this.binding.nextButton.setText(R.string.welcome_next_button);
         }
         showView(this.binding.nextButton);
+    }
+
+    /**
+     * Show the battery steps for the VPN method only.
+     */
+    private void updateSteps() {
+        boolean batterySteps = PreferenceHelper.getAdBlockMethod(this) != ROOT;
+        this.pagerAdapter.setBatterySteps(batterySteps);
+        int visibility = batterySteps ? VISIBLE : GONE;
+        this.binding.dot3ImageView.setVisibility(visibility);
+        this.binding.dot4ImageView.setVisibility(visibility);
     }
 
     @Override

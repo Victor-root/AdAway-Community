@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="update_title">AdAway update</string>
+    <string name="update_back">Back</string>
     <!-- Home screen -->
     <string name="update_banner_title">Update available</string>
     <string name="update_banner_subtitle">Tap to install %1$s</string>

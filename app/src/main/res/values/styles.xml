@@ -240,7 +240,7 @@
         does not reliably report the right wrap_content height in that combination.
     -->
     <style name="TextAppearance.AdAway.Welcome.Header" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">26sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:breakStrategy">high_quality</item>
         <item name="android:hyphenationFrequency">full</item>

@@ -15,6 +15,7 @@
 * Fix the update screen staying stuck after a cancelled or failed download
 * Fix the VPN permission being asked again and again on the home screen when declined
 * Fix the daily app update check never showing its notification
+* Fix English text changes not showing on devices set to US English
 
 ### Changed
 
@@ -22,6 +23,10 @@
 * Update the bundled tcpdump and libpcap used by the root DNS log from 4.5.1 and 1.5.2 (2014) to 4.99.7 and 1.10.7
 * Shrink the APK from 15 MB to 9.1 MB by no longer bundling OpenSSL and an unused native C++ library
 * Show the host counters with digit grouping
+* Show unreachable hosts sources on the home screen and in the sources list
+* Skip the battery steps of the welcome wizard in root mode, where nothing runs in the background
+* Center the welcome screens, align the home screen tiles and add a back button to the update screen
+* Rename the "Dark theme" setting to "Theme", as it offers light, dark and system modes
 
 ### Removed
 
