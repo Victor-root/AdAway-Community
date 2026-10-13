@@ -45,6 +45,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -297,18 +298,20 @@ public class RootModel extends AdBlockModel {
             if (!writable) {
                 // remount for write access
                 Timber.i("Remounting for RW…");
-                if (!ShellUtils.remountPartition(targetFile, READ_WRITE)) {
-                    throw new CommandException("Failed to remount hosts file partition as read-write.");
+                // mount can exit successfully without remounting (e.g. a dm-verity system partition)
+                if (!ShellUtils.remountPartition(targetFile, READ_WRITE) || !isWritable(targetFile)) {
+                    throw new CommandException("The hosts file partition is read-only and could not be remounted read-write.");
                 }
             }
             // Copy hosts file then set owner and permissions
+            List<String> errors = new ArrayList<>();
             Shell.Result result = Shell.cmd(
                     "dd if=" + quote(privateFile) + " of=" + quote(target),
                     COMMAND_CHOWN + " " + quote(target),
                     COMMAND_CHMOD_644 + " " + quote(target)
-            ).exec();
+            ).to(new ArrayList<>(), errors).exec();
             if (!result.isSuccess()) {
-                throw new CommandException("Failed to copy hosts file: " + mergeAllLines(result.getErr()));
+                throw new CommandException("Failed to copy hosts file: " + mergeAllLines(errors));
             }
         } finally {
             if (!writable) {

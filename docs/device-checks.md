@@ -19,13 +19,26 @@ debug key) and the debug APK:
   records the DNS queries in the format the app parses and stops with `killall`; the web server
   answers on ports 80 and 443 over TLS 1.2 and 1.3 with the existing certificate (same SHA-256).
 - Preferences: titles, and the D-pad skipping the info rows and the dimmed root section.
-- Found and fixed: on a fresh install, the AdAway and Pete Lowe default sources stayed empty for good, one broken source among usable ones reported "none of your
-  hosts sources are reachable", and accepting the VPN consent again on the mobile home didn't restart
-  ad blocking.
+- Found and fixed: on a fresh install, the AdAway and Pete Lowe default sources stayed empty for
+  good, one broken source among usable ones reported "none of your hosts sources are reachable", and
+  accepting the VPN consent again on the mobile home didn't restart ad blocking.
 
-Still to check: root mode through the app (needs a rooted image, e.g. rootAVD), Android TV (needs a
-TV image), Ethernet (the emulator has none), the in-app update download (needs a newer release),
-the screens on a device without a browser.
+Root mode, on the same image rooted with rootAVD (Magisk 26.4) and the Magisk systemless hosts
+module enabled:
+
+- The hosts file is applied (72,548 hosts, `root:root 644`, `system_file` label) and reverted, blocked
+  hosts resolve to 127.0.0.1, and it stays applied after a reboot.
+- The web server starts from Preferences without `LD_LIBRARY_PATH` and again at boot, answers on
+  ports 80 and 443, and its state reads "Running but certificate not installed"; the certificate is
+  saved as the same file and the dialog opens the security settings.
+- The DNS log records queries through tcpdump and stops it.
+- "Open hosts file" offers the viewers and serves the whole file through the `FileProvider`; "Test
+  web server" opens Chrome, and with no browser shows a message instead of crashing.
+- Without the systemless hosts module, applying fails with the "Magisk systemless hosts" advice and
+  the log names the read-only partition (`mount` exits with 0 even when it cannot remount).
+
+Still to check: Android TV (needs a TV image), Ethernet (the emulator has none), the in-app update
+download (needs a newer release), the web server certificate trusted by the system.
 
 ## Emulator setup
 
@@ -67,15 +80,15 @@ The release build is the one that matters here: it is shrunk by R8, with dnsjava
 
 ## 3. Root mode (rooted emulator or device, debug and release APKs)
 
-- [ ] Applying and reverting the hosts file works (the `dd`, `chown` and `chmod` commands now quote
+- [x] Applying and reverting the hosts file works (the `dd`, `chown` and `chmod` commands now quote
       their paths).
-- [ ] The web server starts (Preferences → Root → web server), shows as running, and
+- [x] The web server starts (Preferences → Root → web server), shows as running, and
       `https://localhost/internal-test` loads in a browser once its certificate is installed. It now
       uses Mbed TLS instead of OpenSSL, is statically linked and is started without
       `LD_LIBRARY_PATH`. Also check from a root shell:
       `curl -k https://localhost/internal-test` (or `openssl s_client -connect localhost:443`).
 - [ ] The certificate installed with a previous version is still trusted (same certificate).
-- [ ] The DNS log (tcpdump 4.99.7 / libpcap 1.10.7) records the hosts of the device's DNS queries,
+- [x] The DNS log (tcpdump 4.99.7 / libpcap 1.10.7) records the hosts of the device's DNS queries,
       and stops when asked (the app finds it with `ps -A | grep` and stops it with `killall`).
 - [x] Debug builds can now do all of the above: they didn't package the tcpdump and web server
       executables before.
@@ -121,13 +134,13 @@ The release build is the one that matters here: it is shrunk by R8, with dnsjava
 - [ ] VPN mode on Ethernet (an Android TV box, or the emulator with Wi-Fi turned off in its extended
       controls): ad blocking works, unplugging and plugging back the cable reconnects the tunnel,
       and turning Wi-Fi on and off while Ethernet stays up doesn't stop it.
-- [ ] Root mode, Preferences → Root → Open hosts file: a text viewer opens the hosts file instead of
+- [x] Root mode, Preferences → Root → Open hosts file: a text viewer opens the hosts file instead of
       the app crashing (it now goes through the `FileProvider`, read-only).
 - [x] A hosts source whose URL answers 404 (e.g. a typo in a GitHub raw URL) is reported as failed
       and keeps its previous hosts.
 - [ ] Update screen: cancelling the download from its notification, or a failed download, shows
       "Download failed" and the Update button again.
-- [ ] On a device without a browser (most Android TV): DNS log → open in browser, Help → About links
+- [x] On a device without a browser (most Android TV): DNS log → open in browser, Help → About links
       and the web server test page show "No application found to open it" instead of crashing.
 - [x] Mobile home in VPN mode with the VPN consent revoked: declining the consent dialog doesn't
       show it again until the app is reopened.

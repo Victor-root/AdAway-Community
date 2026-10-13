@@ -7,6 +7,7 @@ import android.content.Context;
 import com.topjohnwu.superuser.Shell;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -82,10 +83,15 @@ public final class ShellUtils {
             return false;
         }
         String partition = partitionOptional.get();
-        Shell.Result result = Shell.cmd("mount -o " + type.getOption() + ",remount " + quote(partition)).exec();
+        List<String> errors = new ArrayList<>();
+        Shell.Result result = Shell.cmd("mount -o " + type.getOption() + ",remount " + quote(partition))
+                .to(new ArrayList<>(), errors)
+                .exec();
         boolean success = result.isSuccess();
         if (!success) {
-            Timber.w("Failed to remount partition %s as %s: %s.", partition, type.getOption(), mergeAllLines(result.getErr()));
+            Timber.w("Failed to remount partition %s as %s: %s.", partition, type.getOption(), mergeAllLines(errors));
+        } else if (!errors.isEmpty()) {
+            Timber.w("Remounting partition %s as %s reported: %s.", partition, type.getOption(), mergeAllLines(errors));
         }
         return success;
     }
