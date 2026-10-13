@@ -2,6 +2,7 @@ package org.adaway.vpn.dns;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
 import static android.net.NetworkCapabilities.TRANSPORT_CELLULAR;
+import static android.net.NetworkCapabilities.TRANSPORT_ETHERNET;
 import static android.net.NetworkCapabilities.TRANSPORT_VPN;
 import static android.net.NetworkCapabilities.TRANSPORT_WIFI;
 import static java.util.Collections.emptyList;
@@ -227,6 +228,7 @@ public class DnsServerMapper {
             NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(network);
             boolean cellular = networkCapabilities != null && networkCapabilities.hasTransport(TRANSPORT_CELLULAR);
             boolean wifi = networkCapabilities != null && networkCapabilities.hasTransport(TRANSPORT_WIFI);
+            boolean ethernet = networkCapabilities != null && networkCapabilities.hasTransport(TRANSPORT_ETHERNET);
             boolean vpn = networkCapabilities != null && networkCapabilities.hasTransport(TRANSPORT_VPN);
             LinkProperties linkProperties = connectivityManager.getLinkProperties(network);
             String dnsList = linkProperties == null ? "none" : linkProperties.getDnsServers()
@@ -234,11 +236,12 @@ public class DnsServerMapper {
                     .map(InetAddress::toString)
                     .collect(Collectors.joining(", "));
             Timber.d(
-                    "Network %s %s: %s%s%s with dns %s",
+                    "Network %s %s: %s%s%s%s with dns %s",
                     network,
                     network.equals(activeNetwork) ? "[default]" : "[other]",
                     cellular ? "cellular" : "",
                     wifi ? "WiFi" : "",
+                    ethernet ? "Ethernet" : "",
                     vpn ? " VPN" : "",
                     dnsList);
         }
@@ -286,6 +289,8 @@ public class DnsServerMapper {
             activeNetworkTransport = TRANSPORT_CELLULAR;
         } else if (activeNetworkCapabilities.hasTransport(TRANSPORT_WIFI)) {
             activeNetworkTransport = TRANSPORT_WIFI;
+        } else if (activeNetworkCapabilities.hasTransport(TRANSPORT_ETHERNET)) {
+            activeNetworkTransport = TRANSPORT_ETHERNET;
         }
         // Check all network to find one without VPN and matching transport
         for (Network network : connectivityManager.getAllNetworks()) {

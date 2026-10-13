@@ -21,6 +21,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import static android.net.NetworkCapabilities.NET_CAPABILITY_VALIDATED;
 import static android.net.NetworkCapabilities.TRANSPORT_CELLULAR;
+import static android.net.NetworkCapabilities.TRANSPORT_ETHERNET;
 import static android.net.NetworkCapabilities.TRANSPORT_VPN;
 import static android.net.NetworkCapabilities.TRANSPORT_WIFI;
 import static androidx.core.app.NotificationCompat.PRIORITY_LOW;
@@ -31,6 +32,7 @@ import static org.adaway.helper.NotificationHelper.VPN_RESUME_SERVICE_NOTIFICATI
 import static org.adaway.helper.NotificationHelper.VPN_RUNNING_SERVICE_NOTIFICATION_ID;
 import static org.adaway.helper.NotificationHelper.VPN_SERVICE_NOTIFICATION_CHANNEL;
 import static org.adaway.vpn.VpnService.NetworkType.CELLULAR;
+import static org.adaway.vpn.VpnService.NetworkType.ETHERNET;
 import static org.adaway.vpn.VpnService.NetworkType.WIFI;
 import static org.adaway.vpn.VpnStatus.RECONNECTING;
 import static org.adaway.vpn.VpnStatus.RUNNING;
@@ -102,6 +104,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
     private final MyHandler handler;
     private final NetworkTypeCallback wifiNetworkCallback;
     private final NetworkTypeCallback cellularNetworkCallback;
+    private final NetworkTypeCallback ethernetNetworkCallback;
     /**
      * Whether a Wi-Fi network is currently available on the device.
      */
@@ -119,6 +122,11 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
      * Whether a cellular network is currently available on the device.
      */
     private boolean cellularAvailable;
+    /**
+     * Whether an Ethernet network is currently available on the device (Android TV boxes mostly).
+     * Android prefers it over Wi-Fi, which some devices even turn off once Ethernet is up.
+     */
+    private boolean ethernetAvailable;
     /**
      * The transport the running tunnel is currently built for, or <code>null</code> when the VPN
      * is stopped (no network). The tunnel is rebuilt only when the transport Android would route
@@ -160,9 +168,11 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
         this.handler = new MyHandler(this);
         this.wifiNetworkCallback = new NetworkTypeCallback(WIFI);
         this.cellularNetworkCallback = new NetworkTypeCallback(CELLULAR);
+        this.ethernetNetworkCallback = new NetworkTypeCallback(ETHERNET);
         this.wifiAvailable = false;
         this.wifiValidated = false;
         this.cellularAvailable = false;
+        this.ethernetAvailable = false;
         this.currentTransport = null;
         this.currentTransportDnsServers = null;
         this.stoppedOnPurpose = false;
@@ -405,9 +415,13 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
         NetworkRequest cellularNetworkRequest = new NetworkRequest.Builder()
                 .addTransportType(TRANSPORT_CELLULAR)
                 .build();
+        NetworkRequest ethernetNetworkRequest = new NetworkRequest.Builder()
+                .addTransportType(TRANSPORT_ETHERNET)
+                .build();
         initializeNetworkState(connectivityManager);
         connectivityManager.registerNetworkCallback(wifiNetworkRequest, this.wifiNetworkCallback, this.handler);
         connectivityManager.registerNetworkCallback(cellularNetworkRequest, this.cellularNetworkCallback, this.handler);
+        connectivityManager.registerNetworkCallback(ethernetNetworkRequest, this.ethernetNetworkCallback, this.handler);
 
     }
 
@@ -415,6 +429,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         connectivityManager.unregisterNetworkCallback(this.wifiNetworkCallback);
         connectivityManager.unregisterNetworkCallback(this.cellularNetworkCallback);
+        connectivityManager.unregisterNetworkCallback(this.ethernetNetworkCallback);
     }
 
     // getAllNetworks() is deprecated in favour of the network callbacks, which is what the rest of
@@ -427,6 +442,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
         this.wifiAvailable = false;
         this.wifiValidated = false;
         this.cellularAvailable = false;
+        this.ethernetAvailable = false;
         setCurrentTransport(null);
         // Seed the state synchronously from the current networks. The per-transport callbacks
         // fire right after registration and will refine this, but seeding first means startVpn()
@@ -436,36 +452,51 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
             if (capabilities == null || capabilities.hasTransport(TRANSPORT_VPN)) {
                 continue;
             }
-            if (capabilities.hasTransport(TRANSPORT_WIFI)) {
+            if (capabilities.hasTransport(TRANSPORT_ETHERNET)) {
+                this.ethernetAvailable = true;
+            } else if (capabilities.hasTransport(TRANSPORT_WIFI)) {
                 this.wifiAvailable = true;
                 this.wifiValidated = capabilities.hasCapability(NET_CAPABILITY_VALIDATED);
             } else if (capabilities.hasTransport(TRANSPORT_CELLULAR)) {
                 this.cellularAvailable = true;
             }
         }
-        Timber.i("Initial network state: wifi=%s (validated=%s), cellular=%s.",
-                this.wifiAvailable, this.wifiValidated, this.cellularAvailable);
+        Timber.i("Initial network state: ethernet=%s, wifi=%s (validated=%s), cellular=%s.",
+                this.ethernetAvailable, this.wifiAvailable, this.wifiValidated, this.cellularAvailable);
+    }
+
+    private NetworkType computeDesiredTransport() {
+        return computeDesiredTransport(
+                this.ethernetAvailable, this.wifiAvailable, this.wifiValidated, this.cellularAvailable);
     }
 
     /**
      * Determine which transport the tunnel should be built for, mirroring how Android chooses the
-     * default (active) network: Wi-Fi is preferred over cellular, but only once it has validated
-     * internet connectivity. Before Wi-Fi validates, Android keeps routing through cellular, so
-     * the tunnel must too; otherwise its DNS (resolved from the active network) would not match
-     * the network actually carrying the traffic.
+     * default (active) network: Ethernet first, then Wi-Fi over cellular, but only once Wi-Fi has
+     * validated internet connectivity. Before Wi-Fi validates, Android keeps routing through
+     * cellular, so the tunnel must too; otherwise its DNS (resolved from the active network) would
+     * not match the network actually carrying the traffic.
      *
      * @return The transport to build the tunnel for, or <code>null</code> if no network is available.
      */
-    private NetworkType computeDesiredTransport() {
-        if (this.wifiAvailable && this.cellularAvailable) {
+    static NetworkType computeDesiredTransport(
+            boolean ethernetAvailable,
+            boolean wifiAvailable,
+            boolean wifiValidated,
+            boolean cellularAvailable
+    ) {
+        if (ethernetAvailable) {
+            return ETHERNET;
+        }
+        if (wifiAvailable && cellularAvailable) {
             // Both present: follow Android, which only promotes Wi-Fi to the default once it is
             // validated. Until then cellular remains the network carrying the traffic.
-            return this.wifiValidated ? WIFI : CELLULAR;
+            return wifiValidated ? WIFI : CELLULAR;
         }
-        if (this.wifiAvailable) {
+        if (wifiAvailable) {
             return WIFI;
         }
-        if (this.cellularAvailable) {
+        if (cellularAvailable) {
             return CELLULAR;
         }
         return null;
@@ -515,14 +546,20 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
     }
 
     private void setNetworkAvailable(NetworkType type, boolean available) {
-        if (type == WIFI) {
-            this.wifiAvailable = available;
-            if (!available) {
-                // A gone Wi-Fi network is no longer validated.
-                this.wifiValidated = false;
-            }
-        } else {
-            this.cellularAvailable = available;
+        switch (type) {
+            case WIFI:
+                this.wifiAvailable = available;
+                if (!available) {
+                    // A gone Wi-Fi network is no longer validated.
+                    this.wifiValidated = false;
+                }
+                break;
+            case CELLULAR:
+                this.cellularAvailable = available;
+                break;
+            case ETHERNET:
+                this.ethernetAvailable = available;
+                break;
         }
         reconcile();
     }
@@ -649,6 +686,7 @@ public class VpnService extends android.net.VpnService implements Handler.Callba
     enum NetworkType {
         CELLULAR,
         WIFI,
+        ETHERNET,
     }
 
     /* The handler may only keep a weak reference around, otherwise it leaks */

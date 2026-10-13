@@ -26,8 +26,6 @@ import com.google.common.net.InternetDomainName;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import timber.log.Timber;
-
 public final class RegexUtils {
     private static final Pattern WILDCARD_PATTERN = Pattern.compile("[*?]");
 
@@ -78,12 +76,7 @@ public final class RegexUtils {
      * @return {@code true} if the IP is valid, {@code false} otherwise.
      */
     public static boolean isValidIP(String ip) {
-        try {
-            InetAddresses.forString(ip);
-            return true;
-        } catch (IllegalArgumentException exception) {
-            Timber.d(exception, "Invalid IP address: %s.", ip);
-            return false;
-        }
+        // Checked on each keystroke: avoid parsing through an exception
+        return InetAddresses.isInetAddress(ip);
     }
 }

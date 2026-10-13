@@ -92,3 +92,22 @@ The release build is the one that matters here: it is shrunk by R8, with dnsjava
 - [ ] The next Transifex sync writes the Hebrew and Indonesian store listings to `metadata/he` and
       `metadata/id`, and doesn't complain about the removed `strings_support.xml`.
 - [ ] GitHub Actions are enabled on the fork (Actions tab), so `Android CI` runs on push.
+
+## 7. Network, download and crash fixes
+
+- [ ] VPN mode on Ethernet (an Android TV box, or the emulator with Wi-Fi turned off in its extended
+      controls): ad blocking works, unplugging and plugging back the cable reconnects the tunnel,
+      and turning Wi-Fi on and off while Ethernet stays up doesn't stop it.
+- [ ] Root mode, Preferences → Root → Open hosts file: a text viewer opens the hosts file instead of
+      the app crashing (it now goes through the `FileProvider`, read-only).
+- [ ] A hosts source whose URL answers 404 (e.g. a typo in a GitHub raw URL) is reported as failed
+      and keeps its previous hosts.
+- [ ] Update screen: cancelling the download from its notification, or a failed download, shows
+      "Download failed" and the Update button again.
+- [ ] On a device without a browser (most Android TV): DNS log → open in browser, Help → About links
+      and the web server test page show "No application found to open it" instead of crashing.
+- [ ] Mobile home in VPN mode with the VPN consent revoked: declining the consent dialog doesn't
+      show it again until the app is reopened.
+- [ ] The host counters on the home screens show grouped digits (e.g. 123,456).
+- [ ] Root mode web server certificate install (Android 10 and below) still opens the system
+      installer (the certificate is now parsed with `java.security.cert`).

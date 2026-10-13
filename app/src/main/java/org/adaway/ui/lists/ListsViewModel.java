@@ -55,26 +55,26 @@ public class ListsViewModel extends AndroidViewModel {
         // adapter and crashes with "Attempt to collect twice from pageEventFlow". cachedIn(),
         // scoped to this ViewModel (which survives the recreation), makes each Pager's stream
         // safely re-collectable by a new adapter instance.
-        CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
-        this.blockedListItems = switchMap(
-                this.filter,
-                filter -> cachedIn(getLiveData(new Pager<>(pagingConfig, () ->
-                        this.hostListItemDao.loadList(BLOCKED.getValue(), filter.sourcesIncluded, filter.sqlQuery)
-                )), viewModelScope)
-        );
-        this.allowedListItems = switchMap(
-                this.filter,
-                filter -> cachedIn(getLiveData(new Pager<>(pagingConfig, () ->
-                        this.hostListItemDao.loadList(ALLOWED.getValue(), filter.sourcesIncluded, filter.sqlQuery)
-                )), viewModelScope)
-        );
-        this.redirectedListItems = switchMap(
-                this.filter,
-                filter -> cachedIn(getLiveData(new Pager<>(pagingConfig, () ->
-                        this.hostListItemDao.loadList(REDIRECTED.getValue(), filter.sourcesIncluded, filter.sqlQuery)
-                )), viewModelScope)
-        );
+        this.blockedListItems = getListItems(BLOCKED, pagingConfig);
+        this.allowedListItems = getListItems(ALLOWED, pagingConfig);
+        this.redirectedListItems = getListItems(REDIRECTED, pagingConfig);
         this.modelChanged = new MutableLiveData<>(false);
+    }
+
+    private LiveData<PagingData<HostListItem>> getListItems(ListType type, PagingConfig pagingConfig) {
+        // Each PagingData can only be collected once: without cachedIn(), re-observing this
+        // LiveData after the fragment is recreated (e.g. an Activity recreation on a light/dark
+        // theme switch) redelivers the very same, already-collected PagingData to a brand new
+        // adapter and crashes with "Attempt to collect twice from pageEventFlow". cachedIn(),
+        // scoped to this ViewModel (which survives the recreation), makes each Pager's stream
+        // safely re-collectable by a new adapter instance.
+        CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
+        return switchMap(
+                this.filter,
+                filter -> cachedIn(getLiveData(new Pager<>(pagingConfig, () ->
+                        this.hostListItemDao.loadList(type.getValue(), filter.sourcesIncluded, filter.sqlQuery)
+                )), viewModelScope)
+        );
     }
 
     public LiveData<PagingData<HostListItem>> getBlockedListItems() {

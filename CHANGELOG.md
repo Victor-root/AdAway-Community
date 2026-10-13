@@ -8,12 +8,18 @@
 * Fix adding a host from the DNS log creating a second, conflicting entry when the host was already in one of your lists
 * Fix sources with 1,000 to 1,099 hosts showing a raw count instead of "1k"
 * Update dnsjava, which parses the DNS queries in VPN mode, to 3.6.5 for its security fixes
+* Fix VPN mode stopping on Ethernet connected devices when Wi-Fi went away
+* Fix a hosts source losing its hosts when its server answered with an error
+* Fix crashes when opening the hosts file, or a link on a device without a browser
+* Fix the update screen staying stuck after a cancelled or failed download
+* Fix the VPN permission being asked again and again on the home screen when declined
 
 ### Changed
 
 * Move the built-in web server from OpenSSL 1.1.1, end of life since 2023, to Mbed TLS 3.6 LTS (TLS 1.2 and 1.3, same certificate)
 * Update the bundled tcpdump and libpcap used by the root DNS log from 4.5.1 and 1.5.2 (2014) to 4.99.7 and 1.10.7
 * Shrink the APK from 15 MB to 9.1 MB by no longer bundling OpenSSL and an unused native C++ library
+* Show the host counters with digit grouping
 
 ### Removed
 
