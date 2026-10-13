@@ -60,6 +60,11 @@ final class RootPrefsBinder {
      * The webserver certificate mime type.
      */
     private static final String CERTIFICATE_MIME_TYPE = "application/x-x509-ca-cert";
+    /**
+     * How many times, and how often, to check the web server reached its expected state.
+     */
+    private static final int WEB_SERVER_STATE_CHECKS = 20;
+    private static final long WEB_SERVER_STATE_CHECK_DELAY_MS = 100;
 
     private final PreferenceFragmentCompat fragment;
     /**
@@ -114,10 +119,13 @@ final class RootPrefsBinder {
      */
     void onSharedPreferenceChanged(String key) {
         Context context = this.fragment.requireContext();
-        if (context.getString(R.string.pref_webserver_icon_key).equals(key) && isWebServerRunning()) {
-            stopWebServer();
-            startWebServer(context);
-            updateWebServerState();
+        if (context.getString(R.string.pref_webserver_icon_key).equals(key)) {
+            AppExecutors.getInstance().diskIO().execute(() -> {
+                if (isWebServerRunning()) {
+                    // Starting the web server stops the running one first
+                    switchWebServer(context, true);
+                }
+            });
         }
     }
 
@@ -192,30 +200,45 @@ final class RootPrefsBinder {
         SwitchPreferenceCompat webServerEnabledPref = require(R.string.pref_webserver_enabled_key);
         webServerEnabledPref.setOnPreferenceChangeListener((preference, newValue) -> {
             boolean enabled = newValue.equals(true);
-            if (enabled) {
-                startWebServer(context);
-            } else {
-                stopWebServer();
-            }
-            updateWebServerState();
-            // The web server binary is started or killed in a background shell command, so it
-            // needs a moment before it actually shows up (or disappears) from the process list.
-            // Accept the switch change right away and correct it afterwards if the process
-            // never reached the expected state, instead of checking synchronously here and
-            // rejecting a change that simply hasn't happened yet.
-            AppExecutors executors = AppExecutors.getInstance();
-            executors.networkIO().execute(() -> {
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-                boolean running = isWebServerRunning();
-                if (running != enabled) {
-                    executors.mainThread().execute(() -> webServerEnabledPref.setChecked(running));
-                }
-            });
+            // Root shell commands must not run on the main thread. Accept the switch change right
+            // away and correct it afterwards if the web server did not reach the expected state.
+            AppExecutors.getInstance().diskIO().execute(() -> switchWebServer(context, enabled));
             return true;
+        });
+    }
+
+    /**
+     * Start or stop the web server, wait for it to reach that state, then refresh the switch and
+     * the reported state. Must be called from a background thread.
+     *
+     * @param context The application context.
+     * @param enabled {@code true} to start the web server, {@code false} to stop it.
+     */
+    private void switchWebServer(Context context, boolean enabled) {
+        AppExecutors.getInstance().mainThread().execute(() ->
+                require(R.string.pref_webserver_test_key).setSummary(R.string.pref_webserver_state_checking));
+        if (enabled) {
+            startWebServer(context);
+        } else {
+            stopWebServer();
+        }
+        // The web server is started and killed in the background of a root shell
+        boolean running = isWebServerRunning();
+        for (int i = 0; i < WEB_SERVER_STATE_CHECKS && running != enabled; i++) {
+            try {
+                Thread.sleep(WEB_SERVER_STATE_CHECK_DELAY_MS);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+            running = isWebServerRunning();
+        }
+        int summaryResId = getWebServerState();
+        boolean finalRunning = running;
+        AppExecutors.getInstance().mainThread().execute(() -> {
+            SwitchPreferenceCompat webServerEnabledPref = require(R.string.pref_webserver_enabled_key);
+            webServerEnabledPref.setChecked(finalRunning);
+            require(R.string.pref_webserver_test_key).setSummary(summaryResId);
         });
     }
 
@@ -267,17 +290,8 @@ final class RootPrefsBinder {
         webServerTest.setSummary(R.string.pref_webserver_state_checking);
         AppExecutors executors = AppExecutors.getInstance();
         executors.networkIO().execute(() -> {
-                    // Wait for server to start
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
-                    int summaryResId = getWebServerState();
-                    executors.mainThread().execute(
-                            () -> webServerTest.setSummary(summaryResId)
-                    );
-                }
-        );
+            int summaryResId = getWebServerState();
+            executors.mainThread().execute(() -> webServerTest.setSummary(summaryResId));
+        });
     }
 }
