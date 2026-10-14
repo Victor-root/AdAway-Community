@@ -44,6 +44,8 @@ pub enum Exit {
     Stopped,
     TunnelClosed,
     NetworkUnreachable,
+    /// The DNS over HTTPS relay is gone.
+    UpstreamClosed,
 }
 
 /// Wakes up a running tunnel to stop it, from any thread.
@@ -66,12 +68,12 @@ struct PendingQuery {
 }
 
 /// Relayed queries waiting for an answer, under identifiers chosen per upstream server so that
-/// two apps using the same identifier never get each other's answer.
+/// two apps using the same identifier never get each other's answer. The identifiers are random,
+/// so that a forged answer has to guess them.
 #[derive(Default)]
 struct Pending {
     queries: HashMap<(usize, u16), PendingQuery>,
     order: VecDeque<(usize, u16, Instant)>,
-    next_ids: HashMap<usize, u16>,
 }
 
 impl Pending {
@@ -82,12 +84,13 @@ impl Pending {
             };
             self.remove_if_current(index, id, deadline);
         }
-        let next = self.next_ids.entry(upstream).or_default();
-        while self.queries.contains_key(&(upstream, *next)) {
-            *next = next.wrapping_add(1);
+        let mut random = [0u8; 2];
+        // Without randomness, which never happens, the identifiers simply follow each other.
+        let _ = getrandom::getrandom(&mut random);
+        let mut id = u16::from_ne_bytes(random);
+        while self.queries.contains_key(&(upstream, id)) {
+            id = id.wrapping_add(1);
         }
-        let id = *next;
-        *next = next.wrapping_add(1);
         self.order.push_back((upstream, id, query.deadline));
         self.queries.insert((upstream, id), query);
         id
@@ -209,7 +212,13 @@ impl Tunnel {
                 }
             }
             for index in 0..self.config.upstreams.len() {
-                if descriptors[index + 2].revents & libc::POLLIN != 0 {
+                let events = descriptors[index + 2].revents;
+                // Only the DNS over HTTPS relay hangs up, once all its workers are gone.
+                if events & (libc::POLLHUP | libc::POLLNVAL) != 0 {
+                    return Exit::UpstreamClosed;
+                }
+                // A pending error, as a refused port, stays reported until a read takes it.
+                if events != 0 {
                     let socket = self.config.upstreams[index].socket.as_raw_fd();
                     if let Ok(length) = receive(socket, &mut buffer) {
                         self.handle_answer(index, &buffer[..length]);
@@ -286,7 +295,10 @@ impl Tunnel {
     }
 
     fn handle_answer(&mut self, upstream: usize, answer: &[u8]) {
-        let Some(query) = dns::message_id(answer).and_then(|id| self.pending.take(upstream, id))
+        let Some(query) = dns::is_response(answer)
+            .then(|| dns::message_id(answer))
+            .flatten()
+            .and_then(|id| self.pending.take(upstream, id))
         else {
             return;
         };

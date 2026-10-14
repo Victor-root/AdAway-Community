@@ -4,8 +4,7 @@
 //! name: a blocked name points to the IPv4 redirection, and also to the IPv6 one when given; a
 //! redirected name points to its own address only. Wildcard rules have no hosts file form.
 
-use std::fs::File;
-use std::io::{self, BufRead, BufReader};
+use std::io;
 use std::path::Path;
 
 use crate::rule;
@@ -21,14 +20,15 @@ const LOCALHOST: [&str; 2] = ["127.0.0.1 localhost", "::1 localhost"];
 
 /// Writes the hosts file at `output` from the final list in `final_directory`.
 pub fn write(final_directory: &Path, output: &Path, options: &HostsOptions) -> io::Result<()> {
-    let blocked = read_lines(&final_directory.join("blocked.txt"))?;
-    let redirected: Vec<(String, String)> = read_lines(&final_directory.join("redirected.txt"))?
-        .into_iter()
-        .filter_map(|line| {
-            let (host, address) = line.split_once(' ')?;
-            Some((host.to_owned(), address.to_owned()))
-        })
-        .collect();
+    let blocked = rule::read_lines(&final_directory.join("blocked.txt"))?;
+    let redirected: Vec<(String, String)> =
+        rule::read_lines(&final_directory.join("redirected.txt"))?
+            .into_iter()
+            .filter_map(|line| {
+                let (host, address) = line.split_once(' ')?;
+                Some((host.to_owned(), address.to_owned()))
+            })
+            .collect();
     let mut entries = Vec::with_capacity(blocked.len() * 2 + redirected.len());
     // Both lists are sorted by name: merge them.
     let (mut block, mut redirect) = (blocked.iter().peekable(), redirected.iter().peekable());
@@ -58,14 +58,6 @@ pub fn write(final_directory: &Path, output: &Path, options: &HostsOptions) -> i
         .chain(LOCALHOST)
         .chain(entries.iter().map(String::as_str));
     rule::write_lines(output, lines)
-}
-
-fn read_lines(path: &Path) -> io::Result<Vec<String>> {
-    match File::open(path) {
-        Ok(file) => BufReader::new(file).lines().collect(),
-        Err(error) if error.kind() == io::ErrorKind::NotFound => Ok(Vec::new()),
-        Err(error) => Err(error),
-    }
 }
 
 #[cfg(test)]

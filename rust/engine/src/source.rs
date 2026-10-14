@@ -92,6 +92,9 @@ pub fn parse<R: BufRead>(mut reader: R, options: ParseOptions) -> Result<Vec<Rul
 }
 
 fn parse_line(line: &str, options: ParseOptions, collector: &mut Collector) {
+    if is_element_hiding(line) {
+        return;
+    }
     let line = line.split('#').next().unwrap_or_default().trim();
     if line.is_empty() || line.starts_with('!') || line.starts_with('[') {
         return;
@@ -100,6 +103,18 @@ fn parse_line(line: &str, options: ParseOptions, collector: &mut Collector) {
         SourceFormat::Block => parse_block_line(line, options.redirects, collector),
         SourceFormat::Allow => parse_allow_line(line, collector),
     }
+}
+
+/// An element hiding rule of Adblock lists, as `example.com##.banner`: it hides part of a page and
+/// blocks no host.
+fn is_element_hiding(line: &str) -> bool {
+    line.find('#').is_some_and(|start| {
+        start > 0
+            && !line[..start].ends_with(char::is_whitespace)
+            && line[start + 1..]
+                .trim_start_matches(['@', '?', '$', '%'])
+                .starts_with('#')
+    })
 }
 
 fn parse_block_line(line: &str, redirects: bool, collector: &mut Collector) {
@@ -270,7 +285,8 @@ mod tests {
     #[test]
     fn reads_domain_lists_and_adblock_rules() {
         let text = "! Adblock comment\n[Adblock Plus 2.0]\nads.example.com\n||tracker.example.net^\n\
-                    ||options.example.org^$third-party\n||path.example.org/ad^\n";
+                    ||options.example.org^$third-party\n||path.example.org/ad^\n\
+                    news.example.org##.banner\nshop.example.org#@#.promo\nmail.example.org#?#.ad\n";
         assert_eq!(blocked(text), ["ads.example.com", "tracker.example.net"]);
     }
 

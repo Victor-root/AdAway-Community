@@ -94,7 +94,7 @@ fn read_chunked<R: BufRead>(stream: &mut R) -> io::Result<Vec<u8>> {
             while !read_line(stream)?.is_empty() {}
             return Ok(body);
         }
-        if body.len() + size > MAX_BODY {
+        if size > MAX_BODY - body.len() {
             return Err(invalid("answer too large"));
         }
         let start = body.len();

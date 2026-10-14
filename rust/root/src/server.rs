@@ -62,19 +62,15 @@ fn is_ipv6_missing(error: &io::Error) -> bool {
         || error.raw_os_error() == Some(libc::EAFNOSUPPORT)
 }
 
-/// Answers the connections. Returns only if every listener failed.
-pub fn serve(listeners: Vec<Listener>, content: Arc<Content>, tls: Arc<ServerConfig>) {
+/// Answers the connections for as long as the process lives.
+pub fn serve(listeners: Vec<Listener>, content: Arc<Content>, tls: Arc<ServerConfig>) -> ! {
     let active = Arc::new(AtomicUsize::new(0));
-    let threads: Vec<_> = listeners
-        .into_iter()
-        .map(|listener| {
-            let (content, tls, active) =
-                (Arc::clone(&content), Arc::clone(&tls), Arc::clone(&active));
-            thread::spawn(move || accept(listener, &content, &tls, &active))
-        })
-        .collect();
-    for thread in threads {
-        let _ = thread.join();
+    for listener in listeners {
+        let (content, tls, active) = (Arc::clone(&content), Arc::clone(&tls), Arc::clone(&active));
+        thread::spawn(move || accept(listener, &content, &tls, &active));
+    }
+    loop {
+        thread::park();
     }
 }
 
@@ -83,9 +79,9 @@ fn accept(
     content: &Arc<Content>,
     tls: &Arc<ServerConfig>,
     active: &Arc<AtomicUsize>,
-) {
-    for stream in listener.socket.incoming() {
-        let Ok(stream) = stream else {
+) -> ! {
+    loop {
+        let Ok((stream, _)) = listener.socket.accept() else {
             // Out of file descriptors for instance: give the open connections time to end.
             thread::sleep(BIND_RETRY_DELAY);
             continue;

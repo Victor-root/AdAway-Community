@@ -56,8 +56,7 @@ fn run() -> Result<(), (u8, String)> {
     })?;
     daemon::detach().map_err(|error| (EXIT_START, format!("not detached: {error}")))?;
     protect_from_low_memory_killer();
-    server::serve(listeners, Arc::new(content), Arc::new(tls));
-    Err((EXIT_START, "every listener failed".to_owned()))
+    server::serve(listeners, Arc::new(content), Arc::new(tls))
 }
 
 fn parse_arguments() -> Option<(PathBuf, bool)> {

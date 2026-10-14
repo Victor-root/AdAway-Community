@@ -47,6 +47,15 @@ pub fn read_rules(path: &Path) -> io::Result<Vec<Rule>> {
     Ok(rules)
 }
 
+/// Reads the lines of a file, none if it does not exist.
+pub fn read_lines(path: &Path) -> io::Result<Vec<String>> {
+    match File::open(path) {
+        Ok(file) => BufReader::new(file).lines().collect(),
+        Err(error) if error.kind() == io::ErrorKind::NotFound => Ok(Vec::new()),
+        Err(error) => Err(error),
+    }
+}
+
 /// Writes `lines` to `path` through a temporary file, so that readers never see a partial file.
 pub fn write_lines<I, S>(path: &Path, lines: I) -> io::Result<()>
 where

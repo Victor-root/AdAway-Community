@@ -1,14 +1,13 @@
 //! The final list loaded in memory, answering for each queried name.
 
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::{self, BufRead, BufReader};
+use std::io;
 use std::net::IpAddr;
 use std::path::Path;
 
 use crate::glob::Pattern;
 use crate::nameset::NameSet;
-use crate::rule::Rule;
+use crate::rule::{self, Rule};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Verdict {
@@ -30,19 +29,19 @@ impl BlockList {
     /// Loads the final list written by [`crate::compile::compile`]. A list never computed is empty.
     pub fn load(final_directory: &Path) -> io::Result<Self> {
         let mut list = BlockList::default();
-        for line in read_lines(&final_directory.join("blocked.txt"))? {
+        for line in rule::read_lines(&final_directory.join("blocked.txt"))? {
             list.blocked.push(line.into_boxed_str());
         }
         // Already sorted by the compilation, but a sorted list is what makes the search correct.
         list.blocked.sort_unstable();
-        for line in read_lines(&final_directory.join("redirected.txt"))? {
+        for line in rule::read_lines(&final_directory.join("redirected.txt"))? {
             if let Some((host, address)) = line.split_once(' ')
                 && let Ok(address) = address.parse()
             {
                 list.redirected.insert(host.into(), address);
             }
         }
-        for line in read_lines(&final_directory.join("patterns.txt"))? {
+        for line in rule::read_lines(&final_directory.join("patterns.txt"))? {
             match Rule::from_line(&line) {
                 Some(Rule::Blocked(pattern)) => {
                     list.user_block_patterns.push(Pattern::new(pattern))
@@ -75,14 +74,6 @@ impl BlockList {
                 .iter()
                 .any(|pattern| pattern.matches(name))
                 && !self.user_allowed.matches(name))
-    }
-}
-
-fn read_lines(path: &Path) -> io::Result<Vec<String>> {
-    match File::open(path) {
-        Ok(file) => BufReader::new(file).lines().collect(),
-        Err(error) if error.kind() == io::ErrorKind::NotFound => Ok(Vec::new()),
-        Err(error) => Err(error),
     }
 }
 

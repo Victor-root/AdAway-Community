@@ -12,6 +12,7 @@ use std::os::fd::{AsRawFd, FromRawFd, OwnedFd};
 use std::process::ExitCode;
 
 use adaway_engine::dns::parse_query;
+use adaway_engine::hostname;
 use adaway_engine::packet::parse_udp;
 use adaway_root::daemon;
 
@@ -126,6 +127,6 @@ fn query_name(packet: &[u8]) -> Option<String> {
     if packet.destination.port() != DNS_PORT {
         return None;
     }
-    let name = parse_query(packet.payload)?.name;
-    (!name.is_empty()).then_some(name)
+    // A query can carry any byte, a line break included, which must not reach the file.
+    hostname::normalize(&parse_query(packet.payload)?.name, false)
 }

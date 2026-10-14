@@ -26,6 +26,7 @@ dependencies = [
 name = "adaway-engine"
 version = "7.0.0"
 dependencies = [
+ "getrandom",
  "libc",
 ]
 

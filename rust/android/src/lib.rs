@@ -372,6 +372,7 @@ fn exit_code(exit: Exit) -> jint {
         Exit::Stopped => 0,
         Exit::TunnelClosed => 1,
         Exit::NetworkUnreachable => 2,
+        Exit::UpstreamClosed => 3,
     }
 }
 
@@ -438,7 +439,7 @@ pub extern "system" fn Java_org_adaway_engine_Engine_createTunnel<'caller>(
     final_directory: JString<'caller>,
     monitor: jboolean,
 ) -> jlong {
-    // Owned right away, so that every descriptor is closed if anything below fails.
+    // Each descriptor is owned as soon as it is known, so that it is closed if anything below fails.
     // SAFETY: the Kotlin side detached this descriptor and hands its ownership over.
     let tun = unsafe { OwnedFd::from_raw_fd(tun_fd) };
     unowned_env

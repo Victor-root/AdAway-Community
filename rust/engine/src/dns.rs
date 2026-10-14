@@ -131,6 +131,11 @@ impl Query<'_> {
 }
 
 /// Reads the identifier of a DNS message.
+/// Whether the message is an answer, not a query.
+pub fn is_response(message: &[u8]) -> bool {
+    message.get(2).is_some_and(|flags| flags & 0x80 != 0)
+}
+
 pub fn message_id(message: &[u8]) -> Option<u16> {
     Some(u16::from_be_bytes([*message.first()?, *message.get(1)?]))
 }
