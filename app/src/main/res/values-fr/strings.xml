@@ -93,23 +93,23 @@
     <string name="sources_title">Sources de fichiers hosts</string>
     <string name="sources_empty">Aucune liste de blocage pour l\'instant. Ajoutez-en une avec le bouton +.</string>
     <string name="source_add">Ajouter une source</string>
-    <string name="source_edit">Modifier la liste</string>
+    <string name="source_edit">Modifier une source</string>
     <string name="source_deleted">Source supprimée</string>
     <string name="source_delete_confirm_title">Supprimer cette liste\u00a0?</string>
-    <string name="source_label">Nom</string>
-    <string name="source_label_required">Un nom est obligatoire.</string>
-    <string name="source_format">Contenu</string>
-    <string name="source_format_block">Noms à bloquer</string>
-    <string name="source_format_allow">Noms à autoriser</string>
-    <string name="source_type">Emplacement</string>
-    <string name="source_type_url">Adresse web</string>
+    <string name="source_label">Étiquette</string>
+    <string name="source_label_required">Une étiquette est nécessaire</string>
+    <string name="source_format">Format des listes</string>
+    <string name="source_format_block">Bloquer</string>
+    <string name="source_format_allow">Autoriser</string>
+    <string name="source_type">Type</string>
+    <string name="source_type_url">URL</string>
     <string name="source_type_file">Fichier</string>
-    <string name="source_location">Adresse (https://…)</string>
-    <string name="source_location_required">Une adresse est obligatoire.</string>
-    <string name="source_location_invalid">Utilisez une adresse https://, ou choisissez un fichier.</string>
-    <string name="source_location_duplicate">Une autre liste utilise déjà cette adresse.</string>
-    <string name="source_redirects">Appliquer ses redirections</string>
-    <string name="source_redirects_warning">Les redirections envoient des noms vers les adresses choisies par la liste. Ne les activez que pour une liste de confiance\u00a0: elle pourrait envoyer du trafic sensible vers n\'importe quel serveur.</string>
+    <string name="source_location">Emplacement</string>
+    <string name="source_location_required">Un emplacement est nécessaire</string>
+    <string name="source_location_invalid">L’emplacement est invalide</string>
+    <string name="source_location_duplicate">Une autre source utilise déjà cet emplacement</string>
+    <string name="source_redirects">Appliquer les hôtes redirigés</string>
+    <string name="source_redirects_warning">Autoriser les hôtes redirigés peut entraîner des problèmes de sécurité. N’utilisez ces paramètres que sur une source de confiance, car du trafic sensible pourrait être redirigé à votre insu vers n’importe quel serveur.</string>
     <string name="source_steven_black">Fichier hosts unifié de StevenBlack</string>
     <string name="source_peter_lowe">Fichier hosts de Pete Lowe</string>
     <string name="source_status_disabled">Désactivée</string>
@@ -233,4 +233,5 @@
         <item quantity="many">%1$d mois</item>
         <item quantity="other">%1$d mois</item>
     </plurals>
+    <string name="source_file_hint">Touchez Fichier pour sélectionner le fichier source</string>
 </resources>

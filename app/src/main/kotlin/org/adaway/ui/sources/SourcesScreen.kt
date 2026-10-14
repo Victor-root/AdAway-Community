@@ -12,7 +12,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
@@ -38,6 +37,7 @@ import org.adaway.ui.common.AdAwayFab
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.AdAwaySnackbar
 import org.adaway.ui.common.DialogButton
+import org.adaway.ui.common.adAwayCheckboxColors
 import org.adaway.ui.common.hostCountText
 import org.adaway.ui.common.rememberVpnConsentRequest
 import org.adaway.ui.common.sourceUpdateText
@@ -145,11 +145,7 @@ private fun SourceCard(source: SourceEntity, label: String, onToggle: () -> Unit
             Checkbox(
                 checked = source.enabled,
                 onCheckedChange = { onToggle() },
-                colors = CheckboxDefaults.colors(
-                    checkedColor = colors.primary,
-                    uncheckedColor = colors.textSecondary,
-                    checkmarkColor = colors.onPrimary,
-                ),
+                colors = adAwayCheckboxColors(),
                 modifier = Modifier.align(Alignment.CenterStart).padding(start = 4.dp),
             )
             Column(modifier = Modifier.padding(start = 72.dp, top = 8.dp, end = 16.dp, bottom = 8.dp)) {

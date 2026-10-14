@@ -96,23 +96,23 @@
     <string name="sources_title">Hosts sources</string>
     <string name="sources_empty">No block list yet. Add one with the + button.</string>
     <string name="source_add">Add source</string>
-    <string name="source_edit">Edit the list</string>
+    <string name="source_edit">Edit source</string>
     <string name="source_deleted">Source deleted</string>
     <string name="source_delete_confirm_title">Delete this list?</string>
-    <string name="source_label">Name</string>
-    <string name="source_label_required">A name is required.</string>
-    <string name="source_format">Content</string>
-    <string name="source_format_block">Names to block</string>
-    <string name="source_format_allow">Names to allow</string>
-    <string name="source_type">Location</string>
-    <string name="source_type_url">Web address</string>
+    <string name="source_label">Label</string>
+    <string name="source_label_required">Label required</string>
+    <string name="source_format">List format</string>
+    <string name="source_format_block">Block</string>
+    <string name="source_format_allow">Allow</string>
+    <string name="source_type">Type</string>
+    <string name="source_type_url">URL</string>
     <string name="source_type_file">File</string>
-    <string name="source_location">Address (https://…)</string>
-    <string name="source_location_required">An address is required.</string>
-    <string name="source_location_invalid">Use an https:// address, or pick a file.</string>
-    <string name="source_location_duplicate">Another list already uses this address.</string>
-    <string name="source_redirects">Apply its redirections</string>
-    <string name="source_redirects_warning">Redirections send names to the addresses the list chooses. Only enable them for a list you trust: it could send sensitive traffic to any server.</string>
+    <string name="source_location">Location</string>
+    <string name="source_location_required">Location required</string>
+    <string name="source_location_invalid">Invalid location</string>
+    <string name="source_location_duplicate">Another source already uses this location</string>
+    <string name="source_redirects">Apply redirected hosts</string>
+    <string name="source_redirects_warning">Allowing redirected hosts may cause security issues. Only use this settings on a trusted source as it could redirect some sensitive traffic to whatever server it wants.</string>
     <string name="source_steven_black">StevenBlack Unified hosts</string>
     <string name="source_peter_lowe">Pete Lowe blocklist hosts</string>
     <string name="source_status_disabled">Disabled</string>
@@ -228,4 +228,5 @@
         <item quantity="one">%1$d month</item>
         <item quantity="other">%1$d months</item>
     </plurals>
+    <string name="source_file_hint">Press File to select source file</string>
 </resources>
