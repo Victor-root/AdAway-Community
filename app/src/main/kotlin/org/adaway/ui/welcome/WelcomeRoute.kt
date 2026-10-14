@@ -29,7 +29,7 @@ fun WelcomeRoute(isTelevision: Boolean, onFinished: () -> Unit) {
         chooseVpn = requestVpnConsent,
         finish = { viewModel.finish(onFinished) },
     )
-    if (isTelevision) TvWelcomeScreen(state, actions) else WelcomeScreen(state, actions)
+    if (isTelevision) TvWelcomeScreen(state, actions) else WelcomeScreen(state, viewModel, requestVpnConsent) { viewModel.finish(onFinished) }
     if (state.rootRequired) RootRequiredDialog(onDismiss = viewModel::dismissDialog)
     state.vpnRefusal?.let { VpnRefusalDialog(it, onDismiss = viewModel::dismissDialog) }
 }
@@ -40,8 +40,8 @@ class WelcomeActions(val chooseRoot: () -> Unit, val chooseVpn: () -> Unit, val 
 private fun RootRequiredDialog(onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.root_required_title)) },
-        text = { Text(stringResource(R.string.root_required_text)) },
+        title = { Text(stringResource(R.string.welcome_root_missing_title)) },
+        text = { Text(stringResource(R.string.welcome_root_missile_description)) },
         confirmButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.close)) } },
     )
 }

@@ -67,15 +67,15 @@ fun rememberOpenVpnSettings(@StringRes unavailableMessage: Int = R.string.vpn_se
 @Composable
 fun VpnRefusalDialog(refusal: VpnRefusal, onDismiss: () -> Unit) {
     val openVpnSettings = rememberOpenVpnSettings()
-    val (title, text) = when (refusal) {
-        VpnRefusal.OTHER_ALWAYS_ON_VPN -> R.string.always_on_vpn_title to R.string.always_on_vpn_text
-        VpnRefusal.UNKNOWN_CAUSE -> R.string.vpn_request_failed_title to R.string.vpn_request_failed_text
+    val text = when (refusal) {
+        VpnRefusal.OTHER_ALWAYS_ON_VPN -> R.string.welcome_vpn_alwayson_description
+        VpnRefusal.UNKNOWN_CAUSE -> R.string.welcome_vpn_alwayson_blocked_description
     }
     AdAwayAlertDialog(
         onDismissRequest = onDismiss,
-        title = stringResource(title),
+        title = stringResource(R.string.welcome_vpn_alwayson_title),
         message = stringResource(text),
-        confirmButton = DialogButton(stringResource(R.string.open_vpn_settings), onClick = { onDismiss(); openVpnSettings() }),
+        confirmButton = DialogButton(stringResource(R.string.welcome_vpn_alwayson_settings_action), onClick = { onDismiss(); openVpnSettings() }),
         dismissButton = DialogButton(stringResource(R.string.close), onClick = onDismiss),
     )
 }

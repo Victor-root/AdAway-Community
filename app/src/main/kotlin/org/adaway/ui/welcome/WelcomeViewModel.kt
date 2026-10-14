@@ -5,12 +5,23 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.adaway.AppContainer
+import org.adaway.blocklist.UpdateError
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.ui.common.VpnRefusal
+
+/** The first download of the sources, then the start of the blocking. */
+sealed interface WelcomeSync {
+    data object Running : WelcomeSync
+
+    data object Done : WelcomeSync
+
+    data class Failed(val error: UpdateError) : WelcomeSync
+}
 
 data class WelcomeState(
     val method: BlockingMethod = BlockingMethod.UNSET,
@@ -23,6 +34,12 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
     private val checkingRoot = MutableStateFlow(false)
     private val rootRequired = MutableStateFlow(false)
     private val vpnRefusal = MutableStateFlow<VpnRefusal?>(null)
+    private val mutableStep = MutableStateFlow(0)
+    private val mutableSync = MutableStateFlow<WelcomeSync?>(null)
+
+    /** The phone wizard step: method, synchronization, battery, then the brand battery manager. */
+    val step: StateFlow<Int> = mutableStep.asStateFlow()
+    val sync: StateFlow<WelcomeSync?> = mutableSync.asStateFlow()
 
     val state: StateFlow<WelcomeState> = combine(
         container.settingsRepository.settings,
@@ -57,6 +74,25 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
         vpnRefusal.value = null
     }
 
+    fun goTo(step: Int) {
+        mutableStep.value = step
+        if (step == SYNC_STEP && mutableSync.value == null) startSync()
+    }
+
+    /** Downloads the sources, then turns the blocking on, as the end of the first launch setup. */
+    fun startSync() {
+        mutableSync.value = WelcomeSync.Running
+        viewModelScope.launch {
+            val error = container.blockListUpdater.syncAndApply(onlyPending = false)
+            mutableSync.value = if (error != null) {
+                WelcomeSync.Failed(error)
+            } else {
+                container.vpnController.enable()
+                WelcomeSync.Done
+            }
+        }
+    }
+
     fun finish(onFinished: () -> Unit) {
         viewModelScope.launch {
             container.settingsRepository.update { it.copy(welcomeCompleted = true) }
@@ -68,7 +104,9 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
         container.settingsRepository.update { it.copy(blockingMethod = method) }
     }
 
-    private companion object {
-        const val STOP_TIMEOUT_MILLIS = 5_000L
+    companion object {
+        const val SYNC_STEP = 1
+        const val STEP_COUNT = 4
+        private const val STOP_TIMEOUT_MILLIS = 5_000L
     }
 }

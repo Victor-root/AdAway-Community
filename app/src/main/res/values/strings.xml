@@ -6,33 +6,7 @@
     <string name="app_version" translatable="false">v%1$s</string>
     <string name="logo_description">AdAway logo</string>
 
-    <string name="welcome_title">Welcome to AdAway!</string>
-    <string name="welcome_method_text">AdAway provides two ad blocking methods. Pick the one you like:</string>
-    <string name="welcome_method_root">Root based ad blocking</string>
-    <string name="welcome_method_vpn">VPN based ad blocking</string>
-    <string name="welcome_root_faster">Faster</string>
-    <string name="welcome_root_battery">Battery friendly</string>
-    <string name="welcome_root_required">Root required</string>
-    <string name="welcome_vpn_slower">Slower</string>
-    <string name="welcome_vpn_background">Runs in the background</string>
-    <string name="welcome_vpn_compatibility">Works on any device</string>
-    <string name="welcome_advantage">Advantage</string>
-    <string name="welcome_drawback">Drawback</string>
-    <string name="welcome_next">Next</string>
-    <string name="welcome_tv_intro">This short wizard turns on ad blocking on this device.</string>
-    <string name="welcome_tv_get_started">Get started</string>
-    <string name="welcome_tv_choose_method">Choose your blocking method</string>
-    <string name="welcome_tv_use_root">Use root</string>
-    <string name="welcome_tv_use_root_summary">Faster and battery friendly. Requires a rooted device.</string>
-    <string name="welcome_tv_use_vpn">Use VPN</string>
-    <string name="welcome_tv_use_vpn_summary">Works without root, on any Android TV device.</string>
 
-    <string name="root_required_title">Rooted Android required</string>
-    <string name="root_required_text">Either the su binary could not be found or you did not allow root access for AdAway.\n\nThis happens when your device is not rooted. You can find how to root your device on wiki.lineageos.org or other Android websites.</string>
-    <string name="always_on_vpn_title">Always-on VPN enabled</string>
-    <string name="always_on_vpn_text">Another VPN app has the \"Always-on VPN\" setting enabled, which prevents AdAway from starting its VPN.\n\nTurn off \"Always-on VPN\" for that app, then try again.</string>
-    <string name="vpn_request_failed_title">VPN access not granted</string>
-    <string name="vpn_request_failed_text">AdAway could not get VPN access.\n\nAnother VPN app may have the \"Always-on VPN\" setting enabled. Check your VPN settings, turn it off, then try again.</string>
     <string name="open_vpn_settings">Open VPN settings</string>
     <string name="vpn_settings_unavailable">VPN settings are not available on this device.</string>
     <string name="close">Close</string>

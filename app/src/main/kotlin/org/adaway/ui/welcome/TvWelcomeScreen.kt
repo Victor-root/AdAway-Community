@@ -56,8 +56,8 @@ private fun IntroPage(onStart: () -> Unit) {
     val focusRequester = remember { FocusRequester() }
     WhiteText(R.string.app_title, MaterialTheme.typography.headlineLarge)
     WhiteText(R.string.app_subtitle, MaterialTheme.typography.titleMedium)
-    WhiteText(R.string.welcome_tv_intro, MaterialTheme.typography.bodyLarge)
-    WelcomeButton(R.string.welcome_tv_get_started, onClick = onStart, modifier = Modifier.focusRequester(focusRequester))
+    WhiteText(R.string.tv_welcome_intro_subtitle, MaterialTheme.typography.bodyLarge)
+    WelcomeButton(R.string.tv_welcome_start_button, onClick = onStart, modifier = Modifier.focusRequester(focusRequester))
     LaunchedEffect(Unit) { focusRequester.requestFocus() }
 }
 
@@ -65,20 +65,20 @@ private fun IntroPage(onStart: () -> Unit) {
 private fun MethodPage(state: WelcomeState, actions: WelcomeActions) {
     val methodFocus = remember { FocusRequester() }
     val nextFocus = remember { FocusRequester() }
-    WhiteText(R.string.welcome_tv_choose_method, MaterialTheme.typography.headlineMedium)
-    WhiteText(R.string.welcome_method_text, MaterialTheme.typography.bodyLarge)
+    WhiteText(R.string.tv_welcome_method_header, MaterialTheme.typography.headlineMedium)
+    WhiteText(R.string.welcome_method_summary, MaterialTheme.typography.bodyLarge)
     WelcomeButton(
-        text = R.string.welcome_tv_use_root,
+        text = R.string.tv_welcome_method_root_button,
         onClick = actions.chooseRoot,
         enabled = !state.checkingRoot,
         modifier = Modifier.focusRequester(methodFocus),
     )
-    WhiteText(R.string.welcome_tv_use_root_summary, MaterialTheme.typography.bodyMedium)
-    WelcomeButton(text = R.string.welcome_tv_use_vpn, onClick = actions.chooseVpn)
-    WhiteText(R.string.welcome_tv_use_vpn_summary, MaterialTheme.typography.bodyMedium)
+    WhiteText(R.string.tv_welcome_method_root_body, MaterialTheme.typography.bodyMedium)
+    WelcomeButton(text = R.string.tv_welcome_method_vpn_button, onClick = actions.chooseVpn)
+    WhiteText(R.string.tv_welcome_method_vpn_body, MaterialTheme.typography.bodyMedium)
     val methodChosen = state.method != BlockingMethod.UNSET
     if (methodChosen) {
-        WelcomeButton(R.string.welcome_next, onClick = actions.finish, modifier = Modifier.focusRequester(nextFocus))
+        WelcomeButton(R.string.welcome_next_button, onClick = actions.finish, modifier = Modifier.focusRequester(nextFocus))
     }
     LaunchedEffect(methodChosen) {
         if (methodChosen) nextFocus.requestFocus() else methodFocus.requestFocus()

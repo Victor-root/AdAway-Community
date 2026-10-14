@@ -3,33 +3,7 @@
     <string name="app_subtitle">Bloqueur de publicités à code source ouvert</string>
     <string name="logo_description">Logo AdAway</string>
 
-    <string name="welcome_title">Bienvenue dans AdAway !</string>
-    <string name="welcome_method_text">AdAway propose deux méthodes de blocage des publicités. Choisissez celle qui vous convient :</string>
-    <string name="welcome_method_root">Blocage par le root</string>
-    <string name="welcome_method_vpn">Blocage par un VPN</string>
-    <string name="welcome_root_faster">Plus rapide</string>
-    <string name="welcome_root_battery">Économe en batterie</string>
-    <string name="welcome_root_required">Root obligatoire</string>
-    <string name="welcome_vpn_slower">Plus lent</string>
-    <string name="welcome_vpn_background">Tourne en arrière-plan</string>
-    <string name="welcome_vpn_compatibility">Marche sur tous les appareils</string>
-    <string name="welcome_advantage">Avantage</string>
-    <string name="welcome_drawback">Inconvénient</string>
-    <string name="welcome_next">Suivant</string>
-    <string name="welcome_tv_intro">Ce court assistant active le blocage des publicités sur cet appareil.</string>
-    <string name="welcome_tv_get_started">Commencer</string>
-    <string name="welcome_tv_choose_method">Choisissez votre méthode de blocage</string>
-    <string name="welcome_tv_use_root">Utiliser le root</string>
-    <string name="welcome_tv_use_root_summary">Plus rapide et économe en batterie. Nécessite un appareil rooté.</string>
-    <string name="welcome_tv_use_vpn">Utiliser le VPN</string>
-    <string name="welcome_tv_use_vpn_summary">Fonctionne sans root, sur tous les appareils Android TV.</string>
 
-    <string name="root_required_title">Android rooté requis</string>
-    <string name="root_required_text">Soit le fichier su est introuvable, soit vous n\'avez pas autorisé l\'accès root pour AdAway.\n\nC\'est le cas quand l\'appareil n\'est pas rooté. Vous trouverez comment rooter votre appareil sur wiki.lineageos.org ou d\'autres sites consacrés à Android.</string>
-    <string name="always_on_vpn_title">VPN permanent activé</string>
-    <string name="always_on_vpn_text">Une autre application VPN a le réglage « VPN permanent » activé, ce qui empêche AdAway de démarrer son VPN.\n\nDésactivez « VPN permanent » pour cette application, puis réessayez.</string>
-    <string name="vpn_request_failed_title">Accès VPN non accordé</string>
-    <string name="vpn_request_failed_text">AdAway n\'a pas pu obtenir l\'accès VPN.\n\nUne autre application VPN a peut-être le réglage « VPN permanent » activé. Vérifiez vos réglages VPN, désactivez-le, puis réessayez.</string>
     <string name="open_vpn_settings">Ouvrir les réglages VPN</string>
     <string name="vpn_settings_unavailable">Les réglages VPN ne sont pas accessibles sur cet appareil.</string>
     <string name="close">Fermer</string>
