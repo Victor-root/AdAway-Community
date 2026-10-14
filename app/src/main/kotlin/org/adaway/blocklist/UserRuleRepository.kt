@@ -30,25 +30,43 @@ class UserRuleRepository(
 
     /** Adds a rule when [id] is null, or edits the host and address of an existing one. */
     suspend fun save(id: Long?, type: RuleType, host: String, redirection: String?): RuleSaveResult {
-        val normalizedHost = validator.normalizeHostname(host, allowWildcards = type != RuleType.REDIRECTED)
-            ?: return RuleSaveResult.InvalidHost
-        val normalizedRedirection = if (type == RuleType.REDIRECTED) {
-            redirection?.let(validator::normalizeIpAddress) ?: return RuleSaveResult.InvalidAddress
-        } else {
-            null
+        val rule = when (val normalized = normalize(type, host, redirection)) {
+            is Normalization.Valid -> normalized
+            is Normalization.Invalid -> return normalized.result
         }
-        dao.findByHost(normalizedHost)?.takeIf { it.id != id }?.let { return RuleSaveResult.Duplicate(it.type) }
+        dao.findByHost(rule.host)?.takeIf { it.id != id }?.let { return RuleSaveResult.Duplicate(it.type) }
         val existing = id?.let { dao.findById(it) }
         if (existing == null) {
-            dao.insert(
-                UserRuleEntity(host = normalizedHost, type = type, redirection = normalizedRedirection, enabled = true),
-            )
+            dao.insert(UserRuleEntity(host = rule.host, type = type, redirection = rule.redirection, enabled = true))
         } else {
-            dao.update(existing.copy(host = normalizedHost, redirection = normalizedRedirection))
+            dao.update(existing.copy(host = rule.host, redirection = rule.redirection))
         }
         state.markConfigurationChanged()
         return RuleSaveResult.Saved
     }
+
+    /** Puts [host] in the list of [type], in place of the rule it had, as the DNS log does. */
+    suspend fun putHost(host: String, type: RuleType, redirection: String?): RuleSaveResult {
+        val rule = when (val normalized = normalize(type, host, redirection)) {
+            is Normalization.Valid -> normalized
+            is Normalization.Invalid -> return normalized.result
+        }
+        val existing = dao.findByHost(rule.host)
+        if (existing == null) {
+            dao.insert(UserRuleEntity(host = rule.host, type = type, redirection = rule.redirection, enabled = true))
+        } else {
+            dao.update(existing.copy(type = type, redirection = rule.redirection, enabled = true))
+        }
+        state.markConfigurationChanged()
+        return RuleSaveResult.Saved
+    }
+
+    suspend fun removeHost(host: String) {
+        dao.findByHost(host)?.let { delete(it) }
+    }
+
+    /** The list of each host with an enabled rule. */
+    suspend fun enabledTypes(): Map<String, RuleType> = dao.getEnabled().associate { it.host to it.type }
 
     suspend fun setEnabled(id: Long, enabled: Boolean) {
         dao.setEnabled(id, enabled)
@@ -63,6 +81,21 @@ class UserRuleRepository(
     suspend fun restore(rule: UserRuleEntity) {
         dao.insertIfAbsent(rule)
         state.markConfigurationChanged()
+    }
+
+    private sealed interface Normalization {
+        data class Valid(val host: String, val redirection: String?) : Normalization
+
+        data class Invalid(val result: RuleSaveResult) : Normalization
+    }
+
+    private fun normalize(type: RuleType, host: String, redirection: String?): Normalization {
+        val normalizedHost = validator.normalizeHostname(host, allowWildcards = type != RuleType.REDIRECTED)
+            ?: return Normalization.Invalid(RuleSaveResult.InvalidHost)
+        if (type != RuleType.REDIRECTED) return Normalization.Valid(normalizedHost, null)
+        val normalizedRedirection = redirection?.let(validator::normalizeIpAddress)
+            ?: return Normalization.Invalid(RuleSaveResult.InvalidAddress)
+        return Normalization.Valid(normalizedHost, normalizedRedirection)
     }
 
     companion object {

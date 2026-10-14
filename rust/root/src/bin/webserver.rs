@@ -4,15 +4,14 @@
 //! Usage: `adaway-webserver --resources <directory> [--icon]`. The directory holds `test.html`,
 //! `icon.svg`, `certificate.pem` and `key.pem`.
 
-use std::fs::{self, File};
+use std::fs;
 use std::io;
-use std::os::fd::AsRawFd;
 use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 use std::sync::Arc;
 
-use adaway_webserver::http::Content;
-use adaway_webserver::server;
+use adaway_root::http::Content;
+use adaway_root::{daemon, server};
 use rustls::ServerConfig;
 use rustls::pki_types::pem::PemObject;
 use rustls::pki_types::{CertificateDer, PrivateKeyDer};
@@ -55,7 +54,7 @@ fn run() -> Result<(), (u8, String)> {
         };
         (code, format!("ports not bound: {error}"))
     })?;
-    daemonize().map_err(|error| (EXIT_START, format!("not detached: {error}")))?;
+    daemon::detach().map_err(|error| (EXIT_START, format!("not detached: {error}")))?;
     protect_from_low_memory_killer();
     server::serve(listeners, Arc::new(content), Arc::new(tls));
     Err((EXIT_START, "every listener failed".to_owned()))
@@ -98,26 +97,6 @@ fn tls_config(resources: &Path) -> Result<ServerConfig, String> {
                 .with_single_cert(certificates, key)
         })
         .map_err(|error| format!("TLS not configured: {error}"))
-}
-
-/// The parent ends, telling the app the server started; the child goes on in its own session,
-/// so that it outlives the app shell.
-fn daemonize() -> io::Result<()> {
-    // SAFETY: no other thread exists yet, so the child gets a consistent copy of the process.
-    match unsafe { libc::fork() } {
-        -1 => Err(io::Error::last_os_error()),
-        0 => {
-            // SAFETY: plain system calls on descriptors this process owns.
-            unsafe { libc::setsid() };
-            let null = File::options().read(true).write(true).open("/dev/null")?;
-            for descriptor in 0..=2 {
-                // SAFETY: as above.
-                unsafe { libc::dup2(null.as_raw_fd(), descriptor) };
-            }
-            Ok(())
-        }
-        _ => std::process::exit(0),
-    }
 }
 
 /// Android would otherwise kill it first when memory runs low.

@@ -1,5 +1,5 @@
 [package]
-name = "adaway-webserver"
+name = "adaway-root"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
@@ -7,10 +7,19 @@ license.workspace = true
 publish.workspace = true
 
 [dependencies]
+adaway-engine = { path = "../engine" }
 libc = "0.2.190"
 rcgen = { version = "0.14.10", default-features = false, features = ["crypto", "pem", "ring"] }
 rustls = { version = "0.23.46", default-features = false, features = ["ring", "std", "tls12"] }
 time = "0.3.41"
+
+[[bin]]
+name = "adaway-webserver"
+path = "src/bin/webserver.rs"
+
+[[bin]]
+name = "adaway-capture"
+path = "src/bin/capture.rs"
 
 [lints]
 workspace = true

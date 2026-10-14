@@ -17,6 +17,7 @@ import org.adaway.data.db.AppDatabase
 import org.adaway.data.legacy.LegacyAppData
 import org.adaway.data.legacy.LegacyConversion
 import org.adaway.data.settings.SettingsRepository
+import org.adaway.dnslog.DnsLog
 import org.adaway.engine.Engine
 import org.adaway.engine.EngineFiles
 import org.adaway.root.RootController
@@ -52,6 +53,7 @@ class AppContainer(context: Context) {
     val statusMessages = StatusMessages()
     val rootController = RootController(applicationContext.resources, rootAccess, database, engineFiles, settingsRepository, statusMessages)
     val webServer = WebServer(applicationContext, rootAccess)
+    val dnsLog = DnsLog(applicationContext, settingsRepository, rootAccess)
     val blockingController = BlockingController(settingsRepository, vpnController, rootController, statusMessages)
     val sourceRepository = SourceRepository(database, engineFiles, blockListState)
     val userRuleRepository = UserRuleRepository(database, Engine, blockListState)

@@ -7,7 +7,7 @@ name = "adaway-android"
 version = "7.0.0"
 dependencies = [
  "adaway-engine",
- "adaway-webserver",
+ "adaway-root",
  "jni",
 ]
 
@@ -19,9 +19,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "adaway-webserver"
+name = "adaway-root"
 version = "7.0.0"
 dependencies = [
+ "adaway-engine",
  "libc",
  "rcgen",
  "rustls",

@@ -15,6 +15,7 @@ import org.adaway.ui.help.HelpScreen
 import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
 import org.adaway.ui.lists.ListsRoute
+import org.adaway.ui.log.DnsLogScreen
 import org.adaway.ui.prefs.ExcludedAppsScreen
 import org.adaway.ui.prefs.HostsFileScreen
 import org.adaway.ui.prefs.PreferencesNavigation
@@ -57,6 +58,9 @@ private data object ExcludedApps
 @Serializable
 private data object SystemHosts
 
+@Serializable
+private data object DnsLog
+
 @Composable
 fun AdAwayApp(isTelevision: Boolean) {
     val viewModel = appViewModel(::MainViewModel)
@@ -83,6 +87,7 @@ fun AdAwayApp(isTelevision: Boolean) {
                         openLists = { type -> navController.navigate(Lists(type)) },
                         openPreferences = { navController.navigate(Preferences) },
                         openHelp = { navController.navigate(Help) },
+                        openLog = { navController.navigate(DnsLog) },
                     ),
                 )
             }
@@ -124,6 +129,7 @@ fun AdAwayApp(isTelevision: Boolean) {
             composable<Updates> { UpdatesScreen(onBack = navController::popBackStack) }
             composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
             composable<SystemHosts> { HostsFileScreen(onBack = navController::popBackStack) }
+            composable<DnsLog> { DnsLogScreen(onBack = navController::popBackStack) }
         }
     }
 }

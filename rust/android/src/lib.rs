@@ -5,15 +5,16 @@ use std::io;
 use std::net::IpAddr;
 use std::os::fd::{FromRawFd, OwnedFd};
 use std::path::{Path, PathBuf};
-use std::sync::{Arc, Mutex, RwLock};
+use std::sync::{Arc, LazyLock, Mutex, RwLock};
 
 use adaway_engine::compile::{self, OutputDirectories, UserRules};
-use adaway_engine::filter::BlockList;
+use adaway_engine::filter::{BlockList, Verdict};
 use adaway_engine::hosts::{self, HostsOptions};
+use adaway_engine::querylog::QueryLog;
 use adaway_engine::source::{self, ParseError, ParseOptions, SourceFormat};
 use adaway_engine::tunnel::{Exit, SharedRules, Stopper, Tunnel, TunnelConfig, Upstream};
 use adaway_engine::{address, catalog, hostname};
-use adaway_webserver::certificate;
+use adaway_root::certificate;
 use jni::errors::ThrowRuntimeExAndDefault;
 use jni::objects::{JIntArray, JLongArray, JObject, JObjectArray, JString};
 use jni::sys::{jboolean, jint, jlong};
@@ -286,6 +287,75 @@ pub extern "system" fn Java_org_adaway_engine_Engine_queryCatalog<'caller>(
         .resolve::<ThrowRuntimeExAndDefault>()
 }
 
+/// The names the VPN tunnels were asked for, kept for the life of the process.
+static QUERY_LOG: LazyLock<Arc<QueryLog>> = LazyLock::new(Arc::default);
+
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_setQueryLogRecording<'caller>(
+    _unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    recording: jboolean,
+) {
+    QUERY_LOG.set_recording(recording);
+}
+
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_isQueryLogRecording<'caller>(
+    _unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+) -> jboolean {
+    QUERY_LOG.is_recording()
+}
+
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_queryLogNames<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+) -> JObjectArray<'caller, JString<'caller>> {
+    unowned_env
+        .with_env(|env| -> jni::errors::Result<_> { new_string_array(env, &QUERY_LOG.names()) })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_clearQueryLog<'caller>(
+    _unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+) {
+    QUERY_LOG.clear();
+}
+
+/// Verdict codes of `verdicts`, mirrored in the Kotlin `Engine`.
+fn verdict_code(verdict: Verdict) -> jint {
+    match verdict {
+        Verdict::Allow => 0,
+        Verdict::Block => 1,
+        Verdict::Redirect(_) => 2,
+    }
+}
+
+/// What the final list decides for each name.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_verdicts<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    final_directory: JString<'caller>,
+    names: JObjectArray<'caller, JString<'caller>>,
+) -> JIntArray<'caller> {
+    unowned_env
+        .with_env(|env| -> Result<_, BridgeError> {
+            let list = BlockList::load(Path::new(&final_directory.try_to_string(env)?))?;
+            let codes: Vec<jint> = read_strings(env, &names)?
+                .iter()
+                .map(|name| verdict_code(list.verdict(name)))
+                .collect();
+            let array = JIntArray::new(env, codes.len())?;
+            array.set_region(env, 0, &codes)?;
+            Ok(array)
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
 /// A tunnel shared between the thread running it and the threads stopping or reloading it.
 struct TunnelHandle {
     tunnel: Mutex<Option<Tunnel>>,
@@ -365,6 +435,7 @@ pub extern "system" fn Java_org_adaway_engine_Engine_createTunnel<'caller>(
                     tun,
                     upstreams,
                     monitor,
+                    log: Arc::clone(&QUERY_LOG),
                 },
                 Arc::clone(&rules),
             )?;

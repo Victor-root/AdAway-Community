@@ -74,7 +74,7 @@ android {
         generateLocaleConfig = true
     }
 
-    // The root web server is run from the installed libraries: they must be extracted on install.
+    // The root processes are run from the installed libraries: they must be extracted on install.
     packaging {
         jniLibs {
             useLegacyPackaging = true
@@ -87,8 +87,8 @@ room {
 }
 
 /**
- * Builds the Rust engine for every Android ABI with cargo-ndk, and the root web server next to it.
- * The server is an executable named like a library, so that Android installs it with them.
+ * Builds the Rust engine for every Android ABI with cargo-ndk, and the root processes next to it:
+ * executables named like libraries, so that Android installs them with them.
  */
 abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations) : DefaultTask() {
     @get:InputFiles
@@ -127,7 +127,7 @@ abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations
             commandLine(
                 listOf("cargo", "ndk") + abis.keys.flatMap { listOf("-t", it) } +
                     listOf("--platform", minSdk.get().toString(), "-o", output.absolutePath, "build") +
-                    profile + listOf("-p", "adaway-android", "-p", "adaway-webserver"),
+                    profile + listOf("-p", "adaway-android", "-p", "adaway-root"),
             )
             isIgnoreExitValue = true
         }
@@ -138,9 +138,11 @@ abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations
             )
         }
         val profileDirectory = if (release.get()) "release" else "debug"
-        abis.forEach { (abi, target) ->
-            workspace.file("target/$target/$profileDirectory/adaway-webserver").get().asFile
-                .copyTo(File(output, "$abi/libadaway_webserver.so"), overwrite = true)
+        for ((abi, target) in abis) {
+            for (executable in listOf("adaway-webserver", "adaway-capture")) {
+                workspace.file("target/$target/$profileDirectory/$executable").get().asFile
+                    .copyTo(File(output, "$abi/lib${executable.replace('-', '_')}.so"), overwrite = true)
+            }
         }
     }
 }

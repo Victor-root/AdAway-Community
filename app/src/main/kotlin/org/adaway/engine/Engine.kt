@@ -7,6 +7,11 @@ object Engine : RuleValidator {
     const val PARSE_TOO_MANY_RULES = -2L
     const val PARSE_NO_RULES = -3L
 
+    /** Verdict codes of [verdicts]. */
+    const val VERDICT_ALLOW = 0
+    const val VERDICT_BLOCK = 1
+    const val VERDICT_REDIRECT = 2
+
     init {
         System.loadLibrary("adaway")
     }
@@ -96,4 +101,20 @@ object Engine : RuleValidator {
 
     /** Frees a handle whose tunnel is not running. */
     external fun destroyTunnel(handle: Long)
+
+    /** Whether the VPN tunnels note the names asked for, for the DNS log. Off when the process starts. */
+    external fun setQueryLogRecording(recording: Boolean)
+
+    external fun isQueryLogRecording(): Boolean
+
+    /** The names noted by the VPN tunnels, each once, in the order first asked. */
+    external fun queryLogNames(): Array<String>
+
+    external fun clearQueryLog()
+
+    /**
+     * What the final list in [finalDirectory] decides for each of [names], as `VERDICT_` codes.
+     * Throws a [RuntimeException] when it cannot be read.
+     */
+    external fun verdicts(finalDirectory: String, names: Array<String>): IntArray
 }

@@ -36,7 +36,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.StrokeCap
@@ -60,7 +59,6 @@ import org.adaway.data.db.RuleType
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.root.RootStep
 import org.adaway.sources.UpdateProgress
-import org.adaway.ui.common.DISABLED_ALPHA
 import org.adaway.ui.common.updateProgressText
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -72,6 +70,7 @@ class HomeScreenActions(
     val openSources: () -> Unit,
     val openPreferences: () -> Unit,
     val openHelp: () -> Unit,
+    val openLog: () -> Unit,
     val sync: () -> Unit,
     val toggleBlocking: () -> Unit,
     val openPersistence: () -> Unit,
@@ -126,7 +125,7 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: Statu
                         BlockingStatusCard(state.blocking, detail, actions.toggleBlocking, modifier = Modifier.padding(bottom = 20.dp))
                     }
                 }
-                Tiles(actions.openHelp, actions.openPreferences)
+                Tiles(actions)
                 if (usesVpn) PersistenceCard(actions.openPersistence, modifier = Modifier.padding(top = 20.dp))
             }
         }
@@ -327,14 +326,13 @@ private fun statusText(message: StatusMessage, usesVpn: Boolean): String? = when
     )
 }
 
-/** The DNS log screen does not exist yet: its tile is grayed out. */
 @Composable
-private fun Tiles(openHelp: () -> Unit, openPreferences: () -> Unit) {
+private fun Tiles(actions: HomeScreenActions) {
     val colors = LocalAdAwayColors.current
     Row(modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-        Tile(R.drawable.ic_outline_rule_24, colors.pastelBlue, R.string.home_tile_log, R.string.home_log_subtitle, onClick = null)
-        Tile(R.drawable.ic_help_24dp, colors.pastelAmber, R.string.home_tile_help, R.string.home_help_subtitle, onClick = openHelp)
-        Tile(R.drawable.ic_settings_24dp, colors.pastelGrey, R.string.home_tile_preferences, R.string.home_preferences_subtitle, onClick = openPreferences)
+        Tile(R.drawable.ic_outline_rule_24, colors.pastelBlue, R.string.home_tile_log, R.string.home_log_subtitle, onClick = actions.openLog)
+        Tile(R.drawable.ic_help_24dp, colors.pastelAmber, R.string.home_tile_help, R.string.home_help_subtitle, onClick = actions.openHelp)
+        Tile(R.drawable.ic_settings_24dp, colors.pastelGrey, R.string.home_tile_preferences, R.string.home_preferences_subtitle, onClick = actions.openPreferences)
     }
 }
 
@@ -344,12 +342,12 @@ private fun RowScope.Tile(
     pastel: Pastel,
     @StringRes title: Int,
     @StringRes subtitle: Int,
-    onClick: (() -> Unit)?,
+    onClick: () -> Unit,
 ) {
     val colors = LocalAdAwayColors.current
     HomeCard(onClick = onClick, modifier = Modifier.weight(1f).fillMaxHeight()) {
         Column(
-            modifier = Modifier.fillMaxSize().alpha(if (onClick != null) 1f else DISABLED_ALPHA).padding(12.dp),
+            modifier = Modifier.fillMaxSize().padding(12.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {

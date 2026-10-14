@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_title">DNS requests</string>
+    <string name="log_toggle_recording_description">Toggle log recording</string>
+    <string name="log_start_recording">Press record to start logging requests, browse the Web or use apps, then go back or swipe to refresh the logs.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlocked requests will not be logged. Disable ad-blocking first if you want to log them too.</string>
+    <string name="log_sort">Sort domains</string>
+    <string name="log_clear">Clear log</string>
+    <string name="log_sort_alphabetical">Alphabetical sort</string>
+    <string name="log_sort_top_level_domain">Top level domain sort</string>
+    <string name="log_block">Add entry to black list</string>
+    <string name="log_allow">Add entry to white list</string>
+    <string name="log_redirect">Add entry to redirect list</string>
+    <string name="log_redirect_dialog_title">Redirect domain</string>
+    <string name="log_capture_failed">The DNS capture could not start.</string>
+</resources>

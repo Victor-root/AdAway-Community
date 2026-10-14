@@ -10,6 +10,7 @@ pub mod hostname;
 pub mod hosts;
 pub mod nameset;
 pub mod packet;
+pub mod querylog;
 pub mod rule;
 pub mod source;
 pub mod tunnel;

@@ -11,6 +11,7 @@ use std::time::{Duration, Instant};
 use crate::dns::{self, parse_query};
 use crate::filter::{BlockList, Verdict};
 use crate::packet::{build_udp, parse_udp};
+use crate::querylog::QueryLog;
 
 const BUFFER_SIZE: usize = 65_536;
 /// A relayed query not answered in time is forgotten: the app retries on its own.
@@ -34,6 +35,7 @@ pub struct TunnelConfig {
     pub upstreams: Vec<Upstream>,
     /// Whether to probe the network when the tunnel stays silent, to notice a lost network.
     pub monitor: bool,
+    pub log: Arc<QueryLog>,
 }
 
 /// Why [`Tunnel::run`] returned.
@@ -256,6 +258,7 @@ impl Tunnel {
             return None;
         }
         let query = parse_query(packet.payload)?;
+        self.config.log.record(&query.name);
         let rules = self.rules.read().map(|rules| Arc::clone(&rules)).ok()?;
         let response = match rules.verdict(&query.name) {
             Verdict::Block => query.blocked_response(),
@@ -366,6 +369,7 @@ mod tests {
     use crate::dns::tests::query;
     use crate::filter::BlockList;
     use crate::packet::{build_udp, parse_udp};
+    use crate::querylog::QueryLog;
     use crate::rule;
     use std::net::{SocketAddr, UdpSocket};
     use std::os::fd::{AsRawFd, FromRawFd, OwnedFd};
@@ -382,6 +386,7 @@ mod tests {
         server: UdpSocket,
         runner: thread::JoinHandle<Exit>,
         stopper: super::Stopper,
+        log: Arc<QueryLog>,
     }
 
     fn start(blocked: &[&str]) -> Harness {
@@ -399,6 +404,8 @@ mod tests {
         let server = UdpSocket::bind("127.0.0.1:0").unwrap();
         let upstream = UdpSocket::bind("127.0.0.1:0").unwrap();
         upstream.connect(server.local_addr().unwrap()).unwrap();
+        let log = Arc::new(QueryLog::default());
+        log.set_recording(true);
         let config = TunnelConfig {
             tun,
             upstreams: vec![Upstream {
@@ -406,6 +413,7 @@ mod tests {
                 socket: OwnedFd::from(upstream),
             }],
             monitor: false,
+            log: Arc::clone(&log),
         };
         let mut tunnel = Tunnel::new(config, rules).unwrap();
         let stopper = tunnel.stopper();
@@ -418,6 +426,7 @@ mod tests {
             server,
             runner,
             stopper,
+            log,
         }
     }
 
@@ -497,6 +506,7 @@ mod tests {
             &[0, 1],
             "an SOA record in the authority section"
         );
+        assert_eq!(harness.log.names(), ["ads.example.com"]);
         stop(harness);
     }
 
