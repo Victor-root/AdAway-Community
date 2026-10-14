@@ -6,7 +6,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.defaultMinSize
@@ -15,7 +14,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.text.input.TextFieldLineLimits
+import androidx.compose.foundation.text.input.TextFieldState
+import androidx.compose.foundation.text.input.rememberTextFieldState
+import androidx.compose.foundation.text.input.setTextAndPlaceCursorAtEnd
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.SwitchDefaults
@@ -24,8 +28,11 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -33,9 +40,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.dp
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -53,48 +59,41 @@ fun AdAwayTextField(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
     TextField(
-        value = value,
-        onValueChange = onValueChange,
+        state = rememberTextFieldState(value, onValueChange),
         label = { Text(label) },
-        singleLine = singleLine,
+        lineLimits = if (singleLine) TextFieldLineLimits.SingleLine else TextFieldLineLimits.Default,
         isError = error != null,
         supportingText = error?.let { { Text(it) } },
         keyboardOptions = keyboardOptions.forDevice(),
         textStyle = AdAwayType.subtitle1,
-        shape = TextFieldShape,
+        shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp),
         colors = adAwayTextFieldColors(),
         modifier = modifier.fillMaxWidth(),
     )
 }
 
-/** As the other one, with the [value] holding the cursor position. */
+/**
+ * The text a field edits, showing [value]: the edits of the user go to [onValueChange], and a
+ * [value] changed elsewhere replaces the text, the cursor at its end.
+ */
 @Composable
-fun AdAwayTextField(
-    value: TextFieldValue,
-    onValueChange: (TextFieldValue) -> Unit,
-    label: String,
-    modifier: Modifier = Modifier,
-    error: String? = null,
-    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
-) {
-    TextField(
-        value = value,
-        onValueChange = onValueChange,
-        label = { Text(label) },
-        singleLine = true,
-        isError = error != null,
-        supportingText = error?.let { { Text(it) } },
-        keyboardOptions = keyboardOptions.forDevice(),
-        textStyle = AdAwayType.subtitle1,
-        shape = TextFieldShape,
-        colors = adAwayTextFieldColors(),
-        modifier = modifier.fillMaxWidth(),
-    )
+private fun rememberTextFieldState(value: String, onValueChange: (String) -> Unit): TextFieldState {
+    val state = rememberTextFieldState(initialText = value)
+    val currentValue by rememberUpdatedState(value)
+    val currentOnValueChange by rememberUpdatedState(onValueChange)
+    LaunchedEffect(state) {
+        snapshotFlow { state.text.toString() }.collect { text -> if (text != currentValue) currentOnValueChange(text) }
+    }
+    LaunchedEffect(value) {
+        if (value != state.text.toString()) state.setTextAndPlaceCursorAtEnd(value)
+    }
+    return state
 }
 
-private val TextFieldShape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)
-
-/** On TV, moving onto a field leaves the keyboard closed: the OK button of the remote opens it. */
+/**
+ * On TV, moving onto a field leaves the keyboard closed: the OK button of the remote opens it. Only
+ * the fields editing a [TextFieldState] honor this.
+ */
 @Composable
 private fun KeyboardOptions.forDevice() = if (LocalTelevision.current) copy(showKeyboardOnFocus = false) else this
 
@@ -196,17 +195,17 @@ fun AdAwayEditText(
     val colors = LocalAdAwayColors.current
     val interactions = remember { MutableInteractionSource() }
     val focused by interactions.collectIsFocusedAsState()
+    val state = rememberTextFieldState(value, onValueChange)
     BasicTextField(
-        value = value,
-        onValueChange = onValueChange,
-        singleLine = true,
+        state = state,
+        lineLimits = TextFieldLineLimits.SingleLine,
         keyboardOptions = keyboardOptions.forDevice(),
         textStyle = AdAwayType.subtitle1.copy(color = colors.textPrimary),
         cursorBrush = SolidColor(colors.primary),
         interactionSource = interactions,
-        decorationBox = { field ->
+        decorator = { field ->
             Box {
-                if (value.isEmpty() && hint != null) Text(hint, style = AdAwayType.subtitle1, color = colors.textSecondary)
+                if (state.text.isEmpty() && hint != null) Text(hint, style = AdAwayType.subtitle1, color = colors.textSecondary)
                 field()
             }
         },
