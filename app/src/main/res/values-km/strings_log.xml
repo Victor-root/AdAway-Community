@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_start_recording_button">ចាប់ផ្តើមថត</string>
+    <string name="log_start_recording_vpn_inactive">ចាប់ផ្តើមថត (VPN មិនដំណើរការ)</string>
+    <string name="log_stop_recording">បញ្ឈប់ការថត</string>
+</resources>

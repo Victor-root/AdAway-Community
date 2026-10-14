@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_toggle_recording_description">Chuyển đổi ghi nhật ký</string>
+    <string name="log_start_recording">Nhấn ghi để bắt đầu ghi yêu cầu, duyệt Web hoặc sử dụng ứng dụng, sau đó quay lại hoặc vuốt để làm mới nhật ký.
+</string>
+    <string name="log_blocked_requests_ignored">\n\nCác yêu cầu bị chặn sẽ không được ghi lại. Trước tiên hãy tắt tính năng chặn quảng cáo nếu bạn cũng muốn ghi chúng.</string>
+    <string name="log_sort">Sắp xếp theo tên miền</string>
+    <string name="log_clear">Xoá log</string>
+    <string name="log_sort_alphabetical">Sắp xếp theo thứ tự chữ cái</string>
+    <string name="log_sort_top_level_domain">Sắp xếp miền cấp trên cùng</string>
+    <string name="log_block">Thêm mục vào danh sách đen</string>
+    <string name="log_allow">Thêm mục vào danh sách trắng</string>
+    <string name="log_redirect">Thêm mục vào danh sách chuyển hướng</string>
+    <string name="log_redirect_dialog_title">Chuyển hướng miền</string>
+    <string name="log_start_recording_button">Bắt đầu ghi</string>
+    <string name="log_start_recording_vpn_inactive">Bắt đầu ghi (VPN không hoạt động)</string>
+    <string name="log_stop_recording">Dừng ghi</string>
+</resources>

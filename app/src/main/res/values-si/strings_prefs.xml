@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">VPN යළි සකසන්න</string>
+    <string name="pref_vpn_reset_description">VPN සම්බන්ධතාවය මුල සිට නැවත ගොඩනඟන්න. VPN ක්‍රියා විරහිත වුවහොත් (අන්තර්ජාල ප්‍රවේශයක් නැති හෝ DNS දෝෂ) මෙය භාවිත කරන්න.</string>
+    <string name="pref_vpn_reset_done">VPN සම්බන්ධතාවය නැවත ගොඩනඟන ලදී.</string>
+    <string name="pref_vpn_reset_not_running">VPN ක්‍රියාත්මක නොවේ.</string>
+    <string name="pref_vpn_diagnostic_log">දෝෂ විනිශ්චය ලොගය</string>
+    <string name="pref_vpn_diagnostic_log_description">මෑත දෝෂ සහ VPN සිදුවීම් බලන්න, පිටපත් කරන්න හෝ බෙදාගන්න. ගැටලුවක් වාර්තා කිරීමේදී ප්‍රයෝජනවත් වේ.</string>
+    <string name="pref_vpn_diagnostic_log_empty">තවම කිසිදු සිදුවීමක් වාර්තා වී නැත.</string>
+    <string name="pref_vpn_diagnostic_log_share">දෝෂ විනිශ්චය ලොගය බෙදාගන්න</string>
+    <string name="pref_vpn_diagnostic_log_copy">පිටපත් කරන්න</string>
+    <string name="pref_vpn_diagnostic_log_copied">දෝෂ විනිශ්චය ලොගය පසුරු පුවරුවට පිටපත් කරන ලදී.</string>
+    <string name="pref_vpn_diagnostic_log_clear">දෝෂ විනිශ්චය ලොගය හිස් කරන්න</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">වාර්තා වූ සිදුවීම් මකන්න. පිරිසිදු තොරතුරු ලබා ගැනීමට ගැටලුවක් නැවත ඇති කිරීමට පෙර මෙය කරන්න.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">දෝෂ විනිශ්චය ලොගය හිස් කරන ලදී.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

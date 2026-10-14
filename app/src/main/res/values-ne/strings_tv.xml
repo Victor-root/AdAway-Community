@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">अनुमति सूचीमा थप्नुहोस्</string>
+    <string name="tv_dialog_add_to_blocked">रोक सूचीमा थप्नुहोस्</string>
+    <string name="tv_dialog_remove_from_allowed">अनुमति सूचीबाट हटाउनुहोस्</string>
+    <string name="tv_dialog_remove_from_blocked">रोक सूचीबाट हटाउनुहोस्</string>
+    <string name="tv_dialog_copy_hostname">होस्टनाम प्रतिलिपि गर्नुहोस्</string>
+    <string name="tv_log_entry_status_description">डोमेन स्थिति</string>
+    <string name="tv_button_theme_light">उज्यालो मोड</string>
+    <string name="tv_button_theme_dark">अँध्यारो मोड</string>
+    <string name="tv_lists_empty">यस सूचीमा अझै कुनै प्रविष्टि छैन।</string>
+    <string name="tv_dialog_search">खोज्नुहोस्</string>
+</resources>

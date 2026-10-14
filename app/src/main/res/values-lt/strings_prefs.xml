@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Nustatymai</string>
+    <string name="pref_general_category">Bendri</string>
+    <string name="pref_dark_theme">Tamsi tema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Šviesi</item>
+        <item>Tamsi</item>
+        <item>Sistemos pasirinkta</item>
+    </string-array>
+    <string name="pref_update_configuration">Automatiniai naujinimai</string>
+    <string name="pref_ad_block_category">Reklamų blokavimas</string>
+    <string name="pref_root_ad_blocker_configuration">Root pagrįstas\nad blokavimas</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN pagrįstas reklamų blokavimas</string>
+    <string name="pref_enable_ipv6">Įjungti IPv6</string>
+    <string name="pref_backup_restore">Padaryti atsarginę kopiją / atkurti blokavimo taisykles</string>
+    <string name="pref_backup_restore_title">Padaryti atsarginę kopiją; atkurti </string>
+    <string name="pref_backup">Atsarginė kopija</string>
+    <string name="pref_backup_summary">Sukurti atsarginę kopiją į blokavimo taisyklių į išorinę duomenų laikmeną</string>
+    <string name="pref_restore">Atkurti</string>
+    <string name="pref_restore_summary">Atkrurti jūsų blokavimo taisykles iš atsarginės kopijos</string>
+    <string name="import_success">Atsarginė kopija sėkmingai importuota iš jūsų išorinės atminties.</string>
+    <string name="export_success">Atsarginė kopija sėkmingai eksportuota į failą \'%s\' jūsų išorinėje saugykloje.</string>
+    <string name="export_failed">Nepavyko eksportuoti atsarginės kopijos failą%s</string>
+    <string name="pref_update_title">Atnaujinimai</string>
+    <string name="pref_update_app_category">Programos atnaujinimai</string>
+    <string name="pref_update_check_app_daily">Periodiškai ieškoti atnaujinimų</string>
+    <string name="pref_update_check_now">Tikrinti dabar</string>
+    <string name="pref_update_install">Atnaujinti dabar</string>
+    <string name="pref_update_hosts_category">Domeno hosts atnaujinimai</string>
+    <string name="pref_update_check_hosts_daily">Periodiškai ieškoti atnaujinimų</string>
+    <string name="pref_update_sync_on_update">Sinchronizuoti atnaujinimo metu</string>
+    <string name="pref_update_sync_unmetered_only">Sinchronizuoti tik neribotu tinklu</string>
+    <string name="pref_vpn_service_on_boot">Įjungti įjungimo metu</string>
+    <string name="pref_vpn_excluded_apps">Išskirtos aplikacijos</string>
+    <string name="pref_vpn_excluded_apps_description">Sukonfigūruoti kurios aplikacijos nenaudos VPN kad sujungimai nebūtų blokuojami.</string>
+    <string name="pref_vpn_exclude_system_apps">Išskirti sistemos aplikacijos</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Nei viena</item>
+        <item>Visos išskyrus naršykles</item>
+        <item>Visos</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Išskirti vartotojo aplikacijas</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Išskirtos programos</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Pasirinkti visas</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Nebepasirinkti visų</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Programos ikona</string>
+    <string name="pref_vpn_reset">Nustatyti VPN iš naujo</string>
+    <string name="pref_vpn_reset_description">Iš naujo sukurti VPN ryšį nuo pradžių. Naudokite tai, jei VPN nustoja veikti (nėra interneto prieigos arba DNS klaidos).</string>
+    <string name="pref_vpn_reset_done">VPN ryšys sukurtas iš naujo.</string>
+    <string name="pref_vpn_reset_not_running">VPN neveikia.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostikos žurnalas</string>
+    <string name="pref_vpn_diagnostic_log_description">Peržiūrėkite, kopijuokite arba bendrinkite naujausias klaidas ir VPN įvykius. Naudinga pranešant apie problemą.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Kol kas neužregistruota jokių įvykių.</string>
+    <string name="pref_vpn_diagnostic_log_share">Bendrinti diagnostikos žurnalą</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopijuoti</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostikos žurnalas nukopijuotas į iškarpinę.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Išvalyti diagnostikos žurnalą</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Ištrinti užregistruotus įvykius. Padarykite tai prieš atkurdami problemą, kad užfiksuotumėte švarų pėdsaką.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostikos žurnalas išvalytas.</string>
+    <string name="pref_root_open_hosts">Atidaryti host faila</string>
+    <string name="pref_hosts_redirection_summary">Pasirinkti kur nukreipti užblokuotus hosts domenus</string>
+    <string name="pref_redirection_ipv4">IPv4 nukreipimas</string>
+    <string name="pref_redirection_ipv6">IPv6 nukreipimas</string>
+    <string name="pref_webserver_summary">Lokalus web serveris klauso lokalių IP adresų ir blokuoja domenų adresų užklausas. Tai gali padėti su programos strigimu su blokuotu sujungimu.</string>
+    <string name="pref_webserver_enabled">Įjungti web serverį</string>
+    <string name="pref_webserver_test">Testuoti web serverį</string>
+    <string name="pref_webserver_certificate">Instaliuoti savo pažymėtus sertifikatus</string>
+    <string name="pref_webserver_state_not_running">Neveikia</string>
+    <string name="pref_webserver_state_checking">Tikrinama…</string>
+    <string name="pref_webserver_state_running_not_installed">Veikia bet serfikatas neįdiegtas</string>
+    <string name="pref_webserver_state_running_and_installed">Veikia, serifikatas instaliuotas</string>
+    <string name="pref_webserver_certificate_dialog_title">Sertifikato instrukcijos instaliavimas</string>
+    <string name="pref_webserver_certificate_dialog_content">Pradedant nuo Android 11 (R), programa nebegali automatiškai instaliuoti autorizacijos sertifikato (CA).n\n\ Eikite į \"Saugos\" nustatymus, \"Šifravimas ir Identifikacija\" tada \"Instaliuoti serfifikatą\". Nuo ten, pasirinkti \"CA sertifikatas\" ir naujai eksportuotą sertifikato failą.</string>
+    <string name="pref_webserver_certificate_dialog_action">Atverty \"Saugos\" nustatymus</string>
+    <string name="pref_webserver_icon">Pakeisti tuščios reklamos vietą su programėles ikona</string>
+</resources>

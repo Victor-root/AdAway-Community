@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">Uppdatera AdAway</string>
+    <string name="update_banner_title">Uppdatering tillgänglig</string>
+    <string name="update_banner_subtitle">Tryck för att installera %1$s</string>
+    <string name="update_up_to_date_header">Allt är uppdaterat</string>
+    <string name="update_update_available_header">Uppdatering tillgänglig</string>
+    <string name="update_updating_header">Uppdaterar AdAway</string>
+    <string name="update_update_button">Uppdatera nu</string>
+    <string name="update_last_changelog_title">Senaste ändringar:</string>
+    <string name="update_new_changelog_title">Ändringslogg:</string>
+    <string name="pref_update_check_now_update_available">Ny version tillgänglig: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Inga uppdateringar tillgängliga</string>
+    <string name="pref_update_install_summary">Installera version %1$s</string>
+    <string name="notification_channel_app_updates">App-uppdateringar</string>
+    <string name="notification_channel_app_updates_description">Avisering när en ny version av appen är tillgänglig. Stäng av ljudet för den här kanalen för att dölja aviseringar om app-uppdateringar utan att påverka andra aviseringar.</string>
+    <string name="notification_app_update_title">App-uppdatering tillgänglig</string>
+    <string name="notification_app_update_text">En ny version av AdAway finns att ladda ner.</string>
+</resources>

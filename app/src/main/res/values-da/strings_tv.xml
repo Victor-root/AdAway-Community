@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Føj til tilladte</string>
+    <string name="tv_dialog_add_to_blocked">Føj til blokerede</string>
+    <string name="tv_dialog_remove_from_allowed">Fjern fra tilladte</string>
+    <string name="tv_dialog_remove_from_blocked">Fjern fra blokerede</string>
+    <string name="tv_dialog_copy_hostname">Kopiér værtsnavn</string>
+    <string name="tv_log_entry_status_description">Domænestatus</string>
+    <string name="tv_button_theme_light">Lyst tema</string>
+    <string name="tv_button_theme_dark">Mørkt tema</string>
+    <string name="tv_lists_empty">Ingen poster på denne liste endnu.</string>
+    <string name="tv_dialog_search">Søg</string>
+</resources>

@@ -1,0 +1,34 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Inkomsten via reclames</h2>
+<p>Er is een vaak voorkomende misvatting dat als een gebruiker nooit op reclames klikt, het blokkeren van deze reclames een site of app financieel niet schaad. Dit klopt niet, aangezien ontwikkelaars ook geld verdienen door het alleen tonen van reclames. Het is aan u of u deze wel of niet blokkeert. Persoonlijk zou ik applicaties die reclames tonen niet gebruiken, omdat ik deze hinderlijk vind, dus zonder adblocker zou ik deze applicaties niet eens installeren.</p>
+
+<h2>Hoe werkt AdAway?</h2>
+<p>AdAway gebruikt het <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts bestand</a>om hostnamen te blokkeren die reclames aanbieden. Het hosts-bestand is een bestand in <code>/system/etc/hosts</code> Het zet hostnamen om naar IP-adressen. Het is een veelgebruikte manier om hostnamen naar IP-adressen om te leiden zonder het Domain Name System (DNS) te gebruiken. Alle ongewenste hostnamen worden doorverwezen naar <code>127.0.0.1</code>.Dit betekent dat ze naar uw eigen apparaat verwijzen.<br>
+Als het host bestand niet kan worden weggeschreven, dan is de ingebouwde VPN service een alternatieve oplossing. Dit zal connecties naar ongewenste host namen filteren en zal anderen door laten gaan.</p>
+
+<h2>Waarom moet ik Android herstarten om veranderingen effect te laten hebben?</h2>
+<p>Java op Android houd zijn eigen interne DNS-cache bij. Het besturingssysteem zal het nieuwe hosts-bestand meteen gebruiken (controleer dit met ping via de command line), maar u zult Android opnieuw moeten opstarten om de DNS-cache van Java opnieuw op te bouwen.</p>
+
+<h2>Hoe gebruik ik de webserver in AdAway?</h2>
+<p><strong>AdAway zal ook werken zonder het gebruik van de webserver!</strong>
+<br><br>U kunt een lokale webserver inschakelen vanuit de voorkeuren van AdAway om verzoeken te om te leiden naar het lokale IP-adres <code>127.0.0.1</code>. Dit betekent dat verzoeken van applicaties aan reclameservers die doorverwezen worden naar <code>127.0.0.1</code> beantwoord worden door de webserver van AdAway.
+<br>Sommige applicaties weigeren te werken als reclameservers niet bereikbaar zijn. Met deze methode zullen de servers weer 'bereikbaar' zijn, alleen wordt er geen reclame maar een witte pagina weergegeven.</p>
+
+<h2>Hoe kan ik specifieke hostnamen (de)blokkeren?</h2>
+<p>Voeg de hostnamen die u wilt blokkeren toe aan de <cite>Blokkeer</cite> lijst van het <cite>homescreen</cite>. Daarnaast kunt u ook hostnamen die u wilt uitzonderenn van blokkeren toevoegen aan de  <cite>Toegestane</cite> lijst en hostnamen die u wilt doorverwijzen naar een specifiek IP-adres toevoegen aan <cite>Doorverwijzing</cite> lijst.</p>
+
+<h2>Waar kan ik meer hosts-bronnen vinden?</h2>
+<p>Zie <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">deze lijst van andere hosts-bronnen voor AdAway</a>.</p>
+
+<h2>Waarom deze fork bestaat</h2>
+<p>AdAway is een geweldig project met een lange geschiedenis, maar de upstream release- en review-activiteit is al een tijdje beperkt.<br/>Sommige bugs en pull requests staan al lang open, waaronder problemen die de stabiliteit van de VPN-modus op recente Android-versies en OEM-ROM's beïnvloeden.<br/>Deze fork bestaat om het project bruikbaar te houden met door de community onderhouden fixes, in plaats van geteste verbeteringen ongebruikt te laten.</p>
+
+<h2>Help vertalen of meld een fout</h2>
+<p>Ga naar <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+</body>
+</html>

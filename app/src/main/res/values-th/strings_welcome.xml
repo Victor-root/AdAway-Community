@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_root_missing_title">จำเป็นต้องรูท</string>
+    <string name="tv_welcome_intro_subtitle">ตัวช่วยสั้น ๆ นี้จะเปิดการบล็อกโฆษณาบนอุปกรณ์นี้</string>
+    <string name="tv_welcome_start_button">เริ่มต้นใช้งาน</string>
+    <string name="tv_welcome_method_header">เลือกวิธีการบล็อกของคุณ</string>
+    <string name="tv_welcome_method_root_button">ใช้ root</string>
+    <string name="tv_welcome_method_root_body">เร็วกว่าและประหยัดแบตเตอรี่มากกว่า ต้องใช้อุปกรณ์ที่รูทแล้ว</string>
+    <string name="tv_welcome_method_vpn_button">ใช้ VPN</string>
+    <string name="tv_welcome_method_vpn_body">ทำงานได้โดยไม่ต้องรูท เข้ากันได้กับอุปกรณ์ Android TV ทุกรุ่น</string>
+    <string name="tv_welcome_activate_header">เปิดการบล็อกโฆษณา</string>
+    <string name="tv_welcome_activate_body">นี่คือ VPN ในเครื่อง: กรองโฆษณาบนอุปกรณ์นี้โดยตรง โดยไม่ส่งทราฟฟิกของคุณผ่านเซิร์ฟเวอร์ภายนอก</string>
+</resources>

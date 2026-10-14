@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_first_step">Wizard 1e stap</string>
+    <string name="welcome_second_step">Wizard 2e stap</string>
+    <string name="welcome_method_header">Welkom bij AdAway!</string>
+    <string name="welcome_method_summary">AdAway biedt twee blokkeermethoden aan. Kies de gewenste methode:</string>
+    <string name="welcome_root_method_title">Blokkering op basis van root</string>
+    <string name="welcome_root_method_text1">Sneller</string>
+    <string name="welcome_root_method_text2">Bespaart accu</string>
+    <string name="welcome_root_method_text3">Root vereist</string>
+    <string name="welcome_vpn_method_title">Blokkering op basis van VPN</string>
+    <string name="welcome_vpn_method_text1">Langzamer</string>
+    <string name="welcome_vpn_method_text2">Actief op de achtergrond</string>
+    <string name="welcome_vpn_method_text3">Comptabiliteit</string>
+    <string name="welcome_root_missing_title">Geroote Android vereist</string>
+    <string name="welcome_root_missile_description">De su-binary is niet aangetroffen of u heeft AdAway geen roottoegang verleend.\n\nDit komt voor als uw apparaat niet geroot is. Informatie over het rooten van uw apparaat vindt u op wiki.lineageos.org of andere Android-websites.</string>
+    <string name="welcome_vpn_alwayson_title">Altijd aan VPN ingeschakeld</string>
+    <string name="welcome_vpn_alwayson_description">Adaway detecteerde dat een andere VPN de instelling \"altijd aan VPN ingeschaked\" actief is. .\n\nDit voorkomt Adaway om toegang te vragen tot VPN. Schakel a.u.b. \"altijd aan VPN ingeschaked\" uit op de bijbehorende VPN en probeer opnieuw.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">Adaway kan geen toegang vragen tot VPN. \n\nDit komt waarschijnlijk doordat een andere VPN de instelling \"Altijd aan VPN ingeschakeld\" actief heeft. Controleer a.u.b.  of een andere VPN deze instelling actief heeft en schakel deze uit voordat je het opnieuw probeert.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Open VPN instellingen</string>
+    <string name="welcome_method_pro_logo">Voordeel</string>
+    <string name="welcome_method_con_logo">Nadeel</string>
+    <string name="welcome_sync_header">Bezig met synchroniseren</string>
+    <string name="welcome_synced_header">Gesynchroniseerd!</string>
+    <string name="welcome_sync_summary">AdAway haalt reclamenetwerken op uit online-bronnen. U kunt deze later aanpassen in de instellingen.</string>
+    <string name="welcome_sync_retry_logo">Opnieuw proberen</string>
+    <string name="welcome_sync_error">81%match
+Het synchroniseren is mislukt: %1$s Wilt u het opnieuw proberen?</string>
+    <string name="welcome_sync_notifications">Het kan notificaties sturen om de blokkeerstatus te laten zien en te controleren, je op de hoogte stellen van een bestaande app update (een paar per jaar). Schakel in als je up-to-date wilt blijven.</string>
+    <string name="welcome_sync_leave_early_title">Synchronisatie nog niet klaar</string>
+    <string name="welcome_sync_leave_early_message">Het downloaden van de blokkeerlijsten is nog niet klaar. Je kunt nu doorgaan, het gaat op de achtergrond verder, of hier wachten tot het klaar is.</string>
+    <string name="welcome_sync_leave_early_wait">Wachten</string>
+    <string name="welcome_sync_leave_early_continue">Toch doorgaan</string>
+    <string name="welcome_back_button">Vorige</string>
+    <string name="welcome_next_button">Volgende</string>
+    <string name="welcome_finish_button">Afronden</string>
+    <string name="tv_welcome_intro_subtitle">Deze korte wizard schakelt advertentieblokkering op dit apparaat in.</string>
+    <string name="tv_welcome_start_button">Aan de slag</string>
+    <string name="tv_welcome_method_header">Kies je blokkeermethode</string>
+    <string name="tv_welcome_method_root_button">Root gebruiken</string>
+    <string name="tv_welcome_method_root_body">Sneller en zuiniger met de batterij. Vereist een geroot toestel.</string>
+    <string name="tv_welcome_method_vpn_button">VPN gebruiken</string>
+    <string name="tv_welcome_method_vpn_body">Werkt zonder root, compatibel met elk Android TV-apparaat.</string>
+    <string name="tv_welcome_activate_header">Advertentieblokkering inschakelen</string>
+    <string name="tv_welcome_activate_body">Het is een lokale VPN: die filtert advertenties op dit apparaat zelf, zonder je verkeer via een externe server te sturen.</string>
+</resources>

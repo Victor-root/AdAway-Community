@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Nastavitve</string>
+    <string name="pref_general_category">Splošno</string>
+    <string name="pref_dark_theme">Temna tema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Svetla</item>
+        <item>Temna</item>
+        <item>Sistemska privzeta</item>
+    </string-array>
+    <string name="pref_update_configuration">Samodejne posodobitve</string>
+    <string name="pref_ad_block_category">Zaviranje oglasov</string>
+    <string name="pref_root_ad_blocker_configuration">Zaviralec oglasov na osnovi korenskega sistema</string>
+    <string name="pref_vpn_ad_blocker_configuration">Zaviralec oglasov na osnovi VPN</string>
+    <string name="pref_enable_ipv6">Omogoči podporo za IPv6</string>
+    <string name="pref_backup_restore">Varnostno kopiraj/obnovi pravila zaviranja</string>
+    <string name="pref_backup_restore_title">Varnostno kopiraj in obnovi</string>
+    <string name="pref_backup">Varnostno kopiraj</string>
+    <string name="pref_backup_summary">Varnostno kopirajte svoja pravila zaviranja na zunanjo shrambo</string>
+    <string name="pref_restore">Obnovi</string>
+    <string name="pref_restore_summary">Obnovite svoja pravila zaviranja iz varnostne kopije</string>
+    <string name="import_success">Varnostna kopija je bila uspešno uvožena iz vaše zunanje shrambe.</string>
+    <string name="export_success">Varnostna kopija je bila uspešno izvožena v datoteko \'%s\' na vašo zunanjo shrambo.</string>
+    <string name="export_failed">Datoteke varnostne kopije \'%s\' ni bilo mogoče izvoziti.</string>
+    <string name="pref_update_title">Posodobitve</string>
+    <string name="pref_update_enable_notifications">Obvestila so onemogočena</string>
+    <string name="pref_update_enable_notifications_summary">Obvestila aplikacije ne bodo prikazana. Tapnite, da jih omogočite.</string>
+    <string name="pref_update_app_category">Posodobitve aplikacije</string>
+    <string name="pref_update_check_app_startup">Preveri posodobitev ob zagonu</string>
+    <string name="pref_update_check_app_daily">Občasno preveri obstoj posodobitev</string>
+    <string name="pref_update_check_now">Preveri zdaj</string>
+    <string name="pref_update_install">Posodobi zdaj</string>
+    <string name="pref_update_hosts_category">Posodobitve gostiteljev</string>
+    <string name="pref_update_check">Preveri obstoj posodobitev ob zagonu</string>
+    <string name="pref_update_check_hosts_daily">Občasno preveri obstoj posodobitev</string>
+    <string name="pref_update_sync_on_update">Sinhroniziraj ob posodobitvi</string>
+    <string name="pref_update_sync_unmetered_only">Sinhroniziraj samo v neomejenem omrežju</string>
+    <string name="pref_vpn_service_on_boot">Omogoči ob zagonu</string>
+    <string name="pref_vpn_service_monitor">Spremljaj povezavo</string>
+    <string name="pref_vpn_service_monitor_description">Občasno preveri stanje omrežja za ponovni zagon VPN ob prekinitvi povezave.</string>
+    <string name="pref_vpn_excluded_apps">Izključene aplikacije</string>
+    <string name="pref_vpn_excluded_apps_description">Nastavite, katere aplikacije ne smejo uporabljati VPN, da nobena povezava ne bo onemogočena.</string>
+    <string name="pref_vpn_exclude_system_apps">Izključi sistemske aplikacije</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Brez</item>
+        <item>Vse razen brskalnikov</item>
+        <item>Vse</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Izključi uporabniške aplikacije</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Izključene aplikacije</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Izberi vse</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Počisti izbor vseh</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikacije</string>
+    <string name="pref_vpn_reset">Ponastavi VPN</string>
+    <string name="pref_vpn_reset_description">Znova vzpostavite povezavo VPN iz nič. Uporabite to, če VPN preneha delovati (ni dostopa do interneta ali napake DNS).</string>
+    <string name="pref_vpn_reset_done">Povezava VPN je znova vzpostavljena.</string>
+    <string name="pref_vpn_reset_not_running">VPN ni zagnan.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostični dnevnik</string>
+    <string name="pref_vpn_diagnostic_log_description">Oglejte si, kopirajte ali delite nedavne napake in dogodke VPN. Uporabno pri prijavi težave.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Zabeleženih še ni nobenih dogodkov.</string>
+    <string name="pref_vpn_diagnostic_log_share">Deli diagnostični dnevnik</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopiraj</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostični dnevnik je kopiran v odložišče.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Počisti diagnostični dnevnik</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Izbrišite zabeležene dogodke. To storite pred ponovitvijo težave, da zajamete čist zapis.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostični dnevnik je počiščen.</string>
+    <string name="pref_root_open_hosts">Odpri hosts datoteko</string>
+    <string name="pref_hosts_redirection_summary">Določite, kam želite preusmeriti nemogočene gostitelje</string>
+    <string name="pref_redirection_ipv4">Nastavite preusmeritev IPv4</string>
+    <string name="pref_redirection_ipv6">Nastavite preusmeritev IPv6</string>
+    <string name="pref_redirection_invalid">Neveljavna preusmeritev</string>
+    <string name="pref_webserver_summary">Lokalni spletni strežnik posluša lokalne naslove IP, da odgovori na zahteve po onemogočenih imenih gostiteljev. Morda pomaga pri zamrznitvi aplikacije pri onemogočeni povezavi.</string>
+    <string name="pref_webserver_enabled">Omogoči spletni strežnik</string>
+    <string name="pref_webserver_test">Preizkusni spletni strežnik</string>
+    <string name="pref_webserver_certificate">Namesti samopodpisano potrdilo</string>
+    <string name="pref_webserver_state_not_running">Ne izvaja se</string>
+    <string name="pref_webserver_state_checking">Preverjanje…</string>
+    <string name="pref_webserver_state_running_not_installed">Izvaja se, vendar potrdilo ni nameščeno</string>
+    <string name="pref_webserver_state_running_and_installed">Izvaja se in potrdilo je nameščeno</string>
+    <string name="pref_webserver_certificate_dialog_title">Ročna namestitev potrdila</string>
+    <string name="pref_webserver_certificate_dialog_content">Od Androida 11 (R) naprej aplikacija ne more več samodejno namestiti overitelja potrdil (CA).\n\nPojdite na nastavitve \'Varnost\', \'Šifriranje in poverilnice\' in nato \'Namesti potrdilo\'. Od tam izberite \'Potrdilo CA\' in izberite novo izvoženo datoteko potrdila.</string>
+    <string name="pref_webserver_certificate_dialog_action">Odpri nastavitve \'Varnost\'</string>
+    <string name="pref_webserver_icon">Zamenjajte prazen oglasni prostor z ikono aplikacije</string>
+</resources>

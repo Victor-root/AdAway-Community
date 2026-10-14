@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferencies</string>
+    <string name="pref_general_category">Xeneral</string>
+    <string name="pref_dark_theme">Estilu escuru</string>
+    <string name="pref_update_check_now">Comprobar agora</string>
+    <string name="pref_update_install">Anovar agora</string>
+    <string name="pref_vpn_excluded_apps_description">Configura les aplicaciones que nun deberíen usar la VPN pa que nenguna conexón se bloquie.</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">Reaniciar la VPN</string>
+    <string name="pref_vpn_reset_description">Reconstruyi la conexón VPN dende cero. Usa esto si la VPN dexa de furrular (ensin accesu a internet o con errores DNS).</string>
+    <string name="pref_vpn_reset_done">Reconstruyóse la conexón VPN.</string>
+    <string name="pref_vpn_reset_not_running">La VPN nun ta activa.</string>
+    <string name="pref_vpn_diagnostic_log">Rexistru de diagnósticu</string>
+    <string name="pref_vpn_diagnostic_log_description">Ver, copiar o compartir los errores y eventos recientes de la VPN. Ye útil al informar d\'un problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Entá nun se rexistró dengún eventu.</string>
+    <string name="pref_vpn_diagnostic_log_share">Compartir el rexistru de diagnósticu</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copiar</string>
+    <string name="pref_vpn_diagnostic_log_copied">Copióse\'l rexistru de diagnósticu nel cartafueyu.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Llimpiar el rexistru de diagnósticu</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Desaniciar los eventos rexistraos. Fai esto enantes de reproducir un problema pa capturar un rastru llimpiu.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Llimpióse\'l rexistru de diagnósticu.</string>
+    <string name="pref_root_open_hosts">Ficheru hosts</string>
+</resources>

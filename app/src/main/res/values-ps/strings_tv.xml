@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">پرېښلو ته ورزیات کړئ</string>
+    <string name="tv_dialog_add_to_blocked">تړلو ته ورزیات کړئ</string>
+    <string name="tv_dialog_remove_from_allowed">له پرېښلو څخه لرې کړئ</string>
+    <string name="tv_dialog_remove_from_blocked">له تړلو څخه لرې کړئ</string>
+    <string name="tv_dialog_copy_hostname">د ډومین نوم کاپي کړئ</string>
+    <string name="tv_log_entry_status_description">د ډومین حالت</string>
+    <string name="tv_button_theme_light">روښانه حالت</string>
+    <string name="tv_button_theme_dark">تیاره حالت</string>
+    <string name="tv_lists_empty">په دې لیست کې لا تر اوسه هیڅ ننوتنه نشته.</string>
+    <string name="tv_dialog_search">لټون</string>
+</resources>

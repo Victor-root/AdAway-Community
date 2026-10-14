@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Επιλογές</string>
+    <string name="pref_general_category">Γενικά</string>
+    <string name="pref_dark_theme">Σκοτεινό θέμα</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Φωτεινό</item>
+        <item>Σκοτεινό</item>
+        <item>Προεπιλογή συστήματος</item>
+    </string-array>
+    <string name="pref_update_configuration">Αυτόματες ενημερώσεις</string>
+    <string name="pref_ad_block_category">Αποκλεισμός διαφημίσεων</string>
+    <string name="pref_root_ad_blocker_configuration">Αποκλεισμός διαφημίσεων βάσει Root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Αποκλεισμός διαφημίσεων βάσει VPN</string>
+    <string name="pref_enable_ipv6">Ενεργοποίηση υποστήριξης IPv6</string>
+    <string name="pref_backup_restore">Κανόνες αποκλεισμού Αντιγράφων ασφαλείας / επαναφοράς</string>
+    <string name="pref_backup_restore_title">Αντίγραφο ασφαλείας &amp; επαναφορά</string>
+    <string name="pref_backup">Αντίγραφο ασφαλείας</string>
+    <string name="pref_backup_summary">Αντίγραφο ασφαλείας σε εξωτερικό χώρο αποθήκευσης τους κανόνες αποκλεισμού σας</string>
+    <string name="pref_restore">Επαναφορά</string>
+    <string name="pref_restore_summary">Επαναφέρετε τους κανόνες αποκλεισμού από το εφεδρικό αρχείο</string>
+    <string name="import_success">Η δημιουργία αντιγράφων ασφαλείας έγινε με επιτυχία από το εξωτερικό αποθηκευτικό χώρο.</string>
+    <string name="export_success">Το αντίγραφο ασφαλείας εξήχθη με επιτυχία στο αρχείο \'%s\' στον εξωτερικό χώρο αποθήκευσης σας.</string>
+    <string name="export_failed">Αποτυχία εξαγωγής αρχείου αντιγράφου ασφαλείας \'%s\'.</string>
+    <string name="pref_update_title">Ενημερώσεις</string>
+    <string name="pref_update_enable_notifications">Οι ειδοποιήσεις είναι απενεργοποιημένες</string>
+    <string name="pref_update_enable_notifications_summary">Οι ειδοποιήσεις εφαρμογών δεν θα εμφανίζονται. Πατήστε για να τις ενεργοποιήσετε.</string>
+    <string name="pref_update_app_category">Ενημερώσεις εφαρμογής</string>
+    <string name="pref_update_check_app_startup">Έλεγχος για ενημέρωση κατά την εκκίνηση</string>
+    <string name="pref_update_check_app_daily">Ημερήσιος έλεγχος για ενημερώσεις</string>
+    <string name="pref_update_check_now">Έλεγχος τώρα</string>
+    <string name="pref_update_install">Ενημέρωση τώρα</string>
+    <string name="pref_update_hosts_category">Ενημερώσεις Hosts</string>
+    <string name="pref_update_check">Έλεγχος για ενημέρωση κατά την εκκίνηση</string>
+    <string name="pref_update_check_hosts_daily">Ημερήσιος έλεγχος για ενημερώσεις</string>
+    <string name="pref_update_sync_on_update">Συγχρονισμός κατά την ενημέρωση</string>
+    <string name="pref_update_sync_unmetered_only">Συγχρονισμός μόνο σε δίκτυο χωρίς μέτρηση</string>
+    <string name="pref_vpn_service_on_boot">Ενεργοποίηση κατά την εκκίνηση</string>
+    <string name="pref_vpn_service_monitor">Παρακολούθηση σύνδεσης</string>
+    <string name="pref_vpn_service_monitor_description">Ελέγχετε περιοδικά την κατάσταση δικτύου για επανεκκίνηση του VPN κατά την αποσύνδεση.</string>
+    <string name="pref_vpn_excluded_apps">Εξαιρούμενες εφαρμογές</string>
+    <string name="pref_vpn_excluded_apps_description">Διαμορφώστε ποιες εφαρμογές δεν πρέπει να χρησιμοποιούν το VPN, ώστε να μην αποκλείονται συνδέσεις.</string>
+    <string name="pref_vpn_exclude_system_apps">Εξαίρεση εφαρμογών συστήματος</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Εξαίρεση εφαρμογών χρήστη</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Εξαιρούμενες εφαρμογές</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Επιλογή όλων</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Αποεπιλογή όλων</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Εικονίδιο εφαρμογής</string>
+    <string name="pref_vpn_reset">Επαναφορά VPN</string>
+    <string name="pref_vpn_reset_description">Ανακατασκευή της σύνδεσης VPN από την αρχή. Χρησιμοποιήστε το εάν το VPN σταματήσει να λειτουργεί (χωρίς πρόσβαση στο διαδίκτυο ή σφάλματα DNS).</string>
+    <string name="pref_vpn_reset_done">Η σύνδεση VPN ανακατασκευάστηκε.</string>
+    <string name="pref_vpn_reset_not_running">Το VPN δεν εκτελείται.</string>
+    <string name="pref_vpn_diagnostic_log">Αρχείο διαγνωστικών</string>
+    <string name="pref_vpn_diagnostic_log_description">Προβολή, αντιγραφή ή κοινοποίηση των πρόσφατων σφαλμάτων και συμβάντων VPN. Χρήσιμο κατά την αναφορά ενός προβλήματος.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Δεν έχουν καταγραφεί ακόμη συμβάντα.</string>
+    <string name="pref_vpn_diagnostic_log_share">Κοινοποίηση αρχείου διαγνωστικών</string>
+    <string name="pref_vpn_diagnostic_log_copy">Αντιγραφή</string>
+    <string name="pref_vpn_diagnostic_log_copied">Το αρχείο διαγνωστικών αντιγράφηκε στο πρόχειρο.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Εκκαθάριση αρχείου διαγνωστικών</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Διαγραφή των καταγεγραμμένων συμβάντων. Κάντε το πριν αναπαράγετε ένα πρόβλημα για να καταγράψετε ένα καθαρό ίχνος.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Το αρχείο διαγνωστικών εκκαθαρίστηκε.</string>
+    <string name="pref_root_open_hosts">Άνοιγμα του αρχείου hosts</string>
+    <string name="pref_hosts_redirection_summary">Ορίστε πού θα ανακατευθύνετε αποκλεισμένα hosts</string>
+    <string name="pref_redirection_ipv4">Ανακατεύθυνση IPv4</string>
+    <string name="pref_redirection_ipv6">Ανακατεύθυνση IPv6</string>
+    <string name="pref_redirection_invalid">Μη έγκυρη ανακατεύθυνση</string>
+    <string name="pref_webserver_summary">Ο τοπικός διακομιστής ιστού ακούει τοπικές διευθύνσεις IP για να απαντήσει σε αποκλεισμένες αιτήσεις hostsname. Μπορεί να βοηθήσει στην κατάψυξη εφαρμογών σε αποκλεισμένη σύνδεση.</string>
+    <string name="pref_webserver_enabled">Ενεργοποίηση του διακομιστή ιστοσελίδων</string>
+    <string name="pref_webserver_test">Δοκιμή σέρβερ</string>
+    <string name="pref_webserver_certificate">Εγκατάσταση αυτο-υπογραφόμενου πιστοποιητικού</string>
+    <string name="pref_webserver_state_not_running">Δεν εκτελείται</string>
+    <string name="pref_webserver_state_checking">Ελεγχος…</string>
+    <string name="pref_webserver_state_running_not_installed">Εκτελείται αλλα το πιστοποιητικό δεν έχει εγκατασταθεί</string>
+    <string name="pref_webserver_state_running_and_installed">Εκτελείται και το πιστοποιητικό έχει εγκατασταθεί</string>
+    <string name="pref_webserver_certificate_dialog_title">Χειροκίνητη εγκατάσταση πιστοποιητικού</string>
+    <string name="pref_webserver_certificate_dialog_content">Ξεκινώντας από το Android 11 (R), η εφαρμογή δεν μπορεί πλέον να εγκαταστήσει αυτόματα την αρχή έκδοσης πιστοποιητικών (CA).\n\nΜεταβείτε στις ρυθμίσεις \"Ασφάλεια\", \"Κρυπτογράφηση &amp; διαπιστευτήρια\" και στη συνέχεια, \"Εγκαταστήστε ένα πιστοποιητικό\". Από εκεί, επιλέξτε \"Πιστοποιητικό CA\" και επιλέξτε το αρχείο πιστοποιητικού που εξήχθη πρόσφατα.</string>
+    <string name="pref_webserver_certificate_dialog_action">Ανοίξτε τις ρυθμίσεις \"Ασφάλεια\"</string>
+    <string name="pref_webserver_icon">Αντικατάσταση κενού χώρου διαφημίσεων απο το εικονίδιο της εφαρμογής</string>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">העדפות</string>
+    <string name="pref_general_category">כללי</string>
+    <string name="pref_dark_theme">ערכת צבעים כהה</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>בהיר</item>
+        <item>כהה</item>
+        <item>ברירת מחדל מערכת</item>
+    </string-array>
+    <string name="pref_update_configuration">עדכון אוטומטי</string>
+    <string name="pref_ad_block_category">חוסם פרסומות</string>
+    <string name="pref_root_ad_blocker_configuration">חוסם פרסומות מבוסס גישת שורש</string>
+    <string name="pref_vpn_ad_blocker_configuration">חוסם פרסומות מבוסס VPN</string>
+    <string name="pref_enable_ipv6">אפשר תמיכת IPv6</string>
+    <string name="pref_backup_restore">גיבוי / שחזור חוקי חסימה</string>
+    <string name="pref_backup_restore_title">גיבוי &amp;שיחזור</string>
+    <string name="pref_backup">גיבוי</string>
+    <string name="pref_backup_summary">גיבוי לאיחסון חיצוני את חוקי החסימה שלך</string>
+    <string name="pref_restore">שחזור</string>
+    <string name="pref_restore_summary">שחזור חוקי חסימה מקובץ גיבוי</string>
+    <string name="import_success">גיבוי יובא בהצלחה מהאחסון החיצוני</string>
+    <string name="export_success">הגיבוי יוצא בהצלחה לקובץ \'%s\' באחסון החיצוני שלך.</string>
+    <string name="export_failed">ייצוא קובץ הגיבוי \'%s\' נכשל.</string>
+    <string name="pref_update_title">עדכונים</string>
+    <string name="pref_update_enable_notifications">ההתראות מושבתות</string>
+    <string name="pref_update_enable_notifications_summary">הודעות יישום לא יופיעו. הקש כדי להפעיל אותם.</string>
+    <string name="pref_update_app_category">עידכוני יישום</string>
+    <string name="pref_update_check_app_startup">בדיקת קיום עדכונים בהפעלה</string>
+    <string name="pref_update_check_app_daily">בדיקת קיום עדכונים מידי פעם</string>
+    <string name="pref_update_check_now">בדוק עכשיו</string>
+    <string name="pref_update_install">עדכן עכשיו</string>
+    <string name="pref_update_hosts_category">עדכוני מארחים</string>
+    <string name="pref_update_check">בדיקת עדכונים בהפעלה</string>
+    <string name="pref_update_check_hosts_daily">בדיקת קיום עדכונים מידי פעם</string>
+    <string name="pref_update_sync_on_update">סנכרון בעת עדכון</string>
+    <string name="pref_update_sync_unmetered_only">סנכרון בעת שימוש ברשת לא נמדדת בלבד</string>
+    <string name="pref_vpn_service_on_boot">הפעלת בעת הפעלת המכשיר</string>
+    <string name="pref_vpn_service_monitor">צג חיבור</string>
+    <string name="pref_vpn_service_monitor_description">בדוק מעת לעת את מצב הרשת כדי להפעיל מחדש את ה־VPN בעת ניתוקו.</string>
+    <string name="pref_vpn_excluded_apps">התעלם מיישומים</string>
+    <string name="pref_vpn_excluded_apps_description">הגדר אילו יישומים לא יוכלו להשתמש ב-VPN כדי שלא יתנתקו חיבורים</string>
+    <string name="pref_vpn_exclude_system_apps">התעלם מיישומי מערכת</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>ללא</item>
+        <item>הכל למעט דפדפנים</item>
+        <item>הכל</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">התעלם מאפליקציות משתמש</string>
+    <string name="pref_vpn_exclude_user_apps_activity">התעלם מאפליקציות</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">בחר הכל</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">הסר הכל</string>
+    <string name="pref_vpn_exclude_user_apps_icon">סמל יישום</string>
+    <string name="pref_vpn_reset">איפוס VPN</string>
+    <string name="pref_vpn_reset_description">בנה מחדש את חיבור ה־VPN מאפס. השתמש באפשרות זו אם ה־VPN מפסיק לעבוד (אין גישה לאינטרנט או שגיאות DNS).</string>
+    <string name="pref_vpn_reset_done">חיבור ה־VPN נבנה מחדש.</string>
+    <string name="pref_vpn_reset_not_running">ה־VPN אינו פעיל.</string>
+    <string name="pref_vpn_diagnostic_log">יומן אבחון</string>
+    <string name="pref_vpn_diagnostic_log_description">הצג, העתק או שתף את השגיאות ואירועי ה־VPN האחרונים. שימושי בעת דיווח על בעיה.</string>
+    <string name="pref_vpn_diagnostic_log_empty">עדיין לא נרשמו אירועים.</string>
+    <string name="pref_vpn_diagnostic_log_share">שתף את יומן האבחון</string>
+    <string name="pref_vpn_diagnostic_log_copy">העתק</string>
+    <string name="pref_vpn_diagnostic_log_copied">יומן האבחון הועתק ללוח.</string>
+    <string name="pref_vpn_diagnostic_log_clear">נקה את יומן האבחון</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">מחק את האירועים שנרשמו. עשה זאת לפני שחזור הבעיה כדי לקבל רישום נקי.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">יומן האבחון נוקה.</string>
+    <string name="pref_root_open_hosts">פתח קובץ מארחים</string>
+    <string name="pref_hosts_redirection_summary">הגדר לאן להפנות מארחים חסומים</string>
+    <string name="pref_redirection_ipv4">הפניית IPv4</string>
+    <string name="pref_redirection_ipv6">הפניית IPv6</string>
+    <string name="pref_redirection_invalid">ניתוב מחדש לא חוקי</string>
+    <string name="pref_webserver_summary">שרת האינטרנט המקומי מקשיב לכתובות IP מקומיות כדי לענות לבקשות של שם מארח חסום. זה עשוי לעזור בהקפאת אפליקציות בחיבור חסום.</string>
+    <string name="pref_webserver_enabled">הפעלת שרת Web</string>
+    <string name="pref_webserver_test">בדיקת שרת Web</string>
+    <string name="pref_webserver_certificate">התקן אישור בחתימה עצמית</string>
+    <string name="pref_webserver_state_not_running">לא פעיל</string>
+    <string name="pref_webserver_state_checking">בודק…</string>
+    <string name="pref_webserver_state_running_not_installed">פועל אך האישור לא הותקן</string>
+    <string name="pref_webserver_state_running_and_installed">פועל והאישור הותקן</string>
+    <string name="pref_webserver_certificate_dialog_title">התקנה ידנית של האישור</string>
+    <string name="pref_webserver_certificate_dialog_content">החל מ־Android 11 (R), היישום לא יכול להתקין יותר אוטומטית את רשות האישורים (CA).\n\nעבור אל הגדרות \"אבטחה\", \"הצפנה ואישורים\" ואז \"התקן אישור\". משם, בחר \"אישור CA\" ובחר את קובץ האישור החדש שיוצא.</string>
+    <string name="pref_webserver_certificate_dialog_action">פתיחת הגדרות \"אבטחה\"</string>
+    <string name="pref_webserver_icon">החלף שטח ריק של מודעות שנחסמו בסמל האפליקציה</string>
+</resources>

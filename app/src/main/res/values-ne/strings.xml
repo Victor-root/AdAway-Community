@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">VPN सेटिङ खोल्नुहोस्</string>
+    <string name="vpn_settings_unavailable">यस उपकरणमा VPN सेटिङहरू उपलब्ध छैनन्।</string>
+    <string name="disable">असक्षम पार्नुहोस्</string>
+    <string name="enable">सक्षम पार्नुहोस्</string>
+    <string name="home_blocked_description">विज्ञापन र ट्र्याकरहरू</string>
+    <string name="home_allowed_description">अपवादहरू</string>
+    <string name="home_redirected_description">कस्टम नियमहरू</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">खाली गर्नुहोस्</string>
+    <string name="sources_title">Hosts sources</string>
+    <string name="notification_vpn_disable">असक्षम पार्नुहोस्</string>
+    <string name="notification_vpn_enable">सक्षम पार्नुहोस्</string>
+    <string name="home_blocking_enabled">विज्ञापन रोकथाम: सक्षम</string>
+    <string name="home_blocking_disabled">विज्ञापन रोकथाम: अक्षम</string>
+    <string name="home_always_on_active">सधैँ-सक्रिय VPN सक्रिय छ</string>
+    <string name="vpn_persistence_title">VPN निरन्तरता</string>
+    <string name="vpn_persistence_summary">पृष्ठभूमिमा विज्ञापन ब्लक गर्ने सुविधा चालू राख्नुहोस्</string>
+    <string name="vpn_persistence_enabled">AdAway का लागि सधैँ-सक्रिय VPN सक्षम छ। ✓</string>
+    <string name="vpn_persistence_disabled">सधैँ-सक्रिय VPN सेट गरिएको छैन। AdAway को अन्तर्निहित निरन्तरताले यसलाई ह्यान्डल गर्छ।</string>
+    <string name="vpn_persistence_message">AdAway ले रिबुट, कम मेमोरीका कारण बन्द हुने र क्र्यासहरू आफैँ ह्यान्डल गर्छ, त्यसैले धेरैजसो अवस्थामा अतिरिक्त सेटअप आवश्यक पर्दैन।\n\nयदि VPN कहिल्यै अप्रत्याशित रूपमा रोकिएमा, सबैभन्दा बलियो सुनिश्चितताका लागि AdAway लाई Android प्रणालीको सधैँ-सक्रिय VPN का रूपमा सेट गर्नुहोस्।</string>
+    <string name="vpn_persistence_tv_settings_unavailable">यस Android TV मा VPN सेटिङ लुकाइएको छ। देखाइएका ADB आदेशहरू प्रयोग गर्नुहोस्।</string>
+    <string name="vpn_persistence_dismiss">बुझेँ</string>
+    <string name="home_tile_log">DNS लग</string>
+    <string name="home_log_subtitle">के रोकिएको छ भनी वास्तविक समयमा हेर्नुहोस्</string>
+    <string name="home_tile_help">मद्दत</string>
+    <string name="home_help_subtitle">गाइडहरू र समस्या समाधान</string>
+    <string name="home_preferences_subtitle">AdAway कन्फिगर गर्नुहोस्</string>
+    <string name="help_tab_about">बारेमा</string>
+    <string name="about_version">संस्करण %s</string>
+    <string name="about_description">AdAway को अनौपचारिक, समुदायद्वारा सम्भार गरिएको फोर्क।</string>
+    <string name="about_source_label">स्रोत कोड (GitHub)</string>
+    <string name="about_issues_label">समस्या रिपोर्ट गर्नुहोस्</string>
+    <string name="about_releases_label">रिलिजहरू</string>
+    <string name="about_upstream_label">आधिकारिक AdAway (upstream)</string>
+    <string name="about_license_label">इजाजतपत्र: GNU General Public License v3.0 वा पछिल्लो (GPLv3+)</string>
+</resources>

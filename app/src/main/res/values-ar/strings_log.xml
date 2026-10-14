@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_toggle_recording_description">تشغيل أو إيقاف تسجيل السّجل</string>
+    <string name="log_start_recording">اضغط على زر التسجيل لبدء تسجيل الطلبات وقم بتصفح الويب أو استخدام بعض التطبيقات، ثم عُد أو اسحب بإصبعك للأسفل لتحديث السجلات.</string>
+    <string name="log_blocked_requests_ignored">\n\nلن يتم تسجيل الطلبات المحظورة. قم بتعطيل حظر الإعلانات أولاً إذا كنت تريد تسجيلها أيضًا.
+</string>
+    <string name="log_sort">ترتيب الـ domains</string>
+    <string name="log_clear">محي السّجلّ</string>
+    <string name="log_sort_alphabetical">ترتيب أبجدي</string>
+    <string name="log_sort_top_level_domain">ترتيب Top level domain</string>
+    <string name="log_block">إضافة المُدخَل للقائمة السوداء</string>
+    <string name="log_allow">إضافة المُدخَل للقائمة البيضاء</string>
+    <string name="log_redirect">إضافة المُدخَل إلى قائمة إعادة التوجيه</string>
+    <string name="log_redirect_dialog_title">إعادة توجيه الـ domain</string>
+    <string name="log_start_recording_button">بدء التسجيل</string>
+    <string name="log_start_recording_vpn_inactive">بدء التسجيل (VPN غير نشط)</string>
+    <string name="log_stop_recording">إيقاف التسجيل</string>
+</resources>

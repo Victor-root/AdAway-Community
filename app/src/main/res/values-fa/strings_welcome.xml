@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_first_step">اولین قدم جادوگر</string>
+    <string name="welcome_second_step">گام دوم جادوگر</string>
+    <string name="welcome_method_header">به برنامه AdAway مسدود کننده تبلیغات خوش آمدید</string>
+    <string name="welcome_method_summary">برنامه AdAway به دو روش ویژگی مسدود کردن تبلیغات را ارائه می دهد لطفا یکی از روش ها را انتخاب کنید :</string>
+    <string name="welcome_root_method_title">مسدود کردن تبلیغات با استفاده از روت</string>
+    <string name="welcome_root_method_text1">سریع تر</string>
+    <string name="welcome_root_method_text2">سازگار با باتری</string>
+    <string name="welcome_root_method_text3">نیاز به روت دارد</string>
+    <string name="welcome_vpn_method_title">مسدود کردن تبلیغات مبتنی بر VPN</string>
+    <string name="welcome_vpn_method_text1">کند تر</string>
+    <string name="welcome_vpn_method_text2">اجرا در پس زمینه</string>
+    <string name="welcome_vpn_method_text3">سازگاری</string>
+    <string name="welcome_root_missing_title">به گوشی اندروید روت شده نیاز دارد</string>
+    <string name="welcome_root_missile_description">دسترسی روت به AdAway داده نشده یا باینری پیدا نشد این اتفاق ممکن است زمانی اتفاق بیفتد که دستگاه شما روت نشده باشد شما می توانید اطلاعات مورد نظر در مورد روش روت کردن گوشی خود را در سایت wiki.lineageos.org یا سایر سایت های اندروید پیدا کنید</string>
+    <string name="welcome_vpn_alwayson_title">VPN همیشه روشن فعال است</string>
+    <string name="welcome_vpn_alwayson_description">AdAway تشخیص داد که VPN دیگری دارای تنظیم \"VPN همیشه روشن\" فعال است که مانع از درخواست AdAway برای دسترسی به VPN می شود لطفا «VPN همیشه روشن» را از تنظیمات VPN گوشی غیرفعال کرده و دوباره امتحان کنید</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway در درخواست دسترسی VPN ناموفق بود این ممکن است به این دلیل باشد که یک VPN دیگر دارای تنظیم \"VPN همیشه روشن\" فعال است لطفا بررسی کنید که آیا VPN این تنظیم را فعال کرده است یا خیر و قبل از تلاش دوباره آن را غیرفعال کنید</string>
+    <string name="welcome_vpn_alwayson_settings_action">تنظیمات \"VPN\" باز شود</string>
+    <string name="welcome_method_pro_logo">حرفه ای</string>
+    <string name="welcome_method_con_logo">همراه هم</string>
+    <string name="welcome_sync_header">در حال همگام سازی</string>
+    <string name="welcome_synced_header">همگام سازی شد</string>
+    <string name="welcome_sync_summary">AdAway شبکه های تبلیغاتی را دانلود کرده و آن ها را مسدود خواهد کرد شما می توانید آن ها را در تنظیمات برنامه سفارشی کنید</string>
+    <string name="welcome_sync_retry_logo">دوباره همگام سازی کنید</string>
+    <string name="welcome_sync_error">همگام‌ سازی انجام نشد : %1$s آیا دوباره امتحان می‌کنید؟</string>
+    <string name="welcome_sync_notifications">این گزینه اعلان‌ هایی را برای نمایش وضعیت مسدود کردن تبلیغات و مدیریت و اطلاع‌ رسانی در مورد به‌ روز رسانی برنامه (تا چندین سال) ارسال کند اگر می‌خواهید به‌ روز بمانید آن‌ها را فعال کنید</string>
+    <string name="welcome_sync_leave_early_title">همگام‌سازی هنوز تمام نشده است</string>
+    <string name="welcome_sync_leave_early_message">دانلود لیست‌های مسدودسازی هنوز تمام نشده است. می‌توانید اکنون ادامه دهید و در پس‌زمینه ادامه می‌یابد، یا اینجا منتظر بمانید تا تمام شود.</string>
+    <string name="welcome_sync_leave_early_wait">منتظر بمانید</string>
+    <string name="welcome_sync_leave_early_continue">در هر صورت ادامه بده</string>
+    <string name="welcome_back_button">بازگشت</string>
+    <string name="welcome_next_button">بعدی</string>
+    <string name="welcome_finish_button">پایان</string>
+    <string name="tv_welcome_intro_subtitle">این جادوگر کوتاه، مسدودسازی تبلیغات را روی این دستگاه فعال می‌کند.</string>
+    <string name="tv_welcome_start_button">شروع کنید</string>
+    <string name="tv_welcome_method_header">روش مسدودسازی خود را انتخاب کنید</string>
+    <string name="tv_welcome_method_root_button">استفاده از روت</string>
+    <string name="tv_welcome_method_root_body">سریع‌تر و کم‌مصرف‌تر برای باتری. به دستگاه روت‌شده نیاز دارد.</string>
+    <string name="tv_welcome_method_vpn_button">استفاده از VPN</string>
+    <string name="tv_welcome_method_vpn_body">بدون روت کار می‌کند، با هر دستگاه Android TV سازگار است.</string>
+    <string name="tv_welcome_activate_header">فعال‌سازی مسدودسازی تبلیغات</string>
+    <string name="tv_welcome_activate_body">این یک VPN محلی است: تبلیغات را روی همین دستگاه فیلتر می‌کند، بدون اینکه ترافیک شما را از یک سرور خارجی عبور دهد.</string>
+</resources>

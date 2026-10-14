@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">Сартаваць дамены</string>
+    <string name="log_clear">Ачысціць журнал</string>
+    <string name="log_sort_alphabetical">Сартаваць па алфавіту</string>
+    <string name="log_sort_top_level_domain">Сартаванне па найвышэйшаму ўзроўню дамена</string>
+    <string name="log_block">Дадаць запіс у Чорны спіс</string>
+    <string name="log_allow">Дадаць запіс у Белы спіс</string>
+    <string name="log_redirect">Дадаць запіс у спіс перанакіраванняў</string>
+    <string name="log_redirect_dialog_title">Перанакіраваць дамен</string>
+    <string name="log_start_recording_button">Пачаць запіс</string>
+    <string name="log_start_recording_vpn_inactive">Пачаць запіс (VPN не актыўны)</string>
+    <string name="log_stop_recording">Спыніць запіс</string>
+</resources>

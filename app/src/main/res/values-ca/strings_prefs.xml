@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferències</string>
+    <string name="pref_general_category">General</string>
+    <string name="pref_dark_theme">Tema fosc</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Clar</item>
+        <item>Fosc</item>
+        <item>Valor per defecte del sistema</item>
+    </string-array>
+    <string name="pref_update_configuration">Actualitzacions automàtiques</string>
+    <string name="pref_ad_block_category">Bloqueig d\'anuncis</string>
+    <string name="pref_root_ad_blocker_configuration">Bloquejador d\'anuncis basat en root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Bloquejador d\'anuncis basat en VPN</string>
+    <string name="pref_enable_ipv6">Activa el suport d\'IPv6</string>
+    <string name="pref_backup_restore">Copia/restaura les regles de bloqueig</string>
+    <string name="pref_backup_restore_title">Copia i restaura</string>
+    <string name="pref_backup">Copia</string>
+    <string name="pref_backup_summary">Feu una còpia de seguretat a l\'emmagatzematge extern de les vostres regles de bloqueig</string>
+    <string name="pref_restore">Restaura</string>
+    <string name="pref_restore_summary">Restaura les regles de bloqueig des del fitxer de còpia de seguretat</string>
+    <string name="import_success">S\'ha importat correctament la còpia de l\'emmagatzematge extern.</string>
+    <string name="export_success">S\'ha exportat correctament l\'arxiu \'%s\' a  l\'emmagatzematge extern.</string>
+    <string name="export_failed">Error al exportar la còpia de seguretat \'%s\' </string>
+    <string name="pref_update_title">Actualitzacions</string>
+    <string name="pref_update_app_category">Actualitzacions de l\'aplicació</string>
+    <string name="pref_update_check_app_startup">Comprova si hi ha actualitzacions a l\'inici</string>
+    <string name="pref_update_check_app_daily">Comprova periòdicament actualitzacions</string>
+    <string name="pref_update_check_now">Comprova ara</string>
+    <string name="pref_update_install">Actualitza ara</string>
+    <string name="pref_update_hosts_category">Actualitzacions dels amfitrions</string>
+    <string name="pref_update_check">Comprova si hi ha actualització a l\'inici</string>
+    <string name="pref_update_check_hosts_daily">Comprova periòdicament actualitzacions</string>
+    <string name="pref_update_sync_on_update">Sincronitza en l\'actualització</string>
+    <string name="pref_update_sync_unmetered_only">Sincronitza només a la xarxa sense mesura</string>
+    <string name="pref_vpn_service_on_boot">Activa a l\'inici</string>
+    <string name="pref_vpn_service_monitor">Analitza la connexió</string>
+    <string name="pref_vpn_service_monitor_description">Comprova periòdicament l\'estat de la xarxa per reiniciar la VPN en desconnectar-se.</string>
+    <string name="pref_vpn_excluded_apps">Aplicacions excloses</string>
+    <string name="pref_vpn_excluded_apps_description">Configureu quines aplicacions no haurien d\'utilitzar la VPN perquè no es bloquegin les connexions.</string>
+    <string name="pref_vpn_exclude_system_apps">Exclou les aplicacions del sistema</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Exclou les aplicacions d\'usuari</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Aplicacions excloses</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Seleccioneu-ho tot</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Anul·la la selecció</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Icona de l\'aplicació</string>
+    <string name="pref_vpn_reset">Restableix la VPN</string>
+    <string name="pref_vpn_reset_description">Reconstrueix la connexió VPN des de zero. Utilitzeu-ho si la VPN deixa de funcionar (sense accés a internet o errors de DNS).</string>
+    <string name="pref_vpn_reset_done">S\'ha reconstruït la connexió VPN.</string>
+    <string name="pref_vpn_reset_not_running">La VPN no s\'està executant.</string>
+    <string name="pref_vpn_diagnostic_log">Registre de diagnòstic</string>
+    <string name="pref_vpn_diagnostic_log_description">Visualitzeu, copieu o compartiu els errors i esdeveniments recents de la VPN. Útil per informar d\'un problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Encara no s\'ha registrat cap esdeveniment.</string>
+    <string name="pref_vpn_diagnostic_log_share">Comparteix el registre de diagnòstic</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copia</string>
+    <string name="pref_vpn_diagnostic_log_copied">S\'ha copiat el registre de diagnòstic al porta-retalls.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Esborra el registre de diagnòstic</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Suprimeix els esdeveniments registrats. Feu-ho abans de reproduir un problema per capturar un rastre net.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">S\'ha esborrat el registre de diagnòstic.</string>
+    <string name="pref_root_open_hosts">Obriu el fitxer de hosts</string>
+    <string name="pref_hosts_redirection_summary">Defineix on redirigir els amfitrions bloquejats</string>
+    <string name="pref_redirection_ipv4">Configura la redirecció IPv4</string>
+    <string name="pref_redirection_ipv6">Configura la redirecció IPv6</string>
+    <string name="pref_redirection_invalid">Redirecció no vàlida</string>
+    <string name="pref_webserver_summary">El servidor web local escolta les adreces IP locals per respondre a les sol·licituds de nom d\'amfitrió bloquejades. Pot ser útil amb la congelació de l\'aplicació en connexió bloquejada.</string>
+    <string name="pref_webserver_enabled">Activa el servidor web</string>
+    <string name="pref_webserver_test">Prova el servidor web</string>
+    <string name="pref_webserver_certificate">Instal·la el certificat autofirmat</string>
+    <string name="pref_webserver_state_not_running">No s\'està executant</string>
+    <string name="pref_webserver_state_checking">S\'està comprovant…</string>
+    <string name="pref_webserver_state_running_not_installed">S\'està executant però el certificat no s\'ha instal·lat</string>
+    <string name="pref_webserver_state_running_and_installed">S\'està executant i el certificat està instal·lat</string>
+    <string name="pref_webserver_certificate_dialog_title">Instal·lació manual del certificat</string>
+    <string name="pref_webserver_certificate_dialog_content">A partir d\'Android 11 (R), l\'aplicació ja no pot instal·lar automàticament l\'autoritat de certificació (CA).\n\nAneu a la configuració de \"Seguretat\", \"Xifrat i credencials\" i després \"Instal·la un certificat\". A partir d\'aquí, trieu \"Certificat CA\" i seleccioneu el fitxer de certificat recent exportat.</string>
+    <string name="pref_webserver_certificate_dialog_action">Obriu la configuració de \"Seguretat\".</string>
+    <string name="pref_webserver_icon">Substituïu l\'espai publicitari en blanc per la icona de l\'aplicació</string>
+</resources>

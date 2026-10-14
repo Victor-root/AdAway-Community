@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">VPN ക്രമീകരണങ്ങൾ തുറക്കുക</string>
+    <string name="vpn_settings_unavailable">ഈ ഉപകരണത്തിൽ VPN ക്രമീകരണങ്ങൾ ലഭ്യമല്ല.</string>
+    <string name="close">അവസാനിപ്പിക്കുക</string>
+    <string name="add">ചേർക്കുക </string>
+    <string name="apply">പ്രയോഗിക്കുക</string>
+    <string name="cancel">ഉപേക്ഷിക്കുക </string>
+    <string name="delete">നീക്കം ചെയ്യുക </string>
+    <string name="disable">പ്രവർത്തനരഹിതമാക്കുക</string>
+    <string name="edit">തിരുത്തുക </string>
+    <string name="enable">പ്രവർത്തനക്ഷമമാക്കുക</string>
+    <string name="save">സൂക്ഷിക്കുക </string>
+    <string name="home_blocked_description">പരസ്യങ്ങളും ട്രാക്കറുകളും</string>
+    <string name="home_allowed_description">ഒഴിവാക്കലുകൾ</string>
+    <string name="home_redirected_description">ഇഷ്‌ടാനുസൃത നിയമങ്ങൾ</string>
+    <string name="lists_title">നിങ്ങളുടെ ലിസ്റ്റുകൾ</string>
+    <string name="lists_search_clear">മായ്‌ക്കുക</string>
+    <string name="rule_add_blocked">ഹോസ്റ്റ് ബ്ലാക്ക് ലിസ്റ്റിലേക് ചേർക്കുക </string>
+    <string name="rule_add_allowed">ഹോസ്റ്റ് ബ്ലാക്ക്‌ലിസ്റ്റിലേക് ചേർക്കുക </string>
+    <string name="rule_add_redirected">ഹോസ്റ്റ് വ്യതിചലിക്കുന്നതിലെക് ചേർക്കുക </string>
+    <string name="rule_edit_blocked">ബ്ലാക്ക് ലിസ്റ്റ് ചെയ്ത ഹോസ്റ്റ്കൾ തിരുത്തുക </string>
+    <string name="rule_edit_allowed">വൈറ്റ് ലിസ്റ്റ് ചെയ്ത ഹോസ്റ്റ്കൾ തിരുത്തുക </string>
+    <string name="rule_edit_redirected">വ്യതിചലനം തിരുത്തുക </string>
+    <string name="rule_host">ഹോസ്റ്റ്നാമം</string>
+    <string name="rule_address">IP (IPv4 or IPv6):</string>
+    <string name="rule_wildcards_hint">(വൈൽഡ്കാർഡ് പ്രതീകങ്ങൾ * ഉം ? അനുവദനീയമാണ്)</string>
+    <string name="sources_title">ഹോസ്റ്റുകളുടെ ഉറവിടങ്ങൾ </string>
+    <string name="source_add">ഉറവിടം ചേർക്കുക</string>
+    <string name="source_edit">ഉറവിടം എഡിറ്റുചെയ്യുക</string>
+    <string name="update_error_no_network_title">ഇന്റർനെറ്റ് കണക്ഷനില്ല</string>
+    <string name="root_error_denied_title">റൂട്ട് ആക്‌സസ്സ് നിരസിച്ചു</string>
+    <string name="root_error_denied_text">നിങ്ങളുടെ റൂട്ട് അപ്ലിക്കേഷനിൽ നിന്ന് റൂട്ട് ആക്‌സസ്സ് അനുവദിക്കുക</string>
+    <string name="root_error_space_title">മതിയായ സ്ഥലമില്ല </string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">പ്രവർത്തനരഹിതമാക്കുക</string>
+    <string name="notification_vpn_enable">പ്രവർത്തനക്ഷമമാക്കുക</string>
+    <string name="home_blocking_enabled">പരസ്യ തടയൽ: പ്രവർത്തനക്ഷമം</string>
+    <string name="home_blocking_disabled">പരസ്യ തടയൽ: പ്രവർത്തനരഹിതം</string>
+    <string name="home_enable_blocking">പരസ്യ-തടയൽ പ്രാപ്തമാക്കുക</string>
+    <string name="home_disable_blocking">പരസ്യ-തടയൽ അപ്രാപ്തമാക്കുക</string>
+    <string name="home_always_on_active">എപ്പോഴും ഓണായിരിക്കുന്ന VPN സജീവം</string>
+    <string name="vpn_persistence_title">VPN സ്ഥിരത</string>
+    <string name="vpn_persistence_summary">പശ്ചാത്തലത്തിൽ പരസ്യം തടയൽ പ്രവർത്തിപ്പിക്കുക</string>
+    <string name="vpn_persistence_enabled">AdAway-യ്‌ക്കായി എപ്പോഴും ഓണായിരിക്കുന്ന VPN പ്രവർത്തനക്ഷമമാക്കിയിരിക്കുന്നു. ✓</string>
+    <string name="vpn_persistence_disabled">എപ്പോഴും ഓണായിരിക്കുന്ന VPN സജ്ജീകരിച്ചിട്ടില്ല. AdAway-യുടെ അന്തർനിർമ്മിത സ്ഥിരത അത് കൈകാര്യം ചെയ്യുന്നു.</string>
+    <string name="vpn_persistence_message">AdAway റീബൂട്ടുകൾ, കുറഞ്ഞ മെമ്മറി മൂലമുള്ള ക്ലോസുകൾ, ക്രാഷുകൾ എന്നിവ സ്വയം കൈകാര്യം ചെയ്യുന്നു, അതിനാൽ മിക്ക കേസുകളിലും അധിക സജ്ജീകരണം ആവശ്യമില്ല.\n\nVPN എപ്പോഴെങ്കിലും അപ്രതീക്ഷിതമായി നിലയ്ക്കുകയാണെങ്കിൽ, ഏറ്റവും ശക്തമായ ഉറപ്പിനായി AdAway-യെ Android സിസ്റ്റത്തിന്റെ എപ്പോഴും ഓണായിരിക്കുന്ന VPN ആയി സജ്ജീകരിക്കുക.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">ഈ Android TV-യിൽ VPN ക്രമീകരണങ്ങൾ മറഞ്ഞിരിക്കുന്നു. കാണിച്ചിരിക്കുന്ന ADB കമാൻഡുകൾ ഉപയോഗിക്കുക.</string>
+    <string name="vpn_persistence_dismiss">മനസ്സിലായി</string>
+    <string name="status_update_available">നവീകരണം ലഭ്യമാണ്</string>
+    <string name="error_dialog_help">കൂടുതൽ വിവരങ്ങൾക്ക് സഹായം വായിക്കുക.</string>
+    <string name="help">സഹായം </string>
+    <string name="home_tile_log">DNS ലോഗ്</string>
+    <string name="home_log_subtitle">തടയുന്നത് തത്സമയം കാണുക</string>
+    <string name="home_tile_help">സഹായം</string>
+    <string name="home_help_subtitle">ഗൈഡുകളും പ്രശ്നപരിഹാരവും</string>
+    <string name="home_tile_preferences">മുൻ‌ഗണനകൾ</string>
+    <string name="home_preferences_subtitle">AdAway കോൺഫിഗർ ചെയ്യുക</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="hosts_source_up_to_date">%1$sഇതിനകം  കാലികമാണ്</string>
+    <string name="hosts_source_need_update">%1$s ന് അപ്‌ഡേറ്റ് ആവശ്യമാണ്</string>
+    <string name="hosts_source_last_update">അവസാന അപ്‌ഡേറ്റ് %1$s മുമ്പ്</string>
+    <string name="hosts_source_unknown_status">അജ്ഞാത അപ്‌ഡേറ്റ് നില</string>
+    <plurals name="hosts_source_hours">
+        <item quantity="one">%dമണിക്കൂറുകൾ</item>
+        <item quantity="other">%dമണിക്കൂറുകൾ</item>
+    </plurals>
+    <plurals name="hosts_source_days">
+        <item quantity="one">%dദിവസങ്ങൾ </item>
+        <item quantity="other">%dദിവസങ്ങൾ </item>
+    </plurals>
+    <plurals name="hosts_source_months">
+        <item quantity="one">%dമാസങ്ങൾ </item>
+        <item quantity="other">%dമാസങ്ങൾ </item>
+    </plurals>
+    <string name="rule_actions_title">ചേർത്തത് തിരുത്തുക </string>
+    <string name="help_tab_faq">പതിവുചോദ്യങ്ങൾ</string>
+    <string name="help_tab_problems">പ്രശ്നങ്ങൾ</string>
+    <string name="help_tab_about">കുറിച്ച്</string>
+    <string name="about_version">പതിപ്പ് %s</string>
+    <string name="about_description">AdAway-യുടെ അനൗദ്യോഗിക, കമ്മ്യൂണിറ്റി പരിപാലിക്കുന്ന ഫോർക്ക്.</string>
+    <string name="about_source_label">സോഴ്‌സ് കോഡ് (GitHub)</string>
+    <string name="about_issues_label">ഒരു പ്രശ്നം റിപ്പോർട്ട് ചെയ്യുക</string>
+    <string name="about_releases_label">റിലീസുകൾ</string>
+    <string name="about_upstream_label">ഔദ്യോഗിക AdAway അപ്‌സ്ട്രീം</string>
+    <string name="about_license_label">ലൈസൻസ്: GNU General Public License v3.0 or later (GPLv3+)</string>
+    <string name="shortcut_dns_requests">DNS അഭ്യർത്ഥനകൾ</string>
+    <string name="shortcut_your_lists">നിങ്ങളുടെ ലിസ്റ്റുകൾ</string>
+    <string name="shortcut_preferences">മുൻ‌ഗണനകൾ</string>
+    <string name="menu_refresh">പുതുക്കുക</string>
+</resources>

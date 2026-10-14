@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_root_missing_title">Neophodan Root-ovan Android</string>
+    <string name="tv_welcome_intro_subtitle">Овај кратак чаробњак ће укључити блокирање огласа на овом уређају.</string>
+    <string name="tv_welcome_start_button">Почни</string>
+    <string name="tv_welcome_method_header">Изаберите начин блокирања</string>
+    <string name="tv_welcome_method_root_button">Користи root</string>
+    <string name="tv_welcome_method_root_body">Брже и штедљивије за батерију. Захтева уређај са root приступом.</string>
+    <string name="tv_welcome_method_vpn_button">Користи VPN</string>
+    <string name="tv_welcome_method_vpn_body">Ради без root-а, компатибилно са сваким Android TV уређајем.</string>
+    <string name="tv_welcome_activate_header">Укључи блокирање огласа</string>
+    <string name="tv_welcome_activate_body">То је локални VPN: филтрира огласе на самом уређају, без преусмеравања вашег саобраћаја преко спољног сервера.</string>
+</resources>

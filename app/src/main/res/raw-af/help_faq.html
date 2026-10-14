@@ -1,0 +1,34 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Inkomste deur advertensies</h2>
+<p>Daar bestaan 'n miskonsepsie dat indien die gebruiker nie op die advertensie klik nie, die blokkering, nie die webwerf of die program finansieel sal benadeel nie. Dit is egter nie waar nie, program ontwikkelaars verdien ook geld as die advertensie vertoon word. Dit is jou keuse of jy die advertensie wil blokkeer al dan nie. Persoonlik gebruik ek nie programme wat advertensie vertoon nie aangesien ek dit frustrerend vind, dus sal ek nie die programme sonder 'n advertensie blokkeerder installeer nie.</p>
+
+<h2>Hoe werk AdAway?</h2>
+<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
+If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+
+<h2>Hoekom moet Android weer begin om veranderinge te implementeer?</h2>
+<p>Java en Android onderhou hulle eie interne DNS geheue. Die bedryfstelsel sal dadelik nuwe gasheer lêers vertoon (verifieer dit met ping op die "command line") jy sal egter Android weer moet begin om die DNS geheue en Java te herbou.</p>
+
+<h2>Hoe om die webbediener in AdAway te gebruik?</h2>
+<p><strong>AdAway will also work without using the webserver!</strong>
+<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
+<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+
+<h2>Hoe kan ek spesifieke gasheername blokkeer/toelaat?</h2>
+<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+
+<h2>Waar kan ek meer gasheer bronne vind?</h2>
+<p>Sien <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Lys van addisionele gasheer bronne vir AdAway</a>.</p>
+
+<h2>Why this fork exists</h2>
+<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+
+<h2>Help vertaal/rapporteer foute</h2>
+<p>Gaan asseblief na <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+</body>
+</html>

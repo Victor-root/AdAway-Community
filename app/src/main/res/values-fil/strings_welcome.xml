@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_root_missing_title">Kailangan ng Android na may root</string>
+    <string name="tv_welcome_intro_subtitle">Papaganahin ng maikling wizard na ito ang pag-block ng ads sa device na ito.</string>
+    <string name="tv_welcome_start_button">Magsimula</string>
+    <string name="tv_welcome_method_header">Piliin ang iyong paraan ng pag-block</string>
+    <string name="tv_welcome_method_root_button">Gamitin ang root</string>
+    <string name="tv_welcome_method_root_body">Mas mabilis at matipid sa baterya. Kailangan ng naka-root na device.</string>
+    <string name="tv_welcome_method_vpn_button">Gamitin ang VPN</string>
+    <string name="tv_welcome_method_vpn_body">Gumagana nang walang root, tugma sa anumang Android TV device.</string>
+    <string name="tv_welcome_activate_header">I-on ang pag-block ng ads</string>
+    <string name="tv_welcome_activate_body">Ito ay local na VPN: sinasala nito ang mga ad sa device na ito, nang hindi dinadaan ang iyong trapiko sa isang panlabas na server.</string>
+</resources>

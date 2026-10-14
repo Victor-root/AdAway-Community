@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferencias</string>
+    <string name="pref_general_category">General</string>
+    <string name="pref_dark_theme">Tema oscuro</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Claro</item>
+        <item>Oscuro</item>
+        <item>Predeterminado del sistema</item>
+    </string-array>
+    <string name="pref_update_configuration">Actualizaciones automáticas</string>
+    <string name="pref_ad_block_category">Bloqueo de anuncios</string>
+    <string name="pref_root_ad_blocker_configuration">Bloqueador de anuncios basado en root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Bloqueador de anuncios basado en VPN</string>
+    <string name="pref_enable_ipv6">Habilitar el soporte para IPv6</string>
+    <string name="pref_backup_restore">Copia de seguridad / restauración de las reglas de bloqueo</string>
+    <string name="pref_backup_restore_title">Respaldar y restaurar</string>
+    <string name="pref_backup">Respaldar</string>
+    <string name="pref_backup_summary">Respalda tus reglas de bloqueo en el almacenamiento externo</string>
+    <string name="pref_restore">Restaurar</string>
+    <string name="pref_restore_summary">Restaura tus reglas de bloqueo desde un archivo de respaldo</string>
+    <string name="import_success">Copia de seguridad importada correctamente desde el almacenamiento externo.</string>
+    <string name="export_success">Copia de seguridad exportada correctamente al archivo \'%s\' en tu almacenamiento externo.</string>
+    <string name="export_failed">Error al exportar el archivo de la copia de seguridad \'%s\'.</string>
+    <string name="pref_update_title">Actualizaciones</string>
+    <string name="pref_update_enable_notifications">Las notificaciones están deshabilitadas</string>
+    <string name="pref_update_enable_notifications_summary">Las notificaciones de la aplicación no se mostrarán. Toca para habilitarlas.</string>
+    <string name="pref_update_app_category">Actualizaciones de la aplicación</string>
+    <string name="pref_update_check_app_startup">Buscar actualizaciones al inicio</string>
+    <string name="pref_update_check_app_daily">Buscar actualizaciones diariamente</string>
+    <string name="pref_update_check_now">Comprobar ahora</string>
+    <string name="pref_update_install">Actualizar ahora</string>
+    <string name="pref_update_hosts_category">Actualizaciones de los hosts</string>
+    <string name="pref_update_check">Buscar actualizaciones al inicio</string>
+    <string name="pref_update_check_hosts_daily">Buscar actualizaciones diariamente</string>
+    <string name="pref_update_sync_on_update">Sincronizar durante la actualización</string>
+    <string name="pref_update_sync_unmetered_only">Sincronizar sólo en redes sin limitaciones</string>
+    <string name="pref_vpn_service_on_boot">Habilitar al inicio</string>
+    <string name="pref_vpn_service_monitor">Monitor de conexión</string>
+    <string name="pref_vpn_service_monitor_description">Comprobar periódicamente el estado de la red para reiniciar la VPN en caso de desconexión.</string>
+    <string name="pref_vpn_excluded_apps">Aplicaciones excluidas</string>
+    <string name="pref_vpn_excluded_apps_description">Configura qué aplicaciones no deben usar la VPN para que no se bloquee ninguna conexión.</string>
+    <string name="pref_vpn_exclude_system_apps">Excluir aplicaciones del sistema</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Ninguno</item>
+        <item>Todas excepto los navegadores</item>
+        <item>Todo</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Excluir aplicaciones del usuario</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Aplicaciones excluidas</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Seleccionar todo</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Deseleccionar todo</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Icono de la aplicación</string>
+    <string name="pref_vpn_reset">Restablecer la VPN</string>
+    <string name="pref_vpn_reset_description">Reconstruye la conexión VPN desde cero. Úsalo si la VPN deja de funcionar (sin acceso a internet o errores de DNS).</string>
+    <string name="pref_vpn_reset_done">Conexión VPN reconstruida.</string>
+    <string name="pref_vpn_reset_not_running">La VPN no está en ejecución.</string>
+    <string name="pref_vpn_diagnostic_log">Registro de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_description">Consulta, copia o comparte los errores y eventos recientes de la VPN. Útil para informar de un problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Aún no se ha registrado ningún evento.</string>
+    <string name="pref_vpn_diagnostic_log_share">Compartir el registro de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copiar</string>
+    <string name="pref_vpn_diagnostic_log_copied">Registro de diagnóstico copiado al portapapeles.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Borrar el registro de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Elimina los eventos registrados. Hazlo antes de reproducir un problema para capturar un rastro limpio.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Registro de diagnóstico borrado.</string>
+    <string name="pref_root_open_hosts">Abrir el archivo hosts</string>
+    <string name="pref_hosts_redirection_summary">Definir dónde redirigir los hosts bloqueados</string>
+    <string name="pref_redirection_ipv4">Configurar redirección IPv4</string>
+    <string name="pref_redirection_ipv6">Configurar redirección IPv6</string>
+    <string name="pref_redirection_invalid">Redirección no válida</string>
+    <string name="pref_webserver_summary">El servidor web local escucha las direcciones IP locales para responder a las peticiones de nombres de host bloqueadas. Puede ayudar con la congelación de aplicaciones en conexiones bloqueadas.</string>
+    <string name="pref_webserver_enabled">Habilitar servidor web</string>
+    <string name="pref_webserver_test">Probar servidor web</string>
+    <string name="pref_webserver_certificate">Instalar certificado autofirmado</string>
+    <string name="pref_webserver_state_not_running">No se está ejecutando</string>
+    <string name="pref_webserver_state_checking">Comprobando…</string>
+    <string name="pref_webserver_state_running_not_installed">En ejecución pero el certificado no está instalado</string>
+    <string name="pref_webserver_state_running_and_installed">En ejecución y certificado instalado</string>
+    <string name="pref_webserver_certificate_dialog_title">Instalación manual del certificado</string>
+    <string name="pref_webserver_certificate_dialog_content">A partir de Android 11 (R), la aplicación ya no puede instalar automáticamente la autoridad de certificación (CA).\n\nVe a la configuración de \"Seguridad\", \"Cifrado y credenciales\" y luego a \"Instalar un certificado\". Desde allí, elige \"Certificado de CA\" y seleccione el archivo del certificado recién exportado.</string>
+    <string name="pref_webserver_certificate_dialog_action">Abrir configuración de \"Seguridad\"</string>
+    <string name="pref_webserver_icon">Reemplazar espacio en blanco del anuncio por el icono de la aplicación</string>
+</resources>

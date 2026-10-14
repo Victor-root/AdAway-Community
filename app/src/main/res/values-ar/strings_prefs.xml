@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">الخيارات</string>
+    <string name="pref_general_category">عام</string>
+    <string name="pref_dark_theme">ثيم داكن</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>مضيئ</item>
+        <item>داكن</item>
+        <item>الإعداد الإفتراضي للنظام</item>
+    </string-array>
+    <string name="pref_update_configuration">تحديثات تلقائية</string>
+    <string name="pref_ad_block_category">منع إعلانات</string>
+    <string name="pref_root_ad_blocker_configuration">مانع إعلانات يعتمد على الرووت</string>
+    <string name="pref_vpn_ad_blocker_configuration">مانع إعلانات يعتمد على ال VPN</string>
+    <string name="pref_enable_ipv6">تفعيل دعم IPv6</string>
+    <string name="pref_backup_restore">قواعد حظر النسخ الاحتياطي / الاستعادة</string>
+    <string name="pref_backup_restore_title">النسخ الاحتياطي و الإستعادة</string>
+    <string name="pref_backup">النسخ الاحتياطي</string>
+    <string name="pref_backup_summary">نسخ احتياطي إلى ذاكرة خارجية</string>
+    <string name="pref_restore">إستعادة</string>
+    <string name="pref_restore_summary">إستعادة نسخة إحتياطية من ملف</string>
+    <string name="import_success">تم ادخال النسخة الاحتياطية من الذاكرة الخارجية بنجاح.</string>
+    <string name="export_success">تم أخذ النسخة الإحتياطية بنجاح وتصديرها للملف %sعلى وسيط التخزين الخارجي الخاص بك</string>
+    <string name="export_failed">تعذر تصدير ملف نسخة إحتياطية %s</string>
+    <string name="pref_update_title">تحديثات</string>
+    <string name="pref_update_enable_notifications">الإشعارات معطلة</string>
+    <string name="pref_update_enable_notifications_summary">اشعارات التطبيق لن تظهر. اضغط لتفعيلها</string>
+    <string name="pref_update_app_category">تحديثات التطبيق</string>
+    <string name="pref_update_check_app_startup">تحقق من التحديث عند بدء التشغيل</string>
+    <string name="pref_update_check_app_daily">تحقق بشكل دوري من التحديثات</string>
+    <string name="pref_update_check_now">التحقق الآن</string>
+    <string name="pref_update_install">التحديث الآن</string>
+    <string name="pref_update_hosts_category">تحديثات المضيفين</string>
+    <string name="pref_update_check">تحقق من التحديث عند بدء التشغيل</string>
+    <string name="pref_update_check_hosts_daily">تحقق بشكل دوري من التحديثات</string>
+    <string name="pref_update_sync_on_update">مزامنة عند التحديث</string>
+    <string name="pref_update_sync_unmetered_only">المزامنة على شبكة غير مقيَّدة فقط</string>
+    <string name="pref_vpn_service_on_boot">التمكين عند بدء تشغيل الجهاز</string>
+    <string name="pref_vpn_service_monitor">مراقبة الاتصال</string>
+    <string name="pref_vpn_service_monitor_description">تحقق بشكل دوري من حالة الشبكة لإعادة تشغيل VPN عند قطع الاتصال.</string>
+    <string name="pref_vpn_excluded_apps">التطبيقات المستبعدة</string>
+    <string name="pref_vpn_excluded_apps_description">إعداد التطبيقات التي يجب ألا تستخدم VPN حتى لا يتم حظر أي اتصالات.</string>
+    <string name="pref_vpn_exclude_system_apps">استبعد تطبيقات النظام</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">استبعد تطبيقات المستخدم</string>
+    <string name="pref_vpn_exclude_user_apps_activity">التطبيقات المستبعدة</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">تحديد الكل</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">إلغاء تحديد الكل</string>
+    <string name="pref_vpn_exclude_user_apps_icon">أيقونة التطبيق</string>
+    <string name="pref_vpn_reset">إعادة تعيين VPN</string>
+    <string name="pref_vpn_reset_description">إعادة بناء اتصال VPN من الصفر. استخدم هذا إذا توقّف VPN عن العمل (لا يوجد وصول إلى الإنترنت أو أخطاء DNS).</string>
+    <string name="pref_vpn_reset_done">تمت إعادة بناء اتصال VPN.</string>
+    <string name="pref_vpn_reset_not_running">‏VPN لا يعمل.</string>
+    <string name="pref_vpn_diagnostic_log">سجل التشخيص</string>
+    <string name="pref_vpn_diagnostic_log_description">عرض أو نسخ أو مشاركة الأخطاء وأحداث VPN الأخيرة. مفيد عند الإبلاغ عن مشكلة.</string>
+    <string name="pref_vpn_diagnostic_log_empty">لم يتم تسجيل أي أحداث بعد.</string>
+    <string name="pref_vpn_diagnostic_log_share">مشاركة سجل التشخيص</string>
+    <string name="pref_vpn_diagnostic_log_copy">نسخ</string>
+    <string name="pref_vpn_diagnostic_log_copied">تم نسخ سجل التشخيص إلى الحافظة.</string>
+    <string name="pref_vpn_diagnostic_log_clear">مسح سجل التشخيص</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">حذف الأحداث المسجّلة. افعل ذلك قبل إعادة إنتاج مشكلة لالتقاط أثر نظيف.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">تم مسح سجل التشخيص.</string>
+    <string name="pref_root_open_hosts">فتح ملفات المضيف</string>
+    <string name="pref_hosts_redirection_summary">حدد مكان إعادة توجيه المضيفين المحظورين</string>
+    <string name="pref_redirection_ipv4">عنوان إعادة التوجيه IPv4</string>
+    <string name="pref_redirection_ipv6">عنوان إعادة التوجيه IPv6</string>
+    <string name="pref_redirection_invalid">إعادة توجيه غير صالحة</string>
+    <string name="pref_webserver_summary">يستمع خادم الويب المحلي إلى عناوين IP المحلية للرد على طلبات اسم المضيف المحظورة. قد يساعد في حالة تجمد التطبيق عند الاتصالات المحظورة.</string>
+    <string name="pref_webserver_enabled">تفعيل خادم الويب</string>
+    <string name="pref_webserver_test">اختبار خادم الويب</string>
+    <string name="pref_webserver_certificate">قم بتثبيت شهادة موقعة ذاتيًا</string>
+    <string name="pref_webserver_state_not_running">لا يعمل</string>
+    <string name="pref_webserver_state_checking">تدقيق…</string>
+    <string name="pref_webserver_state_running_not_installed">قيد التشغيل ولكن الشهادة غير مثبتة</string>
+    <string name="pref_webserver_state_running_and_installed">قيد التشغيل والشهادة مثبتة</string>
+    <string name="pref_webserver_certificate_dialog_title">التثبيت اليدوي للشهادة</string>
+    <string name="pref_webserver_certificate_dialog_content">بدءًا من أندرويد 11 (R)، لم يعد بإمكان التطبيق التثبيت التلقائي للمرجع المصدق (CA). 
+انتقل إلى إعدادات \"الأمان\" ، و \"بيانات الاعتماد والتشفير\" ثم \"تثبيت شهادة\". من هناك ، اختر \"شهادة CA\" وحدد ملف الشهادة الذي تم تصديره حديثًا.</string>
+    <string name="pref_webserver_certificate_dialog_action">افتح إعدادات \"الأمان\"</string>
+    <string name="pref_webserver_icon">استبدل المساحة الإعلانية الفارغة بأيقونة التطبيق</string>
+</resources>

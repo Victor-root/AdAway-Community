@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Προσθήκη στα επιτρεπόμενα</string>
+    <string name="tv_dialog_add_to_blocked">Προσθήκη στα αποκλεισμένα</string>
+    <string name="tv_dialog_remove_from_allowed">Αφαίρεση από τα επιτρεπόμενα</string>
+    <string name="tv_dialog_remove_from_blocked">Αφαίρεση από τα αποκλεισμένα</string>
+    <string name="tv_dialog_copy_hostname">Αντιγραφή ονόματος κεντρικού υπολογιστή</string>
+    <string name="tv_log_entry_status_description">Κατάσταση τομέα</string>
+    <string name="tv_button_theme_light">Φωτεινή λειτουργία</string>
+    <string name="tv_button_theme_dark">Σκοτεινή λειτουργία</string>
+    <string name="tv_lists_empty">Δεν υπάρχουν ακόμη καταχωρίσεις σε αυτή τη λίστα.</string>
+    <string name="tv_dialog_search">Αναζήτηση</string>
+</resources>

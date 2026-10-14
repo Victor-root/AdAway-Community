@@ -1,0 +1,35 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>فشل نسخ ملفات المضيف على أندرويد 9 أو أحدث!</h2>
+<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
+If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+
+<h2>المساحة غير كافية على القرص</h2>
+<p>حاول تغيير مسار ملف المضيف من الإعدادات الى <code>/data/data/hosts</code> (أو <code>/data/hosts</code>) وقم بإعادة تحديث AdAway مجدداً .</p>
+
+<h2>لا يعمل على انظمة الاندرويد من اصدار 4.4+</h2>
+<p>حاول تغيير مسار ملف المضيف من الإعدادات من <code>/data/data/hosts</code> إلى <code>/data/hosts</code> أو <code>/system/etc/hosts</code> وقم بإعادة تحديث AdAway مجدداً .</p>
+
+<h2>إنه لا يحجب الإعلانات في التطبيق س ص ع!</h2>
+<p>قد تكون بعض أسماء المضيف مفقودة في ملفات المضيفات المقدمة من<cite>Hosts Sources</cite> أو يحتوي التطبيق على صور لتقديم إعلانات دون الوصول إلى الإنترنت.<br><br>
+يمكنك تسجيل طلبات الDNS من (Menu-&gt;Log DNS Requests) عن طريق AdAway وذلك لمعرفة أسماء المضيف الإضافية التي يجب حظرها.
+<br><br>أضف أسماء المضيفات المريبة إلى القائمة السوداء Blacklist الخاصة بك من خلال الضغط على الإدخالات في السجل Log وبلّغ عن أسماء المضيفات هذه عند التحقق منها في Forum المنتدى <a href="http://forum.hosts-file.net/viewforum.php?f=9"> Hosts Inbox</a> لـ <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+
+<h2>إعلانات مخبوءة</h2>
+<p>أحيانا بعض التطبيقات تحفظ الإعلانات بعد التحميل. و ذلك يؤدي إلى بقائها في بعض التطبيقات. تستطيع حذف هذه الإعلانات المخبأة لتلك التطبيقات في قائمة تطبيقات آندرويد لتطويق هذه المشكلة.</p>
+
+<h2>التطبيق XYZ لم يعد يعمل بعد الآن.</h2>
+<p>بعض التطبيقات تحتاج إلى تواصل مع إسم الموقع الذي تم حظره من قِبَل AdAway وإلا فإنها سترفض العمل عندما يكون التواصل متعذّراً مع أسماء مواقعٍ من المفترض أن تُقدّم الإعلانات . يرجى زيارة <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> للحصول على قائمة البرامج المعروفة بهذه المشكلة بالتحديد . وإلا فيرجى محاولة معرفة أسماء المضيف المطلوبة وإضافتها إلى <cite>القائمة البيضاء</cite> تحت <cite>قوائمك</cite> والإبلاغ عنها في <a href="https://github.com/Victor-root/AdAway-Community/issues">تعقّب العِلل لـ AdAway</a>.</p>
+
+<h2>زر الرجوع للخلف في المتصفح لا يعمل.</h2>
+<p>تستطيع تفعيل خادم AdAway المحلي من الإعدادات كحل بديل.</p>
+
+<h2>زر الرجوع للخلف في المتصفح لا يعمل.</h2>
+<p>تستطيع تفعيل خادم AdAway المحلي من الإعدادات كحل بديل.</p>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Lisää sallittuihin</string>
+    <string name="tv_dialog_add_to_blocked">Lisää estettyihin</string>
+    <string name="tv_dialog_remove_from_allowed">Poista sallituista</string>
+    <string name="tv_dialog_remove_from_blocked">Poista estetyistä</string>
+    <string name="tv_dialog_copy_hostname">Kopioi isäntänimi</string>
+    <string name="tv_log_entry_status_description">Verkkotunnuksen tila</string>
+    <string name="tv_button_theme_light">Vaalea tila</string>
+    <string name="tv_button_theme_dark">Tumma tila</string>
+    <string name="tv_lists_empty">Tässä luettelossa ei ole vielä merkintöjä.</string>
+    <string name="tv_dialog_search">Haku</string>
+</resources>

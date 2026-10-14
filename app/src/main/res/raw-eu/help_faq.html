@@ -1,0 +1,34 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Iragarkiengaitiko irabazia</h2>
+<p>Uste oso zabaldua dago erabiltzaileak ez badu inoiz iragarki batean klikatzen, hura blokeatzeak ez diola kalterik egiten gune edo aplikazio bati finantzari dagokionez. Hau okerra da, garatzaileek dirua ere irabazten dute iragarkiak erakutsiz. Zure esku dago iragarkiak blokeatzea edo ez. Nik neuk ez dut iragarkirik erakusten duen aplikaziorik erabiltzen oso eragozgarritzat hartzen ditudalako, hortaz iragarki blokeatzaile bat gabe ez nituzke aplikazio hauek ezarriko.</p>
+
+<h2>Nola egiten du lan AdAway-ek?</h2>
+<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
+If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+
+<h2>Zergaitik berrabiarazi behar dut Android aldaketek eragina izateko?</h2>
+<p>Java -k Android-en bere barneko DNS katxea mantentzen du. Sistema eragileak hostalari izen berriak berehala isladatuko ditu (egiaztatu ping bat eginez agindu lerroan) baina Android berrabiarazi beharko duzu Java-ren DNS katxea berreraikitzeko.</p>
+
+<h2>Nola erabili web-zerbitzaria AdAway-n?</h2>
+<p><strong>AdAway will also work without using the webserver!</strong>
+<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
+<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+
+<h2>Nola blokeatu/desblokeatu ditzaket hostalari-izen jakinak?</h2>
+<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+
+<h2>Non aurkitu ditzaket hostalari iturburu gehiago?</h2>
+<p>Ikusi <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">AdAway-rako hostalari iturburu gehigarrien zerrenda</a>.</p>
+
+<h2>Why this fork exists</h2>
+<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+
+<h2>Lagundu itzultzen/akatsak jakinarazten</h2>
+<p>Mesedez joan <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>-ra.</p>
+</body>
+</html>

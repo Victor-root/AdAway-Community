@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">Åpne VPN-innstillinger</string>
+    <string name="vpn_settings_unavailable">VPN-innstillinger er ikke tilgjengelige på denne enheten.</string>
+    <string name="close">Lukk</string>
+    <string name="add">Legg til</string>
+    <string name="cancel">Avbryt</string>
+    <string name="disable">Slå av</string>
+    <string name="enable">Slå på</string>
+    <string name="save">Lagre</string>
+    <string name="home_blocked_description">Annonser og sporere</string>
+    <string name="home_allowed_description">Unntak</string>
+    <string name="home_redirected_description">Egendefinerte regler</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">Tøm</string>
+    <string name="sources_title">Hosts sources</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">Slå av</string>
+    <string name="notification_vpn_enable">Slå på</string>
+    <string name="home_blocking_enabled">Annonseblokkering: aktivert</string>
+    <string name="home_blocking_disabled">Annonseblokkering: deaktivert</string>
+    <string name="home_always_on_active">Alltid på VPN aktiv</string>
+    <string name="vpn_persistence_title">VPN-persistens</string>
+    <string name="vpn_persistence_summary">Hold annonseblokkering i gang i bakgrunnen</string>
+    <string name="vpn_persistence_enabled">Alltid på VPN er aktivert for AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">Alltid på VPN er ikke angitt. AdAways innebygde persistens håndterer det.</string>
+    <string name="vpn_persistence_message">AdAway håndterer allerede omstarter, avslutninger ved lite minne og krasj på egen hånd, så i de fleste tilfeller trengs ingen ekstra oppsett.\n\nHvis VPN-en noen gang stopper uventet, angi AdAway som Android-systemets Alltid på VPN for den sterkeste garantien.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">VPN-innstillinger er skjult på denne Android TV-en. Bruk ADB-kommandoene som vises.</string>
+    <string name="vpn_persistence_dismiss">Skjønner</string>
+    <string name="home_tile_log">DNS-logg</string>
+    <string name="home_log_subtitle">Se hva som blokkeres i sanntid</string>
+    <string name="home_tile_help">Hjelp</string>
+    <string name="home_help_subtitle">Veiledninger og feilsøking</string>
+    <string name="home_preferences_subtitle">Konfigurer AdAway</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="help_tab_about">Om</string>
+    <string name="about_version">Versjon %s</string>
+    <string name="about_description">Uoffisiell forgrening av AdAway, vedlikeholdt av fellesskapet.</string>
+    <string name="about_source_label">Kildekode (GitHub)</string>
+    <string name="about_issues_label">Rapporter et problem</string>
+    <string name="about_releases_label">Utgivelser</string>
+    <string name="about_upstream_label">Offisiell AdAway (upstream)</string>
+    <string name="about_license_label">Lisens: GNU General Public License v3.0 eller nyere (GPLv3+)</string>
+</resources>

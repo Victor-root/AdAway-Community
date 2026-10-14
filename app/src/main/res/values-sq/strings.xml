@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">Hap cilësimet e VPN-së</string>
+    <string name="vpn_settings_unavailable">Cilësimet e VPN-së nuk janë të disponueshme në këtë pajisje.</string>
+    <string name="disable">Çaktivizo</string>
+    <string name="enable">Aktivizo</string>
+    <string name="home_blocked_description">Reklama dhe gjurmues</string>
+    <string name="home_allowed_description">Përjashtime</string>
+    <string name="home_redirected_description">Rregulla të personalizuara</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">Pastro</string>
+    <string name="sources_title">Hosts sources</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">Çaktivizo</string>
+    <string name="notification_vpn_enable">Aktivizo</string>
+    <string name="home_blocking_enabled">Bllokimi i reklamave: i aktivizuar</string>
+    <string name="home_blocking_disabled">Bllokimi i reklamave: i çaktivizuar</string>
+    <string name="home_always_on_active">VPN gjithmonë aktiv është në punë</string>
+    <string name="vpn_persistence_title">Qëndrueshmëria e VPN-së</string>
+    <string name="vpn_persistence_summary">Mbaje bllokimin e reklamave aktiv në sfond</string>
+    <string name="vpn_persistence_enabled">VPN-ja gjithmonë aktive është e aktivizuar për AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">VPN-ja gjithmonë aktive nuk është caktuar. E menaxhon qëndrueshmëria e brendshme e AdAway.</string>
+    <string name="vpn_persistence_message">AdAway i menaxhon vetë rinisjet, mbylljet për shkak të mungesës së memories dhe rrëzimet, prandaj në shumicën e rasteve nuk nevojitet konfigurim shtesë.\n\nNëse VPN-ja ndalon papritur, caktoni AdAway si VPN-në gjithmonë aktive të sistemit Android për garancinë më të fortë.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">Cilësimet e VPN-së janë të fshehura në këtë Android TV. Përdorni komandat ADB të shfaqura.</string>
+    <string name="vpn_persistence_dismiss">E kuptova</string>
+    <string name="home_tile_log">Regjistri DNS</string>
+    <string name="home_log_subtitle">Shikoni çfarë bllokohet në kohë reale</string>
+    <string name="home_tile_help">Ndihmë</string>
+    <string name="home_help_subtitle">Udhëzues dhe zgjidhje problemesh</string>
+    <string name="home_preferences_subtitle">Konfiguroni AdAway</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="help_tab_about">Rreth</string>
+    <string name="about_version">Versioni %s</string>
+    <string name="about_description">Degë jozyrtare e AdAway, e mirëmbajtur nga komuniteti.</string>
+    <string name="about_source_label">Kodi burimor (GitHub)</string>
+    <string name="about_issues_label">Raporto një problem</string>
+    <string name="about_releases_label">Publikimet</string>
+    <string name="about_upstream_label">AdAway zyrtar (projekti origjinal)</string>
+    <string name="about_license_label">Licenca: GNU General Public License v3.0 ose më e re (GPLv3+)</string>
+</resources>

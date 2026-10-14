@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">ഡൊമെയ്‌നുകൾ അടുക്കുക</string>
+    <string name="log_clear">ലോഗ് മായ്‌ക്കുക</string>
+    <string name="log_sort_alphabetical">അക്ഷരമാലാക്രമത്തിൽ</string>
+    <string name="log_sort_top_level_domain">ടോപ്പ് ലെവൽ ഡൊമെയ്ൻ അടുക്കൽ</string>
+    <string name="log_block">ബ്ലാക്ക് ലിസ്റ്റിലേക് എൻട്രി ചേർക്കുക</string>
+    <string name="log_allow">വൈറ്റ് ലിസ്റ്റിലേക്ക് എൻ‌ട്രി ചേർക്കുക</string>
+    <string name="log_redirect">റീഡയറക്‌ട് ലിസ്റ്റിലേക്ക് എൻട്രി ചേർക്കുക</string>
+    <string name="log_redirect_dialog_title">ഡൊമെയ്ൻ റീഡയറക്ട് ചെയ്യുക</string>
+    <string name="log_start_recording_button">റെക്കോർഡിംഗ് ആരംഭിക്കുക</string>
+    <string name="log_start_recording_vpn_inactive">റെക്കോർഡിംഗ് ആരംഭിക്കുക (VPN സജീവമല്ല)</string>
+    <string name="log_stop_recording">റെക്കോർഡിംഗ് നിർത്തുക</string>
+</resources>

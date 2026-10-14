@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_update_check_now">Semak sekarang</string>
+    <string name="pref_update_install">Kemas kini sekarang</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">Tetapkan semula VPN</string>
+    <string name="pref_vpn_reset_description">Bina semula sambungan VPN dari awal. Gunakan ini jika VPN berhenti berfungsi (tiada akses internet atau ralat DNS).</string>
+    <string name="pref_vpn_reset_done">Sambungan VPN telah dibina semula.</string>
+    <string name="pref_vpn_reset_not_running">VPN tidak berjalan.</string>
+    <string name="pref_vpn_diagnostic_log">Log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_description">Lihat, salin atau kongsi ralat dan peristiwa VPN terkini. Berguna semasa melaporkan masalah.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Belum ada peristiwa direkodkan.</string>
+    <string name="pref_vpn_diagnostic_log_share">Kongsi log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_copy">Salin</string>
+    <string name="pref_vpn_diagnostic_log_copied">Log diagnostik disalin ke papan keratan.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Kosongkan log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Padam peristiwa yang direkodkan. Lakukan ini sebelum menghasilkan semula masalah untuk menangkap jejak yang bersih.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Log diagnostik dikosongkan.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

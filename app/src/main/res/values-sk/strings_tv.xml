@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Pridať medzi povolené</string>
+    <string name="tv_dialog_add_to_blocked">Pridať medzi blokované</string>
+    <string name="tv_dialog_remove_from_allowed">Odstrániť z povolených</string>
+    <string name="tv_dialog_remove_from_blocked">Odstrániť z blokovaných</string>
+    <string name="tv_dialog_copy_hostname">Kopírovať názov domény</string>
+    <string name="tv_log_entry_status_description">Stav domény</string>
+    <string name="tv_button_theme_light">Svetlý režim</string>
+    <string name="tv_button_theme_dark">Tmavý režim</string>
+    <string name="tv_lists_empty">V tomto zozname zatiaľ nie sú žiadne položky.</string>
+    <string name="tv_dialog_search">Hľadať</string>
+</resources>

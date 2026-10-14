@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">Wizard ringkas ini akan menghidupkan sekatan iklan pada peranti ini.</string>
+    <string name="tv_welcome_start_button">Mula</string>
+    <string name="tv_welcome_method_header">Pilih kaedah sekatan anda</string>
+    <string name="tv_welcome_method_root_button">Gunakan root</string>
+    <string name="tv_welcome_method_root_body">Lebih pantas dan mesra bateri. Memerlukan peranti yang di-root.</string>
+    <string name="tv_welcome_method_vpn_button">Gunakan VPN</string>
+    <string name="tv_welcome_method_vpn_body">Berfungsi tanpa root, serasi dengan mana-mana peranti Android TV.</string>
+    <string name="tv_welcome_activate_header">Hidupkan sekatan iklan</string>
+    <string name="tv_welcome_activate_body">Ia adalah VPN tempatan: ia menapis iklan pada peranti ini, tanpa menghalakan trafik anda melalui pelayan luar.</string>
+</resources>

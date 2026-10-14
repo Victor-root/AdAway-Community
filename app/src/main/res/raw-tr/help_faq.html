@@ -1,0 +1,34 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Reklamlardan gelen gelirler</h2>
+<p>Bir kullanıcı hiçbir reklamı zaten tıklamıyor ve reklamları engelliyorsa bunun siteyi ya da uygulamayı zarara sokmayacağı gibi bir yanlış anlaşılma var. Geliştiriciler sadece reklamları göstererek bile para kazanabiliyor. Kişisel olarak ben reklam gösteren uygulamaları kullanmam çünkü çok sinir bozucu olabiliyorlar. Bu yüzden bir reklam engelleyici olmadan bu programları yüklemem.</p>
+
+<h2>AdAway nasıl çalışır?</h2>
+<p>AdAway, reklam sunan ana makine adlarını engellemek için <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts dosyasını</a> kullanır. Hosts dosyası, <code>/system/etc/hosts</code> konumunda bulunan ve ana makine adlarını IP adresleriyle eşleyen bir dosyadır. Etki Alanı Adı Sistemi'ne (DNS) dayanmadan IP adresi çiftlerine anasistem adı tanımlamanın geleneksel bir yoludur. Tüm istenmeyen ana bilgisayar adları <code>127.0.0.1</code>'e yönlendirilir, bu da kendi cihazınızı gösterecekleri anlamına gelir.<br>
+Hosts dosyası yazılabilir değilse, yerleşik VPN hizmetini kullanmak için bir yedek çözümdür. İstenmeyen ana bilgisayar adlarına bağlantıları filtreleyecek ve başkalarının geçmesine izin verecektir.</p>
+
+<h2>Neden değişikliklerin uygulanması için Androidi yeniden başlatmalıyım?</h2>
+<p>Android üzerinde Java'nın korumalı kendi iç DNS ön belleği vardır. İşletim sistemi yeni sunucu dosyasını hemen oluşturacaktır (komut satırı üzerinde ping ile doğrulanır) fakat Java DNS önbelleğinin yeniden derlenmesi için Android yeniden başlatılmalıdır.</p>
+
+<h2>AdAway içinde web sunucusu nasıl kullanılır?</h2>
+<p><strong>AdAway, web sunucu olmadan da çalışabilmektedir!</strong>
+<br><br>Yerel IP adresinizden <code>127.0.0.1</code> gelen isteklere cevap vermek için AdAway seçeneklerinden yerel web sunucu'yu aktifleştirebilirsiniz. Bu, <code>127.0.0.1</code>'e yönlendirilmiş uygulama isteklerini AdAway web sunucuları cevaplandıracaktır.
+<br>Bazı uygulamalar, web sunucuya ulaşılamadığında çalışmamaktadır. Bu yöntemle istek, boş ve reklamsız bir sayfa ile cevaplanır ve böylece web sunucular ulaşılabilir durumda olmaktadır.</p>
+
+<h2>Özel alanadlarını nasıl engelleyip/engelini kaldırabilirim?</h2>
+<p>Engellemek istediğiniz ana makine adlarını <cite>ana ekrandan</cite> <cite>Engellenenler</cite> listesine ekleyin. Ayrıca, engellemeden hariç tutmak istediğiniz ana makine adları <cite>İzin Verilenlere</cite> eklenebilir ve <cite>Yönlendirilen</cite>'e ait belirli bir IP adresine yönlendirmek istediğiniz ana makine adları eklenebilir.</p>
+
+<h2>Daha fazla sunucu kaynağını nereden bulabilirim?</h2>
+<p>Lütfen <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">AdAway için daha fazla kaynak adresi listesine bakınız </a>.</p>
+
+<h2>Bu fork neden var</h2>
+<p>AdAway, uzun bir geçmişe sahip harika bir projedir, ancak yukarı akıştaki sürüm ve inceleme etkinliği bir süredir sınırlıdır.<br/>Bazı hatalar ve pull request'ler uzun süredir açık kalmaktadır; bunlar arasında son Android sürümlerinde ve OEM ROM'larında VPN modu kararlılığını etkileyen sorunlar da bulunmaktadır.<br/>Bu fork, test edilmiş iyileştirmeleri kullanılmadan bırakmak yerine topluluk tarafından sürdürülen düzeltmelerle projeyi kullanılabilir tutmak için vardır.</p>
+
+<h2>Çeviriye yardım et/hata raporla</h2>
+<p>Lütfen adrese gidin <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+</body>
+</html>

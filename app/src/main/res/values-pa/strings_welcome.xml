@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">ਇਹ ਛੋਟਾ ਵਿਜ਼ਾਰਡ ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਵਿਗਿਆਪਨ ਬਲੌਕਿੰਗ ਚਾਲੂ ਕਰ ਦੇਵੇਗਾ।</string>
+    <string name="tv_welcome_start_button">ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="tv_welcome_method_header">ਆਪਣਾ ਬਲੌਕਿੰਗ ਢੰਗ ਚੁਣੋ</string>
+    <string name="tv_welcome_method_root_button">ਰੂਟ ਵਰਤੋ</string>
+    <string name="tv_welcome_method_root_body">ਤੇਜ਼ ਅਤੇ ਬੈਟਰੀ ਲਈ ਵਧੀਆ। ਰੂਟ ਕੀਤੇ ਡਿਵਾਈਸ ਦੀ ਲੋੜ ਹੈ।</string>
+    <string name="tv_welcome_method_vpn_button">VPN ਵਰਤੋ</string>
+    <string name="tv_welcome_method_vpn_body">ਰੂਟ ਤੋਂ ਬਿਨਾਂ ਕੰਮ ਕਰਦਾ ਹੈ, ਕਿਸੇ ਵੀ Android TV ਡਿਵਾਈਸ ਨਾਲ ਅਨੁਕੂਲ।</string>
+    <string name="tv_welcome_activate_header">ਵਿਗਿਆਪਨ ਬਲੌਕਿੰਗ ਚਾਲੂ ਕਰੋ</string>
+    <string name="tv_welcome_activate_body">ਇਹ ਇੱਕ ਲੋਕਲ VPN ਹੈ: ਇਹ ਤੁਹਾਡੀ ਟ੍ਰੈਫਿਕ ਨੂੰ ਬਾਹਰੀ ਸਰਵਰ ਰਾਹੀਂ ਭੇਜੇ ਬਿਨਾਂ, ਇਸੇ ਡਿਵਾਈਸ \'ਤੇ ਵਿਗਿਆਪਨਾਂ ਨੂੰ ਫਿਲਟਰ ਕਰਦਾ ਹੈ।</string>
+</resources>

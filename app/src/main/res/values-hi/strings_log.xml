@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_start_recording_button">रिकॉर्डिंग शुरू करें</string>
+    <string name="log_start_recording_vpn_inactive">रिकॉर्डिंग शुरू करें (VPN सक्रिय नहीं है)</string>
+    <string name="log_stop_recording">रिकॉर्डिंग रोकें</string>
+</resources>

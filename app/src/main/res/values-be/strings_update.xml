@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">Абнавіць AdAway</string>
+    <string name="update_banner_title">Update available</string>
+    <string name="update_banner_subtitle">Tap to install %1$s</string>
+    <string name="update_up_to_date_header">У вас актуальная версія</string>
+    <string name="update_update_available_header">Даступна абнаўленне</string>
+    <string name="update_updating_header">Абнаўленне AdAway</string>
+    <string name="update_update_button">Абнавіць зараз</string>
+    <string name="update_last_changelog_title">Апошнія змены</string>
+    <string name="update_new_changelog_title">Спіс змен</string>
+    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">No update available</string>
+    <string name="pref_update_install_summary">Install version %1$s</string>
+    <string name="notification_channel_app_updates">App updates</string>
+    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="notification_app_update_title">Даступна абнаўленне праграмы</string>
+    <string name="notification_app_update_text">Новая версія AdAway даступна для спампоўкі</string>
+</resources>

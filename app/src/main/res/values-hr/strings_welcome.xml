@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_first_step">Prvi korak instalacije</string>
+    <string name="welcome_second_step">Drugi korak instalacije</string>
+    <string name="welcome_method_header">Dobrodošli u AdAway!</string>
+    <string name="welcome_method_summary">AdAway omogućuje dva načina blokiranja oglasa. Odaberite poželjni način:</string>
+    <string name="welcome_root_method_title">Root temeljeno\nblokiranje oglasa</string>
+    <string name="welcome_root_method_text1">Brže</string>
+    <string name="welcome_root_method_text2">Baterijski prihvatljivije</string>
+    <string name="welcome_root_method_text3">Root je potreban</string>
+    <string name="welcome_vpn_method_title">VPN temeljeno\nblokiranje oglasa</string>
+    <string name="welcome_vpn_method_text1">Sporije</string>
+    <string name="welcome_vpn_method_text2">Pokreni u pozadini</string>
+    <string name="welcome_vpn_method_text3">Kompatibilnost</string>
+    <string name="welcome_root_missing_title">Potreban je rootani Android</string>
+    <string name="welcome_root_missile_description">Nemoguće je pronaći su izvršnu datoteku ili AdAway nema root dozvole.\n\nOvo se može dogoditi kada vaš uređaj nije rootan. \n Možete pronaći informacije o rootanju vašeg uređaja na wiki.lineageos.org ili na drugim Android web stranicama.</string>
+    <string name="welcome_method_pro_logo">Prednosti</string>
+    <string name="welcome_method_con_logo">Mane</string>
+    <string name="welcome_sync_header">Usklađivanje</string>
+    <string name="welcome_synced_header">Usklađeno!</string>
+    <string name="welcome_sync_summary">AdAway preuzima mrežna oglašavanja kako bi ih blokirao iz mrežnih izvora. Možete ih prilagoditi kasnije u postavkama.</string>
+    <string name="welcome_sync_retry_logo">Ponovno pokušaj uskladiti</string>
+    <string name="welcome_sync_error">Neuspjelo usklađivanje: %1$s Ponovno pokušaj odmah?</string>
+    <string name="welcome_back_button">Natrag</string>
+    <string name="welcome_next_button">Sljedeće</string>
+    <string name="welcome_finish_button">Završi</string>
+    <string name="tv_welcome_intro_subtitle">Ovaj kratki čarobnjak uključit će blokiranje oglasa na ovom uređaju.</string>
+    <string name="tv_welcome_start_button">Započni</string>
+    <string name="tv_welcome_method_header">Odaberite način blokiranja</string>
+    <string name="tv_welcome_method_root_button">Koristi root</string>
+    <string name="tv_welcome_method_root_body">Brže i štedljivije za bateriju. Zahtijeva uređaj s rootom.</string>
+    <string name="tv_welcome_method_vpn_button">Koristi VPN</string>
+    <string name="tv_welcome_method_vpn_body">Radi bez roota, kompatibilno sa svakim Android TV uređajem.</string>
+    <string name="tv_welcome_activate_header">Uključi blokiranje oglasa</string>
+    <string name="tv_welcome_activate_body">Riječ je o lokalnom VPN-u: filtrira oglase na ovom uređaju, bez usmjeravanja vašeg prometa preko vanjskog poslužitelja.</string>
+</resources>

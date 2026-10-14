@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">Buka tetapan VPN</string>
+    <string name="vpn_settings_unavailable">Tetapan VPN tidak tersedia pada peranti ini.</string>
+    <string name="disable">Lumpuhkan</string>
+    <string name="enable">Dayakan</string>
+    <string name="home_blocked_description">Iklan &amp; penjejak</string>
+    <string name="home_allowed_description">Pengecualian</string>
+    <string name="home_redirected_description">Peraturan tersuai</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">Kosongkan</string>
+    <string name="sources_title">Hosts sources</string>
+    <string name="notification_vpn_disable">Lumpuhkan</string>
+    <string name="notification_vpn_enable">Dayakan</string>
+    <string name="home_blocking_enabled">Penyekatan iklan: dihidupkan</string>
+    <string name="home_blocking_disabled">Penyekatan iklan: dimatikan</string>
+    <string name="home_always_on_active">VPN sentiasa hidup aktif</string>
+    <string name="vpn_persistence_title">Kegigihan VPN</string>
+    <string name="vpn_persistence_summary">Kekalkan sekatan iklan berjalan di latar belakang</string>
+    <string name="vpn_persistence_enabled">VPN sentiasa hidup dihidupkan untuk AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">VPN sentiasa hidup tidak ditetapkan. Kegigihan terbina dalam AdAway mengendalikannya.</string>
+    <string name="vpn_persistence_message">AdAway sudah mengendalikan but semula, pembunuhan akibat memori rendah dan ranap dengan sendirinya, jadi persediaan tambahan tidak diperlukan dalam kebanyakan kes.\n\nJika VPN berhenti secara tidak dijangka, tetapkan AdAway sebagai VPN Sentiasa Hidup sistem Android untuk jaminan yang paling kukuh.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">Tetapan VPN tersembunyi pada Android TV ini. Gunakan arahan ADB yang ditunjukkan.</string>
+    <string name="vpn_persistence_dismiss">Faham</string>
+    <string name="home_tile_log">Log DNS</string>
+    <string name="home_log_subtitle">Lihat perkara yang disekat secara masa nyata</string>
+    <string name="home_tile_help">Bantuan</string>
+    <string name="home_help_subtitle">Panduan dan penyelesaian masalah</string>
+    <string name="home_preferences_subtitle">Konfigurasikan AdAway</string>
+    <string name="help_tab_about">Perihal</string>
+    <string name="about_version">Versi %s</string>
+    <string name="about_description">Cabang AdAway tidak rasmi yang diselenggara oleh komuniti.</string>
+    <string name="about_source_label">Kod sumber (GitHub)</string>
+    <string name="about_issues_label">Laporkan masalah</string>
+    <string name="about_releases_label">Keluaran</string>
+    <string name="about_upstream_label">AdAway huluan rasmi</string>
+    <string name="about_license_label">Lesen: GNU General Public License v3.0 or later (GPLv3+)</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Добавяне към позволените</string>
+    <string name="tv_dialog_add_to_blocked">Добавяне към блокираните</string>
+    <string name="tv_dialog_remove_from_allowed">Премахване от позволените</string>
+    <string name="tv_dialog_remove_from_blocked">Премахване от блокираните</string>
+    <string name="tv_dialog_copy_hostname">Копиране на името на хоста</string>
+    <string name="tv_log_entry_status_description">Състояние на домейна</string>
+    <string name="tv_button_theme_light">Светъл режим</string>
+    <string name="tv_button_theme_dark">Тъмен режим</string>
+    <string name="tv_lists_empty">Все още няма записи в този списък.</string>
+    <string name="tv_dialog_search">Търсене</string>
+</resources>

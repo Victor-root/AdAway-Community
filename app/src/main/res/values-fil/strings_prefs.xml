@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">I-reset ang VPN</string>
+    <string name="pref_vpn_reset_description">Muling buuin ang koneksyon ng VPN mula sa simula. Gamitin ito kung huminto sa paggana ang VPN (walang access sa internet o may mga error sa DNS).</string>
+    <string name="pref_vpn_reset_done">Muling naibuo ang koneksyon ng VPN.</string>
+    <string name="pref_vpn_reset_not_running">Hindi tumatakbo ang VPN.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostic log</string>
+    <string name="pref_vpn_diagnostic_log_description">Tingnan, kopyahin o ibahagi ang mga kamakailang error at kaganapan ng VPN. Kapaki-pakinabang kapag nag-uulat ng problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Wala pang naitatalang kaganapan.</string>
+    <string name="pref_vpn_diagnostic_log_share">Ibahagi ang diagnostic log</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopyahin</string>
+    <string name="pref_vpn_diagnostic_log_copied">Nakopya ang diagnostic log sa clipboard.</string>
+    <string name="pref_vpn_diagnostic_log_clear">I-clear ang diagnostic log</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Tanggalin ang mga naitalang kaganapan. Gawin ito bago i-reproduce ang isang problema upang makakuha ng malinis na trace.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Na-clear ang diagnostic log.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

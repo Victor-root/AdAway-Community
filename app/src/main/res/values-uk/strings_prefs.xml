@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Налаштування</string>
+    <string name="pref_general_category">Загальні</string>
+    <string name="pref_dark_theme">Темна тема</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Світла</item>
+        <item>Темна</item>
+        <item>Системна</item>
+    </string-array>
+    <string name="pref_update_configuration">Автоматичні оновлення</string>
+    <string name="pref_ad_block_category">Блокування реклами</string>
+    <string name="pref_root_ad_blocker_configuration">Блокувальник реклами з root-правами</string>
+    <string name="pref_vpn_ad_blocker_configuration">Блокування на основі VPN</string>
+    <string name="pref_enable_ipv6">Увімкнути підтримку IPv6</string>
+    <string name="pref_backup_restore">Збереження / відновлення правил блокування</string>
+    <string name="pref_backup_restore_title">Збереження і відновлення</string>
+    <string name="pref_backup">Збереження</string>
+    <string name="pref_backup_summary">Збереження правил блокування на зовнішнє сховище</string>
+    <string name="pref_restore">Відновлення</string>
+    <string name="pref_restore_summary">Відновити правила блокування зі збереженої копії</string>
+    <string name="import_success">Резервну копію успішно імпортовано із зовнішнього сховища.</string>
+    <string name="export_success">Резервну копію успішно експортовано в файл \'%s\' на зовнішнє сховище.</string>
+    <string name="export_failed">Не вдалося експортувати резервну копію в файл \'%s\'.</string>
+    <string name="pref_update_title">Оновлення</string>
+    <string name="pref_update_app_category">Оновлення застосунку</string>
+    <string name="pref_update_check_app_startup">Перевіряти оновлення під час запуску</string>
+    <string name="pref_update_check_app_daily">Періодично перевіряти наявність оновлень</string>
+    <string name="pref_update_check_now">Перевірити зараз</string>
+    <string name="pref_update_install">Оновити зараз</string>
+    <string name="pref_update_hosts_category">Оновлення хостів</string>
+    <string name="pref_update_check">Перевіряти оновлення під час запуску</string>
+    <string name="pref_update_check_hosts_daily">Періодично перевіряти наявність оновлень</string>
+    <string name="pref_update_sync_on_update">Синхронізувати при оновленні</string>
+    <string name="pref_update_sync_unmetered_only">Синхронізувати лише коли W-iFi</string>
+    <string name="pref_vpn_service_on_boot">Увімкнути під час запуску</string>
+    <string name="pref_vpn_service_monitor">Перевіряти з’єднання</string>
+    <string name="pref_vpn_service_monitor_description">Періодично перевіряти стан мережі, і за потреби перезавантажувати VPN при роз’єднанні.</string>
+    <string name="pref_vpn_excluded_apps">Виключені застосунки</string>
+    <string name="pref_vpn_excluded_apps_description">Налаштуйте, які застосунки не повинні використовувати VPN, щоб з’єднання не блокувалося.</string>
+    <string name="pref_vpn_exclude_system_apps">Виключені системні застосунки</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Вимкнені застосунки користувача</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Виключені застосунки</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Вибрати всі</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Зняти виділення</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Іконка застосунку</string>
+    <string name="pref_vpn_reset">Скинути VPN</string>
+    <string name="pref_vpn_reset_description">Повністю перебудувати VPN-з’єднання. Скористайтеся цим, якщо VPN перестає працювати (немає доступу до інтернету або помилки DNS).</string>
+    <string name="pref_vpn_reset_done">VPN-з’єднання перебудовано.</string>
+    <string name="pref_vpn_reset_not_running">VPN не запущено.</string>
+    <string name="pref_vpn_diagnostic_log">Журнал діагностики</string>
+    <string name="pref_vpn_diagnostic_log_description">Переглядайте, копіюйте або діліться нещодавніми помилками та подіями VPN. Корисно під час повідомлення про проблему.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Ще не записано жодної події.</string>
+    <string name="pref_vpn_diagnostic_log_share">Поділитися журналом діагностики</string>
+    <string name="pref_vpn_diagnostic_log_copy">Копіювати</string>
+    <string name="pref_vpn_diagnostic_log_copied">Журнал діагностики скопійовано в буфер обміну.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Очистити журнал діагностики</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Видалити записані події. Зробіть це перед відтворенням проблеми, щоб отримати чистий журнал.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Журнал діагностики очищено.</string>
+    <string name="pref_root_open_hosts">Відкрити файл хостів</string>
+    <string name="pref_hosts_redirection_summary">Вибрати, куди направляти заблоковані хости</string>
+    <string name="pref_redirection_ipv4">IPv4 перенаправлення</string>
+    <string name="pref_redirection_ipv6">IPv6 перенаправлення</string>
+    <string name="pref_redirection_invalid">Невірне перенаправлення</string>
+    <string name="pref_webserver_summary">Локальний вебсервер слухає локальні IP адреси і відповідає на запити від заблокованих хостів. Це може допомогти із зависанням застосунку, коли його з’єднання заблокували.</string>
+    <string name="pref_webserver_enabled">Увімкнути веб-сервер</string>
+    <string name="pref_webserver_test">Тестовий вебсервер</string>
+    <string name="pref_webserver_certificate">Встановити самопідписаний сертифікат</string>
+    <string name="pref_webserver_state_not_running">Не запущено</string>
+    <string name="pref_webserver_state_checking">Перевірка…</string>
+    <string name="pref_webserver_state_running_not_installed">Запущено, але сертифікат не встановлено</string>
+    <string name="pref_webserver_state_running_and_installed">Запущено, сертифікат встановлено</string>
+    <string name="pref_webserver_certificate_dialog_title">Ручне встановлення сертифікату</string>
+    <string name="pref_webserver_certificate_dialog_content">Починаючи з Android 11 (R), застосунки більше не можуть автоматично встановлювати сертифікати (CA).\n\nЩоб це зробити вручну, зайдіть в налаштування, розділ «Безпека» далі «Шифрування й облікові дані», потім «Установити сертифікат». У вікні, що з’явиться виберіть щойно створений файл сертифікату.</string>
+    <string name="pref_webserver_certificate_dialog_action">Відкрити налаштування «Безпека»</string>
+    <string name="pref_webserver_icon">Замінити порожнє місце від реклами іконкою застосунку</string>
+</resources>

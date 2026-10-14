@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">VPN ji nû ve saz bike</string>
+    <string name="pref_vpn_reset_description">Girêdana VPN ji nû ve ava bike. Vê bikar bîne heke VPN bêkar bibe (gihîştina înternetê tune an xeletiyên DNS).</string>
+    <string name="pref_vpn_reset_done">Girêdana VPN ji nû ve hate avakirin.</string>
+    <string name="pref_vpn_reset_not_running">VPN naxebite.</string>
+    <string name="pref_vpn_diagnostic_log">Tomarê teşhîsê</string>
+    <string name="pref_vpn_diagnostic_log_description">Xeletî û bûyerên VPN yên dawî bibîne, kopî bike an parve bike. Dema ku pirsgirêkekê ragihînî bikêr e.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Hê tu bûyer nehatine tomarkirin.</string>
+    <string name="pref_vpn_diagnostic_log_share">Tomarê teşhîsê parve bike</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopî bike</string>
+    <string name="pref_vpn_diagnostic_log_copied">Tomarê teşhîsê li panoyê hate kopîkirin.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Tomarê teşhîsê paqij bike</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Bûyerên tomarkirî jê bibe. Berî ku pirsgirêkê ji nû ve çêbikî vê bike da ku şopeke paqij bistînî.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Tomarê teşhîsê hate paqijkirin.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">AdAway güncellemesi</string>
+    <string name="update_banner_title">Güncelleme var</string>
+    <string name="update_banner_subtitle">%1$s sürümünü yüklemek için dokunun</string>
+    <string name="update_up_to_date_header">Güncel</string>
+    <string name="update_update_available_header">Güncelleme mevcut</string>
+    <string name="update_updating_header">AdAway güncelleştiriliyor</string>
+    <string name="update_update_button">Şimdi güncelle</string>
+    <string name="update_last_changelog_title">Son değişiklikler</string>
+    <string name="update_new_changelog_title">Değişiklikler</string>
+    <string name="pref_update_check_now_update_available">Yeni sürüm var: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Güncelleme yok</string>
+    <string name="pref_update_install_summary">%1$s sürümünü yükle</string>
+    <string name="notification_channel_app_updates">Uygulama güncellemeleri</string>
+    <string name="notification_channel_app_updates_description">Uygulamanın yeni bir sürümü olduğunda bildirim. Diğer bildirimleri etkilemeden uygulama güncelleme uyarılarını gizlemek için bu kanalı sessize alın.</string>
+    <string name="notification_app_update_title">Uygulama güncellemesi mevcut</string>
+    <string name="notification_app_update_text">AdAway\'in yeni bir sürümü indirilebilir.</string>
+</resources>

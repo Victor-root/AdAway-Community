@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">Mîhengên VPN veke</string>
+    <string name="vpn_settings_unavailable">Mîhengên VPN li ser vê amûrê tune ne.</string>
+    <string name="cancel">ھەڵوەشاندن</string>
+    <string name="disable">Neçalak bike</string>
+    <string name="edit">دەستکاری</string>
+    <string name="enable">Çalak bike</string>
+    <string name="home_blocked_description">Reklam û şopîner</string>
+    <string name="home_allowed_description">Îstîsna</string>
+    <string name="home_redirected_description">Rêzikên taybet</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">Paqij bike</string>
+    <string name="sources_title">Hosts sources</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">Neçalak bike</string>
+    <string name="notification_vpn_enable">Çalak bike</string>
+    <string name="home_blocking_enabled">Astengkirina reklaman: çalak</string>
+    <string name="home_blocking_disabled">Astengkirina reklaman: neçalak</string>
+    <string name="home_always_on_active">VPN-a herdem-vekirî çalak e</string>
+    <string name="vpn_persistence_title">Domdariya VPN</string>
+    <string name="vpn_persistence_summary">Astengkirina reklaman di paşxaneyê de çalak bihêle</string>
+    <string name="vpn_persistence_enabled">VPN-a herdem-vekirî ji bo AdAway çalak e. ✓</string>
+    <string name="vpn_persistence_disabled">VPN-a herdem-vekirî nehatiye danîn. Domdariya hundirîn a AdAway wê bi rê ve dibe.</string>
+    <string name="vpn_persistence_message">AdAway bi xwe ji nû ve destpêkirin, kuştinên bîranîna kêm û hilweşînan bi rê ve dibe, ji ber vê yekê pir caran sazkirineke zêde ne hewce ye.\n\nHeke VPN car carna bêhemdî raweste, AdAway wekî \"VPN-a herdem-vekirî\" ya pergala Android saz bike ji bo ewlehiya herî xurt.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">Mîhengên VPN li ser vê Android TV-yê veşartî ne. Fermanên ADB yên nîşandayî bikar bîne.</string>
+    <string name="vpn_persistence_dismiss">Fêhm kir</string>
+    <string name="home_tile_log">Tomarê DNS</string>
+    <string name="home_log_subtitle">Bibîne çi tê astengkirin bi dema rast</string>
+    <string name="home_tile_help">Alîkarî</string>
+    <string name="home_help_subtitle">Rênîşan û çareserkirina pirsgirêkan</string>
+    <string name="home_preferences_subtitle">AdAway mîheng bike</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="help_tab_about">Derbar</string>
+    <string name="about_version">Guherto %s</string>
+    <string name="about_description">Çengala neresmî ya AdAway ku ji aliyê civakê ve tê parastin.</string>
+    <string name="about_source_label">Koda çavkaniyê (GitHub)</string>
+    <string name="about_issues_label">Pirsgirêkekê ragihîne</string>
+    <string name="about_releases_label">Weşan</string>
+    <string name="about_upstream_label">AdAway resmî (jorîn)</string>
+    <string name="about_license_label">Lîsans: GNU General Public License v3.0 an paştir (GPLv3+)</string>
+</resources>

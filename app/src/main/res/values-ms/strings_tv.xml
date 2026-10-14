@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Tambah ke dibenarkan</string>
+    <string name="tv_dialog_add_to_blocked">Tambah ke disekat</string>
+    <string name="tv_dialog_remove_from_allowed">Alih keluar daripada dibenarkan</string>
+    <string name="tv_dialog_remove_from_blocked">Alih keluar daripada disekat</string>
+    <string name="tv_dialog_copy_hostname">Salin nama hos</string>
+    <string name="tv_log_entry_status_description">Status domain</string>
+    <string name="tv_button_theme_light">Mod terang</string>
+    <string name="tv_button_theme_dark">Mod gelap</string>
+    <string name="tv_lists_empty">Belum ada entri dalam senarai ini.</string>
+    <string name="tv_dialog_search">Cari</string>
+</resources>

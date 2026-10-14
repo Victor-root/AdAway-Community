@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">設定</string>
+    <string name="pref_general_category">一般</string>
+    <string name="pref_dark_theme">ダークテーマ</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>ライト</item>
+        <item>ダーク</item>
+        <item>システムのデフォルト</item>
+    </string-array>
+    <string name="pref_update_configuration">自動更新</string>
+    <string name="pref_ad_block_category">広告ブロッキング</string>
+    <string name="pref_root_ad_blocker_configuration">Root based ad blocker</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN based ad blocker</string>
+    <string name="pref_enable_ipv6">IPv6 サポートの有効化</string>
+    <string name="pref_backup_restore">ブロックルールのバックアップ/リストア</string>
+    <string name="pref_backup_restore_title">バックアップ &amp; リストア</string>
+    <string name="pref_backup">バックアップ</string>
+    <string name="pref_backup_summary">ブロックルールを外部ストレージにバックアップ</string>
+    <string name="pref_restore">リストア</string>
+    <string name="pref_restore_summary">バックアップファイルからブロックルールを復元</string>
+    <string name="import_success">外部ストレージからバックアップが正常にインポートされました。</string>
+    <string name="export_success">バックアップは、外部ストレージ上の \'%s\' へ正常にエクスポートされました。</string>
+    <string name="export_failed">バックアップ\'%s\'のエクスポートに失敗しました。</string>
+    <string name="pref_update_title">アップデート</string>
+    <string name="pref_update_enable_notifications">通知がオフされています</string>
+    <string name="pref_update_enable_notifications_summary">アプリケーションの通知は表示されません。タップして有効にする。</string>
+    <string name="pref_update_app_category">アプリケーションの更新</string>
+    <string name="pref_update_check_app_startup">起動時にアップデートを確認する</string>
+    <string name="pref_update_check_app_daily">定期的なアップデートの確認</string>
+    <string name="pref_update_check_now">今すぐ確認</string>
+    <string name="pref_update_install">今すぐ更新</string>
+    <string name="pref_update_hosts_category">hostsの更新</string>
+    <string name="pref_update_check">起動時にアップデートを確認する</string>
+    <string name="pref_update_check_hosts_daily">定期的なアップデートの確認</string>
+    <string name="pref_update_sync_on_update">更新時に同期する</string>
+    <string name="pref_update_sync_unmetered_only">非課金ネットワークでのみ同期</string>
+    <string name="pref_vpn_service_on_boot">起動時に有効にする</string>
+    <string name="pref_vpn_service_monitor">接続を監視する</string>
+    <string name="pref_vpn_service_monitor_description">定期的にネットワークの状態を確認し、切断時にVPNを再起動します</string>
+    <string name="pref_vpn_excluded_apps">対象外のアプリケーション</string>
+    <string name="pref_vpn_excluded_apps_description">VPNを使用しないアプリケーションを設定すると、接続がブロックされなくなります</string>
+    <string name="pref_vpn_exclude_system_apps">システムアプリを除外する</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>除外しない</item>
+        <item>ブラウザを除くすべて</item>
+        <item>すべて</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">ユーザーアプリを除外する</string>
+    <string name="pref_vpn_exclude_user_apps_activity">対象外のアプリケーション</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">すべて選択</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">すべての選択を解除</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Application icon</string>
+    <string name="pref_vpn_reset">VPNをリセット</string>
+    <string name="pref_vpn_reset_description">VPN接続を一から再構築します。VPNが動作しなくなった場合（インターネットに接続できない、またはDNSエラー）に使用してください。</string>
+    <string name="pref_vpn_reset_done">VPN接続を再構築しました。</string>
+    <string name="pref_vpn_reset_not_running">VPNは実行されていません。</string>
+    <string name="pref_vpn_diagnostic_log">診断ログ</string>
+    <string name="pref_vpn_diagnostic_log_description">最近のエラーやVPNイベントを表示、コピー、または共有します。問題を報告する際に役立ちます。</string>
+    <string name="pref_vpn_diagnostic_log_empty">まだイベントは記録されていません。</string>
+    <string name="pref_vpn_diagnostic_log_share">診断ログを共有</string>
+    <string name="pref_vpn_diagnostic_log_copy">コピー</string>
+    <string name="pref_vpn_diagnostic_log_copied">診断ログをクリップボードにコピーしました。</string>
+    <string name="pref_vpn_diagnostic_log_clear">診断ログを消去</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">記録されたイベントを削除します。きれいなトレースを取得するため、問題を再現する前に実行してください。</string>
+    <string name="pref_vpn_diagnostic_log_cleared">診断ログを消去しました。</string>
+    <string name="pref_root_open_hosts">hostsファイルを開く</string>
+    <string name="pref_hosts_redirection_summary">ブロックされたホストのリダイレクト先を定義します</string>
+    <string name="pref_redirection_ipv4">IPv4リダイレクト</string>
+    <string name="pref_redirection_ipv6">IPv6リダイレクト</string>
+    <string name="pref_redirection_invalid">無効なリダイレクト</string>
+    <string name="pref_webserver_summary">ローカルWebサーバーがブロックされたホスト名のリクエストに答えます。接続がブロックされた影響によるアプリのフリーズを防ぐことができます。</string>
+    <string name="pref_webserver_enabled">Webサーバーを有効にする</string>
+    <string name="pref_webserver_test">Webサーバーのテスト</string>
+    <string name="pref_webserver_certificate">自己署名証明書のインストール</string>
+    <string name="pref_webserver_state_not_running">実行していません</string>
+    <string name="pref_webserver_state_checking">確認中…</string>
+    <string name="pref_webserver_state_running_not_installed">実行中ですが証明書がインストールされていません</string>
+    <string name="pref_webserver_state_running_and_installed">実行中で証明書がインストールされています</string>
+    <string name="pref_webserver_certificate_dialog_title">証明書の手動インストール</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R)以降、アプリから認証局（CA）の自動インストールができなくなりました。\n\n\"セキュリティ\"設定の\"暗号化と認証情報\"から\"証明書のインストール\"を選択してください。そこから\"CA証明書\"を選択し、エクスポートした証明書ファイルを選択してください。</string>
+    <string name="pref_webserver_certificate_dialog_action">\"セキュリティ\"設定を開く</string>
+    <string name="pref_webserver_icon">空白になる広告スペースをアプリアイコンで置き換える</string>
+</resources>

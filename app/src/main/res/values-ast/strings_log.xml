@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort_alphabetical">Orde alfabéticu</string>
+    <string name="log_start_recording_button">Aniciar la grabación</string>
+    <string name="log_start_recording_vpn_inactive">Aniciar la grabación (VPN inactiva)</string>
+    <string name="log_stop_recording">Parar la grabación</string>
+</resources>

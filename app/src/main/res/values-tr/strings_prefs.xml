@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Tercihler</string>
+    <string name="pref_general_category">Genel</string>
+    <string name="pref_dark_theme">Karanlık temayı etkinleştir</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Açık</item>
+        <item>Koyu</item>
+        <item>Sistem varsayılanı</item>
+    </string-array>
+    <string name="pref_update_configuration">Otomatik güncellemeler</string>
+    <string name="pref_ad_block_category">Reklam engelle</string>
+    <string name="pref_root_ad_blocker_configuration">Kök erişimi tabanlı reklam engelleyici</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN tabanlı reklam engelleyici</string>
+    <string name="pref_enable_ipv6">IPv6 etkinleştir</string>
+    <string name="pref_backup_restore">Engelleme kurallarını yedekle/geri yükle</string>
+    <string name="pref_backup_restore_title">Yedekle ve geri yükle</string>
+    <string name="pref_backup">Yedekle</string>
+    <string name="pref_backup_summary">Engelleme kurallarını harici depolamaya yedekle</string>
+    <string name="pref_restore">Geri yükle</string>
+    <string name="pref_restore_summary">Engelleme kurallarını yedekleme dosyasından geri yükle</string>
+    <string name="import_success">Yedekleme, harici depolama alanınızdan başarıyla içe aktarıldı.</string>
+    <string name="export_success">Yedekleme, harici depolama alanınızdaki \'%s\' dosyasına başarıyla aktarıldı.</string>
+    <string name="export_failed">Yedekleme dosyası dışa aktarılamadı \'%s\'.</string>
+    <string name="pref_update_title">Güncellemeler</string>
+    <string name="pref_update_enable_notifications">Bildirimler devre dışı bırakıldı</string>
+    <string name="pref_update_enable_notifications_summary">Uygulama bildirimleri gösterilmeyecek. Etkinleştirmek için dokunun.</string>
+    <string name="pref_update_app_category">Uygulama güncellemeleri</string>
+    <string name="pref_update_check_app_startup">Başlangıçta güncellemeleri kontrol et</string>
+    <string name="pref_update_check_app_daily">Güncellemeleri günlük denetle</string>
+    <string name="pref_update_check_now">Şimdi denetle</string>
+    <string name="pref_update_install">Şimdi güncelle</string>
+    <string name="pref_update_hosts_category">Hosts güncellemeleri</string>
+    <string name="pref_update_check">Başlangıçta güncellemeleri kontrol et</string>
+    <string name="pref_update_check_hosts_daily">Güncellemeleri günlük denetle</string>
+    <string name="pref_update_sync_on_update">Güncellemede eşitle</string>
+    <string name="pref_update_sync_unmetered_only">Yalnızca ölçülmemiş ağda eşitle</string>
+    <string name="pref_vpn_service_on_boot">Başlangıçta etkinleştir</string>
+    <string name="pref_vpn_service_monitor">Ekran bağlantısı</string>
+    <string name="pref_vpn_service_monitor_description">VPN bağlantısı bulunmadığı durumlarda düzenli olarak VPN bağlantısının tekrar sağlanabilmesi için bağlantıyı kontrol et</string>
+    <string name="pref_vpn_excluded_apps">Hariç tutulan uygulamalar</string>
+    <string name="pref_vpn_excluded_apps_description">Hangi uygulamaların VPN\'yi kullanmaması gerektiğini yapılandırın, böylece bağlantı engellenmez.</string>
+    <string name="pref_vpn_exclude_system_apps">Sistem uygulamalarını hariç tut</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Yok</item>
+        <item>Tarayıcılar hariç tümü</item>
+        <item>Tümü</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Kullanıcı uygulamalarını hariç tut</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Hariç tutulan uygulamalar</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Tümünü seç</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Tüm seçimleri kaldır</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Uygulama simgesi</string>
+    <string name="pref_vpn_reset">VPN\'yi sıfırla</string>
+    <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yeniden oluşturun. VPN çalışmayı durdurursa (internet erişimi yok veya DNS hataları) bunu kullanın.</string>
+    <string name="pref_vpn_reset_done">VPN bağlantısı yeniden oluşturuldu.</string>
+    <string name="pref_vpn_reset_not_running">VPN çalışmıyor.</string>
+    <string name="pref_vpn_diagnostic_log">Tanılama günlüğü</string>
+    <string name="pref_vpn_diagnostic_log_description">Son hataları ve VPN olaylarını görüntüleyin, kopyalayın veya paylaşın. Bir sorunu bildirirken yararlıdır.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Henüz hiçbir olay kaydedilmedi.</string>
+    <string name="pref_vpn_diagnostic_log_share">Tanılama günlüğünü paylaş</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopyala</string>
+    <string name="pref_vpn_diagnostic_log_copied">Tanılama günlüğü panoya kopyalandı.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Tanılama günlüğünü temizle</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Kaydedilen olayları silin. Temiz bir iz yakalamak için bir sorunu yeniden oluşturmadan önce bunu yapın.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Tanılama günlüğü temizlendi.</string>
+    <string name="pref_root_open_hosts">Host dosyasını aç</string>
+    <string name="pref_hosts_redirection_summary">Engellenen hosts\'u nereye yönlendireceğinizi tanımlayın</string>
+    <string name="pref_redirection_ipv4">IPv4 yönlendirmesi</string>
+    <string name="pref_redirection_ipv6">IPv6 yönlendirmesi</string>
+    <string name="pref_redirection_invalid">Geçersiz yönlendirme</string>
+    <string name="pref_webserver_summary">Yerel web sunucusu, engellenen ana bilgisayar adı isteklerine yanıt vermek için yerel IP adreslerini dinler. Engellenen bağlantıda uygulamanın donmasına yardımcı olabilir.</string>
+    <string name="pref_webserver_enabled">Web sunucusunu etkinleştir</string>
+    <string name="pref_webserver_test">Web sunucusunu test et</string>
+    <string name="pref_webserver_certificate">Kendinden imzalı sertifika kur</string>
+    <string name="pref_webserver_state_not_running">Çalışmıyor</string>
+    <string name="pref_webserver_state_checking">Kontrol ediliyor…</string>
+    <string name="pref_webserver_state_running_not_installed">Çalışıyor ancak sertifika kurulu değil</string>
+    <string name="pref_webserver_state_running_and_installed">Çalışıyor ve sertifika kurulu</string>
+    <string name="pref_webserver_certificate_dialog_title">Manuel sertifika kurulumu</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R)\'den başlatılan uygulama artık otomatik olarak doğrulama sertifikası (CA) yükleyemez. Bunun için: \"Güvenlik\" ayarlarına gidin. \"Şifreleme &amp; kimlikleri\"ni seçin daha sonra \"Bir sertifika yükle\"yi seçin. Oradan da, \"CA sertifikası\"nı seçin ve yeni dışa aktarılmış sertifika dosyanızı seçin.</string>
+    <string name="pref_webserver_certificate_dialog_action">\"Güvenlik\" ayarlarını açın</string>
+    <string name="pref_webserver_icon">Boş reklam alanını uygulama simgesiyle değiştir</string>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Настройки</string>
+    <string name="pref_general_category">Главные</string>
+    <string name="pref_dark_theme">Выбрать тему</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Светлая</item>
+        <item>Темная</item>
+        <item>На основе системной</item>
+    </string-array>
+    <string name="pref_update_configuration">Автоматические обновления</string>
+    <string name="pref_ad_block_category">Блокировка рекламы</string>
+    <string name="pref_root_ad_blocker_configuration">Блокировщик рекламы на основе root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Блокировщик рекламы на основе VPN</string>
+    <string name="pref_enable_ipv6">Включить поддержку IPv6</string>
+    <string name="pref_backup_restore">Резервная копия / восстановление правил блокировки</string>
+    <string name="pref_backup_restore_title">Резервная копия и восстановление</string>
+    <string name="pref_backup">Резервная копия</string>
+    <string name="pref_backup_summary">Сохранить резервную копию ваших правил блокировки на внешний носитель</string>
+    <string name="pref_restore">Восстановление</string>
+    <string name="pref_restore_summary">Восстановить ваши правила блокировки из файла резервной копии</string>
+    <string name="import_success">Резервная копия успешно импортирована из вашего внешнего хранилища.</string>
+    <string name="export_success">Резервная копия успешно экспортирована в файл \'%s\' в вашем внешнем хранилище.</string>
+    <string name="export_failed">Не удалось экспортировать файл резервной копии \'%s\'.</string>
+    <string name="pref_update_title">Обновления</string>
+    <string name="pref_update_enable_notifications">Уведомления отключены</string>
+    <string name="pref_update_enable_notifications_summary">Уведомления приложений не будут отображаться. Нажмите, чтобы включить их.</string>
+    <string name="pref_update_app_category">Обновления приложения</string>
+    <string name="pref_update_check_app_startup">Проверять обновления при запуске</string>
+    <string name="pref_update_check_app_daily">Периодическая проверка обновлений</string>
+    <string name="pref_update_check_now">Проверить сейчас</string>
+    <string name="pref_update_install">Обновить сейчас</string>
+    <string name="pref_update_hosts_category">Обновления хостов</string>
+    <string name="pref_update_check">Проверять обновления при запуске</string>
+    <string name="pref_update_check_hosts_daily">Периодическая проверка обновлений</string>
+    <string name="pref_update_sync_on_update">Синхронизация при обновлении</string>
+    <string name="pref_update_sync_unmetered_only">Синхронизация только в нетарифицируемой сети</string>
+    <string name="pref_vpn_service_on_boot">Включить при запуске</string>
+    <string name="pref_vpn_service_monitor">Проверка соединения</string>
+    <string name="pref_vpn_service_monitor_description">Периодически проверяйте состояние сети, чтобы перезапустить VPN при отключении.</string>
+    <string name="pref_vpn_excluded_apps">Исключённые приложения</string>
+    <string name="pref_vpn_excluded_apps_description">Настройте, какие приложения не должны использовать VPN, чтобы никакие соединения не блокировались.</string>
+    <string name="pref_vpn_exclude_system_apps">Исключить системные приложения</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Никакие</item>
+        <item>Все, кроме браузеров</item>
+        <item>Все</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Исключить пользовательские приложения</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Исключённые приложения</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Выбрать все</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Отменить выбрать все</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Значок приложения</string>
+    <string name="pref_vpn_reset">Сбросить VPN</string>
+    <string name="pref_vpn_reset_description">Полностью пересоздать VPN-подключение. Используйте, если VPN перестал работать (нет доступа к интернету или ошибки DNS).</string>
+    <string name="pref_vpn_reset_done">VPN-подключение пересоздано.</string>
+    <string name="pref_vpn_reset_not_running">VPN не запущен.</string>
+    <string name="pref_vpn_diagnostic_log">Журнал диагностики</string>
+    <string name="pref_vpn_diagnostic_log_description">Просмотр, копирование или отправка последних ошибок и событий VPN. Полезно при сообщении о проблеме.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Пока не записано ни одного события.</string>
+    <string name="pref_vpn_diagnostic_log_share">Поделиться журналом диагностики</string>
+    <string name="pref_vpn_diagnostic_log_copy">Копировать</string>
+    <string name="pref_vpn_diagnostic_log_copied">Журнал диагностики скопирован в буфер обмена.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Очистить журнал диагностики</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Удалить записанные события. Сделайте это перед воспроизведением проблемы, чтобы получить чистый лог.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Журнал диагностики очищен.</string>
+    <string name="pref_root_open_hosts">Открыть файл hosts</string>
+    <string name="pref_hosts_redirection_summary">Определить куда переадресовывать заблокированные хосты</string>
+    <string name="pref_redirection_ipv4">Перенаправление IPv4</string>
+    <string name="pref_redirection_ipv6">Перенаправление IPv6</string>
+    <string name="pref_redirection_invalid">Неверное перенаправление</string>
+    <string name="pref_webserver_summary">Локальный веб-сервер прослушивает локальные IP адреса и отвечает на запросы к заблокированным хостам.  Это поможет избегать зависаний при блокировке подключений.</string>
+    <string name="pref_webserver_enabled">Включить веб-сервер</string>
+    <string name="pref_webserver_test">Проверить веб-сервер</string>
+    <string name="pref_webserver_certificate">Установить самоподписанный сертификат</string>
+    <string name="pref_webserver_state_not_running">Не запущен</string>
+    <string name="pref_webserver_state_checking">Проверка…</string>
+    <string name="pref_webserver_state_running_not_installed">Запущен, но сертификат не установлен</string>
+    <string name="pref_webserver_state_running_and_installed">Запущен и сертификат установлен</string>
+    <string name="pref_webserver_certificate_dialog_title">Установка сертификата вручную</string>
+    <string name="pref_webserver_certificate_dialog_content">Начиная с Android 11 (R), приложение больше не может автоматически устанавливать центр сертификации (CA).\n\nПерейдите в настройки \"Безопасность\", \"Шифрование личных данных\", затем \"Установить сертификат\". Оттуда выберите \"Сертификат CA\" и выберите только что экспортированный файл сертификата.</string>
+    <string name="pref_webserver_certificate_dialog_action">Откройте настройки безопасности</string>
+    <string name="pref_webserver_icon">Заменить пустое место от рекламы логотипом приложения</string>
+</resources>

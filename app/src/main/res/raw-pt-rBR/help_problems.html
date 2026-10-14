@@ -1,0 +1,35 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Falha na cópia do arquivo hosts no Android 9 ou superior</h2>
+<p>As versões mais recentes do Android usam a partição <code>/system</code> somente leitura. <br>
+Se você estiver usando o Magisk como solução raiz, ative o módulo hosts sem sistema e reinicie.</p>
+
+<h2>Espaço insuficiente na partição</h2>
+<p>Tente alterar o arquivo de hosts de destino em preferências para <code>/data/data/hosts</code> (ou <code>/data/hosts</code>) e aplique AdAway novamente.</p>
+
+<h2>Não funciona no Android 4.4+</h2>
+<p>Tente alterar o arquivo de hosts de destino nas preferências de <code>/data/data/hosts</code> para <code>/data/hosts</code> ou <code>/system/etc/hosts</code> e aplique AdAway novamente.</p>
+
+<h2>Não bloqueia anúncios no app XYZ!</h2>
+<p>Alguns hostnames podem estar ausentes nos arquivos de hosts fornecidos das <cite>Fontes de Hosts</cite> ou o aplicativo agrupou as imagens para fornecer anúncios sem acessar a Internet. <br><br>
+Você pode registrar solicitações de DNS (Menu-&gt;Registrar solicitações de DNS) a partir do AdAway para descobrir quais nomes de host adicionais devem ser bloqueados.
+<br><br>Adicione os nomes de host suspeitos à sua própria Lista Negra pressionando por muito tempo as entradas no Registro e informe esses nomes de host quando os tiver verificado na <a href="http://forum.hosts-file.net/viewforum.php?f=9">Caixa de Entrada dos Hosts</a> do Fórum em <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+
+<h2>Anúncios no Cache</h2>
+<p>Algumas vezes os apps armazenam anúncios no cache após baixados. Isto gera resíduos de anúncios em alguns apps. Você pode tentar excluir o cache destes apps na lista de Apps do Android para contornar este problema.</p>
+
+<h2>App XYZ não está funcionando mais!</h2>
+<p>Alguns aplicativos precisam se comunicar com um nome de host bloqueado pela AdAway ou se recusar a funcionar quando os nomes de host que devem veicular anúncios não podem ser acessados. Consulte <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> para obter uma lista de aplicativos conhecidos que apresentam problemas. Caso contrário, descubra quais nomes de host são necessários e adicione-os à sua <cite>Lista Branca</cite> em <cite>Suas listas</cite> e informe-os ao <a href="https://github.com/Victor-root/AdAway-Community/issues">rastreador de erros da AdAway</a>.</p>
+
+<h2>O botão Voltar nos navegadores web não está funcionando</h2>
+<p>Você pode ativar o servidor web local do AdAway nas preferências como uma solução alternativa.</p>
+
+<h2>O botão Voltar nos navegadores web não está funcionando</h2>
+<p>Você pode ativar o servidor web local do AdAway nas preferências como uma solução alternativa.</p>
+
+</body>
+</html>

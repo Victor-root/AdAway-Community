@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Tənzimləmələr</string>
+    <string name="pref_update_title">Yeniləmələr</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">VPN-i sıfırla</string>
+    <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yenidən qurun. VPN işləməyi dayandırarsa (internet girişi yoxdursa və ya DNS xətaları varsa) bundan istifadə edin.</string>
+    <string name="pref_vpn_reset_done">VPN bağlantısı yenidən quruldu.</string>
+    <string name="pref_vpn_reset_not_running">VPN işləmir.</string>
+    <string name="pref_vpn_diagnostic_log">Diaqnostika jurnalı</string>
+    <string name="pref_vpn_diagnostic_log_description">Son xətaları və VPN hadisələrini baxın, kopyalayın və ya paylaşın. Problem bildirərkən faydalıdır.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Hələ heç bir hadisə qeydə alınmayıb.</string>
+    <string name="pref_vpn_diagnostic_log_share">Diaqnostika jurnalını paylaş</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopyala</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diaqnostika jurnalı buferə kopyalandı.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Diaqnostika jurnalını təmizlə</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Qeydə alınmış hadisələri silin. Təmiz iz əldə etmək üçün problemi təkrar yaratmadan əvvəl bunu edin.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diaqnostika jurnalı təmizləndi.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_webserver_enabled">Web serveri aç</string>
+</resources>

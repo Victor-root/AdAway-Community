@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">Ev sêrbaza kurt dê astengkirina reklaman li ser vê amûrê veke.</string>
+    <string name="tv_welcome_start_button">Dest pê bike</string>
+    <string name="tv_welcome_method_header">Rêbaza asteng kirinê hilbijêre</string>
+    <string name="tv_welcome_method_root_button">Root bikar bîne</string>
+    <string name="tv_welcome_method_root_body">Bileztir û ji bo bataryayê baştir e. Amûrek bi root divê.</string>
+    <string name="tv_welcome_method_vpn_button">VPN bikar bîne</string>
+    <string name="tv_welcome_method_vpn_body">Bêyî root dixebite, li gel her amûrek Android TV lihevhatî ye.</string>
+    <string name="tv_welcome_activate_header">Astengkirina reklaman veke</string>
+    <string name="tv_welcome_activate_body">Ev VPNek herêmî ye: reklaman li ser vê amûrê fîltre dike, bêyî ku trafîka te bişîne rajekerek derveyî.</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">Domainek rendezése</string>
+    <string name="log_clear">Napló törlése</string>
+    <string name="log_sort_alphabetical">Rendezés ABC sorrendben</string>
+    <string name="log_sort_top_level_domain">Rendezés TLD szerint</string>
+    <string name="log_block">Elem hozzáadása feketelistához</string>
+    <string name="log_allow">Elem hozzáadása fehérlistához</string>
+    <string name="log_redirect">Elem hozzáadása az átirányítási listához</string>
+    <string name="log_redirect_dialog_title">Domain átirányítása</string>
+    <string name="log_start_recording_button">Felvétel indítása</string>
+    <string name="log_start_recording_vpn_inactive">Felvétel indítása (VPN nem aktív)</string>
+    <string name="log_stop_recording">Felvétel leállítása</string>
+</resources>

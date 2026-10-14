@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Hobespenak</string>
+    <string name="pref_backup_restore_title">Babes-kopia eta berreskuratzea</string>
+    <string name="pref_backup">Babes-kopia</string>
+    <string name="pref_backup_summary">Egin blokeo-arauen babes-kopia kanpo biltegiratzean</string>
+    <string name="pref_restore">Berreskuratu</string>
+    <string name="pref_restore_summary">Berreskuratu zure blokeo-arauak babes-kopia fitxategitik</string>
+    <string name="import_success"> Kanpoko biltegitik segurtasun-kopia ondo inportatuta.</string>
+    <string name="pref_update_title">Eguneraketak</string>
+    <string name="pref_update_enable_notifications">Jakinarazpenak ezgaituta daude</string>
+    <string name="pref_update_enable_notifications_summary">Ez dira aplikazioaren jakinarazpenak erakutsiko. Sakatu gaitzeko.</string>
+    <string name="pref_update_app_category">Aplikazioaren eguneraketak</string>
+    <string name="pref_update_check_app_startup">Egiaztatu eguneraketak abiatzean</string>
+    <string name="pref_update_check_app_daily">Egiaztatu eguneraketak egunero</string>
+    <string name="pref_update_check_now">Egiaztatu orain</string>
+    <string name="pref_update_install">Eguneratu orain</string>
+    <string name="pref_update_hosts_category">Ostalarien eguneraketak</string>
+    <string name="pref_update_check">Egiaztatu eguneraketak abiatzean</string>
+    <string name="pref_update_check_hosts_daily">Egiaztatu eguneraketak egunero</string>
+    <string name="pref_update_sync_on_update">Sinkronizatu eguneratzean</string>
+    <string name="pref_update_sync_unmetered_only">Sinkronizatu nehurtu gabeko sareetan soilik</string>
+    <string name="pref_vpn_service_on_boot">Gaitu sistemaren abioan</string>
+    <string name="pref_vpn_service_monitor">Egin konexioaren segimendua</string>
+    <string name="pref_vpn_service_monitor_description">Egiaztatu noizean behin sarearen egoera VPNa deskonektatzen denean berrabiarazteko.</string>
+    <string name="pref_vpn_excluded_apps">Alde batera utzitako aplikazioak</string>
+    <string name="pref_vpn_excluded_apps_description">Ezarri zein aplikaziok ez lukeen VPNa erabili beharko konexioa ez blokeatzeko.</string>
+    <string name="pref_vpn_exclude_system_apps">Alde batera utzitako sistemaren aplikazioak</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Bat ere ez</item>
+        <item>Guztia nabigatzaileak izan ezik</item>
+        <item>Guztia</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Utzi alde batera erabiltzailearen aplikazioak</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Alde batera utzitako aplikazioak</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Hautatu guztia</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Utzi guztia hautatzeari</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Aplikazioaren ikonoa</string>
+    <string name="pref_vpn_reset">Berrezarri VPNa</string>
+    <string name="pref_vpn_reset_description">Berreraiki VPN konexioa hutsetik. Erabili hau VPNak funtzionatzeari uzten badio (internet sarbiderik ez edo DNS erroreak).</string>
+    <string name="pref_vpn_reset_done">VPN konexioa berreraiki da.</string>
+    <string name="pref_vpn_reset_not_running">VPNa ez dago martxan.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostiko-erregistroa</string>
+    <string name="pref_vpn_diagnostic_log_description">Ikusi, kopiatu edo partekatu azken erroreak eta VPN gertaerak. Erabilgarria arazo baten berri ematean.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Ez da gertaerarik erregistratu oraindik.</string>
+    <string name="pref_vpn_diagnostic_log_share">Partekatu diagnostiko-erregistroa</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopiatu</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostiko-erregistroa arbelean kopiatu da.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Garbitu diagnostiko-erregistroa</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Ezabatu erregistratutako gertaerak. Egin hau arazo bat erreproduzitu aurretik, aztarna garbi bat lortzeko.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostiko-erregistroa garbitu da.</string>
+    <string name="pref_root_open_hosts">Ireki hostalari agiria</string>
+    <string name="pref_redirection_ipv4">IPv4 birbideratzea</string>
+    <string name="pref_redirection_ipv6">IPv6 birbideratzea</string>
+    <string name="pref_webserver_enabled">Gaitu web-zerbitzaria</string>
+</resources>

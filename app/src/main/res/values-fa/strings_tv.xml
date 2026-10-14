@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">افزودن به فهرست مجاز</string>
+    <string name="tv_dialog_add_to_blocked">افزودن به فهرست مسدود</string>
+    <string name="tv_dialog_remove_from_allowed">حذف از فهرست مجاز</string>
+    <string name="tv_dialog_remove_from_blocked">حذف از فهرست مسدود</string>
+    <string name="tv_dialog_copy_hostname">کپی نام میزبان</string>
+    <string name="tv_log_entry_status_description">وضعیت دامنه</string>
+    <string name="tv_button_theme_light">حالت روشن</string>
+    <string name="tv_button_theme_dark">حالت تیره</string>
+    <string name="tv_lists_empty">هنوز هیچ ورودی‌ای در این فهرست نیست.</string>
+    <string name="tv_dialog_search">جستجو</string>
+</resources>

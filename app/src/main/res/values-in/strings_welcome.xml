@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_first_step">Langkah pertama</string>
+    <string name="welcome_second_step">Langkah Kedua</string>
+    <string name="welcome_method_header">Selamat datang di AdAway!</string>
+    <string name="welcome_method_summary">AdAway menyediakan dua metode pemblokiran iklan.
+Pilih salah satu yang kamu inginkan:</string>
+    <string name="welcome_root_method_title">Pemblokiran iklan menggunakan root</string>
+    <string name="welcome_root_method_text1">Lebih cepat</string>
+    <string name="welcome_root_method_text2">Hemat baterai</string>
+    <string name="welcome_root_method_text3">Membutuhkan mode root</string>
+    <string name="welcome_vpn_method_title">Pemblokiran iklan menggunakan VPN</string>
+    <string name="welcome_vpn_method_text1">Lebih lambat</string>
+    <string name="welcome_vpn_method_text2">Berjalan di latar belakang</string>
+    <string name="welcome_vpn_method_text3">Kompatibilitas</string>
+    <string name="welcome_root_missing_title">Dibutuhkan perangkat Android yang sudah di-root</string>
+    <string name="welcome_root_missile_description">Binary su tidak ditemukan atau anda tidak memberikan izin root untuk AdAway.\n\nIni dapat terjadi ketika perangkat anda tidak memiliki akses root. Anda dapat menemukan informasi mengenai cara root perangkat anda di wiki.lineageos.org atau webiste Android lainnya.</string>
+    <string name="welcome_method_pro_logo">Kelebihan</string>
+    <string name="welcome_method_con_logo">Kekurangan</string>
+    <string name="welcome_sync_header">Sedang menyinkronkan</string>
+    <string name="welcome_synced_header">Sudah tersinkron!</string>
+    <string name="welcome_sync_summary">AdAway mengunduh jaringan iklan untuk memblokir dari sumber-sumber online. Anda dapat menyesuaikannya nanti di pengaturan.</string>
+    <string name="welcome_sync_retry_logo">Mengulang sinkorinisasi</string>
+    <string name="welcome_sync_error">Gagal saat sinkronisasi: %1$s Coba lagi?</string>
+    <string name="welcome_sync_notifications">dapat mengirimkan notifikasi tentang blok iklan dan pengaturan, juga  notifikasi update aplikasi yang tersedia (beberapa kali per tahun). Aktifkan jika ingin tetap up-to-date</string>
+    <string name="welcome_sync_leave_early_title">Sinkronisasi belum selesai</string>
+    <string name="welcome_sync_leave_early_message">Pengunduhan daftar blokir belum selesai. Anda bisa melanjutkan sekarang dan proses akan terus berjalan di latar belakang, atau menunggu di sini sampai selesai.</string>
+    <string name="welcome_sync_leave_early_wait">Tunggu</string>
+    <string name="welcome_sync_leave_early_continue">Lanjutkan saja</string>
+    <string name="welcome_back_button">Kembali</string>
+    <string name="welcome_next_button">Selanjutnya</string>
+    <string name="welcome_finish_button">Selesai</string>
+    <string name="tv_welcome_intro_subtitle">Wizard singkat ini akan mengaktifkan pemblokiran iklan di perangkat ini.</string>
+    <string name="tv_welcome_start_button">Mulai</string>
+    <string name="tv_welcome_method_header">Pilih metode pemblokiran Anda</string>
+    <string name="tv_welcome_method_root_button">Gunakan root</string>
+    <string name="tv_welcome_method_root_body">Lebih cepat dan hemat baterai. Memerlukan perangkat yang di-root.</string>
+    <string name="tv_welcome_method_vpn_button">Gunakan VPN</string>
+    <string name="tv_welcome_method_vpn_body">Berfungsi tanpa root, kompatibel dengan perangkat Android TV apa pun.</string>
+    <string name="tv_welcome_activate_header">Aktifkan pemblokiran iklan</string>
+    <string name="tv_welcome_activate_body">Ini adalah VPN lokal: memfilter iklan di perangkat ini, tanpa mengarahkan lalu lintas Anda melalui server eksternal.</string>
+</resources>

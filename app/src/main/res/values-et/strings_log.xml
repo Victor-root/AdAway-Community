@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">Sorteeri domeene</string>
+    <string name="log_clear">Tühjenda logi</string>
+    <string name="log_sort_alphabetical">Tähestikuline järjekord</string>
+    <string name="log_sort_top_level_domain">TLD järjekord</string>
+    <string name="log_block">Lisa üksus musta loendisse</string>
+    <string name="log_allow">Lisa üksus valgesse loendisse</string>
+    <string name="log_redirect">Lisa üksus suunamisloendisse</string>
+    <string name="log_redirect_dialog_title">Suuna domeen</string>
+    <string name="log_start_recording_button">Alusta salvestamist</string>
+    <string name="log_start_recording_vpn_inactive">Alusta salvestamist (VPN pole aktiivne)</string>
+    <string name="log_stop_recording">Peata salvestamine</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_toggle_recording_description">切換記錄的記錄功能</string>
+    <string name="log_start_recording">按下「記錄」以開始記錄請求，瀏覽網頁或使用應用程式，然後返回或滑動以更新紀錄。</string>
+    <string name="log_blocked_requests_ignored">\n\n被阻擋的請求將不會被記錄。如果您也想記錄它們，請先停用廣告阻擋功能。</string>
+    <string name="log_sort">排序網域</string>
+    <string name="log_clear">清除記錄</string>
+    <string name="log_sort_alphabetical">按字母順序排序</string>
+    <string name="log_sort_top_level_domain">按頂級網域排序</string>
+    <string name="log_block">加入項目至黑名單</string>
+    <string name="log_allow">加入項目至白名單</string>
+    <string name="log_redirect">加入項目至重新導向清單</string>
+    <string name="log_redirect_dialog_title">重新導向網域</string>
+    <string name="log_start_recording_button">開始記錄</string>
+    <string name="log_start_recording_vpn_inactive">開始記錄（VPN 未啟用）</string>
+    <string name="log_stop_recording">停止記錄</string>
+</resources>

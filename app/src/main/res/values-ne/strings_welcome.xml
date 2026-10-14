@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">यो छोटो विजार्डले यस उपकरणमा विज्ञापन ब्लक गर्ने सुविधा सक्रिय गर्नेछ।</string>
+    <string name="tv_welcome_start_button">सुरु गर्नुहोस्</string>
+    <string name="tv_welcome_method_header">आफ्नो ब्लकिङ विधि छान्नुहोस्</string>
+    <string name="tv_welcome_method_root_button">रूट प्रयोग गर्नुहोस्</string>
+    <string name="tv_welcome_method_root_body">छिटो र ब्याट्री बचत गर्ने। रूट गरिएको उपकरण आवश्यक छ।</string>
+    <string name="tv_welcome_method_vpn_button">VPN प्रयोग गर्नुहोस्</string>
+    <string name="tv_welcome_method_vpn_body">रूट बिना काम गर्छ, कुनै पनि Android TV उपकरणसँग मिल्दोजुल्दो।</string>
+    <string name="tv_welcome_activate_header">विज्ञापन ब्लकिङ सक्रिय गर्नुहोस्</string>
+    <string name="tv_welcome_activate_body">यो एक स्थानीय VPN हो: यसले तपाईंको ट्राफिकलाई बाहिरी सर्भरमार्फत नपठाई यही उपकरणमा विज्ञापनहरू फिल्टर गर्छ।</string>
+</resources>

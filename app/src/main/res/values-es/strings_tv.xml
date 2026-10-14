@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Añadir a permitidos</string>
+    <string name="tv_dialog_add_to_blocked">Añadir a bloqueados</string>
+    <string name="tv_dialog_remove_from_allowed">Quitar de permitidos</string>
+    <string name="tv_dialog_remove_from_blocked">Quitar de bloqueados</string>
+    <string name="tv_dialog_copy_hostname">Copiar el nombre de host</string>
+    <string name="tv_log_entry_status_description">Estado del dominio</string>
+    <string name="tv_button_theme_light">Modo claro</string>
+    <string name="tv_button_theme_dark">Modo oscuro</string>
+    <string name="tv_lists_empty">Todavía no hay entradas en esta lista.</string>
+    <string name="tv_dialog_search">Buscar</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">Buksan ang mga setting ng VPN</string>
+    <string name="vpn_settings_unavailable">Hindi available ang mga setting ng VPN sa device na ito.</string>
+    <string name="disable">I-disable</string>
+    <string name="enable">I-enable</string>
+    <string name="home_blocked_description">Mga ad at tracker</string>
+    <string name="home_allowed_description">Mga eksepsiyon</string>
+    <string name="home_redirected_description">Mga custom na panuntunan</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">I-clear</string>
+    <string name="sources_title">Hosts sources</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">I-disable</string>
+    <string name="notification_vpn_enable">I-enable</string>
+    <string name="home_blocking_enabled">Pag-block ng ad: naka-enable</string>
+    <string name="home_blocking_disabled">Pag-block ng ad: naka-disable</string>
+    <string name="home_always_on_active">Aktibo ang Always-on VPN</string>
+    <string name="vpn_persistence_title">Pananatili ng VPN</string>
+    <string name="vpn_persistence_summary">Panatilihing tumatakbo ang pag-block ng ad sa background</string>
+    <string name="vpn_persistence_enabled">Naka-enable ang Always-on VPN para sa AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">Hindi nakatakda ang Always-on VPN. Hinahawakan ito ng built-in na pananatili ng AdAway.</string>
+    <string name="vpn_persistence_message">Kaya na mismo ng AdAway ang mga reboot, pagpatay dahil sa mababang memory, at mga pag-crash, kaya sa karamihan ng mga kaso ay hindi na kailangan ng karagdagang setup.\n\nKung biglang huminto ang VPN, itakda ang AdAway bilang Always-on VPN ng sistema ng Android para sa pinakamatibay na garantiya.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">Nakatago ang mga setting ng VPN sa Android TV na ito. Gamitin ang mga ipinapakitang ADB command.</string>
+    <string name="vpn_persistence_dismiss">Nakuha ko</string>
+    <string name="home_tile_log">Log ng DNS</string>
+    <string name="home_log_subtitle">Tingnan kung ano ang naka-block nang real time</string>
+    <string name="home_tile_help">Tulong</string>
+    <string name="home_help_subtitle">Mga gabay at pag-troubleshoot</string>
+    <string name="home_preferences_subtitle">I-configure ang AdAway</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="help_tab_about">Tungkol sa</string>
+    <string name="about_version">Bersyon %s</string>
+    <string name="about_description">Hindi opisyal na fork ng AdAway na pinananatili ng komunidad.</string>
+    <string name="about_source_label">Source code (GitHub)</string>
+    <string name="about_issues_label">Mag-ulat ng isyu</string>
+    <string name="about_releases_label">Mga release</string>
+    <string name="about_upstream_label">Opisyal na AdAway upstream</string>
+    <string name="about_license_label">Lisensya: GNU General Public License v3.0 o mas bago (GPLv3+)</string>
+</resources>

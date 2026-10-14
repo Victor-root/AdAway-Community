@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Pengaturan</string>
+    <string name="pref_general_category">Umum</string>
+    <string name="pref_dark_theme">Gunakan tema gelap</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Terang</item>
+        <item>Gelap</item>
+        <item>Bawaan sistem</item>
+    </string-array>
+    <string name="pref_update_configuration">Pembaruan otomatis</string>
+    <string name="pref_ad_block_category">Pemblokir iklan</string>
+    <string name="pref_root_ad_blocker_configuration">Mode root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Mode vpn</string>
+    <string name="pref_enable_ipv6">Aktifkan IPv6</string>
+    <string name="pref_backup_restore">Backup / memulihkan aturan blokir</string>
+    <string name="pref_backup_restore_title">Backup &amp; pulihkan</string>
+    <string name="pref_backup">Backup</string>
+    <string name="pref_backup_summary">Backup aturan blokir ke penyimpanan eksternal </string>
+    <string name="pref_restore">Pulihkan</string>
+    <string name="pref_restore_summary">Pulihkan aturan blookir dari berkas backup</string>
+    <string name="import_success">Cadangan sukses diimpor dari penyimpanan eksternal anda</string>
+    <string name="export_success">File backup \'%s\' berhasil di export ke penyimpanan eksternal</string>
+    <string name="export_failed">Gagal untuk mengeksport file backup \'%s\'.</string>
+    <string name="pref_update_title">Pembaruan</string>
+    <string name="pref_update_enable_notifications">Notifikasi dinonaktifkan</string>
+    <string name="pref_update_enable_notifications_summary">Notifikasi aplikasi tidak dapat ditampilkan, Tap untuk mengaktifkan.</string>
+    <string name="pref_update_app_category">Update aplikasi</string>
+    <string name="pref_update_check_app_startup">Periksa update tiap mulai</string>
+    <string name="pref_update_check_app_daily">Periksa pembaruan setiap hari</string>
+    <string name="pref_update_check_now">Periksa sekarang</string>
+    <string name="pref_update_install">Perbarui sekarang</string>
+    <string name="pref_update_hosts_category">Update hosts</string>
+    <string name="pref_update_check">Periksa update tiap mulai</string>
+    <string name="pref_update_check_hosts_daily">Periksa pembaruan setiap hari</string>
+    <string name="pref_update_sync_on_update">Sinkronisasi saat update</string>
+    <string name="pref_update_sync_unmetered_only">Hanya singkronisasi pada koneksi tak dibatasi</string>
+    <string name="pref_vpn_service_on_boot">Mengizinkan saat mulai</string>
+    <string name="pref_vpn_service_monitor">Memonitor konneksi</string>
+    <string name="pref_vpn_service_monitor_description">Cek keadaan koneksi berkala untuk restart koneksi VPN</string>
+    <string name="pref_vpn_excluded_apps">Aplikasi yang dikecualikan</string>
+    <string name="pref_vpn_excluded_apps_description">Atur aplikasi yang tidak menggunakan VPN agar koneksi tidak terblokir</string>
+    <string name="pref_vpn_exclude_system_apps">Kecualikan aplikasi sisttem</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">kecualikan aplikasi pengguna</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Aplikasi yang dikecualikan</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Pilih semua</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Batal pilih semua</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Ikon aplikasi</string>
+    <string name="pref_vpn_reset">Setel ulang VPN</string>
+    <string name="pref_vpn_reset_description">Bangun ulang koneksi VPN dari awal. Gunakan ini jika VPN berhenti berfungsi (tidak ada akses internet atau kesalahan DNS).</string>
+    <string name="pref_vpn_reset_done">Koneksi VPN telah dibangun ulang.</string>
+    <string name="pref_vpn_reset_not_running">VPN tidak berjalan.</string>
+    <string name="pref_vpn_diagnostic_log">Log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_description">Lihat, salin, atau bagikan kesalahan dan peristiwa VPN terbaru. Berguna saat melaporkan masalah.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Belum ada peristiwa yang tercatat.</string>
+    <string name="pref_vpn_diagnostic_log_share">Bagikan log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_copy">Salin</string>
+    <string name="pref_vpn_diagnostic_log_copied">Log diagnostik disalin ke papan klip.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Hapus log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Hapus peristiwa yang tercatat. Lakukan ini sebelum mereproduksi masalah untuk mendapatkan jejak yang bersih.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Log diagnostik telah dihapus.</string>
+    <string name="pref_root_open_hosts">Buka berkas hosts</string>
+    <string name="pref_hosts_redirection_summary">Masukkan kemana hosts akan dialihkan</string>
+    <string name="pref_redirection_ipv4">Redireksi IPv4</string>
+    <string name="pref_redirection_ipv6">Redireksi IPv6</string>
+    <string name="pref_redirection_invalid">Pengalihan salah</string>
+    <string name="pref_webserver_summary">Server web lokal mendengarkan alamat IP lokal untuk menjawab permintaan nama host yang diblokir. Ini dapat membantu dengan pembekuan aplikasi pada koneksi yang diblokir.</string>
+    <string name="pref_webserver_enabled">Aktifkan peladen web</string>
+    <string name="pref_webserver_test">Tes server web</string>
+    <string name="pref_webserver_certificate">Instal sertifikat self-signed</string>
+    <string name="pref_webserver_state_not_running">Tidak berjalan</string>
+    <string name="pref_webserver_state_checking">Memeriksa…</string>
+    <string name="pref_webserver_state_running_not_installed">Berjalan tapi tidak terinstal</string>
+    <string name="pref_webserver_state_running_and_installed">Berjalan dan terinstal</string>
+    <string name="pref_webserver_certificate_dialog_title">Instal sertifikat manual</string>
+    <string name="pref_webserver_certificate_dialog_content">Mulai dari Android 11 (R), aplikasi tidak bisa menginstall certificate authority (CA).\n\nBuka \"keamanaan\" pada setelan, \"Enkripsi &amp; kredensial\" kemudian \"menginstal sertifikat\". Setelah itu, pilih \"Sertifikat CA\" dan pilih file sertifikat yang baru dibuat.</string>
+    <string name="pref_webserver_certificate_dialog_action">Buka \"Keamanan\" di setelan</string>
+    <string name="pref_webserver_icon">Mengganti iklan yang terblokir dengan ikon app</string>
+</resources>

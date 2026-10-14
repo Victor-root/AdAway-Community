@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">Abrir la configuración de la VPN</string>
+    <string name="vpn_settings_unavailable">Los axustes de VPN nun tán disponibles nesti preséu.</string>
+    <string name="close">Zarrar</string>
+    <string name="add">Amestar</string>
+    <string name="cancel">Encaboxar</string>
+    <string name="delete">Desaniciar</string>
+    <string name="disable">Desactivar</string>
+    <string name="edit">Editar</string>
+    <string name="enable">Activar</string>
+    <string name="save">Guardar</string>
+    <string name="home_blocked_description">Anuncios y rastreadores</string>
+    <string name="home_allowed_description">Esceiciones</string>
+    <string name="home_redirected_description">Regles personalizaes</string>
+    <string name="lists_title">Llistes de to</string>
+    <string name="lists_search_clear">Llimpiar</string>
+    <string name="rule_add_blocked">Amiestu d\'un agospiu a la llista prieta</string>
+    <string name="rule_add_allowed">Amiestu d\'un agospiu a la llista blanca</string>
+    <string name="rule_edit_blocked">Edición d\'un agospiu na llista prieta</string>
+    <string name="rule_edit_allowed">Edición d\'un agospiu na llista blanca</string>
+    <string name="rule_host">Nome d\'agospiu:</string>
+    <string name="rule_address">IP (IPv4 o IPv6):</string>
+    <string name="sources_title">Oríxenes d\'agospios</string>
+    <string name="update_error_no_network_title">Ensin conexón d\'internet</string>
+    <string name="root_error_space_title">Nun hai espaciu abondo</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_channel_vpn">VPN</string>
+    <string name="notification_vpn_disable">Desactivar</string>
+    <string name="notification_vpn_enable">Activar</string>
+    <string name="home_blocking_enabled">Bloquéu d\'anuncios: activáu</string>
+    <string name="home_blocking_disabled">Bloquéu d\'anuncios: desactiváu</string>
+    <string name="home_enable_blocking">Activar el bloquéu d\'anuncios</string>
+    <string name="home_always_on_active">VPN siempres activa</string>
+    <string name="vpn_persistence_title">Persistencia de la VPN</string>
+    <string name="vpn_persistence_summary">Caltener el bloquéu d\'anuncios activu en segundu planu</string>
+    <string name="vpn_persistence_enabled">La VPN siempres activa ta habilitada pa AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">La VPN siempres activa nun ta configurada. La persistencia integrada d\'AdAway encárgase d\'ello.</string>
+    <string name="vpn_persistence_message">AdAway yá xestiona por sí mesmu los reanicios, les zarraes por falta de memoria y les cayíes, asina que na mayoría de los casos nun fai falta configuración adicional.\n\nSi la VPN se para dalguna vez de mou inesperáu, fixa AdAway como la VPN siempres activa del sistema Android pa tener la mayor garantía.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">La configuración de la VPN ta anubrida nesta Android TV. Usa los comandos ADB amosaos.</string>
+    <string name="vpn_persistence_dismiss">Entendío</string>
+    <string name="status_update_available">Anovamientu disponible</string>
+    <string name="error_dialog_help">Llei l\'ayuda pa más información, por favor.</string>
+    <string name="help">Ayuda</string>
+    <string name="home_tile_log">Rexistru DNS</string>
+    <string name="home_log_subtitle">Mira lo que se bloquia en tiempu real</string>
+    <string name="home_tile_help">Ayuda</string>
+    <string name="home_help_subtitle">Guíes y resolución de problemes</string>
+    <string name="home_tile_preferences">Preferencies</string>
+    <string name="home_preferences_subtitle">Configurar AdAway</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="hosts_source_unknown_status">Desconozse l\'estáu d\'anovamientu</string>
+    <plurals name="hosts_source_hours">
+        <item quantity="one">%d hora</item>
+        <item quantity="other">%d hores</item>
+    </plurals>
+    <plurals name="hosts_source_days">
+        <item quantity="one">%d día</item>
+        <item quantity="other">%d díes</item>
+    </plurals>
+    <plurals name="hosts_source_months">
+        <item quantity="one">%d mes</item>
+        <item quantity="other">%d meses</item>
+    </plurals>
+    <string name="rule_actions_title">Editar entrada</string>
+    <string name="help_tab_faq">FAQ</string>
+    <string name="help_tab_problems">Problemes</string>
+    <string name="help_tab_about">Tocante a</string>
+    <string name="about_version">Versión %s</string>
+    <string name="about_description">Bifurcación non oficial d\'AdAway calteníida pola comunidá.</string>
+    <string name="about_source_label">Códigu fonte (GitHub)</string>
+    <string name="about_issues_label">Informar d\'un problema</string>
+    <string name="about_releases_label">Llanzamientos</string>
+    <string name="about_upstream_label">AdAway oficial (fonte orixinal)</string>
+    <string name="about_license_label">Llicencia: GNU General Public License v3.0 or later (GPLv3+)</string>
+    <string name="shortcut_your_lists">Llistes de to</string>
+    <string name="shortcut_preferences">Preferencies</string>
+    <string name="menu_refresh">Refrescar</string>
+</resources>

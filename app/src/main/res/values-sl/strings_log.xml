@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_toggle_recording_description">Preklopi snemanje dnevnika</string>
+    <string name="log_start_recording">Pritisnite zapis, da začnete beležiti zahteve, brskate po spletu ali uporabljati aplikacije, nato se vrnite nazaj ali povlecite, da osvežite dnevnike.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokirane zahteve ne bodo zabeležene. Najprej onemogočite blokiranje oglasov, če jih želite tudi prijaviti.</string>
+    <string name="log_sort">Razvrsti domene</string>
+    <string name="log_clear">Počisti dnevnik</string>
+    <string name="log_sort_alphabetical">Abecedno razvrščanje</string>
+    <string name="log_sort_top_level_domain">Razvrsti domene najvišje ravni</string>
+    <string name="log_block">Dodaj vnos na seznam nedovoljenih</string>
+    <string name="log_allow">Dodaj vnos na seznam dovoljenih</string>
+    <string name="log_redirect">Dodaj vnos na seznam preusmeritev</string>
+    <string name="log_redirect_dialog_title">Preusmeri domeno</string>
+    <string name="log_start_recording_button">Začni snemanje</string>
+    <string name="log_start_recording_vpn_inactive">Začni snemanje (VPN ni aktiven)</string>
+    <string name="log_stop_recording">Ustavi snemanje</string>
+</resources>

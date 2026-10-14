@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">شپولو اڼل </string>
+    <string name="log_clear">خبرال پاکول</string>
+    <string name="log_sort_alphabetical">آبڅیز اڼل</string>
+    <string name="log_block">تور لړ کښې د ننوت زیاتول</string>
+    <string name="log_allow">سپين لړ کښې د ننوت زیاتول</string>
+    <string name="log_start_recording_button">ثبتول پیل کړئ</string>
+    <string name="log_start_recording_vpn_inactive">ثبتول پیل کړئ (VPN فعال نه دی)</string>
+    <string name="log_stop_recording">ثبتول ودروئ</string>
+</resources>

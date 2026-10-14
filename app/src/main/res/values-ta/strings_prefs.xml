@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_backup_restore_title">காப்புப்பிரதி &amp; மீட்டமை</string>
+    <string name="pref_backup">காப்புப்பிரதி</string>
+    <string name="pref_backup_summary">உங்கள் தடுப்பு விதிகளை வெளிப்புற சேமிப்பகத்துக்கு காப்புப்பிரதி எடுக்கவும்</string>
+    <string name="pref_restore">மீட்டெடு</string>
+    <string name="pref_restore_summary">காப்புப்பிரதி கோப்பிலிருந்து உங்கள் தடுப்பு விதிகளை மீட்டெடு</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">VPN ஐ மீட்டமை</string>
+    <string name="pref_vpn_reset_description">VPN இணைப்பை முதலிலிருந்து மீண்டும் உருவாக்கவும். VPN வேலை செய்வதை நிறுத்தினால் (இணைய அணுகல் இல்லை அல்லது DNS பிழைகள்) இதைப் பயன்படுத்தவும்.</string>
+    <string name="pref_vpn_reset_done">VPN இணைப்பு மீண்டும் உருவாக்கப்பட்டது.</string>
+    <string name="pref_vpn_reset_not_running">VPN இயங்கவில்லை.</string>
+    <string name="pref_vpn_diagnostic_log">கண்டறிதல் பதிவு</string>
+    <string name="pref_vpn_diagnostic_log_description">சமீபத்திய பிழைகள் மற்றும் VPN நிகழ்வுகளைப் பார்க்கவும், நகலெடுக்கவும் அல்லது பகிரவும். சிக்கலைப் புகாரளிக்கும்போது பயனுள்ளது.</string>
+    <string name="pref_vpn_diagnostic_log_empty">இதுவரை எந்த நிகழ்வும் பதிவு செய்யப்படவில்லை.</string>
+    <string name="pref_vpn_diagnostic_log_share">கண்டறிதல் பதிவைப் பகிர்</string>
+    <string name="pref_vpn_diagnostic_log_copy">நகலெடு</string>
+    <string name="pref_vpn_diagnostic_log_copied">கண்டறிதல் பதிவு கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது.</string>
+    <string name="pref_vpn_diagnostic_log_clear">கண்டறிதல் பதிவை அழி</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">பதிவு செய்யப்பட்ட நிகழ்வுகளை நீக்கவும். ஒரு தூய்மையான தடத்தைப் பிடிக்க, சிக்கலை மீண்டும் உருவாக்கும் முன் இதைச் செய்யவும்.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">கண்டறிதல் பதிவு அழிக்கப்பட்டது.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_webserver_enabled">வலை சேவையகத்தை இயக்கு</string>
+</resources>

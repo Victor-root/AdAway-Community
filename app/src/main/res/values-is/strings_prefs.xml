@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">Endurstilla VPN</string>
+    <string name="pref_vpn_reset_description">Endurbyggja VPN-tenginguna frá grunni. Notaðu þetta ef VPN hættir að virka (enginn internetaðgangur eða DNS-villur).</string>
+    <string name="pref_vpn_reset_done">VPN-tenging endurbyggð.</string>
+    <string name="pref_vpn_reset_not_running">VPN er ekki í gangi.</string>
+    <string name="pref_vpn_diagnostic_log">Greiningarannáll</string>
+    <string name="pref_vpn_diagnostic_log_description">Skoða, afrita eða deila nýlegum villum og VPN-atburðum. Gagnlegt þegar vandamál er tilkynnt.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Engir atburðir hafa enn verið skráðir.</string>
+    <string name="pref_vpn_diagnostic_log_share">Deila greiningarannál</string>
+    <string name="pref_vpn_diagnostic_log_copy">Afrita</string>
+    <string name="pref_vpn_diagnostic_log_copied">Greiningarannáll afritaður á klippiborð.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Hreinsa greiningarannál</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Eyða skráðum atburðum. Gerðu þetta áður en þú endurskapar vandamál til að fá hreinan feril.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Greiningarannáll hreinsaður.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">VPN সেটিংস খুলুন</string>
+    <string name="vpn_settings_unavailable">এই ডিভাইসে VPN সেটিংস উপলব্ধ নয়।</string>
+    <string name="close">বন্ধ</string>
+    <string name="delete">মুছে ফেলুন</string>
+    <string name="disable">নিষ্ক্রিয় করুন</string>
+    <string name="enable">সক্ষম করুন</string>
+    <string name="home_blocked_description">বিজ্ঞাপন ও ট্র্যাকার</string>
+    <string name="home_allowed_description">ব্যতিক্রমসমূহ</string>
+    <string name="home_redirected_description">কাস্টম নিয়ম</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">মুছুন</string>
+    <string name="sources_title">Hosts sources</string>
+    <string name="update_error_no_network_title">ইন্টারনেট সংযোগ নেই</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">নিষ্ক্রিয় করুন</string>
+    <string name="notification_vpn_enable">সক্ষম করুন</string>
+    <string name="home_blocking_enabled">বিজ্ঞাপন ব্লকিং: সক্রিয়</string>
+    <string name="home_blocking_disabled">বিজ্ঞাপন ব্লকিং: নিষ্ক্রিয়</string>
+    <string name="home_always_on_active">সর্বদা-চালু VPN সক্রিয়</string>
+    <string name="vpn_persistence_title">VPN স্থায়িত্ব</string>
+    <string name="vpn_persistence_summary">ব্যাকগ্রাউন্ডে বিজ্ঞাপন ব্লকিং চালু রাখুন</string>
+    <string name="vpn_persistence_enabled">AdAway-এর জন্য সর্বদা-চালু VPN সক্রিয় করা আছে। ✓</string>
+    <string name="vpn_persistence_disabled">সর্বদা-চালু VPN সেট করা নেই। AdAway-এর অন্তর্নির্মিত স্থায়িত্ব এটি সামলায়।</string>
+    <string name="vpn_persistence_message">AdAway ইতিমধ্যেই রিবুট, কম-মেমরির কারণে বন্ধ হয়ে যাওয়া এবং ক্র্যাশ নিজে থেকেই সামলায়, তাই বেশিরভাগ ক্ষেত্রে অতিরিক্ত কোনো সেটআপের প্রয়োজন হয় না।\n\nVPN যদি কখনও অপ্রত্যাশিতভাবে বন্ধ হয়ে যায়, তবে সবচেয়ে শক্তিশালী নিশ্চয়তার জন্য AdAway-কে Android সিস্টেমের সর্বদা-চালু VPN হিসেবে পিন করুন।</string>
+    <string name="vpn_persistence_tv_settings_unavailable">এই Android TV-তে VPN সেটিংস লুকানো আছে। দেখানো ADB কমান্ডগুলি ব্যবহার করুন।</string>
+    <string name="vpn_persistence_dismiss">বুঝেছি</string>
+    <string name="status_update_available">আপডেট উপলব্ধ</string>
+    <string name="home_tile_log">DNS লগ</string>
+    <string name="home_log_subtitle">রিয়েল টাইমে কী ব্লক হচ্ছে তা দেখুন</string>
+    <string name="home_tile_help">সহায়তা</string>
+    <string name="home_help_subtitle">নির্দেশিকা ও সমস্যা সমাধান</string>
+    <string name="home_preferences_subtitle">AdAway কনফিগার করুন</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="help_tab_about">সম্পর্কে</string>
+    <string name="about_version">সংস্করণ %s</string>
+    <string name="about_description">AdAway-এর একটি অনানুষ্ঠানিক, কমিউনিটি-রক্ষণাবেক্ষণকৃত ফর্ক।</string>
+    <string name="about_source_label">সোর্স কোড (GitHub)</string>
+    <string name="about_issues_label">একটি সমস্যা রিপোর্ট করুন</string>
+    <string name="about_releases_label">রিলিজ</string>
+    <string name="about_upstream_label">অফিশিয়াল AdAway আপস্ট্রিম</string>
+    <string name="about_license_label">লাইসেন্স: GNU General Public License v3.0 or later (GPLv3+)</string>
+</resources>

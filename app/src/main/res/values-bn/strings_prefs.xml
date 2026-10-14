@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">VPN রিসেট করুন</string>
+    <string name="pref_vpn_reset_description">VPN সংযোগ একদম নতুন করে তৈরি করুন। VPN কাজ করা বন্ধ করলে (ইন্টারনেট অ্যাক্সেস না থাকলে বা DNS ত্রুটি হলে) এটি ব্যবহার করুন।</string>
+    <string name="pref_vpn_reset_done">VPN সংযোগ পুনর্নির্মাণ করা হয়েছে।</string>
+    <string name="pref_vpn_reset_not_running">VPN চলছে না।</string>
+    <string name="pref_vpn_diagnostic_log">ডায়াগনস্টিক লগ</string>
+    <string name="pref_vpn_diagnostic_log_description">সাম্প্রতিক ত্রুটি ও VPN ইভেন্ট দেখুন, কপি করুন বা শেয়ার করুন। কোনো সমস্যা রিপোর্ট করার সময় এটি কাজে লাগে।</string>
+    <string name="pref_vpn_diagnostic_log_empty">এখনও কোনো ইভেন্ট রেকর্ড করা হয়নি।</string>
+    <string name="pref_vpn_diagnostic_log_share">ডায়াগনস্টিক লগ শেয়ার করুন</string>
+    <string name="pref_vpn_diagnostic_log_copy">কপি করুন</string>
+    <string name="pref_vpn_diagnostic_log_copied">ডায়াগনস্টিক লগ ক্লিপবোর্ডে কপি করা হয়েছে।</string>
+    <string name="pref_vpn_diagnostic_log_clear">ডায়াগনস্টিক লগ সাফ করুন</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">রেকর্ড করা ইভেন্টগুলি মুছুন। একটি পরিষ্কার ট্রেস পেতে কোনো সমস্যা পুনরায় তৈরি করার আগে এটি করুন।</string>
+    <string name="pref_vpn_diagnostic_log_cleared">ডায়াগনস্টিক লগ সাফ করা হয়েছে।</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

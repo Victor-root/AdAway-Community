@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_toggle_recording_description">Tombol rekam log</string>
+    <string name="log_start_recording">Tekan rekam untuk memulai log,  browsing atau gunakan aplikasi target, kemudian kembali atau refresh halaman ini</string>
+    <string name="log_blocked_requests_ignored">\n\nNonaktifkan ad-block dulu sebelum memuali log</string>
+    <string name="log_sort">Sortir domain</string>
+    <string name="log_clear">Bersihkan catatan</string>
+    <string name="log_sort_alphabetical">Urutkan sesuai abjad</string>
+    <string name="log_sort_top_level_domain">Urutkan sesuai TLD</string>
+    <string name="log_block">Tambahkan pada daftar hitam</string>
+    <string name="log_allow">Tambahkan pada daftar putih</string>
+    <string name="log_redirect">Tambahkan pada daftar pengalihan</string>
+    <string name="log_redirect_dialog_title">Alihkan domain</string>
+    <string name="log_start_recording_button">Mulai Merekam</string>
+    <string name="log_start_recording_vpn_inactive">Mulai Merekam (VPN tidak aktif)</string>
+    <string name="log_stop_recording">Berhenti Merekam</string>
+</resources>

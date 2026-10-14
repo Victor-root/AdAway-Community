@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_vpn_ad_blocker_configuration">Bloqueador de publicidade baseado en VPN</string>
+    <string name="import_success">Copia de seguridade importada correctamente dende o teu almacenamento externo.</string>
+    <string name="pref_update_title">Unha nova versión de AdAway está dispoñibel para descargar</string>
+    <string name="pref_update_check_now">Comprobar agora</string>
+    <string name="pref_update_install">Actualizar agora</string>
+    <string name="pref_vpn_service_on_boot">Habilitar no arranque</string>
+    <string name="pref_vpn_excluded_apps">Aplicacións excluídas</string>
+    <string name="pref_vpn_excluded_apps_description">Configure cales aplicacións non deberían utilizar a VPN para que non se bloqueen súas conexións.</string>
+    <string name="pref_vpn_exclude_system_apps">Excluír aplicacións do sistema</string>
+    <string name="pref_vpn_exclude_user_apps">Excluír aplicacións do usuario</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Aplicacións excluídas</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Selecciona todas</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Quitar selección a todas</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Icona da aplicación</string>
+    <string name="pref_vpn_reset">Restablecer a VPN</string>
+    <string name="pref_vpn_reset_description">Reconstrúe a conexión VPN desde cero. Usa isto se a VPN deixa de funcionar (sen acceso a internet ou con erros de DNS).</string>
+    <string name="pref_vpn_reset_done">Conexión VPN reconstruída.</string>
+    <string name="pref_vpn_reset_not_running">A VPN non está en execución.</string>
+    <string name="pref_vpn_diagnostic_log">Rexistro de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_description">Consulta, copia ou comparte os erros e eventos recentes da VPN. Útil ao informar dun problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Aínda non se rexistrou ningún evento.</string>
+    <string name="pref_vpn_diagnostic_log_share">Compartir o rexistro de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copiar</string>
+    <string name="pref_vpn_diagnostic_log_copied">Rexistro de diagnóstico copiado ao portapapeis.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Borrar o rexistro de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Elimina os eventos rexistrados. Fai isto antes de reproducir un problema para capturar un rastro limpo.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Rexistro de diagnóstico borrado.</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_webserver_enabled">Activar servidor web</string>
+</resources>

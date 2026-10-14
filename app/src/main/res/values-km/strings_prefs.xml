@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">ការកំណត់</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">កំណត់ VPN ឡើងវិញ</string>
+    <string name="pref_vpn_reset_description">បង្កើតការតភ្ជាប់ VPN ឡើងវិញពីដំបូង។ ប្រើវានេះ ប្រសិនបើ VPN ឈប់ដំណើរការ (គ្មានការតភ្ជាប់អ៊ីនធឺណិត ឬមានកំហុស DNS)។</string>
+    <string name="pref_vpn_reset_done">បានបង្កើតការតភ្ជាប់ VPN ឡើងវិញ។</string>
+    <string name="pref_vpn_reset_not_running">VPN មិនកំពុងដំណើរការទេ។</string>
+    <string name="pref_vpn_diagnostic_log">កំណត់ហេតុវិនិច្ឆ័យ</string>
+    <string name="pref_vpn_diagnostic_log_description">មើល ចម្លង ឬចែករំលែកកំហុស និងព្រឹត្តិការណ៍ VPN ថ្មីៗ។ មានប្រយោជន៍ពេលរាយការណ៍បញ្ហា។</string>
+    <string name="pref_vpn_diagnostic_log_empty">មិនទាន់មានព្រឹត្តិការណ៍ណាមួយត្រូវបានកត់ត្រានៅឡើយទេ។</string>
+    <string name="pref_vpn_diagnostic_log_share">ចែករំលែកកំណត់ហេតុវិនិច្ឆ័យ</string>
+    <string name="pref_vpn_diagnostic_log_copy">ចម្លង</string>
+    <string name="pref_vpn_diagnostic_log_copied">បានចម្លងកំណត់ហេតុវិនិច្ឆ័យទៅក្តារតម្បៀតខ្ទាស់។</string>
+    <string name="pref_vpn_diagnostic_log_clear">សម្អាតកំណត់ហេតុវិនិច្ឆ័យ</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">លុបព្រឹត្តិការណ៍ដែលបានកត់ត្រា។ ធ្វើវានេះ មុនពេលបង្កើតបញ្ហាឡើងវិញ ដើម្បីទទួលបានដាននៃដំណើរការស្អាត។</string>
+    <string name="pref_vpn_diagnostic_log_cleared">បានសម្អាតកំណត់ហេតុវិនិច្ឆ័យ។</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">จัดเรียงโดเมน</string>
+    <string name="log_clear">ล้างบันทึก</string>
+    <string name="log_sort_alphabetical">จัดเรียงตามตัวอักษร</string>
+    <string name="log_sort_top_level_domain">จัดเรียงโดเมนยอดนิยม</string>
+    <string name="log_block">เพิ่มรายการลงในบัญชีดำ</string>
+    <string name="log_allow">เพิ่มรายการไปยังบัญชีขาว</string>
+    <string name="log_redirect">เพิ่มรายการไปยังรายการเปลี่ยนเส้นทาง</string>
+    <string name="log_redirect_dialog_title">เปลี่ยนเส้นทางโดเมน</string>
+    <string name="log_start_recording_button">เริ่มบันทึก</string>
+    <string name="log_start_recording_vpn_inactive">เริ่มบันทึก (VPN ไม่ทำงาน)</string>
+    <string name="log_stop_recording">หยุดบันทึก</string>
+</resources>

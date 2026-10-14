@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_method_header">اډاوې ته ښه راغلاست!</string>
+    <string name="welcome_root_method_text1">لاګړندى</string>
+    <string name="welcome_back_button">شا</string>
+    <string name="welcome_next_button">بل </string>
+    <string name="welcome_finish_button">پاينه </string>
+    <string name="tv_welcome_intro_subtitle">دا لنډ برنامه به پدې وسیله کې د اعلاناتو بندول فعال کړي.</string>
+    <string name="tv_welcome_start_button">پیل</string>
+    <string name="tv_welcome_method_header">خپل بندولو میتود وټاکئ</string>
+    <string name="tv_welcome_method_root_button">روټ وکاروئ</string>
+    <string name="tv_welcome_method_root_body">ګړندی او د بیټرۍ خوندي کوونکی. روټ شوی وسیله ته اړتیا لري.</string>
+    <string name="tv_welcome_method_vpn_button">VPN وکاروئ</string>
+    <string name="tv_welcome_method_vpn_body">پرته له روټ څخه کار کوي، د هرې Android TV وسیلې سره مطابقت لري.</string>
+    <string name="tv_welcome_activate_header">د اعلاناتو بندول فعال کړئ</string>
+    <string name="tv_welcome_activate_body">دا یو محلي VPN دی: دا ستاسو ترافیک د بهرني سرور له لارې لیږلو پرته، په همدې وسیله کې اعلانات فلټر کوي.</string>
+</resources>

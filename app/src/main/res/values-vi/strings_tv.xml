@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Thêm vào danh sách cho phép</string>
+    <string name="tv_dialog_add_to_blocked">Thêm vào danh sách chặn</string>
+    <string name="tv_dialog_remove_from_allowed">Xóa khỏi danh sách cho phép</string>
+    <string name="tv_dialog_remove_from_blocked">Xóa khỏi danh sách chặn</string>
+    <string name="tv_dialog_copy_hostname">Sao chép tên miền</string>
+    <string name="tv_log_entry_status_description">Trạng thái tên miền</string>
+    <string name="tv_button_theme_light">Chế độ sáng</string>
+    <string name="tv_button_theme_dark">Chế độ tối</string>
+    <string name="tv_lists_empty">Chưa có mục nào trong danh sách này.</string>
+    <string name="tv_dialog_search">Tìm kiếm</string>
+</resources>

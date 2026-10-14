@@ -1,0 +1,34 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Venitul obținut din reclame</h2>
+<p>Există o confuzie legată de banii obținuți din reclame, și anume, dacă un utilizator nu interacționează cu reclamele atunci nici blocarea acestora nu afectează financiar site-ul web sau aplicația în cauză. Acest lucru este greșit deoarece dezvoltatorii primesc bani doar afișând reclamele indiferent dacă se interacționează cu ele sau nu. Personal, eu nu aș folosi aplicații care aleg să afișeze reclame deoarece le consider deranjante, deci fără un alt program de blocare a reclamelor nici măcar nu le-aș fi instalat.</p>
+
+<h2>Cum funcționează AdAway?</h2>
+<p>AdAway folosește <a href="http://en.wikipedia.org/wiki/Hosts_file">fișierul hosts</a> pentru a bloca domeniile care trimit reclame. Fișierul host se găsește în <code>/system/etc/hosts</code> și asociază domeniul cu o adresă IP. Este o metoda tradițională de alocare pentru domenii de adrese IP pereche fără a mai avea nevoie de Sistemul de Nume de Domeniu (DNS). Domeniile nedorite vor fi redirectate către <code>127.0.0.1</code> ceea ce înseamnă că vor fi trimise local către dispozitivul dumneavoastră.<br>
+Dacă fișierul hosts nu poate fi suprascris, o soluție de rezervă este utilizarea serverului dedicat VPN. Acesta va filtra pe conexiune domeniile nedorite și va permite trecerea celorlalte.</p>
+
+<h2>De ce trebuie să repornesc Android pentru ca modificările să aibă efect?</h2>
+<p>Java in Android mentine un cache DNS intern. Sistemul de operare va vedea noul fișier hosts imediat după aplicarea modificărilor (se poate verifica acest lucru printr-o comanda ping în consolă) dar o repornire este totuși necesară pentru a reface cache-ul DNS din Java.</p>
+
+<h2>Cum se folosește serverul web în AdAway?</h2>
+<p><strong>AdAway poate funcționa și fără server local!</strong>
+<br><br>Poți activa serverul local din setările AdAway pentru a răspunde cererilor pe adresa IP locală <code>127.0.0.1</code>. Așadar cererile aplicațiilor către serverele de reclame for fi redirecționate către <code>127.0.0.1</code> fiind gestionate de serverul web AdAway.
+<br>Unele aplicații pot să nu mai funcționeze dacă nu reușesc să descarce reclamele.  Cu această metodă, aplicațiile vor avea răspuns la cereri, răspunsul fiind o pagină goală fără reclame sau imagini.</p>
+
+<h2>Cum pot bloca/debloca domenii mai specifice?</h2>
+<p>Adăugați domeniile pe care doriți să le blocați pe <cite>Lista neagră</cite> din <cite>ecranul principal</cite>. Opțional, domeniile pe care doriți să le excludeți din blocare pot fi adăugate pe <cite>Lista albă</cite> iar domeniile pe care doriți să le redirecționați spre o adresă IP specifică, se află în <cite>Lista de redirecționare</cite>.</p>
+
+<h2>Unde pot găsi mai multe surse hosts?</h2>
+<p>Accesați <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Lista adițională de surse hosts pentru AdAway</a></p>
+
+<h2>De ce există acest fork</h2>
+<p>AdAway este un proiect grozav cu o istorie lungă, dar activitatea de lansare și revizuire upstream este limitată de ceva timp.<br/>Unele erori și pull request-uri au rămas deschise mult timp, inclusiv probleme care afectează stabilitatea modului VPN pe versiunile recente de Android și ROM-uri OEM.<br/>Acest fork există pentru a menține proiectul utilizabil cu corecții întreținute de comunitate, în loc să lase îmbunătățiri testate neutilizate.</p>
+
+<h2>Ajută la traducere/Raportare erori.</h2>
+<p>Vizitați pagina <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+</body>
+</html>

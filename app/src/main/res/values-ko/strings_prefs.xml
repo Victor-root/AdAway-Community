@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">환경 설정</string>
+    <string name="pref_general_category">일반</string>
+    <string name="pref_dark_theme">테마</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>밝음</item>
+        <item>어두움</item>
+        <item>시스템 기본값</item>
+    </string-array>
+    <string name="pref_update_configuration">자동 업데이트</string>
+    <string name="pref_ad_block_category">광고 차단</string>
+    <string name="pref_root_ad_blocker_configuration">루팅 기반 광고 차단</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN 기반 광고 차단</string>
+    <string name="pref_enable_ipv6">IPv6 지원 적용</string>
+    <string name="pref_backup_restore">차단 규칙 백업 / 복원하기</string>
+    <string name="pref_backup_restore_title">백업 및 복원</string>
+    <string name="pref_backup">백업</string>
+    <string name="pref_backup_summary">차단 규칙을 외부 저장소에 백업합니다</string>
+    <string name="pref_restore">복원</string>
+    <string name="pref_restore_summary">백업된 차단 규칙을 복원합니다</string>
+    <string name="import_success">백업이 성공적으로 외부 저장소에서부터 불러와졌습니다.</string>
+    <string name="export_success">Backup successfully exported to file \'%s\' on your external storage.</string>
+    <string name="export_failed">백업 파일 \'%s\'를 내보내지 실패했어요.</string>
+    <string name="pref_update_title">업데이트</string>
+    <string name="pref_update_app_category">앱 업데이트</string>
+    <string name="pref_update_check_app_startup">시작 시 업데이트 확인</string>
+    <string name="pref_update_check_app_daily">주기적으로 업데이트 확인</string>
+    <string name="pref_update_check_now">지금 확인</string>
+    <string name="pref_update_install">지금 업데이트</string>
+    <string name="pref_update_hosts_category">호스트 업데이트</string>
+    <string name="pref_update_check">시작 시 업데이트 확인</string>
+    <string name="pref_update_check_hosts_daily">주기적으로 업데이트 확인</string>
+    <string name="pref_update_sync_on_update">업데이트 시 동기화</string>
+    <string name="pref_update_sync_unmetered_only">무제한 네트워크 환경에서만 동기화</string>
+    <string name="pref_vpn_service_on_boot">앱 실행시 활성화</string>
+    <string name="pref_vpn_service_monitor">연결 감시</string>
+    <string name="pref_vpn_service_monitor_description">주기적으로 네트워크 상태를 확인하여 연결 끊김시 VPN을 재시작하기</string>
+    <string name="pref_vpn_excluded_apps">앱 제외하기</string>
+    <string name="pref_vpn_excluded_apps_description">VPN을 사용하지 않아야 하는 앱을 설정하여 연결이 차단되지 않도록 하십시오.</string>
+    <string name="pref_vpn_exclude_system_apps">시스템 앱 제외하기</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>없음</item>
+        <item>모든 브라우저 제외</item>
+        <item>전부</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">사용자 앱 제외하기</string>
+    <string name="pref_vpn_exclude_user_apps_activity">앱 제외하기</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">모두 선택</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">모두 선택 해제</string>
+    <string name="pref_vpn_exclude_user_apps_icon">앱 아이콘</string>
+    <string name="pref_vpn_reset">VPN 재설정</string>
+    <string name="pref_vpn_reset_description">VPN 연결을 처음부터 다시 구축합니다. VPN이 작동하지 않을 때(인터넷 접속 불가 또는 DNS 오류) 사용하십시오.</string>
+    <string name="pref_vpn_reset_done">VPN 연결을 다시 구축했습니다.</string>
+    <string name="pref_vpn_reset_not_running">VPN이 실행 중이 아닙니다.</string>
+    <string name="pref_vpn_diagnostic_log">진단 로그</string>
+    <string name="pref_vpn_diagnostic_log_description">최근 오류와 VPN 이벤트를 보거나 복사 또는 공유합니다. 문제를 신고할 때 유용합니다.</string>
+    <string name="pref_vpn_diagnostic_log_empty">아직 기록된 이벤트가 없습니다.</string>
+    <string name="pref_vpn_diagnostic_log_share">진단 로그 공유</string>
+    <string name="pref_vpn_diagnostic_log_copy">복사</string>
+    <string name="pref_vpn_diagnostic_log_copied">진단 로그를 클립보드에 복사했습니다.</string>
+    <string name="pref_vpn_diagnostic_log_clear">진단 로그 지우기</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">기록된 이벤트를 삭제합니다. 깔끔한 추적을 남기려면 문제를 재현하기 전에 실행하십시오.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">진단 로그를 지웠습니다.</string>
+    <string name="pref_root_open_hosts">호스트 파일 열기</string>
+    <string name="pref_hosts_redirection_summary">차단된 호스트를 리다이렉트할 위치 정의</string>
+    <string name="pref_redirection_ipv4">IPv4 리다이렉트</string>
+    <string name="pref_redirection_ipv6">IPv6 리다이렉트</string>
+    <string name="pref_redirection_invalid">잘못된 리다이렉션</string>
+    <string name="pref_webserver_summary">로컬 웹 서버는 차단 된 호스트 이름을 요청에 응답하기 위해 로컬 IP 주소를 수신합니다. 차단된 연결로 앱 프리징을 막을 수 있습니다.</string>
+    <string name="pref_webserver_enabled">웹 서버 활성화</string>
+    <string name="pref_webserver_test">시험 웹 서버</string>
+    <string name="pref_webserver_certificate">자체 서명된 인증서 설치</string>
+    <string name="pref_webserver_state_not_running">실행중이 아님</string>
+    <string name="pref_webserver_state_checking">확인 중…</string>
+    <string name="pref_webserver_state_running_not_installed">실행 중이지만 인증서가 설치되지 않음</string>
+    <string name="pref_webserver_state_running_and_installed">실행 중이며 인증서가 설치되어 있음</string>
+    <string name="pref_webserver_certificate_dialog_title">수동 설치 인증</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R)부터 애플리케이션은 자동으로 인증 기관 (CA)를 설치할 수 없습니다.\n\n\"보안\" 설정으로 이동한 다음 \" 암호화 및 사용자 인증 정보\"에서 \"인증서 설치\"를 해주세요. 그리고 \"CA 인증서\"를 선택한 다음 최근에 내보낸 인증서 파일을 선택해 주세요.</string>
+    <string name="pref_webserver_certificate_dialog_action">\"보안\" 설정 열기</string>
+    <string name="pref_webserver_icon">빈 광고 공간을 앱 아이콘으로 대체하기</string>
+</resources>

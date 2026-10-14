@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_start_recording_button">Comezar a gravación</string>
+    <string name="log_start_recording_vpn_inactive">Comezar a gravación (VPN non activa)</string>
+    <string name="log_stop_recording">Deter a gravación</string>
+</resources>

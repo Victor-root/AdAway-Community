@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Nastavenia</string>
+    <string name="pref_general_category">Všeobecné</string>
+    <string name="pref_dark_theme">Tmavý motív</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Svetlý</item>
+        <item>Tmavý</item>
+        <item>Podľa systému</item>
+    </string-array>
+    <string name="pref_update_configuration">Automatické aktualizácie</string>
+    <string name="pref_ad_block_category">Blokovanie reklamy</string>
+    <string name="pref_root_ad_blocker_configuration">Blokovač reklám s rootom</string>
+    <string name="pref_vpn_ad_blocker_configuration">Blokovač reklám pomocou VPN</string>
+    <string name="pref_enable_ipv6">Povoliť podporu IPv6</string>
+    <string name="pref_backup_restore">Zálohovať / obnoviť pravidlá blokovania</string>
+    <string name="pref_backup_restore_title">Zálohovať a obnoviť</string>
+    <string name="pref_backup">Zálohovať</string>
+    <string name="pref_backup_summary">Zálohovať pravidlá blokovania na externé úložisko</string>
+    <string name="pref_restore">Obnoviť</string>
+    <string name="pref_restore_summary">Obnoviť pravidlá blokovania zo záložného súboru</string>
+    <string name="import_success">Záloha úspešne importovaná z vášho externého úložiska.</string>
+    <string name="export_success">Záloha bola úspešne exportovaná do súboru \'%s\' na externom úložisku.</string>
+    <string name="export_failed">Nepodarilo sa exportovať súbor zálohy \'%s\'.</string>
+    <string name="pref_update_title">Aktualizácie</string>
+    <string name="pref_update_enable_notifications">Upozornenia sú vypnuté</string>
+    <string name="pref_update_enable_notifications_summary">Upozornenia aplikácie sa nezobrazia. Klepnutím ich povolíte.</string>
+    <string name="pref_update_app_category">Aktualizácie aplikácie</string>
+    <string name="pref_update_check_app_startup">Skontrolovať aktualizácie pri spustení</string>
+    <string name="pref_update_check_app_daily">Pravidelne kontrolovať aktualizácie</string>
+    <string name="pref_update_check_now">Skontrolovať teraz</string>
+    <string name="pref_update_install">Aktualizovať teraz</string>
+    <string name="pref_update_hosts_category">Aktualizácie hosts</string>
+    <string name="pref_update_check">Skontrolovať aktualizácie pri spustení</string>
+    <string name="pref_update_check_hosts_daily">Pravidelne kontrolovať aktualizácie</string>
+    <string name="pref_update_sync_on_update">Synchronizovať pri aktualizácii</string>
+    <string name="pref_update_sync_unmetered_only">Synchronizovať len na neplatenej sieti</string>
+    <string name="pref_vpn_service_on_boot">Povoliť pri štarte</string>
+    <string name="pref_vpn_service_monitor">Sledovanie pripojenia</string>
+    <string name="pref_vpn_service_monitor_description">Pravidelne kontrolovať stav siete, pri odpojení reštartovať VPN.</string>
+    <string name="pref_vpn_excluded_apps">Vylúčené aplikácie</string>
+    <string name="pref_vpn_excluded_apps_description">Nastavte, ktoré aplikácie by nemali používať VPN a nebudú sa blokovať žiadne ich pripojenia.</string>
+    <string name="pref_vpn_exclude_system_apps">Vylúčiť systémové aplikácie</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Žiadne</item>
+        <item>Všetky okrem prehliadačov</item>
+        <item>Všetky</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Vylúčiť užívateľské aplikácie</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Vylúčené aplikácie</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Vybrať všetky</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Nevybrať nič</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikácie</string>
+    <string name="pref_vpn_reset">Resetovať VPN</string>
+    <string name="pref_vpn_reset_description">Znovu vytvorí pripojenie VPN od začiatku. Použite, ak VPN prestane fungovať (žiadny prístup na internet alebo chyby DNS).</string>
+    <string name="pref_vpn_reset_done">Pripojenie VPN bolo znovu vytvorené.</string>
+    <string name="pref_vpn_reset_not_running">VPN nie je spustená.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostický denník</string>
+    <string name="pref_vpn_diagnostic_log_description">Zobrazte, skopírujte alebo zdieľajte nedávne chyby a udalosti VPN. Užitočné pri nahlasovaní problému.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Zatiaľ neboli zaznamenané žiadne udalosti.</string>
+    <string name="pref_vpn_diagnostic_log_share">Zdieľať diagnostický denník</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopírovať</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostický denník skopírovaný do schránky.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Vymazať diagnostický denník</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Odstráňte zaznamenané udalosti. Urobte to pred reprodukovaním problému, aby ste zachytili čistý záznam.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostický denník bol vymazaný.</string>
+    <string name="pref_root_open_hosts">Otvoriť súbor hosts</string>
+    <string name="pref_hosts_redirection_summary">Zadať, kam presmerovať blokované domény</string>
+    <string name="pref_redirection_ipv4">Presmerovanie IPv4</string>
+    <string name="pref_redirection_ipv6">Presmerovanie IPv6</string>
+    <string name="pref_redirection_invalid">Neplatné presmerovanie</string>
+    <string name="pref_webserver_summary">Miestny webserver počúva na miestnej IP adrese, aby odpovedal za požiadavky blokovaných domén.</string>
+    <string name="pref_webserver_enabled">Povoliť web server</string>
+    <string name="pref_webserver_test">Testovať web server</string>
+    <string name="pref_webserver_certificate">Inštalovať certifikát s vlastným podpisom</string>
+    <string name="pref_webserver_state_not_running">Nie je spustený</string>
+    <string name="pref_webserver_state_checking">Kontrolovanie…</string>
+    <string name="pref_webserver_state_running_not_installed">Spustený, ale certifikát nie je nainštalovaný</string>
+    <string name="pref_webserver_state_running_and_installed">Spustený a certifikát je nainštalovaný</string>
+    <string name="pref_webserver_certificate_dialog_title">Ručná inštalácia certifikátu</string>
+    <string name="pref_webserver_certificate_dialog_content">Od Androidu 11 (R) aplikácie nemôžu automaticky inštalovať dôveryhodné certifikáty (CA).\n\nPrejdite na nastavenie \"Zabezpečenie\", \"Šifrovanie a poverenia\", potom \"Inštalovať certifikát\". Tam vyberte \"Certifikát CA\" a vyberte nový exportovaný súbor s certifikátom.</string>
+    <string name="pref_webserver_certificate_dialog_action">Otvoriť nastavenie Zabezpečenie</string>
+    <string name="pref_webserver_icon">Vyplniť prázdne reklamné miesto ikonou apky</string>
+</resources>

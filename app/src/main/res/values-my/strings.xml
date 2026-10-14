@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">VPN ဆက်တင်များ ဖွင့်ပါ</string>
+    <string name="vpn_settings_unavailable">ဤစက်တွင် VPN ဆက်တင်များ မရနိုင်ပါ။</string>
+    <string name="disable">ပိတ်ရန်</string>
+    <string name="enable">ဖွင့်ရန်</string>
+    <string name="home_blocked_description">ကြော်ငြာနှင့် ခြေရာခံများ</string>
+    <string name="home_allowed_description">ခြွင်းချက်များ</string>
+    <string name="home_redirected_description">စိတ်ကြိုက်စည်းမျဉ်းများ</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">ရှင်းလင်းရန်</string>
+    <string name="sources_title">Hosts sources</string>
+    <string name="notification_vpn_disable">ပိတ်ရန်</string>
+    <string name="notification_vpn_enable">ဖွင့်ရန်</string>
+    <string name="home_blocking_enabled">ကြော်ငြာပိတ်ဆို့ခြင်း: ဖွင့်ထားသည်</string>
+    <string name="home_blocking_disabled">ကြော်ငြာပိတ်ဆို့ခြင်း: ပိတ်ထားသည်</string>
+    <string name="home_always_on_active">အမြဲတမ်းဖွင့် VPN ဖွင့်ထားသည်</string>
+    <string name="vpn_persistence_title">VPN တည်တံ့မှု</string>
+    <string name="vpn_persistence_summary">နောက်ခံတွင် ကြော်ငြာပိတ်ဆို့မှုကို ဆက်လက်လုပ်ဆောင်ပါ</string>
+    <string name="vpn_persistence_enabled">AdAway အတွက် အမြဲတမ်းဖွင့် VPN ကို ဖွင့်ထားသည်။ ✓</string>
+    <string name="vpn_persistence_disabled">အမြဲတမ်းဖွင့် VPN မသတ်မှတ်ရသေးပါ။ AdAway ၏ တပ်ဆင်ပါဝင်သော တည်တံ့မှုက ကိုင်တွယ်ပေးသည်။</string>
+    <string name="vpn_persistence_message">AdAway သည် ပြန်လည်စတင်ခြင်း၊ မန်မိုရီနည်းသဖြင့် ပိတ်သွားခြင်းနှင့် crash ဖြစ်ခြင်းများကို ကိုယ်တိုင် ကိုင်တွယ်ပြီးဖြစ်သောကြောင့် အများစုတွင် ထပ်ဆောင်း ပြင်ဆင်မှု မလိုအပ်ပါ။\n\nVPN သည် မမျှော်လင့်ဘဲ ရပ်တန့်သွားပါက အားအကောင်းဆုံး အာမခံချက်အတွက် AdAway ကို Android စနစ်၏ အမြဲတမ်းဖွင့် VPN အဖြစ် သတ်မှတ်ပါ။</string>
+    <string name="vpn_persistence_tv_settings_unavailable">ဤ Android TV တွင် VPN ဆက်တင်များကို ဖုံးကွယ်ထားသည်။ ပြထားသော ADB command များကို သုံးပါ။</string>
+    <string name="vpn_persistence_dismiss">ရပါပြီ</string>
+    <string name="home_tile_log">DNS မှတ်တမ်း</string>
+    <string name="home_log_subtitle">ပိတ်ဆို့ထားသည့်အရာများကို အချိန်နှင့်တစ်ပြေးညီ ကြည့်ရှုပါ</string>
+    <string name="home_tile_help">အကူအညီ</string>
+    <string name="home_help_subtitle">လမ်းညွှန်များနှင့် ပြဿနာဖြေရှင်းခြင်း</string>
+    <string name="home_preferences_subtitle">AdAway ကို ပြင်ဆင်သတ်မှတ်ပါ</string>
+    <string name="help_tab_about">အကြောင်း</string>
+    <string name="about_version">ဗားရှင်း %s</string>
+    <string name="about_description">AdAway ၏ တရားဝင်မဟုတ်သော အသိုက်အဝန်းက ထိန်းသိမ်းသည့် fork တစ်ခု။</string>
+    <string name="about_source_label">အရင်းအမြစ်ကုဒ် (GitHub)</string>
+    <string name="about_issues_label">ပြဿနာတစ်ခု တင်ပြပါ</string>
+    <string name="about_releases_label">ထုတ်ဝေမှုများ</string>
+    <string name="about_upstream_label">တရားဝင် AdAway (upstream)</string>
+    <string name="about_license_label">လိုင်စင်: GNU General Public License v3.0 သို့မဟုတ် နောက်ပိုင်း (GPLv3+)</string>
+</resources>

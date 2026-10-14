@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Setări</string>
+    <string name="pref_general_category">Generale</string>
+    <string name="pref_dark_theme">Temă întunecată</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Luminoasă</item>
+        <item>Întunecată</item>
+        <item>Valoare implicită sistem</item>
+    </string-array>
+    <string name="pref_update_configuration">Actualizări automate</string>
+    <string name="pref_ad_block_category">Blocarea reclamelor</string>
+    <string name="pref_root_ad_blocker_configuration">Blocarea prin root a reclamelor</string>
+    <string name="pref_vpn_ad_blocker_configuration">Blocarea prin server VPN a reclamelor</string>
+    <string name="pref_enable_ipv6">Activare suport IPv6</string>
+    <string name="pref_backup_restore">Salvare / restabilire copie de rezervă pentru regulile de blocare</string>
+    <string name="pref_backup_restore_title">Salvare &amp; restabilire</string>
+    <string name="pref_backup">Salvare</string>
+    <string name="pref_backup_summary">Salvează pe memoria externă regulile de blocare</string>
+    <string name="pref_restore">Restabilire</string>
+    <string name="pref_restore_summary">Restaurare reguli de blocare din fișier</string>
+    <string name="import_success">Copie de rezervă importată cu succes din stocarea externă.</string>
+    <string name="export_success">Exportul s-a realizat cu succes, fișierul %s a fost scris în memoria externă.</string>
+    <string name="export_failed">Exportul a eșuat, fișierul %s nu a fost scris.</string>
+    <string name="pref_update_title">Actualizări</string>
+    <string name="pref_update_app_category">Actualizări aplicație</string>
+    <string name="pref_update_check_app_startup">Verificare actualizări la pornire</string>
+    <string name="pref_update_check_app_daily">Verificare periodică</string>
+    <string name="pref_update_check_now">Verifică acum</string>
+    <string name="pref_update_install">Actualizează acum</string>
+    <string name="pref_update_hosts_category">Actualizări fișier hosts</string>
+    <string name="pref_update_check">Verificare actualizări la pornire</string>
+    <string name="pref_update_check_hosts_daily">Verificare periodică</string>
+    <string name="pref_update_sync_on_update">Sincronizare la actualizare</string>
+    <string name="pref_update_sync_unmetered_only">Sincronizare doar pe rețea necontorizată</string>
+    <string name="pref_vpn_service_on_boot">Activare la pornire</string>
+    <string name="pref_vpn_service_monitor">Monitorizare conexiune</string>
+    <string name="pref_vpn_service_monitor_description">Verificare periodică a stării internetului pentru repornirea VPN la deconectare</string>
+    <string name="pref_vpn_excluded_apps">Aplicații excluse</string>
+    <string name="pref_vpn_excluded_apps_description">Alegeți aplicațiile care nu ar trebui să fie blocate de către VPN deci conexiunea lor va rămâne nerestricționată</string>
+    <string name="pref_vpn_exclude_system_apps">Excludere aplicații de sistem</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Niciuna</item>
+        <item>Toate cu excepția navigatoarelor web</item>
+        <item>Toate</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Excludere aplicații instalate de utilizator</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Aplicații excluse</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Selectare toate</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Anulare selecție</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Pictograma aplicației</string>
+    <string name="pref_vpn_reset">Resetează VPN</string>
+    <string name="pref_vpn_reset_description">Reconstruiește conexiunea VPN de la zero. Folosește această opțiune dacă VPN-ul nu mai funcționează (fără acces la internet sau erori DNS).</string>
+    <string name="pref_vpn_reset_done">Conexiunea VPN a fost reconstruită.</string>
+    <string name="pref_vpn_reset_not_running">VPN-ul nu rulează.</string>
+    <string name="pref_vpn_diagnostic_log">Jurnal de diagnosticare</string>
+    <string name="pref_vpn_diagnostic_log_description">Vizualizează, copiază sau distribuie erorile recente și evenimentele VPN. Util când raportezi o problemă.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Nu a fost înregistrat încă niciun eveniment.</string>
+    <string name="pref_vpn_diagnostic_log_share">Distribuie jurnalul de diagnosticare</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copiază</string>
+    <string name="pref_vpn_diagnostic_log_copied">Jurnalul de diagnosticare a fost copiat în clipboard.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Șterge jurnalul de diagnosticare</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Șterge evenimentele înregistrate. Fă acest lucru înainte de a reproduce o problemă pentru a captura o urmă curată.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Jurnalul de diagnosticare a fost șters.</string>
+    <string name="pref_root_open_hosts">Deschide fișierul hosts</string>
+    <string name="pref_hosts_redirection_summary">Definire domeniu de redirecționare pentru domeniile blocate din hosts</string>
+    <string name="pref_redirection_ipv4">Redirecționare IPv4</string>
+    <string name="pref_redirection_ipv6">Redirecționare IPv6</string>
+    <string name="pref_webserver_summary">Serverul web local ascultă pe adresa IP locală pentru a răspunde cererilor făcute de către domeniile blocate. Poate fi de ajutor dacă aplicația nu funcționează fără conexiune.</string>
+    <string name="pref_webserver_enabled">Activare server web</string>
+    <string name="pref_webserver_test">Testare server web</string>
+    <string name="pref_webserver_certificate">Instalare certificat subsemnat</string>
+    <string name="pref_webserver_state_not_running">Nu rulează</string>
+    <string name="pref_webserver_state_checking">Verificare…</string>
+    <string name="pref_webserver_state_running_not_installed">Rulează fără certificat instalat</string>
+    <string name="pref_webserver_state_running_and_installed">Rulează cu certificat instalat</string>
+    <string name="pref_webserver_certificate_dialog_title">Instalare manuală certificat</string>
+    <string name="pref_webserver_certificate_dialog_content">Începând cu versiunea 11 a Android (R), nu se mai pot instala automat certificate de autoritate (CA).\n\nAccesați setarea \"Securitate\", \"Criptare și date de conectare\" apoi \"Instalați de pe stocare\". Alegeți \"Certificat CA\" și instalați certificatul exportat de aplicație.</string>
+    <string name="pref_webserver_certificate_dialog_action">Accesați setarea \"Securitate\" (Security)<br/></string>
+    <string name="pref_webserver_icon">Înlocuiește spațiul liber destinat reclamelor cu pictograma aplicației</string>
+</resources>

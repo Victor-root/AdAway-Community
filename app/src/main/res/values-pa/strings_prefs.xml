@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferences</string>
+    <string name="pref_update_check_now">Check now</string>
+    <string name="pref_update_install">Update now</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">VPN ਰੀਸੈੱਟ ਕਰੋ</string>
+    <string name="pref_vpn_reset_description">VPN ਕਨੈਕਸ਼ਨ ਨੂੰ ਸ਼ੁਰੂ ਤੋਂ ਦੁਬਾਰਾ ਬਣਾਓ। ਜੇ VPN ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦਿੰਦਾ ਹੈ (ਇੰਟਰਨੈੱਟ ਪਹੁੰਚ ਨਹੀਂ ਜਾਂ DNS ਗਲਤੀਆਂ) ਤਾਂ ਇਸਦੀ ਵਰਤੋਂ ਕਰੋ।</string>
+    <string name="pref_vpn_reset_done">VPN ਕਨੈਕਸ਼ਨ ਦੁਬਾਰਾ ਬਣਾਇਆ ਗਿਆ।</string>
+    <string name="pref_vpn_reset_not_running">VPN ਚੱਲ ਨਹੀਂ ਰਿਹਾ।</string>
+    <string name="pref_vpn_diagnostic_log">ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ</string>
+    <string name="pref_vpn_diagnostic_log_description">ਹਾਲੀਆ ਗਲਤੀਆਂ ਅਤੇ VPN ਘਟਨਾਵਾਂ ਨੂੰ ਵੇਖੋ, ਕਾਪੀ ਕਰੋ ਜਾਂ ਸਾਂਝਾ ਕਰੋ। ਸਮੱਸਿਆ ਦੀ ਰਿਪੋਰਟ ਕਰਨ ਵੇਲੇ ਲਾਭਦਾਇਕ।</string>
+    <string name="pref_vpn_diagnostic_log_empty">ਹਾਲੇ ਤੱਕ ਕੋਈ ਘਟਨਾ ਰਿਕਾਰਡ ਨਹੀਂ ਕੀਤੀ ਗਈ।</string>
+    <string name="pref_vpn_diagnostic_log_share">ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ ਸਾਂਝਾ ਕਰੋ</string>
+    <string name="pref_vpn_diagnostic_log_copy">ਕਾਪੀ ਕਰੋ</string>
+    <string name="pref_vpn_diagnostic_log_copied">ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕੀਤਾ ਗਿਆ।</string>
+    <string name="pref_vpn_diagnostic_log_clear">ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ ਸਾਫ਼ ਕਰੋ</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">ਰਿਕਾਰਡ ਕੀਤੀਆਂ ਘਟਨਾਵਾਂ ਨੂੰ ਮਿਟਾਓ। ਸਾਫ਼ ਟ੍ਰੇਸ ਹਾਸਲ ਕਰਨ ਲਈ ਸਮੱਸਿਆ ਨੂੰ ਦੁਬਾਰਾ ਪੈਦਾ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਇਹ ਕਰੋ।</string>
+    <string name="pref_vpn_diagnostic_log_cleared">ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ ਸਾਫ਼ ਕੀਤਾ ਗਿਆ।</string>
+    <string name="pref_root_open_hosts">Open hosts file</string>
+</resources>

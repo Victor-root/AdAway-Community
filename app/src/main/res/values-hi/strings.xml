@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">VPN सेटिंग खोलें</string>
+    <string name="vpn_settings_unavailable">इस डिवाइस पर VPN सेटिंग्स उपलब्ध नहीं हैं।</string>
+    <string name="disable">अक्षम करें</string>
+    <string name="enable">सक्षम करें</string>
+    <string name="home_blocked_description">विज्ञापन और ट्रैकर</string>
+    <string name="home_allowed_description">अपवाद</string>
+    <string name="home_redirected_description">कस्टम नियम</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">साफ़ करें</string>
+    <string name="sources_title">Hosts sources</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">अक्षम करें</string>
+    <string name="notification_vpn_enable">सक्षम करें</string>
+    <string name="home_blocking_enabled">विज्ञापन अवरोधन: सक्षम</string>
+    <string name="home_blocking_disabled">विज्ञापन अवरोधन: अक्षम</string>
+    <string name="home_always_on_active">हमेशा चालू VPN सक्रिय</string>
+    <string name="vpn_persistence_title">VPN स्थायित्व</string>
+    <string name="vpn_persistence_summary">बैकग्राउंड में विज्ञापन ब्लॉकिंग चालू रखें</string>
+    <string name="vpn_persistence_enabled">AdAway के लिए हमेशा चालू VPN सक्षम है। ✓</string>
+    <string name="vpn_persistence_disabled">हमेशा चालू VPN सेट नहीं है। AdAway का अंतर्निहित स्थायित्व इसे संभालता है।</string>
+    <string name="vpn_persistence_message">AdAway रीबूट, लो-मेमोरी किल और क्रैश को स्वयं ही संभाल लेता है, इसलिए ज़्यादातर मामलों में किसी अतिरिक्त सेटअप की आवश्यकता नहीं होती।\n\nयदि VPN कभी अप्रत्याशित रूप से बंद हो जाए, तो सबसे मज़बूत गारंटी के लिए AdAway को Android सिस्टम के हमेशा चालू VPN के रूप में सेट करें।</string>
+    <string name="vpn_persistence_tv_settings_unavailable">इस Android TV पर VPN सेटिंग छिपी हुई हैं। दिखाए गए ADB कमांड का उपयोग करें।</string>
+    <string name="vpn_persistence_dismiss">समझ गया</string>
+    <string name="home_tile_log">DNS लॉग</string>
+    <string name="home_log_subtitle">वास्तविक समय में देखें कि क्या अवरोधित हो रहा है</string>
+    <string name="home_tile_help">सहायता</string>
+    <string name="home_help_subtitle">गाइड और समस्या निवारण</string>
+    <string name="home_preferences_subtitle">AdAway कॉन्फ़िगर करें</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="help_tab_faq">सवाल </string>
+    <string name="help_tab_about">परिचय</string>
+    <string name="about_version">संस्करण %s</string>
+    <string name="about_description">AdAway का अनौपचारिक, समुदाय द्वारा अनुरक्षित फ़ोर्क।</string>
+    <string name="about_source_label">स्रोत कोड (GitHub)</string>
+    <string name="about_issues_label">कोई समस्या रिपोर्ट करें</string>
+    <string name="about_releases_label">रिलीज़</string>
+    <string name="about_upstream_label">आधिकारिक AdAway अपस्ट्रीम</string>
+    <string name="about_license_label">लाइसेंस: GNU General Public License v3.0 or later (GPLv3+)</string>
+</resources>

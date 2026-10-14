@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">AdAway frissítés</string>
+    <string name="update_banner_title">Frissítés érhető el</string>
+    <string name="update_banner_subtitle">Koppintson a(z) %1$s telepítéséhez</string>
+    <string name="update_up_to_date_header">Naprakész vagy</string>
+    <string name="update_update_available_header">Frissítés érhető el</string>
+    <string name="update_updating_header">AdAway frissítése</string>
+    <string name="update_update_button">Frissítés most</string>
+    <string name="update_last_changelog_title">Utolsó változtatások</string>
+    <string name="update_new_changelog_title">Változásnapló</string>
+    <string name="pref_update_check_now_update_available">Új verzió érhető el: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nincs elérhető frissítés</string>
+    <string name="pref_update_install_summary">%1$s verzió telepítése</string>
+    <string name="notification_channel_app_updates">Alkalmazás frissítései</string>
+    <string name="notification_channel_app_updates_description">Értesítés, ha az alkalmazás új verziója érhető el. Némítsa el ezt a csatornát az alkalmazásfrissítési értesítések elrejtéséhez anélkül, hogy a többi értesítést befolyásolná.</string>
+    <string name="notification_app_update_title">Alkalmazás frissítés elérhető</string>
+    <string name="notification_app_update_text">Az AdAway új verziója letölthető.</string>
+</resources>

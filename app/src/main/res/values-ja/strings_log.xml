@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_toggle_recording_description">ログ取得切替</string>
+    <string name="log_start_recording">記録ボタンを押してログの取得を開始後、Web閲覧やアプリを使用してから、再度この画面に戻るかスワイプすることでログが更新されます。</string>
+    <string name="log_blocked_requests_ignored">\n\nブロックされたDNS要求はログに記録されません。広告ブロックを解除してからログを記録してください。</string>
+    <string name="log_sort">ドメインを並べ替える</string>
+    <string name="log_clear">ログを消去</string>
+    <string name="log_sort_alphabetical">アルファベット順</string>
+    <string name="log_sort_top_level_domain">トップレベルドメイン順</string>
+    <string name="log_block">ブラックリストにエントリーを追加する</string>
+    <string name="log_allow">ホワイトリストにエントリーを追加する</string>
+    <string name="log_redirect">リダイレクトリストにエントリを追加する</string>
+    <string name="log_redirect_dialog_title">ドメインをリダイレクトする</string>
+    <string name="log_start_recording_button">記録を開始</string>
+    <string name="log_start_recording_vpn_inactive">記録を開始（VPNが無効）</string>
+    <string name="log_stop_recording">記録を停止</string>
+</resources>

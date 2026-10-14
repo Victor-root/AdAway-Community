@@ -1,0 +1,35 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Kopírovanie súboru hosts na Android 9+ zlyhalo</h2>
+<p>Pre najnovší Android nastavte partíciu <code>/system</code> iba na čítanie.<br>
+Ak používate na root Magisk, overte povolenie modulu systemless hosts a reštartujte.</p>
+
+<h2>Nedostatok miesta na partícii</h2>
+<p>Skúste zmeniť umiestnenie hosts súboru v nastaveniach na <code>/data/data/hosts</code> (alebo <code>/data/hosts</code>) a povoľte AdAway znova.</p>
+
+<h2>Nefunguje na Android 4.4+</h2>
+<p>V nastaveniach prehliadača Chrome vypnite <cite>zjednodušený režim</cite> (predtým známy ako <cite>šetrič dát</cite>). Táto funkcia umožňuje prehliadaču Chrome používať súkromné riešenie DNS a obchádzať AdAway.</p>
+
+<h2>Neblokuje reklamy v aplikácii XYZ!</h2>
+<p>Niektoré názvy hostiteľov môžu chýbať v poskytnutých súboroch hosts z <cite>Zdroje hosts</cite> alebo aplikácia obsahuje obrázky, ktoré sa zobrazujú ako reklama bez internetu.<br><br>
+DNS požiadavky môžete zaznamenať (Menu-&gt;Zaznamenať DNS požiadavky) v AdAway a nájdené hosts môžu byť blokované.
+<br><br>Podozrivých hostiteľov pridajte na Čiernu listinu dlhým podržaním na položku v zázname a nahláste týchto hostiteľov po overení na našom <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub issue tracker</a>.</p>
+
+<h2>Reklamy vo vyrovnávacej pamäti</h2>
+<p>Niekedy aplikácie ukladajú reklamy do vyrovnávacej pamäti. To niekedy spôsobuje zobrazovanie reklám v niektorých aplikáciách, Môžete skúsiť vymazať vyrovnávaciu pamäť pre tieto aplikácie Nastaveniach - Aplikácie vo vašom zariadení.</p>
+
+<h2>Aplikácia XYZ už nefunguje!</h2>
+<p>Niektoré aplikácie potrebujú komunikovať s názvami hostiteľa, ktoré sú blokované v AdAway alebo odmietajú fungovať, ak adresy s reklamami nie sú dosiahnuteľné. Na stránke <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> nájdete zoznam známych aplikácií, ktoré majú s týmto problém. Alebo, zistite adresy, ktoré sú potrebné a pridajte ich na vašu <cite>Bielu listinu</cite> pod <cite>Vaše zoznamy</cite> a nahláste ich na <a href="https://github.com/Victor-root/AdAway-Community/issues">stránke pre hlásenie chýb v AdAway</a>.</p>
+
+<h2>Nefunguje na Androide 4.4+</h2>
+<p>Skúste zmeniť umiestnenie hosts súboru v nastaveniach z <code>/data/data/hosts</code> na <code>/data/hosts</code> alebo <code>/system/etc/hosts</code> a povoľte AdAway znova.</p>
+
+<h2>Tlačidlo späť v internetovom prehliadači nefunguje</h2>
+<p>Môžete povoliť <cite>Miestny webserver</cite> v nastaveniach AdAway ako dočasné riešenie.</p>
+
+</body>
+</html>

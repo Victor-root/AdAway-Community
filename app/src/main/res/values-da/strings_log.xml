@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">Sorter domæner</string>
+    <string name="log_clear">Ryd log</string>
+    <string name="log_sort_alphabetical">Sorter alfabetisk</string>
+    <string name="log_sort_top_level_domain">Sorter topniveau domæne</string>
+    <string name="log_block">Tilføj adgang til sort liste</string>
+    <string name="log_allow">Tilføj adgang til hvide liste</string>
+    <string name="log_redirect">Tilføj adgang til omdirigeringsliste</string>
+    <string name="log_redirect_dialog_title">Viderestil domæne</string>
+    <string name="log_start_recording_button">Start optagelse</string>
+    <string name="log_start_recording_vpn_inactive">Start optagelse (VPN ikke aktiv)</string>
+    <string name="log_stop_recording">Stop optagelse</string>
+</resources>

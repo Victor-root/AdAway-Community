@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">Cập nhật AdAway</string>
+    <string name="update_banner_title">Đã có bản cập nhật</string>
+    <string name="update_banner_subtitle">Nhấn để cài đặt %1$s</string>
+    <string name="update_up_to_date_header">Đã cập nhật xong</string>
+    <string name="update_update_available_header">Đã có bản cập nhật</string>
+    <string name="update_updating_header">Đang cập nhật AdAway</string>
+    <string name="update_update_button">Cập nhật ngay</string>
+    <string name="update_last_changelog_title">Các thay đổi mới:</string>
+    <string name="update_new_changelog_title">Các thay đổi</string>
+    <string name="pref_update_check_now_update_available">Đã có phiên bản mới: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Không có bản cập nhật</string>
+    <string name="pref_update_install_summary">Cài đặt phiên bản %1$s</string>
+    <string name="notification_channel_app_updates">Cập nhật ứng dụng</string>
+    <string name="notification_channel_app_updates_description">Thông báo khi có phiên bản mới của ứng dụng. Tắt tiếng kênh này để ẩn cảnh báo cập nhật ứng dụng mà không ảnh hưởng đến các thông báo khác.</string>
+    <string name="notification_app_update_title">Ứng dụng có bản cập nhật mới</string>
+    <string name="notification_app_update_text">Phiên bản mới của AdAway đã sẵn sàng để tải xuống</string>
+</resources>

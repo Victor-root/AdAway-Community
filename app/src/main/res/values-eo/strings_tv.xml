@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Aldoni al permesitaj</string>
+    <string name="tv_dialog_add_to_blocked">Aldoni al blokitaj</string>
+    <string name="tv_dialog_remove_from_allowed">Forigi el permesitaj</string>
+    <string name="tv_dialog_remove_from_blocked">Forigi el blokitaj</string>
+    <string name="tv_dialog_copy_hostname">Kopii gastnomon</string>
+    <string name="tv_log_entry_status_description">Stato de domajno</string>
+    <string name="tv_button_theme_light">Hela reĝimo</string>
+    <string name="tv_button_theme_dark">Malhela reĝimo</string>
+    <string name="tv_lists_empty">Ankoraŭ neniuj enskriboj en ĉi tiu listo.</string>
+    <string name="tv_dialog_search">Serĉi</string>
+</resources>

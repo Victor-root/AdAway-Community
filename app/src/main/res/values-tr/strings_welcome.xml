@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_first_step">Kurulumun ilk aşaması</string>
+    <string name="welcome_second_step">Kurulumun ikinci aşaması</string>
+    <string name="welcome_method_header">AdAway\'e hoş geldiniz!</string>
+    <string name="welcome_method_summary">AdAway iki reklam engelleme yöntemi sunar. Beğendiğiniz birini seçin:</string>
+    <string name="welcome_root_method_title">Kök erişimi tabanlı\nreklam engelleyici</string>
+    <string name="welcome_root_method_text1">Daha hızlı</string>
+    <string name="welcome_root_method_text2">Pil dostu</string>
+    <string name="welcome_root_method_text3">Kök erişimi gerekli</string>
+    <string name="welcome_vpn_method_title">VPN tabanlı\nreklam engelleyici</string>
+    <string name="welcome_vpn_method_text1">Daha yavaş</string>
+    <string name="welcome_vpn_method_text2">Arka planda çalıştır</string>
+    <string name="welcome_vpn_method_text3">Uyumluluk</string>
+    <string name="welcome_root_missing_title">Kök erişimli Android gerekli</string>
+    <string name="welcome_root_missile_description">Su binary dosyası bulunamadı veya AdAway için kök erişimi izni sağlanmadı.\n\nEğer cihazınızda kök erişimi sağlanmadıysa bu yaşanabilir. Ayrıntılı bilgi ve cihazınızda nasıl kök erişimi sağlanacağını öğrenmek için wiki.lineageos.org veya diğer Android web sitelerini ziyaret edebilirsiniz.</string>
+    <string name="welcome_method_pro_logo">Pro</string>
+    <string name="welcome_method_con_logo">Con</string>
+    <string name="welcome_sync_header">Eşitleniyor</string>
+    <string name="welcome_synced_header">Eşitlendi!</string>
+    <string name="welcome_sync_summary">AdAway, çevrimiçi kaynaklardan engellemek için reklam ağlarını indirir. Bunları daha sonra ayarlardan özelleştirebilirsiniz.</string>
+    <string name="welcome_sync_retry_logo">Eşitlemeyi tekrar dene</string>
+    <string name="welcome_sync_error">%1$ssenkronize edilemedi. Tekrar denensin mi?</string>
+    <string name="welcome_sync_notifications">Reklam bloğu durumunu ve kontrolünü görüntülemek ve mevcut uygulama güncellemesi hakkında bilgi vermek için (yılda birkaç kez) bildirimler gönderebilir. Güncel kalmak istiyorsanız bunları etkinleştirin.</string>
+    <string name="welcome_sync_leave_early_title">Senkronizasyon henüz tamamlanmadı</string>
+    <string name="welcome_sync_leave_early_message">Engelleme listelerinin indirilmesi henüz tamamlanmadı. Şimdi devam edebilirsiniz, arka planda devam edecektir, ya da tamamlanana kadar burada bekleyebilirsiniz.</string>
+    <string name="welcome_sync_leave_early_wait">Bekle</string>
+    <string name="welcome_sync_leave_early_continue">Yine de devam et</string>
+    <string name="welcome_back_button">Geri</string>
+    <string name="welcome_next_button">İleri</string>
+    <string name="welcome_finish_button">Tamamlandı</string>
+    <string name="tv_welcome_intro_subtitle">Bu kısa sihirbaz, bu cihazda reklam engellemeyi açacak.</string>
+    <string name="tv_welcome_start_button">Başla</string>
+    <string name="tv_welcome_method_header">Engelleme yönteminizi seçin</string>
+    <string name="tv_welcome_method_root_button">Root kullan</string>
+    <string name="tv_welcome_method_root_body">Daha hızlı ve pil dostu. Root\'lu bir cihaz gerektirir.</string>
+    <string name="tv_welcome_method_vpn_button">VPN kullan</string>
+    <string name="tv_welcome_method_vpn_body">Root olmadan çalışır, herhangi bir Android TV cihazıyla uyumludur.</string>
+    <string name="tv_welcome_activate_header">Reklam engellemeyi aç</string>
+    <string name="tv_welcome_activate_body">Bu yerel bir VPN\'dir: trafiğinizi harici bir sunucudan geçirmeden, reklamları doğrudan bu cihazda filtreler.</string>
+</resources>

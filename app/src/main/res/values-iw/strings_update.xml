@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">עדכון AdAway</string>
+    <string name="update_banner_title">עדכון זמין</string>
+    <string name="update_banner_subtitle">הקש כדי להתקין %1$s</string>
+    <string name="update_up_to_date_header">זו הגרסה האחרונה</string>
+    <string name="update_update_available_header">עדכון זמין</string>
+    <string name="update_updating_header">מעדכן את AdAway</string>
+    <string name="update_update_button">עדכן כעת</string>
+    <string name="update_complete_label">השלם\י</string>
+    <string name="update_last_changelog_title">שינויים אחרונים</string>
+    <string name="update_new_changelog_title">רשימת שינויים</string>
+    <string name="pref_update_check_now_update_available">גרסה חדשה זמינה: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">אין עדכון זמין</string>
+    <string name="pref_update_install_summary">התקן גרסה %1$s</string>
+    <string name="notification_channel_app_updates">עדכוני אפליקציה</string>
+    <string name="notification_channel_app_updates_description">התראה כאשר גרסה חדשה של האפליקציה זמינה. השתק ערוץ זה כדי להסתיר התראות על עדכוני אפליקציה מבלי להשפיע על התראות אחרות.</string>
+    <string name="notification_app_update_title">עדכון יישום זמין</string>
+    <string name="notification_app_update_text">גרסה חדשה של AdAway זמינה להורדה.</string>
+</resources>

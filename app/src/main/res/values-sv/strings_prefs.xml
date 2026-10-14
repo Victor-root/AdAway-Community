@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Inställningar</string>
+    <string name="pref_general_category">Allmänt</string>
+    <string name="pref_dark_theme">Mörk tema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Ljust</item>
+        <item>Mörkt</item>
+        <item>Systemstandard</item>
+    </string-array>
+    <string name="pref_update_configuration">Automatisk uppdatering</string>
+    <string name="pref_ad_block_category">Annonsblockering</string>
+    <string name="pref_root_ad_blocker_configuration">Root-baserad annonsblockering</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-baserad annonsblockering</string>
+    <string name="pref_enable_ipv6">Aktivera IPv6-stöd</string>
+    <string name="pref_backup_restore">Säkerhetskopiera / återställ blockregler</string>
+    <string name="pref_backup_restore_title">Säkerhetskopiera &amp; återställa</string>
+    <string name="pref_backup">Säkerhetskopiera</string>
+    <string name="pref_backup_summary">Säkerhetskopiera dina blockeringsregler till extern lagring</string>
+    <string name="pref_restore">Återställ</string>
+    <string name="pref_restore_summary">Återställ dina blockeringsregler från säkerhetskopia</string>
+    <string name="import_success">Säkerhetskopian importerades framgångsrikt från din externa lagring.</string>
+    <string name="export_success">Säkerhetskopian exporterades framgångsrikt till filen \'%s\' i din externa lagring.</string>
+    <string name="export_failed">Exporteringen av den säkerhetskopierade filen \'%s\' misslyckades</string>
+    <string name="pref_update_title">Uppdateringar</string>
+    <string name="pref_update_app_category">Applikationsuppdateringar</string>
+    <string name="pref_update_check_app_startup">Sök efter uppdatering vid uppstart</string>
+    <string name="pref_update_check_app_daily">Sök regelbundet efter uppdateringar</string>
+    <string name="pref_update_check_now">Sök nu</string>
+    <string name="pref_update_install">Uppdatera nu</string>
+    <string name="pref_update_hosts_category">Värduppdateringar</string>
+    <string name="pref_update_check">Sök efter uppdatering vid uppstart</string>
+    <string name="pref_update_check_hosts_daily">Sök regelbundet efter uppdateringar</string>
+    <string name="pref_update_sync_on_update">Synkronisera vid uppdatering</string>
+    <string name="pref_update_sync_unmetered_only">Synkronisera endast på nätverk med obegränsad data</string>
+    <string name="pref_vpn_service_on_boot">Aktivera vid uppstart</string>
+    <string name="pref_vpn_service_monitor">Övervaka anslutning</string>
+    <string name="pref_vpn_service_monitor_description">Kontrollera periodvis nätverkets tillstånd för att starta om VPN vid urkoppling.</string>
+    <string name="pref_vpn_excluded_apps">Exkluderade applikationer</string>
+    <string name="pref_vpn_excluded_apps_description">Konfigurera vilken applikation som inte ska använda VPN så ingen anslutning blockeras.</string>
+    <string name="pref_vpn_exclude_system_apps">Exkludera systemapplikationer</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Inga</item>
+        <item>All except browsers</item>
+        <item>Alla</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Exkludera användarapplikationer</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Exkluderade applications</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Markera alla</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Avmarkera alla</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Applikationsikon</string>
+    <string name="pref_vpn_reset">Återställ VPN</string>
+    <string name="pref_vpn_reset_description">Bygg upp VPN-anslutningen från grunden. Använd detta om VPN slutar fungera (ingen internetåtkomst eller DNS-fel).</string>
+    <string name="pref_vpn_reset_done">VPN-anslutningen har byggts om.</string>
+    <string name="pref_vpn_reset_not_running">VPN körs inte.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostiklogg</string>
+    <string name="pref_vpn_diagnostic_log_description">Visa, kopiera eller dela de senaste felen och VPN-händelserna. Användbart när du rapporterar ett problem.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Inga händelser har registrerats ännu.</string>
+    <string name="pref_vpn_diagnostic_log_share">Dela diagnostiklogg</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopiera</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostikloggen har kopierats till urklipp.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Rensa diagnostiklogg</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Ta bort de registrerade händelserna. Gör detta innan du återskapar ett problem för att fånga ett rent spår.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostikloggen har rensats.</string>
+    <string name="pref_root_open_hosts">Öppna värdfil</string>
+    <string name="pref_hosts_redirection_summary">Definiera var du ska omdirigera blockerade värdar</string>
+    <string name="pref_redirection_ipv4">IPv4-omdirigering</string>
+    <string name="pref_redirection_ipv6">IPv6-omdirigering</string>
+    <string name="pref_redirection_invalid">Ogiltig omdirigering</string>
+    <string name="pref_webserver_summary">Den lokala webbservern lyssnar på lokala IP-adresser till att svara på blockerade värdnamsförfrågningar. Det kan förhindra appfrysningar på blockerade anslutningar.</string>
+    <string name="pref_webserver_enabled">Aktivera webbserver</string>
+    <string name="pref_webserver_test">Testa webbservern</string>
+    <string name="pref_webserver_certificate">Installera självsignerat certifikat</string>
+    <string name="pref_webserver_state_not_running">Körs inte</string>
+    <string name="pref_webserver_state_checking">Kontrollerar…</string>
+    <string name="pref_webserver_state_running_not_installed">Körs men utan installerat certifikat</string>
+    <string name="pref_webserver_state_running_and_installed">Körs med installerat certifikat</string>
+    <string name="pref_webserver_certificate_dialog_title">Installera certifikat manuellt</string>
+    <string name="pref_webserver_certificate_dialog_content">Med start i Android 11 (R) kan appar inte längre automatiskt installera certifikat (CA). \n\Gå till Säkerhet under Inställningar, \"Kryptering &amp; Certifikat\" och \"Installera ett certifikat\". Här väljer du \"CA-certifikat\" och väljer den certifikatfil som du nyss exporterade.</string>
+    <string name="pref_webserver_certificate_dialog_action">Öppna Säkerhetsinställningar</string>
+    <string name="pref_webserver_icon">Ersätt tomt annonsutrymme med en appikon</string>
+</resources>

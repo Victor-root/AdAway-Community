@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">මෙම කෙටි විසාඩ් මෙම උපාංගයේ දැන්වීම් අවහිර කිරීම ක්‍රියාත්මක කරයි.</string>
+    <string name="tv_welcome_start_button">ආරම්භ කරන්න</string>
+    <string name="tv_welcome_method_header">ඔබේ අවහිර කිරීමේ ක්‍රමය තෝරන්න</string>
+    <string name="tv_welcome_method_root_button">root භාවිතා කරන්න</string>
+    <string name="tv_welcome_method_root_body">වේගවත් සහ බැටරි ඉතිරි කරයි. root කළ උපාංගයක් අවශ්‍යයි.</string>
+    <string name="tv_welcome_method_vpn_button">VPN භාවිතා කරන්න</string>
+    <string name="tv_welcome_method_vpn_body">root නොමැතිව ක්‍රියා කරයි, ඕනෑම Android TV උපාංගයක් සමඟ ගැලපේ.</string>
+    <string name="tv_welcome_activate_header">දැන්වීම් අවහිර කිරීම ක්‍රියාත්මක කරන්න</string>
+    <string name="tv_welcome_activate_body">එය දේශීය VPN එකකි: එය ඔබේ ට්‍රැෆික් බාහිර සර්වරයක් හරහා යැවීමකින් තොරව, මෙම උපාංගයේම දැන්වීම් පෙරහන් කරයි.</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">Rūsiuoti domenus</string>
+    <string name="log_clear">Išvalyti surinktą informaciją</string>
+    <string name="log_sort_alphabetical">Alfabetinis rūšiavimas</string>
+    <string name="log_sort_top_level_domain">Viršutinio lygio domeno rūšiavimas</string>
+    <string name="log_block">Įdėti įėjima į juodą sąrašą</string>
+    <string name="log_allow">Įdėti įėjimą į baltajį sąrašą</string>
+    <string name="log_redirect">Įdėti įėjima į nukreipimo sąrašą</string>
+    <string name="log_redirect_dialog_title">Nukreipti domeną</string>
+    <string name="log_start_recording_button">Pradėti įrašymą</string>
+    <string name="log_start_recording_vpn_inactive">Pradėti įrašymą (VPN neaktyvus)</string>
+    <string name="log_stop_recording">Stabdyti įrašymą</string>
+</resources>

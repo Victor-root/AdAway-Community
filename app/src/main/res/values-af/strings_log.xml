@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_start_recording_button">Begin opneem</string>
+    <string name="log_start_recording_vpn_inactive">Begin opneem (VPN nie aktief nie)</string>
+    <string name="log_stop_recording">Stop opneem</string>
+</resources>

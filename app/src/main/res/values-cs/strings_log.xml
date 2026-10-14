@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_toggle_recording_description">Přepnout zaznamenávání</string>
+    <string name="log_start_recording">Stisknutím tlačítka nahrávání spusťte zaznamenávání požadavků, procházejte web nebo používáte aplikace a poté se vraťte zpět nebo přejetím prstem dolů aktualizujte záznam.</string>
+    <string name="log_blocked_requests_ignored">\n\nZablokované požadavky nebudou zaznamenány. Pokud je chcete zaznamenat také, nejprve vypněte blokování reklam.</string>
+    <string name="log_sort">Řazení domén</string>
+    <string name="log_clear">Vymazat záznam</string>
+    <string name="log_sort_alphabetical">Řazení podle abecedy</string>
+    <string name="log_sort_top_level_domain">Řazení podle nejvyšší úrovně domény</string>
+    <string name="log_block">Přidat položku na černou listinu</string>
+    <string name="log_allow">Přidat položku na bílou listinu</string>
+    <string name="log_redirect">Přidat položku na listinu přesměrování</string>
+    <string name="log_redirect_dialog_title">Doména pro přesměrování</string>
+    <string name="log_start_recording_button">Spustit nahrávání</string>
+    <string name="log_start_recording_vpn_inactive">Spustit nahrávání (VPN není aktivní)</string>
+    <string name="log_stop_recording">Zastavit nahrávání</string>
+</resources>

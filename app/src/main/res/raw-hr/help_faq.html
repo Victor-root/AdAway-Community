@@ -1,0 +1,34 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Zarada od oglasa</h2>
+<p>Postoji općenito nerazumijevanje da ukoliko korisnik nikada ne klika na oglase, tada se blokiranje istih neće negativno financijski odraziti na stranicu ili aplikaciju. To je pogrešno, razvijatelji isto tako zarađuju novac samim prikazom oglasa. Na vama je hoćete li, ili nećete blokirati oglase. Osobno ne bih koristio aplikacije koje prikazuju oglase jer ih smatram vrlo iritantnima, stoga bez blokatora oglasa ne bih instalirao aplikacije te vrste. </p>
+
+<h2>Kako AdAway radi?</h2>
+<p>AdAway koristi <a href="http://en.wikipedia.org/wiki/Hosts_file">datoteku poslužitelja</a> za blokiranje naziva poslužitelja koji dostavljaju oglase. Datoteka poslužitelja može se pronaći u <code>/system/etc/hosts</code> , a mapira nazive poslužitelja na IP adrese. To je tradicionalan način za određivanja naziva poslužitelja uparivanjem s parovima IP adresa bez oslanjanja na DNS (Domain Name System). Svi neželjeni nazivi poslužitelja se preusmjeravaju na <code>127.0.0.1</code>, što znači da će biti usmjereni na vaš uređaj.<br>
+Ako datoteka poslužitelja nije zapisiva, pričuvno rješenje je korištenje VPN usluge. Filtrirat će povezivanja s neželjenim nazivima poslužitelja i ostale propustiti.</p>
+
+<h2>Zašto moram ponovno pokrenuti Android kako bi se promjene primijenile?</h2>
+<p>Java na Androidu ima svoju unutrašnju DNS predmemoriju. Operativni sustav će primijeniti novu datoteku poslužitelja odmah (to možete provjeriti pomoću ping naredbe u naredbenom redku), ali je potrebno ponovno pokrenuti Android kako bi se DNS predmemorija Jave ponovno izgradila.</p>
+
+<h2>Kako koristiti web poslužitelj u AdAwayu?</h2>
+<p><strong>AdAway isto može raditi bez web poslužitelja!</strong>
+<br><br>Možete omogućiti lokalnog web poslužitelja u postavkama AdAwaya kako bi preusmjerio zahtjeve na lokalnu IP adresu <code>127.0.0.1</code>. o znači da zahtjevi aplikacije prema poslužiteljima za oglase su preusmjereni na <code>127.0.0.1</code>  odgovaraju AdAway web poslužitelju.
+<br>Neke aplikacije odbijaju raditi kada poslužitelji oglašavanja nisu dostupni. Ovim načinom postati će opet dostupni, prikazom prazne stranice bez slika oglasa.</p>
+
+<h2>Kako mogu blokirati/odblokirati određene nazive poslužitelja?</h2>
+<p>Dodajte nazive poslužitelja koje želite blokirati u popisu <cite>Blokirani</cite> iz vašeg <cite>Početnog zaslona</cite>. Dodatno, nazive poslužitelja koje želite isključiti iz blokiranja možete dodati u popis <cite>Dopušteni</cite> a nazive poslužitelja koje želite preusmjeriti na određenu IP adresu pripadaju u popis <cite>Preusmjereni</cite>.</p>
+
+<h2>Gdje mogu pronaći više izvora poslužitelja?</h2>
+<p>Pogledajte <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Popis dodatnih izvora poslužitelja za AdAway</a>.</p>
+
+<h2>Zašto postoji ovaj fork</h2>
+<p>AdAway je sjajan projekt s dugom poviješću, ali aktivnost izdavanja i pregleda u upstreamu već je neko vrijeme ograničena.<br/>Neki bugovi i pull requestovi ostali su otvoreni dulje vrijeme, uključujući probleme koji utječu na stabilnost VPN načina rada na novijim verzijama Androida i OEM ROM-ovima.<br/>Ovaj fork postoji kako bi projekt ostao upotrebljiv uz ispravke koje održava zajednica, umjesto da se testirana poboljšanja ostave neiskorištenima.</p>
+
+<h2>Pomozite u prijevodu/prijavi grešaka.</h2>
+<p>Posjetite <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+</body>
+</html>

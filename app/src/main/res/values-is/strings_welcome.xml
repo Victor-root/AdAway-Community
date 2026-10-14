@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">Þessi stutti leiðarvísir kveikir á auglýsingalokun á þessu tæki.</string>
+    <string name="tv_welcome_start_button">Byrja</string>
+    <string name="tv_welcome_method_header">Veldu lokunaraðferð þína</string>
+    <string name="tv_welcome_method_root_button">Nota root</string>
+    <string name="tv_welcome_method_root_body">Hraðara og sparar rafhlöðu. Krefst tækis með root-aðgangi.</string>
+    <string name="tv_welcome_method_vpn_button">Nota VPN</string>
+    <string name="tv_welcome_method_vpn_body">Virkar án root, samhæft við öll Android TV tæki.</string>
+    <string name="tv_welcome_activate_header">Kveikja á auglýsingalokun</string>
+    <string name="tv_welcome_activate_body">Þetta er staðbundið VPN: það síar auglýsingar á þessu tæki, án þess að beina umferð þinni um ytri netþjón.</string>
+</resources>

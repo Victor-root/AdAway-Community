@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Asetukset</string>
+    <string name="pref_general_category">Yleiset</string>
+    <string name="pref_dark_theme">Tummateema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Vaalea</item>
+        <item>Tumma</item>
+        <item>Järjestelmän oletus</item>
+    </string-array>
+    <string name="pref_update_configuration">Automaattiset päivitykset</string>
+    <string name="pref_ad_block_category">Mainostentorjunta</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN pohjainen mainostenesto</string>
+    <string name="pref_backup_restore_title">Varmuuskopioi &amp; palauta</string>
+    <string name="pref_backup">Varmuuskopioi</string>
+    <string name="pref_restore">Palauta</string>
+    <string name="pref_update_title">Päivityksiä</string>
+    <string name="pref_update_app_category">Ohjelmapäivitykset</string>
+    <string name="pref_update_check_app_startup">Tarkista päivityksiä käynnistäessä</string>
+    <string name="pref_update_check_app_daily">Säännöllisesti tarkista päivityksiä </string>
+    <string name="pref_update_check_now">Tarkista nyt</string>
+    <string name="pref_update_install">Päivitä nyt</string>
+    <string name="pref_update_hosts_category">Hosts-päivityksiä </string>
+    <string name="pref_update_check">Tarkista päivityksiä käynnistäessä</string>
+    <string name="pref_update_check_hosts_daily">Säännöllisesti tarkista päivityksiä </string>
+    <string name="pref_update_sync_on_update">Synkronoi päivittäessä</string>
+    <string name="pref_update_sync_unmetered_only">Synkronoi ainoastaan rajattomalla yhteydellä</string>
+    <string name="pref_vpn_service_on_boot">Aktivoi käynnistyksessä</string>
+    <string name="pref_vpn_service_monitor">Valvo yhteyttä</string>
+    <string name="pref_vpn_service_monitor_description">Tarkista säännöllisesti verkon tilaa uudelleen käynnistääkseen VPN yhteyden katkettua. </string>
+    <string name="pref_vpn_excluded_apps">Pois jätetyt sovellukset</string>
+    <string name="pref_vpn_excluded_apps_description">Valitse mitkä sovellukset eivät saa käyttää VPNää jotta mitään yhteyksiä ei estetä.</string>
+    <string name="pref_vpn_exclude_system_apps">Jätä pois järjestelmäsovelluksia</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Ei mikään</item>
+        <item>All except browsers</item>
+        <item>Kaikki</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Jätä pois käyttäjän sovelluksiä</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Pois jätetyt sovellukset</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Valitse kaikki</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Poista valinta kaikista</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Sovelluksen kuvake</string>
+    <string name="pref_vpn_reset">Nollaa VPN</string>
+    <string name="pref_vpn_reset_description">Rakenna VPN-yhteys uudelleen alusta. Käytä tätä, jos VPN lakkaa toimimasta (ei internetyhteyttä tai DNS-virheitä).</string>
+    <string name="pref_vpn_reset_done">VPN-yhteys rakennettu uudelleen.</string>
+    <string name="pref_vpn_reset_not_running">VPN ei ole käynnissä.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostiikkaloki</string>
+    <string name="pref_vpn_diagnostic_log_description">Tarkastele, kopioi tai jaa viimeaikaiset virheet ja VPN-tapahtumat. Hyödyllinen ongelmaa ilmoitettaessa.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Yhtään tapahtumaa ei ole vielä tallennettu.</string>
+    <string name="pref_vpn_diagnostic_log_share">Jaa diagnostiikkaloki</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopioi</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostiikkaloki kopioitu leikepöydälle.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Tyhjennä diagnostiikkaloki</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Poista tallennetut tapahtumat. Tee tämä ennen ongelman toistamista, jotta saat puhtaan jäljen.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostiikkaloki tyhjennetty.</string>
+    <string name="pref_root_open_hosts">Avaa hosts-tiedosto</string>
+    <string name="pref_webserver_enabled">Ota web-palvelin käyttöön</string>
+    <string name="pref_webserver_test">Testaa web-palvelinta</string>
+    <string name="pref_webserver_state_not_running">Ei käynnissä</string>
+    <string name="pref_webserver_state_checking">Tarkistetaan… </string>
+    <string name="pref_webserver_certificate_dialog_action">Avaa \"Turvallisuus\'\" -asetukset</string>
+</resources>

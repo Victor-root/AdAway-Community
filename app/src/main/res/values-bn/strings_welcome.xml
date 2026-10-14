@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">এই সংক্ষিপ্ত উইজার্ড এই ডিভাইসে বিজ্ঞাপন ব্লকিং চালু করবে।</string>
+    <string name="tv_welcome_start_button">শুরু করুন</string>
+    <string name="tv_welcome_method_header">আপনার ব্লকিং পদ্ধতি বেছে নিন</string>
+    <string name="tv_welcome_method_root_button">রুট ব্যবহার করুন</string>
+    <string name="tv_welcome_method_root_body">দ্রুত এবং ব্যাটারি সাশ্রয়ী। রুট করা ডিভাইস প্রয়োজন।</string>
+    <string name="tv_welcome_method_vpn_button">VPN ব্যবহার করুন</string>
+    <string name="tv_welcome_method_vpn_body">রুট ছাড়াই কাজ করে, যেকোনো Android TV ডিভাইসের সাথে সামঞ্জস্যপূর্ণ।</string>
+    <string name="tv_welcome_activate_header">বিজ্ঞাপন ব্লকিং চালু করুন</string>
+    <string name="tv_welcome_activate_body">এটি একটি স্থানীয় VPN: এটি বাইরের সার্ভারের মাধ্যমে আপনার ট্রাফিক না পাঠিয়ে এই ডিভাইসেই বিজ্ঞাপন ফিল্টার করে।</string>
+</resources>

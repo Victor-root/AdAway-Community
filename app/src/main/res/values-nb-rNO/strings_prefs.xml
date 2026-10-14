@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Preferanser</string>
+    <string name="pref_update_check_now">Sjekk nå</string>
+    <string name="pref_update_install">Oppdater nå</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_reset">Tilbakestill VPN</string>
+    <string name="pref_vpn_reset_description">Bygg VPN-tilkoblingen opp på nytt fra bunnen av. Bruk dette hvis VPN-en slutter å fungere (ingen internettilgang eller DNS-feil).</string>
+    <string name="pref_vpn_reset_done">VPN-tilkoblingen er gjenoppbygd.</string>
+    <string name="pref_vpn_reset_not_running">VPN kjører ikke.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnoselogg</string>
+    <string name="pref_vpn_diagnostic_log_description">Vis, kopier eller del de siste feilene og VPN-hendelsene. Nyttig når du rapporterer et problem.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Ingen hendelser er registrert ennå.</string>
+    <string name="pref_vpn_diagnostic_log_share">Del diagnoselogg</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopier</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnoselogg kopiert til utklippstavlen.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Tøm diagnoselogg</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Slett de registrerte hendelsene. Gjør dette før du gjenskaper et problem for å fange et rent spor.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnoselogg tømt.</string>
+    <string name="pref_root_open_hosts">Åpne vertsfilen</string>
+</resources>

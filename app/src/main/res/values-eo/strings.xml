@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">Malfermi VPN-agordojn</string>
+    <string name="vpn_settings_unavailable">VPN-agordoj ne disponeblas sur ĉi tiu aparato.</string>
+    <string name="disable">Malŝalti</string>
+    <string name="enable">Ŝalti</string>
+    <string name="home_blocked_description">Reklamoj kaj spuriloj</string>
+    <string name="home_allowed_description">Esceptoj</string>
+    <string name="home_redirected_description">Propraj reguloj</string>
+    <string name="lists_title">Your lists</string>
+    <string name="lists_search_clear">Forviŝi</string>
+    <string name="sources_title">Hosts sources</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_vpn_disable">Malŝalti</string>
+    <string name="notification_vpn_enable">Ŝalti</string>
+    <string name="home_blocking_enabled">Reklamblokado: ŝaltita</string>
+    <string name="home_blocking_disabled">Reklamblokado: malŝaltita</string>
+    <string name="home_always_on_active">Ĉiam-aktiva VPN aktiva</string>
+    <string name="vpn_persistence_title">VPN-persisto</string>
+    <string name="vpn_persistence_summary">Teni la reklamblokadon aktiva en la fono</string>
+    <string name="vpn_persistence_enabled">Ĉiam-aktiva VPN estas ŝaltita por AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">Ĉiam-aktiva VPN ne estas agordita. La enkonstruita persisto de AdAway prizorgas ĝin.</string>
+    <string name="vpn_persistence_message">AdAway jam mem traktas restartojn, ĉesigojn pro malalta memoro kaj kraŝojn, do en la plej multaj kazoj neniu plia agordo necesas.\n\nSe la VPN iam neatendite haltas, agordu AdAway kiel la ĉiam-aktivan VPN de la Android-sistemo por la plej forta garantio.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">VPN-agordoj estas kaŝitaj sur ĉi tiu Android TV. Uzu la montritajn ADB-komandojn.</string>
+    <string name="vpn_persistence_dismiss">Komprenite</string>
+    <string name="home_tile_log">DNS-protokolo</string>
+    <string name="home_log_subtitle">Vidu kio estas blokata en reala tempo</string>
+    <string name="home_tile_help">Helpo</string>
+    <string name="home_help_subtitle">Gvidiloj kaj problemsolvado</string>
+    <string name="home_preferences_subtitle">Agordu AdAway</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="help_tab_faq">Oftaj demandoj</string>
+    <string name="help_tab_about">Pri</string>
+    <string name="about_version">Versio %s</string>
+    <string name="about_description">Neoficiala forko de AdAway prizorgata de la komunumo.</string>
+    <string name="about_source_label">Fontkodo (GitHub)</string>
+    <string name="about_issues_label">Raporti problemon</string>
+    <string name="about_releases_label">Eldonoj</string>
+    <string name="about_upstream_label">Oficiala AdAway (upstream)</string>
+    <string name="about_license_label">Permesilo: GNU General Public License v3.0 aŭ pli nova (GPLv3+)</string>
+</resources>

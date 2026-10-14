@@ -1,0 +1,35 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Kopiering av värdfil misslyckades på Android 9+</h2>
+<p>På senaste versionen av Android är <code>/system</code>-partitionen skrivskyddad. <br>
+Om du använder Magisk som din root-hanterare, se då till att du aktiverar modulen systemless hosts och sen startar om.</p>
+
+<h2>Inte tillräckligt med utrymme på partitionen</h2>
+<p>Försök ändra målvärdfilen i inställningar till <code>/data/data/hosts</code> (eller <code>/data/hosts</code>) och verkställ AdAway igen.</p>
+
+<h2>Fungerar ej på Android 4.4+</h2>
+<p>Se till att du inaktiverar <cite>lite mode</cite> (kallades tidigare för <cite>datasparare</cite>) från Chrome-inställningar. Den här funktionen gör det möjligt för Chrome att använda privat DNS-lösning och gå förbi AdAway.</p>
+
+<h2>Den blockerar inte annonser i applikationen XYZ!</h2>
+<p>Vissa värdnamn kan saknas i de medföljande värdfilerna från <cite>Hosts Sources</cite> eller programmet har buntat bilderna för att ge annonser utan att komma åt internet.<br><br>
+YDu kan logga DNS-förfrågningar (Meny-&gt;logga DNS-förfrågningar) från AdAway för att ta reda på vilka ytterligare värdnamn som måste blockeras.
+<br><br>Lägg till misstänkta värdnamn i din egen svarta lista genom att länge trycka på posterna i loggen och rapportera dessa värdnamn när du har verifierat dem i vår <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub issue tracker</a>.</p>
+
+<h2>Cachade annonser</h2>
+<p>Ibland cachar applikationer sina annonser efter hämtning. Detta leder till att annonserna finns kvar i vissa applikationer. Du kan testa att rensa cache för applikationen i Androids Applista för att kringgå detta problem.</p>
+
+<h2>Applikation XYZ fungerar inte längre!</h2>
+<p>En del applikationer måste kommunicera med ett värdnamn som är blockerad av AdAway eller så vägrar de att fungera när värdnamnet som skickar annonser inte går att nå. Gå till <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> för en lista över kända applikationer som har detta problemet. Annars, ta reda på vilka värdnamn som behövs och lägg till dem till din <cite>Vitlista</cite> under <cite>Dina listor</cite> och rapportera dem till <a href="https://github.com/Victor-root/AdAway-Community/issues">felsökaren för AdAway</a>.</p>
+
+<h2>Fungerar inte på Android 4.4+</h2>
+<p>Prova med att ändra målvärdfilen i inställningar från <code>/data/data/hosts</code> till <code>/data/hosts</code> eller <code>/system/etc/hosts</code> och verkställ  AdAway igen.</p>
+
+<h2>Bakåtknappen i webbläsaren fungerar inte</h2>
+<p>Du kan aktivera AdAways lokala webbserver i inställningarna för att komma förbi problemet.</p>
+
+</body>
+</html>

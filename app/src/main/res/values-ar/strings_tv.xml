@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">إضافة إلى المسموح بها</string>
+    <string name="tv_dialog_add_to_blocked">إضافة إلى المحظورة</string>
+    <string name="tv_dialog_remove_from_allowed">إزالة من المسموح بها</string>
+    <string name="tv_dialog_remove_from_blocked">إزالة من المحظورة</string>
+    <string name="tv_dialog_copy_hostname">نسخ اسم المضيف</string>
+    <string name="tv_log_entry_status_description">حالة النطاق</string>
+    <string name="tv_button_theme_light">الوضع الفاتح</string>
+    <string name="tv_button_theme_dark">الوضع الداكن</string>
+    <string name="tv_lists_empty">لا توجد إدخالات في هذه القائمة بعد.</string>
+    <string name="tv_dialog_search">بحث</string>
+</resources>

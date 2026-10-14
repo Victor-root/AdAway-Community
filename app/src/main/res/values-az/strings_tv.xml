@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">İcazə verilənlərə əlavə et</string>
+    <string name="tv_dialog_add_to_blocked">Bloklananlara əlavə et</string>
+    <string name="tv_dialog_remove_from_allowed">İcazə verilənlərdən sil</string>
+    <string name="tv_dialog_remove_from_blocked">Bloklananlardan sil</string>
+    <string name="tv_dialog_copy_hostname">Host adını kopyala</string>
+    <string name="tv_log_entry_status_description">Domen statusu</string>
+    <string name="tv_button_theme_light">İşıqlı rejim</string>
+    <string name="tv_button_theme_dark">Qaranlıq rejim</string>
+    <string name="tv_lists_empty">Bu siyahıda hələ heç bir giriş yoxdur.</string>
+    <string name="tv_dialog_search">Axtar</string>
+</resources>

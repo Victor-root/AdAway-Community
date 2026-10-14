@@ -1,0 +1,33 @@
+<!-- Maintain structure with headings with h2 tags and content with p tags.
+This makes it easy to translate the values with transifex!
+And don't add newlines before or after p tags because of transifex -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>درآمد با تبلیغات</h2>
+<p>این تصور غلط وجود دارد که اگر کاربر هرگز روی تبلیغات کلیک نکند مسدود کردن آن ها از نظر مالی به سایت یا برنامه آسیبی وارد نخواهد کرد این اشتباه است توسعه دهندگان نیز تنها با نمایش تبلیغات درآمد کسب می کنند این به شما بستگی دارد که آیا تبلیغات را مسدود کنید یا خیر من شخصا از برنامه هایی که تبلیغات را نمایش می دهند استفاده نمی کنم زیرا آن ها را بسیار آزاردهنده می دانم بنابراین بدون مسدود کننده تبلیغات این برنامه ها را نصب نمی کنم</p>
+
+<h2>برنامه AdAway چگونه کار میکند؟</h2>
+<p>AdAway از <a href="http://en.wikipedia.org/wiki/Hosts_file">فایل hosts</a> برای مسدود کردن نام های host که تبلیغات را ارائه می دهند استفاده می کند فایل host فایلی است که در <code> system/etc/hosts/</code> یافت می شود که نام های host را به آدرس های IP نگاشت می کند این یک روش سنتی برای تعریف نام host به جفت آدرس IP بدون تکیه بر سیستم نام دامنه (DNS) است همه نام‌ های host ناخواسته به <code>127.0.0.1</code> منتقل می‌شوند و به این معنی که آن ها به دستگاه شما اشاره می کنند<br>فایل hosts قابل نوشتن نیست یک راه حل بازگشتی استفاده از سرویس VPN داخلی است که اتصالات به نام های host ناخواسته را فیلتر می کند و به دیگران اجازه می دهد تا از آن عبور کنند</p>
+
+<h2>چرا برای انجام تغییرات باید گوشی خود را خاموش و روشن کنم؟</h2>
+<p>جاوا در اندروید حافظه پنهان DNS داخلی خود را حفظ می کند سیستم عامل گوشی شما فایل hosts جدید را فورا منعکس می کند (این را با پینگ در خط فرمان تایید کنید) اما برای بازسازی حافظه پنهان DNS جاوا باید گوشی خود را خاموش و روشن کنید</p>
+
+<h2>چگونه از وب سرور در AdAway استفاده کنیم؟</h2>
+<p><strong>AdAway همچنین بدون استفاده از وب سرور کار خواهد کرد</strong>
+<br><br>شما می توانید یک وب سرور محلی را در تنظیمات برگزیده AdAway فعال کنید تا به درخواست ها با آدرس IP محلی <code>127.0.0.1</code> پاسخ دهد این به این معناست که درخواست‌ های برنامه‌ ها به سرورهای تبلیغاتی به <code>127.0.0.1</code> منتقل می‌ شوند توسط وب سرور AdAway پاسخ داده می‌شوند
+<br> وقتی سرورهای تبلیغاتی در دسترس نیستند برخی از برنامه‌ ها که از کار کردن خودداری می‌کنند با این روش دوباره در دسترس خواهند بود و با صفحه خالی و بدون تصاویر تبلیغاتی پاسخ داده می شوند</p>
+
+<h2>چگونه می توانم نام host خاصی را مسدود یا آزاد کنم؟</h2>
+<p>نام‌ host هایی را که می‌خواهید مسدود کنید از <cite>صفحه اصلی</cite> به لیست <cite>مسدود شده</cite> اضافه کنید و همچنین نام‌ های host مورد نظر که می‌ خواهید از مسدود کردن حذف شوند را به <cite>مجاز شده</cite> اضافه کنید همچنین نام‌ های host که می‌خواهید به یک آدرس IP خاص هدایت کنید متعلق به <cite>تغییر مسیر</cite> هستند</p>
+
+<h2>از کجا می توانم منابع hosts بیشتری پیدا کنم؟</h2>
+<p><a href="https://github.com/AdAway/AdAway/wiki/HostsSources">فهرست منابع hosts اضافی برای AdAway</a> را ببینید</p>
+
+<h2>Why this fork exists</h2>
+<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+
+<h2>کمک به ترجمه و گزارش مشکلات برنامه</h2>
+<p>لطفا سایت <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> را مشاهده کنید</p>
+</body>
+</html>

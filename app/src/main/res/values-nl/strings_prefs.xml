@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Instellingen</string>
+    <string name="pref_general_category">Algemeen</string>
+    <string name="pref_dark_theme">Donker thema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Licht</item>
+        <item>Donker</item>
+        <item>Systeem default</item>
+    </string-array>
+    <string name="pref_update_configuration">Automatisch bijwerken</string>
+    <string name="pref_ad_block_category">Advertentieblokkering</string>
+    <string name="pref_root_ad_blocker_configuration">Advertentieblokkeerder voor geroote apparaten</string>
+    <string name="pref_vpn_ad_blocker_configuration">Advertentieblokkering op basis van VPN</string>
+    <string name="pref_enable_ipv6">IPv6-ondersteuning inschakelen</string>
+    <string name="pref_backup_restore">Backup/herstel blokkaderegels</string>
+    <string name="pref_backup_restore_title">Backup &amp; restore</string>
+    <string name="pref_backup">Backup</string>
+    <string name="pref_backup_summary">Backup je blokkeerregels naar een externe locatie</string>
+    <string name="pref_restore">Restore</string>
+    <string name="pref_restore_summary">Restore je blokkeerregels vanuit een backup bestand</string>
+    <string name="import_success">De back-up is geïmporteerd van uw externe opslag.</string>
+    <string name="export_success">De back-up is succesvol geëxporteerd naar \'%s\' op uw externe opslag.</string>
+    <string name="export_failed">Het exporteren van backup file \'%s\' is mislukt.</string>
+    <string name="pref_update_title">Updates</string>
+    <string name="pref_update_enable_notifications">Notificaties zijn uitgeschakeld</string>
+    <string name="pref_update_enable_notifications_summary">Applicatie notificaties zijn niet zichtbaar. Tik om in te schakelen.</string>
+    <string name="pref_update_app_category">App-updates</string>
+    <string name="pref_update_check_app_startup">Controleer voor updates tijdens opstarten</string>
+    <string name="pref_update_check_app_daily">Regelmatig controleren op updates</string>
+    <string name="pref_update_check_now">Nu controleren</string>
+    <string name="pref_update_install">Nu bijwerken</string>
+    <string name="pref_update_hosts_category">Hosts-updates</string>
+    <string name="pref_update_check">Controleer voor updates tijdens opstarten</string>
+    <string name="pref_update_check_hosts_daily">Regelmatig controleren op updates</string>
+    <string name="pref_update_sync_on_update">Synchroniseren na updates</string>
+    <string name="pref_update_sync_unmetered_only">Alleen synchroniseren via Wi-Fi</string>
+    <string name="pref_vpn_service_on_boot">Inschakelen bij opstarten</string>
+    <string name="pref_vpn_service_monitor">Controleer verbinding</string>
+    <string name="pref_vpn_service_monitor_description">Controleer periodiek de netwerkstatus om VPN te herstarten bij disconnectie</string>
+    <string name="pref_vpn_excluded_apps">Uitgesloten applicaties</string>
+    <string name="pref_vpn_excluded_apps_description">Geef aan welke applicaties niet VPN mogen gebruiken zodat er geen connecties zullen worden geblokkeerd.</string>
+    <string name="pref_vpn_exclude_system_apps">Uitgesloten systeem applicaties</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>None</item>
+        <item>All except browsers</item>
+        <item>All</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Uitgesloten gebruiker applicaties</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Uitgesloten applicaties</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Selecteer alles</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Deselecteer alles</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Applicatie icon</string>
+    <string name="pref_vpn_reset">VPN opnieuw instellen</string>
+    <string name="pref_vpn_reset_description">Bouw de VPN-verbinding volledig opnieuw op. Gebruik dit als de VPN niet meer werkt (geen internettoegang of DNS-fouten).</string>
+    <string name="pref_vpn_reset_done">VPN-verbinding opnieuw opgebouwd.</string>
+    <string name="pref_vpn_reset_not_running">VPN is niet actief.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnostisch logboek</string>
+    <string name="pref_vpn_diagnostic_log_description">Bekijk, kopieer of deel de recente fouten en VPN-gebeurtenissen. Handig bij het melden van een probleem.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Er zijn nog geen gebeurtenissen vastgelegd.</string>
+    <string name="pref_vpn_diagnostic_log_share">Diagnostisch logboek delen</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopiëren</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostisch logboek gekopieerd naar klembord.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Diagnostisch logboek wissen</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Verwijder de vastgelegde gebeurtenissen. Doe dit voordat je een probleem reproduceert om een schone trace vast te leggen.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostisch logboek gewist.</string>
+    <string name="pref_root_open_hosts">Hosts-bestand openen</string>
+    <string name="pref_hosts_redirection_summary">Bepaal waar de geblokkeerde hosts naar moeten worden omgeleid</string>
+    <string name="pref_redirection_ipv4">IPv4 doorverwijzing</string>
+    <string name="pref_redirection_ipv6">IPv6 doorverwijzing</string>
+    <string name="pref_redirection_invalid">Ongeldige doorverwijzing</string>
+    <string name="pref_webserver_summary">De lokale webserver luistert naar lokale ip-adressen om aanvragen van geblokkeerde hostnamen te beantwoorden. indien de connectie blokkeert kan app freezing helpen.</string>
+    <string name="pref_webserver_enabled">Webserver inschakelen</string>
+    <string name="pref_webserver_test">Test webserver</string>
+    <string name="pref_webserver_certificate">Installeer zelf ondertekend certificaat</string>
+    <string name="pref_webserver_state_not_running">Niet actief</string>
+    <string name="pref_webserver_state_checking">Controleer…</string>
+    <string name="pref_webserver_state_running_not_installed">Actief maar certificaat is niet geinstalleerd</string>
+    <string name="pref_webserver_state_running_and_installed">Actief en certificaat is geinstalleerd</string>
+    <string name="pref_webserver_certificate_dialog_title">Installeer certificaten handmatig</string>
+    <string name="pref_webserver_certificate_dialog_content">Vanaf Android 11 (R), applicaties kunnen niet meer automatisch geautoriseerde certificaten (CA) installeren.\n\nGa naar \"Beveiliging\" in settings, \"Encrypty &amp; credentials\" en dan \"Installeer een certificaat\". Vanaf daar kies voor \"CA certificaat\" en selecteer het nieuwe geëxporteerde certificaat bestand.</string>
+    <string name="pref_webserver_certificate_dialog_action">Open \"Beveiliging\" in settings</string>
+    <string name="pref_webserver_icon">Vervang lege advertentieruimte met app incon</string>
+</resources>

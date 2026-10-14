@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_clear">Tyhjennä loki</string>
+    <string name="log_start_recording_button">Aloita tallennus</string>
+    <string name="log_start_recording_vpn_inactive">Aloita tallennus (VPN ei aktiivinen)</string>
+    <string name="log_stop_recording">Lopeta tallennus</string>
+</resources>

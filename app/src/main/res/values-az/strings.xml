@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_vpn_settings">VPN parametrlərini aç</string>
+    <string name="vpn_settings_unavailable">VPN parametrləri bu cihazda mövcud deyil.</string>
+    <string name="close">Bağla</string>
+    <string name="add">Əlavə Et</string>
+    <string name="apply">Tətbiq et</string>
+    <string name="cancel">Ləğv Et</string>
+    <string name="delete">Sil</string>
+    <string name="disable">Deaktivləşdir</string>
+    <string name="edit">Redaktə Et</string>
+    <string name="enable">Aktivləşdir</string>
+    <string name="save">Yadda saxla</string>
+    <string name="home_blocked_description">Reklam və izləyicilər</string>
+    <string name="home_allowed_description">İstisnalar</string>
+    <string name="home_redirected_description">Fərdi qaydalar</string>
+    <string name="lists_title">Siyahılarınız</string>
+    <string name="lists_search_clear">Təmizlə</string>
+    <string name="rule_add_blocked">Host\'u qara siyahıya at</string>
+    <string name="rule_add_allowed">Host\'u ağ siyahıya at</string>
+    <string name="rule_add_redirected">Host yönləndirici əlavə et</string>
+    <string name="rule_edit_blocked">Qara siyahıdakı host\'u dəyiş</string>
+    <string name="rule_edit_allowed">Ağ siyahıdakı host\'u dəyiş</string>
+    <string name="rule_edit_redirected">Yönləndirməni dəyiş</string>
+    <string name="rule_host">Host adı:</string>
+    <string name="rule_address">IP (IPv4 or IPv6):</string>
+    <string name="rule_wildcards_hint">(Wildkart * və ? işarələrinə icazə verilir)</string>
+    <string name="sources_title">Hosts resursları</string>
+    <string name="source_add">Qaynaq əlavə et</string>
+    <string name="source_edit">Qaynağı dəyiş</string>
+    <string name="update_error_no_network_title">İnternetə çıxış yoxdur</string>
+    <string name="root_error_denied_title">Root icazəsi verilmədi</string>
+    <string name="root_error_denied_text">Root tətbiqinizdən root icazəsi verin</string>
+    <string name="root_error_space_title">Kifayət qədər yer yoxdur</string>
+    <plurals name="home_sources_up_to_date">
+        <item quantity="one">%d up-to-date source</item>
+        <item quantity="other">%d up-to-date sources</item>
+    </plurals>
+    <string name="notification_channel_vpn">VPN</string>
+    <string name="notification_vpn_disable">Deaktivləşdir</string>
+    <string name="notification_vpn_enable">Aktivləşdir</string>
+    <string name="home_blocking_enabled">Reklam bloklama: aktiv</string>
+    <string name="home_blocking_disabled">Reklam bloklama: deaktiv</string>
+    <string name="home_enable_blocking">Reklam-bloklamanı aç</string>
+    <string name="home_disable_blocking">Reklam-bloklamanı bağla</string>
+    <string name="home_always_on_active">Həmişə aktiv VPN işləkdir</string>
+    <string name="vpn_persistence_title">VPN davamlılığı</string>
+    <string name="vpn_persistence_summary">Reklam bloklamasını arxa planda aktiv saxlayın</string>
+    <string name="vpn_persistence_enabled">Həmişə aktiv VPN AdAway üçün aktivdir. ✓</string>
+    <string name="vpn_persistence_disabled">Həmişə aktiv VPN təyin edilməyib. AdAway-in daxili davamlılığı bunu idarə edir.</string>
+    <string name="vpn_persistence_message">AdAway yenidən başlatmaları, yaddaş azlığına görə dayandırmaları və çökmələri artıq özü idarə edir, buna görə əksər hallarda əlavə quraşdırma tələb olunmur.\n\nƏgər VPN nə vaxtsa gözlənilmədən dayanarsa, ən güclü zəmanət üçün AdAway-i Android sisteminin Həmişə aktiv VPN tətbiqi kimi təyin edin.</string>
+    <string name="vpn_persistence_tv_settings_unavailable">Bu Android TV-də VPN parametrləri gizlidir. Göstərilən ADB əmrlərindən istifadə edin.</string>
+    <string name="vpn_persistence_dismiss">Anladım</string>
+    <string name="help">Kömək</string>
+    <string name="home_tile_log">DNS jurnalı</string>
+    <string name="home_log_subtitle">Real vaxtda nəyin bloklandığını görün</string>
+    <string name="home_tile_help">Kömək</string>
+    <string name="home_help_subtitle">Bələdçilər və nasazlıqların aradan qaldırılması</string>
+    <string name="home_tile_preferences">Tənzimləmələr</string>
+    <string name="home_preferences_subtitle">AdAway-i tənzimləyin</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%d outdated source</item>
+        <item quantity="other">%d outdated sources</item>
+    </plurals>
+    <string name="hosts_source_up_to_date">%1$s üçün yenidir</string>
+    <string name="hosts_source_need_update">%1$s üçün yeniləmə lazımdır</string>
+    <string name="hosts_source_last_update">Son yeniləmə %1$s əvvəl</string>
+    <string name="hosts_source_unknown_status">Bilinməyən yeniləmə vəziyəti</string>
+    <plurals name="hosts_source_hours">
+        <item quantity="one">%d saat</item>
+        <item quantity="other">%d saat</item>
+    </plurals>
+    <plurals name="hosts_source_days">
+        <item quantity="one">%d gün</item>
+        <item quantity="other">%d gün</item>
+    </plurals>
+    <plurals name="hosts_source_months">
+        <item quantity="one">%d ay</item>
+        <item quantity="other">%d ay</item>
+    </plurals>
+    <string name="rule_actions_title">Girişi Redaktə Et</string>
+    <string name="help_tab_faq">FAQ</string>
+    <string name="help_tab_problems">Problemlər</string>
+    <string name="help_tab_about">Haqqında</string>
+    <string name="about_version">Versiya %s</string>
+    <string name="about_description">AdAway-in icma tərəfindən dəstəklənən qeyri-rəsmi forku.</string>
+    <string name="about_source_label">Mənbə kodu (GitHub)</string>
+    <string name="about_issues_label">Problem bildirin</string>
+    <string name="about_releases_label">Buraxılışlar</string>
+    <string name="about_upstream_label">Rəsmi AdAway (əsas mənbə)</string>
+    <string name="about_license_label">Lisenziya: GNU General Public License v3.0 or later (GPLv3+)</string>
+    <string name="shortcut_dns_requests">DNS istəkləri</string>
+    <string name="shortcut_your_lists">Siyahılarınız</string>
+    <string name="shortcut_preferences">Tənzimləmələr</string>
+    <string name="menu_refresh">Yenilə</string>
+</resources>

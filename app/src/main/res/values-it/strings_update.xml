@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">Aggiornamento di AdAway</string>
+    <string name="update_banner_title">Aggiornamento disponibile</string>
+    <string name="update_banner_subtitle">Tocca per installare %1$s</string>
+    <string name="update_up_to_date_header">Sei aggiornato</string>
+    <string name="update_update_available_header">Aggiornamento disponibile</string>
+    <string name="update_updating_header">Aggiornando AdAway</string>
+    <string name="update_update_button">Aggiorna ora</string>
+    <string name="update_complete_label">Completato</string>
+    <string name="update_last_changelog_title">Le ultime novità:</string>
+    <string name="update_new_changelog_title">Registro modifiche</string>
+    <string name="pref_update_check_now_update_available">Nuova versione disponibile: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nessun aggiornamento disponibile</string>
+    <string name="pref_update_install_summary">Installa versione %1$s</string>
+    <string name="notification_channel_app_updates">Aggiornamenti app</string>
+    <string name="notification_channel_app_updates_description">Notifica quando è disponibile una nuova versione dell’app. Disattiva questo canale per silenziare gli avvisi di aggiornamento app senza incidere sulle altre notifiche.</string>
+    <string name="notification_app_update_title">Aggiornamento dell\'app disponibile</string>
+    <string name="notification_app_update_text">Nuova versione di AdAway disponibile</string>
+</resources>

@@ -74,6 +74,11 @@ android {
         generateLocaleConfig = true
     }
 
+    // The translations come from the 6.x versions: the texts added since stay in English until translated.
+    lint {
+        disable += "MissingTranslation"
+    }
+
     // The root processes are run from the installed libraries: they must be extracted on install.
     packaging {
         jniLibs {

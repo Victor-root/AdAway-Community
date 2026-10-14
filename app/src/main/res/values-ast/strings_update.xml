@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_banner_title">Anovamientu disponible</string>
+    <string name="update_banner_subtitle">Toca pa instalar %1$s</string>
+    <string name="update_update_available_header">Anovamientu disponible</string>
+    <string name="pref_update_check_now_update_available">Nueva versión disponible: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nun hai anovamientos disponibles</string>
+    <string name="pref_update_install_summary">Instalar la versión %1$s</string>
+    <string name="notification_channel_app_updates">Anovamientos de l’aplicación</string>
+    <string name="notification_channel_app_updates_description">Avisu cuando hai una nueva versión de l’aplicación. Silencia esta canal pa anubrir los avisos d’anovamientu de l’aplicación ensin afectar a otres notificaciones.</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Lägg till i tillåtna</string>
+    <string name="tv_dialog_add_to_blocked">Lägg till i blockerade</string>
+    <string name="tv_dialog_remove_from_allowed">Ta bort från tillåtna</string>
+    <string name="tv_dialog_remove_from_blocked">Ta bort från blockerade</string>
+    <string name="tv_dialog_copy_hostname">Kopiera värdnamn</string>
+    <string name="tv_log_entry_status_description">Domänstatus</string>
+    <string name="tv_button_theme_light">Ljust läge</string>
+    <string name="tv_button_theme_dark">Mörkt läge</string>
+    <string name="tv_lists_empty">Inga poster i listan än.</string>
+    <string name="tv_dialog_search">Sök</string>
+</resources>

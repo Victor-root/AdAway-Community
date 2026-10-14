@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_first_step">Primer paso del asistente</string>
+    <string name="welcome_second_step">Segundo paso del asistente</string>
+    <string name="welcome_method_header">¡Bienvenido a AdAway!</string>
+    <string name="welcome_method_summary">AdAway proporciona dos métodos de bloqueo de anuncios. Escoge el que te gusta:</string>
+    <string name="welcome_root_method_title">Basado en root\nbloqueo de anuncios</string>
+    <string name="welcome_root_method_text1">Más rápido</string>
+    <string name="welcome_root_method_text2">Amigable para la batería</string>
+    <string name="welcome_root_method_text3">Root necesario</string>
+    <string name="welcome_vpn_method_title">Basado en VPN\nbloqueo de anuncios</string>
+    <string name="welcome_vpn_method_text1">Más lento</string>
+    <string name="welcome_vpn_method_text2">Ejecutar en segundo plano</string>
+    <string name="welcome_vpn_method_text3">Compatibilidad</string>
+    <string name="welcome_root_missing_title">Se requiere un Android rooteado</string>
+    <string name="welcome_root_missile_description">O bien no se pudo encontrar el binario o no permitió el permiso de root para AdAway.\n\nEsto puede suceder cuando tu dispositivo no está rooteado. Puedes encontrar información acerca de cómo hacer funcionar tu dispositivo en wiki.lineageos.org u otros sitios web de Android.</string>
+    <string name="welcome_vpn_alwayson_title">VPN siempre activa habilitada</string>
+    <string name="welcome_vpn_alwayson_description">AdAway detectó que otra VPN tiene la configuración \"VPN siempre activa\" habilitada.\n\nEsto impide que AdAway solicite acceso a la VPN. Por favor desactivar \"VPN siempre activa\" en la VPN correspondiente y volver a intentarlo.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway no pudo solicitar acceso a la VPN.\n\nEsto podría deberse a que otra VPN tiene activada la configuración de \"VPN siempre activa\". Por favor, verificar si alguna VPN tiene esta configuración habilitada y desactivarla antes de intentar nuevamente.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Abrir la configuración de \"VPN\"</string>
+    <string name="welcome_method_pro_logo">Pro</string>
+    <string name="welcome_method_con_logo">Con</string>
+    <string name="welcome_sync_header">Sincronizando</string>
+    <string name="welcome_synced_header">¡Sincronizado!</string>
+    <string name="welcome_sync_summary">AdAway descarga redes publicitarias para bloquear las fuentes en línea. Puedes personalizarlas más tarde en la configuración.</string>
+    <string name="welcome_sync_retry_logo">Reintentar la sincronización</string>
+    <string name="welcome_sync_error">Error al sincronizar: %1$s ¿Reintentar ahora?</string>
+    <string name="welcome_sync_notifications">Puedes enviar notificaciones para mostrar el estado y el control del bloqueo de anuncios, y para notificar sobre las actualizaciones disponibles de la aplicación (unas pocas al año). Habilítalas si quieres estar actualizado.</string>
+    <string name="welcome_sync_leave_early_title">La sincronización aún no ha terminado</string>
+    <string name="welcome_sync_leave_early_message">La descarga de las listas de bloqueo aún no ha terminado. Puedes continuar ahora y seguirá en segundo plano, o esperar aquí hasta que termine.</string>
+    <string name="welcome_sync_leave_early_wait">Esperar</string>
+    <string name="welcome_sync_leave_early_continue">Continuar de todos modos</string>
+    <string name="welcome_back_button">Atrás</string>
+    <string name="welcome_next_button">Siguiente</string>
+    <string name="welcome_finish_button">Finalizar</string>
+    <string name="tv_welcome_intro_subtitle">Este breve asistente activará el bloqueo de anuncios en este dispositivo.</string>
+    <string name="tv_welcome_start_button">Empezar</string>
+    <string name="tv_welcome_method_header">Elige tu método de bloqueo</string>
+    <string name="tv_welcome_method_root_button">Usar root</string>
+    <string name="tv_welcome_method_root_body">Más rápido y eficiente con la batería. Requiere un dispositivo rooteado.</string>
+    <string name="tv_welcome_method_vpn_button">Usar VPN</string>
+    <string name="tv_welcome_method_vpn_body">Funciona sin root, compatible con cualquier dispositivo Android TV.</string>
+    <string name="tv_welcome_activate_header">Activar el bloqueo de anuncios</string>
+    <string name="tv_welcome_activate_body">Es una VPN local: filtra los anuncios en este dispositivo, sin enviar tu tráfico a través de un servidor externo.</string>
+</resources>

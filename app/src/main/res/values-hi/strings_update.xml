@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_banner_title">अद्यतन उपलब्ध</string>
+    <string name="update_banner_subtitle">%1$s स्थापित करने के लिए टैप करें</string>
+    <string name="pref_update_check_now_update_available">नया संस्करण उपलब्ध: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">कोई अद्यतन उपलब्ध नहीं</string>
+    <string name="pref_update_install_summary">%1$s संस्करण स्थापित करें</string>
+    <string name="notification_channel_app_updates">ऐप अद्यतन</string>
+    <string name="notification_channel_app_updates_description">ऐप का नया संस्करण उपलब्ध होने पर सूचना। अन्य सूचनाओं को प्रभावित किए बिना ऐप-अद्यतन अलर्ट छिपाने के लिए इस चैनल को म्यूट करें।</string>
+</resources>

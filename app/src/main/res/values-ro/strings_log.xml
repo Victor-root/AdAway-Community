@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_sort">Sortare domenii</string>
+    <string name="log_clear">Șterge log-uri</string>
+    <string name="log_sort_alphabetical">Sortare alfabetică</string>
+    <string name="log_sort_top_level_domain">Sortare domeniu pe nivel superior</string>
+    <string name="log_block">Adăugare intrare în lista neagră</string>
+    <string name="log_allow">Adăugare intrare în lista albă</string>
+    <string name="log_redirect">Adăugare înregistrare pe lista de redirecționare</string>
+    <string name="log_redirect_dialog_title">Redirecționare domeniu</string>
+    <string name="log_start_recording_button">Începe înregistrarea</string>
+    <string name="log_start_recording_vpn_inactive">Începe înregistrarea (VPN inactiv)</string>
+    <string name="log_stop_recording">Oprește înregistrarea</string>
+</resources>

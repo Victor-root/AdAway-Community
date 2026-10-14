@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_welcome_intro_subtitle">Papapaganahin ng maikling wizard na ito ang pag-block ng mga ad sa device na ito.</string>
+    <string name="tv_welcome_start_button">Simulan</string>
+    <string name="tv_welcome_method_header">Piliin ang paraan ng pag-block</string>
+    <string name="tv_welcome_method_root_button">Gamitin ang root</string>
+    <string name="tv_welcome_method_root_body">Mas mabilis at nakatitipid sa baterya. Nangangailangan ng naka-root na device.</string>
+    <string name="tv_welcome_method_vpn_button">Gamitin ang VPN</string>
+    <string name="tv_welcome_method_vpn_body">Gumagana nang walang root, katugma sa anumang Android TV device.</string>
+    <string name="tv_welcome_activate_header">I-on ang pag-block ng ad</string>
+    <string name="tv_welcome_activate_body">Isa itong lokal na VPN: sinasala nito ang mga ad sa mismong device, nang hindi dinadaan ang iyong trapiko sa isang panlabas na server.</string>
+</resources>

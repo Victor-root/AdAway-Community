@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_start_recording_button">ریکارڈنگ شروع کریں</string>
+    <string name="log_start_recording_vpn_inactive">ریکارڈنگ شروع کریں (VPN فعال نہیں)</string>
+    <string name="log_stop_recording">ریکارڈنگ روکیں</string>
+</resources>

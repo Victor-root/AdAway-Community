@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">設定</string>
+    <string name="pref_general_category">一般</string>
+    <string name="pref_dark_theme">深色主題</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>淺色</item>
+        <item>深色</item>
+        <item>系統預設</item>
+    </string-array>
+    <string name="pref_update_configuration">自動更新</string>
+    <string name="pref_ad_block_category">廣告阻擋</string>
+    <string name="pref_root_ad_blocker_configuration">基於 Root 的廣告阻擋器</string>
+    <string name="pref_vpn_ad_blocker_configuration">基於 VPN 的廣告阻擋器</string>
+    <string name="pref_enable_ipv6">啟用 IPv6 支援</string>
+    <string name="pref_backup_restore">備份 / 還原阻擋規則</string>
+    <string name="pref_backup_restore_title">備份和還原</string>
+    <string name="pref_backup">備份</string>
+    <string name="pref_backup_summary">將阻擋規則備份到外部存儲</string>
+    <string name="pref_restore">還原</string>
+    <string name="pref_restore_summary">從備份檔案還原阻擋規則</string>
+    <string name="import_success">成功從外接儲存裝置匯入了備份資料。</string>
+    <string name="export_success">備份成功匯出到外部儲存空間的「%s」檔案。</string>
+    <string name="export_failed">無法匯出備份檔案「%s」。</string>
+    <string name="pref_update_title">更新</string>
+    <string name="pref_update_enable_notifications">通知已停用</string>
+    <string name="pref_update_enable_notifications_summary">應用程式通知不會顯示。點擊啟用它們。</string>
+    <string name="pref_update_app_category">應用程式更新</string>
+    <string name="pref_update_check_app_startup">啟動時檢查更新</string>
+    <string name="pref_update_check_app_daily">定期檢查更新</string>
+    <string name="pref_update_check_now">立即檢查</string>
+    <string name="pref_update_install">立即更新</string>
+    <string name="pref_update_hosts_category">Hosts 更新</string>
+    <string name="pref_update_check">啟動時檢查更新</string>
+    <string name="pref_update_check_hosts_daily">定期檢查更新</string>
+    <string name="pref_update_sync_on_update">同步更新</string>
+    <string name="pref_update_sync_unmetered_only">僅在不限流量的網路上同步</string>
+    <string name="pref_vpn_service_on_boot">開機時啟用</string>
+    <string name="pref_vpn_service_monitor">監視連線狀態</string>
+    <string name="pref_vpn_service_monitor_description">定期檢查網路狀態，並在斷線時重新啟動 VPN。</string>
+    <string name="pref_vpn_excluded_apps">排除的應用程式</string>
+    <string name="pref_vpn_excluded_apps_description">設定哪些應用程式不應使用 VPN，以避免阻擋任何連線。</string>
+    <string name="pref_vpn_exclude_system_apps">排除系統應用程式</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>無</item>
+        <item>排除瀏覽器之外的所有應用程式</item>
+        <item>全部</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">排除使用者應用程式</string>
+    <string name="pref_vpn_exclude_user_apps_activity">已排除的應用程式</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">全選</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">全不選</string>
+    <string name="pref_vpn_exclude_user_apps_icon">應用程式圖示</string>
+    <string name="pref_vpn_reset">重設 VPN</string>
+    <string name="pref_vpn_reset_description">從頭重建 VPN 連線。若 VPN 停止運作（無法連上網際網路或出現 DNS 錯誤），請使用此功能。</string>
+    <string name="pref_vpn_reset_done">已重建 VPN 連線。</string>
+    <string name="pref_vpn_reset_not_running">VPN 未在運行。</string>
+    <string name="pref_vpn_diagnostic_log">診斷記錄</string>
+    <string name="pref_vpn_diagnostic_log_description">檢視、複製或分享最近的錯誤與 VPN 事件。回報問題時很有用。</string>
+    <string name="pref_vpn_diagnostic_log_empty">尚未記錄任何事件。</string>
+    <string name="pref_vpn_diagnostic_log_share">分享診斷記錄</string>
+    <string name="pref_vpn_diagnostic_log_copy">複製</string>
+    <string name="pref_vpn_diagnostic_log_copied">診斷記錄已複製到剪貼簿。</string>
+    <string name="pref_vpn_diagnostic_log_clear">清除診斷記錄</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">刪除已記錄的事件。請在重現問題之前執行此操作，以取得乾淨的記錄。</string>
+    <string name="pref_vpn_diagnostic_log_cleared">診斷記錄已清除。</string>
+    <string name="pref_root_open_hosts">開啟 hosts 檔案</string>
+    <string name="pref_hosts_redirection_summary">定義重新導向被阻止的 hosts 位置</string>
+    <string name="pref_redirection_ipv4">IPv4 重新導向</string>
+    <string name="pref_redirection_ipv6">IPv6 重新導向</string>
+    <string name="pref_redirection_invalid">無效的重新導向</string>
+    <string name="pref_webserver_summary">本機網頁伺服器會監聽本機 IP 位址，以回應被阻擋的主機名稱請求。這可能有助於解決應用程式在被阻擋的連線時出現的凍結問題。</string>
+    <string name="pref_webserver_enabled">啟用網頁伺服器</string>
+    <string name="pref_webserver_test">測試網頁伺服器</string>
+    <string name="pref_webserver_certificate">安裝自簽憑證</string>
+    <string name="pref_webserver_state_not_running">未執行</string>
+    <string name="pref_webserver_state_checking">檢查中……</string>
+    <string name="pref_webserver_state_running_not_installed">正在執行，但未安裝憑證</string>
+    <string name="pref_webserver_state_running_and_installed">正在執行且已安裝憑證</string>
+    <string name="pref_webserver_certificate_dialog_title">憑證手動安裝</string>
+    <string name="pref_webserver_certificate_dialog_content">從 Android 11（R）版本開始，應用程式無法自動安裝憑證授權（CA）。\n\n請前往「安全性」設定，點選「加密與憑證」，然後選擇「安裝證書」。在那裡，選擇「CA 憑證」並選取新匯出的憑證檔案。</string>
+    <string name="pref_webserver_certificate_dialog_action">開啟「安全性」設定</string>
+    <string name="pref_webserver_icon">將空白的廣告區域替換為應用程式圖示</string>
+</resources>

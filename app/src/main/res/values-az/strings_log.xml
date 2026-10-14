@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_start_recording_button">Qeydə başla</string>
+    <string name="log_start_recording_vpn_inactive">Qeydə başla (VPN aktiv deyil)</string>
+    <string name="log_stop_recording">Qeydi dayandır</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Aan toegestaan toevoegen</string>
+    <string name="tv_dialog_add_to_blocked">Aan geblokkeerd toevoegen</string>
+    <string name="tv_dialog_remove_from_allowed">Uit toegestaan verwijderen</string>
+    <string name="tv_dialog_remove_from_blocked">Uit geblokkeerd verwijderen</string>
+    <string name="tv_dialog_copy_hostname">Hostnaam kopiëren</string>
+    <string name="tv_log_entry_status_description">Domeinstatus</string>
+    <string name="tv_button_theme_light">Lichte modus</string>
+    <string name="tv_button_theme_dark">Donkere modus</string>
+    <string name="tv_lists_empty">Nog geen items in deze lijst.</string>
+    <string name="tv_dialog_search">Zoeken</string>
+</resources>

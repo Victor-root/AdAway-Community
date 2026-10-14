@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_dialog_add_to_allowed">Dodaj u dopuštene</string>
+    <string name="tv_dialog_add_to_blocked">Dodaj u blokirane</string>
+    <string name="tv_dialog_remove_from_allowed">Ukloni iz dopuštenih</string>
+    <string name="tv_dialog_remove_from_blocked">Ukloni iz blokiranih</string>
+    <string name="tv_dialog_copy_hostname">Kopiraj naziv domaćina</string>
+    <string name="tv_log_entry_status_description">Stanje domene</string>
+    <string name="tv_button_theme_light">Svijetla tema</string>
+    <string name="tv_button_theme_dark">Tamna tema</string>
+    <string name="tv_lists_empty">Na ovom popisu još nema stavki.</string>
+    <string name="tv_dialog_search">Pretraži</string>
+</resources>

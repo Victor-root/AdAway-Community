@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_first_step">Першы крок</string>
+    <string name="welcome_second_step">Другі крок</string>
+    <string name="welcome_method_header">Сардэчна запрашаем у AdAway!</string>
+    <string name="welcome_method_summary">AdAway падае два метаду блакавання рэкламы.  Выберыце той, які вам пасуе:</string>
+    <string name="welcome_root_method_title">Root\n блакіроўка рэкламы</string>
+    <string name="welcome_root_method_text1">Хутчэй</string>
+    <string name="welcome_root_method_text2">Эканоміць батарэю</string>
+    <string name="welcome_root_method_text3">Патрабуюцца рут правы</string>
+    <string name="welcome_vpn_method_title">VPN\nблакіроўка рэкламы</string>
+    <string name="welcome_vpn_method_text1">Павольней</string>
+    <string name="welcome_vpn_method_text2">Працуе ў фоне</string>
+    <string name="welcome_vpn_method_text3">Сумяшчальны</string>
+    <string name="welcome_root_missing_title">Для Android патрабуюцца правы Root</string>
+    <string name="welcome_root_missile_description">Альбо двайковы файл su не знойдзены, альбо вы не далі права root для AdAway.\n\nГэта можа здарыцца, калі ваша прылада не мае root-правоў.  Вы можаце знайсці інфармацыю аб тым, як атрымаць root правы на вашай прыладзе, на wiki.lineageos.org або іншых сайтах Android.</string>
+    <string name="welcome_method_pro_logo">Плюсы</string>
+    <string name="welcome_method_con_logo">Мінусы</string>
+    <string name="welcome_sync_header">Сінхранізацыя</string>
+    <string name="welcome_synced_header">Сінхранізавана!</string>
+    <string name="welcome_sync_summary">AdAway загружае спісы блакавання з анлайн-крыніц. Вы можаце змяніць іх пазней у наладах.</string>
+    <string name="welcome_sync_retry_logo">Паўтарыць сінхранізацыю</string>
+    <string name="welcome_sync_error">Сінхранізацыя не ўдалася: %1$s nПаўтарыць зараз?</string>
+    <string name="welcome_back_button">Назад</string>
+    <string name="welcome_next_button">Далей</string>
+    <string name="welcome_finish_button">Завершыць</string>
+    <string name="tv_welcome_intro_subtitle">Гэты кароткі майстар уключыць блакіроўку рэкламы на гэтай прыладзе.</string>
+    <string name="tv_welcome_start_button">Пачаць</string>
+    <string name="tv_welcome_method_header">Выберыце спосаб блакіроўкі</string>
+    <string name="tv_welcome_method_root_button">Выкарыстоўваць root</string>
+    <string name="tv_welcome_method_root_body">Хутчэй і эканамічней для батарэі. Патрабуе рутаванай прылады.</string>
+    <string name="tv_welcome_method_vpn_button">Выкарыстоўваць VPN</string>
+    <string name="tv_welcome_method_vpn_body">Працуе без root, сумяшчальны з любой прыладай Android TV.</string>
+    <string name="tv_welcome_activate_header">Уключыць блакіроўку рэкламы</string>
+    <string name="tv_welcome_activate_body">Гэта лакальны VPN: ён фільтруе рэкламу на гэтай прыладзе, не накіроўваючы ваш трафік праз знешні сервер.</string>
+</resources>

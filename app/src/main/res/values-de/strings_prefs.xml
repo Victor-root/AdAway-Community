@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Einstellungen</string>
+    <string name="pref_general_category">Allgemein</string>
+    <string name="pref_dark_theme">Dunkles Design aktivieren</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Hell</item>
+        <item>Dunkel</item>
+        <item>Systemvorgabe</item>
+    </string-array>
+    <string name="pref_update_configuration">Automatische Updates</string>
+    <string name="pref_ad_block_category">Werbung blockieren</string>
+    <string name="pref_root_ad_blocker_configuration">Root-basierter Werbeblocker</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-basierter Werbeblocker</string>
+    <string name="pref_enable_ipv6">IPv6 aktivieren</string>
+    <string name="pref_backup_restore">Sichern / Wiederherstellen Ihrer Listen</string>
+    <string name="pref_backup_restore_title">Sichern und wiederherstellen</string>
+    <string name="pref_backup">Sichern</string>
+    <string name="pref_backup_summary">Sichern Ihrer Listen auf einen externen Speicher</string>
+    <string name="pref_restore">Wiederherstellen</string>
+    <string name="pref_restore_summary">Wiederherstellen Ihrer Listen aus der Sicherungsdatei</string>
+    <string name="import_success">Sicherung erfolgreich aus externem Speicher importiert. </string>
+    <string name="export_success">Sicherung wurde erfolgreich in die Datei „%s“ auf externem Speicher erstellt.</string>
+    <string name="export_failed">Erstellen der Sicherungsdatei „%s“ ist fehlgeschlagen.</string>
+    <string name="pref_update_title">Aktualisierungen</string>
+    <string name="pref_update_enable_notifications">Benachrichtigungen sind ausgeschaltet</string>
+    <string name="pref_update_enable_notifications_summary">App-Benachrichtigungen werden unterdrückt. Tippen, um sie anzuzeigen.</string>
+    <string name="pref_update_app_category">App-Aktualisierungen</string>
+    <string name="pref_update_check_app_startup">Beim Start nach Aktualisierungen suchen</string>
+    <string name="pref_update_check_app_daily">Täglich nach Aktualisierungen suchen</string>
+    <string name="pref_update_check_now">Jetzt prüfen</string>
+    <string name="pref_update_install">Jetzt aktualisieren</string>
+    <string name="pref_update_hosts_category">Hosts-Aktualisierungen</string>
+    <string name="pref_update_check">Beim Start nach Aktualisierungen suchen</string>
+    <string name="pref_update_check_hosts_daily">Täglich nach Aktualisierungen suchen</string>
+    <string name="pref_update_sync_on_update">Beim Aktualisieren synchronisieren</string>
+    <string name="pref_update_sync_unmetered_only">Nur im gebührenfreien Netzwerk synchronisieren</string>
+    <string name="pref_vpn_service_on_boot">Beim Starten einschalten</string>
+    <string name="pref_vpn_service_monitor">Verbindung überwachen</string>
+    <string name="pref_vpn_service_monitor_description">Überprüfen Sie regelmäßig den Netzwerkstatus, um VPN beim Trennen der Verbindung neu zu starten.</string>
+    <string name="pref_vpn_excluded_apps">Ausgenommene Anwendungen</string>
+    <string name="pref_vpn_excluded_apps_description">Konfigurieren Sie, welche Anwendungen das VPN nicht verwenden sollen, damit keine Verbindungen blockiert werden.</string>
+    <string name="pref_vpn_exclude_system_apps">System-Anwendungen ausschließen</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Keine</item>
+        <item>Alle außer Webbrowser</item>
+        <item>Alle</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Benutzer-Anwendungen ausschließen</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Ausgenommene Anwendungen</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Alle anwählen</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Alle abwählen</string>
+    <string name="pref_vpn_exclude_user_apps_icon">App-Icon</string>
+    <string name="pref_vpn_reset">VPN zurücksetzen</string>
+    <string name="pref_vpn_reset_description">Die VPN-Verbindung komplett neu aufbauen. Verwenden Sie dies, wenn das VPN nicht mehr funktioniert (kein Internetzugang oder DNS-Fehler).</string>
+    <string name="pref_vpn_reset_done">VPN-Verbindung neu aufgebaut.</string>
+    <string name="pref_vpn_reset_not_running">Das VPN läuft nicht.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnoseprotokoll</string>
+    <string name="pref_vpn_diagnostic_log_description">Die letzten Fehler und VPN-Ereignisse anzeigen, kopieren oder teilen. Nützlich, um ein Problem zu melden.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Es wurden noch keine Ereignisse aufgezeichnet.</string>
+    <string name="pref_vpn_diagnostic_log_share">Diagnoseprotokoll teilen</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopieren</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnoseprotokoll in die Zwischenablage kopiert.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Diagnoseprotokoll löschen</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Die aufgezeichneten Ereignisse löschen. Tun Sie dies, bevor Sie ein Problem reproduzieren, um eine saubere Ablaufverfolgung zu erhalten.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnoseprotokoll gelöscht.</string>
+    <string name="pref_root_open_hosts">Hosts-Datei öffnen</string>
+    <string name="pref_hosts_redirection_summary">Festlegen, wohin blockierte Hosts umgeleitet werden sollen</string>
+    <string name="pref_redirection_ipv4">Umleitungs-IPv4</string>
+    <string name="pref_redirection_ipv6">Umleitungs-IPv6</string>
+    <string name="pref_redirection_invalid">Ungültige Umleitung</string>
+    <string name="pref_webserver_summary">Der lokale Webserver überwacht lokale IP-Adressen, um auf blockierte Hostnamen zu antworten. Es kann helfen, wenn Apps bei einer blockierten Verbindung einfrieren.</string>
+    <string name="pref_webserver_enabled">Webserver aktivieren</string>
+    <string name="pref_webserver_test">Webserver testen</string>
+    <string name="pref_webserver_certificate">Selbstsigniertes Zertifikat installieren</string>
+    <string name="pref_webserver_state_not_running">Läuft nicht</string>
+    <string name="pref_webserver_state_checking">Wird überspüft …</string>
+    <string name="pref_webserver_state_running_not_installed">Läuft aber Zertifikat nicht installiert</string>
+    <string name="pref_webserver_state_running_and_installed">Läuft und Zertifikat installiert</string>
+    <string name="pref_webserver_certificate_dialog_title">Zertifikat manuell installieren</string>
+    <string name="pref_webserver_certificate_dialog_content">Ab Android 11 (R), kann die Anwendung die Zertifizierungsstelle (CA) nicht mehr automatisch installieren.\n\nGehen Sie zu „Sicherheit“-Einstellungen, „Verschlüsselung und Anmeldeinformationen“ und dann zu „Zertifikat installieren“. Wählen Sie dort „CA-Zertifikat“ und wählen Sie die neu exportierte Zertifikatsdatei aus.</string>
+    <string name="pref_webserver_certificate_dialog_action">„Sicherheit“-Einstellungen öffnen</string>
+    <string name="pref_webserver_icon">Ersetzt die leere Werbefläche durch das Anwendungssymbol </string>
+</resources>

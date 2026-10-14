@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">Оновлення AdAway</string>
+    <string name="update_banner_title">Доступне оновлення</string>
+    <string name="update_banner_subtitle">Натисніть, щоб встановити %1$s</string>
+    <string name="update_up_to_date_header">Ви маєте останюю версію</string>
+    <string name="update_update_available_header">Доступне оновлення</string>
+    <string name="update_updating_header">Оновлення AdAway</string>
+    <string name="update_update_button">Оновити зараз</string>
+    <string name="update_last_changelog_title">Останні зміни</string>
+    <string name="update_new_changelog_title">Журанал змін</string>
+    <string name="pref_update_check_now_update_available">Доступна нова версія: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Немає доступних оновлень</string>
+    <string name="pref_update_install_summary">Встановити версію %1$s</string>
+    <string name="notification_channel_app_updates">Оновлення додатка</string>
+    <string name="notification_channel_app_updates_description">Сповіщення про вихід нової версії додатка. Вимкніть звук цього каналу, щоб приховати сповіщення про оновлення додатка, не зачіпаючи інших сповіщень.</string>
+    <string name="notification_app_update_title">Оновлення додатку вже доступно</string>
+    <string name="notification_app_update_text">Нова версія AdAway доступна для завантаження.</string>
+</resources>
