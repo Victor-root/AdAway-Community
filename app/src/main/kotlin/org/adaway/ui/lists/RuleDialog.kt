@@ -34,12 +34,7 @@ fun RuleDialog(type: RuleType, rule: UserRuleEntity?, viewModel: ListsViewModel,
         RuleType.ALLOWED -> if (rule == null) R.string.rule_add_allowed else R.string.rule_edit_allowed
         RuleType.REDIRECTED -> if (rule == null) R.string.rule_add_redirected else R.string.rule_edit_redirected
     }
-    val error = when (val current = result) {
-        is RuleSaveResult.Duplicate -> stringResource(R.string.rule_duplicate, ruleTypeLabel(current.type))
-        RuleSaveResult.InvalidHost -> stringResource(R.string.rule_invalid_host)
-        RuleSaveResult.InvalidAddress -> stringResource(R.string.rule_invalid_address)
-        RuleSaveResult.Saved, null -> null
-    }
+    val error = ruleSaveErrorText(result)
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text(stringResource(title)) },
@@ -86,3 +81,11 @@ fun RuleDialog(type: RuleType, rule: UserRuleEntity?, viewModel: ListsViewModel,
     )
 }
 
+/** Why a rule could not be saved, if it could not. */
+@Composable
+fun ruleSaveErrorText(result: RuleSaveResult?): String? = when (result) {
+    is RuleSaveResult.Duplicate -> stringResource(R.string.rule_duplicate, ruleTypeLabel(result.type))
+    RuleSaveResult.InvalidHost -> stringResource(R.string.rule_invalid_host)
+    RuleSaveResult.InvalidAddress -> stringResource(R.string.rule_invalid_address)
+    RuleSaveResult.Saved, null -> null
+}

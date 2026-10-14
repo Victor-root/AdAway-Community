@@ -26,6 +26,7 @@ import org.adaway.R
 import org.adaway.data.db.SourceFormat
 import org.adaway.sources.SourceFieldError
 import org.adaway.ui.common.AdAwayCheckboxRow
+import org.adaway.ui.common.AppBarAction
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.AdAwayTextField
 import org.adaway.ui.common.AdAwayToggleGroup
@@ -44,13 +45,9 @@ fun SourceEditScreen(title: String, form: SourceForm, viewModel: SourceEditViewM
         onBack = onBack,
         actions = {
             if (!viewModel.isNew) {
-                IconButton(onClick = { viewModel.delete(undoable = true) }) {
-                    Icon(painterResource(R.drawable.outline_delete_24), contentDescription = stringResource(R.string.delete), tint = colors.onPrimary)
-                }
+                AppBarAction(painterResource(R.drawable.outline_delete_24), stringResource(R.string.delete)) { viewModel.delete(undoable = true) }
             }
-            IconButton(onClick = save) {
-                Icon(painterResource(R.drawable.baseline_check_24), contentDescription = stringResource(R.string.apply), tint = colors.onPrimary)
-            }
+            AppBarAction(painterResource(R.drawable.baseline_check_24), stringResource(R.string.apply), onClick = save)
         },
     ) { padding ->
         Column(

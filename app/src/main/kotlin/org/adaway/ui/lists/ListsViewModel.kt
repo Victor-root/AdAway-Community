@@ -22,6 +22,7 @@ import org.adaway.blocklist.RuleSaveResult
 import org.adaway.data.db.RuleType
 import org.adaway.data.db.UserRuleEntity
 import org.adaway.engine.Engine
+import org.adaway.ui.common.ConfigurationApplier
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ListsViewModel(private val container: AppContainer, initialType: RuleType) : ViewModel() {
@@ -56,9 +57,7 @@ class ListsViewModel(private val container: AppContainer, initialType: RuleType)
         }
         .cachedIn(viewModelScope)
 
-    val configurationChanged: StateFlow<Boolean> = container.blockListState.configurationChanged
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), false)
-    val progress = container.blockListUpdater.progress
+    val applier = ConfigurationApplier(container, viewModelScope)
 
     fun selectType(type: RuleType) {
         mutableType.value = type
@@ -96,8 +95,6 @@ class ListsViewModel(private val container: AppContainer, initialType: RuleType)
     fun restore(rule: UserRuleEntity) {
         viewModelScope.launch { repository.restore(rule) }
     }
-
-    fun apply() = container.blockListUpdater.requestApply()
 
     private companion object {
         const val STOP_TIMEOUT_MILLIS = 5_000L

@@ -22,7 +22,6 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.Layout
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
@@ -44,7 +43,27 @@ fun AdAwayAlertDialog(
     confirmButton: DialogButton,
     dismissButton: DialogButton? = null,
     icon: Painter? = null,
-    monospaceMessage: Boolean = false,
+) {
+    val colors = LocalAdAwayColors.current
+    AdAwayDialog(onDismissRequest, title, confirmButton, dismissButton, icon) {
+        Text(
+            message,
+            style = AdAwayType.body2,
+            color = colors.textPrimary.copy(alpha = 0.6f),
+            modifier = Modifier.verticalScroll(rememberScrollState()).padding(start = 24.dp, end = 24.dp, bottom = 24.dp),
+        )
+    }
+}
+
+/** The 6.x dialog around any [content], placed under the title. */
+@Composable
+fun AdAwayDialog(
+    onDismissRequest: () -> Unit,
+    title: String,
+    confirmButton: DialogButton,
+    dismissButton: DialogButton? = null,
+    icon: Painter? = null,
+    content: @Composable () -> Unit,
 ) {
     val colors = LocalAdAwayColors.current
     Dialog(onDismissRequest = onDismissRequest, properties = DialogProperties(usePlatformDefaultWidth = false)) {
@@ -56,7 +75,7 @@ fun AdAwayAlertDialog(
         ) {
             Column {
                 Row(
-                    modifier = Modifier.padding(start = 24.dp, top = 24.dp, end = 24.dp),
+                    modifier = Modifier.padding(start = 24.dp, top = 24.dp, end = 24.dp, bottom = 20.dp),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     icon?.let {
@@ -64,16 +83,7 @@ fun AdAwayAlertDialog(
                     }
                     Text(title, style = AdAwayType.headline6, color = colors.textPrimary)
                 }
-                Text(
-                    message,
-                    style = AdAwayType.body2,
-                    color = colors.textPrimary.copy(alpha = 0.6f),
-                    fontFamily = if (monospaceMessage) FontFamily.Monospace else null,
-                    modifier = Modifier
-                        .weight(1f, fill = false)
-                        .verticalScroll(rememberScrollState())
-                        .padding(start = 24.dp, top = 20.dp, end = 24.dp, bottom = 24.dp),
-                )
+                Box(modifier = Modifier.weight(1f, fill = false)) { content() }
                 DialogButtons(listOfNotNull(dismissButton, confirmButton), Modifier.fillMaxWidth().padding(8.dp))
             }
         }

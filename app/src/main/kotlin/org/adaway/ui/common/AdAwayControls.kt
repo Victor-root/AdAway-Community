@@ -4,6 +4,9 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsFocusedAsState
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.defaultMinSize
@@ -19,10 +22,16 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import org.adaway.ui.theme.AdAwayType
@@ -130,4 +139,37 @@ fun AdAwayCheckboxRow(text: String, checked: Boolean, onCheckedChange: (Boolean)
 @Composable
 fun adAwayCheckboxColors() = LocalAdAwayColors.current.let { colors ->
     CheckboxDefaults.colors(checkedColor = colors.primary, uncheckedColor = colors.textSecondary, checkmarkColor = colors.onPrimary)
+}
+
+/** The plain 6.x edit text: the text over an underline that thickens and turns red with the focus. */
+@Composable
+fun AdAwayEditText(
+    value: String,
+    onValueChange: (String) -> Unit,
+    modifier: Modifier = Modifier,
+    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+) {
+    val colors = LocalAdAwayColors.current
+    val interactions = remember { MutableInteractionSource() }
+    val focused by interactions.collectIsFocusedAsState()
+    BasicTextField(
+        value = value,
+        onValueChange = onValueChange,
+        singleLine = true,
+        keyboardOptions = keyboardOptions,
+        textStyle = AdAwayType.subtitle1.copy(color = colors.textPrimary),
+        cursorBrush = SolidColor(colors.primary),
+        interactionSource = interactions,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+            .drawBehind {
+                val stroke = (if (focused) 2.dp else 1.dp).toPx()
+                drawRect(
+                    color = if (focused) colors.primary else colors.textSecondary,
+                    topLeft = Offset(0f, size.height + 8.dp.toPx() - stroke),
+                    size = Size(size.width, stroke),
+                )
+            },
+    )
 }

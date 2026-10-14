@@ -59,11 +59,11 @@
     <string name="home_blocked_description">Pubs &amp; traqueurs</string>
     <string name="home_allowed_description">Exceptions</string>
     <string name="home_redirected_description">Règles personnalisées</string>
-    <string name="host_copied">Nom copié dans le presse-papiers</string>
+    <string name="host_copied">L’hôte a été copié dans le presse-papiers</string>
     <string name="lists_title">Vos listes</string>
-    <string name="lists_search">Rechercher</string>
+    <string name="lists_search">Filtrer les hôtes</string>
     <string name="lists_search_clear">Effacer</string>
-    <string name="lists_show_source_rules">Inclure les listes de blocage</string>
+    <string name="lists_show_source_rules">Activer/désactiver les sources</string>
     <string name="lists_user_rules">Vos entrées</string>
     <string name="lists_user_rules_empty">Aucune entrée pour l\'instant.</string>
     <string name="lists_source_rules">Depuis les listes de blocage</string>
@@ -72,16 +72,16 @@
     <string name="progress_downloading">Téléchargement de la source %1$s</string>
     <string name="progress_reading">Analyse de la source %1$s</string>
     <string name="progress_applying">Synchronisation de la base de données des règles</string>
-    <string name="rule_add">Ajouter une entrée</string>
-    <string name="rule_add_blocked">Bloquer un nom</string>
-    <string name="rule_add_allowed">Autoriser un nom</string>
-    <string name="rule_add_redirected">Rediriger un nom</string>
-    <string name="rule_edit_blocked">Modifier le nom bloqué</string>
-    <string name="rule_edit_allowed">Modifier le nom autorisé</string>
+    <string name="rule_add">Ajouter un hôte</string>
+    <string name="rule_add_blocked">Ajouter un hôte à la liste noire</string>
+    <string name="rule_add_allowed">Ajouter un hôte à la liste blanche</string>
+    <string name="rule_add_redirected">Ajouter une redirection d’hôte</string>
+    <string name="rule_edit_blocked">Modifier l’hôte mis en liste noire</string>
+    <string name="rule_edit_allowed">Modifier l’hôte mis en liste blanche</string>
     <string name="rule_edit_redirected">Modifier la redirection</string>
-    <string name="rule_host">Nom d\'hôte</string>
-    <string name="rule_address">Adresse IP (IPv4 ou IPv6)</string>
-    <string name="rule_wildcards_hint">* remplace n\'importe quel texte et ? un seul caractère, par exemple *.example.com.</string>
+    <string name="rule_host">Nom de l’hôte :</string>
+    <string name="rule_address">IP (IPv4 ou IPv6) :</string>
+    <string name="rule_wildcards_hint">(Les métacaractères * et ? sont permis)</string>
     <string name="rule_invalid_host">Ce nom d\'hôte n\'est pas valide.</string>
     <string name="rule_invalid_address">Cette adresse IP n\'est pas valide.</string>
     <string name="rule_duplicate">Ce nom est déjà dans vos listes\u00a0: %1$s.</string>
@@ -233,4 +233,6 @@
         <item quantity="many">%1$d mois</item>
         <item quantity="other">%1$d mois</item>
     </plurals>
+    <string name="lists_search_hint">Chercher un nom d’hôte…</string>
+    <string name="rule_actions_title">Modifier l’entrée</string>
 </resources>

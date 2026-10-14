@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -39,55 +38,81 @@ import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 
 /**
- * A phone screen of the 6.x interface: the red app bar with its back arrow, the content, and at the
- * bottom end the round button above the snackbar, which pushes it up.
+ * A phone screen of the 6.x interface: the red app bar with its back arrow, the content, an optional
+ * bottom bar, and at the bottom end the round button above the snackbar, which pushes it up.
  */
 @Composable
 fun AdAwayScreen(
     title: String,
     onBack: () -> Unit,
     actions: @Composable RowScope.() -> Unit = {},
+    topBar: (@Composable () -> Unit)? = null,
+    bottomBar: (@Composable () -> Unit)? = null,
     floatingActionButton: @Composable () -> Unit = {},
     snackbar: @Composable () -> Unit = {},
     content: @Composable (PaddingValues) -> Unit,
 ) {
     val colors = LocalAdAwayColors.current
-    Box(modifier = Modifier.fillMaxSize().background(colors.surface)) {
-        Column(modifier = Modifier.fillMaxSize()) {
-            AdAwayAppBar(title, onBack, actions)
-            Box(modifier = Modifier.weight(1f)) {
-                content(WindowInsets.navigationBars.asPaddingValues())
+    // Without a bottom bar, the content runs under the system navigation bar.
+    val bottomInset = if (bottomBar == null) WindowInsets.navigationBars.asPaddingValues() else PaddingValues()
+    Column(modifier = Modifier.fillMaxSize().background(colors.surface)) {
+        topBar?.invoke() ?: AdAwayAppBar(onNavigation = onBack, actions = actions) { AppBarTitle(title) }
+        Box(modifier = Modifier.weight(1f)) {
+            content(bottomInset)
+            Column(
+                modifier = Modifier.align(Alignment.BottomEnd).padding(bottom = bottomInset.calculateBottomPadding()),
+                horizontalAlignment = Alignment.End,
+            ) {
+                Box(modifier = Modifier.padding(16.dp)) { floatingActionButton() }
+                snackbar()
             }
         }
-        Column(modifier = Modifier.align(Alignment.BottomEnd).navigationBarsPadding(), horizontalAlignment = Alignment.End) {
-            Box(modifier = Modifier.padding(16.dp)) { floatingActionButton() }
-            snackbar()
-        }
+        bottomBar?.invoke()
     }
 }
 
+/** The red 6.x app bar: a navigation icon, the [title] taking the room left, then the actions. */
 @Composable
-private fun AdAwayAppBar(title: String, onBack: () -> Unit, actions: @Composable RowScope.() -> Unit) {
+fun AdAwayAppBar(
+    onNavigation: () -> Unit,
+    navigationIcon: Painter = painterResource(R.drawable.ic_arrow_back),
+    navigationDescription: String = stringResource(R.string.back),
+    actions: @Composable RowScope.() -> Unit = {},
+    title: @Composable RowScope.() -> Unit,
+) {
     val colors = LocalAdAwayColors.current
     Surface(color = colors.primary, shadowElevation = 4.dp) {
         Row(
             modifier = Modifier.fillMaxWidth().statusBarsPadding().height(56.dp).padding(horizontal = 4.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            IconButton(onClick = onBack) {
-                Icon(painterResource(R.drawable.ic_arrow_back), contentDescription = stringResource(R.string.back), tint = colors.onPrimary)
+            IconButton(onClick = onNavigation) {
+                Icon(navigationIcon, contentDescription = navigationDescription, tint = colors.onPrimary)
             }
-            // The title starts 72 dp from the edge, as on the 6.x app bar.
-            Text(
-                title,
-                style = AdAwayType.headline6,
-                color = colors.onPrimary,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                modifier = Modifier.weight(1f).padding(start = 20.dp),
-            )
+            title()
             actions()
         }
+    }
+}
+
+/** The title starts 72 dp from the edge, as on the 6.x app bar. */
+@Composable
+fun RowScope.AppBarTitle(title: String) {
+    Text(
+        title,
+        style = AdAwayType.headline6,
+        color = LocalAdAwayColors.current.onPrimary,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+        modifier = Modifier.weight(1f).padding(start = 20.dp),
+    )
+}
+
+/** An app bar action icon, white on the red bar. */
+@Composable
+fun AppBarAction(icon: Painter, contentDescription: String, onClick: () -> Unit) {
+    IconButton(onClick = onClick) {
+        Icon(icon, contentDescription = contentDescription, tint = LocalAdAwayColors.current.onPrimary)
     }
 }
 

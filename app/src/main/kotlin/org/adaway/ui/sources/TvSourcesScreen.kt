@@ -39,8 +39,8 @@ import androidx.tv.material3.Text as TvText
 /** The TV list of hosts sources, made for the remote. */
 @Composable
 fun TvSourcesScreen(sources: List<Pair<SourceEntity, String>>, viewModel: SourcesViewModel, navigation: SourcesNavigation) {
-    val configurationChanged by viewModel.configurationChanged.collectAsStateWithLifecycle()
-    val progress by viewModel.progress.collectAsStateWithLifecycle()
+    val configurationChanged by viewModel.applier.configurationChanged.collectAsStateWithLifecycle()
+    val progress by viewModel.applier.progress.collectAsStateWithLifecycle()
     val applying = progress != null
     var selected by rememberSaveable { mutableStateOf<Long?>(null) }
     var confirmDeletion by rememberSaveable { mutableStateOf(false) }
@@ -49,7 +49,7 @@ fun TvSourcesScreen(sources: List<Pair<SourceEntity, String>>, viewModel: Source
         actions = {
             AppButton(stringResource(R.string.source_add), navigation.add, isTelevision = true)
             if (configurationChanged) {
-                AppButton(stringResource(R.string.apply), viewModel::apply, isTelevision = true, enabled = !applying)
+                AppButton(stringResource(R.string.apply), viewModel.applier::apply, isTelevision = true, enabled = !applying)
             }
         },
     ) {

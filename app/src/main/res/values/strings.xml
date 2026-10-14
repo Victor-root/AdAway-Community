@@ -62,11 +62,11 @@
     <string name="home_blocked_description">Ads &amp; trackers</string>
     <string name="home_allowed_description">Exceptions</string>
     <string name="home_redirected_description">Custom rules</string>
-    <string name="host_copied">Name copied to the clipboard</string>
+    <string name="host_copied">Host copied to clipboard</string>
     <string name="lists_title">Your lists</string>
-    <string name="lists_search">Search</string>
+    <string name="lists_search">Filter hosts</string>
     <string name="lists_search_clear">Clear</string>
-    <string name="lists_show_source_rules">Include the block lists</string>
+    <string name="lists_show_source_rules">Toggle sources</string>
     <string name="lists_user_rules">Your entries</string>
     <string name="lists_user_rules_empty">No entry yet.</string>
     <string name="lists_source_rules">From the block lists</string>
@@ -75,16 +75,16 @@
     <string name="progress_downloading">Downloading source %1$s</string>
     <string name="progress_reading">Parsing %1$s source</string>
     <string name="progress_applying">Syncing rule database</string>
-    <string name="rule_add">Add an entry</string>
-    <string name="rule_add_blocked">Block a name</string>
-    <string name="rule_add_allowed">Allow a name</string>
-    <string name="rule_add_redirected">Redirect a name</string>
-    <string name="rule_edit_blocked">Edit the blocked name</string>
-    <string name="rule_edit_allowed">Edit the allowed name</string>
-    <string name="rule_edit_redirected">Edit the redirection</string>
-    <string name="rule_host">Host name</string>
-    <string name="rule_address">IP address (IPv4 or IPv6)</string>
-    <string name="rule_wildcards_hint">* matches any text and ? any single character, for example *.example.com.</string>
+    <string name="rule_add">Add host</string>
+    <string name="rule_add_blocked">Add host to blacklist</string>
+    <string name="rule_add_allowed">Add host to whitelist</string>
+    <string name="rule_add_redirected">Add host redirect</string>
+    <string name="rule_edit_blocked">Edit blacklisted host</string>
+    <string name="rule_edit_allowed">Edit whitelisted host</string>
+    <string name="rule_edit_redirected">Edit redirect</string>
+    <string name="rule_host">Hostname:</string>
+    <string name="rule_address">IP (IPv4 or IPv6):</string>
+    <string name="rule_wildcards_hint">(Wildcard characters * and ? are allowed)</string>
     <string name="rule_invalid_host">This host name is not valid.</string>
     <string name="rule_invalid_address">This IP address is not valid.</string>
     <string name="rule_duplicate">This name is already in your lists: %1$s.</string>
@@ -228,4 +228,6 @@
         <item quantity="one">%1$d month</item>
         <item quantity="other">%1$d months</item>
     </plurals>
+    <string name="lists_search_hint">Search hostname…</string>
+    <string name="rule_actions_title">Edit Entry</string>
 </resources>

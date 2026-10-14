@@ -1,0 +1,231 @@
+package org.adaway.ui.lists
+
+import android.widget.Toast
+import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.paging.compose.LazyPagingItems
+import org.adaway.R
+import org.adaway.data.db.RuleType
+import org.adaway.data.db.UserRuleEntity
+import org.adaway.system.copyToClipboard
+import org.adaway.ui.common.AppButton
+import org.adaway.ui.common.ChoiceChip
+import org.adaway.ui.common.TvScreen
+import org.adaway.ui.common.ruleTypeLabel
+import androidx.tv.material3.ListItem as TvListItem
+import androidx.tv.material3.Text as TvText
+
+/** What the add and edit dialog is showing. */
+private sealed interface RuleEditing {
+    data object New : RuleEditing
+
+    data class Existing(val rule: UserRuleEntity) : RuleEditing
+}
+
+/** The TV lists, made for the remote: the actions sit in the header. */
+@Composable
+fun TvListsScreen(type: RuleType, userRules: List<UserRuleEntity>, sourceRules: LazyPagingItems<String>, viewModel: ListsViewModel) {
+    var editing by remember { mutableStateOf<RuleEditing?>(null) }
+    val onEdit = { rule: RuleEditing -> editing = rule }
+    val context = LocalContext.current
+    val showSourceRules by viewModel.showSourceRules.collectAsStateWithLifecycle()
+    val configurationChanged by viewModel.applier.configurationChanged.collectAsStateWithLifecycle()
+    val progress by viewModel.applier.progress.collectAsStateWithLifecycle()
+    var searching by rememberSaveable { mutableStateOf(false) }
+    var selected by remember { mutableStateOf<UserRuleEntity?>(null) }
+    var confirmDeletion by rememberSaveable { mutableStateOf(false) }
+    val copiedMessage = stringResource(R.string.host_copied)
+    val copy = { host: String ->
+        context.copyToClipboard(host)
+        Toast.makeText(context, copiedMessage, Toast.LENGTH_SHORT).show()
+    }
+    TvScreen(
+        title = stringResource(R.string.lists_title),
+        actions = {
+            AppButton(stringResource(R.string.rule_add), { onEdit(RuleEditing.New) }, isTelevision = true)
+            AppButton(stringResource(R.string.lists_search), { searching = true }, isTelevision = true)
+            ChoiceChip(
+                stringResource(R.string.lists_show_source_rules),
+                selected = showSourceRules,
+                onClick = { viewModel.setShowSourceRules(!showSourceRules) },
+                isTelevision = true,
+            )
+            if (configurationChanged) {
+                AppButton(stringResource(R.string.apply), viewModel.applier::apply, isTelevision = true, enabled = progress == null)
+            }
+        },
+    ) {
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            RuleType.entries.forEach { tabType ->
+                ChoiceChip(ruleTypeLabel(tabType), tabType == type, { viewModel.selectType(tabType) }, isTelevision = true)
+            }
+        }
+        if (configurationChanged) {
+            Text(
+                stringResource(if (progress != null) R.string.apply_in_progress else R.string.apply_needed),
+                color = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.padding(top = 8.dp),
+            )
+        }
+        RuleList(
+            userRules = userRules,
+            sourceRules = sourceRules.takeIf { showSourceRules },
+            userRule = { rule ->
+                TvListItem(
+                    selected = false,
+                    onClick = { selected = rule },
+                    headlineContent = { TvText(rule.host) },
+                    supportingContent = rule.redirection?.let { { TvText(it) } },
+                    modifier = Modifier.alpha(if (rule.enabled) 1f else DISABLED_ALPHA),
+                )
+            },
+            sourceRule = { line ->
+                val (host, redirection) = splitCatalogLine(line)
+                TvListItem(
+                    selected = false,
+                    onClick = { copy(host) },
+                    headlineContent = { TvText(host) },
+                    supportingContent = redirection?.let { { TvText(it) } },
+                )
+            },
+            contentPadding = PaddingValues(vertical = 16.dp),
+        )
+    }
+    if (searching) TvSearchDialog(viewModel, onDismiss = { searching = false })
+    editing?.let { current ->
+        RuleDialog(type = type, rule = (current as? RuleEditing.Existing)?.rule, viewModel = viewModel, onDismiss = { editing = null })
+    }
+    val rule = selected ?: return
+    if (confirmDeletion) {
+        AlertDialog(
+            onDismissRequest = { confirmDeletion = false },
+            title = { Text(stringResource(R.string.rule_delete_confirm_title)) },
+            text = { Text(rule.host) },
+            confirmButton = {
+                TextButton(onClick = { viewModel.delete(rule); confirmDeletion = false; selected = null }) {
+                    Text(stringResource(R.string.delete))
+                }
+            },
+            dismissButton = { TextButton(onClick = { confirmDeletion = false }) { Text(stringResource(R.string.cancel)) } },
+        )
+    } else {
+        AlertDialog(
+            onDismissRequest = { selected = null },
+            title = { Text(rule.host) },
+            text = {
+                Column {
+                    TextButton(onClick = { viewModel.setEnabled(rule, !rule.enabled); selected = null }) {
+                        Text(stringResource(if (rule.enabled) R.string.disable else R.string.enable))
+                    }
+                    TextButton(onClick = { selected = null; onEdit(RuleEditing.Existing(rule)) }) {
+                        Text(stringResource(R.string.edit))
+                    }
+                    TextButton(onClick = { confirmDeletion = true }) { Text(stringResource(R.string.delete)) }
+                    TextButton(onClick = { copy(rule.host); selected = null }) { Text(stringResource(R.string.copy_host)) }
+                }
+            },
+            confirmButton = {},
+            dismissButton = { TextButton(onClick = { selected = null }) { Text(stringResource(R.string.cancel)) } },
+        )
+    }
+}
+
+@Composable
+private fun TvSearchDialog(viewModel: ListsViewModel, onDismiss: () -> Unit) {
+    val filter by viewModel.filter.collectAsStateWithLifecycle()
+    var text by rememberSaveable { mutableStateOf(filter) }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.lists_search)) },
+        text = { OutlinedTextField(value = text, onValueChange = { text = it }, singleLine = true) },
+        confirmButton = {
+            TextButton(onClick = { viewModel.search(text); onDismiss() }) { Text(stringResource(R.string.lists_search)) }
+        },
+        dismissButton = {
+            TextButton(onClick = { viewModel.search(""); onDismiss() }) { Text(stringResource(R.string.lists_search_clear)) }
+        },
+    )
+}
+
+/** The user rules, then the rules of the enabled sources when shown. */
+@Composable
+private fun RuleList(
+    userRules: List<UserRuleEntity>,
+    sourceRules: LazyPagingItems<String>?,
+    userRule: @Composable (UserRuleEntity) -> Unit,
+    sourceRule: @Composable (String) -> Unit,
+    contentPadding: PaddingValues,
+) {
+    LazyColumn(modifier = Modifier.fillMaxSize(), contentPadding = contentPadding) {
+        sectionTitle(R.string.lists_user_rules)
+        if (userRules.isEmpty()) {
+            item { EmptyText(R.string.lists_user_rules_empty) }
+        }
+        items(userRules, key = { "user-${it.id}" }) { userRule(it) }
+        if (sourceRules != null) {
+            sectionTitle(R.string.lists_source_rules)
+            if (sourceRules.itemCount == 0) {
+                item { EmptyText(R.string.lists_source_rules_empty) }
+            }
+            items(sourceRules.itemCount) { index -> sourceRules[index]?.let { sourceRule(it) } }
+        }
+    }
+}
+
+private fun LazyListScope.sectionTitle(@StringRes text: Int) {
+    item {
+        Text(
+            stringResource(text),
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 8.dp),
+        )
+    }
+}
+
+@Composable
+private fun EmptyText(@StringRes text: Int) {
+    Text(
+        stringResource(text),
+        style = MaterialTheme.typography.bodyMedium,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+    )
+}
+
+@Composable
+private fun RuleText(host: String, redirection: String?, modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Text(host, style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurface)
+        redirection?.let {
+            Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+    }
+}
+
+private const val DISABLED_ALPHA = 0.6f
