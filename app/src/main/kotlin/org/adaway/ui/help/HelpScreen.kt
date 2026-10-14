@@ -63,6 +63,7 @@ import org.adaway.R
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
+import org.adaway.ui.theme.LocalTelevision
 
 private const val REPOSITORY = "https://github.com/Victor-root/AdAway-Community"
 private const val UPSTREAM = "https://github.com/AdAway/AdAway"
@@ -74,7 +75,8 @@ private val Tabs = listOf(R.string.help_tab_faq, R.string.help_tab_problems, R.s
  * remote picks a tab by moving on it, goes down to read the page, and back up at its top.
  */
 @Composable
-fun HelpScreen(isTelevision: Boolean, onBack: () -> Unit) {
+fun HelpScreen(onBack: () -> Unit) {
+    val isTelevision = LocalTelevision.current
     val pager = rememberPagerState { Tabs.size }
     val scope = rememberCoroutineScope()
     val tabs = remember { Tabs.map { FocusRequester() } }

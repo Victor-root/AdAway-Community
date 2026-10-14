@@ -72,7 +72,7 @@ fun AdAwayApp(isTelevision: Boolean, destination: MutableStateFlow<Destination?>
             predictivePopExitTransition = { ScreenTransitions.popExit },
         ) {
             if (isTelevision) tvDestinations(navController) else phoneDestinations(navController)
-            sharedDestinations(navController, isTelevision)
+            sharedDestinations(navController)
         }
     }
 }
@@ -86,7 +86,7 @@ private fun NavGraphBuilder.phoneDestinations(navController: NavController) {
     }
     composable<Home> {
         val navigation = remember { homeNavigation(navController) }
-        HomeRoute(isTelevision = false, navigation) { state, viewModel, blocking -> HomeScreen(state, viewModel, navigation, blocking) }
+        HomeRoute(navigation) { state, viewModel, blocking -> HomeScreen(state, viewModel, navigation, blocking) }
     }
     composable<Sources> { SourcesRoute(sourcesNavigation(navController)) }
     composable<SourceEdit> { entry ->
@@ -99,7 +99,7 @@ private fun NavGraphBuilder.phoneDestinations(navController: NavController) {
 }
 
 /** The screens the TV shows as the phone does, as the 6.x versions did. */
-private fun NavGraphBuilder.sharedDestinations(navController: NavController, isTelevision: Boolean) {
+private fun NavGraphBuilder.sharedDestinations(navController: NavController) {
     composable<Preferences> {
         PreferencesScreen(
             PreferencesNavigation(
@@ -111,7 +111,7 @@ private fun NavGraphBuilder.sharedDestinations(navController: NavController, isT
             ),
         )
     }
-    composable<Help> { HelpScreen(isTelevision, onBack = navController::popBackStack) }
+    composable<Help> { HelpScreen(onBack = navController::popBackStack) }
     composable<Updates> { UpdatesScreen(onBack = navController::popBackStack, openUpdate = { navController.navigate(AppUpdate) }) }
     composable<AppUpdate> { UpdateScreen(onBack = navController::popBackStack) }
     composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }

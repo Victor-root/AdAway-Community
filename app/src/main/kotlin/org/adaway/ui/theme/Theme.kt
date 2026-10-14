@@ -159,6 +159,9 @@ class NavigationBarAppearance {
 
 val LocalNavigationBarAppearance = staticCompositionLocalOf { NavigationBarAppearance() }
 
+/** Whether the app runs on a TV, driven by its remote. */
+val LocalTelevision = staticCompositionLocalOf { false }
+
 /** For a screen red under the navigation bar, while it is on display. */
 @Composable
 fun RedNavigationBar() {
@@ -197,6 +200,7 @@ fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composab
             LocalAdAwayColors provides colors,
             LocalNavigationBarAppearance provides navigationBar,
             LocalRippleConfiguration provides controlHighlight(colors),
+            LocalTelevision provides isTelevision,
             content = content,
         )
     }

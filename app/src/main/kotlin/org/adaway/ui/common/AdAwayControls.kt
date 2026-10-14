@@ -39,6 +39,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
+import org.adaway.ui.theme.LocalTelevision
 
 /** The filled text field of the 6.x screens: gray box, underline, floating label, error under it. */
 @Composable
@@ -58,7 +59,7 @@ fun AdAwayTextField(
         singleLine = singleLine,
         isError = error != null,
         supportingText = error?.let { { Text(it) } },
-        keyboardOptions = keyboardOptions,
+        keyboardOptions = keyboardOptions.forDevice(),
         textStyle = AdAwayType.subtitle1,
         shape = TextFieldShape,
         colors = adAwayTextFieldColors(),
@@ -83,7 +84,7 @@ fun AdAwayTextField(
         singleLine = true,
         isError = error != null,
         supportingText = error?.let { { Text(it) } },
-        keyboardOptions = keyboardOptions,
+        keyboardOptions = keyboardOptions.forDevice(),
         textStyle = AdAwayType.subtitle1,
         shape = TextFieldShape,
         colors = adAwayTextFieldColors(),
@@ -92,6 +93,10 @@ fun AdAwayTextField(
 }
 
 private val TextFieldShape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)
+
+/** On TV, moving onto a field leaves the keyboard closed: the OK button of the remote opens it. */
+@Composable
+private fun KeyboardOptions.forDevice() = if (LocalTelevision.current) copy(showKeyboardOnFocus = false) else this
 
 @Composable
 private fun adAwayTextFieldColors(): TextFieldColors {
@@ -195,7 +200,7 @@ fun AdAwayEditText(
         value = value,
         onValueChange = onValueChange,
         singleLine = true,
-        keyboardOptions = keyboardOptions,
+        keyboardOptions = keyboardOptions.forDevice(),
         textStyle = AdAwayType.subtitle1.copy(color = colors.textPrimary),
         cursorBrush = SolidColor(colors.primary),
         interactionSource = interactions,

@@ -27,7 +27,7 @@ internal fun NavGraphBuilder.tvDestinations(navController: NavController) {
     }
     composable<Home> {
         val navigation = remember { homeNavigation(navController) }
-        HomeRoute(isTelevision = true, navigation) { state, viewModel, blocking -> TvHomeScreen(state, viewModel, navigation, blocking) }
+        HomeRoute(navigation) { state, viewModel, blocking -> TvHomeScreen(state, viewModel, navigation, blocking) }
     }
     composable<Sources> { TvSourcesScreen(sourcesNavigation(navController)) }
     composable<SourceEdit> { entry ->

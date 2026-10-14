@@ -42,7 +42,7 @@ class HomeNavigation(
  * dialogs. [screen] draws the home of the device.
  */
 @Composable
-fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation, screen: @Composable (HomeState, HomeViewModel, BlockingActions) -> Unit) {
+fun HomeRoute(navigation: HomeNavigation, screen: @Composable (HomeState, HomeViewModel, BlockingActions) -> Unit) {
     val viewModel = appViewModel(::HomeViewModel)
     val state by viewModel.state.collectAsStateWithLifecycle()
     val error by viewModel.error.collectAsStateWithLifecycle()
@@ -83,7 +83,7 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation, screen: @Compos
     error?.let { UpdateErrorDialog(it, onRetry = viewModel::sync, onHelp = navigation.openHelp, onDismiss = viewModel::dismissError) }
     rootError?.let { ErrorDialog(rootErrorTitle(it), rootErrorText(it), confirmButton = null, onHelp = navigation.openHelp, onDismiss = viewModel::dismissRootError) }
     refusal?.let { VpnRefusalDialog(it, onDismiss = { refusal = null }) }
-    persistenceMode?.let { VpnPersistenceDialog(isTelevision, it, onDismiss = { persistenceMode = null }) }
+    persistenceMode?.let { VpnPersistenceDialog(it, onDismiss = { persistenceMode = null }) }
 }
 
 @Composable

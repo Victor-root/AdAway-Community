@@ -8,6 +8,7 @@ import org.adaway.R
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.rememberOpenVpnSettings
+import org.adaway.ui.theme.LocalTelevision
 import org.adaway.vpn.AlwaysOnMode
 import org.adaway.vpn.VpnStatus
 
@@ -29,7 +30,8 @@ fun blockingDetail(status: VpnStatus): Int? = when (status) {
  * setting is often hidden, it also gives the ADB commands, and stays open if the setting cannot open.
  */
 @Composable
-fun VpnPersistenceDialog(isTelevision: Boolean, mode: AlwaysOnMode, onDismiss: () -> Unit) {
+fun VpnPersistenceDialog(mode: AlwaysOnMode, onDismiss: () -> Unit) {
+    val isTelevision = LocalTelevision.current
     val packageName = LocalContext.current.packageName
     val openVpnSettings = rememberOpenVpnSettings(
         if (isTelevision) R.string.vpn_persistence_tv_settings_unavailable else R.string.vpn_settings_unavailable,
