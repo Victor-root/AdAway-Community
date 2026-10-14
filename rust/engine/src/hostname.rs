@@ -1,8 +1,9 @@
 //! Host name rules shared by list parsing, user input and backups.
 
+use crate::glob::WILDCARDS;
+
 const MAX_NAME_LENGTH: usize = 253;
 const MAX_LABEL_LENGTH: usize = 63;
-const WILDCARDS: [char; 2] = ['*', '?'];
 
 /// Returns the canonical form of `input` (trimmed, lowercase, without the final root dot), or
 /// `None` if it is not a valid host name.
@@ -15,17 +16,18 @@ pub fn normalize(input: &str, allow_wildcards: bool) -> Option<String> {
     if !trimmed.is_ascii() {
         return None;
     }
-    let lowercase = trimmed.to_ascii_lowercase();
-    let name = lowercase.strip_suffix('.').unwrap_or(&lowercase);
-    let has_wildcards = name.contains(WILDCARDS);
-    let valid = if has_wildcards {
+    let mut name = trimmed.to_ascii_lowercase();
+    if name.ends_with('.') {
+        name.pop();
+    }
+    let valid = if name.contains(WILDCARDS) {
         allow_wildcards
             && (is_valid_name(&name.replace(WILDCARDS, "a"))
                 || is_valid_name(&name.replace(WILDCARDS, "")))
     } else {
-        is_valid_name(name)
+        is_valid_name(&name)
     };
-    valid.then(|| name.to_owned())
+    valid.then_some(name)
 }
 
 fn is_valid_name(name: &str) -> bool {
