@@ -82,7 +82,7 @@ fun DnsLogScreen(onBack: () -> Unit) {
         onPauseOrDispose {}
     }
     AdAwayScreen(
-        title = stringResource(R.string.log_title),
+        title = stringResource(R.string.shortcut_dns_requests),
         onBack = onBack,
         actions = {
             AppBarAction(painterResource(R.drawable.baseline_sort_by_alpha_24), stringResource(R.string.log_sort)) {
@@ -223,7 +223,7 @@ private fun RedirectDialog(onRedirect: (String) -> Unit, onDismiss: () -> Unit) 
 private fun DnsLogErrorDialog(error: DnsLogError, onDismiss: () -> Unit) {
     AdAwayAlertDialog(
         onDismissRequest = onDismiss,
-        title = stringResource(if (error == DnsLogError.ROOT_DENIED) R.string.root_error_denied_title else R.string.log_title),
+        title = stringResource(if (error == DnsLogError.ROOT_DENIED) R.string.root_error_denied_title else R.string.shortcut_dns_requests),
         message = stringResource(if (error == DnsLogError.ROOT_DENIED) R.string.root_error_denied_text else R.string.log_capture_failed),
         confirmButton = DialogButton(stringResource(R.string.close), onClick = onDismiss),
     )

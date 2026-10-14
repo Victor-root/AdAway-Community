@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.adaway.AppContainer
+import org.adaway.blocking.isBlockingActive
 import org.adaway.blocklist.BlockListSummary
 import org.adaway.data.db.SourceEntity
 import org.adaway.data.settings.BlockingMethod
@@ -26,16 +27,9 @@ data class SourceStats(val upToDate: Int, val pending: Int, val failed: Int) {
     val outdated: Int get() = pending + failed
 }
 
-/**
- * How ad blocking stands. A VPN starting, reconnecting or waiting for a network still counts as on.
- * [rootBusy] while the hosts file is being installed or reverted.
- */
+/** How ad blocking stands. [rootBusy] while the hosts file is being installed or reverted. */
 data class BlockingState(val method: BlockingMethod, val vpnStatus: VpnStatus, val rootState: RootState, val rootBusy: Boolean) {
-    val active: Boolean get() = when (method) {
-        BlockingMethod.VPN -> vpnStatus.isServiceAlive()
-        BlockingMethod.ROOT -> rootState == RootState.INSTALLED
-        BlockingMethod.UNSET -> false
-    }
+    val active: Boolean get() = isBlockingActive(method, vpnStatus, rootState)
 }
 
 data class HomeState(

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The identifiers of the previous versions, so that the shortcuts users pinned get these intents. -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@mipmap/shortcut_preferences"
+        android:shortcutDisabledMessage="@string/shortcut_preferences"
+        android:shortcutId="preferences"
+        android:shortcutLongLabel="@string/shortcut_preferences"
+        android:shortcutShortLabel="@string/shortcut_preferences">
+        <intent
+            android:action="org.adaway.action.OPEN_PREFERENCES"
+            android:targetClass="org.adaway.MainActivity"
+            android:targetPackage="org.adaway" />
+    </shortcut>
+    <shortcut
+        android:icon="@mipmap/shortcut_dns_requests"
+        android:shortcutDisabledMessage="@string/shortcut_dns_requests"
+        android:shortcutId="dns_requests"
+        android:shortcutLongLabel="@string/shortcut_dns_requests"
+        android:shortcutShortLabel="@string/shortcut_dns_requests">
+        <intent
+            android:action="org.adaway.action.OPEN_DNS_LOG"
+            android:targetClass="org.adaway.MainActivity"
+            android:targetPackage="org.adaway" />
+    </shortcut>
+    <shortcut
+        android:icon="@mipmap/shortcut_your_lists"
+        android:shortcutDisabledMessage="@string/shortcut_your_lists"
+        android:shortcutId="your_lists"
+        android:shortcutLongLabel="@string/shortcut_your_lists"
+        android:shortcutShortLabel="@string/shortcut_your_lists">
+        <intent
+            android:action="org.adaway.action.OPEN_LISTS"
+            android:targetClass="org.adaway.MainActivity"
+            android:targetPackage="org.adaway" />
+    </shortcut>
+</shortcuts>

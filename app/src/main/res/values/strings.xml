@@ -227,4 +227,9 @@
     <string name="about_releases_label">Releases</string>
     <string name="about_upstream_label">Official AdAway upstream</string>
     <string name="about_license_label">License: GNU General Public License v3.0 or later (GPLv3+)</string>
+    <string name="shortcut_dns_requests">DNS requests</string>
+    <string name="shortcut_your_lists">Your lists</string>
+    <string name="shortcut_preferences">Preferences</string>
+    <string name="permission_send_command_label">Send commands to AdAway</string>
+    <string name="permission_send_command_description">Allow to send commands to AdAway like enabling or disabling the system-wide ad-blocking</string>
 </resources>

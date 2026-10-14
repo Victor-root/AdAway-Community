@@ -1,6 +1,7 @@
 package org.adaway.ui
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -8,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.serialization.Serializable
 import org.adaway.data.db.RuleType
 import org.adaway.ui.common.appViewModel
@@ -65,8 +67,9 @@ private data object DnsLog
 @Serializable
 private data object BackupRestore
 
+/** [shortcut] holds the screen a launcher shortcut asks for, emptied once shown. */
 @Composable
-fun AdAwayApp(isTelevision: Boolean) {
+fun AdAwayApp(isTelevision: Boolean, shortcut: MutableStateFlow<Shortcut?>) {
     val viewModel = appViewModel(::MainViewModel)
     val state by viewModel.state.collectAsStateWithLifecycle()
     // The window background shows the brand color until the app data is ready.
@@ -74,6 +77,19 @@ fun AdAwayApp(isTelevision: Boolean) {
     AdAwayTheme(themeMode = settings.themeMode, isTelevision = isTelevision) {
         val navController = rememberNavController()
         val startDestination = remember { if (settings.welcomeCompleted) Home else Welcome }
+        val requested by shortcut.collectAsStateWithLifecycle()
+        LaunchedEffect(requested, settings.welcomeCompleted) {
+            val target = requested ?: return@LaunchedEffect
+            shortcut.value = null
+            if (!settings.welcomeCompleted) return@LaunchedEffect
+            navController.navigate(
+                when (target) {
+                    Shortcut.PREFERENCES -> Preferences
+                    Shortcut.DNS_LOG -> DnsLog
+                    Shortcut.LISTS -> Lists(RuleType.BLOCKED)
+                },
+            ) { popUpTo<Home>() }
+        }
         NavHost(navController = navController, startDestination = startDestination) {
             composable<Welcome> {
                 WelcomeRoute(

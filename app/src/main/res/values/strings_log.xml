@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_title">DNS requests</string>
     <string name="log_toggle_recording_description">Toggle log recording</string>
     <string name="log_start_recording">Press record to start logging requests, browse the Web or use apps, then go back or swipe to refresh the logs.</string>
     <string name="log_blocked_requests_ignored">\n\nBlocked requests will not be logged. Disable ad-blocking first if you want to log them too.</string>

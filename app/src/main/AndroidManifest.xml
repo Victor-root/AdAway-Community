@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Lets automation apps turn ad blocking on or off, the user granting it to each. -->
+    <permission
+        android:name="org.adaway.permission.SEND_COMMAND"
+        android:description="@string/permission_send_command_description"
+        android:label="@string/permission_send_command_label"
+        android:protectionLevel="dangerous" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -50,6 +57,9 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity-alias>
 
         <activity-alias
@@ -95,5 +105,25 @@
         <receiver
             android:name=".broadcast.VpnActionReceiver"
             android:exported="false" />
+
+        <receiver
+            android:name=".broadcast.CommandReceiver"
+            android:exported="true"
+            android:permission="org.adaway.permission.SEND_COMMAND">
+            <intent-filter>
+                <action android:name="org.adaway.action.SEND_COMMAND" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".tile.AdBlockingTileService"
+            android:exported="true"
+            android:icon="@drawable/logo"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>
