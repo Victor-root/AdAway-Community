@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Tekan rakam untuk mula merekod permintaan, layari Web atau gunakan aplikasi, kemudian kembali atau leret untuk memuat semula log.</string>
-    <string name="log_start_recording_button">Mula Merakam</string>
-    <string name="log_start_recording_vpn_inactive">Mula Merakam (VPN tidak aktif)</string>
-    <string name="log_stop_recording">Hentikan Rakaman</string>
-</resources>

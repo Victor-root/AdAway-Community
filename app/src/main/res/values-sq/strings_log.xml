@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Shtypni butonin e regjistrimit për të nisur regjistrimin e kërkesave, shfletoni internetin ose përdorni aplikacione, pastaj kthehuni prapa ose rrëshqitni për të rifreskuar regjistrat.</string>
-    <string name="log_start_recording_button">Nis regjistrimin</string>
-    <string name="log_start_recording_vpn_inactive">Nis regjistrimin (VPN-ja jo aktive)</string>
-    <string name="log_stop_recording">Ndalo regjistrimin</string>
-</resources>

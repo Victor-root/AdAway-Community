@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Source model errors -->
-    <string name="error_no_connection_message">Ühendus puudub</string>
-    <string name="error_not_enough_space_message">Pole piisavalt ruumi</string>
-    </resources>

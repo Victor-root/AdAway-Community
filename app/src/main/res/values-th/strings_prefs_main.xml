@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="pref_main_title">การตั้งค่า</string>
-    <!-- Debug category -->
-    <string name="pref_debug_category">ดีบัค</string>
-    </resources>

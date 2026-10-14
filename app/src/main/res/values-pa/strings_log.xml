@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="log_description_start_recording">ਬੇਨਤੀਆਂ ਲੌਗ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਰਿਕਾਰਡ ਦਬਾਓ, ਵੈੱਬ ਬ੍ਰਾਊਜ਼ ਕਰੋ ਜਾਂ ਐਪਾਂ ਵਰਤੋ, ਫਿਰ ਵਾਪਸ ਜਾਓ ਜਾਂ ਲੌਗ ਤਾਜ਼ਾ ਕਰਨ ਲਈ ਸਵਾਈਪ ਕਰੋ।</string>
-    <string name="log_start_recording_button">ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ</string>
-    <string name="log_start_recording_vpn_inactive">ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ (VPN ਕਿਰਿਆਸ਼ੀਲ ਨਹੀਂ)</string>
-    <string name="log_stop_recording">ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ</string>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-</resources>

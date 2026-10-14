@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">অনুরোধ লগিং শুরু করতে রেকর্ড বোতামে চাপুন, ওয়েব ব্রাউজ করুন বা অ্যাপ ব্যবহার করুন, তারপর ফিরে আসুন বা লগ রিফ্রেশ করতে সোয়াইপ করুন।</string>
-    <string name="log_start_recording_button">রেকর্ডিং শুরু করুন</string>
-    <string name="log_start_recording_vpn_inactive">রেকর্ডিং শুরু করুন (VPN সক্রিয় নয়)</string>
-    <string name="log_stop_recording">রেকর্ডিং বন্ধ করুন</string>
-</resources>

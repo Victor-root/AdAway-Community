@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">கோரிக்கைகளைப் பதிவு செய்யத் தொடங்க பதிவு பொத்தானை அழுத்தவும், இணையத்தில் உலாவவும் அல்லது பயன்பாடுகளைப் பயன்படுத்தவும், பிறகு திரும்பிச் சென்று அல்லது ஸ்வைப் செய்து பதிவுகளைப் புதுப்பிக்கவும்.</string>
-    <string name="log_start_recording_button">பதிவைத் தொடங்கு</string>
-    <string name="log_start_recording_vpn_inactive">பதிவைத் தொடங்கு (VPN செயலில் இல்லை)</string>
-    <string name="log_stop_recording">பதிவை நிறுத்து</string>
-</resources>

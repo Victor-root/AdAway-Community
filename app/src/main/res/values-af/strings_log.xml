@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Druk op opneem om versoeke te begin aanteken, blaai op die web of gebruik programme, en gaan dan terug of swiep om die logboeke te verfris.</string>
-    <string name="log_start_recording_button">Begin opneem</string>
-    <string name="log_start_recording_vpn_inactive">Begin opneem (VPN nie aktief nie)</string>
-    <string name="log_stop_recording">Stop opneem</string>
-</resources>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-    <!-- Dark mode puts the navigation bar on the dark surface, so Android draws light icons. -->
-    <bool name="navigationBarIsLight">false</bool>
-</resources>

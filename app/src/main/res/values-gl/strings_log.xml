@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Preme gravar para comezar a rexistrar as solicitudes, navega pola Web ou usa aplicacións, e despois volve atrás ou desliza para actualizar os rexistros.</string>
-    <string name="log_start_recording_button">Comezar a gravación</string>
-    <string name="log_start_recording_vpn_inactive">Comezar a gravación (VPN non activa)</string>
-    <string name="log_stop_recording">Deter a gravación</string>
-</resources>

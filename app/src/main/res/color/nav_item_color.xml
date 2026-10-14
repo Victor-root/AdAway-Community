@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Bottom navigation item colour on the red footer: full white when selected,
-     faded white when not, like the red header tabs. -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/onPrimary" android:state_checked="true" />
-    <item android:alpha="0.7" android:color="@color/onPrimary" />
-</selector>

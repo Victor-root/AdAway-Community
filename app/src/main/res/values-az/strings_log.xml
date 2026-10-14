@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Sorğuları qeyd etməyə başlamaq üçün qeyd düyməsinə basın, internetdə gəzin və ya tətbiqlərdən istifadə edin, sonra geri qayıdın və ya jurnalları yeniləmək üçün sürüşdürün.</string>
-    <string name="log_start_recording_button">Qeydə başla</string>
-    <string name="log_start_recording_vpn_inactive">Qeydə başla (VPN aktiv deyil)</string>
-    <string name="log_stop_recording">Qeydi dayandır</string>
-</resources>

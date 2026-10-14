@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Pindutin ang record upang simulan ang pag-log ng mga kahilingan, mag-browse sa Web o gumamit ng mga app, pagkatapos ay bumalik o mag-swipe upang i-refresh ang mga log.</string>
-    <string name="log_start_recording_button">Simulan ang Pag-record</string>
-    <string name="log_start_recording_vpn_inactive">Simulan ang Pag-record (hindi aktibo ang VPN)</string>
-    <string name="log_stop_recording">Ihinto ang Pag-record</string>
-</resources>

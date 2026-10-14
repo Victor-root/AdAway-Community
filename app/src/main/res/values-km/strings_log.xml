@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">ចុចប៊ូតុងថត ដើម្បីចាប់ផ្តើមកត់ត្រាសំណើ រុករកបណ្តាញ ឬប្រើកម្មវិធី បន្ទាប់មកត្រឡប់ក្រោយ ឬអូសដើម្បីផ្ទុកកំណត់ហេតុឡើងវិញ។</string>
-    <string name="log_start_recording_button">ចាប់ផ្តើមថត</string>
-    <string name="log_start_recording_vpn_inactive">ចាប់ផ្តើមថត (VPN មិនដំណើរការ)</string>
-    <string name="log_stop_recording">បញ្ឈប់ការថត</string>
-</resources>

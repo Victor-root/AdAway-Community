@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-    Reusable round background for pastel icon badges and circular action buttons.
-    Tint it per usage with android:backgroundTint (e.g. @color/pastelBlueBg).
--->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
-    <solid android:color="@android:color/white" />
-</shape>

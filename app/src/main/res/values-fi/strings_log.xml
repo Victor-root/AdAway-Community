@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Aloita pyyntöjen kirjaaminen painamalla tallennuspainiketta, selaa verkkoa tai käytä sovelluksia, palaa sitten takaisin tai päivitä lokit pyyhkäisemällä.</string>
-    <string name="log_start_recording_button">Aloita tallennus</string>
-    <string name="log_start_recording_vpn_inactive">Aloita tallennus (VPN ei aktiivinen)</string>
-    <string name="log_stop_recording">Lopeta tallennus</string>
-</resources>

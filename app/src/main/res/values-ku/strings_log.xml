@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Pêl tomarê bike da ku tomarkirina daxwazan dest pê bike, li Webê bigere an sepanan bikar bîne, paşê vegere an bilîze da ku tomar nû bibin.</string>
-    <string name="log_start_recording_button">Tomarkirinê dest pê bike</string>
-    <string name="log_start_recording_vpn_inactive">Tomarkirinê dest pê bike (VPN çalak nîne)</string>
-    <string name="log_stop_recording">Tomarkirinê raweste</string>
-</resources>

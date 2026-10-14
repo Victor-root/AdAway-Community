@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Ýttu á upptöku til að byrja að skrá beiðnir, vafraðu um vefinn eða notaðu forrit, farðu svo til baka eða strjúktu til að endurnýja annálinn.</string>
-    <string name="log_start_recording_button">Hefja upptöku</string>
-    <string name="log_start_recording_vpn_inactive">Hefja upptöku (VPN ekki virkt)</string>
-    <string name="log_stop_recording">Stöðva upptöku</string>
-</resources>

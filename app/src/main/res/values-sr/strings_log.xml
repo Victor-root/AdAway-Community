@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Pritisnite dugme za snimanje da biste počeli da beležite zahteve, pretražujte veb ili koristite aplikacije, zatim se vratite nazad ili prevucite da osvežite dnevnike.</string>
-    <string name="log_start_recording_button">Započni snimanje</string>
-    <string name="log_start_recording_vpn_inactive">Započni snimanje (VPN nije aktivan)</string>
-    <string name="log_stop_recording">Zaustavi snimanje</string>
-</resources>

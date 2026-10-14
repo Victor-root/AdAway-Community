@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="log_description_start_recording">တောင်းဆိုမှုများကို မှတ်တမ်းတင်ရန် record ကိုနှိပ်ပါ၊ ဝဘ်ကိုကြည့်ပါ သို့မဟုတ် အက်ပ်များကိုသုံးပါ၊ ထို့နောက် ပြန်သွားပါ သို့မဟုတ် မှတ်တမ်းများကို ပြန်လည်စတင်ရန် ပွတ်ဆွဲပါ။</string>
-    <string name="log_start_recording_button">မှတ်တမ်းတင်ခြင်း စတင်ပါ</string>
-    <string name="log_start_recording_vpn_inactive">မှတ်တမ်းတင်ခြင်း စတင်ပါ (VPN မဖွင့်ထား)</string>
-    <string name="log_stop_recording">မှတ်တမ်းတင်ခြင်း ရပ်ပါ</string>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-</resources>

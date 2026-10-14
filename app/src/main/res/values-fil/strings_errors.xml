@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Source model errors -->
-    <string name="error_no_connection_message">Walang koneksyong Internet</string>
-    </resources>

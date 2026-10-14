@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">ඉල්ලීම් ලොග් කිරීම ආරම්භ කිරීමට පටිගත කිරීමේ බොත්තම ඔබන්න, වෙබය පිරික්සන්න හෝ යෙදුම් භාවිත කරන්න, පසුව ආපසු යන්න හෝ ලොග නැවුම් කිරීමට ස්වයිප් කරන්න.</string>
-    <string name="log_start_recording_button">පටිගත කිරීම ආරම්භ කරන්න</string>
-    <string name="log_start_recording_vpn_inactive">පටිගත කිරීම ආරම්භ කරන්න (VPN සක්‍රිය නැත)</string>
-    <string name="log_stop_recording">පටිගත කිරීම නවත්වන්න</string>
-</resources>

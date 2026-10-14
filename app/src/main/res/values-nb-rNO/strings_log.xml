@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="log_description_start_recording">Trykk på ta opp for å begynne å logge forespørsler, surf på nettet eller bruk apper, gå deretter tilbake eller sveip for å oppdatere loggene.</string>
-    <string name="log_start_recording_button">Start opptak</string>
-    <string name="log_start_recording_vpn_inactive">Start opptak (VPN ikke aktiv)</string>
-    <string name="log_stop_recording">Stopp opptak</string>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-</resources>

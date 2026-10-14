@@ -1,1 +1,0 @@
-Un bloqueador de anuncios libre y de código abierto para Android.

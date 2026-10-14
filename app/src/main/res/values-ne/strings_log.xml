@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="log_description_start_recording">अनुरोधहरू लग गर्न रेकर्ड थिच्नुहोस्, वेब ब्राउज गर्नुहोस् वा एपहरू प्रयोग गर्नुहोस्, त्यसपछि फर्कनुहोस् वा लगहरू ताजा गर्न स्वाइप गर्नुहोस्।</string>
-    <string name="log_start_recording_button">रेकर्डिङ सुरु गर्नुहोस्</string>
-    <string name="log_start_recording_vpn_inactive">रेकर्डिङ सुरु गर्नुहोस् (VPN सक्रिय छैन)</string>
-    <string name="log_stop_recording">रेकर्डिङ रोक्नुहोस्</string>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-</resources>

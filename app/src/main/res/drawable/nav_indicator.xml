@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Thick white pill indicator shown on the top edge of the selected footer tab. -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid android:color="@color/onPrimary" />
-    <corners android:radius="2dp" />
-</shape>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">अनुरोधों को लॉग करना शुरू करने के लिए रिकॉर्ड बटन दबाएं, वेब ब्राउज़ करें या ऐप्स का उपयोग करें, फिर वापस जाएं या लॉग रीफ़्रेश करने के लिए स्वाइप करें।</string>
-    <string name="log_start_recording_button">रिकॉर्डिंग शुरू करें</string>
-    <string name="log_start_recording_vpn_inactive">रिकॉर्डिंग शुरू करें (VPN सक्रिय नहीं है)</string>
-    <string name="log_stop_recording">रिकॉर्डिंग रोकें</string>
-</resources>

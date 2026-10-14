@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Sort -->
-    <!-- Redirect dialog  -->
-    <string name="log_description_start_recording">Soʻrovlarni yozib olishni boshlash uchun yozib olish tugmasini bosing, Internetni koʻring yoki ilovalardan foydalaning, soʻngra orqaga qayting yoki jurnallarni yangilash uchun suring.</string>
-    <string name="log_start_recording_button">Yozib olishni boshlash</string>
-    <string name="log_start_recording_vpn_inactive">Yozib olishni boshlash (VPN faol emas)</string>
-    <string name="log_stop_recording">Yozib olishni toʻxtatish</string>
-</resources>
