@@ -42,6 +42,20 @@ object Engine : RuleValidator {
         finalDirectory: String,
     ): LongArray
 
+    /**
+     * Writes the hosts file of the root blocking at [output] from the final list: the [header]
+     * comment lines, the localhost entries, then each name. Blocked names point to [ipv4Redirection],
+     * and also to [ipv6Redirection] when given.
+     * Throws a [RuntimeException] when the files cannot be read or written.
+     */
+    external fun writeHosts(
+        finalDirectory: String,
+        output: String,
+        header: Array<String>,
+        ipv4Redirection: String,
+        ipv6Redirection: String?,
+    )
+
     /** Returns a page of the catalog lines whose host contains [filter] (`*` and `?` wildcards). */
     external fun queryCatalog(path: String, filter: String, offset: Int, limit: Int): Array<String>
 

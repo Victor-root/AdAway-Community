@@ -24,6 +24,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -33,6 +37,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import org.adaway.R
+import org.adaway.ui.common.AdAwayEditText
 import org.adaway.ui.common.DISABLED_ALPHA
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.DialogTextButton
@@ -148,3 +153,32 @@ fun ChoiceDialog(title: String, choices: List<String>, selected: Int, onSelect: 
         }
     }
 }
+
+/** The rounded 6.x preference dialog editing a text, with its OK button. */
+@Composable
+fun TextInputDialog(
+    title: String,
+    initialValue: String,
+    onConfirm: (String) -> Unit,
+    onDismiss: () -> Unit,
+) {
+    val colors = LocalAdAwayColors.current
+    var value by rememberSaveable { mutableStateOf(initialValue) }
+    Dialog(onDismissRequest = onDismiss) {
+        Surface(shape = RoundedCornerShape(28.dp), color = colors.dialogSurface) {
+            Column(modifier = Modifier.padding(top = 24.dp)) {
+                Text(title, style = AdAwayType.headline6, color = colors.textPrimary, modifier = Modifier.padding(horizontal = 24.dp))
+                AdAwayEditText(
+                    value = value,
+                    onValueChange = { value = it },
+                    modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 24.dp),
+                )
+                Row(modifier = Modifier.fillMaxWidth().padding(8.dp), horizontalArrangement = Arrangement.End) {
+                    DialogTextButton(DialogButton(stringResource(R.string.cancel), onClick = onDismiss))
+                    DialogTextButton(DialogButton(stringResource(android.R.string.ok), onClick = { onDismiss(); onConfirm(value) }))
+                }
+            }
+        }
+    }
+}
+

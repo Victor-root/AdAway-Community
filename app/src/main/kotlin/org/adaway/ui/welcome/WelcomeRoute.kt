@@ -1,14 +1,13 @@
 package org.adaway.ui.welcome
 
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
+import org.adaway.ui.common.AdAwayAlertDialog
+import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.VpnRefusalDialog
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.common.rememberVpnConsentRequest
@@ -38,10 +37,10 @@ class WelcomeActions(val chooseRoot: () -> Unit, val chooseVpn: () -> Unit, val 
 
 @Composable
 private fun RootRequiredDialog(onDismiss: () -> Unit) {
-    AlertDialog(
+    AdAwayAlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.welcome_root_missing_title)) },
-        text = { Text(stringResource(R.string.welcome_root_missile_description)) },
-        confirmButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.close)) } },
+        title = stringResource(R.string.welcome_root_missing_title),
+        message = stringResource(R.string.welcome_root_missile_description),
+        confirmButton = DialogButton(stringResource(R.string.close), onClick = onDismiss),
     )
 }

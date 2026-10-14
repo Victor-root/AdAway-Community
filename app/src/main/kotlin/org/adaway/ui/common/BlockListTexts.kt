@@ -1,10 +1,13 @@
 package org.adaway.ui.common
 
+import android.content.res.Resources
 import android.icu.text.CompactDecimalFormat
 import android.icu.text.NumberFormat
 import android.text.format.DateUtils
+import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import kotlin.math.pow
@@ -15,19 +18,24 @@ import org.adaway.data.db.BuiltInSource
 import org.adaway.data.db.RuleType
 import org.adaway.data.db.SourceEntity
 import org.adaway.data.db.SyncError
+import org.adaway.root.RootError
 import org.adaway.sources.UpdateProgress
 
-@Composable
-fun builtInSourceLabel(source: BuiltInSource): String = stringResource(
-    when (source) {
-        BuiltInSource.STEVEN_BLACK -> R.string.source_steven_black
-        BuiltInSource.PETER_LOWE -> R.string.source_peter_lowe
-    },
-)
+@StringRes
+private fun builtInSourceLabelRes(source: BuiltInSource): Int = when (source) {
+    BuiltInSource.STEVEN_BLACK -> R.string.source_steven_black
+    BuiltInSource.PETER_LOWE -> R.string.source_peter_lowe
+}
 
 @Composable
-fun sourceLabel(source: SourceEntity): String =
-    source.label ?: source.builtIn?.let { builtInSourceLabel(it) } ?: source.url
+fun builtInSourceLabel(source: BuiltInSource): String = stringResource(builtInSourceLabelRes(source))
+
+/** The user's name of the source, else the built-in one, else its address. */
+fun sourceLabel(source: SourceEntity, resources: Resources): String =
+    source.label ?: source.builtIn?.let { resources.getString(builtInSourceLabelRes(it)) } ?: source.url
+
+@Composable
+fun sourceLabel(source: SourceEntity): String = sourceLabel(source, LocalResources.current)
 
 @Composable
 fun sourceStatus(source: SourceEntity): String {
@@ -151,6 +159,28 @@ fun updateErrorText(error: UpdateError): String = stringResource(
         UpdateError.NO_NETWORK -> R.string.update_error_no_network_text
         UpdateError.DOWNLOAD_FAILED -> R.string.update_error_download_text
         UpdateError.APPLY_FAILED -> R.string.update_error_apply_text
+    },
+)
+
+@Composable
+fun rootErrorTitle(error: RootError): String = stringResource(
+    when (error) {
+        RootError.ROOT_DENIED -> R.string.root_error_denied_title
+        RootError.PRIVATE_FILE -> R.string.update_error_apply_title
+        RootError.NOT_ENOUGH_SPACE -> R.string.root_error_space_title
+        RootError.COPY_FAILED -> R.string.root_error_copy_title
+        RootError.REVERT_FAILED -> R.string.root_error_revert_title
+    },
+)
+
+@Composable
+fun rootErrorText(error: RootError): String = stringResource(
+    when (error) {
+        RootError.ROOT_DENIED -> R.string.root_error_denied_text
+        RootError.PRIVATE_FILE -> R.string.update_error_apply_text
+        RootError.NOT_ENOUGH_SPACE -> R.string.root_error_space_text
+        RootError.COPY_FAILED -> R.string.root_error_copy_text
+        RootError.REVERT_FAILED -> R.string.root_error_revert_text
     },
 )
 

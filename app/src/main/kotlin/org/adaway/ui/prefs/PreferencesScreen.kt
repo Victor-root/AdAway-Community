@@ -19,10 +19,11 @@ import org.adaway.R
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.SystemAppExclusion
 import org.adaway.data.settings.ThemeMode
+import org.adaway.engine.Engine
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
 
-class PreferencesNavigation(val back: () -> Unit, val openUpdates: () -> Unit, val openExcludedApps: () -> Unit)
+class PreferencesNavigation(val back: () -> Unit, val openUpdates: () -> Unit, val openExcludedApps: () -> Unit, val openHostsFile: () -> Unit)
 
 /** The order of the dark theme choices. */
 private val ThemeModes = listOf(ThemeMode.LIGHT, ThemeMode.DARK, ThemeMode.SYSTEM)
@@ -30,7 +31,7 @@ private val ThemeModes = listOf(ThemeMode.LIGHT, ThemeMode.DARK, ThemeMode.SYSTE
 /** The order of the system app exclusion choices. */
 private val SystemAppExclusions = listOf(SystemAppExclusion.NONE, SystemAppExclusion.ALL_EXCEPT_BROWSERS, SystemAppExclusion.ALL)
 
-private enum class PreferenceChoice { THEME, SYSTEM_APPS }
+private enum class PreferenceChoice { THEME, SYSTEM_APPS, IPV4_REDIRECTION, IPV6_REDIRECTION }
 
 /**
  * The preferences, all on one screen as in 6.x. Only the section of the blocking method in use is
@@ -44,6 +45,8 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
     val context = LocalContext.current
     var choice by rememberSaveable { mutableStateOf<PreferenceChoice?>(null) }
     val usesVpn = current.blockingMethod == BlockingMethod.VPN
+    val usesRoot = current.blockingMethod == BlockingMethod.ROOT
+    val invalidRedirection = stringResource(R.string.pref_redirection_invalid)
     val resetDone = stringResource(R.string.pref_vpn_reset_done)
     val resetNotRunning = stringResource(R.string.pref_vpn_reset_not_running)
     val themeChoices = stringArrayResource(R.array.pref_dark_theme_modes).toList()
@@ -97,13 +100,25 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
             Preference(R.drawable.ic_article_24dp, stringResource(R.string.pref_vpn_diagnostic_log), stringResource(R.string.pref_vpn_diagnostic_log_description), enabled = false)
             Preference(R.drawable.ic_delete_sweep_24dp, stringResource(R.string.pref_vpn_diagnostic_log_clear), stringResource(R.string.pref_vpn_diagnostic_log_clear_description), enabled = false)
 
-            // Root blocking does not exist yet.
-            PreferenceCategory(stringResource(R.string.pref_root_ad_blocker_configuration), enabled = false)
-            Preference(R.drawable.ic_edit_note_24dp, stringResource(R.string.pref_root_open_hosts), enabled = false)
-            SwitchPreference(R.drawable.ic_speaker_notes_off_24dp, stringResource(R.string.pref_never_reboot), checked = false, onCheckedChange = {}, enabled = false)
-            Preference(null, null, summary = stringResource(R.string.pref_hosts_redirection_summary), enabled = false)
-            Preference(R.drawable.ic_alt_route_24dp, stringResource(R.string.pref_redirection_ipv4), summary = current.rootRedirectionIpv4, enabled = false)
-            Preference(R.drawable.ic_alt_route_24dp, stringResource(R.string.pref_redirection_ipv6), summary = current.rootRedirectionIpv6, enabled = false)
+            PreferenceCategory(stringResource(R.string.pref_root_ad_blocker_configuration), enabled = usesRoot)
+            Preference(R.drawable.ic_edit_note_24dp, stringResource(R.string.pref_root_open_hosts), enabled = usesRoot, onClick = navigation.openHostsFile)
+            Preference(null, null, summary = stringResource(R.string.pref_hosts_redirection_summary), enabled = usesRoot)
+            Preference(
+                R.drawable.ic_alt_route_24dp,
+                stringResource(R.string.pref_redirection_ipv4),
+                summary = current.rootRedirectionIpv4,
+                enabled = usesRoot,
+                onClick = { choice = PreferenceChoice.IPV4_REDIRECTION },
+            )
+            // Only written in the hosts file with the IPv6 support.
+            Preference(
+                R.drawable.ic_alt_route_24dp,
+                stringResource(R.string.pref_redirection_ipv6),
+                summary = current.rootRedirectionIpv6,
+                enabled = usesRoot && current.ipv6Enabled,
+                onClick = { choice = PreferenceChoice.IPV6_REDIRECTION },
+            )
+            // The web server does not exist yet.
             Preference(null, null, summary = stringResource(R.string.pref_webserver_summary), enabled = false)
             SwitchPreference(R.drawable.ic_dns_24dp, stringResource(R.string.pref_webserver_enabled), checked = current.webServerEnabled, onCheckedChange = {}, enabled = false)
             Preference(R.drawable.ic_open_in_browser_24dp, stringResource(R.string.pref_webserver_test), stringResource(R.string.pref_webserver_state_not_running), enabled = false)
@@ -115,7 +130,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 R.drawable.ic_ipv6_24dp,
                 stringResource(R.string.pref_enable_ipv6),
                 checked = current.ipv6Enabled,
-                onCheckedChange = { checked -> viewModel.update { it.copy(ipv6Enabled = checked) } },
+                onCheckedChange = { checked -> viewModel.updateHostsSetting { it.copy(ipv6Enabled = checked) } },
             )
             Preference(R.drawable.ic_sd_storage_24dp, stringResource(R.string.pref_backup_restore), enabled = false)
 
@@ -145,6 +160,22 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
             onSelect = { index -> viewModel.update { it.copy(vpnSystemAppExclusion = SystemAppExclusions[index]) } },
             onDismiss = { choice = null },
         )
+        PreferenceChoice.IPV4_REDIRECTION, PreferenceChoice.IPV6_REDIRECTION -> {
+            val ipv6 = choice == PreferenceChoice.IPV6_REDIRECTION
+            TextInputDialog(
+                title = stringResource(if (ipv6) R.string.pref_redirection_ipv6 else R.string.pref_redirection_ipv4),
+                initialValue = if (ipv6) current.rootRedirectionIpv6 else current.rootRedirectionIpv4,
+                onConfirm = { text ->
+                    val address = Engine.normalizeIpAddress(text)?.takeIf { it.contains(':') == ipv6 }
+                    when {
+                        address == null -> Toast.makeText(context, invalidRedirection, Toast.LENGTH_SHORT).show()
+                        ipv6 -> viewModel.updateHostsSetting { it.copy(rootRedirectionIpv6 = address) }
+                        else -> viewModel.updateHostsSetting { it.copy(rootRedirectionIpv4 = address) }
+                    }
+                },
+                onDismiss = { choice = null },
+            )
+        }
         null -> {}
     }
 }

@@ -57,10 +57,11 @@
     <string name="pref_vpn_diagnostic_log_clear">Effacer le journal de diagnostic</string>
     <string name="pref_vpn_diagnostic_log_clear_description">Supprimer les événements enregistrés. À faire avant de reproduire un problème pour capturer une trace propre.</string>
     <string name="pref_root_open_hosts">Ouvrir le fichier hosts</string>
-    <string name="pref_never_reboot">Cacher le message de redémarrage après application</string>
+    <string name="hosts_file_unreadable">Le fichier hosts n’a pas pu être lu.</string>
     <string name="pref_hosts_redirection_summary">Définir où rediriger les hôtes bloqués</string>
     <string name="pref_redirection_ipv4">Redirection IPv4</string>
     <string name="pref_redirection_ipv6">Redirection IPv6</string>
+    <string name="pref_redirection_invalid">La redirection est invalide</string>
     <string name="pref_webserver_summary">Le serveur Web local écoute les adresses IP locales pour répondre aux requêtes vers des noms d’hôtes bloqués. Cela pourrait empêcher le gel de certaines applications lors de connexions bloquées.</string>
     <string name="pref_webserver_enabled">Activer le serveur Web</string>
     <string name="pref_webserver_test">Tester le serveur Web</string>

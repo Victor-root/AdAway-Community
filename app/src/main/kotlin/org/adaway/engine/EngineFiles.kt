@@ -11,6 +11,8 @@ class EngineFiles(context: Context) {
     val catalogDirectory = File(root, "catalog")
     val finalDirectory = File(root, "final")
     val downloadsDirectory = File(context.cacheDir, "downloads")
+    /** The hosts files the root blocking installs, and the one of the device it replaced. */
+    val rootDirectory = File(root, "root")
 
     fun sourceRules(sourceId: Long) = File(sourcesDirectory, "$sourceId.rules")
 

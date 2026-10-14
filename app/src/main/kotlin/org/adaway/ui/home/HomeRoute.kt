@@ -9,15 +9,19 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
 import org.adaway.blocklist.UpdateError
 import org.adaway.data.db.RuleType
+import org.adaway.data.settings.BlockingMethod
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.VpnRefusal
 import org.adaway.ui.common.VpnRefusalDialog
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.common.rootErrorText
+import org.adaway.ui.common.rootErrorTitle
 import org.adaway.ui.common.rememberVpnConsentRequest
 import org.adaway.ui.common.updateErrorText
 import org.adaway.ui.common.updateErrorTitle
@@ -31,8 +35,9 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
     val viewModel = appViewModel(::HomeViewModel)
     val state by viewModel.state.collectAsStateWithLifecycle()
     val progress by viewModel.progress.collectAsStateWithLifecycle()
-    val outcome by viewModel.outcome.collectAsStateWithLifecycle()
+    val statusMessage by viewModel.statusMessage.collectAsStateWithLifecycle()
     val error by viewModel.error.collectAsStateWithLifecycle()
+    val rootError by viewModel.rootError.collectAsStateWithLifecycle()
     val consentPrompt by viewModel.consentPrompt.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var refusal by remember { mutableStateOf<VpnRefusal?>(null) }
@@ -41,6 +46,10 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
         onGranted = viewModel::enableBlocking,
         onRefused = { refusal = vpnRefusal(context) },
     )
+    LifecycleResumeEffect(Unit) {
+        viewModel.refreshRootState()
+        onPauseOrDispose {}
+    }
     LaunchedEffect(consentPrompt) {
         if (consentPrompt) {
             viewModel.consentPromptShown()
@@ -49,7 +58,13 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
     }
     val current = state ?: return
     val actions = BlockingActions(
-        toggle = { if (current.blocking.active) viewModel.disableBlocking() else requestConsent() },
+        toggle = {
+            when {
+                current.blocking.active -> viewModel.disableBlocking()
+                current.blocking.method == BlockingMethod.ROOT -> viewModel.enableBlocking()
+                else -> requestConsent()
+            }
+        },
         openPersistence = { persistenceMode = viewModel.alwaysOnMode() },
     )
     if (isTelevision) {
@@ -58,7 +73,7 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
         HomeScreen(
             state = current,
             progress = progress,
-            outcome = outcome,
+            statusMessage = statusMessage,
             actions = HomeScreenActions(
                 openLists = navigation.openLists,
                 openSources = navigation.openSources,
@@ -72,6 +87,7 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
         )
     }
     error?.let { UpdateErrorDialog(it, onRetry = viewModel::sync, onHelp = navigation.openHelp, onDismiss = viewModel::dismissError) }
+    rootError?.let { ErrorDialog(rootErrorTitle(it), rootErrorText(it), confirmButton = null, onHelp = navigation.openHelp, onDismiss = viewModel::dismissRootError) }
     refusal?.let { VpnRefusalDialog(it, onDismiss = { refusal = null }) }
     persistenceMode?.let { VpnPersistenceDialog(isTelevision, it, onDismiss = { persistenceMode = null }) }
 }
@@ -79,16 +95,24 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
 @Composable
 private fun UpdateErrorDialog(error: UpdateError, onRetry: () -> Unit, onHelp: () -> Unit, onDismiss: () -> Unit) {
     val canRetry = error != UpdateError.APPLY_FAILED
+    ErrorDialog(
+        title = updateErrorTitle(error),
+        text = updateErrorText(error),
+        confirmButton = if (canRetry) DialogButton(stringResource(R.string.retry_sync), onClick = { onDismiss(); onRetry() }) else null,
+        onHelp = onHelp,
+        onDismiss = onDismiss,
+    )
+}
+
+/** A failure, pointing to the help. Without [confirmButton], the dialog offers to close. */
+@Composable
+private fun ErrorDialog(title: String, text: String, confirmButton: DialogButton?, onHelp: () -> Unit, onDismiss: () -> Unit) {
     AdAwayAlertDialog(
         onDismissRequest = onDismiss,
         icon = painterResource(android.R.drawable.ic_dialog_alert),
-        title = updateErrorTitle(error),
-        message = updateErrorText(error) + "\n\n" + stringResource(R.string.error_dialog_help),
-        confirmButton = if (canRetry) {
-            DialogButton(stringResource(R.string.retry_sync), onClick = { onDismiss(); onRetry() })
-        } else {
-            DialogButton(stringResource(R.string.close), onClick = onDismiss)
-        },
+        title = title,
+        message = text + "\n\n" + stringResource(R.string.error_dialog_help),
+        confirmButton = confirmButton ?: DialogButton(stringResource(R.string.close), onClick = onDismiss),
         dismissButton = DialogButton(stringResource(R.string.help), onClick = { onDismiss(); onHelp() }),
     )
 }

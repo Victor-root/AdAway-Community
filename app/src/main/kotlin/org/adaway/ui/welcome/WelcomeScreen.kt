@@ -75,8 +75,8 @@ import kotlinx.coroutines.delay
 import org.adaway.R
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.ui.common.AdAwayAlertDialog
-import org.adaway.ui.common.DISABLED_ALPHA
 import org.adaway.ui.common.DialogButton
+import org.adaway.ui.common.rootErrorTitle
 import org.adaway.ui.common.updateErrorTitle
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.BrandRed
@@ -105,7 +105,7 @@ fun WelcomeScreen(state: WelcomeState, viewModel: WelcomeViewModel, chooseVpn: (
         Column(modifier = Modifier.fillMaxSize()) {
             Box(modifier = Modifier.weight(1f)) {
                 when (step) {
-                    0 -> MethodStep(state.method, chooseVpn)
+                    0 -> MethodStep(state.method, viewModel::chooseRoot, chooseVpn)
                     WelcomeViewModel.SYNC_STEP -> SyncStep(sync, viewModel::startSync)
                     2 -> BatteryStep()
                     else -> OemBatteryStep()
@@ -116,7 +116,7 @@ fun WelcomeScreen(state: WelcomeState, viewModel: WelcomeViewModel, chooseVpn: (
         if (step > 0) {
             WizardButton(R.string.welcome_back_button, { viewModel.goTo(step - 1) }, Modifier.align(Alignment.BottomStart))
         }
-        if (step != 0 || state.method == BlockingMethod.VPN) {
+        if (step != 0 || state.method != BlockingMethod.UNSET) {
             WizardButton(if (last) R.string.welcome_finish_button else R.string.welcome_next_button, next, Modifier.align(Alignment.BottomEnd))
         }
     }
@@ -134,9 +134,8 @@ fun WelcomeScreen(state: WelcomeState, viewModel: WelcomeViewModel, chooseVpn: (
     }
 }
 
-/** Root blocking is not available yet: its card is grayed out. */
 @Composable
-private fun MethodStep(method: BlockingMethod, chooseVpn: () -> Unit) {
+private fun MethodStep(method: BlockingMethod, chooseRoot: () -> Unit, chooseVpn: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -156,9 +155,9 @@ private fun MethodStep(method: BlockingMethod, chooseVpn: () -> Unit) {
                 icon = R.drawable.ic_superuser_24dp,
                 title = R.string.welcome_root_method_title,
                 points = listOf(true to R.string.welcome_root_method_text1, true to R.string.welcome_root_method_text2, false to R.string.welcome_root_method_text3),
-                selected = false,
-                onClick = null,
-                modifier = Modifier.weight(1f).alpha(DISABLED_ALPHA),
+                selected = method == BlockingMethod.ROOT,
+                onClick = chooseRoot,
+                modifier = Modifier.weight(1f),
             )
             MethodCard(
                 icon = R.drawable.ic_vpn_key_24dp,
@@ -238,7 +237,8 @@ private fun SyncStep(sync: WelcomeSync?, retry: () -> Unit) {
             Box(modifier = Modifier.size(indicatorSize), contentAlignment = Alignment.Center) {
                 when (sync) {
                     WelcomeSync.Done -> Icon(painterResource(R.drawable.baseline_check_24), null, tint = Color.White, modifier = Modifier.fillMaxSize())
-                    is WelcomeSync.Failed -> Icon(painterResource(R.drawable.ic_cloud_off_24dp), null, tint = Color.White, modifier = Modifier.fillMaxSize())
+                    is WelcomeSync.Failed, is WelcomeSync.InstallFailed ->
+                        Icon(painterResource(R.drawable.ic_cloud_off_24dp), null, tint = Color.White, modifier = Modifier.fillMaxSize())
                     WelcomeSync.Running, null -> CircularProgressIndicator(modifier = Modifier.fillMaxSize(), color = Color.White)
                 }
             }
@@ -256,14 +256,19 @@ private fun SyncStep(sync: WelcomeSync?, retry: () -> Unit) {
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(top = 32.dp),
             )
-            if (sync is WelcomeSync.Failed) {
+            val failure = when (sync) {
+                is WelcomeSync.Failed -> updateErrorTitle(sync.error)
+                is WelcomeSync.InstallFailed -> rootErrorTitle(sync.error)
+                WelcomeSync.Running, WelcomeSync.Done, null -> null
+            }
+            if (failure != null) {
                 Row(
                     modifier = Modifier.padding(top = 32.dp).clickable(onClick = retry),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Icon(painterResource(R.drawable.ic_sync_24dp), stringResource(R.string.welcome_sync_retry_logo), tint = Color.White, modifier = Modifier.size(64.dp))
                     Text(
-                        stringResource(R.string.welcome_sync_error, updateErrorTitle(sync.error)),
+                        stringResource(R.string.welcome_sync_error, failure),
                         style = AdAwayType.large,
                         color = Color.White,
                         modifier = Modifier.padding(start = 8.dp),

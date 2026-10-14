@@ -7,6 +7,7 @@ pub mod dns;
 pub mod filter;
 pub mod glob;
 pub mod hostname;
+pub mod hosts;
 pub mod nameset;
 pub mod packet;
 pub mod rule;

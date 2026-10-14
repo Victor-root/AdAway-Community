@@ -108,6 +108,14 @@
     <string name="update_error_download_text">None of your enabled hosts sources are reachable. Please check you are properly connected to the Internet.</string>
     <string name="update_error_apply_title">Failed to create private file</string>
     <string name="update_error_apply_text">Unable to create a private file to build a new hosts source. Please check the free space available on your device.</string>
+    <string name="root_error_denied_title">Root access denied</string>
+    <string name="root_error_denied_text">Allow root access from your root app</string>
+    <string name="root_error_space_title">Not enough space</string>
+    <string name="root_error_space_text">Unable to copy hosts file to your system partition. Please check Magisk \"systemless hosts\" module is enabled then reboot.</string>
+    <string name="root_error_copy_title">Failed to install new hosts file</string>
+    <string name="root_error_copy_text">Unable to copy hosts file to /system partition. Please check Magisk \"systemless hosts\" module is enabled then reboot.</string>
+    <string name="root_error_revert_title">Failed to revert hosts file</string>
+    <string name="root_error_revert_text">Unable to restore default hosts file configuration.</string>
     <plurals name="home_sources_up_to_date">
         <item quantity="one">%1$d up-to-date source</item>
         <item quantity="other">%1$d up-to-date sources</item>
@@ -163,6 +171,11 @@
     <string name="status_update_available">Source update available</string>
     <string name="status_no_update_found">No source update found</string>
     <string name="status_vpn_configuration_updated">VPN configuration successfully updated</string>
+    <string name="status_create_new_hosts">Creating a new hosts file</string>
+    <string name="status_copy_new_hosts">Copying a new hosts file</string>
+    <string name="status_hosts_updated">Hosts file successfully updated</string>
+    <string name="status_revert">Reverting to default hosts file</string>
+    <string name="status_revert_done">Default hosts file restored</string>
     <string name="error_dialog_help">Please read Help for more information.</string>
     <string name="help">Help</string>
     <string name="home_tile_log">DNS log</string>

@@ -105,6 +105,14 @@
     <string name="update_error_download_text">Aucune de vos sources de fichiers hosts activées n’est accessible. Assurez-vous que votre appareil est bien connecté à Internet.</string>
     <string name="update_error_apply_title">Échec de création du fichier privé</string>
     <string name="update_error_apply_text">Impossible de créer un fichier privé pour construire une nouvelle source de fichiers hosts. Vérifiez l’espace libre sur votre appareil.</string>
+    <string name="root_error_denied_title">L’accès racine a été refusé</string>
+    <string name="root_error_denied_text">Autorisez l’accès racine à partir de votre appli de débridage</string>
+    <string name="root_error_space_title">Il manque d’espace</string>
+    <string name="root_error_space_text">Impossible de copier le fichier hosts vers votre partition système. Assurez-vous que le module « Systemless Hosts » de Magisk est activé, puis redémarrez.</string>
+    <string name="root_error_copy_title">Échec d’installation du nouveau fichier hosts.</string>
+    <string name="root_error_copy_text">Impossible de copier le fichier hosts vers la partition /system. Assurez-vous que le module « Systemless Hosts » de Magisk est activé, puis redémarrez.</string>
+    <string name="root_error_revert_title">Échec de rétablissement du fichier hosts</string>
+    <string name="root_error_revert_text">Impossible de restaurer la configuration du fichier hosts par défaut.</string>
     <plurals name="home_sources_up_to_date">
         <item quantity="one">%1$d source à jour</item>
         <item quantity="many">%1$d sources à jour</item>
@@ -164,6 +172,11 @@
     <string name="status_update_available">Une mise à jour des sources est proposée</string>
     <string name="status_no_update_found">Aucune mise à jour des sources n’a été trouvée</string>
     <string name="status_vpn_configuration_updated">La configuration du RPV/VPN a été mise à jour avec succès</string>
+    <string name="status_create_new_hosts">Création d’un nouveau fichier hosts</string>
+    <string name="status_copy_new_hosts">Copie d’un nouveau fichier hosts</string>
+    <string name="status_hosts_updated">Le fichier hosts a été mis à jour avec succès</string>
+    <string name="status_revert">Rétablissement du fichier hosts par défaut</string>
+    <string name="status_revert_done">Le fichier hosts par défaut a été restauré</string>
     <string name="error_dialog_help">Pour plus de précisions, consultez l’aide.</string>
     <string name="help">Aide</string>
     <string name="home_tile_log">Journal DNS</string>

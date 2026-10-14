@@ -6,9 +6,11 @@ import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import org.adaway.blocking.BlockingController
 import org.adaway.blocklist.BlockListCompiler
 import org.adaway.blocklist.BlockListState
 import org.adaway.blocklist.BlockListUpdater
+import org.adaway.blocklist.StatusMessages
 import org.adaway.blocklist.UserRuleRepository
 import org.adaway.data.DataInitializer
 import org.adaway.data.db.AppDatabase
@@ -17,6 +19,7 @@ import org.adaway.data.legacy.LegacyConversion
 import org.adaway.data.settings.SettingsRepository
 import org.adaway.engine.Engine
 import org.adaway.engine.EngineFiles
+import org.adaway.root.RootController
 import org.adaway.sources.SourceDownloader
 import org.adaway.sources.SourceRepository
 import org.adaway.sources.SourceSync
@@ -43,12 +46,16 @@ class AppContainer(context: Context) {
     )
     val rootAccess = RootAccess()
     val vpnController = VpnController(applicationContext, settingsRepository)
+    val statusMessages = StatusMessages()
+    val rootController = RootController(applicationContext.resources, rootAccess, database, engineFiles, settingsRepository, statusMessages)
+    val blockingController = BlockingController(settingsRepository, vpnController, rootController, statusMessages)
     val sourceRepository = SourceRepository(database, engineFiles, blockListState)
     val userRuleRepository = UserRuleRepository(database, Engine, blockListState)
     val blockListUpdater = BlockListUpdater(
         scope = applicationScope,
         sourceSync = SourceSync(database, SourceDownloader(context), engineFiles),
         compiler = BlockListCompiler(database, engineFiles, blockListState),
-        onApplied = vpnController::onBlockListApplied,
+        statusMessages = statusMessages,
+        onApplied = blockingController::onBlockListApplied,
     )
 }

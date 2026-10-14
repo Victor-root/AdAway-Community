@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import org.adaway.AppContainer
 import org.adaway.blocklist.UpdateError
 import org.adaway.data.settings.BlockingMethod
+import org.adaway.root.RootError
 import org.adaway.ui.common.VpnRefusal
 
 /** The first download of the sources, then the start of the blocking. */
@@ -21,6 +22,8 @@ sealed interface WelcomeSync {
     data object Done : WelcomeSync
 
     data class Failed(val error: UpdateError) : WelcomeSync
+
+    data class InstallFailed(val error: RootError) : WelcomeSync
 }
 
 data class WelcomeState(
@@ -87,8 +90,7 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
             mutableSync.value = if (error != null) {
                 WelcomeSync.Failed(error)
             } else {
-                container.vpnController.enable()
-                WelcomeSync.Done
+                container.blockingController.enable()?.let(WelcomeSync::InstallFailed) ?: WelcomeSync.Done
             }
         }
     }

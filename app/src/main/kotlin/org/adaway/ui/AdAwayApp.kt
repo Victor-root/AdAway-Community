@@ -16,6 +16,7 @@ import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
 import org.adaway.ui.lists.ListsRoute
 import org.adaway.ui.prefs.ExcludedAppsScreen
+import org.adaway.ui.prefs.HostsFileScreen
 import org.adaway.ui.prefs.PreferencesNavigation
 import org.adaway.ui.prefs.PreferencesScreen
 import org.adaway.ui.prefs.UpdatesScreen
@@ -52,6 +53,9 @@ private data object Updates
 
 @Serializable
 private data object ExcludedApps
+
+@Serializable
+private data object SystemHosts
 
 @Composable
 fun AdAwayApp(isTelevision: Boolean) {
@@ -112,12 +116,14 @@ fun AdAwayApp(isTelevision: Boolean) {
                         back = navController::popBackStack,
                         openUpdates = { navController.navigate(Updates) },
                         openExcludedApps = { navController.navigate(ExcludedApps) },
+                        openHostsFile = { navController.navigate(SystemHosts) },
                     ),
                 )
             }
             composable<Help> { HelpScreen(onBack = navController::popBackStack) }
             composable<Updates> { UpdatesScreen(onBack = navController::popBackStack) }
             composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
+            composable<SystemHosts> { HostsFileScreen(onBack = navController::popBackStack) }
         }
     }
 }

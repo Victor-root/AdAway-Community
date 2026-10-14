@@ -54,9 +54,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.adaway.BuildConfig
 import org.adaway.R
+import org.adaway.blocklist.StatusMessage
 import org.adaway.blocklist.UpdateOutcome
 import org.adaway.data.db.RuleType
 import org.adaway.data.settings.BlockingMethod
+import org.adaway.root.RootStep
 import org.adaway.sources.UpdateProgress
 import org.adaway.ui.common.DISABLED_ALPHA
 import org.adaway.ui.common.updateProgressText
@@ -86,18 +88,19 @@ private val HomeCardShape = RoundedCornerShape(22.dp)
 
 /** Phone home screen: header, counters straddling it, a scrolling zone of cards, and the bottom bar. */
 @Composable
-fun HomeScreen(state: HomeState, progress: UpdateProgress?, outcome: UpdateOutcome?, actions: HomeScreenActions) {
+fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: StatusMessage?, actions: HomeScreenActions) {
     val colors = LocalAdAwayColors.current
     val statusBar = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
     val navigationBar = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
     val usesVpn = state.blocking.method == BlockingMethod.VPN
+    val busy = progress != null || state.blocking.rootBusy
     BoxWithConstraints(modifier = Modifier.fillMaxSize().background(colors.homeBackground)) {
         val contentHeight = maxHeight - statusBar - navigationBar
         val headerHeight = statusBar + contentHeight * HEADER_HEIGHT_FRACTION
         Column(modifier = Modifier.fillMaxSize()) {
             Box(modifier = Modifier.fillMaxWidth()) {
                 Header(
-                    blockingOn = !usesVpn || state.blocking.active,
+                    blockingOn = state.blocking.active,
                     logoSize = contentHeight * LOGO_HEIGHT_FRACTION,
                     modifier = Modifier.fillMaxWidth().height(headerHeight),
                     contentTop = statusBar,
@@ -117,7 +120,7 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, outcome: UpdateOutco
                 if (state.legacyImportFailed) {
                     LegacyImportFailedCard(actions.dismissLegacyImportFailure, modifier = Modifier.padding(bottom = 20.dp))
                 }
-                SourcesCard(state.sources, progress, outcome, actions, modifier = Modifier.padding(bottom = 20.dp))
+                SourcesCard(state.sources, busy, statusMessage?.let { statusText(it, usesVpn) }, actions, modifier = Modifier.padding(bottom = 20.dp))
                 if (usesVpn) {
                     blockingDetail(state.blocking.vpnStatus)?.let { detail ->
                         BlockingStatusCard(state.blocking, detail, actions.toggleBlocking, modifier = Modifier.padding(bottom = 20.dp))
@@ -130,8 +133,8 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, outcome: UpdateOutco
         BumpBottomBar(
             icon = painterResource(if (state.blocking.active) R.drawable.ic_pause_24dp else R.drawable.logo),
             contentDescription = stringResource(R.string.home_toggle_blocking),
-            enabled = usesVpn,
-            onClick = { if (progress == null) actions.toggleBlocking() },
+            enabled = state.blocking.method != BlockingMethod.UNSET,
+            onClick = { if (!busy) actions.toggleBlocking() },
             modifier = Modifier.align(Alignment.BottomCenter),
         )
     }
@@ -260,9 +263,8 @@ private fun CounterCard(type: RuleType, count: Long, onClick: () -> Unit, modifi
 }
 
 @Composable
-private fun SourcesCard(stats: SourceStats, progress: UpdateProgress?, outcome: UpdateOutcome?, actions: HomeScreenActions, modifier: Modifier) {
+private fun SourcesCard(stats: SourceStats, busy: Boolean, message: String?, actions: HomeScreenActions, modifier: Modifier) {
     val colors = LocalAdAwayColors.current
-    val message = progress?.let { updateProgressText(it) } ?: outcome?.let { stringResource(outcomeText(it)) }
     HomeCard(onClick = actions.openSources, modifier = modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -289,7 +291,7 @@ private fun SourcesCard(stats: SourceStats, progress: UpdateProgress?, outcome: 
                     onClick = actions.sync,
                 )
             }
-            if (progress != null) {
+            if (busy) {
                 LinearProgressIndicator(
                     modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
                     color = colors.primary,
@@ -305,11 +307,24 @@ private fun SourcesCard(stats: SourceStats, progress: UpdateProgress?, outcome: 
     }
 }
 
-@StringRes
-private fun outcomeText(outcome: UpdateOutcome): Int = when (outcome) {
-    UpdateOutcome.UPDATE_AVAILABLE -> R.string.status_update_available
-    UpdateOutcome.NO_UPDATE_FOUND -> R.string.status_no_update_found
-    UpdateOutcome.APPLIED -> R.string.status_vpn_configuration_updated
+/** The VPN tells the list it took; the root blocking tells its own steps. */
+@Composable
+private fun statusText(message: StatusMessage, usesVpn: Boolean): String? = when (message) {
+    is StatusMessage.Update -> updateProgressText(message.progress)
+    is StatusMessage.Outcome -> when (message.outcome) {
+        UpdateOutcome.UPDATE_AVAILABLE -> stringResource(R.string.status_update_available)
+        UpdateOutcome.NO_UPDATE_FOUND -> stringResource(R.string.status_no_update_found)
+        UpdateOutcome.APPLIED -> if (usesVpn) stringResource(R.string.status_vpn_configuration_updated) else null
+    }
+    is StatusMessage.Root -> stringResource(
+        when (message.step) {
+            RootStep.CREATING -> R.string.status_create_new_hosts
+            RootStep.COPYING -> R.string.status_copy_new_hosts
+            RootStep.INSTALLED -> R.string.status_hosts_updated
+            RootStep.REVERTING -> R.string.status_revert
+            RootStep.REVERTED -> R.string.status_revert_done
+        },
+    )
 }
 
 /** The DNS log screen does not exist yet: its tile is grayed out. */

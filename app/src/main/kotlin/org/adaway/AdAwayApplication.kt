@@ -17,6 +17,8 @@ class AdAwayApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Shell.enableVerboseLogging = BuildConfig.DEBUG
+        // The root shell sees the mounts of the whole system, the hosts file as the other apps read it.
+        Shell.setDefaultBuilder(Shell.Builder.create().setFlags(Shell.FLAG_MOUNT_MASTER))
         container = AppContainer(this)
         Notifications.createChannels(this)
         scheduleOnChange({ it.sourcesPeriodicCheck to it.sourcesUnmeteredOnly }, SourceUpdateWorker.Companion::schedule)

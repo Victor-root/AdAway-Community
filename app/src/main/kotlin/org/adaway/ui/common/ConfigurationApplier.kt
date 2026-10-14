@@ -21,10 +21,10 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 import org.adaway.AppContainer
 import org.adaway.R
 import org.adaway.data.settings.BlockingMethod
+import org.adaway.root.RootState
 import org.adaway.ui.theme.LocalAdAwayColors
 
 /** Applying the configuration changed on a screen, as the sources and lists screens offer it. */
@@ -36,17 +36,28 @@ class ConfigurationApplier(private val container: AppContainer, private val scop
     val progress = updater.progress
     val error = updater.error
 
-    /** Changes applied while the VPN blocking is off only take effect once it is on. */
-    val blockingOff: StateFlow<Boolean> = combine(container.settingsRepository.settings, container.vpnController.status) { settings, status ->
-        settings.blockingMethod == BlockingMethod.VPN && !status.isServiceAlive()
-    }.stateIn(scope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), false)
+    /**
+     * The method in use while its blocking is off, else null: changes applied then only take
+     * effect once it is on.
+     */
+    val blockingOff: StateFlow<BlockingMethod?> = combine(
+        container.settingsRepository.settings,
+        container.vpnController.status,
+        container.rootController.state,
+    ) { settings, vpnStatus, rootState ->
+        settings.blockingMethod.takeIf { method ->
+            when (method) {
+                BlockingMethod.VPN -> !vpnStatus.isServiceAlive()
+                BlockingMethod.ROOT -> rootState == RootState.NOT_INSTALLED
+                BlockingMethod.UNSET -> false
+            }
+        }
+    }.stateIn(scope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
 
     fun apply() = updater.requestApply()
 
-    /** Called once the consent is granted, when needed. */
-    fun enableBlocking() {
-        scope.launch { container.vpnController.enable() }
-    }
+    /** Applies, then turns the blocking on. For the VPN, called once the consent is granted. */
+    fun applyAndEnable() = updater.requestApply(andThen = { container.blockingController.enable() })
 
     fun dismissError() = updater.dismissError()
 
@@ -69,7 +80,7 @@ fun ApplyConfigurationSnackbar(applier: ConfigurationApplier) {
     val error by applier.error.collectAsStateWithLifecycle()
     val blockingOff by applier.blockingOff.collectAsStateWithLifecycle()
     var applyWhileOff by rememberSaveable { mutableStateOf(false) }
-    val requestConsent = rememberVpnConsentRequest(onGranted = applier::enableBlocking, onRefused = {})
+    val requestConsent = rememberVpnConsentRequest(onGranted = applier::applyAndEnable, onRefused = applier::apply)
     val colors = LocalAdAwayColors.current
     LaunchedEffect(error) {
         if (error == null) return@LaunchedEffect
@@ -83,8 +94,7 @@ fun ApplyConfigurationSnackbar(applier: ConfigurationApplier) {
             message = stringResource(R.string.apply_blocking_off_text),
             confirmButton = DialogButton(stringResource(R.string.apply_and_enable), onClick = {
                 applyWhileOff = false
-                applier.apply()
-                requestConsent()
+                if (blockingOff == BlockingMethod.VPN) requestConsent() else applier.applyAndEnable()
             }),
             dismissButton = DialogButton(stringResource(R.string.apply_only), onClick = {
                 applyWhileOff = false
@@ -107,7 +117,7 @@ fun ApplyConfigurationSnackbar(applier: ConfigurationApplier) {
         configurationChanged -> AdAwaySnackbar(
             stringResource(R.string.configuration_changed),
             actionLabel = stringResource(R.string.apply),
-            onAction = { if (blockingOff) applyWhileOff = true else applier.apply() },
+            onAction = { if (blockingOff != null) applyWhileOff = true else applier.apply() },
         )
     }
 }

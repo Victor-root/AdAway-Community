@@ -23,6 +23,7 @@ class BlockListUpdater(
     private val scope: CoroutineScope,
     private val sourceSync: SourceSync,
     private val compiler: BlockListCompiler,
+    private val statusMessages: StatusMessages,
     /** Called after each new final list, for the blocking in use to take it. */
     private val onApplied: suspend () -> Unit,
 ) {
@@ -30,20 +31,17 @@ class BlockListUpdater(
     private val startupTasksStarted = AtomicBoolean(false)
     private val mutableProgress = MutableStateFlow<UpdateProgress?>(null)
     private val mutableError = MutableStateFlow<UpdateError?>(null)
-    private val mutableOutcome = MutableStateFlow<UpdateOutcome?>(null)
 
     val progress: StateFlow<UpdateProgress?> = mutableProgress.asStateFlow()
 
     /** The failure of the last update requested from a screen, until dismissed. */
     val error: StateFlow<UpdateError?> = mutableError.asStateFlow()
 
-    val outcome: StateFlow<UpdateOutcome?> = mutableOutcome.asStateFlow()
-
     /** Downloads all the enabled sources, then applies. */
     fun requestSync() = launchForScreen { syncAndApply(onlyPending = false) }
 
-    /** Downloads the sources added or edited since their last read, then applies. */
-    fun requestApply() = launchForScreen { syncAndApply(onlyPending = true) }
+    /** Downloads the sources added or edited since their last read, applies, then runs [andThen] unless it failed. */
+    fun requestApply(andThen: suspend () -> Unit = {}) = launchForScreen { syncAndApply(onlyPending = true).also { if (it == null) andThen() } }
 
     /** On the first screen display of the process: reads new sources, or checks for updates. */
     fun runStartupTasks(checkForUpdates: Boolean) {
@@ -63,13 +61,8 @@ class BlockListUpdater(
     /** Returns null when another update is already running. */
     suspend fun checkForUpdates(): Boolean? = exclusive {
         sourceSync.check(::publish).also { available ->
-            mutableOutcome.value = if (available) UpdateOutcome.UPDATE_AVAILABLE else UpdateOutcome.NO_UPDATE_FOUND
+            statusMessages.post(StatusMessage.Outcome(if (available) UpdateOutcome.UPDATE_AVAILABLE else UpdateOutcome.NO_UPDATE_FOUND))
         }
-    }
-
-    /** The blocking took the current configuration, as when it was just turned on. */
-    fun announceApplied() {
-        mutableOutcome.value = UpdateOutcome.APPLIED
     }
 
     /** Returns the error, or null on success or when another update is already running. */
@@ -80,9 +73,8 @@ class BlockListUpdater(
             report.allFailed -> UpdateError.DOWNLOAD_FAILED
             else -> null
         }
-        (compile() ?: syncError).also { error ->
-            mutableOutcome.value = if (error == null) UpdateOutcome.APPLIED else null
-        }
+        // The line under the sources card leaves room for the error.
+        (compile() ?: syncError)?.also { statusMessages.post(null) }
     }
 
     private suspend fun compile(): UpdateError? {
@@ -92,6 +84,8 @@ class BlockListUpdater(
         } catch (_: RuntimeException) {
             return UpdateError.APPLY_FAILED
         }
+        // Before the blocking takes it, so that its own steps come after.
+        statusMessages.post(StatusMessage.Outcome(UpdateOutcome.APPLIED))
         onApplied()
         return null
     }
@@ -102,11 +96,11 @@ class BlockListUpdater(
 
     private fun publish(progress: UpdateProgress) {
         mutableProgress.value = progress
+        statusMessages.post(StatusMessage.Update(progress))
     }
 
     private suspend fun <T> exclusive(block: suspend () -> T): T? {
         if (!mutex.tryLock()) return null
-        mutableOutcome.value = null
         return try {
             block()
         } finally {

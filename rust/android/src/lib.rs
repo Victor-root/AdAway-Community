@@ -9,6 +9,7 @@ use std::sync::{Arc, Mutex, RwLock};
 
 use adaway_engine::compile::{self, OutputDirectories, UserRules};
 use adaway_engine::filter::BlockList;
+use adaway_engine::hosts::{self, HostsOptions};
 use adaway_engine::source::{self, ParseError, ParseOptions, SourceFormat};
 use adaway_engine::tunnel::{Exit, SharedRules, Stopper, Tunnel, TunnelConfig, Upstream};
 use adaway_engine::{address, catalog, hostname};
@@ -196,6 +197,39 @@ pub extern "system" fn Java_org_adaway_engine_Engine_compile<'caller>(
             let array = JLongArray::new(env, counts.len())?;
             array.set_region(env, 0, &counts)?;
             Ok(array)
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// Writes the hosts file of the root blocking from the final list.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_writeHosts<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    final_directory: JString<'caller>,
+    output: JString<'caller>,
+    header: JObjectArray<'caller, JString<'caller>>,
+    ipv4_redirection: JString<'caller>,
+    ipv6_redirection: JString<'caller>,
+) {
+    unowned_env
+        .with_env(|env| -> Result<_, BridgeError> {
+            let final_directory = PathBuf::from(final_directory.try_to_string(env)?);
+            let output = PathBuf::from(output.try_to_string(env)?);
+            let header = read_strings(env, &header)?;
+            let ipv4 = ipv4_redirection.try_to_string(env)?;
+            let ipv6 = if ipv6_redirection.is_null() {
+                None
+            } else {
+                Some(ipv6_redirection.try_to_string(env)?)
+            };
+            let options = HostsOptions {
+                header: &header,
+                ipv4_redirection: &ipv4,
+                ipv6_redirection: ipv6.as_deref(),
+            };
+            hosts::write(&final_directory, &output, &options)?;
+            Ok(())
         })
         .resolve::<ThrowRuntimeExAndDefault>()
 }

@@ -57,10 +57,11 @@
     <string name="pref_vpn_diagnostic_log_clear">Clear diagnostic log</string>
     <string name="pref_vpn_diagnostic_log_clear_description">Delete the recorded events. Do this before reproducing a problem to capture a clean trace.</string>
     <string name="pref_root_open_hosts">Open hosts file</string>
-    <string name="pref_never_reboot">Hide reboot dialog after apply</string>
+    <string name="hosts_file_unreadable">The hosts file could not be read.</string>
     <string name="pref_hosts_redirection_summary">Define where to redirect blocked hosts</string>
     <string name="pref_redirection_ipv4">Configure IPv4 redirection</string>
     <string name="pref_redirection_ipv6">Configure IPv6 redirection</string>
+    <string name="pref_redirection_invalid">Invalid redirection</string>
     <string name="pref_webserver_summary">The local web server listens on local IP addresses to answer to blocked hostname requests. It may help with app freezing on blocked connection.</string>
     <string name="pref_webserver_enabled">Enable web server</string>
     <string name="pref_webserver_test">Test web server</string>

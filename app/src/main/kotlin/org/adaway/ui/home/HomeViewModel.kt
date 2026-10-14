@@ -15,6 +15,7 @@ import org.adaway.AppContainer
 import org.adaway.blocklist.BlockListSummary
 import org.adaway.data.db.SourceEntity
 import org.adaway.data.settings.BlockingMethod
+import org.adaway.root.RootState
 import org.adaway.system.Notifications
 import org.adaway.vpn.AlwaysOnMode
 import org.adaway.vpn.StartResult
@@ -25,9 +26,16 @@ data class SourceStats(val upToDate: Int, val pending: Int, val failed: Int) {
     val outdated: Int get() = pending + failed
 }
 
-/** How ad blocking stands. Starting, reconnecting or waiting for a network still count as on. */
-data class BlockingState(val method: BlockingMethod, val vpnStatus: VpnStatus) {
-    val active: Boolean get() = method == BlockingMethod.VPN && vpnStatus.isServiceAlive()
+/**
+ * How ad blocking stands. A VPN starting, reconnecting or waiting for a network still counts as on.
+ * [rootBusy] while the hosts file is being installed or reverted.
+ */
+data class BlockingState(val method: BlockingMethod, val vpnStatus: VpnStatus, val rootState: RootState, val rootBusy: Boolean) {
+    val active: Boolean get() = when (method) {
+        BlockingMethod.VPN -> vpnStatus.isServiceAlive()
+        BlockingMethod.ROOT -> rootState == RootState.INSTALLED
+        BlockingMethod.UNSET -> false
+    }
 }
 
 data class HomeState(
@@ -41,8 +49,14 @@ data class HomeState(
 class HomeViewModel(private val container: AppContainer) : ViewModel() {
     private val updater = container.blockListUpdater
     private val vpnController = container.vpnController
-    private val blocking = combine(container.settingsRepository.settings, vpnController.status) { settings, status ->
-        BlockingState(settings.blockingMethod, status)
+    private val rootController = container.rootController
+    private val blocking = combine(
+        container.settingsRepository.settings,
+        vpnController.status,
+        rootController.state,
+        rootController.busy,
+    ) { settings, status, rootState, rootBusy ->
+        BlockingState(settings.blockingMethod, status, rootState, rootBusy)
     }
     private val mutableConsentPrompt = MutableStateFlow(false)
 
@@ -57,8 +71,9 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
 
     val progress = updater.progress
-    val outcome = updater.outcome
+    val statusMessage = container.statusMessages.current
     val error = updater.error
+    val rootError = rootController.error
 
     /** Set when the VPN the user wants lacks the consent: the screen asks Android for it. */
     val consentPrompt: StateFlow<Boolean> = mutableConsentPrompt.asStateFlow()
@@ -78,15 +93,20 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
 
     fun apply() = updater.requestApply()
 
-    /** Called once the consent is granted, when needed. */
+    /** For the VPN, called once the consent is granted. */
     fun enableBlocking() {
-        viewModelScope.launch {
-            if (vpnController.enable() == StartResult.STARTED) updater.announceApplied()
-        }
+        viewModelScope.launch { container.blockingController.enable() }
     }
 
     fun disableBlocking() {
-        viewModelScope.launch { vpnController.disable() }
+        viewModelScope.launch { container.blockingController.disable() }
+    }
+
+    /** The root blocking state is read from the device, where it may have changed meanwhile. */
+    fun refreshRootState() {
+        viewModelScope.launch {
+            if (container.settingsRepository.settings.first().blockingMethod == BlockingMethod.ROOT) rootController.refresh()
+        }
     }
 
     fun consentPromptShown() {
@@ -96,6 +116,8 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     fun alwaysOnMode(): AlwaysOnMode = vpnController.alwaysOnMode()
 
     fun dismissError() = updater.dismissError()
+
+    fun dismissRootError() = rootController.dismissError()
 
     fun dismissLegacyImportFailure() {
         viewModelScope.launch { container.settingsRepository.dismissLegacyImportFailure() }
