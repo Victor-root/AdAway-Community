@@ -217,11 +217,11 @@ private fun SourceList(
  */
 @Composable
 private fun SourceDetails(source: SourceEntity, label: String?, isTelevision: Boolean, modifier: Modifier = Modifier) {
-    val line: @Composable (String, TextStyle, Color) -> Unit = { text, style, color ->
+    val line: @Composable (String, TextStyle, Color, Int) -> Unit = { text, style, color, maxLines ->
         if (isTelevision) {
-            TvText(text, style = style, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            TvText(text, style = style, maxLines = maxLines, overflow = TextOverflow.Ellipsis)
         } else {
-            Text(text, style = style, color = color, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(text, style = style, color = color, maxLines = maxLines, overflow = TextOverflow.Ellipsis)
         }
     }
     val secondary = MaterialTheme.colorScheme.onSurfaceVariant
@@ -230,13 +230,14 @@ private fun SourceDetails(source: SourceEntity, label: String?, isTelevision: Bo
         verticalArrangement = Arrangement.spacedBy(2.dp),
     ) {
         if (label != null) {
-            line(label, MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold), MaterialTheme.colorScheme.onSurface)
+            line(label, MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold), MaterialTheme.colorScheme.onSurface, 1)
         }
-        line(source.url, MaterialTheme.typography.bodySmall, secondary)
+        line(source.url, MaterialTheme.typography.bodySmall, secondary, 1)
         val statusColor = if (source.enabled && source.syncError != null) MaterialTheme.colorScheme.error else secondary
-        line(sourceStatus(source), MaterialTheme.typography.bodySmall, statusColor)
+        // The status may explain a failure: it is never cut.
+        line(sourceStatus(source), MaterialTheme.typography.bodySmall, statusColor, Int.MAX_VALUE)
         if (source.enabled && source.ruleCount > 0) {
-            line(ruleCountText(source.ruleCount), MaterialTheme.typography.labelMedium, MaterialTheme.colorScheme.primary)
+            line(ruleCountText(source.ruleCount), MaterialTheme.typography.labelMedium, MaterialTheme.colorScheme.primary, 1)
         }
     }
 }
