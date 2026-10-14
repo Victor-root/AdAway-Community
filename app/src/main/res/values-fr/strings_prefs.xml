@@ -14,6 +14,15 @@
     <string name="pref_vpn_ad_blocker_configuration">Bloqueur de publicités fondé sur un RPV/VPN</string>
     <string name="pref_enable_ipv6">Activer la prise en charge d’IPv6</string>
     <string name="pref_backup_restore">Sauvegarder/restaurer les règles de blocage</string>
+    <string name="pref_backup_restore_title">Sauvegarde et restauration</string>
+    <string name="pref_backup">Sauvegarde</string>
+    <string name="pref_backup_summary">Sauvegardez vos règles de blocage sur une mémoire externe</string>
+    <string name="pref_restore">Restaurer</string>
+    <string name="pref_restore_summary">Restaurez vos règles de blocage d’un fichier de sauvegarde</string>
+    <string name="import_success">La sauvegarde a été importée avec succès de votre mémoire externe.</string>
+    <string name="import_failed">Échec d’importation de la sauvegarde. Le format est-il correct\u00a0?</string>
+    <string name="export_success">La sauvegarde a été exportée avec succès vers le fichier « %s » de votre mémoire externe.</string>
+    <string name="export_failed">Échec d’exportation du fichier de sauvegarde « %s ».</string>
     <string name="pref_update_title">Mises à jour</string>
     <string name="pref_update_enable_notifications">Les notifications sont désactivées</string>
     <string name="pref_update_enable_notifications_summary">Les notifications de l’appli ne seront pas affichées. Touchez pour les activer.</string>

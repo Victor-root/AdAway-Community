@@ -99,12 +99,7 @@ class LegacyConversion(private val validator: RuleValidator) {
     }
 
     private fun convertRule(rule: LegacyUserRule): UserRuleEntity? {
-        val type = when (rule.type) {
-            0 -> RuleType.BLOCKED
-            1 -> RuleType.ALLOWED
-            2 -> RuleType.REDIRECTED
-            else -> return null
-        }
+        val type = RULE_TYPES.getOrNull(rule.type) ?: return null
         val host = validator.normalizeHostname(rule.host, allowWildcards = type != RuleType.REDIRECTED)
             ?: return null
         val redirection = if (type == RuleType.REDIRECTED) {
@@ -129,9 +124,14 @@ class LegacyConversion(private val validator: RuleValidator) {
         }
     }
 
-    private companion object {
-        const val HTTPS = "https://"
-        const val CONTENT = "content://"
-        val LINE_BREAKS = Regex("[\\r\\n]+")
+    companion object {
+        private const val HTTPS = "https://"
+        private const val CONTENT = "content://"
+        private val LINE_BREAKS = Regex("[\\r\\n]+")
+
+        /** The rule types by code, in the previous app database and in its backups. */
+        private val RULE_TYPES = listOf(RuleType.BLOCKED, RuleType.ALLOWED, RuleType.REDIRECTED)
+
+        fun ruleTypeCode(type: RuleType): Int = RULE_TYPES.indexOf(type)
     }
 }

@@ -32,6 +32,9 @@ interface UserRuleDao {
     @Query("SELECT * FROM user_rules WHERE type = :type AND host LIKE :pattern ESCAPE '\\' ORDER BY host")
     fun observe(type: RuleType, pattern: String): Flow<List<UserRuleEntity>>
 
+    @Query("SELECT * FROM user_rules ORDER BY host")
+    suspend fun getAll(): List<UserRuleEntity>
+
     @Query("SELECT * FROM user_rules WHERE enabled = 1")
     suspend fun getEnabled(): List<UserRuleEntity>
 

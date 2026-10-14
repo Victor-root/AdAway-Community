@@ -16,6 +16,7 @@ import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
 import org.adaway.ui.lists.ListsRoute
 import org.adaway.ui.log.DnsLogScreen
+import org.adaway.ui.prefs.BackupRestoreScreen
 import org.adaway.ui.prefs.ExcludedAppsScreen
 import org.adaway.ui.prefs.HostsFileScreen
 import org.adaway.ui.prefs.PreferencesNavigation
@@ -60,6 +61,9 @@ private data object SystemHosts
 
 @Serializable
 private data object DnsLog
+
+@Serializable
+private data object BackupRestore
 
 @Composable
 fun AdAwayApp(isTelevision: Boolean) {
@@ -122,6 +126,7 @@ fun AdAwayApp(isTelevision: Boolean) {
                         openUpdates = { navController.navigate(Updates) },
                         openExcludedApps = { navController.navigate(ExcludedApps) },
                         openHostsFile = { navController.navigate(SystemHosts) },
+                        openBackupRestore = { navController.navigate(BackupRestore) },
                     ),
                 )
             }
@@ -130,6 +135,7 @@ fun AdAwayApp(isTelevision: Boolean) {
             composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
             composable<SystemHosts> { HostsFileScreen(onBack = navController::popBackStack) }
             composable<DnsLog> { DnsLogScreen(onBack = navController::popBackStack) }
+            composable<BackupRestore> { BackupRestoreScreen(onBack = navController::popBackStack) }
         }
     }
 }

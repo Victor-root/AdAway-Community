@@ -14,6 +14,15 @@
     <string name="pref_vpn_ad_blocker_configuration">VPN based ad blocker</string>
     <string name="pref_enable_ipv6">Enable IPv6 support</string>
     <string name="pref_backup_restore">Backup / restore block rules</string>
+    <string name="pref_backup_restore_title">Backup &amp; restore</string>
+    <string name="pref_backup">Backup</string>
+    <string name="pref_backup_summary">Backup to external storage your block rules</string>
+    <string name="pref_restore">Restore</string>
+    <string name="pref_restore_summary">Restore your block rules from backup file</string>
+    <string name="import_success">Backup successfully imported from your external storage.</string>
+    <string name="import_failed">Failed to import backup. Is its format correct?</string>
+    <string name="export_success">Backup successfully exported to file \'%s\' on your external storage.</string>
+    <string name="export_failed">Failed to export backup file \'%s\'.</string>
     <string name="pref_update_title">Updates</string>
     <string name="pref_update_enable_notifications">Notifications are disabled</string>
     <string name="pref_update_enable_notifications_summary">Application notifications won\'t show. Tap to enable them.</string>

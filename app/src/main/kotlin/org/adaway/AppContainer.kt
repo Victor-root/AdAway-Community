@@ -6,6 +6,7 @@ import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import org.adaway.backup.BackupFile
 import org.adaway.blocking.BlockingController
 import org.adaway.blocklist.BlockListCompiler
 import org.adaway.blocklist.BlockListState
@@ -41,12 +42,14 @@ class AppContainer(context: Context) {
     val database = Room.databaseBuilder(context, AppDatabase::class.java, AppDatabase.NAME).build()
     val engineFiles = EngineFiles(context)
     val blockListState = BlockListState(context.blockListDataStore)
+    private val legacyConversion = LegacyConversion(Engine)
     val dataInitializer = DataInitializer(
         database = database,
         settingsRepository = settingsRepository,
         legacyAppData = LegacyAppData(context),
-        legacyConversion = LegacyConversion(Engine),
+        legacyConversion = legacyConversion,
     )
+    val backupFile = BackupFile(database, legacyConversion, blockListState, applicationContext.resources)
     val rootAccess = RootAccess()
     val diagnosticLog = DiagnosticLog(context.filesDir, applicationScope, settingsRepository.settings)
     val vpnController = VpnController(applicationContext, settingsRepository, diagnosticLog)

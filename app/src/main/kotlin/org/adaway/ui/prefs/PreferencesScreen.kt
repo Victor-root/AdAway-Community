@@ -23,7 +23,13 @@ import org.adaway.engine.Engine
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
 
-class PreferencesNavigation(val back: () -> Unit, val openUpdates: () -> Unit, val openExcludedApps: () -> Unit, val openHostsFile: () -> Unit)
+class PreferencesNavigation(
+    val back: () -> Unit,
+    val openUpdates: () -> Unit,
+    val openExcludedApps: () -> Unit,
+    val openHostsFile: () -> Unit,
+    val openBackupRestore: () -> Unit,
+)
 
 /** The order of the dark theme choices. */
 private val ThemeModes = listOf(ThemeMode.LIGHT, ThemeMode.DARK, ThemeMode.SYSTEM)
@@ -144,7 +150,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 checked = current.ipv6Enabled,
                 onCheckedChange = { checked -> viewModel.updateHostsSetting { it.copy(ipv6Enabled = checked) } },
             )
-            Preference(R.drawable.ic_sd_storage_24dp, stringResource(R.string.pref_backup_restore), enabled = false)
+            Preference(R.drawable.ic_sd_storage_24dp, stringResource(R.string.pref_backup_restore), onClick = navigation.openBackupRestore)
         }
     }
     diagnosticLog?.let { DiagnosticLogDialog(it, onDismiss = viewModel::hideDiagnosticLog) }
