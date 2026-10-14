@@ -6,8 +6,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ColorScheme as MobileColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
@@ -162,6 +168,26 @@ private fun Palette.applyTo(base: TvColorScheme) = base.copy(
     surfaceTint = primary,
 )
 
+/**
+ * How many screens on display show red under the system navigation bar, which then takes white
+ * icons, as the 6.x lists and first launch screens colored it.
+ */
+class NavigationBarAppearance {
+    var redScreens by mutableIntStateOf(0)
+}
+
+val LocalNavigationBarAppearance = staticCompositionLocalOf { NavigationBarAppearance() }
+
+/** For a screen red under the navigation bar, while it is on display. */
+@Composable
+fun RedNavigationBar() {
+    val appearance = LocalNavigationBarAppearance.current
+    DisposableEffect(appearance) {
+        appearance.redScreens++
+        onDispose { appearance.redScreens-- }
+    }
+}
+
 /** Applies the app colors to both the mobile and the TV Material components. */
 @Composable
 fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composable () -> Unit) {
@@ -171,12 +197,15 @@ fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composab
         ThemeMode.DARK -> true
     }
     val view = LocalView.current
+    val navigationBar = remember { NavigationBarAppearance() }
     if (!view.isInEditMode) {
-        SideEffect {
+        LaunchedEffect(dark) {
             val insetsController = WindowCompat.getInsetsController((view.context as Activity).window, view)
             // Every screen starts with the red brand header.
             insetsController.isAppearanceLightStatusBars = false
-            insetsController.isAppearanceLightNavigationBars = !dark
+            snapshotFlow { navigationBar.redScreens }.collect { redScreens ->
+                insetsController.isAppearanceLightNavigationBars = !dark && redScreens == 0
+            }
         }
     }
     val palette = if (dark) DarkPalette else LightPalette
@@ -186,7 +215,11 @@ fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composab
     val tvColors = remember(dark) { palette.applyTo(if (dark) tvDarkColorScheme() else tvLightColorScheme()) }
     MaterialTheme(colorScheme = mobileColors) {
         TvMaterialTheme(colorScheme = tvColors) {
-            CompositionLocalProvider(LocalAdAwayColors provides if (dark) DarkAdAwayColors else LightAdAwayColors, content = content)
+            CompositionLocalProvider(
+                LocalAdAwayColors provides if (dark) DarkAdAwayColors else LightAdAwayColors,
+                LocalNavigationBarAppearance provides navigationBar,
+                content = content,
+            )
         }
     }
 }

@@ -45,10 +45,12 @@ import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.BrandRed
+import org.adaway.ui.theme.RedNavigationBar
 
 /** The latest release and its changes, on the red background of the first launch screens. */
 @Composable
 fun UpdateScreen(onBack: () -> Unit) {
+    RedNavigationBar()
     val viewModel = appViewModel(::UpdateViewModel)
     val latest by viewModel.latest.collectAsStateWithLifecycle()
     val checking by viewModel.checking.collectAsStateWithLifecycle()

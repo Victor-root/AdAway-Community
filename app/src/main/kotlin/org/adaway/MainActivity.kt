@@ -1,8 +1,11 @@
 package org.adaway
 
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +18,9 @@ class MainActivity : ComponentActivity() {
     private val destination = MutableStateFlow<Destination?>(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
+        // Each screen draws what is under the navigation bar, without the veil Android adds by default.
+        enableEdgeToEdge(navigationBarStyle = SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT))
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) window.isNavigationBarContrastEnforced = false
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) destination.value = Destination.from(intent)
         val isTelevision = isTelevision()

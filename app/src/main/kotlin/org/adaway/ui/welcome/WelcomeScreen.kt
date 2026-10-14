@@ -80,6 +80,7 @@ import org.adaway.ui.common.rootErrorTitle
 import org.adaway.ui.common.updateErrorTitle
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.BrandRed
+import org.adaway.ui.theme.RedNavigationBar
 
 private val WelcomeCard = Color(0xFF424242)
 private val WelcomeCardSelected = Color(0xFF388E3C)
@@ -89,6 +90,7 @@ private const val NOTIFICATIONS_DELAY_MILLIS = 10_000L
 /** The phone first launch wizard, on the red background, a dot per step at the bottom. */
 @Composable
 fun WelcomeScreen(state: WelcomeState, viewModel: WelcomeViewModel, chooseVpn: () -> Unit, finish: () -> Unit) {
+    RedNavigationBar()
     val step by viewModel.step.collectAsStateWithLifecycle()
     val sync by viewModel.sync.collectAsStateWithLifecycle()
     var leaveEarly by rememberSaveable { mutableStateOf(false) }

@@ -75,6 +75,7 @@ import org.adaway.ui.common.adAwayCheckboxColors
 import org.adaway.ui.common.ruleTypeLabel
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
+import org.adaway.ui.theme.RedNavigationBar
 
 /** How long the undo action of a deletion stays offered. */
 private const val UNDO_MILLIS = 10_000L
@@ -88,6 +89,7 @@ private val SelectedBackground = Color(0x78B71C1C)
  */
 @Composable
 fun ListsScreen(type: RuleType, userRules: List<UserRuleEntity>, sourceRules: LazyPagingItems<String>, viewModel: ListsViewModel, onBack: () -> Unit) {
+    RedNavigationBar()
     val context = LocalContext.current
     val filter by viewModel.filter.collectAsStateWithLifecycle()
     val showSourceRules by viewModel.showSourceRules.collectAsStateWithLifecycle()
