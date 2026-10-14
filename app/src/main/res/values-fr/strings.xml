@@ -151,4 +151,5 @@
         <item quantity="many">%1$s entrées</item>
         <item quantity="other">%1$s entrées</item>
     </plurals>
+    <string name="just_now">à l\'instant</string>
 </resources>

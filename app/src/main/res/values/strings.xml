@@ -150,4 +150,5 @@
         <item quantity="one">%1$s entry</item>
         <item quantity="other">%1$s entries</item>
     </plurals>
+    <string name="just_now">just now</string>
 </resources>

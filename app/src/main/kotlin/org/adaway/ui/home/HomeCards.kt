@@ -33,7 +33,7 @@ fun CounterContent(type: RuleType, count: Long, modifier: Modifier = Modifier) {
         RuleType.REDIRECTED -> R.string.home_redirected_description
     }
     Column(modifier = modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(formatCount(count), style = MaterialTheme.typography.headlineSmall, color = ruleTypeColor(type))
+        Text(formatCount(count), style = MaterialTheme.typography.titleLarge, color = ruleTypeColor(type), maxLines = 1, softWrap = false)
         Text(ruleTypeLabel(type), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurface)
         Text(
             stringResource(description),

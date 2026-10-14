@@ -36,14 +36,17 @@ fun sourceStatus(source: SourceEntity): String {
         error != null -> stringResource(R.string.source_status_failed, syncErrorText(error, source.syncErrorStatus))
         syncedAt == null -> stringResource(R.string.source_status_never_synced)
         source.updateAvailable -> stringResource(R.string.source_status_update_available)
-        else -> stringResource(
-            R.string.source_status_up_to_date,
-            DateUtils.getRelativeTimeSpanString(
-                syncedAt * 1000,
-                System.currentTimeMillis(),
-                DateUtils.MINUTE_IN_MILLIS,
-            ).toString(),
-        )
+        else -> {
+            val elapsed = System.currentTimeMillis() - syncedAt * 1000
+            val checkedAt = if (elapsed < DateUtils.MINUTE_IN_MILLIS) {
+                stringResource(R.string.just_now)
+            } else {
+                DateUtils.getRelativeTimeSpanString(syncedAt * 1000, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS)
+                    .toString()
+                    .replaceFirstChar { it.lowercase(LocalConfiguration.current.locales[0]) }
+            }
+            stringResource(R.string.source_status_up_to_date, checkedAt)
+        }
     }
 }
 
