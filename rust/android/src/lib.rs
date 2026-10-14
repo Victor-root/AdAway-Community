@@ -2,13 +2,18 @@
 
 use std::fmt;
 use std::io;
+use std::net::IpAddr;
+use std::os::fd::{FromRawFd, OwnedFd};
 use std::path::{Path, PathBuf};
+use std::sync::{Arc, Mutex, RwLock};
 
 use adaway_engine::compile::{self, OutputDirectories, UserRules};
+use adaway_engine::filter::BlockList;
 use adaway_engine::source::{self, ParseError, ParseOptions, SourceFormat};
+use adaway_engine::tunnel::{Exit, SharedRules, Stopper, Tunnel, TunnelConfig, Upstream};
 use adaway_engine::{address, catalog, hostname};
 use jni::errors::ThrowRuntimeExAndDefault;
-use jni::objects::{JLongArray, JObject, JObjectArray, JString};
+use jni::objects::{JIntArray, JLongArray, JObject, JObjectArray, JString};
 use jni::sys::{jboolean, jint, jlong};
 use jni::{Env, EnvUnowned};
 
@@ -21,6 +26,7 @@ const PARSE_NO_RULES: jlong = -3;
 enum BridgeError {
     Jni(jni::errors::Error),
     Io(io::Error),
+    InvalidArgument(&'static str),
 }
 
 impl fmt::Display for BridgeError {
@@ -28,6 +34,7 @@ impl fmt::Display for BridgeError {
         match self {
             BridgeError::Jni(error) => write!(formatter, "JNI error: {error}"),
             BridgeError::Io(error) => write!(formatter, "I/O error: {error}"),
+            BridgeError::InvalidArgument(reason) => write!(formatter, "invalid argument: {reason}"),
         }
     }
 }
@@ -215,4 +222,157 @@ pub extern "system" fn Java_org_adaway_engine_Engine_queryCatalog<'caller>(
             Ok(new_string_array(env, &lines)?)
         })
         .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// A tunnel shared between the thread running it and the threads stopping or reloading it.
+struct TunnelHandle {
+    tunnel: Mutex<Option<Tunnel>>,
+    stopper: Stopper,
+    rules: SharedRules,
+    final_directory: PathBuf,
+}
+
+/// Exit codes of `runTunnel`, mirrored in the Kotlin `Engine`.
+fn exit_code(exit: Exit) -> jint {
+    match exit {
+        Exit::Stopped => 0,
+        Exit::TunnelClosed => 1,
+        Exit::NetworkUnreachable => 2,
+    }
+}
+
+/// Recovers a handle created by `createTunnel` and not destroyed yet, as the Kotlin side guarantees.
+///
+/// # Safety
+///
+/// `handle` must come from `createTunnel` and `destroyTunnel` must not have been called on it.
+unsafe fn tunnel_handle<'a>(handle: jlong) -> &'a TunnelHandle {
+    // SAFETY: guaranteed by the caller.
+    unsafe { &*(handle as *const TunnelHandle) }
+}
+
+/// Takes ownership of the tun and socket descriptors, which are closed when the tunnel ends, and
+/// returns a handle for the other tunnel functions.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_createTunnel<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    tun_fd: jint,
+    virtual_addresses: JObjectArray<'caller, JString<'caller>>,
+    upstream_fds: JIntArray<'caller>,
+    final_directory: JString<'caller>,
+    monitor: jboolean,
+) -> jlong {
+    // Owned right away, so that every descriptor is closed if anything below fails.
+    // SAFETY: the Kotlin side detached this descriptor and hands its ownership over.
+    let tun = unsafe { OwnedFd::from_raw_fd(tun_fd) };
+    unowned_env
+        .with_env(|env| -> Result<_, BridgeError> {
+            let length = upstream_fds.len(env)?;
+            let mut fds = vec![0; length];
+            upstream_fds.get_region(env, 0, &mut fds)?;
+            // SAFETY: as for the tun descriptor.
+            let sockets: Vec<OwnedFd> = fds
+                .into_iter()
+                .map(|fd| unsafe { OwnedFd::from_raw_fd(fd) })
+                .collect();
+            let addresses = read_strings(env, &virtual_addresses)?;
+            if addresses.len() != sockets.len() {
+                return Err(BridgeError::InvalidArgument(
+                    "one virtual address per upstream socket",
+                ));
+            }
+            let upstreams = addresses
+                .iter()
+                .zip(sockets)
+                .map(|(address, socket)| {
+                    let virtual_address = address
+                        .parse::<IpAddr>()
+                        .map_err(|_| BridgeError::InvalidArgument("virtual address"))?;
+                    Ok(Upstream {
+                        virtual_address,
+                        socket,
+                    })
+                })
+                .collect::<Result<Vec<_>, BridgeError>>()?;
+            let final_directory = PathBuf::from(final_directory.try_to_string(env)?);
+            let rules: SharedRules =
+                Arc::new(RwLock::new(Arc::new(BlockList::load(&final_directory)?)));
+            let tunnel = Tunnel::new(
+                TunnelConfig {
+                    tun,
+                    upstreams,
+                    monitor,
+                },
+                Arc::clone(&rules),
+            )?;
+            let handle = TunnelHandle {
+                stopper: tunnel.stopper(),
+                tunnel: Mutex::new(Some(tunnel)),
+                rules,
+                final_directory,
+            };
+            Ok(Box::into_raw(Box::new(handle)) as jlong)
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// Filters until stopped or until the tunnel or the network fails, and returns why.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_runTunnel<'caller>(
+    _env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    handle: jlong,
+) -> jint {
+    // SAFETY: the Kotlin side only runs a live handle.
+    let handle = unsafe { tunnel_handle(handle) };
+    let tunnel = handle
+        .tunnel
+        .lock()
+        .ok()
+        .and_then(|mut tunnel| tunnel.take());
+    tunnel.map_or(exit_code(Exit::Stopped), |mut tunnel| {
+        exit_code(tunnel.run())
+    })
+}
+
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_stopTunnel<'caller>(
+    _env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    handle: jlong,
+) {
+    // SAFETY: the Kotlin side only stops a live handle.
+    unsafe { tunnel_handle(handle) }.stopper.stop();
+}
+
+/// Loads the final list again, for the running tunnel to use from its next query.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_reloadTunnelRules<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    handle: jlong,
+) {
+    // SAFETY: the Kotlin side only reloads a live handle.
+    let handle = unsafe { tunnel_handle(handle) };
+    unowned_env
+        .with_env(|_env| -> Result<_, BridgeError> {
+            let list = Arc::new(BlockList::load(&handle.final_directory)?);
+            if let Ok(mut rules) = handle.rules.write() {
+                *rules = list;
+            }
+            Ok(())
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// Frees a handle whose tunnel is not running.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_destroyTunnel<'caller>(
+    _env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    handle: jlong,
+) {
+    // SAFETY: the handle comes from `createTunnel` and the Kotlin side destroys it once.
+    drop(unsafe { Box::from_raw(handle as *mut TunnelHandle) });
 }

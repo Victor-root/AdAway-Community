@@ -16,7 +16,7 @@ use std::fs;
 use std::io;
 use std::path::{Path, PathBuf};
 
-use crate::glob::{self, Pattern};
+use crate::nameset::NameSet;
 use crate::rule::{self, Rule};
 
 /// Enabled user rules, in canonical form.
@@ -47,53 +47,6 @@ enum Decision {
     Block,
     Allow,
     Redirect(String),
-}
-
-/// Exact names and patterns of one kind of rule.
-///
-/// Patterns are indexed by the dot-aligned end of their literal suffix (`ads.example.com` for
-/// `*.ads.example.com`, `com` for `*example.com`), so a name is only tested against the patterns
-/// indexed by one of its own dot-aligned ends.
-#[derive(Default)]
-struct NameSet {
-    exact: HashSet<String>,
-    patterns: HashMap<String, Vec<Pattern>>,
-}
-
-impl NameSet {
-    fn insert(&mut self, name: String) {
-        if glob::has_wildcards(&name) {
-            let pattern = Pattern::new(name);
-            let suffix = pattern.literal_suffix();
-            let key = match suffix.strip_prefix('.') {
-                Some(aligned) => aligned,
-                None => suffix.split_once('.').map_or("", |(_, rest)| rest),
-            };
-            self.patterns
-                .entry(key.to_owned())
-                .or_default()
-                .push(pattern);
-        } else {
-            self.exact.insert(name);
-        }
-    }
-
-    fn matches(&self, name: &str) -> bool {
-        if self.exact.contains(name) {
-            return true;
-        }
-        let dot_aligned_ends = std::iter::once(name)
-            .chain(name.match_indices('.').map(|(index, _)| &name[index + 1..]))
-            .chain(std::iter::once(""));
-        dot_aligned_ends
-            .filter_map(|end| self.patterns.get(end))
-            .flatten()
-            .any(|pattern| pattern.matches(name))
-    }
-
-    fn patterns(&self) -> impl Iterator<Item = &Pattern> {
-        self.patterns.values().flatten()
-    }
 }
 
 /// One layer of rules: the user rules, or all the enabled sources together.
