@@ -14,9 +14,6 @@
     <string name="pref_vpn_ad_blocker_configuration">Bloqueur de publicités fondé sur un RPV/VPN</string>
     <string name="pref_enable_ipv6">Activer la prise en charge d’IPv6</string>
     <string name="pref_backup_restore">Sauvegarder/restaurer les règles de blocage</string>
-    <string name="pref_debug_category">Débogage</string>
-    <string name="pref_enable_debug">Journalisation détaillée</string>
-    <string name="pref_enable_debug_summary">Les changements prendront effet après redémarrage de l’appli</string>
     <string name="pref_update_title">Mises à jour</string>
     <string name="pref_update_enable_notifications">Les notifications sont désactivées</string>
     <string name="pref_update_enable_notifications_summary">Les notifications de l’appli ne seront pas affichées. Touchez pour les activer.</string>

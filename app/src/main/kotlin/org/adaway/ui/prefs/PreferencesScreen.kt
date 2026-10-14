@@ -150,16 +150,6 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 onCheckedChange = { checked -> viewModel.updateHostsSetting { it.copy(ipv6Enabled = checked) } },
             )
             Preference(R.drawable.ic_sd_storage_24dp, stringResource(R.string.pref_backup_restore), enabled = false)
-
-            PreferenceCategory(stringResource(R.string.pref_debug_category), enabled = false)
-            SwitchPreference(
-                R.drawable.ic_bug_report_24dp,
-                stringResource(R.string.pref_enable_debug),
-                checked = false,
-                onCheckedChange = {},
-                summary = stringResource(R.string.pref_enable_debug_summary),
-                enabled = false,
-            )
         }
     }
     diagnosticLog?.let { DiagnosticLogDialog(it, onDismiss = viewModel::hideDiagnosticLog) }

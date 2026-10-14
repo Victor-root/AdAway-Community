@@ -14,9 +14,6 @@
     <string name="pref_vpn_ad_blocker_configuration">VPN based ad blocker</string>
     <string name="pref_enable_ipv6">Enable IPv6 support</string>
     <string name="pref_backup_restore">Backup / restore block rules</string>
-    <string name="pref_debug_category">Debug</string>
-    <string name="pref_enable_debug">Verbose logging</string>
-    <string name="pref_enable_debug_summary">App restart is needed to apply</string>
     <string name="pref_update_title">Updates</string>
     <string name="pref_update_enable_notifications">Notifications are disabled</string>
     <string name="pref_update_enable_notifications_summary">Application notifications won\'t show. Tap to enable them.</string>
