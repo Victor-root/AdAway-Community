@@ -101,9 +101,14 @@ class AppUpdater(private val context: Context) {
         }
         val sessionId = installer.createSession(params)
         installer.openSession(sessionId).use { session ->
-            session.openWrite(file.name, 0, file.length()).use { output ->
-                file.inputStream().use { it.copyTo(output) }
-                session.fsync(output)
+            try {
+                session.openWrite(file.name, 0, file.length()).use { output ->
+                    file.inputStream().use { it.copyTo(output) }
+                    session.fsync(output)
+                }
+            } catch (exception: IOException) {
+                session.abandon()
+                throw exception
             }
             val status = PendingIntent.getBroadcast(
                 context,

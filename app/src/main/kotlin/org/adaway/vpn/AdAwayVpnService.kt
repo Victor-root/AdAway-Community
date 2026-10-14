@@ -17,13 +17,16 @@ import org.adaway.system.Notifications
 class AdAwayVpnService : VpnService() {
     private val container get() = (application as AdAwayApplication).container
     private var session: VpnSession? = null
+    /** Stopping with it keeps the service when a newer start is still on its way. */
+    private var lastStartId = 0
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        lastStartId = startId
         if (session?.isEnded == false) return START_STICKY
         // Restarted by Android after the process was killed: the foreground service type needs the consent.
         if (intent == null && prepare(this) != null) {
             container.diagnosticLog.warn(VPN_LOG_TAG, "Restarted by Android without the VPN consent")
-            stopSelf()
+            stopSelfResult(startId)
             return START_NOT_STICKY
         }
         if (!startForeground()) return START_NOT_STICKY
@@ -37,6 +40,7 @@ class AdAwayVpnService : VpnService() {
         )
         val started = VpnSession(
             service = this,
+            dataInitializer = container.dataInitializer,
             settingsRepository = container.settingsRepository,
             diagnosticLog = container.diagnosticLog,
             finalDirectory = container.engineFiles.finalDirectory,
@@ -88,7 +92,7 @@ class AdAwayVpnService : VpnService() {
         container.diagnosticLog.warn(VPN_LOG_TAG, "Foreground start refused by Android")
         container.vpnController.publish(VpnStatus.STOPPED)
         Notifications.showVpnStartRefused(this)
-        stopSelf()
+        stopSelfResult(lastStartId)
         return false
     }
 
@@ -110,7 +114,7 @@ class AdAwayVpnService : VpnService() {
         } else {
             Notifications.showVpnStatus(this, status)
         }
-        stopSelf()
+        stopSelfResult(lastStartId)
     }
 
     companion object {

@@ -117,10 +117,16 @@ class SourceDownloader(private val context: Context) {
     }
 
     /** Copies [input] to [target], or returns the failure if it is larger than allowed. */
+    /** A failure to read is the caller's to report; a failure to write is the storage's. */
     private fun copyLimited(input: InputStream, target: File): DownloadResult.Failed? {
-        target.parentFile?.mkdirs()
         input.use { stream ->
-            target.outputStream().use { output ->
+            target.parentFile?.mkdirs()
+            val output = try {
+                target.outputStream()
+            } catch (_: IOException) {
+                return DownloadResult.Failed(SyncError.STORAGE)
+            }
+            output.use {
                 val buffer = ByteArray(BUFFER_SIZE)
                 var total = 0L
                 while (true) {
@@ -128,7 +134,11 @@ class SourceDownloader(private val context: Context) {
                     if (read < 0) break
                     total += read
                     if (total > MAX_LIST_BYTES) return DownloadResult.Failed(SyncError.TOO_LARGE)
-                    output.write(buffer, 0, read)
+                    try {
+                        output.write(buffer, 0, read)
+                    } catch (_: IOException) {
+                        return DownloadResult.Failed(SyncError.STORAGE)
+                    }
                 }
             }
         }

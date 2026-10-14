@@ -9,6 +9,7 @@ import org.adaway.data.settings.Settings
 import org.adaway.data.settings.SystemAppExclusion
 import org.adaway.data.settings.ThemeMode
 import org.adaway.engine.RuleValidator
+import org.adaway.sources.SourceRepository
 
 /** A hosts source row of the previous app database (schema version 7). */
 data class LegacySource(
@@ -27,8 +28,8 @@ class LegacyConversion(private val validator: RuleValidator) {
 
     fun convertSources(sources: List<LegacySource>): List<SourceEntity> =
         sources.mapNotNull { source ->
-            val url = normalizeSourceUrl(source.url) ?: return@mapNotNull null
-            val label = source.label.replace(LINE_BREAKS, " ").trim().ifEmpty { url }
+            val url = SourceRepository.normalizeUrl(source.url) ?: return@mapNotNull null
+            val label = SourceRepository.cleanLabel(source.label).ifEmpty { url }
             val format = if (source.allowFormat) SourceFormat.ALLOW else SourceFormat.BLOCK
             SourceEntity(
                 url = url,
@@ -114,21 +115,7 @@ class LegacyConversion(private val validator: RuleValidator) {
 
     private fun normalizeIpv6(address: String) = validator.normalizeIpAddress(address)?.takeIf { ':' in it }
 
-    private fun normalizeSourceUrl(url: String): String? {
-        val trimmed = url.trim()
-        return when {
-            trimmed.startsWith(HTTPS, ignoreCase = true) && trimmed.length > HTTPS.length ->
-                HTTPS + trimmed.substring(HTTPS.length)
-            trimmed.startsWith(CONTENT) && trimmed.length > CONTENT.length -> trimmed
-            else -> null
-        }
-    }
-
     companion object {
-        private const val HTTPS = "https://"
-        private const val CONTENT = "content://"
-        private val LINE_BREAKS = Regex("[\\r\\n]+")
-
         /** The rule types by code, in the previous app database and in its backups. */
         private val RULE_TYPES = listOf(RuleType.BLOCKED, RuleType.ALLOWED, RuleType.REDIRECTED)
 

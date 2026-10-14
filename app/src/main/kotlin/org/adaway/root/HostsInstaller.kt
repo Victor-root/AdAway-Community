@@ -47,6 +47,8 @@ class HostsInstaller(private val directory: File, private val rootAccess: RootAc
         } else {
             File(directory, "default_hosts").apply {
                 try {
+                    // Missing when the hosts file was installed by a 6.x version.
+                    directory.mkdirs()
                     writeText(defaultContent)
                 } catch (exception: IOException) {
                     debugLog("Default hosts not written: $exception")

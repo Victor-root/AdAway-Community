@@ -29,6 +29,7 @@ class AdBlockingTileService : TileService() {
 
     override fun onClick() {
         container.applicationScope.launch {
+            container.dataInitializer.ensureInitialized()
             val blocking = container.blockingController
             if (blocking.active.first()) blocking.disable() else blocking.enableInBackground()
         }

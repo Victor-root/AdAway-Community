@@ -48,7 +48,7 @@ class SourceRepository(
     suspend fun save(id: Long?, draft: SourceDraft): SourceSaveResult {
         val existing = id?.let { dao.get(it) }
         val url = normalizeUrl(draft.url)
-        val label = draft.label?.replace(LINE_BREAKS, " ")?.trim()
+        val label = draft.label?.let(::cleanLabel)
         val errors = buildSet {
             val keepsBuiltInName = label == null && existing?.builtIn != null && url == existing.url
             if (label.isNullOrEmpty() && !keepsBuiltInName) add(SourceFieldError.LABEL_REQUIRED)
@@ -125,6 +125,9 @@ class SourceRepository(
         private const val HTTPS = "https://"
         private const val CONTENT = "content://"
         private val LINE_BREAKS = Regex("[\\r\\n]+")
+
+        /** A label on a single line. */
+        fun cleanLabel(label: String) = label.replace(LINE_BREAKS, " ").trim()
 
         /** Returns the url to store, or null unless it is an HTTPS url or a picked document. */
         fun normalizeUrl(input: String): String? {

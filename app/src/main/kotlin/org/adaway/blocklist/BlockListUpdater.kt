@@ -1,5 +1,6 @@
 package org.adaway.blocklist
 
+import android.database.sqlite.SQLiteException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -42,8 +43,13 @@ class BlockListUpdater(
     /** Downloads all the enabled sources, then applies. */
     fun requestSync() = launchForScreen { syncAndApply(onlyPending = false) }
 
-    /** Downloads the sources added or edited since their last read, applies, then runs [andThen] unless it failed. */
-    fun requestApply(andThen: suspend () -> Unit = {}) = launchForScreen { syncAndApply(onlyPending = true).also { if (it == null) andThen() } }
+    /**
+     * Downloads the sources added or edited since their last read, applies, then runs [andThen]
+     * unless it failed or another update was running.
+     */
+    fun requestApply(andThen: suspend () -> Unit = {}) = launchForScreen {
+        exclusive { syncAndApplyNow(onlyPending = true).also { if (it == null) andThen() } }
+    }
 
     /** On the first screen display of the process: reads new sources, or checks for updates. */
     fun runStartupTasks(checkForUpdates: Boolean) {
@@ -60,16 +66,30 @@ class BlockListUpdater(
         mutableError.value = null
     }
 
-    /** Returns null when another update is already running. */
+    /** Returns null when another update is already running, or when the result cannot be recorded. */
     suspend fun checkForUpdates(): Boolean? = exclusive {
-        sourceSync.check(::publish).also { available ->
-            statusMessages.post(StatusMessage.Outcome(if (available) UpdateOutcome.UPDATE_AVAILABLE else UpdateOutcome.NO_UPDATE_FOUND))
+        try {
+            sourceSync.check(::publish).also { available ->
+                statusMessages.post(StatusMessage.Outcome(if (available) UpdateOutcome.UPDATE_AVAILABLE else UpdateOutcome.NO_UPDATE_FOUND))
+            }
+        } catch (exception: SQLiteException) {
+            diagnosticLog.warn(TAG, "Update check not recorded: $exception")
+            null
         }
     }
 
     /** Returns the error, or null on success or when another update is already running. */
-    suspend fun syncAndApply(onlyPending: Boolean): UpdateError? = exclusive {
-        val report = sourceSync.sync(onlyPending, ::publish)
+    suspend fun syncAndApply(onlyPending: Boolean): UpdateError? = exclusive { syncAndApplyNow(onlyPending) }
+
+    private suspend fun syncAndApplyNow(onlyPending: Boolean): UpdateError? {
+        val report = try {
+            sourceSync.sync(onlyPending, ::publish)
+        } catch (exception: SQLiteException) {
+            // The storage is full, for instance.
+            diagnosticLog.warn(TAG, "Sources not recorded: $exception")
+            statusMessages.post(null)
+            return UpdateError.APPLY_FAILED
+        }
         diagnosticLog.info(TAG, "Sources synchronized: ${report.attempted - report.failed} of ${report.attempted}")
         val syncError = when {
             report.allFailed && report.noNetwork -> UpdateError.NO_NETWORK
@@ -77,7 +97,7 @@ class BlockListUpdater(
             else -> null
         }
         // The line under the sources card leaves room for the error.
-        (compile() ?: syncError)?.also { statusMessages.post(null) }
+        return (compile() ?: syncError)?.also { statusMessages.post(null) }
     }
 
     private suspend fun compile(): UpdateError? {

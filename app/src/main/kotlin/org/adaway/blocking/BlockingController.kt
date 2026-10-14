@@ -43,7 +43,10 @@ class BlockingController(
         BlockingMethod.UNSET -> null
     }
 
-    /** As [enable], from outside the app, which can only tell the user by notification. */
+    /**
+     * As [enable], from outside the app: the VPN tells its failures by notification, the root
+     * blocking keeps its own for the home screen.
+     */
     suspend fun enableInBackground() {
         when (method()) {
             BlockingMethod.VPN -> vpnController.enableInBackground()

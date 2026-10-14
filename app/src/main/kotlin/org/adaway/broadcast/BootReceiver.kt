@@ -10,7 +10,6 @@ class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != Intent.ACTION_BOOT_COMPLETED) return
         launchAsync(context) { container ->
-            container.dataInitializer.ensureInitialized()
             if (container.settingsRepository.settings.first().vpnStartOnBoot) {
                 container.vpnController.ensureRunningInBackground()
             }

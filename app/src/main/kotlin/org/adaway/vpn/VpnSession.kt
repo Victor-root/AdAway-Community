@@ -9,8 +9,10 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import org.adaway.data.DataInitializer
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.Settings
 import org.adaway.data.settings.SettingsRepository
@@ -30,6 +32,7 @@ import java.net.SocketException
  */
 class VpnSession(
     private val service: VpnService,
+    private val dataInitializer: DataInitializer,
     private val settingsRepository: SettingsRepository,
     private val diagnosticLog: DiagnosticLog,
     finalDirectory: File,
@@ -66,6 +69,8 @@ class VpnSession(
     fun start(markWanted: Boolean) {
         scope.launch {
             onStatus(status)
+            // Started by Android right after an update from 6.x, the settings may not be imported yet.
+            dataInitializer.ensureInitialized()
             if (markWanted) settingsRepository.update { it.copy(vpnWanted = true) }
             networks.start()
             settingsRepository.settings.collect(::onSettings)
@@ -121,11 +126,13 @@ class VpnSession(
         else -> AlwaysOnMode.OFF
     }
 
-    private fun onSettings(new: Settings) {
+    private suspend fun onSettings(new: Settings) {
         val old = settings
         settings = new
         when {
-            !new.vpnWanted || new.blockingMethod != BlockingMethod.VPN -> end(VpnStatus.STOPPED)
+            // A start may already have followed this stop, as an automation app sends both at once.
+            !new.wantsVpn() && !settingsRepository.settings.first().wantsVpn() -> end(VpnStatus.STOPPED)
+            !new.wantsVpn() -> {}
             old == null -> scheduleRebuild()
             buildSettings(old) != buildSettings(new) && status != VpnStatus.WAITING_FOR_NETWORK -> {
                 diagnosticLog.info(VPN_LOG_TAG, "Settings changed")
@@ -134,6 +141,8 @@ class VpnSession(
             }
         }
     }
+
+    private fun Settings.wantsVpn() = vpnWanted && blockingMethod == BlockingMethod.VPN
 
     private fun onNetworkChanged() {
         if (isEnded || settings == null) return
