@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">AdAway update</string>
+    <string name="update_banner_title">Update available</string>
+    <string name="update_banner_subtitle">Tap to install %1$s</string>
+    <string name="update_up_to_date_header">You are up-to-date</string>
+    <string name="update_update_available_header">Update available</string>
+    <string name="update_updating_header">Updating AdAway</string>
+    <string name="update_update_button">Update now</string>
+    <string name="update_progress_label" translatable="false">%1$s / %2$s</string>
+    <string name="update_complete_label">Complete</string>
+    <string name="update_last_changelog_title">Last changes</string>
+    <string name="update_new_changelog_title">Changelog</string>
+    <string name="update_download_failed">The update could not be downloaded.</string>
+    <string name="update_install_failed">The update could not be installed.</string>
+    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">No update available</string>
+    <string name="pref_update_check_now_failed">The update server could not be reached</string>
+    <string name="pref_update_install_summary">Install version %1$s</string>
+    <string name="notification_channel_app_updates">App updates</string>
+    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="notification_app_update_title">App update available</string>
+    <string name="notification_app_update_text">A new version of AdAway is available for download.</string>
+</resources>

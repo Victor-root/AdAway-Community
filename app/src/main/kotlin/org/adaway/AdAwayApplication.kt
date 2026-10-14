@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.adaway.data.settings.Settings
 import org.adaway.system.Notifications
+import org.adaway.work.AppUpdateWorker
 import org.adaway.work.SourceUpdateWorker
 import org.adaway.work.VpnHeartbeatWorker
 
@@ -24,6 +25,7 @@ class AdAwayApplication : Application() {
         Notifications.createChannels(this)
         scheduleOnChange({ it.sourcesPeriodicCheck to it.sourcesUnmeteredOnly }, SourceUpdateWorker.Companion::schedule)
         scheduleOnChange({ it.blockingMethod to it.vpnWanted }, VpnHeartbeatWorker.Companion::schedule)
+        scheduleOnChange({ it.appUpdatePeriodicCheck }, AppUpdateWorker.Companion::schedule)
         container.applicationScope.launch {
             container.dataInitializer.ensureInitialized()
             container.webServer.ensureRunning(container.settingsRepository.settings.first())

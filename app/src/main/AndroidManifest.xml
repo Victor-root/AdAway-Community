@@ -15,6 +15,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!-- Lets the wizard ask Android to keep AdAway out of the battery optimizations. -->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- Lets the app hand its updates to the Android installer, the user confirming each. -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SYSTEM_EXEMPTED" />
     <!-- Excluding apps from the VPN needs the list of all of them. -->
@@ -104,6 +106,10 @@
 
         <receiver
             android:name=".broadcast.VpnActionReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".update.InstallStatusReceiver"
             android:exported="false" />
 
         <receiver

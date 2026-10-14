@@ -17,6 +17,7 @@ import org.adaway.blocklist.BlockListSummary
 import org.adaway.data.db.SourceEntity
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.root.RootState
+import org.adaway.update.AppRelease
 import org.adaway.system.Notifications
 import org.adaway.vpn.AlwaysOnMode
 import org.adaway.vpn.StartResult
@@ -69,13 +70,19 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     val error = updater.error
     val rootError = rootController.error
 
+    /** A newer version of the app, once found. */
+    val appUpdate: StateFlow<AppRelease?> = container.appUpdater.available
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
+
     /** Set when the VPN the user wants lacks the consent: the screen asks Android for it. */
     val consentPrompt: StateFlow<Boolean> = mutableConsentPrompt.asStateFlow()
 
     init {
         Notifications.cancelSourceUpdateAvailable(container.applicationContext)
         viewModelScope.launch {
-            updater.runStartupTasks(checkForUpdates = container.settingsRepository.settings.first().sourcesCheckOnStartup)
+            val settings = container.settingsRepository.settings.first()
+            updater.runStartupTasks(checkForUpdates = settings.sourcesCheckOnStartup)
+            if (settings.appUpdateCheckOnStartup) container.appUpdater.checkOnStartup()
         }
         viewModelScope.launch {
             val result = vpnController.ensureRunning()

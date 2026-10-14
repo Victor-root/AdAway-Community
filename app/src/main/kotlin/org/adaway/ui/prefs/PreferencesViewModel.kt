@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import org.adaway.AppContainer
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.Settings
+import org.adaway.update.AppRelease
 
 class PreferencesViewModel(private val container: AppContainer) : ViewModel() {
     val settings: StateFlow<Settings?> = container.settingsRepository.settings
@@ -46,6 +47,13 @@ class PreferencesViewModel(private val container: AppContainer) : ViewModel() {
     fun clearDiagnosticLog() {
         container.applicationScope.launch { container.diagnosticLog.clear() }
     }
+
+    /** A newer version of the app, once found. */
+    val appUpdate: StateFlow<AppRelease?> = container.appUpdater.available
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
+
+    /** Returns the latest release, or null when it cannot be known. */
+    suspend fun checkAppUpdate(): AppRelease? = container.appUpdater.check()
 
     /** False when the VPN is not running. */
     fun resetVpn(): Boolean = container.vpnController.reset()

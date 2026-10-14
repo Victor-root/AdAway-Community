@@ -34,6 +34,7 @@ class HomeNavigation(
     val openPreferences: () -> Unit,
     val openHelp: () -> Unit,
     val openLog: () -> Unit,
+    val openUpdate: () -> Unit,
 )
 
 @Composable
@@ -44,6 +45,7 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
     val statusMessage by viewModel.statusMessage.collectAsStateWithLifecycle()
     val error by viewModel.error.collectAsStateWithLifecycle()
     val rootError by viewModel.rootError.collectAsStateWithLifecycle()
+    val appUpdate by viewModel.appUpdate.collectAsStateWithLifecycle()
     val consentPrompt by viewModel.consentPrompt.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var refusal by remember { mutableStateOf<VpnRefusal?>(null) }
@@ -80,12 +82,14 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
             state = current,
             progress = progress,
             statusMessage = statusMessage,
+            appUpdate = appUpdate,
             actions = HomeScreenActions(
                 openLists = navigation.openLists,
                 openSources = navigation.openSources,
                 openPreferences = navigation.openPreferences,
                 openHelp = navigation.openHelp,
                 openLog = navigation.openLog,
+                openUpdate = navigation.openUpdate,
                 sync = viewModel::sync,
                 toggleBlocking = actions.toggle,
                 openPersistence = actions.openPersistence,

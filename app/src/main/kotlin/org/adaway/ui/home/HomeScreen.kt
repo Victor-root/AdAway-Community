@@ -59,6 +59,7 @@ import org.adaway.data.db.RuleType
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.root.RootStep
 import org.adaway.sources.UpdateProgress
+import org.adaway.update.AppRelease
 import org.adaway.ui.common.updateProgressText
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -71,6 +72,7 @@ class HomeScreenActions(
     val openPreferences: () -> Unit,
     val openHelp: () -> Unit,
     val openLog: () -> Unit,
+    val openUpdate: () -> Unit,
     val sync: () -> Unit,
     val toggleBlocking: () -> Unit,
     val openPersistence: () -> Unit,
@@ -87,7 +89,7 @@ private val HomeCardShape = RoundedCornerShape(22.dp)
 
 /** Phone home screen: header, counters straddling it, a scrolling zone of cards, and the bottom bar. */
 @Composable
-fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: StatusMessage?, actions: HomeScreenActions) {
+fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: StatusMessage?, appUpdate: AppRelease?, actions: HomeScreenActions) {
     val colors = LocalAdAwayColors.current
     val statusBar = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
     val navigationBar = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
@@ -103,6 +105,7 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: Statu
                     logoSize = contentHeight * LOGO_HEIGHT_FRACTION,
                     modifier = Modifier.fillMaxWidth().height(headerHeight),
                     contentTop = statusBar,
+                    openUpdate = actions.openUpdate,
                 )
                 Column {
                     Spacer(modifier = Modifier.height(headerHeight - CounterOverlap - BadgeSize / 2))
@@ -116,6 +119,7 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: Statu
                     .verticalScroll(rememberScrollState())
                     .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 16.dp + BumpBottomBarReservedHeight + navigationBar),
             ) {
+                appUpdate?.let { AppUpdateCard(it, actions.openUpdate, modifier = Modifier.padding(bottom = 16.dp)) }
                 if (state.legacyImportFailed) {
                     LegacyImportFailedCard(actions.dismissLegacyImportFailure, modifier = Modifier.padding(bottom = 20.dp))
                 }
@@ -142,10 +146,10 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: Statu
 /**
  * Brand color while blocking, gray otherwise; it also colors the status bar behind it. The title
  * and the subtitle share the logo height, weighted 1 to 1.4, each as large as it fits, and the
- * title stops before the version in the corner.
+ * title stops before the version in the corner, which opens the update screen.
  */
 @Composable
-private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, modifier: Modifier) {
+private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate: () -> Unit, modifier: Modifier) {
     val colors = LocalAdAwayColors.current
     val white = colors.onPrimary
     Layout(
@@ -174,7 +178,12 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, modifier: 
                 maxLines = 3,
                 autoSize = TextAutoSize.StepBased(minFontSize = 12.sp, maxFontSize = 20.sp, stepSize = 1.sp),
             )
-            Text(text = BuildConfig.VERSION_NAME, style = AdAwayType.medium, color = white, modifier = Modifier.padding(2.dp))
+            Text(
+                text = BuildConfig.VERSION_NAME,
+                style = AdAwayType.medium,
+                color = white,
+                modifier = Modifier.clip(RoundedCornerShape(4.dp)).clickable(onClick = openUpdate).padding(2.dp),
+            )
         },
     ) { measurables, constraints ->
         val width = constraints.maxWidth
@@ -400,6 +409,26 @@ private fun PersistenceCard(onClick: () -> Unit, modifier: Modifier) {
             Column(modifier = Modifier.padding(start = 16.dp)) {
                 Text(stringResource(R.string.vpn_persistence_title), style = AdAwayType.subtitle1, fontWeight = FontWeight.Bold, color = colors.textPrimary)
                 Text(stringResource(R.string.vpn_persistence_summary), style = AdAwayType.body2, color = colors.homeCardSubtitle)
+            }
+        }
+    }
+}
+
+/** The red card of a newer app version. */
+@Composable
+private fun AppUpdateCard(release: AppRelease, onClick: () -> Unit, modifier: Modifier) {
+    val colors = LocalAdAwayColors.current
+    Surface(onClick = onClick, modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(20.dp), color = colors.primary) {
+        Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Icon(
+                painterResource(R.drawable.ic_get_app_24dp),
+                contentDescription = stringResource(R.string.update_banner_title),
+                tint = colors.onPrimary,
+                modifier = Modifier.size(32.dp),
+            )
+            Column(modifier = Modifier.padding(start = 16.dp)) {
+                Text(stringResource(R.string.update_banner_title), style = AdAwayType.medium, fontWeight = FontWeight.Bold, color = colors.onPrimary)
+                Text(stringResource(R.string.update_banner_subtitle, release.version), style = AdAwayType.small, color = colors.onPrimary)
             }
         }
     }

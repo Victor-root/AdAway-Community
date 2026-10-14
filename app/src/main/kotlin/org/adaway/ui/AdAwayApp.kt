@@ -29,6 +29,7 @@ import org.adaway.ui.sources.SourceEditViewModel
 import org.adaway.ui.sources.SourcesNavigation
 import org.adaway.ui.sources.SourcesRoute
 import org.adaway.ui.theme.AdAwayTheme
+import org.adaway.ui.update.UpdateScreen
 import org.adaway.ui.welcome.WelcomeRoute
 
 @Serializable
@@ -67,9 +68,12 @@ private data object DnsLog
 @Serializable
 private data object BackupRestore
 
-/** [shortcut] holds the screen a launcher shortcut asks for, emptied once shown. */
+@Serializable
+private data object AppUpdate
+
+/** [destination] holds the screen a shortcut or a notification asks for, emptied once shown. */
 @Composable
-fun AdAwayApp(isTelevision: Boolean, shortcut: MutableStateFlow<Shortcut?>) {
+fun AdAwayApp(isTelevision: Boolean, destination: MutableStateFlow<Destination?>) {
     val viewModel = appViewModel(::MainViewModel)
     val state by viewModel.state.collectAsStateWithLifecycle()
     // The window background shows the brand color until the app data is ready.
@@ -77,16 +81,17 @@ fun AdAwayApp(isTelevision: Boolean, shortcut: MutableStateFlow<Shortcut?>) {
     AdAwayTheme(themeMode = settings.themeMode, isTelevision = isTelevision) {
         val navController = rememberNavController()
         val startDestination = remember { if (settings.welcomeCompleted) Home else Welcome }
-        val requested by shortcut.collectAsStateWithLifecycle()
+        val requested by destination.collectAsStateWithLifecycle()
         LaunchedEffect(requested, settings.welcomeCompleted) {
             val target = requested ?: return@LaunchedEffect
-            shortcut.value = null
+            destination.value = null
             if (!settings.welcomeCompleted) return@LaunchedEffect
             navController.navigate(
                 when (target) {
-                    Shortcut.PREFERENCES -> Preferences
-                    Shortcut.DNS_LOG -> DnsLog
-                    Shortcut.LISTS -> Lists(RuleType.BLOCKED)
+                    Destination.PREFERENCES -> Preferences
+                    Destination.DNS_LOG -> DnsLog
+                    Destination.LISTS -> Lists(RuleType.BLOCKED)
+                    Destination.UPDATE -> AppUpdate
                 },
             ) { popUpTo<Home>() }
         }
@@ -108,6 +113,7 @@ fun AdAwayApp(isTelevision: Boolean, shortcut: MutableStateFlow<Shortcut?>) {
                         openPreferences = { navController.navigate(Preferences) },
                         openHelp = { navController.navigate(Help) },
                         openLog = { navController.navigate(DnsLog) },
+                        openUpdate = { navController.navigate(AppUpdate) },
                     ),
                 )
             }
@@ -147,7 +153,8 @@ fun AdAwayApp(isTelevision: Boolean, shortcut: MutableStateFlow<Shortcut?>) {
                 )
             }
             composable<Help> { HelpScreen(onBack = navController::popBackStack) }
-            composable<Updates> { UpdatesScreen(onBack = navController::popBackStack) }
+            composable<Updates> { UpdatesScreen(onBack = navController::popBackStack, openUpdate = { navController.navigate(AppUpdate) }) }
+            composable<AppUpdate> { UpdateScreen(onBack = navController::popBackStack) }
             composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
             composable<SystemHosts> { HostsFileScreen(onBack = navController::popBackStack) }
             composable<DnsLog> { DnsLogScreen(onBack = navController::popBackStack) }

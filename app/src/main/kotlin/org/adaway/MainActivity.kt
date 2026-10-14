@@ -8,22 +8,22 @@ import androidx.activity.enableEdgeToEdge
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.adaway.system.isTelevision
 import org.adaway.ui.AdAwayApp
-import org.adaway.ui.Shortcut
+import org.adaway.ui.Destination
 
 class MainActivity : ComponentActivity() {
-    /** The shortcut the activity was opened with, until its screen is shown. */
-    private val shortcut = MutableStateFlow<Shortcut?>(null)
+    /** The destination the activity was opened with, until its screen is shown. */
+    private val destination = MutableStateFlow<Destination?>(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
-        if (savedInstanceState == null) shortcut.value = Shortcut.from(intent)
+        if (savedInstanceState == null) destination.value = Destination.from(intent)
         val isTelevision = isTelevision()
-        setContent { AdAwayApp(isTelevision = isTelevision, shortcut = shortcut) }
+        setContent { AdAwayApp(isTelevision = isTelevision, destination = destination) }
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        shortcut.value = Shortcut.from(intent)
+        destination.value = Destination.from(intent)
     }
 }

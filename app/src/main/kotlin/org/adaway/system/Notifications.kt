@@ -12,13 +12,16 @@ import androidx.core.app.NotificationManagerCompat
 import org.adaway.MainActivity
 import org.adaway.R
 import org.adaway.broadcast.VpnActionReceiver
+import org.adaway.ui.Destination
 import org.adaway.vpn.VpnStatus
 
 /** Notification channels keep the identifiers of the previous versions, and so the user choices. */
 object Notifications {
     private const val SOURCE_UPDATES_CHANNEL = "UpdateChannel"
+    private const val APP_UPDATES_CHANNEL = "AppUpdateChannel"
     private const val VPN_CHANNEL = "VpnServiceChannel"
     private const val SOURCE_UPDATE_ID = 10
+    private const val APP_UPDATE_ID = 11
     const val VPN_STATUS_ID = 20
     /** Something the user must do for the VPN to run again. */
     private const val VPN_ATTENTION_ID = 22
@@ -30,6 +33,11 @@ object Notifications {
                 context.getString(R.string.notification_channel_source_updates),
                 NotificationManager.IMPORTANCE_LOW,
             ).apply { description = context.getString(R.string.notification_channel_source_updates_description) },
+            NotificationChannel(
+                APP_UPDATES_CHANNEL,
+                context.getString(R.string.notification_channel_app_updates),
+                NotificationManager.IMPORTANCE_LOW,
+            ).apply { description = context.getString(R.string.notification_channel_app_updates_description) },
             NotificationChannel(
                 VPN_CHANNEL,
                 context.getString(R.string.notification_channel_vpn),
@@ -58,6 +66,23 @@ object Notifications {
 
     fun cancelSourceUpdateAvailable(context: Context) {
         NotificationManagerCompat.from(context).cancel(SOURCE_UPDATE_ID)
+    }
+
+    /** Opens the update screen. */
+    fun showAppUpdateAvailable(context: Context) {
+        val openUpdate = PendingIntent.getActivity(
+            context,
+            APP_UPDATE_ID,
+            Intent(context, MainActivity::class.java).setAction(Destination.UPDATE.action).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+            PendingIntent.FLAG_IMMUTABLE,
+        )
+        val notification = builder(context, APP_UPDATES_CHANNEL)
+            .setContentTitle(context.getString(R.string.notification_app_update_title))
+            .setContentText(context.getString(R.string.notification_app_update_text))
+            .setContentIntent(openUpdate)
+            .setAutoCancel(true)
+            .build()
+        notify(context, APP_UPDATE_ID, notification)
     }
 
     /** The single VPN notification: the foreground one while the service runs, then the stopped one. */

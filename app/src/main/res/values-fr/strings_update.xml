@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">Mise à jour d’AdAway</string>
+    <string name="update_banner_title">Mise à jour disponible</string>
+    <string name="update_banner_subtitle">Touchez pour installer %1$s</string>
+    <string name="update_up_to_date_header">AdAway est à jour</string>
+    <string name="update_update_available_header">Une mise à jour est proposée</string>
+    <string name="update_updating_header">Mise à jour d’AdAway</string>
+    <string name="update_update_button">Mettre à jour maintenant</string>
+    <string name="update_complete_label">Terminée</string>
+    <string name="update_last_changelog_title">Derniers changements</string>
+    <string name="update_new_changelog_title">Journal des changements</string>
+    <string name="update_download_failed">La mise à jour n’a pas pu être téléchargée.</string>
+    <string name="update_install_failed">La mise à jour n’a pas pu être installée.</string>
+    <string name="pref_update_check_now_update_available">Nouvelle version disponible : %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Aucune mise à jour disponible</string>
+    <string name="pref_update_check_now_failed">Le serveur des mises à jour n’a pas pu être joint</string>
+    <string name="pref_update_install_summary">Installer la version %1$s</string>
+    <string name="notification_channel_app_updates">Mises à jour de l’app</string>
+    <string name="notification_channel_app_updates_description">Notification quand une nouvelle version de l’app est disponible. Désactivez ce canal pour ne plus recevoir ces alertes sans toucher aux autres notifications.</string>
+    <string name="notification_app_update_title">Une mise à jour de l’appli est proposée</string>
+    <string name="notification_app_update_text">Une nouvelle version d’AdAway est proposée en téléchargement.</string>
+</resources>
