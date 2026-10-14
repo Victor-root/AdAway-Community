@@ -63,6 +63,7 @@ import org.adaway.ui.common.updateProgressText
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.Pastel
+import org.adaway.vpn.VpnStatus
 
 class HomeScreenActions(
     val openLists: (RuleType) -> Unit,
@@ -115,6 +116,11 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, outcome: UpdateOutco
                     LegacyImportFailedCard(actions.dismissLegacyImportFailure, modifier = Modifier.padding(bottom = 20.dp))
                 }
                 SourcesCard(state.sources, progress, outcome, actions, modifier = Modifier.padding(bottom = 20.dp))
+                if (usesVpn) {
+                    blockingDetail(state.blocking.vpnStatus)?.let { detail ->
+                        BlockingStatusCard(state.blocking, detail, actions.toggleBlocking, modifier = Modifier.padding(bottom = 20.dp))
+                    }
+                }
                 Tiles()
                 if (usesVpn) PersistenceCard(actions.openPersistence, modifier = Modifier.padding(top = 20.dp))
             }
@@ -344,6 +350,27 @@ private fun RowScope.Tile(
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth().padding(top = 2.dp),
             )
+        }
+    }
+}
+
+/** Shown only while the VPN is between on and off. Without the consent, a tap asks for it. */
+@Composable
+private fun BlockingStatusCard(blocking: BlockingState, @StringRes detail: Int, toggleBlocking: () -> Unit, modifier: Modifier) {
+    val colors = LocalAdAwayColors.current
+    val needsConsent = blocking.vpnStatus == VpnStatus.CONSENT_REQUIRED
+    HomeCard(onClick = if (needsConsent) toggleBlocking else null, modifier = modifier.fillMaxWidth()) {
+        Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            PastelIcon(R.drawable.ic_network_check_24dp, colors.pastelAmber, contentDescription = null)
+            Column(modifier = Modifier.padding(start = 16.dp)) {
+                Text(
+                    stringResource(if (blocking.active) R.string.home_blocking_enabled else R.string.home_blocking_disabled),
+                    style = AdAwayType.subtitle1,
+                    fontWeight = FontWeight.Bold,
+                    color = colors.textPrimary,
+                )
+                Text(stringResource(detail), style = AdAwayType.body2, color = colors.homeCardSubtitle)
+            }
         }
     }
 }

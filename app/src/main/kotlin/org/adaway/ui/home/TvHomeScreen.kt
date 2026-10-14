@@ -47,7 +47,6 @@ import org.adaway.ui.theme.BrandRed
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.ruleTypeColor
 import org.adaway.vpn.AlwaysOnMode
-import org.adaway.vpn.VpnStatus
 import androidx.tv.material3.Card as TvCard
 import androidx.tv.material3.Icon as TvIcon
 import androidx.tv.material3.Text as TvText
@@ -225,13 +224,7 @@ private fun LegacyImportFailedCard(modifier: Modifier = Modifier, dismissButton:
 /** On or off, and what is going on in between: waiting for a network, reconnecting, consent missing. */
 @Composable
 private fun BlockingStatusContent(blocking: BlockingState, modifier: Modifier = Modifier) {
-    @StringRes val detail = when (blocking.vpnStatus) {
-        VpnStatus.STARTING -> R.string.home_blocking_starting
-        VpnStatus.WAITING_FOR_NETWORK -> R.string.home_blocking_waiting_for_network
-        VpnStatus.RECONNECTING -> R.string.home_blocking_reconnecting
-        VpnStatus.CONSENT_REQUIRED -> R.string.home_blocking_consent_required
-        VpnStatus.RUNNING, VpnStatus.STOPPED -> null
-    }
+    val detail = blockingDetail(blocking.vpnStatus)
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(
             stringResource(if (blocking.active) R.string.home_blocking_enabled else R.string.home_blocking_disabled),

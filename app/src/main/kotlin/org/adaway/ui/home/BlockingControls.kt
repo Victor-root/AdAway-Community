@@ -1,5 +1,6 @@
 package org.adaway.ui.home
 
+import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -8,9 +9,20 @@ import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.rememberOpenVpnSettings
 import org.adaway.vpn.AlwaysOnMode
+import org.adaway.vpn.VpnStatus
 
 /** The blocking actions of the home screens. [toggle] asks for the VPN consent when needed. */
 class BlockingActions(val toggle: () -> Unit, val openPersistence: () -> Unit)
+
+/** What goes on between on and off: starting, waiting for a network, reconnecting, consent missing. */
+@StringRes
+fun blockingDetail(status: VpnStatus): Int? = when (status) {
+    VpnStatus.STARTING -> R.string.home_blocking_starting
+    VpnStatus.WAITING_FOR_NETWORK -> R.string.home_blocking_waiting_for_network
+    VpnStatus.RECONNECTING -> R.string.home_blocking_reconnecting
+    VpnStatus.CONSENT_REQUIRED -> R.string.home_blocking_consent_required
+    VpnStatus.RUNNING, VpnStatus.STOPPED -> null
+}
 
 /**
  * Explains how the VPN stays on, and leads to the Android always-on VPN setting. On TV, where that
