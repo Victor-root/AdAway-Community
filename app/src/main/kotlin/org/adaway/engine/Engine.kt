@@ -56,6 +56,12 @@ object Engine : RuleValidator {
         ipv6Redirection: String?,
     )
 
+    /**
+     * Writes a new certificate of the root web server at [certificatePath], and its private key at
+     * [keyPath], both in PEM. Throws a [RuntimeException] when they cannot be written.
+     */
+    external fun generateWebServerCertificate(certificatePath: String, keyPath: String)
+
     /** Returns a page of the catalog lines whose host contains [filter] (`*` and `?` wildcards). */
     external fun queryCatalog(path: String, filter: String, offset: Int, limit: Int): Array<String>
 

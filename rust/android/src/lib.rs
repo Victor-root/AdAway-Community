@@ -13,6 +13,7 @@ use adaway_engine::hosts::{self, HostsOptions};
 use adaway_engine::source::{self, ParseError, ParseOptions, SourceFormat};
 use adaway_engine::tunnel::{Exit, SharedRules, Stopper, Tunnel, TunnelConfig, Upstream};
 use adaway_engine::{address, catalog, hostname};
+use adaway_webserver::certificate;
 use jni::errors::ThrowRuntimeExAndDefault;
 use jni::objects::{JIntArray, JLongArray, JObject, JObjectArray, JString};
 use jni::sys::{jboolean, jint, jlong};
@@ -51,6 +52,15 @@ impl From<jni::errors::Error> for BridgeError {
 impl From<io::Error> for BridgeError {
     fn from(error: io::Error) -> Self {
         BridgeError::Io(error)
+    }
+}
+
+impl From<certificate::Error> for BridgeError {
+    fn from(error: certificate::Error) -> Self {
+        match error {
+            certificate::Error::Io(error) => BridgeError::Io(error),
+            certificate::Error::Generation(error) => BridgeError::Io(io::Error::other(error)),
+        }
     }
 }
 
@@ -229,6 +239,24 @@ pub extern "system" fn Java_org_adaway_engine_Engine_writeHosts<'caller>(
                 ipv6_redirection: ipv6.as_deref(),
             };
             hosts::write(&final_directory, &output, &options)?;
+            Ok(())
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// Writes a new certificate of the root web server, with its private key, both in PEM.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_generateWebServerCertificate<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    certificate_path: JString<'caller>,
+    key_path: JString<'caller>,
+) {
+    unowned_env
+        .with_env(|env| -> Result<_, BridgeError> {
+            let certificate_path = PathBuf::from(certificate_path.try_to_string(env)?);
+            let key_path = PathBuf::from(key_path.try_to_string(env)?);
+            certificate::generate(&certificate_path, &key_path)?;
             Ok(())
         })
         .resolve::<ThrowRuntimeExAndDefault>()

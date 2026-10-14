@@ -135,12 +135,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 enabled = usesRoot && current.ipv6Enabled,
                 onClick = { choice = PreferenceChoice.IPV6_REDIRECTION },
             )
-            // The web server does not exist yet.
-            Preference(null, null, summary = stringResource(R.string.pref_webserver_summary), enabled = false)
-            SwitchPreference(R.drawable.ic_dns_24dp, stringResource(R.string.pref_webserver_enabled), checked = current.webServerEnabled, onCheckedChange = {}, enabled = false)
-            Preference(R.drawable.ic_open_in_browser_24dp, stringResource(R.string.pref_webserver_test), stringResource(R.string.pref_webserver_state_not_running), enabled = false)
-            Preference(R.drawable.ic_verified_user_24dp, stringResource(R.string.pref_webserver_certificate), enabled = false)
-            SwitchPreference(R.drawable.ic_image_24dp, stringResource(R.string.pref_webserver_icon), checked = current.webServerIcon, onCheckedChange = {}, enabled = false)
+            WebServerPreferences(current, enabled = usesRoot)
 
             PreferenceCategory(stringResource(R.string.pref_ad_block_category))
             SwitchPreference(

@@ -13,3 +13,6 @@ class RootAccess {
         granted
     }
 }
+
+/** [text] as one word of a shell command. */
+fun shellQuote(text: String) = "'" + text.replace("'", "'\\''") + "'"

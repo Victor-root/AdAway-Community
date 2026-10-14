@@ -73,13 +73,23 @@ android {
     androidResources {
         generateLocaleConfig = true
     }
+
+    // The root web server is run from the installed libraries: they must be extracted on install.
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
 }
 
 room {
     schemaDirectory("$projectDir/schemas")
 }
 
-/** Builds the Rust engine for every Android ABI with cargo-ndk. */
+/**
+ * Builds the Rust engine for every Android ABI with cargo-ndk, and the root web server next to it.
+ * The server is an executable named like a library, so that Android installs it with them.
+ */
 abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations) : DefaultTask() {
     @get:InputFiles
     @get:PathSensitive(PathSensitivity.RELATIVE)
@@ -104,15 +114,20 @@ abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations
     fun build() {
         val output = outputDirectory.get().asFile
         output.deleteRecursively()
-        val abis = listOf("arm64-v8a", "armeabi-v7a", "x86", "x86_64").flatMap { listOf("-t", it) }
+        val abis = mapOf(
+            "arm64-v8a" to "aarch64-linux-android",
+            "armeabi-v7a" to "armv7-linux-androideabi",
+            "x86" to "i686-linux-android",
+            "x86_64" to "x86_64-linux-android",
+        )
         val profile = if (release.get()) listOf("--release") else emptyList()
         val result = exec.exec {
             workingDir = workspace.get().asFile
             environment("ANDROID_NDK_HOME", ndkDirectory.get().asFile.absolutePath)
             commandLine(
-                listOf("cargo", "ndk") + abis +
+                listOf("cargo", "ndk") + abis.keys.flatMap { listOf("-t", it) } +
                     listOf("--platform", minSdk.get().toString(), "-o", output.absolutePath, "build") +
-                    profile + listOf("-p", "adaway-android"),
+                    profile + listOf("-p", "adaway-android", "-p", "adaway-webserver"),
             )
             isIgnoreExitValue = true
         }
@@ -121,6 +136,11 @@ abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations
                 "The Rust engine build failed. It needs rustup (https://rustup.rs) and cargo-ndk " +
                     "(cargo install cargo-ndk --locked), see the error above.",
             )
+        }
+        val profileDirectory = if (release.get()) "release" else "debug"
+        abis.forEach { (abi, target) ->
+            workspace.file("target/$target/$profileDirectory/adaway-webserver").get().asFile
+                .copyTo(File(output, "$abi/libadaway_webserver.so"), overwrite = true)
         }
     }
 }

@@ -12,6 +12,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 adaway-engine = { path = "../engine" }
+adaway-webserver = { path = "../webserver" }
 jni = "0.22.4"
 
 [lints]

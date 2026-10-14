@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.adaway.BuildConfig
 import org.adaway.system.RootAccess
+import org.adaway.system.shellQuote
 import java.io.File
 import java.io.IOException
 
@@ -65,7 +66,7 @@ class HostsInstaller(private val directory: File, private val rootAccess: RootAc
     private fun saveOriginal() {
         directory.mkdirs()
         val uid = Process.myUid()
-        val saved = exec("cat ${quote(HostsFile.SYSTEM.path)} > ${quote(original.path)} && chown $uid:$uid ${quote(original.path)}")
+        val saved = exec("cat ${shellQuote(HostsFile.SYSTEM.path)} > ${shellQuote(original.path)} && chown $uid:$uid ${shellQuote(original.path)}")
         if (!saved.isSuccess) {
             original.delete()
             debugLog("Original hosts not saved: ${saved.err}")
@@ -74,7 +75,7 @@ class HostsInstaller(private val directory: File, private val rootAccess: RootAc
 
     private fun copyToSystem(source: File, failure: RootError) {
         val target = moduleHosts() ?: HostsFile.SYSTEM.path
-        val remounted = if (exec("[ -w ${quote(target)} ]").isSuccess) {
+        val remounted = if (exec("[ -w ${shellQuote(target)} ]").isSuccess) {
             null
         } else {
             remountWritable(target) ?: run {
@@ -83,19 +84,19 @@ class HostsInstaller(private val directory: File, private val rootAccess: RootAc
             }
         }
         try {
-            val copy = exec("cat ${quote(source.path)} > ${quote(target)} && chown 0:0 ${quote(target)} && chmod 644 ${quote(target)}")
+            val copy = exec("cat ${shellQuote(source.path)} > ${shellQuote(target)} && chown 0:0 ${shellQuote(target)} && chmod 644 ${shellQuote(target)}")
             if (!copy.isSuccess) {
                 debugLog("Copy to $target failed: ${copy.err}")
                 val noSpace = copy.err.any { it.contains("No space left", ignoreCase = true) }
                 throw RootException(if (noSpace && failure == RootError.COPY_FAILED) RootError.NOT_ENOUGH_SPACE else failure)
             }
             // What the apps read, through the module mount if any.
-            if (!exec("cmp -s ${quote(source.path)} ${quote(HostsFile.SYSTEM.path)}").isSuccess) {
+            if (!exec("cmp -s ${shellQuote(source.path)} ${shellQuote(HostsFile.SYSTEM.path)}").isSuccess) {
                 debugLog("The installed hosts file differs from the written one")
                 throw RootException(failure)
             }
         } finally {
-            remounted?.let { exec("mount -o ro,remount ${quote(it)}") }
+            remounted?.let { exec("mount -o ro,remount ${shellQuote(it)}") }
         }
     }
 
@@ -117,7 +118,7 @@ class HostsInstaller(private val directory: File, private val rootAccess: RootAc
             .filter { path == it || path.startsWith(if (it.endsWith('/')) it else "$it/") }
             .maxByOrNull { it.length }
             ?: return null
-        val remount = exec("mount -o rw,remount ${quote(mountPoint)}")
+        val remount = exec("mount -o rw,remount ${shellQuote(mountPoint)}")
         if (!remount.isSuccess) {
             debugLog("Remount of $mountPoint failed: ${remount.err}")
             return null
@@ -133,7 +134,5 @@ class HostsInstaller(private val directory: File, private val rootAccess: RootAc
 
     private companion object {
         const val TAG = "AdAwayRoot"
-
-        fun quote(path: String) = "'" + path.replace("'", "'\\''") + "'"
     }
 }

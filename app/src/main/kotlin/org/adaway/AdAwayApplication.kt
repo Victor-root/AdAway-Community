@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.topjohnwu.superuser.Shell
 import kotlinx.coroutines.flow.distinctUntilChangedBy
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.adaway.data.settings.Settings
 import org.adaway.system.Notifications
@@ -23,6 +24,10 @@ class AdAwayApplication : Application() {
         Notifications.createChannels(this)
         scheduleOnChange({ it.sourcesPeriodicCheck to it.sourcesUnmeteredOnly }, SourceUpdateWorker.Companion::schedule)
         scheduleOnChange({ it.blockingMethod to it.vpnWanted }, VpnHeartbeatWorker.Companion::schedule)
+        container.applicationScope.launch {
+            container.dataInitializer.ensureInitialized()
+            container.webServer.ensureRunning(container.settingsRepository.settings.first())
+        }
     }
 
     /** Keeps a periodic work in line with the settings it depends on. */
