@@ -20,6 +20,8 @@ import androidx.tv.material3.lightColorScheme as tvLightColorScheme
 
 /** Brand red of the headers, the welcome screens and the launcher icons, in both themes. */
 val BrandRed = Color(0xFFB71C1C)
+/** Header color while ad blocking is off. */
+val BrandGray = Color(0xFF616161)
 
 private class Palette(
     val primary: Color,

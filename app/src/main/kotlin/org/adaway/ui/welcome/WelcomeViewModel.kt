@@ -10,26 +10,27 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import org.adaway.AppContainer
 import org.adaway.data.settings.BlockingMethod
-import org.adaway.system.AlwaysOnVpn
-
-enum class WelcomeDialog { ROOT_REQUIRED, ALWAYS_ON_VPN, VPN_REQUEST_FAILED }
+import org.adaway.ui.common.VpnRefusal
 
 data class WelcomeState(
     val method: BlockingMethod = BlockingMethod.UNSET,
     val checkingRoot: Boolean = false,
-    val dialog: WelcomeDialog? = null,
+    val rootRequired: Boolean = false,
+    val vpnRefusal: VpnRefusal? = null,
 )
 
 class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
     private val checkingRoot = MutableStateFlow(false)
-    private val dialog = MutableStateFlow<WelcomeDialog?>(null)
+    private val rootRequired = MutableStateFlow(false)
+    private val vpnRefusal = MutableStateFlow<VpnRefusal?>(null)
 
     val state: StateFlow<WelcomeState> = combine(
         container.settingsRepository.settings,
         checkingRoot,
-        dialog,
-    ) { settings, checking, shownDialog ->
-        WelcomeState(settings.blockingMethod, checking, shownDialog)
+        rootRequired,
+        vpnRefusal,
+    ) { settings, checking, root, refusal ->
+        WelcomeState(settings.blockingMethod, checking, root, refusal)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), WelcomeState())
 
     fun chooseRoot() {
@@ -37,7 +38,7 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch {
             val granted = container.rootAccess.request()
             setMethod(if (granted) BlockingMethod.ROOT else BlockingMethod.UNSET)
-            if (!granted) dialog.value = WelcomeDialog.ROOT_REQUIRED
+            rootRequired.value = !granted
             checkingRoot.value = false
         }
     }
@@ -46,17 +47,14 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch { setMethod(BlockingMethod.VPN) }
     }
 
-    fun onVpnRefused(alwaysOnVpn: AlwaysOnVpn, ownPackage: String) {
+    fun onVpnRefused(refusal: VpnRefusal?) {
         viewModelScope.launch { setMethod(BlockingMethod.UNSET) }
-        dialog.value = when {
-            alwaysOnVpn is AlwaysOnVpn.App && alwaysOnVpn.packageName != ownPackage -> WelcomeDialog.ALWAYS_ON_VPN
-            alwaysOnVpn is AlwaysOnVpn.Unknown -> WelcomeDialog.VPN_REQUEST_FAILED
-            else -> null
-        }
+        vpnRefusal.value = refusal
     }
 
     fun dismissDialog() {
-        dialog.value = null
+        rootRequired.value = false
+        vpnRefusal.value = null
     }
 
     fun finish(onFinished: () -> Unit) {

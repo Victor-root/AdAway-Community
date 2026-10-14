@@ -2,6 +2,7 @@ package org.adaway.vpn
 
 import android.net.Network
 import android.net.VpnService
+import android.os.Build
 import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -97,6 +98,14 @@ class VpnSession(
 
     fun stop() {
         scope.launch { end(VpnStatus.STOPPED) }
+    }
+
+    /** Asked to Android by the service itself, the only reliable way. Null before Android 10. */
+    fun alwaysOnMode(): AlwaysOnMode? = when {
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> null
+        service.isLockdownEnabled -> AlwaysOnMode.LOCKDOWN
+        service.isAlwaysOn -> AlwaysOnMode.ON
+        else -> AlwaysOnMode.OFF
     }
 
     private fun onSettings(new: Settings) {

@@ -166,4 +166,28 @@
     <string name="vpn_status_waiting_for_network">wait for network</string>
     <string name="vpn_status_reconnecting">reconnecting</string>
     <string name="vpn_status_stopped">stopped</string>
+
+    <string name="home_blocking_enabled">Ad-blocking: enabled</string>
+    <string name="home_blocking_disabled">Ad-blocking: disabled</string>
+    <string name="home_blocking_starting">Starting…</string>
+    <string name="home_blocking_waiting_for_network">Waiting for a network connection</string>
+    <string name="home_blocking_reconnecting">Reconnecting…</string>
+    <string name="home_blocking_consent_required">VPN permission needed: turn ad blocking on to grant it.</string>
+    <string name="home_toggle_blocking">Pause/resume ad blocking</string>
+    <string name="home_enable_blocking">Enable ad-blocking</string>
+    <string name="home_disable_blocking">Disable ad-blocking</string>
+    <string name="home_always_on_active">Always-on VPN active</string>
+    <string name="vpn_persistence_title">VPN persistence</string>
+    <string name="vpn_persistence_summary">Keep ad blocking running in the background</string>
+    <string name="vpn_persistence_enabled">Always-on VPN is enabled for AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">Always-on VPN not set. AdAway\'s built-in persistence handles it.</string>
+    <string name="vpn_persistence_lockdown">\"Block connections without VPN\" is on: apps excluded from the VPN have no Internet access.</string>
+    <string name="vpn_persistence_message">AdAway already handles reboots, low-memory kills and crashes on its own, so no extra setup is needed in most cases.\n\nIf the VPN ever stops unexpectedly, pin AdAway as the Android system Always-on VPN for the strongest guarantee.</string>
+    <string name="vpn_persistence_adb_commands">If the system VPN screen is hidden on your TV, use ADB, then restart the TV:\n\n• Enable always-on for AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Disable always-on:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_tv_settings_unavailable">VPN settings hidden on this Android TV. Use the ADB commands shown.</string>
+    <string name="vpn_persistence_dismiss">Got it</string>
+    <string name="apply_blocking_off_title">Ad blocking is off</string>
+    <string name="apply_blocking_off_text">Your changes will be used once ad blocking is on. Turn it on now?</string>
+    <string name="apply_and_enable">Apply and turn on</string>
+    <string name="apply_only">Apply only</string>
 </resources>

@@ -9,9 +9,14 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.SettingsRepository
+import org.adaway.system.AlwaysOnVpn
 import org.adaway.system.Notifications
+import java.util.concurrent.atomic.AtomicBoolean
 
 enum class StartResult { STARTED, NOT_WANTED, CONSENT_REQUIRED, REFUSED }
+
+/** Whether AdAway is the Android always-on VPN, and blocks connections without it (lockdown). */
+enum class AlwaysOnMode { OFF, ON, LOCKDOWN, UNKNOWN }
 
 /**
  * Starts the VPN service and tells its status. The VPN runs only while the user wants it, as
@@ -23,11 +28,21 @@ class VpnController(private val context: Context, private val settingsRepository
 
     @Volatile
     private var attached: VpnSession? = null
+    private val consentPrompted = AtomicBoolean(false)
 
     private val session: VpnSession? get() = attached?.takeUnless { it.isEnded }
 
     /** Whether Android must first ask the user to let the app create a VPN. */
     fun needsConsent(): Boolean = VpnService.prepare(context) != null
+
+    /** True the first time only: the consent is asked on its own once per launch of the app at most. */
+    fun claimConsentPrompt(): Boolean = consentPrompted.compareAndSet(false, true)
+
+    fun alwaysOnMode(): AlwaysOnMode = session?.alwaysOnMode() ?: when (val app = AlwaysOnVpn.read(context)) {
+        AlwaysOnVpn.None -> AlwaysOnMode.OFF
+        is AlwaysOnVpn.App -> if (app.packageName == context.packageName) AlwaysOnMode.ON else AlwaysOnMode.OFF
+        AlwaysOnVpn.Unknown -> AlwaysOnMode.UNKNOWN
+    }
 
     /** The user turns ad blocking on, without any delay. */
     suspend fun enable(): StartResult {

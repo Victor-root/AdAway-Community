@@ -167,4 +167,28 @@
     <string name="vpn_status_waiting_for_network">en attente du réseau</string>
     <string name="vpn_status_reconnecting">reconnexion</string>
     <string name="vpn_status_stopped">arrêté</string>
+
+    <string name="home_blocking_enabled">Blocage des publicités : activé</string>
+    <string name="home_blocking_disabled">Blocage des publicités : désactivé</string>
+    <string name="home_blocking_starting">Démarrage…</string>
+    <string name="home_blocking_waiting_for_network">En attente d\'une connexion réseau</string>
+    <string name="home_blocking_reconnecting">Reconnexion…</string>
+    <string name="home_blocking_consent_required">Autorisation VPN nécessaire : activez le blocage pour l\'accorder.</string>
+    <string name="home_toggle_blocking">Mettre en pause/Reprendre le blocage des publicités</string>
+    <string name="home_enable_blocking">Activer le blocage des publicités</string>
+    <string name="home_disable_blocking">Désactiver le blocage des publicités</string>
+    <string name="home_always_on_active">Always-on VPN actif</string>
+    <string name="vpn_persistence_title">Persistance VPN</string>
+    <string name="vpn_persistence_summary">Maintenir le blocage actif en arrière-plan</string>
+    <string name="vpn_persistence_enabled">Always-on VPN activé pour AdAway. ✓</string>
+    <string name="vpn_persistence_disabled">Always-on VPN non configuré. AdAway gère via sa persistance interne.</string>
+    <string name="vpn_persistence_lockdown">« Bloquer les connexions sans VPN » est activé : les applis exclues du VPN n\'ont plus accès à Internet.</string>
+    <string name="vpn_persistence_message">AdAway gère déjà les redémarrages, les kills système et les crashs, donc normalement aucune configuration n\'est nécessaire.\n\nSi le VPN se coupe de façon inattendue, vous pouvez activer Always-on VPN au niveau Android pour renforcer la persistance.</string>
+    <string name="vpn_persistence_adb_commands">Si l\'écran VPN système est caché sur votre TV, utilisez ADB, puis redémarrez la TV :\n\n• Activer always-on pour AdAway :\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Désactiver always-on :\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_tv_settings_unavailable">Réglages VPN cachés sur cet Android TV. Utilisez les commandes ADB affichées.</string>
+    <string name="vpn_persistence_dismiss">Compris</string>
+    <string name="apply_blocking_off_title">Le blocage des publicités est coupé</string>
+    <string name="apply_blocking_off_text">Vos changements seront utilisés dès que le blocage sera activé. L\'activer maintenant ?</string>
+    <string name="apply_and_enable">Appliquer et activer</string>
+    <string name="apply_only">Appliquer seulement</string>
 </resources>

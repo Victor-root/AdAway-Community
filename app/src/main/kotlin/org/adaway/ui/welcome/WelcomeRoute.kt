@@ -9,10 +9,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
-import org.adaway.system.AlwaysOnVpn
+import org.adaway.ui.common.VpnRefusalDialog
 import org.adaway.ui.common.appViewModel
-import org.adaway.ui.common.rememberOpenVpnSettings
 import org.adaway.ui.common.rememberVpnConsentRequest
+import org.adaway.ui.common.vpnRefusal
 
 /** First launch wizard: lets the user pick and grant a blocking method. */
 @Composable
@@ -22,7 +22,7 @@ fun WelcomeRoute(isTelevision: Boolean, onFinished: () -> Unit) {
     val context = LocalContext.current
     val requestVpnConsent = rememberVpnConsentRequest(
         onGranted = viewModel::onVpnGranted,
-        onRefused = { viewModel.onVpnRefused(AlwaysOnVpn.read(context), context.packageName) },
+        onRefused = { viewModel.onVpnRefused(vpnRefusal(context)) },
     )
     val actions = WelcomeActions(
         chooseRoot = viewModel::chooseRoot,
@@ -30,32 +30,18 @@ fun WelcomeRoute(isTelevision: Boolean, onFinished: () -> Unit) {
         finish = { viewModel.finish(onFinished) },
     )
     if (isTelevision) TvWelcomeScreen(state, actions) else WelcomeScreen(state, actions)
-    state.dialog?.let { WelcomeDialog(it, onDismiss = viewModel::dismissDialog) }
+    if (state.rootRequired) RootRequiredDialog(onDismiss = viewModel::dismissDialog)
+    state.vpnRefusal?.let { VpnRefusalDialog(it, onDismiss = viewModel::dismissDialog) }
 }
 
 class WelcomeActions(val chooseRoot: () -> Unit, val chooseVpn: () -> Unit, val finish: () -> Unit)
 
 @Composable
-private fun WelcomeDialog(dialog: WelcomeDialog, onDismiss: () -> Unit) {
-    val openVpnSettings = rememberOpenVpnSettings()
-    val (title, text) = when (dialog) {
-        WelcomeDialog.ROOT_REQUIRED -> R.string.root_required_title to R.string.root_required_text
-        WelcomeDialog.ALWAYS_ON_VPN -> R.string.always_on_vpn_title to R.string.always_on_vpn_text
-        WelcomeDialog.VPN_REQUEST_FAILED -> R.string.vpn_request_failed_title to R.string.vpn_request_failed_text
-    }
+private fun RootRequiredDialog(onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(title)) },
-        text = { Text(stringResource(text)) },
-        confirmButton = {
-            if (dialog != WelcomeDialog.ROOT_REQUIRED) {
-                TextButton(onClick = { onDismiss(); openVpnSettings() }) {
-                    Text(stringResource(R.string.open_vpn_settings))
-                }
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) { Text(stringResource(R.string.close)) }
-        },
+        title = { Text(stringResource(R.string.root_required_title)) },
+        text = { Text(stringResource(R.string.root_required_text)) },
+        confirmButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.close)) } },
     )
 }
