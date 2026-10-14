@@ -44,4 +44,36 @@ object Engine : RuleValidator {
 
     /** Returns a page of the catalog lines whose host contains [filter] (`*` and `?` wildcards). */
     external fun queryCatalog(path: String, filter: String, offset: Int, limit: Int): Array<String>
+
+    /**
+     * Creates the DNS filter of the VPN, reading the final list. Takes the ownership of the tun and
+     * socket descriptors, closed when the tunnel ends: one socket connected to a real DNS server per
+     * virtual address. Returns a handle to free with [destroyTunnel].
+     * Throws a [RuntimeException] when the final list cannot be read.
+     */
+    external fun createTunnel(
+        tunFd: Int,
+        virtualAddresses: Array<String>,
+        upstreamFds: IntArray,
+        finalDirectory: String,
+        monitor: Boolean,
+    ): Long
+
+    /**
+     * Filters until [stopTunnel], or until the tunnel or the network fails. Returns why: 0 when
+     * stopped, 1 when the tunnel closed, 2 when the network became unreachable.
+     */
+    external fun runTunnel(handle: Long): Int
+
+    /** Makes [runTunnel] return, from any thread. */
+    external fun stopTunnel(handle: Long)
+
+    /**
+     * Loads the final list again, used by the tunnel from its next query.
+     * Throws a [RuntimeException] when it cannot be read: the tunnel then keeps the previous one.
+     */
+    external fun reloadTunnelRules(handle: Long)
+
+    /** Frees a handle whose tunnel is not running. */
+    external fun destroyTunnel(handle: Long)
 }

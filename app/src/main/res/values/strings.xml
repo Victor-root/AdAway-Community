@@ -151,4 +151,19 @@
         <item quantity="other">%1$s entries</item>
     </plurals>
     <string name="just_now">just now</string>
+
+    <string name="notification_channel_vpn">VPN</string>
+    <string name="notification_channel_vpn_description">VPN running notifications</string>
+    <string name="notification_vpn_title">Ad-blocker VPN %1$s</string>
+    <string name="notification_vpn_disable">Disable</string>
+    <string name="notification_vpn_enable">Enable</string>
+    <string name="notification_vpn_consent_title">VPN permission required</string>
+    <string name="notification_vpn_consent_text">Tap to let AdAway block ads again.</string>
+    <string name="notification_vpn_refused_title">Ad blocking is off</string>
+    <string name="notification_vpn_refused_text">Android prevented AdAway from restarting it in the background. Tap to turn it back on.</string>
+    <string name="vpn_status_starting">starting</string>
+    <string name="vpn_status_running">active</string>
+    <string name="vpn_status_waiting_for_network">wait for network</string>
+    <string name="vpn_status_reconnecting">reconnecting</string>
+    <string name="vpn_status_stopped">stopped</string>
 </resources>

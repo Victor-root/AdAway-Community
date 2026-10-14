@@ -201,7 +201,11 @@ Chaque étape se termine par un commit sur `adaway-rust` et une liste de choses 
    - tuile, commandes externes et notifications ;
    - aide et assistant complet.
 6. **DNS personnalisé et DNS chiffré** (décision C1).
-7. **Finitions**
+7. **Interface identique à celle de main**
+   - chaque écran, mobile et TV, refait à l'identique de la version 6.6.1-c ;
+   - les comportements décidés en section 6 (annulation, refus des doublons, erreurs par liste…) sont intégrés dans ce visuel ;
+   - la séparation entre le moteur, la logique et l'interface rend ce travail possible sans toucher au reste.
+8. **Finitions**
    - vérification de la version release ;
    - relecture complète ;
    - éléments de la section 7.

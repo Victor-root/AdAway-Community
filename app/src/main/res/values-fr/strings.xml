@@ -152,4 +152,19 @@
         <item quantity="other">%1$s entrées</item>
     </plurals>
     <string name="just_now">à l\'instant</string>
+
+    <string name="notification_channel_vpn">RPV/VPN</string>
+    <string name="notification_channel_vpn_description">Notifications de l\'exécution du RPV/VPN</string>
+    <string name="notification_vpn_title">RPV/VPN bloqueur de publicités %1$s</string>
+    <string name="notification_vpn_disable">Désactiver</string>
+    <string name="notification_vpn_enable">Activer</string>
+    <string name="notification_vpn_consent_title">Autorisation VPN requise</string>
+    <string name="notification_vpn_consent_text">Touchez pour permettre à AdAway de bloquer à nouveau les publicités.</string>
+    <string name="notification_vpn_refused_title">Le blocage des publicités est coupé</string>
+    <string name="notification_vpn_refused_text">Android a empêché AdAway de le relancer en arrière-plan. Touchez pour le réactiver.</string>
+    <string name="vpn_status_starting">démarrage</string>
+    <string name="vpn_status_running">activé</string>
+    <string name="vpn_status_waiting_for_network">en attente du réseau</string>
+    <string name="vpn_status_reconnecting">reconnexion</string>
+    <string name="vpn_status_stopped">arrêté</string>
 </resources>

@@ -21,6 +21,7 @@ import org.adaway.sources.SourceDownloader
 import org.adaway.sources.SourceRepository
 import org.adaway.sources.SourceSync
 import org.adaway.system.RootAccess
+import org.adaway.vpn.VpnController
 
 private val Context.settingsDataStore by preferencesDataStore(name = "settings")
 private val Context.blockListDataStore by preferencesDataStore(name = "block_list")
@@ -41,11 +42,13 @@ class AppContainer(context: Context) {
         legacyConversion = LegacyConversion(Engine),
     )
     val rootAccess = RootAccess()
+    val vpnController = VpnController(applicationContext, settingsRepository)
     val sourceRepository = SourceRepository(database, engineFiles, blockListState)
     val userRuleRepository = UserRuleRepository(database, Engine, blockListState)
     val blockListUpdater = BlockListUpdater(
         scope = applicationScope,
         sourceSync = SourceSync(database, SourceDownloader(context), engineFiles),
         compiler = BlockListCompiler(database, engineFiles, blockListState),
+        onApplied = vpnController::onBlockListApplied,
     )
 }

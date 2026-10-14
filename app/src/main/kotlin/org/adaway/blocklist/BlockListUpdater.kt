@@ -20,6 +20,8 @@ class BlockListUpdater(
     private val scope: CoroutineScope,
     private val sourceSync: SourceSync,
     private val compiler: BlockListCompiler,
+    /** Called after each new final list, for the blocking in use to take it. */
+    private val onApplied: suspend () -> Unit,
 ) {
     private val mutex = Mutex()
     private val startupTasksStarted = AtomicBoolean(false)
@@ -68,12 +70,13 @@ class BlockListUpdater(
 
     private suspend fun compile(): UpdateError? {
         publish(UpdateProgress.Applying)
-        return try {
+        try {
             compiler.compile()
-            null
         } catch (_: RuntimeException) {
-            UpdateError.APPLY_FAILED
+            return UpdateError.APPLY_FAILED
         }
+        onApplied()
+        return null
     }
 
     private fun launchForScreen(update: suspend () -> UpdateError?) {

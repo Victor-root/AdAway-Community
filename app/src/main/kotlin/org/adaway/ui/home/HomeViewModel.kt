@@ -44,6 +44,7 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch {
             updater.runStartupTasks(checkForUpdates = container.settingsRepository.settings.first().sourcesCheckOnStartup)
         }
+        viewModelScope.launch { container.vpnController.ensureRunning() }
     }
 
     fun sync() = updater.requestSync()
