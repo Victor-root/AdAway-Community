@@ -1,0 +1,6 @@
+# Android 15+ devices may use 16 KB memory pages: every native binary must be aligned on them.
+[target.'cfg(target_os = "android")']
+rustflags = [
+    "-C", "link-arg=-Wl,-z,max-page-size=16384",
+    "-C", "link-arg=-Wl,-z,common-page-size=16384",
+]

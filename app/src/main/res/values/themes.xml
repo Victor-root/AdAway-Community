@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AdAway" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/brand_red</item>
+    </style>
+</resources>

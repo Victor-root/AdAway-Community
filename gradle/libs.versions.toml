@@ -1,0 +1,50 @@
+[versions]
+appVersionName = "7.0.0-c"
+appVersionCode = "70000"
+
+minSdk = "26"
+compileSdk = "37"
+compileSdkMinor = "2"
+targetSdk = "37"
+ndk = "30.0.16248370"
+
+agp = "9.4.1"
+kotlin = "2.4.21"
+ksp = "2.3.12"
+
+activityCompose = "1.13.0"
+composeBom = "2026.09.00"
+coreKtx = "1.19.1"
+datastore = "1.2.1"
+lifecycle = "2.11.0"
+libsu = "6.0.0"
+navigation = "2.10.2"
+room = "2.8.5"
+tvMaterial = "1.1.0"
+work = "2.12.0"
+
+junit = "4.13.2"
+
+[libraries]
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-tv-material = { module = "androidx.tv:tv-material", version.ref = "tvMaterial" }
+androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "work" }
+libsu-core = { module = "com.github.topjohnwu.libsu:core", version.ref = "libsu" }
+junit = { module = "junit:junit", version.ref = "junit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }

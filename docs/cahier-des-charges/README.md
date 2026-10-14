@@ -20,7 +20,7 @@ Refaire entièrement AdAway Community, sans reprendre une seule ligne de l'ancie
 | Langages | Kotlin pour l'app, Rust pour le moteur et les outils root. Aucune ligne de C. |
 | Interface | Jetpack Compose, mobile et Android TV. |
 | Installation | Mise à jour par-dessus l'ancienne app : même identifiant `org.adaway`, même clé de signature, reprise des sources, listes perso et réglages. |
-| Fonctions | Toutes gardées, sauf décision contraire en section 6. |
+| Fonctions | Toutes gardées, sauf le scanner d'adwares (retiré) et les décisions de la section 6. |
 | Android minimum | Android 8.0 (API 26). |
 | Textes | Tous passent par les traductions, anglais d'abord, français ensuite. Les autres langues seront ajoutées plus tard. |
 | Journaux de debug | Uniquement dans la version debug, jamais en release, beta ou autre. |
@@ -92,13 +92,13 @@ Le même code Rust (lecture des listes, lecture des paquets DNS) sert à la fois
     - Un APK de mise à jour n'est installé qu'après vérification de son paquet et de sa signature.
     - Aucun secret partagé n'est livré dans l'app (le certificat du serveur web est généré sur l'appareil).
 
-## 6. Décisions à trancher
+## 6. Décisions
 
-Pour chaque point, ma recommandation est en dernière colonne. Les questions mineures des chapitres qui ne sont pas reprises ici seront tranchées selon la recommandation du chapitre, ou à défaut dans le sens qui corrige le défaut constaté.
+Toutes les recommandations ci-dessous ont été validées le 2026-10-14. Les questions mineures des chapitres qui ne sont pas reprises ici seront tranchées selon la recommandation du chapitre, ou à défaut dans le sens qui corrige le défaut constaté.
 
 ### 6.1 Reprise et compatibilité
 
-| N° | Question | Recommandation |
+| N° | Question | Décision |
 |---|---|---|
 | A1 | Quelles anciennes bases relire ? | **Seulement la version 7.** Toutes les installations de la version Community sont en version 7, et les autres ne peuvent pas recevoir la mise à jour par-dessus (signature différente). Si la base est d'une autre version ou illisible : on garde quand même les réglages, on repart des sources par défaut et on propose de restaurer une sauvegarde. |
 | A2 | Permettre de revenir à l'ancienne version ? | **Non.** Les données sont converties une fois pour toutes. |
@@ -108,7 +108,7 @@ Pour chaque point, ma recommandation est en dernière colonne. Les questions min
 
 ### 6.2 Sources et listes
 
-| N° | Question | Recommandation |
+| N° | Question | Décision |
 |---|---|---|
 | B1 | Sources par défaut (nouvelles installations) | **StevenBlack activée, Peter Lowe proposée mais désactivée, AdAway retirée.** La liste AdAway n'est plus mise à jour depuis fin 2025, et StevenBlack reprend déjà AdAway et Peter Lowe. Les sources des utilisateurs existants ne sont jamais touchées. |
 | B2 | Lire aussi les listes "un domaine par ligne" et le format Adblock simple (`\|\|domaine^`) ? | **Oui, les deux.** Ce sont des formats très répandus. |
@@ -123,7 +123,7 @@ Pour chaque point, ma recommandation est en dernière colonne. Les questions min
 
 ### 6.3 Mode VPN
 
-| N° | Question | Recommandation |
+| N° | Question | Décision |
 |---|---|---|
 | C1 | DNS personnalisé et DNS chiffré (DoH) | **Pas dans la première version.** Le moteur est conçu pour, et la fonction est ajoutée dans une étape dédiée juste après avoir atteint les mêmes fonctions que l'ancienne app. |
 | C2 | Secours quand le réseau ne donne aucun DNS | **Garder Cloudflare en secours** (indispensable), et le noter dans le journal de diagnostic. |
@@ -135,7 +135,7 @@ Pour chaque point, ma recommandation est en dernière colonne. Les questions min
 
 ### 6.4 Mode root
 
-| N° | Question | Recommandation |
+| N° | Question | Décision |
 |---|---|---|
 | D1 | Où écrire le fichier hosts ? | **Toujours `/system/etc/hosts`**, et l'app détecte elle-même un module "systemless hosts" (Magisk, KernelSU, APatch) pour guider l'utilisateur s'il manque. Le remontage de partition n'est tenté que s'il n'y a pas de module. |
 | D2 | Garder le hosts d'origine pour le restaurer à l'identique ? | **Oui**, sauvegardé avant la première application. |
@@ -147,9 +147,9 @@ Pour chaque point, ma recommandation est en dernière colonne. Les questions min
 
 ### 6.5 Fonctions annexes et interface
 
-| N° | Question | Recommandation |
+| N° | Question | Décision |
 |---|---|---|
-| E1 | Scanner d'adwares | **Le retirer.** Il est déjà inaccessible dans l'app actuelle, sa liste date de plusieurs années, et il réclame une permission sensible. Tu as demandé de tout garder : dis-moi si tu veux plutôt le remettre avec une entrée de menu. |
+| E1 | Scanner d'adwares | **Retiré.** Il est déjà inaccessible dans l'app actuelle, sa liste date de plusieurs années, et il réclame une permission sensible. |
 | E2 | Canal beta pour les mises à jour de l'app | **Pas pour l'instant.** Un seul canal stable. |
 | E3 | Comparaison de versions | **Seuls les trois nombres x.y.z comptent**, tout suffixe (`-c`) est ignoré. |
 | E4 | Format de sauvegarde | **Ajouter un numéro de version et les réglages**, en continuant à lire les anciens fichiers. Une restauration se fait en entier ou pas du tout. |
@@ -192,6 +192,7 @@ Chaque étape se termine par un commit sur `adaway-rust` et une liste de choses 
    - compteurs et bouton "Appliquer".
 3. **Mode VPN complet**, avec toutes les situations du chapitre 02.
    *À tester au moins une semaine en usage réel.*
+   *Point à vérifier : depuis Android 17, joindre une adresse du réseau local (le serveur DNS de la box, par exemple) peut demander la permission "accès au réseau local".*
 4. **Mode root complet**, avec le serveur web et la capture DNS en Rust.
 5. **Le reste des fonctions**
    - journal DNS ;
@@ -199,7 +200,7 @@ Chaque étape se termine par un commit sur `adaway-rust` et une liste de choses 
    - mise à jour de l'app ;
    - tuile, commandes externes et notifications ;
    - aide et assistant complet.
-6. **DNS personnalisé et DNS chiffré**, si la décision C1 est confirmée.
+6. **DNS personnalisé et DNS chiffré** (décision C1).
 7. **Finitions**
    - vérification de la version release ;
    - relecture complète ;
