@@ -23,6 +23,7 @@ import org.adaway.root.RootController
 import org.adaway.sources.SourceDownloader
 import org.adaway.sources.SourceRepository
 import org.adaway.sources.SourceSync
+import org.adaway.system.DiagnosticLog
 import org.adaway.system.RootAccess
 import org.adaway.vpn.VpnController
 
@@ -45,7 +46,8 @@ class AppContainer(context: Context) {
         legacyConversion = LegacyConversion(Engine),
     )
     val rootAccess = RootAccess()
-    val vpnController = VpnController(applicationContext, settingsRepository)
+    val diagnosticLog = DiagnosticLog(context.filesDir, applicationScope, settingsRepository.settings)
+    val vpnController = VpnController(applicationContext, settingsRepository, diagnosticLog)
     val statusMessages = StatusMessages()
     val rootController = RootController(applicationContext.resources, rootAccess, database, engineFiles, settingsRepository, statusMessages)
     val blockingController = BlockingController(settingsRepository, vpnController, rootController, statusMessages)
@@ -56,6 +58,7 @@ class AppContainer(context: Context) {
         sourceSync = SourceSync(database, SourceDownloader(context), engineFiles),
         compiler = BlockListCompiler(database, engineFiles, blockListState),
         statusMessages = statusMessages,
+        diagnosticLog = diagnosticLog,
         onApplied = blockingController::onBlockListApplied,
     )
 }

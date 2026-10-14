@@ -54,8 +54,14 @@
     <string name="pref_vpn_diagnostic_log_enabled_description">Turn on before reproducing a problem, then export it below. May slightly slow down older devices. Records only technical VPN events, never browsing history or personal data.</string>
     <string name="pref_vpn_diagnostic_log">Diagnostic log</string>
     <string name="pref_vpn_diagnostic_log_description">View, copy or share the recent errors and VPN events. Useful when reporting a problem.</string>
+    <string name="pref_vpn_diagnostic_log_empty">No events have been recorded yet. Turn on \"Record diagnostic log\" above, then try to reproduce the problem.</string>
+    <string name="pref_vpn_diagnostic_log_share">Share</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Share diagnostic log</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copy</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostic log copied to clipboard.</string>
     <string name="pref_vpn_diagnostic_log_clear">Clear diagnostic log</string>
     <string name="pref_vpn_diagnostic_log_clear_description">Delete the recorded events. Do this before reproducing a problem to capture a clean trace.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnostic log cleared.</string>
     <string name="pref_root_open_hosts">Open hosts file</string>
     <string name="hosts_file_unreadable">The hosts file could not be read.</string>
     <string name="pref_hosts_redirection_summary">Define where to redirect blocked hosts</string>

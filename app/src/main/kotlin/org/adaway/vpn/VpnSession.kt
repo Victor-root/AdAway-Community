@@ -3,7 +3,6 @@ package org.adaway.vpn
 import android.net.Network
 import android.net.VpnService
 import android.os.Build
-import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -12,12 +11,12 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import org.adaway.BuildConfig
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.Settings
 import org.adaway.data.settings.SettingsRepository
 import org.adaway.data.settings.SystemAppExclusion
 import org.adaway.engine.Engine
+import org.adaway.system.DiagnosticLog
 import java.io.File
 import java.io.IOException
 import java.net.NetworkInterface
@@ -30,6 +29,7 @@ import java.net.SocketException
 class VpnSession(
     private val service: VpnService,
     private val settingsRepository: SettingsRepository,
+    private val diagnosticLog: DiagnosticLog,
     finalDirectory: File,
     private val onStatus: (VpnStatus) -> Unit,
     private val onEnded: (VpnSession, VpnStatus) -> Unit,
@@ -91,7 +91,7 @@ class VpnSession(
             try {
                 Engine.reloadTunnelRules(running.handle)
             } catch (exception: RuntimeException) {
-                debugLog("Rules not reloaded: $exception")
+                diagnosticLog.warn(VPN_LOG_TAG, "Rules not reloaded: $exception")
             }
         }
     }
@@ -123,7 +123,7 @@ class VpnSession(
             !new.vpnWanted || new.blockingMethod != BlockingMethod.VPN -> end(VpnStatus.STOPPED)
             old == null -> scheduleRebuild()
             buildSettings(old) != buildSettings(new) && status != VpnStatus.WAITING_FOR_NETWORK -> {
-                debugLog("Settings changed")
+                diagnosticLog.info(VPN_LOG_TAG, "Settings changed")
                 throttle.reset()
                 scheduleRebuild()
             }
@@ -136,26 +136,26 @@ class VpnSession(
         val target = networks.target(preferred = running?.network)
         when {
             target == null -> if (status != VpnStatus.WAITING_FOR_NETWORK) {
-                debugLog("No network")
+                diagnosticLog.info(VPN_LOG_TAG, "No network")
                 rebuildJob?.cancel()
                 closeTunnel()
                 setStatus(VpnStatus.WAITING_FOR_NETWORK)
             }
             status == VpnStatus.WAITING_FOR_NETWORK -> {
-                debugLog("Network back")
+                diagnosticLog.info(VPN_LOG_TAG, "Network back")
                 throttle.reset()
                 scheduleRebuild()
             }
             // A rebuild already waiting reads the latest networks.
             running == null || rebuildJob?.isActive == true -> {}
             target != running.network -> {
-                debugLog("Network changed")
+                diagnosticLog.info(VPN_LOG_TAG, "Network changed")
                 scheduleRebuild()
             }
             else -> {
                 val selection = selectServers(target)
                 if (!selection.usesFallback && selection.servers.toSet() != running.selection.servers.toSet()) {
-                    debugLog("DNS servers changed")
+                    diagnosticLog.info(VPN_LOG_TAG, "DNS servers changed")
                     scheduleRebuild()
                 }
             }
@@ -181,7 +181,7 @@ class VpnSession(
             return
         }
         val selection = selectServers(network)
-        debugLog("Building on $network with ${selection.servers}")
+        diagnosticLog.info(VPN_LOG_TAG, "Building on $network with ${selection.servers}")
         // The new tunnel replaces the previous one before it closes, so that the VPN never drops.
         val built = try {
             builder.build(
@@ -192,13 +192,13 @@ class VpnSession(
                 monitor = settings.vpnConnectionMonitor,
             )
         } catch (exception: IOException) {
-            debugLog("Network not usable: $exception")
+            diagnosticLog.warn(VPN_LOG_TAG, "Network not usable: $exception")
             closeTunnel()
             setStatus(VpnStatus.RECONNECTING)
             scheduleRebuild()
             return
         } catch (exception: RuntimeException) {
-            debugLog("Tunnel not created: $exception")
+            diagnosticLog.warn(VPN_LOG_TAG, "Tunnel not created: $exception")
             end(VpnStatus.STOPPED)
             return
         }
@@ -216,7 +216,7 @@ class VpnSession(
     private fun onTunnelExit(exited: ActiveTunnel, exit: Int) {
         // A tunnel closed on purpose is no longer the current one.
         if (exited !== tunnel) return
-        debugLog("Tunnel ended with code $exit")
+        diagnosticLog.warn(VPN_LOG_TAG, "Tunnel ended with code $exit")
         closeTunnel()
         scheduleRebuild()
     }
@@ -227,7 +227,7 @@ class VpnSession(
             while (isActive) {
                 delay(INTERFACE_CHECK_MILLIS)
                 if (!hasTunInterface()) {
-                    debugLog("Tunnel interface gone")
+                    diagnosticLog.warn(VPN_LOG_TAG, "Tunnel interface gone")
                     closeTunnel()
                     scheduleRebuild()
                 }
@@ -255,7 +255,7 @@ class VpnSession(
 
     private fun setStatus(new: VpnStatus) {
         if (new == status) return
-        debugLog("Status $new")
+        diagnosticLog.info(VPN_LOG_TAG, "Status $new")
         status = new
         onStatus(new)
     }
@@ -281,12 +281,7 @@ class VpnSession(
         true
     }
 
-    private fun debugLog(message: String) {
-        if (BuildConfig.DEBUG) Log.d(TAG, message)
-    }
-
     private companion object {
-        const val TAG = "AdAwayVpn"
         const val INTERFACE_CHECK_MILLIS = 10_000L
     }
 }

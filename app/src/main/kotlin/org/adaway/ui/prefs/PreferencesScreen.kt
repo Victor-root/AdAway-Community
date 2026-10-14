@@ -41,6 +41,7 @@ private enum class PreferenceChoice { THEME, SYSTEM_APPS, IPV4_REDIRECTION, IPV6
 fun PreferencesScreen(navigation: PreferencesNavigation) {
     val viewModel = appViewModel(::PreferencesViewModel)
     val settings by viewModel.settings.collectAsStateWithLifecycle()
+    val diagnosticLog by viewModel.diagnosticLog.collectAsStateWithLifecycle()
     val current = settings ?: return
     val context = LocalContext.current
     var choice by rememberSaveable { mutableStateOf<PreferenceChoice?>(null) }
@@ -49,6 +50,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
     val invalidRedirection = stringResource(R.string.pref_redirection_invalid)
     val resetDone = stringResource(R.string.pref_vpn_reset_done)
     val resetNotRunning = stringResource(R.string.pref_vpn_reset_not_running)
+    val diagnosticLogCleared = stringResource(R.string.pref_vpn_diagnostic_log_cleared)
     val themeChoices = stringArrayResource(R.array.pref_dark_theme_modes).toList()
     val systemAppChoices = stringArrayResource(R.array.pref_vpn_excluded_system_apps_entries).toList()
     AdAwayScreen(title = stringResource(R.string.pref_main_title), onBack = navigation.back) { padding ->
@@ -92,13 +94,28 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
             SwitchPreference(
                 R.drawable.ic_record_24dp,
                 stringResource(R.string.pref_vpn_diagnostic_log_enabled),
-                checked = false,
-                onCheckedChange = {},
+                checked = current.diagnosticLogEnabled,
+                onCheckedChange = { checked -> viewModel.update { it.copy(diagnosticLogEnabled = checked) } },
                 summary = stringResource(R.string.pref_vpn_diagnostic_log_enabled_description),
-                enabled = false,
+                enabled = usesVpn,
             )
-            Preference(R.drawable.ic_article_24dp, stringResource(R.string.pref_vpn_diagnostic_log), stringResource(R.string.pref_vpn_diagnostic_log_description), enabled = false)
-            Preference(R.drawable.ic_delete_sweep_24dp, stringResource(R.string.pref_vpn_diagnostic_log_clear), stringResource(R.string.pref_vpn_diagnostic_log_clear_description), enabled = false)
+            Preference(
+                R.drawable.ic_article_24dp,
+                stringResource(R.string.pref_vpn_diagnostic_log),
+                stringResource(R.string.pref_vpn_diagnostic_log_description),
+                enabled = usesVpn,
+                onClick = viewModel::showDiagnosticLog,
+            )
+            Preference(
+                R.drawable.ic_delete_sweep_24dp,
+                stringResource(R.string.pref_vpn_diagnostic_log_clear),
+                stringResource(R.string.pref_vpn_diagnostic_log_clear_description),
+                enabled = usesVpn,
+                onClick = {
+                    viewModel.clearDiagnosticLog()
+                    Toast.makeText(context, diagnosticLogCleared, Toast.LENGTH_SHORT).show()
+                },
+            )
 
             PreferenceCategory(stringResource(R.string.pref_root_ad_blocker_configuration), enabled = usesRoot)
             Preference(R.drawable.ic_edit_note_24dp, stringResource(R.string.pref_root_open_hosts), enabled = usesRoot, onClick = navigation.openHostsFile)
@@ -138,13 +155,14 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
             SwitchPreference(
                 R.drawable.ic_bug_report_24dp,
                 stringResource(R.string.pref_enable_debug),
-                checked = current.diagnosticLogEnabled,
+                checked = false,
                 onCheckedChange = {},
                 summary = stringResource(R.string.pref_enable_debug_summary),
                 enabled = false,
             )
         }
     }
+    diagnosticLog?.let { DiagnosticLogDialog(it, onDismiss = viewModel::hideDiagnosticLog) }
     when (choice) {
         PreferenceChoice.THEME -> ChoiceDialog(
             title = stringResource(R.string.pref_dark_theme),

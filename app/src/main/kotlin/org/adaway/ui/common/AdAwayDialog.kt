@@ -55,7 +55,7 @@ fun AdAwayAlertDialog(
     }
 }
 
-/** The 6.x dialog around any [content], placed under the title. */
+/** The 6.x dialog around any [content], placed under the title. [neutralButton] stands apart, at the start. */
 @Composable
 fun AdAwayDialog(
     onDismissRequest: () -> Unit,
@@ -63,6 +63,7 @@ fun AdAwayDialog(
     confirmButton: DialogButton,
     dismissButton: DialogButton? = null,
     icon: Painter? = null,
+    neutralButton: DialogButton? = null,
     content: @Composable () -> Unit,
 ) {
     val colors = LocalAdAwayColors.current
@@ -84,33 +85,39 @@ fun AdAwayDialog(
                     Text(title, style = AdAwayType.headline6, color = colors.textPrimary)
                 }
                 Box(modifier = Modifier.weight(1f, fill = false)) { content() }
-                DialogButtons(listOfNotNull(dismissButton, confirmButton), Modifier.fillMaxWidth().padding(8.dp))
+                DialogButtons(neutralButton, listOfNotNull(dismissButton, confirmButton), Modifier.fillMaxWidth().padding(8.dp))
             }
         }
     }
 }
 
-/** Buttons on one line, the confirming one last; stacked under each other, confirming first, when too wide. */
+/**
+ * Buttons on one line, the confirming one last and the [neutral] one at the start; stacked under
+ * each other, confirming first, when too wide.
+ */
 @Composable
-private fun DialogButtons(buttons: List<DialogButton>, modifier: Modifier) {
+private fun DialogButtons(neutral: DialogButton?, buttons: List<DialogButton>, modifier: Modifier) {
     Layout(
-        content = { buttons.forEach { DialogTextButton(it) } },
+        content = { (listOfNotNull(neutral) + buttons).forEach { DialogTextButton(it) } },
         modifier = modifier,
     ) { measurables, constraints ->
         val gap = 8.dp.roundToPx()
-        val placeables = measurables.map { it.measure(Constraints(maxWidth = constraints.maxWidth)) }
-        val rowWidth = placeables.sumOf { it.width } + gap * (placeables.size - 1)
+        val all = measurables.map { it.measure(Constraints(maxWidth = constraints.maxWidth)) }
+        val start = if (neutral != null) all.first() else null
+        val placeables = if (start != null) all.drop(1) else all
+        val endWidth = placeables.sumOf { it.width } + gap * (placeables.size - 1)
         val width = constraints.maxWidth
-        if (rowWidth <= width) {
-            layout(width, placeables.maxOf { it.height }) {
-                var x = width - rowWidth
+        if (endWidth + (start?.let { it.width + gap } ?: 0) <= width) {
+            layout(width, all.maxOf { it.height }) {
+                start?.placeRelative(0, 0)
+                var x = width - endWidth
                 placeables.forEach {
                     it.placeRelative(x, 0)
                     x += it.width + gap
                 }
             }
         } else {
-            val stacked = placeables.reversed()
+            val stacked = placeables.reversed() + listOfNotNull(start)
             layout(width, stacked.sumOf { it.height }) {
                 var y = 0
                 stacked.forEach {

@@ -22,13 +22,23 @@ class AdAwayVpnService : VpnService() {
         if (session?.isEnded == false) return START_STICKY
         // Restarted by Android after the process was killed: the foreground service type needs the consent.
         if (intent == null && prepare(this) != null) {
+            container.diagnosticLog.warn(VPN_LOG_TAG, "Restarted by Android without the VPN consent")
             stopSelf()
             return START_NOT_STICKY
         }
         if (!startForeground()) return START_NOT_STICKY
+        container.diagnosticLog.info(
+            VPN_LOG_TAG,
+            when {
+                intent == null -> "Restarted by Android"
+                intent.action == SERVICE_INTERFACE -> "Started by Android as the always-on VPN"
+                else -> "Started by the app"
+            },
+        )
         val started = VpnSession(
             service = this,
             settingsRepository = container.settingsRepository,
+            diagnosticLog = container.diagnosticLog,
             finalDirectory = container.engineFiles.finalDirectory,
             onStatus = ::onStatus,
             onEnded = { ended, status -> ContextCompat.getMainExecutor(this).execute { onSessionEnded(ended, status) } },
@@ -44,7 +54,9 @@ class AdAwayVpnService : VpnService() {
         if (running == null) {
             super.onRevoke()
         } else {
-            running.revoke(consentLost = prepare(this) != null)
+            val consentLost = prepare(this) != null
+            container.diagnosticLog.warn(VPN_LOG_TAG, if (consentLost) "Revoked: another VPN app took over" else "Revoked by Android")
+            running.revoke(consentLost)
         }
     }
 
@@ -73,6 +85,7 @@ class AdAwayVpnService : VpnService() {
 
     /** Android refused the foreground: the user intention is kept for a later restart. */
     private fun refuseStart(): Boolean {
+        container.diagnosticLog.warn(VPN_LOG_TAG, "Foreground start refused by Android")
         container.vpnController.publish(VpnStatus.STOPPED)
         Notifications.showVpnStartRefused(this)
         stopSelf()

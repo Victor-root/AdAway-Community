@@ -8,6 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import org.adaway.sources.SourceSync
 import org.adaway.sources.UpdateProgress
+import org.adaway.system.DiagnosticLog
 import java.util.concurrent.atomic.AtomicBoolean
 
 enum class UpdateError { NO_NETWORK, DOWNLOAD_FAILED, APPLY_FAILED }
@@ -24,6 +25,7 @@ class BlockListUpdater(
     private val sourceSync: SourceSync,
     private val compiler: BlockListCompiler,
     private val statusMessages: StatusMessages,
+    private val diagnosticLog: DiagnosticLog,
     /** Called after each new final list, for the blocking in use to take it. */
     private val onApplied: suspend () -> Unit,
 ) {
@@ -68,6 +70,7 @@ class BlockListUpdater(
     /** Returns the error, or null on success or when another update is already running. */
     suspend fun syncAndApply(onlyPending: Boolean): UpdateError? = exclusive {
         val report = sourceSync.sync(onlyPending, ::publish)
+        diagnosticLog.info(TAG, "Sources synchronized: ${report.attempted - report.failed} of ${report.attempted}")
         val syncError = when {
             report.allFailed && report.noNetwork -> UpdateError.NO_NETWORK
             report.allFailed -> UpdateError.DOWNLOAD_FAILED
@@ -81,7 +84,8 @@ class BlockListUpdater(
         publish(UpdateProgress.Applying)
         try {
             compiler.compile()
-        } catch (_: RuntimeException) {
+        } catch (exception: RuntimeException) {
+            diagnosticLog.warn(TAG, "Final list not computed: $exception")
             return UpdateError.APPLY_FAILED
         }
         // Before the blocking takes it, so that its own steps come after.
@@ -107,5 +111,9 @@ class BlockListUpdater(
             mutableProgress.value = null
             mutex.unlock()
         }
+    }
+
+    private companion object {
+        const val TAG = "AdAwayUpdate"
     }
 }

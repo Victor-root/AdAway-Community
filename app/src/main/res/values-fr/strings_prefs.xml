@@ -54,8 +54,14 @@
     <string name="pref_vpn_diagnostic_log_enabled_description">Activez-la avant de reproduire un problème, puis exportez-la ci-dessous. Peut légèrement ralentir les appareils anciens. N’enregistre que des événements techniques du RPV/VPN, jamais de données personnelles.</string>
     <string name="pref_vpn_diagnostic_log">Journal de diagnostic</string>
     <string name="pref_vpn_diagnostic_log_description">Consulter, copier ou partager les erreurs et événements RPV/VPN récents. Utile pour signaler un problème.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Aucun événement n’a encore été enregistré. Activez « Enregistrer le journal de diagnostic » ci-dessus, puis essayez de reproduire le problème.</string>
+    <string name="pref_vpn_diagnostic_log_share">Partager</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Partager le journal de diagnostic</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copier</string>
+    <string name="pref_vpn_diagnostic_log_copied">Journal de diagnostic copié dans le presse-papiers.</string>
     <string name="pref_vpn_diagnostic_log_clear">Effacer le journal de diagnostic</string>
     <string name="pref_vpn_diagnostic_log_clear_description">Supprimer les événements enregistrés. À faire avant de reproduire un problème pour capturer une trace propre.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Journal de diagnostic effacé.</string>
     <string name="pref_root_open_hosts">Ouvrir le fichier hosts</string>
     <string name="hosts_file_unreadable">Le fichier hosts n’a pas pu être lu.</string>
     <string name="pref_hosts_redirection_summary">Définir où rediriger les hôtes bloqués</string>

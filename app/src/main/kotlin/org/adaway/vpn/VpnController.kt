@@ -10,8 +10,12 @@ import kotlinx.coroutines.flow.first
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.SettingsRepository
 import org.adaway.system.AlwaysOnVpn
+import org.adaway.system.DiagnosticLog
 import org.adaway.system.Notifications
 import java.util.concurrent.atomic.AtomicBoolean
+
+/** Tag of the VPN events in the logs. */
+internal const val VPN_LOG_TAG = "AdAwayVpn"
 
 enum class StartResult { STARTED, NOT_WANTED, CONSENT_REQUIRED, REFUSED }
 
@@ -22,7 +26,11 @@ enum class AlwaysOnMode { OFF, ON, LOCKDOWN, UNKNOWN }
  * Starts the VPN service and tells its status. The VPN runs only while the user wants it, as
  * stored in the settings: turning that off is enough for the running session to stop.
  */
-class VpnController(private val context: Context, private val settingsRepository: SettingsRepository) {
+class VpnController(
+    private val context: Context,
+    private val settingsRepository: SettingsRepository,
+    private val diagnosticLog: DiagnosticLog,
+) {
     private val mutableStatus = MutableStateFlow(VpnStatus.STOPPED)
     val status: StateFlow<VpnStatus> = mutableStatus.asStateFlow()
 
@@ -109,6 +117,7 @@ class VpnController(private val context: Context, private val settingsRepository
     }
 
     private fun consentRequired(): StartResult {
+        diagnosticLog.warn(VPN_LOG_TAG, "VPN consent missing")
         if (session == null) mutableStatus.value = VpnStatus.CONSENT_REQUIRED
         return StartResult.CONSENT_REQUIRED
     }
@@ -118,6 +127,7 @@ class VpnController(private val context: Context, private val settingsRepository
         StartResult.STARTED
     } catch (_: IllegalStateException) {
         // Android does not let an app in the background start a foreground service (Android 12+).
+        diagnosticLog.warn(VPN_LOG_TAG, "Start refused in the background")
         StartResult.REFUSED
     }
 }
