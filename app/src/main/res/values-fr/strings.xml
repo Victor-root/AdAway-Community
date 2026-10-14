@@ -209,4 +209,14 @@
     </plurals>
     <string name="lists_search_hint">Chercher un nom d’hôte…</string>
     <string name="rule_actions_title">Modifier l’entrée</string>
+    <string name="help_tab_faq">FAQ</string>
+    <string name="help_tab_problems">Problèmes</string>
+    <string name="help_tab_about">À propos</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_description">Fork communautaire non officiel d’AdAway.</string>
+    <string name="about_source_label">Code source (GitHub)</string>
+    <string name="about_issues_label">Signaler un problème</string>
+    <string name="about_releases_label">Versions publiées</string>
+    <string name="about_upstream_label">AdAway officiel (amont)</string>
+    <string name="about_license_label">Licence : GNU General Public License v3.0 ou supérieure (GPLv3+)</string>
 </resources>

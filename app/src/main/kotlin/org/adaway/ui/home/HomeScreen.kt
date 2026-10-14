@@ -69,6 +69,7 @@ class HomeScreenActions(
     val openLists: (RuleType) -> Unit,
     val openSources: () -> Unit,
     val openPreferences: () -> Unit,
+    val openHelp: () -> Unit,
     val sync: () -> Unit,
     val toggleBlocking: () -> Unit,
     val openPersistence: () -> Unit,
@@ -122,7 +123,7 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, outcome: UpdateOutco
                         BlockingStatusCard(state.blocking, detail, actions.toggleBlocking, modifier = Modifier.padding(bottom = 20.dp))
                     }
                 }
-                Tiles(actions.openPreferences)
+                Tiles(actions.openHelp, actions.openPreferences)
                 if (usesVpn) PersistenceCard(actions.openPersistence, modifier = Modifier.padding(top = 20.dp))
             }
         }
@@ -311,13 +312,13 @@ private fun outcomeText(outcome: UpdateOutcome): Int = when (outcome) {
     UpdateOutcome.APPLIED -> R.string.status_vpn_configuration_updated
 }
 
-/** The DNS log and help screens do not exist yet: their tiles are grayed out. */
+/** The DNS log screen does not exist yet: its tile is grayed out. */
 @Composable
-private fun Tiles(openPreferences: () -> Unit) {
+private fun Tiles(openHelp: () -> Unit, openPreferences: () -> Unit) {
     val colors = LocalAdAwayColors.current
     Row(modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         Tile(R.drawable.ic_outline_rule_24, colors.pastelBlue, R.string.home_tile_log, R.string.home_log_subtitle, onClick = null)
-        Tile(R.drawable.ic_help_24dp, colors.pastelAmber, R.string.home_tile_help, R.string.home_help_subtitle, onClick = null)
+        Tile(R.drawable.ic_help_24dp, colors.pastelAmber, R.string.home_tile_help, R.string.home_help_subtitle, onClick = openHelp)
         Tile(R.drawable.ic_settings_24dp, colors.pastelGrey, R.string.home_tile_preferences, R.string.home_preferences_subtitle, onClick = openPreferences)
     }
 }

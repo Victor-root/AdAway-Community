@@ -1,0 +1,31 @@
+<!-- Help content for AdAway Community (unofficial fork). Rendered as HTML in a TextView.
+Keep structure simple: h2 headings and p paragraphs, links via <a href>. -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>The VPN turns off by itself</h2>
+<p>This is almost always the system killing the VPN service to save battery, not a crash. It is common on OEM ROMs with aggressive power management (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, and others).</p>
+<p>In Android settings, find AdAway and: set <cite>battery optimization</cite> to <cite>Unrestricted</cite> (or <cite>Don't optimize</cite>), allow <cite>autostart</cite>/<cite>auto-launch</cite> if your ROM has it, and lock AdAway in the recent-apps list so it is not swiped away. Also make sure <cite>Enable at startup</cite> is on in AdAway's VPN preferences.</p>
+
+<h2>No internet or slow browsing right after switching between Wi-Fi and mobile</h2>
+<p>When the active network changes, the tunnel has to be rebuilt so DNS is resolved from the new network. If browsing stays broken, open <cite>Preferences, VPN, Reset VPN</cite> to rebuild the connection from scratch. If it keeps happening, capture a diagnostic log (below) and report it.</p>
+
+<h2>How do I export a diagnostic log?</h2>
+<p>Open <cite>Preferences, VPN, Diagnostic log</cite>. It records recent errors and VPN events (network switches, reconnections, failures), not your browsing history, just technical events. Use <cite>Copy</cite> or <cite>Share</cite> to send it when reporting a problem. Tip: <cite>Clear</cite> it first, then reproduce the issue, so the log is focused.</p>
+
+<h2>Chrome still shows ads</h2>
+<p>Chrome can use its own <cite>Secure DNS</cite> (DNS-over-HTTPS), which bypasses AdAway. In Chrome, open <cite>Settings, Privacy and security, Use secure DNS</cite> and turn it off. The same applies to any app or system <cite>Private DNS</cite> setting.</p>
+
+<h2>Some ads still get through, or an app still shows ads</h2>
+<p>A hostname may be missing from your sources, or the app bundles its ads so no request is made. Open the <cite>DNS log</cite> from the home screen to see what the app is querying, add the suspicious hostnames to your <cite>Blocked</cite> list, and verify nothing breaks. Some apps also cache ads after downloading them, so clearing that app's cache in Android settings can help.</p>
+
+<h2>An app stopped working after enabling AdAway</h2>
+<p>Some apps refuse to work when a hostname they need is blocked. Use the <cite>DNS log</cite> to find which hostname the app needs, add it to your <cite>Allowed</cite> list, and the app should work again. Known problematic apps are listed <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">here</a>.</p>
+
+<h2>Applying the hosts file fails (root mode)</h2>
+<p>Recent Android versions use a read-only <code>/system</code> partition, so AdAway cannot write there directly. If you use Magisk, enable the <cite>systemless hosts</cite> module, reboot, and apply again. If you do not use root, switch to VPN mode instead, which needs no system modification.</p>
+
+<h2>Still stuck?</h2>
+<p>Report the problem with a diagnostic log attached at <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+</body>
+</html>

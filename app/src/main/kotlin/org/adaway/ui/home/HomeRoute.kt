@@ -24,7 +24,7 @@ import org.adaway.ui.common.updateErrorTitle
 import org.adaway.ui.common.vpnRefusal
 import org.adaway.vpn.AlwaysOnMode
 
-class HomeNavigation(val openSources: () -> Unit, val openLists: (RuleType) -> Unit, val openPreferences: () -> Unit)
+class HomeNavigation(val openSources: () -> Unit, val openLists: (RuleType) -> Unit, val openPreferences: () -> Unit, val openHelp: () -> Unit)
 
 @Composable
 fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
@@ -63,6 +63,7 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
                 openLists = navigation.openLists,
                 openSources = navigation.openSources,
                 openPreferences = navigation.openPreferences,
+                openHelp = navigation.openHelp,
                 sync = viewModel::sync,
                 toggleBlocking = actions.toggle,
                 openPersistence = actions.openPersistence,
@@ -70,14 +71,13 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
             ),
         )
     }
-    error?.let { UpdateErrorDialog(it, onRetry = viewModel::sync, onDismiss = viewModel::dismissError) }
+    error?.let { UpdateErrorDialog(it, onRetry = viewModel::sync, onHelp = navigation.openHelp, onDismiss = viewModel::dismissError) }
     refusal?.let { VpnRefusalDialog(it, onDismiss = { refusal = null }) }
     persistenceMode?.let { VpnPersistenceDialog(isTelevision, it, onDismiss = { persistenceMode = null }) }
 }
 
-/** The help screen does not exist yet: its button is grayed out. */
 @Composable
-private fun UpdateErrorDialog(error: UpdateError, onRetry: () -> Unit, onDismiss: () -> Unit) {
+private fun UpdateErrorDialog(error: UpdateError, onRetry: () -> Unit, onHelp: () -> Unit, onDismiss: () -> Unit) {
     val canRetry = error != UpdateError.APPLY_FAILED
     AdAwayAlertDialog(
         onDismissRequest = onDismiss,
@@ -89,6 +89,6 @@ private fun UpdateErrorDialog(error: UpdateError, onRetry: () -> Unit, onDismiss
         } else {
             DialogButton(stringResource(R.string.close), onClick = onDismiss)
         },
-        dismissButton = DialogButton(stringResource(R.string.help), onClick = {}, enabled = false),
+        dismissButton = DialogButton(stringResource(R.string.help), onClick = { onDismiss(); onHelp() }),
     )
 }

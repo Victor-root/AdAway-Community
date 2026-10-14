@@ -11,6 +11,7 @@ import androidx.navigation.toRoute
 import kotlinx.serialization.Serializable
 import org.adaway.data.db.RuleType
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.help.HelpScreen
 import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
 import org.adaway.ui.lists.ListsRoute
@@ -44,6 +45,9 @@ private data class Lists(val type: RuleType)
 private data object Preferences
 
 @Serializable
+private data object Help
+
+@Serializable
 private data object Updates
 
 @Serializable
@@ -74,6 +78,7 @@ fun AdAwayApp(isTelevision: Boolean) {
                         openSources = { navController.navigate(Sources) },
                         openLists = { type -> navController.navigate(Lists(type)) },
                         openPreferences = { navController.navigate(Preferences) },
+                        openHelp = { navController.navigate(Help) },
                     ),
                 )
             }
@@ -110,6 +115,7 @@ fun AdAwayApp(isTelevision: Boolean) {
                     ),
                 )
             }
+            composable<Help> { HelpScreen(onBack = navController::popBackStack) }
             composable<Updates> { UpdatesScreen(onBack = navController::popBackStack) }
             composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
         }

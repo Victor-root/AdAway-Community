@@ -1,0 +1,31 @@
+<!-- Contenu d'aide pour AdAway Community (fork non officiel). Rendu en HTML dans un TextView.
+Garder une structure simple : titres h2 et paragraphes p, liens via <a href>. -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Le RPV/VPN se coupe tout seul</h2>
+<p>C'est presque toujours le système qui coupe le service RPV/VPN pour économiser la batterie, pas un plantage. C'est fréquent sur les ROM constructeurs à gestion d'énergie agressive (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, etc.).</p>
+<p>Dans les paramètres Android, trouvez AdAway et : réglez l'<cite>optimisation de la batterie</cite> sur <cite>Sans restriction</cite> (ou <cite>Ne pas optimiser</cite>), autorisez le <cite>démarrage automatique</cite> si votre ROM le propose, et verrouillez AdAway dans la liste des applications récentes pour ne pas le balayer. Vérifiez aussi que <cite>Activer au démarrage</cite> est coché dans les préférences RPV/VPN d'AdAway.</p>
+
+<h2>Pas d'internet ou navigation lente juste après un passage Wi-Fi ↔ données mobiles</h2>
+<p>Quand le réseau actif change, le tunnel doit être reconstruit pour que le DNS soit résolu depuis le nouveau réseau. Si la navigation reste cassée, ouvrez <cite>Préférences › VPN › Réinitialiser le RPV/VPN</cite> pour reconstruire la connexion. Si cela se reproduit, capturez un journal de diagnostic (ci-dessous) et signalez-le.</p>
+
+<h2>Comment exporter un journal de diagnostic ?</h2>
+<p>Ouvrez <cite>Préférences › VPN › Journal de diagnostic</cite>. Il enregistre les erreurs et événements RPV/VPN récents (changements de réseau, reconnexions, échecs), pas votre historique de navigation, seulement des événements techniques. Utilisez <cite>Copier</cite> ou <cite>Partager</cite> pour l'envoyer lors d'un signalement. Astuce : <cite>Effacez</cite>-le d'abord, puis reproduisez le problème, pour un journal ciblé.</p>
+
+<h2>Chrome affiche encore des publicités</h2>
+<p>Chrome peut utiliser son propre <cite>DNS sécurisé</cite> (DNS-over-HTTPS), qui contourne AdAway. Dans Chrome, ouvrez <cite>Paramètres › Confidentialité et sécurité › Utiliser un DNS sécurisé</cite> et désactivez-le. Cela vaut aussi pour tout paramètre <cite>DNS privé</cite> d'une application ou du système.</p>
+
+<h2>Certaines publicités passent encore, ou une application en affiche</h2>
+<p>Un domaine peut manquer dans vos sources, ou l'application intègre ses publicités sans faire de requête. Ouvrez le <cite>journal DNS</cite> depuis l'accueil pour voir ce que l'application interroge, ajoutez les domaines suspects à votre liste <cite>Bloqués</cite>, et vérifiez que rien ne casse. Certaines applications gardent aussi les publicités en cache après les avoir téléchargées, donc vider le cache de l'application dans les paramètres Android peut aider.</p>
+
+<h2>Une application ne fonctionne plus après l'activation d'AdAway</h2>
+<p>Certaines applications refusent de fonctionner quand un domaine dont elles ont besoin est bloqué. Utilisez le <cite>journal DNS</cite> pour trouver ce domaine, ajoutez-le à votre liste <cite>Autorisés</cite>, et l'application devrait refonctionner. Les applications problématiques connues sont listées <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">ici</a>.</p>
+
+<h2>L'application du fichier hosts échoue (mode root)</h2>
+<p>Les versions récentes d'Android utilisent une partition <code>/system</code> en lecture seule, donc AdAway ne peut pas y écrire directement. Si vous utilisez Magisk, activez le module <cite>systemless hosts</cite>, redémarrez, puis réappliquez. Sans root, utilisez plutôt le mode RPV/VPN, qui ne modifie pas le système.</p>
+
+<h2>Toujours bloqué ?</h2>
+<p>Signalez le problème avec un journal de diagnostic joint sur <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+</body>
+</html>
