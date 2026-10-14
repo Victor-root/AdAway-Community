@@ -2,8 +2,10 @@ package org.adaway.ui.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.ColorScheme as MobileColorScheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
@@ -18,12 +20,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import org.adaway.data.settings.ThemeMode
-import androidx.compose.material3.darkColorScheme as mobileDarkColorScheme
-import androidx.compose.material3.lightColorScheme as mobileLightColorScheme
-import androidx.tv.material3.ColorScheme as TvColorScheme
-import androidx.tv.material3.MaterialTheme as TvMaterialTheme
-import androidx.tv.material3.darkColorScheme as tvDarkColorScheme
-import androidx.tv.material3.lightColorScheme as tvLightColorScheme
 
 /** Brand red of the headers, the welcome screens and the launcher icons, in both themes. */
 val BrandRed = Color(0xFFB71C1C)
@@ -133,7 +129,7 @@ private val DarkPalette = Palette(
     surfaceContainerHighest = Color(0xFF3D3231),
 )
 
-private fun Palette.applyTo(base: MobileColorScheme) = base.copy(
+private fun Palette.applyTo(base: ColorScheme) = base.copy(
     primary = primary, onPrimary = onPrimary,
     primaryContainer = primaryContainer, onPrimaryContainer = onPrimaryContainer,
     secondary = secondary, onSecondary = onSecondary,
@@ -150,22 +146,6 @@ private fun Palette.applyTo(base: MobileColorScheme) = base.copy(
     surfaceContainerLowest = surfaceContainerLowest, surfaceContainerLow = surfaceContainerLow,
     surfaceContainer = surfaceContainer, surfaceContainerHigh = surfaceContainerHigh,
     surfaceContainerHighest = surfaceContainerHighest,
-)
-
-private fun Palette.applyTo(base: TvColorScheme) = base.copy(
-    primary = primary, onPrimary = onPrimary,
-    primaryContainer = primaryContainer, onPrimaryContainer = onPrimaryContainer,
-    secondary = secondary, onSecondary = onSecondary,
-    secondaryContainer = secondaryContainer, onSecondaryContainer = onSecondaryContainer,
-    tertiary = tertiary, onTertiary = onTertiary,
-    background = background, onBackground = onBackground,
-    surface = surface, onSurface = onSurface,
-    surfaceVariant = surfaceVariant, onSurfaceVariant = onSurfaceVariant,
-    error = error, onError = onError,
-    errorContainer = errorContainer, onErrorContainer = onErrorContainer,
-    border = outline, borderVariant = outlineVariant,
-    inverseSurface = inverseSurface, inverseOnSurface = inverseOnSurface, inversePrimary = inversePrimary,
-    surfaceTint = primary,
 )
 
 /**
@@ -188,7 +168,7 @@ fun RedNavigationBar() {
     }
 }
 
-/** Applies the app colors to both the mobile and the TV Material components. */
+/** Applies the app colors to the Material components. */
 @Composable
 fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composable () -> Unit) {
     val dark = when (themeMode ?: if (isTelevision) ThemeMode.DARK else ThemeMode.SYSTEM) {
@@ -209,17 +189,12 @@ fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composab
         }
     }
     val palette = if (dark) DarkPalette else LightPalette
-    val mobileColors = remember(dark) {
-        palette.applyTo(if (dark) mobileDarkColorScheme() else mobileLightColorScheme())
-    }
-    val tvColors = remember(dark) { palette.applyTo(if (dark) tvDarkColorScheme() else tvLightColorScheme()) }
-    MaterialTheme(colorScheme = mobileColors) {
-        TvMaterialTheme(colorScheme = tvColors) {
-            CompositionLocalProvider(
-                LocalAdAwayColors provides if (dark) DarkAdAwayColors else LightAdAwayColors,
-                LocalNavigationBarAppearance provides navigationBar,
-                content = content,
-            )
-        }
+    val colorScheme = remember(dark) { palette.applyTo(if (dark) darkColorScheme() else lightColorScheme()) }
+    MaterialTheme(colorScheme = colorScheme) {
+        CompositionLocalProvider(
+            LocalAdAwayColors provides if (dark) DarkAdAwayColors else LightAdAwayColors,
+            LocalNavigationBarAppearance provides navigationBar,
+            content = content,
+        )
     }
 }

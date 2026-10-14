@@ -12,4 +12,7 @@
     <string name="log_redirect">Ajouter une entrée à la liste des redirections</string>
     <string name="log_redirect_dialog_title">Rediriger un domaine</string>
     <string name="log_capture_failed">La capture DNS n’a pas pu démarrer.</string>
+    <string name="log_start_recording_button">Démarrer l’enregistrement</string>
+    <string name="log_start_recording_vpn_inactive">Démarrer l’enregistrement (VPN non actif)</string>
+    <string name="log_stop_recording">Arrêter l’enregistrement</string>
 </resources>

@@ -21,6 +21,7 @@ import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -34,6 +35,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -49,8 +51,6 @@ fun AdAwayTextField(
     singleLine: Boolean = true,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
-    val colors = LocalAdAwayColors.current
-    val box = colors.textPrimary.copy(alpha = 0.12f)
     TextField(
         value = value,
         onValueChange = onValueChange,
@@ -60,25 +60,59 @@ fun AdAwayTextField(
         supportingText = error?.let { { Text(it) } },
         keyboardOptions = keyboardOptions,
         textStyle = AdAwayType.subtitle1,
-        shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp),
-        colors = TextFieldDefaults.colors(
-            focusedContainerColor = box,
-            unfocusedContainerColor = box,
-            errorContainerColor = box,
-            focusedTextColor = colors.textPrimary,
-            unfocusedTextColor = colors.textPrimary,
-            errorTextColor = colors.textPrimary,
-            cursorColor = colors.primary,
-            focusedIndicatorColor = colors.primary,
-            unfocusedIndicatorColor = colors.textPrimary.copy(alpha = 0.42f),
-            focusedLabelColor = colors.primary,
-            unfocusedLabelColor = colors.textPrimary.copy(alpha = 0.6f),
-            errorIndicatorColor = ErrorRed,
-            errorLabelColor = ErrorRed,
-            errorSupportingTextColor = ErrorRed,
-            errorCursorColor = ErrorRed,
-        ),
+        shape = TextFieldShape,
+        colors = adAwayTextFieldColors(),
         modifier = modifier.fillMaxWidth(),
+    )
+}
+
+/** As the other one, with the [value] holding the cursor position. */
+@Composable
+fun AdAwayTextField(
+    value: TextFieldValue,
+    onValueChange: (TextFieldValue) -> Unit,
+    label: String,
+    modifier: Modifier = Modifier,
+    error: String? = null,
+    keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+) {
+    TextField(
+        value = value,
+        onValueChange = onValueChange,
+        label = { Text(label) },
+        singleLine = true,
+        isError = error != null,
+        supportingText = error?.let { { Text(it) } },
+        keyboardOptions = keyboardOptions,
+        textStyle = AdAwayType.subtitle1,
+        shape = TextFieldShape,
+        colors = adAwayTextFieldColors(),
+        modifier = modifier.fillMaxWidth(),
+    )
+}
+
+private val TextFieldShape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp)
+
+@Composable
+private fun adAwayTextFieldColors(): TextFieldColors {
+    val colors = LocalAdAwayColors.current
+    val box = colors.textPrimary.copy(alpha = 0.12f)
+    return TextFieldDefaults.colors(
+        focusedContainerColor = box,
+        unfocusedContainerColor = box,
+        errorContainerColor = box,
+        focusedTextColor = colors.textPrimary,
+        unfocusedTextColor = colors.textPrimary,
+        errorTextColor = colors.textPrimary,
+        cursorColor = colors.primary,
+        focusedIndicatorColor = colors.primary,
+        unfocusedIndicatorColor = colors.textPrimary.copy(alpha = 0.42f),
+        focusedLabelColor = colors.primary,
+        unfocusedLabelColor = colors.textPrimary.copy(alpha = 0.6f),
+        errorIndicatorColor = ErrorRed,
+        errorLabelColor = ErrorRed,
+        errorSupportingTextColor = ErrorRed,
+        errorCursorColor = ErrorRed,
     )
 }
 
@@ -142,12 +176,16 @@ fun adAwayCheckboxColors() = LocalAdAwayColors.current.let { colors ->
     CheckboxDefaults.colors(checkedColor = colors.primary, uncheckedColor = colors.textSecondary, checkmarkColor = colors.onPrimary)
 }
 
-/** The plain 6.x edit text: the text over an underline that thickens and turns red with the focus. */
+/**
+ * The plain 6.x edit text: the text over an underline that thickens and turns red with the focus,
+ * and the [hint] while it is empty.
+ */
 @Composable
 fun AdAwayEditText(
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
+    hint: String? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
     val colors = LocalAdAwayColors.current
@@ -161,6 +199,12 @@ fun AdAwayEditText(
         textStyle = AdAwayType.subtitle1.copy(color = colors.textPrimary),
         cursorBrush = SolidColor(colors.primary),
         interactionSource = interactions,
+        decorationBox = { field ->
+            Box {
+                if (value.isEmpty() && hint != null) Text(hint, style = AdAwayType.subtitle1, color = colors.textSecondary)
+                field()
+            }
+        },
         modifier = modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp)

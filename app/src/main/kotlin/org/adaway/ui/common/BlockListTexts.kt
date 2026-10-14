@@ -1,24 +1,23 @@
 package org.adaway.ui.common
 
 import android.content.res.Resources
-import android.icu.text.CompactDecimalFormat
-import android.icu.text.NumberFormat
-import android.text.format.DateUtils
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import kotlin.math.pow
 import kotlin.math.roundToLong
 import org.adaway.R
+import org.adaway.blocklist.StatusMessage
 import org.adaway.blocklist.UpdateError
+import org.adaway.blocklist.UpdateOutcome
 import org.adaway.data.db.BuiltInSource
 import org.adaway.data.db.RuleType
 import org.adaway.data.db.SourceEntity
 import org.adaway.data.db.SyncError
 import org.adaway.root.RootError
+import org.adaway.root.RootStep
 import org.adaway.sources.UpdateProgress
 
 @StringRes
@@ -36,29 +35,6 @@ fun sourceLabel(source: SourceEntity, resources: Resources): String =
 
 @Composable
 fun sourceLabel(source: SourceEntity): String = sourceLabel(source, LocalResources.current)
-
-@Composable
-fun sourceStatus(source: SourceEntity): String {
-    val error = source.syncError
-    val syncedAt = source.syncedAt
-    return when {
-        !source.enabled -> stringResource(R.string.source_status_disabled)
-        error != null -> stringResource(R.string.source_status_failed, syncErrorText(error, source.syncErrorStatus))
-        syncedAt == null -> stringResource(R.string.source_status_never_synced)
-        source.updateAvailable -> stringResource(R.string.source_status_update_available)
-        else -> {
-            val elapsed = System.currentTimeMillis() - syncedAt * 1000
-            val checkedAt = if (elapsed < DateUtils.MINUTE_IN_MILLIS) {
-                stringResource(R.string.just_now)
-            } else {
-                DateUtils.getRelativeTimeSpanString(syncedAt * 1000, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS)
-                    .toString()
-                    .replaceFirstChar { it.lowercase(LocalConfiguration.current.locales[0]) }
-            }
-            stringResource(R.string.source_status_up_to_date, checkedAt)
-        }
-    }
-}
 
 /**
  * The update status of a source, as the 6.x source list tells it: how long the online version has
@@ -127,21 +103,31 @@ fun syncErrorText(error: SyncError, httpStatus: Int?): String = when (error) {
 }
 
 @Composable
-fun ruleCountText(count: Int): String {
-    val locale = LocalConfiguration.current.locales[0]
-    val compact = CompactDecimalFormat.getInstance(locale, CompactDecimalFormat.CompactStyle.SHORT).format(count)
-    return pluralStringResource(R.plurals.source_rule_count, count, compact)
-}
-
-@Composable
-fun formatCount(count: Long): String = NumberFormat.getIntegerInstance(LocalConfiguration.current.locales[0]).format(count)
-
-@Composable
 fun updateProgressText(progress: UpdateProgress): String = when (progress) {
     UpdateProgress.Checking -> stringResource(R.string.progress_checking)
     is UpdateProgress.Downloading -> stringResource(R.string.progress_downloading, sourceLabel(progress.source))
     is UpdateProgress.Reading -> stringResource(R.string.progress_reading, sourceLabel(progress.source))
     UpdateProgress.Applying -> stringResource(R.string.progress_applying)
+}
+
+/** The VPN tells the list it took; the root blocking tells its own steps. */
+@Composable
+fun statusMessageText(message: StatusMessage, usesVpn: Boolean): String? = when (message) {
+    is StatusMessage.Update -> updateProgressText(message.progress)
+    is StatusMessage.Outcome -> when (message.outcome) {
+        UpdateOutcome.UPDATE_AVAILABLE -> stringResource(R.string.status_update_available)
+        UpdateOutcome.NO_UPDATE_FOUND -> stringResource(R.string.status_no_update_found)
+        UpdateOutcome.APPLIED -> if (usesVpn) stringResource(R.string.status_vpn_configuration_updated) else null
+    }
+    is StatusMessage.Root -> stringResource(
+        when (message.step) {
+            RootStep.CREATING -> R.string.status_create_new_hosts
+            RootStep.COPYING -> R.string.status_copy_new_hosts
+            RootStep.INSTALLED -> R.string.status_hosts_updated
+            RootStep.REVERTING -> R.string.status_revert
+            RootStep.REVERTED -> R.string.status_revert_done
+        },
+    )
 }
 
 @Composable

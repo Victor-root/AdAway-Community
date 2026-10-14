@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -61,6 +62,11 @@ class DnsLogViewModel(private val container: AppContainer) : ViewModel() {
     val blockedRequestsIgnored: StateFlow<Boolean> = container.settingsRepository.settings
         .map { it.blockingMethod == BlockingMethod.ROOT }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), false)
+
+    /** The VPN blocking is off, so its tunnel notes no names. */
+    val vpnInactive: StateFlow<Boolean> = combine(container.settingsRepository.settings, container.vpnController.status) { settings, status ->
+        settings.blockingMethod == BlockingMethod.VPN && !status.isServiceAlive()
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), false)
 
     fun refresh() {
         mutableRefreshing.value = true

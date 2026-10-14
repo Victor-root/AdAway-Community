@@ -8,7 +8,6 @@
     <string name="vpn_settings_unavailable">Les réglages VPN ne sont pas accessibles sur cet appareil.</string>
     <string name="close">Fermer</string>
 
-    <string name="home_sources">Listes de blocage</string>
     <string name="home_legacy_import_failed">AdAway n\'a pas pu récupérer les listes de blocage et vos listes de la version précédente. Si vous avez un fichier de sauvegarde, vous pouvez le restaurer depuis les réglages.</string>
     <string name="dismiss">Fermer</string>
     <string name="notification_channel_source_updates">Mises à jour des listes de blocage</string>
@@ -17,11 +16,8 @@
     <string name="notification_source_update_text">De nouvelles versions de vos listes de blocage peuvent être téléchargées.</string>
     <string name="add">Ajouter</string>
     <string name="apply">Appliquer</string>
-    <string name="apply_in_progress">Application de la nouvelle configuration…</string>
-    <string name="apply_needed">Votre configuration a changé. Appliquez-la pour l\'utiliser.</string>
     <string name="back">Retour</string>
     <string name="cancel">Annuler</string>
-    <string name="copy_host">Copier le nom</string>
     <string name="delete">Supprimer</string>
     <string name="disable">Désactiver</string>
     <string name="edit">Modifier</string>
@@ -38,10 +34,6 @@
     <string name="lists_search">Filtrer les hôtes</string>
     <string name="lists_search_clear">Effacer</string>
     <string name="lists_show_source_rules">Activer/désactiver les sources</string>
-    <string name="lists_user_rules">Vos entrées</string>
-    <string name="lists_user_rules_empty">Aucune entrée pour l\'instant.</string>
-    <string name="lists_source_rules">Depuis les listes de blocage</string>
-    <string name="lists_source_rules_empty">Aucune entrée.</string>
     <string name="progress_checking">Vérification de la présence de mises à jour</string>
     <string name="progress_downloading">Téléchargement de la source %1$s</string>
     <string name="progress_reading">Analyse de la source %1$s</string>
@@ -60,16 +52,13 @@
     <string name="rule_invalid_address">Cette adresse IP n\'est pas valide.</string>
     <string name="rule_duplicate">Ce nom est déjà dans vos listes\u00a0: %1$s.</string>
     <string name="rule_deleted">Entrée supprimée</string>
-    <string name="rule_delete_confirm_title">Supprimer cette entrée\u00a0?</string>
     <string name="rules_blocked">Bloqués</string>
     <string name="rules_allowed">Autorisés</string>
     <string name="rules_redirected">Redirigés</string>
     <string name="sources_title">Sources de fichiers hosts</string>
-    <string name="sources_empty">Aucune liste de blocage pour l\'instant. Ajoutez-en une avec le bouton +.</string>
     <string name="source_add">Ajouter une source</string>
     <string name="source_edit">Modifier une source</string>
     <string name="source_deleted">Source supprimée</string>
-    <string name="source_delete_confirm_title">Supprimer cette liste\u00a0?</string>
     <string name="source_label">Étiquette</string>
     <string name="source_label_required">Une étiquette est nécessaire</string>
     <string name="source_format">Format des listes</string>
@@ -86,11 +75,7 @@
     <string name="source_redirects_warning">Autoriser les hôtes redirigés peut entraîner des problèmes de sécurité. N’utilisez ces paramètres que sur une source de confiance, car du trafic sensible pourrait être redirigé à votre insu vers n’importe quel serveur.</string>
     <string name="source_steven_black">Fichier hosts unifié de StevenBlack</string>
     <string name="source_peter_lowe">Fichier hosts de Pete Lowe</string>
-    <string name="source_status_disabled">Désactivée</string>
     <string name="source_status_failed">Échec de la dernière mise à jour\u00a0: %1$s</string>
-    <string name="source_status_never_synced">Pas encore téléchargée</string>
-    <string name="source_status_update_available">Mise à jour disponible</string>
-    <string name="source_status_up_to_date">À jour, vérifiée %1$s</string>
     <string name="sync_error_no_network">pas de connexion à Internet</string>
     <string name="sync_error_network">le serveur est injoignable</string>
     <string name="sync_error_http_status">le serveur a répondu par l\'erreur %1$d</string>
@@ -118,22 +103,6 @@
         <item quantity="many">%1$d sources à jour</item>
         <item quantity="other">%1$d sources à jour</item>
     </plurals>
-    <plurals name="home_sources_pending">
-        <item quantity="one">%1$d liste à mettre à jour</item>
-        <item quantity="many">%1$d listes à mettre à jour</item>
-        <item quantity="other">%1$d listes à mettre à jour</item>
-    </plurals>
-    <plurals name="home_sources_failed">
-        <item quantity="one">%1$d liste en échec</item>
-        <item quantity="many">%1$d listes en échec</item>
-        <item quantity="other">%1$d listes en échec</item>
-    </plurals>
-    <plurals name="source_rule_count">
-        <item quantity="one">%1$s entrée</item>
-        <item quantity="many">%1$s entrées</item>
-        <item quantity="other">%1$s entrées</item>
-    </plurals>
-    <string name="just_now">à l\'instant</string>
 
     <string name="notification_channel_vpn">RPV/VPN</string>
     <string name="notification_channel_vpn_description">Notifications de l\'exécution du RPV/VPN</string>
@@ -237,4 +206,5 @@
     <string name="shortcut_preferences">Préférences</string>
     <string name="permission_send_command_label">Envoyer des commandes à AdAway</string>
     <string name="permission_send_command_description">Permettre d’envoyer des commandes à AdAway telles qu’activer ou désactiver le blocage des publicités pour le système entier</string>
+    <string name="menu_refresh">Actualiser</string>
 </resources>

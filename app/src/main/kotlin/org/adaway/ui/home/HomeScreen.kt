@@ -34,6 +34,7 @@ import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -51,22 +52,22 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.BuildConfig
 import org.adaway.R
 import org.adaway.blocklist.StatusMessage
-import org.adaway.blocklist.UpdateOutcome
 import org.adaway.data.db.RuleType
 import org.adaway.data.settings.BlockingMethod
-import org.adaway.root.RootStep
 import org.adaway.sources.UpdateProgress
 import org.adaway.update.AppRelease
-import org.adaway.ui.common.updateProgressText
+import org.adaway.ui.common.PastelIcon
+import org.adaway.ui.common.statusMessageText
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.Pastel
 import org.adaway.vpn.VpnStatus
 
-class HomeScreenActions(
+private class HomeScreenActions(
     val openLists: (RuleType) -> Unit,
     val openSources: () -> Unit,
     val openPreferences: () -> Unit,
@@ -89,7 +90,32 @@ private val HomeCardShape = RoundedCornerShape(22.dp)
 
 /** Phone home screen: header, counters straddling it, a scrolling zone of cards, and the bottom bar. */
 @Composable
-fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: StatusMessage?, appUpdate: AppRelease?, actions: HomeScreenActions) {
+fun HomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNavigation, blocking: BlockingActions) {
+    val progress by viewModel.progress.collectAsStateWithLifecycle()
+    val statusMessage by viewModel.statusMessage.collectAsStateWithLifecycle()
+    val appUpdate by viewModel.appUpdate.collectAsStateWithLifecycle()
+    HomeLayout(
+        state = state,
+        progress = progress,
+        statusMessage = statusMessage,
+        appUpdate = appUpdate,
+        actions = HomeScreenActions(
+            openLists = navigation.openLists,
+            openSources = navigation.openSources,
+            openPreferences = navigation.openPreferences,
+            openHelp = navigation.openHelp,
+            openLog = navigation.openLog,
+            openUpdate = navigation.openUpdate,
+            sync = viewModel::sync,
+            toggleBlocking = blocking.toggle,
+            openPersistence = blocking.openPersistence,
+            dismissLegacyImportFailure = viewModel::dismissLegacyImportFailure,
+        ),
+    )
+}
+
+@Composable
+private fun HomeLayout(state: HomeState, progress: UpdateProgress?, statusMessage: StatusMessage?, appUpdate: AppRelease?, actions: HomeScreenActions) {
     val colors = LocalAdAwayColors.current
     val statusBar = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
     val navigationBar = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
@@ -123,7 +149,7 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, statusMessage: Statu
                 if (state.legacyImportFailed) {
                     LegacyImportFailedCard(actions.dismissLegacyImportFailure, modifier = Modifier.padding(bottom = 20.dp))
                 }
-                SourcesCard(state.sources, busy, statusMessage?.let { statusText(it, usesVpn) }, actions, modifier = Modifier.padding(bottom = 20.dp))
+                SourcesCard(state.sources, busy, statusMessage?.let { statusMessageText(it, usesVpn) }, actions, modifier = Modifier.padding(bottom = 20.dp))
                 if (usesVpn) {
                     blockingDetail(state.blocking.vpnStatus)?.let { detail ->
                         BlockingStatusCard(state.blocking, detail, actions.toggleBlocking, modifier = Modifier.padding(bottom = 20.dp))
@@ -315,26 +341,6 @@ private fun SourcesCard(stats: SourceStats, busy: Boolean, message: String?, act
     }
 }
 
-/** The VPN tells the list it took; the root blocking tells its own steps. */
-@Composable
-private fun statusText(message: StatusMessage, usesVpn: Boolean): String? = when (message) {
-    is StatusMessage.Update -> updateProgressText(message.progress)
-    is StatusMessage.Outcome -> when (message.outcome) {
-        UpdateOutcome.UPDATE_AVAILABLE -> stringResource(R.string.status_update_available)
-        UpdateOutcome.NO_UPDATE_FOUND -> stringResource(R.string.status_no_update_found)
-        UpdateOutcome.APPLIED -> if (usesVpn) stringResource(R.string.status_vpn_configuration_updated) else null
-    }
-    is StatusMessage.Root -> stringResource(
-        when (message.step) {
-            RootStep.CREATING -> R.string.status_create_new_hosts
-            RootStep.COPYING -> R.string.status_copy_new_hosts
-            RootStep.INSTALLED -> R.string.status_hosts_updated
-            RootStep.REVERTING -> R.string.status_revert
-            RootStep.REVERTED -> R.string.status_revert_done
-        },
-    )
-}
-
 @Composable
 private fun Tiles(actions: HomeScreenActions) {
     val colors = LocalAdAwayColors.current
@@ -471,28 +477,5 @@ private fun HomeCard(onClick: (() -> Unit)?, modifier: Modifier, content: @Compo
         Surface(modifier = modifier, shape = HomeCardShape, color = colors.homeCard, shadowElevation = 2.dp, content = content)
     } else {
         Surface(onClick = onClick, modifier = modifier, shape = HomeCardShape, color = colors.homeCard, shadowElevation = 2.dp, content = content)
-    }
-}
-
-/** An icon on a pastel disc. */
-@Composable
-private fun PastelIcon(
-    @DrawableRes icon: Int,
-    pastel: Pastel,
-    contentDescription: String?,
-    modifier: Modifier = Modifier,
-    size: Dp = BadgeSize,
-    padding: Dp = 12.dp,
-    onClick: (() -> Unit)? = null,
-) {
-    Box(
-        modifier = modifier
-            .size(size)
-            .clip(CircleShape)
-            .background(pastel.background)
-            .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
-            .padding(padding),
-    ) {
-        Icon(painterResource(icon), contentDescription = contentDescription, tint = pastel.foreground, modifier = Modifier.fillMaxSize())
     }
 }

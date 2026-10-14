@@ -37,15 +37,16 @@ class HomeNavigation(
     val openUpdate: () -> Unit,
 )
 
+/**
+ * The home logic shared by the phone and TV screens: the VPN consent, the blocking actions and the
+ * dialogs. [screen] draws the home of the device.
+ */
 @Composable
-fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
+fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation, screen: @Composable (HomeState, HomeViewModel, BlockingActions) -> Unit) {
     val viewModel = appViewModel(::HomeViewModel)
     val state by viewModel.state.collectAsStateWithLifecycle()
-    val progress by viewModel.progress.collectAsStateWithLifecycle()
-    val statusMessage by viewModel.statusMessage.collectAsStateWithLifecycle()
     val error by viewModel.error.collectAsStateWithLifecycle()
     val rootError by viewModel.rootError.collectAsStateWithLifecycle()
-    val appUpdate by viewModel.appUpdate.collectAsStateWithLifecycle()
     val consentPrompt by viewModel.consentPrompt.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var refusal by remember { mutableStateOf<VpnRefusal?>(null) }
@@ -65,38 +66,20 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
         }
     }
     val current = state ?: return
-    val actions = BlockingActions(
-        toggle = {
-            when {
-                current.blocking.active -> viewModel.disableBlocking()
-                current.blocking.method == BlockingMethod.ROOT -> viewModel.enableBlocking()
-                else -> requestConsent()
-            }
-        },
-        openPersistence = { persistenceMode = viewModel.alwaysOnMode() },
+    screen(
+        current,
+        viewModel,
+        BlockingActions(
+            toggle = {
+                when {
+                    current.blocking.active -> viewModel.disableBlocking()
+                    current.blocking.method == BlockingMethod.ROOT -> viewModel.enableBlocking()
+                    else -> requestConsent()
+                }
+            },
+            openPersistence = { persistenceMode = viewModel.alwaysOnMode() },
+        ),
     )
-    if (isTelevision) {
-        TvHomeScreen(current, progress, viewModel, navigation, actions)
-    } else {
-        HomeScreen(
-            state = current,
-            progress = progress,
-            statusMessage = statusMessage,
-            appUpdate = appUpdate,
-            actions = HomeScreenActions(
-                openLists = navigation.openLists,
-                openSources = navigation.openSources,
-                openPreferences = navigation.openPreferences,
-                openHelp = navigation.openHelp,
-                openLog = navigation.openLog,
-                openUpdate = navigation.openUpdate,
-                sync = viewModel::sync,
-                toggleBlocking = actions.toggle,
-                openPersistence = actions.openPersistence,
-                dismissLegacyImportFailure = viewModel::dismissLegacyImportFailure,
-            ),
-        )
-    }
     error?.let { UpdateErrorDialog(it, onRetry = viewModel::sync, onHelp = navigation.openHelp, onDismiss = viewModel::dismissError) }
     rootError?.let { ErrorDialog(rootErrorTitle(it), rootErrorText(it), confirmButton = null, onHelp = navigation.openHelp, onDismiss = viewModel::dismissRootError) }
     refusal?.let { VpnRefusalDialog(it, onDismiss = { refusal = null }) }

@@ -220,7 +220,7 @@ private fun RedirectDialog(onRedirect: (String) -> Unit, onDismiss: () -> Unit) 
 }
 
 @Composable
-private fun DnsLogErrorDialog(error: DnsLogError, onDismiss: () -> Unit) {
+fun DnsLogErrorDialog(error: DnsLogError, onDismiss: () -> Unit) {
     AdAwayAlertDialog(
         onDismissRequest = onDismiss,
         title = stringResource(if (error == DnsLogError.ROOT_DENIED) R.string.root_error_denied_title else R.string.shortcut_dns_requests),

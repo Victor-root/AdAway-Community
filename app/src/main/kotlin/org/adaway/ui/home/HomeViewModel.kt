@@ -16,6 +16,7 @@ import org.adaway.blocking.isBlockingActive
 import org.adaway.blocklist.BlockListSummary
 import org.adaway.data.db.SourceEntity
 import org.adaway.data.settings.BlockingMethod
+import org.adaway.data.settings.ThemeMode
 import org.adaway.root.RootState
 import org.adaway.update.AppRelease
 import org.adaway.system.Notifications
@@ -119,6 +120,10 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     fun dismissError() = updater.dismissError()
 
     fun dismissRootError() = rootController.dismissError()
+
+    fun setThemeMode(mode: ThemeMode) {
+        viewModelScope.launch { container.settingsRepository.update { it.copy(themeMode = mode) } }
+    }
 
     fun dismissLegacyImportFailure() {
         viewModelScope.launch { container.settingsRepository.dismissLegacyImportFailure() }

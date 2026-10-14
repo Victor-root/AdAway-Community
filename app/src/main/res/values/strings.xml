@@ -11,7 +11,6 @@
     <string name="vpn_settings_unavailable">VPN settings are not available on this device.</string>
     <string name="close">Close</string>
 
-    <string name="home_sources">Block lists</string>
     <string name="home_legacy_import_failed">AdAway could not recover the block lists and your lists from the previous version. If you have a backup file, you can restore it from the settings.</string>
     <string name="dismiss">Dismiss</string>
     <string name="notification_channel_source_updates">Block list updates</string>
@@ -20,11 +19,8 @@
     <string name="notification_source_update_text">Newer versions of your block lists can be downloaded.</string>
     <string name="add">Add</string>
     <string name="apply">Apply</string>
-    <string name="apply_in_progress">Applying the new configuration…</string>
-    <string name="apply_needed">Your configuration changed. Apply it to use it.</string>
     <string name="back">Back</string>
     <string name="cancel">Cancel</string>
-    <string name="copy_host">Copy the name</string>
     <string name="delete">Delete</string>
     <string name="disable">Disable</string>
     <string name="edit">Edit</string>
@@ -41,10 +37,6 @@
     <string name="lists_search">Filter hosts</string>
     <string name="lists_search_clear">Clear</string>
     <string name="lists_show_source_rules">Toggle sources</string>
-    <string name="lists_user_rules">Your entries</string>
-    <string name="lists_user_rules_empty">No entry yet.</string>
-    <string name="lists_source_rules">From the block lists</string>
-    <string name="lists_source_rules_empty">No entry.</string>
     <string name="progress_checking">Checking for update</string>
     <string name="progress_downloading">Downloading source %1$s</string>
     <string name="progress_reading">Parsing %1$s source</string>
@@ -63,16 +55,13 @@
     <string name="rule_invalid_address">This IP address is not valid.</string>
     <string name="rule_duplicate">This name is already in your lists: %1$s.</string>
     <string name="rule_deleted">Entry deleted</string>
-    <string name="rule_delete_confirm_title">Delete this entry?</string>
     <string name="rules_blocked">Blocked</string>
     <string name="rules_allowed">Allowed</string>
     <string name="rules_redirected">Redirected</string>
     <string name="sources_title">Hosts sources</string>
-    <string name="sources_empty">No block list yet. Add one with the + button.</string>
     <string name="source_add">Add source</string>
     <string name="source_edit">Edit source</string>
     <string name="source_deleted">Source deleted</string>
-    <string name="source_delete_confirm_title">Delete this list?</string>
     <string name="source_label">Label</string>
     <string name="source_label_required">Label required</string>
     <string name="source_format">List format</string>
@@ -89,11 +78,7 @@
     <string name="source_redirects_warning">Allowing redirected hosts may cause security issues. Only use this settings on a trusted source as it could redirect some sensitive traffic to whatever server it wants.</string>
     <string name="source_steven_black">StevenBlack Unified hosts</string>
     <string name="source_peter_lowe">Pete Lowe blocklist hosts</string>
-    <string name="source_status_disabled">Disabled</string>
     <string name="source_status_failed">Last update failed: %1$s</string>
-    <string name="source_status_never_synced">Not downloaded yet</string>
-    <string name="source_status_update_available">Update available</string>
-    <string name="source_status_up_to_date">Up to date, checked %1$s</string>
     <string name="sync_error_no_network">no Internet connection</string>
     <string name="sync_error_network">the server could not be reached</string>
     <string name="sync_error_http_status">the server answered with error %1$d</string>
@@ -120,19 +105,6 @@
         <item quantity="one">%1$d up-to-date source</item>
         <item quantity="other">%1$d up-to-date sources</item>
     </plurals>
-    <plurals name="home_sources_pending">
-        <item quantity="one">%1$d list to update</item>
-        <item quantity="other">%1$d lists to update</item>
-    </plurals>
-    <plurals name="home_sources_failed">
-        <item quantity="one">%1$d list failed to update</item>
-        <item quantity="other">%1$d lists failed to update</item>
-    </plurals>
-    <plurals name="source_rule_count">
-        <item quantity="one">%1$s entry</item>
-        <item quantity="other">%1$s entries</item>
-    </plurals>
-    <string name="just_now">just now</string>
 
     <string name="notification_channel_vpn">VPN</string>
     <string name="notification_channel_vpn_description">VPN running notifications</string>
@@ -232,4 +204,5 @@
     <string name="shortcut_preferences">Preferences</string>
     <string name="permission_send_command_label">Send commands to AdAway</string>
     <string name="permission_send_command_description">Allow to send commands to AdAway like enabling or disabling the system-wide ad-blocking</string>
+    <string name="menu_refresh">Refresh</string>
 </resources>

@@ -9,8 +9,9 @@ import org.adaway.R
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.common.builtInSourceLabel
 
+/** The source form logic shared by the phone and TV screens. [screen] draws the form of the device. */
 @Composable
-fun SourceEditRoute(isTelevision: Boolean, sourceId: Long, onDone: () -> Unit) {
+fun SourceEditRoute(sourceId: Long, onDone: () -> Unit, screen: @Composable (title: String, form: SourceForm, viewModel: SourceEditViewModel, save: () -> Unit) -> Unit) {
     val viewModel = appViewModel { SourceEditViewModel(it, sourceId) }
     val form by viewModel.form.collectAsStateWithLifecycle()
     val done by viewModel.done.collectAsStateWithLifecycle()
@@ -22,9 +23,5 @@ fun SourceEditRoute(isTelevision: Boolean, sourceId: Long, onDone: () -> Unit) {
     }
     val title = stringResource(if (viewModel.isNew) R.string.source_add else R.string.source_edit)
     val save = { viewModel.save(translatedLabel) }
-    if (isTelevision) {
-        TvSourceEditScreen(title, current, viewModel, save)
-    } else {
-        SourceEditScreen(title, current, viewModel, save, onBack = onDone)
-    }
+    screen(title, current, viewModel, save)
 }

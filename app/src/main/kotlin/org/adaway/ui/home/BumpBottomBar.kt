@@ -61,23 +61,9 @@ val BumpBottomBarReservedHeight = 70.dp
 fun BumpBottomBar(icon: Painter, contentDescription: String, enabled: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier) {
     val colors = LocalAdAwayColors.current
     Column(modifier = modifier.fillMaxWidth()) {
-        Box(modifier = Modifier.fillMaxWidth().height(TotalHeight)) {
-            Canvas(modifier = Modifier.fillMaxWidth().height(TotalHeight)) {
-                val ledgeY = size.height - BarHeight.toPx()
-                val crestY = ledgeY - BumpHeight.toPx()
-                val fill = topEdge(size, ledgeY, crestY).apply {
-                    lineTo(size.width, size.height)
-                    lineTo(0f, size.height)
-                    close()
-                }
-                drawFillWithShadow(fill, colors.bumpBarBackground)
-                drawPath(topEdge(size, ledgeY, crestY), colors.bumpBarStroke, style = Stroke(width = 1.dp.toPx()))
-            }
-            // Centered on the crest: the lower half nestles in the bar, the upper half emerges above it.
+        BumpBar {
             Box(
                 modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .offset(y = TotalHeight - BarHeight - BumpHeight - FabSize / 2)
                     .size(FabSize)
                     .clip(CircleShape)
                     .background(colors.primary)
@@ -89,6 +75,31 @@ fun BumpBottomBar(icon: Painter, contentDescription: String, enabled: Boolean, o
             }
         }
         Spacer(modifier = Modifier.fillMaxWidth().windowInsetsBottomHeight(WindowInsets.navigationBars).background(colors.bumpBarBackground))
+    }
+}
+
+/**
+ * The swelling bar alone, with its round [badge] of 56 dp centered on the crest: the lower half
+ * nestles in the bar, the upper half emerges above it. The TV home shows the blocking state so.
+ */
+@Composable
+fun BumpBar(modifier: Modifier = Modifier, badge: @Composable () -> Unit) {
+    val colors = LocalAdAwayColors.current
+    Box(modifier = modifier.fillMaxWidth().height(TotalHeight)) {
+        Canvas(modifier = Modifier.fillMaxWidth().height(TotalHeight)) {
+            val ledgeY = size.height - BarHeight.toPx()
+            val crestY = ledgeY - BumpHeight.toPx()
+            val fill = topEdge(size, ledgeY, crestY).apply {
+                lineTo(size.width, size.height)
+                lineTo(0f, size.height)
+                close()
+            }
+            drawFillWithShadow(fill, colors.bumpBarBackground)
+            drawPath(topEdge(size, ledgeY, crestY), colors.bumpBarStroke, style = Stroke(width = 1.dp.toPx()))
+        }
+        Box(modifier = Modifier.align(Alignment.TopCenter).offset(y = TotalHeight - BarHeight - BumpHeight - FabSize / 2)) {
+            badge()
+        }
     }
 }
 

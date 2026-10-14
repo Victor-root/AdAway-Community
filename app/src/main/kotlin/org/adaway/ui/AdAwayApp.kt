@@ -5,18 +5,20 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.serialization.Serializable
 import org.adaway.data.db.RuleType
 import org.adaway.ui.common.ScreenTransitions
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.help.HelpScreen
 import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
+import org.adaway.ui.home.HomeScreen
 import org.adaway.ui.lists.ListsRoute
 import org.adaway.ui.log.DnsLogScreen
 import org.adaway.ui.prefs.BackupRestoreScreen
@@ -26,51 +28,14 @@ import org.adaway.ui.prefs.PreferencesNavigation
 import org.adaway.ui.prefs.PreferencesScreen
 import org.adaway.ui.prefs.UpdatesScreen
 import org.adaway.ui.sources.SourceEditRoute
-import org.adaway.ui.sources.SourceEditViewModel
+import org.adaway.ui.sources.SourceEditScreen
 import org.adaway.ui.sources.SourcesNavigation
 import org.adaway.ui.sources.SourcesRoute
 import org.adaway.ui.theme.AdAwayTheme
+import org.adaway.ui.tv.tvDestinations
 import org.adaway.ui.update.UpdateScreen
 import org.adaway.ui.welcome.WelcomeRoute
-
-@Serializable
-private data object Welcome
-
-@Serializable
-private data object Home
-
-@Serializable
-private data object Sources
-
-@Serializable
-private data class SourceEdit(val sourceId: Long = SourceEditViewModel.NEW_SOURCE)
-
-@Serializable
-private data class Lists(val type: RuleType)
-
-@Serializable
-private data object Preferences
-
-@Serializable
-private data object Help
-
-@Serializable
-private data object Updates
-
-@Serializable
-private data object ExcludedApps
-
-@Serializable
-private data object SystemHosts
-
-@Serializable
-private data object DnsLog
-
-@Serializable
-private data object BackupRestore
-
-@Serializable
-private data object AppUpdate
+import org.adaway.ui.welcome.WelcomeScreen
 
 /** [destination] holds the screen a shortcut or a notification asks for, emptied once shown. */
 @Composable
@@ -106,69 +71,69 @@ fun AdAwayApp(isTelevision: Boolean, destination: MutableStateFlow<Destination?>
             predictivePopEnterTransition = { ScreenTransitions.popEnter },
             predictivePopExitTransition = { ScreenTransitions.popExit },
         ) {
-            composable<Welcome> {
-                WelcomeRoute(
-                    isTelevision = isTelevision,
-                    onFinished = {
-                        navController.navigate(Home) { popUpTo<Welcome> { inclusive = true } }
-                    },
-                )
-            }
-            composable<Home> {
-                HomeRoute(
-                    isTelevision = isTelevision,
-                    navigation = HomeNavigation(
-                        openSources = { navController.navigate(Sources) },
-                        openLists = { type -> navController.navigate(Lists(type)) },
-                        openPreferences = { navController.navigate(Preferences) },
-                        openHelp = { navController.navigate(Help) },
-                        openLog = { navController.navigate(DnsLog) },
-                        openUpdate = { navController.navigate(AppUpdate) },
-                    ),
-                )
-            }
-            composable<Sources> {
-                SourcesRoute(
-                    isTelevision = isTelevision,
-                    navigation = SourcesNavigation(
-                        back = navController::popBackStack,
-                        add = { navController.navigate(SourceEdit()) },
-                        edit = { id -> navController.navigate(SourceEdit(id)) },
-                    ),
-                )
-            }
-            composable<SourceEdit> { entry ->
-                SourceEditRoute(
-                    isTelevision = isTelevision,
-                    sourceId = entry.toRoute<SourceEdit>().sourceId,
-                    onDone = navController::popBackStack,
-                )
-            }
-            composable<Lists> { entry ->
-                ListsRoute(
-                    isTelevision = isTelevision,
-                    initialType = entry.toRoute<Lists>().type,
-                    onBack = navController::popBackStack,
-                )
-            }
-            composable<Preferences> {
-                PreferencesScreen(
-                    PreferencesNavigation(
-                        back = navController::popBackStack,
-                        openUpdates = { navController.navigate(Updates) },
-                        openExcludedApps = { navController.navigate(ExcludedApps) },
-                        openHostsFile = { navController.navigate(SystemHosts) },
-                        openBackupRestore = { navController.navigate(BackupRestore) },
-                    ),
-                )
-            }
-            composable<Help> { HelpScreen(onBack = navController::popBackStack) }
-            composable<Updates> { UpdatesScreen(onBack = navController::popBackStack, openUpdate = { navController.navigate(AppUpdate) }) }
-            composable<AppUpdate> { UpdateScreen(onBack = navController::popBackStack) }
-            composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
-            composable<SystemHosts> { HostsFileScreen(onBack = navController::popBackStack) }
-            composable<DnsLog> { DnsLogScreen(onBack = navController::popBackStack) }
-            composable<BackupRestore> { BackupRestoreScreen(onBack = navController::popBackStack) }
+            if (isTelevision) tvDestinations(navController) else phoneDestinations(navController)
+            sharedDestinations(navController, isTelevision)
         }
     }
 }
+
+/** The screens of a phone or a tablet that the TV has its own of. */
+private fun NavGraphBuilder.phoneDestinations(navController: NavController) {
+    composable<Welcome> {
+        WelcomeRoute(onFinished = navController::leaveWelcome) { state, viewModel, actions ->
+            WelcomeScreen(state, viewModel, actions.chooseVpn, actions.finish)
+        }
+    }
+    composable<Home> {
+        val navigation = remember { homeNavigation(navController) }
+        HomeRoute(isTelevision = false, navigation) { state, viewModel, blocking -> HomeScreen(state, viewModel, navigation, blocking) }
+    }
+    composable<Sources> { SourcesRoute(sourcesNavigation(navController)) }
+    composable<SourceEdit> { entry ->
+        SourceEditRoute(entry.toRoute<SourceEdit>().sourceId, onDone = navController::popBackStack) { title, form, viewModel, save ->
+            SourceEditScreen(title, form, viewModel, save, onBack = navController::popBackStack)
+        }
+    }
+    composable<Lists> { entry -> ListsRoute(entry.toRoute<Lists>().type, onBack = navController::popBackStack) }
+    composable<DnsLog> { DnsLogScreen(onBack = navController::popBackStack) }
+}
+
+/** The screens the TV shows as the phone does, as the 6.x versions did. */
+private fun NavGraphBuilder.sharedDestinations(navController: NavController, isTelevision: Boolean) {
+    composable<Preferences> {
+        PreferencesScreen(
+            PreferencesNavigation(
+                back = navController::popBackStack,
+                openUpdates = { navController.navigate(Updates) },
+                openExcludedApps = { navController.navigate(ExcludedApps) },
+                openHostsFile = { navController.navigate(SystemHosts) },
+                openBackupRestore = { navController.navigate(BackupRestore) },
+            ),
+        )
+    }
+    composable<Help> { HelpScreen(isTelevision, onBack = navController::popBackStack) }
+    composable<Updates> { UpdatesScreen(onBack = navController::popBackStack, openUpdate = { navController.navigate(AppUpdate) }) }
+    composable<AppUpdate> { UpdateScreen(onBack = navController::popBackStack) }
+    composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
+    composable<SystemHosts> { HostsFileScreen(onBack = navController::popBackStack) }
+    composable<BackupRestore> { BackupRestoreScreen(onBack = navController::popBackStack) }
+}
+
+/** Where the home screens lead, on the phone and the TV. */
+internal fun homeNavigation(navController: NavController) = HomeNavigation(
+    openSources = { navController.navigate(Sources) },
+    openLists = { type -> navController.navigate(Lists(type)) },
+    openPreferences = { navController.navigate(Preferences) },
+    openHelp = { navController.navigate(Help) },
+    openLog = { navController.navigate(DnsLog) },
+    openUpdate = { navController.navigate(AppUpdate) },
+)
+
+internal fun sourcesNavigation(navController: NavController) = SourcesNavigation(
+    back = navController::popBackStack,
+    add = { navController.navigate(SourceEdit()) },
+    edit = { id -> navController.navigate(SourceEdit(id)) },
+)
+
+/** The wizard done, the home takes its place. */
+internal fun NavController.leaveWelcome() = navigate(Home) { popUpTo<Welcome> { inclusive = true } }

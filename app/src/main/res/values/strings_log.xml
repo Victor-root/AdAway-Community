@@ -12,4 +12,7 @@
     <string name="log_redirect">Add entry to redirect list</string>
     <string name="log_redirect_dialog_title">Redirect domain</string>
     <string name="log_capture_failed">The DNS capture could not start.</string>
+    <string name="log_start_recording_button">Start Recording</string>
+    <string name="log_start_recording_vpn_inactive">Start Recording (VPN not active)</string>
+    <string name="log_stop_recording">Stop Recording</string>
 </resources>

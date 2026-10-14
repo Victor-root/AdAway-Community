@@ -13,9 +13,12 @@ import org.adaway.ui.common.appViewModel
 import org.adaway.ui.common.rememberVpnConsentRequest
 import org.adaway.ui.common.vpnRefusal
 
-/** First launch wizard: lets the user pick and grant a blocking method. */
+/**
+ * First launch wizard logic shared by the phone and TV screens: the root check, the VPN consent and
+ * their dialogs. [screen] draws the wizard of the device.
+ */
 @Composable
-fun WelcomeRoute(isTelevision: Boolean, onFinished: () -> Unit) {
+fun WelcomeRoute(onFinished: () -> Unit, screen: @Composable (WelcomeState, WelcomeViewModel, WelcomeActions) -> Unit) {
     val viewModel = appViewModel(::WelcomeViewModel)
     val state by viewModel.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -23,12 +26,11 @@ fun WelcomeRoute(isTelevision: Boolean, onFinished: () -> Unit) {
         onGranted = viewModel::onVpnGranted,
         onRefused = { viewModel.onVpnRefused(vpnRefusal(context)) },
     )
-    val actions = WelcomeActions(
-        chooseRoot = viewModel::chooseRoot,
-        chooseVpn = requestVpnConsent,
-        finish = { viewModel.finish(onFinished) },
+    screen(
+        state,
+        viewModel,
+        WelcomeActions(chooseRoot = viewModel::chooseRoot, chooseVpn = requestVpnConsent, finish = { viewModel.finish(onFinished) }),
     )
-    if (isTelevision) TvWelcomeScreen(state, actions) else WelcomeScreen(state, viewModel, requestVpnConsent) { viewModel.finish(onFinished) }
     if (state.rootRequired) RootRequiredDialog(onDismiss = viewModel::dismissDialog)
     state.vpnRefusal?.let { VpnRefusalDialog(it, onDismiss = viewModel::dismissDialog) }
 }

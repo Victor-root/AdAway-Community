@@ -8,16 +8,12 @@ import org.adaway.data.db.RuleType
 import org.adaway.ui.common.appViewModel
 
 @Composable
-fun ListsRoute(isTelevision: Boolean, initialType: RuleType, onBack: () -> Unit) {
+fun ListsRoute(initialType: RuleType, onBack: () -> Unit) {
     val viewModel = appViewModel { ListsViewModel(it, initialType) }
     val type by viewModel.type.collectAsStateWithLifecycle()
     val userRules by viewModel.userRules.collectAsStateWithLifecycle()
     val sourceRules = viewModel.sourceRules.collectAsLazyPagingItems()
-    if (isTelevision) {
-        TvListsScreen(type, userRules.orEmpty(), sourceRules, viewModel)
-    } else {
-        ListsScreen(type, userRules.orEmpty(), sourceRules, viewModel, onBack)
-    }
+    ListsScreen(type, userRules.orEmpty(), sourceRules, viewModel, onBack)
 }
 
 /** A catalog line is `host` or `host address`. */

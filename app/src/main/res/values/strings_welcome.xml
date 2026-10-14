@@ -95,4 +95,6 @@
     <string name="tv_welcome_method_root_body">Faster and battery-friendly. Requires a rooted device.</string>
     <string name="tv_welcome_method_vpn_button">Use VPN</string>
     <string name="tv_welcome_method_vpn_body">Works without root, compatible with any Android TV device.</string>
+    <string name="tv_welcome_activate_header">Turn on ad blocking</string>
+    <string name="tv_welcome_activate_body">It\'s a local VPN: it filters ads on this device, without routing your traffic through an outside server.</string>
 </resources>

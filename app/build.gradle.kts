@@ -173,7 +173,6 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.paging.compose)
     implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.tv.material)
     implementation(libs.androidx.work.runtime)
     implementation(libs.libsu.core)
     ksp(libs.androidx.room.compiler)

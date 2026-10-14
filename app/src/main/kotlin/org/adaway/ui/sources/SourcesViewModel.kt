@@ -23,14 +23,6 @@ class SourcesViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch { repository.setEnabled(source.id, enabled) }
     }
 
-    /** Deletes for good, as on TV where a confirmation replaces the undo action. */
-    fun delete(source: SourceEntity) {
-        viewModelScope.launch {
-            repository.delete(source)
-            forgetDeleted(source)
-        }
-    }
-
     fun restore(source: SourceEntity) {
         viewModelScope.launch { repository.restore(source) }
     }

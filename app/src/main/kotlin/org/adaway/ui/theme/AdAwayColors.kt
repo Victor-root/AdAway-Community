@@ -37,6 +37,9 @@ data class AdAwayColors(
     val dialogSurface: Color,
     val bumpBarBackground: Color,
     val bumpBarStroke: Color,
+    /** The marks of the names of the TV DNS log that a list blocks or allows. */
+    val logBlocked: Color,
+    val logAllowed: Color,
 )
 
 /** How Material 2 lightens a surface in the dark theme for an elevation in dp. */
@@ -68,6 +71,8 @@ val LightAdAwayColors = AdAwayColors(
     dialogSurface = Color.White,
     bumpBarBackground = Color(0xFFFAFAFC),
     bumpBarStroke = Color(0xFFE0E0E8),
+    logBlocked = Color(0xFFFF5252),
+    logAllowed = Color(0xFF64FFDA),
 )
 
 val DarkAdAwayColors = AdAwayColors(
@@ -92,6 +97,8 @@ val DarkAdAwayColors = AdAwayColors(
     dialogSurface = Color(0xFF2B2B2B),
     bumpBarBackground = Color(0xFF2C2C31),
     bumpBarStroke = Color(0xFF3D3D43),
+    logBlocked = Color(0xFFEF9A9A),
+    logAllowed = Color(0xFF80CBC4),
 )
 
 val LocalAdAwayColors = staticCompositionLocalOf { LightAdAwayColors }

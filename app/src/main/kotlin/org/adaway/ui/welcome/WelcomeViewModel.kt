@@ -2,9 +2,12 @@ package org.adaway.ui.welcome
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
@@ -39,10 +42,15 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
     private val vpnRefusal = MutableStateFlow<VpnRefusal?>(null)
     private val mutableStep = MutableStateFlow(0)
     private val mutableSync = MutableStateFlow<WelcomeSync?>(null)
+    private val mutableMethodGranted = MutableSharedFlow<BlockingMethod>(extraBufferCapacity = 1)
 
     /** The phone wizard step: method, synchronization, battery, then the brand battery manager. */
     val step: StateFlow<Int> = mutableStep.asStateFlow()
     val sync: StateFlow<WelcomeSync?> = mutableSync.asStateFlow()
+    val statusMessage = container.statusMessages.current
+
+    /** Each method the user chose and Android granted, as the TV wizard goes on with it. */
+    val methodGranted: SharedFlow<BlockingMethod> = mutableMethodGranted.asSharedFlow()
 
     val state: StateFlow<WelcomeState> = combine(
         container.settingsRepository.settings,
@@ -60,11 +68,15 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
             setMethod(if (granted) BlockingMethod.ROOT else BlockingMethod.UNSET)
             rootRequired.value = !granted
             checkingRoot.value = false
+            if (granted) mutableMethodGranted.emit(BlockingMethod.ROOT)
         }
     }
 
     fun onVpnGranted() {
-        viewModelScope.launch { setMethod(BlockingMethod.VPN) }
+        viewModelScope.launch {
+            setMethod(BlockingMethod.VPN)
+            mutableMethodGranted.emit(BlockingMethod.VPN)
+        }
     }
 
     fun onVpnRefused(refusal: VpnRefusal?) {

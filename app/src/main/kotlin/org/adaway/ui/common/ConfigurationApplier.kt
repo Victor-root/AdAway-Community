@@ -69,24 +69,56 @@ class ConfigurationApplier(private val container: AppContainer, private val scop
 /** How long the failure message stays shown. */
 private const val FAILURE_MILLIS = 2_750L
 
-/**
- * The 6.x snackbars of a changed configuration: apply it, applying, or the failure. Applying while
- * the blocking is off first offers to turn it on.
- */
+/** The 6.x snackbars of a changed configuration: apply it, applying, or the failure. */
 @Composable
 fun ApplyConfigurationSnackbar(applier: ConfigurationApplier) {
     val configurationChanged by applier.configurationChanged.collectAsStateWithLifecycle()
+    ApplyConfiguration(applier) { apply ->
+        ApplyProgressSnackbar(applier) {
+            if (configurationChanged) {
+                AdAwaySnackbar(stringResource(R.string.configuration_changed), actionLabel = stringResource(R.string.apply), onAction = apply)
+            }
+        }
+    }
+}
+
+/** The snackbar of the configuration being applied, or of its failure, else [idle]. */
+@Composable
+fun ApplyProgressSnackbar(applier: ConfigurationApplier, idle: @Composable () -> Unit = {}) {
+    val configurationChanged by applier.configurationChanged.collectAsStateWithLifecycle()
     val progress by applier.progress.collectAsStateWithLifecycle()
     val error by applier.error.collectAsStateWithLifecycle()
-    val blockingOff by applier.blockingOff.collectAsStateWithLifecycle()
-    var applyWhileOff by rememberSaveable { mutableStateOf(false) }
-    val requestConsent = rememberVpnConsentRequest(onGranted = applier::applyAndEnable, onRefused = applier::apply)
     val colors = LocalAdAwayColors.current
     LaunchedEffect(error) {
         if (error == null) return@LaunchedEffect
         delay(FAILURE_MILLIS)
         applier.dismissError()
     }
+    when {
+        error != null -> AdAwaySnackbar(stringResource(R.string.configuration_failed)) {
+            Icon(
+                painterResource(R.drawable.ic_error_outline_24dp),
+                contentDescription = null,
+                tint = colors.snackbarText,
+                modifier = Modifier.padding(8.dp),
+            )
+        }
+        configurationChanged && progress != null -> AdAwaySnackbar(stringResource(R.string.configuration_installing)) {
+            CircularProgressIndicator(modifier = Modifier.padding(8.dp).size(32.dp), color = colors.primary)
+        }
+        else -> idle()
+    }
+}
+
+/**
+ * Gives [content] the action applying the configuration. Applying while the blocking is off first
+ * offers to turn it on.
+ */
+@Composable
+fun ApplyConfiguration(applier: ConfigurationApplier, content: @Composable (apply: () -> Unit) -> Unit) {
+    val blockingOff by applier.blockingOff.collectAsStateWithLifecycle()
+    var applyWhileOff by rememberSaveable { mutableStateOf(false) }
+    val requestConsent = rememberVpnConsentRequest(onGranted = applier::applyAndEnable, onRefused = applier::apply)
     if (applyWhileOff) {
         AdAwayAlertDialog(
             onDismissRequest = { applyWhileOff = false },
@@ -102,22 +134,5 @@ fun ApplyConfigurationSnackbar(applier: ConfigurationApplier) {
             }),
         )
     }
-    when {
-        error != null -> AdAwaySnackbar(stringResource(R.string.configuration_failed)) {
-            Icon(
-                painterResource(R.drawable.ic_error_outline_24dp),
-                contentDescription = null,
-                tint = colors.snackbarText,
-                modifier = Modifier.padding(8.dp),
-            )
-        }
-        configurationChanged && progress != null -> AdAwaySnackbar(stringResource(R.string.configuration_installing)) {
-            CircularProgressIndicator(modifier = Modifier.padding(8.dp).size(32.dp), color = colors.primary)
-        }
-        configurationChanged -> AdAwaySnackbar(
-            stringResource(R.string.configuration_changed),
-            actionLabel = stringResource(R.string.apply),
-            onAction = { if (blockingOff != null) applyWhileOff = true else applier.apply() },
-        )
-    }
+    content { if (blockingOff != null) applyWhileOff = true else applier.apply() }
 }
