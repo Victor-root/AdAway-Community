@@ -234,7 +234,7 @@ private fun CounterCard(type: RuleType, count: Long, onClick: () -> Unit, modifi
             onClick = onClick,
             modifier = Modifier.padding(top = BadgeSize / 2).fillMaxWidth(),
             shape = RoundedCornerShape(8.dp),
-            color = colors.counterCard,
+            color = colors.card,
             shadowElevation = 10.dp,
         ) {
             Column(

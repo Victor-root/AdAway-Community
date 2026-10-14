@@ -93,11 +93,11 @@
     <string name="rules_blocked">Blocked</string>
     <string name="rules_allowed">Allowed</string>
     <string name="rules_redirected">Redirected</string>
-    <string name="sources_title">Block lists</string>
+    <string name="sources_title">Hosts sources</string>
     <string name="sources_empty">No block list yet. Add one with the + button.</string>
-    <string name="source_add">Add a list</string>
+    <string name="source_add">Add source</string>
     <string name="source_edit">Edit the list</string>
-    <string name="source_deleted">List deleted</string>
+    <string name="source_deleted">Source deleted</string>
     <string name="source_delete_confirm_title">Delete this list?</string>
     <string name="source_label">Name</string>
     <string name="source_label_required">A name is required.</string>
@@ -113,8 +113,8 @@
     <string name="source_location_duplicate">Another list already uses this address.</string>
     <string name="source_redirects">Apply its redirections</string>
     <string name="source_redirects_warning">Redirections send names to the addresses the list chooses. Only enable them for a list you trust: it could send sensitive traffic to any server.</string>
-    <string name="source_steven_black">StevenBlack unified hosts</string>
-    <string name="source_peter_lowe">Peter Lowe\'s list</string>
+    <string name="source_steven_black">StevenBlack Unified hosts</string>
+    <string name="source_peter_lowe">Pete Lowe blocklist hosts</string>
     <string name="source_status_disabled">Disabled</string>
     <string name="source_status_failed">Last update failed: %1$s</string>
     <string name="source_status_never_synced">Not downloaded yet</string>
@@ -200,5 +200,32 @@
     <plurals name="home_sources_outdated">
         <item quantity="one">%1$d outdated source</item>
         <item quantity="other">%1$d outdated sources</item>
+    </plurals>
+    <string name="hosts_source_installed">Installed %1$s ago</string>
+    <string name="hosts_source_up_to_date">Up-to-date for %1$s</string>
+    <string name="hosts_source_need_update">Need update for %1$s</string>
+    <string name="hosts_source_last_update">Last update %1$s ago</string>
+    <string name="hosts_source_unknown_status">Unknown update status</string>
+    <string name="hosts_source_disabled">Disabled</string>
+    <string name="hosts_source_few_minutes">few minutes</string>
+    <string name="hosts_count">%1$s hosts</string>
+    <string name="configuration_changed">Your configuration changed. You need to apply it.</string>
+    <string name="configuration_installing">Applying new configuration…</string>
+    <string name="configuration_failed">Failed to apply new configuration.</string>
+    <string name="apply_blocking_off_title">Ad blocking is off</string>
+    <string name="apply_blocking_off_text">Your changes will be used once ad blocking is on. Turn it on now?</string>
+    <string name="apply_and_enable">Apply and turn on</string>
+    <string name="apply_only">Apply only</string>
+    <plurals name="hosts_source_hours">
+        <item quantity="one">%1$d hour</item>
+        <item quantity="other">%1$d hours</item>
+    </plurals>
+    <plurals name="hosts_source_days">
+        <item quantity="one">%1$d day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+    <plurals name="hosts_source_months">
+        <item quantity="one">%1$d month</item>
+        <item quantity="other">%1$d months</item>
     </plurals>
 </resources>

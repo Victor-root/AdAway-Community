@@ -90,11 +90,11 @@
     <string name="rules_blocked">Bloqués</string>
     <string name="rules_allowed">Autorisés</string>
     <string name="rules_redirected">Redirigés</string>
-    <string name="sources_title">Listes de blocage</string>
+    <string name="sources_title">Sources de fichiers hosts</string>
     <string name="sources_empty">Aucune liste de blocage pour l\'instant. Ajoutez-en une avec le bouton +.</string>
-    <string name="source_add">Ajouter une liste</string>
+    <string name="source_add">Ajouter une source</string>
     <string name="source_edit">Modifier la liste</string>
-    <string name="source_deleted">Liste supprimée</string>
+    <string name="source_deleted">Source supprimée</string>
     <string name="source_delete_confirm_title">Supprimer cette liste\u00a0?</string>
     <string name="source_label">Nom</string>
     <string name="source_label_required">Un nom est obligatoire.</string>
@@ -110,8 +110,8 @@
     <string name="source_location_duplicate">Une autre liste utilise déjà cette adresse.</string>
     <string name="source_redirects">Appliquer ses redirections</string>
     <string name="source_redirects_warning">Les redirections envoient des noms vers les adresses choisies par la liste. Ne les activez que pour une liste de confiance\u00a0: elle pourrait envoyer du trafic sensible vers n\'importe quel serveur.</string>
-    <string name="source_steven_black">Hosts unifié de StevenBlack</string>
-    <string name="source_peter_lowe">Liste de Peter Lowe</string>
+    <string name="source_steven_black">Fichier hosts unifié de StevenBlack</string>
+    <string name="source_peter_lowe">Fichier hosts de Pete Lowe</string>
     <string name="source_status_disabled">Désactivée</string>
     <string name="source_status_failed">Échec de la dernière mise à jour\u00a0: %1$s</string>
     <string name="source_status_never_synced">Pas encore téléchargée</string>
@@ -202,5 +202,35 @@
         <item quantity="one">%1$d source périmée</item>
         <item quantity="many">%1$d sources périmées</item>
         <item quantity="other">%1$d sources périmées</item>
+    </plurals>
+    <string name="hosts_source_installed">Installée il y a %1$s</string>
+    <string name="hosts_source_up_to_date">À jour depuis %1$s</string>
+    <string name="hosts_source_need_update">Mise à jour proposée depuis %1$s</string>
+    <string name="hosts_source_last_update">Dernière mise à jour il y a %1$s</string>
+    <string name="hosts_source_unknown_status">L’état de mise à jour est inconnu</string>
+    <string name="hosts_source_disabled">Désactivée</string>
+    <string name="hosts_source_few_minutes">quelques minutes</string>
+    <string name="hosts_count">Fichier(s) hosts de %1$s</string>
+    <string name="configuration_changed">Votre configuration a changé. Vous devez l’appliquer.</string>
+    <string name="configuration_installing">Application de la nouvelle configuration…</string>
+    <string name="configuration_failed">Échec d’application de la nouvelle configuration.</string>
+    <string name="apply_blocking_off_title">Le blocage des publicités est coupé</string>
+    <string name="apply_blocking_off_text">Vos changements seront utilisés dès que le blocage sera activé. L’activer maintenant ?</string>
+    <string name="apply_and_enable">Appliquer et activer</string>
+    <string name="apply_only">Appliquer seulement</string>
+    <plurals name="hosts_source_hours">
+        <item quantity="one">%1$d heure</item>
+        <item quantity="many">%1$d heures</item>
+        <item quantity="other">%1$d heures</item>
+    </plurals>
+    <plurals name="hosts_source_days">
+        <item quantity="one">%1$d jour</item>
+        <item quantity="many">%1$d jours</item>
+        <item quantity="other">%1$d jours</item>
+    </plurals>
+    <plurals name="hosts_source_months">
+        <item quantity="one">%1$d mois</item>
+        <item quantity="many">%1$d mois</item>
+        <item quantity="other">%1$d mois</item>
     </plurals>
 </resources>

@@ -12,6 +12,7 @@ object AdAwayType {
     val small = TextStyle(fontSize = 14.sp)
     val headline6 = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Medium, letterSpacing = 0.0125.em)
     val subtitle1 = TextStyle(fontSize = 16.sp, letterSpacing = 0.009375.em)
+    val subtitle2 = TextStyle(fontSize = 14.sp, fontWeight = FontWeight.Medium, letterSpacing = 0.0071429.em)
     val body2 = TextStyle(fontSize = 14.sp, letterSpacing = 0.0178571.em)
     val caption = TextStyle(fontSize = 12.sp, letterSpacing = 0.0333333.em)
     val button = TextStyle(fontSize = 14.sp, fontWeight = FontWeight.Medium, letterSpacing = 0.0892857.em)

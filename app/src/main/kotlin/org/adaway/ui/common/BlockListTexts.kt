@@ -7,6 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import kotlin.math.pow
+import kotlin.math.roundToLong
 import org.adaway.R
 import org.adaway.blocklist.UpdateError
 import org.adaway.data.db.BuiltInSource
@@ -49,6 +51,60 @@ fun sourceStatus(source: SourceEntity): String {
         }
     }
 }
+
+/**
+ * The update status of a source, as the 6.x source list tells it: how long the online version has
+ * been there, or since when the list is installed when the server gives no date.
+ */
+@Composable
+fun sourceUpdateText(source: SourceEntity): String {
+    val error = source.syncError
+    val onlineModifiedAt = source.onlineModifiedAt
+    val syncedAt = source.syncedAt
+    return when {
+        !source.enabled -> stringResource(R.string.hosts_source_disabled)
+        error != null -> stringResource(R.string.source_status_failed, syncErrorText(error, source.syncErrorStatus))
+        onlineModifiedAt != null -> stringResource(
+            when {
+                syncedAt == null -> R.string.hosts_source_last_update
+                source.updateAvailable -> R.string.hosts_source_need_update
+                else -> R.string.hosts_source_up_to_date
+            },
+            approximateDelay(onlineModifiedAt),
+        )
+        syncedAt != null -> stringResource(R.string.hosts_source_installed, approximateDelay(syncedAt))
+        else -> stringResource(R.string.hosts_source_unknown_status)
+    }
+}
+
+/** A few minutes, then hours, days and 30-day months. */
+@Composable
+private fun approximateDelay(epochSeconds: Long): String {
+    val minutes = (System.currentTimeMillis() / 1000 - epochSeconds).coerceAtLeast(0) / 60
+    val hours = (minutes / 60).toInt()
+    val days = hours / 24
+    return when {
+        minutes < 60 -> stringResource(R.string.hosts_source_few_minutes)
+        hours < 24 -> pluralStringResource(R.plurals.hosts_source_hours, hours, hours)
+        days < 30 -> pluralStringResource(R.plurals.hosts_source_days, days, days)
+        else -> pluralStringResource(R.plurals.hosts_source_months, days / 30, days / 30)
+    }
+}
+
+/** The entry count rounded to its thousands with a k, M or G suffix, as "73k". */
+@Composable
+fun hostCountText(count: Int): String {
+    val digits = count.toString().length
+    val prefix = ((digits - 1) / 3 - 1).coerceAtMost(QUANTITY_PREFIXES.lastIndex)
+    val text = if (prefix < 0) {
+        count.toString()
+    } else {
+        (count / 10.0.pow((prefix + 1) * 3)).roundToLong().toString() + QUANTITY_PREFIXES[prefix]
+    }
+    return stringResource(R.string.hosts_count, text)
+}
+
+private val QUANTITY_PREFIXES = listOf("k", "M", "G")
 
 @Composable
 fun syncErrorText(error: SyncError, httpStatus: Int?): String = when (error) {
