@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import kotlinx.coroutines.launch
 import org.adaway.R
+import org.adaway.system.launchOrTell
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
 
@@ -48,13 +49,13 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
                 R.drawable.ic_save_24dp,
                 stringResource(R.string.pref_backup),
                 stringResource(R.string.pref_backup_summary),
-                onClick = { export.launch(BACKUP_FILE_NAME) },
+                onClick = { export.launchOrTell(BACKUP_FILE_NAME, context) },
             )
             Preference(
                 R.drawable.ic_settings_backup_restore_24dp,
                 stringResource(R.string.pref_restore),
                 stringResource(R.string.pref_restore_summary),
-                onClick = { restore.launch(restoreMimeTypes()) },
+                onClick = { restore.launchOrTell(restoreMimeTypes(), context) },
             )
         }
     }

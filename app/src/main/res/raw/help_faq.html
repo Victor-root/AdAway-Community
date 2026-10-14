@@ -8,7 +8,7 @@ Keep structure simple: h2 headings and p paragraphs, links via <a href>. -->
 
 <h2>How does it block ads?</h2>
 <p>AdAway works in one of two modes:</p>
-<p><strong>VPN mode</strong> (default, no root needed): AdAway runs a local, on-device VPN that never sends your traffic anywhere. It only inspects DNS requests and drops the ones pointing to ad and tracker hostnames, letting everything else through. Nothing leaves your device.</p>
+<p><strong>VPN mode</strong> (no root needed): AdAway runs a local, on-device VPN that never sends your traffic anywhere. It only inspects DNS requests and drops the ones pointing to ad and tracker hostnames, letting everything else through. Nothing leaves your device.</p>
 <p><strong>Root mode</strong>: if your device is rooted, AdAway can instead write a <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to <code>/system/etc/hosts</code>, mapping unwanted hostnames to <code>127.0.0.1</code> so they resolve to your own device. On recent Android, a systemless hosts module (e.g. Magisk) is required.</p>
 
 <h2>Which DNS servers does the VPN use?</h2>

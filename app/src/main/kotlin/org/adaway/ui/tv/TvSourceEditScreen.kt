@@ -1,6 +1,5 @@
 package org.adaway.ui.tv
 
-import android.content.ActivityNotFoundException
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.animateFloatAsState
@@ -22,6 +21,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusProperties
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import org.adaway.R
 import org.adaway.data.db.SourceFormat
 import org.adaway.sources.SourceFieldError
+import org.adaway.system.launchOrTell
 import org.adaway.ui.common.AdAwayCheckboxRow
 import org.adaway.ui.common.AdAwayTextField
 import org.adaway.ui.common.AdAwayToggleGroup
@@ -51,13 +52,8 @@ fun TvSourceEditScreen(title: String, form: SourceForm, viewModel: SourceEditVie
     val pickFile = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri?.let(viewModel::usePickedFile)
     }
-    val openFile = {
-        try {
-            pickFile.launch(arrayOf("*/*"))
-        } catch (_: ActivityNotFoundException) {
-            // No document picker on this TV.
-        }
-    }
+    val context = LocalContext.current
+    val openFile = { pickFile.launchOrTell(arrayOf("*/*"), context) }
     val applyFocus = remember { FocusRequester() }
     TvScreen(
         header = {
@@ -98,12 +94,7 @@ fun TvSourceEditScreen(title: String, form: SourceForm, viewModel: SourceEditVie
                 onSelect = { file -> if (file) openFile() else if (form.isFile) viewModel.useUrl() },
                 modifier = Modifier.padding(top = 2.dp),
             )
-            val locationError = when {
-                SourceFieldError.LOCATION_REQUIRED in form.errors -> R.string.source_location_required
-                SourceFieldError.LOCATION_INVALID in form.errors -> R.string.source_location_invalid
-                SourceFieldError.LOCATION_DUPLICATE in form.errors -> R.string.source_location_duplicate
-                else -> null
-            }?.let { stringResource(it) }
+            val locationError = form.locationError?.let { stringResource(it) }
             if (form.isFile) {
                 Text(
                     form.url,

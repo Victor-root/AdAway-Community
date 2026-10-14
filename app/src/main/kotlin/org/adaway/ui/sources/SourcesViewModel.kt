@@ -33,6 +33,11 @@ class SourcesViewModel(private val container: AppContainer) : ViewModel() {
         DocumentAccess.release(container.applicationContext, source.url)
     }
 
+    /** Leaving the screen ends the offer to undo a deletion. */
+    override fun onCleared() {
+        recentlyDeleted.value?.let(::forgetDeleted)
+    }
+
     private companion object {
         const val STOP_TIMEOUT_MILLIS = 5_000L
     }

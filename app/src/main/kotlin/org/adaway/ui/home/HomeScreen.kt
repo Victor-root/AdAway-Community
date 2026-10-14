@@ -59,12 +59,16 @@ import org.adaway.blocklist.StatusMessage
 import org.adaway.data.db.RuleType
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.sources.UpdateProgress
-import org.adaway.update.AppRelease
 import org.adaway.ui.common.PastelIcon
+import org.adaway.ui.common.ruleTypeDescription
+import org.adaway.ui.common.ruleTypeIcon
+import org.adaway.ui.common.ruleTypeLabel
 import org.adaway.ui.common.statusMessageText
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.Pastel
+import org.adaway.ui.theme.pastel
+import org.adaway.update.AppRelease
 import org.adaway.vpn.VpnStatus
 
 private class HomeScreenActions(
@@ -250,24 +254,7 @@ private fun Counters(state: HomeState, openLists: (RuleType) -> Unit) {
 @Composable
 private fun CounterCard(type: RuleType, count: Long, onClick: () -> Unit, modifier: Modifier) {
     val colors = LocalAdAwayColors.current
-    @StringRes val label: Int
-    @StringRes val description: Int
-    @DrawableRes val icon: Int
-    val pastel: Pastel
-    when (type) {
-        RuleType.BLOCKED -> {
-            label = R.string.rules_blocked; description = R.string.home_blocked_description
-            icon = R.drawable.baseline_block_24; pastel = colors.pastelRed
-        }
-        RuleType.ALLOWED -> {
-            label = R.string.rules_allowed; description = R.string.home_allowed_description
-            icon = R.drawable.baseline_check_24; pastel = colors.pastelGreen
-        }
-        RuleType.REDIRECTED -> {
-            label = R.string.rules_redirected; description = R.string.home_redirected_description
-            icon = R.drawable.baseline_compare_arrows_24; pastel = colors.pastelBlue
-        }
-    }
+    val label = ruleTypeLabel(type)
     Box(modifier = modifier) {
         Surface(
             onClick = onClick,
@@ -282,9 +269,9 @@ private fun CounterCard(type: RuleType, count: Long, onClick: () -> Unit, modifi
             ) {
                 // The raw count, without thousands separators.
                 Text(count.toString(), style = AdAwayType.large, fontWeight = FontWeight.Bold, color = colors.textPrimary, maxLines = 1)
-                Text(stringResource(label), style = AdAwayType.small, color = colors.textSecondary)
+                Text(label, style = AdAwayType.small, color = colors.textSecondary)
                 BasicText(
-                    text = stringResource(description),
+                    text = ruleTypeDescription(type),
                     style = AdAwayType.caption.copy(color = colors.homeCardSubtitle, textAlign = TextAlign.Center),
                     maxLines = 2,
                     autoSize = TextAutoSize.StepBased(minFontSize = 8.sp, maxFontSize = 12.sp, stepSize = 1.sp),
@@ -292,7 +279,7 @@ private fun CounterCard(type: RuleType, count: Long, onClick: () -> Unit, modifi
                 )
             }
         }
-        PastelIcon(icon, pastel, contentDescription = stringResource(label), modifier = Modifier.align(Alignment.TopCenter).shadow(12.dp, CircleShape))
+        PastelIcon(ruleTypeIcon(type), colors.pastel(type), contentDescription = label, modifier = Modifier.align(Alignment.TopCenter).shadow(12.dp, CircleShape))
     }
 }
 

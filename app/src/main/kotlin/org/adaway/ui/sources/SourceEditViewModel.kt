@@ -1,6 +1,7 @@
 package org.adaway.ui.sources
 
 import android.net.Uri
+import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -9,6 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.adaway.AppContainer
+import org.adaway.R
 import org.adaway.data.db.BuiltInSource
 import org.adaway.data.db.SourceEntity
 import org.adaway.data.db.SourceFormat
@@ -25,6 +27,16 @@ data class SourceForm(
     val errors: Set<SourceFieldError> = emptySet(),
 ) {
     val isFile get() = url.startsWith(CONTENT_PREFIX)
+
+    /** Why the location cannot be saved, if it cannot. */
+    @get:StringRes
+    val locationError: Int?
+        get() = when {
+            SourceFieldError.LOCATION_REQUIRED in errors -> R.string.source_location_required
+            SourceFieldError.LOCATION_INVALID in errors -> R.string.source_location_invalid
+            SourceFieldError.LOCATION_DUPLICATE in errors -> R.string.source_location_duplicate
+            else -> null
+        }
 
     companion object {
         const val HTTPS_PREFIX = "https://"

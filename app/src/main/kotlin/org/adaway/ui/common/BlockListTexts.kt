@@ -1,6 +1,7 @@
 package org.adaway.ui.common
 
 import android.content.res.Resources
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalResources
@@ -78,15 +79,14 @@ private fun approximateDelay(epochSeconds: Long): String {
 /** The entry count rounded to its thousands with a k, M or G suffix, as "73k". */
 @Composable
 fun hostCountText(count: Int): String {
-    val digits = count.toString().length
-    val prefix = ((digits - 1) / 3 - 1).coerceAtMost(QUANTITY_PREFIXES.lastIndex)
-    val text = if (prefix < 0) {
-        count.toString()
-    } else {
-        (count / 10.0.pow((prefix + 1) * 3)).roundToLong().toString() + QUANTITY_PREFIXES[prefix]
-    }
+    var prefix = ((count.toString().length - 1) / 3 - 1).coerceAtMost(QUANTITY_PREFIXES.lastIndex)
+    // 999 600 rounds to 1000k, which is 1M.
+    if (prefix in 0 until QUANTITY_PREFIXES.lastIndex && rounded(count, prefix) >= 1000) prefix++
+    val text = if (prefix < 0) count.toString() else rounded(count, prefix).toString() + QUANTITY_PREFIXES[prefix]
     return stringResource(R.string.hosts_count, text)
 }
+
+private fun rounded(count: Int, prefix: Int) = (count / 10.0.pow((prefix + 1) * 3)).roundToLong()
 
 private val QUANTITY_PREFIXES = listOf("k", "M", "G")
 
@@ -178,3 +178,20 @@ fun ruleTypeLabel(type: RuleType): String = stringResource(
         RuleType.REDIRECTED -> R.string.rules_redirected
     },
 )
+
+/** What the rules of a type are for, under their count on the home screens. */
+@Composable
+fun ruleTypeDescription(type: RuleType): String = stringResource(
+    when (type) {
+        RuleType.BLOCKED -> R.string.home_blocked_description
+        RuleType.ALLOWED -> R.string.home_allowed_description
+        RuleType.REDIRECTED -> R.string.home_redirected_description
+    },
+)
+
+@DrawableRes
+fun ruleTypeIcon(type: RuleType): Int = when (type) {
+    RuleType.BLOCKED -> R.drawable.baseline_block_24
+    RuleType.ALLOWED -> R.drawable.baseline_check_24
+    RuleType.REDIRECTED -> R.drawable.baseline_compare_arrows_24
+}

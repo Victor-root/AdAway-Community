@@ -172,10 +172,13 @@ fun RedNavigationBar() {
     }
 }
 
+/** The theme until the user picks one: dark on TV, as on 6.x, else the one of the system. */
+fun defaultThemeMode(isTelevision: Boolean) = if (isTelevision) ThemeMode.DARK else ThemeMode.SYSTEM
+
 /** Applies the app colors to the Material components. */
 @Composable
 fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composable () -> Unit) {
-    val dark = when (themeMode ?: if (isTelevision) ThemeMode.DARK else ThemeMode.SYSTEM) {
+    val dark = when (themeMode ?: defaultThemeMode(isTelevision)) {
         ThemeMode.SYSTEM -> isSystemInDarkTheme()
         ThemeMode.LIGHT -> false
         ThemeMode.DARK -> true

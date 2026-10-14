@@ -25,6 +25,8 @@ import org.adaway.data.settings.Settings as AppSettings
 import org.adaway.root.WebServer
 import org.adaway.root.WebServerError
 import org.adaway.root.WebServerState
+import org.adaway.system.launchOrTell
+import org.adaway.system.startActivityOrTell
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
@@ -89,14 +91,14 @@ fun WebServerPreferences(settings: AppSettings, enabled: Boolean) {
         enabled = dependentEnabled,
         onClick = {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                exportCertificate.launch(CERTIFICATE_FILE_NAME)
+                exportCertificate.launchOrTell(CERTIFICATE_FILE_NAME, context)
             } else {
                 scope.launch {
                     val certificate = viewModel.certificateDer()
                     if (certificate == null) {
                         Toast.makeText(context, certificateFailed, Toast.LENGTH_SHORT).show()
                     } else {
-                        context.startActivity(
+                        context.startActivityOrTell(
                             KeyChain.createInstallIntent().putExtra(KeyChain.EXTRA_CERTIFICATE, certificate).putExtra(KeyChain.EXTRA_NAME, "AdAway"),
                         )
                     }

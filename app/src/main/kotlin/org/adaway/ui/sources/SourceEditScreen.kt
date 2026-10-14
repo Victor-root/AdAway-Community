@@ -11,12 +11,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -25,11 +24,12 @@ import androidx.compose.ui.unit.dp
 import org.adaway.R
 import org.adaway.data.db.SourceFormat
 import org.adaway.sources.SourceFieldError
+import org.adaway.system.launchOrTell
 import org.adaway.ui.common.AdAwayCheckboxRow
-import org.adaway.ui.common.AppBarAction
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.AdAwayTextField
 import org.adaway.ui.common.AdAwayToggleGroup
+import org.adaway.ui.common.AppBarAction
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 
@@ -37,6 +37,7 @@ import org.adaway.ui.theme.LocalAdAwayColors
 @Composable
 fun SourceEditScreen(title: String, form: SourceForm, viewModel: SourceEditViewModel, save: () -> Unit, onBack: () -> Unit) {
     val colors = LocalAdAwayColors.current
+    val context = LocalContext.current
     val pickFile = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri?.let(viewModel::usePickedFile)
     }
@@ -76,21 +77,16 @@ fun SourceEditScreen(title: String, form: SourceForm, viewModel: SourceEditViewM
                 AdAwayToggleGroup(
                     options = listOf(false to stringResource(R.string.source_type_url), true to stringResource(R.string.source_type_file)),
                     selected = form.isFile,
-                    onSelect = { file -> if (file) pickFile.launch(arrayOf("*/*")) else if (form.isFile) viewModel.useUrl() },
+                    onSelect = { file -> if (file) pickFile.launchOrTell(arrayOf("*/*"), context) else if (form.isFile) viewModel.useUrl() },
                 )
             }
-            val locationError = when {
-                SourceFieldError.LOCATION_REQUIRED in form.errors -> R.string.source_location_required
-                SourceFieldError.LOCATION_INVALID in form.errors -> R.string.source_location_invalid
-                SourceFieldError.LOCATION_DUPLICATE in form.errors -> R.string.source_location_duplicate
-                else -> null
-            }
+            val locationError = form.locationError
             if (form.isFile) {
                 Text(
                     form.url,
                     style = AdAwayType.body2,
                     color = colors.textPrimary,
-                    modifier = Modifier.fillMaxWidth().clickable { pickFile.launch(arrayOf("*/*")) }.padding(8.dp),
+                    modifier = Modifier.fillMaxWidth().clickable { pickFile.launchOrTell(arrayOf("*/*"), context) }.padding(8.dp),
                 )
                 locationError?.let { Text(stringResource(it), style = AdAwayType.caption, color = colors.primary, modifier = Modifier.padding(horizontal = 8.dp)) }
             } else {

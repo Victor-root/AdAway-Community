@@ -136,4 +136,8 @@ internal fun sourcesNavigation(navController: NavController) = SourcesNavigation
 )
 
 /** The wizard done, the home takes its place. */
-internal fun NavController.leaveWelcome() = navigate(Home) { popUpTo<Welcome> { inclusive = true } }
+internal fun NavController.leaveWelcome() = navigate(Home) {
+    popUpTo<Welcome> { inclusive = true }
+    // A second tap on Finish finds the home already there.
+    launchSingleTop = true
+}

@@ -35,7 +35,6 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
@@ -74,18 +73,31 @@ fun AdAwayTextField(
 
 /**
  * The text a field edits, showing [value]: the edits of the user go to [onValueChange], and a
- * [value] changed elsewhere replaces the text, the cursor at its end.
+ * [value] changed elsewhere replaces the text, the cursor at its end. The values coming back from
+ * the edits are recognized as such, so that one arriving late never undoes a later keystroke.
  */
 @Composable
 private fun rememberTextFieldState(value: String, onValueChange: (String) -> Unit): TextFieldState {
     val state = rememberTextFieldState(initialText = value)
+    val sent = remember { ArrayDeque<String>() }
     val currentValue by rememberUpdatedState(value)
     val currentOnValueChange by rememberUpdatedState(onValueChange)
     LaunchedEffect(state) {
-        snapshotFlow { state.text.toString() }.collect { text -> if (text != currentValue) currentOnValueChange(text) }
+        snapshotFlow { state.text.toString() }.collect { text ->
+            if (text != currentValue) {
+                sent.addLast(text)
+                currentOnValueChange(text)
+            }
+        }
     }
     LaunchedEffect(value) {
-        if (value != state.text.toString()) state.setTextAndPlaceCursorAtEnd(value)
+        val echo = sent.indexOf(value)
+        if (echo >= 0) {
+            repeat(echo + 1) { sent.removeFirst() }
+        } else if (value != state.text.toString()) {
+            sent.clear()
+            state.setTextAndPlaceCursorAtEnd(value)
+        }
     }
     return state
 }
@@ -161,16 +173,13 @@ fun <T> AdAwayToggleGroup(options: List<Pair<T, String>>, selected: T, onSelect:
 
 /** A checkbox with its text, the whole row toggling it. */
 @Composable
-fun AdAwayCheckboxRow(text: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit, modifier: Modifier = Modifier, enabled: Boolean = true) {
+fun AdAwayCheckboxRow(text: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit, modifier: Modifier = Modifier) {
     val colors = LocalAdAwayColors.current
     Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .clickable(enabled = enabled) { onCheckedChange(!checked) }
-            .alpha(if (enabled) 1f else DISABLED_ALPHA),
+        modifier = modifier.fillMaxWidth().clickable { onCheckedChange(!checked) },
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Checkbox(checked = checked, onCheckedChange = null, enabled = enabled, colors = adAwayCheckboxColors(), modifier = Modifier.padding(12.dp))
+        Checkbox(checked = checked, onCheckedChange = null, colors = adAwayCheckboxColors(), modifier = Modifier.padding(12.dp))
         Text(text, style = AdAwayType.small, color = colors.textPrimary)
     }
 }

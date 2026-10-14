@@ -73,6 +73,8 @@ import org.adaway.data.settings.ThemeMode
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.PastelIcon
+import org.adaway.ui.common.ruleTypeDescription
+import org.adaway.ui.common.ruleTypeIcon
 import org.adaway.ui.common.ruleTypeLabel
 import org.adaway.ui.common.statusMessageText
 import org.adaway.ui.home.BlockingActions
@@ -86,6 +88,7 @@ import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.Pastel
 import org.adaway.ui.theme.controlHighlight
 import org.adaway.ui.theme.highlight
+import org.adaway.ui.theme.pastel
 import org.adaway.vpn.AlwaysOnMode
 
 /** The controls of the TV home the remote moves between. */
@@ -454,29 +457,15 @@ private fun ActionCard(@DrawableRes icon: Int, pastel: Pastel, text: String, onC
 @Composable
 private fun StatCard(type: RuleType, count: Long, openLists: (RuleType) -> Unit, modifier: Modifier) {
     val colors = LocalAdAwayColors.current
-    @DrawableRes val icon: Int
-    @StringRes val description: Int
-    val pastel: Pastel
-    when (type) {
-        RuleType.BLOCKED -> {
-            icon = R.drawable.baseline_block_24; description = R.string.home_blocked_description; pastel = colors.pastelRed
-        }
-        RuleType.ALLOWED -> {
-            icon = R.drawable.baseline_check_24; description = R.string.home_allowed_description; pastel = colors.pastelGreen
-        }
-        RuleType.REDIRECTED -> {
-            icon = R.drawable.baseline_compare_arrows_24; description = R.string.home_redirected_description; pastel = colors.pastelBlue
-        }
-    }
     val label = ruleTypeLabel(type)
     TvCard(onClick = { openLists(type) }, modifier = modifier) {
         Column(modifier = Modifier.fillMaxWidth().padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-            PastelIcon(icon, pastel, contentDescription = label, size = 36.dp, padding = 9.dp)
+            PastelIcon(ruleTypeIcon(type), colors.pastel(type), contentDescription = label, size = 36.dp, padding = 9.dp)
             // The raw count, without thousands separators.
             Text(count.toString(), style = AdAwayType.headline6, fontWeight = FontWeight.Bold, color = colors.textPrimary, modifier = Modifier.padding(top = 6.dp))
             Text(label, style = AdAwayType.body2, color = colors.textPrimary)
             Text(
-                stringResource(description),
+                ruleTypeDescription(type),
                 style = AdAwayType.caption,
                 color = colors.homeCardSubtitle,
                 textAlign = TextAlign.Center,

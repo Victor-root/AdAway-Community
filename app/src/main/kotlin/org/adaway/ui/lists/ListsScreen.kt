@@ -1,6 +1,5 @@
 package org.adaway.ui.lists
 
-import android.widget.Toast
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -59,7 +58,7 @@ import kotlinx.coroutines.delay
 import org.adaway.R
 import org.adaway.data.db.RuleType
 import org.adaway.data.db.UserRuleEntity
-import org.adaway.system.copyToClipboard
+import org.adaway.system.copyHost
 import org.adaway.ui.common.AdAwayAppBar
 import org.adaway.ui.common.AdAwayFab
 import org.adaway.ui.common.AdAwayScreen
@@ -68,6 +67,7 @@ import org.adaway.ui.common.AppBarAction
 import org.adaway.ui.common.AppBarTitle
 import org.adaway.ui.common.ApplyConfigurationSnackbar
 import org.adaway.ui.common.adAwayCheckboxColors
+import org.adaway.ui.common.ruleTypeIcon
 import org.adaway.ui.common.ruleTypeLabel
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -94,7 +94,6 @@ fun ListsScreen(type: RuleType, userRules: List<UserRuleEntity>, sourceRules: La
     var editing by remember { mutableStateOf<UserRuleEntity?>(null) }
     var adding by rememberSaveable { mutableStateOf(false) }
     var deleted by remember { mutableStateOf<UserRuleEntity?>(null) }
-    val copiedMessage = stringResource(R.string.host_copied)
     LaunchedEffect(deleted) {
         if (deleted == null) return@LaunchedEffect
         delay(UNDO_MILLIS)
@@ -178,8 +177,7 @@ fun ListsScreen(type: RuleType, userRules: List<UserRuleEntity>, sourceRules: La
                         selected = false,
                         onToggle = {},
                         onLongClick = {
-                            context.copyToClipboard(host)
-                            Toast.makeText(context, copiedMessage, Toast.LENGTH_SHORT).show()
+                            context.copyHost(host)
                         },
                     )
                 }
@@ -257,18 +255,13 @@ private fun TypeNavigation(type: RuleType, onSelect: (RuleType) -> Unit) {
             Row(modifier = Modifier.fillMaxSize()) {
                 RuleType.entries.forEach { item ->
                     val checked = item == type
-                    val icon = when (item) {
-                        RuleType.BLOCKED -> R.drawable.baseline_block_24
-                        RuleType.ALLOWED -> R.drawable.baseline_check_24
-                        RuleType.REDIRECTED -> R.drawable.baseline_compare_arrows_24
-                    }
                     val tint = if (checked) colors.onPrimary else colors.onPrimary.copy(alpha = 0.7f)
                     Column(
                         modifier = Modifier.weight(1f).fillMaxSize().clickable { onSelect(item) },
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center,
                     ) {
-                        Icon(painterResource(icon), contentDescription = null, tint = tint, modifier = Modifier.size(24.dp))
+                        Icon(painterResource(ruleTypeIcon(item)), contentDescription = null, tint = tint, modifier = Modifier.size(24.dp))
                         Text(ruleTypeLabel(item), style = if (checked) AdAwayType.small else AdAwayType.caption, color = tint)
                     }
                 }

@@ -5,6 +5,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import kotlin.math.ln
+import org.adaway.data.db.RuleType
 
 /** A pastel disc and the color of the icon drawn on it. */
 @Immutable
@@ -41,6 +42,13 @@ data class AdAwayColors(
     val logBlocked: Color,
     val logAllowed: Color,
 )
+
+/** The pastel of a type of rules, on its home counter. */
+fun AdAwayColors.pastel(type: RuleType): Pastel = when (type) {
+    RuleType.BLOCKED -> pastelRed
+    RuleType.ALLOWED -> pastelGreen
+    RuleType.REDIRECTED -> pastelBlue
+}
 
 /** How Material 2 lightens a surface in the dark theme for an elevation in dp. */
 private fun Color.elevated(elevation: Float): Color =

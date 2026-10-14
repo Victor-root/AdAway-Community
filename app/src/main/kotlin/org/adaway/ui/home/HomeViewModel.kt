@@ -37,7 +37,6 @@ data class BlockingState(val method: BlockingMethod, val vpnStatus: VpnStatus, v
 data class HomeState(
     val summary: BlockListSummary,
     val sources: SourceStats,
-    val configurationChanged: Boolean,
     val legacyImportFailed: Boolean,
     val blocking: BlockingState,
 )
@@ -59,11 +58,10 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     val state: StateFlow<HomeState?> = combine(
         container.blockListState.summary,
         container.sourceRepository.sources.map(::sourceStats),
-        container.blockListState.configurationChanged,
         container.settingsRepository.legacyImportFailed,
         blocking,
-    ) { summary, sources, configurationChanged, legacyImportFailed, blocking ->
-        HomeState(summary, sources, configurationChanged, legacyImportFailed, blocking)
+    ) { summary, sources, legacyImportFailed, blocking ->
+        HomeState(summary, sources, legacyImportFailed, blocking)
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
 
     val progress = updater.progress
@@ -92,8 +90,6 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     }
 
     fun sync() = updater.requestSync()
-
-    fun apply() = updater.requestApply()
 
     /** For the VPN, called once the consent is granted. */
     fun enableBlocking() {

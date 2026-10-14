@@ -78,19 +78,22 @@ fun UpdateScreen(onBack: () -> Unit) {
                     contentDescription = stringResource(R.string.logo_description),
                     modifier = Modifier.size(iconSize),
                 )
-                Text(
-                    stringResource(
-                        when {
-                            progress != null -> R.string.update_updating_header
-                            updateAvailable -> R.string.update_update_available_header
-                            else -> R.string.update_up_to_date_header
-                        },
-                    ),
-                    fontSize = 34.sp,
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(horizontal = 32.dp),
-                )
+                // Nothing to tell yet while checking, or after a failed check.
+                val header = when {
+                    progress != null -> R.string.update_updating_header
+                    release == null -> null
+                    updateAvailable -> R.string.update_update_available_header
+                    else -> R.string.update_up_to_date_header
+                }
+                header?.let {
+                    Text(
+                        stringResource(it),
+                        fontSize = 34.sp,
+                        color = Color.White,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(horizontal = 32.dp),
+                    )
+                }
                 when {
                     checking -> CircularProgressIndicator(color = Color.White, modifier = Modifier.padding(top = 24.dp))
                     release == null -> Text(

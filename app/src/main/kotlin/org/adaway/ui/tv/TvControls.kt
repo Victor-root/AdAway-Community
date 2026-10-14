@@ -27,6 +27,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,14 +37,18 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
 import org.adaway.ui.common.AdAwayDialog
+import org.adaway.ui.common.ApplyConfiguration
+import org.adaway.ui.common.ConfigurationApplier
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.theme.AdAwayColors
 import org.adaway.ui.theme.AdAwayType
@@ -130,6 +135,29 @@ fun TvHeaderButton(text: String, icon: Painter, onClick: () -> Unit, modifier: M
                 overflow = TextOverflow.Ellipsis,
             )
         }
+    }
+}
+
+/** Whether a changed configuration waits to be applied: the TV headers then offer it, with a hint. */
+@Composable
+fun isApplyPending(applier: ConfigurationApplier): Boolean {
+    val configurationChanged by applier.configurationChanged.collectAsStateWithLifecycle()
+    val progress by applier.progress.collectAsStateWithLifecycle()
+    return configurationChanged && progress == null
+}
+
+/** The Apply pill of a header. It goes away once applying: the focus first moves to [afterApply]. */
+@Composable
+fun TvApplyButton(applier: ConfigurationApplier, afterApply: FocusRequester) {
+    ApplyConfiguration(applier) { apply ->
+        TvHeaderButton(
+            stringResource(R.string.apply),
+            painterResource(R.drawable.baseline_check_24),
+            onClick = {
+                afterApply.requestFocus()
+                apply()
+            },
+        )
     }
 }
 

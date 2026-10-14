@@ -1,6 +1,5 @@
 package org.adaway.ui.tv
 
-import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -41,11 +40,11 @@ import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.delay
 import org.adaway.R
 import org.adaway.data.db.RuleType
-import org.adaway.system.copyToClipboard
-import org.adaway.ui.common.ApplyConfiguration
+import org.adaway.system.copyHost
 import org.adaway.ui.common.ApplyProgressSnackbar
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.common.ruleTypeIcon
 import org.adaway.ui.log.DnsLogEntry
 import org.adaway.ui.log.DnsLogErrorDialog
 import org.adaway.ui.log.DnsLogViewModel
@@ -67,14 +66,11 @@ fun TvDnsLogScreen() {
     val recording by viewModel.recording.collectAsStateWithLifecycle()
     val vpnInactive by viewModel.vpnInactive.collectAsStateWithLifecycle()
     val error by viewModel.error.collectAsStateWithLifecycle()
-    val configurationChanged by viewModel.applier.configurationChanged.collectAsStateWithLifecycle()
-    val progress by viewModel.applier.progress.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    val copied = stringResource(R.string.host_copied)
     val lifecycle = LocalLifecycleOwner.current.lifecycle
     var selected by remember { mutableStateOf<DnsLogEntry?>(null) }
     val refreshFocus = remember { FocusRequester() }
-    val pendingApply = configurationChanged && progress == null
+    val pendingApply = isApplyPending(viewModel.applier)
     LifecycleResumeEffect(Unit) {
         viewModel.refresh()
         onPauseOrDispose {}
@@ -124,11 +120,7 @@ fun TvDnsLogScreen() {
                     onClick = viewModel::clear,
                     modifier = Modifier.padding(end = 8.dp),
                 )
-                if (pendingApply) {
-                    ApplyConfiguration(viewModel.applier) { apply ->
-                        TvHeaderButton(stringResource(R.string.apply), painterResource(R.drawable.baseline_check_24), onClick = apply)
-                    }
-                }
+                if (pendingApply) TvApplyButton(viewModel.applier, afterApply = refreshFocus)
             }
         },
         snackbar = { ApplyProgressSnackbar(viewModel.applier) },
@@ -154,8 +146,7 @@ fun TvDnsLogScreen() {
                     if (blocked) viewModel.removeHost(entry.host) else viewModel.putHost(entry.host, RuleType.BLOCKED)
                 }),
                 DialogButton(stringResource(R.string.tv_dialog_copy_hostname), onClick = {
-                    context.copyToClipboard(entry.host)
-                    Toast.makeText(context, copied, Toast.LENGTH_SHORT).show()
+                    context.copyHost(entry.host)
                 }),
             ),
             onDismiss = { selected = null },
@@ -190,8 +181,8 @@ private fun ListMark(type: RuleType?) {
     val colors = LocalAdAwayColors.current
     val description = stringResource(R.string.tv_log_entry_status_description)
     when (type) {
-        RuleType.BLOCKED -> Icon(painterResource(R.drawable.baseline_block_24), description, tint = colors.logBlocked, modifier = Modifier.size(32.dp))
-        RuleType.ALLOWED -> Icon(painterResource(R.drawable.baseline_check_24), description, tint = colors.logAllowed, modifier = Modifier.size(32.dp))
+        RuleType.BLOCKED -> Icon(painterResource(ruleTypeIcon(type)), description, tint = colors.logBlocked, modifier = Modifier.size(32.dp))
+        RuleType.ALLOWED -> Icon(painterResource(ruleTypeIcon(type)), description, tint = colors.logAllowed, modifier = Modifier.size(32.dp))
         RuleType.REDIRECTED, null -> Box(modifier = Modifier.size(32.dp).border(2.dp, colors.textPrimary, CircleShape))
     }
 }

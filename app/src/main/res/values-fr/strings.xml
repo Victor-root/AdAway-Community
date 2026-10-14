@@ -207,4 +207,5 @@
     <string name="permission_send_command_label">Envoyer des commandes à AdAway</string>
     <string name="permission_send_command_description">Permettre d’envoyer des commandes à AdAway telles qu’activer ou désactiver le blocage des publicités pour le système entier</string>
     <string name="menu_refresh">Actualiser</string>
+    <string name="activity_unavailable">Aucune application de cet appareil ne peut ouvrir ceci.</string>
 </resources>

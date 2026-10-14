@@ -28,7 +28,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
 import org.adaway.data.db.SourceEntity
-import org.adaway.ui.common.ApplyConfiguration
 import org.adaway.ui.common.ApplyProgressSnackbar
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
@@ -48,13 +47,11 @@ private const val NO_SOURCE = -1L
 fun TvSourcesScreen(navigation: SourcesNavigation) {
     val viewModel = appViewModel(::SourcesViewModel)
     val sources by viewModel.sources.collectAsStateWithLifecycle()
-    val configurationChanged by viewModel.applier.configurationChanged.collectAsStateWithLifecycle()
-    val progress by viewModel.applier.progress.collectAsStateWithLifecycle()
     var selected by remember { mutableStateOf<Pair<SourceEntity, String>?>(null) }
     // The card focused last, focused again when coming back from the edit screen, as Android does.
     var focused by rememberSaveable { mutableStateOf(NO_SOURCE) }
     val addFocus = remember { FocusRequester() }
-    val pendingApply = configurationChanged && progress == null
+    val pendingApply = isApplyPending(viewModel.applier)
     TvScreen(
         header = {
             TvHeader(
@@ -71,11 +68,7 @@ fun TvSourcesScreen(navigation: SourcesNavigation) {
                         .onFocusChanged { if (it.isFocused) focused = NO_SOURCE }
                         .padding(end = 8.dp),
                 )
-                if (pendingApply) {
-                    ApplyConfiguration(viewModel.applier) { apply ->
-                        TvHeaderButton(stringResource(R.string.apply), painterResource(R.drawable.baseline_check_24), onClick = apply)
-                    }
-                }
+                if (pendingApply) TvApplyButton(viewModel.applier, afterApply = addFocus)
             }
         },
         snackbar = { ApplyProgressSnackbar(viewModel.applier) },
@@ -111,7 +104,11 @@ fun TvSourcesScreen(navigation: SourcesNavigation) {
             onDismiss = { selected = null },
         )
     }
-    LaunchedEffect(Unit) { if (focused == NO_SOURCE) addFocus.requestFocus() }
+    // Also when the card focused last is gone, its source deleted.
+    val loaded = sources
+    LaunchedEffect(loaded != null) {
+        if (loaded != null && loaded.none { it.id == focused }) addFocus.requestFocus()
+    }
 }
 
 /** Name, address, update status and size of a source, faded when disabled. */

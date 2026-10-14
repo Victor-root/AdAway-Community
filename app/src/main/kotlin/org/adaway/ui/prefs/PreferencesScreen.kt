@@ -22,6 +22,8 @@ import org.adaway.data.settings.ThemeMode
 import org.adaway.engine.Engine
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.theme.LocalTelevision
+import org.adaway.ui.theme.defaultThemeMode
 
 class PreferencesNavigation(
     val back: () -> Unit,
@@ -41,7 +43,7 @@ private enum class PreferenceChoice { THEME, SYSTEM_APPS, IPV4_REDIRECTION, IPV6
 
 /**
  * The preferences, all on one screen as in 6.x. Only the section of the blocking method in use is
- * enabled. The settings of features not written yet are grayed out.
+ * enabled.
  */
 @Composable
 fun PreferencesScreen(navigation: PreferencesNavigation) {
@@ -159,7 +161,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
         PreferenceChoice.THEME -> ChoiceDialog(
             title = stringResource(R.string.pref_dark_theme),
             choices = themeChoices,
-            selected = ThemeModes.indexOf(current.themeMode ?: ThemeMode.SYSTEM),
+            selected = ThemeModes.indexOf(current.themeMode ?: defaultThemeMode(LocalTelevision.current)),
             onSelect = { index -> viewModel.update { it.copy(themeMode = ThemeModes[index]) } },
             onDismiss = { choice = null },
         )

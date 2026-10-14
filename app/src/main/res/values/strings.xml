@@ -205,4 +205,5 @@
     <string name="permission_send_command_label">Send commands to AdAway</string>
     <string name="permission_send_command_description">Allow to send commands to AdAway like enabling or disabling the system-wide ad-blocking</string>
     <string name="menu_refresh">Refresh</string>
+    <string name="activity_unavailable">No app on this device can open this.</string>
 </resources>

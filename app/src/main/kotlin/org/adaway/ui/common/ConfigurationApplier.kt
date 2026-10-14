@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -19,10 +20,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.stateIn
 import org.adaway.AppContainer
 import org.adaway.R
+import org.adaway.blocklist.UpdateError
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.root.RootState
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -59,8 +63,6 @@ class ConfigurationApplier(private val container: AppContainer, private val scop
     /** Applies, then turns the blocking on. For the VPN, called once the consent is granted. */
     fun applyAndEnable() = updater.requestApply(andThen = { container.blockingController.enable() })
 
-    fun dismissError() = updater.dismissError()
-
     private companion object {
         const val STOP_TIMEOUT_MILLIS = 5_000L
     }
@@ -82,20 +84,28 @@ fun ApplyConfigurationSnackbar(applier: ConfigurationApplier) {
     }
 }
 
-/** The snackbar of the configuration being applied, or of its failure, else [idle]. */
+/**
+ * The snackbar of the configuration being applied, or of a failure while on the screen, else
+ * [idle]. The failure stays for the home screen, which tells it in full.
+ */
 @Composable
 fun ApplyProgressSnackbar(applier: ConfigurationApplier, idle: @Composable () -> Unit = {}) {
     val configurationChanged by applier.configurationChanged.collectAsStateWithLifecycle()
     val progress by applier.progress.collectAsStateWithLifecycle()
-    val error by applier.error.collectAsStateWithLifecycle()
+    var failure by remember { mutableStateOf<UpdateError?>(null) }
     val colors = LocalAdAwayColors.current
-    LaunchedEffect(error) {
-        if (error == null) return@LaunchedEffect
-        delay(FAILURE_MILLIS)
-        applier.dismissError()
+    LaunchedEffect(applier) {
+        applier.error.drop(1).collectLatest { error ->
+            failure = error
+            if (error != null) {
+                delay(FAILURE_MILLIS)
+                failure = null
+            }
+        }
     }
+    val shown = failure
     when {
-        error != null -> AdAwaySnackbar(stringResource(R.string.configuration_failed)) {
+        shown != null -> AdAwaySnackbar(if (shown == UpdateError.APPLY_FAILED) stringResource(R.string.configuration_failed) else updateErrorTitle(shown)) {
             Icon(
                 painterResource(R.drawable.ic_error_outline_24dp),
                 contentDescription = null,

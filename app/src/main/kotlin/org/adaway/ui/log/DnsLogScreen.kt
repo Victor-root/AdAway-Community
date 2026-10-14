@@ -48,7 +48,7 @@ import org.adaway.R
 import org.adaway.data.db.RuleType
 import org.adaway.dnslog.DnsLogError
 import org.adaway.engine.Engine
-import org.adaway.system.copyToClipboard
+import org.adaway.system.copyHost
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.AdAwayDialog
 import org.adaway.ui.common.AdAwayEditText
@@ -58,6 +58,7 @@ import org.adaway.ui.common.AppBarAction
 import org.adaway.ui.common.ApplyConfigurationSnackbar
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.common.ruleTypeIcon
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 
@@ -148,11 +149,10 @@ private fun EmptyLog(blockedRequestsIgnored: Boolean) {
 @Composable
 private fun DnsLogRow(entry: DnsLogEntry, onSelect: (RuleType) -> Unit) {
     val context = LocalContext.current
-    val copied = stringResource(R.string.host_copied)
     Row(modifier = Modifier.fillMaxWidth().height(48.dp).padding(start = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-        ListIcon(R.drawable.baseline_block_24, R.string.log_block, entry.type == RuleType.BLOCKED) { onSelect(RuleType.BLOCKED) }
-        ListIcon(R.drawable.baseline_check_24, R.string.log_allow, entry.type == RuleType.ALLOWED) { onSelect(RuleType.ALLOWED) }
-        ListIcon(R.drawable.baseline_compare_arrows_24, R.string.log_redirect, entry.type == RuleType.REDIRECTED) { onSelect(RuleType.REDIRECTED) }
+        ListIcon(ruleTypeIcon(RuleType.BLOCKED), R.string.log_block, entry.type == RuleType.BLOCKED) { onSelect(RuleType.BLOCKED) }
+        ListIcon(ruleTypeIcon(RuleType.ALLOWED), R.string.log_allow, entry.type == RuleType.ALLOWED) { onSelect(RuleType.ALLOWED) }
+        ListIcon(ruleTypeIcon(RuleType.REDIRECTED), R.string.log_redirect, entry.type == RuleType.REDIRECTED) { onSelect(RuleType.REDIRECTED) }
         Box(
             modifier = Modifier
                 .weight(1f)
@@ -166,8 +166,7 @@ private fun DnsLogRow(entry: DnsLogEntry, onSelect: (RuleType) -> Unit) {
                         }
                     },
                     onLongClick = {
-                        context.copyToClipboard(entry.host)
-                        Toast.makeText(context, copied, Toast.LENGTH_SHORT).show()
+                        context.copyHost(entry.host)
                     },
                 )
                 .padding(start = 8.dp, end = 16.dp),

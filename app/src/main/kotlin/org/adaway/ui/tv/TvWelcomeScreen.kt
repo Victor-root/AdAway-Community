@@ -1,5 +1,6 @@
 package org.adaway.ui.tv
 
+import androidx.activity.compose.BackHandler
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -89,6 +90,10 @@ fun TvWelcomeScreen(state: WelcomeState, viewModel: WelcomeViewModel, actions: W
     RedNavigationBar()
     val sync by viewModel.sync.collectAsStateWithLifecycle()
     var page by rememberSaveable { mutableStateOf(WelcomePage.INTRO) }
+    // Back to the previous page, until the download starts: Back then leaves, as on 6.x.
+    BackHandler(enabled = page == WelcomePage.METHOD || (page == WelcomePage.ACTIVATE && sync == null)) {
+        page = if (page == WelcomePage.METHOD) WelcomePage.INTRO else WelcomePage.METHOD
+    }
     LaunchedEffect(Unit) {
         viewModel.methodGranted.collect {
             page = WelcomePage.ACTIVATE

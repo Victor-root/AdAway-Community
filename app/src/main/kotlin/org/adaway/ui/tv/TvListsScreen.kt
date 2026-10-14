@@ -1,6 +1,5 @@
 package org.adaway.ui.tv
 
-import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -31,13 +30,13 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import org.adaway.R
 import org.adaway.data.db.RuleType
 import org.adaway.data.db.UserRuleEntity
-import org.adaway.system.copyToClipboard
+import org.adaway.system.copyHost
 import org.adaway.ui.common.AdAwayDialog
 import org.adaway.ui.common.AdAwayEditText
-import org.adaway.ui.common.ApplyConfiguration
 import org.adaway.ui.common.ApplyProgressSnackbar
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.common.ruleTypeIcon
 import org.adaway.ui.common.ruleTypeLabel
 import org.adaway.ui.lists.ListsViewModel
 import org.adaway.ui.lists.RuleDialog
@@ -63,28 +62,16 @@ fun TvListsScreen(type: RuleType) {
     val userRules by viewModel.userRules.collectAsStateWithLifecycle()
     val sourceRules = viewModel.sourceRules.collectAsLazyPagingItems()
     val showSourceRules by viewModel.showSourceRules.collectAsStateWithLifecycle()
-    val configurationChanged by viewModel.applier.configurationChanged.collectAsStateWithLifecycle()
-    val progress by viewModel.applier.progress.collectAsStateWithLifecycle()
     val context = LocalContext.current
-    val copied = stringResource(R.string.host_copied)
-    val copy = { host: String ->
-        context.copyToClipboard(host)
-        Toast.makeText(context, copied, Toast.LENGTH_SHORT).show()
-    }
     var editing by remember { mutableStateOf<RuleEditing?>(null) }
     var selected by remember { mutableStateOf<UserRuleEntity?>(null) }
     var searching by rememberSaveable { mutableStateOf(false) }
     val addFocus = remember { FocusRequester() }
-    val pendingApply = configurationChanged && progress == null
-    val icon = when (type) {
-        RuleType.BLOCKED -> R.drawable.baseline_block_24
-        RuleType.ALLOWED -> R.drawable.baseline_check_24
-        RuleType.REDIRECTED -> R.drawable.baseline_compare_arrows_24
-    }
+    val pendingApply = isApplyPending(viewModel.applier)
     TvScreen(
         header = {
             TvHeader(
-                icon = painterResource(icon),
+                icon = painterResource(ruleTypeIcon(type)),
                 title = ruleTypeLabel(type),
                 hint = if (pendingApply) stringResource(R.string.configuration_changed) else null,
             ) {
@@ -106,11 +93,7 @@ fun TvListsScreen(type: RuleType) {
                     onClick = { viewModel.setShowSourceRules(!showSourceRules) },
                     modifier = Modifier.padding(end = 8.dp),
                 )
-                if (pendingApply) {
-                    ApplyConfiguration(viewModel.applier) { apply ->
-                        TvHeaderButton(stringResource(R.string.apply), painterResource(R.drawable.baseline_check_24), onClick = apply)
-                    }
-                }
+                if (pendingApply) TvApplyButton(viewModel.applier, afterApply = addFocus)
             }
         },
         snackbar = { ApplyProgressSnackbar(viewModel.applier) },
@@ -127,7 +110,7 @@ fun TvListsScreen(type: RuleType) {
                 items(sourceCount) { index ->
                     val line = sourceRules[index] ?: return@items
                     val (host, redirection) = splitCatalogLine(line)
-                    RuleRow(host, redirection, onClick = { copy(host) })
+                    RuleRow(host, redirection, onClick = { context.copyHost(host) })
                 }
             }
         }
@@ -138,8 +121,12 @@ fun TvListsScreen(type: RuleType) {
             items = listOf(
                 DialogButton(stringResource(if (rule.enabled) R.string.disable else R.string.enable), onClick = { viewModel.setEnabled(rule, !rule.enabled) }),
                 DialogButton(stringResource(R.string.edit), onClick = { editing = RuleEditing.Existing(rule) }),
-                DialogButton(stringResource(R.string.delete), onClick = { viewModel.delete(rule) }),
-                DialogButton(stringResource(R.string.tv_dialog_copy_hostname), onClick = { copy(rule.host) }),
+                DialogButton(stringResource(R.string.delete), onClick = {
+                    // The focused row goes away with the rule.
+                    addFocus.requestFocus()
+                    viewModel.delete(rule)
+                }),
+                DialogButton(stringResource(R.string.tv_dialog_copy_hostname), onClick = { context.copyHost(rule.host) }),
             ),
             onDismiss = { selected = null },
         )
