@@ -233,5 +233,4 @@
         <item quantity="many">%1$d mois</item>
         <item quantity="other">%1$d mois</item>
     </plurals>
-    <string name="source_file_hint">Touchez Fichier pour sélectionner le fichier source</string>
 </resources>

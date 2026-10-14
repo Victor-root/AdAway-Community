@@ -228,5 +228,4 @@
         <item quantity="one">%1$d month</item>
         <item quantity="other">%1$d months</item>
     </plurals>
-    <string name="source_file_hint">Press File to select source file</string>
 </resources>
