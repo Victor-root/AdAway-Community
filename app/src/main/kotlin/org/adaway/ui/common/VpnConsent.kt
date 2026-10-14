@@ -10,9 +10,6 @@ import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.StringRes
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -74,13 +71,11 @@ fun VpnRefusalDialog(refusal: VpnRefusal, onDismiss: () -> Unit) {
         VpnRefusal.OTHER_ALWAYS_ON_VPN -> R.string.always_on_vpn_title to R.string.always_on_vpn_text
         VpnRefusal.UNKNOWN_CAUSE -> R.string.vpn_request_failed_title to R.string.vpn_request_failed_text
     }
-    AlertDialog(
+    AdAwayAlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text(stringResource(title)) },
-        text = { Text(stringResource(text)) },
-        confirmButton = {
-            TextButton(onClick = { onDismiss(); openVpnSettings() }) { Text(stringResource(R.string.open_vpn_settings)) }
-        },
-        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.close)) } },
+        title = stringResource(title),
+        message = stringResource(text),
+        confirmButton = DialogButton(stringResource(R.string.open_vpn_settings), onClick = { onDismiss(); openVpnSettings() }),
+        dismissButton = DialogButton(stringResource(R.string.close), onClick = onDismiss),
     )
 }

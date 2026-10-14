@@ -39,13 +39,13 @@ fun LogoBadge(size: Dp, modifier: Modifier = Modifier) {
     )
 }
 
-/** Header with the app name and version, drawn behind the status bar. */
+/** Red header with the app name and version, drawn behind the status bar. */
 @Composable
-fun BrandHeader(modifier: Modifier = Modifier, color: Color = BrandRed) {
+fun BrandHeader(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .background(color)
+            .background(BrandRed)
             .statusBarsPadding()
             .padding(horizontal = 24.dp, vertical = 20.dp),
         verticalAlignment = Alignment.CenterVertically,

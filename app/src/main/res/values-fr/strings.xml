@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_subtitle">Bloqueur de publicités libre</string>
-    <string name="logo_description">Logo d\'AdAway</string>
+    <string name="app_subtitle">Bloqueur de publicités à code source ouvert</string>
+    <string name="logo_description">Logo AdAway</string>
 
     <string name="welcome_title">Bienvenue dans AdAway !</string>
     <string name="welcome_method_text">AdAway propose deux méthodes de blocage des publicités. Choisissez celle qui vous convient :</string>
@@ -54,11 +54,11 @@
     <string name="enable">Activer</string>
     <string name="save">Enregistrer</string>
     <string name="undo">Annuler</string>
-    <string name="retry_sync">Réessayer</string>
-    <string name="sync_sources">Mettre à jour les listes de blocage</string>
-    <string name="home_blocked_description">Pubs et traqueurs</string>
+    <string name="retry_sync">Essayer de resynchroniser</string>
+    <string name="sync_sources">Mettre à jour le fichier hosts</string>
+    <string name="home_blocked_description">Pubs &amp; traqueurs</string>
     <string name="home_allowed_description">Exceptions</string>
-    <string name="home_redirected_description">Règles perso</string>
+    <string name="home_redirected_description">Règles personnalisées</string>
     <string name="host_copied">Nom copié dans le presse-papiers</string>
     <string name="lists_title">Vos listes</string>
     <string name="lists_search">Rechercher</string>
@@ -68,10 +68,10 @@
     <string name="lists_user_rules_empty">Aucune entrée pour l\'instant.</string>
     <string name="lists_source_rules">Depuis les listes de blocage</string>
     <string name="lists_source_rules_empty">Aucune entrée.</string>
-    <string name="progress_checking">Recherche de mises à jour des listes de blocage</string>
-    <string name="progress_downloading">Téléchargement de %1$s</string>
-    <string name="progress_reading">Lecture de %1$s</string>
-    <string name="progress_applying">Application de la configuration</string>
+    <string name="progress_checking">Vérification de la présence de mises à jour</string>
+    <string name="progress_downloading">Téléchargement de la source %1$s</string>
+    <string name="progress_reading">Analyse de la source %1$s</string>
+    <string name="progress_applying">Synchronisation de la base de données des règles</string>
     <string name="rule_add">Ajouter une entrée</string>
     <string name="rule_add_blocked">Bloquer un nom</string>
     <string name="rule_add_allowed">Autoriser un nom</string>
@@ -126,15 +126,15 @@
     <string name="sync_error_file_unreadable">le fichier ne peut plus être lu, choisissez-le à nouveau</string>
     <string name="sync_error_storage">l\'espace de stockage de l\'appareil n\'a pas pu être écrit</string>
     <string name="update_error_no_network_title">Aucune connexion à Internet</string>
-    <string name="update_error_no_network_text">Les listes de blocage n\'ont pas pu être téléchargées. Vérifiez que l\'appareil est connecté à Internet.</string>
-    <string name="update_error_download_title">Échec du téléchargement</string>
-    <string name="update_error_download_text">Aucune de vos listes de blocage activées n\'a pu être téléchargée. La raison est indiquée sur chaque liste.</string>
-    <string name="update_error_apply_title">Configuration non appliquée</string>
-    <string name="update_error_apply_text">La nouvelle configuration n\'a pas pu être enregistrée sur l\'appareil. Vérifiez l\'espace de stockage libre.</string>
+    <string name="update_error_no_network_text">Impossible d’établir une connexion vers Internet. Vérifiez la connectivité de votre appareil.</string>
+    <string name="update_error_download_title">Échec de téléchargement de la source du fichier hosts</string>
+    <string name="update_error_download_text">Aucune de vos sources de fichiers hosts activées n’est accessible. Assurez-vous que votre appareil est bien connecté à Internet.</string>
+    <string name="update_error_apply_title">Échec de création du fichier privé</string>
+    <string name="update_error_apply_text">Impossible de créer un fichier privé pour construire une nouvelle source de fichiers hosts. Vérifiez l’espace libre sur votre appareil.</string>
     <plurals name="home_sources_up_to_date">
-        <item quantity="one">%1$d liste à jour</item>
-        <item quantity="many">%1$d listes à jour</item>
-        <item quantity="other">%1$d listes à jour</item>
+        <item quantity="one">%1$d source à jour</item>
+        <item quantity="many">%1$d sources à jour</item>
+        <item quantity="other">%1$d sources à jour</item>
     </plurals>
     <plurals name="home_sources_pending">
         <item quantity="one">%1$d liste à mettre à jour</item>
@@ -187,8 +187,20 @@
     <string name="vpn_persistence_adb_commands">Si l\'écran VPN système est caché sur votre TV, utilisez ADB, puis redémarrez la TV :\n\n• Activer always-on pour AdAway :\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Désactiver always-on :\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Réglages VPN cachés sur cet Android TV. Utilisez les commandes ADB affichées.</string>
     <string name="vpn_persistence_dismiss">Compris</string>
-    <string name="apply_blocking_off_title">Le blocage des publicités est coupé</string>
-    <string name="apply_blocking_off_text">Vos changements seront utilisés dès que le blocage sera activé. L\'activer maintenant ?</string>
-    <string name="apply_and_enable">Appliquer et activer</string>
-    <string name="apply_only">Appliquer seulement</string>
+    <string name="status_update_available">Une mise à jour des sources est proposée</string>
+    <string name="status_no_update_found">Aucune mise à jour des sources n’a été trouvée</string>
+    <string name="status_vpn_configuration_updated">La configuration du RPV/VPN a été mise à jour avec succès</string>
+    <string name="error_dialog_help">Pour plus de précisions, consultez l’aide.</string>
+    <string name="help">Aide</string>
+    <string name="home_tile_log">Journal DNS</string>
+    <string name="home_log_subtitle">Voir ce qui est bloqué en temps réel</string>
+    <string name="home_tile_help">Aide</string>
+    <string name="home_help_subtitle">Guides et dépannage</string>
+    <string name="home_tile_preferences">Préférences</string>
+    <string name="home_preferences_subtitle">Configurer AdAway</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%1$d source périmée</item>
+        <item quantity="many">%1$d sources périmées</item>
+        <item quantity="other">%1$d sources périmées</item>
+    </plurals>
 </resources>

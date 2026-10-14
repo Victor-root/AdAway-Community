@@ -21,7 +21,9 @@ import org.adaway.vpn.StartResult
 import org.adaway.vpn.VpnStatus
 
 /** How the enabled sources stand. */
-data class SourceStats(val upToDate: Int, val pending: Int, val failed: Int)
+data class SourceStats(val upToDate: Int, val pending: Int, val failed: Int) {
+    val outdated: Int get() = pending + failed
+}
 
 /** How ad blocking stands. Starting, reconnecting or waiting for a network still count as on. */
 data class BlockingState(val method: BlockingMethod, val vpnStatus: VpnStatus) {
@@ -55,6 +57,7 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
 
     val progress = updater.progress
+    val outcome = updater.outcome
     val error = updater.error
 
     /** Set when the VPN the user wants lacks the consent: the screen asks Android for it. */
@@ -77,7 +80,9 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
 
     /** Called once the consent is granted, when needed. */
     fun enableBlocking() {
-        viewModelScope.launch { vpnController.enable() }
+        viewModelScope.launch {
+            if (vpnController.enable() == StartResult.STARTED) updater.announceApplied()
+        }
     }
 
     fun disableBlocking() {

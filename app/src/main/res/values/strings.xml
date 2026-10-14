@@ -57,9 +57,9 @@
     <string name="enable">Enable</string>
     <string name="save">Save</string>
     <string name="undo">Undo</string>
-    <string name="retry_sync">Retry</string>
-    <string name="sync_sources">Update the block lists</string>
-    <string name="home_blocked_description">Ads and trackers</string>
+    <string name="retry_sync">Retry sync</string>
+    <string name="sync_sources">Update hosts</string>
+    <string name="home_blocked_description">Ads &amp; trackers</string>
     <string name="home_allowed_description">Exceptions</string>
     <string name="home_redirected_description">Custom rules</string>
     <string name="host_copied">Name copied to the clipboard</string>
@@ -71,10 +71,10 @@
     <string name="lists_user_rules_empty">No entry yet.</string>
     <string name="lists_source_rules">From the block lists</string>
     <string name="lists_source_rules_empty">No entry.</string>
-    <string name="progress_checking">Checking the block lists for updates</string>
-    <string name="progress_downloading">Downloading %1$s</string>
-    <string name="progress_reading">Reading %1$s</string>
-    <string name="progress_applying">Applying the configuration</string>
+    <string name="progress_checking">Checking for update</string>
+    <string name="progress_downloading">Downloading source %1$s</string>
+    <string name="progress_reading">Parsing %1$s source</string>
+    <string name="progress_applying">Syncing rule database</string>
     <string name="rule_add">Add an entry</string>
     <string name="rule_add_blocked">Block a name</string>
     <string name="rule_add_allowed">Allow a name</string>
@@ -129,14 +129,14 @@
     <string name="sync_error_file_unreadable">the file can no longer be read, pick it again</string>
     <string name="sync_error_storage">the device storage could not be written</string>
     <string name="update_error_no_network_title">No Internet connection</string>
-    <string name="update_error_no_network_text">The block lists could not be downloaded. Check that the device is connected to the Internet.</string>
-    <string name="update_error_download_title">Download failed</string>
-    <string name="update_error_download_text">None of your enabled block lists could be downloaded. The reason is shown on each list.</string>
-    <string name="update_error_apply_title">Configuration not applied</string>
-    <string name="update_error_apply_text">The new configuration could not be saved on the device. Check the free storage space.</string>
+    <string name="update_error_no_network_text">Unable to establish a connection to the Internet. Please check your device connectivity.</string>
+    <string name="update_error_download_title">Failed to download hosts source</string>
+    <string name="update_error_download_text">None of your enabled hosts sources are reachable. Please check you are properly connected to the Internet.</string>
+    <string name="update_error_apply_title">Failed to create private file</string>
+    <string name="update_error_apply_text">Unable to create a private file to build a new hosts source. Please check the free space available on your device.</string>
     <plurals name="home_sources_up_to_date">
-        <item quantity="one">%1$d list up to date</item>
-        <item quantity="other">%1$d lists up to date</item>
+        <item quantity="one">%1$d up-to-date source</item>
+        <item quantity="other">%1$d up-to-date sources</item>
     </plurals>
     <plurals name="home_sources_pending">
         <item quantity="one">%1$d list to update</item>
@@ -186,8 +186,19 @@
     <string name="vpn_persistence_adb_commands">If the system VPN screen is hidden on your TV, use ADB, then restart the TV:\n\n• Enable always-on for AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Disable always-on:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN settings hidden on this Android TV. Use the ADB commands shown.</string>
     <string name="vpn_persistence_dismiss">Got it</string>
-    <string name="apply_blocking_off_title">Ad blocking is off</string>
-    <string name="apply_blocking_off_text">Your changes will be used once ad blocking is on. Turn it on now?</string>
-    <string name="apply_and_enable">Apply and turn on</string>
-    <string name="apply_only">Apply only</string>
+    <string name="status_update_available">Source update available</string>
+    <string name="status_no_update_found">No source update found</string>
+    <string name="status_vpn_configuration_updated">VPN configuration successfully updated</string>
+    <string name="error_dialog_help">Please read Help for more information.</string>
+    <string name="help">Help</string>
+    <string name="home_tile_log">DNS log</string>
+    <string name="home_log_subtitle">See what\'s blocked in real time</string>
+    <string name="home_tile_help">Help</string>
+    <string name="home_help_subtitle">Guides and troubleshooting</string>
+    <string name="home_tile_preferences">Preferences</string>
+    <string name="home_preferences_subtitle">Configure AdAway</string>
+    <plurals name="home_sources_outdated">
+        <item quantity="one">%1$d outdated source</item>
+        <item quantity="other">%1$d outdated sources</item>
+    </plurals>
 </resources>

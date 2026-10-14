@@ -12,6 +12,9 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 enum class UpdateError { NO_NETWORK, DOWNLOAD_FAILED, APPLY_FAILED }
 
+/** How the last successful update ended, told until the next one starts. */
+enum class UpdateOutcome { UPDATE_AVAILABLE, NO_UPDATE_FOUND, APPLIED }
+
 /**
  * Runs the source updates and the computation of the final list, one at a time. Requests made
  * from the screens run in the app scope, so they finish even if the user leaves the screen.
@@ -27,11 +30,14 @@ class BlockListUpdater(
     private val startupTasksStarted = AtomicBoolean(false)
     private val mutableProgress = MutableStateFlow<UpdateProgress?>(null)
     private val mutableError = MutableStateFlow<UpdateError?>(null)
+    private val mutableOutcome = MutableStateFlow<UpdateOutcome?>(null)
 
     val progress: StateFlow<UpdateProgress?> = mutableProgress.asStateFlow()
 
     /** The failure of the last update requested from a screen, until dismissed. */
     val error: StateFlow<UpdateError?> = mutableError.asStateFlow()
+
+    val outcome: StateFlow<UpdateOutcome?> = mutableOutcome.asStateFlow()
 
     /** Downloads all the enabled sources, then applies. */
     fun requestSync() = launchForScreen { syncAndApply(onlyPending = false) }
@@ -55,7 +61,16 @@ class BlockListUpdater(
     }
 
     /** Returns null when another update is already running. */
-    suspend fun checkForUpdates(): Boolean? = exclusive { sourceSync.check(::publish) }
+    suspend fun checkForUpdates(): Boolean? = exclusive {
+        sourceSync.check(::publish).also { available ->
+            mutableOutcome.value = if (available) UpdateOutcome.UPDATE_AVAILABLE else UpdateOutcome.NO_UPDATE_FOUND
+        }
+    }
+
+    /** The blocking took the current configuration, as when it was just turned on. */
+    fun announceApplied() {
+        mutableOutcome.value = UpdateOutcome.APPLIED
+    }
 
     /** Returns the error, or null on success or when another update is already running. */
     suspend fun syncAndApply(onlyPending: Boolean): UpdateError? = exclusive {
@@ -65,7 +80,9 @@ class BlockListUpdater(
             report.allFailed -> UpdateError.DOWNLOAD_FAILED
             else -> null
         }
-        compile() ?: syncError
+        (compile() ?: syncError).also { error ->
+            mutableOutcome.value = if (error == null) UpdateOutcome.APPLIED else null
+        }
     }
 
     private suspend fun compile(): UpdateError? {
@@ -89,6 +106,7 @@ class BlockListUpdater(
 
     private suspend fun <T> exclusive(block: suspend () -> T): T? {
         if (!mutex.tryLock()) return null
+        mutableOutcome.value = null
         return try {
             block()
         } finally {

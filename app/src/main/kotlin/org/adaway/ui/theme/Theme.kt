@@ -5,6 +5,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ColorScheme as MobileColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
@@ -20,8 +21,6 @@ import androidx.tv.material3.lightColorScheme as tvLightColorScheme
 
 /** Brand red of the headers, the welcome screens and the launcher icons, in both themes. */
 val BrandRed = Color(0xFFB71C1C)
-/** Header color while ad blocking is off. */
-val BrandGray = Color(0xFF616161)
 
 private class Palette(
     val primary: Color,
@@ -186,6 +185,8 @@ fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composab
     }
     val tvColors = remember(dark) { palette.applyTo(if (dark) tvDarkColorScheme() else tvLightColorScheme()) }
     MaterialTheme(colorScheme = mobileColors) {
-        TvMaterialTheme(colorScheme = tvColors, content = content)
+        TvMaterialTheme(colorScheme = tvColors) {
+            CompositionLocalProvider(LocalAdAwayColors provides if (dark) DarkAdAwayColors else LightAdAwayColors, content = content)
+        }
     }
 }
