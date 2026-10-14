@@ -19,6 +19,7 @@ datastore = "1.2.1"
 lifecycle = "2.11.0"
 libsu = "6.0.0"
 navigation = "2.10.2"
+paging = "3.5.3"
 room = "2.8.5"
 tvMaterial = "1.1.0"
 work = "2.12.0"
@@ -35,6 +36,7 @@ androidx-datastore-preferences = { module = "androidx.datastore:datastore-prefer
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-tv-material = { module = "androidx.tv:tv-material", version.ref = "tvMaterial" }

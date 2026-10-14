@@ -43,6 +43,17 @@ private class Palette(
     val errorContainer: Color,
     val onErrorContainer: Color,
     val outline: Color,
+    val outlineVariant: Color,
+    val inverseSurface: Color,
+    val inverseOnSurface: Color,
+    val inversePrimary: Color,
+    val surfaceDim: Color,
+    val surfaceBright: Color,
+    val surfaceContainerLowest: Color,
+    val surfaceContainerLow: Color,
+    val surfaceContainer: Color,
+    val surfaceContainerHigh: Color,
+    val surfaceContainerHighest: Color,
 )
 
 private val LightPalette = Palette(
@@ -67,6 +78,17 @@ private val LightPalette = Palette(
     errorContainer = Color(0xFFFFDAD6),
     onErrorContainer = Color(0xFF410002),
     outline = Color(0xFF857371),
+    outlineVariant = Color(0xFFD8C2BE),
+    inverseSurface = Color(0xFF392E2C),
+    inverseOnSurface = Color(0xFFFFEDEA),
+    inversePrimary = Color(0xFFFFB4A9),
+    surfaceDim = Color(0xFFE8D6D3),
+    surfaceBright = Color(0xFFFFF8F7),
+    surfaceContainerLowest = Color.White,
+    surfaceContainerLow = Color(0xFFFFF0EE),
+    surfaceContainer = Color(0xFFFCEAE8),
+    surfaceContainerHigh = Color(0xFFF6E4E2),
+    surfaceContainerHighest = Color(0xFFF1DEDC),
 )
 
 private val DarkPalette = Palette(
@@ -91,6 +113,17 @@ private val DarkPalette = Palette(
     errorContainer = Color(0xFF93000A),
     onErrorContainer = Color(0xFFFFDAD6),
     outline = Color(0xFFA08C89),
+    outlineVariant = Color(0xFF534341),
+    inverseSurface = Color(0xFFF1DEDC),
+    inverseOnSurface = Color(0xFF392E2C),
+    inversePrimary = Color(0xFFC62828),
+    surfaceDim = Color(0xFF1A1110),
+    surfaceBright = Color(0xFF423735),
+    surfaceContainerLowest = Color(0xFF140C0B),
+    surfaceContainerLow = Color(0xFF231918),
+    surfaceContainer = Color(0xFF271D1C),
+    surfaceContainerHigh = Color(0xFF322826),
+    surfaceContainerHighest = Color(0xFF3D3231),
 )
 
 private fun Palette.applyTo(base: MobileColorScheme) = base.copy(
@@ -104,7 +137,12 @@ private fun Palette.applyTo(base: MobileColorScheme) = base.copy(
     surfaceVariant = surfaceVariant, onSurfaceVariant = onSurfaceVariant,
     error = error, onError = onError,
     errorContainer = errorContainer, onErrorContainer = onErrorContainer,
-    outline = outline,
+    outline = outline, outlineVariant = outlineVariant,
+    inverseSurface = inverseSurface, inverseOnSurface = inverseOnSurface, inversePrimary = inversePrimary,
+    surfaceTint = primary, surfaceDim = surfaceDim, surfaceBright = surfaceBright,
+    surfaceContainerLowest = surfaceContainerLowest, surfaceContainerLow = surfaceContainerLow,
+    surfaceContainer = surfaceContainer, surfaceContainerHigh = surfaceContainerHigh,
+    surfaceContainerHighest = surfaceContainerHighest,
 )
 
 private fun Palette.applyTo(base: TvColorScheme) = base.copy(
@@ -118,7 +156,9 @@ private fun Palette.applyTo(base: TvColorScheme) = base.copy(
     surfaceVariant = surfaceVariant, onSurfaceVariant = onSurfaceVariant,
     error = error, onError = onError,
     errorContainer = errorContainer, onErrorContainer = onErrorContainer,
-    border = outline,
+    border = outline, borderVariant = outlineVariant,
+    inverseSurface = inverseSurface, inverseOnSurface = inverseOnSurface, inversePrimary = inversePrimary,
+    surfaceTint = primary,
 )
 
 /** Applies the app colors to both the mobile and the TV Material components. */

@@ -18,44 +18,59 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.adaway.R
 import org.adaway.data.db.RuleType
-import org.adaway.data.settings.BlockingMethod
+import org.adaway.sources.UpdateProgress
+import org.adaway.ui.common.UpdateProgressLine
+import org.adaway.ui.common.formatCount
+import org.adaway.ui.common.ruleTypeLabel
+import org.adaway.ui.theme.ruleTypeColor
 
-/** Summary cards shared by the mobile and TV home screens. */
+/** Contents shared by the mobile and TV home screens. Text colors are explicit for both card kinds. */
 @Composable
-fun MethodCard(method: BlockingMethod, modifier: Modifier = Modifier) {
-    val label = when (method) {
-        BlockingMethod.ROOT -> stringResource(R.string.home_method_root)
-        BlockingMethod.VPN -> stringResource(R.string.home_method_vpn)
-        BlockingMethod.UNSET -> return
+fun CounterContent(type: RuleType, count: Long, modifier: Modifier = Modifier) {
+    @StringRes val description = when (type) {
+        RuleType.BLOCKED -> R.string.home_blocked_description
+        RuleType.ALLOWED -> R.string.home_allowed_description
+        RuleType.REDIRECTED -> R.string.home_redirected_description
     }
-    SummaryCard(title = R.string.home_blocking_method, modifier = modifier) {
-        Text(label, style = MaterialTheme.typography.bodyLarge)
-    }
-}
-
-@Composable
-fun SourcesCard(state: HomeState, modifier: Modifier = Modifier) {
-    SummaryCard(title = R.string.home_sources, modifier = modifier) {
+    Column(modifier = modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(formatCount(count), style = MaterialTheme.typography.headlineSmall, color = ruleTypeColor(type))
+        Text(ruleTypeLabel(type), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurface)
         Text(
-            text = pluralStringResource(
-                R.plurals.home_sources_enabled,
-                state.sources.enabled,
-                state.sources.enabled,
-                state.sources.total,
-            ),
-            style = MaterialTheme.typography.bodyLarge,
+            stringResource(description),
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
     }
 }
 
 @Composable
-fun UserListsCard(state: HomeState, modifier: Modifier = Modifier) {
-    SummaryCard(title = R.string.home_your_lists, modifier = modifier) {
-        Row(horizontalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.fillMaxWidth()) {
-            RuleCount(R.string.home_blocked, state.userRules[RuleType.BLOCKED] ?: 0)
-            RuleCount(R.string.home_allowed, state.userRules[RuleType.ALLOWED] ?: 0)
-            RuleCount(R.string.home_redirected, state.userRules[RuleType.REDIRECTED] ?: 0)
+fun SourcesSummaryContent(stats: SourceStats, progress: UpdateProgress?, modifier: Modifier = Modifier) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Text(
+            stringResource(R.string.home_sources),
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.onSurface,
+        )
+        Text(
+            pluralStringResource(R.plurals.home_sources_up_to_date, stats.upToDate, stats.upToDate),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        if (stats.pending > 0) {
+            Text(
+                pluralStringResource(R.plurals.home_sources_pending, stats.pending, stats.pending),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
         }
+        if (stats.failed > 0) {
+            Text(
+                pluralStringResource(R.plurals.home_sources_failed, stats.failed, stats.failed),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.error,
+            )
+        }
+        progress?.let { UpdateProgressLine(it, modifier = Modifier.padding(top = 4.dp)) }
     }
 }
 
@@ -71,28 +86,6 @@ fun LegacyImportFailedCard(modifier: Modifier = Modifier, dismissButton: @Compos
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(stringResource(R.string.home_legacy_import_failed), style = MaterialTheme.typography.bodyMedium)
             Row(modifier = Modifier.align(Alignment.End)) { dismissButton() }
-        }
-    }
-}
-
-@Composable
-private fun RuleCount(@StringRes label: Int, count: Int) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(count.toString(), style = MaterialTheme.typography.headlineSmall)
-        Text(stringResource(label), style = MaterialTheme.typography.labelMedium)
-    }
-}
-
-@Composable
-private fun SummaryCard(@StringRes title: Int, modifier: Modifier, content: @Composable () -> Unit) {
-    Card(modifier = modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(
-                text = stringResource(title),
-                style = MaterialTheme.typography.titleSmall,
-                color = MaterialTheme.colorScheme.primary,
-            )
-            content()
         }
     }
 }

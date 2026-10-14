@@ -7,9 +7,17 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import kotlinx.serialization.Serializable
+import org.adaway.data.db.RuleType
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
+import org.adaway.ui.lists.ListsRoute
+import org.adaway.ui.sources.SourceEditRoute
+import org.adaway.ui.sources.SourceEditViewModel
+import org.adaway.ui.sources.SourcesNavigation
+import org.adaway.ui.sources.SourcesRoute
 import org.adaway.ui.theme.AdAwayTheme
 import org.adaway.ui.welcome.WelcomeRoute
 
@@ -18,6 +26,15 @@ private data object Welcome
 
 @Serializable
 private data object Home
+
+@Serializable
+private data object Sources
+
+@Serializable
+private data class SourceEdit(val sourceId: Long = SourceEditViewModel.NEW_SOURCE)
+
+@Serializable
+private data class Lists(val type: RuleType)
 
 @Composable
 fun AdAwayApp(isTelevision: Boolean) {
@@ -37,7 +54,39 @@ fun AdAwayApp(isTelevision: Boolean) {
                     },
                 )
             }
-            composable<Home> { HomeRoute(isTelevision = isTelevision) }
+            composable<Home> {
+                HomeRoute(
+                    isTelevision = isTelevision,
+                    navigation = HomeNavigation(
+                        openSources = { navController.navigate(Sources) },
+                        openLists = { type -> navController.navigate(Lists(type)) },
+                    ),
+                )
+            }
+            composable<Sources> {
+                SourcesRoute(
+                    isTelevision = isTelevision,
+                    navigation = SourcesNavigation(
+                        back = navController::popBackStack,
+                        add = { navController.navigate(SourceEdit()) },
+                        edit = { id -> navController.navigate(SourceEdit(id)) },
+                    ),
+                )
+            }
+            composable<SourceEdit> { entry ->
+                SourceEditRoute(
+                    isTelevision = isTelevision,
+                    sourceId = entry.toRoute<SourceEdit>().sourceId,
+                    onDone = navController::popBackStack,
+                )
+            }
+            composable<Lists> { entry ->
+                ListsRoute(
+                    isTelevision = isTelevision,
+                    initialType = entry.toRoute<Lists>().type,
+                    onBack = navController::popBackStack,
+                )
+            }
         }
     }
 }
