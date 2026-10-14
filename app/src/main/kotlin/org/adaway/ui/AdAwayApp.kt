@@ -12,6 +12,7 @@ import androidx.navigation.toRoute
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.serialization.Serializable
 import org.adaway.data.db.RuleType
+import org.adaway.ui.common.ScreenTransitions
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.help.HelpScreen
 import org.adaway.ui.home.HomeNavigation
@@ -95,7 +96,16 @@ fun AdAwayApp(isTelevision: Boolean, destination: MutableStateFlow<Destination?>
                 },
             ) { popUpTo<Home>() }
         }
-        NavHost(navController = navController, startDestination = startDestination) {
+        NavHost(
+            navController = navController,
+            startDestination = startDestination,
+            enterTransition = { ScreenTransitions.enter },
+            exitTransition = { ScreenTransitions.exit },
+            popEnterTransition = { ScreenTransitions.popEnter },
+            popExitTransition = { ScreenTransitions.popExit },
+            predictivePopEnterTransition = { ScreenTransitions.popEnter },
+            predictivePopExitTransition = { ScreenTransitions.popExit },
+        ) {
             composable<Welcome> {
                 WelcomeRoute(
                     isTelevision = isTelevision,
