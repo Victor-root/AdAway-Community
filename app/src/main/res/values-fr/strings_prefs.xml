@@ -47,6 +47,19 @@
         <item>Toutes, sauf les navigateurs</item>
         <item>Toutes</item>
     </string-array>
+    <string name="pref_vpn_dns">Serveurs DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Serveurs DNS du réseau</item>
+        <item>Serveurs DNS choisis</item>
+        <item>DNS sur HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Serveurs DNS choisis</string>
+    <string name="pref_vpn_dns_custom_summary">Adresses IP, séparées par des virgules</string>
+    <string name="pref_vpn_dns_custom_invalid">Adresse de serveur DNS invalide</string>
+    <string name="pref_vpn_doh">Serveur DNS sur HTTPS</string>
+    <string name="pref_vpn_doh_custom">Adresse personnalisée</string>
+    <string name="pref_vpn_doh_address">Adresse DNS sur HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Adresse DNS sur HTTPS invalide</string>
     <string name="pref_vpn_exclude_user_apps">Exclure des applications utilisateur</string>
     <string name="pref_vpn_exclude_user_apps_activity">Applications exclues</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Les sélectionner toutes</string>

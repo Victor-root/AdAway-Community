@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["engine", "android", "root"]
+members = ["engine", "android", "root", "doh"]
 
 [workspace.package]
 version = "7.0.0"

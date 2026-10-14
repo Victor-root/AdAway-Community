@@ -16,7 +16,7 @@ import java.net.InetAddress
 import java.net.InetSocketAddress
 
 /** A tunnel created by the engine, filtering on its own thread until closed. */
-class ActiveTunnel(val handle: Long, val network: Network, val selection: DnsServers) {
+class ActiveTunnel(val handle: Long, val network: Network, val selection: DnsUpstream) {
     private var thread: Thread? = null
 
     fun run(onExit: (Int) -> Unit) {
@@ -39,51 +39,62 @@ class TunnelBuilder(private val service: VpnService, private val finalDirectory:
      */
     fun build(
         network: Network,
-        selection: DnsServers,
+        selection: DnsUpstream,
         virtualNetwork: VirtualNetwork,
         excludedPackages: Set<String>,
         monitor: Boolean,
     ): ActiveTunnel? {
-        val upstreams = connect(network, selection.servers)
-        val servers = upstreams.map { it.first }
-        val virtualAddresses = servers.mapIndexed { index, server ->
-            checkNotNull(virtualNetwork.serverAddress(index, server).hostAddress)
+        // Each server, with the descriptor of its socket, handed over to the engine which then closes it.
+        val upstreams = when (selection) {
+            is DnsUpstream.Servers -> connect(network, selection.servers)
+            is DnsUpstream.Https -> listOf(startRelay(network, selection.url))
         }
-        // Copies of the socket descriptors, handed over to the engine which then closes them.
-        val descriptors = mutableListOf<ParcelFileDescriptor>()
         try {
-            upstreams.mapTo(descriptors) { (_, socket) -> checkNotNull(ParcelFileDescriptor.fromDatagramSocket(socket)) }
+            val servers = upstreams.map { it.first }
+            val virtualAddresses = servers.mapIndexed { index, server ->
+                checkNotNull(virtualNetwork.serverAddress(index, server).hostAddress)
+            }
             val tun = configure(network, servers, virtualNetwork, excludedPackages).establish() ?: return null
             val handle = Engine.createTunnel(
                 tunFd = tun.detachFd(),
                 virtualAddresses = virtualAddresses.toTypedArray(),
-                upstreamFds = descriptors.map { it.detachFd() }.toIntArray(),
+                upstreamFds = upstreams.map { (_, descriptor) -> descriptor.detachFd() }.toIntArray(),
                 finalDirectory = finalDirectory.path,
                 monitor = monitor,
             )
             return ActiveTunnel(handle, network, selection)
         } finally {
-            descriptors.forEach { it.close() }
-            upstreams.forEach { (_, socket) -> socket.close() }
+            upstreams.forEach { (_, descriptor) -> descriptor.close() }
         }
     }
 
     /** Connects a socket outside the VPN to each server, leaving out the ones not reachable. */
-    private fun connect(network: Network, servers: List<InetAddress>): List<Pair<InetAddress, DatagramSocket>> {
+    private fun connect(network: Network, servers: List<InetAddress>): List<Pair<InetAddress, ParcelFileDescriptor>> {
         val upstreams = servers.mapNotNull { server ->
-            val socket = DatagramSocket()
-            try {
-                if (!service.protect(socket)) throw IOException("Socket not protected from the VPN")
-                network.bindSocket(socket)
-                socket.connect(InetSocketAddress(server, DNS_PORT))
-                server to socket
-            } catch (_: IOException) {
-                socket.close()
-                null
+            DatagramSocket().use { socket ->
+                try {
+                    if (!service.protect(socket)) throw IOException("Socket not protected from the VPN")
+                    network.bindSocket(socket)
+                    socket.connect(InetSocketAddress(server, DNS_PORT))
+                    server to ParcelFileDescriptor.fromDatagramSocket(socket)
+                } catch (_: IOException) {
+                    null
+                }
             }
         }
         if (upstreams.isEmpty()) throw IOException("No DNS server reachable")
         return upstreams
+    }
+
+    /**
+     * Starts the relay to the DNS over HTTPS server, its name resolved by the network itself. The
+     * virtual server takes the family of the address used first.
+     */
+    private fun startRelay(network: Network, url: String): Pair<InetAddress, ParcelFileDescriptor> {
+        val host = Engine.dohHost(url) ?: throw IllegalArgumentException("Invalid DNS over HTTPS address")
+        val addresses = network.getAllByName(host).toList()
+        val descriptor = ParcelFileDescriptor.adoptFd(Engine.startDohRelay(url, addresses.mapNotNull { it.hostAddress }.toTypedArray()))
+        return addresses.first() to descriptor
     }
 
     private fun configure(

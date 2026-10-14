@@ -47,6 +47,10 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>) {
             vpnConnectionMonitor = preferences[Keys.vpnConnectionMonitor] ?: defaults.vpnConnectionMonitor,
             vpnSystemAppExclusion = preferences.enum(Keys.vpnSystemAppExclusion) ?: defaults.vpnSystemAppExclusion,
             vpnExcludedApps = preferences[Keys.vpnExcludedApps] ?: defaults.vpnExcludedApps,
+            vpnDnsMode = preferences.enum(Keys.vpnDnsMode) ?: defaults.vpnDnsMode,
+            vpnCustomDnsServers = preferences[Keys.vpnCustomDnsServers]?.split(LIST_SEPARATOR)?.filter { it.isNotEmpty() }
+                ?: defaults.vpnCustomDnsServers,
+            vpnDohUrl = preferences[Keys.vpnDohUrl] ?: defaults.vpnDohUrl,
             ipv6Enabled = preferences[Keys.ipv6Enabled] ?: defaults.ipv6Enabled,
             rootRedirectionIpv4 = preferences[Keys.rootRedirectionIpv4] ?: defaults.rootRedirectionIpv4,
             rootRedirectionIpv6 = preferences[Keys.rootRedirectionIpv6] ?: defaults.rootRedirectionIpv6,
@@ -72,6 +76,9 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>) {
         preferences[Keys.vpnConnectionMonitor] = settings.vpnConnectionMonitor
         preferences[Keys.vpnSystemAppExclusion] = settings.vpnSystemAppExclusion.name
         preferences[Keys.vpnExcludedApps] = settings.vpnExcludedApps
+        preferences[Keys.vpnDnsMode] = settings.vpnDnsMode.name
+        preferences[Keys.vpnCustomDnsServers] = settings.vpnCustomDnsServers.joinToString(LIST_SEPARATOR)
+        preferences[Keys.vpnDohUrl] = settings.vpnDohUrl
         preferences[Keys.ipv6Enabled] = settings.ipv6Enabled
         preferences[Keys.rootRedirectionIpv4] = settings.rootRedirectionIpv4
         preferences[Keys.rootRedirectionIpv6] = settings.rootRedirectionIpv6
@@ -84,6 +91,11 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>) {
         preferences[Keys.appUpdateCheckOnStartup] = settings.appUpdateCheckOnStartup
         preferences[Keys.appUpdatePeriodicCheck] = settings.appUpdatePeriodicCheck
         preferences[Keys.diagnosticLogEnabled] = settings.diagnosticLogEnabled
+    }
+
+    private companion object {
+        /** Between the items of an ordered list stored as one text. */
+        const val LIST_SEPARATOR = ","
     }
 
     private inline fun <reified T : Enum<T>> Preferences.enum(key: Preferences.Key<String>): T? =
@@ -100,6 +112,9 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>) {
         val vpnConnectionMonitor = booleanPreferencesKey("vpn_connection_monitor")
         val vpnSystemAppExclusion = stringPreferencesKey("vpn_system_app_exclusion")
         val vpnExcludedApps = stringSetPreferencesKey("vpn_excluded_apps")
+        val vpnDnsMode = stringPreferencesKey("vpn_dns_mode")
+        val vpnCustomDnsServers = stringPreferencesKey("vpn_custom_dns_servers")
+        val vpnDohUrl = stringPreferencesKey("vpn_doh_url")
         val ipv6Enabled = booleanPreferencesKey("ipv6_enabled")
         val rootRedirectionIpv4 = stringPreferencesKey("root_redirection_ipv4")
         val rootRedirectionIpv6 = stringPreferencesKey("root_redirection_ipv6")

@@ -90,6 +90,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 onClick = { choice = PreferenceChoice.SYSTEM_APPS },
             )
             Preference(R.drawable.ic_apps_24dp, stringResource(R.string.pref_vpn_exclude_user_apps), enabled = usesVpn, onClick = navigation.openExcludedApps)
+            VpnDnsPreferences(current, enabled = usesVpn, update = viewModel::update)
             Preference(
                 R.drawable.ic_restart_alt_24dp,
                 stringResource(R.string.pref_vpn_reset),

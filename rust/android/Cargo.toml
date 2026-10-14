@@ -12,6 +12,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 adaway-engine = { path = "../engine" }
+adaway-doh = { path = "../doh" }
 adaway-root = { path = "../root" }
 jni = "0.22.4"
 

@@ -99,6 +99,17 @@ object Engine : RuleValidator {
      */
     external fun reloadTunnelRules(handle: Long)
 
+    /** The host of a DNS over HTTPS address (`https://host[:port][/path]`), or null when it is not one. */
+    external fun dohHost(url: String): String?
+
+    /**
+     * Starts a DNS over HTTPS relay to the server at [url], reached at one of [addresses], and
+     * returns the descriptor of its end for the tunnel, which the caller owns: a socket taking DNS
+     * queries and giving their answers. The relay stops once it is closed.
+     * Throws a [RuntimeException] when the address is invalid or the relay cannot start.
+     */
+    external fun startDohRelay(url: String, addresses: Array<String>): Int
+
     /** Frees a handle whose tunnel is not running. */
     external fun destroyTunnel(handle: Long)
 

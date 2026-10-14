@@ -3,10 +3,12 @@
 use std::fmt;
 use std::io;
 use std::net::IpAddr;
-use std::os::fd::{FromRawFd, OwnedFd};
+use std::os::fd::{FromRawFd, IntoRawFd, OwnedFd};
 use std::path::{Path, PathBuf};
 use std::sync::{Arc, LazyLock, Mutex, RwLock};
 
+use adaway_doh::relay;
+use adaway_doh::url::DohUrl;
 use adaway_engine::compile::{self, OutputDirectories, UserRules};
 use adaway_engine::filter::{BlockList, Verdict};
 use adaway_engine::hosts::{self, HostsOptions};
@@ -371,6 +373,47 @@ fn exit_code(exit: Exit) -> jint {
         Exit::TunnelClosed => 1,
         Exit::NetworkUnreachable => 2,
     }
+}
+
+/// The host of a DNS over HTTPS address, or null when the address is not one.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_dohHost<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    url: JString<'caller>,
+) -> JString<'caller> {
+    unowned_env
+        .with_env(|env| -> jni::errors::Result<_> {
+            let url = url.try_to_string(env)?;
+            optional_string(env, DohUrl::parse(&url).ok().map(|url| url.host))
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// Starts a DNS over HTTPS relay to the server at `url`, reached at one of `addresses`, and returns
+/// the descriptor of its end for the tunnel, which the caller owns.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_startDohRelay<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    url: JString<'caller>,
+    addresses: JObjectArray<'caller, JString<'caller>>,
+) -> jint {
+    unowned_env
+        .with_env(|env| -> Result<_, BridgeError> {
+            let url = DohUrl::parse(&url.try_to_string(env)?)
+                .map_err(|_| BridgeError::InvalidArgument("DNS over HTTPS address"))?;
+            let addresses = read_strings(env, &addresses)?
+                .iter()
+                .map(|address| {
+                    address
+                        .parse::<IpAddr>()
+                        .map_err(|_| BridgeError::InvalidArgument("server address"))
+                })
+                .collect::<Result<Vec<_>, _>>()?;
+            Ok(relay::start(url, addresses)?.into_raw_fd())
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
 }
 
 /// Recovers a handle created by `createTunnel` and not destroyed yet, as the Kotlin side guarantees.

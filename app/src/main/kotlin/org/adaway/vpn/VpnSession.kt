@@ -15,10 +15,12 @@ import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.Settings
 import org.adaway.data.settings.SettingsRepository
 import org.adaway.data.settings.SystemAppExclusion
+import org.adaway.data.settings.VpnDnsMode
 import org.adaway.engine.Engine
 import org.adaway.system.DiagnosticLog
 import java.io.File
 import java.io.IOException
+import java.net.InetAddress
 import java.net.NetworkInterface
 import java.net.SocketException
 
@@ -40,6 +42,9 @@ class VpnSession(
         val monitor: Boolean,
         val systemAppExclusion: SystemAppExclusion,
         val excludedApps: Set<String>,
+        val dnsMode: VpnDnsMode,
+        val customDnsServers: List<String>,
+        val dohUrl: String,
     )
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO.limitedParallelism(1))
@@ -153,8 +158,15 @@ class VpnSession(
                 scheduleRebuild()
             }
             else -> {
-                val selection = selectServers(target)
-                if (!selection.usesFallback && selection.servers.toSet() != running.selection.servers.toSet()) {
+                val selection = selectUpstream(target)
+                val current = running.selection
+                // A fallback is no change worth a rebuild: the network may soon give its servers.
+                val changed = when (selection) {
+                    is DnsUpstream.Servers -> !selection.usesFallback &&
+                        selection.servers.toSet() != (current as? DnsUpstream.Servers)?.servers?.toSet()
+                    is DnsUpstream.Https -> selection != current
+                }
+                if (changed) {
                     diagnosticLog.info(VPN_LOG_TAG, "DNS servers changed")
                     scheduleRebuild()
                 }
@@ -180,8 +192,8 @@ class VpnSession(
             setStatus(VpnStatus.WAITING_FOR_NETWORK)
             return
         }
-        val selection = selectServers(network)
-        diagnosticLog.info(VPN_LOG_TAG, "Building on $network with ${selection.servers}")
+        val selection = selectUpstream(network)
+        diagnosticLog.info(VPN_LOG_TAG, "Building on $network with $selection")
         // The new tunnel replaces the previous one before it closes, so that the VPN never drops.
         val built = try {
             builder.build(
@@ -260,18 +272,34 @@ class VpnSession(
         onStatus(new)
     }
 
-    private fun selectServers(network: Network): DnsServers = DnsServerSelection.select(
-        networkServers = networks.dnsServers(network),
-        ipv6Enabled = settings?.ipv6Enabled == true,
-        hasIpv4 = networks.hasIpv4(),
-        hasIpv6 = networks.hasIpv6(),
-    )
+    /** The chosen servers, or the network ones when none of the chosen addresses is valid. */
+    private fun selectUpstream(network: Network): DnsUpstream {
+        val settings = settings
+        val custom = settings?.vpnCustomDnsServers.orEmpty().mapNotNull(::numericAddress)
+        return when {
+            settings?.vpnDnsMode == VpnDnsMode.HTTPS -> DnsUpstream.Https(settings.vpnDohUrl)
+            settings?.vpnDnsMode == VpnDnsMode.CUSTOM && custom.isNotEmpty() -> DnsUpstream.Servers(custom, usesFallback = false)
+            else -> DnsServerSelection.select(
+                networkServers = networks.dnsServers(network),
+                ipv6Enabled = settings?.ipv6Enabled == true,
+                hasIpv4 = networks.hasIpv4(),
+                hasIpv6 = networks.hasIpv6(),
+            )
+        }
+    }
+
+    /** Never a name to resolve, which would block. */
+    private fun numericAddress(address: String): InetAddress? =
+        Engine.normalizeIpAddress(address)?.let(InetAddress::getByName)
 
     private fun buildSettings(settings: Settings) = BuildSettings(
         ipv6Enabled = settings.ipv6Enabled,
         monitor = settings.vpnConnectionMonitor,
         systemAppExclusion = settings.vpnSystemAppExclusion,
         excludedApps = settings.vpnExcludedApps,
+        dnsMode = settings.vpnDnsMode,
+        customDnsServers = settings.vpnCustomDnsServers,
+        dohUrl = settings.vpnDohUrl,
     )
 
     private fun hasTunInterface(): Boolean = try {

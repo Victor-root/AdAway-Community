@@ -4,8 +4,14 @@ import java.net.Inet4Address
 import java.net.Inet6Address
 import java.net.InetAddress
 
-/** The real DNS servers the tunnel relays to, and whether they are the public fallback. */
-data class DnsServers(val servers: List<InetAddress>, val usesFallback: Boolean)
+/** Where the tunnel relays the queries it lets through. */
+sealed interface DnsUpstream {
+    /** Plain DNS servers, and whether they are the public fallback of a network without usable ones. */
+    data class Servers(val servers: List<InetAddress>, val usesFallback: Boolean) : DnsUpstream
+
+    /** A DNS over HTTPS server. */
+    data class Https(val url: String) : DnsUpstream
+}
 
 object DnsServerSelection {
     private val FALLBACK_IPV4: InetAddress = InetAddress.getByAddress(byteArrayOf(1, 1, 1, 1))
@@ -23,13 +29,13 @@ object DnsServerSelection {
         ipv6Enabled: Boolean,
         hasIpv4: Boolean,
         hasIpv6: Boolean,
-    ): DnsServers {
+    ): DnsUpstream.Servers {
         val ipv4 = networkServers.filterIsInstance<Inet4Address>()
         val ipv6 = networkServers.filterIsInstance<Inet6Address>()
         val onlyServerIsIpv6 = networkServers.size == 1 && ipv6.size == 1
         val selected = networkServers.filter { it in ipv4 || ((ipv6Enabled || onlyServerIsIpv6) && it in ipv6) }
-        if (selected.isNotEmpty()) return DnsServers(selected, usesFallback = false)
+        if (selected.isNotEmpty()) return DnsUpstream.Servers(selected, usesFallback = false)
         val fallback = if (hasIpv6 && !hasIpv4) FALLBACK_IPV6 else FALLBACK_IPV4
-        return DnsServers(listOf(fallback), usesFallback = true)
+        return DnsUpstream.Servers(listOf(fallback), usesFallback = true)
     }
 }
