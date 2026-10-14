@@ -69,6 +69,13 @@ class VpnController(private val context: Context, private val settingsRepository
         return startService()
     }
 
+    /** Rebuilds the running tunnel, as the user asks it when the VPN stops working. False when not running. */
+    fun reset(): Boolean {
+        val running = session ?: return false
+        running.rebuildNow()
+        return true
+    }
+
     /** As [ensureRunning], for callers in the background which can only tell the user by notification. */
     suspend fun ensureRunningInBackground() = notifyFailure(ensureRunning())
 

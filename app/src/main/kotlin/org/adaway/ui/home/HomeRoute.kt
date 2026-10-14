@@ -24,7 +24,7 @@ import org.adaway.ui.common.updateErrorTitle
 import org.adaway.ui.common.vpnRefusal
 import org.adaway.vpn.AlwaysOnMode
 
-class HomeNavigation(val openSources: () -> Unit, val openLists: (RuleType) -> Unit)
+class HomeNavigation(val openSources: () -> Unit, val openLists: (RuleType) -> Unit, val openPreferences: () -> Unit)
 
 @Composable
 fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
@@ -62,6 +62,7 @@ fun HomeRoute(isTelevision: Boolean, navigation: HomeNavigation) {
             actions = HomeScreenActions(
                 openLists = navigation.openLists,
                 openSources = navigation.openSources,
+                openPreferences = navigation.openPreferences,
                 sync = viewModel::sync,
                 toggleBlocking = actions.toggle,
                 openPersistence = actions.openPersistence,

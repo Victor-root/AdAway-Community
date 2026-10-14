@@ -14,6 +14,10 @@ import org.adaway.ui.common.appViewModel
 import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
 import org.adaway.ui.lists.ListsRoute
+import org.adaway.ui.prefs.ExcludedAppsScreen
+import org.adaway.ui.prefs.PreferencesNavigation
+import org.adaway.ui.prefs.PreferencesScreen
+import org.adaway.ui.prefs.UpdatesScreen
 import org.adaway.ui.sources.SourceEditRoute
 import org.adaway.ui.sources.SourceEditViewModel
 import org.adaway.ui.sources.SourcesNavigation
@@ -35,6 +39,15 @@ private data class SourceEdit(val sourceId: Long = SourceEditViewModel.NEW_SOURC
 
 @Serializable
 private data class Lists(val type: RuleType)
+
+@Serializable
+private data object Preferences
+
+@Serializable
+private data object Updates
+
+@Serializable
+private data object ExcludedApps
 
 @Composable
 fun AdAwayApp(isTelevision: Boolean) {
@@ -60,6 +73,7 @@ fun AdAwayApp(isTelevision: Boolean) {
                     navigation = HomeNavigation(
                         openSources = { navController.navigate(Sources) },
                         openLists = { type -> navController.navigate(Lists(type)) },
+                        openPreferences = { navController.navigate(Preferences) },
                     ),
                 )
             }
@@ -87,6 +101,17 @@ fun AdAwayApp(isTelevision: Boolean) {
                     onBack = navController::popBackStack,
                 )
             }
+            composable<Preferences> {
+                PreferencesScreen(
+                    PreferencesNavigation(
+                        back = navController::popBackStack,
+                        openUpdates = { navController.navigate(Updates) },
+                        openExcludedApps = { navController.navigate(ExcludedApps) },
+                    ),
+                )
+            }
+            composable<Updates> { UpdatesScreen(onBack = navController::popBackStack) }
+            composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
         }
     }
 }

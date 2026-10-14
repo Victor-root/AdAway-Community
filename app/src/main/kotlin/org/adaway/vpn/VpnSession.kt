@@ -76,6 +76,14 @@ class VpnSession(
         }
     }
 
+    /** Rebuilds the tunnel from scratch, reading the DNS servers again, at once. */
+    fun rebuildNow() {
+        scope.launch {
+            throttle.reset()
+            scheduleRebuild()
+        }
+    }
+
     /** Applies a new final list to the running tunnel. A tunnel built later reads it anyway. */
     fun reloadRules() {
         scope.launch {

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_main_title">Préférences</string>
+    <string name="pref_general_category">Général</string>
+    <string name="pref_dark_theme">Thème sombre</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Clair</item>
+        <item>Sombre</item>
+        <item>Valeur par défaut du système</item>
+    </string-array>
+    <string name="pref_update_configuration">Mises à jour automatiques</string>
+    <string name="pref_ad_block_category">Blocage des publicités</string>
+    <string name="pref_root_ad_blocker_configuration">Bloqueur de publicités pour appareil débridé</string>
+    <string name="pref_vpn_ad_blocker_configuration">Bloqueur de publicités fondé sur un RPV/VPN</string>
+    <string name="pref_enable_ipv6">Activer la prise en charge d’IPv6</string>
+    <string name="pref_backup_restore">Sauvegarder/restaurer les règles de blocage</string>
+    <string name="pref_debug_category">Débogage</string>
+    <string name="pref_enable_debug">Journalisation détaillée</string>
+    <string name="pref_enable_debug_summary">Les changements prendront effet après redémarrage de l’appli</string>
+    <string name="pref_update_title">Mises à jour</string>
+    <string name="pref_update_enable_notifications">Les notifications sont désactivées</string>
+    <string name="pref_update_enable_notifications_summary">Les notifications de l’appli ne seront pas affichées. Touchez pour les activer.</string>
+    <string name="pref_update_app_category">Mises à jour de l’application</string>
+    <string name="pref_update_check_app_startup">Vérifier la présence d’une mise à jour au démarrage</string>
+    <string name="pref_update_check_app_daily">Vérifier régulièrement la présence de mises à jour</string>
+    <string name="pref_update_check_now">Vérifier maintenant</string>
+    <string name="pref_update_install">Mettre à jour</string>
+    <string name="pref_update_hosts_category">Mises à jour des hôtes</string>
+    <string name="pref_update_check">Vérifier la présence d’une mise à jour au démarrage</string>
+    <string name="pref_update_check_hosts_daily">Vérifier régulièrement la présence de mises à jour</string>
+    <string name="pref_update_sync_on_update">Synchroniser lors d’une mise à jour</string>
+    <string name="pref_update_sync_unmetered_only">Ne synchroniser que sur les réseaux sans limite de données</string>
+    <string name="pref_vpn_service_on_boot">Activer au démarrage</string>
+    <string name="pref_vpn_service_monitor">Surveiller la connexion</string>
+    <string name="pref_vpn_service_monitor_description">Vérifier régulièrement l’état du réseau pour relancer le RPV/VPN après une déconnexion.</string>
+    <string name="pref_vpn_excluded_apps">Applications exclues</string>
+    <string name="pref_vpn_excluded_apps_description">Configurer les applis qui ne devraient pas utiliser le RPV/VPN, afin qu’aucune connexion ne soit bloquée.</string>
+    <string name="pref_vpn_exclude_system_apps">Exclure les applications système</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Aucune</item>
+        <item>Toutes, sauf les navigateurs</item>
+        <item>Toutes</item>
+    </string-array>
+    <string name="pref_vpn_exclude_user_apps">Exclure des applications utilisateur</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Applications exclues</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Les sélectionner toutes</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Les dessélectionner toutes</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Icône de l’application</string>
+    <string name="pref_vpn_reset">Réinitialiser le RPV/VPN</string>
+    <string name="pref_vpn_reset_description">Reconstruire entièrement la connexion RPV/VPN. À utiliser si le RPV/VPN ne fonctionne plus (pas d’accès à Internet ou erreurs DNS).</string>
+    <string name="pref_vpn_reset_done">Connexion RPV/VPN reconstruite.</string>
+    <string name="pref_vpn_reset_not_running">Le RPV/VPN n’est pas actif.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Enregistrer le journal de diagnostic</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Activez-la avant de reproduire un problème, puis exportez-la ci-dessous. Peut légèrement ralentir les appareils anciens. N’enregistre que des événements techniques du RPV/VPN, jamais de données personnelles.</string>
+    <string name="pref_vpn_diagnostic_log">Journal de diagnostic</string>
+    <string name="pref_vpn_diagnostic_log_description">Consulter, copier ou partager les erreurs et événements RPV/VPN récents. Utile pour signaler un problème.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Effacer le journal de diagnostic</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Supprimer les événements enregistrés. À faire avant de reproduire un problème pour capturer une trace propre.</string>
+    <string name="pref_root_open_hosts">Ouvrir le fichier hosts</string>
+    <string name="pref_never_reboot">Cacher le message de redémarrage après application</string>
+    <string name="pref_hosts_redirection_summary">Définir où rediriger les hôtes bloqués</string>
+    <string name="pref_redirection_ipv4">Redirection IPv4</string>
+    <string name="pref_redirection_ipv6">Redirection IPv6</string>
+    <string name="pref_webserver_summary">Le serveur Web local écoute les adresses IP locales pour répondre aux requêtes vers des noms d’hôtes bloqués. Cela pourrait empêcher le gel de certaines applications lors de connexions bloquées.</string>
+    <string name="pref_webserver_enabled">Activer le serveur Web</string>
+    <string name="pref_webserver_test">Tester le serveur Web</string>
+    <string name="pref_webserver_certificate">Installer un certificat autosigné</string>
+    <string name="pref_webserver_state_not_running">N’est pas en fonction</string>
+    <string name="pref_webserver_icon">Remplacer l’espace vide des publicités par l’icône de l’appli</string>
+</resources>

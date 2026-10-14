@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -172,4 +173,9 @@ fun AdAwayEditText(
                 )
             },
     )
+}
+
+@Composable
+fun adAwaySwitchColors() = LocalAdAwayColors.current.let { colors ->
+    SwitchDefaults.colors(checkedTrackColor = colors.primary, checkedThumbColor = colors.onPrimary, checkedBorderColor = colors.primary)
 }

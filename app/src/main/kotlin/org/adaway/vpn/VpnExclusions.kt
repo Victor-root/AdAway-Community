@@ -41,7 +41,7 @@ object VpnExclusions {
         return (excludedSystem + excludedUser).toSet()
     }
 
-    private fun installedApplications(packageManager: PackageManager): List<ApplicationInfo> =
+    fun installedApplications(packageManager: PackageManager): List<ApplicationInfo> =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             packageManager.getInstalledApplications(PackageManager.ApplicationInfoFlags.of(0))
         } else {

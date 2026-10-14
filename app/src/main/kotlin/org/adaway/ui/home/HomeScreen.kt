@@ -68,6 +68,7 @@ import org.adaway.vpn.VpnStatus
 class HomeScreenActions(
     val openLists: (RuleType) -> Unit,
     val openSources: () -> Unit,
+    val openPreferences: () -> Unit,
     val sync: () -> Unit,
     val toggleBlocking: () -> Unit,
     val openPersistence: () -> Unit,
@@ -121,7 +122,7 @@ fun HomeScreen(state: HomeState, progress: UpdateProgress?, outcome: UpdateOutco
                         BlockingStatusCard(state.blocking, detail, actions.toggleBlocking, modifier = Modifier.padding(bottom = 20.dp))
                     }
                 }
-                Tiles()
+                Tiles(actions.openPreferences)
                 if (usesVpn) PersistenceCard(actions.openPersistence, modifier = Modifier.padding(top = 20.dp))
             }
         }
@@ -310,14 +311,14 @@ private fun outcomeText(outcome: UpdateOutcome): Int = when (outcome) {
     UpdateOutcome.APPLIED -> R.string.status_vpn_configuration_updated
 }
 
-/** The DNS log, help and preferences screens do not exist yet: their tiles are grayed out. */
+/** The DNS log and help screens do not exist yet: their tiles are grayed out. */
 @Composable
-private fun Tiles() {
+private fun Tiles(openPreferences: () -> Unit) {
     val colors = LocalAdAwayColors.current
     Row(modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-        Tile(R.drawable.ic_outline_rule_24, colors.pastelBlue, R.string.home_tile_log, R.string.home_log_subtitle)
-        Tile(R.drawable.ic_help_24dp, colors.pastelAmber, R.string.home_tile_help, R.string.home_help_subtitle)
-        Tile(R.drawable.ic_settings_24dp, colors.pastelGrey, R.string.home_tile_preferences, R.string.home_preferences_subtitle)
+        Tile(R.drawable.ic_outline_rule_24, colors.pastelBlue, R.string.home_tile_log, R.string.home_log_subtitle, onClick = null)
+        Tile(R.drawable.ic_help_24dp, colors.pastelAmber, R.string.home_tile_help, R.string.home_help_subtitle, onClick = null)
+        Tile(R.drawable.ic_settings_24dp, colors.pastelGrey, R.string.home_tile_preferences, R.string.home_preferences_subtitle, onClick = openPreferences)
     }
 }
 
@@ -327,11 +328,12 @@ private fun RowScope.Tile(
     pastel: Pastel,
     @StringRes title: Int,
     @StringRes subtitle: Int,
+    onClick: (() -> Unit)?,
 ) {
     val colors = LocalAdAwayColors.current
-    HomeCard(onClick = null, modifier = Modifier.weight(1f).fillMaxHeight()) {
+    HomeCard(onClick = onClick, modifier = Modifier.weight(1f).fillMaxHeight()) {
         Column(
-            modifier = Modifier.fillMaxSize().alpha(DISABLED_ALPHA).padding(12.dp),
+            modifier = Modifier.fillMaxSize().alpha(if (onClick != null) 1f else DISABLED_ALPHA).padding(12.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {
