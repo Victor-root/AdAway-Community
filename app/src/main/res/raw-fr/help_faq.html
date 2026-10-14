@@ -11,6 +11,11 @@ Garder une structure simple : titres h2 et paragraphes p, liens via <a href>. --
 <p><strong>Mode RPV/VPN</strong> (par défaut, sans root) : AdAway lance un RPV/VPN local, sur l'appareil, qui n'envoie votre trafic nulle part. Il inspecte seulement les requêtes DNS et écarte celles qui pointent vers des domaines de publicité ou de pistage, en laissant passer tout le reste. Rien ne quitte votre appareil.</p>
 <p><strong>Mode root</strong> : si votre appareil est rooté, AdAway peut écrire un <a href="http://en.wikipedia.org/wiki/Hosts_file">fichier hosts</a> dans <code>/system/etc/hosts</code>, qui redirige les domaines indésirables vers <code>127.0.0.1</code> (votre propre appareil). Sur Android récent, un module hosts « systemless » (ex. Magisk) est nécessaire.</p>
 
+<h2>Quels serveurs DNS le RPV/VPN utilise-t-il ?</h2>
+<p>En mode RPV/VPN, les domaines qui ne sont pas bloqués sont résolus par les serveurs DNS choisis dans <cite>Préférences › Bloqueur de publicités fondé sur un RPV/VPN › Serveurs DNS</cite> :</p>
+<p><strong>Serveurs DNS du réseau</strong> (par défaut) : ceux de votre réseau Wi-Fi ou mobile. Si le réseau n'en fournit aucun qu'AdAway puisse utiliser, Cloudflare (<code>1.1.1.1</code>) prend le relais.<br/><strong>Serveurs DNS choisis</strong> : les adresses IP que vous saisissez, séparées par des virgules.<br/><strong>DNS sur HTTPS</strong> : les requêtes sont chiffrées et envoyées à Cloudflare, Google, Quad9 ou à l'adresse <code>https://</code> que vous saisissez, si bien que votre réseau ne peut ni les lire ni les modifier.</p>
+<p>Le blocage fonctionne de la même façon dans les trois cas. Pour garder un DNS chiffré, utilisez le DNS sur HTTPS ici plutôt que le paramètre <cite>DNS privé</cite> d'Android, qui contourne AdAway.</p>
+
 <h2>Comment bloquer, autoriser ou rediriger un domaine ?</h2>
 <p>Depuis l'écran d'accueil, vous gérez trois listes :</p>
 <p><strong>Bloqués</strong> : les domaines à bloquer (publicités et traqueurs).<br/><strong>Autorisés</strong> : les exceptions à ne jamais bloquer, même si une source les contient.<br/><strong>Redirigés</strong> : les domaines à pointer vers une adresse IP précise.</p>

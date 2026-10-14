@@ -11,6 +11,11 @@ Keep structure simple: h2 headings and p paragraphs, links via <a href>. -->
 <p><strong>VPN mode</strong> (default, no root needed): AdAway runs a local, on-device VPN that never sends your traffic anywhere. It only inspects DNS requests and drops the ones pointing to ad and tracker hostnames, letting everything else through. Nothing leaves your device.</p>
 <p><strong>Root mode</strong>: if your device is rooted, AdAway can instead write a <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to <code>/system/etc/hosts</code>, mapping unwanted hostnames to <code>127.0.0.1</code> so they resolve to your own device. On recent Android, a systemless hosts module (e.g. Magisk) is required.</p>
 
+<h2>Which DNS servers does the VPN use?</h2>
+<p>In VPN mode, the hostnames that are not blocked are resolved by the DNS servers you pick in <cite>Preferences, VPN based ad blocker, DNS servers</cite>:</p>
+<p><strong>Network DNS servers</strong> (default): the servers of your Wi-Fi or mobile network. If the network gives none AdAway can use, it falls back to Cloudflare (<code>1.1.1.1</code>).<br/><strong>Custom DNS servers</strong>: the IP addresses you enter, separated by commas.<br/><strong>DNS over HTTPS</strong>: requests are encrypted and sent to Cloudflare, Google, Quad9 or the <code>https://</code> address you enter, so your network cannot read or change them.</p>
+<p>Blocking works the same with all three. To keep encrypted DNS, use DNS over HTTPS here rather than the Android <cite>Private DNS</cite> setting, which bypasses AdAway.</p>
+
 <h2>How do I block, allow or redirect a hostname?</h2>
 <p>From the home screen you manage three lists:</p>
 <p><strong>Blocked</strong>: hostnames that should be blocked (ads and trackers).<br/><strong>Allowed</strong>: exceptions you never want blocked, even if a source lists them.<br/><strong>Redirected</strong>: hostnames you want pointed to a specific IP address.</p>
