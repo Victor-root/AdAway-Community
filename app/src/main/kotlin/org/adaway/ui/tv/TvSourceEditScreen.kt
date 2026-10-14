@@ -12,10 +12,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.LocalRippleConfiguration
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -82,65 +80,63 @@ fun TvSourceEditScreen(title: String, form: SourceForm, viewModel: SourceEditVie
             }
         },
     ) {
-        CompositionLocalProvider(LocalRippleConfiguration provides rowHighlight(colors)) {
-            Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(20.dp)) {
-                AdAwayTextField(
-                    value = form.label,
-                    onValueChange = { label -> viewModel.edit { it.copy(label = label) } },
-                    label = stringResource(R.string.source_label),
-                    error = if (SourceFieldError.LABEL_REQUIRED in form.errors) stringResource(R.string.source_label_required) else null,
-                )
-                FieldTitle(stringResource(R.string.source_format))
-                AdAwayToggleGroup(
-                    options = listOf(
-                        SourceFormat.BLOCK to stringResource(R.string.source_format_block),
-                        SourceFormat.ALLOW to stringResource(R.string.source_format_allow),
-                    ),
-                    selected = form.format,
-                    onSelect = { format -> viewModel.edit { it.copy(format = format) } },
-                    modifier = Modifier.padding(top = 2.dp),
-                )
-                FieldTitle(stringResource(R.string.source_type))
-                AdAwayToggleGroup(
-                    options = listOf(false to stringResource(R.string.source_type_url), true to stringResource(R.string.source_type_file)),
-                    selected = form.isFile,
-                    onSelect = { file -> if (file) openFile() else if (form.isFile) viewModel.useUrl() },
-                    modifier = Modifier.padding(top = 2.dp),
-                )
-                val locationError = when {
-                    SourceFieldError.LOCATION_REQUIRED in form.errors -> R.string.source_location_required
-                    SourceFieldError.LOCATION_INVALID in form.errors -> R.string.source_location_invalid
-                    SourceFieldError.LOCATION_DUPLICATE in form.errors -> R.string.source_location_duplicate
-                    else -> null
-                }?.let { stringResource(it) }
-                if (form.isFile) {
-                    Text(
-                        form.url,
-                        style = AdAwayType.body2,
-                        color = colors.textPrimary,
-                        modifier = Modifier.padding(top = 20.dp).fillMaxWidth().clickable(onClick = openFile).padding(12.dp),
-                    )
-                    locationError?.let { Text(it, style = AdAwayType.caption, color = colors.primary, modifier = Modifier.padding(horizontal = 12.dp)) }
-                } else {
-                    LocationField(form.url, locationError, onChange = { url -> viewModel.edit { it.copy(url = url) } })
-                }
-                // Hidden for an allow list, the room kept.
-                val redirects = form.format == SourceFormat.BLOCK
-                val redirectsAlpha by animateFloatAsState(if (redirects) 1f else 0f, tween(FADE_MILLIS), label = "redirects")
-                AdAwayCheckboxRow(
-                    stringResource(R.string.source_redirects),
-                    checked = form.redirectsEnabled,
-                    onCheckedChange = { checked -> viewModel.edit { it.copy(redirectsEnabled = checked) } },
-                    modifier = Modifier.padding(top = 20.dp).alpha(redirectsAlpha).focusProperties { canFocus = redirects },
-                )
+        Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(20.dp)) {
+            AdAwayTextField(
+                value = form.label,
+                onValueChange = { label -> viewModel.edit { it.copy(label = label) } },
+                label = stringResource(R.string.source_label),
+                error = if (SourceFieldError.LABEL_REQUIRED in form.errors) stringResource(R.string.source_label_required) else null,
+            )
+            FieldTitle(stringResource(R.string.source_format))
+            AdAwayToggleGroup(
+                options = listOf(
+                    SourceFormat.BLOCK to stringResource(R.string.source_format_block),
+                    SourceFormat.ALLOW to stringResource(R.string.source_format_allow),
+                ),
+                selected = form.format,
+                onSelect = { format -> viewModel.edit { it.copy(format = format) } },
+                modifier = Modifier.padding(top = 2.dp),
+            )
+            FieldTitle(stringResource(R.string.source_type))
+            AdAwayToggleGroup(
+                options = listOf(false to stringResource(R.string.source_type_url), true to stringResource(R.string.source_type_file)),
+                selected = form.isFile,
+                onSelect = { file -> if (file) openFile() else if (form.isFile) viewModel.useUrl() },
+                modifier = Modifier.padding(top = 2.dp),
+            )
+            val locationError = when {
+                SourceFieldError.LOCATION_REQUIRED in form.errors -> R.string.source_location_required
+                SourceFieldError.LOCATION_INVALID in form.errors -> R.string.source_location_invalid
+                SourceFieldError.LOCATION_DUPLICATE in form.errors -> R.string.source_location_duplicate
+                else -> null
+            }?.let { stringResource(it) }
+            if (form.isFile) {
                 Text(
-                    stringResource(R.string.source_redirects_warning),
-                    style = AdAwayType.caption,
-                    color = colors.textSecondary,
-                    textAlign = TextAlign.Justify,
-                    modifier = Modifier.padding(top = 8.dp).alpha(redirectsAlpha),
+                    form.url,
+                    style = AdAwayType.body2,
+                    color = colors.textPrimary,
+                    modifier = Modifier.padding(top = 20.dp).fillMaxWidth().clickable(onClick = openFile).padding(12.dp),
                 )
+                locationError?.let { Text(it, style = AdAwayType.caption, color = colors.primary, modifier = Modifier.padding(horizontal = 12.dp)) }
+            } else {
+                LocationField(form.url, locationError, onChange = { url -> viewModel.edit { it.copy(url = url) } })
             }
+            // Hidden for an allow list, the room kept.
+            val redirects = form.format == SourceFormat.BLOCK
+            val redirectsAlpha by animateFloatAsState(if (redirects) 1f else 0f, tween(FADE_MILLIS), label = "redirects")
+            AdAwayCheckboxRow(
+                stringResource(R.string.source_redirects),
+                checked = form.redirectsEnabled,
+                onCheckedChange = { checked -> viewModel.edit { it.copy(redirectsEnabled = checked) } },
+                modifier = Modifier.padding(top = 20.dp).alpha(redirectsAlpha).focusProperties { canFocus = redirects },
+            )
+            Text(
+                stringResource(R.string.source_redirects_warning),
+                style = AdAwayType.caption,
+                color = colors.textSecondary,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(top = 8.dp).alpha(redirectsAlpha),
+            )
         }
     }
     LaunchedEffect(Unit) { applyFocus.requestFocus() }

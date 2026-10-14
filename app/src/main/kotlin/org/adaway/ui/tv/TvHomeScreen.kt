@@ -64,6 +64,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlin.math.roundToInt
 import org.adaway.BuildConfig
 import org.adaway.R
 import org.adaway.data.db.RuleType
@@ -83,8 +84,9 @@ import org.adaway.ui.home.blockingDetail
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.Pastel
+import org.adaway.ui.theme.controlHighlight
+import org.adaway.ui.theme.highlight
 import org.adaway.vpn.AlwaysOnMode
-import kotlin.math.roundToInt
 
 /** The controls of the TV home the remote moves between. */
 private enum class HomeControl { TOGGLE, UPDATE, PERSISTENCE, THEME, BLOCKED, ALLOWED, REDIRECTED, SOURCES, SYNC, LOG, HELP, PREFERENCES }
@@ -274,7 +276,7 @@ fun TvHomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNav
                                     color = colors.homeCardSubtitle,
                                 )
                             }
-                            CompositionLocalProvider(LocalRippleConfiguration provides rowHighlight(colors)) {
+                            CompositionLocalProvider(LocalRippleConfiguration provides controlHighlight(colors)) {
                                 PastelIcon(
                                     R.drawable.ic_sync_24dp,
                                     colors.pastelBlue,

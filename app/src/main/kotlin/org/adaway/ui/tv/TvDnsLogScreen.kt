@@ -17,10 +17,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
-import androidx.compose.material3.LocalRippleConfiguration
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -170,21 +168,19 @@ fun TvDnsLogScreen() {
 @Composable
 private fun LogRow(entry: DnsLogEntry, onClick: () -> Unit) {
     val colors = LocalAdAwayColors.current
-    CompositionLocalProvider(LocalRippleConfiguration provides rowHighlight(colors)) {
-        Row(
-            modifier = Modifier.fillMaxWidth().clickable(onClick = onClick).padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            ListMark(entry.type)
-            Text(
-                entry.host,
-                style = AdAwayType.subtitle1,
-                color = colors.textPrimary,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                modifier = Modifier.weight(1f).padding(start = 16.dp),
-            )
-        }
+    Row(
+        modifier = Modifier.fillMaxWidth().clickable(onClick = onClick).padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        ListMark(entry.type)
+        Text(
+            entry.host,
+            style = AdAwayType.subtitle1,
+            color = colors.textPrimary,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.weight(1f).padding(start = 16.dp),
+        )
     }
 }
 

@@ -2,8 +2,8 @@ package org.adaway.ui.tv
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
@@ -21,10 +21,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ripple.RippleAlpha
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalRippleConfiguration
-import androidx.compose.material3.RippleConfiguration
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -50,18 +48,12 @@ import org.adaway.ui.common.DialogButton
 import org.adaway.ui.theme.AdAwayColors
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
+import org.adaway.ui.theme.highlight
 
 private val HeaderButtonShape = RoundedCornerShape(20.dp)
 private val CardShape = RoundedCornerShape(16.dp)
 
-/** The highlight the 6.x controls take with the focus or a press: [color] laid over them at [alpha]. */
-fun highlight(color: Color, alpha: Float) = RippleConfiguration(color, RippleAlpha(draggedAlpha = alpha, focusedAlpha = alpha, hoveredAlpha = alpha / 3, pressedAlpha = alpha))
-
-/** The gray highlight of the plain list rows and icons, stronger on the dark theme. */
-fun rowHighlight(colors: AdAwayColors) =
-    if (colors.surface.luminance() < 0.5f) highlight(Color.White, 0.2f) else highlight(Color.Black, 0.12f)
-
-/** The gray highlight of the cards, lighter than the rows' on the dark theme. */
+/** The gray highlight of the cards, lighter than the other controls' on the dark theme. */
 private fun cardHighlight(colors: AdAwayColors) =
     if (colors.surface.luminance() < 0.5f) highlight(Color.White, 0.1f) else highlight(Color.Black, 0.12f)
 
@@ -160,9 +152,7 @@ fun TvCard(onClick: () -> Unit, modifier: Modifier = Modifier, content: @Composa
 /** A plain list row, highlighted across its width. */
 @Composable
 fun TvListRow(onClick: () -> Unit, modifier: Modifier = Modifier, content: @Composable ColumnScope.() -> Unit) {
-    CompositionLocalProvider(LocalRippleConfiguration provides rowHighlight(LocalAdAwayColors.current)) {
-        Column(modifier = modifier.fillMaxWidth().clickable(onClick = onClick).padding(16.dp), content = content)
-    }
+    Column(modifier = modifier.fillMaxWidth().clickable(onClick = onClick).padding(16.dp), content = content)
 }
 
 /** The text of an empty list, in the middle of the screen. */
@@ -179,23 +169,21 @@ fun TvListDialog(title: String, items: List<DialogButton>, onDismiss: () -> Unit
     val colors = LocalAdAwayColors.current
     val firstItem = remember { FocusRequester() }
     AdAwayDialog(onDismissRequest = onDismiss, title = title, confirmButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss)) {
-        CompositionLocalProvider(LocalRippleConfiguration provides rowHighlight(colors)) {
-            Column {
-                items.forEachIndexed { index, item ->
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .heightIn(min = 48.dp)
-                            .then(if (index == 0) Modifier.focusRequester(firstItem) else Modifier)
-                            .clickable {
-                                onDismiss()
-                                item.onClick()
-                            }
-                            .padding(horizontal = 24.dp),
-                        contentAlignment = Alignment.CenterStart,
-                    ) {
-                        Text(item.text, style = AdAwayType.subtitle1, color = colors.textPrimary)
-                    }
+        Column {
+            items.forEachIndexed { index, item ->
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = 48.dp)
+                        .then(if (index == 0) Modifier.focusRequester(firstItem) else Modifier)
+                        .clickable {
+                            onDismiss()
+                            item.onClick()
+                        }
+                        .padding(horizontal = 24.dp),
+                    contentAlignment = Alignment.CenterStart,
+                ) {
+                    Text(item.text, style = AdAwayType.subtitle1, color = colors.textPrimary)
                 }
             }
         }

@@ -3,6 +3,7 @@ package org.adaway.ui.theme
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.LocalRippleConfiguration
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -190,10 +191,12 @@ fun AdAwayTheme(themeMode: ThemeMode?, isTelevision: Boolean, content: @Composab
     }
     val palette = if (dark) DarkPalette else LightPalette
     val colorScheme = remember(dark) { palette.applyTo(if (dark) darkColorScheme() else lightColorScheme()) }
+    val colors = if (dark) DarkAdAwayColors else LightAdAwayColors
     MaterialTheme(colorScheme = colorScheme) {
         CompositionLocalProvider(
-            LocalAdAwayColors provides if (dark) DarkAdAwayColors else LightAdAwayColors,
+            LocalAdAwayColors provides colors,
             LocalNavigationBarAppearance provides navigationBar,
+            LocalRippleConfiguration provides controlHighlight(colors),
             content = content,
         )
     }
