@@ -1,3 +1,18 @@
+> [!WARNING]
+> **Pull requests temporarily suspended**
+>
+> AdAway relies on code and dependencies that have become far too old. To improve stability, speed, security and maintainability, the app is being fully rewritten in Kotlin and Rust.
+>
+> Since the old code will be entirely replaced, a pull request made on it could not be merged. Pull requests are therefore paused during the migration.
+>
+> **They will reopen as soon as the version 7 pre-release is published.** From then on, contributions will need to be based on the new Kotlin and Rust code.
+>
+> Issues remain open: you can still report a bug or suggest an idea.
+>
+> **Testers are very welcome!** Once the migration is complete, version 7 will be published as a pre-release. We need as many different devices as possible to test it.
+>
+> Thank you for your patience and support!
+
 # ![AdAway logo](app/src/main/res/mipmap-mdpi/icon.png) AdAway Community
 <div align="center">
 
