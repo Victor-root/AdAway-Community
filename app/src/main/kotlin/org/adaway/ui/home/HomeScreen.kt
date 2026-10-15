@@ -47,7 +47,6 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -89,6 +88,13 @@ private const val HEADER_HEIGHT_FRACTION = 0.25f
 private const val LOGO_HEIGHT_FRACTION = 0.12f
 /** How far the counter cards climb onto the header. */
 private val CounterOverlap = 30.dp
+/**
+ * The smallest logo, whose height the title and the subtitle share: on a wide and short screen, as
+ * a tablet held flat, a share of the height alone leaves them no room.
+ */
+private val MinLogoSize = 72.dp
+private val HeaderMargin = 16.dp
+private val HeaderGap = 8.dp
 private val BadgeSize = 48.dp
 private val HomeCardShape = RoundedCornerShape(22.dp)
 
@@ -127,12 +133,17 @@ private fun HomeLayout(state: HomeState, progress: UpdateProgress?, statusMessag
     val busy = progress != null || state.blocking.rootBusy
     BoxWithConstraints(modifier = Modifier.fillMaxSize().background(colors.homeBackground)) {
         val contentHeight = maxHeight - statusBar - navigationBar
-        val headerHeight = statusBar + contentHeight * HEADER_HEIGHT_FRACTION
+        val logoSize = maxOf(contentHeight * LOGO_HEIGHT_FRACTION, MinLogoSize)
+        // Tall enough for the logo above the counters climbing onto it.
+        val headerHeight = statusBar + maxOf(
+            contentHeight * HEADER_HEIGHT_FRACTION,
+            HeaderMargin + logoSize + HeaderGap + CounterOverlap + BadgeSize / 2,
+        )
         Column(modifier = Modifier.fillMaxSize()) {
             Box(modifier = Modifier.fillMaxWidth()) {
                 Header(
                     blockingOn = state.blocking.active,
-                    logoSize = contentHeight * LOGO_HEIGHT_FRACTION,
+                    logoSize = logoSize,
                     modifier = Modifier.fillMaxWidth().height(headerHeight),
                     contentTop = statusBar,
                     openUpdate = actions.openUpdate,
@@ -198,7 +209,7 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
                     text = stringResource(R.string.app_title),
                     style = AdAwayType.large.copy(color = white, fontWeight = FontWeight.Bold),
                     maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
+                    // Clipped, not ellipsized: the size then fits the height too, not only the width.
                     autoSize = TextAutoSize.StepBased(minFontSize = 13.sp, maxFontSize = 34.sp, stepSize = 1.sp),
                 )
             }
@@ -219,8 +230,8 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
         val width = constraints.maxWidth
         val top = contentTop.roundToPx()
         val logo = logoSize.roundToPx()
-        val margin = 16.dp.roundToPx()
-        val gap = 8.dp.roundToPx()
+        val margin = HeaderMargin.roundToPx()
+        val gap = HeaderGap.roundToPx()
         val version = measurables[3].measure(Constraints())
         val textLeft = margin + logo + gap
         val textHeight = (logo - 2 * gap).coerceAtLeast(0)
