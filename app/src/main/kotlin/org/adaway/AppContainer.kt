@@ -39,7 +39,7 @@ class AppContainer(context: Context) {
     val applicationContext: Context = context.applicationContext
     /** Scope of the work that must outlive the screens, such as an update the user started. */
     val applicationScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
-    val settingsRepository = SettingsRepository(context.settingsDataStore)
+    val settingsRepository = SettingsRepository(context.settingsDataStore, applicationScope)
     val database = Room.databaseBuilder(context, AppDatabase::class.java, AppDatabase.NAME).build()
     val engineFiles = EngineFiles(context)
     val blockListState = BlockListState(context.blockListDataStore)

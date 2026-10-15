@@ -15,8 +15,7 @@ import org.adaway.data.settings.Settings
 import org.adaway.update.AppRelease
 
 class PreferencesViewModel(private val container: AppContainer) : ViewModel() {
-    val settings: StateFlow<Settings?> = container.settingsRepository.settings
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
+    val settings: StateFlow<Settings?> = container.settingsRepository.current
 
     fun update(transform: (Settings) -> Settings) {
         viewModelScope.launch { container.settingsRepository.update(transform) }
