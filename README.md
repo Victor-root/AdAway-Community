@@ -1,18 +1,3 @@
-> [!WARNING]
-> **Pull requests temporarily suspended**
->
-> AdAway relies on code and dependencies that have become far too old. To improve stability, speed, security and maintainability, the app is being fully rewritten in Kotlin and Rust.
->
-> Since the old code will be entirely replaced, a pull request made on it could not be merged. Pull requests are therefore paused during the migration.
->
-> **They will reopen as soon as the version 7 pre-release is published.** From then on, contributions will need to be based on the new Kotlin and Rust code.
->
-> Issues remain open: you can still report a bug or suggest an idea.
->
-> **Testers are very welcome!** Once the migration is complete, version 7 will be published as a pre-release. We need as many different devices as possible to test it.
->
-> Thank you for your patience and support!
-
 # ![AdAway logo](app/src/main/res/mipmap-mdpi/icon.png) AdAway Community
 <div align="center">
 
@@ -22,13 +7,15 @@
 
 [![Unofficial fork](https://img.shields.io/badge/Unofficial-community%20fork-f59e0b?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Victor-root/AdAway-Community)
 [![Android APK](https://img.shields.io/badge/Android-APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Victor-root/AdAway-Community/releases)
-[![Android TV](https://img.shields.io/badge/Android%20TV-supported-3DDC84?style=for-the-badge&logo=androidtv&logoColor=white)](https://github.com/Victor-root/AdAway-Community#android-tv-support)
-[![VPN stability](https://img.shields.io/badge/VPN-stability%20fixes-2563eb?style=for-the-badge&logo=wireguard&logoColor=white)](https://github.com/Victor-root/AdAway-Community#mobile--vpn-stability)
+[![Android TV](https://img.shields.io/badge/Android%20TV-supported-3DDC84?style=for-the-badge&logo=androidtv&logoColor=white)](https://github.com/Victor-root/AdAway-Community#-android-tv)
+[![Kotlin and Rust](https://img.shields.io/badge/Kotlin%20%2B%20Rust-rebuilt%20for%20v7-2563eb?style=for-the-badge&logo=rust&logoColor=white)](#-under-the-hood)
 
 
 </div>
 
-AdAway Community is an unofficial fork of [AdAway](https://github.com/AdAway/AdAway), an open source ad blocker for Android using hosts sources and a local VPN / root-based blocking depending on the selected mode.
+**Ads stop before they load.**
+
+AdAway Community is an unofficial fork of [AdAway](https://github.com/AdAway/AdAway), an open source ad blocker for Android. It blocks ads and trackers across every app at the DNS level, with a local VPN (no root) or a root-written hosts file. No account, no telemetry, nothing sent anywhere.
 
 This fork is **not affiliated with, endorsed by, or signed by** the official AdAway maintainers.
 
@@ -64,122 +51,84 @@ This fork is **not affiliated with, endorsed by, or signed by** the official AdA
 
 ## 🚀 Why this fork exists
 
-AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.
+AdAway is a great project, but its updates had slowed down and some useful fixes were left waiting, including work on VPN-mode stability on recent Android versions and OEM ROMs. This fork keeps them alive in a build you can actually install, and keeps Android TV in the same app.
 
-Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.
+This is not a hostile fork and not a claim of ownership over the original project. If the official project becomes actively maintained again and equivalent fixes land there, this fork may be archived or re-aligned with upstream.
 
-This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.
+### Version 7: rebuilt from scratch
 
-The goal is simple:
+AdAway relied on very old code and tools. Patching them any longer was not an option if the app was to stay stable, fast, secure and easy to maintain, so everything was rebuilt on modern foundations: **Kotlin** for the app, **Rust** for the blocking engine, and no C code left. It was a big job, but an unavoidable one.
 
-- 🧯 fix real bugs affecting daily usage;
-- 📱 keep the mobile Android experience stable;
-- 📺 maintain Android TV support in the same codebase;
-- 🔄 publish tested community builds;
-- 🛠️ keep changes practical and maintainable;
-- 🤝 stay compatible with upstream whenever possible.
-
-This is not a hostile fork and not a claim of ownership over the original project.
-
-If the official project becomes actively maintained again and equivalent fixes are merged/released, this fork may be deprecated, archived, or re-aligned with upstream.
+For users, nothing changes: same screens, same settings, and the sources, lists and settings of a 6.x install are imported on the first launch. Behind the scenes, everything is new.
 
 ---
 
-## 📱 Mobile / VPN stability
+## 🛡️ How it works
 
-This fork includes a VPN-mode stability patch originally proposed upstream here:
+Ads and trackers must look up a domain name before they can load. AdAway answers those lookups with nothing, so the request never leaves your device, in every app.
 
-https://github.com/AdAway/AdAway/pull/4255
-
-It is intended to improve cases where AdAway VPN could:
-
-- restart after being manually disabled;
-- stop or desynchronize unexpectedly in the background;
-- enter unstable restart/reconnect loops;
-- rebuild the VPN tunnel too often during network changes;
-- show inconsistent states between the app UI, Android VPN status, notification and Quick Settings tile.
-
-Main VPN-related changes:
-
-- 🧠 separate VPN user intent from runtime VPN service state;
-- 🚫 prevent background/internal sync or update paths from silently restarting the VPN;
-- 🛑 prevent sticky service restart from resurrecting VPN mode against user intent;
-- 🔄 improve synchronization between VPN service state, app UI, notification and Quick Settings tile;
-- 📶 avoid unnecessary VPN tunnel rebuilds when secondary networks flicker;
-- ⚡ reset VPN reconnect throttling for explicit user starts;
-- 🧯 reduce unstable restart/reconnect behavior in VPN mode;
-- ✅ keep the welcome/setup flow working on first launch;
-- 🧪 add focused testable decision logic for VPN start behavior.
-
-<details>
-<summary><strong>✅ Tested</strong></summary>
-
-Current mobile testing:
-
-- Oppo Reno 13 Pro;
-- Android 16 / ColorOS;
-- AdAway VPN mode;
-- daily usage for multiple weeks.
-
-Observed result on mobile:
-
-- ✅ VPN no longer restarted by itself after manual disable;
-- ✅ VPN stayed stable during normal background usage;
-- ✅ no visible VPN restart/reconnect loop during daily use;
-- ✅ Quick Settings tile stayed coherent;
-- ✅ app UI, Android VPN key icon and VPN state stayed consistent;
-- ✅ Wi-Fi / mobile data changes did not cause unwanted VPN restarts;
-- ✅ local-network IoT connectivity stayed stable;
-- ✅ Ecovacs Home robot vacuum stayed reachable through the patched VPN.
-
-Android TV testing:
-
-- ✅ Android TV UI launches correctly;
-- ✅ TV home screen is usable with a remote;
-- ✅ core TV navigation works on my setup.
-
-More device feedback is welcome.
-
-</details>
+| | VPN mode | Root mode |
+|:--|:--|:--|
+| **Needs** | no root | a rooted device |
+| **How** | a local VPN that only intercepts DNS requests; blocked names get an empty answer, the others go to the upstream DNS server | the blocklist is written into the system hosts file; a small local web server answers the blocked hosts at once |
+| **Upstream DNS** | system, custom servers, or DNS over HTTPS | not used |
+| **DNS log** | yes, from the tunnel | yes, from a root DNS capture |
 
 ---
 
-## 📺 Android TV support
+## ✨ Features
 
-This fork also includes Android TV support, written for this fork and maintained in the same codebase as the mobile app.
-
-Current TV-related features:
-
-- 📺 Android TV / Leanback launcher support;
-- 🖼️ TV banner resource;
-- 🎮 D-pad / remote-friendly TV home screen;
-- 🧭 automatic redirect to the TV UI when running on Android TV;
-- 📋 TV-friendly DNS log screen;
-- 🔘 TV actions for toggle, update, sync, DNS monitor and host sources.
-
-Android TV support has been tested on my Android TV setup. More feedback from other TV devices is still welcome, especially for different remotes, launchers, boxes and network setups.
-
-Known points where more feedback is useful:
-
-- D-pad navigation with different remotes;
-- VPN permission flow on different Android TV builds;
-- DNS monitor behavior on TV;
-- host sources screen usability on TV;
-- Ethernet behavior on Android TV boxes.
+- 🛡️ **Stable VPN mode:** the app, the notification and the Quick Settings tile always agree, and the VPN comes back on its own if your phone kills it;
+- 📺 **Android TV:** a full interface built for a remote, on TVs and TV boxes;
+- 📊 **Live DNS log:** see what each app asks for, then block, allow or redirect it in one tap;
+- 📝 **Your own lists:** blocked, allowed and redirected hosts, searchable, with wildcards, and per-app VPN exclusions;
+- 🌐 **DNS servers:** choose the upstream servers of the VPN, including DNS over HTTPS;
+- 🔄 **Sources:** community hosts files, refreshed automatically, with your own sources and local files;
+- 💾 **Backup and restore** of your sources and rules, in the format of the 6.x versions so that old backups restore too;
+- 🔁 **Built-in updater** that follows this repository's releases, plus a diagnostic log you can record, copy and share to report a VPN problem.
 
 ---
 
-## 🧪 Feedback
+## 🧱 Under the hood
 
-Feedback is welcome, especially for VPN-mode stability, Android TV behavior and recent Android/OEM compatibility issues.
+The repository holds the Android app and a Rust workspace:
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for what to include in a report so it's as easy as possible to reproduce and fix.
+| Part | What it does |
+|:--|:--|
+| `app/` | The Kotlin app: Jetpack Compose interface (phone, tablet and a separate TV interface), Room database for sources and your rules, DataStore for settings, WorkManager for the automatic updates, libsu for root |
+| `rust/engine` | The blocking engine: reads and cleans the sources, computes the final lists, filters DNS queries, runs the VPN tunnel and records the DNS log |
+| `rust/doh` | The DNS over HTTPS relay the tunnel sends its queries to, as to a plain DNS server |
+| `rust/root` | The processes started as root: the local web server for blocked hosts and the DNS capture |
+| `rust/android` | The JNI bindings that expose the engine to the app |
+
+How the final list is computed:
+
+- your own rules always win over the sources;
+- within each of the two layers, a redirection wins over an allow rule, which wins over a block rule;
+- block and redirect rules from sources match exact names only, while allow rules and your own block rules may use wildcards;
+- the result is written as sorted files, which the tunnel and the hosts file writer use.
+
+Building needs Android Studio, the Android NDK and Rust: see [BUILDING.md](BUILDING.md) (in French). The Rust engine has its own tests (`cargo test` in `rust/`), and the app has unit tests (`gradlew testDebugUnitTest`). The architecture and the behavior of the app are specified in [docs/cahier-des-charges](docs/cahier-des-charges/README.md) (in French).
+
+---
+
+## 📺 Android TV
+
+The TV interface is written for this fork and lives in the same app as the phone one: Leanback launcher entry, TV banner, a D-pad friendly home screen, lists, sources, DNS log and setup wizard.
+
+Feedback from more TV devices is welcome, especially for different remotes, launchers, boxes and the VPN permission flow on different Android TV builds.
+
+---
+
+## 🧪 Feedback and contributing
+
+Feedback is welcome, especially for VPN-mode stability, Android TV behavior and recent Android/OEM compatibility. The [issue forms](https://github.com/Victor-root/AdAway-Community/issues/new/choose) ask for what is needed to reproduce a problem, and [CONTRIBUTING.md](CONTRIBUTING.md) explains how to report it and how to send a change.
 
 ---
 
 ## 🌍 Translations
 
-**AdAway Community** speaks **65 languages** 🗣️, entirely thanks to the community of volunteer translators. 💜
+The app speaks **65 languages** 🗣️, entirely thanks to the community of volunteer translators. 💜
 
 Spotted a missing string or an awkward wording? Contributions to start a new language or improve an existing one are always welcome: every little bit helps! 🙌
 
@@ -263,8 +212,7 @@ Spotted a missing string or an awkward wording? Contributions to start a new lan
 ## 🧱 Requirements
 
 - Android 8 Oreo or above;
-- VPN mode or root mode depending on your setup;
-- Android VPN permission for VPN mode.
+- VPN mode (Android VPN permission) or root mode, depending on your setup.
 
 For devices older than Android 8 Oreo, use older official AdAway versions from upstream.
 
@@ -272,14 +220,13 @@ For devices older than Android 8 Oreo, use older official AdAway versions from u
 
 ## 🔐 Permissions
 
-AdAway uses these permissions:
-
 - `INTERNET` to download hosts files and application updates;
 - `ACCESS_NETWORK_STATE` to monitor network changes;
 - `RECEIVE_BOOT_COMPLETED` to optionally start AdAway after boot;
 - `FOREGROUND_SERVICE` to run the VPN service in foreground;
 - `POST_NOTIFICATIONS` for source update, app update and VPN control notifications;
-- `REQUEST_INSTALL_PACKAGES` for the built-in updater;
+- `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` to keep the VPN alive against battery managers;
+- `REQUEST_INSTALL_PACKAGES` and `UPDATE_PACKAGES_WITHOUT_USER_ACTION` for the built-in updater;
 - `QUERY_ALL_PACKAGES` to let users exclude apps from VPN.
 
 ---
