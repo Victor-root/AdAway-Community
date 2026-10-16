@@ -33,7 +33,7 @@ window.AAC_I18N['fr'] = {
   'why.migTag': "Version 7",
   'why.migT': "Reconstruite de zéro",
   'why.migB1': "AdAway reposait sur du code et des outils très anciens. Continuer à les rafistoler n’était plus possible si l’application devait rester stable, rapide, sûre et facile à faire évoluer : tout a donc été reconstruit sur des bases modernes. C’était un gros chantier, mais inévitable.",
-  'why.migB2': "Pour vous, rien ne change : mêmes écrans, mêmes réglages, et vos listes sont conservées. En coulisses tout est neuf, et la mise à jour des listes prend désormais 2 ou 3 secondes au lieu d’environ 10 dans nos tests.",
+  'why.migB2': "Pour vous, rien ne change : mêmes écrans, mêmes réglages, et vos listes sont conservées. En coulisses, tout est neuf.",
   'why.note': "Ce n’est pas un fork hostile : il n’est ni affilié aux mainteneurs officiels d’AdAway, ni approuvé ni signé par eux.",
 
   'how.kicker': "Fonctionnement",

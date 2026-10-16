@@ -46,7 +46,7 @@
     'why.migTag': 'Version 7',
     'why.migT': 'Rebuilt from scratch',
     'why.migB1': 'AdAway relied on very old code and tools. Patching them any longer was not an option if the app was to stay stable, fast, secure and easy to maintain, so everything was rebuilt on modern foundations. It was a big job, but an unavoidable one.',
-    'why.migB2': 'For you, nothing changes: same screens, same settings, and your lists are kept. Behind the scenes everything is new, and updating the lists now takes 2 or 3 seconds instead of about 10 in our tests.',
+    'why.migB2': 'For you, nothing changes: same screens, same settings, and your lists are kept. Behind the scenes, everything is new.',
     'why.note': 'This is not a hostile fork: it is not affiliated with, endorsed by, or signed by the official AdAway maintainers.',
 
     'how.kicker': 'How it works',

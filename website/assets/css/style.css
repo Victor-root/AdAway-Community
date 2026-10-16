@@ -146,13 +146,12 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 /* Where an anchor jump comes to rest.
    The header is sticky, so the landing has to clear it. But stopping at the
    top of the section stops on its padding, not on its text: the sections carry
-   up to 104px of space above the title, which together with the header buried
-   a fifth of the screen under nothing at all. Subtracting that padding back out
-   lands the title a constant 32px below the header whatever the width, which is
-   why this is a calc against the same clamp the padding uses rather than a
-   number, and why it goes negative on a wide screen. */
+   space above the title, which together with the header buries part of the
+   screen under nothing at all. Subtracting that padding back out lands the
+   title a constant 32px below the header whatever the width, which is why this
+   is a calc against the padding variable rather than a number. */
 #main,.hero{scroll-margin-top:80px}
-.sec{scroll-margin-top:calc(95px - clamp(64px,8.5vw,104px))}
+.sec{scroll-margin-top:calc(95px - var(--sec-pad))}
 
 .skip{position:absolute;left:-9999px;top:0;background:var(--red);color:#fff;padding:12px 18px;z-index:200;border-radius:0 0 var(--r-sm) 0}
 .skip:focus{left:0}
@@ -278,7 +277,7 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
    display the height term never wins and nothing changes. */
 .hero{
   position:relative;overflow:hidden;
-  padding:min(clamp(64px,10vw,112px),8vh) 0 min(clamp(72px,9vw,110px),8vh);
+  padding:min(clamp(28px,4vw,48px),5vh) 0 min(clamp(44px,6vw,72px),6vh);
 }
 .hero-glow{
   position:absolute;top:-38%;left:50%;transform:translateX(-50%);
@@ -336,9 +335,9 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 }
 
 /* ---------- sections ---------- */
-.sec{padding:clamp(64px,8.5vw,104px) 0;position:relative}
+.sec{--sec-pad:clamp(40px,5vw,64px);padding:var(--sec-pad) 0;position:relative}
 .sec-alt{background:var(--bg-alt);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-.sec-head{max-width:72ch;margin-bottom:52px}
+.sec-head{max-width:72ch;margin-bottom:36px}
 
 /* why */
 .why-card{
@@ -498,7 +497,7 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
   .nav-in{height:60px;gap:10px}
   /* The header is 8px shorter here, so the landing follows it up. */
   #main,.hero{scroll-margin-top:70px}
-  .sec{scroll-margin-top:calc(87px - clamp(64px,8.5vw,104px))}
+  .sec{scroll-margin-top:calc(87px - var(--sec-pad))}
   .nav-links{top:60px}
   /* "Community" is dropped from the mark here so the row still fits a
      narrow phone without the menu button being pushed off-screen. */
