@@ -12,7 +12,7 @@
 [![Android TV](https://img.shields.io/badge/Android%20TV-supported-3DDC84?style=for-the-badge&logo=androidtv&logoColor=white)](https://github.com/Victor-root/AdAway-Community#-android-tv)
 [![Kotlin and Rust](https://img.shields.io/badge/Kotlin%20%2B%20Rust-rebuilt%20for%20v7-2563eb?style=for-the-badge&logo=rust&logoColor=white)](#-under-the-hood)
 
-<a href="https://victor-root.github.io/AdAway-Community/"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/website-dark.webp"><img width="820" alt="The AdAway Community website: what the app does, the version 7 rebuild, the features and the download links" src=".github/assets/website-light.webp" /></picture></a>
+<a href="https://victor-root.github.io/AdAway-Community/"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/website-hero-dark.webp"><img width="820" alt="The AdAway Community website: what the app does, the version 7 rebuild, the features and the download links" src=".github/assets/website-hero-light.webp" /></picture></a>
 
 **[victor-root.github.io/AdAway-Community](https://victor-root.github.io/AdAway-Community/)** has the download links, the
 features and real screenshots, in light and dark, in 63 languages.
