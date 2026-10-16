@@ -47,13 +47,19 @@ pub fn read_rules(path: &Path) -> io::Result<Vec<Rule>> {
     Ok(rules)
 }
 
+/// The lines of a file, read as they are asked for, none if it does not exist.
+pub fn lines(path: &Path) -> io::Result<impl Iterator<Item = io::Result<String>> + use<>> {
+    let reader = match File::open(path) {
+        Ok(file) => Some(BufReader::new(file)),
+        Err(error) if error.kind() == io::ErrorKind::NotFound => None,
+        Err(error) => return Err(error),
+    };
+    Ok(reader.into_iter().flat_map(|reader| reader.lines()))
+}
+
 /// Reads the lines of a file, none if it does not exist.
 pub fn read_lines(path: &Path) -> io::Result<Vec<String>> {
-    match File::open(path) {
-        Ok(file) => BufReader::new(file).lines().collect(),
-        Err(error) if error.kind() == io::ErrorKind::NotFound => Ok(Vec::new()),
-        Err(error) => Err(error),
-    }
+    lines(path)?.collect()
 }
 
 /// Writes `lines` to `path` through a temporary file, so that readers never see a partial file.
@@ -62,13 +68,25 @@ where
     I: IntoIterator<Item = S>,
     S: AsRef<str>,
 {
-    let temporary = path.with_extension("tmp");
-    {
-        let mut writer = BufWriter::new(File::create(&temporary)?);
+    write_with(path, |writer| {
         for line in lines {
             writer.write_all(line.as_ref().as_bytes())?;
             writer.write_all(b"\n")?;
         }
+        Ok(())
+    })
+}
+
+/// Lets `write` fill a temporary file, then puts it at `path`, so that readers never see a
+/// partial file.
+pub fn write_with<F>(path: &Path, write: F) -> io::Result<()>
+where
+    F: FnOnce(&mut BufWriter<File>) -> io::Result<()>,
+{
+    let temporary = path.with_extension("tmp");
+    {
+        let mut writer = BufWriter::new(File::create(&temporary)?);
+        write(&mut writer)?;
         writer
             .into_inner()
             .map_err(io::IntoInnerError::into_error)?

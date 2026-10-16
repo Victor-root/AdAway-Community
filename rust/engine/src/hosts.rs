@@ -4,7 +4,7 @@
 //! name: a blocked name points to the IPv4 redirection, and also to the IPv6 one when given; a
 //! redirected name points to its own address only. Wildcard rules have no hosts file form.
 
-use std::io;
+use std::io::{self, Write};
 use std::path::Path;
 
 use crate::rule;
@@ -18,9 +18,9 @@ pub struct HostsOptions<'a> {
 
 const LOCALHOST: [&str; 2] = ["127.0.0.1 localhost", "::1 localhost"];
 
-/// Writes the hosts file at `output` from the final list in `final_directory`.
+/// Writes the hosts file at `output` from the final list in `final_directory`. The blocked names
+/// are streamed from their file, so the memory it takes does not grow with their number.
 pub fn write(final_directory: &Path, output: &Path, options: &HostsOptions) -> io::Result<()> {
-    let blocked = rule::read_lines(&final_directory.join("blocked.txt"))?;
     let redirected: Vec<(String, String)> =
         rule::read_lines(&final_directory.join("redirected.txt"))?
             .into_iter()
@@ -29,35 +29,36 @@ pub fn write(final_directory: &Path, output: &Path, options: &HostsOptions) -> i
                 Some((host.to_owned(), address.to_owned()))
             })
             .collect();
-    let mut entries = Vec::with_capacity(blocked.len() * 2 + redirected.len());
-    // Both lists are sorted by name: merge them.
-    let (mut block, mut redirect) = (blocked.iter().peekable(), redirected.iter().peekable());
-    loop {
-        let take_block = match (block.peek(), redirect.peek()) {
-            (Some(host), Some((redirected_host, _))) => host.as_str() < redirected_host.as_str(),
-            (Some(_), None) => true,
-            (None, Some(_)) => false,
-            (None, None) => break,
-        };
-        if take_block {
-            let host = block.next().expect("peeked");
-            entries.push(format!("{} {host}", options.ipv4_redirection));
-            if let Some(ipv6) = options.ipv6_redirection {
-                entries.push(format!("{ipv6} {host}"));
-            }
-        } else {
-            let (host, address) = redirect.next().expect("peeked");
-            entries.push(format!("{address} {host}"));
+    let blocked = rule::lines(&final_directory.join("blocked.txt"))?;
+    rule::write_with(output, |writer| {
+        for line in options
+            .header
+            .iter()
+            .map(String::as_str)
+            .chain([""])
+            .chain(LOCALHOST)
+        {
+            writeln!(writer, "{line}")?;
         }
-    }
-    let lines = options
-        .header
-        .iter()
-        .map(String::as_str)
-        .chain([""])
-        .chain(LOCALHOST)
-        .chain(entries.iter().map(String::as_str));
-    rule::write_lines(output, lines)
+        // Both lists are sorted by name: merge them.
+        let mut redirect = redirected.iter().peekable();
+        for host in blocked {
+            let host = host?;
+            while let Some((redirected_host, address)) =
+                redirect.next_if(|(redirected_host, _)| redirected_host.as_str() <= host.as_str())
+            {
+                writeln!(writer, "{address} {redirected_host}")?;
+            }
+            writeln!(writer, "{} {host}", options.ipv4_redirection)?;
+            if let Some(ipv6) = options.ipv6_redirection {
+                writeln!(writer, "{ipv6} {host}")?;
+            }
+        }
+        for (host, address) in redirect {
+            writeln!(writer, "{address} {host}")?;
+        }
+        Ok(())
+    })
 }
 
 #[cfg(test)]
