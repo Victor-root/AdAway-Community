@@ -1,0 +1,9 @@
+Um bloqueador de anúncios livre e de código aberto para Android.
+
+A aplicação está disponível para dispositivos com e sem acesso root.
+Usando um dispositivo com acesso root, a aplicação atualiza o ficheiro hosts do sistema que contém uma lista de mapeamentos entre hostnames e endereços IP.
+Usando um dispositivo sem acesso root, a aplicação usa a função de VPN para bloquear conexões de saída a anúncios e perseguidores.
+Portanto, quando uma aplicação solicita um anúncio ou um perseguidor de um host nesse ficheiro, esse pedido é redirecionado para o IP local 127.0.0.1, que não faz nada.
+
+Pode descarregar listas de bloqueio de anúncios predefinidas como ficheiros hosts a partir da aplicação para incorporá-los no ficheiro hosts do sistema. Também é possível utilizar os seus próprios ficheiros e adicionar certos hosts às listas de permissão e bloqueio.
+Há opção de executar um servidor web local para responder a hostnames bloqueados e, ao invés disso, direcionar estes pedidos para um endereço de IP à sua escolha.

@@ -1,0 +1,30 @@
+name: Feature request
+description: Have an idea? Tell us what would be useful
+title: "[Feature Request] "
+labels: ['enhancement']
+body:
+- type: checkboxes
+  id: checklist
+  attributes:
+    label: Before you suggest
+    options:
+    - label: I have searched the existing issues and none already asks for this.
+      required: true
+- type: dropdown
+  id: method
+  attributes:
+    label: Blocking method concerned
+    options:
+    - VPN
+    - Root
+    - Both
+    - Does not matter
+  validations:
+    required: true
+- type: textarea
+  id: feature
+  attributes:
+    label: What feature would you like?
+    description: Describe what you would like to be able to do in AdAway.
+  validations:
+    required: true

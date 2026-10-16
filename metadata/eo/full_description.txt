@@ -1,0 +1,9 @@
+Libera kaj malfermkoda reklamblokilo por Android.
+
+Tiu ĉi aplikaĵo estas destinita por aparatoj kun ĉefuzanta (root) aliro kaj sen tiu ĉi aliro.
+Ĉe aparatoj kun ĉefuzanta aliro, la aplikaĵo modifas la dosieron “hosts”, kiu enhavas mapigojn servilnomo → IP‑adreso.
+ĈE aparatoj sen ĉefuzanta aliro, la aplikaĵo uzas VPN por bloki elirajn konektojn al reklamoj kaj spuriloj.
+Do kiam aplikaĵo petas pri reklamo/spurilo, kiu estas gastigata ĉe servilo listigita en la dosiero “hosts”, tiu ĉi peto estas aldirektata al la loka IP‑adreso 127.0.0.1, kiu faras nenion.
+
+La aplikaĵo liveras elŝuteblan liston de serviloj de reklamoj kaj elementoj por bloki. Sed ankaŭ vi povas aldoni proprajn listojn aŭ individuajn servilojn al permesataj/blokataj listoj.
+Estas funkcio ruli lokan retservilon por respondi al blokataj nomregnoj kaj aldirekti petojn al iu alia elektita IP-adreso.

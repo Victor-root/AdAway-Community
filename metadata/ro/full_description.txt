@@ -1,0 +1,9 @@
+A Free and Open Source ad blocker for Android.
+
+Aplicația este disponibilă pe dispozitive cu sau fără acces la root.
+Using rooted device, the application update your system hosts file that contains a list of mappings between host names and IP addresses.
+Using non-rooted device, the application use the VPN feature to block outgoing connections to ads and trackers.
+So when an app requests an ad or a tracker from a host in that file, this request is redirected to the local IP 127.0.0.1, which does nothing.
+
+You can download predefined ads and blocker lists as hosts files from within the app to incorporate. It is also possible to use your own files and to add certain hosts to allowed and blocked lists.
+Există opțiuni pentru a rula un server web local ce va răspunde domeniilor blocate cu redirecționări la adresa IP aleasă de dumneavoastră.

@@ -1,0 +1,9 @@
+Besplatan i otvorenog kôda blokator oglasa za Android.
+
+Aplikacija je dostupna za rootane i ne-rootane uređaje.
+Korištenje na rootanim uređajima, aplikacija ažurira vašu datoteku poslužitelja sustava koja sadrži popis mapiranja između naziva poslužitelja i IP adresa.
+Korištenje na ne-rootanim uređajima, aplikacija koristi VPN značajku za blokiranje oglasa i praćenja na odlaznim povezivanjima.
+Stoga kada aplikacija zahtijeva oglas ili pratitelja iz poslužitelja s te datoteke, taj zahtjev je preusmjeren na lokalnu IP adresu 127.0.0.1, što nema daljneg učinka.
+
+Možete preuzeti preddefinirane popise oglasa i blokatora kao datoteke poslužitelja iz aplikacije. Možete koristiti i vlastite datoteke i dodati određene poslužitelje na popis dopuštenih i blokiranih.
+Postoje mogućnosti pokretanja lokalnog web poslužitelja kao odgovor na blokirane nazive poslužitelja i izravan zahtjev na vaše odabrane IP adrese.

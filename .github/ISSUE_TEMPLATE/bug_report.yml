@@ -1,0 +1,52 @@
+name: Bug report
+description: File a bug/issue report
+title: "[BUG] "
+labels: ['bug :bug:']
+body:
+- type: checkboxes
+  id: checklist
+  attributes:
+    label: Before you report
+    options:
+    - label: I have searched the existing issues and none covers this problem.
+      required: true
+- type: input
+  id: device
+  attributes:
+    label: Device and Android version
+    placeholder: "e.g. Pixel 6a, Android 15"
+  validations:
+    required: true
+- type: input
+  id: version
+  attributes:
+    label: AdAway version
+    description: Shown at the top right of the home screen.
+    placeholder: "e.g. 7.0.0-c"
+  validations:
+    required: true
+- type: dropdown
+  id: method
+  attributes:
+    label: Blocking method
+    options:
+    - VPN
+    - Root
+    - Both
+  validations:
+    required: true
+- type: textarea
+  id: description
+  attributes:
+    label: What is happening?
+    description: Describe the problem, and what you expected instead.
+  validations:
+    required: true
+- type: textarea
+  id: details
+  attributes:
+    label: Steps to reproduce, screenshots, logs
+    description: |
+      Give the steps if you know them, and add screenshots if they help.
+      In VPN mode, turn on "Record diagnostic log" in the preferences, reproduce the problem, then paste here the content of "Diagnostic log".
+      Tip: you can drag images or files into this field.

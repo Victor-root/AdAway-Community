@@ -1,0 +1,9 @@
+Bezplatný open source blokovač reklamy pre Android.
+
+Aplikácia je určená pre rootnuté aj nerootnuté zariadenia.
+Pri rootnutom zariadení aplikácia aktualizuje váš systémový súbor host tak, že obsahuje zoznam namapovaných hostiteľov a IP adresy.
+Pre použitie v nerootnutom zariadení aplikácia používa funkciu VPN, ktorá blokuje odchádzajúce pripojenia na blokovanie reklamy a trackerov.
+Takže ak si aplikácia vyžiada hostiteľa reklamy alebo trackera zo súboru, táto požiadavka bude presmerovaná na lokálnu IP adresu 127.0.0.1, ktorá nič neurobí.
+
+Z aplikácie si môžete stiahnuť preddefinované zoznamy blokujúce reklamy ako súbor hosts a zlúčiť ich do jedného. Je tiež možné použiť vaše vlastné súbory a pridať určitých hostiteľov do povolených a blokovaných zoznamov.
+Je tu aj možnosť spustiť lokálny webový server, ktorý bude reagovať na blokované hostiteľské názvy a ich požiadavky posielať na vami zvolenú IP adresu.

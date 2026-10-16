@@ -1,0 +1,9 @@
+Trình chặn quảng cáo mã nguồn mở cho Android.
+
+Ứng dụng có sẵn cho các thiết bị đã root và chưa root.
+Với thiết bị đã root, ứng dụng sẽ cập nhật file hosts của hệ thống bao gồm danh sách chỉ rõ tên máy chủ và địa chỉ IP.
+Với thiết bị chưa root, ứng dụng sẽ dùng tính năng VPN để chặn các kết nối tới các quảng cáo và các trình theo dõi.
+Do vậy khi một ứng dụng yêu cầu một quảng cáo hoặc một trình giám sát từ một máy chủ lưu trữ tệp đó, yêu cầu này sẽ bị chuyển hướng tới IP nội bộ là 127.0.0.1, thứ mà sẽ không làm gì hết.
+
+Bạn có thể tải xuống các danh sách chặn quảng cáo dưới dạng tệp hosts từ trong ứng dụng để tích hợp. Bạn cũng có thể sử dụng tệp của riêng mình để thêm một số hosts nhất định vào danh sách cho phép hoặc bị chặn.
+Bạn có thể tùy chỉnh cho phép chạy một máy chủ web cục bộ để trả lời tên máy chủ bị chặn và chuyển hướng nó đến địa chỉ IP tùy chọn.

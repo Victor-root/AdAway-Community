@@ -1,0 +1,9 @@
+Bezplatný blokovač reklam pro Android s otevřeným kódem.
+
+Aplikace je dostupná pro zařízeni s i bez ROOT přístupu.
+Při použití na zařízení s ROOT přístupem aplikace aktualizuje Váš soubor hostitelů, který obsahuje mapování mezi názvy hostitelů a IP adresami.
+Při použití na zařízení bez ROOT přístupu aplikace použije funkci VPN pro zablokování odchozích připojení k reklamám a sledovačům.
+Takže když nějaká aplikace požádá o reklamu nebo sledovač od hostitele v tomto souboru, daný požadavek je přesměrován na místní IP 127.0.0.1, která nic nedělá.
+
+Přímo z aplikace můžete stáhnout předdefinované seznamy blokovaných reklam jako soubory hostitelů k začlenění. Také je možné použít Vaše vlastní soubory nebo přidat určité hostitele na seznam povolených či zablokovaných hostitelů.
+Jsou zde možnosti spustit lokální webový server aby odpovídal na požadavky na zablokovaná jména hostitelů a aby směroval požadavky přímo na konkrétní IP adresu dle vašeho výběru.
