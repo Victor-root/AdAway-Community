@@ -1,0 +1,82 @@
+/* Türkçe */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['tr'] = {
+  'meta.desc': "AdAway’in resmî olmayan bir topluluk çatallaması: Android için tüm sistem genelinde çalışan açık kaynaklı bir reklam engelleyici; VPN kipi kararlılık düzeltmeleri ve Android TV desteğiyle.",
+
+  'a11y.skip': "İçeriğe geç",
+  'a11y.nav': "Ana",
+  'a11y.lang': "Dil",
+  'a11y.menu': "Menü",
+  'a11y.themeDark': "Koyu temaya geç",
+  'a11y.themeLight': "Açık temaya geç",
+
+  'nav.why': "Neden",
+  'nav.how': "Nasıl çalışır",
+  'nav.features': "Özellikler",
+  'nav.shots': "Ekran görüntüleri",
+  'nav.get': "İndir",
+
+  'hero.tag': "Resmî olmayan topluluk çatallaması",
+  'hero.h1a': "Reklamlar durur",
+  'hero.h1b': "daha yüklenmeden.",
+  'hero.sub': "AdAway, Android cihazınızdaki her uygulamada reklamları ve izleyicileri DNS düzeyinde engeller. Root gerekmez, hesap gerekmez, hiçbir trafik hiçbir yere gönderilmez. Bu topluluk çatallaması onu güncel Android sürümlerinde kararlı tutar ve Android TV desteği ekler.",
+  'hero.cta1': "APK’yı indir",
+  'hero.cta2': "Kaynak kodu görüntüle",
+  'hero.cta3': "Omnify ile edinin",
+  'hero.req': "Android 8 Oreo veya üzeri · GPLv3 · Öntanımlı olarak izleyici, reklam ve telemetri yok",
+  'hero.feed': "DNS istekleri",
+  'hero.feedBlocked': "engellendi",
+
+  'why.kicker': "Çatallama",
+  'why.h2': "Neden var",
+  'why.lead': "AdAway uzun geçmişi olan harika bir proje. Kaynak projede sürüm çıkarma ve inceleme etkinliği bir süredir sınırlı ve günlük kullanımı etkileyen bazı düzeltmeler yayımlanmadan bekliyor. Bu çatallama onları gerçekten kurabileceğiniz bir derlemede topluyor.",
+  'why.note': "Bu düşmanca bir çatallama değil ve bir sahiplik iddiası da değil. AdAway’in resmî bakımcılarıyla bağlantılı değil, onlar tarafından onaylanmadı ve imzalanmadı. Resmî proje yeniden etkin biçimde bakılmaya başlar ve eşdeğer düzeltmeler oraya girerse, bu çatallama arşivlenebilir ya da kaynak projeyle yeniden hizalanabilir.",
+
+  'how.kicker': "Nasıl çalışır",
+  'how.h2': "Kaynağında engelleme",
+  'how.lead': "Reklamlar ve izleyiciler herhangi bir şey yükleyebilmek için önce bir alan adını çözmek zorunda. AdAway bu alan adlarının listesini tutar ve onlara hiçbir şeyle yanıt verir; böylece istek cihazınızdan hiç çıkmaz. Bu yalnızca tarayıcıda değil, her uygulamada işler.",
+  'how.vpnTag': "Root gerekmez",
+  'how.vpnT': "VPN kipi",
+  'how.vpnB': "AdAway, cihazda yalnızca DNS isteklerini incelemek için yerel bir VPN kaydeder. Uzak bir sunucuya hiçbir şey gönderilmez, hesap yoktur ve kimseye giden bir tünel yoktur. Trafiğiniz AdAway üzerinden telefonu asla terk etmez.",
+  'how.rootTag': "Root gerekir",
+  'how.rootT': "Root kipi",
+  'how.rootB': "Root’lu bir cihazda AdAway engelleme listesini doğrudan sistemin hosts dosyasına yazar. Arka planda hiçbir şey çalışmaz ve VPN yuvası gerçek bir VPN için boş kalır.",
+
+  'feat.kicker': "Özellikler",
+  'feat.h2': "Ne elde edersiniz",
+  'feat.1t': "Kararlı VPN kipi",
+  'feat.1b': "Duraklattıktan sonra kendi kendine yeniden başlamıyor, yeniden bağlanma döngüleri yok, ağ her titrediğinde tünel yeniden kurulmuyor. Uygulamadaki durum, bildirim ve hızlı ayarlar kutucuğu nihayet birbiriyle uyumlu; telefonunuz VPN’i kapatırsa kendiliğinden geri geliyor.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Kumanda için gerçek bir arayüz: D-pad ile gezinme, leanback başlatıcıda bir giriş ve TV’ye uyarlanmış bir DNS izleyici.",
+  'feat.3t': "Canlı DNS günlüğü",
+  'feat.3b': "Her uygulamanın tam olarak neyi çözdüğünü görün, sonra bir alan adını doğrudan listeden engelleyin, izin verin ya da yönlendirin.",
+  'feat.4t': "Kendi listeleriniz",
+  'feat.4b': "Engellenen, izin verilen ve yönlendirilen ana makineler, her biri aranabilir; ayrıca uygulama bazında VPN dışı bırakmalar.",
+
+  'shots.kicker': "Ekran görüntüleri",
+  'shots.h2': "Çalışırken görün",
+  'shots.1': "Ana ekran: tek dokunuşla engellemeyi açın ya da kapatın, canlı sayaçlarla.",
+  'shots.2': "Hosts kaynakları: uygulamayı besleyen engelleme listeleri, kendiliğinden güncellenir.",
+  'shots.3': "DNS günlüğü: uygulamalarınızın gerçekte neyi çözdüğü, gerçek zamanlı.",
+  'shots.4': "Kumanda için yapılmış Android TV ana ekranı.",
+
+
+  'get.kicker': "Kurulum",
+  'get.h2': "Edinmenin üç yolu",
+  'get.1t': "APK’yı indir",
+  'get.1b': "Son sürümü alın ve kurun. Android sizden bir kez tarayıcıdan veya dosya yöneticisinden kuruluma izin vermenizi isteyecek.",
+  'get.1c': "İndir",
+  'get.2t': "Omnify ile takip edin",
+  'get.2b': "Bu depoyu Omnify’a ekleyin; yeni sürümleri izler ve güncellemeleri diğer uygulamalarınızla birlikte önerir.",
+  'get.2c': "Omnify’ı edin",
+  'get.note': "Her Community sürümü aynı anahtarla imzalanır, bu yüzden güncellemeler ayarlarınızı ve verilerinizi korur. Bu anahtar resmî AdAway’inkinden farklıdır; resmî uygulamadan geliyorsanız önce onu kaldırmanız gerekir.",
+
+  'foot.tagline': "AdAway’in resmî olmayan topluluk çatallaması",
+  'foot.project': "Proje",
+  'foot.releases': "Sürümler",
+  'foot.issues': "Sorun bildir",
+  'foot.contribute': "Katkıda bulun",
+  'foot.upstream': "Kaynak proje",
+  'foot.official': "Resmî AdAway",
+  'foot.license': "Özgün AdAway gibi GPLv3+ ile lisanslanmıştır. AdAway projesine katkıda bulunanlar tarafından oluşturulmuş ve sürdürülmektedir; bu çatallama onlarla bağlantılı değildir ve onlar tarafından onaylanmamıştır."
+};

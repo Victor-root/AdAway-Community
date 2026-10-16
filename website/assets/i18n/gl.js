@@ -1,0 +1,82 @@
+/* Galego */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['gl'] = {
+  'meta.desc': "Unha bifurcación comunitaria non oficial de AdAway: un bloqueador de anuncios de código aberto para Android que actúa en todo o sistema, con correccións de estabilidade do modo VPN e compatibilidade con Android TV.",
+
+  'a11y.skip': "Ir ao contido",
+  'a11y.nav': "Principal",
+  'a11y.lang': "Idioma",
+  'a11y.menu': "Menú",
+  'a11y.themeDark': "Cambiar ao tema escuro",
+  'a11y.themeLight': "Cambiar ao tema claro",
+
+  'nav.why': "Por que",
+  'nav.how': "Como funciona",
+  'nav.features': "Funcións",
+  'nav.shots': "Capturas",
+  'nav.get': "Descargar",
+
+  'hero.tag': "Bifurcación comunitaria non oficial",
+  'hero.h1a': "Os anuncios páranse",
+  'hero.h1b': "antes de cargarse.",
+  'hero.sub': "AdAway bloquea anuncios e rastrexadores en todas as aplicacións do teu dispositivo Android, a nivel de DNS. Sen root, sen conta e sen enviar o teu tráfico a ningunha parte. Esta bifurcación comunitaria mantén a aplicación estable nas versións recentes de Android e engade compatibilidade con Android TV.",
+  'hero.cta1': "Descargar o APK",
+  'hero.cta2': "Ver o código fonte",
+  'hero.cta3': "Conségueo en Omnify",
+  'hero.req': "Android 8 Oreo ou posterior · GPLv3 · Sen rastrexadores, sen anuncios e sen telemetría de forma predeterminada",
+  'hero.feed': "Peticións DNS",
+  'hero.feedBlocked': "bloqueadas",
+
+  'why.kicker': "A bifurcación",
+  'why.h2': "Por que existe",
+  'why.lead': "AdAway é un gran proxecto cunha longa historia. A actividade de publicación e revisión no proxecto orixinal leva tempo sendo limitada, e algunhas correccións que afectan ao uso diario seguen sen publicarse. Esta bifurcación reúneas nunha compilación que si podes instalar.",
+  'why.note': "Non é unha bifurcación hostil nin unha reivindicación de propiedade. Non está afiliada aos mantedores oficiais de AdAway, nin avalada nin asinada por eles. Se o proxecto oficial volve manterse activamente e chegan alí correccións equivalentes, esta bifurcación podería arquivarse ou realiñarse co proxecto orixinal.",
+
+  'how.kicker': "Como funciona",
+  'how.h2': "Bloqueo na orixe",
+  'how.lead': "Os anuncios e os rastrexadores teñen que resolver un nome de dominio antes de poderen cargar nada. AdAway mantén unha lista deses dominios e respóndelles con nada, de xeito que a petición nunca sae do teu dispositivo. Funciona en todas as aplicacións, non só no navegador.",
+  'how.vpnTag': "Sen root",
+  'how.vpnT': "Modo VPN",
+  'how.vpnB': "AdAway rexistra unha VPN local no dispositivo unicamente para inspeccionar as peticións DNS. Non se envía nada a un servidor remoto, non hai conta nin túnel cara a ninguén. O teu tráfico nunca sae do teléfono a través de AdAway.",
+  'how.rootTag': "Require root",
+  'how.rootT': "Modo root",
+  'how.rootB': "Nun dispositivo con root, AdAway escribe a lista de bloqueo directamente no ficheiro hosts do sistema. Non queda nada executándose en segundo plano, e a rañura de VPN queda libre para unha VPN de verdade.",
+
+  'feat.kicker': "Funcións",
+  'feat.h2': "O que obtés",
+  'feat.1t': "Modo VPN estable",
+  'feat.1b': "Non se reinicia só despois de pausalo, sen bucles de reconexión nin túnel reconstruído cada vez que a rede escintila. O estado da aplicación, a notificación e o mosaico dos axustes rápidos por fin coinciden, e a VPN volve soa se o teu teléfono a mata.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Unha interface de verdade para o mando: navegación co D-pad, entrada no lanzador leanback e monitor DNS adaptado á televisión.",
+  'feat.3t': "Rexistro DNS en directo",
+  'feat.3b': "Mira exactamente que resolve cada aplicación e logo bloquea, permite ou redirixe un dominio directamente desde a lista.",
+  'feat.4t': "As túas propias listas",
+  'feat.4b': "Hosts bloqueados, permitidos e redirixidos, cada un con busca, ademais de exclusións da VPN aplicación por aplicación.",
+
+  'shots.kicker': "Capturas",
+  'shots.h2': "Míraa en marcha",
+  'shots.1': "Pantalla de inicio: bloqueo activado ou non cun toque, con contadores en directo.",
+  'shots.2': "Fontes hosts: as listas de bloqueo que alimentan a aplicación, actualizadas soas.",
+  'shots.3': "Rexistro DNS: o que as túas aplicacións resolven realmente, en tempo real.",
+  'shots.4': "A pantalla de inicio de Android TV, feita para o mando.",
+
+
+  'get.kicker': "Instalación",
+  'get.h2': "Tres xeitos de conseguila",
+  'get.1t': "Descargar o APK",
+  'get.1b': "Colle a última versión e instálaa. Android pediráche unha vez que permitas instalacións desde o navegador ou o xestor de ficheiros.",
+  'get.1c': "Descargar",
+  'get.2t': "Seguila con Omnify",
+  'get.2b': "Engade este repositorio a Omnify e seguirá as novas versións e ofrecerache as actualizacións xunto co resto das túas aplicacións.",
+  'get.2c': "Conseguir Omnify",
+  'get.note': "Cada versión de Community está asinada coa mesma chave, así que as actualizacións conservan os teus axustes e datos. Esa chave é distinta da de AdAway oficial, así que se vés da aplicación oficial tes que desinstalala primeiro.",
+
+  'foot.tagline': "Bifurcación comunitaria non oficial de AdAway",
+  'foot.project': "Proxecto",
+  'foot.releases': "Versións",
+  'foot.issues': "Informar dun problema",
+  'foot.contribute': "Colaborar",
+  'foot.upstream': "Proxecto orixinal",
+  'foot.official': "AdAway oficial",
+  'foot.license': "Con licenza GPLv3+, como o AdAway orixinal. Creado e mantido polos colaboradores do proxecto AdAway; esta bifurcación non está afiliada a eles nin avalada por eles."
+};

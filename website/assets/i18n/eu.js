@@ -1,0 +1,82 @@
+/* Euskara */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['eu'] = {
+  'meta.desc': "AdAway-ren komunitate-sardexka ez ofizial bat: kode irekiko iragarki-blokeatzailea Androiderako, sistema osoan lan egiten duena, VPN moduaren egonkortasun-konponketekin eta Android TV euskarriarekin.",
+
+  'a11y.skip': "Joan edukira",
+  'a11y.nav': "Nagusia",
+  'a11y.lang': "Hizkuntza",
+  'a11y.menu': "Menua",
+  'a11y.themeDark': "Aldatu gai ilunera",
+  'a11y.themeLight': "Aldatu gai argira",
+
+  'nav.why': "Zergatik",
+  'nav.how': "Nola dabilen",
+  'nav.features': "Ezaugarriak",
+  'nav.shots': "Pantaila-argazkiak",
+  'nav.get': "Deskargatu",
+
+  'hero.tag': "Komunitate-sardexka ez ofiziala",
+  'hero.h1a': "Iragarkiak gelditzen dira",
+  'hero.h1b': "kargatu aurretik.",
+  'hero.sub': "AdAway-k iragarkiak eta jarraitzaileak blokeatzen ditu zure Android gailuko aplikazio guztietan, DNS mailan. Root gabe, konturik gabe eta zure trafikoa inora bidali gabe. Komunitate-sardexka honek egonkor mantentzen du Android-en bertsio berrietan eta Android TV euskarria gehitzen dio.",
+  'hero.cta1': "Deskargatu APKa",
+  'hero.cta2': "Ikusi iturburu-kodea",
+  'hero.cta3': "Lortu Omnify-n",
+  'hero.req': "Android 8 Oreo edo berriagoa · GPLv3 · Jarraitzailerik, iragarkirik eta telemetriarik ez lehenetsita",
+  'hero.feed': "DNS eskaerak",
+  'hero.feedBlocked': "blokeatuta",
+
+  'why.kicker': "Sardexka",
+  'why.h2': "Zergatik dagoen",
+  'why.lead': "AdAway historia luzeko proiektu bikaina da. Jatorrizko proiektuan argitalpen eta berrikuspen jarduera mugatua da aspalditik, eta eguneroko erabilerari eragiten dioten zenbait konponketa argitaratu gabe daude. Sardexka honek konpilazio instalagarri batean biltzen ditu.",
+  'why.note': "Hau ez da sardexka etsaia, ezta jabetza-aldarrikapena ere. Ez dago AdAway-ren mantentzaile ofizialei lotuta, ez dute onartu ez sinatu. Proiektu ofiziala berriro aktiboki mantentzen hasten bada eta baliokideak diren konponketak hara iristen badira, sardexka hau artxibatu edo jatorrizko proiektuarekin berriro lerrokatu liteke.",
+
+  'how.kicker': "Nola dabilen",
+  'how.h2': "Blokeoa iturburuan",
+  'how.lead': "Iragarkiek eta jarraitzaileek domeinu-izen bat ebatzi behar dute ezer kargatu aurretik. AdAway-k domeinu horien zerrenda gordetzen du eta ezerekin erantzuten die, beraz eskaerak ez du inoiz zure gailua uzten. Aplikazio guztietan dabil, ez nabigatzailean bakarrik.",
+  'how.vpnTag': "Rootik gabe",
+  'how.vpnT': "VPN modua",
+  'how.vpnB': "AdAway-k VPN lokal bat erregistratzen du gailuan, DNS eskaerak aztertzeko soilik. Ez da ezer bidaltzen urruneko zerbitzari batera, ez dago konturik ez inorenganako tunelik. Zure trafikoak ez du inoiz telefonoa uzten AdAway bidez.",
+  'how.rootTag': "Root beharrezkoa",
+  'how.rootT': "Root modua",
+  'how.rootB': "Root duen gailu batean, AdAway-k blokeo-zerrenda zuzenean sistemaren hosts fitxategian idazten du. Ez da ezer exekutatzen bigarren planoan, eta VPN lekua libre geratzen da benetako VPN batentzat.",
+
+  'feat.kicker': "Ezaugarriak",
+  'feat.h2': "Zer lortzen duzun",
+  'feat.1t': "VPN modu egonkorra",
+  'feat.1b': "Ez da bere kabuz berrabiarazten pausatu ondoren, ez dago berriro konektatzeko ziklorik, ez da tunela berreraikitzen sareak keinu egiten duen bakoitzean. Aplikazioaren egoera, jakinarazpena eta ezarpen bizkorren lauza azkenean bat datoz, eta VPNa bere kabuz itzultzen da telefonoak hiltzen badu.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Urrutiko agintearentzako benetako interfazea: D-pad nabigazioa, leanback abiarazlean sarrera, eta telebistarako egokitutako DNS monitorea.",
+  'feat.3t': "Zuzeneko DNS erregistroa",
+  'feat.3b': "Ikusi zehazki aplikazio bakoitzak zer ebazten duen, eta gero blokeatu, baimendu edo birbideratu domeinu bat zerrendatik bertatik.",
+  'feat.4t': "Zeure zerrendak",
+  'feat.4b': "Blokeatutako, baimendutako eta birbideratutako ostalariak, bakoitza bilaketarekin, gehi aplikazioz aplikazioko VPN salbuespenak.",
+
+  'shots.kicker': "Pantaila-argazkiak",
+  'shots.h2': "Ikusi martxan",
+  'shots.1': "Hasierako pantaila: blokeoa piztu edo itzali ukitu batez, zuzeneko kontagailuekin.",
+  'shots.2': "Hosts iturriak: aplikazioa elikatzen duten blokeo-zerrendak, beren kabuz eguneratuta.",
+  'shots.3': "DNS erregistroa: zure aplikazioek benetan zer ebazten duten, denbora errealean.",
+  'shots.4': "Android TV hasierako pantaila, urrutiko agintearentzat egina.",
+
+
+  'get.kicker': "Instalazioa",
+  'get.h2': "Hiru modu lortzeko",
+  'get.1t': "Deskargatu APKa",
+  'get.1b': "Hartu azken bertsioa eta instalatu. Android-ek behin eskatuko dizu nabigatzailetik edo fitxategi-kudeatzailetik instalazioak baimentzeko.",
+  'get.1c': "Deskargatu",
+  'get.2t': "Jarraitu Omnify-rekin",
+  'get.2b': "Gehitu biltegi hau Omnify-ra eta bertsio berriak jarraituko ditu eta eguneraketak eskainiko dizkizu gainerako aplikazioekin batera.",
+  'get.2c': "Lortu Omnify",
+  'get.note': "Community bertsio bakoitza gako berarekin sinatuta dago, beraz eguneraketek zure ezarpenak eta datuak gordetzen dituzte. Gako hori AdAway ofizialarenaren desberdina da, beraz aplikazio ofizialetik bazatoz, lehenik desinstalatu behar duzu.",
+
+  'foot.tagline': "AdAway-ren komunitate-sardexka ez ofiziala",
+  'foot.project': "Proiektua",
+  'foot.releases': "Bertsioak",
+  'foot.issues': "Jakinarazi arazo bat",
+  'foot.contribute': "Lagundu",
+  'foot.upstream': "Jatorrizko proiektua",
+  'foot.official': "AdAway ofiziala",
+  'foot.license': "GPLv3+ lizentziapean, jatorrizko AdAway bezala. AdAway proiektuko laguntzaileek sortu eta mantentzen dute; sardexka hau ez dago haiei lotuta ez haiek onartuta."
+};

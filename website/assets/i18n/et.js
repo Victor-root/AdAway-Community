@@ -1,0 +1,82 @@
+/* Eesti */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['et'] = {
+  'meta.desc': "AdAway mitteametlik kogukondlik haru: avatud lähtekoodiga reklaamiblokeerija Androidile, mis töötab kogu süsteemis, VPN-režiimi stabiilsusparandustega ja Android TV toega.",
+
+  'a11y.skip': "Liigu sisu juurde",
+  'a11y.nav': "Peamenüü",
+  'a11y.lang': "Keel",
+  'a11y.menu': "Menüü",
+  'a11y.themeDark': "Lülitu tumedale teemale",
+  'a11y.themeLight': "Lülitu heledale teemale",
+
+  'nav.why': "Miks",
+  'nav.how': "Kuidas see töötab",
+  'nav.features': "Võimalused",
+  'nav.shots': "Ekraanipildid",
+  'nav.get': "Laadi alla",
+
+  'hero.tag': "Mitteametlik kogukondlik haru",
+  'hero.h1a': "Reklaamid peatuvad",
+  'hero.h1b': "enne laadimist.",
+  'hero.sub': "AdAway blokeerib reklaamid ja jälgijad kõigis su Android-seadme rakendustes, DNS-i tasemel. Juurõigusi pole vaja, kontot pole vaja, liiklust ei saadeta kuhugi. See kogukondlik haru hoiab selle uutel Androidi versioonidel stabiilsena ja lisab Android TV toe.",
+  'hero.cta1': "Laadi APK alla",
+  'hero.cta2': "Vaata lähtekoodi",
+  'hero.cta3': "Hangi see Omnify kaudu",
+  'hero.req': "Android 8 Oreo või uuem · GPLv3 · Vaikimisi ei mingeid jälgijaid, reklaame ega telemeetriat",
+  'hero.feed': "DNS-päringud",
+  'hero.feedBlocked': "blokeeritud",
+
+  'why.kicker': "Haru",
+  'why.h2': "Miks see olemas on",
+  'why.lead': "AdAway on suurepärane pika ajalooga projekt. Väljalasete ja ülevaatuste tegevus algprojektis on juba mõnda aega piiratud ning osa igapäevast kasutust puudutavaid parandusi seisab avaldamata. See haru koondab need ehitisse, mille saab ka päriselt paigaldada.",
+  'why.note': "See ei ole vaenulik haru ega omandinõue. See ei ole seotud AdAway ametlike hooldajatega, nende heaks kiidetud ega allkirjastatud. Kui ametlikku projekti hakatakse taas aktiivselt hooldama ja samaväärsed parandused jõuavad sinna, võidakse see haru arhiveerida või algprojektiga uuesti ühtlustada.",
+
+  'how.kicker': "Kuidas see töötab",
+  'how.h2': "Blokeerimine allikas",
+  'how.lead': "Reklaamid ja jälgijad peavad enne millegi laadimist lahendama domeeninime. AdAway hoiab nende domeenide nimekirja ja vastab neile eimillegagi, nii et päring ei lahku kunagi su seadmest. See töötab kõigis rakendustes, mitte ainult brauseris.",
+  'how.vpnTag': "Juurõigusi pole vaja",
+  'how.vpnT': "VPN-režiim",
+  'how.vpnB': "AdAway registreerib seadmes kohaliku VPN-i ainuüksi selleks, et DNS-päringuid vaadata. Kaugserverisse ei saadeta midagi, kontot ega tunnelit kellegi juurde ei ole. Su liiklus ei lahku AdAway kaudu kunagi telefonist.",
+  'how.rootTag': "Nõuab juurõigusi",
+  'how.rootT': "Juurrežiim",
+  'how.rootB': "Juurõigustega seadmes kirjutab AdAway blokeerimisnimekirja otse süsteemi hosts-faili. Taustal ei tööta üldse midagi ja VPN-i koht jääb vabaks päris VPN-i jaoks.",
+
+  'feat.kicker': "Võimalused",
+  'feat.h2': "Mida sa saad",
+  'feat.1t': "Stabiilne VPN-režiim",
+  'feat.1b': "Ei mingit iseenesest taaskäivitumist pärast pausile panemist, taasühendusringe ega tunneli ümberehitamist iga kord, kui võrk võbeleb. Rakenduse olek, teavitus ja kiirseadete paan on lõpuks omavahel kooskõlas ning VPN tuleb ise tagasi, kui telefon selle tapab.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Päris puldiliides: D-padiga liikumine, kirje leanback-käivitajas ja telerile kohandatud DNS-monitor.",
+  'feat.3t': "Reaalajas DNS-logi",
+  'feat.3b': "Näe täpselt, mida iga rakendus lahendab, ja blokeeri, luba või suuna domeen otse nimekirjast ümber.",
+  'feat.4t': "Sinu enda nimekirjad",
+  'feat.4b': "Blokeeritud, lubatud ja ümbersuunatud hostid, igaüks otsinguga, lisaks rakendusepõhised erandid VPN-ist.",
+
+  'shots.kicker': "Ekraanipildid",
+  'shots.h2': "Vaata seda töötamas",
+  'shots.1': "Avakuva: blokeerimine sisse või välja ühe puudutusega, reaalajas loenditega.",
+  'shots.2': "Hosts-allikad: blokeerimisnimekirjad, mis rakendust toidavad ja end ise värskendavad.",
+  'shots.3': "DNS-logi: mida su rakendused tegelikult lahendavad, reaalajas.",
+  'shots.4': "Android TV avakuva, tehtud puldi jaoks.",
+
+
+  'get.kicker': "Paigaldamine",
+  'get.h2': "Kolm viisi selle saamiseks",
+  'get.1t': "Laadi APK alla",
+  'get.1b': "Võta viimane väljalase ja paigalda see. Android küsib sinult ühe korra luba paigaldusteks brauserist või failihaldurist.",
+  'get.1c': "Laadi alla",
+  'get.2t': "Jälgi seda Omnifyga",
+  'get.2b': "Lisa see hoidla Omnifysse ja see jälgib uusi väljalaskeid ning pakub uuendusi koos su ülejäänud rakendustega.",
+  'get.2c': "Hangi Omnify",
+  'get.note': "Iga Community väljalase on allkirjastatud sama võtmega, nii et uuendused säilitavad su seaded ja andmed. See võti erineb ametliku AdAway omast, seega kui tuled ametlikust rakendusest, tuleb see kõigepealt eemaldada.",
+
+  'foot.tagline': "AdAway mitteametlik kogukondlik haru",
+  'foot.project': "Projekt",
+  'foot.releases': "Väljalasked",
+  'foot.issues': "Teata probleemist",
+  'foot.contribute': "Panusta",
+  'foot.upstream': "Algprojekt",
+  'foot.official': "Ametlik AdAway",
+  'foot.license': "Litsentsitud GPLv3+ alusel, nagu algne AdAway. Loodud ja hooldatud AdAway projekti kaastööliste poolt; see haru ei ole nendega seotud ega nende heaks kiidetud."
+};

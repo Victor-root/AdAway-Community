@@ -1,0 +1,82 @@
+/* Filipino */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['fil'] = {
+  'meta.desc': "Isang hindi opisyal na community fork ng AdAway: isang open source na ad blocker para sa Android na gumagana sa buong sistema, may mga pag-aayos sa katatagan ng VPN mode at suporta para sa Android TV.",
+
+  'a11y.skip': "Lumaktaw sa nilalaman",
+  'a11y.nav': "Pangunahin",
+  'a11y.lang': "Wika",
+  'a11y.menu': "Menu",
+  'a11y.themeDark': "Lumipat sa madilim na tema",
+  'a11y.themeLight': "Lumipat sa maliwanag na tema",
+
+  'nav.why': "Bakit",
+  'nav.how': "Paano ito gumagana",
+  'nav.features': "Mga tampok",
+  'nav.shots': "Mga screenshot",
+  'nav.get': "I-download",
+
+  'hero.tag': "Hindi opisyal na community fork",
+  'hero.h1a': "Huminto ang mga ad",
+  'hero.h1b': "bago pa sila mag-load.",
+  'hero.sub': "Hinaharangan ng AdAway ang mga ad at tracker sa bawat app sa iyong Android device, sa antas ng DNS. Walang root na kailangan, walang account, walang trapikong ipinapadala kahit saan. Pinapanatili itong matatag ng community fork na ito sa mga bagong bersyon ng Android at nagdaragdag ng suporta sa Android TV.",
+  'hero.cta1': "I-download ang APK",
+  'hero.cta2': "Tingnan ang source code",
+  'hero.cta3': "Kunin ito sa Omnify",
+  'hero.req': "Android 8 Oreo o mas bago · GPLv3 · Walang tracker, walang ad, walang telemetry bilang default",
+  'hero.feed': "Mga kahilingan sa DNS",
+  'hero.feedBlocked': "hinarang",
+
+  'why.kicker': "Ang fork",
+  'why.h2': "Bakit ito umiiral",
+  'why.lead': "Magandang proyekto ang AdAway na may mahabang kasaysayan. Limitado na nang ilang panahon ang paglabas ng bersyon at pagsusuri sa orihinal na proyekto, at may mga pag-aayos na nakakaapekto sa pang-araw-araw na paggamit na hindi pa nailalabas. Iniipon sila ng fork na ito sa isang build na talagang maii-install mo.",
+  'why.note': "Hindi ito palaban na fork at hindi paghahabol ng pagmamay-ari. Hindi ito kaugnay ng mga opisyal na maintainer ng AdAway, hindi nila ito inendorso o nilagdaan. Kung muling maging aktibong pinapanatili ang opisyal na proyekto at makarating doon ang katumbas na mga pag-aayos, maaaring i-archive ang fork na ito o muling ihanay sa orihinal na proyekto.",
+
+  'how.kicker': "Paano ito gumagana",
+  'how.h2': "Paghadlang sa pinagmulan",
+  'how.lead': "Kailangang lutasin ng mga ad at tracker ang isang domain name bago sila makapag-load ng kahit ano. Nagtatago ang AdAway ng listahan ng mga domain na iyon at sinasagot sila ng wala, kaya hindi umaalis sa device mo ang kahilingan. Gumagana ito sa bawat app, hindi lang sa browser.",
+  'how.vpnTag': "Walang root na kailangan",
+  'how.vpnT': "VPN mode",
+  'how.vpnB': "Nagrerehistro ang AdAway ng lokal na VPN sa device para lang suriin ang mga kahilingan sa DNS. Walang ipinapadala sa malayong server, walang account at walang tunnel patungo kaninuman. Hindi umaalis ang trapiko mo sa telepono sa pamamagitan ng AdAway.",
+  'how.rootTag': "Kailangan ng root",
+  'how.rootT': "Root mode",
+  'how.rootB': "Sa device na may root, isinusulat ng AdAway ang blocklist diretso sa hosts file ng sistema. Walang anumang tumatakbo sa background, at nananatiling bakante ang puwesto ng VPN para sa tunay na VPN.",
+
+  'feat.kicker': "Mga tampok",
+  'feat.h2': "Ano ang makukuha mo",
+  'feat.1t': "Matatag na VPN mode",
+  'feat.1b': "Hindi na ito kusang nagre-restart matapos mong i-pause, walang paulit-ulit na pagkonekta, walang tunnel na muling binubuo sa tuwing kumukurap ang network. Sa wakas ay magkatugma na ang katayuan sa app, ang notification at ang tile sa Quick Settings, at kusang bumabalik ang VPN kapag pinatay ito ng telepono mo.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Tunay na interface para sa remote: paggalaw gamit ang D-pad, entry sa leanback launcher, at DNS monitor na akma sa TV.",
+  'feat.3t': "Live na DNS log",
+  'feat.3b': "Tingnan kung ano mismo ang nilulutas ng bawat app, at harangan, payagan o i-redirect ang isang domain diretso mula sa listahan.",
+  'feat.4t': "Sarili mong mga listahan",
+  'feat.4b': "Mga host na hinarang, pinayagan at ni-redirect, bawat isa ay mahahanap, saka mga pagbubukod sa VPN kada app.",
+
+  'shots.kicker': "Mga screenshot",
+  'shots.h2': "Panoorin itong gumagana",
+  'shots.1': "Home screen: buksan o isara ang pagharang sa isang tap, may live na counter.",
+  'shots.2': "Mga hosts source: ang mga blocklist na nagpapakain sa app, kusang nag-uupdate.",
+  'shots.3': "DNS log: kung ano talaga ang nilulutas ng mga app mo, sa tunay na oras.",
+  'shots.4': "Ang home screen ng Android TV, ginawa para sa remote.",
+
+
+  'get.kicker': "Pag-install",
+  'get.h2': "Tatlong paraan para makuha ito",
+  'get.1t': "I-download ang APK",
+  'get.1b': "Kunin ang pinakabagong release at i-install. Minsan kang tatanungin ng Android na payagan ang pag-install mula sa browser o file manager mo.",
+  'get.1c': "I-download",
+  'get.2t': "Subaybayan gamit ang Omnify",
+  'get.2b': "Idagdag ang repository na ito sa Omnify at susubaybayan nito ang mga bagong release at ihahandog ang mga update kasabay ng iba mong app.",
+  'get.2c': "Kunin ang Omnify",
+  'get.note': "Nilagdaan ng iisang key ang bawat release ng Community, kaya pinananatili ng mga update ang iyong mga setting at datos. Iba ang key na iyon sa opisyal na AdAway, kaya kung galing ka sa opisyal na app kailangan mo muna itong i-uninstall.",
+
+  'foot.tagline': "Hindi opisyal na community fork ng AdAway",
+  'foot.project': "Proyekto",
+  'foot.releases': "Mga release",
+  'foot.issues': "Mag-ulat ng problema",
+  'foot.contribute': "Mag-ambag",
+  'foot.upstream': "Orihinal na proyekto",
+  'foot.official': "Opisyal na AdAway",
+  'foot.license': "Lisensyado sa ilalim ng GPLv3+, tulad ng orihinal na AdAway. Nilikha at pinananatili ng mga tumulong sa proyektong AdAway; ang fork na ito ay hindi kaugnay nila ni inendorso nila."
+};

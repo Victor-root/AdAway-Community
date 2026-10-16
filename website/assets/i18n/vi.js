@@ -1,0 +1,82 @@
+/* Tiếng Việt */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['vi'] = {
+  'meta.desc': "Một nhánh cộng đồng không chính thức của AdAway: trình chặn quảng cáo mã nguồn mở cho Android hoạt động trên toàn hệ thống, kèm các sửa lỗi ổn định cho chế độ VPN và hỗ trợ Android TV.",
+
+  'a11y.skip': "Bỏ qua tới nội dung",
+  'a11y.nav': "Chính",
+  'a11y.lang': "Ngôn ngữ",
+  'a11y.menu': "Menu",
+  'a11y.themeDark': "Chuyển sang giao diện tối",
+  'a11y.themeLight': "Chuyển sang giao diện sáng",
+
+  'nav.why': "Vì sao",
+  'nav.how': "Cách hoạt động",
+  'nav.features': "Tính năng",
+  'nav.shots': "Ảnh chụp màn hình",
+  'nav.get': "Tải xuống",
+
+  'hero.tag': "Nhánh cộng đồng không chính thức",
+  'hero.h1a': "Quảng cáo dừng lại",
+  'hero.h1b': "trước cả khi kịp tải.",
+  'hero.sub': "AdAway chặn quảng cáo và trình theo dõi trong mọi ứng dụng trên thiết bị Android của bạn, ở mức DNS. Không cần root, không cần tài khoản, không gửi lưu lượng đi đâu cả. Nhánh cộng đồng này giữ cho ứng dụng ổn định trên các phiên bản Android mới và bổ sung hỗ trợ Android TV.",
+  'hero.cta1': "Tải tệp APK",
+  'hero.cta2': "Xem mã nguồn",
+  'hero.cta3': "Nhận qua Omnify",
+  'hero.req': "Android 8 Oreo trở lên · GPLv3 · Mặc định không có trình theo dõi, quảng cáo hay dữ liệu đo lường",
+  'hero.feed': "Yêu cầu DNS",
+  'hero.feedBlocked': "đã chặn",
+
+  'why.kicker': "Nhánh này",
+  'why.h2': "Vì sao nó tồn tại",
+  'why.lead': "AdAway là một dự án tuyệt vời với lịch sử lâu dài. Hoạt động phát hành và duyệt xét ở dự án gốc đã hạn chế một thời gian, và một số bản sửa ảnh hưởng tới việc dùng hằng ngày vẫn nằm đó chưa được phát hành. Nhánh này gom chúng vào một bản dựng mà bạn thật sự cài được.",
+  'why.note': "Đây không phải nhánh thù địch, cũng không phải một tuyên bố sở hữu. Nó không liên kết với những người bảo trì chính thức của AdAway, không được họ chứng thực hay ký. Nếu dự án chính thức được bảo trì tích cực trở lại và các bản sửa tương đương xuất hiện ở đó, nhánh này có thể được lưu trữ hoặc chỉnh lại cho khớp với dự án gốc.",
+
+  'how.kicker': "Cách hoạt động",
+  'how.h2': "Chặn ngay từ nguồn",
+  'how.lead': "Quảng cáo và trình theo dõi phải phân giải một tên miền trước khi tải được bất cứ thứ gì. AdAway giữ danh sách các tên miền đó và trả lời chúng bằng không có gì, nên yêu cầu không bao giờ rời khỏi thiết bị của bạn. Cách này hoạt động trong mọi ứng dụng, không chỉ trình duyệt.",
+  'how.vpnTag': "Không cần root",
+  'how.vpnT': "Chế độ VPN",
+  'how.vpnB': "AdAway đăng ký một VPN cục bộ trên thiết bị chỉ để xem xét các yêu cầu DNS. Không có gì được gửi tới máy chủ từ xa, không có tài khoản và không có đường hầm tới bất kỳ ai. Lưu lượng của bạn không bao giờ rời khỏi điện thoại qua AdAway.",
+  'how.rootTag': "Cần root",
+  'how.rootT': "Chế độ root",
+  'how.rootB': "Trên thiết bị đã root, AdAway ghi thẳng danh sách chặn vào tệp hosts của hệ thống. Không có gì chạy nền cả, và khe VPN vẫn để trống cho một VPN thật sự.",
+
+  'feat.kicker': "Tính năng",
+  'feat.h2': "Bạn nhận được gì",
+  'feat.1t': "Chế độ VPN ổn định",
+  'feat.1b': "Không tự khởi động lại sau khi bạn tạm dừng, không có vòng lặp kết nối lại, không dựng lại đường hầm mỗi lần mạng chập chờn. Trạng thái trong ứng dụng, thông báo và ô trong cài đặt nhanh cuối cùng cũng khớp với nhau, và VPN tự quay lại nếu điện thoại tắt nó.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Một giao diện thật sự cho điều khiển từ xa: điều hướng bằng D-pad, một mục trong trình khởi chạy leanback và trình theo dõi DNS được chỉnh cho TV.",
+  'feat.3t': "Nhật ký DNS trực tiếp",
+  'feat.3b': "Xem chính xác từng ứng dụng phân giải cái gì, rồi chặn, cho phép hoặc chuyển hướng một tên miền ngay từ danh sách.",
+  'feat.4t': "Danh sách của riêng bạn",
+  'feat.4b': "Máy chủ bị chặn, được phép và được chuyển hướng, mỗi loại đều tìm kiếm được, cùng với việc loại trừ khỏi VPN theo từng ứng dụng.",
+
+  'shots.kicker': "Ảnh chụp màn hình",
+  'shots.h2': "Xem nó chạy",
+  'shots.1': "Màn hình chính: bật hoặc tắt chặn chỉ bằng một chạm, kèm bộ đếm trực tiếp.",
+  'shots.2': "Nguồn hosts: các danh sách chặn nuôi ứng dụng, tự cập nhật.",
+  'shots.3': "Nhật ký DNS: những gì ứng dụng của bạn thật sự phân giải, theo thời gian thực.",
+  'shots.4': "Màn hình chính Android TV, làm cho điều khiển từ xa.",
+
+
+  'get.kicker': "Cài đặt",
+  'get.h2': "Ba cách để có nó",
+  'get.1t': "Tải tệp APK",
+  'get.1b': "Lấy bản phát hành mới nhất và cài đặt. Android sẽ hỏi bạn một lần để cho phép cài đặt từ trình duyệt hoặc trình quản lý tệp.",
+  'get.1c': "Tải xuống",
+  'get.2t': "Theo dõi bằng Omnify",
+  'get.2b': "Thêm kho này vào Omnify và nó sẽ theo dõi các bản phát hành mới, đề xuất cập nhật cùng với những ứng dụng khác của bạn.",
+  'get.2c': "Tải Omnify",
+  'get.note': "Mọi bản phát hành Community đều ký bằng cùng một khóa, nên các bản cập nhật giữ nguyên cài đặt và dữ liệu của bạn. Khóa đó khác với khóa của AdAway chính thức, nên nếu bạn chuyển từ ứng dụng chính thức thì phải gỡ nó trước.",
+
+  'foot.tagline': "Nhánh cộng đồng không chính thức của AdAway",
+  'foot.project': "Dự án",
+  'foot.releases': "Bản phát hành",
+  'foot.issues': "Báo cáo sự cố",
+  'foot.contribute': "Đóng góp",
+  'foot.upstream': "Dự án gốc",
+  'foot.official': "AdAway chính thức",
+  'foot.license': "Cấp phép theo GPLv3+, giống AdAway gốc. Do những người đóng góp cho dự án AdAway tạo ra và duy trì; nhánh này không liên kết với họ và cũng không được họ chứng thực."
+};

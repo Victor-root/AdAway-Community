@@ -1,0 +1,82 @@
+/* Kurdî */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['ku'] = {
+  'meta.desc': "Forkeke civakî ya ne fermî ya AdAway: astengkerekî reklaman bi koda vekirî ji bo Androidê ku li ser tevahiya pergalê dixebite, bi sererastkirinên aramiya moda VPNê û piştgiriya Android TV.",
+
+  'a11y.skip': "Biçe naverokê",
+  'a11y.nav': "Sereke",
+  'a11y.lang': "Ziman",
+  'a11y.menu': "Pêşek",
+  'a11y.themeDark': "Biguhere bo dirbê tarî",
+  'a11y.themeLight': "Biguhere bo dirbê ronî",
+
+  'nav.why': "Çima",
+  'nav.how': "Çawa dixebite",
+  'nav.features': "Taybetmendî",
+  'nav.shots': "Wêneyên dîmenderê",
+  'nav.get': "Daxîne",
+
+  'hero.tag': "Forkeke civakî ya ne fermî",
+  'hero.h1a': "Reklam radiwestin",
+  'hero.h1b': "berî ku bar bibin.",
+  'hero.sub': "AdAway reklaman û şopgeran di her sepana amûra te ya Androidê de, li asta DNSê asteng dike. Root ne pêwîst e, hesab tune ye, tu seyrûsefer ti derê nayê şandin. Ev forka civakî wê li ser guhertoyên nû yên Androidê aram digire û piştgiriya Android TV lê zêde dike.",
+  'hero.cta1': "APKê daxîne",
+  'hero.cta2': "Koda çavkaniyê bibîne",
+  'hero.cta3': "Bi Omnify bistîne",
+  'hero.req': "Android 8 Oreo an nûtir · GPLv3 · Bi awayê pêşdanasînî bê şopger, bê reklam, bê telemetrî",
+  'hero.feed': "Daxwazên DNSê",
+  'hero.feedBlocked': "hate astengkirin",
+
+  'why.kicker': "Ev fork",
+  'why.h2': "Çima heye",
+  'why.lead': "AdAway projeyeke hêja ye bi dîrokeke dirêj. Çalakiya weşandin û venêrînê di proje ya bingehîn de ji demekê ve sînordar e, û hin sererastkirinên ku bandorê li bikaranîna rojane dikin bênweşandin mane. Ev fork wan di avakirineke ku tu bi rastî dikarî saz bikî de dicivîne.",
+  'why.note': "Ev ne forkeke dijmînane ye û ne jî daxwaza xwedîtiyê ye. Ew bi lênerên fermî yên AdAway ve girêdayî nîne, ji aliyê wan ve nehatiye pejirandin an îmzekirin. Ger proje ya fermî dîsa bi çalakî were lênerîn û sererastkirinên hevta li wir bicih bibin, dibe ku ev fork were arşîvkirin an ji nû ve bi proje ya bingehîn re were hevrêzkirin.",
+
+  'how.kicker': "Çawa dixebite",
+  'how.h2': "Astengkirin li serkaniyê",
+  'how.lead': "Reklam û şopger neçar in navekî domainê çareser bikin berî ku tiştekî bar bikin. AdAway lîsteyeke wan domainan digire û bi tiştekî bersivê nade wan, ji ber vê yekê daxwaz tu carî ji amûra te dernakeve. Ev di her sepanê de dixebite, ne tenê di geroka te de.",
+  'how.vpnTag': "Bê root",
+  'how.vpnT': "Moda VPNê",
+  'how.vpnB': "AdAway li ser amûrê VPNeke herêmî tomar dike tenê ji bo lêkolîna daxwazên DNSê. Tiştek ji rajekareke dûr re nayê şandin, ne hesab heye ne jî tunelek ber bi kesekî ve. Seyrûsefera te tu carî bi rêya AdAway ji telefonê dernakeve.",
+  'how.rootTag': "Root pêwîst e",
+  'how.rootT': "Moda rootê",
+  'how.rootB': "Li ser amûreke bi root, AdAway lîsteya astengkirinê rasterast di pelê hosts ê pergalê de dinivîse. Di paşperdeyê de qet tiştek naxebite, û cihê VPNê ji bo VPNeke rastîn vala dimîne.",
+
+  'feat.kicker': "Taybetmendî",
+  'feat.h2': "Tu çi distînî",
+  'feat.1t': "Moda VPNê ya aram",
+  'feat.1b': "Piştî ku te ew rawestand ew bi xwe dîsa dest pê nake, çerxên girêdana nû tune ne, tunel her carê ku tor dilerize ji nû ve nayê avakirin. Rewşa sepanê, agahdarî û qerpaça mîhengên bilez di dawiyê de bi hev re li hev tên, û ger telefona te VPNê bikuje ew bi xwe vedigere.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Navrûyeke rastîn ji bo kontrola dûr: gerîna bi D-padê, ketineke di destpêkerê leanback de, û çavdêrekî DNSê yê li gorî TVyê hatiye lihevkirin.",
+  'feat.3t': "Têketina DNSê ya zindî",
+  'feat.3b': "Bibîne ka her sepan bi rastî çi çareser dike, paşê rasterast ji lîsteyê domainekê asteng bike, destûr bide an beralî bike.",
+  'feat.4t': "Lîsteyên te yên xwe",
+  'feat.4b': "Hostên astengkirî, destûrdayî û beralîkirî, her yek bi lêgerînê, û derxistina sepanan ji VPNê yek bi yek.",
+
+  'shots.kicker': "Wêneyên dîmenderê",
+  'shots.h2': "Wê di xebatê de bibîne",
+  'shots.1': "Dîmendera destpêkê: astengkirin bi destêkê vekirî an girtî, bi jimarkerên zindî.",
+  'shots.2': "Çavkaniyên hosts: lîsteyên astengkirinê ku sepanê xwedî dikin, bi xwe nû dibin.",
+  'shots.3': "Têketina DNSê: sepanên te bi rastî çi çareser dikin, di dema rastîn de.",
+  'shots.4': "Dîmendera destpêkê ya Android TV, ji bo kontrola dûr hatiye çêkirin.",
+
+
+  'get.kicker': "Sazkirin",
+  'get.h2': "Sê rê ji bo bidestxistinê",
+  'get.1t': "APKê daxîne",
+  'get.1b': "Weşana herî dawî bigire û saz bike. Android carekê ji te dipirse ku destûrê bidî sazkirinên ji geroka an rêveberê pelan.",
+  'get.1c': "Daxîne",
+  'get.2t': "Bi Omnify bişopîne",
+  'get.2b': "Vê depoyê li Omnify zêde bike, ew ê weşanên nû bişopîne û nûkirinan digel sepanên te yên din pêşkêş bike.",
+  'get.2c': "Omnify bigire",
+  'get.note': "Her weşana Community bi heman mifteyê hatiye îmzekirin, ji ber vê yekê nûkirin mîheng û daneyên te diparêzin. Ew mifte ji ya AdAway ya fermî cuda ye, ji ber vê yekê ger tu ji sepana fermî tê, divê pêşî wê rakî.",
+
+  'foot.tagline': "Forkeke civakî ya ne fermî ya AdAway",
+  'foot.project': "Proje",
+  'foot.releases': "Weşan",
+  'foot.issues': "Pirsgirêkekê ragihîne",
+  'foot.contribute': "Beşdar bibe",
+  'foot.upstream': "Proje ya bingehîn",
+  'foot.official': "AdAway ya fermî",
+  'foot.license': "Bi lîsansa GPLv3+ hatiye weşandin, wek AdAway ya orîjînal. Ji aliyê beşdarên proje ya AdAway ve hatiye afirandin û tê lênerîn; ev fork ne bi wan ve girêdayî ye û ne jî ji aliyê wan ve hatiye pejirandin."
+};

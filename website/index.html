@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AdAway Community</title>
+<meta name="description" content="An unofficial community fork of AdAway: a system-wide, open source ad blocker for Android, with VPN-mode stability fixes and Android TV support.">
+<meta name="theme-color" content="#C62828" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D0D0F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdAway Community">
+<meta property="og:description" content="System-wide ad blocking on Android. No root required. Open source.">
+<meta property="og:image" content="assets/icon.png">
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- Deferred rather than placed at the end of the body: the script still runs
+     with the document parsed, but it starts fetching the visitor's language
+     file earlier, which is what shortens the moment the page spends in
+     English before switching. -->
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img src="assets/icon.png" alt="" width="30" height="30">
+      <span>AdAway<em>Community</em></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main" data-i18n-aria="a11y.nav">
+      <a href="#why" data-i18n="nav.why">Why</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#screenshots" data-i18n="nav.shots">Screenshots</a>
+    </nav>
+
+    <div class="nav-tools">
+      <div class="lang">
+        <button type="button" id="langBtn" class="lang-b" aria-haspopup="listbox" aria-expanded="false"
+                aria-controls="langPop" aria-label="Language" data-i18n-aria="a11y.lang">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18"/></svg>
+          <span class="lang-name" id="langName">English</span>
+          <span class="lang-code" id="langCode">EN</span>
+          <svg class="lang-chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg>
+        </button>
+        <div class="lang-pop" id="langPop" role="listbox" aria-label="Language" data-i18n-aria="a11y.lang" hidden></div>
+      </div>
+      <button type="button" id="themeBtn" class="icon-b" aria-label="Toggle theme">
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/></svg>
+      </button>
+      <a class="btn btn-sm" data-apk href="https://github.com/Victor-root/AdAway-Community/releases/latest" data-i18n="nav.get">Download</a>
+    </div>
+
+    <button type="button" id="menuBtn" class="icon-b menu-b" aria-label="Menu" aria-expanded="false" data-i18n-aria="a11y.menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="tag"><i class="dot"></i><span data-i18n="hero.tag">Unofficial community fork</span></span>
+
+      <h1 class="display">
+        <span data-i18n="hero.h1a">Ads stop</span><br>
+        <span class="grad" data-i18n="hero.h1b">before they load.</span>
+      </h1>
+
+      <p class="lead" data-i18n="hero.sub">AdAway blocks ads and trackers across every app on your Android device, at the DNS level. No root required, no account, no traffic sent anywhere. This community fork keeps it stable on recent Android versions and adds Android TV support.</p>
+
+      <div class="cta">
+        <a class="btn btn-lg" data-apk href="https://github.com/Victor-root/AdAway-Community/releases/latest">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"/><path d="M7 11l5 5l5 -5"/><path d="M12 4l0 12"/></svg>
+          <span data-i18n="hero.cta1">Download the APK</span>
+        </a>
+        <!--
+          The Omnify mark is a two-colour brand logo, so it is an <img> rather than an inline
+          <svg> like the icons around it: the global svg{fill:none;stroke:currentColor} rule
+          would strip it down to a monochrome outline.
+        -->
+        <a class="btn btn-ghost btn-lg" href="https://victor-root.github.io/Omnify/add.html?url=https%3A%2F%2Fgithub.com%2FVictor-root%2FAdAway-Community">
+          <img src="assets/omnify-logo.svg" width="18" height="18" alt="" aria-hidden="true">
+          <span data-i18n="hero.cta3">Get it on Omnify</span>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/Victor-root/AdAway-Community">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/></svg>
+          <span data-i18n="hero.cta2">View source</span>
+        </a>
+      </div>
+
+      <p class="micro" data-i18n="hero.req">Android 8 Oreo or later &middot; GPLv3 &middot; No trackers, no ads, no telemetry by default</p>
+    </div>
+
+    <!-- signature visual: a live block feed -->
+    <div class="feed" aria-hidden="true">
+      <div class="feed-top">
+        <span class="feed-dot"></span>
+        <span class="feed-title" data-i18n="hero.feed">DNS requests</span>
+        <span class="feed-count"><b id="feedCount">0</b> <span data-i18n="hero.feedBlocked">blocked</span></span>
+      </div>
+      <ul class="feed-list" id="feedList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── WHY ───────────────────────── -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="why.kicker">The fork</span>
+      <h2 class="h2" data-i18n="why.h2">Why this exists</h2>
+      <p class="sec-lead" data-i18n="why.lead">AdAway is a great project, but its updates had slowed down and some useful fixes were left waiting. This fork keeps them alive in a build you can actually install.</p>
+    </div>
+
+    <article class="why-card why-mig">
+      <span class="pill pill-red" data-i18n="why.migTag">Version 7</span>
+      <h3 data-i18n="why.migT">Rebuilt from scratch</h3>
+      <p data-i18n="why.migB1">AdAway relied on very old code and tools. Patching them any longer was not an option if the app was to stay stable, fast, secure and easy to maintain, so everything was rebuilt on modern foundations. It was a big job, but an unavoidable one.</p>
+      <p data-i18n="why.migB2">For you, nothing changes: same screens, same settings, and your lists are kept. Behind the scenes everything is new, and updating the lists now takes 2 or 3 seconds instead of about 10 in our tests.</p>
+    </article>
+
+    <p class="note">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+      <span data-i18n="why.note">This is not a hostile fork: it is not affiliated with, endorsed by, or signed by the official AdAway maintainers.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ───────────────────────── HOW ───────────────────────── -->
+<section class="sec sec-alt" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="how.kicker">How it works</span>
+      <h2 class="h2" data-i18n="how.h2">Blocking at the source</h2>
+      <p class="sec-lead" data-i18n="how.lead">Ads and trackers must look up a domain name before they can load. AdAway answers those lookups with nothing, so the request never leaves your device, in every app.</p>
+    </div>
+
+    <div class="modes">
+      <article class="mode">
+        <div class="mode-top">
+          <span class="pill pill-red" data-i18n="how.vpnTag">No root needed</span>
+        </div>
+        <h3 data-i18n="how.vpnT">VPN mode</h3>
+        <p data-i18n="how.vpnB">A local VPN on your device inspects DNS requests only. No account, and nothing is sent to a remote server.</p>
+      </article>
+      <article class="mode">
+        <div class="mode-top">
+          <span class="pill" data-i18n="how.rootTag">Root required</span>
+        </div>
+        <h3 data-i18n="how.rootT">Root mode</h3>
+        <p data-i18n="how.rootB">On a rooted device, the blocklist is written straight into the system hosts file. The VPN slot stays free.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── FEATURES ───────────────────────── -->
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="feat.kicker">Features</span>
+      <h2 class="h2" data-i18n="feat.h2">What you get</h2>
+    </div>
+
+    <div class="bento">
+      <article class="cell">
+        <span class="ic ic-red">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.8 7.6-7 9-4.2-1.4-7-4.8-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        </span>
+        <h3 data-i18n="feat.1t">Stable VPN mode</h3>
+        <p data-i18n="feat.1b">No restart loops, and the app, the notification and the Quick Settings tile always agree. The VPN comes back on its own if your phone kills it.</p>
+      </article>
+
+      <article class="cell">
+        <span class="ic ic-blue">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        <h3 data-i18n="feat.2t">Android TV</h3>
+        <p data-i18n="feat.2b">A full interface built for a remote, on TVs and TV boxes.</p>
+      </article>
+
+      <article class="cell">
+        <span class="ic ic-amber">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M8 15l3-4 3 3 4-6"/></svg>
+        </span>
+        <h3 data-i18n="feat.3t">Live DNS log</h3>
+        <p data-i18n="feat.3b">See what each app asks for, then block, allow or redirect it in one tap.</p>
+      </article>
+
+      <article class="cell">
+        <span class="ic ic-green">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="18" cy="18" r="3"/></svg>
+        </span>
+        <h3 data-i18n="feat.4t">Your own lists</h3>
+        <p data-i18n="feat.4b">Your own blocked, allowed and redirected hosts, and per-app VPN exclusions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── SCREENSHOTS ───────────────────────── -->
+<section class="sec sec-alt" id="screenshots">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="shots.kicker">Screenshots</span>
+      <h2 class="h2" data-i18n="shots.h2">See it running</h2>
+    </div>
+
+    <div class="shots">
+      <figure class="shot">
+        <div class="phone">
+          <img class="s-light" src="assets/screenshots/home-light.png" alt="" loading="lazy">
+          <img class="s-dark" src="assets/screenshots/home-dark.png" alt="" loading="lazy">
+        </div>
+        <figcaption data-i18n="shots.1">Home screen: block on or off in one tap, with live counters.</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="phone">
+          <img class="s-light" src="assets/screenshots/lists-light.png" alt="" loading="lazy">
+          <img class="s-dark" src="assets/screenshots/lists-dark.png" alt="" loading="lazy">
+        </div>
+        <figcaption data-i18n="shots.2">Hosts sources: the blocklists feeding the app, refreshed on their own.</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="phone">
+          <img class="s-light" src="assets/screenshots/dnslog-light.png" alt="" loading="lazy">
+          <img class="s-dark" src="assets/screenshots/dnslog-dark.png" alt="" loading="lazy">
+        </div>
+        <figcaption data-i18n="shots.3">DNS log: what your apps actually resolve, in real time.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="shot shot-tv">
+      <div class="tvframe">
+        <img class="s-light" src="assets/screenshots/tv-light.png" alt="" loading="lazy">
+        <img class="s-dark" src="assets/screenshots/tv-dark.png" alt="" loading="lazy">
+      </div>
+      <figcaption data-i18n="shots.4">The Android TV home screen, built for a remote.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ───────────────────────── GET IT ───────────────────────── -->
+<section class="sec sec-alt" id="get">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker" data-i18n="get.kicker">Install</span>
+      <h2 class="h2" data-i18n="get.h2">Get it</h2>
+    </div>
+
+    <div class="gets">
+      <a class="get" data-apk href="https://github.com/Victor-root/AdAway-Community/releases/latest">
+        <span class="get-n">01</span>
+        <h3 data-i18n="get.1t">Download the APK</h3>
+        <p data-i18n="get.1b">Grab the latest release and install it. Android asks once to allow installs from your browser.</p>
+        <span class="get-go" data-i18n="get.1c">Download</span>
+      </a>
+
+      <a class="get" href="https://victor-root.github.io/Omnify/">
+        <span class="get-n">02</span>
+        <h3 data-i18n="get.2t">Track it with Omnify</h3>
+        <p data-i18n="get.2b">Follow new releases and get updates alongside your other apps.</p>
+        <span class="get-go" data-i18n="get.2c">Get Omnify</span>
+      </a>
+    </div>
+
+    <p class="note">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.8 7.6-7 9-4.2-1.4-7-4.8-7-9V6z"/></svg>
+      <span data-i18n="get.note">Updates keep your settings and data. Our signing key differs from the official AdAway one, so uninstall the official app first.</span>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <img src="assets/icon.png" alt="" width="34" height="34">
+      <div>
+        <strong>AdAway Community</strong>
+        <span data-i18n="foot.tagline">Unofficial community fork of AdAway</span>
+      </div>
+    </div>
+
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4 data-i18n="foot.project">Project</h4>
+        <a href="https://github.com/Victor-root/AdAway-Community">GitHub</a>
+        <a href="https://github.com/Victor-root/AdAway-Community/releases" data-i18n="foot.releases">Releases</a>
+        <a href="https://github.com/Victor-root/AdAway-Community/issues" data-i18n="foot.issues">Report an issue</a>
+        <a href="https://github.com/Victor-root/AdAway-Community/blob/main/CONTRIBUTING.md" data-i18n="foot.contribute">Contribute</a>
+        <a href="https://github.com/Victor-root/AdAway-Community/blob/main/TRANSLATING.md" data-i18n="foot.translate">Translate</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="foot.upstream">Upstream</h4>
+        <a href="https://github.com/AdAway/AdAway" data-i18n="foot.official">Official AdAway</a>
+        <a href="https://adaway.org">adaway.org</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap foot-bot">
+    <p data-i18n="foot.license">Licensed under the GPLv3+, like the original AdAway. Created and maintained by the AdAway project contributors; this fork is not affiliated with or endorsed by them.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* Bahasa Indonesia */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['id'] = {
+  'meta.desc': "Fork komunitas tidak resmi dari AdAway: pemblokir iklan sumber terbuka untuk Android yang bekerja di seluruh sistem, dengan perbaikan stabilitas mode VPN dan dukungan Android TV.",
+
+  'a11y.skip': "Lompat ke konten",
+  'a11y.nav': "Utama",
+  'a11y.lang': "Bahasa",
+  'a11y.menu': "Menu",
+  'a11y.themeDark': "Ganti ke tema gelap",
+  'a11y.themeLight': "Ganti ke tema terang",
+
+  'nav.why': "Mengapa",
+  'nav.how': "Cara kerjanya",
+  'nav.features': "Fitur",
+  'nav.shots': "Tangkapan layar",
+  'nav.get': "Unduh",
+
+  'hero.tag': "Fork komunitas tidak resmi",
+  'hero.h1a': "Iklan berhenti",
+  'hero.h1b': "sebelum sempat dimuat.",
+  'hero.sub': "AdAway memblokir iklan dan pelacak di setiap aplikasi pada perangkat Android Anda, di tingkat DNS. Tanpa root, tanpa akun, tanpa lalu lintas yang dikirim ke mana pun. Fork komunitas ini menjaganya tetap stabil di versi Android terbaru dan menambahkan dukungan Android TV.",
+  'hero.cta1': "Unduh APK",
+  'hero.cta2': "Lihat kode sumber",
+  'hero.cta3': "Dapatkan di Omnify",
+  'hero.req': "Android 8 Oreo atau lebih baru · GPLv3 · Tanpa pelacak, tanpa iklan, tanpa telemetri secara bawaan",
+  'hero.feed': "Permintaan DNS",
+  'hero.feedBlocked': "diblokir",
+
+  'why.kicker': "Fork ini",
+  'why.h2': "Mengapa ini ada",
+  'why.lead': "AdAway adalah proyek hebat dengan sejarah panjang. Aktivitas rilis dan tinjauan di proyek asal sudah cukup lama terbatas, dan sejumlah perbaikan yang menyangkut pemakaian sehari-hari tergeletak tanpa dirilis. Fork ini menyatukannya dalam build yang benar-benar bisa Anda pasang.",
+  'why.note': "Ini bukan fork yang bermusuhan dan bukan klaim kepemilikan. Tidak berafiliasi dengan pengelola resmi AdAway, tidak didukung maupun ditandatangani oleh mereka. Jika proyek resmi kembali dipelihara secara aktif dan perbaikan setara masuk ke sana, fork ini bisa diarsipkan atau diselaraskan kembali dengan proyek asal.",
+
+  'how.kicker': "Cara kerjanya",
+  'how.h2': "Pemblokiran di sumbernya",
+  'how.lead': "Iklan dan pelacak harus menerjemahkan nama domain sebelum bisa memuat apa pun. AdAway menyimpan daftar domain tersebut dan menjawabnya dengan ketiadaan, sehingga permintaan tidak pernah keluar dari perangkat Anda. Ini bekerja di setiap aplikasi, bukan hanya di peramban.",
+  'how.vpnTag': "Tanpa root",
+  'how.vpnT': "Mode VPN",
+  'how.vpnB': "AdAway mendaftarkan VPN lokal di perangkat semata-mata untuk memeriksa permintaan DNS. Tidak ada yang dikirim ke server jauh, tidak ada akun dan tidak ada terowongan ke siapa pun. Lalu lintas Anda tidak pernah keluar dari ponsel melalui AdAway.",
+  'how.rootTag': "Perlu root",
+  'how.rootT': "Mode root",
+  'how.rootB': "Pada perangkat yang di-root, AdAway menulis daftar blokir langsung ke berkas hosts sistem. Tidak ada apa pun yang berjalan di latar belakang, dan slot VPN tetap kosong untuk VPN sungguhan.",
+
+  'feat.kicker': "Fitur",
+  'feat.h2': "Apa yang Anda dapat",
+  'feat.1t': "Mode VPN yang stabil",
+  'feat.1b': "Tidak lagi menyala sendiri setelah Anda jeda, tanpa lingkaran menyambung ulang, tanpa terowongan yang dibangun ulang setiap kali jaringan berkedip. Status aplikasi, notifikasi, dan ubin Pengaturan Cepat akhirnya sepakat, dan VPN kembali sendiri jika ponsel Anda mematikannya.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Antarmuka sungguhan untuk remote: navigasi D-pad, entri di peluncur leanback, dan pemantau DNS yang disesuaikan untuk TV.",
+  'feat.3t': "Log DNS langsung",
+  'feat.3b': "Lihat persis apa yang diterjemahkan setiap aplikasi, lalu blokir, izinkan, atau alihkan sebuah domain langsung dari daftar.",
+  'feat.4t': "Daftar Anda sendiri",
+  'feat.4b': "Host yang diblokir, diizinkan, dan dialihkan, masing-masing dapat dicari, ditambah pengecualian VPN per aplikasi.",
+
+  'shots.kicker': "Tangkapan layar",
+  'shots.h2': "Lihat saat berjalan",
+  'shots.1': "Layar utama: pemblokiran nyala atau mati dengan satu ketukan, lengkap dengan penghitung langsung.",
+  'shots.2': "Sumber hosts: daftar blokir yang memberi makan aplikasi, diperbarui sendiri.",
+  'shots.3': "Log DNS: apa yang sebenarnya diterjemahkan aplikasi Anda, secara waktu nyata.",
+  'shots.4': "Layar utama Android TV, dibuat untuk remote.",
+
+
+  'get.kicker': "Pemasangan",
+  'get.h2': "Tiga cara mendapatkannya",
+  'get.1t': "Unduh APK",
+  'get.1b': "Ambil rilis terbaru dan pasang. Android akan sekali meminta Anda mengizinkan pemasangan dari peramban atau pengelola berkas.",
+  'get.1c': "Unduh",
+  'get.2t': "Pantau dengan Omnify",
+  'get.2b': "Tambahkan repositori ini ke Omnify dan ia akan mengikuti rilis baru serta menawarkan pembaruan bersama aplikasi Anda yang lain.",
+  'get.2c': "Dapatkan Omnify",
+  'get.note': "Setiap rilis Community ditandatangani dengan kunci yang sama, sehingga pembaruan mempertahankan pengaturan dan data Anda. Kunci itu berbeda dari kunci AdAway resmi, jadi bila Anda datang dari aplikasi resmi, hapus dulu aplikasi tersebut.",
+
+  'foot.tagline': "Fork komunitas tidak resmi dari AdAway",
+  'foot.project': "Proyek",
+  'foot.releases': "Rilis",
+  'foot.issues': "Laporkan masalah",
+  'foot.contribute': "Berkontribusi",
+  'foot.upstream': "Proyek asal",
+  'foot.official': "AdAway resmi",
+  'foot.license': "Dilisensikan di bawah GPLv3+, seperti AdAway asli. Dibuat dan dipelihara oleh para kontributor proyek AdAway; fork ini tidak berafiliasi dengan mereka maupun didukung oleh mereka."
+};

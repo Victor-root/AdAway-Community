@@ -1,0 +1,82 @@
+/* 繁體中文 */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['zh-TW'] = {
+  'meta.desc': "AdAway 的非官方社群分支：一款用於 Android 的開源廣告封鎖程式，作用於整個系統，修正了 VPN 模式的穩定性問題並加入 Android TV 支援。",
+
+  'a11y.skip': "跳至內容",
+  'a11y.nav': "主導覽",
+  'a11y.lang': "語言",
+  'a11y.menu': "選單",
+  'a11y.themeDark': "切換至深色佈景",
+  'a11y.themeLight': "切換至淺色佈景",
+
+  'nav.why': "緣由",
+  'nav.how': "運作方式",
+  'nav.features': "功能",
+  'nav.shots': "螢幕擷圖",
+  'nav.get': "下載",
+
+  'hero.tag': "非官方社群分支",
+  'hero.h1a': "廣告被攔下",
+  'hero.h1b': "在它載入之前。",
+  'hero.sub': "AdAway 在 DNS 層攔截 Android 裝置上每個應用程式中的廣告與追蹤器。不需要 root，不需要帳號，也不會把任何流量送往別處。這個社群分支讓它在較新的 Android 版本上保持穩定，並加入 Android TV 支援。",
+  'hero.cta1': "下載 APK",
+  'hero.cta2': "檢視原始碼",
+  'hero.cta3': "透過 Omnify 取得",
+  'hero.req': "Android 8 Oreo 以上 · GPLv3 · 預設沒有追蹤器、廣告與遙測",
+  'hero.feed': "DNS 請求",
+  'hero.feedBlocked': "已封鎖",
+
+  'why.kicker': "這個分支",
+  'why.h2': "它為何存在",
+  'why.lead': "AdAway 是一個歷史悠久的優秀專案。原專案的發行與程式碼審查已沉寂一段時間，一些影響日常使用的修正始終未曾發佈。這個分支把它們收進一個你真的裝得起來的建置版本裡。",
+  'why.note': "這不是敵意分支，也不是所有權主張。它與 AdAway 官方維護者沒有關聯，未獲他們背書或簽署。若官方專案重新獲得積極維護，且同等修正也進入該處，本分支可能被封存，或重新與原專案看齊。",
+
+  'how.kicker': "運作方式",
+  'how.h2': "從源頭封鎖",
+  'how.lead': "廣告與追蹤器在載入任何東西之前，都得先解析網域名稱。AdAway 保有這些網域的清單，並以空回應回覆它們，因此請求根本不會離開你的裝置。這在每個應用程式裡都有效，不只是瀏覽器。",
+  'how.vpnTag': "不需要 root",
+  'how.vpnT': "VPN 模式",
+  'how.vpnB': "AdAway 只為了檢視 DNS 請求，而在裝置上註冊一個本機 VPN。不會傳送任何內容到遠端伺服器，沒有帳號，也沒有通往任何人的通道。你的流量絕不會經由 AdAway 離開手機。",
+  'how.rootTag': "需要 root",
+  'how.rootT': "root 模式",
+  'how.rootB': "在已 root 的裝置上，AdAway 會把封鎖清單直接寫入系統的 hosts 檔案。背景完全沒有任何東西在執行，VPN 位置也空著留給真正的 VPN。",
+
+  'feat.kicker': "功能",
+  'feat.h2': "你會得到什麼",
+  'feat.1t': "穩定的 VPN 模式",
+  'feat.1b': "暫停後不會自己重新啟動，沒有重新連線迴圈，網路稍有閃動也不會重建通道。應用程式內的狀態、通知與快速設定磚終於彼此一致，若被手機終止，VPN 也會自行回來。",
+  'feat.2t': "Android TV",
+  'feat.2b': "真正為遙控器打造的介面：方向鍵導覽、leanback 啟動器項目，以及為電視調整過的 DNS 監視器。",
+  'feat.3t': "即時 DNS 記錄",
+  'feat.3b': "看清每個應用程式究竟解析了什麼，然後直接在清單裡封鎖、放行或重新導向某個網域。",
+  'feat.4t': "你自己的清單",
+  'feat.4b': "被封鎖、被放行與被重新導向的主機，各自都可搜尋，還能逐一把應用程式排除在 VPN 之外。",
+
+  'shots.kicker': "螢幕擷圖",
+  'shots.h2': "看它運作",
+  'shots.1': "主畫面：一次點按開關封鎖，並附即時計數。",
+  'shots.2': "hosts 來源：供給應用程式的封鎖清單，會自行更新。",
+  'shots.3': "DNS 記錄：你的應用程式實際在解析什麼，即時呈現。",
+  'shots.4': "為遙控器打造的 Android TV 主畫面。",
+
+
+  'get.kicker': "安裝",
+  'get.h2': "三種取得方式",
+  'get.1t': "下載 APK",
+  'get.1b': "取得最新發行版並安裝。Android 會問你一次，以允許從瀏覽器或檔案管理員安裝應用程式。",
+  'get.1c': "下載",
+  'get.2t': "用 Omnify 追蹤",
+  'get.2b': "把這個儲存庫加入 Omnify，它就會追蹤新的發行版，並和你其他應用程式一起提示更新。",
+  'get.2c': "取得 Omnify",
+  'get.note': "每個 Community 發行版都以同一把金鑰簽署，因此更新會保留你的設定與資料。該金鑰與官方 AdAway 的不同，所以若你是從官方應用程式轉過來，得先將它解除安裝。",
+
+  'foot.tagline': "AdAway 的非官方社群分支",
+  'foot.project': "專案",
+  'foot.releases': "發行版本",
+  'foot.issues': "回報問題",
+  'foot.contribute': "參與貢獻",
+  'foot.upstream': "上游專案",
+  'foot.official': "官方 AdAway",
+  'foot.license': "與原版 AdAway 一樣，依 GPLv3+ 授權。由 AdAway 專案的貢獻者建立並維護；本分支與他們無關，也未獲其背書。"
+};

@@ -1,0 +1,82 @@
+/* Bahasa Melayu */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['ms'] = {
+  'meta.desc': "Cabang komuniti tidak rasmi AdAway: penyekat iklan sumber terbuka untuk Android yang berfungsi di seluruh sistem, dengan pembetulan kestabilan mod VPN dan sokongan Android TV.",
+
+  'a11y.skip': "Langkau ke kandungan",
+  'a11y.nav': "Utama",
+  'a11y.lang': "Bahasa",
+  'a11y.menu': "Menu",
+  'a11y.themeDark': "Tukar ke tema gelap",
+  'a11y.themeLight': "Tukar ke tema cerah",
+
+  'nav.why': "Mengapa",
+  'nav.how': "Cara ia berfungsi",
+  'nav.features': "Ciri",
+  'nav.shots': "Tangkapan skrin",
+  'nav.get': "Muat turun",
+
+  'hero.tag': "Cabang komuniti tidak rasmi",
+  'hero.h1a': "Iklan berhenti",
+  'hero.h1b': "sebelum ia dimuatkan.",
+  'hero.sub': "AdAway menyekat iklan dan penjejak dalam setiap aplikasi pada peranti Android anda, pada peringkat DNS. Tiada root diperlukan, tiada akaun, tiada trafik dihantar ke mana-mana. Cabang komuniti ini mengekalkannya stabil pada versi Android terkini dan menambah sokongan Android TV.",
+  'hero.cta1': "Muat turun APK",
+  'hero.cta2': "Lihat kod sumber",
+  'hero.cta3': "Dapatkan di Omnify",
+  'hero.req': "Android 8 Oreo atau lebih baharu · GPLv3 · Tiada penjejak, tiada iklan, tiada telemetri secara lalai",
+  'hero.feed': "Permintaan DNS",
+  'hero.feedBlocked': "disekat",
+
+  'why.kicker': "Cabang ini",
+  'why.h2': "Mengapa ia wujud",
+  'why.lead': "AdAway ialah projek hebat dengan sejarah panjang. Aktiviti keluaran dan semakan dalam projek asal sudah agak lama terhad, dan sebahagian pembetulan yang menyentuh penggunaan harian terbiar tanpa dikeluarkan. Cabang ini mengumpulkannya dalam binaan yang benar-benar boleh anda pasang.",
+  'why.note': "Ini bukan cabang bermusuhan dan bukan tuntutan pemilikan. Ia tidak bergabung dengan penyelenggara rasmi AdAway, tidak disokong mahupun ditandatangani oleh mereka. Jika projek rasmi kembali diselenggara secara aktif dan pembetulan setara sampai ke sana, cabang ini mungkin diarkibkan atau diselaraskan semula dengan projek asal.",
+
+  'how.kicker': "Cara ia berfungsi",
+  'how.h2': "Sekatan di puncanya",
+  'how.lead': "Iklan dan penjejak perlu menyelesaikan nama domain sebelum ia boleh memuatkan apa-apa. AdAway menyimpan senarai domain tersebut dan menjawabnya dengan tiada apa-apa, jadi permintaan itu tidak pernah keluar dari peranti anda. Ia berfungsi dalam setiap aplikasi, bukan hanya dalam pelayar.",
+  'how.vpnTag': "Tiada root diperlukan",
+  'how.vpnT': "Mod VPN",
+  'how.vpnB': "AdAway mendaftarkan VPN setempat pada peranti semata-mata untuk memeriksa permintaan DNS. Tiada apa-apa dihantar ke pelayan jauh, tiada akaun dan tiada terowong kepada sesiapa. Trafik anda tidak pernah keluar dari telefon melalui AdAway.",
+  'how.rootTag': "Perlukan root",
+  'how.rootT': "Mod root",
+  'how.rootB': "Pada peranti yang di-root, AdAway menulis senarai sekatan terus ke dalam fail hosts sistem. Tiada apa-apa berjalan di latar belakang, dan slot VPN kekal kosong untuk VPN sebenar.",
+
+  'feat.kicker': "Ciri",
+  'feat.h2': "Apa yang anda dapat",
+  'feat.1t': "Mod VPN yang stabil",
+  'feat.1b': "Tiada lagi mula sendiri selepas anda jeda, tiada gelung sambungan semula, tiada terowong dibina semula setiap kali rangkaian berkelip. Status aplikasi, pemberitahuan dan jubin Tetapan Pantas akhirnya sependapat, dan VPN kembali dengan sendirinya jika telefon anda mematikannya.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Antara muka sebenar untuk alat kawalan jauh: navigasi D-pad, entri dalam pelancar leanback, dan pemantau DNS yang disesuaikan untuk TV.",
+  'feat.3t': "Log DNS langsung",
+  'feat.3b': "Lihat dengan tepat apa yang diselesaikan oleh setiap aplikasi, kemudian sekat, benarkan atau ubah hala satu domain terus dari senarai.",
+  'feat.4t': "Senarai anda sendiri",
+  'feat.4b': "Hos yang disekat, dibenarkan dan diubah hala, setiap satu boleh dicari, serta pengecualian VPN mengikut aplikasi.",
+
+  'shots.kicker': "Tangkapan skrin",
+  'shots.h2': "Lihat ia berjalan",
+  'shots.1': "Skrin utama: sekatan hidup atau mati dengan satu ketikan, dengan pembilang langsung.",
+  'shots.2': "Sumber hosts: senarai sekatan yang menyuap aplikasi, dikemas kini sendiri.",
+  'shots.3': "Log DNS: apa yang sebenarnya diselesaikan oleh aplikasi anda, dalam masa nyata.",
+  'shots.4': "Skrin utama Android TV, dibina untuk alat kawalan jauh.",
+
+
+  'get.kicker': "Pemasangan",
+  'get.h2': "Tiga cara untuk mendapatkannya",
+  'get.1t': "Muat turun APK",
+  'get.1b': "Ambil keluaran terbaharu dan pasangkannya. Android akan meminta anda sekali untuk membenarkan pemasangan daripada pelayar atau pengurus fail anda.",
+  'get.1c': "Muat turun",
+  'get.2t': "Jejaki dengan Omnify",
+  'get.2b': "Tambah repositori ini ke Omnify dan ia akan mengikuti keluaran baharu serta menawarkan kemas kini bersama aplikasi anda yang lain.",
+  'get.2c': "Dapatkan Omnify",
+  'get.note': "Setiap keluaran Community ditandatangani dengan kunci yang sama, jadi kemas kini mengekalkan tetapan dan data anda. Kunci itu berbeza daripada kunci AdAway rasmi, jadi jika anda datang daripada aplikasi rasmi anda perlu menyahpasangnya dahulu.",
+
+  'foot.tagline': "Cabang komuniti tidak rasmi AdAway",
+  'foot.project': "Projek",
+  'foot.releases': "Keluaran",
+  'foot.issues': "Laporkan masalah",
+  'foot.contribute': "Menyumbang",
+  'foot.upstream': "Projek asal",
+  'foot.official': "AdAway rasmi",
+  'foot.license': "Dilesenkan di bawah GPLv3+, seperti AdAway asal. Dicipta dan diselenggara oleh penyumbang projek AdAway; cabang ini tidak bergabung dengan mereka mahupun disokong oleh mereka."
+};

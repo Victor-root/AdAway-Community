@@ -1,0 +1,82 @@
+/* 简体中文 */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['zh'] = {
+  'meta.desc': "AdAway 的非官方社区分支：一款面向 Android 的开源广告拦截器，作用于整个系统，修复了 VPN 模式的稳定性问题并加入 Android TV 支持。",
+
+  'a11y.skip': "跳到正文",
+  'a11y.nav': "主导航",
+  'a11y.lang': "语言",
+  'a11y.menu': "菜单",
+  'a11y.themeDark': "切换到深色主题",
+  'a11y.themeLight': "切换到浅色主题",
+
+  'nav.why': "缘由",
+  'nav.how': "工作原理",
+  'nav.features': "功能",
+  'nav.shots': "截图",
+  'nav.get': "下载",
+
+  'hero.tag': "非官方社区分支",
+  'hero.h1a': "广告被拦下",
+  'hero.h1b': "在它加载之前。",
+  'hero.sub': "AdAway 在 DNS 层面拦截 Android 设备上每个应用中的广告与追踪器。无需 root，无需账号，不会把任何流量发往别处。这个社区分支让它在较新的 Android 版本上保持稳定，并加入了 Android TV 支持。",
+  'hero.cta1': "下载 APK",
+  'hero.cta2': "查看源代码",
+  'hero.cta3': "通过 Omnify 获取",
+  'hero.req': "Android 8 Oreo 及以上 · GPLv3 · 默认不含追踪器、广告与遥测",
+  'hero.feed': "DNS 请求",
+  'hero.feedBlocked': "已拦截",
+
+  'why.kicker': "这个分支",
+  'why.h2': "它为何存在",
+  'why.lead': "AdAway 是一个历史悠久的优秀项目。原项目的发布与代码审阅活动已经清淡了一段时间，一些影响日常使用的修复始终没有发布。这个分支把它们收进一个你真正装得上的构建里。",
+  'why.note': "这不是敌意分支，也不是所有权主张。它与 AdAway 官方维护者没有关联，未获得他们的认可或签名。如果官方项目重新得到积极维护，且同等修复进入了那边，本分支可能被归档，或重新与原项目对齐。",
+
+  'how.kicker': "工作原理",
+  'how.h2': "从源头拦截",
+  'how.lead': "广告和追踪器在加载任何内容之前，都必须先解析域名。AdAway 保存着这些域名的清单，并以空响应回应它们，因此请求根本不会离开你的设备。它在每个应用里都有效，而不只是浏览器。",
+  'how.vpnTag': "无需 root",
+  'how.vpnT': "VPN 模式",
+  'how.vpnB': "AdAway 只为查看 DNS 请求而在设备上注册一个本地 VPN。不会向远程服务器发送任何内容，没有账号，也没有通往任何人的隧道。你的流量绝不会经由 AdAway 离开手机。",
+  'how.rootTag': "需要 root",
+  'how.rootT': "root 模式",
+  'how.rootB': "在已 root 的设备上，AdAway 会把拦截列表直接写入系统的 hosts 文件。后台完全没有任何东西在跑，VPN 位置也空出来留给真正的 VPN。",
+
+  'feat.kicker': "功能",
+  'feat.h2': "你能得到什么",
+  'feat.1t': "稳定的 VPN 模式",
+  'feat.1b': "暂停后不会自己重新启动，没有重连循环，网络稍有波动也不会重建隧道。应用内状态、通知和快捷设置磁贴终于彼此一致，若被手机杀掉，VPN 也会自行回来。",
+  'feat.2t': "Android TV",
+  'feat.2b': "真正为遥控器打造的界面：方向键导航、leanback 启动器条目，以及适配电视的 DNS 监视器。",
+  'feat.3t': "实时 DNS 日志",
+  'feat.3b': "看清每个应用究竟在解析什么，然后直接在列表里拦截、放行或重定向某个域名。",
+  'feat.4t': "你自己的列表",
+  'feat.4b': "被拦截、被放行和被重定向的主机，各自都可搜索，还能按应用逐个排除出 VPN。",
+
+  'shots.kicker': "截图",
+  'shots.h2': "看它运行",
+  'shots.1': "主界面：一次点击开关拦截，并有实时计数。",
+  'shots.2': "hosts 来源：为应用供给的拦截列表，会自行更新。",
+  'shots.3': "DNS 日志：你的应用实际在解析什么，实时呈现。",
+  'shots.4': "为遥控器打造的 Android TV 主界面。",
+
+
+  'get.kicker': "安装",
+  'get.h2': "三种获取方式",
+  'get.1t': "下载 APK",
+  'get.1b': "取最新发布版并安装。Android 会询问你一次，以允许从浏览器或文件管理器安装应用。",
+  'get.1c': "下载",
+  'get.2t': "用 Omnify 跟踪",
+  'get.2b': "把这个仓库加入 Omnify，它就会跟踪新版本，并和你其他应用一起提示更新。",
+  'get.2c': "获取 Omnify",
+  'get.note': "每个 Community 版本都用同一个密钥签名，因此更新会保留你的设置与数据。该密钥与官方 AdAway 的不同，所以如果你是从官方应用迁移过来，需要先把它卸载。",
+
+  'foot.tagline': "AdAway 的非官方社区分支",
+  'foot.project': "项目",
+  'foot.releases': "发布版本",
+  'foot.issues': "反馈问题",
+  'foot.contribute': "参与贡献",
+  'foot.upstream': "上游项目",
+  'foot.official': "官方 AdAway",
+  'foot.license': "与原版 AdAway 一样，依 GPLv3+ 授权。由 AdAway 项目的贡献者创建并维护；本分支与他们无关，也未获其认可。"
+};

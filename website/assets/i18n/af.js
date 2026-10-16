@@ -1,0 +1,82 @@
+/* Afrikaans */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['af'] = {
+  'meta.desc': "’n Nie-amptelike gemeenskapsvurk van AdAway: ’n oopbron-advertensieblokkeerder vir Android wat oor die hele stelsel werk, met stabiliteitsregstellings vir die VPN-modus en ondersteuning vir Android TV.",
+
+  'a11y.skip': "Spring na inhoud",
+  'a11y.nav': "Hoof",
+  'a11y.lang': "Taal",
+  'a11y.menu': "Kieslys",
+  'a11y.themeDark': "Skakel na donker tema",
+  'a11y.themeLight': "Skakel na ligte tema",
+
+  'nav.why': "Waarom",
+  'nav.how': "Hoe dit werk",
+  'nav.features': "Kenmerke",
+  'nav.shots': "Skermkiekies",
+  'nav.get': "Laai af",
+
+  'hero.tag': "Nie-amptelike gemeenskapsvurk",
+  'hero.h1a': "Advertensies stop",
+  'hero.h1b': "voordat hulle laai.",
+  'hero.sub': "AdAway blokkeer advertensies en spoorsnyers in elke program op jou Android-toestel, op DNS-vlak. Geen root nodig nie, geen rekening nie, geen verkeer wat êrens heen gestuur word nie. Hierdie gemeenskapsvurk hou dit stabiel op onlangse Android-weergawes en voeg ondersteuning vir Android TV by.",
+  'hero.cta1': "Laai die APK af",
+  'hero.cta2': "Bekyk bronkode",
+  'hero.cta3': "Kry dit op Omnify",
+  'hero.req': "Android 8 Oreo of later · GPLv3 · Geen spoorsnyers, geen advertensies, geen telemetrie by verstek nie",
+  'hero.feed': "DNS-versoeke",
+  'hero.feedBlocked': "geblokkeer",
+
+  'why.kicker': "Die vurk",
+  'why.h2': "Waarom dit bestaan",
+  'why.lead': "AdAway is ’n uitstekende projek met ’n lang geskiedenis. Vrystellings en hersiening stroomop is al ’n geruime tyd beperk, en sommige regstellings wat die daaglikse gebruik raak, lê ongebruik. Hierdie vurk hou hulle in ’n weergawe wat jy werklik kan installeer.",
+  'why.note': "Dit is nie ’n vyandige vurk nie en geen eis op eienaarskap nie. Dit is nie geaffilieer met, onderskryf deur of onderteken deur die amptelike AdAway-onderhouers nie. As die amptelike projek weer aktief onderhou word en gelykwaardige regstellings daar beland, kan hierdie vurk geargiveer of weer met stroomop belyn word.",
+
+  'how.kicker': "Hoe dit werk",
+  'how.h2': "Blokkering by die bron",
+  'how.lead': "Advertensies en spoorsnyers moet ’n domeinnaam oplos voordat hulle enigiets kan laai. AdAway hou ’n lys van daardie domeine en antwoord hulle met niks nie, sodat die versoek nooit jou toestel verlaat nie. Dit werk in elke program, nie net in jou blaaier nie.",
+  'how.vpnTag': "Geen root nodig nie",
+  'how.vpnT': "VPN-modus",
+  'how.vpnB': "AdAway registreer ’n plaaslike VPN op die toestel bloot om DNS-versoeke te ondersoek. Niks word na ’n afgeleë bediener gestuur nie, daar is geen rekening en geen tonnel na iemand anders nie. Jou verkeer verlaat nooit jou foon via AdAway nie.",
+  'how.rootTag': "Root vereis",
+  'how.rootT': "Root-modus",
+  'how.rootB': "Op ’n geroote toestel skryf AdAway die bloklys direk in die stelsel se hosts-lêer. Niks loop hoegenaamd op die agtergrond nie, en die VPN-gleuf bly vry vir ’n werklike VPN.",
+
+  'feat.kicker': "Kenmerke",
+  'feat.h2': "Wat jy kry",
+  'feat.1t': "Stabiele VPN-modus",
+  'feat.1b': "Geen selfherbegin nadat jy dit onderbreek het nie, geen herkoppelingslusse nie, geen tonnel wat herbou word elke keer as die netwerk flikker nie. Die program se status, die kennisgewing en die Quick Settings-teël stem eindelik met mekaar ooreen, en die VPN kom vanself terug as jou foon dit doodmaak.",
+  'feat.2t': "Android TV",
+  'feat.2b': "’n Werklike koppelvlak vir ’n afstandbeheer: D-pad-navigasie, ’n inskrywing in die leanback-lanseerder, en ’n DNS-monitor wat by TV aangepas is.",
+  'feat.3t': "Lewende DNS-logboek",
+  'feat.3b': "Sien presies wat elke program oplos, en blokkeer, laat toe of herlei ’n domein direk vanaf die lys.",
+  'feat.4t': "Jou eie lyste",
+  'feat.4b': "Geblokkeerde, toegelate en herleide gashere, elkeen deursoekbaar, plus uitsluitings per program van die VPN.",
+
+  'shots.kicker': "Skermkiekies",
+  'shots.h2': "Sien dit loop",
+  'shots.1': "Tuisskerm: blokkering aan of af met een tik, met lewende tellers.",
+  'shots.2': "Hosts-bronne: die bloklyste wat die program voed, wat hulself bywerk.",
+  'shots.3': "DNS-logboek: wat jou programme werklik oplos, intyds.",
+  'shots.4': "Die Android TV-tuisskerm, gebou vir ’n afstandbeheer.",
+
+
+  'get.kicker': "Installeer",
+  'get.h2': "Drie maniere om dit te kry",
+  'get.1t': "Laai die APK af",
+  'get.1b': "Kry die jongste vrystelling en installeer dit. Android sal jou een keer vra om installasies vanaf jou blaaier of lêerbestuurder toe te laat.",
+  'get.1c': "Laai af",
+  'get.2t': "Volg dit met Omnify",
+  'get.2b': "Voeg hierdie bewaarplek by Omnify en dit sal nuwe vrystellings volg en opdaterings saam met die res van jou programme aanbied.",
+  'get.2c': "Kry Omnify",
+  'get.note': "Elke Community-vrystelling word met dieselfde sleutel onderteken, sodat opdaterings jou bestaande instellings en data behou. Daardie sleutel verskil van dié van die amptelike AdAway, so as jy van die amptelike program af kom, moet jy dit eers verwyder.",
+
+  'foot.tagline': "Nie-amptelike gemeenskapsvurk van AdAway",
+  'foot.project': "Projek",
+  'foot.releases': "Vrystellings",
+  'foot.issues': "Meld ’n probleem aan",
+  'foot.contribute': "Dra by",
+  'foot.upstream': "Stroomop",
+  'foot.official': "Amptelike AdAway",
+  'foot.license': "Gelisensieer onder die GPLv3+, soos die oorspronklike AdAway. Geskep en onderhou deur die AdAway-projek se bydraers; hierdie vurk is nie met hulle geaffilieer of deur hulle onderskryf nie."
+};

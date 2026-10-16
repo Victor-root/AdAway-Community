@@ -1,0 +1,82 @@
+/* Slovenščina */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['sl'] = {
+  'meta.desc': "Neuradna skupnostna razvejitev AdAway: odprtokodni zaviralec oglasov za Android, ki deluje v celotnem sistemu, s popravki stabilnosti načina VPN in podporo za Android TV.",
+
+  'a11y.skip': "Preskoči na vsebino",
+  'a11y.nav': "Glavno",
+  'a11y.lang': "Jezik",
+  'a11y.menu': "Meni",
+  'a11y.themeDark': "Preklopi na temno temo",
+  'a11y.themeLight': "Preklopi na svetlo temo",
+
+  'nav.why': "Zakaj",
+  'nav.how': "Kako deluje",
+  'nav.features': "Zmožnosti",
+  'nav.shots': "Zaslonske slike",
+  'nav.get': "Prenesi",
+
+  'hero.tag': "Neuradna skupnostna razvejitev",
+  'hero.h1a': "Oglasi se ustavijo",
+  'hero.h1b': "še preden se naložijo.",
+  'hero.sub': "AdAway zavira oglase in sledilnike v vseh aplikacijah na vaši napravi Android, na ravni DNS. Brez korenskega dostopa, brez računa, brez prometa, poslanega kamor koli. Ta skupnostna razvejitev ga ohranja stabilnega na novejših različicah Androida in dodaja podporo za Android TV.",
+  'hero.cta1': "Prenesi APK",
+  'hero.cta2': "Poglej izvorno kodo",
+  'hero.cta3': "Pridobite prek Omnifyja",
+  'hero.req': "Android 8 Oreo ali novejši · GPLv3 · Privzeto brez sledilnikov, oglasov in telemetrije",
+  'hero.feed': "Zahteve DNS",
+  'hero.feedBlocked': "zavrto",
+
+  'why.kicker': "Razvejitev",
+  'why.h2': "Zakaj obstaja",
+  'why.lead': "AdAway je odličen projekt z dolgo zgodovino. Dejavnost izdaj in pregledov v izvornem projektu je že nekaj časa omejena, del popravkov, ki se dotikajo vsakodnevne rabe, pa leži neobjavljen. Ta razvejitev jih zbere v izgradnjo, ki jo lahko zares namestite.",
+  'why.note': "To ni sovražna razvejitev in ne zahtevek po lastništvu. Ni povezana z uradnimi vzdrževalci AdAway, ni z njihove strani odobrena ali podpisana. Če bo uradni projekt spet dejavno vzdrževan in enakovredni popravki pristanejo tam, se lahko ta razvejitev arhivira ali znova uskladi z izvornim projektom.",
+
+  'how.kicker': "Kako deluje",
+  'how.h2': "Zaviranje pri viru",
+  'how.lead': "Oglasi in sledilniki morajo razrešiti ime domene, preden lahko karkoli naložijo. AdAway hrani seznam teh domen in jim odgovori z ničimer, zato zahteva nikoli ne zapusti vaše naprave. Deluje v vseh aplikacijah, ne le v brskalniku.",
+  'how.vpnTag': "Brez korenskega dostopa",
+  'how.vpnT': "Način VPN",
+  'how.vpnB': "AdAway v napravi registrira krajevni VPN izključno zato, da pregleduje zahteve DNS. Na oddaljeni strežnik ne pošlje ničesar, ni računa in ni tunela do kogar koli. Vaš promet prek AdAway nikoli ne zapusti telefona.",
+  'how.rootTag': "Zahteva korenski dostop",
+  'how.rootT': "Korenski način",
+  'how.rootB': "Na napravi s korenskim dostopom AdAway zapiše seznam zaviranja neposredno v sistemsko datoteko hosts. V ozadju ne teče prav nič, mesto za VPN pa ostane prosto za pravi VPN.",
+
+  'feat.kicker': "Zmožnosti",
+  'feat.h2': "Kaj dobite",
+  'feat.1t': "Stabilen način VPN",
+  'feat.1b': "Nič več samodejnega zagona, potem ko ga zaustavite, brez zank ponovnega povezovanja, brez tunela, ki se prezidava ob vsakem migljaju omrežja. Stanje v aplikaciji, obvestilo in ploščica v hitrih nastavitvah se končno ujemajo med seboj, VPN pa se sam vrne, če ga telefon ubije.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Pravi vmesnik za daljinec: krmarjenje s smerno tipkovnico, vnos v zaganjalniku leanback in nadzornik DNS, prilagojen televiziji.",
+  'feat.3t': "Živ dnevnik DNS",
+  'feat.3b': "Poglejte natanko, kaj razrešuje vsaka aplikacija, nato domeno kar s seznama zavrite, dovolite ali preusmerite.",
+  'feat.4t': "Vaši lastni seznami",
+  'feat.4b': "Zavrti, dovoljeni in preusmerjeni gostitelji, vsak z iskanjem, poleg tega izjeme iz VPN po posameznih aplikacijah.",
+
+  'shots.kicker': "Zaslonske slike",
+  'shots.h2': "Poglejte ga v pogonu",
+  'shots.1': "Začetni zaslon: zaviranje vklopljeno ali izklopljeno z enim dotikom, z živimi števci.",
+  'shots.2': "Viri hosts: seznami zaviranja, ki hranijo aplikacijo, osveženi sami od sebe.",
+  'shots.3': "Dnevnik DNS: kaj vaše aplikacije zares razrešujejo, v resničnem času.",
+  'shots.4': "Začetni zaslon Android TV, narejen za daljinec.",
+
+
+  'get.kicker': "Namestitev",
+  'get.h2': "Trije načini, da ga dobite",
+  'get.1t': "Prenesi APK",
+  'get.1b': "Vzemite zadnjo izdajo in jo namestite. Android vas bo enkrat vprašal, ali dovolite namestitve iz brskalnika ali upravitelja datotek.",
+  'get.1c': "Prenesi",
+  'get.2t': "Spremljajte ga z Omnify",
+  'get.2b': "Dodajte ta repozitorij v Omnify in spremljal bo nove izdaje ter ponujal posodobitve skupaj z drugimi vašimi aplikacijami.",
+  'get.2c': "Pridobi Omnify",
+  'get.note': "Vsaka izdaja Community je podpisana z istim ključem, zato posodobitve ohranijo vaše nastavitve in podatke. Ta ključ se razlikuje od ključa uradnega AdAway, zato morate, če prihajate iz uradne aplikacije, najprej odstraniti njo.",
+
+  'foot.tagline': "Neuradna skupnostna razvejitev AdAway",
+  'foot.project': "Projekt",
+  'foot.releases': "Izdaje",
+  'foot.issues': "Prijavi težavo",
+  'foot.contribute': "Prispevaj",
+  'foot.upstream': "Izvorni projekt",
+  'foot.official': "Uradni AdAway",
+  'foot.license': "Licencirano pod GPLv3+, tako kot izvirni AdAway. Ustvarili in vzdržujejo ga sodelavci projekta AdAway; ta razvejitev z njimi ni povezana in ni z njihove strani odobrena."
+};

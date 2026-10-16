@@ -1,0 +1,82 @@
+/* Oʻzbekcha */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['uz'] = {
+  'meta.desc': "AdAway’ning norasmiy hamjamiyat forki: butun tizim boʻylab ishlaydigan Android uchun ochiq kodli reklama bloklovchisi, VPN rejimi barqarorligi tuzatishlari va Android TV qoʻllab-quvvatlashi bilan.",
+
+  'a11y.skip': "Mazmunga oʻtish",
+  'a11y.nav': "Asosiy",
+  'a11y.lang': "Til",
+  'a11y.menu': "Menyu",
+  'a11y.themeDark': "Qorongʻi mavzuga oʻtish",
+  'a11y.themeLight': "Yorugʻ mavzuga oʻtish",
+
+  'nav.why': "Nega",
+  'nav.how': "Qanday ishlaydi",
+  'nav.features': "Imkoniyatlar",
+  'nav.shots': "Ekran tasvirlari",
+  'nav.get': "Yuklab olish",
+
+  'hero.tag': "Norasmiy hamjamiyat forki",
+  'hero.h1a': "Reklamalar toʻxtaydi",
+  'hero.h1b': "yuklanishidan oldinoq.",
+  'hero.sub': "AdAway Android qurilmangizdagi har bir ilovada reklama va kuzatuvchilarni DNS darajasida bloklaydi. Root kerak emas, hisob kerak emas, hech qanday trafik hech qayerga yuborilmaydi. Ushbu hamjamiyat forki uni Androidning yangi versiyalarida barqaror saqlaydi va Android TV qoʻllab-quvvatlashini qoʻshadi.",
+  'hero.cta1': "APK’ni yuklab olish",
+  'hero.cta2': "Manba kodini koʻrish",
+  'hero.cta3': "Omnify orqali oling",
+  'hero.req': "Android 8 Oreo yoki undan yangi · GPLv3 · Sukut boʻyicha kuzatuvchilar, reklama va telemetriya yoʻq",
+  'hero.feed': "DNS soʻrovlari",
+  'hero.feedBlocked': "bloklandi",
+
+  'why.kicker': "Fork",
+  'why.h2': "Nega u mavjud",
+  'why.lead': "AdAway uzoq tarixga ega ajoyib loyiha. Asl loyihada chiqarish va koʻrib chiqish faoliyati bir muddatdan beri cheklangan, kundalik foydalanishga taʼsir qiluvchi baʼzi tuzatishlar esa nashr etilmay yotibdi. Ushbu fork ularni siz haqiqatan ham oʻrnata oladigan yigʻmaga jamlaydi.",
+  'why.note': "Bu dushmanona fork emas va egalik daʼvosi ham emas. U AdAway’ning rasmiy qoʻllab-quvvatlovchilari bilan bogʻliq emas, ular tomonidan maʼqullangan yoki imzolangan ham emas. Agar rasmiy loyiha yana faol qoʻllab-quvvatlana boshlasa va teng tuzatishlar u yerga yetib borsa, bu fork arxivlanishi yoki asl loyiha bilan qayta moslashtirilishi mumkin.",
+
+  'how.kicker': "Qanday ishlaydi",
+  'how.h2': "Manbaning oʻzida bloklash",
+  'how.lead': "Reklama va kuzatuvchilar biror narsani yuklashdan avval domen nomini aniqlashi kerak. AdAway shunday domenlar roʻyxatini saqlaydi va ularga hech narsa bilan javob beradi, shuning uchun soʻrov hech qachon qurilmangizdan chiqmaydi. Bu faqat brauzerda emas, har bir ilovada ishlaydi.",
+  'how.vpnTag': "Root kerak emas",
+  'how.vpnT': "VPN rejimi",
+  'how.vpnB': "AdAway qurilmada mahalliy VPN’ni faqat DNS soʻrovlarini koʻrib chiqish uchun roʻyxatdan oʻtkazadi. Uzoqdagi serverga hech narsa yuborilmaydi, hisob ham, kimgadir tunnel ham yoʻq. Trafikingiz AdAway orqali hech qachon telefonni tark etmaydi.",
+  'how.rootTag': "Root talab qilinadi",
+  'how.rootT': "Root rejimi",
+  'how.rootB': "Root olingan qurilmada AdAway bloklash roʻyxatini toʻgʻridan-toʻgʻri tizimning hosts fayliga yozadi. Fonda umuman hech narsa ishlamaydi, VPN joyi esa haqiqiy VPN uchun boʻsh qoladi.",
+
+  'feat.kicker': "Imkoniyatlar",
+  'feat.h2': "Nima olasiz",
+  'feat.1t': "Barqaror VPN rejimi",
+  'feat.1b': "Toʻxtatib qoʻyganingizdan keyin oʻzi qayta ishga tushmaydi, qayta ulanish halqalari yoʻq, tarmoq har titraganda tunnel qayta qurilmaydi. Ilovadagi holat, bildirishnoma va tez sozlamalar plitkasi nihoyat bir-biriga mos keladi, telefoningiz VPN’ni oʻchirsa, u oʻzi qaytib keladi.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Pult uchun haqiqiy interfeys: D-pad bilan harakatlanish, leanback ishga tushirgichdagi yozuv va televizorga moslashtirilgan DNS kuzatuvchisi.",
+  'feat.3t': "Jonli DNS jurnali",
+  'feat.3b': "Har bir ilova aynan nimani aniqlayotganini koʻring, soʻng domenni roʻyxatning oʻzidan bloklang, ruxsat bering yoki yoʻnaltiring.",
+  'feat.4t': "Oʻz roʻyxatlaringiz",
+  'feat.4b': "Bloklangan, ruxsat berilgan va yoʻnaltirilgan xostlar, har biri qidiruv bilan, hamda VPN’dan ilova boʻyicha istisnolar.",
+
+  'shots.kicker': "Ekran tasvirlari",
+  'shots.h2': "Ishlaganini koʻring",
+  'shots.1': "Bosh ekran: bir tegish bilan bloklashni yoqish yoki oʻchirish, jonli hisoblagichlar bilan.",
+  'shots.2': "Hosts manbalari: ilovani oziqlantiradigan bloklash roʻyxatlari, oʻzi yangilanadi.",
+  'shots.3': "DNS jurnali: ilovalaringiz aslida nimani aniqlayotgani, real vaqtda.",
+  'shots.4': "Pult uchun yaratilgan Android TV bosh ekrani.",
+
+
+  'get.kicker': "Oʻrnatish",
+  'get.h2': "Uni olishning uch yoʻli",
+  'get.1t': "APK’ni yuklab olish",
+  'get.1b': "Soʻnggi chiqarishni oling va oʻrnating. Android sizdan bir marta brauzer yoki fayl menejeridan oʻrnatishga ruxsat berishni soʻraydi.",
+  'get.1c': "Yuklab olish",
+  'get.2t': "Omnify bilan kuzating",
+  'get.2b': "Ushbu omborni Omnify’ga qoʻshing, u yangi chiqarishlarni kuzatadi va yangilanishlarni boshqa ilovalaringiz bilan birga taklif qiladi.",
+  'get.2c': "Omnify’ni olish",
+  'get.note': "Har bir Community chiqarishi bir xil kalit bilan imzolangan, shuning uchun yangilanishlar sozlamalaringiz va maʼlumotlaringizni saqlab qoladi. Bu kalit rasmiy AdAway kalitidan farq qiladi, shuning uchun rasmiy ilovadan kelayotgan boʻlsangiz, avval uni oʻchirishingiz kerak.",
+
+  'foot.tagline': "AdAway’ning norasmiy hamjamiyat forki",
+  'foot.project': "Loyiha",
+  'foot.releases': "Chiqarishlar",
+  'foot.issues': "Muammo haqida xabar berish",
+  'foot.contribute': "Hissa qoʻshish",
+  'foot.upstream': "Asl loyiha",
+  'foot.official': "Rasmiy AdAway",
+  'foot.license': "Asl AdAway kabi GPLv3+ litsenziyasi ostida. AdAway loyihasi hissadorlari tomonidan yaratilgan va qoʻllab-quvvatlanadi; ushbu fork ular bilan bogʻliq emas va ular tomonidan maʼqullanmagan."
+};

@@ -1,0 +1,82 @@
+/* Dansk */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['da'] = {
+  'meta.desc': "En uofficiel fællesskabsfork af AdAway: en open source-annonceblokering til Android, der virker i hele systemet, med stabilitetsrettelser til VPN-tilstanden og understøttelse af Android TV.",
+
+  'a11y.skip': "Gå til indhold",
+  'a11y.nav': "Hoved",
+  'a11y.lang': "Sprog",
+  'a11y.menu': "Menu",
+  'a11y.themeDark': "Skift til mørkt tema",
+  'a11y.themeLight': "Skift til lyst tema",
+
+  'nav.why': "Hvorfor",
+  'nav.how': "Sådan virker det",
+  'nav.features': "Funktioner",
+  'nav.shots': "Skærmbilleder",
+  'nav.get': "Hent",
+
+  'hero.tag': "Uofficiel fællesskabsfork",
+  'hero.h1a': "Annoncer stopper",
+  'hero.h1b': "før de indlæses.",
+  'hero.sub': "AdAway blokerer annoncer og sporere i alle apps på din Android-enhed, på DNS-niveau. Ingen root, ingen konto, ingen trafik sendt nogen steder hen. Denne fællesskabsfork holder den stabil på nyere Android-versioner og tilføjer understøttelse af Android TV.",
+  'hero.cta1': "Hent APK-filen",
+  'hero.cta2': "Se kildekoden",
+  'hero.cta3': "Hent det på Omnify",
+  'hero.req': "Android 8 Oreo eller nyere · GPLv3 · Ingen sporere, ingen annoncer, ingen telemetri som standard",
+  'hero.feed': "DNS-forespørgsler",
+  'hero.feedBlocked': "blokeret",
+
+  'why.kicker': "Forken",
+  'why.h2': "Hvorfor den findes",
+  'why.lead': "AdAway er et fremragende projekt med en lang historie. Udgivelses- og gennemgangsaktiviteten i hovedprojektet har været begrænset et stykke tid, og en del rettelser, der påvirker den daglige brug, ligger uudgivne. Denne fork samler dem i en udgave, du rent faktisk kan installere.",
+  'why.note': "Dette er ikke en fjendtlig fork og ikke et krav om ejerskab. Den er ikke tilknyttet, godkendt af eller signeret af de officielle AdAway-vedligeholdere. Hvis det officielle projekt igen bliver aktivt vedligeholdt, og tilsvarende rettelser lander der, kan denne fork blive arkiveret eller bragt på linje med hovedprojektet igen.",
+
+  'how.kicker': "Sådan virker det",
+  'how.h2': "Blokering ved kilden",
+  'how.lead': "Annoncer og sporere skal slå et domænenavn op, før de kan indlæse noget som helst. AdAway holder en liste over de domæner og svarer dem med ingenting, så forespørgslen aldrig forlader din enhed. Det virker i alle apps, ikke kun i browseren.",
+  'how.vpnTag': "Ingen root nødvendig",
+  'how.vpnT': "VPN-tilstand",
+  'how.vpnB': "AdAway registrerer en lokal VPN på enheden udelukkende for at kigge på DNS-forespørgsler. Intet sendes til en fjern server, der er ingen konto og ingen tunnel til nogen anden. Din trafik forlader aldrig telefonen via AdAway.",
+  'how.rootTag': "Kræver root",
+  'how.rootT': "Root-tilstand",
+  'how.rootB': "På en enhed med root skriver AdAway blokeringslisten direkte i systemets hosts-fil. Der kører overhovedet ingenting i baggrunden, og VPN-pladsen står fri til en rigtig VPN.",
+
+  'feat.kicker': "Funktioner",
+  'feat.h2': "Hvad du får",
+  'feat.1t': "Stabil VPN-tilstand",
+  'feat.1b': "Ingen selvstart efter at du har sat den på pause, ingen genforbindelsesløkker, ingen tunnel der genopbygges, hver gang netværket blinker. Appens status, notifikationen og feltet i Kvikindstillinger er endelig enige, og VPN’en kommer tilbage af sig selv, hvis telefonen dræber den.",
+  'feat.2t': "Android TV",
+  'feat.2b': "En rigtig grænseflade til fjernbetjening: D-pad-navigation, en post i leanback-launcheren og en DNS-overvågning tilpasset tv.",
+  'feat.3t': "Live DNS-log",
+  'feat.3b': "Se præcis hvad hver app slår op, og blokér, tillad eller omdiriger et domæne direkte fra listen.",
+  'feat.4t': "Dine egne lister",
+  'feat.4b': "Blokerede, tilladte og omdirigerede værter, hver med søgning, samt undtagelser fra VPN’en app for app.",
+
+  'shots.kicker': "Skærmbilleder",
+  'shots.h2': "Se den køre",
+  'shots.1': "Startskærm: blokering til eller fra med ét tryk, med live tællere.",
+  'shots.2': "Hosts-kilder: blokeringslisterne, der føder appen, opdateret af sig selv.",
+  'shots.3': "DNS-log: hvad dine apps rent faktisk slår op, i realtid.",
+  'shots.4': "Startskærmen på Android TV, bygget til en fjernbetjening.",
+
+
+  'get.kicker': "Installation",
+  'get.h2': "Tre måder at få den på",
+  'get.1t': "Hent APK-filen",
+  'get.1b': "Tag den nyeste udgivelse og installer den. Android beder dig én gang om at tillade installationer fra din browser eller filhåndtering.",
+  'get.1c': "Hent",
+  'get.2t': "Følg den med Omnify",
+  'get.2b': "Tilføj dette lager til Omnify, så følger den nye udgivelser og tilbyder opdateringer sammen med resten af dine apps.",
+  'get.2c': "Hent Omnify",
+  'get.note': "Hver Community-udgivelse er signeret med den samme nøgle, så opdateringer bevarer dine indstillinger og data. Den nøgle er ikke den samme som den officielle AdAways, så kommer du fra den officielle app, skal du afinstallere den først.",
+
+  'foot.tagline': "Uofficiel fællesskabsfork af AdAway",
+  'foot.project': "Projekt",
+  'foot.releases': "Udgivelser",
+  'foot.issues': "Rapportér et problem",
+  'foot.contribute': "Bidrag",
+  'foot.upstream': "Hovedprojekt",
+  'foot.official': "Officiel AdAway",
+  'foot.license': "Licenseret under GPLv3+, ligesom den oprindelige AdAway. Skabt og vedligeholdt af AdAway-projektets bidragydere; denne fork er hverken tilknyttet eller godkendt af dem."
+};

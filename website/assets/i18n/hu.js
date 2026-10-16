@@ -1,0 +1,82 @@
+/* Magyar */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['hu'] = {
+  'meta.desc': "Az AdAway nem hivatalos közösségi forkja: nyílt forráskódú reklámblokkoló Androidra, amely az egész rendszerben működik, a VPN mód stabilitási javításaival és Android TV támogatással.",
+
+  'a11y.skip': "Ugrás a tartalomra",
+  'a11y.nav': "Fő",
+  'a11y.lang': "Nyelv",
+  'a11y.menu': "Menü",
+  'a11y.themeDark': "Váltás sötét témára",
+  'a11y.themeLight': "Váltás világos témára",
+
+  'nav.why': "Miért",
+  'nav.how': "Hogyan működik",
+  'nav.features': "Funkciók",
+  'nav.shots': "Képernyőképek",
+  'nav.get': "Letöltés",
+
+  'hero.tag': "Nem hivatalos közösségi fork",
+  'hero.h1a': "A reklámok megállnak,",
+  'hero.h1b': "mielőtt betöltődnének.",
+  'hero.sub': "Az AdAway DNS szinten blokkolja a reklámokat és a nyomkövetőket az Android készüléke minden alkalmazásában. Nem kell root, nem kell fiók, és semmilyen forgalom nem megy sehová. Ez a közösségi fork stabilan tartja az újabb Android verziókon, és Android TV támogatással bővíti.",
+  'hero.cta1': "APK letöltése",
+  'hero.cta2': "Forráskód megtekintése",
+  'hero.cta3': "Beszerzés az Omnify-ról",
+  'hero.req': "Android 8 Oreo vagy újabb · GPLv3 · Alapértelmezés szerint nincs nyomkövető, reklám és telemetria",
+  'hero.feed': "DNS kérések",
+  'hero.feedBlocked': "blokkolva",
+
+  'why.kicker': "A fork",
+  'why.h2': "Miért létezik",
+  'why.lead': "Az AdAway remek projekt hosszú múlttal. A kiadási és átnézési tevékenység az eredeti projektben már egy ideje korlátozott, és néhány, a mindennapi használatot érintő javítás kiadatlanul hever. Ez a fork olyan buildben tartja őket, amelyet ténylegesen telepíthet.",
+  'why.note': "Ez nem ellenséges fork és nem is tulajdonjogi igény. Nem áll kapcsolatban az AdAway hivatalos karbantartóival, nem is támogatják és nem is írták alá. Ha a hivatalos projekt újra aktívan karbantartottá válik, és oda is bekerülnek az egyenértékű javítások, ez a fork archiválható vagy újra az eredeti projekthez igazítható.",
+
+  'how.kicker': "Hogyan működik",
+  'how.h2': "Blokkolás a forrásnál",
+  'how.lead': "A reklámoknak és a nyomkövetőknek fel kell oldaniuk egy domainnevet, mielőtt bármit betöltenének. Az AdAway listát vezet ezekről a domainekről, és semmivel válaszol nekik, így a kérés soha nem hagyja el a készülékét. Minden alkalmazásban működik, nemcsak a böngészőben.",
+  'how.vpnTag': "Nem kell root",
+  'how.vpnT': "VPN mód",
+  'how.vpnB': "Az AdAway kizárólag a DNS kérések vizsgálatához regisztrál helyi VPN-t a készüléken. Semmi nem megy távoli kiszolgálóra, nincs fiók és nincs alagút senki felé. A forgalma az AdAwayen keresztül soha nem hagyja el a telefont.",
+  'how.rootTag': "Root szükséges",
+  'how.rootT': "Root mód",
+  'how.rootB': "Rootolt készüléken az AdAway közvetlenül a rendszer hosts fájljába írja a blokklistát. Semmi nem fut a háttérben, és a VPN hely szabadon marad egy valódi VPN számára.",
+
+  'feat.kicker': "Funkciók",
+  'feat.h2': "Mit kap",
+  'feat.1t': "Stabil VPN mód",
+  'feat.1b': "Nem indul újra magától, miután szüneteltette, nincsenek újracsatlakozási hurkok, és nem épül újra az alagút minden hálózati villanáskor. Az alkalmazás állapota, az értesítés és a gyorsbeállítások csempéje végre egyetért, a VPN pedig magától visszatér, ha a telefon leállítja.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Valódi felület a távirányítóhoz: D-pad navigáció, bejegyzés a leanback indítóban és TV-re szabott DNS figyelő.",
+  'feat.3t': "Élő DNS napló",
+  'feat.3b': "Pontosan látja, mit old fel az egyes alkalmazások, majd a listáról közvetlenül blokkolhat, engedélyezhet vagy átirányíthat egy domaint.",
+  'feat.4t': "Saját listák",
+  'feat.4b': "Blokkolt, engedélyezett és átirányított kiszolgálók, mindegyik kereshető, valamint alkalmazásonkénti kivételek a VPN alól.",
+
+  'shots.kicker': "Képernyőképek",
+  'shots.h2': "Nézze működés közben",
+  'shots.1': "Kezdőképernyő: blokkolás be vagy ki egy koppintással, élő számlálókkal.",
+  'shots.2': "Hosts források: a blokklisták, amelyek az alkalmazást táplálják, maguktól frissülve.",
+  'shots.3': "DNS napló: mit oldanak fel valójában az alkalmazásai, valós időben.",
+  'shots.4': "Az Android TV kezdőképernyője, távirányítóra tervezve.",
+
+
+  'get.kicker': "Telepítés",
+  'get.h2': "Három módja a beszerzésnek",
+  'get.1t': "APK letöltése",
+  'get.1b': "Töltse le a legutóbbi kiadást és telepítse. Az Android egyszer megkérdezi, engedélyezi-e a telepítést a böngészőből vagy a fájlkezelőből.",
+  'get.1c': "Letöltés",
+  'get.2t': "Kövesse az Omnifyval",
+  'get.2b': "Adja hozzá ezt a tárolót az Omnifyhoz, és követi az új kiadásokat, a frissítéseket pedig a többi alkalmazásával együtt kínálja fel.",
+  'get.2c': "Omnify beszerzése",
+  'get.note': "Minden Community kiadás ugyanazzal a kulccsal van aláírva, így a frissítések megőrzik a beállításait és adatait. Ez a kulcs eltér a hivatalos AdAwayétől, ezért ha a hivatalos alkalmazásról vált, azt előbb el kell távolítania.",
+
+  'foot.tagline': "Az AdAway nem hivatalos közösségi forkja",
+  'foot.project': "Projekt",
+  'foot.releases': "Kiadások",
+  'foot.issues': "Hiba bejelentése",
+  'foot.contribute': "Közreműködés",
+  'foot.upstream': "Eredeti projekt",
+  'foot.official': "Hivatalos AdAway",
+  'foot.license': "GPLv3+ licenc alatt, akárcsak az eredeti AdAway. Az AdAway projekt közreműködői készítették és tartják karban; ez a fork nem áll kapcsolatban velük és nem is támogatják."
+};

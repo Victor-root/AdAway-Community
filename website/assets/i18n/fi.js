@@ -1,0 +1,82 @@
+/* Suomi */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['fi'] = {
+  'meta.desc': "Epävirallinen yhteisöhaara AdAwaysta: avoimen lähdekoodin mainosten estäjä Androidille, joka toimii koko järjestelmässä, VPN-tilan vakauskorjauksin ja Android TV -tuella.",
+
+  'a11y.skip': "Siirry sisältöön",
+  'a11y.nav': "Päävalikko",
+  'a11y.lang': "Kieli",
+  'a11y.menu': "Valikko",
+  'a11y.themeDark': "Vaihda tummaan teemaan",
+  'a11y.themeLight': "Vaihda vaaleaan teemaan",
+
+  'nav.why': "Miksi",
+  'nav.how': "Miten se toimii",
+  'nav.features': "Ominaisuudet",
+  'nav.shots': "Kuvakaappaukset",
+  'nav.get': "Lataa",
+
+  'hero.tag': "Epävirallinen yhteisöhaara",
+  'hero.h1a': "Mainokset pysähtyvät",
+  'hero.h1b': "ennen kuin ne latautuvat.",
+  'hero.sub': "AdAway estää mainokset ja seuraimet kaikissa Android-laitteesi sovelluksissa, DNS-tasolla. Ei rootia, ei tiliä, ei liikennettä minnekään. Tämä yhteisöhaara pitää sen vakaana uusissa Android-versioissa ja lisää Android TV -tuen.",
+  'hero.cta1': "Lataa APK",
+  'hero.cta2': "Katso lähdekoodi",
+  'hero.cta3': "Hanki se Omnifysta",
+  'hero.req': "Android 8 Oreo tai uudempi · GPLv3 · Ei seuraimia, ei mainoksia, ei telemetriaa oletuksena",
+  'hero.feed': "DNS-kyselyt",
+  'hero.feedBlocked': "estetty",
+
+  'why.kicker': "Haara",
+  'why.h2': "Miksi tämä on olemassa",
+  'why.lead': "AdAway on hieno projekti, jolla on pitkä historia. Julkaisu- ja katselmointitoiminta alkuperäisessä projektissa on ollut jo jonkin aikaa vähäistä, ja osa arkikäyttöön vaikuttavista korjauksista makaa julkaisematta. Tämä haara kokoaa ne käännökseen, jonka voi oikeasti asentaa.",
+  'why.note': "Tämä ei ole vihamielinen haara eikä omistusvaatimus. Se ei ole sidoksissa AdAwayn virallisiin ylläpitäjiin, eivätkä he ole sitä hyväksyneet tai allekirjoittaneet. Jos virallinen projekti alkaa jälleen olla aktiivisesti ylläpidetty ja vastaavat korjaukset päätyvät sinne, tämä haara voidaan arkistoida tai sovittaa uudelleen alkuperäiseen projektiin.",
+
+  'how.kicker': "Miten se toimii",
+  'how.h2': "Esto lähteellä",
+  'how.lead': "Mainosten ja seuraimien on selvitettävä verkkotunnus ennen kuin ne voivat ladata mitään. AdAway pitää listaa noista verkkotunnuksista ja vastaa niille ei-millään, joten pyyntö ei koskaan poistu laitteeltasi. Tämä toimii kaikissa sovelluksissa, ei vain selaimessa.",
+  'how.vpnTag': "Ei vaadi rootia",
+  'how.vpnT': "VPN-tila",
+  'how.vpnB': "AdAway rekisteröi laitteelle paikallisen VPN:n pelkästään DNS-kyselyjen tarkastelua varten. Mitään ei lähetetä etäpalvelimelle, tiliä ei ole eikä tunnelia kenellekään. Liikenteesi ei koskaan poistu puhelimesta AdAwayn kautta.",
+  'how.rootTag': "Vaatii rootin",
+  'how.rootT': "Root-tila",
+  'how.rootB': "Rootatulla laitteella AdAway kirjoittaa estolistan suoraan järjestelmän hosts-tiedostoon. Taustalla ei pyöri yhtään mitään, ja VPN-paikka jää vapaaksi oikealle VPN:lle.",
+
+  'feat.kicker': "Ominaisuudet",
+  'feat.h2': "Mitä saat",
+  'feat.1t': "Vakaa VPN-tila",
+  'feat.1b': "Ei itsestään käynnistymistä sen jälkeen kun laitat sen tauolle, ei yhteydenmuodostussilmukoita, ei tunnelin uudelleenrakennusta joka kerta kun verkko välkkyy. Sovelluksen tila, ilmoitus ja pika-asetusten ruutu ovat vihdoin samaa mieltä, ja VPN palaa itsestään, jos puhelimesi tappaa sen.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Oikea käyttöliittymä kaukosäätimelle: D-pad-navigointi, merkintä leanback-käynnistimessä ja televisioon sovitettu DNS-valvonta.",
+  'feat.3t': "Reaaliaikainen DNS-loki",
+  'feat.3b': "Näe tarkalleen, mitä kukin sovellus selvittää, ja estä, salli tai uudelleenohjaa verkkotunnus suoraan listalta.",
+  'feat.4t': "Omat listasi",
+  'feat.4b': "Estetyt, sallitut ja uudelleenohjatut isännät, kukin haettavissa, sekä sovelluskohtaiset poikkeukset VPN:stä.",
+
+  'shots.kicker': "Kuvakaappaukset",
+  'shots.h2': "Katso se toiminnassa",
+  'shots.1': "Aloitusnäyttö: esto päälle tai pois yhdellä napautuksella, reaaliaikaisin laskurein.",
+  'shots.2': "Hosts-lähteet: sovellusta ruokkivat estolistat, jotka päivittyvät itsestään.",
+  'shots.3': "DNS-loki: mitä sovelluksesi todella selvittävät, reaaliajassa.",
+  'shots.4': "Android TV:n aloitusnäyttö, tehty kaukosäätimelle.",
+
+
+  'get.kicker': "Asennus",
+  'get.h2': "Kolme tapaa saada se",
+  'get.1t': "Lataa APK",
+  'get.1b': "Ota uusin julkaisu ja asenna se. Android pyytää sinulta kerran luvan asennuksiin selaimesta tai tiedostonhallinnasta.",
+  'get.1c': "Lataa",
+  'get.2t': "Seuraa sitä Omnifylla",
+  'get.2b': "Lisää tämä varasto Omnifyyn, niin se seuraa uusia julkaisuja ja tarjoaa päivitykset muiden sovellustesi rinnalla.",
+  'get.2c': "Hanki Omnify",
+  'get.note': "Jokainen Community-julkaisu on allekirjoitettu samalla avaimella, joten päivitykset säilyttävät asetuksesi ja tietosi. Avain poikkeaa virallisen AdAwayn avaimesta, joten jos tulet virallisesta sovelluksesta, se pitää ensin poistaa.",
+
+  'foot.tagline': "Epävirallinen yhteisöhaara AdAwaysta",
+  'foot.project': "Projekti",
+  'foot.releases': "Julkaisut",
+  'foot.issues': "Ilmoita ongelmasta",
+  'foot.contribute': "Osallistu",
+  'foot.upstream': "Alkuperäinen projekti",
+  'foot.official': "Virallinen AdAway",
+  'foot.license': "Lisensoitu GPLv3+ -lisenssillä, kuten alkuperäinen AdAway. Luonut ja ylläpitää AdAway-projektin osallistujat; tämä haara ei ole heihin sidoksissa eivätkä he ole sitä hyväksyneet."
+};

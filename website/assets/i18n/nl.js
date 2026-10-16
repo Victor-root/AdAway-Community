@@ -1,0 +1,82 @@
+/* Nederlands */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['nl'] = {
+  'meta.desc': "Een onofficiële communityfork van AdAway: een opensource-advertentieblokkeerder voor Android die op het hele systeem werkt, met stabiliteitscorrecties voor de VPN-modus en ondersteuning voor Android TV.",
+
+  'a11y.skip': "Naar inhoud springen",
+  'a11y.nav': "Hoofd",
+  'a11y.lang': "Taal",
+  'a11y.menu': "Menu",
+  'a11y.themeDark': "Naar donker thema wisselen",
+  'a11y.themeLight': "Naar licht thema wisselen",
+
+  'nav.why': "Waarom",
+  'nav.how': "Hoe het werkt",
+  'nav.features': "Functies",
+  'nav.shots': "Schermafbeeldingen",
+  'nav.get': "Downloaden",
+
+  'hero.tag': "Onofficiële communityfork",
+  'hero.h1a': "Advertenties stoppen",
+  'hero.h1b': "voordat ze laden.",
+  'hero.sub': "AdAway blokkeert advertenties en trackers in elke app op je Android-apparaat, op DNS-niveau. Geen root nodig, geen account, geen verkeer dat ergens heen gaat. Deze communityfork houdt de app stabiel op recente Android-versies en voegt ondersteuning voor Android TV toe.",
+  'hero.cta1': "Download de APK",
+  'hero.cta2': "Broncode bekijken",
+  'hero.cta3': "Haal het via Omnify",
+  'hero.req': "Android 8 Oreo of nieuwer · GPLv3 · Standaard geen trackers, geen advertenties, geen telemetrie",
+  'hero.feed': "DNS-verzoeken",
+  'hero.feedBlocked': "geblokkeerd",
+
+  'why.kicker': "De fork",
+  'why.h2': "Waarom dit bestaat",
+  'why.lead': "AdAway is een prachtig project met een lange geschiedenis. De uitgave- en beoordelingsactiviteit in het oorspronkelijke project is al een tijd beperkt, en een aantal correcties die het dagelijks gebruik raken blijft ongepubliceerd liggen. Deze fork bundelt ze in een build die je echt kunt installeren.",
+  'why.note': "Dit is geen vijandige fork en geen claim op eigendom. Het is niet verbonden aan de officiële AdAway-beheerders, niet door hen goedgekeurd of ondertekend. Als het officiële project weer actief onderhouden wordt en gelijkwaardige correcties daar landen, kan deze fork worden gearchiveerd of opnieuw op het oorspronkelijke project worden afgestemd.",
+
+  'how.kicker': "Hoe het werkt",
+  'how.h2': "Blokkeren bij de bron",
+  'how.lead': "Advertenties en trackers moeten een domeinnaam opzoeken voordat ze iets kunnen laden. AdAway houdt een lijst van die domeinen bij en antwoordt met niets, zodat het verzoek je apparaat nooit verlaat. Dat werkt in elke app, niet alleen in je browser.",
+  'how.vpnTag': "Geen root nodig",
+  'how.vpnT': "VPN-modus",
+  'how.vpnB': "AdAway registreert een lokale VPN op het apparaat, puur om DNS-verzoeken te bekijken. Er wordt niets naar een externe server gestuurd, er is geen account en geen tunnel naar wie dan ook. Je verkeer verlaat je telefoon nooit via AdAway.",
+  'how.rootTag': "Root vereist",
+  'how.rootT': "Root-modus",
+  'how.rootB': "Op een geroot apparaat schrijft AdAway de bloklijst rechtstreeks in het hosts-bestand van het systeem. Er draait helemaal niets op de achtergrond en de VPN-plek blijft vrij voor een echte VPN.",
+
+  'feat.kicker': "Functies",
+  'feat.h2': "Wat je krijgt",
+  'feat.1t': "Stabiele VPN-modus",
+  'feat.1b': "Geen vanzelf herstarten nadat je hem gepauzeerd hebt, geen herverbindingslussen, geen tunnel die opnieuw wordt opgebouwd telkens als het netwerk flikkert. De status in de app, de melding en de tegel in de snelle instellingen zijn het eindelijk met elkaar eens, en de VPN komt vanzelf terug als je telefoon hem afsluit.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Een echte interface voor de afstandsbediening: navigatie met het D-pad, een vermelding in de leanback-launcher en een DNS-monitor die op tv is afgestemd.",
+  'feat.3t': "Live DNS-logboek",
+  'feat.3b': "Zie precies wat elke app opzoekt en blokkeer, sta toe of leid een domein rechtstreeks vanuit de lijst om.",
+  'feat.4t': "Je eigen lijsten",
+  'feat.4b': "Geblokkeerde, toegestane en omgeleide hosts, elk doorzoekbaar, plus uitzonderingen op de VPN per app.",
+
+  'shots.kicker': "Schermafbeeldingen",
+  'shots.h2': "Zie het draaien",
+  'shots.1': "Startscherm: blokkeren aan of uit met één tik, met live tellers.",
+  'shots.2': "Hosts-bronnen: de bloklijsten die de app voeden, en zichzelf bijwerken.",
+  'shots.3': "DNS-logboek: wat je apps werkelijk opzoeken, in realtime.",
+  'shots.4': "Het startscherm van Android TV, gemaakt voor een afstandsbediening.",
+
+
+  'get.kicker': "Installeren",
+  'get.h2': "Drie manieren om het te krijgen",
+  'get.1t': "Download de APK",
+  'get.1b': "Pak de nieuwste uitgave en installeer die. Android vraagt je één keer om installaties vanuit je browser of bestandsbeheer toe te staan.",
+  'get.1c': "Downloaden",
+  'get.2t': "Volg het met Omnify",
+  'get.2b': "Voeg deze repository toe aan Omnify: het volgt nieuwe uitgaven en biedt updates aan naast de rest van je apps.",
+  'get.2c': "Omnify halen",
+  'get.note': "Elke Community-uitgave is met dezelfde sleutel ondertekend, dus updates behouden je instellingen en gegevens. Die sleutel verschilt van die van het officiële AdAway, dus als je van de officiële app komt, moet je die eerst verwijderen.",
+
+  'foot.tagline': "Onofficiële communityfork van AdAway",
+  'foot.project': "Project",
+  'foot.releases': "Uitgaven",
+  'foot.issues': "Een probleem melden",
+  'foot.contribute': "Bijdragen",
+  'foot.upstream': "Oorspronkelijk project",
+  'foot.official': "Officiële AdAway",
+  'foot.license': "Gelicentieerd onder de GPLv3+, net als het oorspronkelijke AdAway. Gemaakt en onderhouden door de bijdragers van het AdAway-project; deze fork is niet met hen verbonden en niet door hen goedgekeurd."
+};

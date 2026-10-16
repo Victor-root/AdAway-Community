@@ -1,0 +1,82 @@
+/* Deutsch */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['de'] = {
+  'meta.desc': "Ein inoffizieller Community-Fork von AdAway: ein quelloffener Werbeblocker für Android, der systemweit arbeitet, mit Stabilitätskorrekturen für den VPN-Modus und Unterstützung für Android TV.",
+
+  'a11y.skip': "Zum Inhalt springen",
+  'a11y.nav': "Hauptnavigation",
+  'a11y.lang': "Sprache",
+  'a11y.menu': "Menü",
+  'a11y.themeDark': "Zum dunklen Design wechseln",
+  'a11y.themeLight': "Zum hellen Design wechseln",
+
+  'nav.why': "Warum",
+  'nav.how': "So funktioniert es",
+  'nav.features': "Funktionen",
+  'nav.shots': "Screenshots",
+  'nav.get': "Herunterladen",
+
+  'hero.tag': "Inoffizieller Community-Fork",
+  'hero.h1a': "Werbung endet,",
+  'hero.h1b': "bevor sie lädt.",
+  'hero.sub': "AdAway blockiert Werbung und Tracker in allen Apps auf Ihrem Android-Gerät, auf DNS-Ebene. Kein Root nötig, kein Konto, kein Datenverkehr, der irgendwohin geht. Dieser Community-Fork hält die App auf aktuellen Android-Versionen stabil und ergänzt Unterstützung für Android TV.",
+  'hero.cta1': "APK herunterladen",
+  'hero.cta2': "Quellcode ansehen",
+  'hero.cta3': "Über Omnify holen",
+  'hero.req': "Android 8 Oreo oder neuer · GPLv3 · Standardmäßig keine Tracker, keine Werbung, keine Telemetrie",
+  'hero.feed': "DNS-Anfragen",
+  'hero.feedBlocked': "blockiert",
+
+  'why.kicker': "Der Fork",
+  'why.h2': "Warum es ihn gibt",
+  'why.lead': "AdAway ist ein großartiges Projekt mit langer Geschichte. Veröffentlichungen und Reviews im Ursprungsprojekt sind seit einiger Zeit selten, und einige Korrekturen, die den täglichen Gebrauch betreffen, liegen unveröffentlicht herum. Dieser Fork bündelt sie in einem Build, den Sie tatsächlich installieren können.",
+  'why.note': "Das ist kein feindlicher Fork und kein Anspruch auf Eigentum. Er steht in keiner Verbindung zu den offiziellen AdAway-Betreuern, ist von ihnen weder unterstützt noch signiert. Sollte das offizielle Projekt wieder aktiv gepflegt werden und gleichwertige Korrekturen dort landen, kann dieser Fork archiviert oder wieder an das Ursprungsprojekt angeglichen werden.",
+
+  'how.kicker': "So funktioniert es",
+  'how.h2': "Blockieren an der Quelle",
+  'how.lead': "Werbung und Tracker müssen einen Domainnamen auflösen, bevor sie irgendetwas laden können. AdAway führt eine Liste dieser Domains und antwortet mit nichts, sodass die Anfrage Ihr Gerät nie verlässt. Das gilt in jeder App, nicht nur im Browser.",
+  'how.vpnTag': "Kein Root nötig",
+  'how.vpnT': "VPN-Modus",
+  'how.vpnB': "AdAway richtet auf dem Gerät ein lokales VPN ein, ausschließlich um DNS-Anfragen zu prüfen. Nichts geht an einen entfernten Server, es gibt kein Konto und keinen Tunnel zu irgendjemandem. Ihr Datenverkehr verlässt über AdAway nie Ihr Telefon.",
+  'how.rootTag': "Root erforderlich",
+  'how.rootT': "Root-Modus",
+  'how.rootB': "Auf einem gerooteten Gerät schreibt AdAway die Blockliste direkt in die hosts-Datei des Systems. Im Hintergrund läuft überhaupt nichts, und der VPN-Platz bleibt für ein echtes VPN frei.",
+
+  'feat.kicker': "Funktionen",
+  'feat.h2': "Was Sie bekommen",
+  'feat.1t': "Stabiler VPN-Modus",
+  'feat.1b': "Kein Selbststart mehr, nachdem Sie pausiert haben, keine Wiederverbindungsschleifen, kein Tunnel, der bei jedem Netzwerkflackern neu aufgebaut wird. Der Status in der App, die Benachrichtigung und die Kachel in den Schnelleinstellungen sind sich endlich einig, und das VPN kommt von selbst zurück, wenn Ihr Telefon es beendet.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Eine echte Oberfläche für die Fernbedienung: Steuerkreuz-Navigation, ein Eintrag im Leanback-Launcher und ein für den Fernseher angepasster DNS-Monitor.",
+  'feat.3t': "Live-DNS-Protokoll",
+  'feat.3b': "Sehen Sie genau, was jede App auflöst, und blockieren, erlauben oder leiten Sie eine Domain direkt aus der Liste um.",
+  'feat.4t': "Eigene Listen",
+  'feat.4b': "Blockierte, erlaubte und umgeleitete Hosts, jeweils durchsuchbar, dazu App-genaue Ausnahmen vom VPN.",
+
+  'shots.kicker': "Screenshots",
+  'shots.h2': "Die App im Betrieb",
+  'shots.1': "Startbildschirm: Blockieren mit einem Tippen an oder aus, mit Live-Zählern.",
+  'shots.2': "Hosts-Quellen: die Blocklisten, die die App speisen, und sich selbst aktualisieren.",
+  'shots.3': "DNS-Protokoll: was Ihre Apps tatsächlich auflösen, in Echtzeit.",
+  'shots.4': "Der Android-TV-Startbildschirm, für die Fernbedienung gebaut.",
+
+
+  'get.kicker': "Installation",
+  'get.h2': "Drei Wege, sie zu bekommen",
+  'get.1t': "APK herunterladen",
+  'get.1b': "Holen Sie sich das neueste Release und installieren Sie es. Android fragt Sie einmal, ob Installationen aus Ihrem Browser oder Dateimanager erlaubt sind.",
+  'get.1c': "Herunterladen",
+  'get.2t': "Mit Omnify verfolgen",
+  'get.2b': "Fügen Sie dieses Repository zu Omnify hinzu, dann verfolgt es neue Releases und bietet Aktualisierungen zusammen mit Ihren übrigen Apps an.",
+  'get.2c': "Omnify holen",
+  'get.note': "Jedes Community-Release ist mit demselben Schlüssel signiert, sodass Aktualisierungen Ihre Einstellungen und Daten erhalten. Dieser Schlüssel unterscheidet sich vom offiziellen AdAway-Schlüssel: Wenn Sie von der offiziellen App kommen, müssen Sie diese zuerst deinstallieren.",
+
+  'foot.tagline': "Inoffizieller Community-Fork von AdAway",
+  'foot.project': "Projekt",
+  'foot.releases': "Releases",
+  'foot.issues': "Problem melden",
+  'foot.contribute': "Mitwirken",
+  'foot.upstream': "Ursprungsprojekt",
+  'foot.official': "Offizielles AdAway",
+  'foot.license': "Lizenziert unter der GPLv3+, wie das ursprüngliche AdAway. Erstellt und gepflegt von den Mitwirkenden des AdAway-Projekts; dieser Fork steht in keiner Verbindung zu ihnen und wird von ihnen nicht unterstützt."
+};

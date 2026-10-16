@@ -1,0 +1,82 @@
+/* Shqip */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['sq'] = {
+  'meta.desc': "Një degëzim jozyrtar i komunitetit i AdAway: një bllokues reklamash me burim të hapur për Android që vepron në të gjithë sistemin, me ndreqje qëndrueshmërie të modalitetit VPN dhe mbështetje për Android TV.",
+
+  'a11y.skip': "Kalo te përmbajtja",
+  'a11y.nav': "Kryesore",
+  'a11y.lang': "Gjuha",
+  'a11y.menu': "Menuja",
+  'a11y.themeDark': "Kalo te tema e errët",
+  'a11y.themeLight': "Kalo te tema e çelët",
+
+  'nav.why': "Pse",
+  'nav.how': "Si funksionon",
+  'nav.features': "Veçoritë",
+  'nav.shots': "Pamje ekrani",
+  'nav.get': "Shkarko",
+
+  'hero.tag': "Degëzim jozyrtar i komunitetit",
+  'hero.h1a': "Reklamat ndalen",
+  'hero.h1b': "para se të ngarkohen.",
+  'hero.sub': "AdAway bllokon reklamat dhe gjurmuesit në çdo aplikacion të pajisjes suaj Android, në nivelin e DNS-së. Pa root, pa llogari dhe pa dërguar trafikun tuaj askund. Ky degëzim i komunitetit e mban të qëndrueshëm në versionet e reja të Android dhe shton mbështetjen për Android TV.",
+  'hero.cta1': "Shkarko APK-në",
+  'hero.cta2': "Shiko kodin burim",
+  'hero.cta3': "Merre në Omnify",
+  'hero.req': "Android 8 Oreo ose më i ri · GPLv3 · Pa gjurmues, pa reklama, pa telemetri si parazgjedhje",
+  'hero.feed': "Kërkesa DNS",
+  'hero.feedBlocked': "bllokuar",
+
+  'why.kicker': "Degëzimi",
+  'why.h2': "Pse ekziston",
+  'why.lead': "AdAway është një projekt i shkëlqyer me histori të gjatë. Aktiviteti i lëshimeve dhe i shqyrtimeve në projektin fillestar është i kufizuar prej një kohe, dhe disa ndreqje që prekin përdorimin e përditshëm rrinë të pabotuara. Ky degëzim i mbledh në një ndërtim që mund ta instaloni vërtet.",
+  'why.note': "Ky nuk është një degëzim armiqësor dhe as pretendim pronësie. Nuk lidhet me mirëmbajtësit zyrtarë të AdAway, as nuk është miratuar apo nënshkruar prej tyre. Nëse projekti zyrtar rifillon të mirëmbahet aktivisht dhe ndreqje të njëvlershme mbërrijnë atje, ky degëzim mund të arkivohet ose të rirreshtohet me projektin fillestar.",
+
+  'how.kicker': "Si funksionon",
+  'how.h2': "Bllokim në burim",
+  'how.lead': "Reklamat dhe gjurmuesit duhet të zgjidhin një emër domeni para se të ngarkojnë çfarëdo gjëje. AdAway mban një listë të atyre domeneve dhe u përgjigjet me asgjë, kështu që kërkesa nuk e lë kurrë pajisjen tuaj. Kjo funksionon në çdo aplikacion, jo vetëm te shfletuesi.",
+  'how.vpnTag': "Pa root",
+  'how.vpnT': "Modaliteti VPN",
+  'how.vpnB': "AdAway regjistron një VPN vendore në pajisje thjesht për të shqyrtuar kërkesat DNS. Asgjë nuk dërgohet te një server i largët, nuk ka llogari dhe as tunel drejt askujt. Trafiku juaj nuk e lë kurrë telefonin përmes AdAway.",
+  'how.rootTag': "Kërkon root",
+  'how.rootT': "Modaliteti root",
+  'how.rootB': "Në një pajisje me root, AdAway e shkruan listën e bllokimit drejtpërdrejt në skedarin hosts të sistemit. Në sfond nuk punon absolutisht asgjë, dhe vendi i VPN-së mbetet i lirë për një VPN të vërtetë.",
+
+  'feat.kicker': "Veçoritë",
+  'feat.h2': "Çfarë merrni",
+  'feat.1t': "Modalitet VPN i qëndrueshëm",
+  'feat.1b': "Nuk rinis vetë pasi e ndalni, pa cikle rilidhjeje, pa tunel të rindërtuar sa herë që rrjeti dridhet. Gjendja në aplikacion, njoftimi dhe pllaka te cilësimet e shpejta më në fund pajtohen mes tyre, dhe VPN-ja kthehet vetë nëse telefoni juaj e mbyll.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Një ndërfaqe e vërtetë për telekomandën: lëvizje me D-pad, një zë te nisësi leanback dhe një monitor DNS i përshtatur për televizor.",
+  'feat.3t': "Regjistër DNS i drejtpërdrejtë",
+  'feat.3b': "Shihni saktësisht çfarë zgjidh çdo aplikacion, pastaj bllokoni, lejoni ose ridrejtoni një domen drejt e nga lista.",
+  'feat.4t': "Listat tuaja",
+  'feat.4b': "Strehues të bllokuar, të lejuar dhe të ridrejtuar, secili me kërkim, plus përjashtime nga VPN-ja aplikacion pas aplikacioni.",
+
+  'shots.kicker': "Pamje ekrani",
+  'shots.h2': "Shiheni në punë",
+  'shots.1': "Ekrani kryesor: bllokimi ndizet ose fiket me një prekje, me numërues të drejtpërdrejtë.",
+  'shots.2': "Burime hosts: listat e bllokimit që ushqejnë aplikacionin, të përditësuara vetë.",
+  'shots.3': "Regjistri DNS: çfarë zgjidhin vërtet aplikacionet tuaja, në kohë reale.",
+  'shots.4': "Ekrani kryesor i Android TV, i bërë për telekomandën.",
+
+
+  'get.kicker': "Instalimi",
+  'get.h2': "Tri mënyra për ta marrë",
+  'get.1t': "Shkarko APK-në",
+  'get.1b': "Merrni lëshimin e fundit dhe instalojeni. Android do t’ju kërkojë një herë të lejoni instalime nga shfletuesi ose menaxheri i skedarëve.",
+  'get.1c': "Shkarko",
+  'get.2t': "Ndiqeni me Omnify",
+  'get.2b': "Shtoni këtë depo te Omnify dhe ai do të ndjekë lëshimet e reja e do t’ju ofrojë përditësimet bashkë me aplikacionet e tjera.",
+  'get.2c': "Merr Omnify",
+  'get.note': "Çdo lëshim Community nënshkruhet me të njëjtin çelës, kështu që përditësimet ruajnë cilësimet dhe të dhënat tuaja. Ai çelës ndryshon nga ai i AdAway zyrtar, prandaj nëse vini nga aplikacioni zyrtar duhet ta çinstaloni fillimisht atë.",
+
+  'foot.tagline': "Degëzim jozyrtar i komunitetit i AdAway",
+  'foot.project': "Projekti",
+  'foot.releases': "Lëshimet",
+  'foot.issues': "Raporto një problem",
+  'foot.contribute': "Kontribuo",
+  'foot.upstream': "Projekti fillestar",
+  'foot.official': "AdAway zyrtar",
+  'foot.license': "I licencuar nën GPLv3+, si AdAway origjinal. Krijuar dhe mirëmbajtur nga kontribuuesit e projektit AdAway; ky degëzim nuk lidhet me ta dhe nuk është miratuar prej tyre."
+};

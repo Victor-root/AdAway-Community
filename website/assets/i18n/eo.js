@@ -1,0 +1,82 @@
+/* Esperanto */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['eo'] = {
+  'meta.desc': "Neoficiala komunuma forko de AdAway: malfermkoda reklambarilo por Android, kiu funkcias tra la tuta sistemo, kun stabilecaj korektoj de la VPN-reĝimo kaj subteno de Android TV.",
+
+  'a11y.skip': "Salti al la enhavo",
+  'a11y.nav': "Ĉefa",
+  'a11y.lang': "Lingvo",
+  'a11y.menu': "Menuo",
+  'a11y.themeDark': "Ŝalti al malhela etoso",
+  'a11y.themeLight': "Ŝalti al hela etoso",
+
+  'nav.why': "Kial",
+  'nav.how': "Kiel ĝi funkcias",
+  'nav.features': "Ecoj",
+  'nav.shots': "Ekrankopioj",
+  'nav.get': "Elŝuti",
+
+  'hero.tag': "Neoficiala komunuma forko",
+  'hero.h1a': "Reklamoj haltas",
+  'hero.h1b': "antaŭ ol ili ŝargiĝas.",
+  'hero.sub': "AdAway blokas reklamojn kaj spurilojn en ĉiu aplikaĵo de via Android-aparato, je la DNS-nivelo. Sen radiko, sen konto, sen trafiko sendata ien ajn. Ĉi tiu komunuma forko tenas ĝin stabila sur novaj Android-versioj kaj aldonas subtenon de Android TV.",
+  'hero.cta1': "Elŝuti la APK-on",
+  'hero.cta2': "Vidi la fontkodon",
+  'hero.cta3': "Akiru ĝin per Omnify",
+  'hero.req': "Android 8 Oreo aŭ pli nova · GPLv3 · Neniuj spuriloj, neniuj reklamoj, neniu telemetrio defaŭlte",
+  'hero.feed': "DNS-petoj",
+  'hero.feedBlocked': "blokitaj",
+
+  'why.kicker': "La forko",
+  'why.h2': "Kial ĝi ekzistas",
+  'why.lead': "AdAway estas bonega projekto kun longa historio. La eldona kaj kontrola aktiveco en la origina projekto estas limigita jam de iom da tempo, kaj kelkaj korektoj tuŝantaj la ĉiutagan uzon kuŝas neeldonitaj. Ĉi tiu forko tenas ilin en versio, kiun vi vere povas instali.",
+  'why.note': "Ĉi tio ne estas malamika forko nek postulo pri proprieto. Ĝi ne estas ligita al la oficialaj prizorgantoj de AdAway, nek aprobita nek subskribita de ili. Se la oficiala projekto denove estos aktive prizorgata kaj ekvivalentaj korektoj atingos ĝin, ĉi tiu forko povos esti arĥivita aŭ realiĝita kun la origina projekto.",
+
+  'how.kicker': "Kiel ĝi funkcias",
+  'how.h2': "Blokado ĉe la fonto",
+  'how.lead': "Reklamoj kaj spuriloj devas solvi domajnan nomon antaŭ ol ŝargi ion ajn. AdAway tenas liston de tiuj domajnoj kaj respondas al ili per nenio, do la peto neniam forlasas vian aparaton. Tio funkcias en ĉiu aplikaĵo, ne nur en la retumilo.",
+  'how.vpnTag': "Sen radiko",
+  'how.vpnT': "VPN-reĝimo",
+  'how.vpnB': "AdAway registras lokan VPN-on sur la aparato nur por ekzameni DNS-petojn. Nenio estas sendata al fora servilo, ne estas konto nek tunelo al iu ajn. Via trafiko neniam forlasas vian telefonon tra AdAway.",
+  'how.rootTag': "Radiko necesa",
+  'how.rootT': "Radika reĝimo",
+  'how.rootB': "Sur aparato kun radiko, AdAway skribas la blokliston rekte en la sisteman dosieron hosts. Nenio funkcias fone, kaj la VPN-loko restas libera por vera VPN.",
+
+  'feat.kicker': "Ecoj",
+  'feat.h2': "Kion vi ricevas",
+  'feat.1t': "Stabila VPN-reĝimo",
+  'feat.1b': "Neniu memrestarto post kiam vi paŭzigis ĝin, neniuj rekonektaj cikloj, neniu tunelo rekonstruata ĉiufoje kiam la reto flagras. La stato de la aplikaĵo, la sciigo kaj la kahelo en la rapidaj agordoj finfine konsentas inter si, kaj la VPN revenas mem se via telefono mortigas ĝin.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Vera interfaco por telekomandilo: navigado per D-klavaro, enskribo en la lanĉilo leanback, kaj DNS-monitoro adaptita al televido.",
+  'feat.3t': "Viva DNS-protokolo",
+  'feat.3b': "Vidu precize kion ĉiu aplikaĵo solvas, poste bloku, permesu aŭ alidirektu domajnon rekte el la listo.",
+  'feat.4t': "Viaj propraj listoj",
+  'feat.4b': "Blokitaj, permesitaj kaj alidirektitaj gastigantoj, ĉiu serĉebla, plus escepto de la VPN aplikaĵo post aplikaĵo.",
+
+  'shots.kicker': "Ekrankopioj",
+  'shots.h2': "Vidu ĝin funkcii",
+  'shots.1': "Ĉefa ekrano: blokado ŝaltita aŭ ne per unu tuŝo, kun vivaj nombriloj.",
+  'shots.2': "Hosts-fontoj: la bloklistoj kiuj nutras la aplikaĵon, ĝisdatigataj mem.",
+  'shots.3': "DNS-protokolo: kion viaj aplikaĵoj vere solvas, en reala tempo.",
+  'shots.4': "La ĉefa ekrano de Android TV, farita por telekomandilo.",
+
+
+  'get.kicker': "Instalado",
+  'get.h2': "Tri manieroj akiri ĝin",
+  'get.1t': "Elŝuti la APK-on",
+  'get.1b': "Prenu la plej novan eldonon kaj instalu ĝin. Android petos vin unufoje permesi instaladojn el via retumilo aŭ dosieradministrilo.",
+  'get.1c': "Elŝuti",
+  'get.2t': "Sekvu ĝin per Omnify",
+  'get.2b': "Aldonu ĉi tiun deponejon al Omnify kaj ĝi sekvos novajn eldonojn kaj proponos ĝisdatigojn kune kun la ceteraj viaj aplikaĵoj.",
+  'get.2c': "Akiri Omnify",
+  'get.note': "Ĉiu eldono de Community estas subskribita per la sama ŝlosilo, do ĝisdatigoj konservas viajn agordojn kaj datumojn. Tiu ŝlosilo diferencas de tiu de la oficiala AdAway, do se vi venas de la oficiala aplikaĵo, vi devas unue malinstali ĝin.",
+
+  'foot.tagline': "Neoficiala komunuma forko de AdAway",
+  'foot.project': "Projekto",
+  'foot.releases': "Eldonoj",
+  'foot.issues': "Raporti problemon",
+  'foot.contribute': "Kontribui",
+  'foot.upstream': "Origina projekto",
+  'foot.official': "Oficiala AdAway",
+  'foot.license': "Permesilo GPLv3+, kiel la origina AdAway. Kreita kaj prizorgata de la kontribuantoj de la projekto AdAway; ĉi tiu forko ne estas ligita al ili nek aprobita de ili."
+};

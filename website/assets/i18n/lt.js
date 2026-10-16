@@ -1,0 +1,82 @@
+/* Lietuvių */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['lt'] = {
+  'meta.desc': "Neoficiali bendruomeninė AdAway atšaka: atvirojo kodo reklamų blokatorius Android sistemai, veikiantis visoje sistemoje, su VPN režimo stabilumo pataisymais ir Android TV palaikymu.",
+
+  'a11y.skip': "Pereiti prie turinio",
+  'a11y.nav': "Pagrindinis",
+  'a11y.lang': "Kalba",
+  'a11y.menu': "Meniu",
+  'a11y.themeDark': "Perjungti į tamsią temą",
+  'a11y.themeLight': "Perjungti į šviesią temą",
+
+  'nav.why': "Kodėl",
+  'nav.how': "Kaip veikia",
+  'nav.features': "Savybės",
+  'nav.shots': "Ekrano nuotraukos",
+  'nav.get': "Atsisiųsti",
+
+  'hero.tag': "Neoficiali bendruomeninė atšaka",
+  'hero.h1a': "Reklamos sustoja",
+  'hero.h1b': "dar prieš įsikeldamos.",
+  'hero.sub': "AdAway blokuoja reklamas ir sekiklius visose jūsų Android įrenginio programose, DNS lygmeniu. Nereikia root teisių, nereikia paskyros, jokie duomenys niekur nesiunčiami. Ši bendruomeninė atšaka išlaiko jį stabilų naujose Android versijose ir prideda Android TV palaikymą.",
+  'hero.cta1': "Atsisiųsti APK",
+  'hero.cta2': "Žiūrėti pirminį kodą",
+  'hero.cta3': "Gaukite per Omnify",
+  'hero.req': "Android 8 Oreo arba naujesnė · GPLv3 · Pagal numatymą jokių sekiklių, reklamų ar telemetrijos",
+  'hero.feed': "DNS užklausos",
+  'hero.feedBlocked': "užblokuota",
+
+  'why.kicker': "Atšaka",
+  'why.h2': "Kodėl ji egzistuoja",
+  'why.lead': "AdAway yra puikus projektas su ilga istorija. Leidimų ir peržiūrų veikla pirminiame projekte jau kurį laiką ribota, o dalis kasdienį naudojimą liečiančių pataisymų guli neišleisti. Ši atšaka juos surenka į versiją, kurią tikrai galite įdiegti.",
+  'why.note': "Tai nėra priešiška atšaka ir ne nuosavybės pretenzija. Ji nesusijusi su oficialiais AdAway prižiūrėtojais, jų nepatvirtinta ir nepasirašyta. Jei oficialus projektas vėl bus aktyviai prižiūrimas ir lygiaverčiai pataisymai pateks ten, ši atšaka gali būti archyvuota arba vėl suderinta su pirminiu projektu.",
+
+  'how.kicker': "Kaip veikia",
+  'how.h2': "Blokavimas prie šaltinio",
+  'how.lead': "Reklamos ir sekikliai, prieš ką nors įkeldami, turi išspręsti domeno vardą. AdAway laiko tų domenų sąrašą ir atsako į juos niekuo, todėl užklausa niekada nepalieka jūsų įrenginio. Tai veikia visose programose, ne tik naršyklėje.",
+  'how.vpnTag': "Root nereikia",
+  'how.vpnT': "VPN režimas",
+  'how.vpnB': "AdAway įregistruoja įrenginyje vietinį VPN vien tam, kad peržiūrėtų DNS užklausas. Į nuotolinį serverį nieko nesiunčiama, nėra nei paskyros, nei tunelio pas ką nors. Jūsų srautas per AdAway niekada nepalieka telefono.",
+  'how.rootTag': "Reikia root",
+  'how.rootT': "Root režimas",
+  'how.rootB': "Įrenginyje su root teisėmis AdAway rašo blokavimo sąrašą tiesiai į sisteminį hosts failą. Fone neveikia visiškai niekas, o VPN vieta lieka laisva tikram VPN.",
+
+  'feat.kicker': "Savybės",
+  'feat.h2': "Ką gaunate",
+  'feat.1t': "Stabilus VPN režimas",
+  'feat.1b': "Jokio savaiminio pasileidimo po to, kai jį pristabdote, jokių pakartotinio jungimosi ciklų, jokio tunelio perstatymo kaskart, kai tinklas suvirpa. Programos būsena, pranešimas ir greitųjų nustatymų plytelė pagaliau sutaria tarpusavyje, o VPN pats grįžta, jei telefonas jį nutraukia.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Tikra sąsaja pulteliui: naršymas D-padu, įrašas leanback paleidiklyje ir televizoriui pritaikytas DNS stebėtuvas.",
+  'feat.3t': "Gyvas DNS žurnalas",
+  'feat.3b': "Matykite tiksliai, ką kiekviena programa sprendžia, ir tiesiai iš sąrašo blokuokite, leiskite arba peradresuokite domeną.",
+  'feat.4t': "Jūsų pačių sąrašai",
+  'feat.4b': "Blokuojami, leidžiami ir peradresuojami serveriai, kiekvienas su paieška, be to, kiekvienos programos išimtys iš VPN.",
+
+  'shots.kicker': "Ekrano nuotraukos",
+  'shots.h2': "Pažiūrėkite, kaip veikia",
+  'shots.1': "Pradžios ekranas: blokavimas įjungtas ar išjungtas vienu bakstelėjimu, su gyvais skaitikliais.",
+  'shots.2': "Hosts šaltiniai: blokavimo sąrašai, maitinantys programą ir atsinaujinantys patys.",
+  'shots.3': "DNS žurnalas: ką jūsų programos iš tikrųjų sprendžia, realiu laiku.",
+  'shots.4': "Android TV pradžios ekranas, sukurtas pulteliui.",
+
+
+  'get.kicker': "Diegimas",
+  'get.h2': "Trys būdai jį gauti",
+  'get.1t': "Atsisiųsti APK",
+  'get.1b': "Paimkite naujausią leidimą ir įdiekite. Android vieną kartą paprašys leisti diegti iš naršyklės ar failų tvarkytuvo.",
+  'get.1c': "Atsisiųsti",
+  'get.2t': "Sekite su Omnify",
+  'get.2b': "Pridėkite šią saugyklą į Omnify ir jis seks naujus leidimus bei siūlys atnaujinimus kartu su kitomis jūsų programomis.",
+  'get.2c': "Gauti Omnify",
+  'get.note': "Kiekvienas Community leidimas pasirašytas tuo pačiu raktu, tad atnaujinimai išsaugo jūsų nustatymus ir duomenis. Tas raktas skiriasi nuo oficialaus AdAway rakto, tad jei pereinate nuo oficialios programos, pirma ją reikia pašalinti.",
+
+  'foot.tagline': "Neoficiali bendruomeninė AdAway atšaka",
+  'foot.project': "Projektas",
+  'foot.releases': "Leidimai",
+  'foot.issues': "Pranešti apie problemą",
+  'foot.contribute': "Prisidėti",
+  'foot.upstream': "Pirminis projektas",
+  'foot.official': "Oficialus AdAway",
+  'foot.license': "Licencijuota pagal GPLv3+, kaip ir originalus AdAway. Sukurta ir prižiūrima AdAway projekto talkininkų; ši atšaka su jais nesusijusi ir jų nepatvirtinta."
+};

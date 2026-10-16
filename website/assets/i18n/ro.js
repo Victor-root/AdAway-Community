@@ -1,0 +1,82 @@
+/* Română */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['ro'] = {
+  'meta.desc': "O ramificație comunitară neoficială a AdAway: un blocator de reclame open source pentru Android care funcționează în tot sistemul, cu corecții de stabilitate pentru modul VPN și suport pentru Android TV.",
+
+  'a11y.skip': "Sari la conținut",
+  'a11y.nav': "Principal",
+  'a11y.lang': "Limbă",
+  'a11y.menu': "Meniu",
+  'a11y.themeDark': "Comută la tema întunecată",
+  'a11y.themeLight': "Comută la tema luminoasă",
+
+  'nav.why': "De ce",
+  'nav.how': "Cum funcționează",
+  'nav.features': "Funcții",
+  'nav.shots': "Capturi de ecran",
+  'nav.get': "Descarcă",
+
+  'hero.tag': "Ramificație comunitară neoficială",
+  'hero.h1a': "Reclamele se opresc",
+  'hero.h1b': "înainte să se încarce.",
+  'hero.sub': "AdAway blochează reclamele și urmăritorii în toate aplicațiile de pe dispozitivul tău Android, la nivel DNS. Fără root, fără cont și fără trafic trimis nicăieri. Această ramificație comunitară îl păstrează stabil pe versiunile recente de Android și adaugă suport pentru Android TV.",
+  'hero.cta1': "Descarcă APK-ul",
+  'hero.cta2': "Vezi codul sursă",
+  'hero.cta3': "Obține-l pe Omnify",
+  'hero.req': "Android 8 Oreo sau mai nou · GPLv3 · Fără urmăritori, fără reclame, fără telemetrie în mod implicit",
+  'hero.feed': "Cereri DNS",
+  'hero.feedBlocked': "blocate",
+
+  'why.kicker': "Ramificația",
+  'why.h2': "De ce există",
+  'why.lead': "AdAway este un proiect excelent cu o istorie lungă. Activitatea de lansări și de revizuire din proiectul original este limitată de ceva vreme, iar o parte dintre corecțiile care ating utilizarea de zi cu zi stau nepublicate. Această ramificație le adună într-o versiune pe care chiar o poți instala.",
+  'why.note': "Aceasta nu este o ramificație ostilă și nici o revendicare de proprietate. Nu are legătură cu întreținătorii oficiali ai AdAway, nu este aprobată și nici semnată de ei. Dacă proiectul oficial va fi din nou întreținut activ și corecții echivalente ajung acolo, această ramificație poate fi arhivată sau realiniată cu proiectul original.",
+
+  'how.kicker': "Cum funcționează",
+  'how.h2': "Blocare la sursă",
+  'how.lead': "Reclamele și urmăritorii trebuie să rezolve un nume de domeniu înainte să poată încărca ceva. AdAway ține o listă cu acele domenii și le răspunde cu nimic, așa că cererea nu părăsește niciodată dispozitivul tău. Funcționează în toate aplicațiile, nu doar în navigator.",
+  'how.vpnTag': "Fără root",
+  'how.vpnT': "Modul VPN",
+  'how.vpnB': "AdAway înregistrează pe dispozitiv un VPN local doar pentru a examina cererile DNS. Nimic nu este trimis către un server la distanță, nu există cont și niciun tunel către altcineva. Traficul tău nu părăsește niciodată telefonul prin AdAway.",
+  'how.rootTag': "Necesită root",
+  'how.rootT': "Modul root",
+  'how.rootB': "Pe un dispozitiv cu root, AdAway scrie lista de blocare direct în fișierul hosts al sistemului. Nu rulează absolut nimic în fundal, iar locul de VPN rămâne liber pentru un VPN adevărat.",
+
+  'feat.kicker': "Funcții",
+  'feat.h2': "Ce primești",
+  'feat.1t': "Mod VPN stabil",
+  'feat.1b': "Nu mai repornește de la sine după ce îl pui pe pauză, fără bucle de reconectare, fără tunel reconstruit de fiecare dată când rețeaua pâlpâie. Starea din aplicație, notificarea și dala din setările rapide sunt în sfârșit de acord între ele, iar VPN-ul revine singur dacă telefonul îl oprește.",
+  'feat.2t': "Android TV",
+  'feat.2b': "O interfață adevărată pentru telecomandă: navigare cu D-pad, o intrare în lansatorul leanback și un monitor DNS adaptat televizorului.",
+  'feat.3t': "Jurnal DNS în direct",
+  'feat.3b': "Vezi exact ce rezolvă fiecare aplicație, apoi blochează, permite sau redirecționează un domeniu direct din listă.",
+  'feat.4t': "Propriile tale liste",
+  'feat.4b': "Gazde blocate, permise și redirecționate, fiecare cu căutare, plus excluderi din VPN aplicație cu aplicație.",
+
+  'shots.kicker': "Capturi de ecran",
+  'shots.h2': "Vezi-l în funcțiune",
+  'shots.1': "Ecranul principal: blocare pornită sau oprită dintr-o atingere, cu contoare în direct.",
+  'shots.2': "Surse hosts: listele de blocare care alimentează aplicația, actualizate singure.",
+  'shots.3': "Jurnal DNS: ce rezolvă cu adevărat aplicațiile tale, în timp real.",
+  'shots.4': "Ecranul principal Android TV, făcut pentru telecomandă.",
+
+
+  'get.kicker': "Instalare",
+  'get.h2': "Trei feluri de a-l obține",
+  'get.1t': "Descarcă APK-ul",
+  'get.1b': "Ia ultima lansare și instaleaz-o. Android îți va cere o dată să permiți instalări din navigator sau din managerul de fișiere.",
+  'get.1c': "Descarcă",
+  'get.2t': "Urmărește-l cu Omnify",
+  'get.2b': "Adaugă acest depozit în Omnify și va urmări lansările noi și îți va oferi actualizările alături de restul aplicațiilor tale.",
+  'get.2c': "Obține Omnify",
+  'get.note': "Fiecare lansare Community este semnată cu aceeași cheie, așa că actualizările îți păstrează setările și datele. Cheia diferă de cea a AdAway oficial, deci dacă vii de la aplicația oficială trebuie mai întâi să o dezinstalezi.",
+
+  'foot.tagline': "Ramificație comunitară neoficială a AdAway",
+  'foot.project': "Proiect",
+  'foot.releases': "Lansări",
+  'foot.issues': "Raportează o problemă",
+  'foot.contribute': "Contribuie",
+  'foot.upstream': "Proiectul original",
+  'foot.official': "AdAway oficial",
+  'foot.license': "Licențiat sub GPLv3+, la fel ca AdAway original. Creat și întreținut de contribuitorii proiectului AdAway; această ramificație nu are legătură cu ei și nu este aprobată de ei."
+};

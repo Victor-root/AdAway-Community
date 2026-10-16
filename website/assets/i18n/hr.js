@@ -1,0 +1,82 @@
+/* Hrvatski */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['hr'] = {
+  'meta.desc': "Neslužbeni zajednički fork AdAwaya: blokator oglasa otvorenog koda za Android koji radi na razini cijelog sustava, s ispravcima stabilnosti VPN načina i podrškom za Android TV.",
+
+  'a11y.skip': "Prijeđi na sadržaj",
+  'a11y.nav': "Glavno",
+  'a11y.lang': "Jezik",
+  'a11y.menu': "Izbornik",
+  'a11y.themeDark': "Prebaci na tamnu temu",
+  'a11y.themeLight': "Prebaci na svijetlu temu",
+
+  'nav.why': "Zašto",
+  'nav.how': "Kako radi",
+  'nav.features': "Mogućnosti",
+  'nav.shots': "Snimke zaslona",
+  'nav.get': "Preuzmi",
+
+  'hero.tag': "Neslužbeni zajednički fork",
+  'hero.h1a': "Oglasi staju",
+  'hero.h1b': "prije nego se učitaju.",
+  'hero.sub': "AdAway blokira oglase i pratitelje u svim aplikacijama na vašem Android uređaju, na razini DNS-a. Bez roota, bez računa, bez prometa poslanog bilo kamo. Ovaj zajednički fork drži ga stabilnim na novijim verzijama Androida i dodaje podršku za Android TV.",
+  'hero.cta1': "Preuzmi APK",
+  'hero.cta2': "Pogledaj izvorni kod",
+  'hero.cta3': "Preuzmi putem Omnifyja",
+  'hero.req': "Android 8 Oreo ili noviji · GPLv3 · Bez pratitelja, bez oglasa, bez telemetrije po zadanome",
+  'hero.feed': "DNS zahtjevi",
+  'hero.feedBlocked': "blokirano",
+
+  'why.kicker': "Fork",
+  'why.h2': "Zašto postoji",
+  'why.lead': "AdAway je sjajan projekt s dugom poviješću. Aktivnost izdavanja i pregleda u izvornom projektu već je neko vrijeme ograničena, a dio ispravaka koji utječu na svakodnevnu uporabu stoji neobjavljen. Ovaj fork drži ih u izdanju koje doista možete instalirati.",
+  'why.note': "Ovo nije neprijateljski fork ni zahtjev za vlasništvom. Nije povezan sa službenim održavateljima AdAwaya, niti ga oni podržavaju ili potpisuju. Ako se službeni projekt ponovno počne aktivno održavati i tamo stignu istovrijedni ispravci, ovaj fork može biti arhiviran ili ponovno usklađen s izvornim projektom.",
+
+  'how.kicker': "Kako radi",
+  'how.h2': "Blokiranje na izvoru",
+  'how.lead': "Oglasi i pratitelji moraju razriješiti naziv domene prije nego što išta mogu učitati. AdAway drži popis tih domena i odgovara im ničime, pa zahtjev nikada ne napušta vaš uređaj. Radi u svakoj aplikaciji, ne samo u pregledniku.",
+  'how.vpnTag': "Bez roota",
+  'how.vpnT': "VPN način",
+  'how.vpnB': "AdAway registrira lokalni VPN na uređaju isključivo radi pregleda DNS zahtjeva. Ništa se ne šalje na udaljeni poslužitelj, nema računa ni tunela prema ikome. Vaš promet nikada ne napušta telefon preko AdAwaya.",
+  'how.rootTag': "Potreban root",
+  'how.rootT': "Root način",
+  'how.rootB': "Na uređaju s rootom AdAway zapisuje popis blokiranja izravno u sistemsku datoteku hosts. U pozadini ne radi baš ništa, a mjesto za VPN ostaje slobodno za pravi VPN.",
+
+  'feat.kicker': "Mogućnosti",
+  'feat.h2': "Što dobivate",
+  'feat.1t': "Stabilan VPN način",
+  'feat.1b': "Nema samostalnog ponovnog pokretanja nakon što ga pauzirate, nema petlji ponovnog spajanja, nema tunela koji se iznova gradi svaki put kad mreža zatreperi. Status u aplikaciji, obavijest i pločica u brzim postavkama napokon se slažu, a VPN se sam vraća ako ga telefon ugasi.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Pravo sučelje za daljinski: navigacija D-padom, stavka u leanback pokretaču i DNS nadzor prilagođen televizoru.",
+  'feat.3t': "DNS zapisnik uživo",
+  'feat.3b': "Vidite točno što koja aplikacija razrješava, a zatim blokirajte, dopustite ili preusmjerite domenu izravno s popisa.",
+  'feat.4t': "Vlastiti popisi",
+  'feat.4b': "Blokirani, dopušteni i preusmjereni poslužitelji, svaki s pretragom, uz iznimke od VPN-a po aplikaciji.",
+
+  'shots.kicker': "Snimke zaslona",
+  'shots.h2': "Pogledajte je u radu",
+  'shots.1': "Početni zaslon: blokiranje uključeno ili isključeno jednim dodirom, s brojačima uživo.",
+  'shots.2': "Hosts izvori: popisi blokiranja koji hrane aplikaciju, osvježavaju se sami.",
+  'shots.3': "DNS zapisnik: što vaše aplikacije stvarno razrješavaju, u stvarnom vremenu.",
+  'shots.4': "Početni zaslon Android TV-a, napravljen za daljinski.",
+
+
+  'get.kicker': "Instalacija",
+  'get.h2': "Tri načina da je nabavite",
+  'get.1t': "Preuzmi APK",
+  'get.1b': "Uzmite najnovije izdanje i instalirajte ga. Android će vas jednom pitati da dopustite instalacije iz preglednika ili upravitelja datotekama.",
+  'get.1c': "Preuzmi",
+  'get.2t': "Pratite je s Omnifyjem",
+  'get.2b': "Dodajte ovo spremište u Omnify i pratit će nova izdanja te nuditi ažuriranja uz ostale vaše aplikacije.",
+  'get.2c': "Nabavi Omnify",
+  'get.note': "Svako Community izdanje potpisano je istim ključem, pa ažuriranja čuvaju vaše postavke i podatke. Taj se ključ razlikuje od službenog AdAway ključa, pa ako dolazite sa službene aplikacije, morate je prvo deinstalirati.",
+
+  'foot.tagline': "Neslužbeni zajednički fork AdAwaya",
+  'foot.project': "Projekt",
+  'foot.releases': "Izdanja",
+  'foot.issues': "Prijavi problem",
+  'foot.contribute': "Doprinesi",
+  'foot.upstream': "Izvorni projekt",
+  'foot.official': "Službeni AdAway",
+  'foot.license': "Licencirano pod GPLv3+, kao i izvorni AdAway. Stvorili su ga i održavaju suradnici projekta AdAway; ovaj fork nije povezan s njima niti ga oni podržavaju."
+};

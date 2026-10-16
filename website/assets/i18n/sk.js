@@ -1,0 +1,82 @@
+/* Slovenčina */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['sk'] = {
+  'meta.desc': "Neoficiálny komunitný fork AdAway: open source blokovač reklám pre Android, ktorý funguje v celom systéme, s opravami stability režimu VPN a podporou Android TV.",
+
+  'a11y.skip': "Prejsť na obsah",
+  'a11y.nav': "Hlavné",
+  'a11y.lang': "Jazyk",
+  'a11y.menu': "Ponuka",
+  'a11y.themeDark': "Prepnúť na tmavú tému",
+  'a11y.themeLight': "Prepnúť na svetlú tému",
+
+  'nav.why': "Prečo",
+  'nav.how': "Ako to funguje",
+  'nav.features': "Funkcie",
+  'nav.shots': "Snímky obrazovky",
+  'nav.get': "Stiahnuť",
+
+  'hero.tag': "Neoficiálny komunitný fork",
+  'hero.h1a': "Reklamy sa zastavia",
+  'hero.h1b': "skôr, než sa načítajú.",
+  'hero.sub': "AdAway blokuje reklamy a sledovače vo všetkých aplikáciách vo vašom zariadení s Androidom, na úrovni DNS. Bez rootu, bez účtu, bez odosielania premávky kamkoľvek. Tento komunitný fork ho drží stabilný na nových verziách Androidu a pridáva podporu Android TV.",
+  'hero.cta1': "Stiahnuť APK",
+  'hero.cta2': "Zobraziť zdrojový kód",
+  'hero.cta3': "Získať cez Omnify",
+  'hero.req': "Android 8 Oreo alebo novší · GPLv3 · Predvolene žiadne sledovače, reklamy ani telemetria",
+  'hero.feed': "DNS požiadavky",
+  'hero.feedBlocked': "zablokované",
+
+  'why.kicker': "Fork",
+  'why.h2': "Prečo existuje",
+  'why.lead': "AdAway je skvelý projekt s dlhou históriou. Vydávanie a recenzovanie v pôvodnom projekte je už nejaký čas obmedzené a časť opráv, ktoré sa dotýkajú každodenného používania, leží nevydaná. Tento fork ich drží v zostave, ktorú si naozaj môžete nainštalovať.",
+  'why.note': "Toto nie je nepriateľský fork ani nárok na vlastníctvo. Nie je spojený s oficiálnymi správcami AdAway, nie je nimi schválený ani podpísaný. Ak sa oficiálny projekt začne opäť aktívne udržiavať a dostanú sa doň rovnocenné opravy, tento fork môže byť archivovaný alebo znovu zosúladený s pôvodným projektom.",
+
+  'how.kicker': "Ako to funguje",
+  'how.h2': "Blokovanie pri zdroji",
+  'how.lead': "Reklamy a sledovače musia najprv preložiť doménové meno, než čokoľvek načítajú. AdAway si drží zoznam takýchto domén a odpovedá na ne ničím, takže požiadavka nikdy neopustí vaše zariadenie. Funguje to v každej aplikácii, nielen v prehliadači.",
+  'how.vpnTag': "Bez rootu",
+  'how.vpnT': "Režim VPN",
+  'how.vpnB': "AdAway registruje v zariadení lokálnu VPN výhradne na kontrolu DNS požiadaviek. Na vzdialený server sa neposiela nič, nie je tu žiadny účet ani tunel k niekomu inému. Vaša premávka cez AdAway nikdy neopustí telefón.",
+  'how.rootTag': "Vyžaduje root",
+  'how.rootT': "Režim root",
+  'how.rootB': "V zariadení s rootom zapisuje AdAway zoznam blokovania priamo do systémového súboru hosts. Na pozadí nebeží vôbec nič a miesto pre VPN zostáva voľné pre skutočnú VPN.",
+
+  'feat.kicker': "Funkcie",
+  'feat.h2': "Čo získate",
+  'feat.1t': "Stabilný režim VPN",
+  'feat.1b': "Žiadne samovoľné reštartovanie potom, čo ho pozastavíte, žiadne slučky opätovného pripájania, žiadny tunel prestavovaný pri každom zakolísaní siete. Stav v aplikácii, upozornenie aj dlaždica v rýchlych nastaveniach si konečne zodpovedajú a VPN sa sama vráti, keď ju telefón ukončí.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Skutočné rozhranie pre diaľkový ovládač: navigácia D-padom, položka v spúšťači leanback a monitor DNS prispôsobený televízoru.",
+  'feat.3t': "Živý záznam DNS",
+  'feat.3b': "Uvidíte presne, čo ktorá aplikácia prekladá, a doménu potom priamo zo zoznamu zablokujete, povolíte alebo presmerujete.",
+  'feat.4t': "Vlastné zoznamy",
+  'feat.4b': "Blokovaní, povolení a presmerovaní hostitelia, každý s vyhľadávaním, plus vyňatie jednotlivých aplikácií z VPN.",
+
+  'shots.kicker': "Snímky obrazovky",
+  'shots.h2': "Pozrite sa, ako beží",
+  'shots.1': "Domovská obrazovka: blokovanie zapnete či vypnete jedným ťuknutím, so živými počítadlami.",
+  'shots.2': "Zdroje hosts: zoznamy blokovania, ktoré aplikáciu živia a aktualizujú sa samy.",
+  'shots.3': "Záznam DNS: čo vaše aplikácie skutočne prekladajú, v reálnom čase.",
+  'shots.4': "Domovská obrazovka Android TV, urobená pre diaľkový ovládač.",
+
+
+  'get.kicker': "Inštalácia",
+  'get.h2': "Tri spôsoby, ako ho získať",
+  'get.1t': "Stiahnuť APK",
+  'get.1b': "Vezmite posledné vydanie a nainštalujte ho. Android vás raz požiada o povolenie inštalácií z prehliadača alebo správcu súborov.",
+  'get.1c': "Stiahnuť",
+  'get.2t': "Sledujte ho s Omnify",
+  'get.2b': "Pridajte tento repozitár do Omnify a bude sledovať nové vydania a ponúkať aktualizácie spolu s ostatnými vašimi aplikáciami.",
+  'get.2c': "Získať Omnify",
+  'get.note': "Každé vydanie Community je podpísané rovnakým kľúčom, takže aktualizácie zachovajú vaše nastavenia aj údaje. Tento kľúč sa líši od kľúča oficiálneho AdAway, takže ak prechádzate z oficiálnej aplikácie, musíte ju najprv odinštalovať.",
+
+  'foot.tagline': "Neoficiálny komunitný fork AdAway",
+  'foot.project': "Projekt",
+  'foot.releases': "Vydania",
+  'foot.issues': "Nahlásiť problém",
+  'foot.contribute': "Prispieť",
+  'foot.upstream': "Pôvodný projekt",
+  'foot.official': "Oficiálny AdAway",
+  'foot.license': "Licencované pod GPLv3+, rovnako ako pôvodný AdAway. Vytvorené a udržiavané prispievateľmi projektu AdAway; tento fork s nimi nie je spojený ani nimi schválený."
+};

@@ -1,0 +1,82 @@
+/* Asturianu */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['ast'] = {
+  'meta.desc': "Una bifurcación comunitaria non oficial d’AdAway: un bloquiador d’anuncios de códigu abiertu pa Android que furrula en tol sistema, con igües d’estabilidá del mou VPN y sofitu p’Android TV.",
+
+  'a11y.skip': "Dir al conteníu",
+  'a11y.nav': "Principal",
+  'a11y.lang': "Llingua",
+  'a11y.menu': "Menú",
+  'a11y.themeDark': "Cambiar al tema escuru",
+  'a11y.themeLight': "Cambiar al tema claru",
+
+  'nav.why': "Por qué",
+  'nav.how': "Cómo furrula",
+  'nav.features': "Carauterístiques",
+  'nav.shots': "Captures",
+  'nav.get': "Baxar",
+
+  'hero.tag': "Bifurcación comunitaria non oficial",
+  'hero.h1a': "Los anuncios páren",
+  'hero.h1b': "enantes de cargase.",
+  'hero.sub': "AdAway bloquia anuncios y rastrexadores en toles aplicaciones del to preséu Android, a nivel de DNS. Ensin root, ensin cuenta y ensin unviar el to tráficu a nengún llugar. Esta bifurcación comunitaria caltiénlu estable nes versiones recientes d’Android y amiesta sofitu p’Android TV.",
+  'hero.cta1': "Baxar l’APK",
+  'hero.cta2': "Ver el códigu fonte",
+  'hero.cta3': "Consíguelu n'Omnify",
+  'hero.req': "Android 8 Oreo o posterior · GPLv3 · Ensin rastrexadores, ensin anuncios y ensin telemetría por defeutu",
+  'hero.feed': "Peticiones DNS",
+  'hero.feedBlocked': "bloquiaes",
+
+  'why.kicker': "La bifurcación",
+  'why.h2': "Por qué esiste",
+  'why.lead': "AdAway ye un gran proyeutu con una llarga hestoria. L’actividá de publicación y revisión nel proyeutu orixinal ta llendada dende hai un tiempu, y delles igües qu’afeuten al usu diariu queden ensin publicar. Esta bifurcación recuéyeles nuna compilación que sí pues instalar.",
+  'why.note': "Nun ye una bifurcación hostil nin una reivindicación de propiedá. Nun ta afiliada a los mantenedores oficiales d’AdAway, nin aprobada nin robláu por ellos. Si’l proyeutu oficial vuelve caltenese activamente y lleguen ellí igües equivalentes, esta bifurcación podría archivase o reallinease col orixinal.",
+
+  'how.kicker': "Cómo furrula",
+  'how.h2': "Bloquéu na fonte",
+  'how.lead': "Los anuncios y los rastrexadores tienen de resolver un nome de dominiu enantes de poder cargar nada. AdAway caltién una llista d’esos dominios y respuende con nada, asina que la petición nunca sal del to preséu. Furrula en toles aplicaciones, non namás nel restolador.",
+  'how.vpnTag': "Ensin root",
+  'how.vpnT': "Mou VPN",
+  'how.vpnB': "AdAway rexistra una VPN llocal nel preséu namás pa inspeicionar les peticiones DNS. Nun s’unvia nada a un sirvidor remotu, nun hai cuenta nin túnel escontra naide. El to tráficu nunca sal del to teléfonu al traviés d’AdAway.",
+  'how.rootTag': "Requier root",
+  'how.rootT': "Mou root",
+  'how.rootB': "Nun preséu con root, AdAway escribe la llista de bloquéu direutamente nel ficheru hosts del sistema. Nun queda nada furrulando en segundu planu, y la ranura de VPN queda llibre pa una VPN de verdá.",
+
+  'feat.kicker': "Carauterístiques",
+  'feat.h2': "Lo qu’obtienes",
+  'feat.1t': "Mou VPN estable",
+  'feat.1b': "Nun se reanicia solu dempués de posalu, nun hai bucles de reconexón nin túnel reconstruyíu cada vez que la rede parpaguia. L’estáu de l’aplicación, la notificación y el mosaicu de los axustes rápidos coinciden per fin, y la VPN vuelve sola si’l to teléfonu la mata.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Una interfaz de verdá pal mandu: navegación col D-pad, entrada nel llanzador leanback y monitor DNS afechu a la TV.",
+  'feat.3t': "Rexistru DNS en direuto",
+  'feat.3b': "Mira esautamente lo que resuelve cada aplicación y llueu bloquia, permiti o redirixi un dominiu direutamente dende la llista.",
+  'feat.4t': "Les tos propies llistes",
+  'feat.4b': "Agospios bloquiaos, permitíos y redirixíos, caún con gueta, amás d’esclusiones de la VPN aplicación por aplicación.",
+
+  'shots.kicker': "Captures",
+  'shots.h2': "Miralu furrulando",
+  'shots.1': "Pantalla d’aniciu: bloquéu activáu o non nun toque, con contadores en direuto.",
+  'shots.2': "Fontes de hosts: les llistes de bloquéu qu’alimenten l’aplicación, anovaes soles.",
+  'shots.3': "Rexistru DNS: lo que les tos aplicaciones resuelven de verdá, en tiempu real.",
+  'shots.4': "La pantalla d’aniciu d’Android TV, fecha pal mandu.",
+
+
+  'get.kicker': "Instalación",
+  'get.h2': "Tres maneres d’algamalu",
+  'get.1t': "Baxar l’APK",
+  'get.1b': "Consigui la última versión ya instálala. Android va pidite una vez que permitas instalaciones dende’l restolador o’l xestor de ficheros.",
+  'get.1c': "Baxar",
+  'get.2t': "Siguilu con Omnify",
+  'get.2b': "Amiesta esti repositoriu a Omnify y va siguir les nueves versiones y ufiertate les anovaciones xunto col restu de les tos aplicaciones.",
+  'get.2c': "Consiguir Omnify",
+  'get.note': "Cada versión de Community ta robláu cola mesma clave, asina que les anovaciones caltienen los tos axustes y datos. Esa clave ye distinta de la d’AdAway oficial, asina que si vienes de l’aplicación oficial tienes de desinstalala primero.",
+
+  'foot.tagline': "Bifurcación comunitaria non oficial d’AdAway",
+  'foot.project': "Proyeutu",
+  'foot.releases': "Versiones",
+  'foot.issues': "Informar d’un problema",
+  'foot.contribute': "Collaborar",
+  'foot.upstream': "Proyeutu orixinal",
+  'foot.official': "AdAway oficial",
+  'foot.license': "Llicenciáu baxo la GPLv3+, como l’AdAway orixinal. Creáu y caltenidu polos collaboradores del proyeutu AdAway; esta bifurcación nun ta afiliada a ellos nin aprobada por ellos."
+};

@@ -1,0 +1,82 @@
+/* Íslenska */
+window.AAC_I18N = window.AAC_I18N || {};
+window.AAC_I18N['is'] = {
+  'meta.desc': "Óopinber samfélagsútgáfa af AdAway: opinn auglýsingablokkari fyrir Android sem virkar á öllu kerfinu, með stöðugleikalagfæringum fyrir VPN-haminn og stuðningi við Android TV.",
+
+  'a11y.skip': "Fara í efni",
+  'a11y.nav': "Aðal",
+  'a11y.lang': "Tungumál",
+  'a11y.menu': "Valmynd",
+  'a11y.themeDark': "Skipta í dökkt þema",
+  'a11y.themeLight': "Skipta í ljóst þema",
+
+  'nav.why': "Hvers vegna",
+  'nav.how': "Hvernig það virkar",
+  'nav.features': "Eiginleikar",
+  'nav.shots': "Skjámyndir",
+  'nav.get': "Sækja",
+
+  'hero.tag': "Óopinber samfélagsútgáfa",
+  'hero.h1a': "Auglýsingar stöðvast",
+  'hero.h1b': "áður en þær hlaðast.",
+  'hero.sub': "AdAway blokkar auglýsingar og rekjara í öllum forritum á Android-tækinu þínu, á DNS-stigi. Engin rótaraðgangur, enginn reikningur, engin umferð send neitt. Þessi samfélagsútgáfa heldur því stöðugu á nýjum Android-útgáfum og bætir við stuðningi við Android TV.",
+  'hero.cta1': "Sækja APK-skrána",
+  'hero.cta2': "Skoða frumkóðann",
+  'hero.cta3': "Náðu í það á Omnify",
+  'hero.req': "Android 8 Oreo eða nýrra · GPLv3 · Engir rekjarar, engar auglýsingar, engin fjarmæling sjálfgefið",
+  'hero.feed': "DNS-beiðnir",
+  'hero.feedBlocked': "blokkað",
+
+  'why.kicker': "Útgáfan",
+  'why.h2': "Hvers vegna hún er til",
+  'why.lead': "AdAway er frábært verkefni með langa sögu. Útgáfu- og yfirferðarvirkni í upprunalega verkefninu hefur verið takmörkuð um nokkurt skeið og hluti lagfæringa sem snerta daglega notkun liggur óútgefinn. Þessi útgáfa heldur þeim í smíði sem þú getur raunverulega sett upp.",
+  'why.note': "Þetta er ekki fjandsamleg útgáfa og engin eignarkrafa. Hún tengist ekki opinberum umsjónarmönnum AdAway, er hvorki studd né undirrituð af þeim. Ef opinbera verkefnið verður aftur virkt viðhaldið og sambærilegar lagfæringar rata þangað gæti þessi útgáfa verið sett í geymslu eða samstillt við upprunalega verkefnið á ný.",
+
+  'how.kicker': "Hvernig það virkar",
+  'how.h2': "Blokkun við upptökin",
+  'how.lead': "Auglýsingar og rekjarar verða að fletta upp lénsnafni áður en þau geta hlaðið nokkru. AdAway heldur lista yfir þessi lén og svarar þeim með engu, svo beiðnin fer aldrei úr tækinu þínu. Þetta virkar í öllum forritum, ekki bara í vafranum.",
+  'how.vpnTag': "Engin rót þarf",
+  'how.vpnT': "VPN-hamur",
+  'how.vpnB': "AdAway skráir staðbundið VPN á tækinu eingöngu til að skoða DNS-beiðnir. Ekkert er sent á fjarlægan netþjón, enginn reikningur er til og engin göng til nokkurs manns. Umferðin þín fer aldrei úr símanum í gegnum AdAway.",
+  'how.rootTag': "Rót nauðsynleg",
+  'how.rootT': "Rótarhamur",
+  'how.rootB': "Á tæki með rót skrifar AdAway blokkunarlistann beint í hosts-skrá kerfisins. Ekkert keyrir í bakgrunni og VPN-plássið helst laust fyrir alvöru VPN.",
+
+  'feat.kicker': "Eiginleikar",
+  'feat.h2': "Hvað þú færð",
+  'feat.1t': "Stöðugur VPN-hamur",
+  'feat.1b': "Engin sjálfsræsing eftir að þú setur það á bið, engar endurtengingarlykkjur, engin göng endurbyggð í hvert sinn sem netið flökkar. Staðan í forritinu, tilkynningin og reiturinn í flýtistillingum eru loksins sammála og VPN kemur sjálft aftur ef síminn drepur það.",
+  'feat.2t': "Android TV",
+  'feat.2b': "Alvöru viðmót fyrir fjarstýringu: D-pad flakk, færsla í leanback-ræsinum og DNS-vöktun sniðin að sjónvarpi.",
+  'feat.3t': "Lifandi DNS-annáll",
+  'feat.3b': "Sjáðu nákvæmlega hvað hvert forrit flettir upp og blokkaðu, leyfðu eða endurbeindu léni beint úr listanum.",
+  'feat.4t': "Þínir eigin listar",
+  'feat.4b': "Blokkaðir, leyfðir og endurbeindir hýsingar, hver með leit, auk undantekninga frá VPN eftir forritum.",
+
+  'shots.kicker': "Skjámyndir",
+  'shots.h2': "Sjáðu það í gangi",
+  'shots.1': "Heimaskjár: blokkun á eða af með einni snertingu, með lifandi teljurum.",
+  'shots.2': "Hosts-heimildir: blokkunarlistarnir sem fæða forritið, uppfærðir sjálfkrafa.",
+  'shots.3': "DNS-annáll: hvað forritin þín fletta raunverulega upp, í rauntíma.",
+  'shots.4': "Heimaskjár Android TV, gerður fyrir fjarstýringu.",
+
+
+  'get.kicker': "Uppsetning",
+  'get.h2': "Þrjár leiðir til að fá það",
+  'get.1t': "Sækja APK-skrána",
+  'get.1b': "Náðu í nýjustu útgáfuna og settu hana upp. Android biður þig einu sinni um að leyfa uppsetningar úr vafranum eða skráastjóranum.",
+  'get.1c': "Sækja",
+  'get.2t': "Fylgstu með því í Omnify",
+  'get.2b': "Bættu þessu geymslusvæði við Omnify og það fylgist með nýjum útgáfum og býður uppfærslur ásamt öðrum forritum þínum.",
+  'get.2c': "Sækja Omnify",
+  'get.note': "Sérhver Community-útgáfa er undirrituð með sama lykli, svo uppfærslur halda stillingum þínum og gögnum. Sá lykill er annar en lykill opinbera AdAway, svo ef þú kemur úr opinbera forritinu þarftu fyrst að fjarlægja það.",
+
+  'foot.tagline': "Óopinber samfélagsútgáfa af AdAway",
+  'foot.project': "Verkefni",
+  'foot.releases': "Útgáfur",
+  'foot.issues': "Tilkynna vandamál",
+  'foot.contribute': "Leggja til",
+  'foot.upstream': "Upprunalega verkefnið",
+  'foot.official': "Opinbert AdAway",
+  'foot.license': "Gefið út undir GPLv3+, eins og upprunalega AdAway. Búið til og viðhaldið af þátttakendum AdAway-verkefnisins; þessi útgáfa tengist þeim ekki og er ekki studd af þeim."
+};
