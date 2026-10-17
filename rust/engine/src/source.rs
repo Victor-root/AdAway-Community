@@ -175,13 +175,14 @@ fn block_host(token: &str) -> Option<String> {
     hostname::normalize(token, false).filter(|host| !LOCAL_NAMES.contains(&host.as_str()))
 }
 
-/// Whether a hosts file address sends the name nowhere: `0.0.0.0`, `::`, the loopback range, or
-/// the short `0` some lists use.
+/// Whether a hosts file address sends the name nowhere: `::`, the loopback range, the `0.0.0.0/8`
+/// range (`0.0.0.0`, but also `0.0.0.1` for some lists), or the short `0` some lists use.
 fn is_blocking_address(token: &str) -> bool {
     token == "0"
-        || token
-            .parse::<IpAddr>()
-            .is_ok_and(|address| address.is_unspecified() || address.is_loopback())
+        || token.parse::<IpAddr>().is_ok_and(|address| match address {
+            IpAddr::V4(address) => address.octets()[0] == 0 || address.is_loopback(),
+            IpAddr::V6(address) => address.is_unspecified() || address.is_loopback(),
+        })
 }
 
 /// Gathers the rules of a list. Duplicates are only removed at the end, sorting being much
@@ -268,7 +269,7 @@ mod tests {
     #[test]
     fn reads_hosts_files() {
         let text = "\u{feff}# Title\n127.0.0.1 localhost\n::1 ip6-localhost\n0.0.0.0 Ads.Example.COM # ad\n\
-                    127.0.0.1\ta.com b.com\n:: c.com\n127.0.0.2 d.com\n0 e.com\n0.0.0.0 0.0.0.0\r\n";
+                    127.0.0.1\ta.com b.com\n:: c.com\n127.0.0.2 d.com\n0 e.com\n0.0.0.1 f.com\n0.0.0.0 0.0.0.0\r\n";
         assert_eq!(
             blocked(text),
             [
@@ -277,7 +278,8 @@ mod tests {
                 "b.com",
                 "c.com",
                 "d.com",
-                "e.com"
+                "e.com",
+                "f.com"
             ]
         );
     }
