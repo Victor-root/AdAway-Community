@@ -9,6 +9,8 @@
         <item>Valeur par défaut du système</item>
     </string-array>
     <string name="pref_update_configuration">Mises à jour automatiques</string>
+    <string name="pref_language">Langue</string>
+    <string name="pref_language_system">Langue du système</string>
     <string name="pref_ad_block_category">Blocage des publicités</string>
     <string name="pref_root_ad_blocker_configuration">Bloqueur de publicités pour appareil débridé</string>
     <string name="pref_vpn_ad_blocker_configuration">Bloqueur de publicités fondé sur un RPV/VPN</string>

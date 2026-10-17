@@ -134,7 +134,7 @@ class DnsLogViewModel(private val container: AppContainer) : ViewModel() {
         try {
             Engine.verdicts(container.engineFiles.finalDirectory.path, names.toTypedArray())
         } catch (_: RuntimeException) {
-            IntArray(names.size) { Engine.VERDICT_ALLOW }
+            IntArray(names.size).apply { fill(Engine.VERDICT_ALLOW) }
         }
     }
 

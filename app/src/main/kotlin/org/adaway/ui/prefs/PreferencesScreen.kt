@@ -20,6 +20,9 @@ import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.SystemAppExclusion
 import org.adaway.data.settings.ThemeMode
 import org.adaway.engine.Engine
+import org.adaway.system.appLanguage
+import org.adaway.system.appLanguageSupported
+import org.adaway.system.openAppLanguageSettings
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.theme.LocalTelevision
@@ -65,6 +68,16 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
         Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(padding)) {
             PreferenceCategory(stringResource(R.string.pref_general_category), divider = false)
             Preference(R.drawable.ic_brightness_medium_24dp, stringResource(R.string.pref_dark_theme), onClick = { choice = PreferenceChoice.THEME })
+            if (appLanguageSupported) {
+                val language = context.appLanguage()
+                Preference(
+                    R.drawable.ic_language_24dp,
+                    stringResource(R.string.pref_language),
+                    summary = language?.let { it.getDisplayName(it).replaceFirstChar { char -> char.titlecase(it) } }
+                        ?: stringResource(R.string.pref_language_system),
+                    onClick = context::openAppLanguageSettings,
+                )
+            }
             Preference(R.drawable.ic_sync_24dp, stringResource(R.string.pref_update_configuration), onClick = navigation.openUpdates)
 
             PreferenceCategory(stringResource(R.string.pref_vpn_ad_blocker_configuration), enabled = usesVpn)

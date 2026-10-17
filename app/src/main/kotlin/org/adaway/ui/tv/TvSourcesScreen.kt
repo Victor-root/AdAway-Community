@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -49,7 +50,7 @@ fun TvSourcesScreen(navigation: SourcesNavigation) {
     val sources by viewModel.sources.collectAsStateWithLifecycle()
     var selected by remember { mutableStateOf<Pair<SourceEntity, String>?>(null) }
     // The card focused last, focused again when coming back from the edit screen, as Android does.
-    var focused by rememberSaveable { mutableStateOf(NO_SOURCE) }
+    var focused by rememberSaveable { mutableLongStateOf(NO_SOURCE) }
     val addFocus = remember { FocusRequester() }
     val pendingApply = isApplyPending(viewModel.applier)
     TvScreen(
