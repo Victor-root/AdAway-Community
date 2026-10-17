@@ -2,12 +2,14 @@ package org.adaway.system
 
 import android.app.Activity
 import android.app.LocaleManager
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.net.Uri
 import android.os.Build
+import android.os.LocaleList
 import android.provider.Settings
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.RequiresApi
@@ -46,16 +48,26 @@ fun Context.appLanguages(): List<Locale> = buildList {
 /** The name of the language in itself, as a language picker shows it. */
 val Locale.ownName: String get() = getDisplayName(this).replaceFirstChar { it.titlecase(this) }
 
-/** Opens the Android settings page where the language of the app is picked. */
+/** Opens the Android settings page where the language of the app is picked, false if the device has none, as some TVs. */
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-fun Context.openAppLanguageSettings() =
-    startActivityOrTell(Intent(Settings.ACTION_APP_LOCALE_SETTINGS, Uri.fromParts("package", packageName, null)))
+fun Context.openAppLanguageSettings(): Boolean = try {
+    startActivity(Intent(Settings.ACTION_APP_LOCALE_SETTINGS, Uri.fromParts("package", packageName, null)))
+    true
+} catch (_: ActivityNotFoundException) {
+    false
+}
 
 /**
- * Before Android 13, keeps [language] for the app, null to follow the system, and shows the screen
- * again in it. The services started before keep their language until they start again.
+ * Keeps [language] for the app, null to follow the system. From Android 13 Android shows the app
+ * again in it; before, the app does, and the services started before keep their language until
+ * they start again.
  */
 fun Activity.setAppLanguage(language: Locale?) {
+    if (systemKeepsAppLanguage) {
+        getSystemService(LocaleManager::class.java).applicationLocales =
+            language?.let { LocaleList.forLanguageTags(it.toLanguageTag()) } ?: LocaleList.getEmptyLocaleList()
+        return
+    }
     getSharedPreferences(LANGUAGE_PREFERENCES, Context.MODE_PRIVATE).edit {
         if (language == null) remove(LANGUAGE_TAG) else putString(LANGUAGE_TAG, language.toLanguageTag())
     }

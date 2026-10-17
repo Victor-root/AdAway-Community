@@ -77,7 +77,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 R.drawable.ic_language_24dp,
                 stringResource(R.string.pref_language),
                 summary = context.appLanguage()?.ownName ?: stringResource(R.string.pref_language_system),
-                onClick = { if (systemKeepsAppLanguage) context.openAppLanguageSettings() else choice = PreferenceChoice.LANGUAGE },
+                onClick = { if (!(systemKeepsAppLanguage && context.openAppLanguageSettings())) choice = PreferenceChoice.LANGUAGE },
             )
             Preference(R.drawable.ic_sync_24dp, stringResource(R.string.pref_update_configuration), onClick = navigation.openUpdates)
 
