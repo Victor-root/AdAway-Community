@@ -9,6 +9,7 @@ import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
 import org.adaway.AdAwayApplication
 import org.adaway.system.Notifications
+import org.adaway.system.withAppLanguage
 
 /**
  * The VPN service, in the foreground while a session runs. Started by the app, by Android when
@@ -19,6 +20,8 @@ class AdAwayVpnService : VpnService() {
     private var session: VpnSession? = null
     /** Stopping with it keeps the service when a newer start is still on its way. */
     private var lastStartId = 0
+
+    override fun attachBaseContext(newBase: Context) = super.attachBaseContext(newBase.withAppLanguage())
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         lastStartId = startId

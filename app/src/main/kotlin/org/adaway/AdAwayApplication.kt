@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.adaway.data.settings.Settings
 import org.adaway.system.Notifications
+import org.adaway.system.withAppLanguage
 import org.adaway.work.AppUpdateWorker
 import org.adaway.work.SourceUpdateWorker
 import org.adaway.work.VpnHeartbeatWorker
@@ -15,6 +16,8 @@ import org.adaway.work.VpnHeartbeatWorker
 class AdAwayApplication : Application() {
     lateinit var container: AppContainer
         private set
+
+    override fun attachBaseContext(base: Context) = super.attachBaseContext(base.withAppLanguage())
 
     override fun onCreate() {
         super.onCreate()

@@ -1,6 +1,7 @@
 package org.adaway.ui.prefs
 
 import android.widget.Toast
+import androidx.activity.compose.LocalActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -8,6 +9,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -21,8 +23,11 @@ import org.adaway.data.settings.SystemAppExclusion
 import org.adaway.data.settings.ThemeMode
 import org.adaway.engine.Engine
 import org.adaway.system.appLanguage
-import org.adaway.system.appLanguageSupported
+import org.adaway.system.appLanguages
 import org.adaway.system.openAppLanguageSettings
+import org.adaway.system.ownName
+import org.adaway.system.setAppLanguage
+import org.adaway.system.systemKeepsAppLanguage
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.theme.LocalTelevision
@@ -42,7 +47,7 @@ private val ThemeModes = listOf(ThemeMode.LIGHT, ThemeMode.DARK, ThemeMode.SYSTE
 /** The order of the system app exclusion choices. */
 private val SystemAppExclusions = listOf(SystemAppExclusion.NONE, SystemAppExclusion.ALL_EXCEPT_BROWSERS, SystemAppExclusion.ALL)
 
-private enum class PreferenceChoice { THEME, SYSTEM_APPS, IPV4_REDIRECTION, IPV6_REDIRECTION }
+private enum class PreferenceChoice { THEME, LANGUAGE, SYSTEM_APPS, IPV4_REDIRECTION, IPV6_REDIRECTION }
 
 /**
  * The preferences, all on one screen as in 6.x. Only the section of the blocking method in use is
@@ -68,16 +73,12 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
         Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(padding)) {
             PreferenceCategory(stringResource(R.string.pref_general_category), divider = false)
             Preference(R.drawable.ic_brightness_medium_24dp, stringResource(R.string.pref_dark_theme), onClick = { choice = PreferenceChoice.THEME })
-            if (appLanguageSupported) {
-                val language = context.appLanguage()
-                Preference(
-                    R.drawable.ic_language_24dp,
-                    stringResource(R.string.pref_language),
-                    summary = language?.let { it.getDisplayName(it).replaceFirstChar { char -> char.titlecase(it) } }
-                        ?: stringResource(R.string.pref_language_system),
-                    onClick = context::openAppLanguageSettings,
-                )
-            }
+            Preference(
+                R.drawable.ic_language_24dp,
+                stringResource(R.string.pref_language),
+                summary = context.appLanguage()?.ownName ?: stringResource(R.string.pref_language_system),
+                onClick = { if (systemKeepsAppLanguage) context.openAppLanguageSettings() else choice = PreferenceChoice.LANGUAGE },
+            )
             Preference(R.drawable.ic_sync_24dp, stringResource(R.string.pref_update_configuration), onClick = navigation.openUpdates)
 
             PreferenceCategory(stringResource(R.string.pref_vpn_ad_blocker_configuration), enabled = usesVpn)
@@ -178,6 +179,17 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
             onSelect = { index -> viewModel.update { it.copy(themeMode = ThemeModes[index]) } },
             onDismiss = { choice = null },
         )
+        PreferenceChoice.LANGUAGE -> {
+            val activity = LocalActivity.current
+            val languages = remember { context.appLanguages().sortedBy { it.ownName.lowercase(it) } }
+            ChoiceDialog(
+                title = stringResource(R.string.pref_language),
+                choices = listOf(stringResource(R.string.pref_language_system)) + languages.map { it.ownName },
+                selected = languages.indexOf(context.appLanguage()) + 1,
+                onSelect = { index -> activity?.setAppLanguage(languages.getOrNull(index - 1)) },
+                onDismiss = { choice = null },
+            )
+        }
         PreferenceChoice.SYSTEM_APPS -> ChoiceDialog(
             title = stringResource(R.string.pref_vpn_exclude_system_apps),
             choices = systemAppChoices,

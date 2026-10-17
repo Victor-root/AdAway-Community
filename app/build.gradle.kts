@@ -74,6 +74,13 @@ android {
         generateLocaleConfig = true
     }
 
+    // Below Android 13 the language is picked in the app, so every translation has to be installed.
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
     // The translations come from the 6.x versions: the texts added since stay in English until translated.
     lint {
         disable += "MissingTranslation"

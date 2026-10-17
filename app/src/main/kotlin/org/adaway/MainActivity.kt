@@ -1,5 +1,6 @@
 package org.adaway
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
@@ -10,12 +11,15 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.adaway.system.isTelevision
+import org.adaway.system.withAppLanguage
 import org.adaway.ui.AdAwayApp
 import org.adaway.ui.Destination
 
 class MainActivity : ComponentActivity() {
     /** The destination the activity was opened with, until its screen is shown. */
     private val destination = MutableStateFlow<Destination?>(null)
+
+    override fun attachBaseContext(newBase: Context) = super.attachBaseContext(newBase.withAppLanguage())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Each screen draws what is under the navigation bar, without the veil Android adds by default.
