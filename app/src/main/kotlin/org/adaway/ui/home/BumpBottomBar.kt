@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
@@ -86,7 +87,8 @@ fun BumpBottomBar(icon: Painter, contentDescription: String, enabled: Boolean, o
 fun BumpBar(modifier: Modifier = Modifier, badge: @Composable () -> Unit) {
     val colors = LocalAdAwayColors.current
     Box(modifier = modifier.fillMaxWidth().height(TotalHeight)) {
-        Canvas(modifier = Modifier.fillMaxWidth().height(TotalHeight)) {
+        // The shadow stays within the bar, as the Android views clip it: below, it would show as a gray edge.
+        Canvas(modifier = Modifier.fillMaxWidth().height(TotalHeight).clipToBounds()) {
             val ledgeY = size.height - BarHeight.toPx()
             val crestY = ledgeY - BumpHeight.toPx()
             val fill = topEdge(size, ledgeY, crestY).apply {
