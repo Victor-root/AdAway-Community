@@ -1,39 +1,35 @@
 # Translating to your language
 
-You can help us with your translation efforts!  
+Translations are made by volunteers, and a pull request is the way to send one. A translation is a few text files, so it is a good first contribution, and a fix of a single wrong string is as welcome as a whole new language.
 
-Please have a look at ticket No. [AdAway/AdAway#1050](https://github.com/AdAway/AdAway/issues/1050) for more detailed information, questions and discussions!
-We apreciate new contributors and translations are perfect for getting started with contributing at Github in general.
+## Where the translations are
 
-Here is the gist:
-Translations are managed via the **transifex.com website**! (and Transifex' website alone, that is)
+English is the source of every text. Each language has its own copy, named after its language code (`fr` for French, `pt-rBR` for Brazilian Portuguese in the Android folders):
 
-Unfortunately, we cannot merge translations via Github directly. Please follow the steps below instead.  
-Sorry, but this causes some major synchronization issues if not followed.  We have to consolidate many contributions by translators and sync them up to the latest state. That is just not possible via Github.  
+| What | Where | Source in English |
+|:--|:--|:--|
+| The texts of the app | `app/src/main/res/values-<code>/strings*.xml` | `app/src/main/res/values/strings*.xml` |
+| The help pages | `app/src/main/res/raw-<code>/help_faq.html` and `help_problems.html` | `app/src/main/res/raw/` |
+| The store descriptions | `metadata/<code>/` (`title.txt`, `short_description.txt`, `full_description.txt`) | `metadata/en-US/` |
+| The website | `website/assets/i18n/<code>.js` | the `EN` table of `website/assets/js/main.js` |
 
-1. Please go to **https://www.transifex.com/free-software-for-android/adaway/**
-1. Login or create a new account (you can conveniently login via Github as well)
-1. Enroll into the language you want to contribute to or even submit a request for a new language.
-   * Please keep in mind that we want to stick to the basic languages where possible (e.g. `sr` for Serbian).  
-   Please refrain to request regional localizations (like `sr_RS`).
-1. In your language section, you can browse all available resources and start **translating strings right in your browser**.
-   * You don't have to download anything. Just click "Translate". The downloads are meant for more advanced use cases.
+A text that is missing in a language shows in English, so a translation can be sent in parts.
 
-## Here are some tips for using Transifex:
-* Make sure to have an eye on the **"Suggestions", "History", "Context" and "Glossary" tabs** on every entry. 
-   * Mind translation efforts that were already done or suggested.  
-   Basically, »*stand on the shoulders of giants*« where possible.
-   * Sometimes source strings change only marginally, but their translations get cleared anyway.  
-   You can easily **recover their previous translations** by looking at the "Suggestions" tab. Just make sure they really fit the new source text and edit the translation if needed.
-* Help us validate translations by **reviewing others'**. 
-* Some strings contain **placeholders** - like for HTML tags or numbers.  
-You can click on them to add them or use keyboard shortcuts (see the page settings for an overview).
-* You can point out issues to the Translation Organizers via the **"Comments" tab** or just start a discussion.
-* Don't forget to save your work!
-* Please don't create any Translation Pull Request here on Github.  
-   * We will integrate your contributions from time to time into the code by exporting from Transifex directly. No need to provide any files from your side. ;-) 
-* For more information about how to use Transifex, see https://docs.transifex.com/
+## Fixing a translation
 
+1. Fork the repository and find the text in the file of your language.
+2. Fix it and keep what is not text as it is: the placeholders (`%1$s`, `%d`), the HTML tags of the help pages, and the escaped characters (`\'`, `\n`).
+3. Open a pull request. One pull request per language makes it easier to review.
 
-We will add all Transifex translations from time to time to the app.  
-For our Translation Organizers: You can use the CLI tool for this to retrieve translated resources from the Transifex server and add them to the Github repo. (See https://docs.transifex.com/client/ for more details about the client tool.)
+## Adding a language
+
+1. Copy the files of the English source into the folders of your language, named with the language code, and translate the values. Keep the language code to the basic one (`sr`) rather than a regional one (`sr-rRS`), unless the regions really differ, as for Portuguese.
+2. The app finds its languages from the `values-<code>` folders: nothing else has to be declared for it.
+3. For the website, copy an existing file of `website/assets/i18n/`, translate the values and add the language to the `LANGS` list of `website/assets/js/main.js`, named in itself (`Français`, not `French`).
+4. Open a pull request.
+
+## Good to know
+
+- The first translations of the app come from the 6.x versions. The texts added since, and most of the website, were translated by machine and have not been read by a native speaker, so a review is always useful.
+- Do not translate the name of the app, the names of the lists, or the technical names (`VPN`, `DNS`, `hosts`).
+- Keep a text about as long as the English one: the buttons and the TV screens have little room.
