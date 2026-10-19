@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">添加到允许列表</string>
-    <string name="tv_dialog_add_to_blocked">添加到阻止列表</string>
-    <string name="tv_dialog_remove_from_allowed">从允许列表中移除</string>
-    <string name="tv_dialog_remove_from_blocked">从阻止列表中移除</string>
-    <string name="tv_dialog_copy_hostname">复制域名</string>
+    <string name="tv_dialog_add_to_allowed">添加到已允许</string>
+    <string name="tv_dialog_add_to_blocked">添加到已拦截</string>
+    <string name="tv_dialog_remove_from_allowed">从已允许中移除</string>
+    <string name="tv_dialog_remove_from_blocked">从已拦截中移除</string>
+    <string name="tv_dialog_copy_hostname">复制主机名</string>
     <string name="tv_log_entry_status_description">域名状态</string>
     <string name="tv_button_theme_light">浅色模式</string>
     <string name="tv_button_theme_dark">深色模式</string>

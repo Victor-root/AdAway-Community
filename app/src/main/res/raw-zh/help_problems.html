@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>在 Android 9 及以上版本 hosts 文件复制失败</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN 自己关闭了</h2>
+<p>这几乎总是系统为了省电而终止了 VPN 服务，而不是应用崩溃。在电源管理比较激进的厂商定制系统上很常见（ColorOS/Oppo、MIUI/Xiaomi、EMUI/Huawei、OneUI/Samsung 等）。</p>
+<p>请在 Android 设置中找到 AdAway，然后：将<cite>电池优化</cite>设为<cite>无限制</cite>（或<cite>不优化</cite>），如果您的系统提供<cite>自启动</cite>/<cite>自动启动</cite>选项，请予以允许，并在最近任务列表中锁定 AdAway，避免被划掉。同时请确认 AdAway 的 VPN 设置中已开启<cite>开机时启用</cite>。</p>
 
-<h2>分区空间不足</h2>
-<p>尝试把设置中的目标 hosts 文件修改为 <code>/data/data/hosts</code>（或 <code>/data/hosts</code>）并再次应用  AdAway。</p>
+<h2>在 Wi-Fi 和移动网络之间切换后无法上网或网速很慢</h2>
+<p>当前网络发生变化时，VPN 隧道需要重新建立，才能通过新网络解析 DNS。如果浏览仍然异常，请打开<cite>设置 › 基于 VPN 的广告拦截 › 重置 VPN</cite>，彻底重建连接。如果问题反复出现，请记录一份诊断日志（见下文）并反馈。</p>
 
-<h2>Chrome 浏览网页还是有广告</h2>
-<p>保证你已经从 Chrome 的设置中禁用了<cite>轻量模式</cite>（以前叫做<cite>节省数据</cite>）。启用此功能后，Chrome 会使用私人 DNS 绕过 AdAway。</p>
+<h2>如何导出诊断日志？</h2>
+<p>打开<cite>设置 › 基于 VPN 的广告拦截 › 诊断日志</cite>。它会记录最近的错误和 VPN 事件（网络切换、重新连接、失败等），不会记录您的浏览记录，只有技术事件。只有开启其上方的<cite>记录诊断日志</cite>后，日志才会有内容。反馈问题时，可使用<cite>复制</cite>或<cite>分享</cite>来发送日志。小提示：先<cite>清除</cite>旧日志，再重现问题，这样日志会更有针对性。</p>
 
-<h2>它不会阻止应用 XYZ 中的广告！</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome 仍然显示广告</h2>
+<p>Chrome 可能在使用自带的<cite>安全 DNS</cite>（DNS-over-HTTPS），这会绕过 AdAway。请在 Chrome 中打开<cite>设置 › 隐私和安全 › 使用安全 DNS</cite>并将其关闭。其他应用或系统中的<cite>私人 DNS</cite>设置同样如此。在 VPN 模式下，AdAway 可以自行加密 DNS：请参阅常见问题中的<cite>VPN 使用哪些 DNS 服务器？</cite>。</p>
 
-<h2>广告被缓存了</h2>
-<p>有时，在下载广告后，应用程序还会将其缓存，这会导致某些应用程序中存在剩余广告。您可以尝试在Android 的应用程序列表中删除这些应用程序的缓存，以规避此问题。</p>
+<h2>仍有部分广告漏网，或某个应用仍在显示广告</h2>
+<p>可能是您的来源中缺少某个主机名，也可能是应用把广告内置在自身中，不发出任何请求。请在主屏幕打开<cite>DNS 日志</cite>，查看该应用在查询什么，把可疑的主机名添加到您的<cite>已拦截</cite>列表，并确认没有影响应用正常使用。有些应用在下载广告后还会将其缓存，因此在 Android 设置中清除该应用的缓存可能会有帮助。</p>
 
-<h2>应用程序 XYZ 无法使用！</h2>
-<p>某些应用程序需要与被 AdAway 阻止的主机名通信，或者在无法访问应提供广告的主机名时拒绝工作。请参阅 <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a>以获取存在问题的已知应用程序列表。当然，您也可以找出那些主机名并将它们添加到<cite>您的列表</cite>下的<cite>白名单</cite>，并将它们报告给 <a href="https://github.com/Victor-root/AdAway-Community/issues">AdAway 的错误跟踪器</a>。</p>
+<h2>启用 AdAway 后某个应用无法使用了</h2>
+<p>当某个应用所需的主机名被拦截时，它可能拒绝运行。请使用<cite>DNS 日志</cite>找出该应用需要的主机名，将其添加到您的<cite>已允许</cite>列表，应用就应该能恢复正常。已知有问题的应用列在<a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">这里</a>。</p>
 
-<h2>不适用于 Android 4.4+</h2>
-<p>尝试将首选项中的目标 hosts 文件从 <code>/data/data/hosts</code> 更改为 <code>/data/hosts</code> 或 <code>/system/etc/hosts</code>后，并再次应用 AdAway。</p>
+<h2>应用 hosts 文件失败（root 模式）</h2>
+<p>较新的 Android 版本使用只读的 <code>/system</code> 分区，因此 AdAway 无法直接写入其中。如果您使用 Magisk，请启用 <cite>systemless hosts</cite> 模块，重启后再次应用。如果您没有 root，请改用 VPN 模式，它不需要修改系统。</p>
 
-<h2>Web 浏览器中的后退按钮无法工作</h2>
-<p>可以通过在 AdAway 的设置中启用本地 Web 服务器来解决。</p>
-
+<h2>问题仍未解决？</h2>
+<p>请附上诊断日志，到 <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> 反馈问题。</p>
 </body>
 </html>

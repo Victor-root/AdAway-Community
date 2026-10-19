@@ -1,84 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">首选项</string>
+    <string name="pref_main_title">设置</string>
     <string name="pref_general_category">常规</string>
     <string name="pref_dark_theme">深色主题</string>
     <string-array name="pref_dark_theme_modes">
         <item>浅色</item>
         <item>深色</item>
-        <item>系统默认</item>
+        <item>跟随系统</item>
     </string-array>
     <string name="pref_update_configuration">自动更新</string>
-    <string name="pref_ad_block_category">广告屏蔽</string>
-    <string name="pref_root_ad_blocker_configuration">基于 root 的广告拦截器</string>
-    <string name="pref_vpn_ad_blocker_configuration">基于 VPN 的广告拦截器</string>
+    <string name="pref_language">语言</string>
+    <string name="pref_language_system">系统语言</string>
+    <string name="pref_ad_block_category">广告拦截</string>
+    <string name="pref_root_ad_blocker_configuration">基于 root 的广告拦截</string>
+    <string name="pref_vpn_ad_blocker_configuration">基于 VPN 的广告拦截</string>
     <string name="pref_enable_ipv6">启用 IPv6 支持</string>
-    <string name="pref_backup_restore">备份/还原屏蔽规则</string>
-    <string name="pref_backup_restore_title">备份与还原</string>
+    <string name="pref_backup_restore">备份/恢复拦截规则</string>
+    <string name="pref_backup_restore_title">备份与恢复</string>
     <string name="pref_backup">备份</string>
-    <string name="pref_backup_summary">将屏蔽规则备份至外部存储</string>
-    <string name="pref_restore">还原</string>
-    <string name="pref_restore_summary">从备份文件还原屏蔽规则</string>
-    <string name="import_success">已成功从外置存储中导入备份。</string>
-    <string name="export_success">成功将备份导出到你的外部存储上的文件 \"%s\"</string>
-    <string name="export_failed">备份文件 \"%s\" 导出失败</string>
+    <string name="pref_backup_summary">将您的拦截规则备份到外部存储</string>
+    <string name="pref_restore">恢复</string>
+    <string name="pref_restore_summary">从备份文件恢复您的拦截规则</string>
+    <string name="import_success">已从外部存储成功导入备份。</string>
+    <string name="import_failed">导入备份失败。请确认其格式是否正确。</string>
+    <string name="export_success">备份已成功导出到外部存储中的文件“%s”。</string>
+    <string name="export_failed">导出备份文件“%s”失败。</string>
     <string name="pref_update_title">更新</string>
-    <string name="pref_update_enable_notifications">通知被禁用</string>
-    <string name="pref_update_enable_notifications_summary">不会显示应用通知。轻按启用它们。</string>
-    <string name="pref_update_app_category">应用程序更新</string>
+    <string name="pref_update_enable_notifications">通知已关闭</string>
+    <string name="pref_update_enable_notifications_summary">应用通知将不会显示。点按即可开启。</string>
+    <string name="pref_update_app_category">应用更新</string>
     <string name="pref_update_check_app_startup">启动时检查更新</string>
-    <string name="pref_update_check_app_daily">每天检查更新</string>
+    <string name="pref_update_check_app_daily">定期检查更新</string>
     <string name="pref_update_check_now">立即检查</string>
     <string name="pref_update_install">立即更新</string>
     <string name="pref_update_hosts_category">hosts 更新</string>
-    <string name="pref_update_check">启动时检查更新 </string>
-    <string name="pref_update_check_hosts_daily">定时检查更新</string>
-    <string name="pref_update_sync_on_update">同步更新（Sync on update）</string>
-    <string name="pref_update_sync_unmetered_only">仅在连接至不计费网络时同步</string>
-    <string name="pref_vpn_service_on_boot">启动时启用</string>
-    <string name="pref_vpn_service_monitor">监视连接</string>
-    <string name="pref_vpn_service_monitor_description">定期检查网络状态以便在断开连接时重新启动 VPN。</string>
+    <string name="pref_update_check">启动时检查更新</string>
+    <string name="pref_update_check_hosts_daily">定期检查更新</string>
+    <string name="pref_update_sync_on_update">更新时同步</string>
+    <string name="pref_update_sync_unmetered_only">仅在不按流量计费的网络下同步</string>
+    <string name="pref_vpn_service_on_boot">开机时启用</string>
+    <string name="pref_vpn_service_monitor">监测连接</string>
+    <string name="pref_vpn_service_monitor_description">定期检查网络状态，以便在连接断开时重新启动 VPN。</string>
     <string name="pref_vpn_excluded_apps">排除的应用</string>
-    <string name="pref_vpn_excluded_apps_description">配置哪些应用程序不应使用 VPN，以防止其连接被错误阻止。</string>
-    <string name="pref_vpn_exclude_system_apps">排除系统应用程序</string>
+    <string name="pref_vpn_excluded_apps_description">设置哪些应用不使用 VPN，这样它们的连接就不会被拦截。</string>
+    <string name="pref_vpn_exclude_system_apps">排除系统应用</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
         <item>无</item>
-        <item>除浏览器以外的所有应用</item>
-        <item>所有应用</item>
+        <item>除浏览器外的全部</item>
+        <item>全部</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">排除用户应用程序</string>
+    <string name="pref_vpn_dns">DNS 服务器</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>网络 DNS 服务器</item>
+        <item>自定义 DNS 服务器</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">自定义 DNS 服务器</string>
+    <string name="pref_vpn_dns_custom_summary">IP 地址，以英文逗号分隔</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS 服务器地址无效</string>
+    <string name="pref_vpn_doh">DNS over HTTPS 服务器</string>
+    <string name="pref_vpn_doh_custom">自定义地址</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS 地址</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS 地址无效</string>
+    <string name="pref_vpn_exclude_user_apps">排除用户应用</string>
     <string name="pref_vpn_exclude_user_apps_activity">排除的应用</string>
     <string name="pref_vpn_exclude_user_apps_select_all">全选</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">取消全选</string>
-    <string name="pref_vpn_exclude_user_apps_icon">应用程序图标</string>
+    <string name="pref_vpn_exclude_user_apps_icon">应用图标</string>
     <string name="pref_vpn_reset">重置 VPN</string>
-    <string name="pref_vpn_reset_description">从头重建 VPN 连接。如果 VPN 停止工作（无法访问互联网或出现 DNS 错误），请使用此功能。</string>
+    <string name="pref_vpn_reset_description">彻底重建 VPN 连接。如果 VPN 停止工作（无法上网或出现 DNS 错误），请使用此功能。</string>
     <string name="pref_vpn_reset_done">VPN 连接已重建。</string>
-    <string name="pref_vpn_reset_not_running">VPN 未在运行。</string>
+    <string name="pref_vpn_reset_not_running">VPN 未运行。</string>
+    <string name="pref_vpn_diagnostic_log_enabled">记录诊断日志</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">请在重现问题前开启，然后在下方导出。在较旧的设备上可能会略微拖慢运行速度。仅记录 VPN 的技术事件，绝不记录浏览记录或个人数据。</string>
     <string name="pref_vpn_diagnostic_log">诊断日志</string>
-    <string name="pref_vpn_diagnostic_log_description">查看、复制或分享最近的错误和 VPN 事件。在报告问题时很有用。</string>
-    <string name="pref_vpn_diagnostic_log_empty">尚未记录任何事件。</string>
-    <string name="pref_vpn_diagnostic_log_share">分享诊断日志</string>
+    <string name="pref_vpn_diagnostic_log_description">查看、复制或分享最近的错误和 VPN 事件。报告问题时很有用。</string>
+    <string name="pref_vpn_diagnostic_log_empty">尚未记录任何事件。请先开启上方的“记录诊断日志”，然后尝试重现问题。</string>
+    <string name="pref_vpn_diagnostic_log_share">分享</string>
+    <string name="pref_vpn_diagnostic_log_share_title">分享诊断日志</string>
     <string name="pref_vpn_diagnostic_log_copy">复制</string>
     <string name="pref_vpn_diagnostic_log_copied">诊断日志已复制到剪贴板。</string>
     <string name="pref_vpn_diagnostic_log_clear">清除诊断日志</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">删除已记录的事件。请在重现问题之前执行此操作，以捕获干净的记录。</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">删除已记录的事件。建议在重现问题前先执行此操作，以获得干净的记录。</string>
     <string name="pref_vpn_diagnostic_log_cleared">诊断日志已清除。</string>
     <string name="pref_root_open_hosts">打开 hosts 文件</string>
-    <string name="pref_hosts_redirection_summary">定义重定向被阻止hosts的位置</string>
-    <string name="pref_redirection_ipv4">IPv4 重定向</string>
-    <string name="pref_redirection_ipv6">IPv6 重定向</string>
-    <string name="pref_redirection_invalid">无效的重定向</string>
-    <string name="pref_webserver_summary">本地Web服务器侦听本地IP 地址，以回答被阻止的主机名请求。 它可能有助于阻止连接冻结的应用程序。</string>
-    <string name="pref_webserver_enabled">启用网络服务器</string>
-    <string name="pref_webserver_test">测试网络服务器</string>
+    <string name="hosts_file_unreadable">无法读取 hosts 文件。</string>
+    <string name="pref_hosts_redirection_summary">设置被拦截的主机重定向到哪里</string>
+    <string name="pref_redirection_ipv4">配置 IPv4 重定向</string>
+    <string name="pref_redirection_ipv6">配置 IPv6 重定向</string>
+    <string name="pref_redirection_invalid">重定向无效</string>
+    <string name="pref_webserver_summary">本地 Web 服务器在本地 IP 地址上监听，用于应答对被拦截主机名的请求。这有助于避免应用在连接被拦截时卡住。</string>
+    <string name="pref_webserver_enabled">启用 Web 服务器</string>
+    <string name="pref_webserver_test">测试 Web 服务器</string>
     <string name="pref_webserver_certificate">安装自签名证书</string>
     <string name="pref_webserver_state_not_running">未运行</string>
     <string name="pref_webserver_state_checking">正在检查…</string>
-    <string name="pref_webserver_state_running_not_installed">正在运行，但未安装证书</string>
-    <string name="pref_webserver_state_running_and_installed">运行并安装证书</string>
+    <string name="pref_webserver_state_running_not_installed">已运行，但证书未安装</string>
+    <string name="pref_webserver_state_running_and_installed">已运行，证书已安装</string>
     <string name="pref_webserver_certificate_dialog_title">手动安装证书</string>
-    <string name="pref_webserver_certificate_dialog_content">自Android 11 (R) 起，应用程序不能再自动安装证书颁发机构(CA)。\n\n进入“安全”设置，“加密&amp;凭据”，接着“安装一个证书”。从那里，选择“CA 证书”并选择新导出的证书文件。</string>
-    <string name="pref_webserver_certificate_dialog_action">打开\"安全\"设置</string>
-    <string name="pref_webserver_icon">用应用程序图标替换空白广告空间</string>
+    <string name="pref_webserver_certificate_dialog_content">从 Android 11 (R) 开始，应用无法再自动安装证书颁发机构 (CA) 证书。\n\n请打开“安全”设置，进入“加密与凭据”，点按“安装证书”，再选择“CA 证书”，然后选取刚刚导出的证书文件。</string>
+    <string name="pref_webserver_certificate_dialog_action">打开“安全”设置</string>
+    <string name="pref_webserver_certificate_failed">无法准备证书。</string>
+    <string name="webserver_error_title">Web 服务器未启动</string>
+    <string name="webserver_error_resources">无法准备其文件或证书。</string>
+    <string name="webserver_error_address_in_use">设备上已有其他应用占用了 Web 端口（80 和 443）。</string>
+    <string name="webserver_error_start_failed">无法在此设备上启动。</string>
+    <string name="pref_webserver_icon">用应用图标替换空白广告位</string>
 </resources>

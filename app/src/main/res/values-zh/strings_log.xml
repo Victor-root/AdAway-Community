@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">切换日志记录开启状态</string>
-    <string name="log_start_recording">按下录制按钮以开始记录请求，浏览网页或使用应用程序，然后返回或滑动屏幕刷新日志。</string>
-    <string name="log_blocked_requests_ignored">\n\n被拦截的请求不会被记录。如果你也想记录它们，请先禁用广告拦截功能。</string>
-    <string name="log_sort">排序域名</string>
+    <string name="log_toggle_recording_description">开始/停止记录日志</string>
+    <string name="log_start_recording">点按录制按钮开始记录请求，然后浏览网页或使用应用，再返回或下拉刷新日志。</string>
+    <string name="log_blocked_requests_ignored">\n\n被拦截的请求不会被记录。如果也想记录它们，请先关闭广告拦截。</string>
+    <string name="log_sort">域名排序</string>
     <string name="log_clear">清除日志</string>
-    <string name="log_sort_alphabetical">按字母排序</string>
+    <string name="log_sort_alphabetical">按字母顺序排序</string>
     <string name="log_sort_top_level_domain">按顶级域名排序</string>
-    <string name="log_block">添加条目到黑名单</string>
-    <string name="log_allow">添加条目到白名单</string>
-    <string name="log_redirect">添加条目到重定向</string>
+    <string name="log_block">将条目添加到黑名单</string>
+    <string name="log_allow">将条目添加到白名单</string>
+    <string name="log_redirect">将条目添加到重定向列表</string>
     <string name="log_redirect_dialog_title">重定向域名</string>
-    <string name="log_start_recording_button">开始录制</string>
-    <string name="log_start_recording_vpn_inactive">开始录制（VPN 未激活）</string>
-    <string name="log_stop_recording">停止录制</string>
+    <string name="log_capture_failed">无法启动 DNS 捕获。</string>
+    <string name="log_start_recording_button">开始记录</string>
+    <string name="log_start_recording_vpn_inactive">开始记录（VPN 未运行）</string>
+    <string name="log_stop_recording">停止记录</string>
 </resources>
