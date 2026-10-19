@@ -4,8 +4,8 @@
     <string name="tv_dialog_add_to_blocked">Добавить в заблокированные</string>
     <string name="tv_dialog_remove_from_allowed">Удалить из разрешённых</string>
     <string name="tv_dialog_remove_from_blocked">Удалить из заблокированных</string>
-    <string name="tv_dialog_copy_hostname">Скопировать имя домена</string>
-    <string name="tv_log_entry_status_description">Статус домена</string>
+    <string name="tv_dialog_copy_hostname">Копировать имя хоста</string>
+    <string name="tv_log_entry_status_description">Состояние домена</string>
     <string name="tv_button_theme_light">Светлая тема</string>
     <string name="tv_button_theme_dark">Тёмная тема</string>
     <string name="tv_lists_empty">В этом списке пока нет записей.</string>

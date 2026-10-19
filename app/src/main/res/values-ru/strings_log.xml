@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Переключить запись журнала</string>
-    <string name="log_start_recording">Нажмите кнопку записи, чтобы начать логирование запросов, поищите что-нибудь в интернете или воспользуйтесь другими приложениями, а затем вернитесь назад или потяните вниз, чтобы обновить логи.</string>
-    <string name="log_blocked_requests_ignored">\n\nBlocked запросы не будут логированы. Сначала отключите блокировку рекламы, если вы также хотите их логировать.</string>
-    <string name="log_sort">Сортировать домены</string>
+    <string name="log_toggle_recording_description">Включить или выключить запись журнала</string>
+    <string name="log_start_recording">Нажмите кнопку записи, чтобы начать регистрировать запросы, затем откройте сайты или запустите приложения. После этого вернитесь назад или потяните экран вниз, чтобы обновить журнал.</string>
+    <string name="log_blocked_requests_ignored">\n\nЗаблокированные запросы в журнал не попадают. Чтобы видеть и их, сначала отключите блокировку рекламы.</string>
+    <string name="log_sort">Сортировка доменов</string>
     <string name="log_clear">Очистить журнал</string>
-    <string name="log_sort_alphabetical">Сортировка по алфавиту</string>
-    <string name="log_sort_top_level_domain">Сортировка по наивысшему уровню домена</string>
-    <string name="log_block">Добавить запись в Чёрный список</string>
-    <string name="log_allow">Добавить запись в Белый список</string>
-    <string name="log_redirect">Добавить запись в список Перенаправлений</string>
-    <string name="log_redirect_dialog_title">Перенаправить домен</string>
+    <string name="log_sort_alphabetical">По алфавиту</string>
+    <string name="log_sort_top_level_domain">По домену верхнего уровня</string>
+    <string name="log_block">Добавить запись в чёрный список</string>
+    <string name="log_allow">Добавить запись в белый список</string>
+    <string name="log_redirect">Добавить запись в список перенаправлений</string>
+    <string name="log_redirect_dialog_title">Перенаправление домена</string>
+    <string name="log_capture_failed">Не удалось начать перехват DNS-запросов.</string>
     <string name="log_start_recording_button">Начать запись</string>
     <string name="log_start_recording_vpn_inactive">Начать запись (VPN не активен)</string>
     <string name="log_stop_recording">Остановить запись</string>

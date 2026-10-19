@@ -3,17 +3,21 @@
     <string name="update_title">Обновление AdAway</string>
     <string name="update_banner_title">Доступно обновление</string>
     <string name="update_banner_subtitle">Нажмите, чтобы установить %1$s</string>
-    <string name="update_up_to_date_header">У вас актуальная версия</string>
+    <string name="update_up_to_date_header">У вас последняя версия</string>
     <string name="update_update_available_header">Доступно обновление</string>
     <string name="update_updating_header">Обновление AdAway</string>
     <string name="update_update_button">Обновить сейчас</string>
+    <string name="update_complete_label">Готово</string>
     <string name="update_last_changelog_title">Последние изменения</string>
     <string name="update_new_changelog_title">Список изменений</string>
+    <string name="update_download_failed">Не удалось загрузить обновление.</string>
+    <string name="update_install_failed">Не удалось установить обновление.</string>
     <string name="pref_update_check_now_update_available">Доступна новая версия: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Обновлений нет</string>
+    <string name="pref_update_check_now_failed">Не удалось связаться с сервером обновлений</string>
     <string name="pref_update_install_summary">Установить версию %1$s</string>
     <string name="notification_channel_app_updates">Обновления приложения</string>
-    <string name="notification_channel_app_updates_description">Уведомление о выходе новой версии приложения. Отключите этот канал, чтобы скрыть оповещения об обновлениях приложения, не затрагивая другие уведомления.</string>
+    <string name="notification_channel_app_updates_description">Уведомление о выходе новой версии приложения. Отключите этот канал, чтобы не получать уведомления об обновлениях приложения, не затрагивая остальные уведомления.</string>
     <string name="notification_app_update_title">Доступно обновление приложения</string>
-    <string name="notification_app_update_text">Новая версия AdAway доступна для загрузки.</string>
+    <string name="notification_app_update_text">Доступна для загрузки новая версия AdAway.</string>
 </resources>
