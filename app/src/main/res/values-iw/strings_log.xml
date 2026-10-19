@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">החלפת הקלטת היומן</string>
-    <string name="log_start_recording">לחץ על הקלט כדי להתחיל ברישום בקשות, לגלוש באינטרנט או להשתמש ביישומים, ואז לחזור אחורה או להחליק כדי לרענן את היומנים.</string>
-    <string name="log_blocked_requests_ignored">\n\nבקשות חסומות לא יירשמו. יש להשבית תחילה את חסימת המודעות אם ברצונך לרשום גם אותן.</string>
-    <string name="log_sort">מיין דומיין</string>
-    <string name="log_clear">נקה לוג</string>
+    <string name="log_toggle_recording_description">הפעלה/הפסקה של הקלטת היומן</string>
+    <string name="log_start_recording">הקש על התחלת הקלטה כדי להתחיל לרשום בקשות, גלוש באינטרנט או השתמש באפליקציות, ואז חזור אחורה או החלק כדי לרענן את היומן.</string>
+    <string name="log_blocked_requests_ignored">\n\nבקשות חסומות לא יירשמו. כבה קודם את חסימת הפרסומות אם ברצונך לרשום גם אותן.</string>
+    <string name="log_sort">מיון דומיינים</string>
+    <string name="log_clear">ניקוי היומן</string>
     <string name="log_sort_alphabetical">מיון אלפביתי</string>
-    <string name="log_sort_top_level_domain">מיון דומיין ברמה העליונה</string>
-    <string name="log_block">הוסף לרשימה שחורה</string>
-    <string name="log_allow">הוסף לרשימה לבנה</string>
-    <string name="log_redirect">הוסף לרשימת הפניות</string>
+    <string name="log_sort_top_level_domain">מיון לפי סיומת הדומיין</string>
+    <string name="log_block">הוספת רשומה לרשימת החסימה</string>
+    <string name="log_allow">הוספת רשומה לרשימת ההיתרים</string>
+    <string name="log_redirect">הוספת רשומה לרשימת ההפניות</string>
     <string name="log_redirect_dialog_title">הפניית דומיין</string>
-    <string name="log_start_recording_button">התחל הקלטה</string>
-    <string name="log_start_recording_vpn_inactive">התחל הקלטה (VPN לא פעיל)</string>
-    <string name="log_stop_recording">עצור הקלטה</string>
+    <string name="log_capture_failed">לכידת ה-DNS לא הצליחה להתחיל.</string>
+    <string name="log_start_recording_button">התחלת הקלטה</string>
+    <string name="log_start_recording_vpn_inactive">התחלת הקלטה (ה-VPN לא פעיל)</string>
+    <string name="log_stop_recording">עצירת הקלטה</string>
 </resources>

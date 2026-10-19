@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>הכנסות על ידי פרסומות</h2>
-<p>יש תפיסה לא נכונה שאפליקציות / מפתחים / אתרים לא ירוויחו כסף אם אתם תשתמש בחוסם פרסומות בגלל שלא תלחץ עליהם וזה לא נכון הם מרוויחים כסף גם על הצגת פרסומות לא רק על לחיצות</p>
+<h2>מהו AdAway Community?</h2>
+<p>AdAway Community היא גרסה נגזרת (fork) לא רשמית של AdAway, חוסם הפרסומות בקוד פתוח ל-Android, בתחזוקת הקהילה. היא חוסמת פרסומות ורכיבי מעקב בכל המערכת, עבור כל האפליקציות, בלי חשבון ובלי פרסומות משלה. הגרסה הנגזרת הזו מתמקדת בשמירה על פעולה אמינה של האפליקציה בגרסאות Android חדשות וב-ROM של יצרנים.</p>
 
-<h2>איך AdAway עובד ?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>איך זה חוסם פרסומות?</h2>
+<p>AdAway פועל באחד משני מצבים:</p>
+<p><strong>מצב VPN</strong> (בלי root): AdAway מפעיל VPN מקומי בתוך המכשיר, שאינו שולח את התנועה שלך לשום מקום. הוא בודק רק בקשות DNS וחוסם את אלה שמובילות לשמות מארחים של פרסומות ורכיבי מעקב, ומאפשר לכל השאר לעבור. שום דבר לא עוזב את המכשיר.</p>
+<p><strong>מצב root</strong>: אם המכשיר מושרש, AdAway יכול לכתוב במקום זאת <a href="http://en.wikipedia.org/wiki/Hosts_file">קובץ hosts</a> אל <code>/system/etc/hosts</code>, שממפה שמות מארחים לא רצויים אל <code>127.0.0.1</code>, כך שהם מפנים אל המכשיר שלך. ב-Android חדש נדרש מודול hosts מסוג systemless (למשל Magisk).</p>
 
-<h2>למה אני צריך לעשות ריסט למכשיר בשביל ש AdAway תפעל</h2>
-<p>ג'אווה של אנדרואיד שומר DNS על הקאש המערכת תכתוב מחדש את קובץ הרשימות אחרי שתעשה ריסט למכשיר</p>
+<h2>באילו שרתי DNS משתמש ה-VPN?</h2>
+<p>במצב VPN, שמות המארחים שאינם חסומים נפתרים על ידי שרתי ה-DNS שנבחרו תחת <cite>העדפות › חוסם פרסומות מבוסס VPN › שרתי DNS</cite>:</p>
+<p><strong>שרתי DNS של הרשת</strong> (ברירת מחדל): השרתים של רשת ה-Wi-Fi או הרשת הסלולרית שלך. אם הרשת אינה מספקת שרת ש-AdAway יכול להשתמש בו, AdAway עובר ל-Cloudflare (<code>1.1.1.1</code>).<br/><strong>שרתי DNS מותאמים אישית</strong>: כתובות ה-IP שמוזנות, מופרדות בפסיקים.<br/><strong>DNS over HTTPS</strong>: הבקשות מוצפנות ונשלחות ל-Cloudflare, ל-Google, ל-Quad9 או לכתובת <code>https://</code> שמוזנת, כך שהרשת שלך לא יכולה לקרוא אותן או לשנות אותן.</p>
+<p>החסימה פועלת באותו אופן בשלושת המצבים. כדי לשמור על DNS מוצפן, השתמש כאן ב-DNS over HTTPS ולא בהגדרת <cite>DNS פרטי</cite> של Android, שעוקפת את AdAway.</p>
 
-<h2>איך להשתמש בשרת אינטרנט ב AdAway ?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>איך חוסמים, מתירים או מפנים שם מארח?</h2>
+<p>במסך הבית אפשר לנהל שלוש רשימות:</p>
+<p><strong>חסומים</strong>: שמות מארחים שיש לחסום (פרסומות ורכיבי מעקב).<br/><strong>מותרים</strong>: חריגים שלעולם לא יחסמו, גם אם מקור כלשהו כולל אותם.<br/><strong>מופנים</strong>: שמות מארחים שרוצים להפנות לכתובת IP מסוימת.</p>
+<p>אפשר גם לפתוח את <cite>יומן DNS</cite> ממסך הבית כדי לראות בזמן אמת אילו שמות מארחים האפליקציות מבקשות, ולחסום או להתיר אותם ישירות משם.</p>
 
-<h2>איך אני יכול לחסום / להוריד חסימה למסור ספציפי ?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>האם צריך להפעיל מחדש את Android אחרי שינוי הרשימות?</h2>
+<p>לא. AdAway מחיל את השינוי מיד, אבל אפליקציה שכבר הייתה פתוחה עשויה להמשיך להשתמש בחיבורים הישנים שלה ובמטמון שלה. סגור אותה לגמרי (אילוץ עצירה בהגדרות Android של האפליקציה), ונקה את המטמון שלה אם עדיין מוצגות פרסומות. הפעלה מחדש של Android נדרשת רק פעם אחת במצב root, אחרי הפעלת מודול systemless hosts של Magisk.</p>
 
-<h2>איפה אני יכול למצוא עוד מקורות של מארחים?</h2>
-<p>ראה<a href="https://github.com/AdAway/AdAway/wiki/HostsSources">רשימת מקורות לתוכנת AdAway</a>.</p>
+<h2>איפה אפשר למצוא עוד מקורות hosts?</h2>
+<p>AdAway מגיע עם ברירות מחדל סבירות. אם רוצים עוד, אפשר לעיין ב<a href="https://github.com/AdAway/AdAway/wiki/HostsSources">רשימת מקורות hosts נוספים</a> שבתחזוקת הקהילה. הוסף מקורות במשורה, כי רשימות גדולות מאוד או חופפות עלולות לגרום לתוצאות חיוביות שגויות ששוברות אפליקציות.</p>
 
-<h2>למה הפורק הזה קיים</h2>
-<p>AdAway הוא פרויקט נהדר עם היסטוריה ארוכה, אך פעילות השחרור והסקירה ב-upstream מוגבלת זה זמן מה.<br/>חלק מהבאגים וה-Pull Request נשארו פתוחים זמן רב, כולל בעיות המשפיעות על יציבות מצב VPN בגרסאות Android אחרונות וב-ROM של יצרני ציוד מקורי.<br/>הפורק הזה קיים כדי לשמור על השימוש בפרויקט עם תיקונים שמתוחזקים על ידי הקהילה, במקום להשאיר שיפורים שנבדקו ללא שימוש.</p>
+<h2>למה קיימת הגרסה הנגזרת הזו?</h2>
+<p>AdAway הוא פרויקט נהדר עם היסטוריה ארוכה, אבל פעילות השחרור והסקירה במאגר המקורי מוגבלת כבר זמן מה. כמה תיקוני באגים ובקשות מיזוג (pull requests) נשארו פתוחים הרבה זמן, ובהם בעיות שפוגעות ביציבות מצב ה-VPN בגרסאות Android חדשות וב-ROM של יצרנים. הגרסה הנגזרת הזו קיימת כדי לשמור על הפרויקט שמיש באמצעות תיקונים שבתחזוקת הקהילה, במקום להשאיר שיפורים שנבדקו ללא שימוש.</p>
 
-<h2>עזור בתרגום/דיווח בעיות</h2>
-<p>בקר באתר <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>איך מדווחים על באג או מציעים שינוי?</h2>
+<p>פתח דיווח (issue) במעקב הבעיות של הגרסה הנגזרת: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. יומן אבחון (ראה את הלשונית בעיות) עוזר מאוד בדיווח על בעיות VPN.</p>
 </body>
 </html>

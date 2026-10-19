@@ -1,45 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">اولین قدم جادوگر</string>
-    <string name="welcome_second_step">گام دوم جادوگر</string>
-    <string name="welcome_method_header">به برنامه AdAway مسدود کننده تبلیغات خوش آمدید</string>
-    <string name="welcome_method_summary">برنامه AdAway به دو روش ویژگی مسدود کردن تبلیغات را ارائه می دهد لطفا یکی از روش ها را انتخاب کنید :</string>
-    <string name="welcome_root_method_title">مسدود کردن تبلیغات با استفاده از روت</string>
-    <string name="welcome_root_method_text1">سریع تر</string>
-    <string name="welcome_root_method_text2">سازگار با باتری</string>
-    <string name="welcome_root_method_text3">نیاز به روت دارد</string>
-    <string name="welcome_vpn_method_title">مسدود کردن تبلیغات مبتنی بر VPN</string>
-    <string name="welcome_vpn_method_text1">کند تر</string>
-    <string name="welcome_vpn_method_text2">اجرا در پس زمینه</string>
-    <string name="welcome_vpn_method_text3">سازگاری</string>
-    <string name="welcome_root_missing_title">به گوشی اندروید روت شده نیاز دارد</string>
-    <string name="welcome_root_missile_description">دسترسی روت به AdAway داده نشده یا باینری پیدا نشد این اتفاق ممکن است زمانی اتفاق بیفتد که دستگاه شما روت نشده باشد شما می توانید اطلاعات مورد نظر در مورد روش روت کردن گوشی خود را در سایت wiki.lineageos.org یا سایر سایت های اندروید پیدا کنید</string>
+    <string name="welcome_first_step">مرحله اول راه‌اندازی</string>
+    <string name="welcome_second_step">مرحله دوم راه‌اندازی</string>
+    <string name="welcome_third_step">مرحله سوم راه‌اندازی</string>
+    <string name="welcome_fourth_step">مرحله چهارم راه‌اندازی</string>
+    <string name="welcome_method_header">به AdAway خوش آمدید!</string>
+    <string name="welcome_method_summary">AdAway دو روش برای مسدودسازی تبلیغات ارائه می‌دهد. روشی را که ترجیح می‌دهید انتخاب کنید:</string>
+    <string name="welcome_root_method_title">مسدودسازی تبلیغات\nمبتنی بر روت</string>
+    <string name="welcome_root_method_text1">سریع‌تر</string>
+    <string name="welcome_root_method_text2">مصرف کم باتری</string>
+    <string name="welcome_root_method_text3">نیازمند روت</string>
+    <string name="welcome_vpn_method_title">مسدودسازی تبلیغات\nمبتنی بر VPN</string>
+    <string name="welcome_vpn_method_text1">کندتر</string>
+    <string name="welcome_vpn_method_text2">اجرا در پس‌زمینه</string>
+    <string name="welcome_vpn_method_text3">سازگاری بالا</string>
+    <string name="welcome_root_missing_title">نیاز به اندروید روت‌شده</string>
+    <string name="welcome_root_missile_description">یا فایل اجرایی su پیدا نشد یا دسترسی روت را به AdAway نداده‌اید.\n\nاین اتفاق ممکن است زمانی رخ دهد که دستگاه شما روت نشده باشد. اطلاعات مربوط به روت کردن دستگاه را می‌توانید در wiki.lineageos.org یا دیگر وب‌سایت‌های اندروید پیدا کنید.</string>
     <string name="welcome_vpn_alwayson_title">VPN همیشه روشن فعال است</string>
-    <string name="welcome_vpn_alwayson_description">AdAway تشخیص داد که VPN دیگری دارای تنظیم \"VPN همیشه روشن\" فعال است که مانع از درخواست AdAway برای دسترسی به VPN می شود لطفا «VPN همیشه روشن» را از تنظیمات VPN گوشی غیرفعال کرده و دوباره امتحان کنید</string>
-    <string name="welcome_vpn_alwayson_blocked_description">AdAway در درخواست دسترسی VPN ناموفق بود این ممکن است به این دلیل باشد که یک VPN دیگر دارای تنظیم \"VPN همیشه روشن\" فعال است لطفا بررسی کنید که آیا VPN این تنظیم را فعال کرده است یا خیر و قبل از تلاش دوباره آن را غیرفعال کنید</string>
-    <string name="welcome_vpn_alwayson_settings_action">تنظیمات \"VPN\" باز شود</string>
-    <string name="welcome_method_pro_logo">حرفه ای</string>
-    <string name="welcome_method_con_logo">همراه هم</string>
-    <string name="welcome_sync_header">در حال همگام سازی</string>
-    <string name="welcome_synced_header">همگام سازی شد</string>
-    <string name="welcome_sync_summary">AdAway شبکه های تبلیغاتی را دانلود کرده و آن ها را مسدود خواهد کرد شما می توانید آن ها را در تنظیمات برنامه سفارشی کنید</string>
-    <string name="welcome_sync_retry_logo">دوباره همگام سازی کنید</string>
-    <string name="welcome_sync_error">همگام‌ سازی انجام نشد : %1$s آیا دوباره امتحان می‌کنید؟</string>
-    <string name="welcome_sync_notifications">این گزینه اعلان‌ هایی را برای نمایش وضعیت مسدود کردن تبلیغات و مدیریت و اطلاع‌ رسانی در مورد به‌ روز رسانی برنامه (تا چندین سال) ارسال کند اگر می‌خواهید به‌ روز بمانید آن‌ها را فعال کنید</string>
+    <string name="welcome_vpn_alwayson_description">AdAway تشخیص داد که VPN دیگری گزینه «VPN همیشه روشن» را فعال کرده است.\n\nاین موضوع مانع از آن می‌شود که AdAway درخواست دسترسی VPN بدهد. لطفاً گزینه «VPN همیشه روشن» را در آن VPN غیرفعال کنید و دوباره تلاش کنید.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">درخواست دسترسی VPN توسط AdAway ناموفق بود.\n\nشاید دلیل آن این باشد که VPN دیگری گزینه «VPN همیشه روشن» را فعال کرده است. لطفاً بررسی کنید که آیا VPN دیگری این گزینه را فعال دارد و پیش از تلاش دوباره آن را غیرفعال کنید.</string>
+    <string name="welcome_vpn_alwayson_settings_action">باز کردن تنظیمات «VPN»</string>
+    <string name="welcome_method_pro_logo">مزیت</string>
+    <string name="welcome_method_con_logo">عیب</string>
+    <string name="welcome_sync_header">در حال همگام‌سازی</string>
+    <string name="welcome_synced_header">همگام‌سازی انجام شد!</string>
+    <string name="welcome_sync_summary">AdAway شبکه‌های تبلیغاتی را که باید مسدود شوند از منابع آنلاین دانلود می‌کند. بعداً می‌توانید آن‌ها را در تنظیمات سفارشی کنید.</string>
+    <string name="welcome_sync_retry_logo">تلاش مجدد برای همگام‌سازی</string>
+    <string name="welcome_sync_error">همگام‌سازی ناموفق بود: %1$s. اکنون دوباره تلاش می‌کنید؟</string>
+    <string name="welcome_sync_notifications">برنامه می‌تواند اعلان‌هایی برای نمایش وضعیت و کنترل مسدودسازی تبلیغات و همچنین اطلاع‌رسانی درباره به‌روزرسانی برنامه (چند بار در سال) ارسال کند. اگر می‌خواهید همیشه به‌روز بمانید، آن‌ها را فعال کنید.</string>
     <string name="welcome_sync_leave_early_title">همگام‌سازی هنوز تمام نشده است</string>
-    <string name="welcome_sync_leave_early_message">دانلود لیست‌های مسدودسازی هنوز تمام نشده است. می‌توانید اکنون ادامه دهید و در پس‌زمینه ادامه می‌یابد، یا اینجا منتظر بمانید تا تمام شود.</string>
-    <string name="welcome_sync_leave_early_wait">منتظر بمانید</string>
-    <string name="welcome_sync_leave_early_continue">در هر صورت ادامه بده</string>
+    <string name="welcome_sync_leave_early_message">دانلود فهرست‌های مسدودسازی هنوز کامل نشده است. می‌توانید همین حالا ادامه دهید و دانلود در پس‌زمینه پیش می‌رود، یا اینجا صبر کنید تا کار تمام شود.</string>
+    <string name="welcome_sync_leave_early_wait">صبر کردن</string>
+    <string name="welcome_sync_leave_early_continue">در هر صورت ادامه</string>
+    <string name="welcome_battery_header">در پس‌زمینه هم محافظت‌شده بمانید</string>
+    <string name="welcome_battery_summary">اندروید برای صرفه‌جویی در انرژی ممکن است VPN برنامه AdAway را در پس‌زمینه متوقف کند و مسدودسازی تبلیغات بی‌صدا از کار بیفتد. به AdAway اجازه دهید بهینه‌سازی باتری را نادیده بگیرد تا همچنان در حال اجرا بماند.</string>
+    <string name="welcome_battery_action">اجازه دادن</string>
+    <string name="welcome_battery_granted">مجاز شد ✓</string>
+    <string name="welcome_battery_footnote_prefix">هر زمان که بخواهید، بعداً می‌توانید این مورد را از این مسیر تغییر دهید</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>تنظیمات اندروید</item>
+        <item>برنامه‌ها</item>
+        <item>AdAway</item>
+        <item>باتری</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">یک نکته دیگر: مدیر باتری خود گوشی</string>
+    <string name="welcome_oem_battery_summary">برخی برندهای گوشی مدیر باتری مخصوص خود را دارند که می‌تواند AdAway را هم مسدود کند. موارد زیر را در گوشی خود بررسی کنید:</string>
+    <string name="welcome_oem_battery_action">باز کردن اطلاعات برنامه</string>
+    <string name="welcome_oem_battery_open_failed">باز کردن صفحه اطلاعات برنامه ممکن نبود. آن را به‌صورت دستی از تنظیمات اندروید › برنامه‌ها › AdAway باز کنید.</string>
+    <string name="welcome_oem_battery_disclaimer">این‌ها راهنمایی‌های کلی هستند و راهنمای دقیق نیستند: عبارت‌ها و محل گزینه‌ها بسته به مدل گوشی و نسخه اندروید ممکن است متفاوت باشد.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>اطلاعات برنامه</item>
+        <item>باتری</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">به‌دنبال مواردی مانند «محدودیت‌های مصرف در پس‌زمینه» › «برنامه‌هایی که هرگز به خواب نمی‌روند» بگردید و AdAway را به آن فهرست اضافه کنید.</string>
+    <string name="welcome_oem_battery_secondary_oneui">همچنین گزینه «بهینه‌سازی خودکار» را بررسی کنید و اگر وجود دارد، «راه‌اندازی مجدد در صورت نیاز» را خاموش کنید.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>اطلاعات برنامه</item>
+        <item>صرفه‌جویی در باتری</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">«بدون محدودیت» را انتخاب کنید.</string>
+    <string name="welcome_oem_battery_secondary_miui">همچنین «شروع خودکار» را فعال کنید (در نسخه‌های جدیدتر «شروع خودکار در پس‌زمینه»).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>اطلاعات برنامه</item>
+        <item>مصرف باتری</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">«مجاز کردن فعالیت در پس‌زمینه» را انتخاب کنید (گاهی با عنوان «بدون محدودیت» نمایش داده می‌شود).</string>
+    <string name="welcome_oem_battery_secondary_coloros">همچنین به‌دنبال کلید «راه‌اندازی خودکار» برای AdAway بگردید (اغلب در تنظیمات › برنامه‌ها)، تا پس از توقف اجباری بتواند خودش دوباره اجرا شود.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>اطلاعات برنامه</item>
+        <item>باتری</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">به‌دنبال «راه‌اندازی برنامه» بگردید، «مدیریت خودکار» را خاموش کنید، سپس هر ۳ گزینه «راه‌اندازی خودکار»، «راه‌اندازی ثانویه» و «اجرا در پس‌زمینه» را فعال کنید.</string>
+    <string name="welcome_oem_battery_secondary_emui">همچنین AdAway را در صفحه برنامه‌های اخیر قفل کنید (کارت آن را به پایین بکشید تا نماد قفل ظاهر شود).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>اطلاعات برنامه</item>
+        <item>مصرف باتری</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">به‌دنبال گزینه مصرف انرژی در پس‌زمینه بگردید و «مصرف انرژی در پس‌زمینه محدود نشود» را انتخاب کنید (نه «کنترل هوشمند»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">همچنین به‌دنبال تنظیم «شروع خودکار» برای AdAway بگردید، اغلب در تنظیمات › برنامه‌ها.</string>
+    <string name="welcome_oem_battery_label_generic">برند دیگر</string>
+    <string name="welcome_oem_battery_tip_generic">در اطلاعات برنامه، به‌دنبال تنظیم باتری یا فعالیت در پس‌زمینه بگردید و مطمئن شوید AdAway محدود نشده است.</string>
     <string name="welcome_back_button">بازگشت</string>
     <string name="welcome_next_button">بعدی</string>
     <string name="welcome_finish_button">پایان</string>
-    <string name="tv_welcome_intro_subtitle">این جادوگر کوتاه، مسدودسازی تبلیغات را روی این دستگاه فعال می‌کند.</string>
-    <string name="tv_welcome_start_button">شروع کنید</string>
+    <string name="tv_welcome_intro_subtitle">این راهنمای کوتاه، مسدودسازی تبلیغات را روی این دستگاه روشن می‌کند.</string>
+    <string name="tv_welcome_start_button">شروع</string>
     <string name="tv_welcome_method_header">روش مسدودسازی خود را انتخاب کنید</string>
     <string name="tv_welcome_method_root_button">استفاده از روت</string>
-    <string name="tv_welcome_method_root_body">سریع‌تر و کم‌مصرف‌تر برای باتری. به دستگاه روت‌شده نیاز دارد.</string>
+    <string name="tv_welcome_method_root_body">سریع‌تر و کم‌مصرف برای باتری. نیازمند دستگاه روت‌شده.</string>
     <string name="tv_welcome_method_vpn_button">استفاده از VPN</string>
-    <string name="tv_welcome_method_vpn_body">بدون روت کار می‌کند، با هر دستگاه Android TV سازگار است.</string>
-    <string name="tv_welcome_activate_header">فعال‌سازی مسدودسازی تبلیغات</string>
-    <string name="tv_welcome_activate_body">این یک VPN محلی است: تبلیغات را روی همین دستگاه فیلتر می‌کند، بدون اینکه ترافیک شما را از یک سرور خارجی عبور دهد.</string>
+    <string name="tv_welcome_method_vpn_body">بدون روت کار می‌کند و با هر دستگاه Android TV سازگار است.</string>
+    <string name="tv_welcome_activate_header">مسدودسازی تبلیغات را روشن کنید</string>
+    <string name="tv_welcome_activate_body">این یک VPN محلی است: تبلیغات را روی همین دستگاه فیلتر می‌کند، بدون اینکه ترافیک شما را از یک سرور بیرونی عبور دهد.</string>
 </resources>

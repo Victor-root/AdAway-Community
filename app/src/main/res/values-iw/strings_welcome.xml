@@ -1,45 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">אשף הצעד הראשון</string>
-    <string name="welcome_second_step">אשף הצעד השני</string>
-    <string name="welcome_method_header">ברוכים הבאים אל AdAway!</string>
-    <string name="welcome_method_summary">‏AdAway מספק שני שיטות חסימת פרסומות. בחר\י את השיטה שמתאימה לך:</string>
-    <string name="welcome_root_method_title">מבוסס גישת שורש\nחוסם פרסומות</string>
-    <string name="welcome_root_method_text1">מהיר יותר</string>
-    <string name="welcome_root_method_text2">ידידותי לסוללה</string>
-    <string name="welcome_root_method_text3">נדרש גישת שורש</string>
-    <string name="welcome_vpn_method_title">מבוסס VPN\nחוסם פרסומות</string>
-    <string name="welcome_vpn_method_text1">איטי יותר</string>
-    <string name="welcome_vpn_method_text2">פועל ברקע</string>
+    <string name="welcome_first_step">השלב הראשון באשף</string>
+    <string name="welcome_second_step">השלב השני באשף</string>
+    <string name="welcome_third_step">השלב השלישי באשף</string>
+    <string name="welcome_fourth_step">השלב הרביעי באשף</string>
+    <string name="welcome_method_header">ברוכים הבאים ל-AdAway!</string>
+    <string name="welcome_method_summary">AdAway מציע שתי שיטות לחסימת פרסומות. בחר את המתאימה לך:</string>
+    <string name="welcome_root_method_title">חסימת פרסומות\nמבוססת root</string>
+    <string name="welcome_root_method_text1">מהירה יותר</string>
+    <string name="welcome_root_method_text2">חסכונית בסוללה</string>
+    <string name="welcome_root_method_text3">נדרשת גישת root</string>
+    <string name="welcome_vpn_method_title">חסימת פרסומות\nמבוססת VPN</string>
+    <string name="welcome_vpn_method_text1">איטית יותר</string>
+    <string name="welcome_vpn_method_text2">פועלת ברקע</string>
     <string name="welcome_vpn_method_text3">תאימות</string>
-    <string name="welcome_root_missing_title">נדרשת הרשאת ROOT</string>
-    <string name="welcome_root_missile_description">לא אפשרת הרשאת Root ל־AdAway.\n\nזה יכול לקרות כאשר המכשיר שלך אינו בעל הרשאת Root. תוכל\י למצוא מידע על אופן ביצוע Root במכשיר שלך ב־wiki.lineageos.org או באתרים דומים.</string>
-    <string name="welcome_vpn_alwayson_title">הפעלת \"VPN תמיד פעיל\"</string>
-    <string name="welcome_vpn_alwayson_description">AdAway זיהתה ש-VPN אחר משתמש בהגדרה \"‏VPN תמיד פעיל\".\n\nהדבר מונע מ-AdAway לבקש גישת VPN. אנא השבת את ההגדרה \"‏VPN תמיד פעיל\" ב-VPN המתאים ונסה שוב.</string>
-    <string name="welcome_vpn_alwayson_blocked_description">‏AdAway נכשלה בבקשת גישת VPN.\n\nייתכן שהסיבה לכך היא ש-VPN אחר משתמש בהגדרה \"‏VPN תמיד פעיל\". אנא בדוק אם יש VPN כלשהו שבו ההגדרה הזו מופעלת והשבת אותה לפני שתנסה שוב.</string>
-    <string name="welcome_vpn_alwayson_settings_action">פתח\י הגדרות \"VPN\"</string>
-    <string name="welcome_method_pro_logo">מקצועי</string>
-    <string name="welcome_method_con_logo">עם</string>
+    <string name="welcome_root_missing_title">נדרש Android עם הרשאות root</string>
+    <string name="welcome_root_missile_description">קובץ su לא נמצא, או שלא ניתנה ל-AdAway הרשאת root.\n\nזה יכול לקרות כשהמכשיר אינו מושרש (root). מידע על קבלת הרשאות root במכשיר אפשר למצוא ב-wiki.lineageos.org או באתרי Android אחרים.</string>
+    <string name="welcome_vpn_alwayson_title">\"VPN מופעל תמיד\" פעיל</string>
+    <string name="welcome_vpn_alwayson_description">AdAway זיהה שבאפליקציית VPN אחרת מופעלת ההגדרה \"VPN מופעל תמיד\".\n\nכך AdAway אינו יכול לבקש גישת VPN. השבת את \"VPN מופעל תמיד\" באפליקציית ה-VPN המתאימה ונסה שוב.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway לא הצליח לבקש גישת VPN.\n\nייתכן שהסיבה היא שבאפליקציית VPN אחרת מופעלת ההגדרה \"VPN מופעל תמיד\". בדוק אם ההגדרה הזו מופעלת באחת מאפליקציות ה-VPN וכבה אותה לפני שתנסה שוב.</string>
+    <string name="welcome_vpn_alwayson_settings_action">פתיחת הגדרות \"VPN\"</string>
+    <string name="welcome_method_pro_logo">יתרון</string>
+    <string name="welcome_method_con_logo">חיסרון</string>
     <string name="welcome_sync_header">מסנכרן</string>
-    <string name="welcome_synced_header">מסונכרן!</string>
-    <string name="welcome_sync_summary">AdAway מוריד רשתות של מודעות כדי לחסום אותן ממקורותיהן המקוונים. אתה יכול להתאים אותן מאוחר יותר בהגדרות.</string>
-    <string name="welcome_sync_retry_logo">נסה סנכרון מחדש</string>
-    <string name="welcome_sync_error">סנכרון נכשל: %1$s לנסות כעת?</string>
-    <string name="welcome_sync_notifications">היישום יכול לשלוח התראות להצגת מצב ושליטה בחסימת פרסומות, וכן להודיע על עדכוני אפליקציה זמינים (כמה פעמים בשנה). הפעל התראות אלו אם ברצונך להישאר מעודכן.</string>
+    <string name="welcome_synced_header">הסנכרון הושלם!</string>
+    <string name="welcome_sync_summary">AdAway מוריד ממקורות מקוונים את רשתות הפרסום שיש לחסום. אפשר להתאים אותן אישית מאוחר יותר בהעדפות.</string>
+    <string name="welcome_sync_retry_logo">נסה לסנכרן שוב</string>
+    <string name="welcome_sync_error">הסנכרון נכשל: %1$s. לנסות שוב עכשיו?</string>
+    <string name="welcome_sync_notifications">האפליקציה יכולה לשלוח התראות כדי להציג את מצב חסימת הפרסומות ולשלוט בה, וכדי להודיע על עדכוני אפליקציה זמינים (כמה בשנה). מומלץ להפעיל אותן כדי להישאר מעודכנים.</string>
     <string name="welcome_sync_leave_early_title">הסנכרון עדיין לא הסתיים</string>
-    <string name="welcome_sync_leave_early_message">הורדת רשימות החסימה עדיין לא הסתיימה. תוכל להמשיך עכשיו והיא תמשיך ברקע, או להמתין כאן עד לסיומה.</string>
+    <string name="welcome_sync_leave_early_message">הורדת רשימות החסימה עדיין לא הסתיימה. אפשר להמשיך עכשיו וההורדה תימשך ברקע, או להמתין כאן עד לסיומה.</string>
     <string name="welcome_sync_leave_early_wait">המתן</string>
     <string name="welcome_sync_leave_early_continue">המשך בכל זאת</string>
-    <string name="welcome_back_button">חזור</string>
+    <string name="welcome_battery_header">הגנה רציפה ברקע</string>
+    <string name="welcome_battery_summary">Android עלול להשהות את ה-VPN של AdAway ברקע כדי לחסוך בחשמל, וכך להפסיק את חסימת הפרסומות בשקט. אפשר ל-AdAway להתעלם מאופטימיזציית הסוללה כדי שימשיך לפעול.</string>
+    <string name="welcome_battery_action">אפשר</string>
+    <string name="welcome_battery_granted">מותר ✓</string>
+    <string name="welcome_battery_footnote_prefix">תמיד אפשר לשנות זאת מאוחר יותר דרך</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>הגדרות Android</item>
+        <item>אפליקציות</item>
+        <item>AdAway</item>
+        <item>סוללה</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">עוד דבר אחד: מנהל הסוללה של הטלפון עצמו</string>
+    <string name="welcome_oem_battery_summary">בחלק ממותגי הטלפונים יש מנהל סוללה משלהם שעלול לחסום גם הוא את AdAway. הנה מה שכדאי לבדוק במכשיר שלך:</string>
+    <string name="welcome_oem_battery_action">פתיחת פרטי האפליקציה</string>
+    <string name="welcome_oem_battery_open_failed">לא ניתן היה לפתוח את מסך פרטי האפליקציה. פתח אותו ידנית דרך הגדרות Android › אפליקציות › AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">אלה הנחיות כלליות ולא מדריך מדויק: הנוסח והמיקום עשויים להשתנות בהתאם לדגם הטלפון ולגרסת Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>פרטי האפליקציה</item>
+        <item>סוללה</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">חפש משהו כמו \"הגבלות שימוש ברקע\" › \"אפליקציות שלא נכנסות למצב שינה לעולם\", ואז הוסף את AdAway לרשימה הזו.</string>
+    <string name="welcome_oem_battery_secondary_oneui">בדוק גם אם יש הגדרה \"אופטימיזציה אוטומטית\", וכבה את \"הפעלה מחדש בעת הצורך\" אם היא קיימת.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>פרטי האפליקציה</item>
+        <item>חוסך הסוללה</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">בחר \"ללא הגבלות\".</string>
+    <string name="welcome_oem_battery_secondary_miui">הפעל גם את \"הפעלה אוטומטית\" (\"הפעלה אוטומטית ברקע\" בגרסאות חדשות יותר).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>פרטי האפליקציה</item>
+        <item>שימוש בסוללה</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">בחר \"אפשר פעילות ברקע\" (לפעמים מוצג כ\"ללא הגבלות\").</string>
+    <string name="welcome_oem_battery_secondary_coloros">חפש גם מתג \"הפעלה אוטומטית\" עבור AdAway (לרוב תחת הגדרות › אפליקציות), כדי שיוכל לעלות מחדש בעצמו לאחר אילוץ עצירה.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>פרטי האפליקציה</item>
+        <item>סוללה</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">חפש \"הפעלת אפליקציות\", כבה את \"ניהול אוטומטי\" ואז הפעל את כל שלוש האפשרויות: \"הפעלה אוטומטית\", \"הפעלה משנית\" ו\"הפעלה ברקע\".</string>
+    <string name="welcome_oem_battery_secondary_emui">נעל גם את AdAway במסך האפליקציות האחרונות (החלק מטה על הכרטיס שלו עד שיופיע מנעול).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>פרטי האפליקציה</item>
+        <item>שימוש בסוללה</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">חפש אפשרות של צריכת חשמל ברקע ובחר \"ללא הגבלה על צריכת חשמל ברקע\" (ולא \"בקרה חכמה\").</string>
+    <string name="welcome_oem_battery_secondary_funtouch">חפש גם הגדרת \"הפעלה אוטומטית\" עבור AdAway, לרוב תחת הגדרות › אפליקציות.</string>
+    <string name="welcome_oem_battery_label_generic">מותג אחר</string>
+    <string name="welcome_oem_battery_tip_generic">חפש בפרטי האפליקציה הגדרה של סוללה או של פעילות ברקע, וודא ש-AdAway אינו מוגבל.</string>
+    <string name="welcome_back_button">חזרה</string>
     <string name="welcome_next_button">הבא</string>
     <string name="welcome_finish_button">סיום</string>
-    <string name="tv_welcome_intro_subtitle">אשף קצר זה יפעיל את חסימת הפרסומות במכשיר הזה.</string>
-    <string name="tv_welcome_start_button">התחלה</string>
-    <string name="tv_welcome_method_header">בחר את שיטת החסימה שלך</string>
-    <string name="tv_welcome_method_root_button">השתמש ב-root</string>
-    <string name="tv_welcome_method_root_body">מהיר יותר וחסכוני יותר בסוללה. דורש מכשיר עם הרשאות root.</string>
-    <string name="tv_welcome_method_vpn_button">השתמש ב-VPN</string>
+    <string name="tv_welcome_intro_subtitle">האשף הקצר הזה מפעיל חסימת פרסומות במכשיר הזה.</string>
+    <string name="tv_welcome_start_button">התחל</string>
+    <string name="tv_welcome_method_header">בחר את שיטת החסימה</string>
+    <string name="tv_welcome_method_root_button">שימוש ב-root</string>
+    <string name="tv_welcome_method_root_body">מהיר וחסכוני בסוללה. נדרש מכשיר עם הרשאות root.</string>
+    <string name="tv_welcome_method_vpn_button">שימוש ב-VPN</string>
     <string name="tv_welcome_method_vpn_body">פועל ללא root, תואם לכל מכשיר Android TV.</string>
     <string name="tv_welcome_activate_header">הפעלת חסימת פרסומות</string>
-    <string name="tv_welcome_activate_body">זהו VPN מקומי: הוא מסנן פרסומות במכשיר עצמו, מבלי לנתב את התעבורה שלך דרך שרת חיצוני.</string>
+    <string name="tv_welcome_activate_body">זהו VPN מקומי: הוא מסנן פרסומות במכשיר הזה, בלי להעביר את התנועה שלך דרך שרת חיצוני.</string>
 </resources>

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">تغییر وضعیت ثبت گزارش</string>
-    <string name="log_start_recording">برای شروع گزارش درخواست‌ ها درباره مرور وب یا استفاده از برنامه‌ ها دکمه ثبت را فشار دهید سپس به عقب برگردید یا برای تازه سازی صفحه گزارش‌ ها انگشت خود را به پایین بکشید</string>
-    <string name="log_blocked_requests_ignored">درخواست های مسدود شده گزارش نمی شوند اگر می‌خواهید آن‌ ها را نیز وارد کنید ابتدا مسدود کردن تبلیغات را غیرفعال کنید.</string>
-    <string name="log_clear">پاک کردن رویدادها</string>
-    <string name="log_sort_alphabetical">مرتب‌سازی بر اساس حروف الفبا</string>
-    <string name="log_sort_top_level_domain">مرتب سازی دامنه سطح بالا</string>
-    <string name="log_redirect_dialog_title">تغییر مسیر دامنه</string>
+    <string name="log_toggle_recording_description">روشن/خاموش کردن ثبت گزارش</string>
+    <string name="log_start_recording">برای شروع ثبت درخواست‌ها، دکمه ضبط را بزنید، در وب گشت‌وگذار کنید یا از برنامه‌ها استفاده کنید، سپس برای تازه‌سازی گزارش به صفحه قبل برگردید یا صفحه را به پایین بکشید.</string>
+    <string name="log_blocked_requests_ignored">\n\nدرخواست‌های مسدودشده ثبت نمی‌شوند. اگر می‌خواهید آن‌ها هم ثبت شوند، ابتدا مسدودسازی تبلیغات را غیرفعال کنید.</string>
+    <string name="log_sort">مرتب‌سازی دامنه‌ها</string>
+    <string name="log_clear">پاک کردن گزارش</string>
+    <string name="log_sort_alphabetical">مرتب‌سازی الفبایی</string>
+    <string name="log_sort_top_level_domain">مرتب‌سازی بر اساس دامنه سطح بالا</string>
+    <string name="log_block">افزودن مورد به فهرست مسدودشده‌ها</string>
+    <string name="log_allow">افزودن مورد به فهرست مجازها</string>
+    <string name="log_redirect">افزودن مورد به فهرست هدایت‌ها</string>
+    <string name="log_redirect_dialog_title">هدایت دامنه</string>
+    <string name="log_capture_failed">شروع ثبت درخواست‌های DNS ممکن نبود.</string>
     <string name="log_start_recording_button">شروع ضبط</string>
     <string name="log_start_recording_vpn_inactive">شروع ضبط (VPN فعال نیست)</string>
     <string name="log_stop_recording">توقف ضبط</string>

@@ -2,81 +2,108 @@
 <resources>
     <string name="pref_main_title">تنظیمات</string>
     <string name="pref_general_category">عمومی</string>
-    <string name="pref_dark_theme">پس زمینه سیاه</string>
+    <string name="pref_dark_theme">تم تیره</string>
     <string-array name="pref_dark_theme_modes">
-        <item>سفید</item>
-        <item>سیاه</item>
-        <item>پیش فرض سیستم</item>
+        <item>روشن</item>
+        <item>تیره</item>
+        <item>پیش‌فرض سیستم</item>
     </string-array>
-    <string name="pref_update_configuration">به روز رسانی های خودکار</string>
-    <string name="pref_ad_block_category">مسدود کردن تبلیغات</string>
-    <string name="pref_root_ad_blocker_configuration">مسدود کننده تبلیغات مبتنی بر روت</string>
-    <string name="pref_vpn_ad_blocker_configuration">مسدود کننده تبلیغات مبتنی بر VPN</string>
-    <string name="pref_enable_ipv6">فعال کردن پشتیبانی از IPv6</string>
-    <string name="pref_backup_restore">پشتیبان گیری / بازیابی از قوانین مسدود کردن</string>
-    <string name="pref_backup_restore_title">پشتیبان گیری و بازگردانی</string>
-    <string name="pref_backup">پشتیبان گیری</string>
-    <string name="pref_backup_summary">از قوانین مسدود سازی در حافظه خارجی یک نسخه پشتیبان گیری شده تهیه کنید</string>
-    <string name="pref_restore">بازگردانی</string>
-    <string name="pref_restore_summary">قوانین مسدود سازی را از طریق فایل پشتیبان گیری شده بازیابی کنید</string>
-    <string name="import_success">فایل پشتیبانی با موفقیت از کارت حافظه شما بارگذاری شد.</string>
-    <string name="pref_update_title">به روز رسانی ها</string>
-    <string name="pref_update_enable_notifications">اعلان ها غیرفعال هستند</string>
-    <string name="pref_update_enable_notifications_summary">اعلان‌ های برنامه نمایش داده نمی‌شوند برای فعال کردن آن ها فشار دهید </string>
-    <string name="pref_update_app_category">به روز رسانی های برنامه</string>
-    <string name="pref_update_check_app_startup">بررسی به روز رسانی در استارت آپ</string>
-    <string name="pref_update_check_app_daily">به صورت دوره ای به روز رسانی را بررسی کنید</string>
-    <string name="pref_update_check_now">اکنون بررسی کن</string>
-    <string name="pref_update_install">اکنون به‌روزرسانی کن</string>
-    <string name="pref_update_hosts_category">به روز رسانی های Hosts</string>
-    <string name="pref_update_check">بررسی به روز رسانی در استارت آپ</string>
-    <string name="pref_update_check_hosts_daily">به صورت دوره ای به روز رسانی را بررسی کنید</string>
-    <string name="pref_update_sync_on_update">همگام سازی در به روز رسانی</string>
-    <string name="pref_update_sync_unmetered_only">فقط در شبکه بدون اندازه‌ گیری همگام‌ سازی شود</string>
-    <string name="pref_vpn_service_on_boot">فعال کردن در هنگام استارت آپ</string>
-    <string name="pref_vpn_service_monitor">نظارت بر اتصال</string>
-    <string name="pref_vpn_service_monitor_description">به طور دوره ای وضعیت شبکه را بررسی کنید تا VPN در صورت قطع اتصال دوباره متصل شود</string>
-    <string name="pref_vpn_excluded_apps">برنامه های کاربردی استثنا شده</string>
-    <string name="pref_vpn_excluded_apps_description">پیکربندی کنید که کدام برنامه ها نباید از VPN استفاده کنند تا هیچ اتصالی مسدود نشود</string>
-    <string name="pref_vpn_exclude_system_apps">استثنا کردن برنامه های سیستمی</string>
+    <string name="pref_update_configuration">به‌روزرسانی خودکار</string>
+    <string name="pref_language">زبان</string>
+    <string name="pref_language_system">زبان سیستم</string>
+    <string name="pref_ad_block_category">مسدودسازی تبلیغات</string>
+    <string name="pref_root_ad_blocker_configuration">مسدودکننده تبلیغات مبتنی بر روت</string>
+    <string name="pref_vpn_ad_blocker_configuration">مسدودکننده تبلیغات مبتنی بر VPN</string>
+    <string name="pref_enable_ipv6">فعال‌سازی پشتیبانی از IPv6</string>
+    <string name="pref_backup_restore">پشتیبان‌گیری/بازیابی قوانین مسدودسازی</string>
+    <string name="pref_backup_restore_title">پشتیبان‌گیری و بازیابی</string>
+    <string name="pref_backup">پشتیبان‌گیری</string>
+    <string name="pref_backup_summary">از قوانین مسدودسازی خود روی حافظه خارجی نسخه پشتیبان تهیه کنید</string>
+    <string name="pref_restore">بازیابی</string>
+    <string name="pref_restore_summary">قوانین مسدودسازی خود را از فایل پشتیبان بازیابی کنید</string>
+    <string name="import_success">نسخه پشتیبان با موفقیت از حافظه خارجی شما وارد شد.</string>
+    <string name="import_failed">وارد کردن نسخه پشتیبان ناموفق بود. آیا قالب آن درست است؟</string>
+    <string name="export_success">نسخه پشتیبان با موفقیت در فایل «%s» روی حافظه خارجی شما ذخیره شد.</string>
+    <string name="export_failed">ذخیره فایل پشتیبان «%s» ناموفق بود.</string>
+    <string name="pref_update_title">به‌روزرسانی‌ها</string>
+    <string name="pref_update_enable_notifications">اعلان‌ها غیرفعال هستند</string>
+    <string name="pref_update_enable_notifications_summary">اعلان‌های برنامه نمایش داده نخواهند شد. برای فعال کردن آن‌ها ضربه بزنید.</string>
+    <string name="pref_update_app_category">به‌روزرسانی‌های برنامه</string>
+    <string name="pref_update_check_app_startup">بررسی به‌روزرسانی هنگام اجرای برنامه</string>
+    <string name="pref_update_check_app_daily">بررسی دوره‌ای به‌روزرسانی</string>
+    <string name="pref_update_check_now">بررسی اکنون</string>
+    <string name="pref_update_install">به‌روزرسانی اکنون</string>
+    <string name="pref_update_hosts_category">به‌روزرسانی‌های hosts</string>
+    <string name="pref_update_check">بررسی به‌روزرسانی هنگام اجرای برنامه</string>
+    <string name="pref_update_check_hosts_daily">بررسی دوره‌ای به‌روزرسانی</string>
+    <string name="pref_update_sync_on_update">همگام‌سازی هنگام به‌روزرسانی</string>
+    <string name="pref_update_sync_unmetered_only">همگام‌سازی فقط در شبکه بدون محدودیت داده</string>
+    <string name="pref_vpn_service_on_boot">فعال‌سازی هنگام راه‌اندازی دستگاه</string>
+    <string name="pref_vpn_service_monitor">پایش اتصال</string>
+    <string name="pref_vpn_service_monitor_description">وضعیت شبکه به‌صورت دوره‌ای بررسی می‌شود تا پس از قطع اتصال، VPN دوباره راه‌اندازی شود.</string>
+    <string name="pref_vpn_excluded_apps">برنامه‌های مستثنا</string>
+    <string name="pref_vpn_excluded_apps_description">مشخص کنید کدام برنامه‌ها از VPN استفاده نکنند تا اتصال آن‌ها مسدود نشود.</string>
+    <string name="pref_vpn_exclude_system_apps">مستثنا کردن برنامه‌های سیستمی</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>هیچ کدام</item>
-        <item>همه به جز مرورگر ها</item>
+        <item>هیچ‌کدام</item>
+        <item>همه به‌جز مرورگرها</item>
         <item>همه</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">استثنا کردن برنامه های کاربر</string>
-    <string name="pref_vpn_exclude_user_apps_activity">برنامه های کاربردی استثنا شده</string>
+    <string name="pref_vpn_dns">سرورهای DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>سرورهای DNS شبکه</item>
+        <item>سرورهای DNS سفارشی</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">سرورهای DNS سفارشی</string>
+    <string name="pref_vpn_dns_custom_summary">نشانی‌های IP، جداشده با ویرگول</string>
+    <string name="pref_vpn_dns_custom_invalid">نشانی سرور DNS معتبر نیست</string>
+    <string name="pref_vpn_doh">سرور DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">نشانی سفارشی</string>
+    <string name="pref_vpn_doh_address">نشانی DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">نشانی DNS over HTTPS معتبر نیست</string>
+    <string name="pref_vpn_exclude_user_apps">مستثنا کردن برنامه‌های نصب‌شده</string>
+    <string name="pref_vpn_exclude_user_apps_activity">برنامه‌های مستثنا</string>
     <string name="pref_vpn_exclude_user_apps_select_all">انتخاب همه</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">لغو انتخاب همه</string>
     <string name="pref_vpn_exclude_user_apps_icon">نماد برنامه</string>
     <string name="pref_vpn_reset">بازنشانی VPN</string>
-    <string name="pref_vpn_reset_description">اتصال VPN را از ابتدا بازسازی کنید. اگر VPN از کار افتاد (بدون دسترسی به اینترنت یا خطاهای DNS) از این گزینه استفاده کنید.</string>
-    <string name="pref_vpn_reset_done">اتصال VPN بازسازی شد.</string>
+    <string name="pref_vpn_reset_description">اتصال VPN را از ابتدا دوباره می‌سازد. اگر VPN از کار افتاد (قطع دسترسی به اینترنت یا خطاهای DNS)، از این گزینه استفاده کنید.</string>
+    <string name="pref_vpn_reset_done">اتصال VPN دوباره ساخته شد.</string>
     <string name="pref_vpn_reset_not_running">VPN در حال اجرا نیست.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">ثبت گزارش عیب‌یابی</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">پیش از تکرار یک مشکل آن را روشن کنید، سپس گزارش را در بخش زیر ارسال کنید. ممکن است دستگاه‌های قدیمی را کمی کند کند. فقط رویدادهای فنی VPN ثبت می‌شود، نه تاریخچه گشت‌وگذار و نه داده‌های شخصی.</string>
     <string name="pref_vpn_diagnostic_log">گزارش عیب‌یابی</string>
-    <string name="pref_vpn_diagnostic_log_description">خطاها و رویدادهای اخیر VPN را مشاهده، کپی یا به اشتراک بگذارید. هنگام گزارش یک مشکل مفید است.</string>
-    <string name="pref_vpn_diagnostic_log_empty">هنوز هیچ رویدادی ثبت نشده است.</string>
-    <string name="pref_vpn_diagnostic_log_share">اشتراک‌گذاری گزارش عیب‌یابی</string>
+    <string name="pref_vpn_diagnostic_log_description">خطاها و رویدادهای اخیر VPN را مشاهده، کپی یا ارسال کنید. هنگام گزارش یک مشکل مفید است.</string>
+    <string name="pref_vpn_diagnostic_log_empty">هنوز رویدادی ثبت نشده است. گزینه «ثبت گزارش عیب‌یابی» را در بالا روشن کنید، سپس مشکل را دوباره ایجاد کنید.</string>
+    <string name="pref_vpn_diagnostic_log_share">اشتراک‌گذاری</string>
+    <string name="pref_vpn_diagnostic_log_share_title">اشتراک‌گذاری گزارش عیب‌یابی</string>
     <string name="pref_vpn_diagnostic_log_copy">کپی</string>
-    <string name="pref_vpn_diagnostic_log_copied">گزارش عیب‌یابی در بریده‌دان کپی شد.</string>
+    <string name="pref_vpn_diagnostic_log_copied">گزارش عیب‌یابی در کلیپ‌بورد کپی شد.</string>
     <string name="pref_vpn_diagnostic_log_clear">پاک کردن گزارش عیب‌یابی</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">رویدادهای ثبت‌شده را حذف کنید. برای ثبت ردی تمیز، این کار را پیش از بازتولید مشکل انجام دهید.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">رویدادهای ثبت‌شده را حذف می‌کند. پیش از تکرار یک مشکل این کار را انجام دهید تا گزارشی تمیز داشته باشید.</string>
     <string name="pref_vpn_diagnostic_log_cleared">گزارش عیب‌یابی پاک شد.</string>
     <string name="pref_root_open_hosts">باز کردن فایل hosts</string>
-    <string name="pref_hosts_redirection_summary">تعیین کنید که hosts مسدود شده به کجا منتقل شود</string>
-    <string name="pref_redirection_ipv4">پیکربندی تغییر مسیر IPv4</string>
-    <string name="pref_redirection_ipv6">پیکربندی تغییر مسیر IPv6</string>
-    <string name="pref_redirection_invalid">تغییر مسیر نامعتبر است</string>
-    <string name="pref_webserver_summary">وب سرور محلی به آدرس های IP محلی گوش می دهد تا به درخواست های نام host مسدود شده پاسخ دهد و ممکن است به مسدود شدن برنامه در اتصال مسدود شده کمک کند</string>
-    <string name="pref_webserver_enabled">فعال کردن وب سرور</string>
-    <string name="pref_webserver_test">آزمایش وب سرور</string>
-    <string name="pref_webserver_certificate">نصب گواهی امضا شده شما</string>
+    <string name="hosts_file_unreadable">خواندن فایل hosts ممکن نبود.</string>
+    <string name="pref_hosts_redirection_summary">مشخص کنید میزبان‌های مسدودشده به کجا هدایت شوند</string>
+    <string name="pref_redirection_ipv4">پیکربندی هدایت IPv4</string>
+    <string name="pref_redirection_ipv6">پیکربندی هدایت IPv6</string>
+    <string name="pref_redirection_invalid">هدایت نامعتبر است</string>
+    <string name="pref_webserver_summary">وب‌سرور محلی روی نشانی‌های IP محلی گوش می‌دهد و به درخواست‌های مربوط به نام میزبان‌های مسدودشده پاسخ می‌دهد. ممکن است از قفل شدن برنامه‌ها هنگام اتصال مسدودشده جلوگیری کند.</string>
+    <string name="pref_webserver_enabled">فعال‌سازی وب‌سرور</string>
+    <string name="pref_webserver_test">آزمایش وب‌سرور</string>
+    <string name="pref_webserver_certificate">نصب گواهی خودامضا</string>
     <string name="pref_webserver_state_not_running">در حال اجرا نیست</string>
-    <string name="pref_webserver_state_checking">در حال بررسی ..‌.</string>
-    <string name="pref_webserver_state_running_not_installed">در حال اجرا است اما گواهی نصب نشده</string>
-    <string name="pref_webserver_state_running_and_installed">در حال اجرا است و گواهی نصب شده</string>
+    <string name="pref_webserver_state_checking">در حال بررسی…</string>
+    <string name="pref_webserver_state_running_not_installed">در حال اجرا، اما گواهی نصب نشده است</string>
+    <string name="pref_webserver_state_running_and_installed">در حال اجرا و گواهی نصب شده است</string>
     <string name="pref_webserver_certificate_dialog_title">نصب دستی گواهی</string>
-    <string name="pref_webserver_certificate_dialog_content">از اندروید 11 (R) به بعد برنامه دیگر نمی تواند به طور خودکار مرجع گواهی (CA) را نصب کند برای برطرف شدن این مشکل به تنظیمات گوشی / \"امنیت\" / \"رمزگذاری و اعتبار\" و سپس \"نصب گواهی\" بروید از آنجا \" گواهی CA\" را انتخاب کنید و فایل گواهی صادر شده جدید را انتخاب کنید </string>
-    <string name="pref_webserver_certificate_dialog_action">باز کردن تنظیمات امنیت</string>
-    <string name="pref_webserver_icon">فضای خالی تبلیغات را با نماد برنامه جایگزین کنید</string>
+    <string name="pref_webserver_certificate_dialog_content">از اندروید ۱۱ (R) به بعد، برنامه‌ها دیگر نمی‌توانند مرجع گواهی (CA) را به‌طور خودکار نصب کنند.\n\nبه تنظیمات «امنیت» بروید، سپس «رمزگذاری و اعتبارنامه‌ها» و بعد «نصب گواهی» را باز کنید. در آنجا «گواهی CA» را انتخاب کنید و فایل گواهی را که تازه خروجی گرفته‌اید برگزینید.</string>
+    <string name="pref_webserver_certificate_dialog_action">باز کردن تنظیمات «امنیت»</string>
+    <string name="pref_webserver_certificate_failed">آماده‌سازی گواهی ممکن نبود.</string>
+    <string name="webserver_error_title">وب‌سرور راه‌اندازی نشد</string>
+    <string name="webserver_error_resources">فایل‌ها یا گواهی آن آماده نشدند.</string>
+    <string name="webserver_error_address_in_use">برنامه دیگری از درگاه‌های وب (۸۰ و ۴۴۳) دستگاه استفاده می‌کند.</string>
+    <string name="webserver_error_start_failed">روی این دستگاه راه‌اندازی نشد.</string>
+    <string name="pref_webserver_icon">جایگزینی فضای خالی تبلیغات با نماد برنامه</string>
 </resources>

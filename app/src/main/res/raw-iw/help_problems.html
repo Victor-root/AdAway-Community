@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>ה-VPN מתנתק מעצמו</h2>
+<p>כמעט תמיד זו המערכת שסוגרת את שירות ה-VPN כדי לחסוך בסוללה, ולא קריסה. זה נפוץ ב-ROM של יצרנים עם ניהול צריכת חשמל אגרסיבי (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung ואחרים).</p>
+<p>בהגדרות Android, מצא את AdAway ואז: הגדר את <cite>אופטימיזציית סוללה</cite> לערך <cite>ללא הגבלה</cite> (או <cite>לא לבצע אופטימיזציה</cite>), אפשר <cite>הפעלה אוטומטית</cite> (או <cite>הפעלה אוטומטית ברקע</cite>) אם יש אפשרות כזו ב-ROM שלך, ונעל את AdAway ברשימת האפליקציות האחרונות כדי שלא יוסר בהחלקה. ודא גם שהאפשרות <cite>הפעלה בעת אתחול המכשיר</cite> מופעלת בהעדפות ה-VPN של AdAway.</p>
 
-<h2>אין מספיק זיכרון פנוי במחיצה</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>אין אינטרנט או שהגלישה איטית מיד אחרי מעבר בין Wi-Fi לנתונים ניידים</h2>
+<p>כשהרשת הפעילה משתנה, צריך לבנות מחדש את המנהרה כדי שה-DNS ייפתר מהרשת החדשה. אם הגלישה נשארת תקולה, פתח את <cite>העדפות › חוסם פרסומות מבוסס VPN › איפוס VPN</cite> כדי לבנות את החיבור מחדש מאפס. אם זה חוזר על עצמו, הקלט יומן אבחון (ראה בהמשך) ודווח על כך.</p>
 
-<h2>לא עובד עם אנדרואיד 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>איך מייצאים יומן אבחון?</h2>
+<p>פתח את <cite>העדפות › חוסם פרסומות מבוסס VPN › יומן אבחון</cite>. היומן רושם שגיאות ואירועי VPN אחרונים (מעברי רשת, התחברויות מחדש, כשלים), ולא את היסטוריית הגלישה שלך, רק אירועים טכניים. הוא נשאר ריק עד שמפעילים את <cite>הקלטת יומן אבחון</cite> שנמצאת ממש למעלה. השתמש באפשרות <cite>העתקה</cite> או <cite>שיתוף</cite> כדי לשלוח אותו בעת דיווח על בעיה. טיפ: קודם נקה אותו באמצעות <cite>ניקוי יומן אבחון</cite> ואז שחזר את הבעיה, כדי שהיומן יהיה ממוקד.</p>
 
-<h2>זה לא חוסם פרסומות באפליקציות XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome עדיין מציג פרסומות</h2>
+<p>Chrome יכול להשתמש בתכונת <cite>DNS מאובטח</cite> משלו (DNS over HTTPS), שעוקפת את AdAway. ב-Chrome פתח <cite>הגדרות › פרטיות ואבטחה › שימוש ב-DNS מאובטח</cite> וכבה אותה. כך גם לגבי כל הגדרת <cite>DNS פרטי</cite> של אפליקציה או של המערכת. במצב VPN, AdAway יכול להצפין את ה-DNS בעצמו: ראה <cite>באילו שרתי DNS משתמש ה-VPN?</cite> בלשונית שאלות נפוצות.</p>
 
-<h2>פרסומות בקאש</h2>
-<p>לפעמים הפרסומות נחסמו אבל הפרסומות שכבר הורדו לא יחסמו אתה יכול למחוק את זיכרון הישום במנהל הישומים של המכשיר</p>
+<h2>חלק מהפרסומות עדיין עוברות, או שאפליקציה עדיין מציגה פרסומות</h2>
+<p>ייתכן ששם מארח חסר במקורות שלך, או שהאפליקציה כוללת את הפרסומות בתוכה ולכן לא נשלחת שום בקשה. פתח את <cite>יומן DNS</cite> במסך הבית כדי לראות מה האפליקציה מבקשת, הוסף את שמות המארחים החשודים לרשימת <cite>חסומים</cite> שלך ובדוק ששום דבר לא נשבר. חלק מהאפליקציות גם שומרות פרסומות במטמון אחרי שהורידו אותן, ולכן ניקוי המטמון של האפליקציה בהגדרות Android יכול לעזור.</p>
 
-<h2>אפליקציות XYZ לא עובדות יותר!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>אפליקציה הפסיקה לעבוד אחרי הפעלת AdAway</h2>
+<p>חלק מהאפליקציות מסרבות לעבוד כששם מארח שהן זקוקות לו חסום. פתח את <cite>יומן DNS</cite> כדי למצוא איזה שם מארח האפליקציה צריכה, הוסף אותו לרשימת <cite>מותרים</cite> שלך, והאפליקציה אמורה לעבוד שוב. אפליקציות בעייתיות מוכרות מופיעות <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">כאן</a>.</p>
 
-<h2>הכפתור חזרה אינו עובד בדפדפן</h2>
-<p>אתה יכול להפעיל את השרת המקומי של AdAway באפשרויות בתור פתרון זמני.</p>
+<h2>החלת קובץ ה-hosts נכשלת (מצב root)</h2>
+<p>גרסאות Android חדשות משתמשות במחיצת <code>/system</code> לקריאה בלבד, ולכן AdAway אינו יכול לכתוב בה ישירות. אם יש לך Magisk, הפעל את המודול <cite>systemless hosts</cite>, אתחל את המכשיר והחל שוב. אם אין לך root, עבור במקום זאת למצב VPN, שאינו דורש שינוי במערכת.</p>
 
-<h2>הכפתור חזרה אינו עובד בדפדפן</h2>
-<p>אתה יכול להפעיל את השרת המקומי של AdAway באפשרויות בתור פתרון זמני.</p>
-
+<h2>עדיין יש בעיה?</h2>
+<p>דווח על הבעיה וצרף יומן אבחון בכתובת <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

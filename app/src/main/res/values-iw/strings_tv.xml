@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">הוסף למאופשרים</string>
-    <string name="tv_dialog_add_to_blocked">הוסף לחסומים</string>
-    <string name="tv_dialog_remove_from_allowed">הסר מהמאופשרים</string>
-    <string name="tv_dialog_remove_from_blocked">הסר מהחסומים</string>
-    <string name="tv_dialog_copy_hostname">העתק שם מארח</string>
+    <string name="tv_dialog_add_to_allowed">הוספה למותרים</string>
+    <string name="tv_dialog_add_to_blocked">הוספה לחסומים</string>
+    <string name="tv_dialog_remove_from_allowed">הסרה מהמותרים</string>
+    <string name="tv_dialog_remove_from_blocked">הסרה מהחסומים</string>
+    <string name="tv_dialog_copy_hostname">העתקת שם המארח</string>
     <string name="tv_log_entry_status_description">מצב הדומיין</string>
     <string name="tv_button_theme_light">מצב בהיר</string>
     <string name="tv_button_theme_dark">מצב כהה</string>
-    <string name="tv_lists_empty">אין עדיין רשומות ברשימה זו.</string>
+    <string name="tv_lists_empty">עדיין אין רשומות ברשימה הזו.</string>
     <string name="tv_dialog_search">חיפוש</string>
 </resources>
