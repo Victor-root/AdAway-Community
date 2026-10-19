@@ -1,42 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Langkah pertama</string>
-    <string name="welcome_second_step">Langkah Kedua</string>
+    <string name="welcome_first_step">Langkah pertama panduan</string>
+    <string name="welcome_second_step">Langkah kedua panduan</string>
+    <string name="welcome_third_step">Langkah ketiga panduan</string>
+    <string name="welcome_fourth_step">Langkah keempat panduan</string>
     <string name="welcome_method_header">Selamat datang di AdAway!</string>
-    <string name="welcome_method_summary">AdAway menyediakan dua metode pemblokiran iklan.
-Pilih salah satu yang kamu inginkan:</string>
-    <string name="welcome_root_method_title">Pemblokiran iklan menggunakan root</string>
+    <string name="welcome_method_summary">AdAway menyediakan dua metode pemblokiran iklan. Pilih yang Anda sukai:</string>
+    <string name="welcome_root_method_title">Pemblokiran iklan\nberbasis root</string>
     <string name="welcome_root_method_text1">Lebih cepat</string>
     <string name="welcome_root_method_text2">Hemat baterai</string>
-    <string name="welcome_root_method_text3">Membutuhkan mode root</string>
-    <string name="welcome_vpn_method_title">Pemblokiran iklan menggunakan VPN</string>
+    <string name="welcome_root_method_text3">Perlu root</string>
+    <string name="welcome_vpn_method_title">Pemblokiran iklan\nberbasis VPN</string>
     <string name="welcome_vpn_method_text1">Lebih lambat</string>
     <string name="welcome_vpn_method_text2">Berjalan di latar belakang</string>
     <string name="welcome_vpn_method_text3">Kompatibilitas</string>
-    <string name="welcome_root_missing_title">Dibutuhkan perangkat Android yang sudah di-root</string>
-    <string name="welcome_root_missile_description">Binary su tidak ditemukan atau anda tidak memberikan izin root untuk AdAway.\n\nIni dapat terjadi ketika perangkat anda tidak memiliki akses root. Anda dapat menemukan informasi mengenai cara root perangkat anda di wiki.lineageos.org atau webiste Android lainnya.</string>
+    <string name="welcome_root_missing_title">Perlu Android yang di-root</string>
+    <string name="welcome_root_missile_description">Biner su tidak ditemukan atau Anda belum mengizinkan akses root untuk AdAway.\n\nHal ini bisa terjadi jika perangkat Anda belum di-root. Informasi tentang cara melakukan root pada perangkat Anda tersedia di wiki.lineageos.org atau situs Android lainnya.</string>
+    <string name="welcome_vpn_alwayson_title">VPN selalu aktif diaktifkan</string>
+    <string name="welcome_vpn_alwayson_description">AdAway mendeteksi bahwa VPN lain mengaktifkan setelan “VPN selalu aktif”.\n\nHal ini mencegah AdAway meminta akses VPN. Nonaktifkan “VPN selalu aktif” pada VPN tersebut, lalu coba lagi.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway gagal meminta akses VPN.\n\nKemungkinan penyebabnya adalah VPN lain mengaktifkan setelan “VPN selalu aktif”. Periksa apakah ada VPN yang mengaktifkan setelan ini dan nonaktifkan sebelum mencoba lagi.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Buka setelan “VPN”</string>
     <string name="welcome_method_pro_logo">Kelebihan</string>
     <string name="welcome_method_con_logo">Kekurangan</string>
-    <string name="welcome_sync_header">Sedang menyinkronkan</string>
-    <string name="welcome_synced_header">Sudah tersinkron!</string>
-    <string name="welcome_sync_summary">AdAway mengunduh jaringan iklan untuk memblokir dari sumber-sumber online. Anda dapat menyesuaikannya nanti di pengaturan.</string>
-    <string name="welcome_sync_retry_logo">Mengulang sinkorinisasi</string>
-    <string name="welcome_sync_error">Gagal saat sinkronisasi: %1$s Coba lagi?</string>
-    <string name="welcome_sync_notifications">dapat mengirimkan notifikasi tentang blok iklan dan pengaturan, juga  notifikasi update aplikasi yang tersedia (beberapa kali per tahun). Aktifkan jika ingin tetap up-to-date</string>
+    <string name="welcome_sync_header">Menyinkronkan</string>
+    <string name="welcome_synced_header">Tersinkronkan!</string>
+    <string name="welcome_sync_summary">AdAway mengunduh jaringan iklan yang akan diblokir dari sumber online. Anda dapat menyesuaikannya nanti di setelan.</string>
+    <string name="welcome_sync_retry_logo">Coba sinkronkan lagi</string>
+    <string name="welcome_sync_error">Gagal menyinkronkan: %1$s Coba lagi sekarang?</string>
+    <string name="welcome_sync_notifications">AdAway dapat mengirim notifikasi untuk menampilkan status dan kontrol pemblokiran iklan, serta memberi tahu jika ada pembaruan aplikasi (beberapa kali per tahun). Aktifkan jika Anda ingin tetap mendapatkan versi terbaru.</string>
     <string name="welcome_sync_leave_early_title">Sinkronisasi belum selesai</string>
-    <string name="welcome_sync_leave_early_message">Pengunduhan daftar blokir belum selesai. Anda bisa melanjutkan sekarang dan proses akan terus berjalan di latar belakang, atau menunggu di sini sampai selesai.</string>
+    <string name="welcome_sync_leave_early_message">Daftar blokir belum selesai diunduh. Anda dapat melanjutkan sekarang dan pengunduhan akan terus berjalan di latar belakang, atau menunggu di sini sampai selesai.</string>
     <string name="welcome_sync_leave_early_wait">Tunggu</string>
-    <string name="welcome_sync_leave_early_continue">Lanjutkan saja</string>
+    <string name="welcome_sync_leave_early_continue">Tetap lanjutkan</string>
+    <string name="welcome_battery_header">Tetap terlindungi di latar belakang</string>
+    <string name="welcome_battery_summary">Android dapat menjeda VPN AdAway di latar belakang untuk menghemat daya, sehingga pemblokiran iklan bisa berhenti tanpa disadari. Izinkan AdAway mengabaikan pengoptimalan baterai agar tetap berjalan.</string>
+    <string name="welcome_battery_action">Izinkan</string>
+    <string name="welcome_battery_granted">Diizinkan ✓</string>
+    <string name="welcome_battery_footnote_prefix">Anda selalu dapat mengubahnya nanti melalui</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Setelan Android</item>
+        <item>Aplikasi</item>
+        <item>AdAway</item>
+        <item>Baterai</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Satu hal lagi: pengelola baterai bawaan ponsel Anda</string>
+    <string name="welcome_oem_battery_summary">Beberapa merek ponsel memiliki pengelola baterai sendiri yang juga dapat memblokir AdAway. Berikut yang perlu diperiksa di ponsel Anda:</string>
+    <string name="welcome_oem_battery_action">Buka info aplikasi</string>
+    <string name="welcome_oem_battery_open_failed">Tidak dapat membuka layar info aplikasi. Buka secara manual dari Setelan Android → Aplikasi → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Ini hanya petunjuk umum, bukan panduan yang tepat: istilah dan lokasinya dapat berbeda tergantung model ponsel dan versi Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Info aplikasi</item>
+        <item>Baterai</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Cari opsi seperti “Batas penggunaan di latar belakang” › “Aplikasi yang tidak pernah tidur”, lalu tambahkan AdAway ke daftar tersebut.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Periksa juga apakah ada setelan “Pengoptimalan otomatis” dan nonaktifkan “Mulai ulang bila diperlukan” jika ada.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Info aplikasi</item>
+        <item>Penghemat baterai</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Pilih “Tanpa batasan”.</string>
+    <string name="welcome_oem_battery_secondary_miui">Aktifkan juga “Mulai otomatis” (“Mulai otomatis di latar belakang” pada versi yang lebih baru).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Info aplikasi</item>
+        <item>Penggunaan baterai</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Pilih “Izinkan aktivitas latar belakang” (kadang ditampilkan sebagai “Tanpa batasan”).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Cari juga tombol “Peluncuran otomatis” untuk AdAway (sering ada di Setelan › Aplikasi), agar AdAway dapat memulai sendiri setelah dihentikan paksa.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Info aplikasi</item>
+        <item>Baterai</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Cari “Peluncuran aplikasi”, nonaktifkan “Kelola otomatis”, lalu aktifkan ketiganya: “Peluncuran otomatis”, “Peluncuran sekunder”, dan “Jalankan di latar belakang”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Kunci juga AdAway di layar Aplikasi terbaru (geser kartunya ke bawah sampai muncul gembok).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Info aplikasi</item>
+        <item>Penggunaan baterai</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Cari opsi daya di latar belakang dan pilih “Jangan batasi penggunaan daya di latar belakang” (bukan “Kontrol cerdas”).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Cari juga setelan “Mulai otomatis” untuk AdAway, biasanya ada di Setelan › Aplikasi.</string>
+    <string name="welcome_oem_battery_label_generic">Merek lain</string>
+    <string name="welcome_oem_battery_tip_generic">Cari setelan baterai atau aktivitas latar belakang di info aplikasi dan pastikan AdAway tidak dibatasi.</string>
     <string name="welcome_back_button">Kembali</string>
-    <string name="welcome_next_button">Selanjutnya</string>
+    <string name="welcome_next_button">Berikutnya</string>
     <string name="welcome_finish_button">Selesai</string>
-    <string name="tv_welcome_intro_subtitle">Wizard singkat ini akan mengaktifkan pemblokiran iklan di perangkat ini.</string>
+    <string name="tv_welcome_intro_subtitle">Panduan singkat ini mengaktifkan pemblokiran iklan di perangkat ini.</string>
     <string name="tv_welcome_start_button">Mulai</string>
     <string name="tv_welcome_method_header">Pilih metode pemblokiran Anda</string>
     <string name="tv_welcome_method_root_button">Gunakan root</string>
-    <string name="tv_welcome_method_root_body">Lebih cepat dan hemat baterai. Memerlukan perangkat yang di-root.</string>
+    <string name="tv_welcome_method_root_body">Lebih cepat dan hemat daya. Memerlukan perangkat yang di-root.</string>
     <string name="tv_welcome_method_vpn_button">Gunakan VPN</string>
     <string name="tv_welcome_method_vpn_body">Berfungsi tanpa root, kompatibel dengan perangkat Android TV apa pun.</string>
     <string name="tv_welcome_activate_header">Aktifkan pemblokiran iklan</string>
-    <string name="tv_welcome_activate_body">Ini adalah VPN lokal: memfilter iklan di perangkat ini, tanpa mengarahkan lalu lintas Anda melalui server eksternal.</string>
+    <string name="tv_welcome_activate_body">Ini adalah VPN lokal: VPN ini menyaring iklan di perangkat ini tanpa mengalihkan lalu lintas Anda melalui server luar.</string>
 </resources>

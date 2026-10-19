@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Pendapatan dari iklan</h2>
-<p>Terdapat kesalahpahaman yang sering menyatakan bahwa jika pengguna tidak mengklik iklan, kemudian memblokirnya tidak akan merugikan keuangan situs atau aplikasi. Ini salah, pengembang juga memperoleh uang dengan hanya menampilkan iklan. Itu terserah kepada Anda apakah Anda memblokir iklan atau tidak. Secara pribadi saya tidak akan menggunakan aplikasi yang menampilkan iklan karena saya merasakan mereka sangatlah mengganggu, sehingga tanpa pemblokir iklan saya tidak akan memasang aplikasi tersebut.</p>
+<h2>Apa itu AdAway Community?</h2>
+<p>AdAway Community adalah fork tidak resmi dari AdAway yang dikelola komunitas, pemblokir iklan open source untuk Android. Aplikasi ini memblokir iklan dan pelacak di seluruh sistem, untuk semua aplikasi, tanpa akun dan tanpa iklan sendiri. Fork ini berfokus menjaga aplikasi tetap berfungsi andal di Android versi terbaru dan ROM bawaan produsen.</p>
 
-<h2>Bagaimana cara kerja AdAway?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Bagaimana cara AdAway memblokir iklan?</h2>
+<p>AdAway bekerja dalam salah satu dari dua mode:</p>
+<p><strong>Mode VPN</strong> (tanpa root): AdAway menjalankan VPN lokal di perangkat yang tidak pernah mengirim lalu lintas Anda ke mana pun. VPN ini hanya memeriksa permintaan DNS dan membuang permintaan yang mengarah ke nama host iklan dan pelacak, sementara yang lain dibiarkan lewat. Tidak ada yang keluar dari perangkat Anda.</p>
+<p><strong>Mode root</strong>: jika perangkat Anda sudah di-root, AdAway dapat menulis <a href="http://en.wikipedia.org/wiki/Hosts_file">file hosts</a> ke <code>/system/etc/hosts</code>, yang memetakan nama host yang tidak diinginkan ke <code>127.0.0.1</code> sehingga mengarah ke perangkat Anda sendiri. Pada Android terbaru, diperlukan modul hosts tanpa modifikasi sistem (systemless), misalnya Magisk.</p>
 
-<h2>Mengapa saya harus memulai ulang Android untuk mendapatkan perubahan?</h2>
-<p>Java pada Android mengelola DNS cache internalnya sendiri. Sistem operasi akan merefleksikan berkas host yang baru segera (memverifikasi dengan ping pada command line), tetapi Anda harus memulai kembali Android untuk membangun kembali cache DNS dari Java.</p>
+<h2>Server DNS mana yang digunakan VPN?</h2>
+<p>Dalam mode VPN, nama host yang tidak diblokir diselesaikan oleh server DNS yang Anda pilih di <cite>Preferensi › Pemblokir iklan berbasis VPN › Server DNS</cite>:</p>
+<p><strong>Server DNS jaringan</strong> (default): server milik jaringan Wi-Fi atau seluler Anda. Jika jaringan tidak menyediakan server yang dapat digunakan AdAway, AdAway beralih ke Cloudflare (<code>1.1.1.1</code>).<br/><strong>Server DNS khusus</strong>: alamat IP yang Anda masukkan, dipisahkan dengan koma.<br/><strong>DNS over HTTPS</strong>: permintaan dienkripsi dan dikirim ke Cloudflare, Google, Quad9, atau alamat <code>https://</code> yang Anda masukkan, sehingga jaringan Anda tidak dapat membaca atau mengubahnya.</p>
+<p>Pemblokiran bekerja sama pada ketiganya. Untuk tetap menggunakan DNS terenkripsi, gunakan DNS over HTTPS di sini, bukan setelan <cite>DNS Pribadi</cite> milik Android, karena setelan itu melewati AdAway.</p>
 
-<h2>Bagaimana menggunakan web server di AdAway?</h2>
-<p><strong>AdAway juga akan bekerja tanpa menggunakan webserver!</strong>
-<br><br>Anda dapat mengaktifkan sebuah webserver lokal di preferensi dalam AdAway untuk menjawab permintaan dari alamat IP lokal <code>127.0.0.1</code>. Ini adalah permintaan dari aplikasi ke server iklan yang akan diteruskan ke <code>127.0.0.1</code> yang dijawab oleh webserver AdAway.
-<br>Beberapa aplikasi menolak untuk bekerja, ketika server iklan tidak dapat dijangkau. Dengan metode ini mereka dapat dijangkau kembali, menjawab dengan sebuah laman kosong dan tidak ada gambar iklan.</p>
+<h2>Bagaimana cara memblokir, mengizinkan, atau mengalihkan nama host?</h2>
+<p>Dari layar utama, Anda mengelola tiga daftar:</p>
+<p><strong>Diblokir</strong>: nama host yang harus diblokir (iklan dan pelacak).<br/><strong>Diizinkan</strong>: pengecualian yang tidak ingin Anda blokir, meskipun tercantum di sebuah sumber.<br/><strong>Dialihkan</strong>: nama host yang ingin Anda arahkan ke alamat IP tertentu.</p>
+<p>Anda juga dapat membuka <cite>Log DNS</cite> dari layar utama untuk melihat nama host apa saja yang diminta aplikasi secara real-time, lalu memblokir atau mengizinkannya langsung dari sana.</p>
 
-<h2>Bagaimana saya memblokir/membuka blokir hostname tertentu?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Apakah saya perlu memulai ulang Android setelah mengubah daftar?</h2>
+<p>Tidak. AdAway menerapkan perubahan seketika, tetapi aplikasi yang sudah terbuka dapat terus memakai koneksi lamanya dan cache-nya sendiri. Tutup aplikasi tersebut sepenuhnya (Paksa berhenti di setelan Android untuk aplikasi itu), dan hapus cache-nya jika iklan masih muncul. Mulai ulang Android hanya diperlukan satu kali pada mode root, setelah mengaktifkan modul systemless hosts dari Magisk.</p>
 
-<h2>Di mana saya dapat menemukan lebih banyak sumber host?</h2>
-<p>Lihat <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Daftar sumber host tambahan untuk AdAway List of additional hosts sources for AdAway</a>.</p>
+<h2>Di mana saya dapat menemukan sumber hosts lainnya?</h2>
+<p>AdAway sudah menyertakan pengaturan default yang masuk akal. Jika Anda menginginkan lebih banyak, lihat <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">daftar sumber hosts tambahan</a> yang dikelola komunitas. Tambahkan sumber seperlunya saja, karena daftar yang sangat besar atau saling tumpang tindih dapat menyebabkan salah blokir yang merusak aplikasi.</p>
 
-<h2>Mengapa fork ini ada</h2>
-<p>AdAway adalah proyek hebat dengan sejarah panjang, namun aktivitas rilis dan tinjauan di upstream telah terbatas sejak beberapa waktu.<br/>Beberapa bug dan pull request telah lama terbuka, termasuk masalah yang memengaruhi stabilitas mode VPN pada versi Android terbaru dan ROM OEM.<br/>Fork ini ada untuk menjaga proyek tetap dapat digunakan dengan perbaikan yang dipelihara komunitas, daripada membiarkan peningkatan yang telah diuji tidak terpakai.</p>
+<h2>Mengapa fork ini ada?</h2>
+<p>AdAway adalah proyek hebat dengan sejarah panjang, tetapi aktivitas rilis dan peninjauan di upstream sudah cukup lama terbatas. Beberapa perbaikan bug dan pull request tetap terbuka dalam waktu lama, termasuk masalah yang memengaruhi stabilitas mode VPN pada Android versi terbaru dan ROM bawaan produsen. Fork ini ada untuk menjaga proyek tetap dapat digunakan melalui perbaikan yang dikelola komunitas, agar peningkatan yang sudah diuji tidak terbengkalai.</p>
 
-<h2>Bantu menerjemahkan/melaporkan kesalahan</h2>
-<p>Silakan menuju <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Bagaimana cara melaporkan bug atau mengusulkan perubahan?</h2>
+<p>Buka isu di pelacak milik fork ini: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Log diagnostik (lihat tab Masalah) sangat membantu saat melaporkan masalah VPN.</p>
 </body>
 </html>

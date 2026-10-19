@@ -2,18 +2,22 @@
 <resources>
     <string name="update_title">Pembaruan AdAway</string>
     <string name="update_banner_title">Pembaruan tersedia</string>
-    <string name="update_banner_subtitle">Ketuk untuk memasang %1$s</string>
-    <string name="update_up_to_date_header">Kamu sudah up-to-date</string>
+    <string name="update_banner_subtitle">Ketuk untuk menginstal %1$s</string>
+    <string name="update_up_to_date_header">Anda sudah menggunakan versi terbaru</string>
     <string name="update_update_available_header">Pembaruan tersedia</string>
     <string name="update_updating_header">Memperbarui AdAway</string>
     <string name="update_update_button">Perbarui sekarang</string>
+    <string name="update_complete_label">Selesai</string>
     <string name="update_last_changelog_title">Perubahan terakhir</string>
-    <string name="update_new_changelog_title">Changelog</string>
+    <string name="update_new_changelog_title">Catatan perubahan</string>
+    <string name="update_download_failed">Pembaruan tidak dapat diunduh.</string>
+    <string name="update_install_failed">Pembaruan tidak dapat diinstal.</string>
     <string name="pref_update_check_now_update_available">Versi baru tersedia: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Tidak ada pembaruan tersedia</string>
-    <string name="pref_update_install_summary">Pasang versi %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Tidak ada pembaruan</string>
+    <string name="pref_update_check_now_failed">Server pembaruan tidak dapat dijangkau</string>
+    <string name="pref_update_install_summary">Instal versi %1$s</string>
     <string name="notification_channel_app_updates">Pembaruan aplikasi</string>
-    <string name="notification_channel_app_updates_description">Notifikasi saat versi baru aplikasi tersedia. Bisukan kanal ini untuk menyembunyikan peringatan pembaruan aplikasi tanpa memengaruhi notifikasi lain.</string>
-    <string name="notification_app_update_title">Pembaruan app tersedia</string>
-    <string name="notification_app_update_text">AdAway versi terbaru tersedia untuk di unduh. </string>
+    <string name="notification_channel_app_updates_description">Notifikasi saat versi baru aplikasi tersedia. Bisukan saluran ini untuk menonaktifkan pemberitahuan pembaruan aplikasi tanpa memengaruhi notifikasi lainnya.</string>
+    <string name="notification_app_update_title">Pembaruan aplikasi tersedia</string>
+    <string name="notification_app_update_text">Versi baru AdAway tersedia untuk diunduh.</string>
 </resources>

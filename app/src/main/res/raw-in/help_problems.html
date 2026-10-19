@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Penyalinan berkas hosts gagal pada Android 9+</h2>
-<p>Versi mutahir dari Android menggunakan hanya-baca <code>/system</code> partisi.<br>
-Jika Anda menggunakan Magisk sebagai solusi root, pastikan Anda mengaktifkan systemless modul hosts kemudian mulai ulang.</p>
+<h2>VPN mati sendiri</h2>
+<p>Hampir selalu penyebabnya adalah sistem yang menghentikan layanan VPN untuk menghemat baterai, bukan crash. Hal ini umum terjadi pada ROM bawaan produsen dengan manajemen daya yang agresif (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, dan lainnya).</p>
+<p>Di setelan Android, temukan AdAway lalu: atur <cite>pengoptimalan baterai</cite> ke <cite>Tidak dibatasi</cite> (atau <cite>Jangan optimalkan</cite>), izinkan <cite>mulai otomatis</cite>/<cite>peluncuran otomatis</cite> jika ROM Anda menyediakannya, dan kunci AdAway di daftar aplikasi terbaru agar tidak tergeser. Pastikan juga <cite>Aktifkan saat perangkat dinyalakan</cite> aktif di preferensi VPN AdAway.</p>
 
-<h2>Tidak cukup ruang pada partisi</h2>
-<p>Cobalah mengganti target berkas hosts di preferensi ke <code>/data/data/hosts</code> (or <code>/data/hosts</code>) dan terapkan AdAway lagi.</p>
+<h2>Tidak ada internet atau penelusuran lambat setelah berpindah antara Wi-Fi dan data seluler</h2>
+<p>Saat jaringan aktif berubah, terowongan VPN harus dibangun ulang agar DNS diselesaikan dari jaringan yang baru. Jika penelusuran tetap bermasalah, buka <cite>Preferensi › VPN › Setel ulang VPN</cite> untuk membangun ulang koneksi dari awal. Jika masalah terus berulang, rekam log diagnostik (lihat di bawah) dan laporkan.</p>
 
-<h2>Tidak dapat bekerja di Android 4.4+</h2>
-<p>Cobalah mengganti target berkas hosts di preferensi dari <code>/data/data/hosts</code> ke <code>/data/hosts</code> atau <code>/system/etc/hosts</code> dan terapkan AdAway lagi.</p>
+<h2>Bagaimana cara mengekspor log diagnostik?</h2>
+<p>Buka <cite>Preferensi › VPN › Log diagnostik</cite>. Log ini merekam error dan kejadian VPN terbaru (perpindahan jaringan, sambungan ulang, kegagalan), bukan riwayat penelusuran Anda, hanya kejadian teknis. Log tetap kosong sampai Anda mengaktifkan <cite>Rekam log diagnostik</cite> tepat di atasnya. Gunakan <cite>Salin</cite> atau <cite>Bagikan</cite> untuk mengirimkannya saat melaporkan masalah. Tips: pilih <cite>Hapus log diagnostik</cite> terlebih dahulu, lalu reproduksi masalahnya agar log lebih terfokus.</p>
 
-<h2>iklan tidak dapat di blok pada aplikasi XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome masih menampilkan iklan</h2>
+<p>Chrome dapat menggunakan <cite>DNS aman</cite> miliknya sendiri (DNS-over-HTTPS), yang melewati AdAway. Di Chrome, buka <cite>Setelan › Privasi dan keamanan › Gunakan DNS aman</cite> lalu nonaktifkan. Hal yang sama berlaku untuk setelan <cite>DNS Pribadi</cite> pada aplikasi atau sistem mana pun. Dalam mode VPN, AdAway dapat mengenkripsi DNS sendiri: lihat <cite>Server DNS mana yang digunakan VPN?</cite> di FAQ.</p>
 
-<h2>Iklan tembolok</h2>
-<p>Kadangkala aplikasimelakukan cache iklan setelah diunduh. Ini menyebabkan iklan yang tersisa pada beberapa aplikasi. Kamu bisa mencoba menghapus cache untuk aplikasi ini dalam daftar Aplikasi Android untuk menghindari masalah ini.</p>
+<h2>Sebagian iklan masih lolos, atau sebuah aplikasi masih menampilkan iklan</h2>
+<p>Mungkin ada nama host yang belum ada di sumber Anda, atau aplikasi tersebut menyertakan iklannya sendiri sehingga tidak ada permintaan yang dikirim. Buka <cite>Log DNS</cite> dari layar utama untuk melihat apa yang diminta aplikasi tersebut, tambahkan nama host yang mencurigakan ke daftar <cite>Diblokir</cite> Anda, dan pastikan tidak ada yang rusak. Beberapa aplikasi juga menyimpan iklan di cache setelah mengunduhnya, jadi menghapus cache aplikasi tersebut di setelan Android bisa membantu.</p>
 
-<h2>Aplikasi XYZ tidak lagi berfungsi!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>Sebuah aplikasi berhenti berfungsi setelah AdAway diaktifkan</h2>
+<p>Beberapa aplikasi menolak berfungsi saat nama host yang mereka perlukan diblokir. Gunakan <cite>Log DNS</cite> untuk mencari tahu nama host yang diperlukan aplikasi tersebut, tambahkan ke daftar <cite>Diizinkan</cite> Anda, dan aplikasi seharusnya berfungsi kembali. Aplikasi bermasalah yang sudah diketahui tercantum <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">di sini</a>.</p>
 
-<h2>Tombol kembali pada web browser tidak berfungsi</h2>
-<p>Anda dapat mengaktifkan webserver lokal AdAway di preferensi sebagai solusi.</p>
+<h2>Penerapan file hosts gagal (mode root)</h2>
+<p>Android versi terbaru menggunakan partisi <code>/system</code> yang hanya dapat dibaca, sehingga AdAway tidak dapat menulis ke sana secara langsung. Jika Anda menggunakan Magisk, aktifkan modul <cite>systemless hosts</cite>, mulai ulang perangkat, lalu terapkan lagi. Jika Anda tidak menggunakan root, beralihlah ke mode VPN yang tidak memerlukan perubahan pada sistem.</p>
 
-<h2>Tombol kembali pada web browser tidak berfungsi</h2>
-<p>Anda dapat mengaktifkan webserver lokal AdAway di preferensi sebagai solusi.</p>
-
+<h2>Masih belum teratasi?</h2>
+<p>Laporkan masalah dengan melampirkan log diagnostik di <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

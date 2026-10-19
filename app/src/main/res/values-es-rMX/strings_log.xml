@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">Activar o desactivar la grabación del registro</string>
+    <string name="log_start_recording">Presiona grabar para empezar a registrar las solicitudes, navega por la Web o usa apps, y luego regresa o desliza para actualizar el registro.</string>
+    <string name="log_blocked_requests_ignored">\n\nLas solicitudes bloqueadas no se registrarán. Si quieres registrarlas también, desactiva primero el bloqueo de anuncios.</string>
     <string name="log_sort">Ordenar dominios</string>
-    <string name="log_clear">Limpiar registro</string>
+    <string name="log_clear">Borrar registro</string>
     <string name="log_sort_alphabetical">Orden alfabético</string>
     <string name="log_sort_top_level_domain">Orden por dominio de nivel superior</string>
-    <string name="log_block">Agregar entrada a la lista negra</string>
-    <string name="log_allow">Agregar entrada a la lista blanca</string>
-    <string name="log_redirect">Agregar entrada a la lista de redirección</string>
+    <string name="log_block">Agregar entrada a la lista de bloqueados</string>
+    <string name="log_allow">Agregar entrada a la lista de permitidos</string>
+    <string name="log_redirect">Agregar entrada a la lista de redirigidos</string>
     <string name="log_redirect_dialog_title">Redirigir dominio</string>
+    <string name="log_capture_failed">No se pudo iniciar la captura de DNS.</string>
     <string name="log_start_recording_button">Iniciar grabación</string>
     <string name="log_start_recording_vpn_inactive">Iniciar grabación (VPN no activa)</string>
     <string name="log_stop_recording">Detener grabación</string>
