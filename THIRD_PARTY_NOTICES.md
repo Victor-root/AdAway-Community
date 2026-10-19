@@ -4,6 +4,8 @@ AdAway is licensed under the [GNU General Public License v3.0 or later](LICENSE.
 
 When a Rust component offers a choice of licenses, the one applied in AdAway is named in the "Applied license" column.
 
+This file is written by `tools/third_party_notices.py`.
+
 ## Android components
 
 | Component | License |
@@ -59,7 +61,7 @@ The components built into the native engine and the root processes.
 
 ### Apache License 2.0
 
-Applies to the Android components and to the Rust components marked Apache-2.0, including the code of *ring* sourced from BoringSSL.
+Applies to the Android components and to the Rust components marked Apache-2.0.
 
 ```text
                               Apache License

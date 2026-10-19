@@ -26,6 +26,9 @@ internal data object Preferences
 internal data object Help
 
 @Serializable
+internal data object ThirdPartyNotices
+
+@Serializable
 internal data object Updates
 
 @Serializable

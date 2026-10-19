@@ -205,6 +205,7 @@
     <string name="about_issues_label">Signaler un problème</string>
     <string name="about_releases_label">Versions publiées</string>
     <string name="about_upstream_label">AdAway officiel (amont)</string>
+    <string name="about_third_party_label">Licences tierces</string>
     <string name="about_license_label">Licence : GNU General Public License v3.0 ou supérieure (GPLv3+)</string>
     <string name="shortcut_dns_requests">Requêtes DNS</string>
     <string name="shortcut_your_lists">Vos listes</string>

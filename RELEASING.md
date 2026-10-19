@@ -28,6 +28,8 @@ Each version has its own number that follows the [Semantic Versioning](https://s
 A pre-release adds its stage to the version name, optionally followed by a number: `7.0.0-alpha-c`, `7.0.0-beta2-c` or `7.0.0-rc1-c`.
 The app then shows its stage in its name, such as "AdAway Alpha", and offers the next pre-releases as updates.
 
+When a dependency is added, removed or updated, run `python3 tools/third_party_notices.py` from the repository root to update the third-party notices of the repository and of the app.
+
 ## 3. Updating the changelog
 
 The AdAway project provides [a global changelog](CHANGELOG.md).

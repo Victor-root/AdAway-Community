@@ -202,6 +202,7 @@
     <string name="about_issues_label">Report an issue</string>
     <string name="about_releases_label">Releases</string>
     <string name="about_upstream_label">Official AdAway upstream</string>
+    <string name="about_third_party_label">Third-party licenses</string>
     <string name="about_license_label">License: GNU General Public License v3.0 or later (GPLv3+)</string>
     <string name="shortcut_dns_requests">DNS requests</string>
     <string name="shortcut_your_lists">Your lists</string>

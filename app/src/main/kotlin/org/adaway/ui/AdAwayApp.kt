@@ -16,6 +16,7 @@ import org.adaway.data.db.RuleType
 import org.adaway.ui.common.ScreenTransitions
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.help.HelpScreen
+import org.adaway.ui.help.NoticesScreen
 import org.adaway.ui.home.HomeNavigation
 import org.adaway.ui.home.HomeRoute
 import org.adaway.ui.home.HomeScreen
@@ -111,7 +112,8 @@ private fun NavGraphBuilder.sharedDestinations(navController: NavController) {
             ),
         )
     }
-    composable<Help> { HelpScreen(onBack = navController::popBackStack) }
+    composable<Help> { HelpScreen(onBack = navController::popBackStack, openNotices = { navController.navigate(ThirdPartyNotices) }) }
+    composable<ThirdPartyNotices> { NoticesScreen(onBack = navController::popBackStack) }
     composable<Updates> { UpdatesScreen(onBack = navController::popBackStack, openUpdate = { navController.navigate(AppUpdate) }) }
     composable<AppUpdate> { UpdateScreen(onBack = navController::popBackStack) }
     composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }

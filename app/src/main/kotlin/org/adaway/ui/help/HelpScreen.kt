@@ -75,7 +75,7 @@ private val Tabs = listOf(R.string.help_tab_faq, R.string.help_tab_problems, R.s
  * remote picks a tab by moving on it, goes down to read the page, and back up at its top.
  */
 @Composable
-fun HelpScreen(onBack: () -> Unit) {
+fun HelpScreen(onBack: () -> Unit, openNotices: () -> Unit) {
     val isTelevision = LocalTelevision.current
     val pager = rememberPagerState { Tabs.size }
     val scope = rememberCoroutineScope()
@@ -96,7 +96,7 @@ fun HelpScreen(onBack: () -> Unit) {
                     when (index) {
                         0 -> HelpPage(R.raw.help_faq, pageFocus)
                         1 -> HelpPage(R.raw.help_problems, pageFocus)
-                        else -> AboutPage(pageFocus)
+                        else -> AboutPage(pageFocus, openNotices)
                     }
                 }
             }
@@ -105,8 +105,21 @@ fun HelpScreen(onBack: () -> Unit) {
     if (isTelevision) LaunchedEffect(Unit) { tabs.first().requestFocus() }
 }
 
-/** On TV, the page takes the focus to scroll, and gives it back to its [tab] from its top. */
-private class PageFocus(val isTelevision: Boolean, val page: FocusRequester, val tab: FocusRequester)
+/** The licenses of the components the app is built with. */
+@Composable
+fun NoticesScreen(onBack: () -> Unit) {
+    val isTelevision = LocalTelevision.current
+    val page = remember { FocusRequester() }
+    AdAwayScreen(title = stringResource(R.string.about_third_party_label), onBack = onBack) { padding ->
+        Box(modifier = Modifier.fillMaxSize().padding(bottom = padding.calculateBottomPadding())) {
+            HelpPage(R.raw.third_party_notices, PageFocus(isTelevision, page, tab = null))
+        }
+    }
+    if (isTelevision) LaunchedEffect(Unit) { page.requestFocus() }
+}
+
+/** On TV, the page takes the focus to scroll, and gives it back to its [tab], if any, from its top. */
+private class PageFocus(val isTelevision: Boolean, val page: FocusRequester, val tab: FocusRequester?)
 
 /** Fixed tabs of equal width, the selected one in red over a red line. */
 @Composable
@@ -149,18 +162,31 @@ private fun TabRow(selected: Int, onSelect: (Int) -> Unit, isTelevision: Boolean
     }
 }
 
-/** A scrolling page. On TV, the arrows scroll it by half its height, as Android scrolls a text. */
+/**
+ * A scrolling page. On TV, the arrows scroll it by half its height, as Android scrolls a text, and
+ * the OK button runs [onConfirm].
+ */
 @Composable
-private fun PageColumn(focus: PageFocus, modifier: Modifier = Modifier, horizontalAlignment: Alignment.Horizontal = Alignment.Start, content: @Composable ColumnScope.() -> Unit) {
+private fun PageColumn(
+    focus: PageFocus,
+    modifier: Modifier = Modifier,
+    horizontalAlignment: Alignment.Horizontal = Alignment.Start,
+    onConfirm: (() -> Unit)? = null,
+    content: @Composable ColumnScope.() -> Unit,
+) {
     val scroll = rememberScrollState()
     val scope = rememberCoroutineScope()
     val remote = if (focus.isTelevision) {
         Modifier
             .focusRequester(focus.page)
-            .focusProperties { up = focus.tab }
+            .focusProperties { focus.tab?.let { up = it } }
             .onPreviewKeyEvent { event ->
                 val step = scroll.viewportSize / 2f
                 when {
+                    onConfirm != null && event.key in CONFIRM_KEYS -> {
+                        if (event.type == KeyEventType.KeyUp) onConfirm()
+                        true
+                    }
                     event.type != KeyEventType.KeyDown -> false
                     event.key == Key.DirectionDown -> {
                         scope.launch { scroll.animateScrollBy(step) }
@@ -211,9 +237,9 @@ private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
 }
 
 @Composable
-private fun AboutPage(focus: PageFocus) {
+private fun AboutPage(focus: PageFocus, openNotices: () -> Unit) {
     val colors = LocalAdAwayColors.current
-    PageColumn(focus, modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    PageColumn(focus, modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally, onConfirm = openNotices) {
         Box(modifier = Modifier.size(72.dp).clip(RoundedCornerShape(22)).background(colors.primary)) {
             Image(
                 painterResource(R.mipmap.icon_foreground),
@@ -244,6 +270,8 @@ private fun AboutPage(focus: PageFocus) {
             color = colors.textPrimary,
             modifier = Modifier.fillMaxWidth().padding(top = 8.dp).padding(horizontal = 4.dp),
         )
+        // On TV, the OK button of the page opens it.
+        TextLink(R.string.about_third_party_label, enabled = !focus.isTelevision, onClick = openNotices)
     }
 }
 
@@ -251,23 +279,30 @@ private fun AboutPage(focus: PageFocus) {
 @Composable
 private fun Link(@StringRes text: Int, url: String, isTelevision: Boolean, modifier: Modifier = Modifier) {
     val context = LocalContext.current
+    TextLink(text, modifier, enabled = !isTelevision) {
+        try {
+            context.startActivity(Intent(Intent.ACTION_VIEW, url.toUri()))
+        } catch (_: ActivityNotFoundException) {
+            // No browser on the device.
+        }
+    }
+}
+
+@Composable
+private fun TextLink(@StringRes text: Int, modifier: Modifier = Modifier, enabled: Boolean, onClick: () -> Unit) {
     Box(
         modifier = modifier
             .fillMaxWidth()
             .defaultMinSize(minHeight = 48.dp)
-            .clickable(enabled = !isTelevision) {
-                try {
-                    context.startActivity(Intent(Intent.ACTION_VIEW, url.toUri()))
-                } catch (_: ActivityNotFoundException) {
-                    // No browser on the device.
-                }
-            }
+            .clickable(enabled = enabled, onClick = onClick)
             .padding(horizontal = 4.dp),
         contentAlignment = Alignment.CenterStart,
     ) {
         Text(stringResource(text), style = AdAwayType.small, color = LocalAdAwayColors.current.primary)
     }
 }
+
+private val CONFIRM_KEYS = setOf(Key.DirectionCenter, Key.Enter, Key.NumPadEnter)
 
 @Composable
 private fun HelpDivider(modifier: Modifier) {
