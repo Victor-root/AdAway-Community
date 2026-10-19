@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_title">AdAway-oppdatering</string>
     <string name="update_banner_title">Oppdatering tilgjengelig</string>
     <string name="update_banner_subtitle">Trykk for å installere %1$s</string>
+    <string name="update_up_to_date_header">Du har den nyeste versjonen</string>
+    <string name="update_update_available_header">Oppdatering tilgjengelig</string>
+    <string name="update_updating_header">Oppdaterer AdAway</string>
+    <string name="update_update_button">Oppdater nå</string>
+    <string name="update_complete_label">Fullført</string>
+    <string name="update_last_changelog_title">Siste endringer</string>
+    <string name="update_new_changelog_title">Endringslogg</string>
+    <string name="update_download_failed">Oppdateringen kunne ikke lastes ned.</string>
+    <string name="update_install_failed">Oppdateringen kunne ikke installeres.</string>
     <string name="pref_update_check_now_update_available">Ny versjon tilgjengelig: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Ingen oppdateringer tilgjengelig</string>
+    <string name="pref_update_check_now_up_to_date">Ingen oppdatering tilgjengelig</string>
+    <string name="pref_update_check_now_failed">Oppdateringsserveren kunne ikke nås</string>
     <string name="pref_update_install_summary">Installer versjon %1$s</string>
-    <string name="notification_channel_app_updates">App-oppdateringer</string>
-    <string name="notification_channel_app_updates_description">Varsel når en ny versjon av appen er tilgjengelig. Demp denne kanalen for å skjule varsler om app-oppdateringer uten å påvirke andre varsler.</string>
+    <string name="notification_channel_app_updates">Appoppdateringer</string>
+    <string name="notification_channel_app_updates_description">Varsel når en ny versjon av appen er tilgjengelig. Slå av denne kanalen for å skru av varsler om appoppdateringer uten å påvirke andre varsler.</string>
+    <string name="notification_app_update_title">Appoppdatering tilgjengelig</string>
+    <string name="notification_app_update_text">En ny versjon av AdAway er tilgjengelig for nedlasting.</string>
 </resources>
