@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">Þessi stutti leiðarvísir kveikir á auglýsingalokun á þessu tæki.</string>
+    <string name="welcome_first_step">Fyrsta skref leiðsagnarinnar</string>
+    <string name="welcome_second_step">Annað skref leiðsagnarinnar</string>
+    <string name="welcome_third_step">Þriðja skref leiðsagnarinnar</string>
+    <string name="welcome_fourth_step">Fjórða skref leiðsagnarinnar</string>
+    <string name="welcome_method_header">Velkomið í AdAway!</string>
+    <string name="welcome_method_summary">AdAway býður upp á tvær aðferðir til að loka á auglýsingar. Veldu þá sem þér hentar:</string>
+    <string name="welcome_root_method_title">Auglýsingalokun\nbyggð á root</string>
+    <string name="welcome_root_method_text1">Hraðari</string>
+    <string name="welcome_root_method_text2">Sparar rafhlöðu</string>
+    <string name="welcome_root_method_text3">Krefst root</string>
+    <string name="welcome_vpn_method_title">Auglýsingalokun\nbyggð á VPN</string>
+    <string name="welcome_vpn_method_text1">Hægari</string>
+    <string name="welcome_vpn_method_text2">Keyrir í bakgrunni</string>
+    <string name="welcome_vpn_method_text3">Samhæfni</string>
+    <string name="welcome_root_missing_title">Tæki með root nauðsynlegt</string>
+    <string name="welcome_root_missile_description">Annaðhvort fannst su-skráin ekki eða þú veittir AdAway ekki root-heimild.\n\nÞetta getur gerst ef tækið þitt er ekki með root. Upplýsingar um hvernig hægt er að fá root á tækið er að finna á wiki.lineageos.org eða öðrum Android-vefsíðum.</string>
+    <string name="welcome_vpn_alwayson_title">Alltaf virkt VPN er í gangi</string>
+    <string name="welcome_vpn_alwayson_description">AdAway greindi að annað VPN er með stillinguna „Alltaf virkt VPN“ í gangi.\n\nÞað kemur í veg fyrir að AdAway geti beðið um VPN-aðgang. Slökktu á „Alltaf virkt VPN“ í því VPN og reyndu aftur.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway tókst ekki að biðja um VPN-aðgang.\n\nÁstæðan gæti verið að annað VPN er með stillinguna „Alltaf virkt VPN“ í gangi. Athugaðu hvort eitthvert VPN er með þessa stillingu og slökktu á henni áður en þú reynir aftur.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Opna VPN-stillingar</string>
+    <string name="welcome_method_pro_logo">Kostur</string>
+    <string name="welcome_method_con_logo">Galli</string>
+    <string name="welcome_sync_header">Samstilli</string>
+    <string name="welcome_synced_header">Samstillt!</string>
+    <string name="welcome_sync_summary">AdAway sækir af netinu lista yfir auglýsinganet sem á að loka á. Þú getur sérsniðið þá síðar í stillingunum.</string>
+    <string name="welcome_sync_retry_logo">Reyna samstillingu aftur</string>
+    <string name="welcome_sync_error">Samstilling mistókst: %1$s Reyna aftur núna?</string>
+    <string name="welcome_sync_notifications">AdAway getur sent tilkynningar sem sýna stöðu auglýsingalokunar og bjóða upp á stjórn á henni, og látið vita þegar ný útgáfa forritsins er tiltæk (nokkrum sinnum á ári). Kveiktu á þeim ef þú vilt fylgjast með nýjustu útgáfunni.</string>
+    <string name="welcome_sync_leave_early_title">Samstillingu er ekki lokið</string>
+    <string name="welcome_sync_leave_early_message">Niðurhali lokunarlistanna er ekki lokið. Þú getur haldið áfram núna og það heldur áfram í bakgrunni, eða beðið hér þar til því lýkur.</string>
+    <string name="welcome_sync_leave_early_wait">Bíða</string>
+    <string name="welcome_sync_leave_early_continue">Halda samt áfram</string>
+    <string name="welcome_battery_header">Haltu vörninni gangandi í bakgrunni</string>
+    <string name="welcome_battery_summary">Android getur sett VPN AdAway í bið í bakgrunni til að spara orku, sem getur stöðvað auglýsingalokun án þess að þú takir eftir því. Leyfðu AdAway að hunsa hagræðingu rafhlöðu svo það haldi áfram að keyra.</string>
+    <string name="welcome_battery_action">Leyfa</string>
+    <string name="welcome_battery_granted">Leyft ✓</string>
+    <string name="welcome_battery_footnote_prefix">Þú getur alltaf breytt þessu síðar í</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android-stillingar</item>
+        <item>Forrit</item>
+        <item>AdAway</item>
+        <item>Rafhlaða</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Eitt enn: rafhlöðustjórnun símans sjálfs</string>
+    <string name="welcome_oem_battery_summary">Sum símamerki eru með eigin rafhlöðustjórnun sem getur líka lokað á AdAway. Þetta skaltu athuga í þínum síma:</string>
+    <string name="welcome_oem_battery_action">Opna forritaupplýsingar</string>
+    <string name="welcome_oem_battery_open_failed">Ekki tókst að opna skjá forritaupplýsinga. Opnaðu hann handvirkt í Android-stillingum → Forrit → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Þetta eru almennar ábendingar, ekki nákvæm leiðbeining: orðalag og staðsetning geta verið mismunandi eftir símagerð og Android-útgáfu.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Forritaupplýsingar</item>
+        <item>Rafhlaða</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Leitaðu að einhverju eins og „Takmörk á bakgrunnsnotkun“ › „Forrit sem sofna aldrei“ og bættu AdAway á þann lista.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Athugaðu líka hvort stillingin „Sjálfvirk fínstilling“ er til staðar og slökktu á „Endurræsa ef þörf krefur“ ef hún er þar.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Forritaupplýsingar</item>
+        <item>Rafhlöðusparnaður</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Veldu „Engar takmarkanir“.</string>
+    <string name="welcome_oem_battery_secondary_miui">Kveiktu líka á „Sjálfvirk ræsing“ („Sjálfvirk ræsing í bakgrunni“ í nýrri útgáfum).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Forritaupplýsingar</item>
+        <item>Rafhlöðunotkun</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Veldu „Leyfa bakgrunnsvirkni“ (stundum birt sem „Engar takmarkanir“).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Leitaðu líka að rofanum „Sjálfvirk ræsing“ fyrir AdAway (oft undir Stillingar › Forrit) svo það geti ræst sig sjálft eftir að það hefur verið þvingað til að hætta.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Forritaupplýsingar</item>
+        <item>Rafhlaða</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Leitaðu að „Ræsing forrits“, slökktu á „Stjórna sjálfvirkt“ og kveiktu síðan á öllum þremur: „Sjálfvirk ræsing“, „Aukaræsing“ og „Keyra í bakgrunni“.</string>
+    <string name="welcome_oem_battery_secondary_emui">Læstu líka AdAway á yfirlitsskjá nýlegra forrita (strjúktu niður á spjaldi þess þar til hengilás birtist).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Forritaupplýsingar</item>
+        <item>Rafhlöðunotkun</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Leitaðu að valkosti um orkunotkun í bakgrunni og veldu „Ekki takmarka orkunotkun í bakgrunni“ (ekki „Snjallstýring“).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Leitaðu líka að stillingunni „Sjálfvirk ræsing“ fyrir AdAway, oft undir Stillingar › Forrit.</string>
+    <string name="welcome_oem_battery_label_generic">Annað vörumerki</string>
+    <string name="welcome_oem_battery_tip_generic">Leitaðu í forritaupplýsingunum að stillingu fyrir rafhlöðu eða bakgrunnsvirkni og gættu þess að AdAway sé ekki takmarkað.</string>
+    <string name="welcome_back_button">Til baka</string>
+    <string name="welcome_next_button">Áfram</string>
+    <string name="welcome_finish_button">Ljúka</string>
+    <string name="tv_welcome_intro_subtitle">Þessi stutta leiðsögn kveikir á auglýsingalokun á þessu tæki.</string>
     <string name="tv_welcome_start_button">Byrja</string>
-    <string name="tv_welcome_method_header">Veldu lokunaraðferð þína</string>
+    <string name="tv_welcome_method_header">Veldu lokunaraðferð</string>
     <string name="tv_welcome_method_root_button">Nota root</string>
-    <string name="tv_welcome_method_root_body">Hraðara og sparar rafhlöðu. Krefst tækis með root-aðgangi.</string>
+    <string name="tv_welcome_method_root_body">Hraðari og sparar rafhlöðu. Krefst tækis með root.</string>
     <string name="tv_welcome_method_vpn_button">Nota VPN</string>
-    <string name="tv_welcome_method_vpn_body">Virkar án root, samhæft við öll Android TV tæki.</string>
-    <string name="tv_welcome_activate_header">Kveikja á auglýsingalokun</string>
-    <string name="tv_welcome_activate_body">Þetta er staðbundið VPN: það síar auglýsingar á þessu tæki, án þess að beina umferð þinni um ytri netþjón.</string>
+    <string name="tv_welcome_method_vpn_body">Virkar án root og er samhæft við öll Android TV-tæki.</string>
+    <string name="tv_welcome_activate_header">Kveiktu á auglýsingalokun</string>
+    <string name="tv_welcome_activate_body">Þetta er staðbundið VPN: það síar auglýsingar á þessu tæki án þess að senda umferðina þína í gegnum utanaðkomandi þjón.</string>
 </resources>

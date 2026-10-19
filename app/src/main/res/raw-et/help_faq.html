@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Sissetulek reklaamidega</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>Mis on AdAway Community?</h2>
+<p>AdAway Community on mitteametlik, kogukonna hooldatav fork projektist AdAway, mis on avatud lähtekoodiga reklaamiblokeerija Androidile. See blokeerib reklaame ja jälgijaid süsteemiüleselt, kõigis rakendustes, ilma kontota ja ilma enda reklaamideta. See fork keskendub sellele, et rakendus töötaks töökindlalt tänapäevastes Androidi versioonides ja tootjate kohandatud süsteemides.</p>
 
-<h2>Kuidas AdAway töötab?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Kuidas see reklaame blokeerib?</h2>
+<p>AdAway töötab ühes kahest režiimist:</p>
+<p><strong>VPN-režiim</strong> (root-õigusi pole vaja): AdAway käivitab seadmesisese kohaliku VPN-i, mis ei saada sinu liiklust kuhugi. See uurib ainult DNS-päringuid ja katkestab need, mis viivad reklaami- ja jälgimishostinimedeni, lastes kõik muu läbi. Midagi ei lahku sinu seadmest.</p>
+<p><strong>Root-režiim</strong>: kui sinu seade on rootitud, võib AdAway selle asemel kirjutada <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts-faili</a> asukohta <code>/system/etc/hosts</code>, mis seob soovimatud hostinimed aadressiga <code>127.0.0.1</code>, nii et need lahenduvad sinu enda seadmele. Uuemas Androidis on vaja systemless hosts moodulit (nt Magisk).</p>
 
-<h2>Miks ma pean Androidi taaskäivitama, et muutused jõustuksid?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>Milliseid DNS-servereid VPN kasutab?</h2>
+<p>VPN-režiimis lahendavad blokeerimata hostinimed need DNS-serverid, mille valid jaotises <cite>Seaded › VPN-il põhinev reklaamiblokeerija › DNS-serverid</cite>:</p>
+<p><strong>Võrgu DNS-serverid</strong> (vaikimisi): sinu Wi-Fi või mobiilsidevõrgu serverid. Kui võrk ei paku ühtegi AdAway jaoks kasutatavat, kasutab AdAway varuvariandina teenust Cloudflare (<code>1.1.1.1</code>).<br/><strong>Kohandatud DNS-serverid</strong>: sinu sisestatud IP-aadressid, eraldatud komadega.<br/><strong>DNS over HTTPS</strong>: päringud krüptitakse ja saadetakse serverisse Cloudflare, Google, Quad9 või sinu sisestatud <code>https://</code> aadressil asuvasse serverisse, nii et sinu võrk ei saa neid lugeda ega muuta.</p>
+<p>Blokeerimine toimib kõigi kolme puhul ühtmoodi. Krüptitud DNS-i säilitamiseks kasuta siin DNS over HTTPS-i, mitte Androidi sätet <cite>Privaatne DNS</cite>, mis möödub AdAway’st.</p>
 
-<h2>Kuidas kasutada veebiserverit AdAways?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Kuidas hostinime blokeerida, lubada või ümber suunata?</h2>
+<p>Avakuval haldad kolme loendit:</p>
+<p><strong>Blokeeritud</strong>: hostinimed, mida tuleb blokeerida (reklaamid ja jälgijad).<br/><strong>Lubatud</strong>: erandid, mida ei tohi kunagi blokeerida, isegi kui mõni allikas need loetleb.<br/><strong>Ümbersuunatud</strong>: hostinimed, mille soovid suunata kindlale IP-aadressile.</p>
+<p>Avakuvalt saad avada ka <cite>DNS-logi</cite>, et näha reaalajas, milliseid hostinimesid rakendused pärivad, ning neid seal otse blokeerida või lubada.</p>
 
-<h2>Kuidas ma saan blokeerida/eemaldada blokeeringu kindlatel hostinimedel?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Kas pean pärast loendite muutmist Androidi taaskäivitama?</h2>
+<p>Ei. AdAway rakendab muudatuse kohe, kuid juba avatud rakendus võib edasi kasutada vanu ühendusi ja oma vahemälu. Sulge see täielikult (rakenduse „Sundpeata“ Androidi seadetes) ning tühjenda selle vahemälu, kui reklaame näidatakse endiselt. Androidi taaskäivitus on vajalik ainult üks kord root-režiimis, pärast rakenduse Magisk mooduli „systemless hosts“ sisselülitamist.</p>
 
-<h2>Kust ma leian veel hosts-allikaid?</h2>
-<p>Vaata <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Nimekiri ekstra hosts-allikatest AdAwayle</a></p>
+<h2>Kust leida rohkem hosts-allikaid?</h2>
+<p>AdAway sisaldab mõistlikke vaikeallikaid. Kui soovid rohkem, vaata kogukonna hooldatavat <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">täiendavate hosts-allikate loendit</a>. Lisa allikaid mõõdukalt, sest väga suured või kattuvad loendid võivad põhjustada valepositiivseid tulemusi, mis rikuvad rakendusi.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Miks see fork olemas on?</h2>
+<p>AdAway on suurepärane projekt pika ajalooga, kuid algprojekti väljalaske- ja ülevaatustegevus on juba mõnda aega olnud piiratud. Mõned veaparandused ja muudatusettepanekud jäid pikaks ajaks lahtiseks, sealhulgas probleemid, mis mõjutasid VPN-režiimi stabiilsust uuemates Androidi versioonides ja tootjate kohandatud süsteemides. See fork on olemas selleks, et projekt jääks kasutatavaks kogukonna hooldatud parandustega, selle asemel et lasta testitud täiustustel kasutamata seista.</p>
 
-<h2>Aita tõlkida/vigu teatada</h2>
-<p>Palun mine aadressile <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Kuidas teatada veast või teha ettepanekut?</h2>
+<p>Ava teema selle forki probleemijälgijas: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Diagnostikalogi (vaata vahekaarti Probleemid) aitab VPN-i probleemidest teatades väga palju.</p>
 </body>
 </html>

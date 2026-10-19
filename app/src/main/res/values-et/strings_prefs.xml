@@ -1,33 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Eelistused</string>
-    <string name="pref_dark_theme">Luba tume teema</string>
-    <string name="pref_enable_ipv6">Luba IPv6</string>
-    <string name="pref_update_title">Uuendused</string>
-    <string name="pref_update_check_app_daily">Uuenduste kontroll iga päev</string>
-    <string name="pref_update_check_now">Kontrolli kohe</string>
-    <string name="pref_update_install">Uuenda kohe</string>
-    <string name="pref_update_check_hosts_daily">Uuenduste kontroll iga päev</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">Seaded</string>
+    <string name="pref_general_category">Üldist</string>
+    <string name="pref_dark_theme">Tume teema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Hele</item>
+        <item>Tume</item>
+        <item>Süsteemi vaikeseade</item>
     </string-array>
+    <string name="pref_update_configuration">Automaatsed värskendused</string>
+    <string name="pref_language">Keel</string>
+    <string name="pref_language_system">Süsteemi keel</string>
+    <string name="pref_ad_block_category">Reklaamide blokeerimine</string>
+    <string name="pref_root_ad_blocker_configuration">Rootil põhinev reklaamiblokeerija</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-il põhinev reklaamiblokeerija</string>
+    <string name="pref_enable_ipv6">Luba IPv6 tugi</string>
+    <string name="pref_backup_restore">Blokeerimisreeglite varundus / taastamine</string>
+    <string name="pref_backup_restore_title">Varundus ja taastamine</string>
+    <string name="pref_backup">Varundus</string>
+    <string name="pref_backup_summary">Varunda oma blokeerimisreeglid välisele mälule</string>
+    <string name="pref_restore">Taasta</string>
+    <string name="pref_restore_summary">Taasta oma blokeerimisreeglid varukoopiafailist</string>
+    <string name="import_success">Varukoopia imporditi edukalt sinu välisest mälust.</string>
+    <string name="import_failed">Varukoopia importimine ebaõnnestus. Kas selle vorming on õige?</string>
+    <string name="export_success">Varukoopia eksporditi edukalt faili „%s“ sinu välisel mälul.</string>
+    <string name="export_failed">Varukoopiafaili „%s“ eksportimine ebaõnnestus.</string>
+    <string name="pref_update_title">Värskendused</string>
+    <string name="pref_update_enable_notifications">Märguanded on välja lülitatud</string>
+    <string name="pref_update_enable_notifications_summary">Rakenduse märguandeid ei kuvata. Puuduta, et need sisse lülitada.</string>
+    <string name="pref_update_app_category">Rakenduse värskendused</string>
+    <string name="pref_update_check_app_startup">Otsi värskendust käivitamisel</string>
+    <string name="pref_update_check_app_daily">Otsi värskendust regulaarselt</string>
+    <string name="pref_update_check_now">Kontrolli kohe</string>
+    <string name="pref_update_install">Värskenda kohe</string>
+    <string name="pref_update_hosts_category">Hosts-allikate värskendused</string>
+    <string name="pref_update_check">Otsi värskendust käivitamisel</string>
+    <string name="pref_update_check_hosts_daily">Otsi värskendust regulaarselt</string>
+    <string name="pref_update_sync_on_update">Sünkrooni värskenduse leidmisel</string>
+    <string name="pref_update_sync_unmetered_only">Sünkrooni ainult piiramatu andmemahuga võrgus</string>
+    <string name="pref_vpn_service_on_boot">Lülita seadme käivitamisel sisse</string>
+    <string name="pref_vpn_service_monitor">Jälgi ühendust</string>
+    <string name="pref_vpn_service_monitor_description">Kontrolli regulaarselt võrgu olekut, et VPN pärast katkemist uuesti käivitada.</string>
+    <string name="pref_vpn_excluded_apps">Välistatud rakendused</string>
+    <string name="pref_vpn_excluded_apps_description">Määra, millised rakendused ei tohi VPN-i kasutada, et nende ühendusi ei blokeeritaks.</string>
+    <string name="pref_vpn_exclude_system_apps">Välista süsteemirakendused</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Mitte ühtegi</item>
+        <item>Kõik peale brauserite</item>
+        <item>Kõik</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS-serverid</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Võrgu DNS-serverid</item>
+        <item>Kohandatud DNS-serverid</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Kohandatud DNS-serverid</string>
+    <string name="pref_vpn_dns_custom_summary">IP-aadressid, eraldatud komadega</string>
+    <string name="pref_vpn_dns_custom_invalid">Vigane DNS-serveri aadress</string>
+    <string name="pref_vpn_doh">DNS over HTTPS-server</string>
+    <string name="pref_vpn_doh_custom">Kohandatud aadress</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS-i aadress</string>
+    <string name="pref_vpn_doh_invalid">Vigane DNS over HTTPS-i aadress</string>
+    <string name="pref_vpn_exclude_user_apps">Välista kasutaja rakendused</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Välistatud rakendused</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Vali kõik</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Tühista kõigi valik</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Rakenduse ikoon</string>
     <string name="pref_vpn_reset">Lähtesta VPN</string>
-    <string name="pref_vpn_reset_description">Ehita VPN-ühendus nullist üles. Kasuta seda, kui VPN lakkab töötamast (puudub internetiühendus või esineb DNS-i vigu).</string>
-    <string name="pref_vpn_reset_done">VPN-ühendus taastati.</string>
+    <string name="pref_vpn_reset_description">Ehita VPN-ühendus nullist uuesti üles. Kasuta seda, kui VPN lakkab töötamast (internetiühendus puudub või ilmnevad DNS-vead).</string>
+    <string name="pref_vpn_reset_done">VPN-ühendus ehitati uuesti üles.</string>
     <string name="pref_vpn_reset_not_running">VPN ei tööta.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Salvesta diagnostikalogi</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Lülita sisse enne probleemi taasloomist ja ekspordi logi seejärel allpool. Võib vanemate seadmete tööd veidi aeglustada. Salvestab ainult tehnilisi VPN-i sündmusi, mitte kunagi sirvimisajalugu ega isikuandmeid.</string>
     <string name="pref_vpn_diagnostic_log">Diagnostikalogi</string>
-    <string name="pref_vpn_diagnostic_log_description">Vaata, kopeeri või jaga hiljutisi vigu ja VPN-i sündmusi. Kasulik probleemist teatamisel.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Ühtegi sündmust pole veel salvestatud.</string>
-    <string name="pref_vpn_diagnostic_log_share">Jaga diagnostikalogi</string>
+    <string name="pref_vpn_diagnostic_log_description">Vaata, kopeeri või jaga viimaseid vigu ja VPN-i sündmusi. Kasulik probleemist teatamisel.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Sündmusi pole veel salvestatud. Lülita ülal sisse „Salvesta diagnostikalogi“ ja proovi siis probleemi taasluua.</string>
+    <string name="pref_vpn_diagnostic_log_share">Jaga</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Jaga diagnostikalogi</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopeeri</string>
     <string name="pref_vpn_diagnostic_log_copied">Diagnostikalogi kopeeriti lõikelauale.</string>
     <string name="pref_vpn_diagnostic_log_clear">Tühjenda diagnostikalogi</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Kustuta salvestatud sündmused. Tee seda enne probleemi taasesitamist, et jäädvustada puhas jälg.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Kustuta salvestatud sündmused. Tee seda enne probleemi taasloomist, et saada puhas jälg.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Diagnostikalogi tühjendati.</string>
     <string name="pref_root_open_hosts">Ava hosts-fail</string>
-    <string name="pref_redirection_ipv4">Suunamise IPv4</string>
-    <string name="pref_redirection_ipv6">Suunamise IPv6</string>
+    <string name="hosts_file_unreadable">Hosts-faili lugemine ebaõnnestus.</string>
+    <string name="pref_hosts_redirection_summary">Määra, kuhu blokeeritud hostid ümber suunatakse</string>
+    <string name="pref_redirection_ipv4">Seadista IPv4 ümbersuunamine</string>
+    <string name="pref_redirection_ipv6">Seadista IPv6 ümbersuunamine</string>
+    <string name="pref_redirection_invalid">Vigane ümbersuunamine</string>
+    <string name="pref_webserver_summary">Kohalik veebiserver kuulab kohalikke IP-aadresse ja vastab blokeeritud hostinimede päringutele. See võib aidata, kui rakendus hangub blokeeritud ühenduse tõttu.</string>
     <string name="pref_webserver_enabled">Luba veebiserver</string>
+    <string name="pref_webserver_test">Testi veebiserverit</string>
+    <string name="pref_webserver_certificate">Installi iseallkirjastatud sertifikaat</string>
+    <string name="pref_webserver_state_not_running">Ei tööta</string>
+    <string name="pref_webserver_state_checking">Kontrollimine…</string>
+    <string name="pref_webserver_state_running_not_installed">Töötab, kuid sertifikaat pole installitud</string>
+    <string name="pref_webserver_state_running_and_installed">Töötab ja sertifikaat on installitud</string>
+    <string name="pref_webserver_certificate_dialog_title">Sertifikaadi käsitsi installimine</string>
+    <string name="pref_webserver_certificate_dialog_content">Alates Android 11-st (R) ei saa rakendused sertifitseerimiskeskust (CA) enam automaatselt installida.\n\nAva seaded „Turve“, seejärel „Krüpteerimine ja mandaadid“ ning „Installi sertifikaat“. Vali sealt „CA sertifikaat“ ja äsja eksporditud sertifikaadifail.</string>
+    <string name="pref_webserver_certificate_dialog_action">Ava seaded „Turve“</string>
+    <string name="pref_webserver_certificate_failed">Sertifikaadi ettevalmistamine ebaõnnestus.</string>
+    <string name="webserver_error_title">Veebiserver ei käivitunud</string>
+    <string name="webserver_error_resources">Selle faile või sertifikaati ei õnnestunud ette valmistada.</string>
+    <string name="webserver_error_address_in_use">Mõni teine rakendus kasutab juba seadme veebiporte (80 ja 443).</string>
+    <string name="webserver_error_start_failed">See ei saanud selles seadmes käivituda.</string>
+    <string name="pref_webserver_icon">Asenda tühi reklaamiala rakenduse ikooniga</string>
 </resources>

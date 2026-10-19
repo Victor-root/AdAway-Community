@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Lisa lubatute hulka</string>
-    <string name="tv_dialog_add_to_blocked">Lisa blokeeritute hulka</string>
-    <string name="tv_dialog_remove_from_allowed">Eemalda lubatute hulgast</string>
-    <string name="tv_dialog_remove_from_blocked">Eemalda blokeeritute hulgast</string>
+    <string name="tv_dialog_add_to_allowed">Lisa lubatutesse</string>
+    <string name="tv_dialog_add_to_blocked">Lisa blokeeritutesse</string>
+    <string name="tv_dialog_remove_from_allowed">Eemalda lubatutest</string>
+    <string name="tv_dialog_remove_from_blocked">Eemalda blokeeritutest</string>
     <string name="tv_dialog_copy_hostname">Kopeeri hostinimi</string>
     <string name="tv_log_entry_status_description">Domeeni olek</string>
     <string name="tv_button_theme_light">Hele režiim</string>

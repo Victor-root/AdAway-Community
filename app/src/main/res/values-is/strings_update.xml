@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">Uppfærsla AdAway</string>
+    <string name="update_banner_title">Uppfærsla í boði</string>
+    <string name="update_banner_subtitle">Ýttu til að setja upp %1$s</string>
+    <string name="update_up_to_date_header">Þú ert með nýjustu útgáfu</string>
+    <string name="update_update_available_header">Uppfærsla í boði</string>
+    <string name="update_updating_header">Uppfæri AdAway</string>
+    <string name="update_update_button">Uppfæra núna</string>
+    <string name="update_complete_label">Lokið</string>
+    <string name="update_last_changelog_title">Nýjustu breytingar</string>
+    <string name="update_new_changelog_title">Breytingaskrá</string>
+    <string name="update_download_failed">Ekki tókst að sækja uppfærsluna.</string>
+    <string name="update_install_failed">Ekki tókst að setja upp uppfærsluna.</string>
+    <string name="pref_update_check_now_update_available">Ný útgáfa í boði: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Engin uppfærsla í boði</string>
+    <string name="pref_update_check_now_failed">Ekki náðist samband við uppfærsluþjóninn</string>
+    <string name="pref_update_install_summary">Setja upp útgáfu %1$s</string>
+    <string name="notification_channel_app_updates">Forritsuppfærslur</string>
+    <string name="notification_channel_app_updates_description">Tilkynning þegar ný útgáfa forritsins er tiltæk. Þaggaðu þessa rás til að slökkva á tilkynningum um forritsuppfærslur án þess að það hafi áhrif á aðrar tilkynningar.</string>
+    <string name="notification_app_update_title">Forritsuppfærsla í boði</string>
+    <string name="notification_app_update_text">Ný útgáfa af AdAway er tiltæk til niðurhals.</string>
 </resources>

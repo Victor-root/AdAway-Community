@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">Stillingar</string>
+    <string name="pref_general_category">Almennt</string>
+    <string name="pref_dark_theme">Dökkt þema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Ljóst</item>
+        <item>Dökkt</item>
+        <item>Sjálfgefið kerfisins</item>
     </string-array>
+    <string name="pref_update_configuration">Sjálfvirkar uppfærslur</string>
+    <string name="pref_language">Tungumál</string>
+    <string name="pref_language_system">Tungumál kerfisins</string>
+    <string name="pref_ad_block_category">Auglýsingalokun</string>
+    <string name="pref_root_ad_blocker_configuration">Auglýsingalokari byggður á root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Auglýsingalokari byggður á VPN</string>
+    <string name="pref_enable_ipv6">Virkja stuðning við IPv6</string>
+    <string name="pref_backup_restore">Öryggisafrit / endurheimta lokunarreglur</string>
+    <string name="pref_backup_restore_title">Öryggisafrit og endurheimt</string>
+    <string name="pref_backup">Öryggisafrit</string>
+    <string name="pref_backup_summary">Taktu öryggisafrit af lokunarreglunum þínum á ytri geymslu</string>
+    <string name="pref_restore">Endurheimta</string>
+    <string name="pref_restore_summary">Endurheimtu lokunarreglurnar þínar úr öryggisafritsskrá</string>
+    <string name="import_success">Öryggisafritið var flutt inn úr ytri geymslunni þinni.</string>
+    <string name="import_failed">Ekki tókst að flytja inn öryggisafritið. Er sniðið rétt?</string>
+    <string name="export_success">Öryggisafritið var flutt út í skrána „%s“ á ytri geymslunni þinni.</string>
+    <string name="export_failed">Ekki tókst að flytja út öryggisafritsskrána „%s“.</string>
+    <string name="pref_update_title">Uppfærslur</string>
+    <string name="pref_update_enable_notifications">Slökkt er á tilkynningum</string>
+    <string name="pref_update_enable_notifications_summary">Tilkynningar forritsins birtast ekki. Ýttu til að kveikja á þeim.</string>
+    <string name="pref_update_app_category">Uppfærslur forritsins</string>
+    <string name="pref_update_check_app_startup">Leita að uppfærslu við ræsingu</string>
+    <string name="pref_update_check_app_daily">Leita reglulega að uppfærslu</string>
+    <string name="pref_update_check_now">Leita núna</string>
+    <string name="pref_update_install">Uppfæra núna</string>
+    <string name="pref_update_hosts_category">Uppfærslur hosts</string>
+    <string name="pref_update_check">Leita að uppfærslu við ræsingu</string>
+    <string name="pref_update_check_hosts_daily">Leita reglulega að uppfærslu</string>
+    <string name="pref_update_sync_on_update">Samstilla við uppfærslu</string>
+    <string name="pref_update_sync_unmetered_only">Samstilla aðeins á ómældu neti</string>
+    <string name="pref_vpn_service_on_boot">Virkja við ræsingu</string>
+    <string name="pref_vpn_service_monitor">Fylgjast með tengingu</string>
+    <string name="pref_vpn_service_monitor_description">Athuga reglulega ástand netsins til að endurræsa VPN ef tengingin rofnar.</string>
+    <string name="pref_vpn_excluded_apps">Undanskilin forrit</string>
+    <string name="pref_vpn_excluded_apps_description">Veldu hvaða forrit eiga ekki að nota VPN svo engum tengingum sé lokað.</string>
+    <string name="pref_vpn_exclude_system_apps">Undanskilja kerfisforrit</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Engin</item>
+        <item>Öll nema vafrar</item>
+        <item>Öll</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS-þjónar</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>DNS-þjónar netsins</item>
+        <item>Sérsniðnir DNS-þjónar</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Sérsniðnir DNS-þjónar</string>
+    <string name="pref_vpn_dns_custom_summary">IP-tölur, aðgreindar með kommum</string>
+    <string name="pref_vpn_dns_custom_invalid">Ógilt vistfang DNS-þjóns</string>
+    <string name="pref_vpn_doh">DNS over HTTPS-þjónn</string>
+    <string name="pref_vpn_doh_custom">Sérsniðið vistfang</string>
+    <string name="pref_vpn_doh_address">Vistfang DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Ógilt vistfang DNS over HTTPS</string>
+    <string name="pref_vpn_exclude_user_apps">Undanskilja notendaforrit</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Undanskilin forrit</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Velja allt</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Afvelja allt</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Táknmynd forrits</string>
     <string name="pref_vpn_reset">Endurstilla VPN</string>
-    <string name="pref_vpn_reset_description">Endurbyggja VPN-tenginguna frá grunni. Notaðu þetta ef VPN hættir að virka (enginn internetaðgangur eða DNS-villur).</string>
-    <string name="pref_vpn_reset_done">VPN-tenging endurbyggð.</string>
+    <string name="pref_vpn_reset_description">Byggja VPN-tenginguna upp frá grunni. Notaðu þetta ef VPN hættir að virka (enginn netaðgangur eða DNS-villur).</string>
+    <string name="pref_vpn_reset_done">VPN-tengingin var endurbyggð.</string>
     <string name="pref_vpn_reset_not_running">VPN er ekki í gangi.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Skrá greiningarannál</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Kveiktu á þessu áður en þú endurskapar vandamál og deildu annálnum svo hér fyrir neðan. Getur hægt lítillega á eldri tækjum. Skráir aðeins tæknilega VPN-atburði, aldrei vafrasögu eða persónuupplýsingar.</string>
     <string name="pref_vpn_diagnostic_log">Greiningarannáll</string>
-    <string name="pref_vpn_diagnostic_log_description">Skoða, afrita eða deila nýlegum villum og VPN-atburðum. Gagnlegt þegar vandamál er tilkynnt.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Engir atburðir hafa enn verið skráðir.</string>
-    <string name="pref_vpn_diagnostic_log_share">Deila greiningarannál</string>
+    <string name="pref_vpn_diagnostic_log_description">Skoðaðu, afritaðu eða deildu nýlegum villum og VPN-atburðum. Gagnlegt þegar þú tilkynnir vandamál.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Engir atburðir hafa verið skráðir enn. Kveiktu á „Skrá greiningarannál“ hér fyrir ofan og reyndu svo að endurskapa vandamálið.</string>
+    <string name="pref_vpn_diagnostic_log_share">Deila</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Deila greiningarannál</string>
     <string name="pref_vpn_diagnostic_log_copy">Afrita</string>
-    <string name="pref_vpn_diagnostic_log_copied">Greiningarannáll afritaður á klippiborð.</string>
+    <string name="pref_vpn_diagnostic_log_copied">Greiningarannáll afritaður á klippiborðið.</string>
     <string name="pref_vpn_diagnostic_log_clear">Hreinsa greiningarannál</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Eyða skráðum atburðum. Gerðu þetta áður en þú endurskapar vandamál til að fá hreinan feril.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Eyða skráðum atburðum. Gerðu þetta áður en þú endurskapar vandamál til að fá hreinan annál.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Greiningarannáll hreinsaður.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_root_open_hosts">Opna hosts-skrá</string>
+    <string name="hosts_file_unreadable">Ekki tókst að lesa hosts-skrána.</string>
+    <string name="pref_hosts_redirection_summary">Veldu hvert á að beina hýslum sem lokað er á</string>
+    <string name="pref_redirection_ipv4">Stilla IPv4-endurbeiningu</string>
+    <string name="pref_redirection_ipv6">Stilla IPv6-endurbeiningu</string>
+    <string name="pref_redirection_invalid">Ógild endurbeining</string>
+    <string name="pref_webserver_summary">Staðbundni vefþjónninn hlustar á staðbundnum IP-tölum og svarar beiðnum um hýsilheiti sem lokað er á. Hann getur hjálpað ef forrit frjósa vegna lokaðrar tengingar.</string>
+    <string name="pref_webserver_enabled">Virkja vefþjón</string>
+    <string name="pref_webserver_test">Prófa vefþjón</string>
+    <string name="pref_webserver_certificate">Setja upp sjálfundirritað skilríki</string>
+    <string name="pref_webserver_state_not_running">Ekki í gangi</string>
+    <string name="pref_webserver_state_checking">Athuga…</string>
+    <string name="pref_webserver_state_running_not_installed">Í gangi en skilríki ekki uppsett</string>
+    <string name="pref_webserver_state_running_and_installed">Í gangi og skilríki uppsett</string>
+    <string name="pref_webserver_certificate_dialog_title">Handvirk uppsetning skilríkja</string>
+    <string name="pref_webserver_certificate_dialog_content">Frá og með Android 11 (R) geta forrit ekki lengur sett upp vottunaraðila (CA) sjálfvirkt.\n\nFarðu í „Öryggi“ í stillingunum, veldu „Dulkóðun og skilríki“ og svo „Setja upp skilríki“. Veldu þar „CA-skilríki“ og síðan nýútfluttu skilríkjaskrána.</string>
+    <string name="pref_webserver_certificate_dialog_action">Opna „Öryggi“ í stillingum</string>
+    <string name="pref_webserver_certificate_failed">Ekki tókst að undirbúa skilríkin.</string>
+    <string name="webserver_error_title">Vefþjónninn var ekki ræstur</string>
+    <string name="webserver_error_resources">Ekki tókst að undirbúa skrár hans eða skilríki.</string>
+    <string name="webserver_error_address_in_use">Annað forrit notar nú þegar vefgáttirnar (80 og 443) á tækinu.</string>
+    <string name="webserver_error_start_failed">Hann gat ekki ræst á þessu tæki.</string>
+    <string name="pref_webserver_icon">Setja táknmynd forritsins í stað auðs auglýsingapláss</string>
 </resources>

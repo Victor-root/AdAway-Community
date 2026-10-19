@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Hefja upptöku</string>
-    <string name="log_start_recording_vpn_inactive">Hefja upptöku (VPN ekki virkt)</string>
-    <string name="log_stop_recording">Stöðva upptöku</string>
+    <string name="log_toggle_recording_description">Kveikja eða slökkva á skráningu annáls</string>
+    <string name="log_start_recording">Ýttu á upptökuhnappinn til að byrja að skrá beiðnir, vafraðu á vefnum eða notaðu forrit og farðu svo til baka eða strjúktu til að endurnýja annálinn.</string>
+    <string name="log_blocked_requests_ignored">\n\nBeiðnir sem lokað er á eru ekki skráðar. Slökktu fyrst á auglýsingalokun ef þú vilt skrá þær líka.</string>
+    <string name="log_sort">Raða lénum</string>
+    <string name="log_clear">Hreinsa annál</string>
+    <string name="log_sort_alphabetical">Raða í stafrófsröð</string>
+    <string name="log_sort_top_level_domain">Raða eftir efsta stigs léni</string>
+    <string name="log_block">Bæta færslu á svartan lista</string>
+    <string name="log_allow">Bæta færslu á hvítan lista</string>
+    <string name="log_redirect">Bæta færslu á endurbeiningarlista</string>
+    <string name="log_redirect_dialog_title">Endurbeina léni</string>
+    <string name="log_capture_failed">Ekki tókst að ræsa DNS-upptökuna.</string>
+    <string name="log_start_recording_button">Hefja skráningu</string>
+    <string name="log_start_recording_vpn_inactive">Hefja skráningu (VPN ekki virkt)</string>
+    <string name="log_stop_recording">Stöðva skráningu</string>
 </resources>

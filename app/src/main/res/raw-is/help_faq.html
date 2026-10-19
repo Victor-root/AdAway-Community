@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Income by advertisements</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>Hvað er AdAway Community?</h2>
+<p>AdAway Community er óopinbert fork af AdAway, auglýsingalokara með opnum hugbúnaði fyrir Android, sem samfélagið viðheldur. Það lokar á auglýsingar og rekjara á öllu kerfinu, fyrir öll forrit, án aðgangs og án eigin auglýsinga. Markmið þessa fork er að halda forritinu áreiðanlegu í nýjum Android-útgáfum og útgáfum framleiðenda.</p>
 
-<h2>How does AdAway work?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Hvernig lokar það á auglýsingar?</h2>
+<p>AdAway getur unnið á tvo vegu:</p>
+<p><strong>VPN-stilling</strong> (krefst ekki root): AdAway keyrir staðbundið VPN á tækinu sjálfu sem sendir umferðina þína aldrei neitt. Það skoðar aðeins DNS-fyrirspurnir og fellir niður þær sem vísa á hýsilheiti auglýsinga og rekjara, en hleypir öllu öðru í gegn. Ekkert fer út úr tækinu þínu.</p>
+<p><strong>Root-stilling</strong>: ef tækið þitt er með root getur AdAway í staðinn skrifað <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts-skrá</a> í <code>/system/etc/hosts</code> og beint óæskilegum hýsilheitum á <code>127.0.0.1</code>, svo þau leysast á þitt eigið tæki. Í nýlegum Android-útgáfum þarf hosts-einingu án kerfisbreytinga (systemless), til dæmis Magisk.</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>Hvaða DNS-þjóna notar VPN?</h2>
+<p>Í VPN-stillingu eru hýsilheiti, sem ekki er lokað á, leyst af þeim DNS-þjónum sem þú velur í <cite>Stillingar › Auglýsingalokari byggður á VPN › DNS-þjónar</cite>:</p>
+<p><strong>DNS-þjónar netsins</strong> (sjálfgefið): þjónar Wi-Fi netsins eða farsímanetsins. Ef netið gefur engan þjón sem AdAway getur notað er skipt yfir í Cloudflare (<code>1.1.1.1</code>).<br/><strong>Sérsniðnir DNS-þjónar</strong>: IP-tölurnar sem þú slærð inn, aðgreindar með kommum.<br/><strong>DNS over HTTPS</strong>: fyrirspurnir eru dulkóðaðar og sendar til Cloudflare, Google, Quad9 eða á <code>https://</code> vistfangið sem þú slærð inn, svo netið þitt getur hvorki lesið þær né breytt þeim.</p>
+<p>Lokun virkar eins með öllum þremur. Til að halda dulkóðuðu DNS skaltu nota DNS over HTTPS hér frekar en Android-stillinguna <cite>Einka-DNS</cite>, sem fer fram hjá AdAway.</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Hvernig loka ég á, leyfi eða endurbeini hýsilheiti?</h2>
+<p>Á heimaskjánum stjórnarðu þremur listum:</p>
+<p><strong>Lokað á</strong>: hýsilheiti sem á að loka á (auglýsingar og rekjarar).<br/><strong>Leyft</strong>: undantekningar sem þú vilt aldrei loka á, jafnvel þótt uppspretta telji þær upp.<br/><strong>Endurbeint</strong>: hýsilheiti sem þú vilt beina á tiltekna IP-tölu.</p>
+<p>Þú getur líka opnað skjáinn <cite>DNS-annáll</cite> á heimaskjánum til að sjá í rauntíma um hvaða hýsilheiti forrit senda fyrirspurnir og lokað á þau eða leyft þau beint þaðan.</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Þarf ég að endurræsa Android eftir að ég breyti listunum mínum?</h2>
+<p>Nei. AdAway tekur breytinguna í notkun strax, en forrit sem var þegar opið getur haldið áfram að nota gamlar tengingar og eigið skyndiminni. Lokaðu því alveg (Þvinga til að hætta í Android-stillingum forritsins) og hreinsaðu skyndiminni þess ef auglýsingar birtast enn. Aðeins í root-stillingu þarf að endurræsa Android einu sinni, eftir að kveikt er á Magisk-einingunni systemless hosts.</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>Hvar finn ég fleiri hosts-uppsprettur?</h2>
+<p>AdAway kemur með skynsamlegum sjálfgefnum uppsprettum. Ef þú vilt fleiri geturðu skoðað <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">lista yfir fleiri hosts-uppsprettur</a> sem samfélagið heldur við. Bættu við fleiri uppsprettum í hófi, því mjög stórir listar eða listar sem skarast geta valdið rangri lokun sem skemmir forrit.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Hvers vegna er þetta fork til?</h2>
+<p>AdAway er frábært verkefni með langa sögu, en frumverkefnið hefur um nokkurt skeið gefið út og yfirfarið breytingar sjaldan. Sumar villuleiðréttingar og breytingatillögur hafa beðið lengi, þar á meðal vandamál sem hafa áhrif á stöðugleika VPN-stillingar í nýjum Android-útgáfum og útgáfum framleiðenda. Þetta fork er til svo hægt sé að halda verkefninu nothæfu með lagfæringum frá samfélaginu, í stað þess að láta prófaðar endurbætur liggja ónotaðar.</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Hvernig tilkynni ég villu eða legg til breytingu?</h2>
+<p>Opnaðu ábendingu (issue) í villuskrá verkefnisins: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Greiningarannáll (sjá flipann Vandamál) hjálpar mjög mikið þegar VPN-vandamál eru tilkynnt.</p>
 </body>
 </html>

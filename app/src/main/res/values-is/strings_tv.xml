@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Bæta á leyfilista</string>
-    <string name="tv_dialog_add_to_blocked">Bæta á bannlista</string>
-    <string name="tv_dialog_remove_from_allowed">Fjarlægja af leyfilista</string>
-    <string name="tv_dialog_remove_from_blocked">Fjarlægja af bannlista</string>
+    <string name="tv_dialog_add_to_allowed">Bæta við leyft</string>
+    <string name="tv_dialog_add_to_blocked">Bæta við lokað á</string>
+    <string name="tv_dialog_remove_from_allowed">Fjarlægja úr leyft</string>
+    <string name="tv_dialog_remove_from_blocked">Fjarlægja úr lokað á</string>
     <string name="tv_dialog_copy_hostname">Afrita hýsilheiti</string>
     <string name="tv_log_entry_status_description">Staða léns</string>
-    <string name="tv_button_theme_light">Ljóst þema</string>
-    <string name="tv_button_theme_dark">Dökkt þema</string>
-    <string name="tv_lists_empty">Engar færslur eru ennþá á þessum lista.</string>
+    <string name="tv_button_theme_light">Ljós stilling</string>
+    <string name="tv_button_theme_dark">Dökk stilling</string>
+    <string name="tv_lists_empty">Engar færslur á þessum lista enn.</string>
     <string name="tv_dialog_search">Leita</string>
 </resources>

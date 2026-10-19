@@ -2,35 +2,99 @@
 <resources>
     <string name="welcome_first_step">Viisardi esimene samm</string>
     <string name="welcome_second_step">Viisardi teine samm</string>
-    <string name="welcome_method_header">Tere tulemast AdAwaysse!</string>
-    <string name="welcome_method_summary">AdAway pakub kahte reklaamiblokeerimise viisi. Vali endale meeldiv:</string>
-    <string name="welcome_root_method_title">Juurkasutaja-põhine\nreklaamiblokeerimine</string>
+    <string name="welcome_third_step">Viisardi kolmas samm</string>
+    <string name="welcome_fourth_step">Viisardi neljas samm</string>
+    <string name="welcome_method_header">Tere tulemast AdAway kasutama!</string>
+    <string name="welcome_method_summary">AdAway pakub kahte reklaamide blokeerimise meetodit. Vali endale sobiv:</string>
+    <string name="welcome_root_method_title">Rootil põhinev\nreklaamide blokeerimine</string>
     <string name="welcome_root_method_text1">Kiirem</string>
-    <string name="welcome_root_method_text2">Akusõbralik</string>
-    <string name="welcome_root_method_text3">Juurkasutaja nõutud</string>
-    <string name="welcome_vpn_method_title">VPNi-põhine\nreklaamiblokeerimine</string>
+    <string name="welcome_root_method_text2">Säästab akut</string>
+    <string name="welcome_root_method_text3">Vaja on root</string>
+    <string name="welcome_vpn_method_title">VPN-il põhinev\nreklaamide blokeerimine</string>
     <string name="welcome_vpn_method_text1">Aeglasem</string>
     <string name="welcome_vpn_method_text2">Töötab taustal</string>
     <string name="welcome_vpn_method_text3">Ühilduvus</string>
-    <string name="welcome_root_missing_title">Vajalik juurkasutaja toega Android</string>
-    <string name="welcome_root_missile_description">Täitmisfaili \"su\" ei leitud või sa ei lubanud AdAwayle juurkasutaja õigusi.\n\nSee võib juhtuda, kui su seade ei oma juurkasutaja õigusi. Oma seadme juurkasutaja õiguste avamise kohta saad rohkem lugeda wiki.lineageos.org või teistelt Androidi veebilehtedelt.</string>
+    <string name="welcome_root_missing_title">Vaja on rootitud Androidi</string>
+    <string name="welcome_root_missile_description">Kas su-binaarfaili ei leitud või ei andnud sa AdAway’le root-õigust.\n\nSee võib juhtuda, kui sinu seade ei ole rootitud. Teavet seadme rootimise kohta leiad aadressilt wiki.lineageos.org või teistelt Androidi veebisaitidelt.</string>
+    <string name="welcome_vpn_alwayson_title">Alati sees VPN on lubatud</string>
+    <string name="welcome_vpn_alwayson_description">AdAway tuvastas, et mõnel teisel VPN-il on aktiivne säte „Alati sees VPN“.\n\nSee takistab AdAway’l VPN-i juurdepääsu küsimist. Palun lülita „Alati sees VPN“ selle teise VPN-i juures välja ja proovi uuesti.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway ei saanud VPN-i juurdepääsu küsida.\n\nSee võib olla tingitud sellest, et mõnel teisel VPN-il on aktiivne säte „Alati sees VPN“. Palun kontrolli, kas mõnel VPN-il on see säte lubatud, ja lülita see enne uuesti proovimist välja.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Ava seaded „VPN“</string>
     <string name="welcome_method_pro_logo">Eelis</string>
     <string name="welcome_method_con_logo">Puudus</string>
     <string name="welcome_sync_header">Sünkroonimine</string>
     <string name="welcome_synced_header">Sünkroonitud!</string>
-    <string name="welcome_sync_summary">AdAway laadib võrguallikatest reklaamivõrgustike nimed, et neid blokeerida. Neid saab hiljem seadetes kohandada.</string>
-    <string name="welcome_sync_retry_logo">Proovi uuesti sünkroonida</string>
-    <string name="welcome_sync_error">Sünkroonimine ebaõnnestus: %1$s Proovid uuesti?</string>
+    <string name="welcome_sync_summary">AdAway laadib blokeeritavad reklaamivõrgud alla veebiallikatest. Saad neid hiljem seadetes kohandada.</string>
+    <string name="welcome_sync_retry_logo">Proovi sünkroonimist uuesti</string>
+    <string name="welcome_sync_error">Sünkroonimine ebaõnnestus: %1$s. Kas proovida nüüd uuesti?</string>
+    <string name="welcome_sync_notifications">AdAway võib saata märguandeid reklaamiblokeerimise oleku kuvamiseks ja juhtimiseks ning rakenduse saadaolevatest värskendustest teavitamiseks (mõni aastas). Lülita need sisse, kui soovid püsida ajakohasena.</string>
+    <string name="welcome_sync_leave_early_title">Sünkroonimine pole veel lõppenud</string>
+    <string name="welcome_sync_leave_early_message">Blokeerimisloendite allalaadimine ei ole veel lõppenud. Võid nüüd jätkata, siis kestab see taustal edasi, või oodata siin, kuni see on valmis.</string>
+    <string name="welcome_sync_leave_early_wait">Oota</string>
+    <string name="welcome_sync_leave_early_continue">Jätka ikkagi</string>
+    <string name="welcome_battery_header">Püsi kaitstud ka taustal</string>
+    <string name="welcome_battery_summary">Android võib AdAway VPN-i taustal energia säästmiseks peatada, mis võib reklaamiblokeerimise märkamatult seisata. Luba AdAway’l akuoptimeerimist eirata, et see töötaks pidevalt.</string>
+    <string name="welcome_battery_action">Luba</string>
+    <string name="welcome_battery_granted">Lubatud ✓</string>
+    <string name="welcome_battery_footnote_prefix">Saad seda alati hiljem muuta siit:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Androidi seaded</item>
+        <item>Rakendused</item>
+        <item>AdAway</item>
+        <item>Aku</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Veel üks asi: sinu telefoni enda akuhaldur</string>
+    <string name="welcome_oem_battery_summary">Mõnel telefonimargil on oma akuhaldur, mis võib samuti AdAway blokeerida. Siin on, mida oma telefonis kontrollida:</string>
+    <string name="welcome_oem_battery_action">Ava rakenduse teave</string>
+    <string name="welcome_oem_battery_open_failed">Rakenduse teabe ekraani ei õnnestunud avada. Ava see käsitsi: Androidi seaded → Rakendused → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Need on üldised juhised, mitte täpne õpetus: sõnastus ja asukoht võivad sõltuvalt telefonimudelist ja Androidi versioonist erineda.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Rakenduse teave</item>
+        <item>Aku</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Otsi midagi sellist nagu „Taustakasutuse piirangud“ › „Kunagi mitte uinuvad rakendused“ ja lisa AdAway sellesse loendisse.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Kontrolli ka sätet „Automaatne optimeerimine“ ja lülita „Taaskäivita vajaduse korral“ välja, kui see on olemas.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Rakenduse teave</item>
+        <item>Akusäästja</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Vali „Piiranguteta“.</string>
+    <string name="welcome_oem_battery_secondary_miui">Lülita sisse ka „Automaatkäivitus“ (uuematel versioonidel „Automaatkäivitus taustal“).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Rakenduse teave</item>
+        <item>Akukasutus</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Vali „Luba taustategevus“ (mõnikord kuvatakse see kui „Piiranguteta“).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Otsi AdAway jaoks ka lülitit „Automaatne käivitamine“ (sageli jaotises Seaded › Rakendused), et see saaks pärast sundpeatamist ise uuesti käivituda.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Rakenduse teave</item>
+        <item>Aku</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Otsi „Rakenduse käivitamine“, lülita välja „Halda automaatselt“ ja seejärel lülita sisse kõik 3: „Automaatne käivitamine“, „Teisene käivitamine“ ja „Taustal töötamine“.</string>
+    <string name="welcome_oem_battery_secondary_emui">Lukusta AdAway ka hiljutiste rakenduste ekraanil (nipsa selle kaarti allapoole, kuni ilmub lukk).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Rakenduse teave</item>
+        <item>Akukasutus</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Otsi taustal energiakasutuse valikut ja vali „Ära piira taustal energiakasutust“ (mitte „Nutikas juhtimine“).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Otsi AdAway jaoks ka sätet „Automaatkäivitus“, sageli jaotises Seaded › Rakendused.</string>
+    <string name="welcome_oem_battery_label_generic">Muu mark</string>
+    <string name="welcome_oem_battery_tip_generic">Otsi rakenduse teabest aku- või taustategevuse sätet ja veendu, et AdAway pole piiratud.</string>
     <string name="welcome_back_button">Tagasi</string>
     <string name="welcome_next_button">Edasi</string>
     <string name="welcome_finish_button">Lõpeta</string>
-    <string name="tv_welcome_intro_subtitle">See lühike juhend lülitab sisse reklaamide blokeerimise selles seadmes.</string>
+    <string name="tv_welcome_intro_subtitle">See lühike viisard lülitab selles seadmes reklaamiblokeerimise sisse.</string>
     <string name="tv_welcome_start_button">Alusta</string>
-    <string name="tv_welcome_method_header">Valige oma blokeerimismeetod</string>
-    <string name="tv_welcome_method_root_button">Kasuta juurkasutajaõigusi</string>
-    <string name="tv_welcome_method_root_body">Kiirem ja aku suhtes säästlikum. Nõuab juurkasutajaõigustega seadet.</string>
+    <string name="tv_welcome_method_header">Vali blokeerimismeetod</string>
+    <string name="tv_welcome_method_root_button">Kasuta root-õigusi</string>
+    <string name="tv_welcome_method_root_body">Kiirem ja akusäästlik. Nõuab rootitud seadet.</string>
     <string name="tv_welcome_method_vpn_button">Kasuta VPN-i</string>
-    <string name="tv_welcome_method_vpn_body">Töötab ilma juurkasutajaõigusteta, ühilduv iga Android TV seadmega.</string>
-    <string name="tv_welcome_activate_header">Lülita sisse reklaamide blokeerimine</string>
-    <string name="tv_welcome_activate_body">See on kohalik VPN: see filtreerib reklaame otse selles seadmes, suunamata teie liiklust välise serveri kaudu.</string>
+    <string name="tv_welcome_method_vpn_body">Töötab ilma rootita ja ühildub iga Android TV seadmega.</string>
+    <string name="tv_welcome_activate_header">Lülita reklaamiblokeering sisse</string>
+    <string name="tv_welcome_activate_body">See on kohalik VPN: see filtreerib reklaame selles seadmes, suunamata sinu liiklust läbi välise serveri.</string>
 </resources>

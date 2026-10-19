@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN lülitub ise välja</h2>
+<p>See on peaaegu alati süsteem, mis peatab VPN-teenuse aku säästmiseks, mitte kokkujooks. See on tavaline tootjate kohandatud Androidi versioonides, millel on agressiivne energiahaldus (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung ja teised).</p>
+<p>Leia Androidi seadetest AdAway ja seadista järgmist: määra <cite>aku optimeerimine</cite> väärtusele <cite>Piiranguteta</cite> (või <cite>Ära optimeeri</cite>), luba <cite>automaatkäivitus</cite> või <cite>automaatne käivitamine</cite>, kui sinu süsteem seda pakub, ja lukusta AdAway hiljutiste rakenduste loendis, et seda ei pühitaks minema. Veendu ka, et AdAway VPN-i seadetes on sisse lülitatud <cite>Lülita seadme käivitamisel sisse</cite>.</p>
 
-<h2>Partitsioonil pole piisavalt ruumi</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Internet puudub või sirvimine on aeglane kohe pärast Wi-Fi ja mobiilside vahel vahetamist</h2>
+<p>Kui aktiivne võrk muutub, tuleb tunnel uuesti üles ehitada, et DNS-päringud lahendataks uues võrgus. Kui sirvimine jääb rikki, ava <cite>Seaded › VPN-il põhinev reklaamiblokeerija › Lähtesta VPN</cite>, et ühendus nullist uuesti üles ehitada. Kui see kordub, jäädvusta diagnostikalogi (allpool) ja teata probleemist.</p>
 
-<h2>Ei toimi Androidi versioonis 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Kuidas diagnostikalogi eksportida?</h2>
+<p>Ava <cite>Seaded › VPN-il põhinev reklaamiblokeerija › Diagnostikalogi</cite>. See salvestab viimased vead ja VPN-i sündmused (võrgu vahetused, taasühendused, tõrked), mitte sinu sirvimisajalugu, ainult tehnilisi sündmusi. See jääb tühjaks, kuni lülitad kohe selle kohal sisse valiku <cite>Salvesta diagnostikalogi</cite>. Probleemist teatamisel saada logi edasi nuppudega <cite>Kopeeri</cite> või <cite>Jaga</cite>. Nipp: vajuta esmalt <cite>Tühjenda diagnostikalogi</cite>, seejärel taasloo probleem, et logi oleks sihipärane.</p>
 
-<h2>Rakenduses XYZ pole reklaamid blokeeritud!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome näitab endiselt reklaame</h2>
+<p>Chrome võib kasutada oma <cite>Turvalist DNS-i</cite> (DNS over HTTPS), mis möödub AdAway’st. Ava Chrome’is <cite>Seaded › Privaatsus ja turve › Kasuta turvalist DNS-i</cite> ja lülita see välja. Sama kehtib iga rakenduse või süsteemi <cite>Privaatne DNS</cite> sätte kohta. VPN-režiimis saab AdAway DNS-i ise krüptida: vaata KKK-st küsimust <cite>Milliseid DNS-servereid VPN kasutab?</cite>.</p>
 
-<h2>Puhverdatud reklaamid</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>Mõned reklaamid pääsevad ikka läbi või rakendus näitab endiselt reklaame</h2>
+<p>Sinu allikatest võib mõni hostinimi puududa või on rakendusel reklaamid sisse ehitatud, nii et päringut ei tehta. Ava avakuvalt <cite>DNS-logi</cite>, et näha, mida rakendus pärib, lisa kahtlased hostinimed oma loendisse <cite>Blokeeritud</cite> ja kontrolli, et miski ei lakkaks töötamast. Mõned rakendused salvestavad reklaame pärast allalaadimist ka vahemällu, seega võib aidata rakenduse vahemälu tühjendamine Androidi seadetes.</p>
 
-<h2>Rakendus XYZ ei tööta enam!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>Rakendus lakkas töötamast pärast AdAway sisselülitamist</h2>
+<p>Mõned rakendused keelduvad töötamast, kui neile vajalik hostinimi on blokeeritud. Leia <cite>DNS-logi</cite> abil, millist hostinime rakendus vajab, lisa see oma loendisse <cite>Lubatud</cite> ja rakendus peaks uuesti töötama. Teadaolevalt probleemsed rakendused on loetletud <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">siin</a>.</p>
 
-<h2>Tagasinupp ei toimi veebibrauserites</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>Hosts-faili rakendamine ebaõnnestub (root-režiim)</h2>
+<p>Androidi uuemad versioonid kasutavad kirjutuskaitstud partitsiooni <code>/system</code>, seega ei saa AdAway sinna otse kirjutada. Kui kasutad rakendust Magisk, lülita sisse moodul <cite>systemless hosts</cite>, taaskäivita seade ja rakenda uuesti. Kui sul root-õigusi pole, lülitu hoopis VPN-režiimile, mis ei vaja süsteemi muutmist.</p>
 
-<h2>Tagasinupp ei toimi veebibrauserites</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>Probleem ei lahene?</h2>
+<p>Teata probleemist ja lisa diagnostikalogi aadressil <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

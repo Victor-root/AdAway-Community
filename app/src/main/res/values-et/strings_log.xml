@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_sort">Sorteeri domeene</string>
+    <string name="log_toggle_recording_description">Lülita logi salvestamine sisse/välja</string>
+    <string name="log_start_recording">Logimise alustamiseks vajuta salvestusnuppu, sirvi veebi või kasuta rakendusi ning mine seejärel tagasi või nipsa, et logisid värskendada.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokeeritud päringuid ei logita. Kui soovid neid samuti logida, lülita esmalt reklaamiblokeering välja.</string>
+    <string name="log_sort">Sorteeri domeenid</string>
     <string name="log_clear">Tühjenda logi</string>
-    <string name="log_sort_alphabetical">Tähestikuline järjekord</string>
-    <string name="log_sort_top_level_domain">TLD järjekord</string>
-    <string name="log_block">Lisa üksus musta loendisse</string>
-    <string name="log_allow">Lisa üksus valgesse loendisse</string>
-    <string name="log_redirect">Lisa üksus suunamisloendisse</string>
-    <string name="log_redirect_dialog_title">Suuna domeen</string>
+    <string name="log_sort_alphabetical">Sorteeri tähestiku järgi</string>
+    <string name="log_sort_top_level_domain">Sorteeri tipptasemedomeeni järgi</string>
+    <string name="log_block">Lisa kirje blokeeritute loendisse</string>
+    <string name="log_allow">Lisa kirje lubatute loendisse</string>
+    <string name="log_redirect">Lisa kirje ümbersuunatute loendisse</string>
+    <string name="log_redirect_dialog_title">Suuna domeen ümber</string>
+    <string name="log_capture_failed">DNS-päringute jäädvustamine ei käivitunud.</string>
     <string name="log_start_recording_button">Alusta salvestamist</string>
-    <string name="log_start_recording_vpn_inactive">Alusta salvestamist (VPN pole aktiivne)</string>
+    <string name="log_start_recording_vpn_inactive">Alusta salvestamist (VPN ei ole aktiivne)</string>
     <string name="log_stop_recording">Peata salvestamine</string>
 </resources>
