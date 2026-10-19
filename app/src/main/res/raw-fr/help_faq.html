@@ -21,6 +21,9 @@ Garder une structure simple : titres h2 et paragraphes p, liens via <a href>. --
 <p><strong>Bloqués</strong> : les domaines à bloquer (publicités et traqueurs).<br/><strong>Autorisés</strong> : les exceptions à ne jamais bloquer, même si une source les contient.<br/><strong>Redirigés</strong> : les domaines à pointer vers une adresse IP précise.</p>
 <p>Vous pouvez aussi ouvrir le <cite>journal DNS</cite> depuis l'accueil pour voir en temps réel les domaines interrogés par les applications, puis les bloquer ou les autoriser directement.</p>
 
+<h2>Faut-il redémarrer Android après avoir modifié mes listes ?</h2>
+<p>Non. AdAway applique le changement tout de suite, mais une application déjà ouverte peut continuer à utiliser ses anciennes connexions et son propre cache. Fermez-la complètement (Forcer l'arrêt dans les paramètres Android de l'application), et videz son cache si des publicités s'affichent encore. Un redémarrage d'Android n'est nécessaire qu'une seule fois en mode root, après avoir activé le module systemless hosts de Magisk.</p>
+
 <h2>Où trouver d'autres sources de hosts ?</h2>
 <p>AdAway est fourni avec des sources par défaut raisonnables. Pour aller plus loin, consultez la <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">liste de sources hosts supplémentaires</a> maintenue par la communauté. Ajoutez des sources avec parcimonie, car des listes très volumineuses ou redondantes peuvent provoquer des faux positifs qui cassent des applications.</p>
 

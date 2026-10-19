@@ -21,6 +21,9 @@ Keep structure simple: h2 headings and p paragraphs, links via <a href>. -->
 <p><strong>Blocked</strong>: hostnames that should be blocked (ads and trackers).<br/><strong>Allowed</strong>: exceptions you never want blocked, even if a source lists them.<br/><strong>Redirected</strong>: hostnames you want pointed to a specific IP address.</p>
 <p>You can also open the <cite>DNS log</cite> from the home screen to see which hostnames apps are querying in real time, then block or allow them directly from there.</p>
 
+<h2>Do I need to restart Android after changing my lists?</h2>
+<p>No. AdAway applies the change at once, but an app that was already open can keep using its old connections and its own cache. Close it completely (Force stop in the Android settings of the app), and clear its cache if ads still show. A restart of Android is only needed once in root mode, after enabling the Magisk systemless hosts module.</p>
+
 <h2>Where can I find more hosts sources?</h2>
 <p>AdAway ships with sensible defaults. If you want more, see the community-maintained <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">list of additional hosts sources</a>. Add more sources sparingly, because very large or overlapping lists can cause false positives that break apps.</p>
 
