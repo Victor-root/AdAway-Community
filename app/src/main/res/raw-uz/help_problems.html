@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN oʻz-oʻzidan oʻchib qoladi</h2>
+<p>Bu deyarli har doim ishdan chiqish emas, balki tizimning batareyani tejash uchun VPN xizmatini toʻxtatib qoʻyishidir. Quvvat boshqaruvi qattiq ishlab chiqaruvchi ROMlarida (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung va boshqalar) bu tez-tez uchraydi.</p>
+<p>Android sozlamalarida AdAway ilovasini toping va quyidagilarni bajaring: <cite>batareya optimallashtirishi</cite>ni <cite>Cheklovsiz</cite> (yoki <cite>Optimallashtirmaslik</cite>) qilib belgilang, ROMingizda boʻlsa, <cite>avtoishga tushirish</cite> yoki <cite>avtomatik ishga tushirish</cite>ga ruxsat bering va AdAway ilovasini surib tashlamaslik uchun soʻnggi ilovalar roʻyxatida qulflang. Shuningdek, AdAway ilovasidagi VPN sozlamalarida <cite>Ishga tushganda yoqish</cite> yoqilganini tekshiring.</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Wi-Fi va mobil internet orasida almashgandan keyin internet yoʻq yoki sekin ishlaydi</h2>
+<p>Faol tarmoq oʻzgarganda, DNS yangi tarmoqdan hal qilinishi uchun tunnel qayta qurilishi kerak. Internet baribir ishlamasa, ulanishni noldan qayta qurish uchun <cite>Sozlamalar › VPN › VPNni qayta qurish</cite> boʻlimini oching. Bu takrorlanaversa, diagnostika jurnalini (quyida) yozib oling va xabar bering.</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Diagnostika jurnalini qanday eksport qilaman?</h2>
+<p><cite>Sozlamalar › VPN › Diagnostika jurnali</cite> boʻlimini oching. U soʻnggi xatolarni va VPN hodisalarini (tarmoq almashishlari, qayta ulanishlar, nosozliklar) yozib boradi, koʻrish tarixingizni emas, faqat texnik hodisalarni. Yuqoridagi <cite>Diagnostika jurnalini yozib borish</cite> yoqilmaguncha u boʻsh qoladi. Muammo haqida xabar berganda jurnalni yuborish uchun <cite>Nusxalash</cite> yoki <cite>Ulashish</cite> tugmasidan foydalaning. Maslahat: avval <cite>Diagnostika jurnalini tozalash</cite> tugmasini bosing, soʻng muammoni takrorlang, shunda jurnal aniqroq boʻladi.</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome hamon reklamalarni koʻrsatyapti</h2>
+<p>Chrome AdAway ilovasini chetlab oʻtadigan oʻzining <cite>Xavfsiz DNS</cite> (DNS-over-HTTPS) funksiyasidan foydalanishi mumkin. Chrome ichida <cite>Sozlamalar › Maxfiylik va xavfsizlik › Xavfsiz DNSdan foydalanish</cite> boʻlimini oching va uni oʻchiring. Bu har qanday ilovaning yoki tizimning <cite>Shaxsiy DNS</cite> sozlamasiga ham taalluqli. VPN rejimida AdAway DNSni oʻzi shifrlay oladi: «Savol-javob» yorligʻidagi <cite>VPN qaysi DNS serverlardan foydalanadi?</cite> boʻlimiga qarang.</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>Baʼzi reklamalar baribir oʻtadi yoki ilova hamon reklama koʻrsatadi</h2>
+<p>Host nomi manbalaringizda yetishmayotgan boʻlishi mumkin, yoki ilova reklamalarni oʻz ichiga joylagan va shu sababli soʻrov yuborilmaydi. Ilova nimani soʻrayotganini koʻrish uchun bosh ekrandan <cite>DNS jurnali</cite>ni oching, shubhali host nomlarini <cite>Bloklangan</cite> roʻyxatingizga qoʻshing va hech narsa ishdan chiqmayotganini tekshiring. Baʼzi ilovalar reklamalarni yuklab olgandan keyin keshda ham saqlaydi, shuning uchun Android sozlamalarida ilova keshini tozalash yordam berishi mumkin.</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway yoqilgandan keyin ilova ishlamay qoldi</h2>
+<p>Baʼzi ilovalar kerakli host nomi bloklangan boʻlsa, ishlashdan bosh tortadi. Ilovaga qaysi host nomi kerakligini topish uchun <cite>DNS jurnali</cite>dan foydalaning, uni <cite>Ruxsat etilgan</cite> roʻyxatingizga qoʻshing, shunda ilova yana ishlashi kerak. Maʼlum muammoli ilovalar roʻyxati <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">shu yerda</a>.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>Hosts faylini qoʻllash amalga oshmayapti (root rejimi)</h2>
+<p>Androidning yangi versiyalarida <code>/system</code> boʻlimi faqat oʻqish uchun moʻljallangan, shuning uchun AdAway unga bevosita yoza olmaydi. Magisk ishlatsangiz, <cite>systemless hosts</cite> modulini yoqing, qurilmani qayta ishga tushiring va yana qoʻllang. Root ishlatmasangiz, tizimni oʻzgartirishni talab qilmaydigan VPN rejimiga oʻting.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>Hali ham hal boʻlmadimi?</h2>
+<p>Muammo haqida diagnostika jurnalini biriktirib, <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> manzilida xabar bering.</p>
 </body>
 </html>

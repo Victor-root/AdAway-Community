@@ -1,26 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">Sozlamalar</string>
+    <string name="pref_general_category">Umumiy</string>
+    <string name="pref_dark_theme">Qorongʻi mavzu</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Yorugʻ</item>
+        <item>Qorongʻi</item>
+        <item>Tizim boʻyicha</item>
     </string-array>
-    <string name="pref_vpn_reset">VPNni tiklash</string>
-    <string name="pref_vpn_reset_description">VPN ulanishini noldan qayta quring. Agar VPN ishlamay qolsa (internet yoʻq yoki DNS xatolari) shundan foydalaning.</string>
+    <string name="pref_update_configuration">Avtomatik yangilanishlar</string>
+    <string name="pref_language">Til</string>
+    <string name="pref_language_system">Tizim tili</string>
+    <string name="pref_ad_block_category">Reklamalarni bloklash</string>
+    <string name="pref_root_ad_blocker_configuration">Root asosidagi reklama bloklagich</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN asosidagi reklama bloklagich</string>
+    <string name="pref_enable_ipv6">IPv6 qoʻllab-quvvatlashini yoqish</string>
+    <string name="pref_backup_restore">Bloklash qoidalarini zaxiralash / tiklash</string>
+    <string name="pref_backup_restore_title">Zaxira nusxa va tiklash</string>
+    <string name="pref_backup">Zaxira nusxa</string>
+    <string name="pref_backup_summary">Bloklash qoidalaringizdan tashqi xotiraga zaxira nusxa yarating</string>
+    <string name="pref_restore">Tiklash</string>
+    <string name="pref_restore_summary">Bloklash qoidalaringizni zaxira fayldan tiklang</string>
+    <string name="import_success">Zaxira nusxa tashqi xotiradan muvaffaqiyatli import qilindi.</string>
+    <string name="import_failed">Zaxira nusxani import qilib boʻlmadi. Uning formati toʻgʻrimi?</string>
+    <string name="export_success">Zaxira nusxa tashqi xotirangizdagi «%s» fayliga muvaffaqiyatli eksport qilindi.</string>
+    <string name="export_failed">Zaxira nusxani «%s» fayliga eksport qilib boʻlmadi.</string>
+    <string name="pref_update_title">Yangilanishlar</string>
+    <string name="pref_update_enable_notifications">Bildirishnomalar oʻchirilgan</string>
+    <string name="pref_update_enable_notifications_summary">Ilova bildirishnomalari koʻrsatilmaydi. Yoqish uchun teging.</string>
+    <string name="pref_update_app_category">Ilova yangilanishlari</string>
+    <string name="pref_update_check_app_startup">Ishga tushganda yangilanishni tekshirish</string>
+    <string name="pref_update_check_app_daily">Yangilanishni vaqti-vaqti bilan tekshirish</string>
+    <string name="pref_update_check_now">Hozir tekshirish</string>
+    <string name="pref_update_install">Hozir yangilash</string>
+    <string name="pref_update_hosts_category">Hosts yangilanishlari</string>
+    <string name="pref_update_check">Ishga tushganda yangilanishni tekshirish</string>
+    <string name="pref_update_check_hosts_daily">Yangilanishni vaqti-vaqti bilan tekshirish</string>
+    <string name="pref_update_sync_on_update">Yangilanganda sinxronlash</string>
+    <string name="pref_update_sync_unmetered_only">Faqat trafik hisoblanmaydigan tarmoqda sinxronlash</string>
+    <string name="pref_vpn_service_on_boot">Ishga tushganda yoqish</string>
+    <string name="pref_vpn_service_monitor">Ulanishni kuzatish</string>
+    <string name="pref_vpn_service_monitor_description">Aloqa uzilganda VPNni qayta ishga tushirish uchun tarmoq holatini vaqti-vaqti bilan tekshirib turadi.</string>
+    <string name="pref_vpn_excluded_apps">Chiqarib tashlangan ilovalar</string>
+    <string name="pref_vpn_excluded_apps_description">Qaysi ilovalar VPNdan foydalanmasligini belgilang, shunda ularning ulanishlari bloklanmaydi.</string>
+    <string name="pref_vpn_exclude_system_apps">Tizim ilovalarini chiqarib tashlash</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Hech biri</item>
+        <item>Brauzerlardan tashqari barchasi</item>
+        <item>Barchasi</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS serverlar</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Tarmoqning DNS serverlari</item>
+        <item>Maxsus DNS serverlar</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Maxsus DNS serverlar</string>
+    <string name="pref_vpn_dns_custom_summary">IP manzillar, vergul bilan ajratiladi</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS server manzili yaroqsiz</string>
+    <string name="pref_vpn_doh">DNS over HTTPS serveri</string>
+    <string name="pref_vpn_doh_custom">Maxsus manzil</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS manzili</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS manzili yaroqsiz</string>
+    <string name="pref_vpn_exclude_user_apps">Foydalanuvchi ilovalarini chiqarib tashlash</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Chiqarib tashlangan ilovalar</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Barchasini tanlash</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Tanlovni bekor qilish</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Ilova belgisi</string>
+    <string name="pref_vpn_reset">VPNni qayta qurish</string>
+    <string name="pref_vpn_reset_description">VPN ulanishini noldan qayta quradi. VPN ishlamay qolsa (internet yoʻq yoki DNS xatolari), shundan foydalaning.</string>
     <string name="pref_vpn_reset_done">VPN ulanishi qayta qurildi.</string>
     <string name="pref_vpn_reset_not_running">VPN ishlamayapti.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Diagnostika jurnalini yozib borish</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Muammoni takrorlashdan oldin yoqing, soʻng quyida eksport qiling. Eski qurilmalarni biroz sekinlashtirishi mumkin. Faqat VPNning texnik hodisalari yoziladi, koʻrish tarixi yoki shaxsiy maʼlumotlar hech qachon yozilmaydi.</string>
     <string name="pref_vpn_diagnostic_log">Diagnostika jurnali</string>
-    <string name="pref_vpn_diagnostic_log_description">Yaqinda yuz bergan xatolar va VPN hodisalarini koʻring, nusxalang yoki ulashing. Muammo haqida xabar berishda foydali.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Hali hech qanday hodisa yozib olinmagan.</string>
-    <string name="pref_vpn_diagnostic_log_share">Diagnostika jurnalini ulashish</string>
+    <string name="pref_vpn_diagnostic_log_description">Soʻnggi xatolar va VPN hodisalarini koʻring, nusxalang yoki ulashing. Muammo haqida xabar berganda foydali.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Hali birorta hodisa yozib olinmagan. Yuqoridagi «Diagnostika jurnalini yozib borish» funksiyasini yoqing, soʻng muammoni takrorlab koʻring.</string>
+    <string name="pref_vpn_diagnostic_log_share">Ulashish</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Diagnostika jurnalini ulashish</string>
     <string name="pref_vpn_diagnostic_log_copy">Nusxalash</string>
-    <string name="pref_vpn_diagnostic_log_copied">Diagnostika jurnali vaqtinchalik xotiraga nusxalandi.</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnostika jurnali almashish buferiga nusxalandi.</string>
     <string name="pref_vpn_diagnostic_log_clear">Diagnostika jurnalini tozalash</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Yozib olingan hodisalarni oʻchiring. Toza iz olish uchun muammoni qayta hosil qilishdan oldin shuni bajaring.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Yozib olingan hodisalarni oʻchiradi. Toza yozuv olish uchun muammoni takrorlashdan oldin buni bajaring.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Diagnostika jurnali tozalandi.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
-    <string name="pref_webserver_enabled">Veb-serverni ishga tushirish</string>
+    <string name="pref_root_open_hosts">Hosts faylini ochish</string>
+    <string name="hosts_file_unreadable">Hosts faylini oʻqib boʻlmadi.</string>
+    <string name="pref_hosts_redirection_summary">Bloklangan host nomlari qayerga yoʻnaltirilishini belgilang</string>
+    <string name="pref_redirection_ipv4">IPv4 yoʻnaltirishni sozlash</string>
+    <string name="pref_redirection_ipv6">IPv6 yoʻnaltirishni sozlash</string>
+    <string name="pref_redirection_invalid">Yoʻnaltirish yaroqsiz</string>
+    <string name="pref_webserver_summary">Mahalliy veb-server bloklangan host nomlariga kelgan soʻrovlarga javob berish uchun mahalliy IP manzillarni tinglaydi. Bloklangan ulanishda ilova qotib qolishining oldini olishi mumkin.</string>
+    <string name="pref_webserver_enabled">Veb-serverni yoqish</string>
+    <string name="pref_webserver_test">Veb-serverni sinash</string>
+    <string name="pref_webserver_certificate">Oʻzi imzolagan sertifikatni oʻrnatish</string>
+    <string name="pref_webserver_state_not_running">Ishlamayapti</string>
+    <string name="pref_webserver_state_checking">Tekshirilmoqda…</string>
+    <string name="pref_webserver_state_running_not_installed">Ishlayapti, lekin sertifikat oʻrnatilmagan</string>
+    <string name="pref_webserver_state_running_and_installed">Ishlayapti, sertifikat oʻrnatilgan</string>
+    <string name="pref_webserver_certificate_dialog_title">Sertifikatni qoʻlda oʻrnatish</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) dan boshlab ilovalar sertifikat markazini (CA) avtomatik oʻrnata olmaydi.\n\n«Xavfsizlik» sozlamalariga oʻting, «Shifrlash va hisob maʼlumotlari», soʻng «Sertifikat oʻrnatish» boʻlimini oching. U yerda «CA sertifikati»ni tanlab, yangi eksport qilingan sertifikat faylini belgilang.</string>
+    <string name="pref_webserver_certificate_dialog_action">«Xavfsizlik» sozlamalarini ochish</string>
+    <string name="pref_webserver_certificate_failed">Sertifikatni tayyorlab boʻlmadi.</string>
+    <string name="webserver_error_title">Veb-server ishga tushmadi</string>
+    <string name="webserver_error_resources">Uning fayllarini yoki sertifikatini tayyorlab boʻlmadi.</string>
+    <string name="webserver_error_address_in_use">Qurilmaning veb-portlaridan (80 va 443) boshqa ilova allaqachon foydalanmoqda.</string>
+    <string name="webserver_error_start_failed">Bu qurilmada ishga tushmadi.</string>
+    <string name="pref_webserver_icon">Boʻsh reklama oʻrnini ilova belgisi bilan almashtirish</string>
 </resources>

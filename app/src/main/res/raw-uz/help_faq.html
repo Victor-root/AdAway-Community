@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Income by advertisements</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>AdAway Community nima?</h2>
+<p>AdAway Community, Android uchun ochiq manbali reklama bloklagich boʻlgan AdAway loyihasining norasmiy, hamjamiyat tomonidan yuritiladigan forkidir. U reklama va trekerlarni butun tizim miqyosida, har bir ilova uchun bloklaydi, hisob ochishni talab qilmaydi va oʻzida reklama yoʻq. Bu fork ilovaning zamonaviy Android versiyalarida va ishlab chiqaruvchilarning ROMlarida ishonchli ishlashini taʼminlashga eʼtibor qaratadi.</p>
 
-<h2>How does AdAway work?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>U reklamalarni qanday bloklaydi?</h2>
+<p>AdAway ikki rejimdan birida ishlaydi:</p>
+<p><strong>VPN rejimi</strong> (root shart emas): AdAway qurilmaning oʻzida mahalliy VPN ishga tushiradi, u trafigingizni hech qayerga yubormaydi. U faqat DNS soʻrovlarini tekshiradi, reklama va treker host nomlariga yuborilganlarini toʻxtatadi, qolganini oʻtkazib yuboradi. Hech narsa qurilmangizdan tashqariga chiqmaydi.</p>
+<p><strong>Root rejimi</strong>: qurilmangizda root olingan boʻlsa, AdAway oʻrniga <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts faylini</a> <code>/system/etc/hosts</code> manziliga yozishi mumkin: u keraksiz host nomlarini <code>127.0.0.1</code> ga bogʻlaydi, shunda ular sizning qurilmangizning oʻzini koʻrsatadi. Yangi Android versiyalarida systemless hosts moduli (masalan, Magisk) talab etiladi.</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>VPN qaysi DNS serverlardan foydalanadi?</h2>
+<p>VPN rejimida bloklanmagan host nomlarini <cite>Sozlamalar › VPN asosidagi reklama bloklagich › DNS serverlar</cite> boʻlimida tanlagan DNS serverlaringiz hal qiladi:</p>
+<p><strong>Tarmoqning DNS serverlari</strong> (standart): Wi-Fi yoki mobil tarmogʻingizning serverlari. Tarmoq AdAway foydalana oladigan server bermasa, u Cloudflare serveriga (<code>1.1.1.1</code>) oʻtadi.<br/><strong>Maxsus DNS serverlar</strong>: oʻzingiz kiritgan, vergul bilan ajratilgan IP manzillar.<br/><strong>DNS over HTTPS</strong>: soʻrovlar shifrlanib, Cloudflare, Google, Quad9 yoki oʻzingiz kiritgan <code>https://</code> manziliga yuboriladi, shunda tarmogʻingiz ularni oʻqiy yoki oʻzgartira olmaydi.</p>
+<p>Bloklash uchala usulda ham bir xil ishlaydi. Shifrlangan DNSni saqlab qolish uchun AdAway ilovasini chetlab oʻtadigan Androidning <cite>Shaxsiy DNS</cite> sozlamasi oʻrniga shu yerda DNS over HTTPS dan foydalaning.</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Host nomini qanday bloklayman, ruxsat beraman yoki yoʻnaltiraman?</h2>
+<p>Bosh ekranda uchta roʻyxatni boshqarasiz:</p>
+<p><strong>Bloklangan</strong>: bloklanishi kerak boʻlgan host nomlari (reklama va trekerlar).<br/><strong>Ruxsat etilgan</strong>: manba roʻyxatga kiritgan boʻlsa ham, hech qachon bloklanmasligi kerak boʻlgan istisnolar.<br/><strong>Yoʻnaltirilgan</strong>: aniq bir IP manzilga yoʻnaltirmoqchi boʻlgan host nomlari.</p>
+<p>Shuningdek, bosh ekrandan <cite>DNS jurnali</cite>ni ochib, ilovalar real vaqtda qaysi host nomlarini soʻrayotganini koʻrishingiz va ularni shu yerning oʻzidan bloklashingiz yoki ruxsat berishingiz mumkin.</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Roʻyxatlarimni oʻzgartirgandan keyin Androidni qayta ishga tushirish kerakmi?</h2>
+<p>Yoʻq. AdAway oʻzgarishni darhol qoʻllaydi, ammo avval ochilgan ilova eski ulanishlaridan va oʻz keshidan foydalanishda davom etishi mumkin. Uni toʻliq yoping (Android sozlamalarida ilovaning Majburan toʻxtatish tugmasi) va reklamalar hamon koʻrinsa, uning keshini ham tozalang. Androidni qayta ishga tushirish faqat root rejimida, Magiskning systemless hosts modulini yoqqandan keyin, bir marta kerak boʻladi.</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>Qoʻshimcha hosts manbalarini qayerdan topsam boʻladi?</h2>
+<p>AdAway oqilona standart sozlamalar bilan keladi. Koʻproq xohlasangiz, hamjamiyat yuritadigan <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">qoʻshimcha hosts manbalari roʻyxati</a>ga qarang. Manbalarni tejab qoʻshing, chunki juda katta yoki bir-birini takrorlaydigan roʻyxatlar notoʻgʻri bloklashlarga va ilovalarning ishdan chiqishiga olib kelishi mumkin.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Bu fork nima uchun mavjud?</h2>
+<p>AdAway uzoq tarixga ega ajoyib loyiha, lekin asosiy loyihada nashrlar va koʻrib chiqish faolligi bir muddatdan beri cheklangan. Baʼzi xatoliklarni tuzatishlar va pull requestlar uzoq vaqt ochiq qoldi, jumladan zamonaviy Android versiyalari va ishlab chiqaruvchilarning ROMlarida VPN rejimi barqarorligiga taʼsir qiladigan muammolar ham. Bu fork sinovdan oʻtgan yaxshilanishlar foydalanilmay yotib qolmasligi uchun loyihani hamjamiyat tuzatishlari bilan ishlaydigan holatda saqlash maqsadida mavjud.</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Xato haqida qanday xabar beraman yoki oʻzgartirish taklif qilaman?</h2>
+<p>Forkning kuzatuvchisida murojaat (issue) oching: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. VPN muammolari haqida xabar berganda diagnostika jurnali («Muammolar» yorligʻiga qarang) juda yordam beradi.</p>
 </body>
 </html>

@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">Ushbu qisqa yordamchi shu qurilmada reklama blokirovkasini yoqadi.</string>
+    <string name="welcome_first_step">Yoʻriqnoma, birinchi qadam</string>
+    <string name="welcome_second_step">Yoʻriqnoma, ikkinchi qadam</string>
+    <string name="welcome_third_step">Yoʻriqnoma, uchinchi qadam</string>
+    <string name="welcome_fourth_step">Yoʻriqnoma, toʻrtinchi qadam</string>
+    <string name="welcome_method_header">AdAway ilovasiga xush kelibsiz!</string>
+    <string name="welcome_method_summary">AdAway reklamalarni bloklashning ikki usulini taklif qiladi. Oʻzingizga mosini tanlang:</string>
+    <string name="welcome_root_method_title">Root asosida\nreklama bloklash</string>
+    <string name="welcome_root_method_text1">Tezroq</string>
+    <string name="welcome_root_method_text2">Batareyani tejaydi</string>
+    <string name="welcome_root_method_text3">Root talab etiladi</string>
+    <string name="welcome_vpn_method_title">VPN asosida\nreklama bloklash</string>
+    <string name="welcome_vpn_method_text1">Sekinroq</string>
+    <string name="welcome_vpn_method_text2">Fonda ishlaydi</string>
+    <string name="welcome_vpn_method_text3">Keng moslik</string>
+    <string name="welcome_root_missing_title">Root olingan Android kerak</string>
+    <string name="welcome_root_missile_description">Yo su fayli topilmadi, yoki AdAway uchun root ruxsatini bermadingiz.\n\nBu qurilmangizda root olinmagan boʻlsa yuz berishi mumkin. Qurilmangizga root olish haqidagi maʼlumotni wiki.lineageos.org yoki boshqa Android saytlarida topishingiz mumkin.</string>
+    <string name="welcome_vpn_alwayson_title">Doim yoniq VPN yoqilgan</string>
+    <string name="welcome_vpn_alwayson_description">AdAway boshqa VPNda «Doim yoniq VPN» sozlamasi faol ekanini aniqladi.\n\nBu AdAway ilovasining VPN ruxsatini soʻrashiga toʻsqinlik qiladi. Tegishli VPNda «Doim yoniq VPN» sozlamasini oʻchirib, qayta urinib koʻring.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway VPN ruxsatini soʻray olmadi.\n\nBunga boshqa VPNda «Doim yoniq VPN» sozlamasi faol boʻlgani sabab boʻlishi mumkin. Birorta VPNda bu sozlama yoqilganini tekshiring va qayta urinishdan oldin uni oʻchiring.</string>
+    <string name="welcome_vpn_alwayson_settings_action">«VPN» sozlamalarini ochish</string>
+    <string name="welcome_method_pro_logo">Afzallik</string>
+    <string name="welcome_method_con_logo">Kamchilik</string>
+    <string name="welcome_sync_header">Sinxronlanmoqda</string>
+    <string name="welcome_synced_header">Sinxronlandi!</string>
+    <string name="welcome_sync_summary">AdAway bloklanadigan reklama tarmoqlarini internetdagi manbalardan yuklab oladi. Ularni keyinroq sozlamalarda moslashtirishingiz mumkin.</string>
+    <string name="welcome_sync_retry_logo">Sinxronlashni takrorlash</string>
+    <string name="welcome_sync_error">Sinxronlab boʻlmadi: %1$s Hozir qayta urinilsinmi?</string>
+    <string name="welcome_sync_notifications">Ilova reklama bloklash holatini koʻrsatish va boshqarish hamda ilova yangilanishlari haqida (yiliga bir necha marta) xabar berish uchun bildirishnomalar yuborishi mumkin. Yangilanishlardan xabardor boʻlishni istasangiz, ularni yoqing.</string>
+    <string name="welcome_sync_leave_early_title">Sinxronlash hali tugamadi</string>
+    <string name="welcome_sync_leave_early_message">Bloklash roʻyxatlarini yuklab olish hali tugamadi. Hozir davom etishingiz mumkin, yuklash fonda davom etadi, yoki shu yerda tugashini kutishingiz mumkin.</string>
+    <string name="welcome_sync_leave_early_wait">Kutish</string>
+    <string name="welcome_sync_leave_early_continue">Baribir davom etish</string>
+    <string name="welcome_battery_header">Fonda ham himoyada boʻling</string>
+    <string name="welcome_battery_summary">Android quvvatni tejash uchun fonda AdAway ilovasining VPN xizmatini toʻxtatib qoʻyishi mumkin, bu esa reklama bloklashni sezdirmay oʻchirib qoʻyadi. Ilova toʻxtamay ishlashi uchun unga batareya optimallashtirishini hisobga olmaslikka ruxsat bering.</string>
+    <string name="welcome_battery_action">Ruxsat berish</string>
+    <string name="welcome_battery_granted">Ruxsat berildi ✓</string>
+    <string name="welcome_battery_footnote_prefix">Buni keyinroq istalgan vaqtda quyidagi yoʻldan oʻzgartirishingiz mumkin:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android sozlamalari</item>
+        <item>Ilovalar</item>
+        <item>AdAway</item>
+        <item>Batareya</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Yana bir narsa: telefoningizning oʻz batareya menejeri</string>
+    <string name="welcome_oem_battery_summary">Ayrim telefon brendlarining oʻz batareya menejeri bor va u ham AdAway ilovasini toʻsib qoʻyishi mumkin. Telefoningizda nimani tekshirish kerak:</string>
+    <string name="welcome_oem_battery_action">Ilova maʼlumotlarini ochish</string>
+    <string name="welcome_oem_battery_open_failed">Ilova maʼlumotlari ekranini ochib boʻlmadi. Uni Android sozlamalari › Ilovalar › AdAway orqali qoʻlda oching.</string>
+    <string name="welcome_oem_battery_disclaimer">Bular umumiy maslahatlar, aniq qoʻllanma emas: nomlar va joylashuv telefon modeli hamda Android versiyasiga qarab farq qilishi mumkin.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Ilova haqida maʼlumot</item>
+        <item>Batareya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">«Fondagi foydalanish cheklovlari» › «Hech qachon uxlamaydigan ilovalar» kabi boʻlimni qidiring, soʻng AdAway ilovasini shu roʻyxatga qoʻshing.</string>
+    <string name="welcome_oem_battery_secondary_oneui">«Avto optimallashtirish» sozlamasini ham tekshiring va agar mavjud boʻlsa, «Kerak boʻlganda qayta ishga tushirish» ni oʻchiring.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Ilova haqida maʼlumot</item>
+        <item>Batareya tejagich</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">«Cheklovlarsiz» ni tanlang.</string>
+    <string name="welcome_oem_battery_secondary_miui">«Avtoishga tushirish» ni ham yoqing (yangiroq versiyalarda «Fonda avtoishga tushirish»).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Ilova haqida maʼlumot</item>
+        <item>Batareya sarfi</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">«Fondagi faollikka ruxsat berish» ni tanlang (baʼzan «Cheklovlarsiz» deb koʻrsatiladi).</string>
+    <string name="welcome_oem_battery_secondary_coloros">AdAway uchun «Avtomatik ishga tushirish» tugmasini ham qidiring (koʻpincha Sozlamalar › Ilovalar ichida), shunda ilova majburan toʻxtatilgandan keyin oʻzi qayta ishga tusha oladi.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Ilova haqida maʼlumot</item>
+        <item>Batareya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">«Ilovani ishga tushirish» boʻlimini toping, «Avtomatik boshqarish» ni oʻchiring, soʻng uchalasini ham yoqing: «Avtomatik ishga tushirish», «Ikkilamchi ishga tushirish» va «Fonda ishlash».</string>
+    <string name="welcome_oem_battery_secondary_emui">AdAway ilovasini «Soʻnggi ilovalar» ekranida ham qulflab qoʻying (qulf belgisi chiqquncha uning kartochkasini pastga suring).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Ilova haqida maʼlumot</item>
+        <item>Batareya sarfi</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Fondagi quvvat sarfi parametrini toping va «Fondagi quvvat sarfini cheklamaslik» ni tanlang («Aqlli boshqaruv» ni emas).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">AdAway uchun «Avtoishga tushirish» sozlamasini ham qidiring, odatda Sozlamalar › Ilovalar ichida.</string>
+    <string name="welcome_oem_battery_label_generic">Boshqa brend</string>
+    <string name="welcome_oem_battery_tip_generic">Ilova maʼlumotlaridan batareya yoki fondagi faollik sozlamasini toping va AdAway cheklanmaganiga ishonch hosil qiling.</string>
+    <string name="welcome_back_button">Orqaga</string>
+    <string name="welcome_next_button">Keyingi</string>
+    <string name="welcome_finish_button">Tugatish</string>
+    <string name="tv_welcome_intro_subtitle">Bu qisqa yoʻriqnoma shu qurilmada reklama bloklashni yoqadi.</string>
     <string name="tv_welcome_start_button">Boshlash</string>
-    <string name="tv_welcome_method_header">Bloklash usulingizni tanlang</string>
-    <string name="tv_welcome_method_root_button">Root\'dan foydalanish</string>
-    <string name="tv_welcome_method_root_body">Tezroq va batareyani tejaydi. Root qilingan qurilma talab qilinadi.</string>
-    <string name="tv_welcome_method_vpn_button">VPN\'dan foydalanish</string>
-    <string name="tv_welcome_method_vpn_body">Root\'siz ishlaydi, istalgan Android TV qurilmasi bilan mos keladi.</string>
-    <string name="tv_welcome_activate_header">Reklama blokirovkasini yoqish</string>
-    <string name="tv_welcome_activate_body">Bu mahalliy VPN: u trafikingizni tashqi serverga yubormasdan, reklamalarni to‘g‘ridan-to‘g‘ri shu qurilmada filtrlaydi.</string>
+    <string name="tv_welcome_method_header">Bloklash usulini tanlang</string>
+    <string name="tv_welcome_method_root_button">Rootdan foydalanish</string>
+    <string name="tv_welcome_method_root_body">Tezroq va batareyani tejaydi. Root olingan qurilma talab etiladi.</string>
+    <string name="tv_welcome_method_vpn_button">VPNdan foydalanish</string>
+    <string name="tv_welcome_method_vpn_body">Rootsiz ishlaydi, har qanday Android TV qurilmasiga mos keladi.</string>
+    <string name="tv_welcome_activate_header">Reklama bloklashni yoqing</string>
+    <string name="tv_welcome_activate_body">Bu mahalliy VPN: u trafigingizni tashqi server orqali oʻtkazmasdan, reklamalarni shu qurilmaning oʻzida filtrlaydi.</string>
 </resources>

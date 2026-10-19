@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Ruxsat berilganlarga qoʻshish</string>
+    <string name="tv_dialog_add_to_allowed">Ruxsat etilganlarga qoʻshish</string>
     <string name="tv_dialog_add_to_blocked">Bloklanganlarga qoʻshish</string>
-    <string name="tv_dialog_remove_from_allowed">Ruxsat berilganlardan olib tashlash</string>
+    <string name="tv_dialog_remove_from_allowed">Ruxsat etilganlardan olib tashlash</string>
     <string name="tv_dialog_remove_from_blocked">Bloklanganlardan olib tashlash</string>
-    <string name="tv_dialog_copy_hostname">Domen nomini nusxalash</string>
+    <string name="tv_dialog_copy_hostname">Host nomini nusxalash</string>
     <string name="tv_log_entry_status_description">Domen holati</string>
     <string name="tv_button_theme_light">Yorugʻ rejim</string>
     <string name="tv_button_theme_dark">Qorongʻi rejim</string>
-    <string name="tv_lists_empty">Bu roʻyxatda hali yozuvlar yoʻq.</string>
-    <string name="tv_dialog_search">Qidiruv</string>
+    <string name="tv_lists_empty">Bu roʻyxatda hali yozuv yoʻq.</string>
+    <string name="tv_dialog_search">Qidirish</string>
 </resources>

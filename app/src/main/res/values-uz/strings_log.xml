@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Yozib olishni boshlash</string>
-    <string name="log_start_recording_vpn_inactive">Yozib olishni boshlash (VPN faol emas)</string>
-    <string name="log_stop_recording">Yozib olishni toʻxtatish</string>
+    <string name="log_toggle_recording_description">Jurnal yozuvini yoqish yoki toʻxtatish</string>
+    <string name="log_start_recording">Soʻrovlarni yozib borishni boshlash uchun yozuv tugmasini bosing, internetda kezing yoki ilovalardan foydalaning, soʻng jurnalni yangilash uchun orqaga qayting yoki ekranni suring.</string>
+    <string name="log_blocked_requests_ignored">\n\nBloklangan soʻrovlar jurnalga yozilmaydi. Ularni ham yozib borishni istasangiz, avval reklama bloklashni oʻchiring.</string>
+    <string name="log_sort">Domenlarni saralash</string>
+    <string name="log_clear">Jurnalni tozalash</string>
+    <string name="log_sort_alphabetical">Alifbo boʻyicha saralash</string>
+    <string name="log_sort_top_level_domain">Yuqori darajali domen boʻyicha saralash</string>
+    <string name="log_block">Yozuvni bloklanganlar roʻyxatiga qoʻshish</string>
+    <string name="log_allow">Yozuvni ruxsat etilganlar roʻyxatiga qoʻshish</string>
+    <string name="log_redirect">Yozuvni yoʻnaltirilganlar roʻyxatiga qoʻshish</string>
+    <string name="log_redirect_dialog_title">Domenni yoʻnaltirish</string>
+    <string name="log_capture_failed">DNS yozuvini boshlab boʻlmadi.</string>
+    <string name="log_start_recording_button">Yozuvni boshlash</string>
+    <string name="log_start_recording_vpn_inactive">Yozuvni boshlash (VPN faol emas)</string>
+    <string name="log_stop_recording">Yozuvni toʻxtatish</string>
 </resources>
