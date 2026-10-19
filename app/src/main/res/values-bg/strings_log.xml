@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Превключване на дневника</string>
-    <string name="log_start_recording">Натиснете бутона за запис, за да започнат да се записват заявките в дневника. Разглеждайте в интернет или използвайте приложения, след това се върнете тук и дръпнете надолу, за да презаредите на дневника.</string>
-    <string name="log_blocked_requests_ignored">\n\nСпрените заявки нама да присъстват в дневника. Ако желаете да присъстват, тогава първо изключете спирането на рекламите.</string>
+    <string name="log_toggle_recording_description">Включване или изключване на записа на дневника</string>
+    <string name="log_start_recording">Натиснете бутона за запис, за да започне записът на заявките. Сърфирайте в интернет или използвайте приложения, след което се върнете назад или плъзнете надолу, за да опресните дневника.</string>
+    <string name="log_blocked_requests_ignored">\n\nБлокираните заявки няма да бъдат записвани. Първо изключете блокирането на реклами, ако искате да записвате и тях.</string>
     <string name="log_sort">Сортиране на домейните</string>
     <string name="log_clear">Изчистване на дневника</string>
-    <string name="log_sort_alphabetical">Азбучно сортиране</string>
-    <string name="log_sort_top_level_domain">Сортиране на домейн от първо ниво</string>
-    <string name="log_block">Добавяне на запис в черния списък</string>
-    <string name="log_allow">Добавяне на запис в белия списък</string>
-    <string name="log_redirect">Добавяне на запис в списъка за пренасочване</string>
+    <string name="log_sort_alphabetical">Сортиране по азбучен ред</string>
+    <string name="log_sort_top_level_domain">Сортиране по домейн от най-високо ниво</string>
+    <string name="log_block">Добавяне на записа към черния списък</string>
+    <string name="log_allow">Добавяне на записа към белия списък</string>
+    <string name="log_redirect">Добавяне на записа към списъка с пренасочвания</string>
     <string name="log_redirect_dialog_title">Пренасочване на домейн</string>
+    <string name="log_capture_failed">Записът на DNS не можа да стартира.</string>
     <string name="log_start_recording_button">Начало на записа</string>
     <string name="log_start_recording_vpn_inactive">Начало на записа (VPN не е активен)</string>
-    <string name="log_stop_recording">Спиране на записа</string>
+    <string name="log_stop_recording">Край на записа</string>
 </resources>

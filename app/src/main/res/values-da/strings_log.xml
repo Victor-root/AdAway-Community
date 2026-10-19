@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_sort">Sorter domæner</string>
+    <string name="log_toggle_recording_description">Start eller stop optagelse af loggen</string>
+    <string name="log_start_recording">Tryk på optag for at begynde at logge forespørgsler. Browse på nettet eller brug apps, og gå derefter tilbage eller stryg for at opdatere loggen.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokerede forespørgsler logges ikke. Slå først annonceblokeringen fra, hvis du også vil logge dem.</string>
+    <string name="log_sort">Sortér domæner</string>
     <string name="log_clear">Ryd log</string>
-    <string name="log_sort_alphabetical">Sorter alfabetisk</string>
-    <string name="log_sort_top_level_domain">Sorter topniveau domæne</string>
-    <string name="log_block">Tilføj adgang til sort liste</string>
-    <string name="log_allow">Tilføj adgang til hvide liste</string>
-    <string name="log_redirect">Tilføj adgang til omdirigeringsliste</string>
-    <string name="log_redirect_dialog_title">Viderestil domæne</string>
+    <string name="log_sort_alphabetical">Alfabetisk sortering</string>
+    <string name="log_sort_top_level_domain">Sortering efter topdomæne</string>
+    <string name="log_block">Føj post til blokerede</string>
+    <string name="log_allow">Føj post til tilladte</string>
+    <string name="log_redirect">Føj post til omdirigerede</string>
+    <string name="log_redirect_dialog_title">Omdirigér domæne</string>
+    <string name="log_capture_failed">DNS-optagelsen kunne ikke starte.</string>
     <string name="log_start_recording_button">Start optagelse</string>
-    <string name="log_start_recording_vpn_inactive">Start optagelse (VPN ikke aktiv)</string>
+    <string name="log_start_recording_vpn_inactive">Start optagelse (VPN er ikke aktiv)</string>
     <string name="log_stop_recording">Stop optagelse</string>
 </resources>

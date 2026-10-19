@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Venitul obținut din reclame</h2>
-<p>Există o confuzie legată de banii obținuți din reclame, și anume, dacă un utilizator nu interacționează cu reclamele atunci nici blocarea acestora nu afectează financiar site-ul web sau aplicația în cauză. Acest lucru este greșit deoarece dezvoltatorii primesc bani doar afișând reclamele indiferent dacă se interacționează cu ele sau nu. Personal, eu nu aș folosi aplicații care aleg să afișeze reclame deoarece le consider deranjante, deci fără un alt program de blocare a reclamelor nici măcar nu le-aș fi instalat.</p>
+<h2>Ce este AdAway Community?</h2>
+<p>AdAway Community este un fork neoficial, întreținut de comunitate, al AdAway, blocatorul de reclame open source pentru Android. Blochează reclamele și elementele de urmărire la nivel de sistem, pentru toate aplicațiile, fără cont și fără reclame proprii. Acest fork urmărește să mențină aplicația funcțională și fiabilă pe versiunile recente de Android și pe ROM-urile producătorilor.</p>
 
-<h2>Cum funcționează AdAway?</h2>
-<p>AdAway folosește <a href="http://en.wikipedia.org/wiki/Hosts_file">fișierul hosts</a> pentru a bloca domeniile care trimit reclame. Fișierul host se găsește în <code>/system/etc/hosts</code> și asociază domeniul cu o adresă IP. Este o metoda tradițională de alocare pentru domenii de adrese IP pereche fără a mai avea nevoie de Sistemul de Nume de Domeniu (DNS). Domeniile nedorite vor fi redirectate către <code>127.0.0.1</code> ceea ce înseamnă că vor fi trimise local către dispozitivul dumneavoastră.<br>
-Dacă fișierul hosts nu poate fi suprascris, o soluție de rezervă este utilizarea serverului dedicat VPN. Acesta va filtra pe conexiune domeniile nedorite și va permite trecerea celorlalte.</p>
+<h2>Cum blochează reclamele?</h2>
+<p>AdAway funcționează în unul dintre cele două moduri:</p>
+<p><strong>Modul VPN</strong> (fără root): AdAway pornește un VPN local, pe dispozitiv, care nu trimite niciodată traficul dvs. în altă parte. Verifică doar cererile DNS și le elimină pe cele care duc spre nume de gazdă de reclame și de elemente de urmărire, lăsând restul să treacă. Nimic nu părăsește dispozitivul.</p>
+<p><strong>Modul root</strong>: dacă dispozitivul dvs. are root, AdAway poate scrie în schimb un <a href="http://en.wikipedia.org/wiki/Hosts_file">fișier hosts</a> în <code>/system/etc/hosts</code>, care asociază numele de gazdă nedorite cu <code>127.0.0.1</code>, astfel încât acestea să trimită către propriul dispozitiv. Pe versiunile recente de Android este necesar un modul systemless hosts (de exemplu Magisk).</p>
 
-<h2>De ce trebuie să repornesc Android pentru ca modificările să aibă efect?</h2>
-<p>Java in Android mentine un cache DNS intern. Sistemul de operare va vedea noul fișier hosts imediat după aplicarea modificărilor (se poate verifica acest lucru printr-o comanda ping în consolă) dar o repornire este totuși necesară pentru a reface cache-ul DNS din Java.</p>
+<h2>Ce servere DNS folosește VPN-ul?</h2>
+<p>În modul VPN, numele de gazdă care nu sunt blocate sunt rezolvate de serverele DNS alese în <cite>Setări › Blocator de reclame bazat pe VPN › Servere DNS</cite>:</p>
+<p><strong>Serverele DNS ale rețelei</strong> (implicit): serverele rețelei dvs. Wi-Fi sau mobile. Dacă rețeaua nu oferă niciunul pe care AdAway să îl poată folosi, se revine la Cloudflare (<code>1.1.1.1</code>).<br/><strong>Servere DNS personalizate</strong>: adresele IP introduse de dvs., separate prin virgule.<br/><strong>DNS over HTTPS</strong>: cererile sunt criptate și trimise către Cloudflare, Google, Quad9 sau adresa <code>https://</code> introdusă de dvs., astfel încât rețeaua să nu le poată citi sau modifica.</p>
+<p>Blocarea funcționează la fel cu toate cele trei. Pentru a păstra un DNS criptat, folosiți aici DNS over HTTPS, în loc de setarea Android <cite>DNS privat</cite>, care ocolește AdAway.</p>
 
-<h2>Cum se folosește serverul web în AdAway?</h2>
-<p><strong>AdAway poate funcționa și fără server local!</strong>
-<br><br>Poți activa serverul local din setările AdAway pentru a răspunde cererilor pe adresa IP locală <code>127.0.0.1</code>. Așadar cererile aplicațiilor către serverele de reclame for fi redirecționate către <code>127.0.0.1</code> fiind gestionate de serverul web AdAway.
-<br>Unele aplicații pot să nu mai funcționeze dacă nu reușesc să descarce reclamele.  Cu această metodă, aplicațiile vor avea răspuns la cereri, răspunsul fiind o pagină goală fără reclame sau imagini.</p>
+<h2>Cum blochez, permit sau redirecționez un nume de gazdă?</h2>
+<p>Din ecranul principal gestionați trei liste:</p>
+<p><strong>Blocate</strong>: numele de gazdă care trebuie blocate (reclame și elemente de urmărire).<br/><strong>Permise</strong>: excepțiile pe care nu doriți să le blocați niciodată, chiar dacă o sursă le include.<br/><strong>Redirecționate</strong>: numele de gazdă pe care doriți să le îndreptați către o anumită adresă IP.</p>
+<p>Puteți deschide și <cite>Jurnal DNS</cite> din ecranul principal pentru a vedea în timp real ce nume de gazdă interoghează aplicațiile, apoi le puteți bloca sau permite direct de acolo.</p>
 
-<h2>Cum pot bloca/debloca domenii mai specifice?</h2>
-<p>Adăugați domeniile pe care doriți să le blocați pe <cite>Lista neagră</cite> din <cite>ecranul principal</cite>. Opțional, domeniile pe care doriți să le excludeți din blocare pot fi adăugate pe <cite>Lista albă</cite> iar domeniile pe care doriți să le redirecționați spre o adresă IP specifică, se află în <cite>Lista de redirecționare</cite>.</p>
+<h2>Trebuie să repornesc Android după ce îmi modific listele?</h2>
+<p>Nu. AdAway aplică modificarea imediat, dar o aplicație deja deschisă își poate păstra vechile conexiuni și propria memorie cache. Închideți-o complet (Oprire forțată în setările Android ale aplicației) și ștergeți-i memoria cache dacă reclamele mai apar. O repornire a Android este necesară o singură dată în modul root, după activarea modulului Magisk systemless hosts.</p>
 
-<h2>Unde pot găsi mai multe surse hosts?</h2>
-<p>Accesați <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Lista adițională de surse hosts pentru AdAway</a></p>
+<h2>Unde găsesc mai multe surse hosts?</h2>
+<p>AdAway vine cu valori implicite rezonabile. Dacă doriți mai mult, consultați <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">lista de surse hosts suplimentare</a> întreținută de comunitate. Adăugați surse suplimentare cu măsură, deoarece listele foarte mari sau care se suprapun pot provoca fals pozitive care defectează aplicații.</p>
 
-<h2>De ce există acest fork</h2>
-<p>AdAway este un proiect grozav cu o istorie lungă, dar activitatea de lansare și revizuire upstream este limitată de ceva timp.<br/>Unele erori și pull request-uri au rămas deschise mult timp, inclusiv probleme care afectează stabilitatea modului VPN pe versiunile recente de Android și ROM-uri OEM.<br/>Acest fork există pentru a menține proiectul utilizabil cu corecții întreținute de comunitate, în loc să lase îmbunătățiri testate neutilizate.</p>
+<h2>De ce există acest fork?</h2>
+<p>AdAway este un proiect excelent, cu o lungă istorie, dar activitatea de lansare și de revizuire din proiectul original a fost limitată de o vreme. Unele corecții de erori și pull request-uri au rămas deschise mult timp, inclusiv probleme care afectau stabilitatea modului VPN pe versiunile recente de Android și pe ROM-urile producătorilor. Acest fork există pentru a menține proiectul utilizabil prin corecții întreținute de comunitate, în loc să lase neutilizate îmbunătățiri deja testate.</p>
 
-<h2>Ajută la traducere/Raportare erori.</h2>
-<p>Vizitați pagina <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Cum raportez o eroare sau propun o modificare?</h2>
+<p>Deschideți o problemă (issue) în sistemul de urmărire al fork-ului: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Un jurnal de diagnosticare (consultați fila Probleme) ajută foarte mult atunci când raportați probleme legate de VPN.</p>
 </body>
 </html>

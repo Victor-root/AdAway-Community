@@ -1,81 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">Setări</string>
-    <string name="pref_general_category">Generale</string>
+    <string name="pref_general_category">General</string>
     <string name="pref_dark_theme">Temă întunecată</string>
     <string-array name="pref_dark_theme_modes">
         <item>Luminoasă</item>
         <item>Întunecată</item>
-        <item>Valoare implicită sistem</item>
+        <item>Setarea sistemului</item>
     </string-array>
     <string name="pref_update_configuration">Actualizări automate</string>
+    <string name="pref_language">Limbă</string>
+    <string name="pref_language_system">Limba sistemului</string>
     <string name="pref_ad_block_category">Blocarea reclamelor</string>
-    <string name="pref_root_ad_blocker_configuration">Blocarea prin root a reclamelor</string>
-    <string name="pref_vpn_ad_blocker_configuration">Blocarea prin server VPN a reclamelor</string>
+    <string name="pref_root_ad_blocker_configuration">Blocator de reclame bazat pe root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Blocator de reclame bazat pe VPN</string>
     <string name="pref_enable_ipv6">Activare suport IPv6</string>
-    <string name="pref_backup_restore">Salvare / restabilire copie de rezervă pentru regulile de blocare</string>
-    <string name="pref_backup_restore_title">Salvare &amp; restabilire</string>
-    <string name="pref_backup">Salvare</string>
-    <string name="pref_backup_summary">Salvează pe memoria externă regulile de blocare</string>
-    <string name="pref_restore">Restabilire</string>
-    <string name="pref_restore_summary">Restaurare reguli de blocare din fișier</string>
-    <string name="import_success">Copie de rezervă importată cu succes din stocarea externă.</string>
-    <string name="export_success">Exportul s-a realizat cu succes, fișierul %s a fost scris în memoria externă.</string>
-    <string name="export_failed">Exportul a eșuat, fișierul %s nu a fost scris.</string>
+    <string name="pref_backup_restore">Copie de rezervă / restaurare a regulilor de blocare</string>
+    <string name="pref_backup_restore_title">Copie de rezervă și restaurare</string>
+    <string name="pref_backup">Copie de rezervă</string>
+    <string name="pref_backup_summary">Salvați regulile de blocare în stocarea externă</string>
+    <string name="pref_restore">Restaurare</string>
+    <string name="pref_restore_summary">Restaurați regulile de blocare dintr-un fișier de rezervă</string>
+    <string name="import_success">Copia de rezervă a fost importată cu succes din stocarea externă.</string>
+    <string name="import_failed">Importul copiei de rezervă a eșuat. Formatul este corect?</string>
+    <string name="export_success">Copia de rezervă a fost exportată cu succes în fișierul „%s” din stocarea externă.</string>
+    <string name="export_failed">Exportul fișierului de rezervă „%s” a eșuat.</string>
     <string name="pref_update_title">Actualizări</string>
-    <string name="pref_update_app_category">Actualizări aplicație</string>
-    <string name="pref_update_check_app_startup">Verificare actualizări la pornire</string>
-    <string name="pref_update_check_app_daily">Verificare periodică</string>
-    <string name="pref_update_check_now">Verifică acum</string>
-    <string name="pref_update_install">Actualizează acum</string>
-    <string name="pref_update_hosts_category">Actualizări fișier hosts</string>
-    <string name="pref_update_check">Verificare actualizări la pornire</string>
-    <string name="pref_update_check_hosts_daily">Verificare periodică</string>
+    <string name="pref_update_enable_notifications">Notificările sunt dezactivate</string>
+    <string name="pref_update_enable_notifications_summary">Notificările aplicației nu vor fi afișate. Atingeți pentru a le activa.</string>
+    <string name="pref_update_app_category">Actualizările aplicației</string>
+    <string name="pref_update_check_app_startup">Căutare actualizări la pornire</string>
+    <string name="pref_update_check_app_daily">Căutare periodică a actualizărilor</string>
+    <string name="pref_update_check_now">Verificați acum</string>
+    <string name="pref_update_install">Actualizați acum</string>
+    <string name="pref_update_hosts_category">Actualizările surselor hosts</string>
+    <string name="pref_update_check">Căutare actualizări la pornire</string>
+    <string name="pref_update_check_hosts_daily">Căutare periodică a actualizărilor</string>
     <string name="pref_update_sync_on_update">Sincronizare la actualizare</string>
-    <string name="pref_update_sync_unmetered_only">Sincronizare doar pe rețea necontorizată</string>
+    <string name="pref_update_sync_unmetered_only">Sincronizare doar în rețele fără limită de date</string>
     <string name="pref_vpn_service_on_boot">Activare la pornire</string>
-    <string name="pref_vpn_service_monitor">Monitorizare conexiune</string>
-    <string name="pref_vpn_service_monitor_description">Verificare periodică a stării internetului pentru repornirea VPN la deconectare</string>
+    <string name="pref_vpn_service_monitor">Monitorizarea conexiunii</string>
+    <string name="pref_vpn_service_monitor_description">Verifică periodic starea rețelei pentru a reporni VPN-ul după o deconectare.</string>
     <string name="pref_vpn_excluded_apps">Aplicații excluse</string>
-    <string name="pref_vpn_excluded_apps_description">Alegeți aplicațiile care nu ar trebui să fie blocate de către VPN deci conexiunea lor va rămâne nerestricționată</string>
-    <string name="pref_vpn_exclude_system_apps">Excludere aplicații de sistem</string>
+    <string name="pref_vpn_excluded_apps_description">Alegeți aplicațiile care nu trebuie să folosească VPN-ul, astfel încât conexiunile lor să nu fie blocate.</string>
+    <string name="pref_vpn_exclude_system_apps">Excluderea aplicațiilor de sistem</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
         <item>Niciuna</item>
-        <item>Toate cu excepția navigatoarelor web</item>
+        <item>Toate, cu excepția browserelor</item>
         <item>Toate</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">Excludere aplicații instalate de utilizator</string>
+    <string name="pref_vpn_dns">Servere DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Serverele DNS ale rețelei</item>
+        <item>Servere DNS personalizate</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Servere DNS personalizate</string>
+    <string name="pref_vpn_dns_custom_summary">Adrese IP, separate prin virgule</string>
+    <string name="pref_vpn_dns_custom_invalid">Adresă de server DNS nevalidă</string>
+    <string name="pref_vpn_doh">Server DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Adresă personalizată</string>
+    <string name="pref_vpn_doh_address">Adresă DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Adresă DNS over HTTPS nevalidă</string>
+    <string name="pref_vpn_exclude_user_apps">Excluderea aplicațiilor instalate de dvs.</string>
     <string name="pref_vpn_exclude_user_apps_activity">Aplicații excluse</string>
-    <string name="pref_vpn_exclude_user_apps_select_all">Selectare toate</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">Anulare selecție</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Selectați tot</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Deselectați tot</string>
     <string name="pref_vpn_exclude_user_apps_icon">Pictograma aplicației</string>
-    <string name="pref_vpn_reset">Resetează VPN</string>
-    <string name="pref_vpn_reset_description">Reconstruiește conexiunea VPN de la zero. Folosește această opțiune dacă VPN-ul nu mai funcționează (fără acces la internet sau erori DNS).</string>
+    <string name="pref_vpn_reset">Resetați VPN-ul</string>
+    <string name="pref_vpn_reset_description">Reconstruiește de la zero conexiunea VPN. Folosiți această opțiune dacă VPN-ul nu mai funcționează (fără acces la internet sau cu erori DNS).</string>
     <string name="pref_vpn_reset_done">Conexiunea VPN a fost reconstruită.</string>
-    <string name="pref_vpn_reset_not_running">VPN-ul nu rulează.</string>
+    <string name="pref_vpn_reset_not_running">VPN-ul nu este pornit.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Înregistrare jurnal de diagnosticare</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Activați înainte de a reproduce o problemă, apoi exportați jurnalul mai jos. Poate încetini ușor dispozitivele mai vechi. Înregistrează doar evenimente tehnice ale VPN-ului, niciodată istoricul de navigare sau date personale.</string>
     <string name="pref_vpn_diagnostic_log">Jurnal de diagnosticare</string>
-    <string name="pref_vpn_diagnostic_log_description">Vizualizează, copiază sau distribuie erorile recente și evenimentele VPN. Util când raportezi o problemă.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Nu a fost înregistrat încă niciun eveniment.</string>
-    <string name="pref_vpn_diagnostic_log_share">Distribuie jurnalul de diagnosticare</string>
-    <string name="pref_vpn_diagnostic_log_copy">Copiază</string>
+    <string name="pref_vpn_diagnostic_log_description">Vizualizați, copiați sau distribuiți ultimele erori și evenimente ale VPN-ului. Util atunci când raportați o problemă.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Niciun eveniment nu a fost înregistrat încă. Activați mai sus opțiunea „Înregistrare jurnal de diagnosticare”, apoi încercați să reproduceți problema.</string>
+    <string name="pref_vpn_diagnostic_log_share">Distribuiți</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Distribuiți jurnalul de diagnosticare</string>
+    <string name="pref_vpn_diagnostic_log_copy">Copiați</string>
     <string name="pref_vpn_diagnostic_log_copied">Jurnalul de diagnosticare a fost copiat în clipboard.</string>
-    <string name="pref_vpn_diagnostic_log_clear">Șterge jurnalul de diagnosticare</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Șterge evenimentele înregistrate. Fă acest lucru înainte de a reproduce o problemă pentru a captura o urmă curată.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Ștergeți jurnalul de diagnosticare</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Șterge evenimentele înregistrate. Faceți acest lucru înainte de a reproduce o problemă, pentru a obține un jurnal curat.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Jurnalul de diagnosticare a fost șters.</string>
-    <string name="pref_root_open_hosts">Deschide fișierul hosts</string>
-    <string name="pref_hosts_redirection_summary">Definire domeniu de redirecționare pentru domeniile blocate din hosts</string>
-    <string name="pref_redirection_ipv4">Redirecționare IPv4</string>
-    <string name="pref_redirection_ipv6">Redirecționare IPv6</string>
-    <string name="pref_webserver_summary">Serverul web local ascultă pe adresa IP locală pentru a răspunde cererilor făcute de către domeniile blocate. Poate fi de ajutor dacă aplicația nu funcționează fără conexiune.</string>
+    <string name="pref_root_open_hosts">Deschideți fișierul hosts</string>
+    <string name="hosts_file_unreadable">Fișierul hosts nu a putut fi citit.</string>
+    <string name="pref_hosts_redirection_summary">Stabiliți unde sunt redirecționate gazdele blocate</string>
+    <string name="pref_redirection_ipv4">Configurare redirecționare IPv4</string>
+    <string name="pref_redirection_ipv6">Configurare redirecționare IPv6</string>
+    <string name="pref_redirection_invalid">Redirecționare nevalidă</string>
+    <string name="pref_webserver_summary">Serverul web local ascultă pe adresele IP locale pentru a răspunde cererilor către numele de gazdă blocate. Poate ajuta atunci când o aplicație îngheață din cauza unei conexiuni blocate.</string>
     <string name="pref_webserver_enabled">Activare server web</string>
-    <string name="pref_webserver_test">Testare server web</string>
-    <string name="pref_webserver_certificate">Instalare certificat subsemnat</string>
-    <string name="pref_webserver_state_not_running">Nu rulează</string>
-    <string name="pref_webserver_state_checking">Verificare…</string>
-    <string name="pref_webserver_state_running_not_installed">Rulează fără certificat instalat</string>
-    <string name="pref_webserver_state_running_and_installed">Rulează cu certificat instalat</string>
-    <string name="pref_webserver_certificate_dialog_title">Instalare manuală certificat</string>
-    <string name="pref_webserver_certificate_dialog_content">Începând cu versiunea 11 a Android (R), nu se mai pot instala automat certificate de autoritate (CA).\n\nAccesați setarea \"Securitate\", \"Criptare și date de conectare\" apoi \"Instalați de pe stocare\". Alegeți \"Certificat CA\" și instalați certificatul exportat de aplicație.</string>
-    <string name="pref_webserver_certificate_dialog_action">Accesați setarea \"Securitate\" (Security)<br/></string>
-    <string name="pref_webserver_icon">Înlocuiește spațiul liber destinat reclamelor cu pictograma aplicației</string>
+    <string name="pref_webserver_test">Testați serverul web</string>
+    <string name="pref_webserver_certificate">Instalați certificatul autosemnat</string>
+    <string name="pref_webserver_state_not_running">Oprit</string>
+    <string name="pref_webserver_state_checking">Se verifică…</string>
+    <string name="pref_webserver_state_running_not_installed">Pornit, dar certificatul nu este instalat</string>
+    <string name="pref_webserver_state_running_and_installed">Pornit, iar certificatul este instalat</string>
+    <string name="pref_webserver_certificate_dialog_title">Instalarea manuală a certificatului</string>
+    <string name="pref_webserver_certificate_dialog_content">Începând cu Android 11 (R), aplicațiile nu mai pot instala automat o autoritate de certificare (CA).\n\nAccesați setările „Securitate”, apoi „Criptare și date de conectare” și „Instalați un certificat”. De acolo, alegeți „Certificat CA” și selectați fișierul de certificat tocmai exportat.</string>
+    <string name="pref_webserver_certificate_dialog_action">Deschideți setările „Securitate”</string>
+    <string name="pref_webserver_certificate_failed">Certificatul nu a putut fi pregătit.</string>
+    <string name="webserver_error_title">Serverul web nu a pornit</string>
+    <string name="webserver_error_resources">Fișierele sau certificatul său nu au putut fi pregătite.</string>
+    <string name="webserver_error_address_in_use">O altă aplicație folosește deja porturile web (80 și 443) ale dispozitivului.</string>
+    <string name="webserver_error_start_failed">Nu a putut porni pe acest dispozitiv.</string>
+    <string name="pref_webserver_icon">Înlocuirea spațiului gol al reclamelor cu pictograma aplicației</string>
 </resources>

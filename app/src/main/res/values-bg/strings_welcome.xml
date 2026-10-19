@@ -1,47 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Първа стъпка на помощника</string>
-    <string name="welcome_second_step">Втора стъпка на помощника</string>
-    <string name="welcome_method_header">Добре дошли от AdAway!</string>
-    <string name="welcome_method_summary">AdAway предлага два метода за спиране на реклами.
-Изберете предпочитания от вас:</string>
-    <string name="welcome_root_method_title">Чрез достъп до\nсуперпотребител</string>
-    <string name="welcome_root_method_text1">По-бърз</string>
-    <string name="welcome_root_method_text2">Пести батерия</string>
-    <string name="welcome_root_method_text3">Нужен е суперпотребител</string>
-    <string name="welcome_vpn_method_title">VPN базирано\nблокиране на реклами</string>
+    <string name="welcome_first_step">Първа стъпка на съветника</string>
+    <string name="welcome_second_step">Втора стъпка на съветника</string>
+    <string name="welcome_third_step">Трета стъпка на съветника</string>
+    <string name="welcome_fourth_step">Четвърта стъпка на съветника</string>
+    <string name="welcome_method_header">Добре дошли в AdAway!</string>
+    <string name="welcome_method_summary">AdAway предлага два метода за блокиране на реклами. Изберете този, който ви харесва:</string>
+    <string name="welcome_root_method_title">Блокиране на реклами\nчрез root</string>
+    <string name="welcome_root_method_text1">По-бързо</string>
+    <string name="welcome_root_method_text2">Щади батерията</string>
+    <string name="welcome_root_method_text3">Необходим е root</string>
+    <string name="welcome_vpn_method_title">Блокиране на реклами\nчрез VPN</string>
     <string name="welcome_vpn_method_text1">По-бавно</string>
     <string name="welcome_vpn_method_text2">Работи във фонов режим</string>
     <string name="welcome_vpn_method_text3">Съвместимост</string>
-    <string name="welcome_root_missing_title">Изисква се Android с достъп до суперпотребител</string>
-    <string name="welcome_root_missile_description">Изпълниимият файл на su не е намерен или AdAway няма разрешение за достъп до правата на суперпотребителя.\n\n
-Това може да се случи, когато тройството ви няма достъп до суперпотребителя. Можете да намерите информация как да получите достъп до него на устройството си в wiki.lineageos.org или в други страници за Android.</string>
-    <string name="welcome_vpn_alwayson_title">Настроен е винаги включен VPN</string>
-    <string name="welcome_vpn_alwayson_description">AdAway откри, че друга VPN услуга има активна настройка „Винаги включен VPN“.\n\nТова не позволява на AdAway да поиска достъп до VPN. Изключете „Винаги включен VPN“ на съответната VPN услуга и опитайте отново.</string>
-    <string name="welcome_vpn_alwayson_blocked_description">AdAway не можа да поиска VPN достъп.\n\nТова може да се дължи на факта, че друга VPN услуга има активна настройка „Винаги включен VPN“. Проверете дали някоя VPN услуга има включена тази настройка и я изключете, преди да опитате отново.</string>
-    <string name="welcome_vpn_alwayson_settings_action">Настройки на VPN</string>
-    <string name="welcome_method_pro_logo">Предимства</string>
-    <string name="welcome_method_con_logo">Недостатъци</string>
+    <string name="welcome_root_missing_title">Необходим е Android с root достъп</string>
+    <string name="welcome_root_missile_description">Или двоичният файл su не беше намерен, или не сте разрешили root достъп за AdAway.\n\nТова може да се случи, когато устройството ви няма root достъп. Информация как да получите root достъп на устройството си ще намерите на wiki.lineageos.org или в други сайтове за Android.</string>
+    <string name="welcome_vpn_alwayson_title">Включен е „Винаги включен VPN“</string>
+    <string name="welcome_vpn_alwayson_description">AdAway установи, че друг VPN има активна настройка „Винаги включен VPN“.\n\nТова пречи на AdAway да поиска достъп до VPN. Изключете „Винаги включен VPN“ за съответния VPN и опитайте отново.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway не успя да поиска достъп до VPN.\n\nПричината може да е, че друг VPN има активна настройка „Винаги включен VPN“. Проверете дали някой VPN има тази настройка включена и я изключете, преди да опитате отново.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Отваряне на настройките за „VPN“</string>
+    <string name="welcome_method_pro_logo">Предимство</string>
+    <string name="welcome_method_con_logo">Недостатък</string>
     <string name="welcome_sync_header">Синхронизиране</string>
     <string name="welcome_synced_header">Синхронизирано!</string>
-    <string name="welcome_sync_summary">AdAway изтегля от отдалечени източници рекламните мрежи, които да спира. По-късно ще можете да ги променяте в настройките.</string>
-    <string name="welcome_sync_retry_logo">Повторно синхронизиране</string>
-    <string name="welcome_sync_error">Грешка при синхронизиране: %1$s Повторен опит?</string>
-    <string name="welcome_sync_notifications">Може да показва известия за състоянието и да ви известява за налични обновявания (няколко пъти в годината). Включете ги, за да научаеате последните промени.</string>
-    <string name="welcome_sync_leave_early_title">Синхронизацията все още не е завършена</string>
-    <string name="welcome_sync_leave_early_message">Изтеглянето на списъците за блокиране не е завършено. Можете да продължите сега и то ще продължи във фонов режим, или да изчакате тук, докато приключи.</string>
-    <string name="welcome_sync_leave_early_wait">Изчакай</string>
-    <string name="welcome_sync_leave_early_continue">Продължи все пак</string>
+    <string name="welcome_sync_summary">AdAway изтегля от онлайн източници рекламните мрежи, които да блокира. По-късно можете да ги настроите от настройките.</string>
+    <string name="welcome_sync_retry_logo">Нов опит за синхронизиране</string>
+    <string name="welcome_sync_error">Синхронизирането не успя: %1$s Нов опит сега?</string>
+    <string name="welcome_sync_notifications">Приложението може да изпраща известия за състоянието и управлението на блокирането на реклами и за наличните актуализации на приложението (няколко пъти в годината). Включете ги, ако искате да сте в крак с новостите.</string>
+    <string name="welcome_sync_leave_early_title">Синхронизирането още не е приключило</string>
+    <string name="welcome_sync_leave_early_message">Списъците за блокиране не са изтеглени докрай. Можете да продължите сега и изтеглянето ще завърши във фонов режим или да изчакате тук, докато приключи.</string>
+    <string name="welcome_sync_leave_early_wait">Изчакване</string>
+    <string name="welcome_sync_leave_early_continue">Продължаване въпреки това</string>
+    <string name="welcome_battery_header">Оставайте защитени във фонов режим</string>
+    <string name="welcome_battery_summary">Android може да спира VPN на AdAway във фонов режим, за да пести енергия, и така блокирането на реклами да спре без предупреждение. Позволете на AdAway да пренебрегва оптимизацията на батерията, за да продължи да работи.</string>
+    <string name="welcome_battery_action">Позволяване</string>
+    <string name="welcome_battery_granted">Позволено ✓</string>
+    <string name="welcome_battery_footnote_prefix">Винаги можете да промените това по-късно от</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Настройки на Android</item>
+        <item>Приложения</item>
+        <item>AdAway</item>
+        <item>Батерия</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Още нещо: собственият диспечер на батерията на телефона ви</string>
+    <string name="welcome_oem_battery_summary">Някои марки телефони имат собствен диспечер на батерията, който също може да блокира AdAway. Ето какво да проверите при вашия:</string>
+    <string name="welcome_oem_battery_action">Отваряне на информацията за приложението</string>
+    <string name="welcome_oem_battery_open_failed">Екранът с информация за приложението не можа да бъде отворен. Отворете го ръчно от Настройки на Android › Приложения › AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Това са общи насоки, а не точно ръководство: формулировките и местоположението може да се различават според модела на телефона и версията на Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Информация за приложението</item>
+        <item>Батерия</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Потърсете нещо като „Ограничения за използване във фонов режим“ › „Приложения, които никога не заспиват“ и добавете AdAway в този списък.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Проверете и за настройката „Автоматична оптимизация“ и изключете „Рестартиране при нужда“, ако я има.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Информация за приложението</item>
+        <item>Икономия на батерията</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Изберете „Без ограничения“.</string>
+    <string name="welcome_oem_battery_secondary_miui">Включете и „Автоматично стартиране“ („Автоматично стартиране във фонов режим“ при по-новите версии).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Информация за приложението</item>
+        <item>Използване на батерията</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Изберете „Разрешаване на активност във фонов режим“ (понякога се показва като „Без ограничения“).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Потърсете и превключвател „Автоматично стартиране“ за AdAway (често в Настройки › Приложения), за да може да се стартира сам след принудително спиране.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Информация за приложението</item>
+        <item>Батерия</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Потърсете „Стартиране на приложения“, изключете „Автоматично управление“ и включете и трите опции: „Автоматично стартиране“, „Вторично стартиране“ и „Работа във фонов режим“.</string>
+    <string name="welcome_oem_battery_secondary_emui">Заключете и AdAway в екрана с последните приложения (плъзнете картата му надолу, докато се появи катинар).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Информация за приложението</item>
+        <item>Използване на батерията</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Потърсете опция за енергия във фонов режим и изберете „Без ограничаване на потреблението във фонов режим“ (не „Интелигентно управление“).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Потърсете и настройка „Автоматично стартиране“ за AdAway, често в Настройки › Приложения.</string>
+    <string name="welcome_oem_battery_label_generic">Друга марка</string>
+    <string name="welcome_oem_battery_tip_generic">Потърсете в информацията за приложението настройка за батерията или за активността във фонов режим и се уверете, че AdAway не е ограничен.</string>
     <string name="welcome_back_button">Назад</string>
     <string name="welcome_next_button">Напред</string>
-    <string name="welcome_finish_button">Край</string>
-    <string name="tv_welcome_intro_subtitle">Този кратък съветник ще включи блокирането на реклами на това устройство.</string>
+    <string name="welcome_finish_button">Готово</string>
+    <string name="tv_welcome_intro_subtitle">Този кратък съветник включва блокирането на реклами на това устройство.</string>
     <string name="tv_welcome_start_button">Начало</string>
-    <string name="tv_welcome_method_header">Изберете метод на блокиране</string>
-    <string name="tv_welcome_method_root_button">Използване на root</string>
-    <string name="tv_welcome_method_root_body">По-бързо и щадящо батерията. Изисква руутнато устройство.</string>
-    <string name="tv_welcome_method_vpn_button">Използване на VPN</string>
-    <string name="tv_welcome_method_vpn_body">Работи без root, съвместим с всяко устройство с Android TV.</string>
+    <string name="tv_welcome_method_header">Изберете метод за блокиране</string>
+    <string name="tv_welcome_method_root_button">Чрез root</string>
+    <string name="tv_welcome_method_root_body">По-бързо и щади батерията. Изисква устройство с root достъп.</string>
+    <string name="tv_welcome_method_vpn_button">Чрез VPN</string>
+    <string name="tv_welcome_method_vpn_body">Работи без root и е съвместимо с всяко устройство с Android TV.</string>
     <string name="tv_welcome_activate_header">Включване на блокирането на реклами</string>
-    <string name="tv_welcome_activate_body">Това е локална VPN: тя филтрира реклами на устройството, без да пренасочва трафика ви през външен сървър.</string>
+    <string name="tv_welcome_activate_body">Това е локален VPN: филтрира рекламите на това устройство, без да пренасочва трафика ви през външен сървър.</string>
 </resources>

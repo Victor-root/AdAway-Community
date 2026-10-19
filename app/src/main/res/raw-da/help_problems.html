@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN slukker af sig selv</h2>
+<p>Det er næsten altid systemet, der lukker VPN-tjenesten for at spare på batteriet, og ikke et nedbrud. Det er almindeligt på producenternes egne Android-versioner med aggressiv strømstyring (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung med flere).</p>
+<p>Find AdAway i Android-indstillingerne, og gør følgende: sæt <cite>batterioptimering</cite> til <cite>Ubegrænset</cite> (eller <cite>Optimer ikke</cite>), tillad <cite>autostart</cite> eller <cite>automatisk start</cite>, hvis din Android-version har det, og lås AdAway på listen over seneste apps, så den ikke bliver fjernet ved et stryg. Sørg også for, at <cite>Aktivér ved start</cite> er slået til i AdAways VPN-indstillinger.</p>
 
-<h2>Ikke nok plads på partitionen</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Intet internet eller langsom browsing lige efter skift mellem Wi-Fi og mobildata</h2>
+<p>Når det aktive netværk skifter, skal tunnelen opbygges igen, så DNS slås op via det nye netværk. Hvis browsing stadig ikke virker, kan du åbne <cite>Indstillinger › VPN-baseret annonceblokering › Nulstil VPN</cite> for at opbygge forbindelsen helt forfra. Hvis det sker igen og igen, så optag en diagnoselog (se nedenfor), og meld problemet.</p>
 
-<h2>Virker ikke på Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Hvordan eksporterer jeg en diagnoselog?</h2>
+<p>Åbn <cite>Indstillinger › VPN-baseret annonceblokering › Diagnoselog</cite>. Den optager de seneste fejl og VPN-hændelser (netværksskift, genoprettede forbindelser, fejl), men ikke din browserhistorik, kun tekniske hændelser. Den forbliver tom, indtil du slår <cite>Optag diagnoselog</cite> lige ovenover til. Brug <cite>Kopiér</cite> eller <cite>Del</cite> for at sende den, når du melder et problem. Tip: brug først <cite>Ryd diagnoselog</cite>, og genskab derefter problemet, så loggen kun indeholder det relevante.</p>
 
-<h2>Den blokkerer ikke annoncer fra programmet XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome viser stadig annoncer</h2>
+<p>Chrome kan bruge sin egen <cite>sikre DNS</cite> (DNS over HTTPS), som omgår AdAway. Åbn <cite>Indstillinger › Anonymitet og sikkerhed › Brug sikker DNS</cite> i Chrome, og slå den fra. Det samme gælder for alle apps og for systemets indstilling <cite>Privat DNS</cite>. I VPN-tilstand kan AdAway selv kryptere DNS: se <cite>Hvilke DNS-servere bruger VPN-forbindelsen?</cite> i FAQ.</p>
 
-<h2>Cachede Annoncer</h2>
-<p>Nogle gange har applikationer gemt reklamer efter download. Dette fører til rest reklamer i nogle programmer. Du kan prøve at slette cachen for disse applikationer i Android Application liste at omgå dette problem.</p>
+<h2>Nogle annoncer kommer stadig igennem, eller en app viser stadig annoncer</h2>
+<p>Et værtsnavn kan mangle i dine kilder, eller appen har sine annoncer indbygget, så der ikke sendes nogen forespørgsel. Åbn <cite>DNS-log</cite> fra startskærmen for at se, hvad appen slår op, føj de mistænkelige værtsnavne til din liste <cite>Blokerede</cite>, og tjek, at intet holder op med at virke. Nogle apps gemmer også annoncer i cachen, når de er hentet, så det kan hjælpe at rydde appens cache i Android-indstillingerne.</p>
 
-<h2>Programmet XYZ virker ikke mere!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>En app virker ikke længere, efter at jeg har slået AdAway til</h2>
+<p>Nogle apps nægter at virke, når et værtsnavn, de har brug for, er blokeret. Brug <cite>DNS-log</cite> til at finde ud af, hvilket værtsnavn appen har brug for, og føj det til din liste <cite>Tilladte</cite>, så burde appen virke igen. Kendte problematiske apps er opført <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">her</a>.</p>
 
-<h2>Tilbage-knappen i webbrowsere virker ikke</h2>
-<p>Du kan aktivere AdAways lokale webserver i Indstillinger som en workaround.</p>
+<h2>Hosts-filen kan ikke anvendes (root-tilstand)</h2>
+<p>Nyere Android-versioner bruger en skrivebeskyttet partition <code>/system</code>, så AdAway kan ikke skrive direkte dér. Hvis du bruger Magisk, skal du aktivere modulet <cite>systemless hosts</cite>, genstarte og anvende igen. Hvis du ikke bruger root, kan du i stedet skifte til VPN-tilstand, som ikke ændrer noget i systemet.</p>
 
-<h2>Tilbage-knappen i webbrowsere virker ikke</h2>
-<p>Du kan aktivere AdAways lokale webserver i Indstillinger som en workaround.</p>
-
+<h2>Sidder du stadig fast?</h2>
+<p>Meld problemet med en vedhæftet diagnoselog på <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

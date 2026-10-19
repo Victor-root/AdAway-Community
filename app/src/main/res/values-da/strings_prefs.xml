@@ -1,32 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">Indstillinger</string>
-    <string name="pref_dark_theme">Aktiver mørkt tema</string>
-    <string name="pref_enable_ipv6">Aktivér IPv6</string>
-    <string name="import_success">Sikkerhedskopi importeret med succes fra dit eksterne lager.</string>
+    <string name="pref_general_category">Generelt</string>
+    <string name="pref_dark_theme">Mørkt tema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Lyst</item>
+        <item>Mørkt</item>
+        <item>Systemstandard</item>
+    </string-array>
+    <string name="pref_update_configuration">Automatiske opdateringer</string>
+    <string name="pref_language">Sprog</string>
+    <string name="pref_language_system">Systemsprog</string>
+    <string name="pref_ad_block_category">Annonceblokering</string>
+    <string name="pref_root_ad_blocker_configuration">Root-baseret annonceblokering</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-baseret annonceblokering</string>
+    <string name="pref_enable_ipv6">Aktivér understøttelse af IPv6</string>
+    <string name="pref_backup_restore">Sikkerhedskopiér/gendan blokeringsregler</string>
+    <string name="pref_backup_restore_title">Sikkerhedskopi og gendannelse</string>
+    <string name="pref_backup">Sikkerhedskopiér</string>
+    <string name="pref_backup_summary">Sikkerhedskopiér dine blokeringsregler til ekstern lagerplads</string>
+    <string name="pref_restore">Gendan</string>
+    <string name="pref_restore_summary">Gendan dine blokeringsregler fra en sikkerhedskopi</string>
+    <string name="import_success">Sikkerhedskopien blev importeret fra din eksterne lagerplads.</string>
+    <string name="import_failed">Sikkerhedskopien kunne ikke importeres. Er formatet korrekt?</string>
+    <string name="export_success">Sikkerhedskopien blev eksporteret til filen »%s« på din eksterne lagerplads.</string>
+    <string name="export_failed">Sikkerhedskopien »%s« kunne ikke eksporteres.</string>
     <string name="pref_update_title">Opdateringer</string>
-    <string name="pref_update_check_app_daily">Check for opdateringer dagligt</string>
+    <string name="pref_update_enable_notifications">Notifikationer er slået fra</string>
+    <string name="pref_update_enable_notifications_summary">Appens notifikationer vises ikke. Tryk for at slå dem til.</string>
+    <string name="pref_update_app_category">Appopdateringer</string>
+    <string name="pref_update_check_app_startup">Søg efter opdatering ved start</string>
+    <string name="pref_update_check_app_daily">Søg jævnligt efter opdatering</string>
     <string name="pref_update_check_now">Søg nu</string>
     <string name="pref_update_install">Opdater nu</string>
-    <string name="pref_update_check_hosts_daily">Check for opdateringer dagligt</string>
+    <string name="pref_update_hosts_category">Opdateringer af hosts-kilder</string>
+    <string name="pref_update_check">Søg efter opdatering ved start</string>
+    <string name="pref_update_check_hosts_daily">Søg jævnligt efter opdatering</string>
+    <string name="pref_update_sync_on_update">Synkroniser ved opdatering</string>
+    <string name="pref_update_sync_unmetered_only">Synkroniser kun på net uden datagrænse</string>
+    <string name="pref_vpn_service_on_boot">Aktivér ved start</string>
+    <string name="pref_vpn_service_monitor">Overvåg forbindelsen</string>
+    <string name="pref_vpn_service_monitor_description">Tjekker jævnligt netværkets tilstand for at genstarte VPN, hvis forbindelsen afbrydes.</string>
+    <string name="pref_vpn_excluded_apps">Undtagne apps</string>
+    <string name="pref_vpn_excluded_apps_description">Vælg de apps, der ikke skal bruge VPN, så deres forbindelser ikke blokeres.</string>
+    <string name="pref_vpn_exclude_system_apps">Undtag systemapps</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+        <item>Ingen</item>
+        <item>Alle undtagen browsere</item>
+        <item>Alle</item>
     </string-array>
+    <string name="pref_vpn_dns">DNS-servere</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Netværkets DNS-servere</item>
+        <item>Egne DNS-servere</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Egne DNS-servere</string>
+    <string name="pref_vpn_dns_custom_summary">IP-adresser adskilt af kommaer</string>
+    <string name="pref_vpn_dns_custom_invalid">Ugyldig adresse til DNS-server</string>
+    <string name="pref_vpn_doh">DNS over HTTPS-server</string>
+    <string name="pref_vpn_doh_custom">Egen adresse</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS-adresse</string>
+    <string name="pref_vpn_doh_invalid">Ugyldig DNS over HTTPS-adresse</string>
+    <string name="pref_vpn_exclude_user_apps">Undtag brugerapps</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Undtagne apps</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Vælg alle</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Fravælg alle</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Appikon</string>
     <string name="pref_vpn_reset">Nulstil VPN</string>
-    <string name="pref_vpn_reset_description">Genopbyg VPN-forbindelsen helt fra bunden. Brug dette, hvis VPN\'en holder op med at virke (ingen internetadgang eller DNS-fejl).</string>
-    <string name="pref_vpn_reset_done">VPN-forbindelsen er genopbygget.</string>
+    <string name="pref_vpn_reset_description">Opbyg VPN-forbindelsen helt forfra. Brug det, hvis VPN holder op med at virke (ingen internetadgang eller DNS-fejl).</string>
+    <string name="pref_vpn_reset_done">VPN-forbindelsen er opbygget forfra.</string>
     <string name="pref_vpn_reset_not_running">VPN kører ikke.</string>
-    <string name="pref_vpn_diagnostic_log">Diagnostiklog</string>
-    <string name="pref_vpn_diagnostic_log_description">Se, kopiér eller del de seneste fejl og VPN-hændelser. Nyttigt, når du rapporterer et problem.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Der er endnu ikke registreret nogen hændelser.</string>
-    <string name="pref_vpn_diagnostic_log_share">Del diagnostiklog</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Optag diagnoselog</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Slå til, før du genskaber et problem, og eksportér derefter loggen herunder. Kan gøre ældre enheder en smule langsommere. Der optages kun tekniske VPN-hændelser, aldrig browserhistorik eller personlige data.</string>
+    <string name="pref_vpn_diagnostic_log">Diagnoselog</string>
+    <string name="pref_vpn_diagnostic_log_description">Se, kopiér eller del de seneste fejl og VPN-hændelser. Nyttigt, når du melder et problem.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Der er endnu ikke optaget nogen hændelser. Slå »Optag diagnoselog« til ovenfor, og prøv derefter at genskabe problemet.</string>
+    <string name="pref_vpn_diagnostic_log_share">Del</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Del diagnoselog</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopiér</string>
-    <string name="pref_vpn_diagnostic_log_copied">Diagnostiklog kopieret til udklipsholder.</string>
-    <string name="pref_vpn_diagnostic_log_clear">Ryd diagnostiklog</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Slet de registrerede hændelser. Gør dette, før du genskaber et problem, for at fange et rent spor.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Diagnostiklog ryddet.</string>
-    <string name="pref_root_open_hosts">Åben hosts-filen</string>
-    <string name="pref_webserver_enabled">Aktiver webserver</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diagnoseloggen er kopieret til udklipsholderen.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Ryd diagnoselog</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Slet de optagne hændelser. Gør det, før du genskaber et problem, så du får en ren log.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Diagnoseloggen er ryddet.</string>
+    <string name="pref_root_open_hosts">Åbn hosts-filen</string>
+    <string name="hosts_file_unreadable">Hosts-filen kunne ikke læses.</string>
+    <string name="pref_hosts_redirection_summary">Angiv, hvortil blokerede hosts skal omdirigeres</string>
+    <string name="pref_redirection_ipv4">Konfigurér IPv4-omdirigering</string>
+    <string name="pref_redirection_ipv6">Konfigurér IPv6-omdirigering</string>
+    <string name="pref_redirection_invalid">Ugyldig omdirigering</string>
+    <string name="pref_webserver_summary">Den lokale webserver lytter på lokale IP-adresser for at besvare forespørgsler til blokerede værtsnavne. Den kan hjælpe, hvis apps hænger ved en blokeret forbindelse.</string>
+    <string name="pref_webserver_enabled">Aktivér webserver</string>
+    <string name="pref_webserver_test">Test webserver</string>
+    <string name="pref_webserver_certificate">Installér selvsigneret certifikat</string>
+    <string name="pref_webserver_state_not_running">Kører ikke</string>
+    <string name="pref_webserver_state_checking">Kontrollerer…</string>
+    <string name="pref_webserver_state_running_not_installed">Kører, men certifikatet er ikke installeret</string>
+    <string name="pref_webserver_state_running_and_installed">Kører, og certifikatet er installeret</string>
+    <string name="pref_webserver_certificate_dialog_title">Manuel installation af certifikat</string>
+    <string name="pref_webserver_certificate_dialog_content">Fra og med Android 11 (R) kan apps ikke længere installere certifikatudstedere (CA) automatisk.\n\nGå til indstillingerne under »Sikkerhed«, vælg »Kryptering og loginoplysninger« og derefter »Installér et certifikat«. Vælg »CA-certifikat«, og vælg den netop eksporterede certifikatfil.</string>
+    <string name="pref_webserver_certificate_dialog_action">Åbn indstillingerne under »Sikkerhed«</string>
+    <string name="pref_webserver_certificate_failed">Certifikatet kunne ikke gøres klar.</string>
+    <string name="webserver_error_title">Webserveren er ikke startet</string>
+    <string name="webserver_error_resources">Dens filer eller certifikat kunne ikke gøres klar.</string>
+    <string name="webserver_error_address_in_use">En anden app bruger allerede enhedens webporte (80 og 443).</string>
+    <string name="webserver_error_start_failed">Den kunne ikke starte på denne enhed.</string>
+    <string name="pref_webserver_icon">Erstat tom annonceplads med appikonet</string>
 </resources>

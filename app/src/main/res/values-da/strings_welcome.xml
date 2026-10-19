@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_root_missing_title">En rootet Android kræves</string>
+    <string name="welcome_first_step">Guidens første trin</string>
+    <string name="welcome_second_step">Guidens andet trin</string>
+    <string name="welcome_third_step">Guidens tredje trin</string>
+    <string name="welcome_fourth_step">Guidens fjerde trin</string>
+    <string name="welcome_method_header">Velkommen til AdAway!</string>
+    <string name="welcome_method_summary">AdAway tilbyder to metoder til annonceblokering. Vælg den, du foretrækker:</string>
+    <string name="welcome_root_method_title">Root-baseret\nannonceblokering</string>
+    <string name="welcome_root_method_text1">Hurtigere</string>
+    <string name="welcome_root_method_text2">Skåner batteriet</string>
+    <string name="welcome_root_method_text3">Kræver root</string>
+    <string name="welcome_vpn_method_title">VPN-baseret\nannonceblokering</string>
+    <string name="welcome_vpn_method_text1">Langsommere</string>
+    <string name="welcome_vpn_method_text2">Kører i baggrunden</string>
+    <string name="welcome_vpn_method_text3">Kompatibilitet</string>
+    <string name="welcome_root_missing_title">Rootet Android påkrævet</string>
+    <string name="welcome_root_missile_description">Enten kunne su-programmet ikke findes, eller du har ikke givet AdAway root-tilladelse.\n\nDet kan ske, hvis din enhed ikke er rootet. Du kan finde oplysninger om, hvordan du rooter din enhed, på wiki.lineageos.org eller andre Android-websteder.</string>
+    <string name="welcome_vpn_alwayson_title">Altid aktiv VPN er slået til</string>
+    <string name="welcome_vpn_alwayson_description">AdAway har registreret, at en anden VPN har indstillingen »Altid aktiv VPN« slået til.\n\nDet forhindrer AdAway i at anmode om VPN-adgang. Slå »Altid aktiv VPN« fra på den pågældende VPN, og prøv igen.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway kunne ikke anmode om VPN-adgang.\n\nDet kan skyldes, at en anden VPN har indstillingen »Altid aktiv VPN« slået til. Tjek, om en VPN har den indstilling slået til, og slå den fra, før du prøver igen.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Åbn indstillingerne under »VPN«</string>
+    <string name="welcome_method_pro_logo">Fordele</string>
+    <string name="welcome_method_con_logo">Ulemper</string>
+    <string name="welcome_sync_header">Synkroniserer</string>
+    <string name="welcome_synced_header">Synkroniseret!</string>
+    <string name="welcome_sync_summary">AdAway henter fra onlinekilder de annoncenetværk, der skal blokeres. Du kan tilpasse dem senere i indstillingerne.</string>
+    <string name="welcome_sync_retry_logo">Prøv synkronisering igen</string>
+    <string name="welcome_sync_error">Synkroniseringen mislykkedes: %1$s. Vil du prøve igen nu?</string>
+    <string name="welcome_sync_notifications">AdAway kan sende notifikationer, der viser status for annonceblokeringen og lader dig styre den, og som giver besked om appopdateringer (nogle få om året). Slå dem til, hvis du vil holde dig opdateret.</string>
+    <string name="welcome_sync_leave_early_title">Synkroniseringen er ikke færdig endnu</string>
+    <string name="welcome_sync_leave_early_message">Blokeringslisterne er ikke færdige med at blive hentet. Du kan fortsætte nu, så fortsætter hentningen i baggrunden, eller vente her, til den er færdig.</string>
+    <string name="welcome_sync_leave_early_wait">Vent</string>
+    <string name="welcome_sync_leave_early_continue">Fortsæt alligevel</string>
+    <string name="welcome_battery_header">Forbliv beskyttet i baggrunden</string>
+    <string name="welcome_battery_summary">Android kan sætte AdAways VPN på pause i baggrunden for at spare strøm, og det kan i det skjulte stoppe annonceblokeringen. Lad AdAway ignorere batterioptimering, så den bliver ved med at køre.</string>
+    <string name="welcome_battery_action">Tillad</string>
+    <string name="welcome_battery_granted">Tilladt ✓</string>
+    <string name="welcome_battery_footnote_prefix">Du kan altid ændre det senere under</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android-indstillinger</item>
+        <item>Apps</item>
+        <item>AdAway</item>
+        <item>Batteri</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">En ting mere: din telefons egen batteristyring</string>
+    <string name="welcome_oem_battery_summary">Nogle telefonmærker har deres egen batteristyring, som også kan blokere AdAway. Det bør du tjekke på din:</string>
+    <string name="welcome_oem_battery_action">Åbn appinfo</string>
+    <string name="welcome_oem_battery_open_failed">Appinfo kunne ikke åbnes. Åbn den manuelt under Android-indstillinger → Apps → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Det er generelle tip og ikke en nøjagtig vejledning: formuleringer og placering kan variere efter telefonmodel og Android-version.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Appinfo</item>
+        <item>Batteri</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Søg efter noget i retning af »Begrænsninger for baggrundsbrug« › »Apps, der aldrig sover«, og føj AdAway til den liste.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Tjek også, om der er en indstilling som »Automatisk optimering«, og slå »Genstart efter behov« fra, hvis den findes.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Appinfo</item>
+        <item>Batterisparer</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Vælg »Ingen begrænsninger«.</string>
+    <string name="welcome_oem_battery_secondary_miui">Slå også »Autostart« til (»Autostart i baggrunden« i nyere versioner).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Appinfo</item>
+        <item>Batteriforbrug</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Vælg »Tillad aktivitet i baggrunden« (vises nogle gange som »Ingen begrænsninger«).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Se også efter en kontakt til »Automatisk start« for AdAway (ofte under Indstillinger › Apps), så den kan starte sig selv igen efter en tvungen standsning.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Appinfo</item>
+        <item>Batteri</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Find »Appstart«, slå »Administrer automatisk« fra, og slå derefter alle 3 til: »Automatisk start«, »Sekundær start« og »Kør i baggrunden«.</string>
+    <string name="welcome_oem_battery_secondary_emui">Lås også AdAway i oversigten over seneste apps (stryg ned på dens kort, til et hængelåsikon vises).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Appinfo</item>
+        <item>Batteriforbrug</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Find en indstilling for strømforbrug i baggrunden, og vælg »Begræns ikke strømforbrug i baggrunden« (ikke »Smart kontrol«).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Se også efter en indstilling for »Autostart« til AdAway, ofte under Indstillinger › Apps.</string>
+    <string name="welcome_oem_battery_label_generic">Andet mærke</string>
+    <string name="welcome_oem_battery_tip_generic">Se i appinfo efter en indstilling for batteri eller aktivitet i baggrunden, og sørg for, at AdAway ikke er begrænset.</string>
+    <string name="welcome_back_button">Tilbage</string>
+    <string name="welcome_next_button">Næste</string>
+    <string name="welcome_finish_button">Afslut</string>
     <string name="tv_welcome_intro_subtitle">Denne korte guide slår annonceblokering til på denne enhed.</string>
     <string name="tv_welcome_start_button">Kom i gang</string>
     <string name="tv_welcome_method_header">Vælg din blokeringsmetode</string>
     <string name="tv_welcome_method_root_button">Brug root</string>
-    <string name="tv_welcome_method_root_body">Hurtigere og batterivenlig. Kræver en rootet enhed.</string>
+    <string name="tv_welcome_method_root_body">Hurtigere og skånsom mod batteriet. Kræver en rootet enhed.</string>
     <string name="tv_welcome_method_vpn_button">Brug VPN</string>
-    <string name="tv_welcome_method_vpn_body">Fungerer uden root, kompatibel med alle Android TV-enheder.</string>
+    <string name="tv_welcome_method_vpn_body">Virker uden root og er kompatibel med alle Android TV-enheder.</string>
     <string name="tv_welcome_activate_header">Slå annonceblokering til</string>
     <string name="tv_welcome_activate_body">Det er en lokal VPN: den filtrerer annoncer på denne enhed uden at sende din trafik gennem en ekstern server.</string>
 </resources>

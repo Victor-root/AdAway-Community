@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_title">Обновяване на AdAway</string>
-    <string name="update_banner_title">Налична актуализация</string>
+    <string name="update_title">Актуализация на AdAway</string>
+    <string name="update_banner_title">Налична е актуализация</string>
     <string name="update_banner_subtitle">Докоснете, за да инсталирате %1$s</string>
-    <string name="update_up_to_date_header">Ползвате последно издание</string>
-    <string name="update_update_available_header">Налично е ново издание</string>
-    <string name="update_updating_header">Обновяване на AdAway</string>
-    <string name="update_update_button">Обновяване</string>
-    <string name="update_complete_label">Готово</string>
+    <string name="update_up_to_date_header">Имате последната версия</string>
+    <string name="update_update_available_header">Налична е актуализация</string>
+    <string name="update_updating_header">Актуализиране на AdAway</string>
+    <string name="update_update_button">Актуализиране сега</string>
+    <string name="update_complete_label">Завършено</string>
     <string name="update_last_changelog_title">Последни промени</string>
-    <string name="update_new_changelog_title">Дневник на промените</string>
-    <string name="pref_update_check_now_update_available">Налична нова версия: %1$s</string>
+    <string name="update_new_changelog_title">Списък с промените</string>
+    <string name="update_download_failed">Актуализацията не можа да бъде изтеглена.</string>
+    <string name="update_install_failed">Актуализацията не можа да бъде инсталирана.</string>
+    <string name="pref_update_check_now_update_available">Налична е нова версия: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Няма налична актуализация</string>
-    <string name="pref_update_install_summary">Инсталирай версия %1$s</string>
+    <string name="pref_update_check_now_failed">Сървърът за актуализации не може да бъде достигнат</string>
+    <string name="pref_update_install_summary">Инсталиране на версия %1$s</string>
     <string name="notification_channel_app_updates">Актуализации на приложението</string>
-    <string name="notification_channel_app_updates_description">Известие, когато е налична нова версия на приложението. Заглушете този канал, за да скриете известията за актуализация на приложението, без да засягате други известия.</string>
-    <string name="notification_app_update_title">Налице е актуализация на приложението</string>
-    <string name="notification_app_update_text">Нова версия на AdAway е налице за изтегляне.</string>
+    <string name="notification_channel_app_updates_description">Известие, когато е налична нова версия на приложението. Заглушете този канал, за да спрете известията за актуализации на приложението, без това да засяга останалите известия.</string>
+    <string name="notification_app_update_title">Налична е актуализация на приложението</string>
+    <string name="notification_app_update_text">Налична е нова версия на AdAway за изтегляне.</string>
 </resources>

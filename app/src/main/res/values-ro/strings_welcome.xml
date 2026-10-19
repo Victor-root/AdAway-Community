@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Configurator - primul pas</string>
-    <string name="welcome_second_step">Configurator - Pasul 2</string>
-    <string name="welcome_method_header">Bun venit la AdAway!</string>
-    <string name="welcome_method_summary">AdAway dispune de două metode pentru a bloca reclamele. Alege-o pe cea potrivită:</string>
-    <string name="welcome_root_method_title">Blocarea prin root\na reclamelor</string>
-    <string name="welcome_root_method_text1">Rapidă</string>
-    <string name="welcome_root_method_text2">Consum redus al bateriei</string>
-    <string name="welcome_root_method_text3">Acces root necesar</string>
-    <string name="welcome_vpn_method_title">Blocarea prin server VPN\na reclamelor</string>
-    <string name="welcome_vpn_method_text1">Lentă</string>
+    <string name="welcome_first_step">Primul pas al asistentului</string>
+    <string name="welcome_second_step">Al doilea pas al asistentului</string>
+    <string name="welcome_third_step">Al treilea pas al asistentului</string>
+    <string name="welcome_fourth_step">Al patrulea pas al asistentului</string>
+    <string name="welcome_method_header">Bun venit în AdAway!</string>
+    <string name="welcome_method_summary">AdAway oferă două metode de blocare a reclamelor. Alegeți-o pe cea care vi se potrivește:</string>
+    <string name="welcome_root_method_title">Blocare bazată\npe root</string>
+    <string name="welcome_root_method_text1">Mai rapidă</string>
+    <string name="welcome_root_method_text2">Economă cu bateria</string>
+    <string name="welcome_root_method_text3">Necesită root</string>
+    <string name="welcome_vpn_method_title">Blocare bazată\npe VPN</string>
+    <string name="welcome_vpn_method_text1">Mai lentă</string>
     <string name="welcome_vpn_method_text2">Rulează în fundal</string>
     <string name="welcome_vpn_method_text3">Compatibilitate</string>
-    <string name="welcome_root_missing_title">Necesită acces root pe Android</string>
-    <string name="welcome_root_missile_description">Este posibil ca fișierul binar SU să nu fie găsit sau nu ai acordat permisiunea de acces root pentru AdAway.\n\nAcest lucru se poate întâmpla dacă dispozitivul tău nu este root-at. Poți afla mai multe informații despre cum să obții acces root pe dispozitivul tău pe wiki.lineageos.org sau alte site-uri despre Android.</string>
+    <string name="welcome_root_missing_title">Este necesar un Android cu root</string>
+    <string name="welcome_root_missile_description">Fie binarul su nu a putut fi găsit, fie nu ați acordat permisiunea root pentru AdAway.\n\nAcest lucru se poate întâmpla dacă dispozitivul dvs. nu are root. Puteți găsi informații despre cum să obțineți root pe dispozitiv la wiki.lineageos.org sau pe alte site-uri dedicate Android.</string>
+    <string name="welcome_vpn_alwayson_title">VPN permanent activat</string>
+    <string name="welcome_vpn_alwayson_description">AdAway a detectat că un alt VPN are setarea „VPN permanent” activă.\n\nAcest lucru împiedică AdAway să ceară acces VPN. Dezactivați „VPN permanent” pentru celălalt VPN și încercați din nou.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway nu a reușit să ceară acces VPN.\n\nAcest lucru se poate datora faptului că un alt VPN are setarea „VPN permanent” activă. Verificați dacă vreun VPN are această setare activată și dezactivați-o înainte de a încerca din nou.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Deschideți setările „VPN”</string>
     <string name="welcome_method_pro_logo">Pro</string>
     <string name="welcome_method_con_logo">Contra</string>
-    <string name="welcome_sync_header">Sincronizare</string>
+    <string name="welcome_sync_header">Sincronizare în curs</string>
     <string name="welcome_synced_header">Sincronizat!</string>
-    <string name="welcome_sync_summary">AdAway descarcă conținut online din serverele cu reclame pentru a le restricționa. Poți alege ulterior conținutul blocat din setări.</string>
-    <string name="welcome_sync_retry_logo">Reîncearcă sincronizarea</string>
-    <string name="welcome_sync_error">Imposibil de sincronizat: %1$s Reîncercați acum?</string>
+    <string name="welcome_sync_summary">AdAway descarcă din surse online lista rețelelor de reclame de blocat. Le puteți personaliza ulterior din setări.</string>
+    <string name="welcome_sync_retry_logo">Reîncercați sincronizarea</string>
+    <string name="welcome_sync_error">Sincronizarea a eșuat: %1$s Reîncercați acum?</string>
+    <string name="welcome_sync_notifications">Aplicația poate trimite notificări pentru a afișa starea și comenzile blocării reclamelor și pentru a anunța actualizările disponibile (câteva pe an). Activați-le dacă doriți să rămâneți la zi.</string>
+    <string name="welcome_sync_leave_early_title">Sincronizarea nu s-a încheiat încă</string>
+    <string name="welcome_sync_leave_early_message">Listele de blocare nu au terminat de descărcat. Puteți continua acum, iar descărcarea va continua în fundal, sau puteți aștepta aici până se termină.</string>
+    <string name="welcome_sync_leave_early_wait">Așteptați</string>
+    <string name="welcome_sync_leave_early_continue">Continuați oricum</string>
+    <string name="welcome_battery_header">Rămâneți protejat în fundal</string>
+    <string name="welcome_battery_summary">Android poate întrerupe VPN-ul AdAway în fundal pentru a economisi energie, ceea ce poate opri blocarea reclamelor fără niciun avertisment. Permiteți AdAway să ignore optimizarea bateriei pentru a continua să ruleze.</string>
+    <string name="welcome_battery_action">Permiteți</string>
+    <string name="welcome_battery_granted">Permis ✓</string>
+    <string name="welcome_battery_footnote_prefix">Puteți modifica oricând acest lucru din</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Setări</item>
+        <item>Aplicații</item>
+        <item>AdAway</item>
+        <item>Baterie</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Încă un lucru: gestionarul de baterie al telefonului</string>
+    <string name="welcome_oem_battery_summary">Unele mărci de telefoane au propriul gestionar de baterie, care poate bloca și el AdAway. Iată ce să verificați pe telefonul dvs.:</string>
+    <string name="welcome_oem_battery_action">Deschideți informațiile despre aplicație</string>
+    <string name="welcome_oem_battery_open_failed">Ecranul cu informații despre aplicație nu a putut fi deschis. Deschideți-l manual din Setări › Aplicații › AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Acestea sunt indicații generale, nu un ghid exact: denumirile și locul opțiunilor pot varia în funcție de modelul telefonului și de versiunea Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Informații despre aplicație</item>
+        <item>Baterie</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Căutați ceva de genul „Limite de utilizare în fundal” › „Aplicații care nu intră niciodată în repaus”, apoi adăugați AdAway în acea listă.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Verificați și setarea „Optimizare automată” și dezactivați „Repornire când este necesar”, dacă există.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Informații despre aplicație</item>
+        <item>Economisire baterie</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Alegeți „Fără restricții”.</string>
+    <string name="welcome_oem_battery_secondary_miui">Activați și „Pornire automată” („Pornire automată în fundal” în versiunile mai noi).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Informații despre aplicație</item>
+        <item>Utilizare baterie</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Alegeți „Permiteți activitatea în fundal” (uneori afișat ca „Fără restricții”).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Căutați și comutatorul „Lansare automată” pentru AdAway (adesea în Setări › Aplicații), astfel încât aplicația să se poată reporni singură după o oprire forțată.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Informații despre aplicație</item>
+        <item>Baterie</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Căutați „Lansare aplicație”, dezactivați „Gestionare automată”, apoi activați toate cele 3 opțiuni: „Lansare automată”, „Lansare secundară” și „Rulare în fundal”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Blocați și AdAway în ecranul Aplicații recente (glisați în jos pe cardul aplicației până când apare un lacăt).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Informații despre aplicație</item>
+        <item>Utilizare baterie</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Căutați o opțiune de consum în fundal și alegeți „Nu restricționa consumul de energie în fundal” (nu „Control inteligent”).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Căutați și o setare „Pornire automată” pentru AdAway, adesea în Setări › Aplicații.</string>
+    <string name="welcome_oem_battery_label_generic">Altă marcă</string>
+    <string name="welcome_oem_battery_tip_generic">Căutați în informațiile despre aplicație o setare privind bateria sau activitatea în fundal și asigurați-vă că AdAway nu este restricționat.</string>
     <string name="welcome_back_button">Înapoi</string>
-    <string name="welcome_next_button">Următorul</string>
-    <string name="welcome_finish_button">Finalizare</string>
-    <string name="tv_welcome_intro_subtitle">Acest scurt expert va activa blocarea reclamelor pe acest dispozitiv.</string>
-    <string name="tv_welcome_start_button">Începe</string>
-    <string name="tv_welcome_method_header">Alege metoda ta de blocare</string>
-    <string name="tv_welcome_method_root_button">Utilizează root</string>
-    <string name="tv_welcome_method_root_body">Mai rapid și eficient pentru baterie. Necesită un dispozitiv cu root.</string>
-    <string name="tv_welcome_method_vpn_button">Utilizează VPN</string>
-    <string name="tv_welcome_method_vpn_body">Funcționează fără root, compatibil cu orice dispozitiv Android TV.</string>
-    <string name="tv_welcome_activate_header">Activează blocarea reclamelor</string>
-    <string name="tv_welcome_activate_body">Este un VPN local: filtrează reclamele chiar pe acest dispozitiv, fără să direcționeze traficul printr-un server extern.</string>
+    <string name="welcome_next_button">Înainte</string>
+    <string name="welcome_finish_button">Terminați</string>
+    <string name="tv_welcome_intro_subtitle">Acest scurt asistent activează blocarea reclamelor pe acest dispozitiv.</string>
+    <string name="tv_welcome_start_button">Începeți</string>
+    <string name="tv_welcome_method_header">Alegeți metoda de blocare</string>
+    <string name="tv_welcome_method_root_button">Folosiți root</string>
+    <string name="tv_welcome_method_root_body">Mai rapidă și economă cu bateria. Necesită un dispozitiv cu root.</string>
+    <string name="tv_welcome_method_vpn_button">Folosiți VPN</string>
+    <string name="tv_welcome_method_vpn_body">Funcționează fără root, compatibilă cu orice dispozitiv Android TV.</string>
+    <string name="tv_welcome_activate_header">Activați blocarea reclamelor</string>
+    <string name="tv_welcome_activate_body">Este un VPN local: filtrează reclamele pe acest dispozitiv, fără a trece traficul dvs. printr-un server extern.</string>
 </resources>

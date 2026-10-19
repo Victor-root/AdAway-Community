@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">Pornire/oprire înregistrare jurnal</string>
+    <string name="log_start_recording">Apăsați pe înregistrare pentru a începe să notați cererile, navigați pe web sau folosiți aplicații, apoi reveniți sau glisați pentru a reîmprospăta jurnalul.</string>
+    <string name="log_blocked_requests_ignored">\n\nCererile blocate nu vor fi înregistrate. Dezactivați mai întâi blocarea reclamelor dacă doriți să le înregistrați și pe acestea.</string>
     <string name="log_sort">Sortare domenii</string>
-    <string name="log_clear">Șterge log-uri</string>
+    <string name="log_clear">Ștergeți jurnalul</string>
     <string name="log_sort_alphabetical">Sortare alfabetică</string>
-    <string name="log_sort_top_level_domain">Sortare domeniu pe nivel superior</string>
-    <string name="log_block">Adăugare intrare în lista neagră</string>
-    <string name="log_allow">Adăugare intrare în lista albă</string>
-    <string name="log_redirect">Adăugare înregistrare pe lista de redirecționare</string>
+    <string name="log_sort_top_level_domain">Sortare după domeniul de nivel superior</string>
+    <string name="log_block">Adăugați intrarea în lista de blocare</string>
+    <string name="log_allow">Adăugați intrarea în lista de permisiuni</string>
+    <string name="log_redirect">Adăugați intrarea în lista de redirecționare</string>
     <string name="log_redirect_dialog_title">Redirecționare domeniu</string>
-    <string name="log_start_recording_button">Începe înregistrarea</string>
-    <string name="log_start_recording_vpn_inactive">Începe înregistrarea (VPN inactiv)</string>
-    <string name="log_stop_recording">Oprește înregistrarea</string>
+    <string name="log_capture_failed">Captura DNS nu a putut porni.</string>
+    <string name="log_start_recording_button">Începeți înregistrarea</string>
+    <string name="log_start_recording_vpn_inactive">Începeți înregistrarea (VPN inactiv)</string>
+    <string name="log_stop_recording">Opriți înregistrarea</string>
 </resources>

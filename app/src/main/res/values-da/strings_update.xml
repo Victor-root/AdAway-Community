@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_title">Opdatering af AdAway</string>
     <string name="update_banner_title">Opdatering tilgængelig</string>
     <string name="update_banner_subtitle">Tryk for at installere %1$s</string>
-    <string name="update_update_available_header">Opdatering fundet</string>
+    <string name="update_up_to_date_header">Du er opdateret</string>
+    <string name="update_update_available_header">Opdatering tilgængelig</string>
+    <string name="update_updating_header">Opdaterer AdAway</string>
+    <string name="update_update_button">Opdater nu</string>
+    <string name="update_complete_label">Færdig</string>
+    <string name="update_last_changelog_title">Seneste ændringer</string>
+    <string name="update_new_changelog_title">Ændringslog</string>
+    <string name="update_download_failed">Opdateringen kunne ikke hentes.</string>
+    <string name="update_install_failed">Opdateringen kunne ikke installeres.</string>
     <string name="pref_update_check_now_update_available">Ny version tilgængelig: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Ingen opdateringer tilgængelige</string>
-    <string name="pref_update_install_summary">Installer version %1$s</string>
-    <string name="notification_channel_app_updates">App-opdateringer</string>
-    <string name="notification_channel_app_updates_description">Notifikation når en ny version af appen er tilgængelig. Slå denne kanal fra for at skjule notifikationer om app-opdateringer uden at påvirke andre notifikationer.</string>
+    <string name="pref_update_check_now_up_to_date">Ingen opdatering tilgængelig</string>
+    <string name="pref_update_check_now_failed">Opdateringsserveren kunne ikke nås</string>
+    <string name="pref_update_install_summary">Installér version %1$s</string>
+    <string name="notification_channel_app_updates">Appopdateringer</string>
+    <string name="notification_channel_app_updates_description">Notifikation, når der findes en ny version af appen. Slå denne kanal fra for at undgå beskeder om appopdateringer uden at påvirke andre notifikationer.</string>
+    <string name="notification_app_update_title">Appopdatering tilgængelig</string>
+    <string name="notification_app_update_text">En ny version af AdAway kan hentes.</string>
 </resources>

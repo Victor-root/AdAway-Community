@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Adaugă la permise</string>
-    <string name="tv_dialog_add_to_blocked">Adaugă la blocate</string>
-    <string name="tv_dialog_remove_from_allowed">Elimină din permise</string>
-    <string name="tv_dialog_remove_from_blocked">Elimină din blocate</string>
-    <string name="tv_dialog_copy_hostname">Copiază numele domeniului</string>
+    <string name="tv_dialog_add_to_allowed">Adăugați la cele permise</string>
+    <string name="tv_dialog_add_to_blocked">Adăugați la cele blocate</string>
+    <string name="tv_dialog_remove_from_allowed">Eliminați din cele permise</string>
+    <string name="tv_dialog_remove_from_blocked">Eliminați din cele blocate</string>
+    <string name="tv_dialog_copy_hostname">Copiați numele de gazdă</string>
     <string name="tv_log_entry_status_description">Starea domeniului</string>
     <string name="tv_button_theme_light">Mod luminos</string>
     <string name="tv_button_theme_dark">Mod întunecat</string>
-    <string name="tv_lists_empty">Nu există încă intrări în această listă.</string>
+    <string name="tv_lists_empty">Nicio intrare în această listă deocamdată.</string>
     <string name="tv_dialog_search">Căutare</string>
 </resources>

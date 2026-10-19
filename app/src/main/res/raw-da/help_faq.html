@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Indkomst af reklamer</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>Hvad er AdAway Community?</h2>
+<p>AdAway Community er en uofficiel fork af AdAway, den open source-annonceblokering til Android, vedligeholdt af fællesskabet. Den blokerer annoncer og sporere i hele systemet, i alle apps, uden konto og uden egne annoncer. Denne fork har til formål at holde appen pålideligt i gang på moderne Android-versioner og producenternes egne Android-versioner.</p>
 
-<h2>Hvordan virker AdAway?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Hvordan blokerer den annoncer?</h2>
+<p>AdAway virker på en af to måder:</p>
+<p><strong>VPN-tilstand</strong> (kræver ikke root): AdAway kører en lokal VPN på selve enheden, som aldrig sender din trafik andre steder hen. Den ser kun på DNS-forespørgsler og afviser dem, der peger på værtsnavne for annoncer og sporere, mens alt andet slippes igennem. Intet forlader din enhed.</p>
+<p><strong>Root-tilstand</strong>: hvis din enhed er rootet, kan AdAway i stedet skrive en <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts-fil</a> til <code>/system/etc/hosts</code> og lade uønskede værtsnavne pege på <code>127.0.0.1</code>, så de ender hos din egen enhed. På nyere Android kræves et systemless hosts-modul (for eksempel Magisk).</p>
 
-<h2>Hvorfor skal jeg genstarte Android for at ændringerne træder i kraft?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>Hvilke DNS-servere bruger VPN-forbindelsen?</h2>
+<p>I VPN-tilstand slås de værtsnavne, der ikke er blokeret, op via de DNS-servere, du vælger under <cite>Indstillinger › VPN-baseret annonceblokering › DNS-servere</cite>:</p>
+<p><strong>Netværkets DNS-servere</strong> (standard): dit Wi-Fi- eller mobilnetværks egne servere. Hvis netværket ikke angiver nogen, som AdAway kan bruge, falder den tilbage til Cloudflare (<code>1.1.1.1</code>).<br/><strong>Egne DNS-servere</strong>: de IP-adresser, du selv skriver, adskilt af kommaer.<br/><strong>DNS over HTTPS</strong>: forespørgslerne krypteres og sendes til Cloudflare, Google, Quad9 eller den <code>https://</code>-adresse, du angiver, så dit netværk hverken kan læse eller ændre dem.</p>
+<p>Blokeringen virker på samme måde med alle tre. Hvis du vil beholde krypteret DNS, så brug DNS over HTTPS her i stedet for Androids indstilling <cite>Privat DNS</cite>, som omgår AdAway.</p>
 
-<h2>Hvordan bruger jeg webserveren i AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Hvordan blokerer, tillader eller omdirigerer jeg et værtsnavn?</h2>
+<p>Fra startskærmen administrerer du tre lister:</p>
+<p><strong>Blokerede</strong>: værtsnavne, der skal blokeres (annoncer og sporere).<br/><strong>Tilladte</strong>: undtagelser, som aldrig må blokeres, selv om en kilde opfører dem.<br/><strong>Omdirigerede</strong>: værtsnavne, du vil lade pege på en bestemt IP-adresse.</p>
+<p>Du kan også åbne <cite>DNS-log</cite> fra startskærmen for at se, hvilke værtsnavne apps slår op i realtid, og derefter blokere eller tillade dem direkte derfra.</p>
 
-<h2>Hvordan kan jeg blokere/afblokere specifikke hostnavne?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Skal jeg genstarte Android, når jeg har ændret mine lister?</h2>
+<p>Nej. AdAway anvender ændringen med det samme, men en app, der allerede var åben, kan blive ved med at bruge sine gamle forbindelser og sin egen cache. Luk den helt (Gennemtving standsning i appens Android-indstillinger), og ryd dens cache, hvis der stadig vises annoncer. En genstart af Android er kun nødvendig én gang i root-tilstand, efter at du har aktiveret Magisk-modulet systemless hosts.</p>
 
-<h2>Hvor kan jeg finde flere hosts kilder?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>Hvor finder jeg flere hosts-kilder?</h2>
+<p>AdAway leveres med fornuftige standardkilder. Hvis du vil have flere, kan du se fællesskabets <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">liste over ekstra hosts-kilder</a>. Tilføj kun få kilder ad gangen, for meget store eller overlappende lister kan give fejlagtige blokeringer, som får apps til at gå i stykker.</p>
 
-<h2>Hvorfor denne fork eksisterer</h2>
-<p>AdAway er et fantastisk projekt med en lang historie, men upstream-udgivelse og gennemgangsaktivitet har været begrænset i et stykke tid.<br/>Nogle fejl og pull requests har været åbne i lang tid, herunder problemer der påvirker VPN-tilstandens stabilitet på nyere Android-versioner og OEM-ROM'er.<br/>Denne fork eksisterer for at holde projektet brugbart med fællesskabsvedligeholdte rettelser, i stedet for at lade testede forbedringer ligge ubrugte.</p>
+<h2>Hvorfor findes denne fork?</h2>
+<p>AdAway er et fantastisk projekt med en lang historie, men der har i nogen tid været begrænset aktivitet omkring udgivelser og gennemgang i det oprindelige projekt. Nogle fejlrettelser og pull requests er blevet liggende åbne i lang tid, blandt andet fejl, der påvirker VPN-tilstandens stabilitet på nyere Android-versioner og producenternes egne Android-versioner. Denne fork findes for at holde projektet brugbart med rettelser fra fællesskabet i stedet for at lade afprøvede forbedringer ligge ubrugte hen.</p>
 
-<h2>Hjælp med at oversætte/rapportere fejl</h2>
-<p>Gå venligst til <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Hvordan melder jeg en fejl eller foreslår en ændring?</h2>
+<p>Opret en sag i forkens fejlsporing: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. En diagnoselog (se fanen Problemer) er til stor hjælp, når du melder VPN-fejl.</p>
 </body>
 </html>

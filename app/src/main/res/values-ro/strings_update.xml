@@ -2,18 +2,22 @@
 <resources>
     <string name="update_title">Actualizare AdAway</string>
     <string name="update_banner_title">Actualizare disponibilă</string>
-    <string name="update_banner_subtitle">Atinge pentru a instala %1$s</string>
-    <string name="update_up_to_date_header">Aveți ultimele actualizări</string>
+    <string name="update_banner_subtitle">Atingeți pentru a instala %1$s</string>
+    <string name="update_up_to_date_header">Aplicația este la zi</string>
     <string name="update_update_available_header">Actualizare disponibilă</string>
-    <string name="update_updating_header">AdAway se actualizează</string>
-    <string name="update_update_button">Actualizează acum</string>
-    <string name="update_last_changelog_title">Modificări recente:</string>
-    <string name="update_new_changelog_title">Modificări:</string>
+    <string name="update_updating_header">Se actualizează AdAway</string>
+    <string name="update_update_button">Actualizați acum</string>
+    <string name="update_complete_label">Finalizat</string>
+    <string name="update_last_changelog_title">Ultimele modificări</string>
+    <string name="update_new_changelog_title">Jurnal de modificări</string>
+    <string name="update_download_failed">Actualizarea nu a putut fi descărcată.</string>
+    <string name="update_install_failed">Actualizarea nu a putut fi instalată.</string>
     <string name="pref_update_check_now_update_available">Versiune nouă disponibilă: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Nicio actualizare disponibilă</string>
-    <string name="pref_update_install_summary">Instalează versiunea %1$s</string>
-    <string name="notification_channel_app_updates">Actualizări aplicație</string>
-    <string name="notification_channel_app_updates_description">Notificare când este disponibilă o nouă versiune a aplicației. Dezactivează sunetul acestui canal pentru a ascunde alertele de actualizare a aplicației fără a afecta alte notificări.</string>
-    <string name="notification_app_update_title">Este disponibilă o actualizare aplicației</string>
-    <string name="notification_app_update_text">O nouă versiune AdAway este disponibilă pentru descărcare.</string>
+    <string name="pref_update_check_now_failed">Serverul de actualizări nu a putut fi contactat</string>
+    <string name="pref_update_install_summary">Instalați versiunea %1$s</string>
+    <string name="notification_channel_app_updates">Actualizări ale aplicației</string>
+    <string name="notification_channel_app_updates_description">Notificare atunci când este disponibilă o versiune nouă a aplicației. Dezactivați sunetul acestui canal pentru a elimina alertele de actualizare a aplicației, fără a afecta celelalte notificări.</string>
+    <string name="notification_app_update_title">Actualizare a aplicației disponibilă</string>
+    <string name="notification_app_update_text">O versiune nouă a AdAway este disponibilă pentru descărcare.</string>
 </resources>

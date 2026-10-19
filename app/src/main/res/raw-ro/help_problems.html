@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copierea fișierului 'hosts' nereușită pe Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN-ul se oprește singur</h2>
+<p>Aproape întotdeauna, sistemul este cel care oprește serviciul VPN pentru a economisi bateria, nu este vorba de o defecțiune a aplicației. Se întâmplă frecvent pe ROM-urile producătorilor cu gestionare agresivă a energiei (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung și altele).</p>
+<p>În setările Android, găsiți AdAway și: setați <cite>optimizarea bateriei</cite> pe <cite>Fără restricții</cite> (sau <cite>Nu optimizați</cite>), permiteți <cite>pornirea automată</cite>/<cite>lansarea automată</cite> dacă ROM-ul dvs. o oferă și blocați AdAway în lista de aplicații recente, ca să nu fie închis prin glisare. Verificați și dacă opțiunea <cite>Activare la pornire</cite> este activată în setările VPN ale AdAway.</p>
 
-<h2>Spațiu insuficient pe partiție</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Fără internet sau navigare lentă imediat după trecerea între Wi-Fi și date mobile</h2>
+<p>Când rețeaua activă se schimbă, tunelul trebuie reconstruit pentru ca DNS-ul să fie rezolvat din noua rețea. Dacă navigarea rămâne defectă, deschideți <cite>Setări › VPN › Resetați VPN-ul</cite> pentru a reconstrui conexiunea de la zero. Dacă problema se repetă, înregistrați un jurnal de diagnosticare (mai jos) și raportați-o.</p>
 
-<h2>Încă apar reclame în Chrome</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Cum export un jurnal de diagnosticare?</h2>
+<p>Deschideți <cite>Setări › VPN › Jurnal de diagnosticare</cite>. Acesta înregistrează erorile și evenimentele recente ale VPN-ului (schimbări de rețea, reconectări, eșecuri), nu istoricul dvs. de navigare, ci doar evenimente tehnice. Rămâne gol până când activați opțiunea <cite>Înregistrare jurnal de diagnosticare</cite>, chiar deasupra. Folosiți <cite>Copiați</cite> sau <cite>Distribuiți</cite> pentru a-l trimite când raportați o problemă. Sfat: <cite>Ștergeți</cite> mai întâi jurnalul, apoi reproduceți problema, pentru ca jurnalul să fie concentrat pe ea.</p>
 
-<h2>Nu blochează reclamele în aplicația XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome afișează în continuare reclame</h2>
+<p>Chrome poate folosi propriul <cite>DNS securizat</cite> (DNS over HTTPS), care ocolește AdAway. În Chrome, deschideți <cite>Setări › Confidențialitate și securitate › Utilizați DNS securizat</cite> și dezactivați-l. Același lucru este valabil pentru orice setare <cite>DNS privat</cite> a unei aplicații sau a sistemului. În modul VPN, AdAway poate cripta singur DNS-ul: consultați <cite>Ce servere DNS folosește VPN-ul?</cite> din FAQ.</p>
 
-<h2>Cached Advertisements</h2>
-<p>Uneori,aplicatiile salveaza reclamele dupa downloadare. Asta inseamna ca unele aplicatii vor avea reclame ramase nesterse. O solutie este stergerea cache-ului acestor aplicatii din meniul Setari-&gt;Aplicatii.</p>
+<h2>Unele reclame trec în continuare sau o aplicație afișează în continuare reclame</h2>
+<p>Este posibil ca un nume de gazdă să lipsească din sursele dvs. sau ca aplicația să includă reclamele în propriul cod, fără a face vreo cerere. Deschideți <cite>Jurnal DNS</cite> din ecranul principal pentru a vedea ce interoghează aplicația, adăugați numele de gazdă suspecte în lista <cite>Blocate</cite> și verificați că nu se defectează nimic. Unele aplicații păstrează reclamele și în memoria cache după ce le descarcă, așa că ștergerea memoriei cache a aplicației din setările Android poate ajuta.</p>
 
-<h2>Aplicația XYZ nu mai funcționează!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>O aplicație a încetat să funcționeze după activarea AdAway</h2>
+<p>Unele aplicații refuză să funcționeze atunci când un nume de gazdă de care au nevoie este blocat. Folosiți <cite>Jurnal DNS</cite> pentru a afla de ce nume de gazdă are nevoie aplicația, adăugați-l în lista <cite>Permise</cite> și aplicația ar trebui să funcționeze din nou. Aplicațiile problematice cunoscute sunt enumerate <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">aici</a>.</p>
 
-<h2>Nu funcționează pe Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Aplicarea fișierului hosts eșuează (modul root)</h2>
+<p>Versiunile recente de Android folosesc o partiție <code>/system</code> numai în citire, deci AdAway nu poate scrie direct în ea. Dacă folosiți Magisk, activați modulul <cite>systemless hosts</cite>, reporniți dispozitivul și aplicați din nou. Dacă nu folosiți root, treceți în schimb la modul VPN, care nu necesită nicio modificare a sistemului.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>O soluție ar fi activarea serverului web local AdAway din setări.</p>
-
+<h2>Tot nu merge?</h2>
+<p>Raportați problema, cu un jurnal de diagnosticare atașat, la <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>
