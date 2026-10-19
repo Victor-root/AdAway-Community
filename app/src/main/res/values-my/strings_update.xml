@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">AdAway အပ်ဒိတ်</string>
+    <string name="update_banner_title">အပ်ဒိတ် ရရှိနိုင်ပါပြီ</string>
+    <string name="update_banner_subtitle">%1$s ကို ထည့်သွင်းရန် ထိပါ</string>
+    <string name="update_up_to_date_header">သင်သည် နောက်ဆုံးဗားရှင်းကို သုံးနေပါသည်</string>
+    <string name="update_update_available_header">အပ်ဒိတ် ရရှိနိုင်ပါပြီ</string>
+    <string name="update_updating_header">AdAway ကို အပ်ဒိတ်လုပ်နေသည်</string>
+    <string name="update_update_button">ယခု အပ်ဒိတ်လုပ်ရန်</string>
+    <string name="update_complete_label">ပြီးစီးပါပြီ</string>
+    <string name="update_last_changelog_title">နောက်ဆုံးပြောင်းလဲမှုများ</string>
+    <string name="update_new_changelog_title">ပြောင်းလဲမှုမှတ်တမ်း</string>
+    <string name="update_download_failed">အပ်ဒိတ်ကို ဒေါင်းလုဒ်လုပ်၍ မရပါ။</string>
+    <string name="update_install_failed">အပ်ဒိတ်ကို ထည့်သွင်း၍ မရပါ။</string>
+    <string name="pref_update_check_now_update_available">ဗားရှင်းအသစ် ရရှိနိုင်ပါပြီ: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">အပ်ဒိတ် မရှိပါ</string>
+    <string name="pref_update_check_now_failed">အပ်ဒိတ်ဆာဗာကို ဆက်သွယ်၍ မရပါ</string>
+    <string name="pref_update_install_summary">ဗားရှင်း %1$s ကို ထည့်သွင်းရန်</string>
+    <string name="notification_channel_app_updates">အက်ပ်အပ်ဒိတ်များ</string>
+    <string name="notification_channel_app_updates_description">အက်ပ်၏ ဗားရှင်းအသစ် ရရှိနိုင်သည့်အခါ အကြောင်းကြားပါသည်။ အခြားအကြောင်းကြားချက်များကို မထိခိုက်ဘဲ အက်ပ်အပ်ဒိတ်သတိပေးချက်များကို တိတ်ဆိတ်စေရန် ဤချန်နယ်ကို အသံပိတ်ပါ။</string>
+    <string name="notification_app_update_title">အက်ပ်အပ်ဒိတ် ရရှိနိုင်ပါပြီ</string>
+    <string name="notification_app_update_text">AdAway ၏ ဗားရှင်းအသစ်ကို ဒေါင်းလုဒ်လုပ်နိုင်ပါပြီ။</string>
 </resources>

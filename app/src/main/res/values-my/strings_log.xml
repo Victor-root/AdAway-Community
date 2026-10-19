@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">မှတ်တမ်းတင်ခြင်း စတင်ပါ</string>
-    <string name="log_start_recording_vpn_inactive">မှတ်တမ်းတင်ခြင်း စတင်ပါ (VPN မဖွင့်ထား)</string>
-    <string name="log_stop_recording">မှတ်တမ်းတင်ခြင်း ရပ်ပါ</string>
+    <string name="log_toggle_recording_description">မှတ်တမ်းတင်ခြင်းကို ဖွင့်/ပိတ်ရန်</string>
+    <string name="log_start_recording">တောင်းဆိုမှုများကို မှတ်တမ်းတင်ရန် မှတ်တမ်းတင်ခလုတ်ကို နှိပ်ပါ၊ ထို့နောက် ဝဘ်ကို ကြည့်ရှုပါ သို့မဟုတ် အက်ပ်များကို သုံးပါ၊ ပြီးလျှင် နောက်သို့ပြန်သွားပါ သို့မဟုတ် ပွတ်ဆွဲ၍ မှတ်တမ်းများကို ပြန်လည်ဆန်းသစ်ပါ။</string>
+    <string name="log_blocked_requests_ignored">\n\nပိတ်ဆို့ထားသော တောင်းဆိုမှုများကို မှတ်တမ်းတင်မည် မဟုတ်ပါ။ ၎င်းတို့ကိုပါ မှတ်တမ်းတင်လိုပါက ကြော်ငြာပိတ်ဆို့ခြင်းကို အရင်ပိတ်ပါ။</string>
+    <string name="log_sort">ဒိုမိန်းများကို စီရန်</string>
+    <string name="log_clear">မှတ်တမ်းကို ရှင်းလင်းရန်</string>
+    <string name="log_sort_alphabetical">အက္ခရာစဉ်အလိုက် စီရန်</string>
+    <string name="log_sort_top_level_domain">ထိပ်တန်းဒိုမိန်းအလိုက် စီရန်</string>
+    <string name="log_block">ထည့်သွင်းချက်ကို ပိတ်ဆို့စာရင်းသို့ ထည့်ရန်</string>
+    <string name="log_allow">ထည့်သွင်းချက်ကို ခွင့်ပြုစာရင်းသို့ ထည့်ရန်</string>
+    <string name="log_redirect">ထည့်သွင်းချက်ကို ပြန်လွှဲစာရင်းသို့ ထည့်ရန်</string>
+    <string name="log_redirect_dialog_title">ဒိုမိန်းကို ပြန်လွှဲရန်</string>
+    <string name="log_capture_failed">DNS ဖမ်းယူမှုကို စတင်၍ မရပါ။</string>
+    <string name="log_start_recording_button">မှတ်တမ်းတင်ခြင်း စတင်ရန်</string>
+    <string name="log_start_recording_vpn_inactive">မှတ်တမ်းတင်ခြင်း စတင်ရန် (VPN မလည်ပတ်ပါ)</string>
+    <string name="log_stop_recording">မှတ်တမ်းတင်ခြင်း ရပ်ရန်</string>
 </resources>

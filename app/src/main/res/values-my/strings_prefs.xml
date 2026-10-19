@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">စိတ်ကြိုက်ဆက်တင်များ</string>
+    <string name="pref_general_category">ယေဘုယျ</string>
+    <string name="pref_dark_theme">အမှောင်အပြင်အဆင်</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>အလင်း</item>
+        <item>အမှောင်</item>
+        <item>စနစ်၏ မူလအတိုင်း</item>
     </string-array>
-    <string name="pref_vpn_reset">VPN ကို ပြန်လည်သတ်မှတ်ပါ</string>
-    <string name="pref_vpn_reset_description">VPN ချိတ်ဆက်မှုကို အစမှ ပြန်လည်တည်ဆောက်ပါ။ VPN အလုပ်မလုပ်တော့ပါက (အင်တာနက်မရ သို့မဟုတ် DNS အမှားများ) ဤအရာကို သုံးပါ။</string>
+    <string name="pref_update_configuration">အလိုအလျောက် အပ်ဒိတ်များ</string>
+    <string name="pref_language">ဘာသာစကား</string>
+    <string name="pref_language_system">စနစ်ဘာသာစကား</string>
+    <string name="pref_ad_block_category">ကြော်ငြာပိတ်ဆို့ခြင်း</string>
+    <string name="pref_root_ad_blocker_configuration">root အခြေပြု ကြော်ငြာပိတ်ဆို့စနစ်</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN အခြေပြု ကြော်ငြာပိတ်ဆို့စနစ်</string>
+    <string name="pref_enable_ipv6">IPv6 ပံ့ပိုးမှုကို ဖွင့်ရန်</string>
+    <string name="pref_backup_restore">ပိတ်ဆို့စည်းမျဉ်းများကို အရန်ကူးရန် / ပြန်လည်ရယူရန်</string>
+    <string name="pref_backup_restore_title">အရန်ကူးခြင်းနှင့် ပြန်လည်ရယူခြင်း</string>
+    <string name="pref_backup">အရန်ကူးရန်</string>
+    <string name="pref_backup_summary">သင့်ပိတ်ဆို့စည်းမျဉ်းများကို ပြင်ပသိုလှောင်ခန်းသို့ အရန်ကူးပါ</string>
+    <string name="pref_restore">ပြန်လည်ရယူရန်</string>
+    <string name="pref_restore_summary">အရန်ဖိုင်မှ သင့်ပိတ်ဆို့စည်းမျဉ်းများကို ပြန်လည်ရယူပါ</string>
+    <string name="import_success">အရန်ဖိုင်ကို သင့်ပြင်ပသိုလှောင်ခန်းမှ အောင်မြင်စွာ ပြန်လည်ထည့်သွင်းပြီးပါပြီ။</string>
+    <string name="import_failed">အရန်ဖိုင်ကို ပြန်လည်ထည့်သွင်း၍ မရပါ။ ဖိုင်ပုံစံ မှန်ကန်ပါသလား။</string>
+    <string name="export_success">အရန်ဖိုင်ကို သင့်ပြင်ပသိုလှောင်ခန်းရှိ ‘%s’ ဖိုင်သို့ အောင်မြင်စွာ သိမ်းဆည်းပြီးပါပြီ။</string>
+    <string name="export_failed">အရန်ဖိုင် ‘%s’ ကို သိမ်းဆည်း၍ မရပါ။</string>
+    <string name="pref_update_title">အပ်ဒိတ်များ</string>
+    <string name="pref_update_enable_notifications">အကြောင်းကြားချက်များကို ပိတ်ထားသည်</string>
+    <string name="pref_update_enable_notifications_summary">အက်ပ်၏ အကြောင်းကြားချက်များ မပြပါ။ ဖွင့်ရန် ထိပါ။</string>
+    <string name="pref_update_app_category">အက်ပ်အပ်ဒိတ်များ</string>
+    <string name="pref_update_check_app_startup">စတင်သည့်အခါ အပ်ဒိတ်ကို စစ်ဆေးရန်</string>
+    <string name="pref_update_check_app_daily">အပ်ဒိတ်ကို အချိန်ကာလအလိုက် စစ်ဆေးရန်</string>
+    <string name="pref_update_check_now">ယခု စစ်ဆေးရန်</string>
+    <string name="pref_update_install">ယခု အပ်ဒိတ်လုပ်ရန်</string>
+    <string name="pref_update_hosts_category">hosts အပ်ဒိတ်များ</string>
+    <string name="pref_update_check">စတင်သည့်အခါ အပ်ဒိတ်ကို စစ်ဆေးရန်</string>
+    <string name="pref_update_check_hosts_daily">အပ်ဒိတ်ကို အချိန်ကာလအလိုက် စစ်ဆေးရန်</string>
+    <string name="pref_update_sync_on_update">အပ်ဒိတ်ရှိလျှင် ထပ်တူပြုရန်</string>
+    <string name="pref_update_sync_unmetered_only">ဒေတာကန့်သတ်မထားသော ကွန်ရက်တွင်သာ ထပ်တူပြုရန်</string>
+    <string name="pref_vpn_service_on_boot">စတင်သည့်အခါ ဖွင့်ရန်</string>
+    <string name="pref_vpn_service_monitor">ချိတ်ဆက်မှုကို စောင့်ကြည့်ရန်</string>
+    <string name="pref_vpn_service_monitor_description">ချိတ်ဆက်မှု ပြတ်တောက်သွားပါက VPN ကို ပြန်စတင်ရန် ကွန်ရက်အခြေအနေကို အချိန်ကာလအလိုက် စစ်ဆေးပါသည်။</string>
+    <string name="pref_vpn_excluded_apps">ချန်လှပ်ထားသော အက်ပ်များ</string>
+    <string name="pref_vpn_excluded_apps_description">မည်သည့်အက်ပ်များက VPN ကို မသုံးရမည်ကို သတ်မှတ်ပါ။ ထိုအက်ပ်များ၏ ချိတ်ဆက်မှုများကို ပိတ်ဆို့မည် မဟုတ်ပါ။</string>
+    <string name="pref_vpn_exclude_system_apps">စနစ်အက်ပ်များကို ချန်လှပ်ရန်</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>မရှိ</item>
+        <item>ဘရောက်ဇာများမှလွဲ၍ အားလုံး</item>
+        <item>အားလုံး</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS ဆာဗာများ</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>ကွန်ရက်၏ DNS ဆာဗာများ</item>
+        <item>စိတ်ကြိုက် DNS ဆာဗာများ</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">စိတ်ကြိုက် DNS ဆာဗာများ</string>
+    <string name="pref_vpn_dns_custom_summary">IP လိပ်စာများကို ကော်မာ (,) ဖြင့် ခြားပါ</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS ဆာဗာလိပ်စာ မမှန်ကန်ပါ</string>
+    <string name="pref_vpn_doh">DNS over HTTPS ဆာဗာ</string>
+    <string name="pref_vpn_doh_custom">စိတ်ကြိုက်လိပ်စာ</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS လိပ်စာ</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS လိပ်စာ မမှန်ကန်ပါ</string>
+    <string name="pref_vpn_exclude_user_apps">အသုံးပြုသူအက်ပ်များကို ချန်လှပ်ရန်</string>
+    <string name="pref_vpn_exclude_user_apps_activity">ချန်လှပ်ထားသော အက်ပ်များ</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">အားလုံးရွေးရန်</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">ရွေးချယ်မှုအားလုံးကို ဖယ်ရန်</string>
+    <string name="pref_vpn_exclude_user_apps_icon">အက်ပ်သင်္ကေတ</string>
+    <string name="pref_vpn_reset">VPN ကို ပြန်လည်သတ်မှတ်ရန်</string>
+    <string name="pref_vpn_reset_description">VPN ချိတ်ဆက်မှုကို အစမှ ပြန်လည်တည်ဆောက်ပါ။ VPN အလုပ်မလုပ်တော့ပါက (အင်တာနက်မရခြင်း သို့မဟုတ် DNS အမှားများ ဖြစ်ပါက) ဤလုပ်ဆောင်ချက်ကို သုံးပါ။</string>
     <string name="pref_vpn_reset_done">VPN ချိတ်ဆက်မှုကို ပြန်လည်တည်ဆောက်ပြီးပါပြီ။</string>
-    <string name="pref_vpn_reset_not_running">VPN အလုပ်မလုပ်နေပါ။</string>
-    <string name="pref_vpn_diagnostic_log">ပြဿနာစစ်ဆေးရေး မှတ်တမ်း</string>
-    <string name="pref_vpn_diagnostic_log_description">မကြာသေးမီက အမှားများနှင့် VPN ဖြစ်ရပ်များကို ကြည့်ရှု၊ ကူးယူ သို့မဟုတ် မျှဝေပါ။ ပြဿနာတစ်ခု တင်ပြသည့်အခါ အသုံးဝင်သည်။</string>
-    <string name="pref_vpn_diagnostic_log_empty">မည်သည့်ဖြစ်ရပ်မှ မမှတ်တမ်းတင်ရသေးပါ။</string>
-    <string name="pref_vpn_diagnostic_log_share">ပြဿနာစစ်ဆေးရေး မှတ်တမ်းကို မျှဝေပါ</string>
-    <string name="pref_vpn_diagnostic_log_copy">ကူးယူပါ</string>
-    <string name="pref_vpn_diagnostic_log_copied">ပြဿနာစစ်ဆေးရေး မှတ်တမ်းကို clipboard သို့ ကူးယူပြီးပါပြီ။</string>
-    <string name="pref_vpn_diagnostic_log_clear">ပြဿနာစစ်ဆေးရေး မှတ်တမ်းကို ရှင်းလင်းပါ</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">မှတ်တမ်းတင်ထားသော ဖြစ်ရပ်များကို ဖျက်ပါ။ သန့်ရှင်းသော မှတ်တမ်းကို ရယူရန် ပြဿနာကို ပြန်လည်ဖန်တီးမီ ဤအရာကို ပြုလုပ်ပါ။</string>
-    <string name="pref_vpn_diagnostic_log_cleared">ပြဿနာစစ်ဆေးရေး မှတ်တမ်းကို ရှင်းလင်းပြီးပါပြီ။</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_vpn_reset_not_running">VPN မလည်ပတ်နေပါ။</string>
+    <string name="pref_vpn_diagnostic_log_enabled">စစ်ဆေးရေးမှတ်တမ်းကို မှတ်သားရန်</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">ပြဿနာကို ပြန်ဖြစ်စေမီ ဖွင့်ပါ၊ ထို့နောက် အောက်တွင် ထုတ်ယူပါ။ စက်အဟောင်းများတွင် အနည်းငယ် နှေးကွေးစေနိုင်ပါသည်။ နည်းပညာဆိုင်ရာ VPN ဖြစ်ရပ်များကိုသာ မှတ်သားပြီး ဘရောက်ဇင်းမှတ်တမ်း သို့မဟုတ် ကိုယ်ရေးအချက်အလက်ကို ဘယ်တော့မျှ မမှတ်သားပါ။</string>
+    <string name="pref_vpn_diagnostic_log">စစ်ဆေးရေးမှတ်တမ်း</string>
+    <string name="pref_vpn_diagnostic_log_description">မကြာသေးမီက အမှားများနှင့် VPN ဖြစ်ရပ်များကို ကြည့်ရှုရန်၊ ကူးယူရန် သို့မဟုတ် မျှဝေရန် ဖြစ်သည်။ ပြဿနာကို တင်ပြသည့်အခါ အသုံးဝင်ပါသည်။</string>
+    <string name="pref_vpn_diagnostic_log_empty">မည်သည့်ဖြစ်ရပ်ကိုမျှ မှတ်သားရသေးပါ။ အထက်ရှိ “စစ်ဆေးရေးမှတ်တမ်းကို မှတ်သားရန်” ကို ဖွင့်ပြီး ပြဿနာကို ပြန်ဖြစ်စေကြည့်ပါ။</string>
+    <string name="pref_vpn_diagnostic_log_share">မျှဝေရန်</string>
+    <string name="pref_vpn_diagnostic_log_share_title">စစ်ဆေးရေးမှတ်တမ်းကို မျှဝေရန်</string>
+    <string name="pref_vpn_diagnostic_log_copy">ကူးယူရန်</string>
+    <string name="pref_vpn_diagnostic_log_copied">စစ်ဆေးရေးမှတ်တမ်းကို ကလစ်ဘုတ်သို့ ကူးယူပြီးပါပြီ။</string>
+    <string name="pref_vpn_diagnostic_log_clear">စစ်ဆေးရေးမှတ်တမ်းကို ရှင်းလင်းရန်</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">မှတ်သားထားသော ဖြစ်ရပ်များကို ဖျက်ပါ။ သန့်ရှင်းသော မှတ်တမ်းရရန် ပြဿနာကို ပြန်ဖြစ်စေမီ ဤလုပ်ဆောင်ချက်ကို လုပ်ပါ။</string>
+    <string name="pref_vpn_diagnostic_log_cleared">စစ်ဆေးရေးမှတ်တမ်းကို ရှင်းလင်းပြီးပါပြီ။</string>
+    <string name="pref_root_open_hosts">hosts ဖိုင်ကို ဖွင့်ရန်</string>
+    <string name="hosts_file_unreadable">hosts ဖိုင်ကို ဖတ်၍ မရပါ။</string>
+    <string name="pref_hosts_redirection_summary">ပိတ်ဆို့ထားသော hostname များကို ပြန်လွှဲမည့်နေရာကို သတ်မှတ်ပါ</string>
+    <string name="pref_redirection_ipv4">IPv4 ပြန်လွှဲမှုကို ပြင်ဆင်ရန်</string>
+    <string name="pref_redirection_ipv6">IPv6 ပြန်လွှဲမှုကို ပြင်ဆင်ရန်</string>
+    <string name="pref_redirection_invalid">ပြန်လွှဲမှု မမှန်ကန်ပါ</string>
+    <string name="pref_webserver_summary">စက်တွင်းဝက်ဘ်ဆာဗာသည် ပိတ်ဆို့ထားသော hostname တောင်းဆိုမှုများကို ဖြေကြားရန် စက်တွင်း IP လိပ်စာများတွင် နားထောင်နေပါသည်။ ပိတ်ဆို့ထားသော ချိတ်ဆက်မှုကြောင့် အက်ပ်ခဏရပ်တန့်သွားခြင်းကို လျှော့ချပေးနိုင်ပါသည်။</string>
+    <string name="pref_webserver_enabled">ဝက်ဘ်ဆာဗာကို ဖွင့်ရန်</string>
+    <string name="pref_webserver_test">ဝက်ဘ်ဆာဗာကို စမ်းသပ်ရန်</string>
+    <string name="pref_webserver_certificate">ကိုယ်တိုင်လက်မှတ်ထိုးထားသော လက်မှတ်ကို ထည့်သွင်းရန်</string>
+    <string name="pref_webserver_state_not_running">မလည်ပတ်နေပါ</string>
+    <string name="pref_webserver_state_checking">စစ်ဆေးနေသည်…</string>
+    <string name="pref_webserver_state_running_not_installed">လည်ပတ်နေသော်လည်း လက်မှတ်ကို မထည့်သွင်းရသေးပါ</string>
+    <string name="pref_webserver_state_running_and_installed">လည်ပတ်နေပြီး လက်မှတ်ကို ထည့်သွင်းထားသည်</string>
+    <string name="pref_webserver_certificate_dialog_title">လက်မှတ်ကို ကိုယ်တိုင်ထည့်သွင်းခြင်း</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) မှစ၍ အက်ပ်များသည် လက်မှတ်ထုတ်ပေးသူ (CA) လက်မှတ်ကို အလိုအလျောက် ထည့်သွင်း၍ မရတော့ပါ။\n\n“လုံခြုံရေး” ဆက်တင်များသို့ သွားပြီး “ကုဒ်ဝှက်ခြင်းနှင့် အထောက်အထားများ” ထို့နောက် “လက်မှတ်ထည့်သွင်းရန်” ကို ရွေးပါ။ ထိုနေရာတွင် “CA လက်မှတ်” ကို ရွေးပြီး ယခုထုတ်ယူထားသော လက်မှတ်ဖိုင်ကို ရွေးချယ်ပါ။</string>
+    <string name="pref_webserver_certificate_dialog_action">“လုံခြုံရေး” ဆက်တင်များကို ဖွင့်ရန်</string>
+    <string name="pref_webserver_certificate_failed">လက်မှတ်ကို ပြင်ဆင်၍ မရပါ။</string>
+    <string name="webserver_error_title">ဝက်ဘ်ဆာဗာ မစတင်ရသေးပါ</string>
+    <string name="webserver_error_resources">၎င်း၏ ဖိုင်များ သို့မဟုတ် လက်မှတ်ကို ပြင်ဆင်၍ မရပါ။</string>
+    <string name="webserver_error_address_in_use">အခြားအက်ပ်တစ်ခုက စက်၏ ဝက်ဘ်ပေါ့တ်များ (80 နှင့် 443) ကို အသုံးပြုနေပြီး ဖြစ်သည်။</string>
+    <string name="webserver_error_start_failed">ဤစက်တွင် စတင်၍ မရပါ။</string>
+    <string name="pref_webserver_icon">ကြော်ငြာနေရာလွတ်ကို အက်ပ်သင်္ကေတဖြင့် အစားထိုးရန်</string>
 </resources>

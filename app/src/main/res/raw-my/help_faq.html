@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Income by advertisements</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>AdAway Community ဆိုတာ ဘာလဲ။</h2>
+<p>AdAway Community သည် Android အတွက် ပွင့်လင်းရင်းမြစ် ကြော်ငြာပိတ်ဆို့စနစ် AdAway ကို အသိုင်းအဝိုင်းက ထိန်းသိမ်းထားသော၊ တရားဝင်မဟုတ်သည့် fork ဖြစ်ပါသည်။ ၎င်းသည် အကောင့်မလိုဘဲ၊ ကိုယ်ပိုင်ကြော်ငြာလည်း မပါဘဲ အက်ပ်အားလုံးအတွက် စနစ်တစ်ခုလုံးတွင် ကြော်ငြာများနှင့် ခြေရာခံကိရိယာများကို ပိတ်ဆို့ပေးပါသည်။ ဤ fork သည် ခေတ်သစ် Android ဗားရှင်းများနှင့် ထုတ်လုပ်သူ ROM များတွင် အက်ပ်ကို ယုံကြည်စိတ်ချစွာ ဆက်လက်အလုပ်လုပ်စေရေးကို အဓိကထားပါသည်။</p>
 
-<h2>How does AdAway work?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>ကြော်ငြာများကို မည်သို့ ပိတ်ဆို့သနည်း။</h2>
+<p>AdAway သည် မုဒ်နှစ်မျိုးထဲက တစ်မျိုးဖြင့် အလုပ်လုပ်ပါသည်။</p>
+<p><strong>VPN မုဒ်</strong> (root မလိုပါ): AdAway သည် သင့်အသွားအလာကို ဘယ်နေရာသို့မျှ မပို့သော စက်တွင်း VPN တစ်ခုကို လည်ပတ်စေပါသည်။ ၎င်းသည် DNS တောင်းဆိုမှုများကိုသာ စစ်ဆေးပြီး ကြော်ငြာနှင့် ခြေရာခံ hostname များသို့ ညွှန်သည့်အရာများကို ပယ်ချကာ ကျန်အရာအားလုံးကို ဖြတ်သန်းခွင့်ပေးပါသည်။ သင့်စက်မှ ဘာမျှ အပြင်သို့ မထွက်ပါ။</p>
+<p><strong>root မုဒ်</strong>: သင့်စက်ကို root လုပ်ထားပါက AdAway သည် အစားထိုး၍ <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts ဖိုင်</a> တစ်ခုကို <code>/system/etc/hosts</code> သို့ ရေးနိုင်ပြီး မလိုချင်သော hostname များကို <code>127.0.0.1</code> သို့ ချိတ်ဆက်ကာ သင့်စက်ကိုယ်တိုင်သို့ ဖြေရှင်းစေပါသည်။ Android ဗားရှင်းအသစ်များတွင် systemless hosts မော်ဂျူး (ဥပမာ Magisk) လိုအပ်ပါသည်။</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>VPN သည် မည်သည့် DNS ဆာဗာများကို အသုံးပြုသနည်း။</h2>
+<p>VPN မုဒ်တွင် ပိတ်ဆို့မထားသော hostname များကို <cite>စိတ်ကြိုက်ဆက်တင်များ › VPN အခြေပြု ကြော်ငြာပိတ်ဆို့စနစ် › DNS ဆာဗာများ</cite> တွင် သင်ရွေးထားသော DNS ဆာဗာများက ဖြေရှင်းပေးပါသည်။</p>
+<p><strong>ကွန်ရက်၏ DNS ဆာဗာများ</strong> (မူလ): သင့် Wi-Fi သို့မဟုတ် မိုဘိုင်းကွန်ရက်၏ ဆာဗာများ။ AdAway အသုံးပြုနိုင်သည့် ဆာဗာကို ကွန်ရက်က မပေးပါက Cloudflare (<code>1.1.1.1</code>) သို့ ပြောင်းသုံးပါသည်။<br/><strong>စိတ်ကြိုက် DNS ဆာဗာများ</strong>: သင်ထည့်သော IP လိပ်စာများ၊ ကော်မာဖြင့် ခြားထားသည်။<br/><strong>DNS over HTTPS</strong>: တောင်းဆိုမှုများကို ကုဒ်ဝှက်ပြီး Cloudflare၊ Google၊ Quad9 သို့မဟုတ် သင်ထည့်သော <code>https://</code> လိပ်စာသို့ ပို့ပါသည်။ ထို့ကြောင့် သင့်ကွန်ရက်က ၎င်းတို့ကို မဖတ်နိုင်ဘဲ မပြောင်းလဲနိုင်ပါ။</p>
+<p>ပိတ်ဆို့မှုသည် သုံးမျိုးလုံးတွင် အတူတူပင် အလုပ်လုပ်ပါသည်။ ကုဒ်ဝှက်ထားသော DNS ကို ဆက်ထားလိုပါက AdAway ကို ကျော်လွှားသည့် Android ၏ <cite>ပုဂ္ဂလိက DNS</cite> ဆက်တင်အစား ဤနေရာရှိ DNS over HTTPS ကို သုံးပါ။</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>hostname တစ်ခုကို ပိတ်ဆို့ရန်၊ ခွင့်ပြုရန် သို့မဟုတ် ပြန်လွှဲရန် မည်သို့ လုပ်ရမည်နည်း။</h2>
+<p>ပင်မစခရင်မှ စာရင်းသုံးခုကို စီမံနိုင်ပါသည်။</p>
+<p><strong>ပိတ်ဆို့ထားသည်</strong>: ပိတ်ဆို့သင့်သော hostname များ (ကြော်ငြာများနှင့် ခြေရာခံကိရိယာများ)။<br/><strong>ခွင့်ပြုထားသည်</strong>: ရင်းမြစ်က စာရင်းသွင်းထားလျှင်ပင် မည်သည့်အခါမျှ မပိတ်ဆို့စေလိုသော ခြွင်းချက်များ။<br/><strong>ပြန်လွှဲထားသည်</strong>: သီးခြား IP လိပ်စာတစ်ခုသို့ ညွှန်စေလိုသော hostname များ။</p>
+<p>ပင်မစခရင်မှ <cite>DNS မှတ်တမ်း</cite> ကိုလည်း ဖွင့်၍ အက်ပ်များက မည်သည့် hostname များကို အချိန်နှင့်တစ်ပြေးညီ မေးမြန်းနေသည်ကို ကြည့်နိုင်ပြီး ထိုနေရာမှပင် တိုက်ရိုက် ပိတ်ဆို့နိုင်သည် သို့မဟုတ် ခွင့်ပြုနိုင်ပါသည်။</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>စာရင်းများကို ပြောင်းပြီးနောက် Android ကို ပြန်စတင်ရန် လိုပါသလား။</h2>
+<p>မလိုပါ။ AdAway သည် ပြောင်းလဲမှုကို ချက်ချင်း အသုံးပြုသော်လည်း ဖွင့်ထားပြီးသား အက်ပ်သည် ၎င်း၏ ယခင်ချိတ်ဆက်မှုများနှင့် ကိုယ်ပိုင်ကက်ရှ်ကို ဆက်သုံးနေနိုင်ပါသည်။ ၎င်းကို လုံးဝပိတ်ပါ (အက်ပ်၏ Android ဆက်တင်တွင် အတင်းရပ်ရန်)၊ ကြော်ငြာများ ဆက်ပေါ်နေပါက ၎င်း၏ ကက်ရှ်ကိုလည်း ရှင်းလင်းပါ။ Android ကို ပြန်စတင်ရန် လိုအပ်သည်မှာ root မုဒ်တွင် Magisk systemless hosts မော်ဂျူးကို ဖွင့်ပြီးနောက် တစ်ကြိမ်သာ ဖြစ်သည်။</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>hosts ရင်းမြစ် ထပ်မံရှာရန် မည်သည့်နေရာတွင် ရနိုင်သနည်း။</h2>
+<p>AdAway တွင် သင့်တော်သော မူလသတ်မှတ်ချက်များ ပါဝင်ပါသည်။ ပိုလိုချင်ပါက အသိုင်းအဝိုင်းက ထိန်းသိမ်းထားသော <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">ထပ်ဆောင်း hosts ရင်းမြစ်များ စာရင်း</a> ကို ကြည့်ပါ။ ရင်းမြစ်များကို သင့်တင့်သလောက်သာ ထပ်ထည့်ပါ၊ အလွန်ကြီးသော သို့မဟုတ် အချင်းချင်း ထပ်နေသော စာရင်းများသည် အက်ပ်များကို ပျက်စေသည့် မှားယွင်းသော ပိတ်ဆို့မှုများ ဖြစ်စေနိုင်သောကြောင့် ဖြစ်သည်။</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>ဤ fork ကို အဘယ်ကြောင့် ပြုလုပ်ထားသနည်း။</h2>
+<p>AdAway သည် သမိုင်းကြောင်းရှည်လျားသော ကောင်းမွန်သည့် ပရောဂျက်တစ်ခု ဖြစ်သော်လည်း မူလပရောဂျက်၏ ထုတ်ဝေမှုနှင့် ပြန်လည်သုံးသပ်မှု လှုပ်ရှားမှုများမှာ ကာလအတော်ကြာ အကန့်အသတ်ရှိခဲ့ပါသည်။ ခေတ်သစ် Android ဗားရှင်းများနှင့် ထုတ်လုပ်သူ ROM များတွင် VPN မုဒ်၏ တည်ငြိမ်မှုကို ထိခိုက်သည့် ပြဿနာများအပါအဝင် ချို့ယွင်းချက်ပြင်ဆင်မှုများနှင့် pull request အချို့သည် အချိန်ကြာမြင့်စွာ ဖွင့်လျက် ကျန်ခဲ့ပါသည်။ စမ်းသပ်ပြီးသော တိုးတက်မှုများကို အသုံးမပြုဘဲ ထားရှိမည့်အစား အသိုင်းအဝိုင်းက ထိန်းသိမ်းသော ပြင်ဆင်ချက်များဖြင့် ပရောဂျက်ကို ဆက်လက်အသုံးပြုနိုင်စေရန် ဤ fork ကို ပြုလုပ်ထားခြင်း ဖြစ်ပါသည်။</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>ချို့ယွင်းချက်ကို မည်သို့ တင်ပြရမည်နည်း၊ ပြောင်းလဲမှုကို မည်သို့ အကြံပြုရမည်နည်း။</h2>
+<p>ဤ fork ၏ tracker တွင် issue တစ်ခု ဖွင့်ပါ: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>။ VPN ပြဿနာများကို တင်ပြသည့်အခါ စစ်ဆေးရေးမှတ်တမ်း (ပြဿနာများ တက်ဘ်ကို ကြည့်ပါ) သည် အလွန်အထောက်အကူ ဖြစ်ပါသည်။</p>
 </body>
 </html>

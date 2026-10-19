@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">ခွင့်ပြုစာရင်းသို့ ထည့်ပါ</string>
-    <string name="tv_dialog_add_to_blocked">ပိတ်ဆို့စာရင်းသို့ ထည့်ပါ</string>
-    <string name="tv_dialog_remove_from_allowed">ခွင့်ပြုစာရင်းမှ ဖယ်ရှားပါ</string>
-    <string name="tv_dialog_remove_from_blocked">ပိတ်ဆို့စာရင်းမှ ဖယ်ရှားပါ</string>
-    <string name="tv_dialog_copy_hostname">hostname ကို ကူးယူပါ</string>
-    <string name="tv_log_entry_status_description">ဒိုမိန်း အခြေအနေ</string>
-    <string name="tv_button_theme_light">အလင်းရောင်မုဒ်</string>
-    <string name="tv_button_theme_dark">အမှောင်ရောင်မုဒ်</string>
-    <string name="tv_lists_empty">ဒီစာရင်းမှာ အရာဝတ္ထုများ မရှိသေးပါ။</string>
+    <string name="tv_dialog_add_to_allowed">ခွင့်ပြုစာရင်းသို့ ထည့်ရန်</string>
+    <string name="tv_dialog_add_to_blocked">ပိတ်ဆို့စာရင်းသို့ ထည့်ရန်</string>
+    <string name="tv_dialog_remove_from_allowed">ခွင့်ပြုစာရင်းမှ ဖယ်ရှားရန်</string>
+    <string name="tv_dialog_remove_from_blocked">ပိတ်ဆို့စာရင်းမှ ဖယ်ရှားရန်</string>
+    <string name="tv_dialog_copy_hostname">hostname ကူးယူရန်</string>
+    <string name="tv_log_entry_status_description">ဒိုမိန်းအခြေအနေ</string>
+    <string name="tv_button_theme_light">အလင်းမုဒ်</string>
+    <string name="tv_button_theme_dark">အမှောင်မုဒ်</string>
+    <string name="tv_lists_empty">ဤစာရင်းတွင် ထည့်သွင်းချက် မရှိသေးပါ။</string>
     <string name="tv_dialog_search">ရှာဖွေရန်</string>
 </resources>

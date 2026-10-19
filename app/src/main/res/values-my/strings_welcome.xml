@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">ဤတိုတောင်းသောလမ်းညွှန်သည် ဤစက်ပေါ်တွင် ကြော်ငြာပိတ်ဆို့မှုကို ဖွင့်ပေးပါလိမ့်မည်။</string>
+    <string name="welcome_first_step">လမ်းညွှန်၏ ပထမအဆင့်</string>
+    <string name="welcome_second_step">လမ်းညွှန်၏ ဒုတိယအဆင့်</string>
+    <string name="welcome_third_step">လမ်းညွှန်၏ တတိယအဆင့်</string>
+    <string name="welcome_fourth_step">လမ်းညွှန်၏ စတုတ္ထအဆင့်</string>
+    <string name="welcome_method_header">AdAway မှ ကြိုဆိုပါသည်</string>
+    <string name="welcome_method_summary">AdAway တွင် ကြော်ငြာပိတ်ဆို့နည်း နှစ်မျိုး ရှိပါသည်။ သင်နှစ်သက်ရာကို ရွေးပါ။</string>
+    <string name="welcome_root_method_title">root အခြေပြု\nကြော်ငြာပိတ်ဆို့ခြင်း</string>
+    <string name="welcome_root_method_text1">ပိုမြန်သည်</string>
+    <string name="welcome_root_method_text2">ဘက်ထရီသက်သာသည်</string>
+    <string name="welcome_root_method_text3">root လိုအပ်သည်</string>
+    <string name="welcome_vpn_method_title">VPN အခြေပြု\nကြော်ငြာပိတ်ဆို့ခြင်း</string>
+    <string name="welcome_vpn_method_text1">ပိုနှေးသည်</string>
+    <string name="welcome_vpn_method_text2">နောက်ခံတွင် လည်ပတ်သည်</string>
+    <string name="welcome_vpn_method_text3">ကိုက်ညီမှုကောင်းသည်</string>
+    <string name="welcome_root_missing_title">root လုပ်ထားသော Android လိုအပ်ပါသည်</string>
+    <string name="welcome_root_missile_description">su binary ကို ရှာမတွေ့ခြင်း သို့မဟုတ် AdAway အတွက် root ခွင့်ပြုချက်ကို မပေးထားခြင်း ဖြစ်နိုင်ပါသည်။\n\nသင့်စက်ကို root မလုပ်ထားသည့်အခါ ဤသို့ ဖြစ်တတ်ပါသည်။ စက်ကို root လုပ်ပုံအကြောင်း wiki.lineageos.org သို့မဟုတ် အခြား Android ဝက်ဘ်ဆိုက်များတွင် ရှာဖွေနိုင်ပါသည်။</string>
+    <string name="welcome_vpn_alwayson_title">အမြဲတမ်းဖွင့်ထားသော VPN ကို ဖွင့်ထားသည်</string>
+    <string name="welcome_vpn_alwayson_description">အခြား VPN တစ်ခုတွင် “အမြဲတမ်းဖွင့်ထားသော VPN” ဆက်တင်ကို ဖွင့်ထားသည်ကို AdAway က တွေ့ရှိခဲ့ပါသည်။\n\nထိုအချက်ကြောင့် AdAway သည် VPN အသုံးပြုခွင့်ကို တောင်းဆို၍ မရပါ။ သက်ဆိုင်ရာ VPN တွင် “အမြဲတမ်းဖွင့်ထားသော VPN” ကို ပိတ်ပြီး ထပ်မံကြိုးစားပါ။</string>
+    <string name="welcome_vpn_alwayson_blocked_description">VPN အသုံးပြုခွင့်ကို AdAway က တောင်းဆို၍ မအောင်မြင်ပါ။\n\nအခြား VPN တစ်ခုတွင် “အမြဲတမ်းဖွင့်ထားသော VPN” ဆက်တင်ကို ဖွင့်ထားခြင်းကြောင့် ဖြစ်နိုင်ပါသည်။ VPN တစ်ခုခုတွင် ဤဆက်တင်ကို ဖွင့်ထားခြင်း ရှိမရှိ စစ်ဆေးပြီး ပိတ်ကာမှ ထပ်မံကြိုးစားပါ။</string>
+    <string name="welcome_vpn_alwayson_settings_action">“VPN” ဆက်တင်များကို ဖွင့်ရန်</string>
+    <string name="welcome_method_pro_logo">အားသာချက်</string>
+    <string name="welcome_method_con_logo">အားနည်းချက်</string>
+    <string name="welcome_sync_header">ထပ်တူပြုနေသည်</string>
+    <string name="welcome_synced_header">ထပ်တူပြုပြီးပါပြီ</string>
+    <string name="welcome_sync_summary">AdAway သည် ပိတ်ဆို့ရမည့် ကြော်ငြာကွန်ရက်များကို အွန်လိုင်းရင်းမြစ်များမှ ဒေါင်းလုဒ်လုပ်ပါသည်။ ၎င်းတို့ကို နောက်ပိုင်းတွင် ဆက်တင်များ၌ စိတ်ကြိုက်ပြင်ဆင်နိုင်ပါသည်။</string>
+    <string name="welcome_sync_retry_logo">ထပ်တူပြုမှုကို ပြန်စမ်းရန်</string>
+    <string name="welcome_sync_error">ထပ်တူပြု၍ မအောင်မြင်ပါ: %1$s ယခု ပြန်စမ်းမလား။</string>
+    <string name="welcome_sync_notifications">ကြော်ငြာပိတ်ဆို့မှု၏ အခြေအနေနှင့် ထိန်းချုပ်မှုကို ပြရန်နှင့် အက်ပ်အပ်ဒိတ် ရရှိနိုင်ကြောင်း (တစ်နှစ်လျှင် အကြိမ်အနည်းငယ်) အသိပေးရန် အကြောင်းကြားချက်များ ပို့နိုင်ပါသည်။ နောက်ဆုံးအခြေအနေနှင့် အမြဲကိုက်ညီစေလိုပါက ဖွင့်ထားပါ။</string>
+    <string name="welcome_sync_leave_early_title">ထပ်တူပြုမှု မပြီးသေးပါ</string>
+    <string name="welcome_sync_leave_early_message">ပိတ်ဆို့စာရင်းများ ဒေါင်းလုဒ်လုပ်ခြင်း မပြီးသေးပါ။ ယခု ဆက်သွားနိုင်ပြီး နောက်ခံတွင် ဆက်လက်လုပ်ဆောင်သွားမည် ဖြစ်သည်၊ သို့မဟုတ် ပြီးသည်အထိ ဤနေရာတွင် စောင့်နိုင်ပါသည်။</string>
+    <string name="welcome_sync_leave_early_wait">စောင့်ရန်</string>
+    <string name="welcome_sync_leave_early_continue">ဆက်သွားရန်</string>
+    <string name="welcome_battery_header">နောက်ခံတွင် ကာကွယ်မှု ဆက်ရှိနေစေရန်</string>
+    <string name="welcome_battery_summary">ဘက်ထရီချွေတာရန် Android က နောက်ခံရှိ AdAway ၏ VPN ကို ခေတ္တရပ်ထားနိုင်ပြီး ထိုအခါ ကြော်ငြာပိတ်ဆို့မှု ပြောမပြဘဲ ရပ်သွားနိုင်ပါသည်။ AdAway ဆက်လည်ပတ်နေစေရန် ဘက်ထရီ အကောင်းဆုံးပြုလုပ်ခြင်းကို ကျော်လွှားခွင့် ပေးပါ။</string>
+    <string name="welcome_battery_action">ခွင့်ပြုရန်</string>
+    <string name="welcome_battery_granted">ခွင့်ပြုထားသည် ✓</string>
+    <string name="welcome_battery_footnote_prefix">ဤအချက်ကို နောက်မှ အချိန်မရွေး ပြောင်းနိုင်သည့်နေရာ:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android ဆက်တင်များ</item>
+        <item>အက်ပ်များ</item>
+        <item>AdAway</item>
+        <item>ဘက်ထရီ</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">နောက်ထပ်တစ်ခု: သင့်ဖုန်း၏ ကိုယ်ပိုင်ဘက်ထရီစီမံခန့်ခွဲမှု</string>
+    <string name="welcome_oem_battery_summary">ဖုန်းအမှတ်တံဆိပ်အချို့တွင် AdAway ကိုပါ ပိတ်ဆို့နိုင်သော ကိုယ်ပိုင်ဘက်ထရီစီမံခန့်ခွဲမှု ရှိပါသည်။ သင့်ဖုန်းတွင် စစ်ဆေးရမည့်အချက်များမှာ ဤသို့ဖြစ်သည်:</string>
+    <string name="welcome_oem_battery_action">အက်ပ်အချက်အလက်ကို ဖွင့်ရန်</string>
+    <string name="welcome_oem_battery_open_failed">အက်ပ်အချက်အလက် မျက်နှာပြင်ကို မဖွင့်နိုင်ပါ။ Android ဆက်တင်များ → အက်ပ်များ → AdAway မှ ကိုယ်တိုင်ဖွင့်ပါ။</string>
+    <string name="welcome_oem_battery_disclaimer">ဤအချက်များသည် အထွေထွေ လမ်းညွှန်ချက်များသာ ဖြစ်ပြီး အတိအကျ လမ်းညွှန်မဟုတ်ပါ။ ဖုန်းမော်ဒယ်နှင့် Android ဗားရှင်းအလိုက် စကားလုံးနှင့် တည်နေရာ ကွဲပြားနိုင်ပါသည်။</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>အက်ပ်အချက်အလက်</item>
+        <item>ဘက်ထရီ</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">“နောက်ခံအသုံးပြုမှု ကန့်သတ်ချက်များ” › “ဘယ်တော့မျှ အိပ်မပျော်သော အက်ပ်များ” ကဲ့သို့သော အရာကို ရှာပြီး AdAway ကို ထိုစာရင်းသို့ ထည့်ပါ။</string>
+    <string name="welcome_oem_battery_secondary_oneui">“အလိုအလျောက် အကောင်းဆုံးပြုလုပ်ခြင်း” ဆက်တင် ရှိမရှိလည်း စစ်ဆေးပြီး ရှိပါက “လိုအပ်သည့်အခါ ပြန်စတင်ရန်” ကို ပိတ်ပါ။</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>အက်ပ်အချက်အလက်</item>
+        <item>ဘက်ထရီချွေတာမှု</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">“ကန့်သတ်ချက်မရှိ” ကို ရွေးပါ။</string>
+    <string name="welcome_oem_battery_secondary_miui">“အလိုအလျောက်စတင်ခြင်း” (ဗားရှင်းအသစ်များတွင် “နောက်ခံ အလိုအလျောက်စတင်ခြင်း”) ကိုလည်း ဖွင့်ပါ။</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>အက်ပ်အချက်အလက်</item>
+        <item>ဘက်ထရီအသုံးပြုမှု</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">“နောက်ခံလုပ်ဆောင်ချက်ကို ခွင့်ပြုရန်” ကို ရွေးပါ (တစ်ခါတစ်ရံ “ကန့်သတ်ချက်မရှိ” ဟု ပြသည်)။</string>
+    <string name="welcome_oem_battery_secondary_coloros">AdAway အတွက် “အလိုအလျောက်ဖွင့်ခြင်း” ခလုတ်ကိုလည်း ရှာပါ (ဆက်တင်များ › အက်ပ်များ အောက်တွင် မကြာခဏ ရှိသည်)။ ထိုသို့ဖြင့် အတင်းရပ်ပြီးနောက် ကိုယ်တိုင်ပြန်စတင်နိုင်ပါမည်။</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>အက်ပ်အချက်အလက်</item>
+        <item>ဘက်ထရီ</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">“အက်ပ်စတင်ခြင်း” ကို ရှာပြီး “အလိုအလျောက် စီမံရန်” ကို ပိတ်ကာ “အလိုအလျောက်စတင်ခြင်း”၊ “ဒုတိယအဆင့်စတင်ခြင်း” နှင့် “နောက်ခံတွင် လည်ပတ်ခြင်း” ၃ ခုလုံးကို ဖွင့်ပါ။</string>
+    <string name="welcome_oem_battery_secondary_emui">မကြာသေးမီ အက်ပ်များ မျက်နှာပြင်တွင် AdAway ကိုလည်း လော့ခ်ချပါ (သော့ပုံ ပေါ်လာသည်အထိ ၎င်း၏ကတ်ကို အောက်သို့ ဆွဲချပါ)။</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>အက်ပ်အချက်အလက်</item>
+        <item>ဘက်ထရီအသုံးပြုမှု</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">နောက်ခံပါဝါအသုံးပြုမှု ရွေးချယ်စရာကို ရှာပြီး “နောက်ခံပါဝါအသုံးပြုမှုကို မကန့်သတ်ပါနှင့်” ကို ရွေးပါ (“စမတ်ထိန်းချုပ်မှု” မဟုတ်ပါ)။</string>
+    <string name="welcome_oem_battery_secondary_funtouch">AdAway အတွက် “အလိုအလျောက်စတင်ခြင်း” ဆက်တင်ကိုလည်း ရှာပါ။ ၎င်းသည် ဆက်တင်များ › အက်ပ်များ အောက်တွင် မကြာခဏ ရှိပါသည်။</string>
+    <string name="welcome_oem_battery_label_generic">အခြားအမှတ်တံဆိပ်</string>
+    <string name="welcome_oem_battery_tip_generic">အက်ပ်အချက်အလက်တွင် ဘက်ထရီ သို့မဟုတ် နောက်ခံလုပ်ဆောင်ချက် ဆက်တင်ကို ရှာပြီး AdAway ကို ကန့်သတ်မထားကြောင်း သေချာစေပါ။</string>
+    <string name="welcome_back_button">နောက်သို့</string>
+    <string name="welcome_next_button">ရှေ့သို့</string>
+    <string name="welcome_finish_button">ပြီးဆုံးရန်</string>
+    <string name="tv_welcome_intro_subtitle">ဤအတိုချုပ်လမ်းညွှန်သည် ဤစက်တွင် ကြော်ငြာပိတ်ဆို့ခြင်းကို ဖွင့်ပေးပါမည်။</string>
     <string name="tv_welcome_start_button">စတင်ရန်</string>
-    <string name="tv_welcome_method_header">သင့်ပိတ်ဆို့မှုနည်းလမ်းကို ရွေးချယ်ပါ</string>
-    <string name="tv_welcome_method_root_button">root ကို အသုံးပြုပါ</string>
-    <string name="tv_welcome_method_root_body">ပိုမြန်ပြီး ဘက်ထရီ ချွေတာသည်။ root လုပ်ထားသော စက်ပစ္စည်း လိုအပ်သည်။</string>
-    <string name="tv_welcome_method_vpn_button">VPN ကို အသုံးပြုပါ</string>
-    <string name="tv_welcome_method_vpn_body">root မလိုဘဲ အလုပ်လုပ်ပြီး မည်သည့် Android TV စက်ပစ္စည်းနှင့်မဆို လိုက်ဖက်သည်။</string>
-    <string name="tv_welcome_activate_header">ကြော်ငြာပိတ်ဆို့မှုကို ဖွင့်ပါ</string>
-    <string name="tv_welcome_activate_body">၎င်းသည် local VPN တစ်ခုဖြစ်သည်- သင့်ဒေတာကို ပြင်ပဆာဗာမှတစ်ဆင့် မပို့ဘဲ ဤစက်ပေါ်တွင် ကြော်ငြာများကို စစ်ထုတ်ပေးသည်။</string>
+    <string name="tv_welcome_method_header">ပိတ်ဆို့နည်းကို ရွေးပါ</string>
+    <string name="tv_welcome_method_root_button">root သုံးရန်</string>
+    <string name="tv_welcome_method_root_body">ပိုမြန်ပြီး ဘက်ထရီသက်သာသည်။ root လုပ်ထားသော စက် လိုအပ်သည်။</string>
+    <string name="tv_welcome_method_vpn_button">VPN သုံးရန်</string>
+    <string name="tv_welcome_method_vpn_body">root မလိုဘဲ အလုပ်လုပ်ပြီး မည်သည့် Android TV စက်နှင့်မဆို တွဲဖက်သုံးနိုင်သည်။</string>
+    <string name="tv_welcome_activate_header">ကြော်ငြာပိတ်ဆို့ခြင်းကို ဖွင့်ရန်</string>
+    <string name="tv_welcome_activate_body">၎င်းသည် စက်တွင်း VPN ဖြစ်ပါသည်။ ဤစက်ပေါ်တွင်ပင် ကြော်ငြာများကို စစ်ထုတ်ပြီး သင့်အသွားအလာကို ပြင်ပဆာဗာတစ်ခုမှတစ်ဆင့် မဖြတ်စေပါ။</string>
 </resources>
