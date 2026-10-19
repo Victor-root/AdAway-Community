@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_title">AdAway-päivitys</string>
+    <string name="update_title">AdAwayn päivitys</string>
     <string name="update_banner_title">Päivitys saatavilla</string>
-    <string name="update_banner_subtitle">Asenna %1$s napauttamalla</string>
+    <string name="update_banner_subtitle">Napauta asentaaksesi %1$s</string>
     <string name="update_up_to_date_header">Olet ajan tasalla</string>
     <string name="update_update_available_header">Päivitys saatavilla</string>
-    <string name="update_updating_header">Päivitetään AdAwaytä</string>
+    <string name="update_updating_header">Päivitetään AdAwayta</string>
     <string name="update_update_button">Päivitä nyt</string>
+    <string name="update_complete_label">Valmis</string>
     <string name="update_last_changelog_title">Viimeisimmät muutokset</string>
-    <string name="update_new_changelog_title">Muutokset</string>
+    <string name="update_new_changelog_title">Muutosloki</string>
+    <string name="update_download_failed">Päivitystä ei voitu ladata.</string>
+    <string name="update_install_failed">Päivitystä ei voitu asentaa.</string>
     <string name="pref_update_check_now_update_available">Uusi versio saatavilla: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Ei päivityksiä saatavilla</string>
+    <string name="pref_update_check_now_up_to_date">Päivityksiä ei ole saatavilla</string>
+    <string name="pref_update_check_now_failed">Päivityspalvelimeen ei saatu yhteyttä</string>
     <string name="pref_update_install_summary">Asenna versio %1$s</string>
     <string name="notification_channel_app_updates">Sovelluspäivitykset</string>
-    <string name="notification_channel_app_updates_description">Ilmoitus, kun sovelluksen uusi versio on saatavilla. Mykistä tämä kanava piilottaaksesi sovelluspäivitysilmoitukset vaikuttamatta muihin ilmoituksiin.</string>
+    <string name="notification_channel_app_updates_description">Ilmoitus, kun sovelluksesta on saatavilla uusi versio. Mykistä tämä kanava, jos haluat hiljentää sovelluspäivitysten ilmoitukset vaikuttamatta muihin ilmoituksiin.</string>
     <string name="notification_app_update_title">Sovelluspäivitys saatavilla</string>
-    <string name="notification_app_update_text">Uusi AdAway versio ladattavissa</string>
+    <string name="notification_app_update_text">AdAwaystä on ladattavissa uusi versio.</string>
 </resources>

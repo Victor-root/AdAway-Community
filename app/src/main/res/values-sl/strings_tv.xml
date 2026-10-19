@@ -2,12 +2,12 @@
 <resources>
     <string name="tv_dialog_add_to_allowed">Dodaj med dovoljene</string>
     <string name="tv_dialog_add_to_blocked">Dodaj med blokirane</string>
-    <string name="tv_dialog_remove_from_allowed">Odstrani iz dovoljenih</string>
-    <string name="tv_dialog_remove_from_blocked">Odstrani iz blokiranih</string>
+    <string name="tv_dialog_remove_from_allowed">Odstrani izmed dovoljenih</string>
+    <string name="tv_dialog_remove_from_blocked">Odstrani izmed blokiranih</string>
     <string name="tv_dialog_copy_hostname">Kopiraj ime gostitelja</string>
     <string name="tv_log_entry_status_description">Stanje domene</string>
     <string name="tv_button_theme_light">Svetli način</string>
     <string name="tv_button_theme_dark">Temni način</string>
     <string name="tv_lists_empty">Na tem seznamu še ni vnosov.</string>
-    <string name="tv_dialog_search">Iskanje</string>
+    <string name="tv_dialog_search">Išči</string>
 </resources>

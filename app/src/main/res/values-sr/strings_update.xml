@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_title">Ажурирање апликације AdAway</string>
     <string name="update_banner_title">Доступно је ажурирање</string>
-    <string name="update_banner_subtitle">Додирните за инсталацију %1$s</string>
-    <string name="update_update_available_header">Ažuriranje dostupno</string>
-    <string name="pref_update_check_now_update_available">Доступна нова верзија: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Нема доступних ажурирања</string>
+    <string name="update_banner_subtitle">Додирните да инсталирате %1$s</string>
+    <string name="update_up_to_date_header">Имате најновију верзију</string>
+    <string name="update_update_available_header">Доступно је ажурирање</string>
+    <string name="update_updating_header">Ажурирање апликације AdAway</string>
+    <string name="update_update_button">Ажурирај сада</string>
+    <string name="update_complete_label">Завршено</string>
+    <string name="update_last_changelog_title">Последње измене</string>
+    <string name="update_new_changelog_title">Списак измена</string>
+    <string name="update_download_failed">Ажурирање није могло да се преузме.</string>
+    <string name="update_install_failed">Ажурирање није могло да се инсталира.</string>
+    <string name="pref_update_check_now_update_available">Доступна је нова верзија: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Нема доступног ажурирања</string>
+    <string name="pref_update_check_now_failed">Сервер за ажурирање није доступан</string>
     <string name="pref_update_install_summary">Инсталирај верзију %1$s</string>
     <string name="notification_channel_app_updates">Ажурирања апликације</string>
-    <string name="notification_channel_app_updates_description">Обавештење када је доступна нова верзија апликације. Утишајте овај канал да бисте сакрили упозорења о ажурирању апликације без утицаја на друга обавештења.</string>
+    <string name="notification_channel_app_updates_description">Обавештење када је доступна нова верзија апликације. Искључите овај канал да бисте утишали обавештења о ажурирању апликације, а да остала обавештења не буду погођена.</string>
+    <string name="notification_app_update_title">Доступно је ажурирање апликације</string>
+    <string name="notification_app_update_text">Нова верзија апликације AdAway је доступна за преузимање.</string>
 </resources>

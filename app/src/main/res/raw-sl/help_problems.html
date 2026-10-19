@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN se izklopi sam od sebe</h2>
+<p>To je skoraj vedno sistem, ki ustavi storitev VPN, da bi prihranil baterijo, ne pa zrušitev. Pogosto se zgodi v sistemih ROM proizvajalcev z agresivnim upravljanjem porabe (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung in drugi).</p>
+<p>V nastavitvah Androida poiščite AdAway in naredite naslednje: <cite>optimizacijo baterije</cite> nastavite na <cite>Neomejeno</cite> (ali <cite>Ne optimiziraj</cite>), dovolite <cite>samodejni zagon</cite> ali <cite>samodejno zaganjanje</cite>, če ju vaš ROM ima, in AdAway zaklenite na seznamu nedavnih aplikacij, da ga ne odstranite s potegom. Poskrbite tudi, da je v nastavitvah VPN aplikacije AdAway vklopljeno <cite>Omogoči ob zagonu</cite>.</p>
 
-<h2>Na particiji ni dovolj prostora</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Ni interneta ali je brskanje počasno takoj po preklopu med Wi-Fi in mobilnim omrežjem</h2>
+<p>Ko se aktivno omrežje spremeni, je treba tunel zgraditi znova, da se DNS razreši iz novega omrežja. Če brskanje ostane okvarjeno, odprite <cite>Nastavitve › Blokator oglasov na osnovi VPN › Ponastavi VPN</cite>, da povezavo zgradite znova od začetka. Če se to ponavlja, zajemite diagnostični dnevnik (spodaj) in težavo prijavite.</p>
 
-<h2>Ne deluje na Android verziji 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Kako izvozim diagnostični dnevnik?</h2>
+<p>Odprite <cite>Nastavitve › Blokator oglasov na osnovi VPN › Diagnostični dnevnik</cite>. Beleži nedavne napake in dogodke VPN-ja (preklope omrežja, ponovna povezovanja, napake), ne pa vaše zgodovine brskanja, samo tehnične dogodke. Prazen ostane, dokler tik nad njim ne vklopite <cite>Beleži diagnostični dnevnik</cite>. Za pošiljanje ob prijavi težave uporabite <cite>Kopiraj</cite> ali <cite>Deli</cite>. Namig: najprej uporabite <cite>Počisti diagnostični dnevnik</cite>, nato znova sprožite težavo, da bo dnevnik osredotočen.</p>
 
-<h2>Ne blokira oglasov v aplikaciji XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome še vedno prikazuje oglase</h2>
+<p>Chrome lahko uporablja lasten <cite>Varni DNS</cite> (DNS over HTTPS), ki obide AdAway. V Chromu odprite <cite>Nastavitve › Zasebnost in varnost › Uporabi varni DNS</cite> in ga izklopite. Enako velja za vsako aplikacijo ali sistemsko nastavitev <cite>Zasebni DNS</cite>. V načinu VPN lahko AdAway DNS šifrira sam: glejte <cite>Kateri strežniki DNS uporablja VPN?</cite> v pogostih vprašanjih.</p>
 
-<h2>Pomnjeni oglasi</h2>
-<p>Včasih aplikacije pomnijo oglase po prenosu. To vodi k prikazovanju oglasov, kljub blokiranju. Poizkusite lahko z brisanjem pomnilnika teh aplikacij na seznamu aplikacij v nastavitvah naprave.</p>
+<h2>Nekaj oglasov še vedno prehaja ali aplikacija še vedno prikazuje oglase</h2>
+<p>Imena gostitelja morda ni v vaših virih ali pa aplikacija oglase vključuje vase, zato se nobena zahteva ne pošlje. Na začetnem zaslonu odprite <cite>Dnevnik DNS</cite>, da vidite, kaj aplikacija zahteva, sumljiva imena gostiteljev dodajte na seznam <cite>Blokirani</cite> in preverite, da se nič ne pokvari. Nekatere aplikacije oglase po prenosu tudi predpomnijo, zato lahko pomaga, če v nastavitvah Androida počistite predpomnilnik te aplikacije.</p>
 
-<h2>Aplikacije XYZ ne deluje več!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>Aplikacija je po vklopu AdAway prenehala delovati</h2>
+<p>Nekatere aplikacije ne delujejo, če je blokirano ime gostitelja, ki ga potrebujejo. Odprite <cite>Dnevnik DNS</cite>, poiščite, katero ime gostitelja aplikacija potrebuje, ga dodajte na seznam <cite>Dovoljeni</cite> in aplikacija bi morala spet delovati. Znane problematične aplikacije so navedene <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tukaj</a>.</p>
 
-<h2>Gumb za povratek v brskalnikih ne deluje</h2>
-<p>Kot rešitev lahko vključite AdAway lokalni spletni strežnik v nastavitvah.</p>
+<h2>Datoteke hosts ni mogoče uporabiti (način root)</h2>
+<p>Nedavne različice Androida uporabljajo sistemsko particijo <code>/system</code> samo za branje, zato AdAway tja ne more pisati neposredno. Če uporabljate Magisk, omogočite modul <cite>systemless hosts</cite>, znova zaženite napravo in poskusite znova. Če root ne uporabljate, raje preklopite na način VPN, ki ne zahteva sprememb sistema.</p>
 
-<h2>Gumb za povratek v brskalnikih ne deluje</h2>
-<p>Kot rešitev lahko vključite AdAway lokalni spletni strežnik v nastavitvah.</p>
-
+<h2>Se še vedno zatika?</h2>
+<p>Težavo prijavite z dodanim diagnostičnim dnevnikom na <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

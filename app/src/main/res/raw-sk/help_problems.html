@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Kopírovanie súboru hosts na Android 9+ zlyhalo</h2>
-<p>Pre najnovší Android nastavte partíciu <code>/system</code> iba na čítanie.<br>
-Ak používate na root Magisk, overte povolenie modulu systemless hosts a reštartujte.</p>
+<h2>VPN sa vypína sama</h2>
+<p>Takmer vždy ide o systém, ktorý službu VPN ukončí kvôli úspore batérie, nie o pád aplikácie. Býva to bežné pri ROM od výrobcov s agresívnou správou napájania (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung a ďalšie).</p>
+<p>V nastaveniach Androidu nájdite AdAway a upravte tieto položky: <cite>Optimalizácia batérie</cite> nastavte na <cite>Bez obmedzení</cite> (alebo <cite>Neoptimalizovať</cite>), povoľte <cite>Autoštart</cite> alebo <cite>Automatické spustenie</cite>, ak ho vaša ROM ponúka, a zamknite AdAway v zozname nedávnych aplikácií, aby ho neodstránilo potiahnutie. Skontrolujte aj, či je v nastaveniach VPN v AdAway zapnuté <cite>Zapnúť pri spustení</cite>.</p>
 
-<h2>Nedostatok miesta na partícii</h2>
-<p>Skúste zmeniť umiestnenie hosts súboru v nastaveniach na <code>/data/data/hosts</code> (alebo <code>/data/hosts</code>) a povoľte AdAway znova.</p>
+<h2>Žiadny internet alebo pomalé prehliadanie hneď po prepnutí medzi Wi-Fi a mobilnými dátami</h2>
+<p>Keď sa zmení aktívna sieť, musí sa tunel vytvoriť znova, aby sa DNS riešilo z novej siete. Ak prehliadanie naďalej nefunguje, otvorte <cite>Nastavenia › Blokovanie reklám cez VPN › Resetovať VPN</cite> a pripojenie sa vytvorí od začiatku. Ak sa to opakuje, zachyťte diagnostický protokol (pozrite nižšie) a nahláste problém.</p>
 
-<h2>Nefunguje na Android 4.4+</h2>
-<p>V nastaveniach prehliadača Chrome vypnite <cite>zjednodušený režim</cite> (predtým známy ako <cite>šetrič dát</cite>). Táto funkcia umožňuje prehliadaču Chrome používať súkromné riešenie DNS a obchádzať AdAway.</p>
+<h2>Ako exportovať diagnostický protokol?</h2>
+<p>Otvorte <cite>Nastavenia › Blokovanie reklám cez VPN › Diagnostický protokol</cite>. Zaznamenáva nedávne chyby a udalosti VPN (prepnutia siete, opätovné pripojenia, zlyhania), nie vašu históriu prehliadania, iba technické udalosti. Zostane prázdny, kým nezapnete možnosť <cite>Zaznamenávať diagnostický protokol</cite> tesne nad ním. Na odoslanie pri nahlasovaní problému použite <cite>Kopírovať</cite> alebo <cite>Zdieľať</cite>. Tip: najprv použite <cite>Vymazať</cite>, potom problém zopakujte, aby bol protokol prehľadný.</p>
 
-<h2>Neblokuje reklamy v aplikácii XYZ!</h2>
-<p>Niektoré názvy hostiteľov môžu chýbať v poskytnutých súboroch hosts z <cite>Zdroje hosts</cite> alebo aplikácia obsahuje obrázky, ktoré sa zobrazujú ako reklama bez internetu.<br><br>
-DNS požiadavky môžete zaznamenať (Menu-&gt;Zaznamenať DNS požiadavky) v AdAway a nájdené hosts môžu byť blokované.
-<br><br>Podozrivých hostiteľov pridajte na Čiernu listinu dlhým podržaním na položku v zázname a nahláste týchto hostiteľov po overení na našom <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub issue tracker</a>.</p>
+<h2>Chrome stále zobrazuje reklamy</h2>
+<p>Chrome môže používať vlastný <cite>Zabezpečený DNS</cite> (DNS over HTTPS), ktorý AdAway obchádza. V Chrome otvorte <cite>Nastavenia › Ochrana súkromia a zabezpečenie › Používať zabezpečený DNS</cite> a vypnite ho. To isté platí pre akékoľvek nastavenie <cite>Súkromný DNS</cite> v aplikácii alebo v systéme. V režime VPN dokáže AdAway DNS šifrovať sám: pozrite si <cite>Aké servery DNS používa VPN?</cite> v častých otázkach.</p>
 
-<h2>Reklamy vo vyrovnávacej pamäti</h2>
-<p>Niekedy aplikácie ukladajú reklamy do vyrovnávacej pamäti. To niekedy spôsobuje zobrazovanie reklám v niektorých aplikáciách, Môžete skúsiť vymazať vyrovnávaciu pamäť pre tieto aplikácie Nastaveniach - Aplikácie vo vašom zariadení.</p>
+<h2>Niektoré reklamy stále prechádzajú alebo ich aplikácia stále zobrazuje</h2>
+<p>V zdrojoch môže chýbať niektorý názov hostiteľa, alebo aplikácia obsahuje reklamy priamo v sebe, takže sa neodosiela žiadna požiadavka. Na domovskej obrazovke otvorte <cite>Protokol DNS</cite>, pozrite sa, na čo sa aplikácia pýta, pridajte podozrivé názvy hostiteľov do zoznamu <cite>Blokované</cite> a overte, či sa nič nepokazí. Niektoré aplikácie si reklamy po stiahnutí aj ukladajú do medzipamäte, preto môže pomôcť vymazať medzipamäť aplikácie v nastaveniach Androidu.</p>
 
-<h2>Aplikácia XYZ už nefunguje!</h2>
-<p>Niektoré aplikácie potrebujú komunikovať s názvami hostiteľa, ktoré sú blokované v AdAway alebo odmietajú fungovať, ak adresy s reklamami nie sú dosiahnuteľné. Na stránke <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> nájdete zoznam známych aplikácií, ktoré majú s týmto problém. Alebo, zistite adresy, ktoré sú potrebné a pridajte ich na vašu <cite>Bielu listinu</cite> pod <cite>Vaše zoznamy</cite> a nahláste ich na <a href="https://github.com/Victor-root/AdAway-Community/issues">stránke pre hlásenie chýb v AdAway</a>.</p>
+<h2>Aplikácia po zapnutí AdAway prestala fungovať</h2>
+<p>Niektoré aplikácie odmietnu fungovať, ak je zablokovaný názov hostiteľa, ktorý potrebujú. V časti <cite>Protokol DNS</cite> zistite, ktorý názov hostiteľa aplikácia potrebuje, pridajte ho do zoznamu <cite>Povolené</cite> a aplikácia by mala opäť fungovať. Známe problémové aplikácie sú uvedené <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tu</a>.</p>
 
-<h2>Nefunguje na Androide 4.4+</h2>
-<p>Skúste zmeniť umiestnenie hosts súboru v nastaveniach z <code>/data/data/hosts</code> na <code>/data/hosts</code> alebo <code>/system/etc/hosts</code> a povoľte AdAway znova.</p>
+<h2>Použitie súboru hosts zlyháva (režim root)</h2>
+<p>Nové verzie Androidu používajú oddiel <code>/system</code> len na čítanie, takže AdAway do neho nemôže zapisovať priamo. Ak používate Magisk, zapnite modul <cite>systemless hosts</cite>, reštartujte zariadenie a použite zmeny znova. Ak root nepoužívate, prejdite radšej na režim VPN, ktorý systém nijako neupravuje.</p>
 
-<h2>Tlačidlo späť v internetovom prehliadači nefunguje</h2>
-<p>Môžete povoliť <cite>Miestny webserver</cite> v nastaveniach AdAway ako dočasné riešenie.</p>
-
+<h2>Stále si neviete rady?</h2>
+<p>Nahláste problém s priloženým diagnostickým protokolom na <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Dodaj u dozvoljene</string>
-    <string name="tv_dialog_add_to_blocked">Dodaj u blokirane</string>
-    <string name="tv_dialog_remove_from_allowed">Ukloni iz dozvoljenih</string>
-    <string name="tv_dialog_remove_from_blocked">Ukloni iz blokiranih</string>
-    <string name="tv_dialog_copy_hostname">Kopiraj ime hosta</string>
-    <string name="tv_log_entry_status_description">Status domena</string>
-    <string name="tv_button_theme_light">Svetli režim</string>
-    <string name="tv_button_theme_dark">Tamni režim</string>
-    <string name="tv_lists_empty">На овој листи још увек нема ставки.</string>
+    <string name="tv_dialog_add_to_allowed">Додај међу дозвољене</string>
+    <string name="tv_dialog_add_to_blocked">Додај међу блокиране</string>
+    <string name="tv_dialog_remove_from_allowed">Уклони из дозвољених</string>
+    <string name="tv_dialog_remove_from_blocked">Уклони из блокираних</string>
+    <string name="tv_dialog_copy_hostname">Копирај име хоста</string>
+    <string name="tv_log_entry_status_description">Стање домена</string>
+    <string name="tv_button_theme_light">Светли режим</string>
+    <string name="tv_button_theme_dark">Тамни режим</string>
+    <string name="tv_lists_empty">У овој листи још нема ставки.</string>
     <string name="tv_dialog_search">Претражи</string>
 </resources>

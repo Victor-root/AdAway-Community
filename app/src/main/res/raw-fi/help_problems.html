@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN sammuu itsestään</h2>
+<p>Syynä on lähes aina se, että järjestelmä pysäyttää VPN-palvelun akun säästämiseksi, ei sovelluksen kaatuminen. Tämä on tavallista puhelinvalmistajien omissa Android-versioissa, joissa virranhallinta on tiukka (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung ja muut).</p>
+<p>Etsi Androidin asetuksista AdAway ja tee seuraavat asiat: aseta <cite>akun optimointi</cite> tilaan <cite>Rajoittamaton</cite> (tai <cite>Älä optimoi</cite>), salli <cite>automaattinen käynnistys</cite> tai <cite>automaattikäynnistys</cite>, jos puhelimessasi on sellainen, ja lukitse AdAway viimeisimpien sovellusten luettelossa, jotta sitä ei pyyhkäistä pois. Varmista myös, että <cite>Ota käyttöön käynnistyksen yhteydessä</cite> on päällä AdAwayn VPN-asetuksissa.</p>
 
-<h2>Ei tarpeeksi tilaa osiossa</h2>
-<p>Yritä vaihtaa kohde hosts tiedosto asetuksissa <code>/data/data/hosts</code> (tai <code>/data/hosts</code>) tiedostoon ja käynnistä AdAway uudestaan.</p>
+<h2>Ei internetyhteyttä tai selaus on hidasta heti Wi-Fi-verkon ja mobiiliverkon vaihdon jälkeen</h2>
+<p>Kun aktiivinen verkko vaihtuu, tunneli on rakennettava uudelleen, jotta DNS-haut tehdään uuden verkon kautta. Jos selaus ei vieläkään toimi, avaa <cite>Asetukset › VPN-pohjainen mainosten esto › Nollaa VPN</cite>, jolloin yhteys rakennetaan alusta alkaen uudelleen. Jos ongelma toistuu, tallenna diagnostiikkaloki (katso alla) ja ilmoita siitä.</p>
 
-<h2>Ei toimi Android 4.4:stä ylemmillä Android versioilla</h2>
-<p>Yritä vaihtaa kohde hosts tiedosto asetuksissa <code>/data/data/hosts</code> tiedostosta <code>/data/hosts</code> tai<code>system/etc/hosts</code>  ja käynnistä AdAway uudelleen.</p>
+<h2>Miten diagnostiikkaloki viedään?</h2>
+<p>Avaa <cite>Asetukset › VPN-pohjainen mainosten esto › Diagnostiikkaloki</cite>. Se tallentaa viimeisimmät virheet ja VPN-tapahtumat (verkon vaihdot, uudelleenyhdistämiset, virheet), ei selaushistoriaasi, vaan pelkästään teknisiä tapahtumia. Loki pysyy tyhjänä, kunnes otat käyttöön juuri sen yläpuolella olevan asetuksen <cite>Tallenna diagnostiikkaloki</cite>. Lähetä loki ongelmaa ilmoittaessasi painamalla <cite>Kopioi</cite> tai <cite>Jaa</cite>. Vinkki: <cite>Tyhjennä diagnostiikkaloki</cite> ensin ja toista ongelma vasta sitten, jolloin loki sisältää vain olennaisen.</p>
 
-<h2>Se ei estä mainoksia XYZ-sovelluksesta!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome näyttää edelleen mainoksia</h2>
+<p>Chrome voi käyttää omaa <cite>Suojattu DNS</cite> -toimintoaan (DNS over HTTPS), joka ohittaa AdAwayn. Avaa Chromessa <cite>Asetukset › Tietosuoja ja turvallisuus › Käytä suojattua DNS:ää</cite> ja poista se käytöstä. Sama koskee kaikkia sovelluksia ja järjestelmän <cite>Yksityinen DNS</cite> -asetusta. VPN-tilassa AdAway voi salata DNS-liikenteen itse: katso UKK-välilehdeltä kohta <cite>Mitä DNS-palvelimia VPN käyttää?</cite></p>
 
-<h2>Välimuistiin tallennetut mainokset</h2>
-<p>Joskus sovellukset laittavat mainokset välimuistiin lataamisen jälkeen. Siitä johtuen joissakin sovelluksissa näkyy mainoksia. Voit yrittää poistaa näiden sovellusten välimuistin tämän ongelman kiertämiseksi.</p>
+<h2>Osa mainoksista pääsee silti läpi tai sovellus näyttää edelleen mainoksia</h2>
+<p>Isäntänimi voi puuttua lähteistäsi, tai sovellus voi sisältää mainokset itsessään, jolloin verkkopyyntöä ei tehdä lainkaan. Avaa aloitusnäytöstä <cite>DNS-loki</cite>, josta näet, mitä sovellus kysyy, lisää epäilyttävät isäntänimet <cite>Estetyt</cite>-luetteloosi ja tarkista, ettei mikään lakkaa toimimasta. Jotkin sovellukset myös tallentavat mainokset välimuistiin latauksen jälkeen, joten sovelluksen välimuistin tyhjentäminen Androidin asetuksista voi auttaa.</p>
 
-<h2>XYZ-sovellus ei toimi enää!</h2>
-<p>Joidenkin sovellusten tarvitsee kommunikoida AdAwayn estämän palvelimen kanssa tai ne eivät suostu toimimaan, koska palvelimet joista mainosten pitäisi tulla ovat estetty. Katso <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a>  saadaksesi listan tiedetyistä ohjelmista joilla on ongelmia. Muutoin, ota selvää mitkä palvelimet ovat tarpeen ja lisää ne kohtaan <cite>whitelist</cite> alla <cite>Your List</cite> ja ilmoita ne  <a href="https://github.com/Victor-root/AdAway-Community/issues">AdAwayn bug trackerille</a></p>
+<h2>Sovellus lakkasi toimimasta AdAwayn käyttöönoton jälkeen</h2>
+<p>Jotkin sovellukset eivät toimi, jos niiden tarvitsema isäntänimi on estetty. Selvitä <cite>DNS-loki</cite>n avulla, mitä isäntänimeä sovellus tarvitsee, ja lisää se <cite>Sallitut</cite>-luetteloosi, jolloin sovelluksen pitäisi toimia taas. Tunnetut ongelmalliset sovellukset on lueteltu <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">täällä</a>.</p>
 
-<h2>Takaisin-painike selaimissa ei toimi.</h2>
-<p>Voit ottaa asetuksista käyttöön AdAwayn paikallisen web-palvelimen väliaikaisena korjauksena.</p>
+<h2>Hosts-tiedoston käyttöönotto epäonnistuu (root-tila)</h2>
+<p>Uudemmissa Android-versioissa <code>/system</code>-osio on vain luku -tilassa, joten AdAway ei voi kirjoittaa siihen suoraan. Jos käytät Magiskia, ota käyttöön <cite>systemless hosts</cite> -moduuli, käynnistä laite uudelleen ja ota muutokset käyttöön uudelleen. Jos et käytä rootia, siirry VPN-tilaan, joka ei vaadi muutoksia järjestelmään.</p>
 
-<h2>Takaisin-painike selaimissa ei toimi.</h2>
-<p>Voit ottaa asetuksista käyttöön AdAwayn paikallisen web-palvelimen väliaikaisena korjauksena.</p>
-
+<h2>Ongelma ei ratkea?</h2>
+<p>Ilmoita ongelmasta ja liitä mukaan diagnostiikkaloki osoitteessa <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

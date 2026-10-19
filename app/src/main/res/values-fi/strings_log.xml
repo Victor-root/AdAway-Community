@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">Käynnistä tai pysäytä lokin tallennus</string>
+    <string name="log_start_recording">Aloita pyyntöjen kirjaaminen painamalla tallennuspainiketta, selaa verkkoa tai käytä sovelluksia ja palaa sitten takaisin tai pyyhkäise päivittääksesi lokin.</string>
+    <string name="log_blocked_requests_ignored">\n\nEstettyjä pyyntöjä ei kirjata lokiin. Poista mainosten esto ensin käytöstä, jos haluat kirjata myös ne.</string>
+    <string name="log_sort">Lajittele verkkotunnukset</string>
     <string name="log_clear">Tyhjennä loki</string>
+    <string name="log_sort_alphabetical">Aakkosjärjestys</string>
+    <string name="log_sort_top_level_domain">Ylätason verkkotunnuksen mukaan</string>
+    <string name="log_block">Lisää merkintä estettyihin</string>
+    <string name="log_allow">Lisää merkintä sallittuihin</string>
+    <string name="log_redirect">Lisää merkintä uudelleenohjattuihin</string>
+    <string name="log_redirect_dialog_title">Ohjaa verkkotunnus uudelleen</string>
+    <string name="log_capture_failed">DNS-pyyntöjen kaappausta ei voitu aloittaa.</string>
     <string name="log_start_recording_button">Aloita tallennus</string>
-    <string name="log_start_recording_vpn_inactive">Aloita tallennus (VPN ei aktiivinen)</string>
+    <string name="log_start_recording_vpn_inactive">Aloita tallennus (VPN ei ole käytössä)</string>
     <string name="log_stop_recording">Lopeta tallennus</string>
 </resources>

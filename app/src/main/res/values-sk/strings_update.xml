@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="update_title">Aktualizácia AdAway</string>
-    <string name="update_banner_title">K dispozícii je aktualizácia</string>
-    <string name="update_banner_subtitle">Klepnutím nainštalujte %1$s</string>
-    <string name="update_up_to_date_header">Aktualizované</string>
-    <string name="update_update_available_header">Aktualizácia dostupná</string>
-    <string name="update_updating_header">Aktualizovanie AdAway</string>
+    <string name="update_banner_title">Dostupná aktualizácia</string>
+    <string name="update_banner_subtitle">Klepnutím nainštalujete %1$s</string>
+    <string name="update_up_to_date_header">Máte aktuálnu verziu</string>
+    <string name="update_update_available_header">Dostupná aktualizácia</string>
+    <string name="update_updating_header">Aktualizuje sa AdAway</string>
     <string name="update_update_button">Aktualizovať teraz</string>
-    <string name="update_complete_label">Hotovo</string>
+    <string name="update_complete_label">Dokončené</string>
     <string name="update_last_changelog_title">Posledné zmeny</string>
     <string name="update_new_changelog_title">Zoznam zmien</string>
-    <string name="pref_update_check_now_update_available">K dispozícii je nová verzia: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Žiadna aktualizácia nie je k dispozícii</string>
+    <string name="update_download_failed">Aktualizáciu sa nepodarilo stiahnuť.</string>
+    <string name="update_install_failed">Aktualizáciu sa nepodarilo nainštalovať.</string>
+    <string name="pref_update_check_now_update_available">Dostupná nová verzia: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nie je dostupná žiadna aktualizácia</string>
+    <string name="pref_update_check_now_failed">Server aktualizácií sa nepodarilo kontaktovať</string>
     <string name="pref_update_install_summary">Nainštalovať verziu %1$s</string>
     <string name="notification_channel_app_updates">Aktualizácie aplikácie</string>
-    <string name="notification_channel_app_updates_description">Oznámenie o novej verzii aplikácie. Stlmte tento kanál, aby ste skryli upozornenia na aktualizácie aplikácie bez ovplyvnenia ostatných oznámení.</string>
-    <string name="notification_app_update_title">Je dostupná aktualizácia aplikácie</string>
-    <string name="notification_app_update_text">Nová verzia AdAway je dostupná na stiahnutie.</string>
+    <string name="notification_channel_app_updates_description">Upozornenie, keď je dostupná nová verzia aplikácie. Stlmením tohto kanála vypnete upozornenia na aktualizácie aplikácie bez vplyvu na ostatné upozornenia.</string>
+    <string name="notification_app_update_title">Dostupná aktualizácia aplikácie</string>
+    <string name="notification_app_update_text">Je dostupná na stiahnutie nová verzia AdAway.</string>
 </resources>

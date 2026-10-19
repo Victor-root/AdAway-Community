@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Prepnúť zaznamenávanie logu</string>
-    <string name="log_start_recording">Stlačením tlačidla záznamu spustite zaznamenávanie požiadaviek, prehliadania webu alebo používaných aplikácií, a potom sa vráťte späť alebo potiahnutím obnovte logy.</string>
-    <string name="log_blocked_requests_ignored">\n\nBlokované požiadavky nebudú zaznamenané. Najprv zakážte blokovanie, ak ich chcete zahrnúť do logu.</string>
+    <string name="log_toggle_recording_description">Prepnúť zaznamenávanie protokolu</string>
+    <string name="log_start_recording">Stlačením záznamu spustíte zaznamenávanie požiadaviek. Prehliadajte web alebo používajte aplikácie a potom sa vráťte späť alebo potiahnutím obnovte protokol.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokované požiadavky sa nezaznamenávajú. Ak chcete zaznamenávať aj tie, najprv vypnite blokovanie reklám.</string>
     <string name="log_sort">Zoradiť domény</string>
-    <string name="log_clear">Vymazať záznam</string>
-    <string name="log_sort_alphabetical">Zoradenie podľa abecedy</string>
+    <string name="log_clear">Vymazať protokol</string>
+    <string name="log_sort_alphabetical">Abecedné zoradenie</string>
     <string name="log_sort_top_level_domain">Zoradenie podľa domény najvyššej úrovne</string>
-    <string name="log_block">Pridať položku do čiernej listiny</string>
-    <string name="log_allow">Pridať položku do bielej listiny</string>
-    <string name="log_redirect">Pridať položku do zoznamu presmerovaných</string>
+    <string name="log_block">Pridať záznam do zoznamu blokovaných</string>
+    <string name="log_allow">Pridať záznam do zoznamu povolených</string>
+    <string name="log_redirect">Pridať záznam do zoznamu presmerovaných</string>
     <string name="log_redirect_dialog_title">Presmerovať doménu</string>
+    <string name="log_capture_failed">Zachytávanie DNS sa nepodarilo spustiť.</string>
     <string name="log_start_recording_button">Spustiť záznam</string>
     <string name="log_start_recording_vpn_inactive">Spustiť záznam (VPN nie je aktívna)</string>
     <string name="log_stop_recording">Zastaviť záznam</string>

@@ -1,26 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Podešavanja</string>
+    <string name="pref_main_title">Подешавања</string>
+    <string name="pref_general_category">Опште</string>
+    <string name="pref_dark_theme">Тамна тема</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Светла</item>
+        <item>Тамна</item>
+        <item>Подразумевано за систем</item>
+    </string-array>
+    <string name="pref_update_configuration">Аутоматска ажурирања</string>
+    <string name="pref_language">Језик</string>
+    <string name="pref_language_system">Језик система</string>
+    <string name="pref_ad_block_category">Блокирање огласа</string>
+    <string name="pref_root_ad_blocker_configuration">Блокатор огласа преко root приступа</string>
+    <string name="pref_vpn_ad_blocker_configuration">Блокатор огласа преко VPN-а</string>
+    <string name="pref_enable_ipv6">Омогући подршку за IPv6</string>
+    <string name="pref_backup_restore">Резервна копија и враћање правила блокирања</string>
+    <string name="pref_backup_restore_title">Резервна копија и враћање</string>
+    <string name="pref_backup">Резервна копија</string>
+    <string name="pref_backup_summary">Сачувајте правила блокирања на спољну меморију</string>
+    <string name="pref_restore">Врати</string>
+    <string name="pref_restore_summary">Вратите правила блокирања из датотеке резервне копије</string>
+    <string name="import_success">Резервна копија је успешно увезена са спољне меморије.</string>
+    <string name="import_failed">Увоз резервне копије није успео. Да ли је њен формат исправан?</string>
+    <string name="export_success">Резервна копија је успешно извезена у датотеку „%s“ на спољној меморији.</string>
+    <string name="export_failed">Извоз резервне копије у датотеку „%s“ није успео.</string>
+    <string name="pref_update_title">Ажурирања</string>
+    <string name="pref_update_enable_notifications">Обавештења су искључена</string>
+    <string name="pref_update_enable_notifications_summary">Обавештења апликације се неће приказивати. Додирните да их укључите.</string>
+    <string name="pref_update_app_category">Ажурирања апликације</string>
+    <string name="pref_update_check_app_startup">Провери ажурирање при покретању</string>
+    <string name="pref_update_check_app_daily">Периодично проверавај ажурирања</string>
     <string name="pref_update_check_now">Провери сада</string>
     <string name="pref_update_install">Ажурирај сада</string>
+    <string name="pref_update_hosts_category">Ажурирања hosts извора</string>
+    <string name="pref_update_check">Провери ажурирање при покретању</string>
+    <string name="pref_update_check_hosts_daily">Периодично проверавај ажурирања</string>
+    <string name="pref_update_sync_on_update">Синхронизуј при ажурирању</string>
+    <string name="pref_update_sync_unmetered_only">Синхронизуј само на мрежи без ограничења података</string>
+    <string name="pref_vpn_service_on_boot">Омогући при покретању</string>
+    <string name="pref_vpn_service_monitor">Надгледај везу</string>
+    <string name="pref_vpn_service_monitor_description">Периодично проверава стање мреже да би поново покренуо VPN након прекида везе.</string>
+    <string name="pref_vpn_excluded_apps">Изузете апликације</string>
+    <string name="pref_vpn_excluded_apps_description">Подесите које апликације не треба да користе VPN, тако да њихове везе неће бити блокиране.</string>
+    <string name="pref_vpn_exclude_system_apps">Изузми системске апликације</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+        <item>Ниједна</item>
+        <item>Све осим прегледача</item>
+        <item>Све</item>
     </string-array>
-    <string name="pref_vpn_reset">Resetuj VPN</string>
-    <string name="pref_vpn_reset_description">Ponovo izgradite VPN vezu od nule. Koristite ovo ako VPN prestane da radi (nema pristupa internetu ili postoje DNS greške).</string>
-    <string name="pref_vpn_reset_done">VPN veza je ponovo uspostavljena.</string>
-    <string name="pref_vpn_reset_not_running">VPN nije pokrenut.</string>
-    <string name="pref_vpn_diagnostic_log">Dijagnostički dnevnik</string>
-    <string name="pref_vpn_diagnostic_log_description">Pregledajte, kopirajte ili delite nedavne greške i VPN događaje. Korisno prilikom prijave problema.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Još nije zabeležen nijedan događaj.</string>
-    <string name="pref_vpn_diagnostic_log_share">Podeli dijagnostički dnevnik</string>
-    <string name="pref_vpn_diagnostic_log_copy">Kopiraj</string>
-    <string name="pref_vpn_diagnostic_log_copied">Dijagnostički dnevnik je kopiran u privremenu memoriju.</string>
-    <string name="pref_vpn_diagnostic_log_clear">Obriši dijagnostički dnevnik</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Izbrišite zabeležene događaje. Uradite ovo pre nego što reprodukujete problem da biste snimili čist trag.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Dijagnostički dnevnik je obrisan.</string>
-    <string name="pref_root_open_hosts">Otvori host-ove fajlove</string>
-    <string name="pref_webserver_enabled">Omogući webserver</string>
+    <string name="pref_vpn_dns">DNS сервери</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>DNS сервери мреже</item>
+        <item>Прилагођени DNS сервери</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Прилагођени DNS сервери</string>
+    <string name="pref_vpn_dns_custom_summary">IP адресе, раздвојене зарезима</string>
+    <string name="pref_vpn_dns_custom_invalid">Неисправна адреса DNS сервера</string>
+    <string name="pref_vpn_doh">DNS over HTTPS сервер</string>
+    <string name="pref_vpn_doh_custom">Прилагођена адреса</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS адреса</string>
+    <string name="pref_vpn_doh_invalid">Неисправна DNS over HTTPS адреса</string>
+    <string name="pref_vpn_exclude_user_apps">Изузми корисничке апликације</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Изузете апликације</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Изабери све</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Поништи избор</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Икона апликације</string>
+    <string name="pref_vpn_reset">Ресетуј VPN</string>
+    <string name="pref_vpn_reset_description">Поново изграђује VPN везу од почетка. Користите ово ако VPN престане да ради (нема приступа интернету или се јављају DNS грешке).</string>
+    <string name="pref_vpn_reset_done">VPN веза је поново изграђена.</string>
+    <string name="pref_vpn_reset_not_running">VPN није покренут.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Бележи дијагностички дневник</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Укључите пре него што поновите проблем, а затим га извезите испод. Може благо успорити старије уређаје. Бележе се само технички VPN догађаји, никада историја прегледања ни лични подаци.</string>
+    <string name="pref_vpn_diagnostic_log">Дијагностички дневник</string>
+    <string name="pref_vpn_diagnostic_log_description">Прегледајте, копирајте или поделите недавне грешке и VPN догађаје. Корисно при пријави проблема.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Још ниједан догађај није забележен. Укључите „Бележи дијагностички дневник“ изнад, а затим покушајте да поновите проблем.</string>
+    <string name="pref_vpn_diagnostic_log_share">Подели</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Подели дијагностички дневник</string>
+    <string name="pref_vpn_diagnostic_log_copy">Копирај</string>
+    <string name="pref_vpn_diagnostic_log_copied">Дијагностички дневник је копиран у привремену меморију.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Обриши дијагностички дневник</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Брише забележене догађаје. Урадите то пре понављања проблема да бисте добили чист запис.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Дијагностички дневник је обрисан.</string>
+    <string name="pref_root_open_hosts">Отвори датотеку hosts</string>
+    <string name="hosts_file_unreadable">Датотеку hosts није могуће прочитати.</string>
+    <string name="pref_hosts_redirection_summary">Одредите на коју адресу се преусмеравају блокирани хостови</string>
+    <string name="pref_redirection_ipv4">Подеси IPv4 преусмеравање</string>
+    <string name="pref_redirection_ipv6">Подеси IPv6 преусмеравање</string>
+    <string name="pref_redirection_invalid">Неисправно преусмеравање</string>
+    <string name="pref_webserver_summary">Локални веб сервер ослушкује на локалним IP адресама и одговара на захтеве за блокиране хостове. Може помоћи ако се апликације замрзавају због блокиране везе.</string>
+    <string name="pref_webserver_enabled">Омогући веб сервер</string>
+    <string name="pref_webserver_test">Тестирај веб сервер</string>
+    <string name="pref_webserver_certificate">Инсталирај самопотписани сертификат</string>
+    <string name="pref_webserver_state_not_running">Не ради</string>
+    <string name="pref_webserver_state_checking">Провера…</string>
+    <string name="pref_webserver_state_running_not_installed">Ради, али сертификат није инсталиран</string>
+    <string name="pref_webserver_state_running_and_installed">Ради и сертификат је инсталиран</string>
+    <string name="pref_webserver_certificate_dialog_title">Ручна инсталација сертификата</string>
+    <string name="pref_webserver_certificate_dialog_content">Почев од верзије Android 11 (R), апликације више не могу аутоматски да инсталирају сертификациона тела (CA).\n\nОтворите подешавања „Безбедност“, затим „Шифровање и акредитиви“ и „Инсталирај сертификат“. Ту изаберите „CA сертификат“ и означите управо извезену датотеку сертификата.</string>
+    <string name="pref_webserver_certificate_dialog_action">Отвори подешавања „Безбедност“</string>
+    <string name="pref_webserver_certificate_failed">Сертификат није могуће припремити.</string>
+    <string name="webserver_error_title">Веб сервер није покренут</string>
+    <string name="webserver_error_resources">Његове датотеке или сертификат није могуће припремити.</string>
+    <string name="webserver_error_address_in_use">Друга апликација већ користи веб портове (80 и 443) на уређају.</string>
+    <string name="webserver_error_start_failed">Није могао да се покрене на овом уређају.</string>
+    <string name="pref_webserver_icon">Замени празан простор за оглас иконом апликације</string>
 </resources>

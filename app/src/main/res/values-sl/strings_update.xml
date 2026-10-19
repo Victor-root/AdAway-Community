@@ -2,18 +2,22 @@
 <resources>
     <string name="update_title">Posodobitev AdAway</string>
     <string name="update_banner_title">Na voljo je posodobitev</string>
-    <string name="update_banner_subtitle">Tapnite za namestitev %1$s</string>
-    <string name="update_up_to_date_header">Ste na tekočem</string>
-    <string name="update_update_available_header">Na voljo je nova posodobitev</string>
+    <string name="update_banner_subtitle">Dotaknite se za namestitev različice %1$s</string>
+    <string name="update_up_to_date_header">Imate najnovejšo različico</string>
+    <string name="update_update_available_header">Na voljo je posodobitev</string>
     <string name="update_updating_header">Posodabljanje AdAway</string>
     <string name="update_update_button">Posodobi zdaj</string>
+    <string name="update_complete_label">Končano</string>
     <string name="update_last_changelog_title">Zadnje spremembe</string>
     <string name="update_new_changelog_title">Dnevnik sprememb</string>
+    <string name="update_download_failed">Posodobitve ni bilo mogoče prenesti.</string>
+    <string name="update_install_failed">Posodobitve ni bilo mogoče namestiti.</string>
     <string name="pref_update_check_now_update_available">Na voljo je nova različica: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Posodobitev ni na voljo</string>
+    <string name="pref_update_check_now_failed">Strežnika za posodobitve ni bilo mogoče doseči</string>
     <string name="pref_update_install_summary">Namesti različico %1$s</string>
     <string name="notification_channel_app_updates">Posodobitve aplikacije</string>
-    <string name="notification_channel_app_updates_description">Obvestilo, ko je na voljo nova različica aplikacije. Utišajte ta kanal, da skrijete opozorila o posodobitvi aplikacije, ne da bi vplivali na druga obvestila.</string>
+    <string name="notification_channel_app_updates_description">Obvestilo, ko je na voljo nova različica aplikacije. Utišajte ta kanal, če želite utišati opozorila o posodobitvah aplikacije, ne da bi to vplivalo na druga obvestila.</string>
     <string name="notification_app_update_title">Na voljo je posodobitev aplikacije</string>
-    <string name="notification_app_update_text">Nova različica AdAway je na voljo za prenos.</string>
+    <string name="notification_app_update_text">Na voljo je za prenos nova različica AdAway.</string>
 </resources>

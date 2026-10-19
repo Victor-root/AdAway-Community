@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Započni snimanje</string>
-    <string name="log_start_recording_vpn_inactive">Započni snimanje (VPN nije aktivan)</string>
-    <string name="log_stop_recording">Zaustavi snimanje</string>
+    <string name="log_toggle_recording_description">Укључи или искључи снимање дневника</string>
+    <string name="log_start_recording">Притисните дугме за снимање да бисте започели бележење захтева, прегледајте веб или користите апликације, а затим се вратите или превуците прстом да бисте освежили дневник.</string>
+    <string name="log_blocked_requests_ignored">\n\nБлокирани захтеви се неће бележити. Ако желите да се бележе и они, прво искључите блокирање огласа.</string>
+    <string name="log_sort">Сортирај домене</string>
+    <string name="log_clear">Обриши дневник</string>
+    <string name="log_sort_alphabetical">Азбучно сортирање</string>
+    <string name="log_sort_top_level_domain">Сортирање по домену највишег нивоа</string>
+    <string name="log_block">Додај ставку на листу блокираних</string>
+    <string name="log_allow">Додај ставку на листу дозвољених</string>
+    <string name="log_redirect">Додај ставку на листу преусмерених</string>
+    <string name="log_redirect_dialog_title">Преусмери домен</string>
+    <string name="log_capture_failed">DNS снимање није могло да почне.</string>
+    <string name="log_start_recording_button">Започни снимање</string>
+    <string name="log_start_recording_vpn_inactive">Започни снимање (VPN није активан)</string>
+    <string name="log_stop_recording">Заустави снимање</string>
 </resources>

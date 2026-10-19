@@ -2,62 +2,108 @@
 <resources>
     <string name="pref_main_title">Asetukset</string>
     <string name="pref_general_category">Yleiset</string>
-    <string name="pref_dark_theme">Tummateema</string>
+    <string name="pref_dark_theme">Tumma teema</string>
     <string-array name="pref_dark_theme_modes">
         <item>Vaalea</item>
         <item>Tumma</item>
         <item>Järjestelmän oletus</item>
     </string-array>
     <string name="pref_update_configuration">Automaattiset päivitykset</string>
-    <string name="pref_ad_block_category">Mainostentorjunta</string>
-    <string name="pref_vpn_ad_blocker_configuration">VPN pohjainen mainostenesto</string>
-    <string name="pref_backup_restore_title">Varmuuskopioi &amp; palauta</string>
+    <string name="pref_language">Kieli</string>
+    <string name="pref_language_system">Järjestelmän kieli</string>
+    <string name="pref_ad_block_category">Mainosten esto</string>
+    <string name="pref_root_ad_blocker_configuration">Rootiin perustuva mainosten esto</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-pohjainen mainosten esto</string>
+    <string name="pref_enable_ipv6">Ota IPv6-tuki käyttöön</string>
+    <string name="pref_backup_restore">Varmuuskopioi / palauta estosäännöt</string>
+    <string name="pref_backup_restore_title">Varmuuskopiointi ja palautus</string>
     <string name="pref_backup">Varmuuskopioi</string>
+    <string name="pref_backup_summary">Varmuuskopioi estosäännöt ulkoiseen tallennustilaan</string>
     <string name="pref_restore">Palauta</string>
-    <string name="pref_update_title">Päivityksiä</string>
-    <string name="pref_update_app_category">Ohjelmapäivitykset</string>
-    <string name="pref_update_check_app_startup">Tarkista päivityksiä käynnistäessä</string>
-    <string name="pref_update_check_app_daily">Säännöllisesti tarkista päivityksiä </string>
+    <string name="pref_restore_summary">Palauta estosäännöt varmuuskopiotiedostosta</string>
+    <string name="import_success">Varmuuskopio tuotiin onnistuneesti ulkoisesta tallennustilasta.</string>
+    <string name="import_failed">Varmuuskopion tuonti epäonnistui. Onko sen muoto oikea?</string>
+    <string name="export_success">Varmuuskopio vietiin onnistuneesti ulkoisessa tallennustilassa olevaan tiedostoon ”%s”.</string>
+    <string name="export_failed">Varmuuskopiotiedoston ”%s” vienti epäonnistui.</string>
+    <string name="pref_update_title">Päivitykset</string>
+    <string name="pref_update_enable_notifications">Ilmoitukset on poistettu käytöstä</string>
+    <string name="pref_update_enable_notifications_summary">Sovelluksen ilmoituksia ei näytetä. Ota ne käyttöön napauttamalla.</string>
+    <string name="pref_update_app_category">Sovelluspäivitykset</string>
+    <string name="pref_update_check_app_startup">Tarkista päivitykset käynnistyksen yhteydessä</string>
+    <string name="pref_update_check_app_daily">Tarkista päivitykset säännöllisesti</string>
     <string name="pref_update_check_now">Tarkista nyt</string>
     <string name="pref_update_install">Päivitä nyt</string>
-    <string name="pref_update_hosts_category">Hosts-päivityksiä </string>
-    <string name="pref_update_check">Tarkista päivityksiä käynnistäessä</string>
-    <string name="pref_update_check_hosts_daily">Säännöllisesti tarkista päivityksiä </string>
-    <string name="pref_update_sync_on_update">Synkronoi päivittäessä</string>
-    <string name="pref_update_sync_unmetered_only">Synkronoi ainoastaan rajattomalla yhteydellä</string>
-    <string name="pref_vpn_service_on_boot">Aktivoi käynnistyksessä</string>
+    <string name="pref_update_hosts_category">Hosts-lähteiden päivitykset</string>
+    <string name="pref_update_check">Tarkista päivitykset käynnistyksen yhteydessä</string>
+    <string name="pref_update_check_hosts_daily">Tarkista päivitykset säännöllisesti</string>
+    <string name="pref_update_sync_on_update">Synkronoi päivityksen yhteydessä</string>
+    <string name="pref_update_sync_unmetered_only">Synkronoi vain, jos verkossa ei ole datarajoitusta</string>
+    <string name="pref_vpn_service_on_boot">Ota käyttöön käynnistyksen yhteydessä</string>
     <string name="pref_vpn_service_monitor">Valvo yhteyttä</string>
-    <string name="pref_vpn_service_monitor_description">Tarkista säännöllisesti verkon tilaa uudelleen käynnistääkseen VPN yhteyden katkettua. </string>
-    <string name="pref_vpn_excluded_apps">Pois jätetyt sovellukset</string>
-    <string name="pref_vpn_excluded_apps_description">Valitse mitkä sovellukset eivät saa käyttää VPNää jotta mitään yhteyksiä ei estetä.</string>
-    <string name="pref_vpn_exclude_system_apps">Jätä pois järjestelmäsovelluksia</string>
+    <string name="pref_vpn_service_monitor_description">Tarkista verkon tila säännöllisesti, jotta VPN käynnistyy uudelleen yhteyden katketessa.</string>
+    <string name="pref_vpn_excluded_apps">Poissuljetut sovellukset</string>
+    <string name="pref_vpn_excluded_apps_description">Valitse sovellukset, jotka eivät käytä VPN:ää, jotta niiden yhteyksiä ei estetä.</string>
+    <string name="pref_vpn_exclude_system_apps">Poissulje järjestelmäsovellukset</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>Ei mikään</item>
-        <item>All except browsers</item>
+        <item>Ei mitään</item>
+        <item>Kaikki paitsi selaimet</item>
         <item>Kaikki</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">Jätä pois käyttäjän sovelluksiä</string>
-    <string name="pref_vpn_exclude_user_apps_activity">Pois jätetyt sovellukset</string>
+    <string name="pref_vpn_dns">DNS-palvelimet</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Verkon DNS-palvelimet</item>
+        <item>Omat DNS-palvelimet</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Omat DNS-palvelimet</string>
+    <string name="pref_vpn_dns_custom_summary">IP-osoitteet pilkuilla erotettuina</string>
+    <string name="pref_vpn_dns_custom_invalid">Virheellinen DNS-palvelimen osoite</string>
+    <string name="pref_vpn_doh">DNS over HTTPS -palvelin</string>
+    <string name="pref_vpn_doh_custom">Oma osoite</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS -osoite</string>
+    <string name="pref_vpn_doh_invalid">Virheellinen DNS over HTTPS -osoite</string>
+    <string name="pref_vpn_exclude_user_apps">Poissulje käyttäjän sovelluksia</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Poissuljetut sovellukset</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Valitse kaikki</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">Poista valinta kaikista</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Poista kaikkien valinta</string>
     <string name="pref_vpn_exclude_user_apps_icon">Sovelluksen kuvake</string>
     <string name="pref_vpn_reset">Nollaa VPN</string>
-    <string name="pref_vpn_reset_description">Rakenna VPN-yhteys uudelleen alusta. Käytä tätä, jos VPN lakkaa toimimasta (ei internetyhteyttä tai DNS-virheitä).</string>
-    <string name="pref_vpn_reset_done">VPN-yhteys rakennettu uudelleen.</string>
+    <string name="pref_vpn_reset_description">Muodosta VPN-yhteys alusta alkaen uudelleen. Käytä tätä, jos VPN lakkaa toimimasta (ei internetyhteyttä tai DNS-virheitä).</string>
+    <string name="pref_vpn_reset_done">VPN-yhteys muodostettu uudelleen.</string>
     <string name="pref_vpn_reset_not_running">VPN ei ole käynnissä.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Tallenna diagnostiikkaloki</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Ota käyttöön ennen ongelman toistamista ja vie loki sitten alta. Voi hidastaa hieman vanhoja laitteita. Tallentaa vain VPN:n teknisiä tapahtumia, ei koskaan selaushistoriaa tai henkilötietoja.</string>
     <string name="pref_vpn_diagnostic_log">Diagnostiikkaloki</string>
-    <string name="pref_vpn_diagnostic_log_description">Tarkastele, kopioi tai jaa viimeaikaiset virheet ja VPN-tapahtumat. Hyödyllinen ongelmaa ilmoitettaessa.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Yhtään tapahtumaa ei ole vielä tallennettu.</string>
-    <string name="pref_vpn_diagnostic_log_share">Jaa diagnostiikkaloki</string>
+    <string name="pref_vpn_diagnostic_log_description">Katso, kopioi tai jaa viimeisimmät virheet ja VPN-tapahtumat. Hyödyllinen ongelmaa ilmoitettaessa.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Tapahtumia ei ole vielä tallennettu. Ota yllä oleva ”Tallenna diagnostiikkaloki” käyttöön ja yritä sitten toistaa ongelma.</string>
+    <string name="pref_vpn_diagnostic_log_share">Jaa</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Jaa diagnostiikkaloki</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopioi</string>
     <string name="pref_vpn_diagnostic_log_copied">Diagnostiikkaloki kopioitu leikepöydälle.</string>
     <string name="pref_vpn_diagnostic_log_clear">Tyhjennä diagnostiikkaloki</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Poista tallennetut tapahtumat. Tee tämä ennen ongelman toistamista, jotta saat puhtaan jäljen.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Poista tallennetut tapahtumat. Tee tämä ennen ongelman toistamista, jotta loki sisältää vain olennaisen.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Diagnostiikkaloki tyhjennetty.</string>
     <string name="pref_root_open_hosts">Avaa hosts-tiedosto</string>
-    <string name="pref_webserver_enabled">Ota web-palvelin käyttöön</string>
-    <string name="pref_webserver_test">Testaa web-palvelinta</string>
+    <string name="hosts_file_unreadable">Hosts-tiedostoa ei voitu lukea.</string>
+    <string name="pref_hosts_redirection_summary">Määritä, mihin estetyt isännät ohjataan</string>
+    <string name="pref_redirection_ipv4">Määritä IPv4-uudelleenohjaus</string>
+    <string name="pref_redirection_ipv6">Määritä IPv6-uudelleenohjaus</string>
+    <string name="pref_redirection_invalid">Virheellinen uudelleenohjaus</string>
+    <string name="pref_webserver_summary">Paikallinen verkkopalvelin kuuntelee paikallisia IP-osoitteita ja vastaa estettyjen isäntänimien pyyntöihin. Se voi auttaa, jos sovellus jumittuu estetyn yhteyden vuoksi.</string>
+    <string name="pref_webserver_enabled">Ota verkkopalvelin käyttöön</string>
+    <string name="pref_webserver_test">Testaa verkkopalvelin</string>
+    <string name="pref_webserver_certificate">Asenna itse allekirjoitettu varmenne</string>
     <string name="pref_webserver_state_not_running">Ei käynnissä</string>
-    <string name="pref_webserver_state_checking">Tarkistetaan… </string>
-    <string name="pref_webserver_certificate_dialog_action">Avaa \"Turvallisuus\'\" -asetukset</string>
+    <string name="pref_webserver_state_checking">Tarkistetaan…</string>
+    <string name="pref_webserver_state_running_not_installed">Käynnissä, mutta varmennetta ei ole asennettu</string>
+    <string name="pref_webserver_state_running_and_installed">Käynnissä ja varmenne asennettu</string>
+    <string name="pref_webserver_certificate_dialog_title">Varmenteen asennus käsin</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11:stä (R) alkaen sovellukset eivät voi enää asentaa varmenteen myöntäjää (CA) automaattisesti.\n\nAvaa ”Tietoturva”-asetukset, valitse ”Salaus ja tunnistetiedot” ja sitten ”Asenna varmenne”. Valitse sieltä ”CA-varmenne” ja valitse juuri viety varmennetiedosto.</string>
+    <string name="pref_webserver_certificate_dialog_action">Avaa ”Tietoturva”-asetukset</string>
+    <string name="pref_webserver_certificate_failed">Varmennetta ei voitu valmistella.</string>
+    <string name="webserver_error_title">Verkkopalvelinta ei käynnistetty</string>
+    <string name="webserver_error_resources">Sen tiedostoja tai varmennetta ei voitu valmistella.</string>
+    <string name="webserver_error_address_in_use">Toinen sovellus käyttää jo laitteen verkkoportteja (80 ja 443).</string>
+    <string name="webserver_error_start_failed">Se ei voinut käynnistyä tällä laitteella.</string>
+    <string name="pref_webserver_icon">Korvaa tyhjä mainostila sovelluksen kuvakkeella</string>
 </resources>

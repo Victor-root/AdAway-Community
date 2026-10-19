@@ -1,41 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Määrityksen ensimmäinen vaihe</string>
-    <string name="welcome_second_step">Määrityksen toinen vaihe</string>
-    <string name="welcome_method_header">Tervetuloa käyttämään AdAwaytä!</string>
-    <string name="welcome_method_summary">AdAway tarjoaa kaksi mainosten estotapaa. Valitse haluamasi:</string>
-    <string name="welcome_root_method_title">Root-pohjainen\nmainosesto</string>
+    <string name="welcome_first_step">Ohjatun toiminnon ensimmäinen vaihe</string>
+    <string name="welcome_second_step">Ohjatun toiminnon toinen vaihe</string>
+    <string name="welcome_third_step">Ohjatun toiminnon kolmas vaihe</string>
+    <string name="welcome_fourth_step">Ohjatun toiminnon neljäs vaihe</string>
+    <string name="welcome_method_header">Tervetuloa AdAwayn pariin!</string>
+    <string name="welcome_method_summary">AdAway tarjoaa kaksi tapaa estää mainoksia. Valitse mieluisesi:</string>
+    <string name="welcome_root_method_title">Rootiin perustuva\nmainosten esto</string>
     <string name="welcome_root_method_text1">Nopeampi</string>
-    <string name="welcome_root_method_text2">Akkuystävällinen</string>
+    <string name="welcome_root_method_text2">Säästää akkua</string>
     <string name="welcome_root_method_text3">Vaatii root-oikeudet</string>
-    <string name="welcome_vpn_method_title">VPN-pohjainen\nmainosesto</string>
+    <string name="welcome_vpn_method_title">VPN-pohjainen\nmainosten esto</string>
     <string name="welcome_vpn_method_text1">Hitaampi</string>
-    <string name="welcome_vpn_method_text2">Suoritetaan taustalla</string>
-    <string name="welcome_vpn_method_text3">Yhteensopiva</string>
-    <string name="welcome_root_missing_title">Vaatii rootatun Androidin</string>
-    <string name="welcome_root_missile_description">Joko su-binääriä ei löytynyt tai et myöntänyt AdAwaylle root-oikeuksia.\n\nTämä voi tapahtua jos laitetta ei ole rootattu. Löydät tietoja laitteen roottauksesta osoitteessa wiki.lineageos.org tai muilta Android-sivustoilta.</string>
-    <string name="welcome_method_pro_logo">Hyöty</string>
+    <string name="welcome_vpn_method_text2">Toimii taustalla</string>
+    <string name="welcome_vpn_method_text3">Yhteensopivuus</string>
+    <string name="welcome_root_missing_title">Rootattu Android vaaditaan</string>
+    <string name="welcome_root_missile_description">Joko su-binääriä ei löytynyt tai et antanut AdAwaylle root-oikeutta.\n\nNäin voi käydä, jos laitettasi ei ole rootattu. Ohjeita laitteen rootaamiseen löydät osoitteesta wiki.lineageos.org ja muilta Android-sivustoilta.</string>
+    <string name="welcome_vpn_alwayson_title">Aina päällä oleva VPN käytössä</string>
+    <string name="welcome_vpn_alwayson_description">AdAway havaitsi, että toisessa VPN:ssä on käytössä ”Aina päällä oleva VPN” -asetus.\n\nTämä estää AdAwayta pyytämästä VPN-käyttöoikeutta. Poista ”Aina päällä oleva VPN” käytöstä kyseisessä VPN:ssä ja yritä uudelleen.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway ei onnistunut pyytämään VPN-käyttöoikeutta.\n\nSyynä voi olla, että toisessa VPN:ssä on käytössä ”Aina päällä oleva VPN” -asetus. Tarkista, onko jossakin VPN:ssä tämä asetus käytössä, ja poista se käytöstä ennen kuin yrität uudelleen.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Avaa ”VPN”-asetukset</string>
+    <string name="welcome_method_pro_logo">Etu</string>
     <string name="welcome_method_con_logo">Haitta</string>
-    <string name="welcome_sync_header">Synkronoidaan </string>
-    <string name="welcome_synced_header">Synkronoitu! </string>
-    <string name="welcome_sync_summary">AdAway lataa estettäviä mainosverkostoja verkkolähteistä. Voit mukauttaa niitä myöhemmin asetuksista.</string>
+    <string name="welcome_sync_header">Synkronoidaan</string>
+    <string name="welcome_synced_header">Synkronoitu!</string>
+    <string name="welcome_sync_summary">AdAway lataa estettävät mainosverkostot verkossa olevista lähteistä. Voit muokata niitä myöhemmin asetuksissa.</string>
     <string name="welcome_sync_retry_logo">Yritä synkronointia uudelleen</string>
-    <string name="welcome_sync_error">Synkronointi epäonnistui: %1$s Yritetäänkö uudelleen?</string>
-    <string name="welcome_sync_notifications">Sovellus voi näyttää ilmoituksia mainoseston tilasta, hallinnasta ja uusista sovellusversioista (muutama vuodessa). Ota ne käyttöön, jos haluat pysyä ajan tasalla.</string>
+    <string name="welcome_sync_error">Synkronointi epäonnistui: %1$s. Yritetäänkö nyt uudelleen?</string>
+    <string name="welcome_sync_notifications">Sovellus voi lähettää ilmoituksia, jotka näyttävät mainosten eston tilan ja ohjaimet sekä kertovat saatavilla olevista sovelluspäivityksistä (muutama vuodessa). Ota ne käyttöön, jos haluat pysyä ajan tasalla.</string>
     <string name="welcome_sync_leave_early_title">Synkronointi ei ole vielä valmis</string>
-    <string name="welcome_sync_leave_early_message">Estolistojen lataus ei ole vielä valmis. Voit jatkaa nyt, ja lataus jatkuu taustalla, tai odottaa täällä, kunnes se on valmis.</string>
+    <string name="welcome_sync_leave_early_message">Estoluetteloiden lataus ei ole vielä valmis. Voit jatkaa nyt, jolloin lataus jatkuu taustalla, tai odottaa tässä, kunnes se on valmis.</string>
     <string name="welcome_sync_leave_early_wait">Odota</string>
     <string name="welcome_sync_leave_early_continue">Jatka silti</string>
-    <string name="welcome_back_button">Edellinen</string>
+    <string name="welcome_battery_header">Pysy suojattuna taustalla</string>
+    <string name="welcome_battery_summary">Android voi keskeyttää AdAwayn VPN:n taustalla virran säästämiseksi, mikä voi pysäyttää mainosten eston huomaamatta. Salli AdAwayn ohittaa akun optimointi, jotta se pysyy käynnissä.</string>
+    <string name="welcome_battery_action">Salli</string>
+    <string name="welcome_battery_granted">Sallittu ✓</string>
+    <string name="welcome_battery_footnote_prefix">Voit muuttaa tätä myöhemmin milloin tahansa kohdasta</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Androidin asetukset</item>
+        <item>Sovellukset</item>
+        <item>AdAway</item>
+        <item>Akku</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Vielä yksi asia: puhelimesi oma akunhallinta</string>
+    <string name="welcome_oem_battery_summary">Joillakin puhelinmerkeillä on oma akunhallinta, joka voi myös estää AdAwayn toiminnan. Tarkista omasta puhelimestasi seuraavat asiat:</string>
+    <string name="welcome_oem_battery_action">Avaa sovelluksen tiedot</string>
+    <string name="welcome_oem_battery_open_failed">Sovelluksen tietoja ei voitu avata. Avaa ne itse: Androidin asetukset › Sovellukset › AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Nämä ovat yleisiä vinkkejä eikä tarkka ohje: sanamuodot ja sijainnit voivat vaihdella puhelinmallin ja Android-version mukaan.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Sovelluksen tiedot</item>
+        <item>Akku</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Etsi esimerkiksi ”Taustakäytön rajoitukset” › ”Sovellukset, joita ei koskaan siirretä lepotilaan” ja lisää AdAway kyseiseen luetteloon.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Tarkista myös ”Automaattinen optimointi” -asetus ja poista ”Käynnistä uudelleen tarvittaessa” käytöstä, jos se on näkyvissä.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Sovelluksen tiedot</item>
+        <item>Akun säästäjä</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Valitse ”Ei rajoituksia”.</string>
+    <string name="welcome_oem_battery_secondary_miui">Ota käyttöön myös ”Automaattinen käynnistys” (uudemmissa versioissa ”Automaattinen käynnistys taustalla”).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Sovelluksen tiedot</item>
+        <item>Akun käyttö</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Valitse ”Salli toiminta taustalla” (joskus ”Ei rajoituksia”).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Etsi myös AdAwayn ”Automaattinen käynnistys” -kytkin (usein kohdassa Asetukset › Sovellukset), jotta se voi käynnistyä itsestään pakotetun pysäytyksen jälkeen.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Sovelluksen tiedot</item>
+        <item>Akku</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Etsi ”Sovelluksen käynnistys”, poista ”Hallitse automaattisesti” käytöstä ja ota sitten käyttöön kaikki kolme: ”Automaattinen käynnistys”, ”Toissijainen käynnistys” ja ”Suorita taustalla”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Lukitse AdAway myös Viimeisimmät-näkymässä (pyyhkäise sen korttia alas, kunnes lukko tulee näkyviin).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Sovelluksen tiedot</item>
+        <item>Akun käyttö</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Etsi taustavirrankäytön asetus ja valitse ”Älä rajoita taustavirrankäyttöä” (ei ”Älykäs ohjaus”).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Etsi myös AdAwayn ”Automaattinen käynnistys” -asetus, usein kohdassa Asetukset › Sovellukset.</string>
+    <string name="welcome_oem_battery_label_generic">Muu merkki</string>
+    <string name="welcome_oem_battery_tip_generic">Etsi sovelluksen tiedoista akkuun tai taustatoimintaan liittyvä asetus ja varmista, ettei AdAwayta ole rajoitettu.</string>
+    <string name="welcome_back_button">Takaisin</string>
     <string name="welcome_next_button">Seuraava</string>
     <string name="welcome_finish_button">Valmis</string>
-    <string name="tv_welcome_intro_subtitle">Tämä lyhyt ohjattu toiminto ottaa mainosten eston käyttöön tässä laitteessa.</string>
+    <string name="tv_welcome_intro_subtitle">Tämä lyhyt opas ottaa mainosten eston käyttöön tällä laitteella.</string>
     <string name="tv_welcome_start_button">Aloita</string>
-    <string name="tv_welcome_method_header">Valitse esto-menetelmäsi</string>
-    <string name="tv_welcome_method_root_button">Käytä juurikäyttöoikeuksia</string>
-    <string name="tv_welcome_method_root_body">Nopeampi ja akkuystävällisempi. Vaatii juurioikeutetun laitteen.</string>
+    <string name="tv_welcome_method_header">Valitse eston tapa</string>
+    <string name="tv_welcome_method_root_button">Käytä rootia</string>
+    <string name="tv_welcome_method_root_body">Nopeampi ja säästää akkua. Vaatii rootatun laitteen.</string>
     <string name="tv_welcome_method_vpn_button">Käytä VPN:ää</string>
-    <string name="tv_welcome_method_vpn_body">Toimii ilman juurioikeuksia, yhteensopiva minkä tahansa Android TV -laitteen kanssa.</string>
+    <string name="tv_welcome_method_vpn_body">Toimii ilman rootia ja sopii kaikille Android TV -laitteille.</string>
     <string name="tv_welcome_activate_header">Ota mainosten esto käyttöön</string>
-    <string name="tv_welcome_activate_body">Kyseessä on paikallinen VPN: se suodattaa mainokset tässä laitteessa lähettämättä liikennettäsi ulkoisen palvelimen kautta.</string>
+    <string name="tv_welcome_activate_body">Se on paikallinen VPN: se suodattaa mainokset tällä laitteella ohjaamatta liikennettäsi ulkopuolisen palvelimen kautta.</string>
 </resources>

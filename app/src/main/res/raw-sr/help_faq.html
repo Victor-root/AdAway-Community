@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Prihodi od reklama</h2>
-<p>Postoji zabluda, da ukoliko korisnik nikada ne klikće na reklame, da se blokiranje istih neće negativno finansijski odraziti na stranicu ili aplikaciju. To je pogrešno jer programeri isto tako zarađuju novac samim prikazom reklama. Vaša je stvar hoćete li ili nećete blokirati reklame. Lično ne bih koristio aplikacije koje prikazuju oglase jer smatram da su vrlo iritantne, tako da bez aplikacije za sprečavanje prikaza reklama aplikacije te vrste ne bih ni instalirao.</p>
+<h2>Шта је AdAway Community?</h2>
+<p>AdAway Community је незванични форк пројекта AdAway, блокатора огласа отвореног кода за Android, који одржава заједница. Блокира огласе и пратиоце на нивоу целог система, за све апликације, без налога и без сопствених огласа. Овај форк има за циљ да апликација поуздано ради на савременим верзијама система Android и на прилагођеним ROM-овима произвођача.</p>
 
-<h2>Kako AdAway radi?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Како блокира огласе?</h2>
+<p>AdAway ради на један од два начина:</p>
+<p><strong>VPN режим</strong> (без root приступа): AdAway покреће локални VPN на самом уређају који ваш саобраћај никуда не шаље. Он само прегледа DNS захтеве и одбацује оне који воде ка именима хостова огласа и пратилаца, а све остало пропушта. Ништа не напушта ваш уређај.</p>
+<p><strong>Root режим</strong>: ако ваш уређај има root приступ, AdAway уместо тога може да упише <a href="http://en.wikipedia.org/wiki/Hosts_file">датотеку hosts</a> у <code>/system/etc/hosts</code>, која непожељна имена хостова преусмерава на <code>127.0.0.1</code>, односно на ваш уређај. На новијем систему Android потребан је systemless hosts модул (на пример Magisk).</p>
 
-<h2>Zašto moram ponovo pokrenuti Android da bi promene imale efekta?</h2>
-<p>Java na Androidu održava svoju sopstvenu DNS keš. Operativni Sistem će reflektovati nove hosts fajlove odmah (verifikovati sa pingom na komandnoj liniji) ali ćete morati da restartujete Android da bi obnovili DNS keš Jave.</p>
+<h2>Које DNS сервере користи VPN?</h2>
+<p>У VPN режиму, имена хостова која нису блокирана разрешавају DNS сервери које изаберете у менију <cite>Подешавања › Блокатор огласа преко VPN-а › DNS сервери</cite>:</p>
+<p><strong>DNS сервери мреже</strong> (подразумевано): сервери ваше Wi-Fi или мобилне мреже. Ако мрежа не пружа ниједан који AdAway може да користи, користи се Cloudflare (<code>1.1.1.1</code>).<br/><strong>Прилагођени DNS сервери</strong>: IP адресе које унесете, раздвојене зарезима.<br/><strong>DNS over HTTPS</strong>: захтеви се шифрују и шаљу на Cloudflare, Google, Quad9 или на адресу <code>https://</code> коју унесете, тако да ваша мрежа не може ни да их прочита ни да их измени.</p>
+<p>Блокирање функционише исто у сва три случаја. Да бисте задржали шифровани DNS, овде користите DNS over HTTPS уместо Android подешавања <cite>Приватни DNS</cite>, које заобилази AdAway.</p>
 
-<h2>Kako koristiti webserver u AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Како да блокирам, дозволим или преусмерим име хоста?</h2>
+<p>На почетном екрану управљате са три листе:</p>
+<p><strong>Блокирани</strong>: имена хостова која треба блокирати (огласи и пратиоци).<br/><strong>Дозвољени</strong>: изузеци које никада не желите да блокирате, чак и ако их неки извор садржи.<br/><strong>Преусмерени</strong>: имена хостова која желите да упутите на одређену IP адресу.</p>
+<p>Са почетног екрана можете да отворите и <cite>DNS дневник</cite> да бисте у реалном времену видели која имена хостова апликације траже, а затим их директно блокирајте или дозволите.</p>
 
-<h2>Kako mogu da blokiram/odblokiram posebna imena domena</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Да ли морам поново да покренем Android након измене листа?</h2>
+<p>Не. AdAway примењује измену одмах, али апликација која је већ била отворена може да настави да користи своје старе везе и сопствену кеш меморију. Потпуно је затворите (Принудно заустави у подешавањима апликације у систему Android) и обришите јој кеш меморију ако се огласи и даље приказују. Поновно покретање система Android потребно је само једном у root режиму, након укључивања Magisk модула systemless hosts.</p>
 
-<h2>Gde mogu pronaći još host izvora?</h2>
-<p>Pogledajte <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Listu dodatnih izvora hostova za AdAway</a>.</p>
+<h2>Где могу да нађем још hosts извора?</h2>
+<p>AdAway долази са разумним подразумеваним изворима. Ако желите више, погледајте <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">листу додатних hosts извора</a> коју одржава заједница. Додајте нове изворе умерено, јер веома велике листе или листе које се преклапају могу изазвати лажне блокаде које нарушавају рад апликација.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Зашто овај форк постоји?</h2>
+<p>AdAway је одличан пројекат са дугом историјом, али активност објављивања и прегледања измена у изворном пројекту већ неко време је ограничена. Неке исправке и захтеви за спајање дуго су остали отворени, укључујући проблеме са стабилношћу VPN режима на новијим верзијама система Android и на прилагођеним ROM-овима произвођача. Овај форк постоји да би пројекат остао употребљив уз исправке заједнице, уместо да проверена побољшања остану неискоришћена.</p>
 
-<h2>Pomozite prevođenje/Prijavite greške</h2>
-<p>Molimo idite na <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Како да пријавим грешку или предложим измену?</h2>
+<p>Отворите пријаву у евиденцији проблема овог форка: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Дијагностички дневник (погледајте картицу Проблеми) веома помаже при пријави проблема са VPN-ом.</p>
 </body>
 </html>
