@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_title">Абнавіць AdAway</string>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
+    <string name="update_title">Абнаўленне AdAway</string>
+    <string name="update_banner_title">Даступна абнаўленне</string>
+    <string name="update_banner_subtitle">Націсніце, каб усталяваць %1$s</string>
     <string name="update_up_to_date_header">У вас актуальная версія</string>
     <string name="update_update_available_header">Даступна абнаўленне</string>
     <string name="update_updating_header">Абнаўленне AdAway</string>
     <string name="update_update_button">Абнавіць зараз</string>
+    <string name="update_complete_label">Завершана</string>
     <string name="update_last_changelog_title">Апошнія змены</string>
     <string name="update_new_changelog_title">Спіс змен</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_download_failed">Не ўдалося спампаваць абнаўленне.</string>
+    <string name="update_install_failed">Не ўдалося ўсталяваць абнаўленне.</string>
+    <string name="pref_update_check_now_update_available">Даступна новая версія: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Абнаўленняў няма</string>
+    <string name="pref_update_check_now_failed">Не ўдалося звязацца з серверам абнаўленняў</string>
+    <string name="pref_update_install_summary">Усталяваць версію %1$s</string>
+    <string name="notification_channel_app_updates">Абнаўленні праграмы</string>
+    <string name="notification_channel_app_updates_description">Апавяшчэнне, калі даступная новая версія праграмы. Адключыце гэты канал, каб не атрымліваць апавяшчэнні пра абнаўленні праграмы, не закранаючы іншыя апавяшчэнні.</string>
     <string name="notification_app_update_title">Даступна абнаўленне праграмы</string>
-    <string name="notification_app_update_text">Новая версія AdAway даступна для спампоўкі</string>
+    <string name="notification_app_update_text">Для спампоўкі даступная новая версія AdAway.</string>
 </resources>

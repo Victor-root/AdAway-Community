@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Qeydə başla</string>
-    <string name="log_start_recording_vpn_inactive">Qeydə başla (VPN aktiv deyil)</string>
-    <string name="log_stop_recording">Qeydi dayandır</string>
+    <string name="log_toggle_recording_description">Jurnal qeydini işə salın/dayandırın</string>
+    <string name="log_start_recording">Sorğuların qeydini başlatmaq üçün qeyd düyməsinə basın, internetdə gəzin və ya tətbiqlərdən istifadə edin, sonra jurnalı yeniləmək üçün geri qayıdın və ya ekranı sürüşdürün.</string>
+    <string name="log_blocked_requests_ignored">\n\nBloklanmış sorğular jurnala yazılmayacaq. Onları da qeyd etmək istəyirsinizsə, əvvəlcə reklam bloklamanı deaktiv edin.</string>
+    <string name="log_sort">Domenləri sıralayın</string>
+    <string name="log_clear">Jurnalı təmizləyin</string>
+    <string name="log_sort_alphabetical">Əlifba sırası ilə</string>
+    <string name="log_sort_top_level_domain">Üst səviyyəli domenə görə</string>
+    <string name="log_block">Qeydi qara siyahıya əlavə edin</string>
+    <string name="log_allow">Qeydi ağ siyahıya əlavə edin</string>
+    <string name="log_redirect">Qeydi yönləndirmə siyahısına əlavə edin</string>
+    <string name="log_redirect_dialog_title">Domeni yönləndirin</string>
+    <string name="log_capture_failed">DNS sorğularının qeydi başlaya bilmədi.</string>
+    <string name="log_start_recording_button">Qeydi başladın</string>
+    <string name="log_start_recording_vpn_inactive">Qeydi başladın (VPN aktiv deyil)</string>
+    <string name="log_stop_recording">Qeydi dayandırın</string>
 </resources>

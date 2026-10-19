@@ -1,82 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">Налады</string>
-    <string name="pref_general_category">Галоўные</string>
+    <string name="pref_general_category">Агульныя</string>
     <string name="pref_dark_theme">Цёмная тэма</string>
     <string-array name="pref_dark_theme_modes">
         <item>Светлая</item>
         <item>Цёмная</item>
-        <item>Сістэмная</item>
+        <item>Як у сістэме</item>
     </string-array>
-    <string name="pref_update_configuration">Аўтаматычнае абнаўленне</string>
+    <string name="pref_update_configuration">Аўтаматычныя абнаўленні</string>
+    <string name="pref_language">Мова</string>
+    <string name="pref_language_system">Мова сістэмы</string>
     <string name="pref_ad_block_category">Блакіроўка рэкламы</string>
-    <string name="pref_root_ad_blocker_configuration">Блакавальнік рэкламы на аснове root</string>
-    <string name="pref_vpn_ad_blocker_configuration">Блакавальнік рэкламы на аснове VPN</string>
+    <string name="pref_root_ad_blocker_configuration">Блакіроўшчык рэкламы на аснове root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Блакіроўшчык рэкламы на аснове VPN</string>
     <string name="pref_enable_ipv6">Уключыць падтрымку IPv6</string>
-    <string name="pref_backup_restore">Рэзервовая копія / аднаўленне правілаў блакавання</string>
+    <string name="pref_backup_restore">Рэзервовая копія і аднаўленне правілаў блакіроўкі</string>
     <string name="pref_backup_restore_title">Рэзервовая копія і аднаўленне</string>
     <string name="pref_backup">Рэзервовая копія</string>
-    <string name="pref_backup_summary">Захаваць рэзервовую копію вашых правілаў блакавання на знешні носьбіт</string>
-    <string name="pref_restore">Аднаўленне</string>
-    <string name="pref_restore_summary">Аднавіць вашыя правілы блакавання з файла рэзервовай копіі</string>
-    <string name="import_success">Рэзервовая копія паспяхова імпартавана з вашага знешняга сховішча.</string>
-    <string name="export_success">Рэзервовае капіраванне паспяхова экспартавана ў файл \'%s\' на вашым знешнім сховішчы.</string>
-    <string name="export_failed">Не атрымалася экспартаваць файл рэзервовай копіі \'%s\'.</string>
-    <string name="pref_update_title">Абнаўленне</string>
-    <string name="pref_update_app_category">Абнаўленне праграмы</string>
-    <string name="pref_update_check_app_startup">Праверце наяўнасць абнаўленняў пры запуску</string>
-    <string name="pref_update_check_app_daily">Перыядычная праверка абнаўленняў</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string name="pref_update_hosts_category">Абнаўленне hosts</string>
-    <string name="pref_update_check">Праверце наяўнасць абнаўленняў пры запуску</string>
-    <string name="pref_update_check_hosts_daily">Перыядычная праверка абнаўленняў</string>
-    <string name="pref_update_sync_on_update">Сінхранізацыя пры абнаўленні</string>
-    <string name="pref_update_sync_unmetered_only">Сінхранізацыя толькі ў неабароненай сеткі</string>
-    <string name="pref_vpn_service_on_boot">Уключыць пры запуску</string>
-    <string name="pref_vpn_service_monitor">Праверка злучэнне</string>
-    <string name="pref_vpn_service_monitor_description">Перыядычна правярайце стан сеткі, каб перазапусціць VPN пры адключэнні.</string>
+    <string name="pref_backup_summary">Захаваць правілы блакіроўкі ў знешняе сховішча</string>
+    <string name="pref_restore">Аднавіць</string>
+    <string name="pref_restore_summary">Аднавіць правілы блакіроўкі з файла рэзервовай копіі</string>
+    <string name="import_success">Рэзервовая копія паспяхова імпартавана са знешняга сховішча.</string>
+    <string name="import_failed">Не ўдалося імпартаваць рэзервовую копію. Ці правільны яе фармат?</string>
+    <string name="export_success">Рэзервовая копія паспяхова экспартавана ў файл «%s» у знешнім сховішчы.</string>
+    <string name="export_failed">Не ўдалося экспартаваць файл рэзервовай копіі «%s».</string>
+    <string name="pref_update_title">Абнаўленні</string>
+    <string name="pref_update_enable_notifications">Апавяшчэнні адключаны</string>
+    <string name="pref_update_enable_notifications_summary">Апавяшчэнні праграмы не будуць паказвацца. Націсніце, каб уключыць іх.</string>
+    <string name="pref_update_app_category">Абнаўленні праграмы</string>
+    <string name="pref_update_check_app_startup">Правяраць абнаўленні пры запуску</string>
+    <string name="pref_update_check_app_daily">Правяраць абнаўленні рэгулярна</string>
+    <string name="pref_update_check_now">Праверыць зараз</string>
+    <string name="pref_update_install">Абнавіць зараз</string>
+    <string name="pref_update_hosts_category">Абнаўленні hosts</string>
+    <string name="pref_update_check">Правяраць абнаўленні пры запуску</string>
+    <string name="pref_update_check_hosts_daily">Правяраць абнаўленні рэгулярна</string>
+    <string name="pref_update_sync_on_update">Сінхранізаваць пры абнаўленні</string>
+    <string name="pref_update_sync_unmetered_only">Сінхранізаваць толькі праз сетку без ліміту трафіку</string>
+    <string name="pref_vpn_service_on_boot">Уключаць пры запуску</string>
+    <string name="pref_vpn_service_monitor">Сачыць за злучэннем</string>
+    <string name="pref_vpn_service_monitor_description">Рэгулярна правяраць стан сеткі, каб перазапусціць VPN пасля адключэння.</string>
     <string name="pref_vpn_excluded_apps">Выключаныя праграмы</string>
-    <string name="pref_vpn_excluded_apps_description">Наладзьце, якія праграмы не павінны выкарыстоўваць VPN, каб злучэнні не былі заблакаваныя.</string>
+    <string name="pref_vpn_excluded_apps_description">Выберыце праграмы, якія не павінны выкарыстоўваць VPN, каб іх злучэнні не блакіраваліся.</string>
     <string name="pref_vpn_exclude_system_apps">Выключыць сістэмныя праграмы</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
         <item>Няма</item>
-        <item>Усе, акрамя браўзэраў</item>
+        <item>Усе, акрамя браўзераў</item>
         <item>Усе</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">Выключыце карыстацкія праграмы</string>
+    <string name="pref_vpn_dns">DNS-серверы</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>DNS-серверы сеткі</item>
+        <item>Уласныя DNS-серверы</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Уласныя DNS-серверы</string>
+    <string name="pref_vpn_dns_custom_summary">IP-адрасы праз коску</string>
+    <string name="pref_vpn_dns_custom_invalid">Няправільны адрас DNS-сервера</string>
+    <string name="pref_vpn_doh">Сервер DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Уласны адрас</string>
+    <string name="pref_vpn_doh_address">Адрас DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Няправільны адрас DNS over HTTPS</string>
+    <string name="pref_vpn_exclude_user_apps">Выключыць карыстальніцкія праграмы</string>
     <string name="pref_vpn_exclude_user_apps_activity">Выключаныя праграмы</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Выбраць усе</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">Зняць выбар усіх</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Зняць выбар з усіх</string>
     <string name="pref_vpn_exclude_user_apps_icon">Значок праграмы</string>
     <string name="pref_vpn_reset">Скінуць VPN</string>
-    <string name="pref_vpn_reset_description">Перабудаваць злучэнне VPN з нуля. Скарыстайцеся гэтым, калі VPN перастаў працаваць (няма доступу да інтэрнэту або памылкі DNS).</string>
-    <string name="pref_vpn_reset_done">Злучэнне VPN перабудавана.</string>
-    <string name="pref_vpn_reset_not_running">VPN не працуе.</string>
+    <string name="pref_vpn_reset_description">Нанава пабудаваць VPN-злучэнне. Выкарыстоўвайце, калі VPN перастаў працаваць (няма доступу ў інтэрнэт або ўзнікаюць памылкі DNS).</string>
+    <string name="pref_vpn_reset_done">VPN-злучэнне пабудавана нанава.</string>
+    <string name="pref_vpn_reset_not_running">VPN не запушчаны.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Запісваць дыягнастычны журнал</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Уключыце перад тым, як узнавіць праблему, а потым экспартуйце журнал ніжэй. На старых прыладах можа крыху запавольваць працу. Запісвае толькі тэхнічныя падзеі VPN, ніколі не гісторыю прагляду і не асабістыя даныя.</string>
     <string name="pref_vpn_diagnostic_log">Дыягнастычны журнал</string>
-    <string name="pref_vpn_diagnostic_log_description">Прагляд, капіраванне або абмен нядаўнімі памылкамі і падзеямі VPN. Карысна пры паведамленні пра праблему.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Пакуль не запісана ніводнай падзеі.</string>
-    <string name="pref_vpn_diagnostic_log_share">Падзяліцца дыягнастычным журналам</string>
-    <string name="pref_vpn_diagnostic_log_copy">Капіраваць</string>
-    <string name="pref_vpn_diagnostic_log_copied">Дыягнастычны журнал скапіраваны ў буфер абмену.</string>
+    <string name="pref_vpn_diagnostic_log_description">Праглядзіце, скапіюйце або перадайце апошнія памылкі і падзеі VPN. Карысна, калі вы паведамляеце пра праблему.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Падзей пакуль не запісана. Уключыце вышэй параметр «Запісваць дыягнастычны журнал», а потым паспрабуйце ўзнавіць праблему.</string>
+    <string name="pref_vpn_diagnostic_log_share">Падзяліцца</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Падзяліцца дыягнастычным журналам</string>
+    <string name="pref_vpn_diagnostic_log_copy">Скапіяваць</string>
+    <string name="pref_vpn_diagnostic_log_copied">Дыягнастычны журнал скапіяваны ў буфер абмену.</string>
     <string name="pref_vpn_diagnostic_log_clear">Ачысціць дыягнастычны журнал</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Выдаліць запісаныя падзеі. Зрабіце гэта перад узнаўленнем праблемы, каб атрымаць чысты след.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Выдаліць запісаныя падзеі. Зрабіце гэта перад узнаўленнем праблемы, каб атрымаць чысты журнал.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Дыягнастычны журнал ачышчаны.</string>
     <string name="pref_root_open_hosts">Адкрыць файл hosts</string>
-    <string name="pref_hosts_redirection_summary">Вызначыць куды пераадрасоўваць заблакаваныя hosts</string>
-    <string name="pref_redirection_ipv4">Перанакіраванне IPv4</string>
-    <string name="pref_redirection_ipv6">Перанакіраванне IPv6</string>
+    <string name="hosts_file_unreadable">Не ўдалося прачытаць файл hosts.</string>
+    <string name="pref_hosts_redirection_summary">Вызначце, куды перанакіроўваць заблакіраваныя хосты</string>
+    <string name="pref_redirection_ipv4">Наладзіць перанакіраванне IPv4</string>
+    <string name="pref_redirection_ipv6">Наладзіць перанакіраванне IPv6</string>
     <string name="pref_redirection_invalid">Няправільнае перанакіраванне</string>
-    <string name="pref_webserver_summary">Лакальны вэб-сервер праслухоўвае лакальныя IP адрасы і адказвае на запыты да заблакаваных hosts. Гэта дапаможа пазбягаць завісанняў пры блакаванні падключэнняў.</string>
+    <string name="pref_webserver_summary">Лакальны вэб-сервер слухае лакальныя IP-адрасы і адказвае на запыты да заблакіраваных імён хостаў. Ён можа дапамагчы, калі праграмы завісаюць пры заблакіраваным злучэнні.</string>
     <string name="pref_webserver_enabled">Уключыць вэб-сервер</string>
-    <string name="pref_webserver_test">Тэставы вэб-сервер</string>
+    <string name="pref_webserver_test">Праверыць вэб-сервер</string>
     <string name="pref_webserver_certificate">Усталяваць самападпісаны сертыфікат</string>
-    <string name="pref_webserver_state_not_running">Не запушчана</string>
+    <string name="pref_webserver_state_not_running">Не запушчаны</string>
     <string name="pref_webserver_state_checking">Праверка…</string>
     <string name="pref_webserver_state_running_not_installed">Запушчаны, але сертыфікат не ўсталяваны</string>
     <string name="pref_webserver_state_running_and_installed">Запушчаны, сертыфікат усталяваны</string>
-    <string name="pref_webserver_certificate_dialog_title">Ручная ўсталёўка сертыфіката</string>
-    <string name="pref_webserver_certificate_dialog_content">Пачынаючы з Android 11 (R), праграма больш не можа аўтаматычна ўсталёўваць цэнтр сертыфікацыі (CA).\n\nПерайдзіце ў налады «Бяспека», «Шыфраванне і ўліковыя даныя», затым «Усталяваць сертыфікат». Адтуль выберыце «Сертыфікат ЦС» і абярыце новы экспартаваны файл сертыфіката.</string>
-    <string name="pref_webserver_certificate_dialog_action">Адкрыйце налады «Бяспека».</string>
-    <string name="pref_webserver_icon">Замяніць пустое рэкламнае месца на значок праграмы</string>
+    <string name="pref_webserver_certificate_dialog_title">Ручная ўстаноўка сертыфіката</string>
+    <string name="pref_webserver_certificate_dialog_content">Пачынаючы з Android 11 (R) праграмы больш не могуць аўтаматычна ўсталёўваць цэнтр сертыфікацыі (CA).\n\nАдкрыйце налады «Бяспека», затым «Шыфраванне і ўліковыя даныя» і «Усталяваць сертыфікат». Там абярыце «Сертыфікат CA» і выберыце толькі што экспартаваны файл сертыфіката.</string>
+    <string name="pref_webserver_certificate_dialog_action">Адкрыць налады «Бяспека»</string>
+    <string name="pref_webserver_certificate_failed">Не ўдалося падрыхтаваць сертыфікат.</string>
+    <string name="webserver_error_title">Вэб-сервер не запушчаны</string>
+    <string name="webserver_error_resources">Не ўдалося падрыхтаваць яго файлы або сертыфікат.</string>
+    <string name="webserver_error_address_in_use">Іншая праграма ўжо выкарыстоўвае вэб-парты (80 і 443) прылады.</string>
+    <string name="webserver_error_start_failed">Не ўдалося запусціць яго на гэтай прыладзе.</string>
+    <string name="pref_webserver_icon">Замяніць пустое месца рэкламы значком праграмы</string>
 </resources>

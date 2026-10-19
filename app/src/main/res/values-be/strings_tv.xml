@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tv_dialog_add_to_allowed">Дадаць у дазволеныя</string>
-    <string name="tv_dialog_add_to_blocked">Дадаць у заблакаваныя</string>
+    <string name="tv_dialog_add_to_blocked">Дадаць у заблакіраваныя</string>
     <string name="tv_dialog_remove_from_allowed">Выдаліць з дазволеных</string>
-    <string name="tv_dialog_remove_from_blocked">Выдаліць з заблакаваных</string>
-    <string name="tv_dialog_copy_hostname">Скапіраваць імя хаста</string>
+    <string name="tv_dialog_remove_from_blocked">Выдаліць з заблакіраваных</string>
+    <string name="tv_dialog_copy_hostname">Скапіяваць імя хоста</string>
     <string name="tv_log_entry_status_description">Стан дамена</string>
     <string name="tv_button_theme_light">Светлы рэжым</string>
     <string name="tv_button_theme_dark">Цёмны рэжым</string>

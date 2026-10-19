@@ -1,27 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">Tənzimləmələr</string>
-    <string name="pref_update_title">Yeniləmələr</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_general_category">Ümumi</string>
+    <string name="pref_dark_theme">Qaranlıq tema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>İşıqlı</item>
+        <item>Qaranlıq</item>
+        <item>Sistem defoltu</item>
     </string-array>
-    <string name="pref_vpn_reset">VPN-i sıfırla</string>
-    <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yenidən qurun. VPN işləməyi dayandırarsa (internet girişi yoxdursa və ya DNS xətaları varsa) bundan istifadə edin.</string>
+    <string name="pref_update_configuration">Avtomatik yeniləmələr</string>
+    <string name="pref_language">Dil</string>
+    <string name="pref_language_system">Sistem dili</string>
+    <string name="pref_ad_block_category">Reklam bloklama</string>
+    <string name="pref_root_ad_blocker_configuration">Root əsaslı reklam bloklayıcı</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN əsaslı reklam bloklayıcı</string>
+    <string name="pref_enable_ipv6">IPv6 dəstəyini aktiv edin</string>
+    <string name="pref_backup_restore">Blok qaydalarının ehtiyat nüsxəsi / bərpası</string>
+    <string name="pref_backup_restore_title">Ehtiyat nüsxə və bərpa</string>
+    <string name="pref_backup">Ehtiyat nüsxə</string>
+    <string name="pref_backup_summary">Blok qaydalarınızın ehtiyat nüsxəsini xarici yaddaşa saxlayın</string>
+    <string name="pref_restore">Bərpa edin</string>
+    <string name="pref_restore_summary">Blok qaydalarınızı ehtiyat nüsxə faylından bərpa edin</string>
+    <string name="import_success">Ehtiyat nüsxə xarici yaddaşınızdan uğurla idxal edildi.</string>
+    <string name="import_failed">Ehtiyat nüsxəni idxal etmək alınmadı. Formatı düzgündürmü?</string>
+    <string name="export_success">Ehtiyat nüsxə xarici yaddaşınızdakı «%s» faylına uğurla ixrac edildi.</string>
+    <string name="export_failed">«%s» ehtiyat nüsxə faylını ixrac etmək alınmadı.</string>
+    <string name="pref_update_title">Yeniləmələr</string>
+    <string name="pref_update_enable_notifications">Bildirişlər deaktivdir</string>
+    <string name="pref_update_enable_notifications_summary">Tətbiq bildirişləri göstərilməyəcək. Aktiv etmək üçün toxunun.</string>
+    <string name="pref_update_app_category">Tətbiq yeniləmələri</string>
+    <string name="pref_update_check_app_startup">Başlanğıcda yeniləməni yoxlayın</string>
+    <string name="pref_update_check_app_daily">Yeniləməni vaxtaşırı yoxlayın</string>
+    <string name="pref_update_check_now">İndi yoxlayın</string>
+    <string name="pref_update_install">İndi yeniləyin</string>
+    <string name="pref_update_hosts_category">Hosts yeniləmələri</string>
+    <string name="pref_update_check">Başlanğıcda yeniləməni yoxlayın</string>
+    <string name="pref_update_check_hosts_daily">Yeniləməni vaxtaşırı yoxlayın</string>
+    <string name="pref_update_sync_on_update">Yeniləmə zamanı sinxronlaşdırın</string>
+    <string name="pref_update_sync_unmetered_only">Yalnız limitsiz şəbəkədə sinxronlaşdırın</string>
+    <string name="pref_vpn_service_on_boot">Başlanğıcda aktiv edin</string>
+    <string name="pref_vpn_service_monitor">Bağlantını izləyin</string>
+    <string name="pref_vpn_service_monitor_description">Bağlantı kəsildikdə VPN-i yenidən başlatmaq üçün şəbəkənin vəziyyəti vaxtaşırı yoxlanılır.</string>
+    <string name="pref_vpn_excluded_apps">İstisna edilən tətbiqlər</string>
+    <string name="pref_vpn_excluded_apps_description">VPN-dən istifadə etməməli olan tətbiqləri seçin ki, onların bağlantıları bloklanmasın.</string>
+    <string name="pref_vpn_exclude_system_apps">Sistem tətbiqlərini istisna edin</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Heç biri</item>
+        <item>Brauzerlər istisna olmaqla hamısı</item>
+        <item>Hamısı</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS serverləri</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Şəbəkənin DNS serverləri</item>
+        <item>Fərdi DNS serverləri</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Fərdi DNS serverləri</string>
+    <string name="pref_vpn_dns_custom_summary">IP ünvanları, vergüllə ayrılmış</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS server ünvanı yanlışdır</string>
+    <string name="pref_vpn_doh">DNS over HTTPS serveri</string>
+    <string name="pref_vpn_doh_custom">Fərdi ünvan</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS ünvanı</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS ünvanı yanlışdır</string>
+    <string name="pref_vpn_exclude_user_apps">İstifadəçi tətbiqlərini istisna edin</string>
+    <string name="pref_vpn_exclude_user_apps_activity">İstisna edilən tətbiqlər</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Hamısını seçin</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Seçimi ləğv edin</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Tətbiq ikonu</string>
+    <string name="pref_vpn_reset">VPN-i sıfırlayın</string>
+    <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yenidən qurun. VPN işləməyi dayandırdıqda (internetə çıxış yoxdur və ya DNS xətaları var) bundan istifadə edin.</string>
     <string name="pref_vpn_reset_done">VPN bağlantısı yenidən quruldu.</string>
     <string name="pref_vpn_reset_not_running">VPN işləmir.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Diaqnostika jurnalını qeyd edin</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Problemi təkrarlamazdan əvvəl aktiv edin, sonra aşağıdan ixrac edin. Köhnə cihazları bir qədər yavaşlada bilər. Yalnız VPN-in texniki hadisələri qeyd olunur, gəzinti tarixçəsi və ya şəxsi məlumatlar heç vaxt qeyd olunmur.</string>
     <string name="pref_vpn_diagnostic_log">Diaqnostika jurnalı</string>
-    <string name="pref_vpn_diagnostic_log_description">Son xətaları və VPN hadisələrini baxın, kopyalayın və ya paylaşın. Problem bildirərkən faydalıdır.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Hələ heç bir hadisə qeydə alınmayıb.</string>
-    <string name="pref_vpn_diagnostic_log_share">Diaqnostika jurnalını paylaş</string>
-    <string name="pref_vpn_diagnostic_log_copy">Kopyala</string>
-    <string name="pref_vpn_diagnostic_log_copied">Diaqnostika jurnalı buferə kopyalandı.</string>
-    <string name="pref_vpn_diagnostic_log_clear">Diaqnostika jurnalını təmizlə</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Qeydə alınmış hadisələri silin. Təmiz iz əldə etmək üçün problemi təkrar yaratmadan əvvəl bunu edin.</string>
+    <string name="pref_vpn_diagnostic_log_description">Son xətalara və VPN hadisələrinə baxın, onları kopyalayın və ya paylaşın. Problem bildirərkən faydalıdır.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Hələ heç bir hadisə qeyd olunmayıb. Yuxarıdakı «Diaqnostika jurnalını qeyd edin» seçimini aktiv edin, sonra problemi təkrarlamağa çalışın.</string>
+    <string name="pref_vpn_diagnostic_log_share">Paylaşın</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Diaqnostika jurnalını paylaşın</string>
+    <string name="pref_vpn_diagnostic_log_copy">Kopyalayın</string>
+    <string name="pref_vpn_diagnostic_log_copied">Diaqnostika jurnalı mübadilə buferinə kopyalandı.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Diaqnostika jurnalını təmizləyin</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Qeyd olunmuş hadisələri silin. Təmiz iz əldə etmək üçün problemi təkrarlamazdan əvvəl bunu edin.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Diaqnostika jurnalı təmizləndi.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
-    <string name="pref_webserver_enabled">Web serveri aç</string>
+    <string name="pref_root_open_hosts">Hosts faylını açın</string>
+    <string name="hosts_file_unreadable">Hosts faylını oxumaq mümkün olmadı.</string>
+    <string name="pref_hosts_redirection_summary">Bloklanmış hostların hara yönləndiriləcəyini təyin edin</string>
+    <string name="pref_redirection_ipv4">IPv4 yönləndirməsini tənzimləyin</string>
+    <string name="pref_redirection_ipv6">IPv6 yönləndirməsini tənzimləyin</string>
+    <string name="pref_redirection_invalid">Yönləndirmə yanlışdır</string>
+    <string name="pref_webserver_summary">Yerli veb server, bloklanmış host adlarına olan sorğulara cavab vermək üçün yerli IP ünvanlarını dinləyir. Bloklanmış bağlantı zamanı tətbiqlərin donmasının qarşısını ala bilər.</string>
+    <string name="pref_webserver_enabled">Veb serveri aktiv edin</string>
+    <string name="pref_webserver_test">Veb serveri yoxlayın</string>
+    <string name="pref_webserver_certificate">Öz imzalı sertifikatı quraşdırın</string>
+    <string name="pref_webserver_state_not_running">İşləmir</string>
+    <string name="pref_webserver_state_checking">Yoxlanılır…</string>
+    <string name="pref_webserver_state_running_not_installed">İşləyir, lakin sertifikat quraşdırılmayıb</string>
+    <string name="pref_webserver_state_running_and_installed">İşləyir və sertifikat quraşdırılıb</string>
+    <string name="pref_webserver_certificate_dialog_title">Sertifikatın əl ilə quraşdırılması</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) versiyasından başlayaraq tətbiqlər sertifikat orqanını (CA) avtomatik quraşdıra bilmir.\n\n«Təhlükəsizlik» ayarlarına, sonra «Şifrələmə və etimadnamələr» bölməsinə keçin, oradan «Sertifikat quraşdırın» seçin. Daha sonra «CA sertifikatı» seçin və yeni ixrac edilmiş sertifikat faylını göstərin.</string>
+    <string name="pref_webserver_certificate_dialog_action">«Təhlükəsizlik» ayarlarını açın</string>
+    <string name="pref_webserver_certificate_failed">Sertifikatı hazırlamaq mümkün olmadı.</string>
+    <string name="webserver_error_title">Veb server başladılmadı</string>
+    <string name="webserver_error_resources">Faylları və ya sertifikatı hazırlamaq mümkün olmadı.</string>
+    <string name="webserver_error_address_in_use">Başqa tətbiq artıq cihazın veb portlarından (80 və 443) istifadə edir.</string>
+    <string name="webserver_error_start_failed">Bu cihazda başlamaq mümkün olmadı.</string>
+    <string name="pref_webserver_icon">Boş reklam sahəsini tətbiq ikonu ilə əvəz edin</string>
 </resources>
