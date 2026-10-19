@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN ਆਪਣੇ-ਆਪ ਬੰਦ ਹੋ ਜਾਂਦਾ ਹੈ</h2>
+<p>ਇਹ ਲਗਭਗ ਹਮੇਸ਼ਾ ਸਿਸਟਮ ਵੱਲੋਂ ਬੈਟਰੀ ਬਚਾਉਣ ਲਈ VPN ਸੇਵਾ ਨੂੰ ਬੰਦ ਕਰਨ ਕਾਰਨ ਹੁੰਦਾ ਹੈ, ਕਰੈਸ਼ ਕਾਰਨ ਨਹੀਂ। ਇਹ ਉਨ੍ਹਾਂ ਨਿਰਮਾਤਾ ROM ਉੱਤੇ ਆਮ ਹੈ ਜਿੱਥੇ ਬਿਜਲੀ ਪ੍ਰਬੰਧਨ ਸਖ਼ਤ ਹੈ (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung ਅਤੇ ਹੋਰ)।</p>
+<p>Android ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ AdAway ਨੂੰ ਲੱਭੋ ਅਤੇ: <cite>ਬੈਟਰੀ ਔਪਟੀਮਾਈਜ਼ੇਸ਼ਨ</cite> ਨੂੰ <cite>ਅਪ੍ਰਤਿਬੰਧਿਤ</cite> (ਜਾਂ <cite>ਔਪਟੀਮਾਈਜ਼ ਨਾ ਕਰੋ</cite>) ਉੱਤੇ ਸੈੱਟ ਕਰੋ, ਜੇ ਤੁਹਾਡੇ ROM ਵਿੱਚ ਹੋਵੇ ਤਾਂ <cite>ਆਟੋਸਟਾਰਟ</cite>/<cite>ਆਟੋ-ਲਾਂਚ</cite> ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ, ਅਤੇ AdAway ਨੂੰ ਹਾਲੀਆ ਐਪਾਂ ਦੀ ਸੂਚੀ ਵਿੱਚ ਲਾਕ ਕਰੋ ਤਾਂ ਜੋ ਇਹ ਸਵਾਈਪ ਕਰਕੇ ਬੰਦ ਨਾ ਹੋ ਜਾਵੇ। ਇਹ ਵੀ ਯਕੀਨੀ ਬਣਾਓ ਕਿ AdAway ਦੀਆਂ VPN ਤਰਜੀਹਾਂ ਵਿੱਚ <cite>ਸ਼ੁਰੂ ਹੋਣ ਸਮੇਂ ਚਾਲੂ ਕਰੋ</cite> ਚਾਲੂ ਹੈ।</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>ਵਾਈ-ਫ਼ਾਈ ਅਤੇ ਮੋਬਾਈਲ ਡਾਟਾ ਵਿਚਕਾਰ ਬਦਲਣ ਤੋਂ ਤੁਰੰਤ ਬਾਅਦ ਇੰਟਰਨੈੱਟ ਨਹੀਂ ਚੱਲਦਾ ਜਾਂ ਬ੍ਰਾਊਜ਼ਿੰਗ ਹੌਲੀ ਹੈ</h2>
+<p>ਜਦੋਂ ਸਰਗਰਮ ਨੈੱਟਵਰਕ ਬਦਲਦਾ ਹੈ, ਤਾਂ ਟਨਲ ਨੂੰ ਦੁਬਾਰਾ ਬਣਾਉਣਾ ਪੈਂਦਾ ਹੈ ਤਾਂ ਜੋ DNS ਨਵੇਂ ਨੈੱਟਵਰਕ ਤੋਂ ਹੱਲ ਹੋਵੇ। ਜੇ ਬ੍ਰਾਊਜ਼ਿੰਗ ਫਿਰ ਵੀ ਠੀਕ ਨਹੀਂ ਹੁੰਦੀ, ਤਾਂ ਕਨੈਕਸ਼ਨ ਨੂੰ ਸ਼ੁਰੂ ਤੋਂ ਦੁਬਾਰਾ ਬਣਾਉਣ ਲਈ <cite>ਤਰਜੀਹਾਂ › VPN ਆਧਾਰਿਤ ਇਸ਼ਤਿਹਾਰ ਬਲਾਕਰ › VPN ਰੀਸੈੱਟ ਕਰੋ</cite> ਖੋਲ੍ਹੋ। ਜੇ ਇਹ ਵਾਰ-ਵਾਰ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ (ਹੇਠਾਂ) ਲਓ ਅਤੇ ਇਸ ਦੀ ਰਿਪੋਰਟ ਕਰੋ।</p>
 
-<h2>Chrome still displays ads</h2>
-<p>Ensure you disable <cite>lite mode</cite> (previously known as <cite>data saver</cite>) from Chrome settings. This features allows Chrome to use private DNS solution and bypass AdAway.</p>
+<h2>ਮੈਂ ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ ਕਿਵੇਂ ਐਕਸਪੋਰਟ ਕਰਾਂ?</h2>
+<p><cite>ਤਰਜੀਹਾਂ › VPN ਆਧਾਰਿਤ ਇਸ਼ਤਿਹਾਰ ਬਲਾਕਰ › ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ</cite> ਖੋਲ੍ਹੋ। ਇਹ ਹਾਲੀਆ ਗਲਤੀਆਂ ਅਤੇ VPN ਘਟਨਾਵਾਂ (ਨੈੱਟਵਰਕ ਬਦਲਣਾ, ਮੁੜ ਕਨੈਕਟ ਹੋਣਾ, ਅਸਫਲਤਾਵਾਂ) ਰਿਕਾਰਡ ਕਰਦਾ ਹੈ, ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਿੰਗ ਇਤਿਹਾਸ ਨਹੀਂ, ਸਿਰਫ਼ ਤਕਨੀਕੀ ਘਟਨਾਵਾਂ। ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਇਸ ਦੇ ਬਿਲਕੁਲ ਉੱਪਰ ਦਿੱਤਾ <cite>ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ ਰਿਕਾਰਡ ਕਰੋ</cite> ਚਾਲੂ ਨਹੀਂ ਕਰਦੇ, ਇਹ ਖਾਲੀ ਰਹਿੰਦਾ ਹੈ। ਸਮੱਸਿਆ ਦੀ ਰਿਪੋਰਟ ਕਰਦੇ ਸਮੇਂ ਇਸ ਨੂੰ ਭੇਜਣ ਲਈ <cite>ਕਾਪੀ ਕਰੋ</cite> ਜਾਂ <cite>ਸਾਂਝਾ ਕਰੋ</cite> ਵਰਤੋ। ਸੁਝਾਅ: ਪਹਿਲਾਂ ਇਸ ਨੂੰ <cite>ਸਾਫ਼ ਕਰੋ</cite>, ਫਿਰ ਸਮੱਸਿਆ ਨੂੰ ਦੁਹਰਾਓ, ਤਾਂ ਜੋ ਲੌਗ ਸਿਰਫ਼ ਉਸੇ ਬਾਰੇ ਹੋਵੇ।</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in our <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub issue tracker</a>.</p>
+<h2>Chrome ਹਾਲੇ ਵੀ ਇਸ਼ਤਿਹਾਰ ਦਿਖਾਉਂਦਾ ਹੈ</h2>
+<p>Chrome ਆਪਣਾ <cite>ਸੁਰੱਖਿਅਤ DNS</cite> (DNS-over-HTTPS) ਵਰਤ ਸਕਦਾ ਹੈ, ਜੋ AdAway ਨੂੰ ਬਾਈਪਾਸ ਕਰ ਦਿੰਦਾ ਹੈ। Chrome ਵਿੱਚ <cite>ਸੈਟਿੰਗਾਂ › ਪਰਦੇਦਾਰੀ ਅਤੇ ਸੁਰੱਖਿਆ › ਸੁਰੱਖਿਅਤ DNS ਵਰਤੋ</cite> ਖੋਲ੍ਹੋ ਅਤੇ ਇਸ ਨੂੰ ਬੰਦ ਕਰੋ। ਇਹੀ ਕਿਸੇ ਵੀ ਐਪ ਜਾਂ ਸਿਸਟਮ ਦੀ <cite>ਨਿੱਜੀ DNS</cite> ਸੈਟਿੰਗ ਉੱਤੇ ਵੀ ਲਾਗੂ ਹੁੰਦਾ ਹੈ। VPN ਮੋਡ ਵਿੱਚ AdAway DNS ਨੂੰ ਆਪ ਇਨਕ੍ਰਿਪਟ ਕਰ ਸਕਦਾ ਹੈ: FAQ ਵਿੱਚ <cite>VPN ਕਿਹੜੇ DNS ਸਰਵਰ ਵਰਤਦਾ ਹੈ?</cite> ਵੇਖੋ।</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>ਕੁਝ ਇਸ਼ਤਿਹਾਰ ਹਾਲੇ ਵੀ ਲੰਘ ਜਾਂਦੇ ਹਨ, ਜਾਂ ਕੋਈ ਐਪ ਹਾਲੇ ਵੀ ਇਸ਼ਤਿਹਾਰ ਦਿਖਾਉਂਦੀ ਹੈ</h2>
+<p>ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਤੁਹਾਡੇ ਸਰੋਤਾਂ ਵਿੱਚ ਕੋਈ ਹੋਸਟਨਾਮ ਨਾ ਹੋਵੇ, ਜਾਂ ਐਪ ਇਸ਼ਤਿਹਾਰਾਂ ਨੂੰ ਆਪਣੇ ਅੰਦਰ ਹੀ ਸ਼ਾਮਲ ਰੱਖਦੀ ਹੋਵੇ, ਜਿਸ ਕਾਰਨ ਕੋਈ ਬੇਨਤੀ ਹੁੰਦੀ ਹੀ ਨਹੀਂ। ਐਪ ਕੀ ਪੁੱਛ ਰਹੀ ਹੈ, ਇਹ ਵੇਖਣ ਲਈ ਹੋਮ ਸਕ੍ਰੀਨ ਤੋਂ <cite>DNS ਲੌਗ</cite> ਖੋਲ੍ਹੋ, ਸ਼ੱਕੀ ਹੋਸਟਨਾਮ <cite>ਬਲਾਕ ਕੀਤੇ</cite> ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ, ਅਤੇ ਜਾਂਚੋ ਕਿ ਕੁਝ ਟੁੱਟਦਾ ਨਹੀਂ। ਕੁਝ ਐਪਾਂ ਇਸ਼ਤਿਹਾਰ ਡਾਊਨਲੋਡ ਕਰਨ ਤੋਂ ਬਾਅਦ ਉਨ੍ਹਾਂ ਨੂੰ ਕੈਸ਼ ਵਿੱਚ ਵੀ ਰੱਖਦੀਆਂ ਹਨ, ਇਸ ਲਈ Android ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਉਸ ਐਪ ਦਾ ਕੈਸ਼ ਸਾਫ਼ ਕਰਨਾ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ।</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway ਚਾਲੂ ਕਰਨ ਤੋਂ ਬਾਅਦ ਕੋਈ ਐਪ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਗਈ</h2>
+<p>ਕੁਝ ਐਪਾਂ ਉਦੋਂ ਕੰਮ ਕਰਨ ਤੋਂ ਇਨਕਾਰ ਕਰ ਦਿੰਦੀਆਂ ਹਨ ਜਦੋਂ ਉਨ੍ਹਾਂ ਨੂੰ ਲੋੜੀਂਦਾ ਕੋਈ ਹੋਸਟਨਾਮ ਬਲਾਕ ਹੋਵੇ। ਐਪ ਨੂੰ ਕਿਹੜਾ ਹੋਸਟਨਾਮ ਚਾਹੀਦਾ ਹੈ, ਇਹ ਲੱਭਣ ਲਈ <cite>DNS ਲੌਗ</cite> ਵਰਤੋ, ਉਸ ਨੂੰ <cite>ਇਜਾਜ਼ਤ ਵਾਲੇ</cite> ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ, ਅਤੇ ਐਪ ਦੁਬਾਰਾ ਕੰਮ ਕਰਨ ਲੱਗ ਜਾਣੀ ਚਾਹੀਦੀ ਹੈ। ਜਾਣੀਆਂ-ਪਛਾਣੀਆਂ ਸਮੱਸਿਆ ਵਾਲੀਆਂ ਐਪਾਂ <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">ਇੱਥੇ</a> ਸੂਚੀਬੱਧ ਹਨ।</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>hosts ਫ਼ਾਈਲ ਲਾਗੂ ਕਰਨਾ ਅਸਫਲ ਹੁੰਦਾ ਹੈ (root ਮੋਡ)</h2>
+<p>Android ਦੇ ਨਵੇਂ ਸੰਸਕਰਨ ਸਿਰਫ਼-ਪੜ੍ਹਨ ਵਾਲੀ <code>/system</code> ਪਾਰਟੀਸ਼ਨ ਵਰਤਦੇ ਹਨ, ਇਸ ਲਈ AdAway ਉੱਥੇ ਸਿੱਧਾ ਨਹੀਂ ਲਿਖ ਸਕਦਾ। ਜੇ ਤੁਸੀਂ Magisk ਵਰਤਦੇ ਹੋ, ਤਾਂ <cite>systemless hosts</cite> ਮੌਡਿਊਲ ਚਾਲੂ ਕਰੋ, ਰੀਬੂਟ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਲਾਗੂ ਕਰੋ। ਜੇ ਤੁਸੀਂ root ਨਹੀਂ ਵਰਤਦੇ, ਤਾਂ ਇਸ ਦੀ ਥਾਂ VPN ਮੋਡ ਵਰਤੋ, ਜਿਸ ਵਿੱਚ ਸਿਸਟਮ ਨੂੰ ਬਦਲਣ ਦੀ ਲੋੜ ਨਹੀਂ ਪੈਂਦੀ।</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>ਹਾਲੇ ਵੀ ਮੁਸ਼ਕਲ ਆ ਰਹੀ ਹੈ?</h2>
+<p>ਸਮੱਸਿਆ ਦੀ ਰਿਪੋਰਟ ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ ਨਾਲ ਜੋੜ ਕੇ <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> ਉੱਤੇ ਕਰੋ।</p>
 </body>
 </html>

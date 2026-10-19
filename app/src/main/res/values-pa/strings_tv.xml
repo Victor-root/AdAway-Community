@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">ਮਨਜ਼ੂਰਸ਼ੁਦਾ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="tv_dialog_add_to_allowed">ਇਜਾਜ਼ਤ ਵਾਲਿਆਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="tv_dialog_add_to_blocked">ਬਲਾਕ ਕੀਤਿਆਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
-    <string name="tv_dialog_remove_from_allowed">ਮਨਜ਼ੂਰਸ਼ੁਦਾ ਵਿੱਚੋਂ ਹਟਾਓ</string>
+    <string name="tv_dialog_remove_from_allowed">ਇਜਾਜ਼ਤ ਵਾਲਿਆਂ ਵਿੱਚੋਂ ਹਟਾਓ</string>
     <string name="tv_dialog_remove_from_blocked">ਬਲਾਕ ਕੀਤਿਆਂ ਵਿੱਚੋਂ ਹਟਾਓ</string>
     <string name="tv_dialog_copy_hostname">ਹੋਸਟਨਾਮ ਕਾਪੀ ਕਰੋ</string>
-    <string name="tv_log_entry_status_description">ਡੋਮੇਨ ਸਥਿਤੀ</string>
-    <string name="tv_button_theme_light">ਲਾਈਟ ਮੋਡ</string>
-    <string name="tv_button_theme_dark">ਡਾਰਕ ਮੋਡ</string>
-    <string name="tv_lists_empty">ਇਸ ਸੂਚੀ ਵਿੱਚ ਅਜੇ ਕੋਈ ਐਂਟਰੀ ਨਹੀਂ ਹੈ।</string>
-    <string name="tv_dialog_search">ਖੋਜ</string>
+    <string name="tv_log_entry_status_description">ਡੋਮੇਨ ਦੀ ਸਥਿਤੀ</string>
+    <string name="tv_button_theme_light">ਹਲਕਾ ਮੋਡ</string>
+    <string name="tv_button_theme_dark">ਗੂੜ੍ਹਾ ਮੋਡ</string>
+    <string name="tv_lists_empty">ਇਸ ਸੂਚੀ ਵਿੱਚ ਹਾਲੇ ਕੋਈ ਐਂਟਰੀ ਨਹੀਂ ਹੈ।</string>
+    <string name="tv_dialog_search">ਖੋਜੋ</string>
 </resources>

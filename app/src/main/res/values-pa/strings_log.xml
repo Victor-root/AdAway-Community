@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">ਲੌਗ ਰਿਕਾਰਡਿੰਗ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰੋ</string>
+    <string name="log_start_recording">ਬੇਨਤੀਆਂ ਲੌਗ ਕਰਨੀਆਂ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਰਿਕਾਰਡ ਦਬਾਓ, ਵੈੱਬ ਬ੍ਰਾਊਜ਼ ਕਰੋ ਜਾਂ ਐਪਾਂ ਵਰਤੋ, ਫਿਰ ਲੌਗ ਰਿਫ੍ਰੈਸ਼ ਕਰਨ ਲਈ ਪਿੱਛੇ ਜਾਓ ਜਾਂ ਸਵਾਈਪ ਕਰੋ।</string>
+    <string name="log_blocked_requests_ignored">\n\nਬਲਾਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ ਲੌਗ ਨਹੀਂ ਹੋਣਗੀਆਂ। ਜੇ ਤੁਸੀਂ ਇਨ੍ਹਾਂ ਨੂੰ ਵੀ ਲੌਗ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਪਹਿਲਾਂ ਇਸ਼ਤਿਹਾਰ ਬਲਾਕ ਕਰਨਾ ਬੰਦ ਕਰੋ।</string>
+    <string name="log_sort">ਡੋਮੇਨ ਕ੍ਰਮਬੱਧ ਕਰੋ</string>
+    <string name="log_clear">ਲੌਗ ਸਾਫ਼ ਕਰੋ</string>
+    <string name="log_sort_alphabetical">ਵਰਣਮਾਲਾ ਅਨੁਸਾਰ ਕ੍ਰਮ</string>
+    <string name="log_sort_top_level_domain">ਟੌਪ ਲੈਵਲ ਡੋਮੇਨ ਅਨੁਸਾਰ ਕ੍ਰਮ</string>
+    <string name="log_block">ਐਂਟਰੀ ਨੂੰ ਬਲਾਕ ਸੂਚੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="log_allow">ਐਂਟਰੀ ਨੂੰ ਇਜਾਜ਼ਤ ਸੂਚੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="log_redirect">ਐਂਟਰੀ ਨੂੰ ਰੀਡਾਇਰੈਕਟ ਸੂਚੀ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="log_redirect_dialog_title">ਡੋਮੇਨ ਰੀਡਾਇਰੈਕਟ ਕਰੋ</string>
+    <string name="log_capture_failed">DNS ਕੈਪਚਰ ਸ਼ੁਰੂ ਨਹੀਂ ਹੋ ਸਕਿਆ।</string>
     <string name="log_start_recording_button">ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ</string>
-    <string name="log_start_recording_vpn_inactive">ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ (VPN ਕਿਰਿਆਸ਼ੀਲ ਨਹੀਂ)</string>
-    <string name="log_stop_recording">ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ</string>
+    <string name="log_start_recording_vpn_inactive">ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ (VPN ਸਰਗਰਮ ਨਹੀਂ)</string>
+    <string name="log_stop_recording">ਰਿਕਾਰਡਿੰਗ ਬੰਦ ਕਰੋ</string>
 </resources>
