@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Begin opneem</string>
-    <string name="log_start_recording_vpn_inactive">Begin opneem (VPN nie aktief nie)</string>
-    <string name="log_stop_recording">Stop opneem</string>
+    <string name="log_toggle_recording_description">Skakel logboekopname aan of af</string>
+    <string name="log_start_recording">Druk op die opnameknoppie om versoeke aan te teken, blaai deur die web of gebruik programme, en gaan dan terug of swiep om die logboek te verfris.</string>
+    <string name="log_blocked_requests_ignored">\n\nGeblokkeerde versoeke word nie aangeteken nie. Deaktiveer eers advertensieblokkering as jy dit ook wil aanteken.</string>
+    <string name="log_sort">Sorteer domeine</string>
+    <string name="log_clear">Maak logboek skoon</string>
+    <string name="log_sort_alphabetical">Alfabetiese volgorde</string>
+    <string name="log_sort_top_level_domain">Volgens topvlakdomein</string>
+    <string name="log_block">Voeg inskrywing by swartlys</string>
+    <string name="log_allow">Voeg inskrywing by witlys</string>
+    <string name="log_redirect">Voeg inskrywing by herleidinglys</string>
+    <string name="log_redirect_dialog_title">Herlei domein</string>
+    <string name="log_capture_failed">Die DNS-opname kon nie begin nie.</string>
+    <string name="log_start_recording_button">Begin opname</string>
+    <string name="log_start_recording_vpn_inactive">Begin opname (VPN nie aktief nie)</string>
+    <string name="log_stop_recording">Stop opname</string>
 </resources>

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_sort">Domainek rendezése</string>
+    <string name="log_toggle_recording_description">Naplórögzítés ki/be</string>
+    <string name="log_start_recording">A kérések naplózásának indításához nyomja meg a felvétel gombot, böngésszen a weben vagy használjon alkalmazásokat, majd lépjen vissza, vagy húzza le az ujját a napló frissítéséhez.</string>
+    <string name="log_blocked_requests_ignored">\n\nA blokkolt kérések nem lesznek naplózva. Ha azokat is naplózni szeretné, előbb kapcsolja ki a hirdetésblokkolást.</string>
+    <string name="log_sort">Tartományok rendezése</string>
     <string name="log_clear">Napló törlése</string>
-    <string name="log_sort_alphabetical">Rendezés ABC sorrendben</string>
-    <string name="log_sort_top_level_domain">Rendezés TLD szerint</string>
-    <string name="log_block">Elem hozzáadása feketelistához</string>
-    <string name="log_allow">Elem hozzáadása fehérlistához</string>
-    <string name="log_redirect">Elem hozzáadása az átirányítási listához</string>
-    <string name="log_redirect_dialog_title">Domain átirányítása</string>
-    <string name="log_start_recording_button">Felvétel indítása</string>
-    <string name="log_start_recording_vpn_inactive">Felvétel indítása (VPN nem aktív)</string>
-    <string name="log_stop_recording">Felvétel leállítása</string>
+    <string name="log_sort_alphabetical">Rendezés ábécé szerint</string>
+    <string name="log_sort_top_level_domain">Rendezés legfelső szintű tartomány szerint</string>
+    <string name="log_block">Bejegyzés hozzáadása a blokkoltakhoz</string>
+    <string name="log_allow">Bejegyzés hozzáadása az engedélyezettekhez</string>
+    <string name="log_redirect">Bejegyzés hozzáadása az átirányítottakhoz</string>
+    <string name="log_redirect_dialog_title">Tartomány átirányítása</string>
+    <string name="log_capture_failed">A DNS-rögzítést nem sikerült elindítani.</string>
+    <string name="log_start_recording_button">Rögzítés indítása</string>
+    <string name="log_start_recording_vpn_inactive">Rögzítés indítása (a VPN nem aktív)</string>
+    <string name="log_stop_recording">Rögzítés leállítása</string>
 </resources>

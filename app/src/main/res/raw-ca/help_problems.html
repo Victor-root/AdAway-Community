@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>La VPN s’apaga sola</h2>
+<p>Gairebé sempre és el sistema, que atura el servei de VPN per estalviar bateria, i no pas una fallada. És habitual en les ROM de fabricants amb una gestió d’energia agressiva (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung i d’altres).</p>
+<p>A la configuració d’Android, cerca AdAway i posa l’<cite>optimització de la bateria</cite> en <cite>Sense restriccions</cite> (o <cite>No optimitzis</cite>), permet l’<cite>inici automàtic</cite> (o <cite>inici automàtic en segon pla</cite>) si la teva ROM l’ofereix, i bloqueja AdAway a la llista d’aplicacions recents perquè no es tanqui en lliscar-lo. Comprova també que <cite>Activa en arrencar</cite> estigui activat a les preferències de la VPN d’AdAway.</p>
 
-<h2>No hi ha prou espai a la partició</h2>
-<p>Intenteu canviar el fitxer d'amfitrions de destinació a les preferències a <code>/data/data/hosts</code> (o <code>/data/hosts</code>) i torneu a aplicar l'AdAway.</p>
+<h2>No hi ha Internet o la navegació va lenta just després de canviar entre Wi-Fi i dades mòbils</h2>
+<p>Quan canvia la xarxa activa, cal reconstruir el túnel perquè el DNS es resolgui des de la nova xarxa. Si la navegació continua sense funcionar, obre <cite>Preferències › VPN › Restableix la VPN</cite> per reconstruir la connexió des de zero. Si continua passant, captura un registre de diagnòstic (més avall) i informa’n.</p>
 
-<h2>No funciona a Android 4.4+</h2>
-<p>Intenteu canviar el fitxer d'amfitrions de destinació a les preferències de <code> /data/data/hosts</code> a <code>/data/hosts</code> o <code>/system/etc/hosts</code> i torneu a aplicar l'AdAway.</p>
+<h2>Com exporto un registre de diagnòstic?</h2>
+<p>Obre <cite>Preferències › VPN › Registre de diagnòstic</cite>. Hi trobaràs els errors i els esdeveniments recents de la VPN (canvis de xarxa, reconnexions, errors), però no l’historial de navegació: només esdeveniments tècnics. Es manté buit fins que activis <cite>Grava el registre de diagnòstic</cite>, just a sobre. Fes servir <cite>Copia</cite> o <cite>Comparteix</cite> per enviar-lo quan informis d’un problema. Consell: fes primer <cite>Esborra el registre de diagnòstic</cite> i reprodueix després la incidència, perquè el registre sigui més concret.</p>
 
-<h2>No bloqueja els anuncis de l'aplicació X!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome continua mostrant anuncis</h2>
+<p>Chrome pot utilitzar el seu propi <cite>DNS segur</cite> (DNS over HTTPS), que se salta AdAway. A Chrome, obre <cite>Configuració › Privadesa i seguretat › Utilitza un DNS segur</cite> i desactiva’l. El mateix val per a qualsevol aplicació o per a l’opció <cite>DNS privat</cite> del sistema. En mode VPN, AdAway mateix pot xifrar el DNS: consulta <cite>Quins servidors DNS utilitza la VPN?</cite> a la FAQ.</p>
 
-<h2>Anuncis en memòria cau</h2>
-<p>Algunes aplicacions carreguen anuncis en memòria. Això fa que quedin alguns anuncis en algunes aplicacions. Podeu provar eliminant les dades en memòria d'aquestes aplicacions en el gestor de programari d'Android per solucionar aquest problema.</p>
+<h2>Encara passen alguns anuncis, o una aplicació en continua mostrant</h2>
+<p>Pot ser que falti un nom d’amfitrió a les teves fonts, o que l’aplicació inclogui els anuncis al seu interior i no faci cap sol·licitud. Obre el <cite>Registre DNS</cite> des de la pantalla d’inici per veure què consulta l’aplicació, afegeix els noms d’amfitrió sospitosos a la teva llista <cite>Bloquejats</cite> i comprova que no es trenqui res. Algunes aplicacions també desen els anuncis a la memòria cau un cop baixats, de manera que pot ajudar esborrar la memòria cau de l’aplicació a la configuració d’Android.</p>
 
-<h2>L'aplicació X no funciona més.</h2>
-<p>Algunes aplicacions necessiten connexió amb un amfitrió que l'AdAway ha blocat o bé no funcionen correctament si el servidor de publicitat no està disponible. Veieu <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> per obtenir un llistat d'aplicacions amb aquest comportament. D'altra banda, podeu esbrinar quins noms de domini necessiten les aplicacions i els podeu afegir a la <cite>llista blanca</cite> a <cite>llistes</cite> i reportar (en anglès) el problema mitjançant el <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>Una aplicació ha deixat de funcionar després d’activar AdAway</h2>
+<p>Algunes aplicacions es neguen a funcionar quan es bloqueja un nom d’amfitrió que necessiten. Fes servir el <cite>Registre DNS</cite> per esbrinar quin nom d’amfitrió necessita l’aplicació i afegeix-lo a la teva llista <cite>Permesos</cite>: l’aplicació hauria de tornar a funcionar. Les aplicacions problemàtiques conegudes figuren <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">aquí</a>.</p>
 
-<h2>El botó enrera en els navegadors web no funciona</h2>
-<p>Podeu habilitar el servidor local d'AdAway a les preferències com a solució temporal.</p>
+<h2>Falla l’aplicació del fitxer hosts (mode root)</h2>
+<p>Les versions recents d’Android utilitzen una partició <code>/system</code> de només lectura, de manera que AdAway no hi pot escriure directament. Si fas servir Magisk, activa el mòdul <cite>systemless hosts</cite>, reinicia i torna a aplicar. Si no fas servir root, passa al mode VPN, que no requereix cap modificació del sistema.</p>
 
-<h2>El botó enrera en els navegadors web no funciona</h2>
-<p>Podeu habilitar el servidor local d'AdAway a les preferències com a solució temporal.</p>
-
+<h2>Continues encallat?</h2>
+<p>Informa del problema adjuntant-hi un registre de diagnòstic a <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

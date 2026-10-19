@@ -2,35 +2,99 @@
 <resources>
     <string name="welcome_first_step">A varázsló első lépése</string>
     <string name="welcome_second_step">A varázsló második lépése</string>
-    <string name="welcome_method_header">Üdv az AdAway alkalmazásban!</string>
-    <string name="welcome_method_summary">Az AdAway két hirdetésblokkoló módot kínál. Válassza ki azt, amelyik tetszik:</string>
-    <string name="welcome_root_method_title">Root alapú\nhirdetésblokkolás</string>
+    <string name="welcome_third_step">A varázsló harmadik lépése</string>
+    <string name="welcome_fourth_step">A varázsló negyedik lépése</string>
+    <string name="welcome_method_header">Üdvözli az AdAway!</string>
+    <string name="welcome_method_summary">Az AdAway két hirdetésblokkoló módszert kínál. Válassza ki az Önnek megfelelőt:</string>
+    <string name="welcome_root_method_title">Root-alapú\nhirdetésblokkolás</string>
     <string name="welcome_root_method_text1">Gyorsabb</string>
-    <string name="welcome_root_method_text2">Akkumulátor-barát</string>
+    <string name="welcome_root_method_text2">Akkumulátorbarát</string>
     <string name="welcome_root_method_text3">Root szükséges</string>
-    <string name="welcome_vpn_method_title">VPN alapú\nhirdetésblokkolás</string>
+    <string name="welcome_vpn_method_title">VPN-alapú\nhirdetésblokkolás</string>
     <string name="welcome_vpn_method_text1">Lassabb</string>
     <string name="welcome_vpn_method_text2">Fut a háttérben</string>
     <string name="welcome_vpn_method_text3">Kompatibilitás</string>
     <string name="welcome_root_missing_title">Rootolt Android szükséges</string>
-    <string name="welcome_root_missile_description">Vagy nem található a su bináris, vagy nem engedélyezte a root hozzáférést az AdAway számára.\n\nEz akkor fordulhat elő, ha az eszköt nem rendelkezik root jogosultságokkal. A készülék rootolásáról további információkat a wiki.lineageos.org vagy más Android weboldalon talál. </string>
-    <string name="welcome_method_pro_logo">Előny</string>
-    <string name="welcome_method_con_logo">Hátrány</string>
+    <string name="welcome_root_missile_description">Vagy a su bináris nem található, vagy nem engedélyezte a root-hozzáférést az AdAway számára.\n\nEz akkor fordulhat elő, ha az eszköze nincs rootolva. A rootolásról a wiki.lineageos.org oldalon vagy más Android-weboldalakon talál tájékoztatást.</string>
+    <string name="welcome_vpn_alwayson_title">A „Mindig bekapcsolt VPN” be van kapcsolva</string>
+    <string name="welcome_vpn_alwayson_description">Az AdAway észlelte, hogy egy másik VPN-nél be van kapcsolva a „Mindig bekapcsolt VPN” beállítás.\n\nEz megakadályozza, hogy az AdAway VPN-hozzáférést kérjen. Kapcsolja ki a „Mindig bekapcsolt VPN” beállítást az érintett VPN-nél, majd próbálja újra.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">Az AdAway nem tudott VPN-hozzáférést kérni.\n\nEnnek oka lehet, hogy egy másik VPN-nél be van kapcsolva a „Mindig bekapcsolt VPN” beállítás. Ellenőrizze, hogy valamelyik VPN-nél be van-e kapcsolva, és kapcsolja ki, mielőtt újra próbálkozik.</string>
+    <string name="welcome_vpn_alwayson_settings_action">A „VPN” beállítások megnyitása</string>
+    <string name="welcome_method_pro_logo">Előnyök</string>
+    <string name="welcome_method_con_logo">Hátrányok</string>
     <string name="welcome_sync_header">Szinkronizálás</string>
     <string name="welcome_synced_header">Szinkronizálva!</string>
-    <string name="welcome_sync_summary">Az AdAway letölti a hirdetési hálózatokat, hogy blokkolja az online forrásokat. A beállításokban később testreszabhatja őket.</string>
-    <string name="welcome_sync_retry_logo">Szinkronizálás újrapróbálása</string>
-    <string name="welcome_sync_error">Nem sikerült a szinkronizálás: %1$s Újrapróbálkozás?</string>
+    <string name="welcome_sync_summary">Az AdAway online forrásokból tölti le a blokkolandó hirdetéshálózatokat. Később testreszabhatja őket a beállításokban.</string>
+    <string name="welcome_sync_retry_logo">Szinkronizálás újra</string>
+    <string name="welcome_sync_error">A szinkronizálás sikertelen: %1$s Próbálja újra most?</string>
+    <string name="welcome_sync_notifications">Értesítéseket küldhet a hirdetésblokkolás állapotának megjelenítéséhez és vezérléséhez, valamint az alkalmazás elérhető frissítéseiről (évente néhány). Kapcsolja be őket, ha naprakész szeretne maradni.</string>
+    <string name="welcome_sync_leave_early_title">A szinkronizálás még nem fejeződött be</string>
+    <string name="welcome_sync_leave_early_message">A blokkolólisták letöltése még nem fejeződött be. Folytathatja most, és a letöltés a háttérben tovább fog tartani, vagy megvárhatja itt a végét.</string>
+    <string name="welcome_sync_leave_early_wait">Várakozás</string>
+    <string name="welcome_sync_leave_early_continue">Folytatás így is</string>
+    <string name="welcome_battery_header">Maradjon védve a háttérben is</string>
+    <string name="welcome_battery_summary">Az Android a háttérben szüneteltetheti az AdAway VPN-jét az energiatakarékosság érdekében, ami észrevétlenül leállíthatja a hirdetésblokkolást. Engedélyezze az AdAway számára, hogy figyelmen kívül hagyja az akkumulátoroptimalizálást, így folyamatosan futhat.</string>
+    <string name="welcome_battery_action">Engedélyezés</string>
+    <string name="welcome_battery_granted">Engedélyezve ✓</string>
+    <string name="welcome_battery_footnote_prefix">Ezt később bármikor módosíthatja itt:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android Beállítások</item>
+        <item>Alkalmazások</item>
+        <item>AdAway</item>
+        <item>Akkumulátor</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Még valami: a telefon saját akkumulátorkezelője</string>
+    <string name="welcome_oem_battery_summary">Egyes telefonmárkák saját akkumulátorkezelővel rendelkeznek, amely szintén blokkolhatja az AdAway-t. Ezt érdemes ellenőrizni a telefonján:</string>
+    <string name="welcome_oem_battery_action">Alkalmazásinformáció megnyitása</string>
+    <string name="welcome_oem_battery_open_failed">Nem sikerült megnyitni az alkalmazásinformációs képernyőt. Nyissa meg kézzel: Android Beállítások → Alkalmazások → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Ezek általános útmutatók, nem pontos leírások: a megnevezések és a helyek telefonmodellenként és Android-verziónként eltérhetnek.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Alkalmazásinformáció</item>
+        <item>Akkumulátor</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Keressen valami ilyesmit: „Háttérhasználati korlátok” › „Soha nem alvó alkalmazások”, majd adja hozzá az AdAway-t a listához.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Ellenőrizze az „Automatikus optimalizálás” beállítást is, és ha van, kapcsolja ki az „Újraindítás szükség esetén” opciót.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Alkalmazásinformáció</item>
+        <item>Akkumulátorkímélő</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Válassza a „Nincs korlátozás” lehetőséget.</string>
+    <string name="welcome_oem_battery_secondary_miui">Kapcsolja be az „Automatikus indítás” beállítást is (újabb verziókon „Automatikus indítás a háttérben”).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Alkalmazásinformáció</item>
+        <item>Akkumulátorhasználat</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Válassza a „Háttértevékenység engedélyezése” lehetőséget (néha „Nincs korlátozás” néven jelenik meg).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Keresse meg az AdAway „Automatikus indítás” kapcsolóját is (gyakran a Beállítások › Alkalmazások alatt), hogy kényszerített leállítás után újra tudjon indulni.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Alkalmazásinformáció</item>
+        <item>Akkumulátor</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Keresse az „Alkalmazásindítás” menüpontot, kapcsolja ki az „Automatikus kezelés” opciót, majd kapcsolja be mind a 3 lehetőséget: „Automatikus indítás”, „Másodlagos indítás” és „Futtatás a háttérben”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Zárolja az AdAway-t a legutóbbi alkalmazások képernyőjén is (húzza lefelé a kártyáját, amíg meg nem jelenik egy lakat).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Alkalmazásinformáció</item>
+        <item>Akkumulátorhasználat</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Keressen egy háttérenergia-beállítást, és válassza a „Háttérenergia-használat nem korlátozása” lehetőséget (ne az „Intelligens vezérlés” legyen).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Keresse meg az AdAway „Automatikus indítás” beállítását is, gyakran a Beállítások › Alkalmazások alatt.</string>
+    <string name="welcome_oem_battery_label_generic">Más márka</string>
+    <string name="welcome_oem_battery_tip_generic">Az alkalmazásinformációk között keressen akkumulátor- vagy háttértevékenység-beállítást, és ügyeljen rá, hogy az AdAway ne legyen korlátozva.</string>
     <string name="welcome_back_button">Vissza</string>
-    <string name="welcome_next_button">Következő</string>
+    <string name="welcome_next_button">Tovább</string>
     <string name="welcome_finish_button">Befejezés</string>
     <string name="tv_welcome_intro_subtitle">Ez a rövid varázsló bekapcsolja a hirdetésblokkolást ezen az eszközön.</string>
     <string name="tv_welcome_start_button">Kezdés</string>
-    <string name="tv_welcome_method_header">Válaszd ki a blokkolási módot</string>
+    <string name="tv_welcome_method_header">Válassza ki a blokkolási módszert</string>
     <string name="tv_welcome_method_root_button">Root használata</string>
-    <string name="tv_welcome_method_root_body">Gyorsabb és kíméletesebb az akkumulátorral. Rootolt eszközt igényel.</string>
+    <string name="tv_welcome_method_root_body">Gyorsabb és akkumulátorbarát. Rootolt eszközt igényel.</string>
     <string name="tv_welcome_method_vpn_button">VPN használata</string>
-    <string name="tv_welcome_method_vpn_body">Root nélkül működik, bármely Android TV eszközzel kompatibilis.</string>
+    <string name="tv_welcome_method_vpn_body">Root nélkül működik, bármely Android TV-eszközzel kompatibilis.</string>
     <string name="tv_welcome_activate_header">Hirdetésblokkolás bekapcsolása</string>
-    <string name="tv_welcome_activate_body">Ez egy helyi VPN: a hirdetéseket magán az eszközön szűri, anélkül hogy a forgalmadat külső szerveren keresztül irányítaná.</string>
+    <string name="tv_welcome_activate_body">Ez egy helyi VPN: az eszközön szűri a hirdetéseket, anélkül, hogy a forgalmát külső kiszolgálón keresztül irányítaná.</string>
 </resources>

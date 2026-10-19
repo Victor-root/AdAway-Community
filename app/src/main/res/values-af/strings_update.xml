@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
+    <string name="update_title">AdAway-opdatering</string>
+    <string name="update_banner_title">Opdatering beskikbaar</string>
+    <string name="update_banner_subtitle">Tik om %1$s te installeer</string>
+    <string name="update_up_to_date_header">Jy is op datum</string>
     <string name="update_update_available_header">Opdatering beskikbaar</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_updating_header">AdAway word opgedateer</string>
+    <string name="update_update_button">Dateer nou op</string>
+    <string name="update_complete_label">Voltooi</string>
+    <string name="update_last_changelog_title">Laaste veranderinge</string>
+    <string name="update_new_changelog_title">Veranderingslogboek</string>
+    <string name="update_download_failed">Die opdatering kon nie afgelaai word nie.</string>
+    <string name="update_install_failed">Die opdatering kon nie geïnstalleer word nie.</string>
+    <string name="pref_update_check_now_update_available">Nuwe weergawe beskikbaar: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Geen opdatering beskikbaar nie</string>
+    <string name="pref_update_check_now_failed">Die opdateringbediener kon nie bereik word nie</string>
+    <string name="pref_update_install_summary">Installeer weergawe %1$s</string>
+    <string name="notification_channel_app_updates">Programopdaterings</string>
+    <string name="notification_channel_app_updates_description">Kennisgewing wanneer ’n nuwe weergawe van die program beskikbaar is. Demp hierdie kanaal om programopdateringkennisgewings stil te maak sonder om ander kennisgewings te raak.</string>
+    <string name="notification_app_update_title">Programopdatering beskikbaar</string>
+    <string name="notification_app_update_text">’n Nuwe weergawe van AdAway is beskikbaar om af te laai.</string>
 </resources>

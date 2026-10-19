@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_root_missing_title">Kern beskikbare (rooted) Android benodig</string>
-    <string name="tv_welcome_intro_subtitle">Hierdie kort assistent skakel advertensieblokkering op hierdie toestel aan.</string>
-    <string name="tv_welcome_start_button">Begin</string>
+    <string name="welcome_first_step">Eerste stap van die gids</string>
+    <string name="welcome_second_step">Tweede stap van die gids</string>
+    <string name="welcome_third_step">Derde stap van die gids</string>
+    <string name="welcome_fourth_step">Vierde stap van die gids</string>
+    <string name="welcome_method_header">Welkom by AdAway!</string>
+    <string name="welcome_method_summary">AdAway bied twee metodes om advertensies te blokkeer. Kies die een wat jou pas:</string>
+    <string name="welcome_root_method_title">Root-gebaseerde\nadvertensieblokkering</string>
+    <string name="welcome_root_method_text1">Vinniger</string>
+    <string name="welcome_root_method_text2">Batteryvriendelik</string>
+    <string name="welcome_root_method_text3">Root vereis</string>
+    <string name="welcome_vpn_method_title">VPN-gebaseerde\nadvertensieblokkering</string>
+    <string name="welcome_vpn_method_text1">Stadiger</string>
+    <string name="welcome_vpn_method_text2">Loop op die agtergrond</string>
+    <string name="welcome_vpn_method_text3">Versoenbaarheid</string>
+    <string name="welcome_root_missing_title">Geroote Android vereis</string>
+    <string name="welcome_root_missile_description">Óf die su-binêr kon nie gevind word nie, óf jy het nie root-toestemming aan AdAway gegee nie.\n\nDit kan gebeur as jou toestel nie geroot is nie. Inligting oor hoe om jou toestel te root, is op wiki.lineageos.org en ander Android-webwerwe te vinde.</string>
+    <string name="welcome_vpn_alwayson_title">Altyd-aan-VPN is geaktiveer</string>
+    <string name="welcome_vpn_alwayson_description">AdAway het bespeur dat ’n ander VPN die instelling “Altyd-aan-VPN” aktief het.\n\nDit verhoed dat AdAway VPN-toegang kan aanvra. Deaktiveer asseblief “Altyd-aan-VPN” by daardie VPN en probeer weer.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway kon nie VPN-toegang aanvra nie.\n\nDit kan wees omdat ’n ander VPN die instelling “Altyd-aan-VPN” aktief het. Kyk asseblief of enige VPN hierdie instelling aan het, en deaktiveer dit voordat jy weer probeer.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Maak “VPN”-instellings oop</string>
+    <string name="welcome_method_pro_logo">Voordeel</string>
+    <string name="welcome_method_con_logo">Nadeel</string>
+    <string name="welcome_sync_header">Sinkroniseer tans</string>
+    <string name="welcome_synced_header">Gesinkroniseer!</string>
+    <string name="welcome_sync_summary">AdAway laai die advertensienetwerke wat geblokkeer moet word van aanlynbronne af. Jy kan dit later in die instellings aanpas.</string>
+    <string name="welcome_sync_retry_logo">Probeer weer sinkroniseer</string>
+    <string name="welcome_sync_error">Kon nie sinkroniseer nie: %1$s Probeer nou weer?</string>
+    <string name="welcome_sync_notifications">Dit kan kennisgewings stuur om die status van advertensieblokkering te wys en te beheer, en om te laat weet wanneer ’n programopdatering beskikbaar is (’n paar keer per jaar). Aktiveer dit as jy op datum wil bly.</string>
+    <string name="welcome_sync_leave_early_title">Sinkronisering is nog nie klaar nie</string>
+    <string name="welcome_sync_leave_early_message">Die blokkeerlyste is nog nie klaar afgelaai nie. Jy kan nou voortgaan en dit sal op die agtergrond voortgaan, of hier wag totdat dit klaar is.</string>
+    <string name="welcome_sync_leave_early_wait">Wag</string>
+    <string name="welcome_sync_leave_early_continue">Gaan tog voort</string>
+    <string name="welcome_battery_header">Bly op die agtergrond beskerm</string>
+    <string name="welcome_battery_summary">Android kan AdAway se VPN op die agtergrond onderbreek om krag te spaar, en dit kan advertensieblokkering ongemerk laat ophou. Laat AdAway toe om batteryoptimalisering te ignoreer, sodat dit aan die gang bly.</string>
+    <string name="welcome_battery_action">Laat toe</string>
+    <string name="welcome_battery_granted">Toegelaat ✓</string>
+    <string name="welcome_battery_footnote_prefix">Jy kan dit altyd later verander onder</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android-instellings</item>
+        <item>Programme</item>
+        <item>AdAway</item>
+        <item>Battery</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Nog een ding: jou foon se eie batterybestuurder</string>
+    <string name="welcome_oem_battery_summary">Sommige foonhandelsmerke het hul eie batterybestuurder wat ook AdAway kan blokkeer. Dit moet jy op joune nagaan:</string>
+    <string name="welcome_oem_battery_action">Maak programinligting oop</string>
+    <string name="welcome_oem_battery_open_failed">Kon nie die programinligting-skerm oopmaak nie. Maak dit self oop onder Android-instellings → Programme → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Dit is algemene wenke en nie ’n presiese gids nie: die bewoording en ligging kan volgens foonmodel en Android-weergawe verskil.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Programinligting</item>
+        <item>Battery</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Soek iets soos “Agtergrondgebruikbeperkings” › “Programme wat nooit slaap nie”, en voeg dan AdAway by daardie lys.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Kyk ook of daar ’n “Outomatiese optimalisering”-instelling is en skakel “Herbegin wanneer nodig” af as dit daar is.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Programinligting</item>
+        <item>Batterybespaarder</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Kies “Geen beperkings”.</string>
+    <string name="welcome_oem_battery_secondary_miui">Aktiveer ook “Outostart” (“Agtergrond-outostart” in nuwer weergawes).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Programinligting</item>
+        <item>Batterygebruik</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Kies “Laat agtergrondaktiwiteit toe” (word soms as “Geen beperkings” gewys).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Soek ook ’n “Outo-begin”-skakelaar vir AdAway (dikwels onder Instellings › Programme), sodat dit homself kan herbegin nadat dit gedwing is om te stop.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Programinligting</item>
+        <item>Battery</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Soek “Programbegin”, skakel “Bestuur outomaties” af en aktiveer dan al 3: “Outo-begin”, “Sekondêre begin” en “Laat op agtergrond loop”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Sluit AdAway ook in die onlangse programme-skerm vas (swiep sy kaart af totdat ’n hangslot verskyn).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Programinligting</item>
+        <item>Batterygebruik</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Soek ’n opsie vir agtergrondkragverbruik en kies “Moenie agtergrondkragverbruik beperk nie” (nie “Slim beheer” nie).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Soek ook ’n “Outostart”-instelling vir AdAway, dikwels onder Instellings › Programme.</string>
+    <string name="welcome_oem_battery_label_generic">Ander handelsmerk</string>
+    <string name="welcome_oem_battery_tip_generic">Soek in die programinligting na ’n battery- of agtergrondaktiwiteitinstelling en maak seker AdAway word nie beperk nie.</string>
+    <string name="welcome_back_button">Terug</string>
+    <string name="welcome_next_button">Volgende</string>
+    <string name="welcome_finish_button">Voltooi</string>
+    <string name="tv_welcome_intro_subtitle">Hierdie kort gids skakel advertensieblokkering op hierdie toestel aan.</string>
+    <string name="tv_welcome_start_button">Aan die gang</string>
     <string name="tv_welcome_method_header">Kies jou blokkeermetode</string>
     <string name="tv_welcome_method_root_button">Gebruik root</string>
-    <string name="tv_welcome_method_root_body">Vinniger en batterybesparend. Vereis \'n gewortelde toestel.</string>
+    <string name="tv_welcome_method_root_body">Vinniger en batteryvriendelik. Vereis ’n geroote toestel.</string>
     <string name="tv_welcome_method_vpn_button">Gebruik VPN</string>
-    <string name="tv_welcome_method_vpn_body">Werk sonder root, versoenbaar met enige Android TV-toestel.</string>
+    <string name="tv_welcome_method_vpn_body">Werk sonder root en is versoenbaar met enige Android TV-toestel.</string>
     <string name="tv_welcome_activate_header">Skakel advertensieblokkering aan</string>
-    <string name="tv_welcome_activate_body">Dit is \'n plaaslike VPN: dit filter advertensies op hierdie toestel, sonder om jou verkeer deur \'n eksterne bediener te stuur.</string>
+    <string name="tv_welcome_activate_body">Dit is ’n plaaslike VPN: dit filtreer advertensies op hierdie toestel, sonder om jou verkeer deur ’n eksterne bediener te stuur.</string>
 </resources>

@@ -1,23 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">Voorkeure</string>
-    <string name="pref_update_check_app_daily">Kyk daagliks vir opdaterings</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string name="pref_update_check_hosts_daily">Kyk daagliks vir opdaterings</string>
-    <string name="pref_vpn_reset">Herstel VPN</string>
-    <string name="pref_vpn_reset_description">Herbou die VPN-verbinding van voor af. Gebruik dit as die VPN ophou werk (geen internettoegang of DNS-foute).</string>
+    <string name="pref_general_category">Algemeen</string>
+    <string name="pref_dark_theme">Donker tema</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Lig</item>
+        <item>Donker</item>
+        <item>Stelselverstek</item>
+    </string-array>
+    <string name="pref_update_configuration">Outomatiese opdaterings</string>
+    <string name="pref_language">Taal</string>
+    <string name="pref_language_system">Stelseltaal</string>
+    <string name="pref_ad_block_category">Advertensieblokkering</string>
+    <string name="pref_root_ad_blocker_configuration">Root-gebaseerde advertensieblokkeerder</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-gebaseerde advertensieblokkeerder</string>
+    <string name="pref_enable_ipv6">Aktiveer IPv6-ondersteuning</string>
+    <string name="pref_backup_restore">Rugsteun / herstel blokkeerreëls</string>
+    <string name="pref_backup_restore_title">Rugsteun en herstel</string>
+    <string name="pref_backup">Rugsteun</string>
+    <string name="pref_backup_summary">Rugsteun jou blokkeerreëls na eksterne berging</string>
+    <string name="pref_restore">Herstel</string>
+    <string name="pref_restore_summary">Herstel jou blokkeerreëls vanaf ’n rugsteunlêer</string>
+    <string name="import_success">Rugsteun suksesvol vanaf jou eksterne berging ingevoer.</string>
+    <string name="import_failed">Kon nie die rugsteun invoer nie. Is die formaat korrek?</string>
+    <string name="export_success">Rugsteun suksesvol na die lêer “%s” op jou eksterne berging uitgevoer.</string>
+    <string name="export_failed">Kon nie rugsteunlêer “%s” uitvoer nie.</string>
+    <string name="pref_update_title">Opdaterings</string>
+    <string name="pref_update_enable_notifications">Kennisgewings is gedeaktiveer</string>
+    <string name="pref_update_enable_notifications_summary">Programkennisgewings sal nie wys nie. Tik om dit te aktiveer.</string>
+    <string name="pref_update_app_category">Programopdaterings</string>
+    <string name="pref_update_check_app_startup">Kyk by opstart vir opdaterings</string>
+    <string name="pref_update_check_app_daily">Kyk gereeld vir opdaterings</string>
+    <string name="pref_update_check_now">Kyk nou</string>
+    <string name="pref_update_install">Dateer nou op</string>
+    <string name="pref_update_hosts_category">Hosts-opdaterings</string>
+    <string name="pref_update_check">Kyk by opstart vir opdaterings</string>
+    <string name="pref_update_check_hosts_daily">Kyk gereeld vir opdaterings</string>
+    <string name="pref_update_sync_on_update">Sinkroniseer by opdatering</string>
+    <string name="pref_update_sync_unmetered_only">Sinkroniseer net op ongemeterde netwerk</string>
+    <string name="pref_vpn_service_on_boot">Aktiveer by opstart</string>
+    <string name="pref_vpn_service_monitor">Moniteer verbinding</string>
+    <string name="pref_vpn_service_monitor_description">Kyk gereeld na die netwerktoestand om die VPN te herbegin wanneer die verbinding verbreek word.</string>
+    <string name="pref_vpn_excluded_apps">Uitgesluite programme</string>
+    <string name="pref_vpn_excluded_apps_description">Stel in watter programme nie die VPN moet gebruik nie, sodat geen verbindings geblokkeer word nie.</string>
+    <string name="pref_vpn_exclude_system_apps">Sluit stelselprogramme uit</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Geen</item>
+        <item>Almal behalwe blaaiers</item>
+        <item>Almal</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS-bedieners</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Netwerk-DNS-bedieners</item>
+        <item>Eie DNS-bedieners</item>
+        <item>DNS oor HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Eie DNS-bedieners</string>
+    <string name="pref_vpn_dns_custom_summary">IP-adresse, geskei deur kommas</string>
+    <string name="pref_vpn_dns_custom_invalid">Ongeldige DNS-bedieneradres</string>
+    <string name="pref_vpn_doh">DNS oor HTTPS-bediener</string>
+    <string name="pref_vpn_doh_custom">Eie adres</string>
+    <string name="pref_vpn_doh_address">DNS oor HTTPS-adres</string>
+    <string name="pref_vpn_doh_invalid">Ongeldige DNS oor HTTPS-adres</string>
+    <string name="pref_vpn_exclude_user_apps">Sluit gebruikerprogramme uit</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Uitgesluite programme</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Kies almal</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Ontkies almal</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Programikoon</string>
+    <string name="pref_vpn_reset">Stel VPN terug</string>
+    <string name="pref_vpn_reset_description">Bou die VPN-verbinding van voor af weer op. Gebruik dit as die VPN ophou werk (geen internettoegang of DNS-foute).</string>
     <string name="pref_vpn_reset_done">VPN-verbinding herbou.</string>
     <string name="pref_vpn_reset_not_running">Die VPN loop nie.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Teken diagnostiese logboek aan</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Skakel dit aan voordat jy ’n probleem weer laat gebeur, en voer dit dan hieronder uit. Dit kan ouer toestelle effens stadiger maak. Dit teken net tegniese VPN-gebeure aan, nooit blaaigeskiedenis of persoonlike data nie.</string>
     <string name="pref_vpn_diagnostic_log">Diagnostiese logboek</string>
-    <string name="pref_vpn_diagnostic_log_description">Bekyk, kopieer of deel die onlangse foute en VPN-gebeurtenisse. Nuttig wanneer \'n probleem gerapporteer word.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Geen gebeurtenisse is nog aangeteken nie.</string>
-    <string name="pref_vpn_diagnostic_log_share">Deel diagnostiese logboek</string>
+    <string name="pref_vpn_diagnostic_log_description">Bekyk, kopieer of deel die onlangse foute en VPN-gebeure. Nuttig wanneer jy ’n probleem rapporteer.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Nog geen gebeure is aangeteken nie. Skakel “Teken diagnostiese logboek aan” hierbo aan en probeer dan om die probleem weer te laat gebeur.</string>
+    <string name="pref_vpn_diagnostic_log_share">Deel</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Deel diagnostiese logboek</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopieer</string>
     <string name="pref_vpn_diagnostic_log_copied">Diagnostiese logboek na knipbord gekopieer.</string>
     <string name="pref_vpn_diagnostic_log_clear">Vee diagnostiese logboek uit</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Skrap die aangetekende gebeurtenisse. Doen dit voordat jy \'n probleem weer skep om \'n skoon spoor vas te lê.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Vee die aangetekende gebeure uit. Doen dit voordat jy ’n probleem weer laat gebeur, om ’n skoon spoor vas te lê.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Diagnostiese logboek uitgevee.</string>
-    <string name="pref_root_open_hosts">Maak Gasheer lêer oop</string>
+    <string name="pref_root_open_hosts">Maak hosts-lêer oop</string>
+    <string name="hosts_file_unreadable">Die hosts-lêer kon nie gelees word nie.</string>
+    <string name="pref_hosts_redirection_summary">Bepaal waarheen geblokkeerde gashere herlei word</string>
+    <string name="pref_redirection_ipv4">Stel IPv4-herleiding op</string>
+    <string name="pref_redirection_ipv6">Stel IPv6-herleiding op</string>
+    <string name="pref_redirection_invalid">Ongeldige herleiding</string>
+    <string name="pref_webserver_summary">Die plaaslike webbediener luister op plaaslike IP-adresse om versoeke vir geblokkeerde gasheername te beantwoord. Dit kan help wanneer ’n program vries by ’n geblokkeerde verbinding.</string>
     <string name="pref_webserver_enabled">Aktiveer webbediener</string>
+    <string name="pref_webserver_test">Toets webbediener</string>
+    <string name="pref_webserver_certificate">Installeer selfondertekende sertifikaat</string>
+    <string name="pref_webserver_state_not_running">Loop nie</string>
+    <string name="pref_webserver_state_checking">Kyk tans…</string>
+    <string name="pref_webserver_state_running_not_installed">Loop, maar sertifikaat is nie geïnstalleer nie</string>
+    <string name="pref_webserver_state_running_and_installed">Loop en sertifikaat is geïnstalleer</string>
+    <string name="pref_webserver_certificate_dialog_title">Handmatige sertifikaatinstallasie</string>
+    <string name="pref_webserver_certificate_dialog_content">Vanaf Android 11 (R) kan programme nie meer outomaties ’n sertifikaatowerheid (CA) installeer nie.\n\nGaan na die “Sekuriteit”-instellings, kies “Enkripsie en geloofsbriewe” en dan “Installeer ’n sertifikaat”. Kies daar “CA-sertifikaat” en kies die lêer van die sertifikaat wat pas uitgevoer is.</string>
+    <string name="pref_webserver_certificate_dialog_action">Maak “Sekuriteit”-instellings oop</string>
+    <string name="pref_webserver_certificate_failed">Die sertifikaat kon nie voorberei word nie.</string>
+    <string name="webserver_error_title">Webbediener het nie begin nie</string>
+    <string name="webserver_error_resources">Sy lêers of sy sertifikaat kon nie voorberei word nie.</string>
+    <string name="webserver_error_address_in_use">’n Ander program gebruik reeds die toestel se webpoorte (80 en 443).</string>
+    <string name="webserver_error_start_failed">Dit kon nie op hierdie toestel begin nie.</string>
+    <string name="pref_webserver_icon">Vervang leë advertensieruimte met die programikoon</string>
 </resources>

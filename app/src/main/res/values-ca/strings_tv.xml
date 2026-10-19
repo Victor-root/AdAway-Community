@@ -4,10 +4,10 @@
     <string name="tv_dialog_add_to_blocked">Afegeix als bloquejats</string>
     <string name="tv_dialog_remove_from_allowed">Treu dels permesos</string>
     <string name="tv_dialog_remove_from_blocked">Treu dels bloquejats</string>
-    <string name="tv_dialog_copy_hostname">Copia el nom d\'amfitrió</string>
+    <string name="tv_dialog_copy_hostname">Copia el nom d’amfitrió</string>
     <string name="tv_log_entry_status_description">Estat del domini</string>
     <string name="tv_button_theme_light">Mode clar</string>
     <string name="tv_button_theme_dark">Mode fosc</string>
-    <string name="tv_lists_empty">Encara no hi ha entrades en aquesta llista.</string>
+    <string name="tv_lists_empty">Encara no hi ha cap entrada en aquesta llista.</string>
     <string name="tv_dialog_search">Cerca</string>
 </resources>

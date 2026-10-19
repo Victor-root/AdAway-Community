@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Hozzáadás a megengedettekhez</string>
+    <string name="tv_dialog_add_to_allowed">Hozzáadás az engedélyezettekhez</string>
     <string name="tv_dialog_add_to_blocked">Hozzáadás a blokkoltakhoz</string>
-    <string name="tv_dialog_remove_from_allowed">Eltávolítás a megengedettek közül</string>
+    <string name="tv_dialog_remove_from_allowed">Eltávolítás az engedélyezettek közül</string>
     <string name="tv_dialog_remove_from_blocked">Eltávolítás a blokkoltak közül</string>
     <string name="tv_dialog_copy_hostname">Gazdagépnév másolása</string>
-    <string name="tv_log_entry_status_description">Domain állapota</string>
+    <string name="tv_log_entry_status_description">A tartomány állapota</string>
     <string name="tv_button_theme_light">Világos mód</string>
     <string name="tv_button_theme_dark">Sötét mód</string>
-    <string name="tv_lists_empty">Még nincs bejegyzés ezen a listán.</string>
+    <string name="tv_lists_empty">Ebben a listában még nincs bejegyzés.</string>
     <string name="tv_dialog_search">Keresés</string>
 </resources>

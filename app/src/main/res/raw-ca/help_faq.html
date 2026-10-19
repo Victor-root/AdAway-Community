@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Ingressos per publicitat</h2>
-<p>Sovint es diu que, si un usuari no clica els anuncis, els desenvolupadors no reben ingressos. Això és fals, ja que també es reben ingressos mostrant els anuncis. No obstant això, mostrar o amagar els anuncis es decisió vostra.</p>
+<h2>Què és AdAway Community?</h2>
+<p>AdAway Community és un fork no oficial d’AdAway, el bloquejador d’anuncis de codi obert per a Android, mantingut per la comunitat. Bloqueja anuncis i rastrejadors a tot el sistema, per a totes les aplicacions, sense compte i sense cap anunci propi. Aquest fork se centra a mantenir l’aplicació fiable en les versions modernes d’Android i en les ROM dels fabricants.</p>
 
-<h2>Com funciona AdAway?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Com bloqueja els anuncis?</h2>
+<p>AdAway funciona en un de dos modes:</p>
+<p><strong>Mode VPN</strong> (no cal root): AdAway executa una VPN local al dispositiu que no envia mai el teu trànsit enlloc. Només inspecciona les sol·licituds DNS i descarta les que apunten a noms d’amfitrió d’anuncis i de rastrejadors, i deixa passar tota la resta. No surt res del teu dispositiu.</p>
+<p><strong>Mode root</strong>: si el dispositiu té root, AdAway pot escriure en lloc seu un <a href="http://en.wikipedia.org/wiki/Hosts_file">fitxer hosts</a> a <code>/system/etc/hosts</code>, que associa els noms d’amfitrió no desitjats a <code>127.0.0.1</code> perquè es resolguin cap al teu mateix dispositiu. En les versions recents d’Android cal un mòdul systemless hosts (per exemple, Magisk).</p>
 
-<h2>Per què haig de reiniciar Android perquè els canvis facin efecte?</h2>
-<p>El Java d'Android manté la seva llista d'entrades DNS internament. El sistema utilitzarà el nou arxiu hosts immediatament (ho podeu comprovar amb "ping") però, no obstant, haureu de reiniciar Android per reinicialitzar la llista d'entrades de DNS internes.</p>
+<h2>Quins servidors DNS utilitza la VPN?</h2>
+<p>En mode VPN, els noms d’amfitrió que no es bloquegen els resolen els servidors DNS que triïs a <cite>Preferències › Bloquejador d’anuncis amb VPN › Servidors DNS</cite>:</p>
+<p><strong>Servidors DNS de la xarxa</strong> (predeterminat): els servidors de la teva xarxa Wi-Fi o mòbil. Si la xarxa no n’ofereix cap que AdAway pugui utilitzar, recorre a Cloudflare (<code>1.1.1.1</code>).<br/><strong>Servidors DNS personalitzats</strong>: les adreces IP que introdueixis, separades per comes.<br/><strong>DNS over HTTPS</strong>: les sol·licituds es xifren i s’envien a Cloudflare, Google, Quad9 o a l’adreça <code>https://</code> que introdueixis, de manera que la teva xarxa no les pot llegir ni modificar.</p>
+<p>El bloqueig funciona igual amb les tres opcions. Per mantenir el DNS xifrat, utilitza aquí DNS over HTTPS en lloc de l’opció <cite>DNS privat</cite> d’Android, que se salta AdAway.</p>
 
-<h2>Com s'utilitza el servidor web d'AdAway?</h2>
-<p><strong>L'AdAway també funcionarà sense l'ús d'un servidor Web!</strong>
-<br><br>Podeu habilitar el servidor Web local a les opcions de l'AdAway per respondre les peticions cap a l'adreça local <code>127.0.0.1</code>. Això significa que totes les peticions de servidors de publicitat redirigits cap a  <code>127.0.0.1</code> obtindran resposta per part del servidor Web de l'AdAway.
-<br>Algunes aplicacions poden no funcionar correctament si no troben el servidor de publicitat. Amb aquest mètode s'evita el problema atès que s'envia una pàgina en blanc sense imatges publicitàries.</p>
+<h2>Com bloquejo, permeto o redirigeixo un nom d’amfitrió?</h2>
+<p>Des de la pantalla d’inici gestiones tres llistes:</p>
+<p><strong>Bloquejats</strong>: noms d’amfitrió que s’han de bloquejar (anuncis i rastrejadors).<br/><strong>Permesos</strong>: excepcions que no vols que es bloquegin mai, encara que una font les inclogui.<br/><strong>Redirigits</strong>: noms d’amfitrió que vols apuntar a una adreça IP concreta.</p>
+<p>També pots obrir el <cite>Registre DNS</cite> des de la pantalla d’inici per veure en temps real quins noms d’amfitrió consulten les aplicacions i bloquejar-los o permetre’ls directament des d’allà.</p>
 
-<h2>Com puc bloquejar noms de màquina específics?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Cal reiniciar Android després de canviar les meves llistes?</h2>
+<p>No. AdAway aplica el canvi a l’instant, però una aplicació que ja estava oberta pot continuar fent servir les connexions antigues i la seva pròpia memòria cau. Tanca-la completament (Força l’aturada a la configuració d’Android de l’aplicació) i esborra-ne la memòria cau si encara es mostren anuncis. Només cal reiniciar Android una vegada en mode root, després d’activar el mòdul systemless hosts de Magisk.</p>
 
-<h2>On puc trobar més fonts d'amfitrions?</h2>
-<p>Vegeu la <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">llista de fonts addicionals d'amfitrions per a l'AdAway</a>.</p>
+<h2>On puc trobar més fonts d’amfitrions?</h2>
+<p>AdAway inclou uns valors predeterminats raonables. Si en vols més, consulta la <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">llista de fonts d’amfitrions addicionals</a> mantinguda per la comunitat. Afegeix-ne més amb mesura, perquè les llistes molt grans o que es solapen poden causar falsos positius que facin fallar aplicacions.</p>
 
-<h2>Per què existeix aquest fork</h2>
-<p>AdAway és un gran projecte amb una llarga història, però l'activitat de publicació i revisió a l'upstream ha estat limitada des de fa un temps.<br/>Alguns errors i pull requests han romàs oberts durant molt de temps, incloent-hi problemes que afecten l'estabilitat del mode VPN en versions recents d'Android i ROMs OEM.<br/>Aquest fork existeix per mantenir el projecte utilitzable amb correccions mantingudes per la comunitat, en lloc de deixar millores provades sense utilitzar.</p>
+<h2>Per què existeix aquest fork?</h2>
+<p>AdAway és un gran projecte amb una llarga història, però fa temps que l’activitat de publicació i de revisió del projecte original és limitada. Algunes correccions d’errors i pull requests han quedat obertes durant molt de temps, incloses algunes que afecten l’estabilitat del mode VPN en versions recents d’Android i en ROM de fabricants. Aquest fork existeix per mantenir el projecte utilitzable amb correccions mantingudes per la comunitat, en lloc de deixar que millores ja provades quedin sense aprofitar.</p>
 
-<h2>Ajudeu traduint/comunicant errors</h2>
-<p>Aneu a <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Com puc informar d’un error o suggerir un canvi?</h2>
+<p>Obre una incidència al gestor d’incidències del fork: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Un registre de diagnòstic (consulta la pestanya Problemes) ajuda molt quan s’informa de problemes de la VPN.</p>
 </body>
 </html>

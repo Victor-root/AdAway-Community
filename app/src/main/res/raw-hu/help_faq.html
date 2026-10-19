@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Bevétel hirdetéseken keresztül</h2>
-<p>Van egy gyakran elhangzó félreértés mely szerint, ha amúgy se kattintanánk a reklámokra, akkor azzal se ártunk egy oldalnak vagy alkalmazásnak, ha meg se jelenítjük a reklámot. Ez nem igaz, mert a fejlesztők már azért is kaphatnak pénzt, hogy megjelenítik a hirdetést. Az csak a felhasználón múlik, hogy használ-e reklám blokkolót vagy nem.</p>
+<h2>Mi az AdAway Community?</h2>
+<p>Az AdAway Community az AdAway, a nyílt forráskódú androidos hirdetésblokkoló nem hivatalos, a közösség által karbantartott forkja. Rendszerszinten, minden alkalmazásban blokkolja a hirdetéseket és a követőket, fiók nélkül, és saját hirdetések nélkül. Ez a fork azt tűzte ki célul, hogy az alkalmazás megbízhatóan működjön az Android újabb verzióin és a gyártói ROM-okon.</p>
 
-<h2>Hogy működik az AdAway?</h2>
-<p>Az AdAway <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> segítségével blokkolja a reklámokat kiszolgáló hostneveket.. A hosts fájl a <code>/system/etc/hosts</code> könyvtárban található fájl, amely a gazdagépneveket IP-címekre térképezi fel. Hagyományos módszer a gazdanév IP-címpárokhoz történő definiálására anélkül, hogy a Domain Name Systemre (DNS) támaszkodna. Az összes nem kívánt gazdagépnév átirányításra kerül a <code>127.0.0.1</code> címre, ami azt jelenti, hogy a saját eszközre mutatnak.<br>
-Ha a gazdagépfájl nem írható, akkor egy tartalék megoldás a beépített VPN szolgáltatás használata. Szűri a kapcsolatokat a nem kívánt gazdagépnevekkel, és másokat is átenged.</p>
+<h2>Hogyan blokkolja a hirdetéseket?</h2>
+<p>Az AdAway két módban működhet:</p>
+<p><strong>VPN-mód</strong> (root nélkül): az AdAway helyi, az eszközön futó VPN-t indít, amely a forgalmát sehová sem küldi el. Csak a DNS-kéréseket vizsgálja, és eldobja azokat, amelyek hirdetési és követő gazdagépnevekre mutatnak, minden mást átenged. Semmi sem hagyja el az eszközt.</p>
+<p><strong>Root mód</strong>: ha az eszköze rootolva van, az AdAway ehelyett egy <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts fájlt</a> írhat a <code>/system/etc/hosts</code> helyre, amely a nemkívánatos gazdagépneveket a <code>127.0.0.1</code> címre képezi le, vagyis a saját eszközére. Az Android újabb verzióin systemless hosts modul (például Magisk) szükséges.</p>
 
-<h2>Miért kell újraindítani az Androidot, hogy a változások életbe lépjenek?</h2>
-<p>Java az Android rendszeren saját belső DNS tárat tart fenn. Az operációs rendszer azonnal használja az új hosts fájlt (ezt ellenőrizni is lehet pingeléssel), de a DNS cache tárának újraépítéséhez újra kell indítani az Androidot.</p>
+<h2>Milyen DNS-kiszolgálókat használ a VPN?</h2>
+<p>VPN-módban a nem blokkolt gazdagépneveket azok a DNS-kiszolgálók oldják fel, amelyeket a <cite>Beállítások › VPN-alapú hirdetésblokkoló › DNS-kiszolgálók</cite> menüpontban kiválaszt:</p>
+<p><strong>Hálózati DNS-kiszolgálók</strong> (alapértelmezett): a Wi-Fi- vagy mobilhálózat kiszolgálói. Ha a hálózat nem ad olyat, amelyet az AdAway használni tud, a Cloudflare (<code>1.1.1.1</code>) veszi át a szerepet.<br/><strong>Egyéni DNS-kiszolgálók</strong>: az Ön által megadott, vesszővel elválasztott IP-címek.<br/><strong>DNS over HTTPS</strong>: a kérések titkosítva mennek a Cloudflare-hez, a Google-hoz, a Quad9-hez vagy az Ön által megadott <code>https://</code> címre, így a hálózata nem tudja sem elolvasni, sem módosítani őket.</p>
+<p>A blokkolás mindhárom esetben ugyanúgy működik. Ha titkosított DNS-t szeretne, itt a DNS over HTTPS-t használja az Android <cite>Privát DNS</cite> beállítása helyett, mert az megkerüli az AdAway-t.</p>
 
-<h2>Hogy kell használni a web kiszolgálót az AdAway-ben?</h2>
-<p><strong>Az AdAway a web kiszolgáló használata nélkül is működni fog.</strong>
-<br><br>Engedélyezni lehet az AdAway beállításainál egy helyi web kiszolgálót , hogy válaszoljon  a <code>127.0.0.1</code> helyi IP címre érkező kérésekre. Ez olyan kéréseket jelent, amelyeket alkalmazások kezdeményeztek a hirdetés kiszolgálójukhoz, de a <code>127.0.0.1</code> címre lettek átirányítva, így az AdAway válaszol ezekre a kérésekre.
-<br>Néhány alkalmazás nem hajlandó működni, ha a reklám kiszolgálóik nem érhető el. Ezzel a módszerrel újra elérhetőnek hiszi azt, és egy üres oldalt kapnak vissza.</p>
+<h2>Hogyan blokkolhatok, engedélyezhetek vagy irányíthatok át egy gazdagépnevet?</h2>
+<p>A kezdőképernyőről három listát kezelhet:</p>
+<p><strong>Blokkolt</strong>: a blokkolandó gazdagépnevek (hirdetések és követők).<br/><strong>Engedélyezett</strong>: a kivételek, amelyeket soha nem szeretne blokkolni, még akkor sem, ha egy forrás felsorolja őket.<br/><strong>Átirányított</strong>: azok a gazdagépnevek, amelyeket egy megadott IP-címre szeretne irányítani.</p>
+<p>A kezdőképernyőről megnyithatja a <cite>DNS-napló</cite> részt is, hogy valós időben lássa, mely gazdagépneveket kérdezik le az alkalmazások, majd közvetlenül onnan blokkolhatja vagy engedélyezheti őket.</p>
 
-<h2>Hogyan tudok adott kiszolgálókat (hosts) blokkolni/engedélyezni?</h2>
-<p>Add hozzá a blokkolni kívánt hosztneveket a <cite>Blokolt</cite> listához a<cite>kezdőlapról</cite>. Ezenkívül a blokkolásból kizárni kívánt gazdagépnevek hozzáadhatók a <cite>Megengedve</cite> és az adott IP-címre átirányítani kívánt hosztnevek a <cite>Átirányítva</cite>helyhez.</p>
+<h2>Újra kell indítanom az Androidot a listáim módosítása után?</h2>
+<p>Nem. Az AdAway azonnal alkalmazza a módosítást, de egy már megnyitott alkalmazás tovább használhatja a régi kapcsolatait és a saját gyorsítótárát. Zárja be teljesen (az alkalmazás Android-beállításaiban a Kényszerített leállítással), és ha még mindig megjelennek hirdetések, törölje a gyorsítótárát. Az Android újraindítására csak egyszer van szükség root módban, a Magisk systemless hosts moduljának bekapcsolása után.</p>
 
-<h2>Hol találhatok további hosts forrásokat?</h2>
-<p>Tekintse meg <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">az AdAwayhez való hosts fájlok forrásainak listáját</a>!</p>
+<h2>Hol találok további hosts-forrásokat?</h2>
+<p>Az AdAway ésszerű alapértelmezett forrásokkal érkezik. Ha többet szeretne, nézze meg a közösség által karbantartott <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">további hosts-források listáját</a>. Mértékkel adjon hozzá forrásokat, mert a nagyon nagy vagy egymást átfedő listák téves találatokat okozhatnak, amelyek alkalmazásokat tesznek tönkre.</p>
 
-<h2>Miért létezik ez a fork</h2>
-<p>Az AdAway nagyszerű projekt hosszú múlttal, de az upstream kiadási és véleményezési aktivitás már egy ideje korlátozott.<br/>Néhány hiba és pull request hosszú ideje nyitva maradt, beleértve a VPN-mód stabilitását befolyásoló problémákat is a legújabb Android verziókon és OEM ROM-okon.<br/>Ez a fork azért létezik, hogy a projekt használható maradjon a közösség által karbantartott javításokkal, ahelyett hogy a tesztelt fejlesztéseket kihasználatlanul hagynánk.</p>
+<h2>Miért létezik ez a fork?</h2>
+<p>Az AdAway nagyszerű projekt hosszú múlttal, de az eredeti projekt kiadási és átvizsgálási tevékenysége egy ideje korlátozott. Egyes hibajavítások és módosítási kérések hosszú ideig nyitva maradtak, köztük olyanok is, amelyek a VPN-mód stabilitását érintették az Android újabb verzióin és a gyártói ROM-okon. Ez a fork azért jött létre, hogy a projekt közösségi javításokkal használható maradjon, ahelyett hogy a kipróbált fejlesztések kihasználatlanul hevernének.</p>
 
-<h2>Segítsen fordítani/jelentsen hibákat</h2>
-<p>Keresse fel a <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> weboldalt!</p>
+<h2>Hogyan jelenthetek hibát, vagy javasolhatok változtatást?</h2>
+<p>Nyisson hibajegyet a fork követőjében: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. A diagnosztikai napló (lásd a Problémák lapot) sokat segít a VPN-problémák bejelentésekor.</p>
 </body>
 </html>

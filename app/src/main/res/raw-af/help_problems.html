@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>Die VPN skakel self af</h2>
+<p>Dit is amper altyd die stelsel wat die VPN-diens stopsit om batterykrag te spaar, en nie ’n ineenstorting nie. Dit kom gereeld voor op vervaardiger-ROM’s met aggressiewe kragbestuur (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung en ander).</p>
+<p>Soek AdAway in die Android-instellings en doen die volgende: stel <cite>batteryoptimalisering</cite> op <cite>Onbeperk</cite> (of <cite>Moenie optimaliseer nie</cite>), laat <cite>outostart</cite>/<cite>outo-begin</cite> toe as jou ROM dit het, en sluit AdAway in die lys van onlangse programme vas sodat dit nie weggeswiep word nie. Maak ook seker dat <cite>Aktiveer by opstart</cite> in AdAway se VPN-voorkeure aan is.</p>
 
-<h2>Nie genoeg spasie op die partisie nie</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Geen internet of stadige blaai net nadat jy tussen Wi-Fi en mobiele data wissel</h2>
+<p>Wanneer die aktiewe netwerk verander, moet die tonnel herbou word sodat DNS vanaf die nuwe netwerk opgelos word. As blaai steeds nie werk nie, maak <cite>Voorkeure › VPN-gebaseerde advertensieblokkeerder › Stel VPN terug</cite> oop om die verbinding van voor af te herbou. As dit aanhou gebeur, teken ’n diagnostiese logboek aan (hieronder) en rapporteer dit.</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Hoe voer ek ’n diagnostiese logboek uit?</h2>
+<p>Maak <cite>Voorkeure › VPN-gebaseerde advertensieblokkeerder › Diagnostiese logboek</cite> oop. Dit teken onlangse foute en VPN-gebeure aan (netwerkwisselings, herkoppelings, mislukkings), nie jou blaaigeskiedenis nie, net tegniese gebeure. Dit bly leeg totdat jy <cite>Teken diagnostiese logboek aan</cite> net hierbo aanskakel. Gebruik <cite>Kopieer</cite> of <cite>Deel</cite> om dit te stuur wanneer jy ’n probleem rapporteer. Wenk: gebruik eers <cite>Vee diagnostiese logboek uit</cite>, laat die probleem dan weer gebeur, sodat die logboek gefokus bly.</p>
 
-<h2>Dit blokkeer nie advertensie in Programme XYZ nie!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome wys steeds advertensies</h2>
+<p>Chrome kan sy eie <cite>Veilige DNS</cite> (DNS-oor-HTTPS) gebruik, wat AdAway omseil. Maak in Chrome <cite>Instellings › Privaatheid en sekuriteit › Gebruik veilige DNS</cite> oop en skakel dit af. Dieselfde geld vir enige program- of stelsel-<cite>Private DNS</cite>-instelling. In VPN-modus kan AdAway self DNS enkripteer: sien <cite>Watter DNS-bedieners gebruik die VPN?</cite> in die Gewilde vrae.</p>
 
-<h2>Gestoorde advertensies</h2>
-<p>Somtyds stoor programme advertensies nadat dit afgelaai is. Dit veroorsaak dan die oorblywende advertensies in sommige programme. Jy kan probeer om die geheue van hierdie programme uit te vee in Android se Program lys en so die probleem op te los.</p>
+<h2>Sommige advertensies kom steeds deur, of ’n program wys steeds advertensies</h2>
+<p>’n Gasheernaam kan in jou bronne ontbreek, of die program bevat sy advertensies self sodat geen versoek gedoen word nie. Maak die <cite>DNS-logboek</cite> vanaf die tuisskerm oop om te sien wat die program navraag doen, voeg die verdagte gasheername by jou <cite>Geblokkeer</cite>-lys, en kyk dat niks breek nie. Sommige programme hou ook advertensies in die kas nadat hulle dit afgelaai het, so dit kan help om daardie program se kas in die Android-instellings skoon te maak.</p>
 
-<h2>Program XYZ werk nie meer nie!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>’n Program het opgehou werk nadat ek AdAway aangeskakel het</h2>
+<p>Sommige programme weier om te werk wanneer ’n gasheernaam wat hulle nodig het, geblokkeer word. Gebruik die <cite>DNS-logboek</cite> om te vind watter gasheernaam die program nodig het, voeg dit by jou <cite>Toegelaat</cite>-lys, en die program behoort weer te werk. Bekende problematiese programme word <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">hier</a> gelys.</p>
 
-<h2>Die terug knoppie in die webleser werk nie meer nie</h2>
-<p>Kan kan AdAway se lokale webbediener aktiveer in voorkeure as 'n omseiling.</p>
+<h2>Die toepassing van die hosts-lêer misluk (root-modus)</h2>
+<p>Onlangse Android-weergawes gebruik ’n leesalleen-<code>/system</code>-partisie, so AdAway kan nie direk daarheen skryf nie. As jy Magisk gebruik, aktiveer die <cite>systemless hosts</cite>-module, herbegin die toestel en pas weer toe. As jy nie root gebruik nie, skakel eerder oor na VPN-modus, wat geen stelselwysiging vereis nie.</p>
 
-<h2>Die terug knoppie in die webleser werk nie meer nie</h2>
-<p>Kan kan AdAway se lokale webbediener aktiveer in voorkeure as 'n omseiling.</p>
-
+<h2>Sit jy nog vas?</h2>
+<p>Rapporteer die probleem met ’n diagnostiese logboek aangeheg by <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

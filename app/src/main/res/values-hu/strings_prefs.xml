@@ -6,77 +6,104 @@
     <string-array name="pref_dark_theme_modes">
         <item>Világos</item>
         <item>Sötét</item>
-        <item>Rendszer alapértelmezett</item>
+        <item>Rendszer alapértelmezése</item>
     </string-array>
     <string name="pref_update_configuration">Automatikus frissítések</string>
+    <string name="pref_language">Nyelv</string>
+    <string name="pref_language_system">Rendszernyelv</string>
     <string name="pref_ad_block_category">Hirdetésblokkolás</string>
-    <string name="pref_root_ad_blocker_configuration">Root alapú hirdetésblokkolás</string>
-    <string name="pref_vpn_ad_blocker_configuration">VPN alapú hirdetésblokkolás</string>
-    <string name="pref_enable_ipv6">IPv6 engedélyezése</string>
-    <string name="pref_backup_restore">Blokkszabályok mentése / visszaállítása</string>
-    <string name="pref_backup_restore_title">Mentés &amp; visszaállítás</string>
-    <string name="pref_backup">Biztonsági mentés</string>
-    <string name="pref_backup_summary">Blokkszabályok biztonsági mentése külső tárhelyre</string>
+    <string name="pref_root_ad_blocker_configuration">Root-alapú hirdetésblokkoló</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-alapú hirdetésblokkoló</string>
+    <string name="pref_enable_ipv6">IPv6-támogatás bekapcsolása</string>
+    <string name="pref_backup_restore">Blokkolási szabályok mentése és visszaállítása</string>
+    <string name="pref_backup_restore_title">Mentés és visszaállítás</string>
+    <string name="pref_backup">Mentés</string>
+    <string name="pref_backup_summary">Blokkolási szabályok mentése külső tárhelyre</string>
     <string name="pref_restore">Visszaállítás</string>
-    <string name="pref_restore_summary">Blokkszabályok visszaállítása a biztonsági mentés fájlból</string>
-    <string name="import_success">A biztonsági mentés importja a külső tárolóból sikeres.</string>
-    <string name="export_success">A bizt.mentés sikeresen exportálva \'%s\' néven a külső tárhelyre.</string>
-    <string name="export_failed">Sikertelen a bizt.mentés exportja \'%s\' fájlba.</string>
+    <string name="pref_restore_summary">Blokkolási szabályok visszaállítása mentésfájlból</string>
+    <string name="import_success">A mentés sikeresen importálva a külső tárhelyről.</string>
+    <string name="import_failed">A mentést nem sikerült importálni. Megfelelő a formátuma?</string>
+    <string name="export_success">A mentés sikeresen exportálva a külső tárhelyre, a fájl neve: „%s”.</string>
+    <string name="export_failed">A mentésfájl exportálása sikertelen: „%s”.</string>
     <string name="pref_update_title">Frissítések</string>
-    <string name="pref_update_app_category">Alkalmazás frissítések</string>
-    <string name="pref_update_check_app_startup">Indításkor a frissítések ellenőrizése</string>
-    <string name="pref_update_check_app_daily">Frissítések keresése naponta</string>
-    <string name="pref_update_check_now">Ellenőrzés most</string>
+    <string name="pref_update_enable_notifications">Az értesítések ki vannak kapcsolva</string>
+    <string name="pref_update_enable_notifications_summary">Az alkalmazás értesítései nem jelennek meg. Koppintson a bekapcsolásukhoz.</string>
+    <string name="pref_update_app_category">Alkalmazásfrissítések</string>
+    <string name="pref_update_check_app_startup">Frissítések keresése indításkor</string>
+    <string name="pref_update_check_app_daily">Frissítések rendszeres keresése</string>
+    <string name="pref_update_check_now">Keresés most</string>
     <string name="pref_update_install">Frissítés most</string>
-    <string name="pref_update_hosts_category">Hosts frissítések</string>
-    <string name="pref_update_check">Indításkor a frissítések ellenőrizése</string>
-    <string name="pref_update_check_hosts_daily">Frissítések keresése naponta</string>
+    <string name="pref_update_hosts_category">Hosts-frissítések</string>
+    <string name="pref_update_check">Frissítések keresése indításkor</string>
+    <string name="pref_update_check_hosts_daily">Frissítések rendszeres keresése</string>
     <string name="pref_update_sync_on_update">Szinkronizálás frissítéskor</string>
-    <string name="pref_update_sync_unmetered_only">Szinkronizálás csak nem mért hálózaton</string>
-    <string name="pref_vpn_service_on_boot">Engedélyezés indításkor</string>
-    <string name="pref_vpn_service_monitor">Kapcsolat figyelő</string>
-    <string name="pref_vpn_service_monitor_description">Rendszeresen ellenőrzi a hálózat állapotát a VPN újraindításához a szétkapcsoláskor.</string>
+    <string name="pref_update_sync_unmetered_only">Szinkronizálás csak korlátlan forgalmú hálózaton</string>
+    <string name="pref_vpn_service_on_boot">Bekapcsolás indításkor</string>
+    <string name="pref_vpn_service_monitor">Kapcsolat figyelése</string>
+    <string name="pref_vpn_service_monitor_description">A hálózat állapotának rendszeres ellenőrzése, hogy a VPN megszakadás esetén újrainduljon.</string>
     <string name="pref_vpn_excluded_apps">Kizárt alkalmazások</string>
-    <string name="pref_vpn_excluded_apps_description">Állítsa be, mely alkalmazások ne használják a VPN-t. Így egyetlen kapcsolat sem lesz blokkolva.</string>
+    <string name="pref_vpn_excluded_apps_description">Állítsa be, mely alkalmazások ne használják a VPN-t, így azok kapcsolatai nem lesznek blokkolva.</string>
     <string name="pref_vpn_exclude_system_apps">Rendszeralkalmazások kizárása</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+        <item>Egyik sem</item>
+        <item>Mind, a böngészők kivételével</item>
+        <item>Mind</item>
     </string-array>
+    <string name="pref_vpn_dns">DNS-kiszolgálók</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Hálózati DNS-kiszolgálók</item>
+        <item>Egyéni DNS-kiszolgálók</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Egyéni DNS-kiszolgálók</string>
+    <string name="pref_vpn_dns_custom_summary">IP-címek, vesszővel elválasztva</string>
+    <string name="pref_vpn_dns_custom_invalid">Érvénytelen DNS-kiszolgálócím</string>
+    <string name="pref_vpn_doh">DNS over HTTPS-kiszolgáló</string>
+    <string name="pref_vpn_doh_custom">Egyéni cím</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS-cím</string>
+    <string name="pref_vpn_doh_invalid">Érvénytelen DNS over HTTPS-cím</string>
     <string name="pref_vpn_exclude_user_apps">Felhasználói alkalmazások kizárása</string>
     <string name="pref_vpn_exclude_user_apps_activity">Kizárt alkalmazások</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Összes kijelölése</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">Összes kijelölésének törlése</string>
-    <string name="pref_vpn_exclude_user_apps_icon">Application icon</string>
-    <string name="pref_vpn_reset">VPN visszaállítása</string>
-    <string name="pref_vpn_reset_description">A VPN-kapcsolat teljes újraépítése. Használja, ha a VPN nem működik többé (nincs internet-hozzáférés vagy DNS-hibák).</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Kijelölés megszüntetése</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Az alkalmazás ikonja</string>
+    <string name="pref_vpn_reset">VPN alaphelyzetbe állítása</string>
+    <string name="pref_vpn_reset_description">A VPN-kapcsolat teljes újraépítése. Akkor használja, ha a VPN nem működik tovább (nincs internetelérés, vagy DNS-hibák jelentkeznek).</string>
     <string name="pref_vpn_reset_done">A VPN-kapcsolat újraépítve.</string>
     <string name="pref_vpn_reset_not_running">A VPN nem fut.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Diagnosztikai napló rögzítése</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Kapcsolja be a hiba előidézése előtt, majd exportálja lent. Régebbi eszközökön kissé lassíthat. Csak technikai VPN-eseményeket rögzít, soha nem a böngészési előzményeket vagy személyes adatokat.</string>
     <string name="pref_vpn_diagnostic_log">Diagnosztikai napló</string>
-    <string name="pref_vpn_diagnostic_log_description">A legutóbbi hibák és VPN-események megtekintése, másolása vagy megosztása. Hasznos probléma bejelentésekor.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Még nincsenek rögzített események.</string>
-    <string name="pref_vpn_diagnostic_log_share">Diagnosztikai napló megosztása</string>
+    <string name="pref_vpn_diagnostic_log_description">A legutóbbi hibák és VPN-események megtekintése, másolása vagy megosztása. Hasznos hibajelentéshez.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Még egy esemény sem került rögzítésre. Kapcsolja be fent a „Diagnosztikai napló rögzítése” beállítást, majd próbálja meg előidézni a hibát.</string>
+    <string name="pref_vpn_diagnostic_log_share">Megosztás</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Diagnosztikai napló megosztása</string>
     <string name="pref_vpn_diagnostic_log_copy">Másolás</string>
-    <string name="pref_vpn_diagnostic_log_copied">Diagnosztikai napló a vágólapra másolva.</string>
+    <string name="pref_vpn_diagnostic_log_copied">A diagnosztikai napló a vágólapra másolva.</string>
     <string name="pref_vpn_diagnostic_log_clear">Diagnosztikai napló törlése</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">A rögzített események törlése. Egy probléma reprodukálása előtt végezze el, hogy tiszta nyomkövetést rögzíthessen.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Diagnosztikai napló törölve.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">A rögzített események törlése. Tegye meg a hiba előidézése előtt, hogy tiszta naplót kapjon.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">A diagnosztikai napló törölve.</string>
     <string name="pref_root_open_hosts">Hosts fájl megnyitása</string>
-    <string name="pref_hosts_redirection_summary">Adja meg hova irányítsa a letiltott hosztokat</string>
-    <string name="pref_redirection_ipv4">IPv4 átirányítás</string>
-    <string name="pref_redirection_ipv6">IPv6 átirányítás</string>
+    <string name="hosts_file_unreadable">A hosts fájlt nem sikerült beolvasni.</string>
+    <string name="pref_hosts_redirection_summary">Adja meg, hová legyenek átirányítva a blokkolt gazdagépek</string>
+    <string name="pref_redirection_ipv4">IPv4-átirányítás beállítása</string>
+    <string name="pref_redirection_ipv6">IPv6-átirányítás beállítása</string>
     <string name="pref_redirection_invalid">Érvénytelen átirányítás</string>
-    <string name="pref_webserver_summary">A helyi webszerver meghallgatja a helyi IP-címeket, hogy válaszoljon a blokkolt gazdagép-kérelmekre. Segítheti az alkalmazás lefagyasztását blokkolt kapcsolat esetén.</string>
-    <string name="pref_webserver_enabled">Webszerver engedélyezése</string>
-    <string name="pref_webserver_test">Webszerver tesztelése</string>
-    <string name="pref_webserver_certificate">Önaláírt tanusítvány telepítése</string>
+    <string name="pref_webserver_summary">A helyi webkiszolgáló a helyi IP-címeken figyel, és megválaszolja a blokkolt gazdagépnevekre érkező kéréseket. Segíthet, ha egy alkalmazás lefagy egy blokkolt kapcsolat miatt.</string>
+    <string name="pref_webserver_enabled">Webkiszolgáló bekapcsolása</string>
+    <string name="pref_webserver_test">Webkiszolgáló tesztelése</string>
+    <string name="pref_webserver_certificate">Önaláírt tanúsítvány telepítése</string>
     <string name="pref_webserver_state_not_running">Nem fut</string>
     <string name="pref_webserver_state_checking">Ellenőrzés…</string>
-    <string name="pref_webserver_state_running_not_installed">Fut, de a tanusítvány nincs telepítve</string>
-    <string name="pref_webserver_state_running_and_installed">Fut és a tanusítvány telepítve van</string>
-    <string name="pref_webserver_certificate_dialog_title">Tanusítvány manuális telepítése</string>
-    <string name="pref_webserver_certificate_dialog_content">Az Android 11 (R) verziótól kezdve az alkalmazás már nem tudja automatikusan telepíteni a tanusítványt (CA).\n\nLépjen a \"biztonsági\" beállítások menübe, majd \"Titkosítás és hitelesítő adatok\", azután a \"Tanusítvány telepítése\" opcióba. Ott válassza a \"CA tanusítványt\" és jelölje ki az újonnan exportált fájlt.</string>
-    <string name="pref_webserver_certificate_dialog_action">\"Biztonsági\" beállítások megnyitása</string>
-    <string name="pref_webserver_icon">Üres hirdetési felület cseréje az alkalmazás ikonra</string>
+    <string name="pref_webserver_state_running_not_installed">Fut, de a tanúsítvány nincs telepítve</string>
+    <string name="pref_webserver_state_running_and_installed">Fut, és a tanúsítvány telepítve van</string>
+    <string name="pref_webserver_certificate_dialog_title">Tanúsítvány kézi telepítése</string>
+    <string name="pref_webserver_certificate_dialog_content">Az Android 11 (R) verziótól kezdve az alkalmazások már nem tudnak automatikusan hitelesítésszolgáltatói (CA) tanúsítványt telepíteni.\n\nNyissa meg a „Biztonság” beállításait, majd a „Titkosítás és hitelesítő adatok” részt, végül válassza a „Tanúsítvány telepítése” lehetőséget. Ott válassza a „CA-tanúsítvány” elemet, és jelölje ki az újonnan exportált tanúsítványfájlt.</string>
+    <string name="pref_webserver_certificate_dialog_action">A „Biztonság” beállításainak megnyitása</string>
+    <string name="pref_webserver_certificate_failed">A tanúsítványt nem sikerült előkészíteni.</string>
+    <string name="webserver_error_title">A webkiszolgáló nem indult el</string>
+    <string name="webserver_error_resources">A fájljait vagy a tanúsítványát nem sikerült előkészíteni.</string>
+    <string name="webserver_error_address_in_use">Egy másik alkalmazás már használja az eszköz webes portjait (80 és 443).</string>
+    <string name="webserver_error_start_failed">Nem sikerült elindítani ezen az eszközön.</string>
+    <string name="pref_webserver_icon">A hirdetések üres helyének cseréje az alkalmazás ikonjára</string>
 </resources>

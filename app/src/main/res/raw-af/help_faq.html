@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Inkomste deur advertensies</h2>
-<p>Daar bestaan 'n miskonsepsie dat indien die gebruiker nie op die advertensie klik nie, die blokkering, nie die webwerf of die program finansieel sal benadeel nie. Dit is egter nie waar nie, program ontwikkelaars verdien ook geld as die advertensie vertoon word. Dit is jou keuse of jy die advertensie wil blokkeer al dan nie. Persoonlik gebruik ek nie programme wat advertensie vertoon nie aangesien ek dit frustrerend vind, dus sal ek nie die programme sonder 'n advertensie blokkeerder installeer nie.</p>
+<h2>Wat is AdAway Community?</h2>
+<p>AdAway Community is ’n nie-amptelike fork van AdAway wat deur die gemeenskap onderhou word, die oopbron-advertensieblokkeerder vir Android. Dit blokkeer advertensies en spoorsnyers stelselwyd, vir elke program, sonder rekening en sonder eie advertensies. Hierdie fork fokus daarop om die program betroubaar te laat werk op moderne Android-weergawes en vervaardiger-ROM’s.</p>
 
-<h2>Hoe werk AdAway?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Hoe blokkeer dit advertensies?</h2>
+<p>AdAway werk in een van twee modusse:</p>
+<p><strong>VPN-modus</strong> (geen root nodig nie): AdAway laat ’n plaaslike VPN op die toestel self loop wat jou verkeer nêrens heen stuur nie. Dit ondersoek net DNS-versoeke en weier dié wat na advertensie- en spoorsnyer-gasheername wys, en laat al die res deur. Niks verlaat jou toestel nie.</p>
+<p><strong>Root-modus</strong>: as jou toestel geroot is, kan AdAway eerder ’n <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts-lêer</a> na <code>/system/etc/hosts</code> skryf, wat ongewenste gasheername na <code>127.0.0.1</code> koppel sodat hulle na jou eie toestel oplos. Op onlangse Android is ’n systemless hosts-module (soos Magisk) nodig.</p>
 
-<h2>Hoekom moet Android weer begin om veranderinge te implementeer?</h2>
-<p>Java en Android onderhou hulle eie interne DNS geheue. Die bedryfstelsel sal dadelik nuwe gasheer lêers vertoon (verifieer dit met ping op die "command line") jy sal egter Android weer moet begin om die DNS geheue en Java te herbou.</p>
+<h2>Watter DNS-bedieners gebruik die VPN?</h2>
+<p>In VPN-modus word die gasheername wat nie geblokkeer is nie, opgelos deur die DNS-bedieners wat jy kies in <cite>Voorkeure › VPN-gebaseerde advertensieblokkeerder › DNS-bedieners</cite>:</p>
+<p><strong>Netwerk-DNS-bedieners</strong> (verstek): die bedieners van jou Wi-Fi- of mobiele netwerk. As die netwerk geen bedieners gee wat AdAway kan gebruik nie, val dit terug op Cloudflare (<code>1.1.1.1</code>).<br/><strong>Eie DNS-bedieners</strong>: die IP-adresse wat jy invoer, geskei deur kommas.<br/><strong>DNS oor HTTPS</strong>: versoeke word geënkripteer en na Cloudflare, Google, Quad9 of die <code>https://</code>-adres wat jy invoer, gestuur, sodat jou netwerk hulle nie kan lees of verander nie.</p>
+<p>Blokkering werk dieselfde met al drie. Om geënkripteerde DNS te behou, gebruik hier DNS oor HTTPS eerder as die Android-instelling <cite>Private DNS</cite>, wat AdAway omseil.</p>
 
-<h2>Hoe om die webbediener in AdAway te gebruik?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Hoe blokkeer, laat ek toe of herlei ek ’n gasheernaam?</h2>
+<p>Op die tuisskerm bestuur jy drie lyste:</p>
+<p><strong>Geblokkeer</strong>: gasheername wat geblokkeer moet word (advertensies en spoorsnyers).<br/><strong>Toegelaat</strong>: uitsonderings wat jy nooit wil blokkeer nie, selfs al lys ’n bron hulle.<br/><strong>Herlei</strong>: gasheername wat jy na ’n spesifieke IP-adres wil laat wys.</p>
+<p>Jy kan ook die <cite>DNS-logboek</cite> vanaf die tuisskerm oopmaak om intyds te sien watter gasheername programme navraag doen, en dit dan direk daar blokkeer of toelaat.</p>
 
-<h2>Hoe kan ek spesifieke gasheername blokkeer/toelaat?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Moet ek Android herbegin nadat ek my lyste verander het?</h2>
+<p>Nee. AdAway pas die verandering dadelik toe, maar ’n program wat reeds oop was, kan sy ou verbindings en sy eie kas bly gebruik. Maak dit heeltemal toe (Dwing stop in die Android-instellings van die program), en maak sy kas skoon as advertensies steeds wys. ’n Herbegin van Android is net een keer in root-modus nodig, nadat die Magisk systemless hosts-module geaktiveer is.</p>
 
-<h2>Waar kan ek meer gasheer bronne vind?</h2>
-<p>Sien <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Lys van addisionele gasheer bronne vir AdAway</a>.</p>
+<h2>Waar kan ek meer hosts-bronne vind?</h2>
+<p>AdAway kom met verstandige verstekbronne. As jy meer wil hê, kyk na die <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">lys van addisionele hosts-bronne</a> wat deur die gemeenskap onderhou word. Voeg spaarsaam meer bronne by, want baie groot of oorvleuelende lyste kan vals positiewe veroorsaak wat programme laat breek.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Hoekom bestaan hierdie fork?</h2>
+<p>AdAway is ’n goeie projek met ’n lang geskiedenis, maar die vrystelling- en hersieningsaktiwiteit by die oorspronklike projek was ’n tydlank beperk. Sommige foutregstellings en samevoegversoeke het lank oop gebly, onder meer kwessies wat die stabiliteit van die VPN-modus op onlangse Android-weergawes en vervaardiger-ROM’s raak. Hierdie fork bestaan om die projek bruikbaar te hou met regstellings van die gemeenskap, eerder as om getoetste verbeterings ongebruik te laat lê.</p>
 
-<h2>Help vertaal/rapporteer foute</h2>
-<p>Gaan asseblief na <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Hoe rapporteer ek ’n fout of stel ’n verandering voor?</h2>
+<p>Open ’n kwessie op die fork se opspoorder: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. ’n Diagnostiese logboek (sien die Probleme-oortjie) help baie wanneer jy VPN-probleme rapporteer.</p>
 </body>
 </html>
