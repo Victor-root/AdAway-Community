@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">यह छोटा विज़ार्ड इस डिवाइस पर विज्ञापन ब्लॉकिंग चालू कर देगा।</string>
+    <string name="welcome_first_step">सेटअप का पहला चरण</string>
+    <string name="welcome_second_step">सेटअप का दूसरा चरण</string>
+    <string name="welcome_third_step">सेटअप का तीसरा चरण</string>
+    <string name="welcome_fourth_step">सेटअप का चौथा चरण</string>
+    <string name="welcome_method_header">AdAway में आपका स्वागत है!</string>
+    <string name="welcome_method_summary">AdAway विज्ञापन ब्लॉक करने के दो तरीके देता है। अपनी पसंद का तरीका चुनें:</string>
+    <string name="welcome_root_method_title">रूट आधारित\nविज्ञापन ब्लॉकिंग</string>
+    <string name="welcome_root_method_text1">ज़्यादा तेज़</string>
+    <string name="welcome_root_method_text2">बैटरी की कम खपत</string>
+    <string name="welcome_root_method_text3">रूट ज़रूरी</string>
+    <string name="welcome_vpn_method_title">VPN आधारित\nविज्ञापन ब्लॉकिंग</string>
+    <string name="welcome_vpn_method_text1">कम तेज़</string>
+    <string name="welcome_vpn_method_text2">बैकग्राउंड में चलता है</string>
+    <string name="welcome_vpn_method_text3">बेहतर संगतता</string>
+    <string name="welcome_root_missing_title">रूट किया हुआ Android ज़रूरी है</string>
+    <string name="welcome_root_missile_description">या तो su बाइनरी नहीं मिली, या आपने AdAway को रूट की अनुमति नहीं दी।\n\nयह तब हो सकता है जब आपका डिवाइस रूट न किया गया हो। अपने डिवाइस को रूट करने की जानकारी wiki.lineageos.org या Android की दूसरी वेबसाइटों पर मिल सकती है।</string>
+    <string name="welcome_vpn_alwayson_title">हमेशा चालू VPN सक्रिय है</string>
+    <string name="welcome_vpn_alwayson_description">AdAway ने पाया कि किसी दूसरे VPN पर “हमेशा चालू VPN” सेटिंग चालू है।\n\nइस वजह से AdAway VPN एक्सेस नहीं मांग पाता। कृपया उस VPN पर “हमेशा चालू VPN” बंद करें और फिर से कोशिश करें।</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway VPN एक्सेस नहीं मांग सका।\n\nइसकी वजह यह हो सकती है कि किसी दूसरे VPN पर “हमेशा चालू VPN” सेटिंग चालू है। कृपया जांचें कि किसी VPN पर यह सेटिंग चालू तो नहीं है, और फिर से कोशिश करने से पहले उसे बंद करें।</string>
+    <string name="welcome_vpn_alwayson_settings_action">“VPN” सेटिंग खोलें</string>
+    <string name="welcome_method_pro_logo">फ़ायदा</string>
+    <string name="welcome_method_con_logo">कमी</string>
+    <string name="welcome_sync_header">सिंक हो रहा है</string>
+    <string name="welcome_synced_header">सिंक हो गया!</string>
+    <string name="welcome_sync_summary">AdAway ब्लॉक किए जाने वाले विज्ञापन नेटवर्क ऑनलाइन स्रोतों से डाउनलोड करता है। आप इन्हें बाद में प्राथमिकताओं में बदल सकते हैं।</string>
+    <string name="welcome_sync_retry_logo">सिंक दोबारा आज़माएं</string>
+    <string name="welcome_sync_error">सिंक नहीं हो सका: %1$s। दोबारा कोशिश करें?</string>
+    <string name="welcome_sync_notifications">यह विज्ञापन ब्लॉकिंग की स्थिति दिखाने और उसे नियंत्रित करने के लिए, और ऐप के उपलब्ध अपडेट की जानकारी देने के लिए (साल में कुछ ही बार) सूचनाएं भेज सकता है। अपडेट रहना चाहें तो इन्हें चालू करें।</string>
+    <string name="welcome_sync_leave_early_title">सिंक अभी पूरा नहीं हुआ</string>
+    <string name="welcome_sync_leave_early_message">ब्लॉक सूचियों का डाउनलोड अभी पूरा नहीं हुआ है। आप अभी आगे बढ़ सकते हैं और यह बैकग्राउंड में जारी रहेगा, या यहीं रुककर इसके पूरा होने का इंतज़ार कर सकते हैं।</string>
+    <string name="welcome_sync_leave_early_wait">इंतज़ार करें</string>
+    <string name="welcome_sync_leave_early_continue">फिर भी आगे बढ़ें</string>
+    <string name="welcome_battery_header">बैकग्राउंड में भी सुरक्षित रहें</string>
+    <string name="welcome_battery_summary">बैटरी बचाने के लिए Android बैकग्राउंड में AdAway का VPN रोक सकता है, जिससे विज्ञापन ब्लॉकिंग चुपचाप बंद हो सकती है। AdAway को बैटरी ऑप्टिमाइज़ेशन अनदेखा करने की अनुमति दें, ताकि वह चलता रहे।</string>
+    <string name="welcome_battery_action">अनुमति दें</string>
+    <string name="welcome_battery_granted">अनुमति मिल गई ✓</string>
+    <string name="welcome_battery_footnote_prefix">आप इसे बाद में कभी भी यहां से बदल सकते हैं:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android सेटिंग</item>
+        <item>ऐप्लिकेशन</item>
+        <item>AdAway</item>
+        <item>बैटरी</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">एक बात और: आपके फ़ोन का अपना बैटरी मैनेजर</string>
+    <string name="welcome_oem_battery_summary">कुछ फ़ोन ब्रैंड का अपना बैटरी मैनेजर होता है, जो AdAway को भी रोक सकता है। अपने फ़ोन पर यह जांचें:</string>
+    <string name="welcome_oem_battery_action">ऐप्लिकेशन की जानकारी खोलें</string>
+    <string name="welcome_oem_battery_open_failed">ऐप्लिकेशन की जानकारी वाली स्क्रीन नहीं खुल सकी। उसे Android सेटिंग › ऐप्लिकेशन › AdAway से खुद खोलें।</string>
+    <string name="welcome_oem_battery_disclaimer">ये सामान्य सुझाव हैं, सटीक गाइड नहीं: फ़ोन मॉडल और Android वर्शन के हिसाब से शब्द और जगह अलग हो सकते हैं।</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>ऐप्लिकेशन की जानकारी</item>
+        <item>बैटरी</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">“बैकग्राउंड उपयोग की सीमाएं” › “कभी स्लीप न होने वाले ऐप” जैसा कोई विकल्प खोजें, फिर AdAway को उस सूची में जोड़ें।</string>
+    <string name="welcome_oem_battery_secondary_oneui">“ऑटो ऑप्टिमाइज़ेशन” सेटिंग भी देखें और अगर “ज़रूरत पड़ने पर रीस्टार्ट करें” दिखे तो उसे बंद करें।</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>ऐप्लिकेशन की जानकारी</item>
+        <item>बैटरी सेवर</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">“कोई प्रतिबंध नहीं” चुनें।</string>
+    <string name="welcome_oem_battery_secondary_miui">“ऑटोस्टार्ट” भी चालू करें (नए वर्शन में “बैकग्राउंड ऑटोस्टार्ट”)।</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>ऐप्लिकेशन की जानकारी</item>
+        <item>बैटरी उपयोग</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">“बैकग्राउंड गतिविधि की अनुमति दें” चुनें (कभी-कभी यह “कोई प्रतिबंध नहीं” के रूप में दिखता है)।</string>
+    <string name="welcome_oem_battery_secondary_coloros">AdAway के लिए “ऑटो-लॉन्च” टॉगल भी खोजें (अक्सर सेटिंग › ऐप्लिकेशन में), ताकि ज़बरदस्ती रोके जाने के बाद वह खुद दोबारा शुरू हो सके।</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>ऐप्लिकेशन की जानकारी</item>
+        <item>बैटरी</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">“ऐप लॉन्च” खोजें, “अपने-आप प्रबंधित करें” बंद करें, फिर तीनों विकल्प चालू करें: “ऑटो-लॉन्च”, “सेकंडरी लॉन्च” और “बैकग्राउंड में चलाएं”।</string>
+    <string name="welcome_oem_battery_secondary_emui">AdAway को हाल के ऐप्लिकेशन वाली स्क्रीन में लॉक भी करें (उसके कार्ड को तब तक नीचे की ओर स्वाइप करें जब तक ताले का निशान न दिखे)।</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>ऐप्लिकेशन की जानकारी</item>
+        <item>बैटरी उपयोग</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">बैकग्राउंड पावर का कोई विकल्प खोजें और “बैकग्राउंड पावर खपत पर रोक न लगाएं” चुनें (“स्मार्ट कंट्रोल” नहीं)।</string>
+    <string name="welcome_oem_battery_secondary_funtouch">AdAway के लिए “ऑटोस्टार्ट” सेटिंग भी खोजें, जो अक्सर सेटिंग › ऐप्लिकेशन में होती है।</string>
+    <string name="welcome_oem_battery_label_generic">अन्य ब्रैंड</string>
+    <string name="welcome_oem_battery_tip_generic">ऐप्लिकेशन की जानकारी में बैटरी या बैकग्राउंड गतिविधि की सेटिंग खोजें और पक्का करें कि AdAway पर कोई प्रतिबंध न हो।</string>
+    <string name="welcome_back_button">वापस</string>
+    <string name="welcome_next_button">आगे</string>
+    <string name="welcome_finish_button">पूरा करें</string>
+    <string name="tv_welcome_intro_subtitle">यह छोटा सेटअप इस डिवाइस पर विज्ञापन ब्लॉकिंग चालू करता है।</string>
     <string name="tv_welcome_start_button">शुरू करें</string>
-    <string name="tv_welcome_method_header">अपनी ब्लॉकिंग विधि चुनें</string>
-    <string name="tv_welcome_method_root_button">रूट का उपयोग करें</string>
-    <string name="tv_welcome_method_root_body">तेज़ और बैटरी के अनुकूल। रूट किए गए डिवाइस की आवश्यकता है।</string>
-    <string name="tv_welcome_method_vpn_button">VPN का उपयोग करें</string>
-    <string name="tv_welcome_method_vpn_body">बिना रूट के काम करता है, किसी भी Android TV डिवाइस के साथ संगत।</string>
+    <string name="tv_welcome_method_header">ब्लॉकिंग का तरीका चुनें</string>
+    <string name="tv_welcome_method_root_button">रूट इस्तेमाल करें</string>
+    <string name="tv_welcome_method_root_body">ज़्यादा तेज़ और बैटरी की बचत करने वाला। रूट किया हुआ डिवाइस ज़रूरी है।</string>
+    <string name="tv_welcome_method_vpn_button">VPN इस्तेमाल करें</string>
+    <string name="tv_welcome_method_vpn_body">रूट के बिना काम करता है और हर Android TV डिवाइस के साथ संगत है।</string>
     <string name="tv_welcome_activate_header">विज्ञापन ब्लॉकिंग चालू करें</string>
-    <string name="tv_welcome_activate_body">यह एक लोकल VPN है: यह आपके ट्रैफ़िक को किसी बाहरी सर्वर से भेजे बिना, इसी डिवाइस पर विज्ञापन फ़िल्टर करता है।</string>
+    <string name="tv_welcome_activate_body">यह एक लोकल VPN है: यह इसी डिवाइस पर विज्ञापन फ़िल्टर करता है और आपका ट्रैफ़िक किसी बाहरी सर्वर से होकर नहीं गुज़रता।</string>
 </resources>

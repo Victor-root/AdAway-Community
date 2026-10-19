@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">अद्यतन उपलब्ध</string>
-    <string name="update_banner_subtitle">%1$s स्थापित करने के लिए टैप करें</string>
-    <string name="pref_update_check_now_update_available">नया संस्करण उपलब्ध: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">कोई अद्यतन उपलब्ध नहीं</string>
-    <string name="pref_update_install_summary">%1$s संस्करण स्थापित करें</string>
-    <string name="notification_channel_app_updates">ऐप अद्यतन</string>
-    <string name="notification_channel_app_updates_description">ऐप का नया संस्करण उपलब्ध होने पर सूचना। अन्य सूचनाओं को प्रभावित किए बिना ऐप-अद्यतन अलर्ट छिपाने के लिए इस चैनल को म्यूट करें।</string>
+    <string name="update_title">AdAway अपडेट</string>
+    <string name="update_banner_title">अपडेट उपलब्ध है</string>
+    <string name="update_banner_subtitle">%1$s इंस्टॉल करने के लिए टैप करें</string>
+    <string name="update_up_to_date_header">आपके पास नवीनतम वर्शन है</string>
+    <string name="update_update_available_header">अपडेट उपलब्ध है</string>
+    <string name="update_updating_header">AdAway अपडेट हो रहा है</string>
+    <string name="update_update_button">अभी अपडेट करें</string>
+    <string name="update_complete_label">पूरा हुआ</string>
+    <string name="update_last_changelog_title">हाल के बदलाव</string>
+    <string name="update_new_changelog_title">बदलावों की सूची</string>
+    <string name="update_download_failed">अपडेट डाउनलोड नहीं हो सका।</string>
+    <string name="update_install_failed">अपडेट इंस्टॉल नहीं हो सका।</string>
+    <string name="pref_update_check_now_update_available">नया वर्शन उपलब्ध है: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">कोई अपडेट उपलब्ध नहीं है</string>
+    <string name="pref_update_check_now_failed">अपडेट सर्वर तक पहुंचा नहीं जा सका</string>
+    <string name="pref_update_install_summary">वर्शन %1$s इंस्टॉल करें</string>
+    <string name="notification_channel_app_updates">ऐप अपडेट</string>
+    <string name="notification_channel_app_updates_description">ऐप का नया वर्शन उपलब्ध होने पर सूचना। दूसरी सूचनाओं पर असर डाले बिना ऐप अपडेट की सूचनाएं बंद करने के लिए इस चैनल को म्यूट करें।</string>
+    <string name="notification_app_update_title">ऐप का अपडेट उपलब्ध है</string>
+    <string name="notification_app_update_text">AdAway का नया वर्शन डाउनलोड के लिए उपलब्ध है।</string>
 </resources>

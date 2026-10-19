@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN अपने-आप बंद हो जाता है</h2>
+<p>ऐसा लगभग हमेशा इसलिए होता है कि सिस्टम बैटरी बचाने के लिए VPN सेवा को बंद कर देता है, यह कोई क्रैश नहीं है। यह उन फ़ोन निर्माताओं के ROM पर आम है जिनमें पावर मैनेजमेंट सख़्त होता है (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung वगैरह)।</p>
+<p>Android सेटिंग में AdAway खोजें और ये करें: <cite>बैटरी ऑप्टिमाइज़ेशन</cite> को <cite>अप्रतिबंधित</cite> (या <cite>ऑप्टिमाइज़ न करें</cite>) पर सेट करें, अगर आपके ROM में <cite>ऑटोस्टार्ट</cite> या <cite>ऑटो-लॉन्च</cite> का विकल्प है तो उसकी अनुमति दें, और AdAway को हाल के ऐप्लिकेशन की सूची में लॉक कर दें ताकि वह स्वाइप करके हट न जाए। यह भी पक्का करें कि AdAway की VPN प्राथमिकताओं में <cite>स्टार्टअप पर चालू करें</cite> चालू है।</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>वाई-फ़ाई और मोबाइल डेटा के बीच बदलने के तुरंत बाद इंटरनेट नहीं चलता या धीमा चलता है</h2>
+<p>सक्रिय नेटवर्क बदलने पर टनल को दोबारा बनाना पड़ता है, ताकि DNS नए नेटवर्क से हल हो। अगर ब्राउज़िंग फिर भी ठीक न हो, तो कनेक्शन को शुरू से दोबारा बनाने के लिए <cite>प्राथमिकताएं › VPN › VPN रीसेट करें</cite> खोलें। अगर यह बार-बार हो, तो एक डायग्नोस्टिक लॉग (नीचे देखें) लें और उसकी रिपोर्ट करें।</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>डायग्नोस्टिक लॉग कैसे एक्सपोर्ट करूं?</h2>
+<p><cite>प्राथमिकताएं › VPN › डायग्नोस्टिक लॉग</cite> खोलें। इसमें हाल की त्रुटियां और VPN की घटनाएं (नेटवर्क बदलना, दोबारा जुड़ना, विफलताएं) दर्ज होती हैं, आपका ब्राउज़िंग इतिहास नहीं, सिर्फ़ तकनीकी घटनाएं। जब तक आप ठीक ऊपर दिया <cite>डायग्नोस्टिक लॉग रिकॉर्ड करें</cite> चालू नहीं करते, यह खाली रहता है। समस्या की रिपोर्ट करते समय इसे भेजने के लिए <cite>कॉपी करें</cite> या <cite>शेयर करें</cite> इस्तेमाल करें। सुझाव: पहले इसे <cite>साफ़ करें</cite>, फिर समस्या को दोहराएं, ताकि लॉग में सिर्फ़ ज़रूरी जानकारी रहे।</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome में अब भी विज्ञापन दिखते हैं</h2>
+<p>Chrome अपना <cite>सुरक्षित DNS</cite> (DNS-over-HTTPS) इस्तेमाल कर सकता है, जो AdAway को बायपास कर देता है। Chrome में <cite>सेटिंग › निजता और सुरक्षा › सुरक्षित DNS का इस्तेमाल करें</cite> खोलकर उसे बंद करें। यही बात किसी भी ऐप या सिस्टम की <cite>निजी DNS</cite> सेटिंग पर भी लागू होती है। VPN मोड में AdAway DNS को खुद एन्क्रिप्ट कर सकता है: FAQ में <cite>VPN कौन-से DNS सर्वर इस्तेमाल करता है?</cite> देखें।</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>कुछ विज्ञापन अब भी आते हैं, या कोई ऐप अब भी विज्ञापन दिखाता है</h2>
+<p>हो सकता है कि कोई होस्टनाम आपके स्रोतों में न हो, या ऐप अपने विज्ञापन साथ ही लेकर चलता हो, जिससे कोई अनुरोध ही नहीं होता। होम स्क्रीन से <cite>DNS लॉग</cite> खोलकर देखें कि ऐप क्या अनुरोध कर रहा है, संदिग्ध होस्टनाम को अपनी <cite>ब्लॉक किए गए</cite> सूची में जोड़ें, और जांच लें कि कुछ खराब तो नहीं हुआ। कुछ ऐप विज्ञापन डाउनलोड करने के बाद उन्हें कैश में भी रखते हैं, इसलिए Android सेटिंग में उस ऐप की कैश मेमोरी साफ़ करने से मदद मिल सकती है।</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway चालू करने के बाद कोई ऐप काम करना बंद कर देता है</h2>
+<p>जब किसी ऐप के लिए ज़रूरी होस्टनाम ब्लॉक हो जाता है, तो कुछ ऐप काम करने से मना कर देते हैं। <cite>DNS लॉग</cite> से पता करें कि ऐप को कौन-सा होस्टनाम चाहिए, उसे अपनी <cite>अनुमत</cite> सूची में जोड़ें, और ऐप फिर से काम करने लगना चाहिए। जानी-पहचानी समस्या वाले ऐप की सूची <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">यहां</a> है।</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>hosts फ़ाइल लागू करना विफल हो जाता है (रूट मोड)</h2>
+<p>नए Android वर्शन में <code>/system</code> पार्टिशन सिर्फ़ पढ़ने के लिए होता है, इसलिए AdAway उसमें सीधे नहीं लिख सकता। अगर आप Magisk इस्तेमाल करते हैं, तो <cite>systemless hosts</cite> मॉड्यूल चालू करें, रीबूट करें और फिर से लागू करें। अगर आप रूट इस्तेमाल नहीं करते, तो इसके बजाय VPN मोड अपनाएं, जिसमें सिस्टम में कोई बदलाव नहीं करना पड़ता।</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>अब भी समस्या हल नहीं हुई?</h2>
+<p>समस्या की रिपोर्ट डायग्नोस्टिक लॉग जोड़कर यहां करें: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>।</p>
 </body>
 </html>
