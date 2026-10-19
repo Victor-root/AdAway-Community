@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Income by advertisements</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>AdAway Community çi ye?</h2>
+<p>AdAway Community forkeke neresmî ye ku ji aliyê civakê ve tê domandin, ya AdAway, astengkerê reklaman ê çavkaniya vekirî ji bo Android. Ew reklam û şopîneran ji bo hemû sepanan li seranserê pergalê asteng dike, bêyî hesab û bêyî reklamên xwe. Ev fork li ser wê yekê disekine ku sepan li ser guhertoyên nû yên Android û ROM-ên çêkeran bi pêbawerî bixebite.</p>
 
-<h2>How does AdAway work?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Ew reklaman çawa asteng dike?</h2>
+<p>AdAway bi yek ji du rêbazan dixebite:</p>
+<p><strong>Moda VPN</strong> (bêyî root): AdAway VPN-eke herêmî, li ser amûrê dimeşîne ku trafîka te qet nişanî tu derê nake. Tenê daxwazên DNS kontrol dike û yên ku ber bi navên mêvandar ên reklam û şopîneran ve diçin diavêje, hemû yên din derbas dike. Tu tişt ji amûra te dernakeve.</p>
+<p><strong>Moda root</strong>: heke amûra te root bûye, AdAway dikare li şûna wê <a href="http://en.wikipedia.org/wiki/Hosts_file">pelekî hosts</a> li <code>/system/etc/hosts</code> binivîse, ku navên mêvandar ên nexwestî bi <code>127.0.0.1</code> ve girê dide da ku li amûra te bi xwe çareser bibin. Li ser Android a nû, modûleke hosts a systemless (mînak Magisk) pêwîst e.</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>VPN kîjan pêşkêşkerên DNS bi kar tîne?</h2>
+<p>Di moda VPN de, navên mêvandar ên ku nayên astengkirin ji aliyê pêşkêşkerên DNS yên ku tu di <cite>Vebijêrk › Astengkerê reklaman ê bi VPN › Pêşkêşkerên DNS</cite> de hildibijêrî têne çareserkirin:</p>
+<p><strong>Pêşkêşkerên DNS yên torê</strong> (standard): pêşkêşkerên tora te ya Wi-Fi an mobîl. Heke tor yekê nede ku AdAway bikaribe bi kar bîne, Cloudflare (<code>1.1.1.1</code>) dikeve cihê.<br/><strong>Pêşkêşkerên DNS yên bijartî</strong>: navnîşanên IP yên ku tu dinivîsî, bi kommayê ji hev veqetandî.<br/><strong>DNS over HTTPS</strong>: daxwaz têne şîfrekirin û ji Cloudflare, Google, Quad9 an navnîşana <code>https://</code> ya ku tu dinivîsî re têne şandin, ji ber vê tora te nikare wan bixwîne an biguherîne.</p>
+<p>Astengkirin di her sêyan de bi heman awayî dixebite. Ji bo ku DNS-a şîfrekirî bimîne, li vir DNS over HTTPS bi kar bîne li şûna mîhenga <cite>DNS-a taybet</cite> a Android, ya ku AdAway derbas dike.</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Ez çawa navê mêvandarekî asteng bikim, destûr bidim an beralî bikim?</h2>
+<p>Ji dîmena sereke tu sê lîsteyan birêve dibî:</p>
+<p><strong>Astengkirî</strong>: navên mêvandar ên ku divê werin astengkirin (reklam û şopîner).<br/><strong>Destûrdayî</strong>: îstîsnayên ku tu qet naxwazî werin astengkirin, heta ku çavkaniyek wan lîste bike jî.<br/><strong>Beralîkirî</strong>: navên mêvandar ên ku tu dixwazî ber bi navnîşaneke IP ya diyarkirî ve bibî.</p>
+<p>Her wiha tu dikarî ji dîmena sereke <cite>Tomara DNS</cite> veke da ku di cih de bibînî sepan kîjan navên mêvandar dipirsin, paşê wan rasterast ji wir asteng bikî an destûr bidî.</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Piştî guhertina lîsteyên xwe pêdivî ye ez Android ji nû ve bidim destpêkirin?</h2>
+<p>Na. AdAway guherînê yekser bicîh tîne, lê sepanek ku jixwe vekirî bû dikare girêdanên xwe yên kevn û pêşbîra xwe bi kar bîne. Wê bi tevahî bigire (di mîhengên Android yên sepanê de Bi zorê bisekinîne), û heke reklam hê xuya dikin pêşbîra wê paqij bike. Tenê carekê di moda root de, piştî çalakkirina modula systemless hosts a Magisk, ji nû ve destpêkirina Android pêwîst e.</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>Ez çavkaniyên hosts yên din ji ku bibînim?</h2>
+<p>AdAway bi çavkaniyên standard ên maqûl tê. Heke tu bêtir dixwazî, li <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">lîsteya çavkaniyên hosts yên zêde</a> ya ku ji aliyê civakê ve tê domandin binêre. Çavkaniyan bi hişkî zêde bike, ji ber ku lîsteyên pir mezin an li hev ketî dikarin bibin sedema astengkirinên şaş ên ku sepanan xera dikin.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Çima ev fork heye?</h2>
+<p>AdAway projeyeke hêja ye bi dîrokeke dirêj, lê çalakiya weşan û nirxandina upstream demeke dirêj e sînordar e. Hin sererastkirin û daxwazên guherînê (pull request) demeke dirêj vekirî man, tevî pirsgirêkên ku bandor li aramiya moda VPN li ser guhertoyên nû yên Android û ROM-ên çêkeran dikin. Ev fork heye da ku proje bi sererastkirinên ji aliyê civakê ve tên domandin bikêrhatî bimîne, li şûna ku başkirinên ceribandî bêkar bimînin.</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Ez çawa çewtiyekê ragihînim an guherînekê pêşniyar bikim?</h2>
+<p>Li ser şopînerê pirsgirêkan ê fork-ê pirsgirêkekê veke: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Tomareke teşhîsê (tabloya Pirsgirêk bibîne) dema ragihandina pirsgirêkên VPN gelek alîkar e.</p>
 </body>
 </html>

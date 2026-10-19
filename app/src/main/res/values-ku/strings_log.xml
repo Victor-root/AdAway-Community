@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">Tomarkirinê çalak an neçalak bike</string>
+    <string name="log_start_recording">Ji bo destpêkirina tomarkirina daxwazan bişkoka tomarkirinê bitikîne, dûv re li webê bigere an sepanan bi kar bîne, paşê vegere an bikişîne da ku tomar nû bibin.</string>
+    <string name="log_blocked_requests_ignored">\n\nDaxwazên astengkirî nayên tomarkirin. Heke dixwazî ew jî werin tomarkirin, pêşî astengkirina reklaman neçalak bike.</string>
+    <string name="log_sort">Domaînan rêz bike</string>
+    <string name="log_clear">Tomarê paqij bike</string>
+    <string name="log_sort_alphabetical">Rêzkirina alfabetîk</string>
+    <string name="log_sort_top_level_domain">Rêzkirina li gorî domaîna asta jorîn</string>
+    <string name="log_block">Têketinê li lîsteya reş zêde bike</string>
+    <string name="log_allow">Têketinê li lîsteya spî zêde bike</string>
+    <string name="log_redirect">Têketinê li lîsteya beralîkirinê zêde bike</string>
+    <string name="log_redirect_dialog_title">Beralîkirina domaînê</string>
+    <string name="log_capture_failed">Tomarkirina DNS nikaribû dest pê bike.</string>
     <string name="log_start_recording_button">Tomarkirinê dest pê bike</string>
     <string name="log_start_recording_vpn_inactive">Tomarkirinê dest pê bike (VPN çalak nîne)</string>
-    <string name="log_stop_recording">Tomarkirinê raweste</string>
+    <string name="log_stop_recording">Tomarkirinê bisekinîne</string>
 </resources>

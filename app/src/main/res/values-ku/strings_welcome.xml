@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">Ev sêrbaza kurt dê astengkirina reklaman li ser vê amûrê veke.</string>
+    <string name="welcome_first_step">Gava yekem a rêberê</string>
+    <string name="welcome_second_step">Gava duyem a rêberê</string>
+    <string name="welcome_third_step">Gava sêyem a rêberê</string>
+    <string name="welcome_fourth_step">Gava çaremîn a rêberê</string>
+    <string name="welcome_method_header">Bi xêr hatî AdAway!</string>
+    <string name="welcome_method_summary">AdAway du rêbazên astengkirina reklaman pêşkêş dike. Ya ku bi dilê te ye hilbijêre:</string>
+    <string name="welcome_root_method_title">Astengkirina reklaman\nbi root</string>
+    <string name="welcome_root_method_text1">Bileztir</string>
+    <string name="welcome_root_method_text2">Bataryayê kêm bikar tîne</string>
+    <string name="welcome_root_method_text3">Root pêwîst e</string>
+    <string name="welcome_vpn_method_title">Astengkirina reklaman\nbi VPN</string>
+    <string name="welcome_vpn_method_text1">Hêdîtir</string>
+    <string name="welcome_vpn_method_text2">Li paşperdeyê dixebite</string>
+    <string name="welcome_vpn_method_text3">Lihevhatîbûn</string>
+    <string name="welcome_root_missing_title">Amûreke bi root pêwîst e</string>
+    <string name="welcome_root_missile_description">An pelê binary yê su nehat dîtin an te destûra root nedabû AdAway.\n\nDibe ku ev ji ber wê yekê çêbibe ku amûra te root nebûye. Agahiyên li ser rootkirina amûra xwe tu dikarî li wiki.lineageos.org an malperên din ên Android bibînî.</string>
+    <string name="welcome_vpn_alwayson_title">VPN-a her dem çalak vekirî ye</string>
+    <string name="welcome_vpn_alwayson_description">AdAway dît ku VPN-eke din mîhenga «VPN-a her dem çalak» çalak kiriye.\n\nEv rê nade ku AdAway destûra VPN bixwaze. Ji kerema xwe «VPN-a her dem çalak» li VPN-a têkildar neçalak bike û dîsa biceribîne.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway nikaribû destûra VPN bixwaze.\n\nDibe ku ev ji ber wê yekê be ku VPN-eke din mîhenga «VPN-a her dem çalak» çalak kiriye. Ji kerema xwe kontrol bike ka VPN-eke bi vê mîhengê heye û berî ku dîsa biceribînî wê neçalak bike.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Mîhengên «VPN» veke</string>
+    <string name="welcome_method_pro_logo">Feyde</string>
+    <string name="welcome_method_con_logo">Kêmasî</string>
+    <string name="welcome_sync_header">Tê hevdemkirin</string>
+    <string name="welcome_synced_header">Hate hevdemkirin!</string>
+    <string name="welcome_sync_summary">AdAway torên reklaman ên ku divê werin astengkirin ji çavkaniyên serhêl dadixe. Tu dikarî paşê wan di Vebijêrkan de biguherînî.</string>
+    <string name="welcome_sync_retry_logo">Hevdemkirinê dîsa biceribîne</string>
+    <string name="welcome_sync_error">Hevdemkirin têk çû: %1$s Tu dixwazî niha dîsa biceribînî?</string>
+    <string name="welcome_sync_notifications">Dikare agahdariyan bişîne da ku rewş û kontrola astengkirina reklaman nîşan bide û li ser nûvekirina sepanê (çend car di salê de) agahdar bike. Heke dixwazî her dem nûjen bimînî, wan çalak bike.</string>
+    <string name="welcome_sync_leave_early_title">Hevdemkirin hê neqediyaye</string>
+    <string name="welcome_sync_leave_early_message">Daxistina lîsteyên astengkirinê hê neqediyaye. Tu dikarî niha berdewam bikî û ew li paşperdeyê dê biqede, an jî li vir li bendê bimîne heta ku biqede.</string>
+    <string name="welcome_sync_leave_early_wait">Li bendê bimîne</string>
+    <string name="welcome_sync_leave_early_continue">Dîsa jî berdewam bike</string>
+    <string name="welcome_battery_header">Li paşperdeyê jî di parastinê de bimîne</string>
+    <string name="welcome_battery_summary">Android dikare VPN-a AdAway li paşperdeyê ji bo tasarrufa enerjiyê rawestîne, ev jî dikare bêdeng astengkirina reklaman bisekinîne. Destûr bide AdAway ku baştirkirina bataryayê paşguh bike da ku berdewam bixebite.</string>
+    <string name="welcome_battery_action">Destûr bide</string>
+    <string name="welcome_battery_granted">Destûr hate dayîn ✓</string>
+    <string name="welcome_battery_footnote_prefix">Tu dikarî vê her dem paşê biguherînî ji</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Mîhengên Android</item>
+        <item>Sepan</item>
+        <item>AdAway</item>
+        <item>Batarya</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Tiştekî din: rêvebirê bataryayê yê têlefona te bi xwe</string>
+    <string name="welcome_oem_battery_summary">Hin marqeyên têlefonan rêvebirekî bataryayê yê xwe heye ku dikare AdAway jî asteng bike. Li ser ya te ev tişt kontrol bike:</string>
+    <string name="welcome_oem_battery_action">Agahiyên sepanê veke</string>
+    <string name="welcome_oem_battery_open_failed">Dîmena agahiyên sepanê nehat vekirin. Wê bi destî ji Mîhengên Android → Sepan → AdAway veke.</string>
+    <string name="welcome_oem_battery_disclaimer">Ev tenê nîşaneyên giştî ne, ne rêberekî tam: gotin û cih li gorî modela têlefonê û guhertoya Android dikarin cuda bibin.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Agahiyên sepanê</item>
+        <item>Batarya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Li tiştekî mîna «Sînorên bikaranîna li paşperdeyê» › «Sepanên ku qet nakevin xewê» bigere, paşê AdAway li wê lîsteyê zêde bike.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Her wiha li mîhengeke «Xweşkirina otomatîk» bigere û heke hebe «Dema pêwîst be ji nû ve dest pê bike» neçalak bike.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Agahiyên sepanê</item>
+        <item>Tasarrufa bataryayê</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">«Bê sînorkirin» hilbijêre.</string>
+    <string name="welcome_oem_battery_secondary_miui">Her wiha «Destpêkirina otomatîk» (di guhertoyên nûtir de «Destpêkirina otomatîk a li paşperdeyê») çalak bike.</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Agahiyên sepanê</item>
+        <item>Bikaranîna bataryayê</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">«Destûr bide çalakiya li paşperdeyê» hilbijêre (carna wekî «Bê sînorkirin» tê nîşandan).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Her wiha ji bo AdAway li guhêrkereke «Destpêkirina otomatîk» bigere (pir caran di Mîhengên › Sepan de), da ku piştî bi zorê sekinandinê bikaribe xwe ji nû ve dest pê bike.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Agahiyên sepanê</item>
+        <item>Batarya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Li «Destpêkirina sepanê» bigere, «Bi otomatîk birêve bibe» neçalak bike, paşê her 3 vebijarkan çalak bike: «Destpêkirina otomatîk», «Destpêkirina duyemîn» û «Xebata li paşperdeyê».</string>
+    <string name="welcome_oem_battery_secondary_emui">Her wiha AdAway di dîmena sepanên dawî de qefl bike (karta wê berjêr bikişîne heta ku qeflek xuya bibe).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Agahiyên sepanê</item>
+        <item>Bikaranîna bataryayê</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Li vebijarkeke hêza li paşperdeyê bigere û «Bikaranîna hêza li paşperdeyê sînordar neke» hilbijêre (ne «Kontrola jîr»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Her wiha ji bo AdAway li mîhengeke «Destpêkirina otomatîk» bigere, pir caran di Mîhengên › Sepan de.</string>
+    <string name="welcome_oem_battery_label_generic">Marqeyeke din</string>
+    <string name="welcome_oem_battery_tip_generic">Di agahiyên sepanê de li mîhengeke bataryayê an çalakiya li paşperdeyê bigere û pê bawer be ku AdAway ne sînorkirî ye.</string>
+    <string name="welcome_back_button">Vegere</string>
+    <string name="welcome_next_button">Pêşve</string>
+    <string name="welcome_finish_button">Biqedîne</string>
+    <string name="tv_welcome_intro_subtitle">Ev rêbera kurt astengkirina reklaman li ser vê amûrê çalak dike.</string>
     <string name="tv_welcome_start_button">Dest pê bike</string>
-    <string name="tv_welcome_method_header">Rêbaza asteng kirinê hilbijêre</string>
-    <string name="tv_welcome_method_root_button">Root bikar bîne</string>
-    <string name="tv_welcome_method_root_body">Bileztir û ji bo bataryayê baştir e. Amûrek bi root divê.</string>
-    <string name="tv_welcome_method_vpn_button">VPN bikar bîne</string>
-    <string name="tv_welcome_method_vpn_body">Bêyî root dixebite, li gel her amûrek Android TV lihevhatî ye.</string>
-    <string name="tv_welcome_activate_header">Astengkirina reklaman veke</string>
-    <string name="tv_welcome_activate_body">Ev VPNek herêmî ye: reklaman li ser vê amûrê fîltre dike, bêyî ku trafîka te bişîne rajekerek derveyî.</string>
+    <string name="tv_welcome_method_header">Rêbaza xwe ya astengkirinê hilbijêre</string>
+    <string name="tv_welcome_method_root_button">Root bi kar bîne</string>
+    <string name="tv_welcome_method_root_body">Bileztir e û bataryayê kêm bikar tîne. Amûreke bi root pêwîst e.</string>
+    <string name="tv_welcome_method_vpn_button">VPN bi kar bîne</string>
+    <string name="tv_welcome_method_vpn_body">Bêyî root dixebite, bi her amûreke Android TV re lihevhatî ye.</string>
+    <string name="tv_welcome_activate_header">Astengkirina reklaman çalak bike</string>
+    <string name="tv_welcome_activate_body">Ev VPN-eke herêmî ye: reklaman li ser vê amûrê fîltre dike, bêyî ku trafîka te di ser pêşkêşkereke derve re bibe.</string>
 </resources>

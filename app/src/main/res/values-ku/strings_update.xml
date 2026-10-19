@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">Nûvekirina AdAway</string>
+    <string name="update_banner_title">Nûvekirin heye</string>
+    <string name="update_banner_subtitle">Ji bo sazkirina %1$s bitikîne</string>
+    <string name="update_up_to_date_header">Tu nûvekirî yî</string>
+    <string name="update_update_available_header">Nûvekirin heye</string>
+    <string name="update_updating_header">AdAway tê nûvekirin</string>
+    <string name="update_update_button">Niha nûve bike</string>
+    <string name="update_complete_label">Qediya</string>
+    <string name="update_last_changelog_title">Guherînên dawî</string>
+    <string name="update_new_changelog_title">Lîsteya guherînan</string>
+    <string name="update_download_failed">Nûvekirin nehat daxistin.</string>
+    <string name="update_install_failed">Nûvekirin nehat sazkirin.</string>
+    <string name="pref_update_check_now_update_available">Guhertoyeke nû heye: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nûvekirin tune ye</string>
+    <string name="pref_update_check_now_failed">Pêşkêşkera nûvekirinê nehat gihîştin</string>
+    <string name="pref_update_install_summary">Guhertoya %1$s saz bike</string>
+    <string name="notification_channel_app_updates">Nûvekirinên sepanê</string>
+    <string name="notification_channel_app_updates_description">Dema guhertoyeke nû ya sepanê peyda dibe agahdarî tê şandin. Vî kanalî bêdeng bike da ku hişyariyên nûvekirina sepanê bêdeng bibin, bêyî ku bandor li agahdariyên din bike.</string>
+    <string name="notification_app_update_title">Nûvekirina sepanê heye</string>
+    <string name="notification_app_update_text">Guhertoyeke nû ya AdAway ji bo daxistinê heye.</string>
 </resources>

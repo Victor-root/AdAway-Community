@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">Vebijêrk</string>
+    <string name="pref_general_category">Giştî</string>
+    <string name="pref_dark_theme">Rûkara tarî</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Ronî</item>
+        <item>Tarî</item>
+        <item>Bi gorî pergalê</item>
     </string-array>
-    <string name="pref_vpn_reset">VPN ji nû ve saz bike</string>
-    <string name="pref_vpn_reset_description">Girêdana VPN ji nû ve ava bike. Vê bikar bîne heke VPN bêkar bibe (gihîştina înternetê tune an xeletiyên DNS).</string>
+    <string name="pref_update_configuration">Nûvekirinên otomatîk</string>
+    <string name="pref_language">Ziman</string>
+    <string name="pref_language_system">Zimanê pergalê</string>
+    <string name="pref_ad_block_category">Astengkirina reklaman</string>
+    <string name="pref_root_ad_blocker_configuration">Astengkerê reklaman ê bi root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Astengkerê reklaman ê bi VPN</string>
+    <string name="pref_enable_ipv6">Piştgiriya IPv6 çalak bike</string>
+    <string name="pref_backup_restore">Yedekkirin / vegerandina rêgezên astengkirinê</string>
+    <string name="pref_backup_restore_title">Yedekkirin û vegerandin</string>
+    <string name="pref_backup">Yedek</string>
+    <string name="pref_backup_summary">Rêgezên xwe yên astengkirinê li bîrgeha derve yedek bike</string>
+    <string name="pref_restore">Vegerîne</string>
+    <string name="pref_restore_summary">Rêgezên xwe yên astengkirinê ji pelê yedekê vegerîne</string>
+    <string name="import_success">Yedek bi serkeftî ji bîrgeha te ya derve hate wergirtin.</string>
+    <string name="import_failed">Wergirtina yedekê têk çû. Gelo format rast e?</string>
+    <string name="export_success">Yedek bi serkeftî li pelê «%s» yê bîrgeha te ya derve hate hinardekirin.</string>
+    <string name="export_failed">Hinardekirina pelê yedekê «%s» têk çû.</string>
+    <string name="pref_update_title">Nûvekirin</string>
+    <string name="pref_update_enable_notifications">Agahdarî neçalak in</string>
+    <string name="pref_update_enable_notifications_summary">Agahdariyên sepanê nayên nîşandan. Ji bo çalakkirinê bitikîne.</string>
+    <string name="pref_update_app_category">Nûvekirinên sepanê</string>
+    <string name="pref_update_check_app_startup">Di destpêkê de nûvekirinê kontrol bike</string>
+    <string name="pref_update_check_app_daily">Nûvekirinê bi rêkûpêk kontrol bike</string>
+    <string name="pref_update_check_now">Niha kontrol bike</string>
+    <string name="pref_update_install">Niha nûve bike</string>
+    <string name="pref_update_hosts_category">Nûvekirinên hosts</string>
+    <string name="pref_update_check">Di destpêkê de nûvekirinê kontrol bike</string>
+    <string name="pref_update_check_hosts_daily">Nûvekirinê bi rêkûpêk kontrol bike</string>
+    <string name="pref_update_sync_on_update">Dema nûvekirinê hevdem bike</string>
+    <string name="pref_update_sync_unmetered_only">Tenê li ser torên bê sînorê daneyê hevdem bike</string>
+    <string name="pref_vpn_service_on_boot">Di destpêkê de çalak bike</string>
+    <string name="pref_vpn_service_monitor">Girêdanê bişopîne</string>
+    <string name="pref_vpn_service_monitor_description">Rewşa torê bi rêkûpêk kontrol bike da ku VPN piştî qutbûnê ji nû ve dest pê bike.</string>
+    <string name="pref_vpn_excluded_apps">Sepanên îstîsnakirî</string>
+    <string name="pref_vpn_excluded_apps_description">Diyar bike kîjan sepan VPN bi kar neynin da ku girêdanên wan neyên astengkirin.</string>
+    <string name="pref_vpn_exclude_system_apps">Sepanên pergalê îstîsna bike</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Tu yek</item>
+        <item>Hemû ji bilî gerokan</item>
+        <item>Hemû</item>
+    </string-array>
+    <string name="pref_vpn_dns">Pêşkêşkerên DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Pêşkêşkerên DNS yên torê</item>
+        <item>Pêşkêşkerên DNS yên bijartî</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Pêşkêşkerên DNS yên bijartî</string>
+    <string name="pref_vpn_dns_custom_summary">Navnîşanên IP, bi kommayê ji hev veqetandî</string>
+    <string name="pref_vpn_dns_custom_invalid">Navnîşana pêşkêşkera DNS derbasdar nîne</string>
+    <string name="pref_vpn_doh">Pêşkêşkera DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Navnîşana bijartî</string>
+    <string name="pref_vpn_doh_address">Navnîşana DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Navnîşana DNS over HTTPS derbasdar nîne</string>
+    <string name="pref_vpn_exclude_user_apps">Sepanên bikarhêner îstîsna bike</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Sepanên îstîsnakirî</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Hemûyan hilbijêre</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Hilbijartina hemûyan rake</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Îkona sepanê</string>
+    <string name="pref_vpn_reset">VPN ji nû ve ava bike</string>
+    <string name="pref_vpn_reset_description">Girêdana VPN ji sifirê ji nû ve ava bike. Heke VPN dev ji xebatê berde (înternet tune ye an çewtiyên DNS hene), vê bi kar bîne.</string>
     <string name="pref_vpn_reset_done">Girêdana VPN ji nû ve hate avakirin.</string>
     <string name="pref_vpn_reset_not_running">VPN naxebite.</string>
-    <string name="pref_vpn_diagnostic_log">Tomarê teşhîsê</string>
-    <string name="pref_vpn_diagnostic_log_description">Xeletî û bûyerên VPN yên dawî bibîne, kopî bike an parve bike. Dema ku pirsgirêkekê ragihînî bikêr e.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Hê tu bûyer nehatine tomarkirin.</string>
-    <string name="pref_vpn_diagnostic_log_share">Tomarê teşhîsê parve bike</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Tomara teşhîsê çêbike</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Berî ku pirsgirêkê dubare bikî vê çalak bike, paşê li jêr hinarde bike. Dibe ku amûrên kevn hinekî hêdî bike. Tenê bûyerên teknîkî yên VPN tomar dike, qet dîroka gerê an daneyên kesane tomar nake.</string>
+    <string name="pref_vpn_diagnostic_log">Tomara teşhîsê</string>
+    <string name="pref_vpn_diagnostic_log_description">Çewtî û bûyerên VPN yên dawî bibîne, kopî bike an parve bike. Dema pirsgirêkekê radigihînî bikêr e.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Hê tu bûyer nehatine tomarkirin. «Tomara teşhîsê çêbike» ya li jor çalak bike, paşê hewl bide pirsgirêkê dubare bikî.</string>
+    <string name="pref_vpn_diagnostic_log_share">Parve bike</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Tomara teşhîsê parve bike</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopî bike</string>
-    <string name="pref_vpn_diagnostic_log_copied">Tomarê teşhîsê li panoyê hate kopîkirin.</string>
-    <string name="pref_vpn_diagnostic_log_clear">Tomarê teşhîsê paqij bike</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Bûyerên tomarkirî jê bibe. Berî ku pirsgirêkê ji nû ve çêbikî vê bike da ku şopeke paqij bistînî.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Tomarê teşhîsê hate paqijkirin.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_vpn_diagnostic_log_copied">Tomara teşhîsê li panoyê hate kopîkirin.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Tomara teşhîsê paqij bike</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Bûyerên tomarkirî jê bibe. Berî ku pirsgirêkê dubare bikî vê bike da ku şopeke paqij bistînî.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Tomara teşhîsê hate paqijkirin.</string>
+    <string name="pref_root_open_hosts">Pelê hosts veke</string>
+    <string name="hosts_file_unreadable">Pelê hosts nehat xwendin.</string>
+    <string name="pref_hosts_redirection_summary">Diyar bike navên mêvandar ên astengkirî ber bi ku ve werin beralîkirin</string>
+    <string name="pref_redirection_ipv4">Beralîkirina IPv4 mîheng bike</string>
+    <string name="pref_redirection_ipv6">Beralîkirina IPv6 mîheng bike</string>
+    <string name="pref_redirection_invalid">Beralîkirin derbasdar nîne</string>
+    <string name="pref_webserver_summary">Pêşkêşkera webê ya herêmî li navnîşanên IP yên herêmî guhdarî dike da ku bersiva daxwazên navên mêvandar ên astengkirî bide. Dibe ku dema sepan li ser girêdanên astengkirî disekinin alîkar be.</string>
+    <string name="pref_webserver_enabled">Pêşkêşkera webê çalak bike</string>
+    <string name="pref_webserver_test">Pêşkêşkera webê biceribîne</string>
+    <string name="pref_webserver_certificate">Sertîfîkaya bi xwe îmzekirî saz bike</string>
+    <string name="pref_webserver_state_not_running">Naxebite</string>
+    <string name="pref_webserver_state_checking">Tê kontrolkirin…</string>
+    <string name="pref_webserver_state_running_not_installed">Dixebite lê sertîfîka saz nebûye</string>
+    <string name="pref_webserver_state_running_and_installed">Dixebite û sertîfîka saz bûye</string>
+    <string name="pref_webserver_certificate_dialog_title">Sazkirina destî ya sertîfîkayê</string>
+    <string name="pref_webserver_certificate_dialog_content">Ji Android 11 (R) pê ve, sepan êdî nikarin rayedara sertîfîkayê (CA) bi otomatîk saz bikin.\n\nBiçe mîhengên «Ewlehî», paşê «Şîfrekirin û kredansiyel» û dûv re «Sertîfîkayekê saz bike». Li wir «Sertîfîkaya CA» hilbijêre û pelê sertîfîkayê yê nû hatî hinardekirin hilbijêre.</string>
+    <string name="pref_webserver_certificate_dialog_action">Mîhengên «Ewlehî» veke</string>
+    <string name="pref_webserver_certificate_failed">Sertîfîka nehat amadekirin.</string>
+    <string name="webserver_error_title">Pêşkêşkera webê dest pê nekir</string>
+    <string name="webserver_error_resources">Pelên wê an sertîfîkaya wê nehatin amadekirin.</string>
+    <string name="webserver_error_address_in_use">Sepaneke din jixwe portên webê (80 û 443) yên amûrê bi kar tîne.</string>
+    <string name="webserver_error_start_failed">Li ser vê amûrê nikaribû dest pê bike.</string>
+    <string name="pref_webserver_icon">Cihê vala yê reklaman bi îkona sepanê veguherîne</string>
 </resources>
