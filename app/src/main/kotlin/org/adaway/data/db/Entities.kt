@@ -16,6 +16,10 @@ enum class RuleType { BLOCKED, ALLOWED, REDIRECTED }
 enum class SyncError {
     NO_NETWORK,
     NETWORK,
+    HOST_NOT_FOUND,
+    TIMEOUT,
+    CONNECTION_LOST,
+    SECURE_CONNECTION,
     HTTP_STATUS,
     TOO_LARGE,
     TOO_MANY_RULES,

@@ -81,6 +81,10 @@
     <string name="source_status_failed">Last update failed: %1$s</string>
     <string name="sync_error_no_network">no Internet connection</string>
     <string name="sync_error_network">the server could not be reached</string>
+    <string name="sync_error_host_not_found">the server address could not be found</string>
+    <string name="sync_error_timeout">the server took too long to answer</string>
+    <string name="sync_error_connection_lost">the connection was cut during the download</string>
+    <string name="sync_error_secure_connection">the secure connection to the server failed</string>
     <string name="sync_error_http_status">the server answered with error %1$d</string>
     <string name="sync_error_too_large">the list is larger than 50 MB</string>
     <string name="sync_error_too_many_rules">the list has more than 2 million entries</string>
@@ -91,6 +95,7 @@
     <string name="update_error_no_network_text">Unable to establish a connection to the Internet. Please check your device connectivity.</string>
     <string name="update_error_download_title">Failed to download hosts source</string>
     <string name="update_error_download_text">None of your enabled hosts sources are reachable. Please check you are properly connected to the Internet.</string>
+    <string name="update_error_failed_source">• %1$s: %2$s</string>
     <string name="update_error_apply_title">Failed to create private file</string>
     <string name="update_error_apply_text">Unable to create a private file to build a new hosts source. Please check the free space available on your device.</string>
     <string name="root_error_denied_title">Root access denied</string>

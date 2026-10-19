@@ -13,10 +13,13 @@ import java.io.File
 import java.io.IOException
 import java.io.InputStream
 import java.net.HttpURLConnection
+import java.net.SocketTimeoutException
 import java.net.URL
+import java.net.UnknownHostException
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.DateTimeParseException
+import javax.net.ssl.SSLException
 
 sealed interface DownloadResult {
     data class Downloaded(val entityTag: String?, val lastModifiedHeader: String?) : DownloadResult
@@ -67,19 +70,28 @@ class SourceDownloader(private val context: Context) {
         try {
             when (val status = connection.responseCode) {
                 HttpURLConnection.HTTP_NOT_MODIFIED -> DownloadResult.NotModified
-                HttpURLConnection.HTTP_OK -> {
+                HttpURLConnection.HTTP_OK -> try {
                     copyLimited(connection.inputStream, target) ?: DownloadResult.Downloaded(
                         entityTag = connection.getHeaderField("ETag"),
                         lastModifiedHeader = connection.getHeaderField("Last-Modified"),
                     )
+                } catch (exception: IOException) {
+                    DownloadResult.Failed(if (exception is SocketTimeoutException) SyncError.TIMEOUT else SyncError.CONNECTION_LOST)
                 }
                 else -> DownloadResult.Failed(SyncError.HTTP_STATUS, status)
             }
         } finally {
             connection.disconnect()
         }
-    } catch (_: IOException) {
-        DownloadResult.Failed(SyncError.NETWORK)
+    } catch (exception: IOException) {
+        DownloadResult.Failed(connectionError(exception))
+    }
+
+    private fun connectionError(exception: IOException) = when (exception) {
+        is UnknownHostException -> SyncError.HOST_NOT_FOUND
+        is SocketTimeoutException -> SyncError.TIMEOUT
+        is SSLException -> SyncError.SECURE_CONNECTION
+        else -> SyncError.NETWORK
     }
 
     private fun readFile(source: SourceEntity, target: File): DownloadResult = try {

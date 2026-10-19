@@ -14,6 +14,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
 import org.adaway.blocklist.UpdateError
 import org.adaway.data.db.RuleType
+import org.adaway.data.db.SourceEntity
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.DialogButton
@@ -23,6 +24,8 @@ import org.adaway.ui.common.appViewModel
 import org.adaway.ui.common.rootErrorText
 import org.adaway.ui.common.rootErrorTitle
 import org.adaway.ui.common.rememberVpnConsentRequest
+import org.adaway.ui.common.sourceLabel
+import org.adaway.ui.common.syncErrorText
 import org.adaway.ui.common.updateErrorText
 import org.adaway.ui.common.updateErrorTitle
 import org.adaway.ui.common.vpnRefusal
@@ -46,6 +49,7 @@ fun HomeRoute(navigation: HomeNavigation, screen: @Composable (HomeState, HomeVi
     val viewModel = appViewModel(::HomeViewModel)
     val state by viewModel.state.collectAsStateWithLifecycle()
     val error by viewModel.error.collectAsStateWithLifecycle()
+    val failedSources by viewModel.failedSources.collectAsStateWithLifecycle()
     val rootError by viewModel.rootError.collectAsStateWithLifecycle()
     val consentPrompt by viewModel.consentPrompt.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -80,18 +84,31 @@ fun HomeRoute(navigation: HomeNavigation, screen: @Composable (HomeState, HomeVi
             openPersistence = { persistenceMode = viewModel.alwaysOnMode() },
         ),
     )
-    error?.let { UpdateErrorDialog(it, onRetry = viewModel::sync, onHelp = navigation.openHelp, onDismiss = viewModel::dismissError) }
+    error?.let { UpdateErrorDialog(it, failedSources, onRetry = viewModel::sync, onHelp = navigation.openHelp, onDismiss = viewModel::dismissError) }
     rootError?.let { ErrorDialog(rootErrorTitle(it), rootErrorText(it), confirmButton = null, onHelp = navigation.openHelp, onDismiss = viewModel::dismissRootError) }
     refusal?.let { VpnRefusalDialog(it, onDismiss = { refusal = null }) }
     persistenceMode?.let { VpnPersistenceDialog(it, onDismiss = { persistenceMode = null }) }
 }
 
 @Composable
-private fun UpdateErrorDialog(error: UpdateError, onRetry: () -> Unit, onHelp: () -> Unit, onDismiss: () -> Unit) {
+private fun UpdateErrorDialog(
+    error: UpdateError,
+    failedSources: List<SourceEntity>,
+    onRetry: () -> Unit,
+    onHelp: () -> Unit,
+    onDismiss: () -> Unit,
+) {
     val canRetry = error != UpdateError.APPLY_FAILED
+    val details = if (error == UpdateError.DOWNLOAD_FAILED) {
+        failedSources.mapNotNull { source ->
+            source.syncError?.let { stringResource(R.string.update_error_failed_source, sourceLabel(source), syncErrorText(it, source.syncErrorStatus)) }
+        }
+    } else {
+        emptyList()
+    }
     ErrorDialog(
         title = updateErrorTitle(error),
-        text = updateErrorText(error),
+        text = (listOf(updateErrorText(error)) + details).joinToString("\n"),
         confirmButton = if (canRetry) DialogButton(stringResource(R.string.retry_sync), onClick = { onDismiss(); onRetry() }) else null,
         onHelp = onHelp,
         onDismiss = onDismiss,

@@ -1,6 +1,7 @@
 package org.adaway.sources
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import org.adaway.data.db.AppDatabase
 import org.adaway.data.db.SourceEntity
@@ -82,7 +83,7 @@ class SourceSync(
         val rules = files.sourceRules(source.id)
         val download = File(files.downloadsDirectory, "${source.id}.download")
         try {
-            return when (val result = downloader.download(source, download, conditional = rules.exists())) {
+            return when (val result = downloadWithRetries(source, download, conditional = rules.exists())) {
                 is DownloadResult.Failed -> fail(source, result.error, result.httpStatus)
                 DownloadResult.NotModified -> {
                     database.sourceDao().recordNotModified(source.id, source.url, now())
@@ -96,6 +97,23 @@ class SourceSync(
         } finally {
             download.delete()
         }
+    }
+
+    /** Tries again after a short pause when the failure may only be a passing network outage. */
+    private suspend fun downloadWithRetries(source: SourceEntity, target: File, conditional: Boolean): DownloadResult {
+        var result = downloader.download(source, target, conditional)
+        for (pause in RETRY_DELAYS_MILLIS) {
+            if (result !is DownloadResult.Failed || !result.isTransient()) break
+            delay(pause)
+            result = downloader.download(source, target, conditional)
+        }
+        return result
+    }
+
+    private fun DownloadResult.Failed.isTransient() = when (error) {
+        SyncError.NETWORK, SyncError.HOST_NOT_FOUND, SyncError.TIMEOUT, SyncError.CONNECTION_LOST -> true
+        SyncError.HTTP_STATUS -> httpStatus in TRANSIENT_HTTP_STATUSES
+        else -> false
     }
 
     private suspend fun read(
@@ -142,6 +160,10 @@ class SourceSync(
 
     companion object {
         const val MAX_RULES = 2_000_000
+        private val RETRY_DELAYS_MILLIS = longArrayOf(2_000, 5_000)
+
+        /** Request timeout, too many requests, and server side failures. */
+        private val TRANSIENT_HTTP_STATUSES = setOf(408, 429) + (500..599)
     }
 }
 

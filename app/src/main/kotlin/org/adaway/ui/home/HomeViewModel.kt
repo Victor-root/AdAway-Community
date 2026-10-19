@@ -69,6 +69,11 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
     val error = updater.error
     val rootError = rootController.error
 
+    /** The enabled sources whose last update failed, told with a download failure. */
+    val failedSources: StateFlow<List<SourceEntity>> = container.sourceRepository.sources
+        .map { sources -> sources.filter { it.enabled && it.syncError != null } }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
+
     /** A newer version of the app, once found. */
     val appUpdate: StateFlow<AppRelease?> = container.appUpdater.available
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)

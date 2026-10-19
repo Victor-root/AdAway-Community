@@ -78,6 +78,10 @@
     <string name="source_status_failed">Échec de la dernière mise à jour\u00a0: %1$s</string>
     <string name="sync_error_no_network">pas de connexion à Internet</string>
     <string name="sync_error_network">le serveur est injoignable</string>
+    <string name="sync_error_host_not_found">l\'adresse du serveur est introuvable</string>
+    <string name="sync_error_timeout">le serveur a mis trop de temps à répondre</string>
+    <string name="sync_error_connection_lost">la connexion a été coupée pendant le téléchargement</string>
+    <string name="sync_error_secure_connection">la connexion sécurisée au serveur a échoué</string>
     <string name="sync_error_http_status">le serveur a répondu par l\'erreur %1$d</string>
     <string name="sync_error_too_large">la liste dépasse 50 Mo</string>
     <string name="sync_error_too_many_rules">la liste dépasse 2 millions d\'entrées</string>
@@ -88,6 +92,7 @@
     <string name="update_error_no_network_text">Impossible d’établir une connexion vers Internet. Vérifiez la connectivité de votre appareil.</string>
     <string name="update_error_download_title">Échec de téléchargement de la source du fichier hosts</string>
     <string name="update_error_download_text">Aucune de vos sources de fichiers hosts activées n’est accessible. Assurez-vous que votre appareil est bien connecté à Internet.</string>
+    <string name="update_error_failed_source">• %1$s\u00a0: %2$s</string>
     <string name="update_error_apply_title">Échec de création du fichier privé</string>
     <string name="update_error_apply_text">Impossible de créer un fichier privé pour construire une nouvelle source de fichiers hosts. Vérifiez l’espace libre sur votre appareil.</string>
     <string name="root_error_denied_title">L’accès racine a été refusé</string>
