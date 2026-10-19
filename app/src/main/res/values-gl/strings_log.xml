@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Comezar a gravación</string>
-    <string name="log_start_recording_vpn_inactive">Comezar a gravación (VPN non activa)</string>
-    <string name="log_stop_recording">Deter a gravación</string>
+    <string name="log_toggle_recording_description">Activar ou desactivar a gravación do rexistro</string>
+    <string name="log_start_recording">Preme gravar para comezar a rexistrar as solicitudes, navega pola Web ou usa aplicacións e, despois, volve atrás ou desliza para actualizar o rexistro.</string>
+    <string name="log_blocked_requests_ignored">\n\nAs solicitudes bloqueadas non se rexistrarán. Desactiva primeiro o bloqueo de anuncios se tamén queres rexistralas.</string>
+    <string name="log_sort">Ordenar dominios</string>
+    <string name="log_clear">Borrar o rexistro</string>
+    <string name="log_sort_alphabetical">Orde alfabética</string>
+    <string name="log_sort_top_level_domain">Orde por dominio de nivel superior</string>
+    <string name="log_block">Engadir entrada á lista de bloqueo</string>
+    <string name="log_allow">Engadir entrada á lista de permitidos</string>
+    <string name="log_redirect">Engadir entrada á lista de redirección</string>
+    <string name="log_redirect_dialog_title">Redirixir dominio</string>
+    <string name="log_capture_failed">Non se puido iniciar a captura de DNS.</string>
+    <string name="log_start_recording_button">Iniciar gravación</string>
+    <string name="log_start_recording_vpn_inactive">Iniciar gravación (VPN inactiva)</string>
+    <string name="log_stop_recording">Deter gravación</string>
 </resources>

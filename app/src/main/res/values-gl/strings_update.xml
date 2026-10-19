@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_title">Actualización de AdAway</string>
     <string name="update_banner_title">Actualización dispoñible</string>
     <string name="update_banner_subtitle">Toca para instalar %1$s</string>
+    <string name="update_up_to_date_header">Tes a última versión</string>
+    <string name="update_update_available_header">Actualización dispoñible</string>
+    <string name="update_updating_header">Actualizando AdAway</string>
+    <string name="update_update_button">Actualizar agora</string>
+    <string name="update_complete_label">Completada</string>
+    <string name="update_last_changelog_title">Últimos cambios</string>
+    <string name="update_new_changelog_title">Rexistro de cambios</string>
+    <string name="update_download_failed">Non se puido descargar a actualización.</string>
+    <string name="update_install_failed">Non se puido instalar a actualización.</string>
     <string name="pref_update_check_now_update_available">Nova versión dispoñible: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Non hai actualizacións dispoñibles</string>
+    <string name="pref_update_check_now_failed">Non se puido contactar co servidor de actualizacións</string>
     <string name="pref_update_install_summary">Instalar a versión %1$s</string>
     <string name="notification_channel_app_updates">Actualizacións da aplicación</string>
-    <string name="notification_channel_app_updates_description">Notificación cando hai unha nova versión da aplicación dispoñible. Silencia esta canle para ocultar avisos de actualización da aplicación sen afectar outras notificacións.</string>
-    <string name="notification_app_update_title">Actualización da app dispoñibel</string>
-    <string name="notification_app_update_text">Unha nova versión de AdAway está dispoñíbel para descargar</string>
+    <string name="notification_channel_app_updates_description">Notificación cando hai unha nova versión da aplicación. Silencia esta canle para non recibir avisos de actualización da aplicación sen afectar ás demais notificacións.</string>
+    <string name="notification_app_update_title">Actualización da aplicación dispoñible</string>
+    <string name="notification_app_update_text">Hai unha nova versión de AdAway dispoñible para descargar.</string>
 </resources>

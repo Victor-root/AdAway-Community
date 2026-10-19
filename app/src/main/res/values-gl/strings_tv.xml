@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Engadir aos permitidos</string>
-    <string name="tv_dialog_add_to_blocked">Engadir aos bloqueados</string>
-    <string name="tv_dialog_remove_from_allowed">Quitar dos permitidos</string>
-    <string name="tv_dialog_remove_from_blocked">Quitar dos bloqueados</string>
-    <string name="tv_dialog_copy_hostname">Copiar o nome do host</string>
+    <string name="tv_dialog_add_to_allowed">Engadir a permitidos</string>
+    <string name="tv_dialog_add_to_blocked">Engadir a bloqueados</string>
+    <string name="tv_dialog_remove_from_allowed">Quitar de permitidos</string>
+    <string name="tv_dialog_remove_from_blocked">Quitar de bloqueados</string>
+    <string name="tv_dialog_copy_hostname">Copiar nome de host</string>
     <string name="tv_log_entry_status_description">Estado do dominio</string>
     <string name="tv_button_theme_light">Modo claro</string>
     <string name="tv_button_theme_dark">Modo escuro</string>
