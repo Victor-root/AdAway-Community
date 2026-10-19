@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">Nis ose ndalo regjistrimin</string>
+    <string name="log_start_recording">Shtypni butonin e regjistrimit për të nisur regjistrimin e kërkesave, shfletoni në internet ose përdorni aplikacione, pastaj kthehuni ose rrëshqitni për të rifreskuar regjistrin.</string>
+    <string name="log_blocked_requests_ignored">\n\nKërkesat e bllokuara nuk do të regjistrohen. Çaktivizoni fillimisht bllokimin e reklamave nëse doni t’i regjistroni edhe ato.</string>
+    <string name="log_sort">Rendit domenet</string>
+    <string name="log_clear">Pastro regjistrin</string>
+    <string name="log_sort_alphabetical">Renditje alfabetike</string>
+    <string name="log_sort_top_level_domain">Renditje sipas domenit të nivelit të lartë</string>
+    <string name="log_block">Shto hyrjen në listën e bllokimit</string>
+    <string name="log_allow">Shto hyrjen në listën e lejimit</string>
+    <string name="log_redirect">Shto hyrjen në listën e ridrejtimit</string>
+    <string name="log_redirect_dialog_title">Ridrejto domenin</string>
+    <string name="log_capture_failed">Kapja e kërkesave DNS nuk mundi të niset.</string>
     <string name="log_start_recording_button">Nis regjistrimin</string>
-    <string name="log_start_recording_vpn_inactive">Nis regjistrimin (VPN-ja jo aktive)</string>
+    <string name="log_start_recording_vpn_inactive">Nis regjistrimin (VPN jo aktive)</string>
     <string name="log_stop_recording">Ndalo regjistrimin</string>
 </resources>

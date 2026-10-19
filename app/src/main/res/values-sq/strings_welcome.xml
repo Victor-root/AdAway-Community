@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">Ky udhëzues i shkurtër do të aktivizojë bllokimin e reklamave në këtë pajisje.</string>
+    <string name="welcome_first_step">Hapi i parë i asistentit</string>
+    <string name="welcome_second_step">Hapi i dytë i asistentit</string>
+    <string name="welcome_third_step">Hapi i tretë i asistentit</string>
+    <string name="welcome_fourth_step">Hapi i katërt i asistentit</string>
+    <string name="welcome_method_header">Mirë se vini në AdAway!</string>
+    <string name="welcome_method_summary">AdAway ofron dy metoda për bllokimin e reklamave. Zgjidhni atë që ju përshtatet:</string>
+    <string name="welcome_root_method_title">Bllokim reklamash\ni bazuar në root</string>
+    <string name="welcome_root_method_text1">Më i shpejtë</string>
+    <string name="welcome_root_method_text2">Kursen baterinë</string>
+    <string name="welcome_root_method_text3">Kërkon root</string>
+    <string name="welcome_vpn_method_title">Bllokim reklamash\ni bazuar në VPN</string>
+    <string name="welcome_vpn_method_text1">Më i ngadaltë</string>
+    <string name="welcome_vpn_method_text2">Funksionon në sfond</string>
+    <string name="welcome_vpn_method_text3">Përputhshmëri</string>
+    <string name="welcome_root_missing_title">Kërkohet Android me root</string>
+    <string name="welcome_root_missile_description">Ose skedari binar su nuk u gjet, ose nuk i keni dhënë AdAway lejen root.\n\nKjo mund të ndodhë kur pajisja juaj nuk ka root. Informacion se si të aktivizoni root në pajisjen tuaj mund të gjeni në wiki.lineageos.org ose në faqe të tjera interneti për Android.</string>
+    <string name="welcome_vpn_alwayson_title">VPN-ja gjithmonë e aktivizuar është aktive</string>
+    <string name="welcome_vpn_alwayson_description">AdAway zbuloi se një VPN tjetër ka cilësimin «VPN-ja gjithmonë e aktivizuar» aktiv.\n\nKjo e pengon AdAway të kërkojë qasje VPN. Çaktivizoni «VPN-ja gjithmonë e aktivizuar» te VPN-ja përkatëse dhe provoni sërish.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway nuk arriti të kërkojë qasje VPN.\n\nKjo mund të ndodhë sepse një VPN tjetër ka cilësimin «VPN-ja gjithmonë e aktivizuar» aktiv. Kontrolloni nëse ndonjë VPN e ka të aktivizuar këtë cilësim dhe çaktivizojeni përpara se të provoni sërish.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Hap cilësimet «VPN»</string>
+    <string name="welcome_method_pro_logo">Pro</string>
+    <string name="welcome_method_con_logo">Kundër</string>
+    <string name="welcome_sync_header">Duke sinkronizuar</string>
+    <string name="welcome_synced_header">U sinkronizua!</string>
+    <string name="welcome_sync_summary">AdAway shkarkon nga burime në internet rrjetet e reklamave që do të bllokohen. Mund t’i personalizoni më vonë te cilësimet.</string>
+    <string name="welcome_sync_retry_logo">Provo sinkronizimin sërish</string>
+    <string name="welcome_sync_error">Sinkronizimi dështoi: %1$s Të provohet sërish tani?</string>
+    <string name="welcome_sync_notifications">Mund të dërgojë njoftime për të shfaqur gjendjen dhe kontrollin e bllokimit të reklamave, si dhe për t’ju njoftuar për përditësimet e aplikacionit (disa në vit). Aktivizojini nëse doni të qëndroni të përditësuar.</string>
+    <string name="welcome_sync_leave_early_title">Sinkronizimi nuk ka mbaruar ende</string>
+    <string name="welcome_sync_leave_early_message">Listat e bllokimit nuk kanë mbaruar së shkarkuari. Mund të vazhdoni tani dhe shkarkimi do të vazhdojë në sfond, ose të prisni këtu derisa të përfundojë.</string>
+    <string name="welcome_sync_leave_early_wait">Prit</string>
+    <string name="welcome_sync_leave_early_continue">Vazhdo gjithsesi</string>
+    <string name="welcome_battery_header">Qëndroni të mbrojtur në sfond</string>
+    <string name="welcome_battery_summary">Android mund ta pezullojë VPN-në e AdAway në sfond për të kursyer energji, gjë që mund ta ndalojë bllokimin e reklamave pa e vënë re. Lejoni AdAway të shpërfillë optimizimin e baterisë, që të vazhdojë të funksionojë.</string>
+    <string name="welcome_battery_action">Lejo</string>
+    <string name="welcome_battery_granted">E lejuar ✓</string>
+    <string name="welcome_battery_footnote_prefix">Këtë mund ta ndryshoni gjithmonë më vonë nga</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Cilësimet e Android</item>
+        <item>Aplikacionet</item>
+        <item>AdAway</item>
+        <item>Bateria</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Edhe një gjë: menaxheri i baterisë i telefonit tuaj</string>
+    <string name="welcome_oem_battery_summary">Disa marka telefonash kanë menaxherin e tyre të baterisë, i cili mund ta bllokojë gjithashtu AdAway. Ja çfarë duhet të kontrolloni te telefoni juaj:</string>
+    <string name="welcome_oem_battery_action">Hap informacionin e aplikacionit</string>
+    <string name="welcome_oem_battery_open_failed">Ekrani i informacionit të aplikacionit nuk u hap. Hapeni manualisht nga Cilësimet e Android → Aplikacionet → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Këto janë udhëzime të përgjithshme, jo një udhëzues i saktë: formulimi dhe vendndodhja mund të ndryshojnë sipas modelit të telefonit dhe versionit të Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Informacioni i aplikacionit</item>
+        <item>Bateria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Kërkoni diçka si «Kufizimet e përdorimit në sfond» › «Aplikacionet që nuk bien kurrë në gjumë», pastaj shtoni AdAway në atë listë.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Kontrolloni edhe për një cilësim «Optimizimi automatik» dhe çaktivizoni «Rinis kur nevojitet» nëse ekziston.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Informacioni i aplikacionit</item>
+        <item>Kursyesi i baterisë</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Zgjidhni «Pa kufizime».</string>
+    <string name="welcome_oem_battery_secondary_miui">Aktivizoni edhe «Nisja automatike» («Nisja automatike në sfond» në versionet më të reja).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Informacioni i aplikacionit</item>
+        <item>Përdorimi i baterisë</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Zgjidhni «Lejo aktivitetin në sfond» (nganjëherë shfaqet si «Pa kufizime»).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Kërkoni edhe një çelës «Nisja automatike» për AdAway (shpesh te Cilësimet › Aplikacionet), që të mund të riniset vetë pas një ndalimi me forcë.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Informacioni i aplikacionit</item>
+        <item>Bateria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Kërkoni «Nisja e aplikacionit», çaktivizoni «Menaxho automatikisht», pastaj aktivizoni të 3 opsionet: «Nisja automatike», «Nisja dytësore» dhe «Ekzekutimi në sfond».</string>
+    <string name="welcome_oem_battery_secondary_emui">Kyçni edhe AdAway te ekrani i aplikacioneve të fundit (rrëshqitni kartën e tij poshtë derisa të shfaqet një dry).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Informacioni i aplikacionit</item>
+        <item>Përdorimi i baterisë</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Kërkoni një opsion për energjinë në sfond dhe zgjidhni «Mos e kufizo përdorimin e energjisë në sfond» (jo «Kontroll i zgjuar»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Kërkoni edhe një cilësim «Nisja automatike» për AdAway, shpesh te Cilësimet › Aplikacionet.</string>
+    <string name="welcome_oem_battery_label_generic">Markë tjetër</string>
+    <string name="welcome_oem_battery_tip_generic">Kërkoni te informacioni i aplikacionit një cilësim baterie ose aktiviteti në sfond dhe sigurohuni që AdAway nuk është i kufizuar.</string>
+    <string name="welcome_back_button">Prapa</string>
+    <string name="welcome_next_button">Tjetra</string>
+    <string name="welcome_finish_button">Përfundo</string>
+    <string name="tv_welcome_intro_subtitle">Ky asistent i shkurtër aktivizon bllokimin e reklamave në këtë pajisje.</string>
     <string name="tv_welcome_start_button">Fillo</string>
-    <string name="tv_welcome_method_header">Zgjidhni metodën tuaj të bllokimit</string>
+    <string name="tv_welcome_method_header">Zgjidhni metodën e bllokimit</string>
     <string name="tv_welcome_method_root_button">Përdor root</string>
-    <string name="tv_welcome_method_root_body">Më i shpejtë dhe kursen baterinë. Kërkon një pajisje me root.</string>
+    <string name="tv_welcome_method_root_body">Më i shpejtë dhe kursen baterinë. Kërkon pajisje me root.</string>
     <string name="tv_welcome_method_vpn_button">Përdor VPN</string>
     <string name="tv_welcome_method_vpn_body">Funksionon pa root, i përputhshëm me çdo pajisje Android TV.</string>
     <string name="tv_welcome_activate_header">Aktivizo bllokimin e reklamave</string>
-    <string name="tv_welcome_activate_body">Është një VPN lokal: filtron reklamat drejtpërdrejt në këtë pajisje, pa e kaluar trafikun tënd nëpër një server të jashtëm.</string>
+    <string name="tv_welcome_activate_body">Është një VPN lokale: filtron reklamat në këtë pajisje, pa e kaluar trafikun tuaj përmes një serveri të jashtëm.</string>
 </resources>

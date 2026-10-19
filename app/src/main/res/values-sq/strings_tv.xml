@@ -5,9 +5,9 @@
     <string name="tv_dialog_remove_from_allowed">Hiq nga të lejuarat</string>
     <string name="tv_dialog_remove_from_blocked">Hiq nga të bllokuarat</string>
     <string name="tv_dialog_copy_hostname">Kopjo emrin e hostit</string>
-    <string name="tv_log_entry_status_description">Statusi i domenit</string>
-    <string name="tv_button_theme_light">Regjimi i çelët</string>
-    <string name="tv_button_theme_dark">Regjimi i errët</string>
+    <string name="tv_log_entry_status_description">Gjendja e domenit</string>
+    <string name="tv_button_theme_light">Modaliteti i çelët</string>
+    <string name="tv_button_theme_dark">Modaliteti i errët</string>
     <string name="tv_lists_empty">Ende nuk ka hyrje në këtë listë.</string>
     <string name="tv_dialog_search">Kërko</string>
 </resources>

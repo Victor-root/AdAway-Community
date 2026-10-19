@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">Preferencat</string>
+    <string name="pref_general_category">Të përgjithshme</string>
+    <string name="pref_dark_theme">Tema e errët</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>E çelët</item>
+        <item>E errët</item>
+        <item>Parazgjedhja e sistemit</item>
     </string-array>
+    <string name="pref_update_configuration">Përditësime automatike</string>
+    <string name="pref_language">Gjuha</string>
+    <string name="pref_language_system">Gjuha e sistemit</string>
+    <string name="pref_ad_block_category">Bllokimi i reklamave</string>
+    <string name="pref_root_ad_blocker_configuration">Bllokues reklamash i bazuar në root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Bllokues reklamash i bazuar në VPN</string>
+    <string name="pref_enable_ipv6">Aktivizo mbështetjen për IPv6</string>
+    <string name="pref_backup_restore">Kopje rezervë / rikthim i rregullave të bllokimit</string>
+    <string name="pref_backup_restore_title">Kopje rezervë dhe rikthim</string>
+    <string name="pref_backup">Kopje rezervë</string>
+    <string name="pref_backup_summary">Ruani rregullat e bllokimit në hapësirën e jashtme ruajtëse</string>
+    <string name="pref_restore">Rikthe</string>
+    <string name="pref_restore_summary">Rikthejini rregullat e bllokimit nga një skedar kopjeje rezervë</string>
+    <string name="import_success">Kopja rezervë u importua me sukses nga hapësira juaj e jashtme ruajtëse.</string>
+    <string name="import_failed">Importimi i kopjes rezervë dështoi. A është i saktë formati i saj?</string>
+    <string name="export_success">Kopja rezervë u eksportua me sukses te skedari «%s» në hapësirën tuaj të jashtme ruajtëse.</string>
+    <string name="export_failed">Eksportimi i skedarit të kopjes rezervë «%s» dështoi.</string>
+    <string name="pref_update_title">Përditësimet</string>
+    <string name="pref_update_enable_notifications">Njoftimet janë çaktivizuar</string>
+    <string name="pref_update_enable_notifications_summary">Njoftimet e aplikacionit nuk do të shfaqen. Trokitni për t’i aktivizuar.</string>
+    <string name="pref_update_app_category">Përditësimet e aplikacionit</string>
+    <string name="pref_update_check_app_startup">Kontrollo për përditësim gjatë nisjes</string>
+    <string name="pref_update_check_app_daily">Kontrollo periodikisht për përditësime</string>
+    <string name="pref_update_check_now">Kontrollo tani</string>
+    <string name="pref_update_install">Përditëso tani</string>
+    <string name="pref_update_hosts_category">Përditësimet e hosts</string>
+    <string name="pref_update_check">Kontrollo për përditësim gjatë nisjes</string>
+    <string name="pref_update_check_hosts_daily">Kontrollo periodikisht për përditësime</string>
+    <string name="pref_update_sync_on_update">Sinkronizo gjatë përditësimit</string>
+    <string name="pref_update_sync_unmetered_only">Sinkronizo vetëm në rrjet pa kufizim të dhënash</string>
+    <string name="pref_vpn_service_on_boot">Aktivizo gjatë nisjes</string>
+    <string name="pref_vpn_service_monitor">Monitoro lidhjen</string>
+    <string name="pref_vpn_service_monitor_description">Kontrollo periodikisht gjendjen e rrjetit për të rinisur VPN-në pas një shkëputjeje.</string>
+    <string name="pref_vpn_excluded_apps">Aplikacionet e përjashtuara</string>
+    <string name="pref_vpn_excluded_apps_description">Konfiguroni cilat aplikacione nuk duhet të përdorin VPN-në, që asnjë lidhje të mos bllokohet.</string>
+    <string name="pref_vpn_exclude_system_apps">Përjashto aplikacionet e sistemit</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>Asnjë</item>
+        <item>Të gjitha, përveç shfletuesve</item>
+        <item>Të gjitha</item>
+    </string-array>
+    <string name="pref_vpn_dns">Serverët DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Serverët DNS të rrjetit</item>
+        <item>Serverë DNS të personalizuar</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Serverë DNS të personalizuar</string>
+    <string name="pref_vpn_dns_custom_summary">Adresa IP, të ndara me presje</string>
+    <string name="pref_vpn_dns_custom_invalid">Adresë e pavlefshme e serverit DNS</string>
+    <string name="pref_vpn_doh">Serveri DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Adresë e personalizuar</string>
+    <string name="pref_vpn_doh_address">Adresa DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Adresë e pavlefshme DNS over HTTPS</string>
+    <string name="pref_vpn_exclude_user_apps">Përjashto aplikacionet e përdoruesit</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Aplikacionet e përjashtuara</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Zgjidhi të gjitha</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Hiqi të gjitha zgjedhjet</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Ikona e aplikacionit</string>
     <string name="pref_vpn_reset">Rivendos VPN-në</string>
-    <string name="pref_vpn_reset_description">Rindërto nga e para lidhjen VPN. Përdoreni nëse VPN-ja ndalon së punuari (nuk ka qasje në internet ose ka gabime DNS).</string>
+    <string name="pref_vpn_reset_description">Rindërtoni lidhjen VPN nga e para. Përdoreni nëse VPN-ja nuk funksionon më (pa qasje në internet ose me gabime DNS).</string>
     <string name="pref_vpn_reset_done">Lidhja VPN u rindërtua.</string>
-    <string name="pref_vpn_reset_not_running">VPN-ja nuk është në punë.</string>
-    <string name="pref_vpn_diagnostic_log">Regjistri diagnostikues</string>
+    <string name="pref_vpn_reset_not_running">VPN-ja nuk është aktive.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Regjistrimi i diagnostikimit</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Aktivizojeni përpara se të riprodhoni një problem, pastaj eksportojeni më poshtë. Mund t’i ngadalësojë paksa pajisjet më të vjetra. Regjistron vetëm ngjarje teknike të VPN-së, kurrë historikun e shfletimit apo të dhëna personale.</string>
+    <string name="pref_vpn_diagnostic_log">Regjistri i diagnostikimit</string>
     <string name="pref_vpn_diagnostic_log_description">Shikoni, kopjoni ose ndani gabimet dhe ngjarjet e fundit të VPN-së. E dobishme kur raportoni një problem.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Ende nuk është regjistruar asnjë ngjarje.</string>
-    <string name="pref_vpn_diagnostic_log_share">Ndaj regjistrin diagnostikues</string>
+    <string name="pref_vpn_diagnostic_log_empty">Ende nuk është regjistruar asnjë ngjarje. Aktivizoni «Regjistrimi i diagnostikimit» më sipër, pastaj provoni ta riprodhoni problemin.</string>
+    <string name="pref_vpn_diagnostic_log_share">Ndaj</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Ndani regjistrin e diagnostikimit</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopjo</string>
-    <string name="pref_vpn_diagnostic_log_copied">Regjistri diagnostikues u kopjua në kujtesën e fragmenteve.</string>
-    <string name="pref_vpn_diagnostic_log_clear">Pastro regjistrin diagnostikues</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Fshi ngjarjet e regjistruara. Bëjeni këtë përpara se të riprodhoni një problem, për të kapur një gjurmë të pastër.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Regjistri diagnostikues u pastrua.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_vpn_diagnostic_log_copied">Regjistri i diagnostikimit u kopjua në kujtesën e fragmenteve.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Pastro regjistrin e diagnostikimit</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Fshini ngjarjet e regjistruara. Bëjeni këtë përpara se të riprodhoni një problem, për të marrë një gjurmë të pastër.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Regjistri i diagnostikimit u pastrua.</string>
+    <string name="pref_root_open_hosts">Hap skedarin hosts</string>
+    <string name="hosts_file_unreadable">Skedari hosts nuk mundi të lexohej.</string>
+    <string name="pref_hosts_redirection_summary">Përcaktoni ku të ridrejtohen hostet e bllokuara</string>
+    <string name="pref_redirection_ipv4">Konfiguro ridrejtimin IPv4</string>
+    <string name="pref_redirection_ipv6">Konfiguro ridrejtimin IPv6</string>
+    <string name="pref_redirection_invalid">Ridrejtim i pavlefshëm</string>
+    <string name="pref_webserver_summary">Serveri web lokal dëgjon në adresat IP lokale për t’iu përgjigjur kërkesave drejt emrave të hosteve të bllokuar. Mund të ndihmojë kur aplikacionet ngrijnë për shkak të një lidhjeje të bllokuar.</string>
+    <string name="pref_webserver_enabled">Aktivizo serverin web</string>
+    <string name="pref_webserver_test">Testo serverin web</string>
+    <string name="pref_webserver_certificate">Instalo certifikatë të vetënënshkruar</string>
+    <string name="pref_webserver_state_not_running">Nuk po funksionon</string>
+    <string name="pref_webserver_state_checking">Duke kontrolluar…</string>
+    <string name="pref_webserver_state_running_not_installed">Po funksionon, por certifikata nuk është instaluar</string>
+    <string name="pref_webserver_state_running_and_installed">Po funksionon dhe certifikata është instaluar</string>
+    <string name="pref_webserver_certificate_dialog_title">Instalimi manual i certifikatës</string>
+    <string name="pref_webserver_certificate_dialog_content">Duke nisur nga Android 11 (R), aplikacionet nuk mund të instalojnë më automatikisht një autoritet certifikimi (CA).\n\nHapni cilësimet «Siguria», pastaj «Enkriptimi dhe kredencialet» dhe «Instalo një certifikatë». Aty zgjidhni «Certifikatë CA» dhe përzgjidhni skedarin e certifikatës së sapoeksportuar.</string>
+    <string name="pref_webserver_certificate_dialog_action">Hap cilësimet «Siguria»</string>
+    <string name="pref_webserver_certificate_failed">Certifikata nuk mundi të përgatitej.</string>
+    <string name="webserver_error_title">Serveri web nuk u nis</string>
+    <string name="webserver_error_resources">Skedarët ose certifikata e tij nuk mundën të përgatiteshin.</string>
+    <string name="webserver_error_address_in_use">Një aplikacion tjetër përdor tashmë portat web (80 dhe 443) të pajisjes.</string>
+    <string name="webserver_error_start_failed">Nuk mundi të niset në këtë pajisje.</string>
+    <string name="pref_webserver_icon">Zëvendëso hapësirën bosh të reklamës me ikonën e aplikacionit</string>
 </resources>

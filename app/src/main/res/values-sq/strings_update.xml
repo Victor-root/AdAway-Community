@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">Përditësimi i AdAway</string>
+    <string name="update_banner_title">Ka përditësim</string>
+    <string name="update_banner_subtitle">Trokitni për të instaluar %1$s</string>
+    <string name="update_up_to_date_header">Gjithçka është e përditësuar</string>
+    <string name="update_update_available_header">Ka përditësim</string>
+    <string name="update_updating_header">Duke përditësuar AdAway</string>
+    <string name="update_update_button">Përditëso tani</string>
+    <string name="update_complete_label">Përfunduar</string>
+    <string name="update_last_changelog_title">Ndryshimet e fundit</string>
+    <string name="update_new_changelog_title">Lista e ndryshimeve</string>
+    <string name="update_download_failed">Përditësimi nuk mundi të shkarkohej.</string>
+    <string name="update_install_failed">Përditësimi nuk mundi të instalohej.</string>
+    <string name="pref_update_check_now_update_available">Version i ri i disponueshëm: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nuk ka përditësim të disponueshëm</string>
+    <string name="pref_update_check_now_failed">Serveri i përditësimeve nuk mundi të arrihej</string>
+    <string name="pref_update_install_summary">Instalo versionin %1$s</string>
+    <string name="notification_channel_app_updates">Përditësimet e aplikacionit</string>
+    <string name="notification_channel_app_updates_description">Njoftim kur ka një version të ri të aplikacionit. Heshtni këtë kanal për të heshtur njoftimet e përditësimit të aplikacionit pa ndikuar te njoftimet e tjera.</string>
+    <string name="notification_app_update_title">Ka përditësim të aplikacionit</string>
+    <string name="notification_app_update_text">Një version i ri i AdAway është i disponueshëm për shkarkim.</string>
 </resources>
