@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">അനുവദിച്ചവയിലേക്ക് ചേർക്കുക</string>
-    <string name="tv_dialog_add_to_blocked">തടഞ്ഞവയിലേക്ക് ചേർക്കുക</string>
-    <string name="tv_dialog_remove_from_allowed">അനുവദിച്ചവയിൽ നിന്ന് നീക്കം ചെയ്യുക</string>
-    <string name="tv_dialog_remove_from_blocked">തടഞ്ഞവയിൽ നിന്ന് നീക്കം ചെയ്യുക</string>
+    <string name="tv_dialog_add_to_allowed">അനുവദിച്ചവയിൽ ചേർക്കുക</string>
+    <string name="tv_dialog_add_to_blocked">തടഞ്ഞവയിൽ ചേർക്കുക</string>
+    <string name="tv_dialog_remove_from_allowed">അനുവദിച്ചവയിൽ നിന്ന് നീക്കുക</string>
+    <string name="tv_dialog_remove_from_blocked">തടഞ്ഞവയിൽ നിന്ന് നീക്കുക</string>
     <string name="tv_dialog_copy_hostname">ഹോസ്റ്റ്നാമം പകർത്തുക</string>
     <string name="tv_log_entry_status_description">ഡൊമെയ്ൻ നില</string>
     <string name="tv_button_theme_light">ലൈറ്റ് മോഡ്</string>

@@ -1,36 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">മുൻ‌ഗണനകൾ</string>
-    <string name="pref_root_ad_blocker_configuration">റൂട്ട് അടിസ്ഥാനമാക്കിയുള്ള പരസ്യ ബ്ലോക്കർ</string>
-    <string name="import_success">നിങ്ങളുടെ ബാഹ്യ സംഭരണത്തിൽ നിന്ന് ബാക്കപ്പ് വിജയകരമായി ഇറക്കുമതി ചെയ്തു.</string>
-    <string name="pref_update_title">നവീകരങ്ങൾ </string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">മുൻഗണനകൾ</string>
+    <string name="pref_general_category">പൊതുവായവ</string>
+    <string name="pref_dark_theme">ഡാർക്ക് തീം</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>ലൈറ്റ്</item>
+        <item>ഡാർക്ക്</item>
+        <item>സിസ്റ്റം ഡിഫോൾട്ട്</item>
     </string-array>
-    <string name="pref_vpn_reset">VPN പുനഃസജ്ജീകരിക്കുക</string>
-    <string name="pref_vpn_reset_description">VPN കണക്ഷൻ ആദ്യം മുതൽ പുനർനിർമ്മിക്കുക. VPN പ്രവർത്തിക്കുന്നത് നിലയ്ക്കുകയാണെങ്കിൽ (ഇന്റർനെറ്റ് ആക്‌സസ് ഇല്ല അല്ലെങ്കിൽ DNS പിശകുകൾ) ഇത് ഉപയോഗിക്കുക.</string>
-    <string name="pref_vpn_reset_done">VPN കണക്ഷൻ പുനർനിർമ്മിച്ചു.</string>
+    <string name="pref_update_configuration">സ്വയമേവയുള്ള അപ്ഡേറ്റുകൾ</string>
+    <string name="pref_language">ഭാഷ</string>
+    <string name="pref_language_system">സിസ്റ്റം ഭാഷ</string>
+    <string name="pref_ad_block_category">പരസ്യം തടയൽ</string>
+    <string name="pref_root_ad_blocker_configuration">റൂട്ട് അടിസ്ഥാനമാക്കിയുള്ള പരസ്യ ബ്ലോക്കർ</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN അടിസ്ഥാനമാക്കിയുള്ള പരസ്യ ബ്ലോക്കർ</string>
+    <string name="pref_enable_ipv6">IPv6 പിന്തുണ പ്രവർത്തനക്ഷമമാക്കുക</string>
+    <string name="pref_backup_restore">ബ്ലോക്ക് നിയമങ്ങൾ ബാക്കപ്പ് ചെയ്യുക / പുനഃസ്ഥാപിക്കുക</string>
+    <string name="pref_backup_restore_title">ബാക്കപ്പും പുനഃസ്ഥാപിക്കലും</string>
+    <string name="pref_backup">ബാക്കപ്പ്</string>
+    <string name="pref_backup_summary">നിങ്ങളുടെ ബ്ലോക്ക് നിയമങ്ങൾ ബാഹ്യ സംഭരണത്തിലേക്ക് ബാക്കപ്പ് ചെയ്യുക</string>
+    <string name="pref_restore">പുനഃസ്ഥാപിക്കുക</string>
+    <string name="pref_restore_summary">ബാക്കപ്പ് ഫയലിൽ നിന്ന് നിങ്ങളുടെ ബ്ലോക്ക് നിയമങ്ങൾ പുനഃസ്ഥാപിക്കുക</string>
+    <string name="import_success">നിങ്ങളുടെ ബാഹ്യ സംഭരണത്തിൽ നിന്ന് ബാക്കപ്പ് വിജയകരമായി ഇമ്പോർട്ട് ചെയ്തു.</string>
+    <string name="import_failed">ബാക്കപ്പ് ഇമ്പോർട്ട് ചെയ്യാൻ കഴിഞ്ഞില്ല. അതിന്റെ ഫോർമാറ്റ് ശരിയാണോ?</string>
+    <string name="export_success">നിങ്ങളുടെ ബാഹ്യ സംഭരണത്തിലെ “%s” ഫയലിലേക്ക് ബാക്കപ്പ് വിജയകരമായി എക്സ്പോർട്ട് ചെയ്തു.</string>
+    <string name="export_failed">ബാക്കപ്പ് ഫയൽ “%s” എക്സ്പോർട്ട് ചെയ്യാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="pref_update_title">അപ്ഡേറ്റുകൾ</string>
+    <string name="pref_update_enable_notifications">അറിയിപ്പുകൾ പ്രവർത്തനരഹിതമാണ്</string>
+    <string name="pref_update_enable_notifications_summary">ആപ്പിന്റെ അറിയിപ്പുകൾ കാണിക്കില്ല. അവ പ്രവർത്തനക്ഷമമാക്കാൻ ടാപ്പ് ചെയ്യുക.</string>
+    <string name="pref_update_app_category">ആപ്പ് അപ്ഡേറ്റുകൾ</string>
+    <string name="pref_update_check_app_startup">ആരംഭിക്കുമ്പോൾ അപ്ഡേറ്റ് പരിശോധിക്കുക</string>
+    <string name="pref_update_check_app_daily">ഇടയ്ക്കിടെ അപ്ഡേറ്റ് പരിശോധിക്കുക</string>
+    <string name="pref_update_check_now">ഇപ്പോൾ പരിശോധിക്കുക</string>
+    <string name="pref_update_install">ഇപ്പോൾ അപ്ഡേറ്റ് ചെയ്യുക</string>
+    <string name="pref_update_hosts_category">hosts അപ്ഡേറ്റുകൾ</string>
+    <string name="pref_update_check">ആരംഭിക്കുമ്പോൾ അപ്ഡേറ്റ് പരിശോധിക്കുക</string>
+    <string name="pref_update_check_hosts_daily">ഇടയ്ക്കിടെ അപ്ഡേറ്റ് പരിശോധിക്കുക</string>
+    <string name="pref_update_sync_on_update">അപ്ഡേറ്റ് ചെയ്യുമ്പോൾ സമന്വയിപ്പിക്കുക</string>
+    <string name="pref_update_sync_unmetered_only">ഡാറ്റ പരിധിയില്ലാത്ത നെറ്റ്‌വർക്കിൽ മാത്രം സമന്വയിപ്പിക്കുക</string>
+    <string name="pref_vpn_service_on_boot">ആരംഭിക്കുമ്പോൾ പ്രവർത്തനക്ഷമമാക്കുക</string>
+    <string name="pref_vpn_service_monitor">കണക്ഷൻ നിരീക്ഷിക്കുക</string>
+    <string name="pref_vpn_service_monitor_description">കണക്ഷൻ നഷ്ടപ്പെട്ടാൽ VPN വീണ്ടും ആരംഭിക്കാൻ നെറ്റ്‌വർക്കിന്റെ നില ഇടയ്ക്കിടെ പരിശോധിക്കുക.</string>
+    <string name="pref_vpn_excluded_apps">ഒഴിവാക്കിയ ആപ്പുകൾ</string>
+    <string name="pref_vpn_excluded_apps_description">ഒരു കണക്ഷനും തടയപ്പെടാതിരിക്കാൻ VPN ഉപയോഗിക്കാൻ പാടില്ലാത്ത ആപ്പുകൾ തിരഞ്ഞെടുക്കുക.</string>
+    <string name="pref_vpn_exclude_system_apps">സിസ്റ്റം ആപ്പുകൾ ഒഴിവാക്കുക</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>ഒന്നുമില്ല</item>
+        <item>ബ്രൗസറുകൾ ഒഴികെ എല്ലാം</item>
+        <item>എല്ലാം</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS സെർവറുകൾ</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>നെറ്റ്‌വർക്ക് DNS സെർവറുകൾ</item>
+        <item>ഇഷ്ടാനുസൃത DNS സെർവറുകൾ</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">ഇഷ്ടാനുസൃത DNS സെർവറുകൾ</string>
+    <string name="pref_vpn_dns_custom_summary">IP വിലാസങ്ങൾ, കോമ ഉപയോഗിച്ച് വേർതിരിക്കുക</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS സെർവർ വിലാസം അസാധുവാണ്</string>
+    <string name="pref_vpn_doh">DNS over HTTPS സെർവർ</string>
+    <string name="pref_vpn_doh_custom">ഇഷ്ടാനുസൃത വിലാസം</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS വിലാസം</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS വിലാസം അസാധുവാണ്</string>
+    <string name="pref_vpn_exclude_user_apps">ഉപയോക്താവിന്റെ ആപ്പുകൾ ഒഴിവാക്കുക</string>
+    <string name="pref_vpn_exclude_user_apps_activity">ഒഴിവാക്കിയ ആപ്പുകൾ</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">തിരഞ്ഞെടുപ്പ് മാറ്റുക</string>
+    <string name="pref_vpn_exclude_user_apps_icon">ആപ്പ് ഐക്കൺ</string>
+    <string name="pref_vpn_reset">VPN പുനഃസജ്ജമാക്കുക</string>
+    <string name="pref_vpn_reset_description">VPN കണക്ഷൻ ആദ്യം മുതൽ വീണ്ടും നിർമ്മിക്കുക. VPN പ്രവർത്തിക്കാതായാൽ (ഇന്റർനെറ്റ് ലഭിക്കാതിരിക്കുക അല്ലെങ്കിൽ DNS പിശകുകൾ വരിക) ഇത് ഉപയോഗിക്കുക.</string>
+    <string name="pref_vpn_reset_done">VPN കണക്ഷൻ വീണ്ടും നിർമ്മിച്ചു.</string>
     <string name="pref_vpn_reset_not_running">VPN പ്രവർത്തിക്കുന്നില്ല.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">ഡയഗ്നോസ്റ്റിക് ലോഗ് റെക്കോർഡ് ചെയ്യുക</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">ഒരു പ്രശ്നം വീണ്ടും ഉണ്ടാക്കിനോക്കുന്നതിന് മുമ്പ് ഇത് ഓണാക്കുക, തുടർന്ന് താഴെ നിന്ന് ലോഗ് പങ്കിടുക. പഴയ ഉപകരണങ്ങളുടെ വേഗത അല്പം കുറഞ്ഞേക്കാം. സാങ്കേതികമായ VPN ഇവന്റുകൾ മാത്രമാണ് രേഖപ്പെടുത്തുന്നത്, ബ്രൗസിങ് ചരിത്രമോ വ്യക്തിഗത വിവരങ്ങളോ ഒരിക്കലും രേഖപ്പെടുത്തില്ല.</string>
     <string name="pref_vpn_diagnostic_log">ഡയഗ്നോസ്റ്റിക് ലോഗ്</string>
-    <string name="pref_vpn_diagnostic_log_description">സമീപകാല പിശകുകളും VPN ഇവന്റുകളും കാണുക, പകർത്തുക അല്ലെങ്കിൽ പങ്കിടുക. ഒരു പ്രശ്നം റിപ്പോർട്ട് ചെയ്യുമ്പോൾ ഉപയോഗപ്രദമാണ്.</string>
-    <string name="pref_vpn_diagnostic_log_empty">ഇതുവരെ ഒരു ഇവന്റും രേഖപ്പെടുത്തിയിട്ടില്ല.</string>
-    <string name="pref_vpn_diagnostic_log_share">ഡയഗ്നോസ്റ്റിക് ലോഗ് പങ്കിടുക</string>
+    <string name="pref_vpn_diagnostic_log_description">സമീപകാല പിശകുകളും VPN ഇവന്റുകളും കാണുക, പകർത്തുക അല്ലെങ്കിൽ പങ്കിടുക. ഒരു പ്രശ്നം റിപ്പോർട്ട് ചെയ്യുമ്പോൾ ഉപകാരപ്പെടും.</string>
+    <string name="pref_vpn_diagnostic_log_empty">ഇതുവരെ ഇവന്റുകളൊന്നും രേഖപ്പെടുത്തിയിട്ടില്ല. മുകളിലുള്ള “ഡയഗ്നോസ്റ്റിക് ലോഗ് റെക്കോർഡ് ചെയ്യുക” ഓണാക്കി പ്രശ്നം വീണ്ടും ഉണ്ടാക്കിനോക്കുക.</string>
+    <string name="pref_vpn_diagnostic_log_share">പങ്കിടുക</string>
+    <string name="pref_vpn_diagnostic_log_share_title">ഡയഗ്നോസ്റ്റിക് ലോഗ് പങ്കിടുക</string>
     <string name="pref_vpn_diagnostic_log_copy">പകർത്തുക</string>
     <string name="pref_vpn_diagnostic_log_copied">ഡയഗ്നോസ്റ്റിക് ലോഗ് ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി.</string>
     <string name="pref_vpn_diagnostic_log_clear">ഡയഗ്നോസ്റ്റിക് ലോഗ് മായ്ക്കുക</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">രേഖപ്പെടുത്തിയ ഇവന്റുകൾ ഇല്ലാതാക്കുക. വൃത്തിയുള്ള ഒരു ട്രെയ്‌സ് ലഭിക്കാൻ ഒരു പ്രശ്നം വീണ്ടും സൃഷ്ടിക്കുന്നതിന് മുമ്പ് ഇത് ചെയ്യുക.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">രേഖപ്പെടുത്തിയ ഇവന്റുകൾ ഇല്ലാതാക്കുക. വൃത്തിയുള്ള ഒരു ലോഗ് ലഭിക്കാൻ പ്രശ്നം വീണ്ടും ഉണ്ടാക്കിനോക്കുന്നതിന് മുമ്പ് ഇത് ചെയ്യുക.</string>
     <string name="pref_vpn_diagnostic_log_cleared">ഡയഗ്നോസ്റ്റിക് ലോഗ് മായ്ച്ചു.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
-    <string name="pref_redirection_ipv4">റീഡയറക്ഷൻ IPv4</string>
-    <string name="pref_redirection_ipv6">റീഡയറക്ഷൻ IPv6</string>
-    <string name="pref_webserver_enabled">വെബ് സെർവർ പ്രാപ്തമാക്കുക</string>
+    <string name="pref_root_open_hosts">hosts ഫയൽ തുറക്കുക</string>
+    <string name="hosts_file_unreadable">hosts ഫയൽ വായിക്കാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="pref_hosts_redirection_summary">തടഞ്ഞ ഹോസ്റ്റുകൾ എവിടേക്ക് വഴിതിരിച്ചുവിടണമെന്ന് നിശ്ചയിക്കുക</string>
+    <string name="pref_redirection_ipv4">IPv4 വഴിതിരിച്ചുവിടൽ ക്രമീകരിക്കുക</string>
+    <string name="pref_redirection_ipv6">IPv6 വഴിതിരിച്ചുവിടൽ ക്രമീകരിക്കുക</string>
+    <string name="pref_redirection_invalid">വഴിതിരിച്ചുവിടൽ അസാധുവാണ്</string>
+    <string name="pref_webserver_summary">ലോക്കൽ വെബ് സെർവർ ലോക്കൽ IP വിലാസങ്ങളിൽ കാത്തിരുന്ന് തടഞ്ഞ ഹോസ്റ്റ്നാമങ്ങളുടെ അഭ്യർത്ഥനകൾക്ക് മറുപടി നൽകുന്നു. തടഞ്ഞ കണക്ഷനിൽ ആപ്പുകൾ സ്തംഭിച്ചുപോകുന്നത് ഒഴിവാക്കാൻ ഇത് സഹായിച്ചേക്കാം.</string>
+    <string name="pref_webserver_enabled">വെബ് സെർവർ പ്രവർത്തനക്ഷമമാക്കുക</string>
     <string name="pref_webserver_test">വെബ് സെർവർ പരിശോധിക്കുക</string>
+    <string name="pref_webserver_certificate">സ്വയം ഒപ്പിട്ട സർട്ടിഫിക്കറ്റ് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
     <string name="pref_webserver_state_not_running">പ്രവർത്തിക്കുന്നില്ല</string>
-    <string name="pref_webserver_state_checking">പരിശോധിക്കുന്നു</string>
-    <string name="pref_webserver_certificate_dialog_title">സർ‌ട്ടിഫിക്കറ്റ് മാനുവൽ‌ ഇൻ‌സ്റ്റാൾ‌</string>
-    <string name="pref_webserver_certificate_dialog_action">സുരക്ഷാ ക്രമീകരണങ്ങൾ തുറക്കുക</string>
+    <string name="pref_webserver_state_checking">പരിശോധിക്കുന്നു…</string>
+    <string name="pref_webserver_state_running_not_installed">പ്രവർത്തിക്കുന്നു, പക്ഷേ സർട്ടിഫിക്കറ്റ് ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല</string>
+    <string name="pref_webserver_state_running_and_installed">പ്രവർത്തിക്കുന്നു, സർട്ടിഫിക്കറ്റ് ഇൻസ്റ്റാൾ ചെയ്തിട്ടുണ്ട്</string>
+    <string name="pref_webserver_certificate_dialog_title">സർട്ടിഫിക്കറ്റ് സ്വമേധയാ ഇൻസ്റ്റാൾ ചെയ്യൽ</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) മുതൽ, സർട്ടിഫിക്കറ്റ് അതോറിറ്റി (CA) സ്വയമേവ ഇൻസ്റ്റാൾ ചെയ്യാൻ ആപ്പുകൾക്ക് കഴിയില്ല.\n\n“സുരക്ഷ” ക്രമീകരണത്തിൽ പോയി “എൻക്രിപ്ഷനും ക്രെഡൻഷ്യലുകളും”, തുടർന്ന് “ഒരു സർട്ടിഫിക്കറ്റ് ഇൻസ്റ്റാൾ ചെയ്യുക” എന്നിവ തിരഞ്ഞെടുക്കുക. അവിടെ “CA സർട്ടിഫിക്കറ്റ്” തിരഞ്ഞെടുത്ത് പുതുതായി എക്സ്പോർട്ട് ചെയ്ത സർട്ടിഫിക്കറ്റ് ഫയൽ തിരഞ്ഞെടുക്കുക.</string>
+    <string name="pref_webserver_certificate_dialog_action">“സുരക്ഷ” ക്രമീകരണം തുറക്കുക</string>
+    <string name="pref_webserver_certificate_failed">സർട്ടിഫിക്കറ്റ് തയ്യാറാക്കാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="webserver_error_title">വെബ് സെർവർ ആരംഭിച്ചില്ല</string>
+    <string name="webserver_error_resources">അതിന്റെ ഫയലുകളോ സർട്ടിഫിക്കറ്റോ തയ്യാറാക്കാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="webserver_error_address_in_use">ഉപകരണത്തിലെ വെബ് പോർട്ടുകൾ (80, 443) മറ്റൊരു ആപ്പ് ഇതിനകം ഉപയോഗിക്കുന്നുണ്ട്.</string>
+    <string name="webserver_error_start_failed">ഈ ഉപകരണത്തിൽ ഇത് ആരംഭിക്കാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="pref_webserver_icon">ഒഴിഞ്ഞ പരസ്യ സ്ഥലത്തിന് പകരം ആപ്പ് ഐക്കൺ കാണിക്കുക</string>
 </resources>

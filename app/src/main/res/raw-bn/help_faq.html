@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>বিজ্ঞাপন দ্বারা আয়</h2>
-<p>একটি অননুমোদিত ভুল ধারণা রয়েছে যে যদি কোনো ব্যবহারকারী বিজ্ঞাপনগুলিতে ক্লিক করেন না, তাহলে তাদের ব্লক করা কোন সাইট বা অ্যাপ্লিকেশানকে আর্থিকভাবে ক্ষতিগ্রস্ত করবে না এটা ভুল, ডেভেলপাররা শুধু বিজ্ঞাপন প্রদর্শন করে অর্থ উপার্জন করে এটা আপনার উপর নির্ভর করে কিনা আপনি বিজ্ঞাপন ব্লক বা না। ব্যক্তিগতভাবে আমি এমন বিজ্ঞাপনগুলি ব্যবহার করব না যা বিজ্ঞাপন প্রদর্শন করে কারণ আমি তাদের খুব বিরক্তিকর, তাই বিজ্ঞাপন ব্লক ছাড়াই আমি এই অ্যাপ্লিকেশানগুলি ইনস্টল করব না</p>
+<h2>AdAway Community কী?</h2>
+<p>AdAway Community হলো Android-এর ওপেন সোর্স বিজ্ঞাপন ব্লকার AdAway-এর একটি অনানুষ্ঠানিক, কমিউনিটি-পরিচালিত ফর্ক। এটি সব অ্যাপের জন্য পুরো সিস্টেমজুড়ে বিজ্ঞাপন ও ট্র্যাকার ব্লক করে, কোনো অ্যাকাউন্ট ছাড়াই এবং নিজের কোনো বিজ্ঞাপন ছাড়াই। এই ফর্কের লক্ষ্য হলো আধুনিক Android সংস্করণ ও নির্মাতাদের ROM-এ অ্যাপটি যেন নির্ভরযোগ্যভাবে কাজ করে তা নিশ্চিত করা।</p>
 
-<h2>AdAway কিভাবে কাজ করে ?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>এটি কীভাবে বিজ্ঞাপন ব্লক করে?</h2>
+<p>AdAway দুটি মোডের যেকোনো একটিতে কাজ করে:</p>
+<p><strong>VPN মোড</strong> (রুট লাগে না): AdAway ডিভাইসের ভেতরেই একটি স্থানীয় VPN চালায়, যা আপনার ট্রাফিক কোথাও পাঠায় না। এটি শুধু DNS অনুরোধ পরীক্ষা করে এবং বিজ্ঞাপন ও ট্র্যাকারের হোস্টনেমে যাওয়া অনুরোধগুলো বাদ দেয়, বাকি সবকিছু যেতে দেয়। কিছুই আপনার ডিভাইসের বাইরে যায় না।</p>
+<p><strong>রুট মোড</strong>: আপনার ডিভাইস রুট করা থাকলে AdAway এর বদলে একটি <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts ফাইল</a> তৈরি করে সেটি <code>/system/etc/hosts</code> পথে লিখতে পারে, যা অবাঞ্ছিত হোস্টনেমগুলোকে <code>127.0.0.1</code>-এ পাঠায়, ফলে সেগুলো আপনার নিজের ডিভাইসেই সমাধান হয়। সাম্প্রতিক Android-এ একটি systemless hosts মডিউল (যেমন Magisk) প্রয়োজন।</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>VPN কোন DNS সার্ভার ব্যবহার করে?</h2>
+<p>VPN মোডে যেসব হোস্টনেম ব্লক করা হয় না, সেগুলো <cite>পছন্দসমূহ › VPN-ভিত্তিক বিজ্ঞাপন ব্লকার › DNS সার্ভার</cite> থেকে আপনার বেছে নেওয়া DNS সার্ভার দিয়ে সমাধান হয়:</p>
+<p><strong>নেটওয়ার্কের DNS সার্ভার</strong> (ডিফল্ট): আপনার Wi-Fi বা মোবাইল নেটওয়ার্কের সার্ভার। নেটওয়ার্ক AdAway-এর ব্যবহারযোগ্য কোনো সার্ভার না দিলে এটি Cloudflare-এ ফিরে যায় (<code>1.1.1.1</code>)।<br/><strong>কাস্টম DNS সার্ভার</strong>: আপনার দেওয়া IP ঠিকানা, কমা দিয়ে আলাদা করে।<br/><strong>DNS over HTTPS</strong>: অনুরোধগুলো এনক্রিপ্ট করে Cloudflare, Google, Quad9 বা আপনার দেওয়া <code>https://</code> ঠিকানায় পাঠানো হয়, ফলে আপনার নেটওয়ার্ক সেগুলো পড়তে বা বদলাতে পারে না।</p>
+<p>তিনটির ক্ষেত্রেই ব্লক করা একইভাবে কাজ করে। এনক্রিপ্টেড DNS রাখতে চাইলে Android-এর <cite>ব্যক্তিগত DNS</cite> সেটিংয়ের বদলে এখানে DNS over HTTPS ব্যবহার করুন, কারণ ওই সেটিং AdAway-কে এড়িয়ে যায়।</p>
 
-<h2>অ্যাডঅ্যাওয়েতে ওয়েব সার্ভার কিভাবে ব্যবহার করবেন?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>কোনো হোস্টনেম কীভাবে ব্লক করব, অনুমতি দেব বা রিডাইরেক্ট করব?</h2>
+<p>হোম স্ক্রিন থেকে আপনি তিনটি তালিকা পরিচালনা করেন:</p>
+<p><strong>ব্লক করা</strong>: যেসব হোস্টনেম ব্লক হওয়া উচিত (বিজ্ঞাপন ও ট্র্যাকার)।<br/><strong>অনুমোদিত</strong>: যেসব ব্যতিক্রম আপনি কখনও ব্লক করতে চান না, কোনো উৎসের তালিকায় থাকলেও।<br/><strong>রিডাইরেক্ট করা</strong>: যেসব হোস্টনেম আপনি একটি নির্দিষ্ট IP ঠিকানায় পাঠাতে চান।</p>
+<p>হোম স্ক্রিন থেকে <cite>DNS লগ</cite> খুলে অ্যাপগুলো রিয়েল টাইমে কোন হোস্টনেম জানতে চাইছে তা দেখতে পারেন, এবং সেখান থেকেই সরাসরি সেগুলো ব্লক করতে বা অনুমতি দিতে পারেন।</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>তালিকা বদলানোর পর কি Android রিস্টার্ট করতে হবে?</h2>
+<p>না। AdAway পরিবর্তনটি সঙ্গে সঙ্গে প্রয়োগ করে, তবে আগে থেকে খোলা থাকা অ্যাপ তার পুরোনো সংযোগ ও নিজস্ব ক্যাশে ব্যবহার করে চলতে পারে। অ্যাপটি পুরোপুরি বন্ধ করুন (অ্যাপের Android সেটিংসে ‘জোর করে বন্ধ করুন’), আর তবুও বিজ্ঞাপন দেখা গেলে তার ক্যাশে সাফ করুন। Android রিস্টার্ট করার প্রয়োজন হয় শুধু রুট মোডে, Magisk-এর systemless hosts মডিউল চালু করার পর, তাও একবারই।</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>আরও hosts উৎস কোথায় পাব?</h2>
+<p>AdAway যুক্তিসংগত ডিফল্ট উৎস নিয়ে আসে। আরও চাইলে কমিউনিটি-পরিচালিত <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">অতিরিক্ত hosts উৎসের তালিকা</a> দেখুন। বেশি উৎস যোগ করবেন পরিমিতভাবে, কারণ খুব বড় বা একে অপরের সঙ্গে মিলে যাওয়া তালিকা ভুল ব্লকের কারণ হতে পারে, যাতে অ্যাপ বিগড়ে যায়।</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>এই ফর্ক কেন আছে?</h2>
+<p>AdAway একটি চমৎকার প্রকল্প যার ইতিহাস দীর্ঘ, কিন্তু মূল প্রকল্পে রিলিজ ও পর্যালোচনার কাজ কিছুদিন ধরে সীমিত। কিছু বাগ ফিক্স ও পুল রিকোয়েস্ট অনেক দিন খোলা পড়ে ছিল, এর মধ্যে সাম্প্রতিক Android সংস্করণ ও নির্মাতাদের ROM-এ VPN মোডের স্থিতিশীলতার সমস্যাও ছিল। এই ফর্ক আছে যাতে পরীক্ষিত উন্নতিগুলো অব্যবহৃত পড়ে না থেকে কমিউনিটির দেওয়া সংশোধনের মাধ্যমে প্রকল্পটি ব্যবহারযোগ্য থাকে।</p>
 
-<h2>অনুবাদ বা প্রতিবেদন বাগ ধরতে সাহায্য করুন</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>বাগ জানাতে বা কোনো পরিবর্তনের প্রস্তাব দিতে কী করব?</h2>
+<p>ফর্কের ট্র্যাকারে একটি ইস্যু খুলুন: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>। VPN-সংক্রান্ত সমস্যা জানানোর সময় একটি ডায়াগনস্টিক লগ (সমস্যা ট্যাব দেখুন) অনেক সাহায্য করে।</p>
 </body>
 </html>

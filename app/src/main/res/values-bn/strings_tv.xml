@@ -5,9 +5,9 @@
     <string name="tv_dialog_remove_from_allowed">অনুমোদিত তালিকা থেকে সরান</string>
     <string name="tv_dialog_remove_from_blocked">ব্লক তালিকা থেকে সরান</string>
     <string name="tv_dialog_copy_hostname">হোস্টনেম কপি করুন</string>
-    <string name="tv_log_entry_status_description">ডোমেইন স্ট্যাটাস</string>
+    <string name="tv_log_entry_status_description">ডোমেনের অবস্থা</string>
     <string name="tv_button_theme_light">লাইট মোড</string>
     <string name="tv_button_theme_dark">ডার্ক মোড</string>
     <string name="tv_lists_empty">এই তালিকায় এখনও কোনো এন্ট্রি নেই।</string>
-    <string name="tv_dialog_search">অনুসন্ধান</string>
+    <string name="tv_dialog_search">খুঁজুন</string>
 </resources>

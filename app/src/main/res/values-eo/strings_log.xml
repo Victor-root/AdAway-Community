@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">Ŝalti/malŝalti la registradon</string>
+    <string name="log_start_recording">Premu la registran butonon por komenci registri petojn, retumu aŭ uzu aplikaĵojn, poste revenu aŭ ŝovu por aktualigi la protokolon.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokitaj petoj ne estos registritaj. Malŝaltu unue la reklamblokadon, se vi volas registri ankaŭ ilin.</string>
+    <string name="log_sort">Ordigi domajnojn</string>
+    <string name="log_clear">Vakigi protokolon</string>
+    <string name="log_sort_alphabetical">Alfabeta ordo</string>
+    <string name="log_sort_top_level_domain">Ordo laŭ supranivela domajno</string>
+    <string name="log_block">Aldoni eron al la nigra listo</string>
+    <string name="log_allow">Aldoni eron al la blanka listo</string>
+    <string name="log_redirect">Aldoni eron al la alidirekta listo</string>
+    <string name="log_redirect_dialog_title">Alidirekti domajnon</string>
+    <string name="log_capture_failed">La DNS-kaptado ne povis komenciĝi.</string>
     <string name="log_start_recording_button">Komenci registradon</string>
     <string name="log_start_recording_vpn_inactive">Komenci registradon (VPN ne aktiva)</string>
     <string name="log_stop_recording">Halti registradon</string>

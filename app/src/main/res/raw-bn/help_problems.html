@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN নিজে থেকেই বন্ধ হয়ে যায়</h2>
+<p>প্রায় সব ক্ষেত্রেই ব্যাটারি বাঁচাতে সিস্টেম VPN সার্ভিসটি বন্ধ করে দেয়, এটি কোনো ক্র্যাশ নয়। কড়া পাওয়ার ম্যানেজমেন্টযুক্ত নির্মাতাদের ROM-এ এটি বেশি দেখা যায় (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung এবং অন্যান্য)।</p>
+<p>Android সেটিংসে AdAway খুঁজে নিন এবং এই কাজগুলো করুন: <cite>ব্যাটারি অপ্টিমাইজেশন</cite> সেট করুন <cite>সীমাবদ্ধ নয়</cite> (বা <cite>অপ্টিমাইজ করবেন না</cite>) অবস্থায়, আপনার ROM-এ থাকলে <cite>অটোস্টার্ট</cite>/<cite>অটো-লঞ্চ</cite>-এর অনুমতি দিন, এবং সাম্প্রতিক অ্যাপের তালিকায় AdAway-কে লক করে রাখুন, যাতে সোয়াইপ করে সরে না যায়। এছাড়া AdAway-এর VPN পছন্দসমূহে <cite>স্টার্টআপে চালু করুন</cite> চালু আছে কিনা দেখে নিন।</p>
 
-<h2>পার্টিশন পর্যাপ্ত নয়</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Wi-Fi আর মোবাইল নেটওয়ার্কের মধ্যে পরিবর্তনের পরপরই ইন্টারনেট নেই বা ব্রাউজিং ধীর</h2>
+<p>সক্রিয় নেটওয়ার্ক বদলে গেলে টানেলটি আবার তৈরি করতে হয়, যাতে নতুন নেটওয়ার্ক থেকে DNS সমাধান হয়। ব্রাউজিং ঠিক না হলে <cite>পছন্দসমূহ › VPN-ভিত্তিক বিজ্ঞাপন ব্লকার › VPN রিসেট করুন</cite> খুলে সংযোগটি গোড়া থেকে আবার তৈরি করুন। বারবার হতে থাকলে একটি ডায়াগনস্টিক লগ নিন (নিচে দেখুন) এবং সমস্যাটি জানান।</p>
 
-<h2>Android 4.4+ এ কাজ করে না</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>ডায়াগনস্টিক লগ কীভাবে এক্সপোর্ট করব?</h2>
+<p><cite>পছন্দসমূহ › VPN-ভিত্তিক বিজ্ঞাপন ব্লকার › ডায়াগনস্টিক লগ</cite> খুলুন। এতে সাম্প্রতিক ত্রুটি ও VPN-এর ঘটনা (নেটওয়ার্ক বদল, পুনঃসংযোগ, ব্যর্থতা) রেকর্ড হয়, আপনার ব্রাউজিং ইতিহাস নয়, শুধু প্রযুক্তিগত ঘটনা। ঠিক ওপরের <cite>ডায়াগনস্টিক লগ রেকর্ড করুন</cite> চালু না করা পর্যন্ত এটি ফাঁকা থাকে। সমস্যা জানানোর সময় পাঠাতে <cite>কপি করুন</cite> বা <cite>শেয়ার করুন</cite> ব্যবহার করুন। পরামর্শ: আগে এটি <cite>মুছুন</cite>, তারপর সমস্যাটি আবার ঘটান, যাতে লগটি নির্দিষ্ট ঘটনায় সীমিত থাকে।</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome-এ এখনও বিজ্ঞাপন দেখা যাচ্ছে</h2>
+<p>Chrome নিজস্ব <cite>নিরাপদ DNS</cite> (DNS-over-HTTPS) ব্যবহার করতে পারে, যা AdAway-কে এড়িয়ে যায়। Chrome-এ <cite>সেটিংস › গোপনীয়তা ও নিরাপত্তা › নিরাপদ DNS ব্যবহার করুন</cite> খুলে এটি বন্ধ করুন। কোনো অ্যাপ বা সিস্টেমের <cite>ব্যক্তিগত DNS</cite> সেটিংয়ের ক্ষেত্রেও একই কথা প্রযোজ্য। VPN মোডে AdAway নিজেই DNS এনক্রিপ্ট করতে পারে: FAQ-তে <cite>VPN কোন DNS সার্ভার ব্যবহার করে?</cite> দেখুন।</p>
 
-<h2>ক্যাশ বিজ্ঞাপনগুলি</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>কিছু বিজ্ঞাপন এখনও আসছে, অথবা কোনো অ্যাপে এখনও বিজ্ঞাপন দেখা যাচ্ছে</h2>
+<p>আপনার উৎসগুলোতে হয়তো একটি হোস্টনেম নেই, অথবা অ্যাপটি বিজ্ঞাপন নিজের ভেতরেই রাখে বলে কোনো অনুরোধই যায় না। হোম স্ক্রিন থেকে <cite>DNS লগ</cite> খুলে দেখুন অ্যাপটি কী কী জানতে চাইছে, সন্দেহজনক হোস্টনেমগুলো আপনার <cite>ব্লক করা</cite> তালিকায় যোগ করুন এবং দেখে নিন কিছু বিগড়ে যাচ্ছে কিনা। কিছু অ্যাপ বিজ্ঞাপন ডাউনলোডের পর ক্যাশেও রেখে দেয়, তাই Android সেটিংসে ওই অ্যাপের ক্যাশে সাফ করলে কাজ হতে পারে।</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway চালু করার পর একটি অ্যাপ কাজ করা বন্ধ করেছে</h2>
+<p>কিছু অ্যাপের প্রয়োজনীয় কোনো হোস্টনেম ব্লক হয়ে গেলে সেগুলো কাজ করতে চায় না। অ্যাপটির কোন হোস্টনেম দরকার তা খুঁজে পেতে <cite>DNS লগ</cite> ব্যবহার করুন, সেটি আপনার <cite>অনুমোদিত</cite> তালিকায় যোগ করুন, তাহলে অ্যাপটি আবার কাজ করা উচিত। সমস্যা তৈরি করে এমন পরিচিত অ্যাপগুলোর তালিকা <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">এখানে</a> আছে।</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>hosts ফাইল প্রয়োগ করা যাচ্ছে না (রুট মোড)</h2>
+<p>Android-এর সাম্প্রতিক সংস্করণগুলোতে <code>/system</code> পার্টিশন শুধু পড়ার জন্য থাকে, তাই AdAway সরাসরি সেখানে লিখতে পারে না। Magisk ব্যবহার করলে <cite>systemless hosts</cite> মডিউল চালু করুন, ডিভাইস রিস্টার্ট করুন এবং আবার প্রয়োগ করুন। রুট না থাকলে বরং VPN মোড ব্যবহার করুন, যার জন্য সিস্টেমে কোনো পরিবর্তনের প্রয়োজন হয় না।</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>তবুও সমাধান হয়নি?</h2>
+<p>ডায়াগনস্টিক লগ সংযুক্ত করে সমস্যাটি এখানে জানান: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>।</p>
 </body>
 </html>

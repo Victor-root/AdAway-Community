@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Ĝisdatigo disponebla</string>
-    <string name="update_banner_subtitle">Tuŝu por instali %1$s</string>
-    <string name="pref_update_check_now_update_available">Nova versio disponebla: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Neniu ĝisdatigo disponebla</string>
+    <string name="update_title">Ĝisdatigo de AdAway</string>
+    <string name="update_banner_title">Ĝisdatigo disponeblas</string>
+    <string name="update_banner_subtitle">Tuŝetu por instali %1$s</string>
+    <string name="update_up_to_date_header">Vi estas ĝisdata</string>
+    <string name="update_update_available_header">Ĝisdatigo disponeblas</string>
+    <string name="update_updating_header">Ĝisdatigado de AdAway</string>
+    <string name="update_update_button">Ĝisdatigi nun</string>
+    <string name="update_complete_label">Finita</string>
+    <string name="update_last_changelog_title">Lastaj ŝanĝoj</string>
+    <string name="update_new_changelog_title">Ŝanĝoprotokolo</string>
+    <string name="update_download_failed">Ne eblis elŝuti la ĝisdatigon.</string>
+    <string name="update_install_failed">Ne eblis instali la ĝisdatigon.</string>
+    <string name="pref_update_check_now_update_available">Nova versio disponeblas: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Neniu ĝisdatigo disponeblas</string>
+    <string name="pref_update_check_now_failed">Ne eblis atingi la ĝisdatigan servilon</string>
     <string name="pref_update_install_summary">Instali version %1$s</string>
-    <string name="notification_channel_app_updates">Ĝisdatigoj de aplikaĵo</string>
-    <string name="notification_channel_app_updates_description">Sciigo kiam nova versio de la aplikaĵo disponeblas. Silentigu ĉi tiun kanalon por kaŝi avertojn pri aplikaĵaj ĝisdatigoj sen efiki aliajn sciigojn.</string>
+    <string name="notification_channel_app_updates">Ĝisdatigoj de la aplikaĵo</string>
+    <string name="notification_channel_app_updates_description">Sciigo, kiam nova versio de la aplikaĵo disponeblas. Silentigu ĉi tiun kanalon por silentigi la sciigojn pri ĝisdatigoj de la aplikaĵo, sen tuŝi aliajn sciigojn.</string>
+    <string name="notification_app_update_title">Ĝisdatigo de la aplikaĵo disponeblas</string>
+    <string name="notification_app_update_text">Nova versio de AdAway disponeblas por elŝuto.</string>
 </resources>

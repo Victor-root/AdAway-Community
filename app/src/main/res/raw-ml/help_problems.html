@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN തനിയെ ഓഫാകുന്നു</h2>
+<p>ബാറ്ററി ലാഭിക്കാൻ സിസ്റ്റം VPN സേവനം അവസാനിപ്പിക്കുന്നതാണ് മിക്കവാറും ഇതിന് കാരണം, അല്ലാതെ ആപ്പ് ക്രാഷ് ആകുന്നതല്ല. കർശനമായ പവർ മാനേജ്മെന്റുള്ള OEM ROM-കളിൽ (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung തുടങ്ങിയവ) ഇത് സാധാരണമാണ്.</p>
+<p>Android ക്രമീകരണത്തിൽ AdAway കണ്ടെത്തി ഇങ്ങനെ ചെയ്യുക: <cite>ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ</cite> <cite>നിയന്ത്രണങ്ങളില്ലാത്തത്</cite> ആക്കുക (അല്ലെങ്കിൽ <cite>ഒപ്റ്റിമൈസ് ചെയ്യരുത്</cite>), നിങ്ങളുടെ ROM-ൽ ഉണ്ടെങ്കിൽ <cite>ഓട്ടോസ്റ്റാർട്ട്</cite>/<cite>ഓട്ടോ-ലോഞ്ച്</cite> അനുവദിക്കുക, സ്വൈപ്പ് ചെയ്ത് നീക്കാതിരിക്കാൻ AdAway സമീപകാല ആപ്പുകളുടെ ലിസ്റ്റിൽ ലോക്ക് ചെയ്യുക. AdAway-യുടെ VPN മുൻഗണനകളിൽ <cite>ആരംഭിക്കുമ്പോൾ പ്രവർത്തനക്ഷമമാക്കുക</cite> ഓണാണെന്നും ഉറപ്പാക്കുക.</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>വൈ-ഫൈയിൽ നിന്ന് മൊബൈൽ ഡാറ്റയിലേക്ക് (തിരിച്ചും) മാറിയ ഉടൻ ഇന്റർനെറ്റ് ഇല്ല, അല്ലെങ്കിൽ ബ്രൗസിങ് വേഗം കുറവാണ്</h2>
+<p>സജീവ നെറ്റ്‌വർക്ക് മാറുമ്പോൾ പുതിയ നെറ്റ്‌വർക്കിൽ നിന്ന് DNS റിസോൾവ് ചെയ്യുന്നതിനായി ടണൽ വീണ്ടും നിർമ്മിക്കേണ്ടതുണ്ട്. ബ്രൗസിങ് ശരിയാകുന്നില്ലെങ്കിൽ, കണക്ഷൻ ആദ്യം മുതൽ വീണ്ടും നിർമ്മിക്കാൻ <cite>മുൻഗണനകൾ › VPN അടിസ്ഥാനമാക്കിയുള്ള പരസ്യ ബ്ലോക്കർ › VPN പുനഃസജ്ജമാക്കുക</cite> തുറക്കുക. ഇത് ആവർത്തിക്കുന്നുണ്ടെങ്കിൽ, ഒരു ഡയഗ്നോസ്റ്റിക് ലോഗ് (താഴെ) എടുത്ത് റിപ്പോർട്ട് ചെയ്യുക.</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>ഡയഗ്നോസ്റ്റിക് ലോഗ് എങ്ങനെ എക്സ്പോർട്ട് ചെയ്യാം?</h2>
+<p><cite>മുൻഗണനകൾ › VPN അടിസ്ഥാനമാക്കിയുള്ള പരസ്യ ബ്ലോക്കർ › ഡയഗ്നോസ്റ്റിക് ലോഗ്</cite> തുറക്കുക. സമീപകാല പിശകുകളും VPN ഇവന്റുകളും (നെറ്റ്‌വർക്ക് മാറ്റങ്ങൾ, വീണ്ടും കണക്റ്റ് ചെയ്യൽ, പരാജയങ്ങൾ) ഇതിൽ രേഖപ്പെടുത്തുന്നു, നിങ്ങളുടെ ബ്രൗസിങ് ചരിത്രമല്ല, സാങ്കേതിക ഇവന്റുകൾ മാത്രം. തൊട്ടുമുകളിലുള്ള <cite>ഡയഗ്നോസ്റ്റിക് ലോഗ് റെക്കോർഡ് ചെയ്യുക</cite> ഓണാക്കുന്നതുവരെ ഇത് ശൂന്യമായിരിക്കും. ഒരു പ്രശ്നം റിപ്പോർട്ട് ചെയ്യുമ്പോൾ ലോഗ് അയയ്ക്കാൻ <cite>പകർത്തുക</cite> അല്ലെങ്കിൽ <cite>പങ്കിടുക</cite> ഉപയോഗിക്കുക. ഒരു നിർദ്ദേശം: ആദ്യം <cite>മായ്ക്കുക</cite>, എന്നിട്ട് പ്രശ്നം വീണ്ടും ഉണ്ടാക്കിനോക്കുക, അങ്ങനെ ലോഗ് കാര്യത്തിലേക്ക് മാത്രം ഒതുങ്ങും.</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome ഇപ്പോഴും പരസ്യങ്ങൾ കാണിക്കുന്നു</h2>
+<p>Chrome-ന് സ്വന്തം <cite>സുരക്ഷിത DNS</cite> (DNS-over-HTTPS) ഉപയോഗിക്കാൻ കഴിയും, ഇത് AdAway-യെ മറികടക്കുന്നു. Chrome-ൽ <cite>ക്രമീകരണം › സ്വകാര്യതയും സുരക്ഷയും › സുരക്ഷിത DNS ഉപയോഗിക്കുക</cite> തുറന്ന് അത് ഓഫാക്കുക. ഏതെങ്കിലും ആപ്പിലെയോ സിസ്റ്റത്തിലെയോ <cite>സ്വകാര്യ DNS</cite> ക്രമീകരണത്തിനും ഇത് ബാധകമാണ്. VPN മോഡിൽ AdAway-ക്ക് തന്നെ DNS എൻക്രിപ്റ്റ് ചെയ്യാൻ കഴിയും: പതിവ് ചോദ്യങ്ങളിലെ <cite>VPN ഉപയോഗിക്കുന്നത് ഏത് DNS സെർവറുകളാണ്?</cite> കാണുക.</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>ചില പരസ്യങ്ങൾ ഇപ്പോഴും വരുന്നു, അല്ലെങ്കിൽ ഒരു ആപ്പ് ഇപ്പോഴും പരസ്യങ്ങൾ കാണിക്കുന്നു</h2>
+<p>നിങ്ങളുടെ ഉറവിടങ്ങളിൽ ഒരു ഹോസ്റ്റ്നാമം ഇല്ലാതിരിക്കാം, അല്ലെങ്കിൽ ആപ്പ് പരസ്യങ്ങൾ അതിനുള്ളിൽ തന്നെ ഉൾപ്പെടുത്തിയതിനാൽ ഒരു അഭ്യർത്ഥനയും ഉണ്ടാകുന്നില്ലായിരിക്കാം. ആപ്പ് എന്തൊക്കെയാണ് അന്വേഷിക്കുന്നതെന്ന് കാണാൻ ഹോം സ്ക്രീനിൽ നിന്ന് <cite>DNS ലോഗ്</cite> തുറക്കുക, സംശയാസ്പദമായ ഹോസ്റ്റ്നാമങ്ങൾ നിങ്ങളുടെ <cite>തടഞ്ഞവ</cite> ലിസ്റ്റിൽ ചേർക്കുക, ഒന്നും തകരാറിലാകുന്നില്ലെന്ന് ഉറപ്പാക്കുക. ചില ആപ്പുകൾ പരസ്യങ്ങൾ ഡൗൺലോഡ് ചെയ്ത ശേഷം കാഷെ ചെയ്യുന്നതിനാൽ, Android ക്രമീകരണത്തിൽ ആ ആപ്പിന്റെ കാഷെ മായ്ക്കുന്നതും സഹായിച്ചേക്കാം.</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway ഓണാക്കിയ ശേഷം ഒരു ആപ്പ് പ്രവർത്തിക്കുന്നില്ല</h2>
+<p>ആവശ്യമായ ഒരു ഹോസ്റ്റ്നാമം തടയപ്പെട്ടാൽ ചില ആപ്പുകൾ പ്രവർത്തിക്കാൻ വിസമ്മതിക്കും. ആപ്പിന് ഏത് ഹോസ്റ്റ്നാമം വേണമെന്ന് കണ്ടെത്താൻ <cite>DNS ലോഗ്</cite> ഉപയോഗിക്കുക, അത് നിങ്ങളുടെ <cite>അനുവദിച്ചവ</cite> ലിസ്റ്റിൽ ചേർക്കുക, ആപ്പ് വീണ്ടും പ്രവർത്തിക്കും. പ്രശ്നമുണ്ടാക്കുന്നതായി അറിയപ്പെടുന്ന ആപ്പുകൾ <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">ഇവിടെ</a> നൽകിയിട്ടുണ്ട്.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>hosts ഫയൽ പ്രയോഗിക്കാൻ കഴിയുന്നില്ല (റൂട്ട് മോഡ്)</h2>
+<p>പുതിയ Android പതിപ്പുകൾ റീഡ്-ഓൺലി <code>/system</code> പാർട്ടീഷൻ ഉപയോഗിക്കുന്നതിനാൽ AdAway-ക്ക് അവിടെ നേരിട്ട് എഴുതാൻ കഴിയില്ല. നിങ്ങൾ Magisk ഉപയോഗിക്കുന്നുണ്ടെങ്കിൽ <cite>systemless hosts</cite> മൊഡ്യൂൾ പ്രവർത്തനക്ഷമമാക്കി, റീബൂട്ട് ചെയ്ത്, വീണ്ടും പ്രയോഗിക്കുക. നിങ്ങൾ റൂട്ട് ഉപയോഗിക്കുന്നില്ലെങ്കിൽ, സിസ്റ്റത്തിൽ മാറ്റമൊന്നും വരുത്തേണ്ടാത്ത VPN മോഡിലേക്ക് മാറുക.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>ഇപ്പോഴും പരിഹരിക്കാനായില്ലേ?</h2>
+<p>ഒരു ഡയഗ്നോസ്റ്റിക് ലോഗ് സഹിതം പ്രശ്നം <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> എന്നതിൽ റിപ്പോർട്ട് ചെയ്യുക.</p>
 </body>
 </html>

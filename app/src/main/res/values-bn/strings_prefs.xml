@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">পছন্দসমূহ</string>
+    <string name="pref_general_category">সাধারণ</string>
+    <string name="pref_dark_theme">ডার্ক থিম</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>লাইট</item>
+        <item>ডার্ক</item>
+        <item>সিস্টেমের ডিফল্ট</item>
     </string-array>
+    <string name="pref_update_configuration">স্বয়ংক্রিয় আপডেট</string>
+    <string name="pref_language">ভাষা</string>
+    <string name="pref_language_system">সিস্টেমের ভাষা</string>
+    <string name="pref_ad_block_category">বিজ্ঞাপন ব্লক করা</string>
+    <string name="pref_root_ad_blocker_configuration">রুট-ভিত্তিক বিজ্ঞাপন ব্লকার</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN-ভিত্তিক বিজ্ঞাপন ব্লকার</string>
+    <string name="pref_enable_ipv6">IPv6 সমর্থন চালু করুন</string>
+    <string name="pref_backup_restore">ব্লকের নিয়মের ব্যাকআপ/পুনরুদ্ধার</string>
+    <string name="pref_backup_restore_title">ব্যাকআপ ও পুনরুদ্ধার</string>
+    <string name="pref_backup">ব্যাকআপ</string>
+    <string name="pref_backup_summary">আপনার ব্লকের নিয়মগুলো বাহ্যিক স্টোরেজে ব্যাকআপ করুন</string>
+    <string name="pref_restore">পুনরুদ্ধার</string>
+    <string name="pref_restore_summary">ব্যাকআপ ফাইল থেকে আপনার ব্লকের নিয়মগুলো পুনরুদ্ধার করুন</string>
+    <string name="import_success">বাহ্যিক স্টোরেজ থেকে ব্যাকআপ সফলভাবে ইমপোর্ট করা হয়েছে।</string>
+    <string name="import_failed">ব্যাকআপ ইমপোর্ট করা যায়নি। এর ফরম্যাট কি সঠিক?</string>
+    <string name="export_success">বাহ্যিক স্টোরেজে ‘%s’ ফাইলে ব্যাকআপ সফলভাবে এক্সপোর্ট করা হয়েছে।</string>
+    <string name="export_failed">‘%s’ ব্যাকআপ ফাইলটি এক্সপোর্ট করা যায়নি।</string>
+    <string name="pref_update_title">আপডেট</string>
+    <string name="pref_update_enable_notifications">বিজ্ঞপ্তি বন্ধ আছে</string>
+    <string name="pref_update_enable_notifications_summary">অ্যাপের বিজ্ঞপ্তি দেখানো হবে না। চালু করতে ট্যাপ করুন।</string>
+    <string name="pref_update_app_category">অ্যাপ আপডেট</string>
+    <string name="pref_update_check_app_startup">স্টার্টআপে আপডেট খুঁজুন</string>
+    <string name="pref_update_check_app_daily">নিয়মিত আপডেট খুঁজুন</string>
+    <string name="pref_update_check_now">এখনই খুঁজুন</string>
+    <string name="pref_update_install">এখনই আপডেট করুন</string>
+    <string name="pref_update_hosts_category">hosts আপডেট</string>
+    <string name="pref_update_check">স্টার্টআপে আপডেট খুঁজুন</string>
+    <string name="pref_update_check_hosts_daily">নিয়মিত আপডেট খুঁজুন</string>
+    <string name="pref_update_sync_on_update">আপডেটের সময় সিঙ্ক করুন</string>
+    <string name="pref_update_sync_unmetered_only">শুধু মিটারবিহীন নেটওয়ার্কে সিঙ্ক করুন</string>
+    <string name="pref_vpn_service_on_boot">স্টার্টআপে চালু করুন</string>
+    <string name="pref_vpn_service_monitor">সংযোগ পর্যবেক্ষণ করুন</string>
+    <string name="pref_vpn_service_monitor_description">সংযোগ বিচ্ছিন্ন হলে VPN আবার চালু করার জন্য নিয়মিত নেটওয়ার্কের অবস্থা পরীক্ষা করা হয়।</string>
+    <string name="pref_vpn_excluded_apps">বাদ দেওয়া অ্যাপ</string>
+    <string name="pref_vpn_excluded_apps_description">যেসব অ্যাপ VPN ব্যবহার করবে না তা ঠিক করুন, যাতে সেগুলোর কোনো সংযোগ ব্লক না হয়।</string>
+    <string name="pref_vpn_exclude_system_apps">সিস্টেম অ্যাপ বাদ দিন</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>কোনোটি নয়</item>
+        <item>ব্রাউজার ছাড়া সব</item>
+        <item>সব</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS সার্ভার</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>নেটওয়ার্কের DNS সার্ভার</item>
+        <item>কাস্টম DNS সার্ভার</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">কাস্টম DNS সার্ভার</string>
+    <string name="pref_vpn_dns_custom_summary">কমা দিয়ে আলাদা করা IP ঠিকানা</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS সার্ভারের ঠিকানাটি সঠিক নয়</string>
+    <string name="pref_vpn_doh">DNS over HTTPS সার্ভার</string>
+    <string name="pref_vpn_doh_custom">কাস্টম ঠিকানা</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS ঠিকানা</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS ঠিকানাটি সঠিক নয়</string>
+    <string name="pref_vpn_exclude_user_apps">ব্যবহারকারীর অ্যাপ বাদ দিন</string>
+    <string name="pref_vpn_exclude_user_apps_activity">বাদ দেওয়া অ্যাপ</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">সব নির্বাচন করুন</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">সব নির্বাচন বাতিল করুন</string>
+    <string name="pref_vpn_exclude_user_apps_icon">অ্যাপের আইকন</string>
     <string name="pref_vpn_reset">VPN রিসেট করুন</string>
-    <string name="pref_vpn_reset_description">VPN সংযোগ একদম নতুন করে তৈরি করুন। VPN কাজ করা বন্ধ করলে (ইন্টারনেট অ্যাক্সেস না থাকলে বা DNS ত্রুটি হলে) এটি ব্যবহার করুন।</string>
-    <string name="pref_vpn_reset_done">VPN সংযোগ পুনর্নির্মাণ করা হয়েছে।</string>
-    <string name="pref_vpn_reset_not_running">VPN চলছে না।</string>
+    <string name="pref_vpn_reset_description">VPN সংযোগ গোড়া থেকে আবার তৈরি করুন। VPN কাজ করা বন্ধ করে দিলে (ইন্টারনেট না পেলে বা DNS ত্রুটি দেখা দিলে) এটি ব্যবহার করুন।</string>
+    <string name="pref_vpn_reset_done">VPN সংযোগ আবার তৈরি করা হয়েছে।</string>
+    <string name="pref_vpn_reset_not_running">VPN চালু নেই।</string>
+    <string name="pref_vpn_diagnostic_log_enabled">ডায়াগনস্টিক লগ রেকর্ড করুন</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">সমস্যাটি আবার ঘটানোর আগে এটি চালু করুন, তারপর নিচের অংশ থেকে লগটি এক্সপোর্ট করুন। পুরোনো ডিভাইস কিছুটা ধীর হতে পারে। শুধু VPN-এর প্রযুক্তিগত ঘটনা রেকর্ড করা হয়, ব্রাউজিং ইতিহাস বা ব্যক্তিগত তথ্য কখনোই নয়।</string>
     <string name="pref_vpn_diagnostic_log">ডায়াগনস্টিক লগ</string>
-    <string name="pref_vpn_diagnostic_log_description">সাম্প্রতিক ত্রুটি ও VPN ইভেন্ট দেখুন, কপি করুন বা শেয়ার করুন। কোনো সমস্যা রিপোর্ট করার সময় এটি কাজে লাগে।</string>
-    <string name="pref_vpn_diagnostic_log_empty">এখনও কোনো ইভেন্ট রেকর্ড করা হয়নি।</string>
-    <string name="pref_vpn_diagnostic_log_share">ডায়াগনস্টিক লগ শেয়ার করুন</string>
+    <string name="pref_vpn_diagnostic_log_description">সাম্প্রতিক ত্রুটি ও VPN ঘটনা দেখুন, কপি করুন বা শেয়ার করুন। সমস্যা জানানোর সময় এটি কাজে লাগে।</string>
+    <string name="pref_vpn_diagnostic_log_empty">এখনও কোনো ঘটনা রেকর্ড করা হয়নি। উপরের ‘ডায়াগনস্টিক লগ রেকর্ড করুন’ চালু করুন, তারপর সমস্যাটি আবার ঘটানোর চেষ্টা করুন।</string>
+    <string name="pref_vpn_diagnostic_log_share">শেয়ার করুন</string>
+    <string name="pref_vpn_diagnostic_log_share_title">ডায়াগনস্টিক লগ শেয়ার করুন</string>
     <string name="pref_vpn_diagnostic_log_copy">কপি করুন</string>
     <string name="pref_vpn_diagnostic_log_copied">ডায়াগনস্টিক লগ ক্লিপবোর্ডে কপি করা হয়েছে।</string>
-    <string name="pref_vpn_diagnostic_log_clear">ডায়াগনস্টিক লগ সাফ করুন</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">রেকর্ড করা ইভেন্টগুলি মুছুন। একটি পরিষ্কার ট্রেস পেতে কোনো সমস্যা পুনরায় তৈরি করার আগে এটি করুন।</string>
-    <string name="pref_vpn_diagnostic_log_cleared">ডায়াগনস্টিক লগ সাফ করা হয়েছে।</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_vpn_diagnostic_log_clear">ডায়াগনস্টিক লগ মুছুন</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">রেকর্ড করা ঘটনাগুলো মুছে ফেলুন। পরিষ্কার তথ্য পেতে সমস্যাটি আবার ঘটানোর আগে এটি করুন।</string>
+    <string name="pref_vpn_diagnostic_log_cleared">ডায়াগনস্টিক লগ মুছে ফেলা হয়েছে।</string>
+    <string name="pref_root_open_hosts">hosts ফাইল খুলুন</string>
+    <string name="hosts_file_unreadable">hosts ফাইলটি পড়া যায়নি।</string>
+    <string name="pref_hosts_redirection_summary">ব্লক করা হোস্ট কোথায় রিডাইরেক্ট হবে তা ঠিক করুন</string>
+    <string name="pref_redirection_ipv4">IPv4 রিডাইরেক্ট কনফিগার করুন</string>
+    <string name="pref_redirection_ipv6">IPv6 রিডাইরেক্ট কনফিগার করুন</string>
+    <string name="pref_redirection_invalid">রিডাইরেক্টটি সঠিক নয়</string>
+    <string name="pref_webserver_summary">স্থানীয় ওয়েব সার্ভার স্থানীয় IP ঠিকানায় অপেক্ষা করে এবং ব্লক করা হোস্টনেমের অনুরোধের উত্তর দেয়। ব্লক করা সংযোগে অ্যাপ আটকে যাওয়ার সমস্যায় এটি সাহায্য করতে পারে।</string>
+    <string name="pref_webserver_enabled">ওয়েব সার্ভার চালু করুন</string>
+    <string name="pref_webserver_test">ওয়েব সার্ভার পরীক্ষা করুন</string>
+    <string name="pref_webserver_certificate">সেলফ-সাইনড সার্টিফিকেট ইনস্টল করুন</string>
+    <string name="pref_webserver_state_not_running">চালু নেই</string>
+    <string name="pref_webserver_state_checking">পরীক্ষা করা হচ্ছে…</string>
+    <string name="pref_webserver_state_running_not_installed">চালু আছে, কিন্তু সার্টিফিকেট ইনস্টল করা নেই</string>
+    <string name="pref_webserver_state_running_and_installed">চালু আছে এবং সার্টিফিকেট ইনস্টল করা আছে</string>
+    <string name="pref_webserver_certificate_dialog_title">সার্টিফিকেট ম্যানুয়ালি ইনস্টল করুন</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) থেকে অ্যাপ আর স্বয়ংক্রিয়ভাবে সার্টিফিকেট অথরিটি (CA) ইনস্টল করতে পারে না।\n\n‘নিরাপত্তা’ সেটিংসে গিয়ে ‘এনক্রিপশন ও ক্রেডেনশিয়াল’ এবং তারপর ‘একটি সার্টিফিকেট ইনস্টল করুন’ বেছে নিন। সেখান থেকে ‘CA সার্টিফিকেট’ বেছে নিয়ে সদ্য এক্সপোর্ট করা সার্টিফিকেট ফাইলটি নির্বাচন করুন।</string>
+    <string name="pref_webserver_certificate_dialog_action">‘নিরাপত্তা’ সেটিংস খুলুন</string>
+    <string name="pref_webserver_certificate_failed">সার্টিফিকেট প্রস্তুত করা যায়নি।</string>
+    <string name="webserver_error_title">ওয়েব সার্ভার চালু হয়নি</string>
+    <string name="webserver_error_resources">এর ফাইল বা সার্টিফিকেট প্রস্তুত করা যায়নি।</string>
+    <string name="webserver_error_address_in_use">অন্য একটি অ্যাপ ইতিমধ্যে ডিভাইসের ওয়েব পোর্ট (80 ও 443) ব্যবহার করছে।</string>
+    <string name="webserver_error_start_failed">এই ডিভাইসে এটি চালু করা যায়নি।</string>
+    <string name="pref_webserver_icon">বিজ্ঞাপনের ফাঁকা জায়গায় অ্যাপের আইকন দেখান</string>
 </resources>

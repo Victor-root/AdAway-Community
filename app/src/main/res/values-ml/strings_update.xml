@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="update_update_available_header">നവീകരണം ലഭ്യമാണ്</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">AdAway അപ്ഡേറ്റ്</string>
+    <string name="update_banner_title">അപ്ഡേറ്റ് ലഭ്യമാണ്</string>
+    <string name="update_banner_subtitle">%1$s ഇൻസ്റ്റാൾ ചെയ്യാൻ ടാപ്പ് ചെയ്യുക</string>
+    <string name="update_up_to_date_header">നിങ്ങൾ ഏറ്റവും പുതിയ പതിപ്പിലാണ്</string>
+    <string name="update_update_available_header">അപ്ഡേറ്റ് ലഭ്യമാണ്</string>
+    <string name="update_updating_header">AdAway അപ്ഡേറ്റ് ചെയ്യുന്നു</string>
+    <string name="update_update_button">ഇപ്പോൾ അപ്ഡേറ്റ് ചെയ്യുക</string>
+    <string name="update_complete_label">പൂർത്തിയായി</string>
+    <string name="update_last_changelog_title">ഒടുവിലത്തെ മാറ്റങ്ങൾ</string>
+    <string name="update_new_changelog_title">മാറ്റങ്ങളുടെ വിവരം</string>
+    <string name="update_download_failed">അപ്ഡേറ്റ് ഡൗൺലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="update_install_failed">അപ്ഡേറ്റ് ഇൻസ്റ്റാൾ ചെയ്യാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="pref_update_check_now_update_available">പുതിയ പതിപ്പ് ലഭ്യമാണ്: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">അപ്ഡേറ്റ് ലഭ്യമല്ല</string>
+    <string name="pref_update_check_now_failed">അപ്ഡേറ്റ് സെർവറുമായി ബന്ധപ്പെടാൻ കഴിഞ്ഞില്ല</string>
+    <string name="pref_update_install_summary">പതിപ്പ് %1$s ഇൻസ്റ്റാൾ ചെയ്യുക</string>
+    <string name="notification_channel_app_updates">ആപ്പ് അപ്ഡേറ്റുകൾ</string>
+    <string name="notification_channel_app_updates_description">ആപ്പിന്റെ പുതിയ പതിപ്പ് ലഭ്യമാകുമ്പോഴുള്ള അറിയിപ്പ്. മറ്റ് അറിയിപ്പുകളെ ബാധിക്കാതെ ആപ്പ് അപ്ഡേറ്റ് അലർട്ടുകൾ ഒഴിവാക്കാൻ ഈ ചാനൽ മ്യൂട്ട് ചെയ്യുക.</string>
+    <string name="notification_app_update_title">ആപ്പ് അപ്ഡേറ്റ് ലഭ്യമാണ്</string>
+    <string name="notification_app_update_text">AdAway-യുടെ പുതിയ പതിപ്പ് ഡൗൺലോഡ് ചെയ്യാൻ ലഭ്യമാണ്.</string>
 </resources>

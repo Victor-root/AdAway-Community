@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_sort">ഡൊമെയ്‌നുകൾ അടുക്കുക</string>
-    <string name="log_clear">ലോഗ് മായ്‌ക്കുക</string>
-    <string name="log_sort_alphabetical">അക്ഷരമാലാക്രമത്തിൽ</string>
-    <string name="log_sort_top_level_domain">ടോപ്പ് ലെവൽ ഡൊമെയ്ൻ അടുക്കൽ</string>
-    <string name="log_block">ബ്ലാക്ക് ലിസ്റ്റിലേക് എൻട്രി ചേർക്കുക</string>
-    <string name="log_allow">വൈറ്റ് ലിസ്റ്റിലേക്ക് എൻ‌ട്രി ചേർക്കുക</string>
-    <string name="log_redirect">റീഡയറക്‌ട് ലിസ്റ്റിലേക്ക് എൻട്രി ചേർക്കുക</string>
-    <string name="log_redirect_dialog_title">ഡൊമെയ്ൻ റീഡയറക്ട് ചെയ്യുക</string>
-    <string name="log_start_recording_button">റെക്കോർഡിംഗ് ആരംഭിക്കുക</string>
-    <string name="log_start_recording_vpn_inactive">റെക്കോർഡിംഗ് ആരംഭിക്കുക (VPN സജീവമല്ല)</string>
-    <string name="log_stop_recording">റെക്കോർഡിംഗ് നിർത്തുക</string>
+    <string name="log_toggle_recording_description">ലോഗ് റെക്കോർഡിങ് ഓൺ/ഓഫ് ചെയ്യുക</string>
+    <string name="log_start_recording">അഭ്യർത്ഥനകൾ ലോഗ് ചെയ്യാൻ റെക്കോർഡ് അമർത്തുക, വെബ് ബ്രൗസ് ചെയ്യുകയോ ആപ്പുകൾ ഉപയോഗിക്കുകയോ ചെയ്യുക, തുടർന്ന് ലോഗുകൾ പുതുക്കാൻ പിന്നോട്ട് പോകുകയോ സ്വൈപ്പ് ചെയ്യുകയോ ചെയ്യുക.</string>
+    <string name="log_blocked_requests_ignored">\n\nതടഞ്ഞ അഭ്യർത്ഥനകൾ ലോഗ് ചെയ്യില്ല. അവയും ലോഗ് ചെയ്യണമെങ്കിൽ ആദ്യം പരസ്യം തടയൽ പ്രവർത്തനരഹിതമാക്കുക.</string>
+    <string name="log_sort">ഡൊമെയ്നുകൾ ക്രമീകരിക്കുക</string>
+    <string name="log_clear">ലോഗ് മായ്ക്കുക</string>
+    <string name="log_sort_alphabetical">അക്ഷരമാലാ ക്രമം</string>
+    <string name="log_sort_top_level_domain">ടോപ്പ് ലെവൽ ഡൊമെയ്ൻ ക്രമം</string>
+    <string name="log_block">എൻട്രി ബ്ലോക്ക് ലിസ്റ്റിൽ ചേർക്കുക</string>
+    <string name="log_allow">എൻട്രി അനുവദിച്ച ലിസ്റ്റിൽ ചേർക്കുക</string>
+    <string name="log_redirect">എൻട്രി വഴിതിരിച്ചുവിടൽ ലിസ്റ്റിൽ ചേർക്കുക</string>
+    <string name="log_redirect_dialog_title">ഡൊമെയ്ൻ വഴിതിരിച്ചുവിടുക</string>
+    <string name="log_capture_failed">DNS ക്യാപ്ചർ ആരംഭിക്കാൻ കഴിഞ്ഞില്ല.</string>
+    <string name="log_start_recording_button">റെക്കോർഡിങ് ആരംഭിക്കുക</string>
+    <string name="log_start_recording_vpn_inactive">റെക്കോർഡിങ് ആരംഭിക്കുക (VPN സജീവമല്ല)</string>
+    <string name="log_stop_recording">റെക്കോർഡിങ് നിർത്തുക</string>
 </resources>

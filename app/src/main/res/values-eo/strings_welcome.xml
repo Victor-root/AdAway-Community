@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">Ĉi tiu mallonga asistanto ŝaltos la reklamblokadon sur ĉi tiu aparato.</string>
-    <string name="tv_welcome_start_button">Ekstarti</string>
-    <string name="tv_welcome_method_header">Elektu vian blokan metodon</string>
-    <string name="tv_welcome_method_root_button">Uzi root-on</string>
-    <string name="tv_welcome_method_root_body">Pli rapida kaj baterioŝpara. Postulas alradikigitan aparaton.</string>
-    <string name="tv_welcome_method_vpn_button">Uzi VPN-on</string>
-    <string name="tv_welcome_method_vpn_body">Funkcias sen root, kongrua kun ajna Android TV-aparato.</string>
-    <string name="tv_welcome_activate_header">Ŝalti la reklamblokadon</string>
-    <string name="tv_welcome_activate_body">Ĝi estas loka VPN: ĝi filtras reklamojn sur ĉi tiu aparato, sen sendi vian trafikon tra ekstera servilo.</string>
+    <string name="welcome_first_step">Unua paŝo de la asistanto</string>
+    <string name="welcome_second_step">Dua paŝo de la asistanto</string>
+    <string name="welcome_third_step">Tria paŝo de la asistanto</string>
+    <string name="welcome_fourth_step">Kvara paŝo de la asistanto</string>
+    <string name="welcome_method_header">Bonvenon al AdAway!</string>
+    <string name="welcome_method_summary">AdAway proponas du metodojn de reklamblokado. Elektu tiun, kiu plaĉas al vi:</string>
+    <string name="welcome_root_method_title">Reklamblokado\nbazita sur root</string>
+    <string name="welcome_root_method_text1">Pli rapida</string>
+    <string name="welcome_root_method_text2">Ŝparas baterion</string>
+    <string name="welcome_root_method_text3">Root necesas</string>
+    <string name="welcome_vpn_method_title">Reklamblokado\nbazita sur VPN</string>
+    <string name="welcome_vpn_method_text1">Pli malrapida</string>
+    <string name="welcome_vpn_method_text2">Funkcias en la fono</string>
+    <string name="welcome_vpn_method_text3">Kongrueco</string>
+    <string name="welcome_root_missing_title">Android kun root necesas</string>
+    <string name="welcome_root_missile_description">Aŭ la binara dosiero su ne troviĝis, aŭ vi ne permesis root-aliron al AdAway.\n\nTio povas okazi, se via aparato ne havas root. Informojn pri tio, kiel akiri root sur via aparato, vi trovos ĉe wiki.lineageos.org aŭ en aliaj retejoj pri Android.</string>
+    <string name="welcome_vpn_alwayson_title">Ĉiam ŝaltita VPN estas aktiva</string>
+    <string name="welcome_vpn_alwayson_description">AdAway rimarkis, ke alia VPN havas aktivan la agordon «Ĉiam ŝaltita VPN».\n\nTio malhelpas AdAway peti VPN-aliron. Bonvolu malŝalti «Ĉiam ŝaltita VPN» ĉe tiu alia VPN kaj provi denove.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway ne sukcesis peti VPN-aliron.\n\nTio povus okazi, ĉar alia VPN havas aktivan la agordon «Ĉiam ŝaltita VPN». Bonvolu kontroli, ĉu iu VPN havas ĝin ŝaltita, kaj malŝalti ĝin antaŭ ol provi denove.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Malfermi la agordojn «VPN»</string>
+    <string name="welcome_method_pro_logo">Avantaĝoj</string>
+    <string name="welcome_method_con_logo">Malavantaĝoj</string>
+    <string name="welcome_sync_header">Sinkronigado</string>
+    <string name="welcome_synced_header">Sinkronigita!</string>
+    <string name="welcome_sync_summary">AdAway elŝutas el interretaj fontoj la reklamretojn por bloki. Vi povas adapti ilin poste en la Preferoj.</string>
+    <string name="welcome_sync_retry_logo">Reprovi sinkronigon</string>
+    <string name="welcome_sync_error">Sinkronigo malsukcesis: %1$s Ĉu reprovi nun?</string>
+    <string name="welcome_sync_notifications">Ĝi povas sendi sciigojn por montri la staton de la reklamblokado kaj regi ĝin, kaj por informi pri disponeblaj ĝisdatigoj de la aplikaĵo (kelkfoje jare). Ŝaltu ilin, se vi volas resti ĝisdata.</string>
+    <string name="welcome_sync_leave_early_title">Sinkronigo ankoraŭ ne finiĝis</string>
+    <string name="welcome_sync_leave_early_message">La blokaj listoj ankoraŭ ne tute elŝutiĝis. Vi povas daŭrigi nun kaj la elŝuto daŭros en la fono, aŭ atendi ĉi tie ĝis ĝi finiĝos.</string>
+    <string name="welcome_sync_leave_early_wait">Atendi</string>
+    <string name="welcome_sync_leave_early_continue">Tamen daŭrigi</string>
+    <string name="welcome_battery_header">Restu protektita en la fono</string>
+    <string name="welcome_battery_summary">Android povas paŭzigi la VPN de AdAway en la fono por ŝpari energion, kio povas silente haltigi la reklamblokadon. Permesu al AdAway ignori la optimumigon de la baterio, por ke ĝi daŭre funkciu.</string>
+    <string name="welcome_battery_action">Permesi</string>
+    <string name="welcome_battery_granted">Permesite ✓</string>
+    <string name="welcome_battery_footnote_prefix">Vi ĉiam povas ŝanĝi tion poste en</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Agordoj de Android</item>
+        <item>Aplikaĵoj</item>
+        <item>AdAway</item>
+        <item>Baterio</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Ankoraŭ unu afero: la propra bateria administrilo de via telefono</string>
+    <string name="welcome_oem_battery_summary">Kelkaj telefonmarkoj havas propran bateriadministrilon, kiu povas ankaŭ bloki AdAway. Jen kion kontroli ĉe via telefono:</string>
+    <string name="welcome_oem_battery_action">Malfermi informojn pri la aplikaĵo</string>
+    <string name="welcome_oem_battery_open_failed">Ne eblis malfermi la ekranon pri informoj de la aplikaĵo. Malfermu ĝin permane en Agordoj de Android › Aplikaĵoj › AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Ĉi tiuj estas ĝeneralaj indikoj, ne preciza gvidilo: la formulado kaj la loko povas varii laŭ telefonmodelo kaj Android-versio.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Informoj pri la aplikaĵo</item>
+        <item>Baterio</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Serĉu ion kiel «Limigoj de fona uzo» › «Neniam dormantaj aplikaĵoj», poste aldonu AdAway al tiu listo.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Kontrolu ankaŭ la agordon «Aŭtomata optimumigo» kaj malŝaltu «Restartigi laŭbezone», se ĝi ekzistas.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Informoj pri la aplikaĵo</item>
+        <item>Bateria ŝparilo</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Elektu «Sen limigoj».</string>
+    <string name="welcome_oem_battery_secondary_miui">Ŝaltu ankaŭ «Aŭtomata starto» («Aŭtomata starto en la fono» ĉe pli novaj versioj).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Informoj pri la aplikaĵo</item>
+        <item>Bateria uzo</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Elektu «Permesi fonan agadon» (foje montrata kiel «Sen limigoj»).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Serĉu ankaŭ ŝaltilon «Aŭtomata lanĉo» por AdAway (ofte en Agordoj › Aplikaĵoj), por ke ĝi povu rekomenci sin post devigita halto.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Informoj pri la aplikaĵo</item>
+        <item>Baterio</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Serĉu «Lanĉo de aplikaĵo», malŝaltu «Aŭtomate administri», poste ŝaltu ĉiujn 3: «Aŭtomata lanĉo», «Duaranga lanĉo» kaj «Funkcii en la fono».</string>
+    <string name="welcome_oem_battery_secondary_emui">Ŝlosu ankaŭ AdAway en la ekrano de lastaj aplikaĵoj (ŝovu ĝian karton malsupren, ĝis aperos seruro).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Informoj pri la aplikaĵo</item>
+        <item>Bateria uzo</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Serĉu opcion pri fona energiuzo kaj elektu «Ne limigi fonan energiuzon» (ne «Saĝa regado»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Serĉu ankaŭ agordon «Aŭtomata starto» por AdAway, ofte en Agordoj › Aplikaĵoj.</string>
+    <string name="welcome_oem_battery_label_generic">Alia marko</string>
+    <string name="welcome_oem_battery_tip_generic">Serĉu en la informoj pri la aplikaĵo agordon pri baterio aŭ fona agado kaj certigu, ke AdAway ne estas limigita.</string>
+    <string name="welcome_back_button">Reen</string>
+    <string name="welcome_next_button">Sekva</string>
+    <string name="welcome_finish_button">Fini</string>
+    <string name="tv_welcome_intro_subtitle">Ĉi tiu mallonga asistanto ŝaltas la reklamblokadon sur ĉi tiu aparato.</string>
+    <string name="tv_welcome_start_button">Komenci</string>
+    <string name="tv_welcome_method_header">Elektu vian blokmetodon</string>
+    <string name="tv_welcome_method_root_button">Uzi root</string>
+    <string name="tv_welcome_method_root_body">Pli rapida kaj ŝparema pri baterio. Postulas aparaton kun root.</string>
+    <string name="tv_welcome_method_vpn_button">Uzi VPN</string>
+    <string name="tv_welcome_method_vpn_body">Funkcias sen root, kongrua kun ĉiu Android TV-aparato.</string>
+    <string name="tv_welcome_activate_header">Ŝalti reklamblokadon</string>
+    <string name="tv_welcome_activate_body">Ĝi estas loka VPN: ĝi filtras reklamojn sur ĉi tiu aparato, sen direkti vian trafikon tra ekstera servilo.</string>
 </resources>

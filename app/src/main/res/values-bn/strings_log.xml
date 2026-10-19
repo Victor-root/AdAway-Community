@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">লগ রেকর্ডিং চালু বা বন্ধ করুন</string>
+    <string name="log_start_recording">অনুরোধ লগ করা শুরু করতে রেকর্ড বোতাম চাপুন, ওয়েব ব্রাউজ করুন বা অ্যাপ ব্যবহার করুন, তারপর লগ রিফ্রেশ করতে ফিরে যান বা সোয়াইপ করুন।</string>
+    <string name="log_blocked_requests_ignored">\n\nব্লক করা অনুরোধ লগ করা হবে না। সেগুলোও লগ করতে চাইলে আগে বিজ্ঞাপন ব্লক করা বন্ধ করুন।</string>
+    <string name="log_sort">ডোমেন সাজান</string>
+    <string name="log_clear">লগ মুছুন</string>
+    <string name="log_sort_alphabetical">বর্ণানুক্রমে সাজান</string>
+    <string name="log_sort_top_level_domain">টপ লেভেল ডোমেন অনুযায়ী সাজান</string>
+    <string name="log_block">ব্লক তালিকায় এন্ট্রি যোগ করুন</string>
+    <string name="log_allow">অনুমোদিত তালিকায় এন্ট্রি যোগ করুন</string>
+    <string name="log_redirect">রিডাইরেক্ট তালিকায় এন্ট্রি যোগ করুন</string>
+    <string name="log_redirect_dialog_title">ডোমেন রিডাইরেক্ট করুন</string>
+    <string name="log_capture_failed">DNS ক্যাপচার শুরু করা যায়নি।</string>
     <string name="log_start_recording_button">রেকর্ডিং শুরু করুন</string>
-    <string name="log_start_recording_vpn_inactive">রেকর্ডিং শুরু করুন (VPN সক্রিয় নয়)</string>
+    <string name="log_start_recording_vpn_inactive">রেকর্ডিং শুরু করুন (VPN সক্রিয় নেই)</string>
     <string name="log_stop_recording">রেকর্ডিং বন্ধ করুন</string>
 </resources>

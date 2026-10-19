@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
+    <string name="pref_main_title">Preferoj</string>
+    <string name="pref_general_category">Ĝeneralaj</string>
+    <string name="pref_dark_theme">Malhela temo</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Hela</item>
+        <item>Malhela</item>
+        <item>Laŭ la sistemo</item>
+    </string-array>
+    <string name="pref_update_configuration">Aŭtomataj ĝisdatigoj</string>
+    <string name="pref_language">Lingvo</string>
+    <string name="pref_language_system">Sistema lingvo</string>
+    <string name="pref_ad_block_category">Reklamblokado</string>
+    <string name="pref_root_ad_blocker_configuration">Reklamblokilo bazita sur root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Reklamblokilo bazita sur VPN</string>
+    <string name="pref_enable_ipv6">Ŝalti subtenon de IPv6</string>
+    <string name="pref_backup_restore">Savkopii / restaŭri blokregulojn</string>
+    <string name="pref_backup_restore_title">Savkopio kaj restaŭro</string>
+    <string name="pref_backup">Savkopio</string>
+    <string name="pref_backup_summary">Savkopii viajn blokregulojn al la ekstera memoro</string>
+    <string name="pref_restore">Restaŭri</string>
+    <string name="pref_restore_summary">Restaŭri viajn blokregulojn el savkopia dosiero</string>
+    <string name="import_success">La savkopio estis sukcese importita el via ekstera memoro.</string>
+    <string name="import_failed">Ne eblis importi la savkopion. Ĉu ĝia formato estas ĝusta?</string>
+    <string name="export_success">La savkopio estis sukcese eksportita al la dosiero «%s» en via ekstera memoro.</string>
+    <string name="export_failed">Ne eblis eksporti la savkopian dosieron «%s».</string>
+    <string name="pref_update_title">Ĝisdatigoj</string>
+    <string name="pref_update_enable_notifications">Sciigoj estas malŝaltitaj</string>
+    <string name="pref_update_enable_notifications_summary">La sciigoj de la aplikaĵo ne aperos. Tuŝetu por ŝalti ilin.</string>
+    <string name="pref_update_app_category">Ĝisdatigoj de la aplikaĵo</string>
+    <string name="pref_update_check_app_startup">Kontroli ĝisdatigon ĉe starto</string>
+    <string name="pref_update_check_app_daily">Kontroli ĝisdatigon periode</string>
     <string name="pref_update_check_now">Kontroli nun</string>
     <string name="pref_update_install">Ĝisdatigi nun</string>
+    <string name="pref_update_hosts_category">Ĝisdatigoj de hosts-fontoj</string>
+    <string name="pref_update_check">Kontroli ĝisdatigon ĉe starto</string>
+    <string name="pref_update_check_hosts_daily">Kontroli ĝisdatigon periode</string>
+    <string name="pref_update_sync_on_update">Sinkronigi post ĝisdatigo</string>
+    <string name="pref_update_sync_unmetered_only">Sinkronigi nur en reto sen datumlimo</string>
+    <string name="pref_vpn_service_on_boot">Ŝalti ĉe starto</string>
+    <string name="pref_vpn_service_monitor">Gvatadi la konekton</string>
+    <string name="pref_vpn_service_monitor_description">Periode kontroli la staton de la reto por rekomenci la VPN post malkonekto.</string>
+    <string name="pref_vpn_excluded_apps">Esceptitaj aplikaĵoj</string>
+    <string name="pref_vpn_excluded_apps_description">Elektu, kiuj aplikaĵoj ne uzu la VPN, por ke neniu konekto de ili estu blokita.</string>
+    <string name="pref_vpn_exclude_system_apps">Escepti sistemajn aplikaĵojn</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+        <item>Neniun</item>
+        <item>Ĉiujn krom retumiloj</item>
+        <item>Ĉiujn</item>
     </string-array>
+    <string name="pref_vpn_dns">DNS-serviloj</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>DNS-serviloj de la reto</item>
+        <item>Propraj DNS-serviloj</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Propraj DNS-serviloj</string>
+    <string name="pref_vpn_dns_custom_summary">IP-adresoj, apartigitaj per komoj</string>
+    <string name="pref_vpn_dns_custom_invalid">Nevalida adreso de DNS-servilo</string>
+    <string name="pref_vpn_doh">Servilo de DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Propra adreso</string>
+    <string name="pref_vpn_doh_address">Adreso de DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Nevalida adreso de DNS over HTTPS</string>
+    <string name="pref_vpn_exclude_user_apps">Escepti uzantajn aplikaĵojn</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Esceptitaj aplikaĵoj</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Elekti ĉiujn</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Malelekti ĉiujn</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Piktogramo de la aplikaĵo</string>
     <string name="pref_vpn_reset">Restarigi VPN</string>
-    <string name="pref_vpn_reset_description">Rekonstrui la VPN-konekton de nulo. Uzu ĉi tion se la VPN ĉesas funkcii (neniu interreta aliro aŭ DNS-eraroj).</string>
-    <string name="pref_vpn_reset_done">VPN-konekto rekonstruita.</string>
-    <string name="pref_vpn_reset_not_running">VPN ne funkcias.</string>
+    <string name="pref_vpn_reset_description">Rekonstrui la VPN-konekton ekde nulo. Uzu tion, se la VPN ĉesas funkcii (neniu interreta aliro aŭ DNS-eraroj).</string>
+    <string name="pref_vpn_reset_done">La VPN-konekto estas rekonstruita.</string>
+    <string name="pref_vpn_reset_not_running">La VPN ne funkcias.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Registri diagnozan protokolon</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Ŝaltu tion antaŭ ol reprodukti problemon, poste eksportu la protokolon ĉi-sube. Povas iomete malrapidigi pli malnovajn aparatojn. Registras nur teknikajn eventojn de la VPN, neniam retumhistorion nek personajn datumojn.</string>
     <string name="pref_vpn_diagnostic_log">Diagnoza protokolo</string>
-    <string name="pref_vpn_diagnostic_log_description">Rigardu, kopiu aŭ kunhavigu la lastatempajn erarojn kaj VPN-eventojn. Utila kiam vi raportas problemon.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Ankoraŭ neniu evento estis registrita.</string>
-    <string name="pref_vpn_diagnostic_log_share">Kunhavigi diagnozan protokolon</string>
+    <string name="pref_vpn_diagnostic_log_description">Rigardi, kopii aŭ kunhavigi la lastatempajn erarojn kaj eventojn de la VPN. Utila por raporti problemon.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Ankoraŭ neniu evento estis registrita. Ŝaltu «Registri diagnozan protokolon» supre, poste provu reprodukti la problemon.</string>
+    <string name="pref_vpn_diagnostic_log_share">Kunhavigi</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Kunhavigi diagnozan protokolon</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopii</string>
-    <string name="pref_vpn_diagnostic_log_copied">Diagnoza protokolo kopiita al tondujo.</string>
+    <string name="pref_vpn_diagnostic_log_copied">La diagnoza protokolo estas kopiita al la tondujo.</string>
     <string name="pref_vpn_diagnostic_log_clear">Vakigi diagnozan protokolon</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Forigi la registritajn eventojn. Faru ĉi tion antaŭ ol reprodukti problemon por kapti puran spuron.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Diagnoza protokolo vakigita.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Forigi la registritajn eventojn. Faru tion antaŭ ol reprodukti problemon, por ricevi puran spuron.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">La diagnoza protokolo estas vakigita.</string>
+    <string name="pref_root_open_hosts">Malfermi la hosts-dosieron</string>
+    <string name="hosts_file_unreadable">Ne eblis legi la hosts-dosieron.</string>
+    <string name="pref_hosts_redirection_summary">Difini, kien alidirekti blokitajn gastigonomojn</string>
+    <string name="pref_redirection_ipv4">Agordi IPv4-alidirektadon</string>
+    <string name="pref_redirection_ipv6">Agordi IPv6-alidirektadon</string>
+    <string name="pref_redirection_invalid">Nevalida alidirektado</string>
+    <string name="pref_webserver_summary">La loka retservilo aŭskultas ĉe lokaj IP-adresoj kaj respondas al petoj pri blokitaj gastigonomoj. Ĝi povas helpi kontraŭ aplikaĵoj, kiuj frostiĝas pro blokita konekto.</string>
+    <string name="pref_webserver_enabled">Ŝalti retservilon</string>
+    <string name="pref_webserver_test">Testi retservilon</string>
+    <string name="pref_webserver_certificate">Instali memsubskribitan atestilon</string>
+    <string name="pref_webserver_state_not_running">Ne funkcias</string>
+    <string name="pref_webserver_state_checking">Kontrolado…</string>
+    <string name="pref_webserver_state_running_not_installed">Funkcias, sed la atestilo ne estas instalita</string>
+    <string name="pref_webserver_state_running_and_installed">Funkcias kaj la atestilo estas instalita</string>
+    <string name="pref_webserver_certificate_dialog_title">Mana instalo de atestilo</string>
+    <string name="pref_webserver_certificate_dialog_content">Ekde Android 11 (R), aplikaĵoj ne plu povas aŭtomate instali atestilajn aŭtoritatojn (CA).\n\nMalfermu la agordojn «Sekureco», poste «Ĉifrado kaj akreditaĵoj» kaj «Instali atestilon». Tie elektu «CA-atestilo» kaj la ĵus eksportitan atestilan dosieron.</string>
+    <string name="pref_webserver_certificate_dialog_action">Malfermi la agordojn «Sekureco»</string>
+    <string name="pref_webserver_certificate_failed">Ne eblis prepari la atestilon.</string>
+    <string name="webserver_error_title">La retservilo ne ekfunkciis</string>
+    <string name="webserver_error_resources">Ne eblis prepari ĝiajn dosierojn aŭ ĝian atestilon.</string>
+    <string name="webserver_error_address_in_use">Alia aplikaĵo jam uzas la retajn pordojn (80 kaj 443) de la aparato.</string>
+    <string name="webserver_error_start_failed">Ĝi ne povis ekfunkcii sur ĉi tiu aparato.</string>
+    <string name="pref_webserver_icon">Anstataŭigi malplenan reklamlokon per la piktogramo de la aplikaĵo</string>
 </resources>
