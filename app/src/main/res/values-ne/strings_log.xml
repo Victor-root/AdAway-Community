@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">लग रेकर्डिङ खोल्नुहोस् / बन्द गर्नुहोस्</string>
+    <string name="log_start_recording">अनुरोधहरू लग गर्न रेकर्ड थिच्नुहोस्, वेब ब्राउज गर्नुहोस् वा एपहरू चलाउनुहोस्, त्यसपछि लगहरू रिफ्रेस गर्न पछाडि जानुहोस् वा स्वाइप गर्नुहोस्।</string>
+    <string name="log_blocked_requests_ignored">\n\nब्लक गरिएका अनुरोधहरू लग गरिने छैनन्। तिनलाई पनि लग गर्न चाहनुहुन्छ भने पहिले विज्ञापन ब्लक असक्षम पार्नुहोस्।</string>
+    <string name="log_sort">डोमेन क्रमबद्ध गर्नुहोस्</string>
+    <string name="log_clear">लग खाली गर्नुहोस्</string>
+    <string name="log_sort_alphabetical">वर्णानुक्रमले क्रमबद्ध</string>
+    <string name="log_sort_top_level_domain">टप-लेभल डोमेनले क्रमबद्ध</string>
+    <string name="log_block">प्रविष्टिलाई ब्लक सूचीमा थप्नुहोस्</string>
+    <string name="log_allow">प्रविष्टिलाई अनुमति सूचीमा थप्नुहोस्</string>
+    <string name="log_redirect">प्रविष्टिलाई रिडिरेक्ट सूचीमा थप्नुहोस्</string>
+    <string name="log_redirect_dialog_title">डोमेन रिडिरेक्ट गर्नुहोस्</string>
+    <string name="log_capture_failed">DNS क्याप्चर सुरु हुन सकेन।</string>
     <string name="log_start_recording_button">रेकर्डिङ सुरु गर्नुहोस्</string>
     <string name="log_start_recording_vpn_inactive">रेकर्डिङ सुरु गर्नुहोस् (VPN सक्रिय छैन)</string>
     <string name="log_stop_recording">रेकर्डिङ रोक्नुहोस्</string>

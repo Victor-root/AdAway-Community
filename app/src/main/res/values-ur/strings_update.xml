@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">AdAway کی اپ ڈیٹ</string>
+    <string name="update_banner_title">اپ ڈیٹ دستیاب ہے</string>
+    <string name="update_banner_subtitle">%1$s انسٹال کرنے کے لیے تھپتھپائیں</string>
+    <string name="update_up_to_date_header">آپ کے پاس تازہ ترین ورژن ہے</string>
+    <string name="update_update_available_header">اپ ڈیٹ دستیاب ہے</string>
+    <string name="update_updating_header">AdAway اپ ڈیٹ ہو رہا ہے</string>
+    <string name="update_update_button">ابھی اپ ڈیٹ کریں</string>
+    <string name="update_complete_label">مکمل</string>
+    <string name="update_last_changelog_title">آخری تبدیلیاں</string>
+    <string name="update_new_changelog_title">تبدیلیوں کی فہرست</string>
+    <string name="update_download_failed">اپ ڈیٹ ڈاؤن لوڈ نہیں ہو سکی۔</string>
+    <string name="update_install_failed">اپ ڈیٹ انسٹال نہیں ہو سکی۔</string>
+    <string name="pref_update_check_now_update_available">نیا ورژن دستیاب ہے: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">کوئی اپ ڈیٹ دستیاب نہیں</string>
+    <string name="pref_update_check_now_failed">اپ ڈیٹ سرور تک رسائی نہیں ہو سکی</string>
+    <string name="pref_update_install_summary">ورژن %1$s انسٹال کریں</string>
+    <string name="notification_channel_app_updates">ایپ کی اپ ڈیٹس</string>
+    <string name="notification_channel_app_updates_description">ایپ کا نیا ورژن دستیاب ہونے پر اطلاع۔ دوسری اطلاعات پر اثر ڈالے بغیر ایپ اپ ڈیٹ کے الرٹس بند کرنے کے لیے اس چینل کو خاموش کریں۔</string>
+    <string name="notification_app_update_title">ایپ کی اپ ڈیٹ دستیاب ہے</string>
+    <string name="notification_app_update_text">AdAway کا نیا ورژن ڈاؤن لوڈ کے لیے دستیاب ہے۔</string>
 </resources>

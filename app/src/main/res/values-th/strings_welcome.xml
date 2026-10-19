@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_root_missing_title">จำเป็นต้องรูท</string>
-    <string name="tv_welcome_intro_subtitle">ตัวช่วยสั้น ๆ นี้จะเปิดการบล็อกโฆษณาบนอุปกรณ์นี้</string>
+    <string name="welcome_first_step">ตัวช่วยตั้งค่า ขั้นตอนแรก</string>
+    <string name="welcome_second_step">ตัวช่วยตั้งค่า ขั้นตอนที่สอง</string>
+    <string name="welcome_third_step">ตัวช่วยตั้งค่า ขั้นตอนที่สาม</string>
+    <string name="welcome_fourth_step">ตัวช่วยตั้งค่า ขั้นตอนที่สี่</string>
+    <string name="welcome_method_header">ยินดีต้อนรับสู่ AdAway!</string>
+    <string name="welcome_method_summary">AdAway มีวิธีบล็อกโฆษณาให้เลือกสองวิธี เลือกวิธีที่คุณชอบ:</string>
+    <string name="welcome_root_method_title">การบล็อกโฆษณา\nแบบ root</string>
+    <string name="welcome_root_method_text1">เร็วกว่า</string>
+    <string name="welcome_root_method_text2">ประหยัดแบตเตอรี่</string>
+    <string name="welcome_root_method_text3">ต้องมี root</string>
+    <string name="welcome_vpn_method_title">การบล็อกโฆษณา\nแบบ VPN</string>
+    <string name="welcome_vpn_method_text1">ช้ากว่า</string>
+    <string name="welcome_vpn_method_text2">ทำงานในเบื้องหลัง</string>
+    <string name="welcome_vpn_method_text3">เข้ากันได้กับทุกเครื่อง</string>
+    <string name="welcome_root_missing_title">ต้องใช้ Android ที่เปิดสิทธิ์ root</string>
+    <string name="welcome_root_missile_description">ไม่พบไบนารี su หรือคุณไม่ได้อนุญาตสิทธิ์ root ให้ AdAway\n\nเหตุการณ์นี้อาจเกิดขึ้นเมื่ออุปกรณ์ของคุณไม่ได้เปิดสิทธิ์ root คุณสามารถดูวิธีเปิดสิทธิ์ root ให้อุปกรณ์ได้ที่ wiki.lineageos.org หรือเว็บไซต์ Android อื่น ๆ</string>
+    <string name="welcome_vpn_alwayson_title">เปิด VPN แบบเปิดตลอดเวลาอยู่</string>
+    <string name="welcome_vpn_alwayson_description">AdAway ตรวจพบว่ามี VPN อื่นเปิดการตั้งค่า “VPN แบบเปิดตลอดเวลา” อยู่\n\nทำให้ AdAway ขอสิทธิ์ใช้ VPN ไม่ได้ โปรดปิด “VPN แบบเปิดตลอดเวลา” ของ VPN นั้น แล้วลองอีกครั้ง</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway ขอสิทธิ์ใช้ VPN ไม่สำเร็จ\n\nอาจเป็นเพราะมี VPN อื่นเปิดการตั้งค่า “VPN แบบเปิดตลอดเวลา” อยู่ โปรดตรวจสอบว่ามี VPN ใดเปิดการตั้งค่านี้หรือไม่ และปิดก่อนลองอีกครั้ง</string>
+    <string name="welcome_vpn_alwayson_settings_action">เปิดการตั้งค่า “VPN”</string>
+    <string name="welcome_method_pro_logo">ข้อดี</string>
+    <string name="welcome_method_con_logo">ข้อเสีย</string>
+    <string name="welcome_sync_header">กำลังซิงค์</string>
+    <string name="welcome_synced_header">ซิงค์แล้ว!</string>
+    <string name="welcome_sync_summary">AdAway ดาวน์โหลดรายชื่อเครือข่ายโฆษณาที่ต้องบล็อกจากแหล่งข้อมูลออนไลน์ คุณปรับแต่งได้ภายหลังในการตั้งค่า</string>
+    <string name="welcome_sync_retry_logo">ซิงค์อีกครั้ง</string>
+    <string name="welcome_sync_error">ซิงค์ไม่สำเร็จ: %1$s ลองอีกครั้งตอนนี้หรือไม่</string>
+    <string name="welcome_sync_notifications">แอปสามารถส่งการแจ้งเตือนเพื่อแสดงสถานะและปุ่มควบคุมการบล็อกโฆษณา รวมถึงแจ้งเมื่อมีอัปเดตแอป (ไม่กี่ครั้งต่อปี) เปิดใช้งานหากต้องการให้แอปเป็นเวอร์ชันล่าสุดอยู่เสมอ</string>
+    <string name="welcome_sync_leave_early_title">การซิงค์ยังไม่เสร็จ</string>
+    <string name="welcome_sync_leave_early_message">รายการบล็อกยังดาวน์โหลดไม่เสร็จ คุณจะดำเนินการต่อตอนนี้และปล่อยให้ดาวน์โหลดต่อในเบื้องหลัง หรือรอที่หน้านี้จนเสร็จก็ได้</string>
+    <string name="welcome_sync_leave_early_wait">รอ</string>
+    <string name="welcome_sync_leave_early_continue">ดำเนินการต่อ</string>
+    <string name="welcome_battery_header">รับการปกป้องต่อเนื่องในเบื้องหลัง</string>
+    <string name="welcome_battery_summary">Android อาจหยุด VPN ของ AdAway ในเบื้องหลังเพื่อประหยัดพลังงาน ซึ่งอาจทำให้การบล็อกโฆษณาหยุดทำงานโดยไม่แจ้งให้ทราบ อนุญาตให้ AdAway ไม่ต้องใช้การเพิ่มประสิทธิภาพแบตเตอรี่ เพื่อให้ทำงานต่อเนื่อง</string>
+    <string name="welcome_battery_action">อนุญาต</string>
+    <string name="welcome_battery_granted">อนุญาตแล้ว ✓</string>
+    <string name="welcome_battery_footnote_prefix">คุณเปลี่ยนการตั้งค่านี้ได้ทุกเมื่อจาก</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>การตั้งค่า Android</item>
+        <item>แอป</item>
+        <item>AdAway</item>
+        <item>แบตเตอรี่</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">อีกเรื่องหนึ่ง: ตัวจัดการแบตเตอรี่ของโทรศัพท์คุณเอง</string>
+    <string name="welcome_oem_battery_summary">โทรศัพท์บางยี่ห้อมีตัวจัดการแบตเตอรี่ของตัวเองที่อาจบล็อก AdAway ด้วย สิ่งที่ควรตรวจสอบในเครื่องของคุณมีดังนี้:</string>
+    <string name="welcome_oem_battery_action">เปิดข้อมูลแอป</string>
+    <string name="welcome_oem_battery_open_failed">เปิดหน้าข้อมูลแอปไม่ได้ ให้เปิดเองจากการตั้งค่า Android → แอป → AdAway</string>
+    <string name="welcome_oem_battery_disclaimer">นี่เป็นเพียงแนวทางทั่วไป ไม่ใช่คู่มือที่ตรงเป๊ะ ข้อความและตำแหน่งของเมนูอาจต่างกันไปตามรุ่นโทรศัพท์และเวอร์ชัน Android</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>ข้อมูลแอป</item>
+        <item>แบตเตอรี่</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">มองหาเมนูประมาณ “ข้อจำกัดการใช้งานในเบื้องหลัง” › “แอปที่ไม่เข้าสู่โหมดสลีป” แล้วเพิ่ม AdAway ในรายการนั้น</string>
+    <string name="welcome_oem_battery_secondary_oneui">ตรวจสอบด้วยว่ามีการตั้งค่า “การเพิ่มประสิทธิภาพอัตโนมัติ” หรือไม่ หากมี ให้ปิด “รีสตาร์ทเมื่อจำเป็น”</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>ข้อมูลแอป</item>
+        <item>ตัวประหยัดแบตเตอรี่</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">เลือก “ไม่มีข้อจำกัด”</string>
+    <string name="welcome_oem_battery_secondary_miui">เปิด “เริ่มอัตโนมัติ” ด้วย (ในเวอร์ชันใหม่คือ “เริ่มอัตโนมัติในเบื้องหลัง”)</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>ข้อมูลแอป</item>
+        <item>การใช้แบตเตอรี่</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">เลือก “อนุญาตกิจกรรมเบื้องหลัง” (บางรุ่นแสดงเป็น “ไม่มีข้อจำกัด”)</string>
+    <string name="welcome_oem_battery_secondary_coloros">มองหาสวิตช์ “เปิดอัตโนมัติ” ของ AdAway ด้วย (มักอยู่ใน การตั้งค่า › แอป) เพื่อให้แอปเริ่มทำงานใหม่ได้เองหลังถูกบังคับหยุด</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>ข้อมูลแอป</item>
+        <item>แบตเตอรี่</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">มองหา “การเปิดแอป” ปิด “จัดการอัตโนมัติ” แล้วเปิดทั้ง 3 ตัวเลือก ได้แก่ “เปิดอัตโนมัติ” “เปิดโดยแอปอื่น” และ “ทำงานในเบื้องหลัง”</string>
+    <string name="welcome_oem_battery_secondary_emui">ล็อก AdAway ในหน้าแอปล่าสุดด้วย (ปัดการ์ดของแอปลงจนเห็นไอคอนแม่กุญแจ)</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>ข้อมูลแอป</item>
+        <item>การใช้แบตเตอรี่</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">มองหาตัวเลือกการใช้พลังงานในเบื้องหลัง แล้วเลือก “ไม่จำกัดการใช้พลังงานในเบื้องหลัง” (ไม่ใช่ “การควบคุมอัจฉริยะ”)</string>
+    <string name="welcome_oem_battery_secondary_funtouch">มองหาการตั้งค่า “เริ่มอัตโนมัติ” ของ AdAway ด้วย มักอยู่ใน การตั้งค่า › แอปพลิเคชัน</string>
+    <string name="welcome_oem_battery_label_generic">ยี่ห้ออื่น</string>
+    <string name="welcome_oem_battery_tip_generic">มองหาการตั้งค่าแบตเตอรี่หรือกิจกรรมเบื้องหลังในข้อมูลแอป และตรวจสอบว่า AdAway ไม่ได้ถูกจำกัด</string>
+    <string name="welcome_back_button">กลับ</string>
+    <string name="welcome_next_button">ถัดไป</string>
+    <string name="welcome_finish_button">เสร็จสิ้น</string>
+    <string name="tv_welcome_intro_subtitle">ตัวช่วยสั้น ๆ นี้จะเปิดการบล็อกโฆษณาบนอุปกรณ์เครื่องนี้</string>
     <string name="tv_welcome_start_button">เริ่มต้นใช้งาน</string>
-    <string name="tv_welcome_method_header">เลือกวิธีการบล็อกของคุณ</string>
+    <string name="tv_welcome_method_header">เลือกวิธีบล็อกโฆษณา</string>
     <string name="tv_welcome_method_root_button">ใช้ root</string>
-    <string name="tv_welcome_method_root_body">เร็วกว่าและประหยัดแบตเตอรี่มากกว่า ต้องใช้อุปกรณ์ที่รูทแล้ว</string>
+    <string name="tv_welcome_method_root_body">เร็วกว่าและประหยัดแบตเตอรี่ ต้องใช้อุปกรณ์ที่เปิดสิทธิ์ root</string>
     <string name="tv_welcome_method_vpn_button">ใช้ VPN</string>
-    <string name="tv_welcome_method_vpn_body">ทำงานได้โดยไม่ต้องรูท เข้ากันได้กับอุปกรณ์ Android TV ทุกรุ่น</string>
+    <string name="tv_welcome_method_vpn_body">ใช้งานได้โดยไม่ต้องมี root และเข้ากันได้กับอุปกรณ์ Android TV ทุกเครื่อง</string>
     <string name="tv_welcome_activate_header">เปิดการบล็อกโฆษณา</string>
-    <string name="tv_welcome_activate_body">นี่คือ VPN ในเครื่อง: กรองโฆษณาบนอุปกรณ์นี้โดยตรง โดยไม่ส่งทราฟฟิกของคุณผ่านเซิร์ฟเวอร์ภายนอก</string>
+    <string name="tv_welcome_activate_body">นี่คือ VPN ภายในเครื่อง ซึ่งกรองโฆษณาบนอุปกรณ์เครื่องนี้ โดยไม่ส่งข้อมูลของคุณผ่านเซิร์ฟเวอร์ภายนอก</string>
 </resources>

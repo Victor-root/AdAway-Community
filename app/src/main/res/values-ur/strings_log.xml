@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">لاگ ریکارڈنگ آن / آف کریں</string>
+    <string name="log_start_recording">درخواستیں لاگ کرنا شروع کرنے کے لیے ریکارڈ دبائیں، ویب براؤز کریں یا ایپس استعمال کریں، پھر لاگ ریفریش کرنے کے لیے واپس جائیں یا سوائپ کریں۔</string>
+    <string name="log_blocked_requests_ignored">\n\nبلاک شدہ درخواستیں لاگ نہیں ہوں گی۔ اگر انہیں بھی لاگ کرنا چاہتے ہیں تو پہلے اشتہارات کی بلاکنگ غیر فعال کریں۔</string>
+    <string name="log_sort">ڈومینز ترتیب دیں</string>
+    <string name="log_clear">لاگ صاف کریں</string>
+    <string name="log_sort_alphabetical">حروف تہجی کے مطابق</string>
+    <string name="log_sort_top_level_domain">ٹاپ لیول ڈومین کے مطابق</string>
+    <string name="log_block">اندراج کو بلاک فہرست میں شامل کریں</string>
+    <string name="log_allow">اندراج کو اجازت کی فہرست میں شامل کریں</string>
+    <string name="log_redirect">اندراج کو ری ڈائریکٹ فہرست میں شامل کریں</string>
+    <string name="log_redirect_dialog_title">ڈومین ری ڈائریکٹ کریں</string>
+    <string name="log_capture_failed">DNS کیپچر شروع نہیں ہو سکا۔</string>
     <string name="log_start_recording_button">ریکارڈنگ شروع کریں</string>
     <string name="log_start_recording_vpn_inactive">ریکارڈنگ شروع کریں (VPN فعال نہیں)</string>
     <string name="log_stop_recording">ریکارڈنگ روکیں</string>

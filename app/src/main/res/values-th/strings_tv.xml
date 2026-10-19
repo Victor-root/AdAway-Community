@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">เพิ่มไปยังรายการที่อนุญาต</string>
-    <string name="tv_dialog_add_to_blocked">เพิ่มไปยังรายการที่บล็อก</string>
-    <string name="tv_dialog_remove_from_allowed">นำออกจากรายการที่อนุญาต</string>
-    <string name="tv_dialog_remove_from_blocked">นำออกจากรายการที่บล็อก</string>
+    <string name="tv_dialog_add_to_allowed">เพิ่มในรายการอนุญาต</string>
+    <string name="tv_dialog_add_to_blocked">เพิ่มในรายการบล็อก</string>
+    <string name="tv_dialog_remove_from_allowed">นำออกจากรายการอนุญาต</string>
+    <string name="tv_dialog_remove_from_blocked">นำออกจากรายการบล็อก</string>
     <string name="tv_dialog_copy_hostname">คัดลอกชื่อโฮสต์</string>
-    <string name="tv_log_entry_status_description">สถานะโดเมน</string>
+    <string name="tv_log_entry_status_description">สถานะของโดเมน</string>
     <string name="tv_button_theme_light">โหมดสว่าง</string>
     <string name="tv_button_theme_dark">โหมดมืด</string>
-    <string name="tv_lists_empty">ยังไม่มีรายการในรายการนี้</string>
+    <string name="tv_lists_empty">รายการนี้ยังว่างอยู่</string>
     <string name="tv_dialog_search">ค้นหา</string>
 </resources>

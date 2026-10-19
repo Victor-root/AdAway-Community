@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">प्राथमिकताहरू</string>
+    <string name="pref_general_category">सामान्य</string>
+    <string name="pref_dark_theme">गाढा थिम</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>उज्यालो</item>
+        <item>गाढा</item>
+        <item>प्रणालीको पूर्वनिर्धारित</item>
     </string-array>
+    <string name="pref_update_configuration">स्वचालित अपडेट</string>
+    <string name="pref_language">भाषा</string>
+    <string name="pref_language_system">प्रणालीको भाषा</string>
+    <string name="pref_ad_block_category">विज्ञापन ब्लक गर्ने सुविधा</string>
+    <string name="pref_root_ad_blocker_configuration">रुटमा आधारित विज्ञापन ब्लकर</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN मा आधारित विज्ञापन ब्लकर</string>
+    <string name="pref_enable_ipv6">IPv6 समर्थन सक्षम पार्नुहोस्</string>
+    <string name="pref_backup_restore">ब्लक नियमहरूको ब्याकअप / पुनर्स्थापना</string>
+    <string name="pref_backup_restore_title">ब्याकअप र पुनर्स्थापना</string>
+    <string name="pref_backup">ब्याकअप</string>
+    <string name="pref_backup_summary">तपाईंका ब्लक नियमहरूको ब्याकअप बाह्य भण्डारणमा राख्नुहोस्</string>
+    <string name="pref_restore">पुनर्स्थापना</string>
+    <string name="pref_restore_summary">ब्याकअप फाइलबाट तपाईंका ब्लक नियमहरू पुनर्स्थापना गर्नुहोस्</string>
+    <string name="import_success">तपाईंको बाह्य भण्डारणबाट ब्याकअप सफलतापूर्वक आयात गरियो।</string>
+    <string name="import_failed">ब्याकअप आयात गर्न सकिएन। यसको ढाँचा सही छ?</string>
+    <string name="export_success">ब्याकअप तपाईंको बाह्य भण्डारणमा “%s” फाइलमा सफलतापूर्वक निर्यात गरियो।</string>
+    <string name="export_failed">ब्याकअप फाइल “%s” निर्यात गर्न सकिएन।</string>
+    <string name="pref_update_title">अपडेट</string>
+    <string name="pref_update_enable_notifications">सूचनाहरू असक्षम छन्</string>
+    <string name="pref_update_enable_notifications_summary">एपका सूचनाहरू देखिने छैनन्। सक्षम पार्न ट्याप गर्नुहोस्।</string>
+    <string name="pref_update_app_category">एपको अपडेट</string>
+    <string name="pref_update_check_app_startup">सुरु हुँदा अपडेट जाँच गर्नुहोस्</string>
+    <string name="pref_update_check_app_daily">समय समयमा अपडेट जाँच गर्नुहोस्</string>
+    <string name="pref_update_check_now">अहिले जाँच गर्नुहोस्</string>
+    <string name="pref_update_install">अहिले अपडेट गर्नुहोस्</string>
+    <string name="pref_update_hosts_category">hosts को अपडेट</string>
+    <string name="pref_update_check">सुरु हुँदा अपडेट जाँच गर्नुहोस्</string>
+    <string name="pref_update_check_hosts_daily">समय समयमा अपडेट जाँच गर्नुहोस्</string>
+    <string name="pref_update_sync_on_update">अपडेट हुँदा सिङ्क गर्नुहोस्</string>
+    <string name="pref_update_sync_unmetered_only">मिटर नगरिएको नेटवर्कमा मात्र सिङ्क गर्नुहोस्</string>
+    <string name="pref_vpn_service_on_boot">सुरु हुँदा सक्षम पार्नुहोस्</string>
+    <string name="pref_vpn_service_monitor">जडानको निगरानी गर्नुहोस्</string>
+    <string name="pref_vpn_service_monitor_description">VPN विच्छेद भएमा पुन: सुरु गर्न नेटवर्कको अवस्था समय समयमा जाँच गरिन्छ।</string>
+    <string name="pref_vpn_excluded_apps">बहिष्कृत एपहरू</string>
+    <string name="pref_vpn_excluded_apps_description">कुन एपहरूले VPN प्रयोग गर्नु हुँदैन भनेर छान्नुहोस्, ताकि तिनका जडानहरू ब्लक नहुन्।</string>
+    <string name="pref_vpn_exclude_system_apps">प्रणालीका एपहरू बहिष्कार गर्नुहोस्</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>कुनै पनि होइन</item>
+        <item>ब्राउजर बाहेक सबै</item>
+        <item>सबै</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS सर्भरहरू</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>नेटवर्कका DNS सर्भरहरू</item>
+        <item>आफ्नै DNS सर्भरहरू</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">आफ्नै DNS सर्भरहरू</string>
+    <string name="pref_vpn_dns_custom_summary">IP ठेगानाहरू, अल्पविरामले छुट्याइएका</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS सर्भरको ठेगाना अमान्य छ</string>
+    <string name="pref_vpn_doh">DNS over HTTPS सर्भर</string>
+    <string name="pref_vpn_doh_custom">आफ्नै ठेगाना</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS को ठेगाना</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS को ठेगाना अमान्य छ</string>
+    <string name="pref_vpn_exclude_user_apps">प्रयोगकर्ताका एपहरू बहिष्कार गर्नुहोस्</string>
+    <string name="pref_vpn_exclude_user_apps_activity">बहिष्कृत एपहरू</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">सबै चयन गर्नुहोस्</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">सबै चयन हटाउनुहोस्</string>
+    <string name="pref_vpn_exclude_user_apps_icon">एपको आइकन</string>
     <string name="pref_vpn_reset">VPN रिसेट गर्नुहोस्</string>
-    <string name="pref_vpn_reset_description">VPN जडानलाई सुरुदेखि पुनर्निर्माण गर्नुहोस्। VPN ले काम गर्न छाडेमा (इन्टरनेट पहुँच नभएमा वा DNS त्रुटिहरू) यो प्रयोग गर्नुहोस्।</string>
-    <string name="pref_vpn_reset_done">VPN जडान पुनर्निर्माण गरियो।</string>
+    <string name="pref_vpn_reset_description">VPN जडान सुरुबाट नयाँ गरी बनाउनुहोस्। VPN ले काम गर्न छाडेमा (इन्टरनेट नचल्ने वा DNS त्रुटि आउने) यसको प्रयोग गर्नुहोस्।</string>
+    <string name="pref_vpn_reset_done">VPN जडान पुन: बनाइयो।</string>
     <string name="pref_vpn_reset_not_running">VPN चलिरहेको छैन।</string>
-    <string name="pref_vpn_diagnostic_log">निदान लग</string>
-    <string name="pref_vpn_diagnostic_log_description">हालैका त्रुटिहरू र VPN घटनाहरू हेर्नुहोस्, प्रतिलिपि गर्नुहोस् वा साझा गर्नुहोस्। समस्या रिपोर्ट गर्दा उपयोगी।</string>
-    <string name="pref_vpn_diagnostic_log_empty">अहिलेसम्म कुनै घटना रेकर्ड गरिएको छैन।</string>
-    <string name="pref_vpn_diagnostic_log_share">निदान लग साझा गर्नुहोस्</string>
-    <string name="pref_vpn_diagnostic_log_copy">प्रतिलिपि गर्नुहोस्</string>
-    <string name="pref_vpn_diagnostic_log_copied">निदान लग क्लिपबोर्डमा प्रतिलिपि गरियो।</string>
-    <string name="pref_vpn_diagnostic_log_clear">निदान लग खाली गर्नुहोस्</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">रेकर्ड गरिएका घटनाहरू मेट्नुहोस्। सफा ट्रेस लिन समस्या पुनः उत्पन्न गर्नुअघि यो गर्नुहोस्।</string>
-    <string name="pref_vpn_diagnostic_log_cleared">निदान लग खाली गरियो।</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_vpn_diagnostic_log_enabled">डायग्नोस्टिक लग रेकर्ड गर्नुहोस्</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">समस्या दोहोर्‍याउनुअघि यसलाई सुरु गर्नुहोस्, त्यसपछि तल निर्यात गर्नुहोस्। पुराना उपकरणहरू अलि ढिला हुन सक्छन्। VPN का प्राविधिक घटनाहरू मात्र रेकर्ड हुन्छन्, ब्राउजिङ इतिहास वा व्यक्तिगत डेटा कहिल्यै होइन।</string>
+    <string name="pref_vpn_diagnostic_log">डायग्नोस्टिक लग</string>
+    <string name="pref_vpn_diagnostic_log_description">हालका त्रुटि र VPN का घटनाहरू हेर्नुहोस्, कपी गर्नुहोस् वा सेयर गर्नुहोस्। समस्या रिपोर्ट गर्दा उपयोगी हुन्छ।</string>
+    <string name="pref_vpn_diagnostic_log_empty">अहिलेसम्म कुनै घटना रेकर्ड भएको छैन। माथि “डायग्नोस्टिक लग रेकर्ड गर्नुहोस्” सुरु गर्नुहोस्, त्यसपछि समस्या दोहोर्‍याउने प्रयास गर्नुहोस्।</string>
+    <string name="pref_vpn_diagnostic_log_share">सेयर गर्नुहोस्</string>
+    <string name="pref_vpn_diagnostic_log_share_title">डायग्नोस्टिक लग सेयर गर्नुहोस्</string>
+    <string name="pref_vpn_diagnostic_log_copy">कपी गर्नुहोस्</string>
+    <string name="pref_vpn_diagnostic_log_copied">डायग्नोस्टिक लग क्लिपबोर्डमा कपी गरियो।</string>
+    <string name="pref_vpn_diagnostic_log_clear">डायग्नोस्टिक लग खाली गर्नुहोस्</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">रेकर्ड गरिएका घटनाहरू मेटाउनुहोस्। स्पष्ट विवरण पाउन समस्या दोहोर्‍याउनुअघि यसो गर्नुहोस्।</string>
+    <string name="pref_vpn_diagnostic_log_cleared">डायग्नोस्टिक लग खाली गरियो।</string>
+    <string name="pref_root_open_hosts">hosts फाइल खोल्नुहोस्</string>
+    <string name="hosts_file_unreadable">hosts फाइल पढ्न सकिएन।</string>
+    <string name="pref_hosts_redirection_summary">ब्लक गरिएका होस्टहरूलाई कहाँ रिडिरेक्ट गर्ने भन्ने तोक्नुहोस्</string>
+    <string name="pref_redirection_ipv4">IPv4 रिडिरेक्सन सेट गर्नुहोस्</string>
+    <string name="pref_redirection_ipv6">IPv6 रिडिरेक्सन सेट गर्नुहोस्</string>
+    <string name="pref_redirection_invalid">रिडिरेक्सन अमान्य छ</string>
+    <string name="pref_webserver_summary">स्थानीय वेब सर्भरले स्थानीय IP ठेगानाहरूमा सुनेर ब्लक गरिएका होस्टनामका अनुरोधहरूको जवाफ दिन्छ। ब्लक गरिएको जडानमा एप अड्कने समस्यामा यसले मद्दत गर्न सक्छ।</string>
+    <string name="pref_webserver_enabled">वेब सर्भर सक्षम पार्नुहोस्</string>
+    <string name="pref_webserver_test">वेब सर्भर परीक्षण गर्नुहोस्</string>
+    <string name="pref_webserver_certificate">स्व-हस्ताक्षरित प्रमाणपत्र इन्स्टल गर्नुहोस्</string>
+    <string name="pref_webserver_state_not_running">चलिरहेको छैन</string>
+    <string name="pref_webserver_state_checking">जाँच गरिँदै…</string>
+    <string name="pref_webserver_state_running_not_installed">चलिरहेको छ तर प्रमाणपत्र इन्स्टल गरिएको छैन</string>
+    <string name="pref_webserver_state_running_and_installed">चलिरहेको छ र प्रमाणपत्र इन्स्टल गरिएको छ</string>
+    <string name="pref_webserver_certificate_dialog_title">प्रमाणपत्र म्यानुअल रूपमा इन्स्टल गर्नुहोस्</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) देखि, एपहरूले प्रमाणपत्र अधिकारी (CA) स्वतः इन्स्टल गर्न सक्दैनन्।\n\n“सुरक्षा” सेटिङमा जानुहोस्, “एन्क्रिप्सन र क्रेडेन्सियल” अनि “प्रमाणपत्र इन्स्टल गर्नुहोस्” छान्नुहोस्। त्यहाँबाट “CA प्रमाणपत्र” छानेर भर्खरै निर्यात गरिएको प्रमाणपत्र फाइल चयन गर्नुहोस्।</string>
+    <string name="pref_webserver_certificate_dialog_action">“सुरक्षा” सेटिङ खोल्नुहोस्</string>
+    <string name="pref_webserver_certificate_failed">प्रमाणपत्र तयार गर्न सकिएन।</string>
+    <string name="webserver_error_title">वेब सर्भर सुरु भएन</string>
+    <string name="webserver_error_resources">यसका फाइल वा प्रमाणपत्र तयार गर्न सकिएन।</string>
+    <string name="webserver_error_address_in_use">अर्को एपले उपकरणका वेब पोर्टहरू (80 र 443) पहिल्यै प्रयोग गरिरहेको छ।</string>
+    <string name="webserver_error_start_failed">यो उपकरणमा सुरु हुन सकेन।</string>
+    <string name="pref_webserver_icon">खाली विज्ञापन ठाउँलाई एपको आइकनले बदल्नुहोस्</string>
 </resources>

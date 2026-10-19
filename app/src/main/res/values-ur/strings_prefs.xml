@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">ترجیحات</string>
+    <string name="pref_general_category">عمومی</string>
+    <string name="pref_dark_theme">ڈارک تھیم</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>لائٹ</item>
+        <item>ڈارک</item>
+        <item>سسٹم ڈیفالٹ</item>
     </string-array>
+    <string name="pref_update_configuration">خودکار اپ ڈیٹس</string>
+    <string name="pref_language">زبان</string>
+    <string name="pref_language_system">سسٹم کی زبان</string>
+    <string name="pref_ad_block_category">اشتہارات کی بلاکنگ</string>
+    <string name="pref_root_ad_blocker_configuration">روٹ پر مبنی اشتہار بلاکر</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN پر مبنی اشتہار بلاکر</string>
+    <string name="pref_enable_ipv6">IPv6 سپورٹ فعال کریں</string>
+    <string name="pref_backup_restore">بلاک اصولوں کا بیک اپ / بحالی</string>
+    <string name="pref_backup_restore_title">بیک اپ اور بحالی</string>
+    <string name="pref_backup">بیک اپ</string>
+    <string name="pref_backup_summary">اپنے بلاک اصولوں کا بیرونی اسٹوریج میں بیک اپ بنائیں</string>
+    <string name="pref_restore">بحال کریں</string>
+    <string name="pref_restore_summary">بیک اپ فائل سے اپنے بلاک اصول بحال کریں</string>
+    <string name="import_success">بیک اپ آپ کے بیرونی اسٹوریج سے کامیابی کے ساتھ درآمد ہو گیا۔</string>
+    <string name="import_failed">بیک اپ درآمد نہیں ہو سکا۔ کیا اس کی فارمیٹ درست ہے؟</string>
+    <string name="export_success">بیک اپ آپ کے بیرونی اسٹوریج میں فائل “%s” کے طور پر کامیابی کے ساتھ برآمد ہو گیا۔</string>
+    <string name="export_failed">بیک اپ فائل “%s” برآمد نہیں ہو سکی۔</string>
+    <string name="pref_update_title">اپ ڈیٹس</string>
+    <string name="pref_update_enable_notifications">اطلاعات بند ہیں</string>
+    <string name="pref_update_enable_notifications_summary">ایپ کی اطلاعات نہیں دکھائی جائیں گی۔ انہیں فعال کرنے کے لیے تھپتھپائیں۔</string>
+    <string name="pref_update_app_category">ایپ کی اپ ڈیٹس</string>
+    <string name="pref_update_check_app_startup">شروع ہونے پر اپ ڈیٹ چیک کریں</string>
+    <string name="pref_update_check_app_daily">وقفے وقفے سے اپ ڈیٹ چیک کریں</string>
+    <string name="pref_update_check_now">ابھی چیک کریں</string>
+    <string name="pref_update_install">ابھی اپ ڈیٹ کریں</string>
+    <string name="pref_update_hosts_category">hosts کی اپ ڈیٹس</string>
+    <string name="pref_update_check">شروع ہونے پر اپ ڈیٹ چیک کریں</string>
+    <string name="pref_update_check_hosts_daily">وقفے وقفے سے اپ ڈیٹ چیک کریں</string>
+    <string name="pref_update_sync_on_update">اپ ڈیٹ پر مطابقت پذیری کریں</string>
+    <string name="pref_update_sync_unmetered_only">صرف غیر محدود نیٹ ورک پر مطابقت پذیری کریں</string>
+    <string name="pref_vpn_service_on_boot">شروع ہونے پر فعال کریں</string>
+    <string name="pref_vpn_service_monitor">کنکشن کی نگرانی</string>
+    <string name="pref_vpn_service_monitor_description">کنکشن ٹوٹنے پر VPN دوبارہ شروع کرنے کے لیے نیٹ ورک کی حالت وقفے وقفے سے جانچی جاتی ہے۔</string>
+    <string name="pref_vpn_excluded_apps">خارج کردہ ایپس</string>
+    <string name="pref_vpn_excluded_apps_description">وہ ایپس منتخب کریں جو VPN استعمال نہ کریں، تاکہ ان کے کنکشن بلاک نہ ہوں۔</string>
+    <string name="pref_vpn_exclude_system_apps">سسٹم ایپس کو خارج کریں</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>کوئی نہیں</item>
+        <item>براؤزرز کے علاوہ سب</item>
+        <item>سب</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS سرورز</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>نیٹ ورک کے DNS سرورز</item>
+        <item>حسب ضرورت DNS سرورز</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">حسب ضرورت DNS سرورز</string>
+    <string name="pref_vpn_dns_custom_summary">IP ایڈریسز، کوما (،) سے الگ کیے ہوئے</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS سرور کا ایڈریس درست نہیں ہے</string>
+    <string name="pref_vpn_doh">DNS over HTTPS سرور</string>
+    <string name="pref_vpn_doh_custom">حسب ضرورت ایڈریس</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS ایڈریس</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS ایڈریس درست نہیں ہے</string>
+    <string name="pref_vpn_exclude_user_apps">صارف کی ایپس کو خارج کریں</string>
+    <string name="pref_vpn_exclude_user_apps_activity">خارج کردہ ایپس</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">سب منتخب کریں</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">سب کا انتخاب ختم کریں</string>
+    <string name="pref_vpn_exclude_user_apps_icon">ایپ کا آئیکن</string>
     <string name="pref_vpn_reset">VPN ری سیٹ کریں</string>
-    <string name="pref_vpn_reset_description">VPN کنکشن کو نئے سرے سے دوبارہ بنائیں۔ اگر VPN کام کرنا بند کر دے (انٹرنیٹ تک رسائی نہ ہو یا DNS کی خرابیاں ہوں) تو اسے استعمال کریں۔</string>
-    <string name="pref_vpn_reset_done">VPN کنکشن دوبارہ بنا دیا گیا۔</string>
+    <string name="pref_vpn_reset_description">VPN کنکشن کو شروع سے دوبارہ بنائیں۔ اگر VPN کام کرنا بند کر دے (انٹرنیٹ تک رسائی نہ ہو یا DNS کی خرابیاں آئیں) تو اسے استعمال کریں۔</string>
+    <string name="pref_vpn_reset_done">VPN کنکشن دوبارہ بن گیا۔</string>
     <string name="pref_vpn_reset_not_running">VPN چل نہیں رہا۔</string>
+    <string name="pref_vpn_diagnostic_log_enabled">تشخیصی لاگ ریکارڈ کریں</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">مسئلہ دوبارہ پیدا کرنے سے پہلے اسے آن کریں، پھر نیچے سے برآمد کریں۔ پرانے آلات کو قدرے سست کر سکتا ہے۔ صرف VPN کے تکنیکی واقعات ریکارڈ ہوتے ہیں، براؤزنگ کی تاریخ یا ذاتی ڈیٹا کبھی نہیں۔</string>
     <string name="pref_vpn_diagnostic_log">تشخیصی لاگ</string>
-    <string name="pref_vpn_diagnostic_log_description">حالیہ خرابیوں اور VPN واقعات کو دیکھیں، کاپی کریں یا شیئر کریں۔ کسی مسئلے کی اطلاع دیتے وقت مفید۔</string>
-    <string name="pref_vpn_diagnostic_log_empty">ابھی تک کوئی واقعہ ریکارڈ نہیں ہوا۔</string>
-    <string name="pref_vpn_diagnostic_log_share">تشخیصی لاگ شیئر کریں</string>
+    <string name="pref_vpn_diagnostic_log_description">حالیہ خرابیاں اور VPN کے واقعات دیکھیں، کاپی کریں یا شیئر کریں۔ مسئلے کی اطلاع دیتے وقت مفید ہے۔</string>
+    <string name="pref_vpn_diagnostic_log_empty">ابھی تک کوئی واقعہ ریکارڈ نہیں ہوا۔ اوپر “تشخیصی لاگ ریکارڈ کریں” آن کریں، پھر مسئلہ دوبارہ پیدا کرنے کی کوشش کریں۔</string>
+    <string name="pref_vpn_diagnostic_log_share">شیئر کریں</string>
+    <string name="pref_vpn_diagnostic_log_share_title">تشخیصی لاگ شیئر کریں</string>
     <string name="pref_vpn_diagnostic_log_copy">کاپی کریں</string>
     <string name="pref_vpn_diagnostic_log_copied">تشخیصی لاگ کلپ بورڈ پر کاپی ہو گیا۔</string>
     <string name="pref_vpn_diagnostic_log_clear">تشخیصی لاگ صاف کریں</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">ریکارڈ شدہ واقعات کو حذف کریں۔ صاف ٹریس حاصل کرنے کے لیے کسی مسئلے کو دوبارہ پیدا کرنے سے پہلے ایسا کریں۔</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">ریکارڈ شدہ واقعات حذف کریں۔ صاف ٹریس حاصل کرنے کے لیے مسئلہ دوبارہ پیدا کرنے سے پہلے یہ کریں۔</string>
     <string name="pref_vpn_diagnostic_log_cleared">تشخیصی لاگ صاف ہو گیا۔</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_root_open_hosts">hosts فائل کھولیں</string>
+    <string name="hosts_file_unreadable">hosts فائل پڑھی نہیں جا سکی۔</string>
+    <string name="pref_hosts_redirection_summary">طے کریں کہ بلاک شدہ ہوسٹس کو کہاں ری ڈائریکٹ کرنا ہے</string>
+    <string name="pref_redirection_ipv4">IPv4 ری ڈائریکشن ترتیب دیں</string>
+    <string name="pref_redirection_ipv6">IPv6 ری ڈائریکشن ترتیب دیں</string>
+    <string name="pref_redirection_invalid">ری ڈائریکشن درست نہیں ہے</string>
+    <string name="pref_webserver_summary">مقامی ویب سرور مقامی IP ایڈریسز پر سنتا ہے تاکہ بلاک شدہ ہوسٹ نیم کی درخواستوں کا جواب دے سکے۔ اس سے بلاک شدہ کنکشن پر ایپ کے رک جانے کی مشکل میں مدد مل سکتی ہے۔</string>
+    <string name="pref_webserver_enabled">ویب سرور فعال کریں</string>
+    <string name="pref_webserver_test">ویب سرور آزمائیں</string>
+    <string name="pref_webserver_certificate">خود دستخطی سرٹیفکیٹ انسٹال کریں</string>
+    <string name="pref_webserver_state_not_running">چل نہیں رہا</string>
+    <string name="pref_webserver_state_checking">جانچ ہو رہی ہے…</string>
+    <string name="pref_webserver_state_running_not_installed">چل رہا ہے لیکن سرٹیفکیٹ انسٹال نہیں ہے</string>
+    <string name="pref_webserver_state_running_and_installed">چل رہا ہے اور سرٹیفکیٹ انسٹال ہے</string>
+    <string name="pref_webserver_certificate_dialog_title">سرٹیفکیٹ کی دستی انسٹالیشن</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) سے ایپس سرٹیفکیٹ اتھارٹی (CA) خود بخود انسٹال نہیں کر سکتیں۔\n\n“سیکیورٹی” کی ترتیبات میں جائیں، پھر “خفیہ کاری اور اسناد” اور اس کے بعد “سرٹیفکیٹ انسٹال کریں” پر جائیں۔ وہاں “CA سرٹیفکیٹ” منتخب کریں اور ابھی برآمد کی گئی سرٹیفکیٹ فائل چنیں۔</string>
+    <string name="pref_webserver_certificate_dialog_action">“سیکیورٹی” کی ترتیبات کھولیں</string>
+    <string name="pref_webserver_certificate_failed">سرٹیفکیٹ تیار نہیں کیا جا سکا۔</string>
+    <string name="webserver_error_title">ویب سرور شروع نہیں ہوا</string>
+    <string name="webserver_error_resources">اس کی فائلیں یا اس کا سرٹیفکیٹ تیار نہیں کیا جا سکا۔</string>
+    <string name="webserver_error_address_in_use">کوئی دوسری ایپ آلے کے ویب پورٹس (80 اور 443) پہلے ہی استعمال کر رہی ہے۔</string>
+    <string name="webserver_error_start_failed">یہ اس آلے پر شروع نہیں ہو سکا۔</string>
+    <string name="pref_webserver_icon">اشتہار کی خالی جگہ کو ایپ کے آئیکن سے بدلیں</string>
 </resources>

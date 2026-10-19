@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">اجازت شدہ میں شامل کریں</string>
-    <string name="tv_dialog_add_to_blocked">مسدود میں شامل کریں</string>
-    <string name="tv_dialog_remove_from_allowed">اجازت شدہ سے ہٹائیں</string>
-    <string name="tv_dialog_remove_from_blocked">مسدود سے ہٹائیں</string>
-    <string name="tv_dialog_copy_hostname">ہوسٹ نام کاپی کریں</string>
-    <string name="tv_log_entry_status_description">ڈومین کی حیثیت</string>
+    <string name="tv_dialog_add_to_allowed">اجازت یافتہ میں شامل کریں</string>
+    <string name="tv_dialog_add_to_blocked">بلاک شدہ میں شامل کریں</string>
+    <string name="tv_dialog_remove_from_allowed">اجازت یافتہ سے ہٹائیں</string>
+    <string name="tv_dialog_remove_from_blocked">بلاک شدہ سے ہٹائیں</string>
+    <string name="tv_dialog_copy_hostname">ہوسٹ نیم کاپی کریں</string>
+    <string name="tv_log_entry_status_description">ڈومین کی حالت</string>
     <string name="tv_button_theme_light">لائٹ موڈ</string>
     <string name="tv_button_theme_dark">ڈارک موڈ</string>
-    <string name="tv_lists_empty">اس فہرست میں ابھی تک کوئی اندراج نہیں ہے۔</string>
-    <string name="tv_dialog_search">تلاش</string>
+    <string name="tv_lists_empty">اس فہرست میں ابھی کوئی اندراج نہیں ہے۔</string>
+    <string name="tv_dialog_search">تلاش کریں</string>
 </resources>

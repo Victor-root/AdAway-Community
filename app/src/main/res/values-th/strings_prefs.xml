@@ -1,27 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">การตั้งค่า</string>
-    <string name="pref_update_title">อัพเดท</string>
-    <string name="pref_update_check_now">ตรวจสอบทันที</string>
-    <string name="pref_update_install">อัปเดตทันที</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_general_category">ทั่วไป</string>
+    <string name="pref_dark_theme">ธีมมืด</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>สว่าง</item>
+        <item>มืด</item>
+        <item>ค่าเริ่มต้นของระบบ</item>
     </string-array>
+    <string name="pref_update_configuration">อัปเดตอัตโนมัติ</string>
+    <string name="pref_language">ภาษา</string>
+    <string name="pref_language_system">ภาษาของระบบ</string>
+    <string name="pref_ad_block_category">การบล็อกโฆษณา</string>
+    <string name="pref_root_ad_blocker_configuration">ตัวบล็อกโฆษณาแบบ root</string>
+    <string name="pref_vpn_ad_blocker_configuration">ตัวบล็อกโฆษณาแบบ VPN</string>
+    <string name="pref_enable_ipv6">เปิดใช้การรองรับ IPv6</string>
+    <string name="pref_backup_restore">สำรอง/กู้คืนกฎการบล็อก</string>
+    <string name="pref_backup_restore_title">สำรองและกู้คืน</string>
+    <string name="pref_backup">สำรองข้อมูล</string>
+    <string name="pref_backup_summary">สำรองกฎการบล็อกของคุณไปยังที่เก็บข้อมูลภายนอก</string>
+    <string name="pref_restore">กู้คืน</string>
+    <string name="pref_restore_summary">กู้คืนกฎการบล็อกของคุณจากไฟล์สำรอง</string>
+    <string name="import_success">นำเข้าข้อมูลสำรองจากที่เก็บข้อมูลภายนอกเรียบร้อยแล้ว</string>
+    <string name="import_failed">นำเข้าข้อมูลสำรองไม่สำเร็จ รูปแบบไฟล์ถูกต้องหรือไม่</string>
+    <string name="export_success">ส่งออกข้อมูลสำรองเป็นไฟล์ “%s” ในที่เก็บข้อมูลภายนอกเรียบร้อยแล้ว</string>
+    <string name="export_failed">ส่งออกไฟล์สำรอง “%s” ไม่สำเร็จ</string>
+    <string name="pref_update_title">การอัปเดต</string>
+    <string name="pref_update_enable_notifications">การแจ้งเตือนปิดอยู่</string>
+    <string name="pref_update_enable_notifications_summary">แอปจะไม่แสดงการแจ้งเตือน แตะเพื่อเปิดใช้งาน</string>
+    <string name="pref_update_app_category">การอัปเดตแอป</string>
+    <string name="pref_update_check_app_startup">ตรวจหาอัปเดตเมื่อเปิดแอป</string>
+    <string name="pref_update_check_app_daily">ตรวจหาอัปเดตเป็นระยะ</string>
+    <string name="pref_update_check_now">ตรวจสอบตอนนี้</string>
+    <string name="pref_update_install">อัปเดตตอนนี้</string>
+    <string name="pref_update_hosts_category">การอัปเดต hosts</string>
+    <string name="pref_update_check">ตรวจหาอัปเดตเมื่อเปิดแอป</string>
+    <string name="pref_update_check_hosts_daily">ตรวจหาอัปเดตเป็นระยะ</string>
+    <string name="pref_update_sync_on_update">ซิงค์เมื่อมีอัปเดต</string>
+    <string name="pref_update_sync_unmetered_only">ซิงค์เฉพาะเครือข่ายที่ไม่จำกัดปริมาณข้อมูล</string>
+    <string name="pref_vpn_service_on_boot">เปิดใช้งานเมื่อเปิดเครื่อง</string>
+    <string name="pref_vpn_service_monitor">ตรวจสอบการเชื่อมต่อ</string>
+    <string name="pref_vpn_service_monitor_description">ตรวจสอบสถานะเครือข่ายเป็นระยะ เพื่อเริ่ม VPN ใหม่เมื่อการเชื่อมต่อหลุด</string>
+    <string name="pref_vpn_excluded_apps">แอปที่ยกเว้น</string>
+    <string name="pref_vpn_excluded_apps_description">กำหนดแอปที่ไม่ต้องใช้ VPN เพื่อไม่ให้การเชื่อมต่อของแอปเหล่านั้นถูกบล็อก</string>
+    <string name="pref_vpn_exclude_system_apps">ยกเว้นแอประบบ</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>ไม่มี</item>
+        <item>ทั้งหมดยกเว้นเบราว์เซอร์</item>
+        <item>ทั้งหมด</item>
+    </string-array>
+    <string name="pref_vpn_dns">เซิร์ฟเวอร์ DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>เซิร์ฟเวอร์ DNS ของเครือข่าย</item>
+        <item>เซิร์ฟเวอร์ DNS แบบกำหนดเอง</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">เซิร์ฟเวอร์ DNS แบบกำหนดเอง</string>
+    <string name="pref_vpn_dns_custom_summary">ที่อยู่ IP คั่นด้วยเครื่องหมายจุลภาค</string>
+    <string name="pref_vpn_dns_custom_invalid">ที่อยู่เซิร์ฟเวอร์ DNS ไม่ถูกต้อง</string>
+    <string name="pref_vpn_doh">เซิร์ฟเวอร์ DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">ที่อยู่แบบกำหนดเอง</string>
+    <string name="pref_vpn_doh_address">ที่อยู่ DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">ที่อยู่ DNS over HTTPS ไม่ถูกต้อง</string>
+    <string name="pref_vpn_exclude_user_apps">ยกเว้นแอปที่ผู้ใช้ติดตั้ง</string>
+    <string name="pref_vpn_exclude_user_apps_activity">แอปที่ยกเว้น</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">เลือกทั้งหมด</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">ยกเลิกการเลือกทั้งหมด</string>
+    <string name="pref_vpn_exclude_user_apps_icon">ไอคอนแอป</string>
     <string name="pref_vpn_reset">รีเซ็ต VPN</string>
-    <string name="pref_vpn_reset_description">สร้างการเชื่อมต่อ VPN ขึ้นใหม่ตั้งแต่ต้น ใช้สิ่งนี้หาก VPN หยุดทำงาน (ไม่มีการเข้าถึงอินเทอร์เน็ตหรือเกิดข้อผิดพลาด DNS)</string>
-    <string name="pref_vpn_reset_done">สร้างการเชื่อมต่อ VPN ขึ้นใหม่แล้ว</string>
+    <string name="pref_vpn_reset_description">สร้างการเชื่อมต่อ VPN ขึ้นใหม่ทั้งหมด ใช้เมื่อ VPN หยุดทำงาน (ไม่มีอินเทอร์เน็ตหรือเกิดข้อผิดพลาดเกี่ยวกับ DNS)</string>
+    <string name="pref_vpn_reset_done">สร้างการเชื่อมต่อ VPN ใหม่แล้ว</string>
     <string name="pref_vpn_reset_not_running">VPN ไม่ได้ทำงานอยู่</string>
+    <string name="pref_vpn_diagnostic_log_enabled">เก็บบันทึกการวินิจฉัย</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">เปิดไว้ก่อนทำให้เกิดปัญหาซ้ำ แล้วส่งออกบันทึกด้านล่าง อาจทำให้อุปกรณ์รุ่นเก่าช้าลงเล็กน้อย บันทึกเฉพาะเหตุการณ์ทางเทคนิคของ VPN ไม่บันทึกประวัติการท่องเว็บหรือข้อมูลส่วนบุคคล</string>
     <string name="pref_vpn_diagnostic_log">บันทึกการวินิจฉัย</string>
-    <string name="pref_vpn_diagnostic_log_description">ดู คัดลอก หรือแชร์ข้อผิดพลาดและเหตุการณ์ VPN ล่าสุด มีประโยชน์เมื่อรายงานปัญหา</string>
-    <string name="pref_vpn_diagnostic_log_empty">ยังไม่มีการบันทึกเหตุการณ์ใด ๆ</string>
-    <string name="pref_vpn_diagnostic_log_share">แชร์บันทึกการวินิจฉัย</string>
+    <string name="pref_vpn_diagnostic_log_description">ดู คัดลอก หรือแชร์ข้อผิดพลาดและเหตุการณ์ของ VPN ล่าสุด มีประโยชน์เมื่อต้องแจ้งปัญหา</string>
+    <string name="pref_vpn_diagnostic_log_empty">ยังไม่มีการบันทึกเหตุการณ์ใด เปิด “เก็บบันทึกการวินิจฉัย” ด้านบน แล้วลองทำให้เกิดปัญหาซ้ำ</string>
+    <string name="pref_vpn_diagnostic_log_share">แชร์</string>
+    <string name="pref_vpn_diagnostic_log_share_title">แชร์บันทึกการวินิจฉัย</string>
     <string name="pref_vpn_diagnostic_log_copy">คัดลอก</string>
     <string name="pref_vpn_diagnostic_log_copied">คัดลอกบันทึกการวินิจฉัยไปยังคลิปบอร์ดแล้ว</string>
     <string name="pref_vpn_diagnostic_log_clear">ล้างบันทึกการวินิจฉัย</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">ลบเหตุการณ์ที่บันทึกไว้ ทำสิ่งนี้ก่อนที่จะจำลองปัญหาซ้ำเพื่อเก็บร่องรอยที่สะอาด</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">ลบเหตุการณ์ที่บันทึกไว้ ควรทำก่อนทำให้เกิดปัญหาซ้ำ เพื่อให้ได้บันทึกที่สะอาด</string>
     <string name="pref_vpn_diagnostic_log_cleared">ล้างบันทึกการวินิจฉัยแล้ว</string>
-    <string name="pref_root_open_hosts">เปิดไฟล์โฮสต์</string>
-    <string name="pref_webserver_enabled">เปิดใช้งานเว็บเซิร์ฟเวอร์</string>
+    <string name="pref_root_open_hosts">เปิดไฟล์ hosts</string>
+    <string name="hosts_file_unreadable">อ่านไฟล์ hosts ไม่ได้</string>
+    <string name="pref_hosts_redirection_summary">กำหนดปลายทางที่จะเปลี่ยนเส้นทางโฮสต์ที่ถูกบล็อกไป</string>
+    <string name="pref_redirection_ipv4">กำหนดการเปลี่ยนเส้นทาง IPv4</string>
+    <string name="pref_redirection_ipv6">กำหนดการเปลี่ยนเส้นทาง IPv6</string>
+    <string name="pref_redirection_invalid">การเปลี่ยนเส้นทางไม่ถูกต้อง</string>
+    <string name="pref_webserver_summary">เว็บเซิร์ฟเวอร์ภายในเครื่องจะรอรับที่อยู่ IP ภายในเครื่อง เพื่อตอบคำขอของชื่อโฮสต์ที่ถูกบล็อก ช่วยแก้ปัญหาแอปค้างเมื่อการเชื่อมต่อถูกบล็อกได้</string>
+    <string name="pref_webserver_enabled">เปิดใช้เว็บเซิร์ฟเวอร์</string>
+    <string name="pref_webserver_test">ทดสอบเว็บเซิร์ฟเวอร์</string>
+    <string name="pref_webserver_certificate">ติดตั้งใบรับรองที่ลงนามด้วยตนเอง</string>
+    <string name="pref_webserver_state_not_running">ไม่ได้ทำงานอยู่</string>
+    <string name="pref_webserver_state_checking">กำลังตรวจสอบ…</string>
+    <string name="pref_webserver_state_running_not_installed">ทำงานอยู่ แต่ยังไม่ได้ติดตั้งใบรับรอง</string>
+    <string name="pref_webserver_state_running_and_installed">ทำงานอยู่ และติดตั้งใบรับรองแล้ว</string>
+    <string name="pref_webserver_certificate_dialog_title">ติดตั้งใบรับรองด้วยตนเอง</string>
+    <string name="pref_webserver_certificate_dialog_content">ตั้งแต่ Android 11 (R) เป็นต้นมา แอปไม่สามารถติดตั้งใบรับรองของผู้ออกใบรับรอง (CA) โดยอัตโนมัติได้อีกต่อไป\n\nไปที่การตั้งค่า “ความปลอดภัย” เลือก “การเข้ารหัสและข้อมูลเข้าสู่ระบบ” แล้วเลือก “ติดตั้งใบรับรอง” จากนั้นเลือก “ใบรับรอง CA” และเลือกไฟล์ใบรับรองที่เพิ่งส่งออก</string>
+    <string name="pref_webserver_certificate_dialog_action">เปิดการตั้งค่า “ความปลอดภัย”</string>
+    <string name="pref_webserver_certificate_failed">เตรียมใบรับรองไม่สำเร็จ</string>
+    <string name="webserver_error_title">เว็บเซิร์ฟเวอร์ไม่ได้เริ่มทำงาน</string>
+    <string name="webserver_error_resources">เตรียมไฟล์หรือใบรับรองของเว็บเซิร์ฟเวอร์ไม่สำเร็จ</string>
+    <string name="webserver_error_address_in_use">มีแอปอื่นใช้พอร์ตเว็บ (80 และ 443) ของอุปกรณ์อยู่แล้ว</string>
+    <string name="webserver_error_start_failed">เริ่มทำงานบนอุปกรณ์นี้ไม่ได้</string>
+    <string name="pref_webserver_icon">แทนที่พื้นที่โฆษณาที่ว่างด้วยไอคอนแอป</string>
 </resources>

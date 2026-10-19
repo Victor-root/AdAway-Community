@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">มีการอัปเดต</string>
+    <string name="update_title">อัปเดต AdAway</string>
+    <string name="update_banner_title">มีอัปเดตใหม่</string>
     <string name="update_banner_subtitle">แตะเพื่อติดตั้ง %1$s</string>
-    <string name="update_update_available_header">สามารถอัพเดตได้</string>
+    <string name="update_up_to_date_header">คุณใช้เวอร์ชันล่าสุดแล้ว</string>
+    <string name="update_update_available_header">มีอัปเดตใหม่</string>
+    <string name="update_updating_header">กำลังอัปเดต AdAway</string>
+    <string name="update_update_button">อัปเดตตอนนี้</string>
+    <string name="update_complete_label">เสร็จสมบูรณ์</string>
+    <string name="update_last_changelog_title">การเปลี่ยนแปลงล่าสุด</string>
+    <string name="update_new_changelog_title">บันทึกการเปลี่ยนแปลง</string>
+    <string name="update_download_failed">ดาวน์โหลดอัปเดตไม่สำเร็จ</string>
+    <string name="update_install_failed">ติดตั้งอัปเดตไม่สำเร็จ</string>
     <string name="pref_update_check_now_update_available">มีเวอร์ชันใหม่: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">ไม่มีการอัปเดต</string>
+    <string name="pref_update_check_now_up_to_date">ไม่มีอัปเดตใหม่</string>
+    <string name="pref_update_check_now_failed">เชื่อมต่อกับเซิร์ฟเวอร์อัปเดตไม่ได้</string>
     <string name="pref_update_install_summary">ติดตั้งเวอร์ชัน %1$s</string>
-    <string name="notification_channel_app_updates">อัปเดตแอป</string>
-    <string name="notification_channel_app_updates_description">การแจ้งเตือนเมื่อมีแอปเวอร์ชันใหม่ ปิดเสียงช่องนี้เพื่อซ่อนการแจ้งเตือนการอัปเดตแอปโดยไม่กระทบการแจ้งเตือนอื่น</string>
+    <string name="notification_channel_app_updates">การอัปเดตแอป</string>
+    <string name="notification_channel_app_updates_description">แจ้งเตือนเมื่อมีแอปเวอร์ชันใหม่ ปิดเสียงช่องทางนี้เพื่อไม่รับการแจ้งเตือนอัปเดตแอป โดยไม่กระทบการแจ้งเตือนอื่น</string>
+    <string name="notification_app_update_title">มีอัปเดตแอปใหม่</string>
+    <string name="notification_app_update_text">AdAway เวอร์ชันใหม่พร้อมให้ดาวน์โหลดแล้ว</string>
 </resources>

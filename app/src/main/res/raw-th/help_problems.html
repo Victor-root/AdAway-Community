@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN ปิดตัวเอง</h2>
+<p>เกือบทุกครั้งเป็นเพราะระบบปิดบริการ VPN เพื่อประหยัดแบตเตอรี่ ไม่ใช่เพราะแอปขัดข้อง พบได้บ่อยใน ROM ของผู้ผลิตโทรศัพท์ที่จัดการพลังงานอย่างเข้มงวด (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung และอื่น ๆ)</p>
+<p>ในการตั้งค่า Android ให้เปิดหน้าของ AdAway แล้วทำดังนี้ ตั้งค่า<cite>การเพิ่มประสิทธิภาพแบตเตอรี่</cite>เป็น <cite>ไม่จำกัด</cite> (หรือ <cite>ไม่เพิ่มประสิทธิภาพ</cite>) อนุญาต<cite>เริ่มอัตโนมัติ</cite>หรือ<cite>เปิดอัตโนมัติ</cite>หาก ROM ของคุณมีตัวเลือกนี้ และล็อก AdAway ไว้ในรายการแอปล่าสุดเพื่อไม่ให้ถูกปัดทิ้ง นอกจากนี้ ตรวจสอบให้แน่ใจว่าได้เปิด <cite>เปิดใช้งานเมื่อเปิดเครื่อง</cite> ไว้ในการตั้งค่า VPN ของ AdAway</p>
 
-<h2>เนื้อที่ไม่พอ</h2>
-<p><code>ลองเปลี่ยนไฟล์เป้าหมายโฮสต์ในตั้งค่าไปที่ <code>/data/data/hosts</code> (หรือ /data/hosts)</code> และใช้ AdAway อีกครั้ง</p>
+<h2>ไม่มีอินเทอร์เน็ตหรือท่องเว็บช้าทันทีหลังสลับระหว่าง Wi-Fi กับเครือข่ายมือถือ</h2>
+<p>เมื่อเครือข่ายที่ใช้งานเปลี่ยนไป ต้องสร้างอุโมงค์ VPN ใหม่เพื่อให้ DNS ถูกค้นหาจากเครือข่ายใหม่ หากยังท่องเว็บไม่ได้ ให้เปิด <cite>การตั้งค่า › ตัวบล็อกโฆษณาแบบ VPN › รีเซ็ต VPN</cite> เพื่อสร้างการเชื่อมต่อขึ้นใหม่ทั้งหมด หากยังเกิดซ้ำอีก ให้เก็บบันทึกการวินิจฉัย (ดูด้านล่าง) แล้วแจ้งปัญหามา</p>
 
-<h2>Chrome still displays ads</h2>
-<p>Ensure you disable <cite>lite mode</cite> (previously known as <cite>data saver</cite>) from Chrome settings. This features allows Chrome to use private DNS solution and bypass AdAway.</p>
+<h2>ส่งออกบันทึกการวินิจฉัยได้อย่างไร</h2>
+<p>เปิด <cite>การตั้งค่า › ตัวบล็อกโฆษณาแบบ VPN › บันทึกการวินิจฉัย</cite> บันทึกนี้เก็บข้อผิดพลาดและเหตุการณ์ของ VPN ล่าสุด (การสลับเครือข่าย การเชื่อมต่อใหม่ ความล้มเหลว) ไม่ใช่ประวัติการท่องเว็บของคุณ เป็นเพียงเหตุการณ์ทางเทคนิค บันทึกจะว่างเปล่าจนกว่าคุณจะเปิด <cite>เก็บบันทึกการวินิจฉัย</cite> ที่อยู่ด้านบน ใช้ <cite>คัดลอก</cite> หรือ <cite>แชร์</cite> เพื่อส่งบันทึกเมื่อแจ้งปัญหา เคล็ดลับ: ใช้ <cite>ล้างบันทึกการวินิจฉัย</cite> ก่อน แล้วค่อยทำให้เกิดปัญหาซ้ำ เพื่อให้ได้บันทึกที่ตรงจุด</p>
 
-<h2>AdAway ไม่รองรับการป้องกันโฆษณาในแอพพลิเคชั่น XYZ</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in our <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub issue tracker</a>.</p>
+<h2>Chrome ยังแสดงโฆษณา</h2>
+<p>Chrome อาจใช้ <cite>DNS ที่ปลอดภัย</cite> (DNS-over-HTTPS) ของตัวเอง ซึ่งข้าม AdAway ไป ใน Chrome ให้เปิด <cite>การตั้งค่า › ความเป็นส่วนตัวและความปลอดภัย › ใช้ DNS ที่ปลอดภัย</cite> แล้วปิดตัวเลือกนี้ กรณีเดียวกันนี้ใช้กับการตั้งค่า <cite>DNS ส่วนตัว</cite> ของแอปหรือของระบบด้วย ในโหมด VPN AdAway เข้ารหัส DNS ให้ได้เอง ดูหัวข้อ <cite>VPN ใช้เซิร์ฟเวอร์ DNS ตัวไหน</cite> ในคำถามที่พบบ่อย</p>
 
-<h2>มีการเก็บโฆษณาไว้ในแคช</h2>
-<p>บางครั้งแอพพลิเคชันแคชโฆษณาหลังจากดาวน์โหลด ซึ่งนำไปสู่การโฆษณาที่เหลืออยู่ในบางแอพพลิเคชัน คุณสามารถลองลบแคชสำหรับแอพพลิเคชันเหล่านี้ในรายการแอพพลิเคชันของแอนดรอยด์เพื่อหลีกเลี่ยงปัญหานี้</p>
+<h2>ยังมีโฆษณาบางส่วนหลุดมา หรือบางแอปยังแสดงโฆษณา</h2>
+<p>อาจมีชื่อโฮสต์ที่ไม่อยู่ในแหล่งที่มาของคุณ หรือแอปฝังโฆษณาไว้ในตัวจึงไม่มีการส่งคำขอออกไป เปิด<cite>บันทึก DNS</cite>จากหน้าแรกเพื่อดูว่าแอปกำลังสอบถามอะไรอยู่ เพิ่มชื่อโฮสต์ที่น่าสงสัยในรายการ<cite>ถูกบล็อก</cite>ของคุณ แล้วตรวจสอบว่าไม่มีอะไรใช้งานไม่ได้ นอกจากนี้ บางแอปจะเก็บโฆษณาไว้ในแคชหลังดาวน์โหลด การล้างแคชของแอปนั้นในการตั้งค่า Android จึงอาจช่วยได้</p>
 
-<h2>แอพพลิเคชั่น XYZ ไม่ทำงาน</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>แอปใช้งานไม่ได้หลังเปิดใช้ AdAway</h2>
+<p>บางแอปไม่ยอมทำงานเมื่อชื่อโฮสต์ที่ต้องใช้ถูกบล็อก ใช้<cite>บันทึก DNS</cite>เพื่อหาว่าแอปต้องใช้ชื่อโฮสต์ใด แล้วเพิ่มในรายการ<cite>อนุญาต</cite>ของคุณ แอปก็น่าจะกลับมาใช้งานได้ รายชื่อแอปที่มีปัญหาและเป็นที่ทราบกันอยู่ดูได้<a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">ที่นี่</a></p>
 
-<h2>ไม่รองรับระบบปฏิบัติการ แอนดรอยด์ 4.4 ขึ้นไป</h2>
-<p>ลองเปลี่ยนเป้าหมายไฟล์โฮสต์ในการตั้งค่าจาก<code>/data/data/hosts</code> เป็น <code>/data/hosts</code> หรือ <code>/system/etc/hosts</code> และใช้ AdAway อีกครั้ง</p>
+<h2>นำไฟล์ hosts ไปใช้ไม่สำเร็จ (โหมด root)</h2>
+<p>Android เวอร์ชันใหม่ ๆ ใช้พาร์ติชัน <code>/system</code> แบบอ่านอย่างเดียว AdAway จึงเขียนข้อมูลลงไปตรง ๆ ไม่ได้ หากคุณใช้ Magisk ให้เปิดโมดูล <cite>systemless hosts</cite> รีบูตเครื่อง แล้วนำไปใช้อีกครั้ง หากคุณไม่ได้ใช้ root ให้เปลี่ยนไปใช้โหมด VPN ซึ่งไม่ต้องแก้ไขระบบ</p>
 
-<h2>กดปุ่มย้อนกลับหากเบราเซอร์ไม่ทำงาน</h2>
-<p>คุณสามารถเปิดการใช้งาน AdAway ได้จาก เว็บเซิร์ฟเวอร์ท้องถิ่นในการกำหนดลักษณะเป็นการแก้ปัญหา</p>
-
+<h2>ยังแก้ไม่ได้ใช่ไหม</h2>
+<p>แจ้งปัญหาพร้อมแนบบันทึกการวินิจฉัยได้ที่ <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a></p>
 </body>
 </html>

@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN आफैँ बन्द हुन्छ</h2>
+<p>यो प्रायः ब्याट्री बचाउन प्रणालीले VPN सेवा बन्द गरेकाले हुन्छ, क्र्यास भएकाले होइन। आक्रामक पावर व्यवस्थापन भएका फोन निर्माताका ROM मा यो सामान्य हो (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung र अन्य)।</p>
+<p>Android सेटिङमा AdAway खोज्नुहोस् र यसो गर्नुहोस्: <cite>ब्याट्री अप्टिमाइजेसन</cite> लाई <cite>अप्रतिबन्धित</cite> (वा <cite>अप्टिमाइज नगर्नुहोस्</cite>) मा सेट गर्नुहोस्, तपाईंको ROM मा भए <cite>अटोस्टार्ट</cite>/<cite>अटो-लन्च</cite> अनुमति दिनुहोस्, र AdAway स्वाइप गरेर हटाइन नपरोस् भनेर हालका एपहरूको सूचीमा यसलाई लक गर्नुहोस्। साथै AdAway को VPN प्राथमिकतामा <cite>सुरु हुँदा सक्षम पार्नुहोस्</cite> सक्रिय छ भन्ने पनि सुनिश्चित गर्नुहोस्।</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Wi-Fi र मोबाइल डेटा बदलेपछि इन्टरनेट चल्दैन वा ब्राउजिङ ढिलो हुन्छ</h2>
+<p>सक्रिय नेटवर्क बदलिँदा नयाँ नेटवर्कबाट DNS समाधान गर्न टनेल फेरि बनाउनुपर्छ। ब्राउजिङ अझै बिग्रिएकै छ भने <cite>प्राथमिकताहरू › VPN मा आधारित विज्ञापन ब्लकर › VPN रिसेट गर्नुहोस्</cite> खोलेर जडान सुरुबाट नयाँ गरी बनाउनुहोस्। यो बारम्बार भइरह्यो भने डायग्नोस्टिक लग (तल) लिनुहोस् र रिपोर्ट गर्नुहोस्।</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>डायग्नोस्टिक लग कसरी निर्यात गर्ने?</h2>
+<p><cite>प्राथमिकताहरू › VPN मा आधारित विज्ञापन ब्लकर › डायग्नोस्टिक लग</cite> खोल्नुहोस्। यसले हालका त्रुटि र VPN का घटनाहरू (नेटवर्क बदलिएको, पुन: जडान, असफलता) रेकर्ड गर्छ, तपाईंको ब्राउजिङ इतिहास होइन, प्राविधिक घटनाहरू मात्र। ठीक माथिको <cite>डायग्नोस्टिक लग रेकर्ड गर्नुहोस्</cite> सुरु नगरेसम्म यो खाली रहन्छ। समस्या रिपोर्ट गर्दा पठाउन <cite>कपी गर्नुहोस्</cite> वा <cite>सेयर गर्नुहोस्</cite> प्रयोग गर्नुहोस्। सुझाव: पहिले <cite>डायग्नोस्टिक लग खाली गर्नुहोस्</cite> थिच्नुहोस्, त्यसपछि समस्या दोहोर्‍याउनुहोस्, ताकि लग छोटो र स्पष्ट होस्।</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome ले अझै विज्ञापन देखाउँछ</h2>
+<p>Chrome ले आफ्नै <cite>सुरक्षित DNS</cite> (DNS-over-HTTPS) प्रयोग गर्न सक्छ, जसले AdAway लाई छलेर जान्छ। Chrome मा <cite>सेटिङ › गोपनीयता र सुरक्षा › सुरक्षित DNS प्रयोग गर्नुहोस्</cite> खोल्नुहोस् र यसलाई बन्द गर्नुहोस्। कुनै एप वा प्रणालीको <cite>निजी DNS</cite> सेटिङमा पनि यही लागू हुन्छ। VPN मोडमा AdAway ले आफैँ DNS इन्क्रिप्ट गर्न सक्छ: FAQ मा <cite>VPN ले कुन DNS सर्भरहरू प्रयोग गर्छ?</cite> हेर्नुहोस्।</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>केही विज्ञापन अझै देखिन्छन्, वा कुनै एपले अझै विज्ञापन देखाउँछ</h2>
+<p>तपाईंका स्रोतहरूमा कुनै होस्टनाम छुटेको हुन सक्छ, वा एपले विज्ञापनहरू आफैँभित्र राखेकाले कुनै अनुरोध नै गरिँदैन। एपले के सोधिरहेको छ हेर्न गृह स्क्रिनबाट <cite>DNS लग</cite> खोल्नुहोस्, शङ्कास्पद होस्टनामहरू आफ्नो <cite>ब्लक गरिएका</cite> सूचीमा थप्नुहोस्, र केही बिग्रिँदैन भन्ने जाँच गर्नुहोस्। केही एपहरूले विज्ञापन डाउनलोड गरेपछि क्यासमा राख्छन्, त्यसैले Android सेटिङमा त्यस एपको क्यास खाली गर्दा मद्दत मिल्न सक्छ।</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway सक्षम पारेपछि कुनै एपले काम गर्न छाड्यो</h2>
+<p>कुनै एपलाई चाहिने होस्टनाम ब्लक भएमा केही एपहरूले काम गर्न मान्दैनन्। एपलाई कुन होस्टनाम चाहिन्छ भनेर पत्ता लगाउन <cite>DNS लग</cite> प्रयोग गर्नुहोस्, त्यसलाई आफ्नो <cite>अनुमति दिइएका</cite> सूचीमा थप्नुहोस्, र एपले फेरि काम गर्नुपर्छ। समस्या ल्याउने ज्ञात एपहरूको सूची <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">यहाँ</a> छ।</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>hosts फाइल लागू हुँदैन (रुट मोड)</h2>
+<p>नयाँ Android संस्करणहरूले <code>/system</code> पार्टिसनलाई पढ्न मात्र मिल्ने बनाउँछन्, त्यसैले AdAway ले त्यहाँ सिधै लेख्न सक्दैन। तपाईं Magisk प्रयोग गर्नुहुन्छ भने <cite>systemless hosts</cite> मोड्युल सक्षम पार्नुहोस्, रिबुट गर्नुहोस् र फेरि लागू गर्नुहोस्। तपाईं रुट प्रयोग गर्नुहुन्न भने प्रणालीमा कुनै परिवर्तन नचाहिने VPN मोड प्रयोग गर्नुहोस्।</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>अझै समाधान भएन?</h2>
+<p>डायग्नोस्टिक लग संलग्न गरेर <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> मा समस्या रिपोर्ट गर्नुहोस्।</p>
 </body>
 </html>

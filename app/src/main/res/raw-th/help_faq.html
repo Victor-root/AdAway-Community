@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>รายได้จากการโฆษณา</h2>
-<p>มีความเข้าใจผิดที่ระบุบ่อยๆว่าหากผู้ใช้ไม่เคยคลิกโฆษณาการปิดกั้นเนื้อหาดังกล่าวจะไม่ส่งผลเสียหายต่อไซต์หรือแอพพลิเคชันทางการเงิน ซึ่งเป็นสิ่งที่ผิดนักพัฒนายังมีรายได้ด้วยการแสดงโฆษณา ทั้งนี้ขึ้นอยู่กับคุณว่าคุณบล็อกโฆษณาหรือไม่ ส่วนตัวฉันจะไม่ใช้แอปพลิเคชันที่แสดงโฆษณาเนื่องจากพบว่าน่ารำคาญมากดังนั้นหากไม่มีตัวบล็อกโฆษณาฉันจะไม่ติดตั้งแอปพลิเคชันเหล่านี้</p>
+<h2>AdAway Community คืออะไร</h2>
+<p>AdAway Community คือฟอร์กของ AdAway ที่ชุมชนช่วยกันดูแล ไม่ใช่ฉบับทางการ AdAway เป็นตัวบล็อกโฆษณาโอเพนซอร์สสำหรับ Android ที่บล็อกโฆษณาและตัวติดตามทั้งระบบ ครอบคลุมทุกแอป โดยไม่ต้องมีบัญชีและไม่มีโฆษณาของตัวเอง ฟอร์กนี้มุ่งเน้นให้แอปทำงานได้อย่างเสถียรบน Android เวอร์ชันใหม่ ๆ และ ROM ของผู้ผลิตโทรศัพท์</p>
 
-<h2>AdAway นี้ทำงานอย่างไร?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>บล็อกโฆษณาอย่างไร</h2>
+<p>AdAway ทำงานได้ 2 โหมด</p>
+<p><strong>โหมด VPN</strong> (ไม่ต้องมี root): AdAway เปิด VPN ภายในเครื่องที่ไม่ส่งข้อมูลของคุณไปที่ใดเลย โดยจะตรวจดูเฉพาะคำขอ DNS และทิ้งคำขอที่ชี้ไปยังชื่อโฮสต์ของโฆษณาและตัวติดตาม ส่วนที่เหลือปล่อยผ่านตามปกติ ไม่มีข้อมูลใดออกจากอุปกรณ์ของคุณ</p>
+<p><strong>โหมด root</strong>: หากอุปกรณ์ของคุณเปิดสิทธิ์ root AdAway สามารถเขียน<a href="http://en.wikipedia.org/wiki/Hosts_file">ไฟล์ hosts</a>ไปที่ <code>/system/etc/hosts</code> แทนได้ โดยจับคู่ชื่อโฮสต์ที่ไม่ต้องการเข้ากับ <code>127.0.0.1</code> เพื่อให้ชี้กลับมาที่อุปกรณ์ของคุณเอง บน Android เวอร์ชันใหม่ ๆ ต้องใช้โมดูล systemless hosts (เช่น Magisk)</p>
 
-<h2>ทำไมถึงต้องรีสตาร์ทเพื่อให้มีผลเปลี่ยนแปลง?</h2>
-<p>Java บน Android มีแคช DNS ภายในของตัวเอง ระบบปฏิบัติการจะแสดงแฟ้ม hosts ใหม่ทันที (ตรวจสอบว่ามี ping ในบรรทัดคำสั่ง) แต่คุณจะต้องเริ่มต้นใหม่ Android เพื่อสร้างแคช DNS ของ Java</p>
+<h2>VPN ใช้เซิร์ฟเวอร์ DNS ตัวไหน</h2>
+<p>ในโหมด VPN ชื่อโฮสต์ที่ไม่ถูกบล็อกจะถูกค้นหาโดยเซิร์ฟเวอร์ DNS ที่คุณเลือกใน <cite>การตั้งค่า › ตัวบล็อกโฆษณาแบบ VPN › เซิร์ฟเวอร์ DNS</cite>:</p>
+<p><strong>เซิร์ฟเวอร์ DNS ของเครือข่าย</strong> (ค่าเริ่มต้น): เซิร์ฟเวอร์ของเครือข่าย Wi-Fi หรือเครือข่ายมือถือของคุณ หากเครือข่ายไม่มีเซิร์ฟเวอร์ที่ AdAway ใช้ได้ ระบบจะสลับไปใช้ Cloudflare (<code>1.1.1.1</code>)<br/><strong>เซิร์ฟเวอร์ DNS แบบกำหนดเอง</strong>: ที่อยู่ IP ที่คุณกรอก คั่นด้วยเครื่องหมายจุลภาค<br/><strong>DNS over HTTPS</strong>: คำขอจะถูกเข้ารหัสและส่งไปยัง Cloudflare, Google, Quad9 หรือที่อยู่ <code>https://</code> ที่คุณกรอก เครือข่ายของคุณจึงอ่านหรือแก้ไขคำขอไม่ได้</p>
+<p>การบล็อกทำงานเหมือนกันทั้ง 3 แบบ หากต้องการใช้ DNS แบบเข้ารหัส ให้ใช้ DNS over HTTPS ที่นี่ แทนการตั้งค่า <cite>DNS ส่วนตัว</cite> ของ Android ซึ่งจะข้าม AdAway ไป</p>
 
-<h2>วิธีใช้เว็บเซิร์ฟเวอร์ใน AdAway</h2>
-<p><strong>AdAway จะทำงานโดยไม่ใช้เว็บเซิร์ฟเวอร์!</strong>
-<br><br>คุณสามารถเปิดใช้งานเว็บเซิร์ฟเวอร์ในลักษณะที่ AdAway ต้องการเพื่อตอบรับคำขอไปยังที่อยู่ IP ในเครื่อง <code>127.0.0.1</code>ซึ่งหมายถึงคำขอจากแอพฯที่ปกติจะส่งไปเว็บโฆษณาจะถูกเปลี่ยนเส้นทางไปยัง <code>127.0.0.1</code><br>ดังนั้นจะทำให้พวกโฆษณาจะไม่สามารถใช้งานได้</p>
+<h2>บล็อก อนุญาต หรือเปลี่ยนเส้นทางชื่อโฮสต์อย่างไร</h2>
+<p>จากหน้าแรก คุณจัดการรายการได้ 3 รายการ:</p>
+<p><strong>ถูกบล็อก</strong>: ชื่อโฮสต์ที่ควรถูกบล็อก (โฆษณาและตัวติดตาม)<br/><strong>อนุญาต</strong>: ข้อยกเว้นที่คุณไม่ต้องการให้ถูกบล็อกเลย แม้แหล่งที่มาจะระบุไว้ก็ตาม<br/><strong>เปลี่ยนเส้นทาง</strong>: ชื่อโฮสต์ที่คุณต้องการให้ชี้ไปยังที่อยู่ IP ที่กำหนด</p>
+<p>คุณยังเปิด<cite>บันทึก DNS</cite>จากหน้าแรกเพื่อดูแบบเรียลไทม์ว่าแอปกำลังสอบถามชื่อโฮสต์ใดอยู่ แล้วบล็อกหรืออนุญาตจากตรงนั้นได้ทันที</p>
 
-<h2>บล็อคหรือปลดบล็อคชื่อโฮสต์?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>ต้องรีสตาร์ท Android หลังเปลี่ยนรายการหรือไม่</h2>
+<p>ไม่ต้อง AdAway นำการเปลี่ยนแปลงไปใช้ทันที แต่แอปที่เปิดอยู่ก่อนแล้วอาจยังใช้การเชื่อมต่อเดิมและแคชของตัวเองต่อไป ให้ปิดแอปนั้นให้สนิท (บังคับหยุดในการตั้งค่า Android ของแอป) และล้างแคชหากยังมีโฆษณาแสดงอยู่ การรีสตาร์ท Android จำเป็นเพียงครั้งเดียวในโหมด root หลังเปิดใช้โมดูล systemless hosts ของ Magisk</p>
 
-<h2>ฉันสามารถหาแหล่งที่มาของโฮสต์ได้จากที่ไหน?</h2>
-<p>ดู <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">รายชื่อแหล่งโฮสต์เพิ่มเติมจาก AdAway</a>.</p>
+<h2>หาแหล่งที่มา hosts เพิ่มเติมได้ที่ไหน</h2>
+<p>AdAway มาพร้อมค่าเริ่มต้นที่เหมาะสมอยู่แล้ว หากต้องการเพิ่ม ดู<a href="https://github.com/AdAway/AdAway/wiki/HostsSources">รายการแหล่งที่มา hosts เพิ่มเติม</a>ที่ชุมชนช่วยกันดูแล ควรเพิ่มแหล่งที่มาอย่างพอประมาณ เพราะรายการที่ใหญ่มากหรือซ้ำซ้อนกันอาจทำให้บล็อกผิดพลาดจนแอปใช้งานไม่ได้</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>ทำไมจึงมีฟอร์กนี้</h2>
+<p>AdAway เป็นโปรเจกต์ที่ยอดเยี่ยมและมีประวัติยาวนาน แต่ช่วงที่ผ่านมาต้นทางออกรุ่นใหม่และตรวจรับการแก้ไขได้ไม่บ่อยนัก การแก้ไขข้อบกพร่องและ pull request บางรายการค้างอยู่เป็นเวลานาน รวมถึงปัญหาที่กระทบความเสถียรของโหมด VPN บน Android เวอร์ชันใหม่ ๆ และ ROM ของผู้ผลิตโทรศัพท์ ฟอร์กนี้เกิดขึ้นเพื่อให้โปรเจกต์ยังใช้งานได้ต่อไปด้วยการแก้ไขที่ชุมชนช่วยกันดูแล แทนที่จะปล่อยให้การปรับปรุงที่ทดสอบแล้วไม่ได้ถูกนำไปใช้</p>
 
-<h2>ช่วยแปลภาษา/รายงานบัค</h2>
-<p>กรุณาไปยังเว็บไซต์ <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>แจ้งข้อบกพร่องหรือเสนอการเปลี่ยนแปลงได้อย่างไร</h2>
+<p>เปิด issue ในระบบติดตามปัญหาของฟอร์ก: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> บันทึกการวินิจฉัย (ดูในแท็บปัญหา) ช่วยได้มากเมื่อแจ้งปัญหาเกี่ยวกับ VPN</p>
 </body>
 </html>

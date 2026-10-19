@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_sort">จัดเรียงโดเมน</string>
+    <string name="log_toggle_recording_description">เปิด/ปิดการบันทึก</string>
+    <string name="log_start_recording">กดปุ่มบันทึกเพื่อเริ่มบันทึกคำขอ จากนั้นท่องเว็บหรือใช้แอป แล้วย้อนกลับหรือปัดลงเพื่อรีเฟรชบันทึก</string>
+    <string name="log_blocked_requests_ignored">\n\nคำขอที่ถูกบล็อกจะไม่ถูกบันทึก หากต้องการบันทึกคำขอเหล่านั้นด้วย ให้ปิดการบล็อกโฆษณาก่อน</string>
+    <string name="log_sort">เรียงลำดับโดเมน</string>
     <string name="log_clear">ล้างบันทึก</string>
-    <string name="log_sort_alphabetical">จัดเรียงตามตัวอักษร</string>
-    <string name="log_sort_top_level_domain">จัดเรียงโดเมนยอดนิยม</string>
-    <string name="log_block">เพิ่มรายการลงในบัญชีดำ</string>
-    <string name="log_allow">เพิ่มรายการไปยังบัญชีขาว</string>
-    <string name="log_redirect">เพิ่มรายการไปยังรายการเปลี่ยนเส้นทาง</string>
+    <string name="log_sort_alphabetical">เรียงตามตัวอักษร</string>
+    <string name="log_sort_top_level_domain">เรียงตามโดเมนระดับบนสุด</string>
+    <string name="log_block">เพิ่มในรายการบล็อก</string>
+    <string name="log_allow">เพิ่มในรายการอนุญาต</string>
+    <string name="log_redirect">เพิ่มในรายการเปลี่ยนเส้นทาง</string>
     <string name="log_redirect_dialog_title">เปลี่ยนเส้นทางโดเมน</string>
+    <string name="log_capture_failed">เริ่มดักจับ DNS ไม่ได้</string>
     <string name="log_start_recording_button">เริ่มบันทึก</string>
-    <string name="log_start_recording_vpn_inactive">เริ่มบันทึก (VPN ไม่ทำงาน)</string>
+    <string name="log_start_recording_vpn_inactive">เริ่มบันทึก (VPN ไม่ได้ทำงาน)</string>
     <string name="log_stop_recording">หยุดบันทึก</string>
 </resources>
