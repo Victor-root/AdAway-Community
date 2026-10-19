@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">මනාප</string>
+    <string name="pref_general_category">සාමාන්‍ය</string>
+    <string name="pref_dark_theme">අඳුරු තේමාව</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>ආලෝක</item>
+        <item>අඳුරු</item>
+        <item>පද්ධති පෙරනිමිය</item>
     </string-array>
+    <string name="pref_update_configuration">ස්වයංක්‍රීය යාවත්කාලීන</string>
+    <string name="pref_language">භාෂාව</string>
+    <string name="pref_language_system">පද්ධති භාෂාව</string>
+    <string name="pref_ad_block_category">දැන්වීම් අවහිර කිරීම</string>
+    <string name="pref_root_ad_blocker_configuration">Root පදනම් කරගත් දැන්වීම් අවහිර කරන්නා</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN පදනම් කරගත් දැන්වීම් අවහිර කරන්නා</string>
+    <string name="pref_enable_ipv6">IPv6 සහාය සක්‍රීය කරන්න</string>
+    <string name="pref_backup_restore">අවහිර නීතිවල උපස්ථය / ප්‍රතිස්ථාපනය</string>
+    <string name="pref_backup_restore_title">උපස්ථ සහ ප්‍රතිස්ථාපන</string>
+    <string name="pref_backup">උපස්ථය</string>
+    <string name="pref_backup_summary">ඔබේ අවහිර නීති බාහිර ආචයනයට උපස්ථ කරන්න</string>
+    <string name="pref_restore">ප්‍රතිස්ථාපනය</string>
+    <string name="pref_restore_summary">උපස්ථ ගොනුවකින් ඔබේ අවහිර නීති ප්‍රතිස්ථාපනය කරන්න</string>
+    <string name="import_success">උපස්ථය ඔබේ බාහිර ආචයනයෙන් සාර්ථකව ආයාත කරන ලදී.</string>
+    <string name="import_failed">උපස්ථය ආයාත කිරීමට නොහැකි විය. එහි ආකෘතිය නිවැරදිද?</string>
+    <string name="export_success">උපස්ථය ඔබේ බාහිර ආචයනයේ “%s” ගොනුවට සාර්ථකව නිර්යාත කරන ලදී.</string>
+    <string name="export_failed">“%s” උපස්ථ ගොනුව නිර්යාත කිරීමට නොහැකි විය.</string>
+    <string name="pref_update_title">යාවත්කාලීන</string>
+    <string name="pref_update_enable_notifications">දැනුම්දීම් අක්‍රීයයි</string>
+    <string name="pref_update_enable_notifications_summary">යෙදුමේ දැනුම්දීම් නොපෙන්වයි. ඒවා සක්‍රීය කිරීමට තට්ටු කරන්න.</string>
+    <string name="pref_update_app_category">යෙදුම් යාවත්කාලීන</string>
+    <string name="pref_update_check_app_startup">ආරම්භයේදී යාවත්කාලීන පරීක්ෂා කරන්න</string>
+    <string name="pref_update_check_app_daily">කලින් කලට යාවත්කාලීන පරීක්ෂා කරන්න</string>
+    <string name="pref_update_check_now">දැන් පරීක්ෂා කරන්න</string>
+    <string name="pref_update_install">දැන් යාවත්කාලීන කරන්න</string>
+    <string name="pref_update_hosts_category">hosts යාවත්කාලීන</string>
+    <string name="pref_update_check">ආරම්භයේදී යාවත්කාලීන පරීක්ෂා කරන්න</string>
+    <string name="pref_update_check_hosts_daily">කලින් කලට යාවත්කාලීන පරීක්ෂා කරන්න</string>
+    <string name="pref_update_sync_on_update">යාවත්කාලීනයේදී සමමුහුර්ත කරන්න</string>
+    <string name="pref_update_sync_unmetered_only">දත්ත සීමාවක් නැති ජාලයකදී පමණක් සමමුහුර්ත කරන්න</string>
+    <string name="pref_vpn_service_on_boot">ආරම්භයේදී සක්‍රීය කරන්න</string>
+    <string name="pref_vpn_service_monitor">සම්බන්ධතාව නිරීක්ෂණය කරන්න</string>
+    <string name="pref_vpn_service_monitor_description">විසන්ධි වූ විට VPN නැවත ආරම්භ කිරීම සඳහා ජාල තත්ත්වය කලින් කලට පරීක්ෂා කරයි.</string>
+    <string name="pref_vpn_excluded_apps">බැහැර කළ යෙදුම්</string>
+    <string name="pref_vpn_excluded_apps_description">කිසිදු සම්බන්ධතාවක් අවහිර නොවීමට VPN භාවිත නොකළ යුතු යෙදුම් තෝරන්න.</string>
+    <string name="pref_vpn_exclude_system_apps">පද්ධති යෙදුම් බැහැර කරන්න</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>කිසිවක් නැත</item>
+        <item>බ්‍රවුසර හැර සියල්ල</item>
+        <item>සියල්ල</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS සේවාදායක</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>ජාලයේ DNS සේවාදායක</item>
+        <item>අභිරුචි DNS සේවාදායක</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">අභිරුචි DNS සේවාදායක</string>
+    <string name="pref_vpn_dns_custom_summary">IP ලිපින, කොමාවලින් වෙන් කර</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS සේවාදායක ලිපිනය වලංගු නොවේ</string>
+    <string name="pref_vpn_doh">DNS over HTTPS සේවාදායකය</string>
+    <string name="pref_vpn_doh_custom">අභිරුචි ලිපිනය</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS ලිපිනය</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS ලිපිනය වලංගු නොවේ</string>
+    <string name="pref_vpn_exclude_user_apps">පරිශීලක යෙදුම් බැහැර කරන්න</string>
+    <string name="pref_vpn_exclude_user_apps_activity">බැහැර කළ යෙදුම්</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">සියල්ල තෝරන්න</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">සියල්ල තේරීම ඉවත් කරන්න</string>
+    <string name="pref_vpn_exclude_user_apps_icon">යෙදුම් නිරූපකය</string>
     <string name="pref_vpn_reset">VPN යළි සකසන්න</string>
-    <string name="pref_vpn_reset_description">VPN සම්බන්ධතාවය මුල සිට නැවත ගොඩනඟන්න. VPN ක්‍රියා විරහිත වුවහොත් (අන්තර්ජාල ප්‍රවේශයක් නැති හෝ DNS දෝෂ) මෙය භාවිත කරන්න.</string>
-    <string name="pref_vpn_reset_done">VPN සම්බන්ධතාවය නැවත ගොඩනඟන ලදී.</string>
+    <string name="pref_vpn_reset_description">VPN සම්බන්ධතාව මුල සිටම නැවත ගොඩනඟයි. VPN ක්‍රියා නොකරන්නේ නම් (අන්තර්ජාල ප්‍රවේශය නැති වීම හෝ DNS දෝෂ) මෙය භාවිත කරන්න.</string>
+    <string name="pref_vpn_reset_done">VPN සම්බන්ධතාව නැවත ගොඩනඟන ලදී.</string>
     <string name="pref_vpn_reset_not_running">VPN ක්‍රියාත්මක නොවේ.</string>
-    <string name="pref_vpn_diagnostic_log">දෝෂ විනිශ්චය ලොගය</string>
-    <string name="pref_vpn_diagnostic_log_description">මෑත දෝෂ සහ VPN සිදුවීම් බලන්න, පිටපත් කරන්න හෝ බෙදාගන්න. ගැටලුවක් වාර්තා කිරීමේදී ප්‍රයෝජනවත් වේ.</string>
-    <string name="pref_vpn_diagnostic_log_empty">තවම කිසිදු සිදුවීමක් වාර්තා වී නැත.</string>
-    <string name="pref_vpn_diagnostic_log_share">දෝෂ විනිශ්චය ලොගය බෙදාගන්න</string>
+    <string name="pref_vpn_diagnostic_log_enabled">රෝග විනිශ්චය ලොගය සටහන් කරන්න</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">ගැටලුවක් නැවත ඇති කිරීමට පෙර මෙය සක්‍රීය කර, පහතින් එය නිර්යාත කරන්න. පැරණි උපාංගවල සුළු මන්දගාමී බවක් ඇති විය හැක. සටහන් වන්නේ තාක්ෂණික VPN සිදුවීම් පමණි, බ්‍රවුස් කළ ඉතිහාසය හෝ පුද්ගලික දත්ත කිසිවිටෙක සටහන් නොවේ.</string>
+    <string name="pref_vpn_diagnostic_log">රෝග විනිශ්චය ලොගය</string>
+    <string name="pref_vpn_diagnostic_log_description">මෑත දෝෂ සහ VPN සිදුවීම් බලන්න, පිටපත් කරන්න හෝ බෙදා ගන්න. ගැටලුවක් වාර්තා කිරීමේදී ප්‍රයෝජනවත් වේ.</string>
+    <string name="pref_vpn_diagnostic_log_empty">තවමත් කිසිදු සිදුවීමක් සටහන් වී නැත. ඉහත “රෝග විනිශ්චය ලොගය සටහන් කරන්න” සක්‍රීය කර, ගැටලුව නැවත ඇති කර බලන්න.</string>
+    <string name="pref_vpn_diagnostic_log_share">බෙදා ගන්න</string>
+    <string name="pref_vpn_diagnostic_log_share_title">රෝග විනිශ්චය ලොගය බෙදා ගන්න</string>
     <string name="pref_vpn_diagnostic_log_copy">පිටපත් කරන්න</string>
-    <string name="pref_vpn_diagnostic_log_copied">දෝෂ විනිශ්චය ලොගය පසුරු පුවරුවට පිටපත් කරන ලදී.</string>
-    <string name="pref_vpn_diagnostic_log_clear">දෝෂ විනිශ්චය ලොගය හිස් කරන්න</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">වාර්තා වූ සිදුවීම් මකන්න. පිරිසිදු තොරතුරු ලබා ගැනීමට ගැටලුවක් නැවත ඇති කිරීමට පෙර මෙය කරන්න.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">දෝෂ විනිශ්චය ලොගය හිස් කරන ලදී.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_vpn_diagnostic_log_copied">රෝග විනිශ්චය ලොගය පසුරු පුවරුවට පිටපත් කරන ලදී.</string>
+    <string name="pref_vpn_diagnostic_log_clear">රෝග විනිශ්චය ලොගය හිස් කරන්න</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">සටහන් වූ සිදුවීම් මකන්න. පිරිසිදු සටහනක් ලබා ගැනීමට ගැටලුව නැවත ඇති කිරීමට පෙර මෙය කරන්න.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">රෝග විනිශ්චය ලොගය හිස් කරන ලදී.</string>
+    <string name="pref_root_open_hosts">hosts ගොනුව විවෘත කරන්න</string>
+    <string name="hosts_file_unreadable">hosts ගොනුව කියවීමට නොහැකි විය.</string>
+    <string name="pref_hosts_redirection_summary">අවහිර කළ සත්කාරක හරවා යැවිය යුතු ස්ථානය සකසන්න</string>
+    <string name="pref_redirection_ipv4">IPv4 හරවා යැවීම වින්‍යාස කරන්න</string>
+    <string name="pref_redirection_ipv6">IPv6 හරවා යැවීම වින්‍යාස කරන්න</string>
+    <string name="pref_redirection_invalid">හරවා යැවීම වලංගු නොවේ</string>
+    <string name="pref_webserver_summary">දේශීය වෙබ් සේවාදායකය, අවහිර කළ සත්කාරක නාම සඳහා ඉල්ලීම්වලට පිළිතුරු දීමට දේශීය IP ලිපින මත සවන් දෙයි. අවහිර කළ සම්බන්ධතාවකදී යෙදුම් හිරවීම වැළැක්වීමට මෙය උපකාරී විය හැක.</string>
+    <string name="pref_webserver_enabled">වෙබ් සේවාදායකය සක්‍රීය කරන්න</string>
+    <string name="pref_webserver_test">වෙබ් සේවාදායකය පරීක්ෂා කරන්න</string>
+    <string name="pref_webserver_certificate">ස්වයං අත්සන් කළ සහතිකය ස්ථාපනය කරන්න</string>
+    <string name="pref_webserver_state_not_running">ක්‍රියාත්මක නොවේ</string>
+    <string name="pref_webserver_state_checking">පරීක්ෂා කරමින්…</string>
+    <string name="pref_webserver_state_running_not_installed">ක්‍රියාත්මකයි, නමුත් සහතිකය ස්ථාපනය කර නැත</string>
+    <string name="pref_webserver_state_running_and_installed">ක්‍රියාත්මකයි, සහතිකය ස්ථාපනය කර ඇත</string>
+    <string name="pref_webserver_certificate_dialog_title">සහතිකය අතින් ස්ථාපනය කිරීම</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) සිට, යෙදුම්වලට සහතික අධිකාරියක් (CA) ස්වයංක්‍රීයව ස්ථාපනය කළ නොහැක.\n\n“ආරක්ෂාව” සැකසීම් වෙත ගොස්, “සංකේතනය සහ අක්තපත්‍ර” ඉන්පසු “සහතිකයක් ස්ථාපනය කරන්න” තෝරන්න. එහිදී “CA සහතිකය” තෝරා, අලුතින් නිර්යාත කළ සහතික ගොනුව තෝරන්න.</string>
+    <string name="pref_webserver_certificate_dialog_action">“ආරක්ෂාව” සැකසීම් විවෘත කරන්න</string>
+    <string name="pref_webserver_certificate_failed">සහතිකය සූදානම් කිරීමට නොහැකි විය.</string>
+    <string name="webserver_error_title">වෙබ් සේවාදායකය ආරම්භ නොවීය</string>
+    <string name="webserver_error_resources">එහි ගොනු හෝ සහතිකය සූදානම් කිරීමට නොහැකි විය.</string>
+    <string name="webserver_error_address_in_use">උපාංගයේ වෙබ් ද්වාර (80 සහ 443) වෙනත් යෙදුමක් දැනටමත් භාවිත කරයි.</string>
+    <string name="webserver_error_start_failed">මෙම උපාංගයේ එය ආරම්භ කිරීමට නොහැකි විය.</string>
+    <string name="pref_webserver_icon">හිස් දැන්වීම් ඉඩ යෙදුම් නිරූපකයෙන් ප්‍රතිස්ථාපනය කරන්න</string>
 </resources>

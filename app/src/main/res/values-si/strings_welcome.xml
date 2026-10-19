@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">මෙම කෙටි විසාඩ් මෙම උපාංගයේ දැන්වීම් අවහිර කිරීම ක්‍රියාත්මක කරයි.</string>
+    <string name="welcome_first_step">විශාරදයේ පළමු පියවර</string>
+    <string name="welcome_second_step">විශාරදයේ දෙවන පියවර</string>
+    <string name="welcome_third_step">විශාරදයේ තෙවන පියවර</string>
+    <string name="welcome_fourth_step">විශාරදයේ සිව්වන පියවර</string>
+    <string name="welcome_method_header">AdAway වෙත සාදරයෙන් පිළිගනිමු!</string>
+    <string name="welcome_method_summary">AdAway දැන්වීම් අවහිර කිරීමේ ක්‍රම දෙකක් සපයයි. ඔබ කැමති එක තෝරන්න:</string>
+    <string name="welcome_root_method_title">Root පදනම් කරගත්\nදැන්වීම් අවහිර කිරීම</string>
+    <string name="welcome_root_method_text1">වේගවත්</string>
+    <string name="welcome_root_method_text2">බැටරියට මිත්‍රශීලී</string>
+    <string name="welcome_root_method_text3">Root අවශ්‍යයි</string>
+    <string name="welcome_vpn_method_title">VPN පදනම් කරගත්\nදැන්වීම් අවහිර කිරීම</string>
+    <string name="welcome_vpn_method_text1">මන්දගාමී</string>
+    <string name="welcome_vpn_method_text2">පසුබිමේ ක්‍රියාත්මක වේ</string>
+    <string name="welcome_vpn_method_text3">ගැළපීම</string>
+    <string name="welcome_root_missing_title">Root කළ Android අවශ්‍යයි</string>
+    <string name="welcome_root_missile_description">su ද්විමය ගොනුව සොයා ගත නොහැකි විය, නැතහොත් ඔබ AdAway සඳහා root අවසරය ලබා දුන්නේ නැත.\n\nඔබේ උපාංගය root කර නොමැති විට මෙය සිදු විය හැක. ඔබේ උපාංගය root කරන ආකාරය පිළිබඳ තොරතුරු wiki.lineageos.org හෝ වෙනත් Android වෙබ් අඩවිවලින් සොයා ගත හැක.</string>
+    <string name="welcome_vpn_alwayson_title">සැම විටම සක්‍රීය VPN සක්‍රීයයි</string>
+    <string name="welcome_vpn_alwayson_description">වෙනත් VPN එකක “සැම විටම සක්‍රීය VPN” සැකසුම සක්‍රීය කර ඇති බව AdAway හඳුනා ගත්තේය.\n\nමෙය නිසා AdAway හට VPN ප්‍රවේශය ඉල්ලා සිටීමට නොහැක. කරුණාකර අදාළ VPN හි “සැම විටම සක්‍රීය VPN” අක්‍රීය කර නැවත උත්සාහ කරන්න.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway හට VPN ප්‍රවේශය ඉල්ලා සිටීමට නොහැකි විය.\n\nවෙනත් VPN එකක “සැම විටම සක්‍රීය VPN” සැකසුම සක්‍රීය කර තිබීම මීට හේතු විය හැක. කරුණාකර කිසියම් VPN එකක මෙම සැකසුම සක්‍රීය දැයි පරීක්ෂා කර, නැවත උත්සාහ කිරීමට පෙර එය අක්‍රීය කරන්න.</string>
+    <string name="welcome_vpn_alwayson_settings_action">“VPN” සැකසීම් විවෘත කරන්න</string>
+    <string name="welcome_method_pro_logo">වාසි</string>
+    <string name="welcome_method_con_logo">අවාසි</string>
+    <string name="welcome_sync_header">සමමුහුර්ත කරමින්</string>
+    <string name="welcome_synced_header">සමමුහුර්ත විය!</string>
+    <string name="welcome_sync_summary">AdAway අවහිර කළ යුතු දැන්වීම් ජාල අන්තර්ජාල මූලාශ්‍රවලින් බාගත කරයි. ඒවා පසුව මනාපවලින් අභිරුචි කළ හැක.</string>
+    <string name="welcome_sync_retry_logo">නැවත සමමුහුර්ත කරන්න</string>
+    <string name="welcome_sync_error">සමමුහුර්ත කිරීමට නොහැකි විය: %1$s නැවත උත්සාහ කරන්නද?</string>
+    <string name="welcome_sync_notifications">දැන්වීම් අවහිර කිරීමේ තත්ත්වය සහ පාලනය පෙන්වීමට, ඒ වගේම යෙදුම් යාවත්කාලීනයක් ඇති බව දැනුම් දීමට (වසරකට කිහිප වතාවක්) එයට දැනුම්දීම් යැවිය හැක. යාවත්කාලීනව සිටීමට කැමති නම් ඒවා සක්‍රීය කරන්න.</string>
+    <string name="welcome_sync_leave_early_title">සමමුහුර්ත කිරීම තවම අවසන් නැත</string>
+    <string name="welcome_sync_leave_early_message">අවහිර ලැයිස්තු බාගත කිරීම තවම අවසන් වී නැත. ඔබට දැන් ඉදිරියට යා හැක, එය පසුබිමේ දිගටම සිදු වේ, නැතහොත් එය අවසන් වන තෙක් මෙහි රැඳී සිටිය හැක.</string>
+    <string name="welcome_sync_leave_early_wait">රැඳී සිටින්න</string>
+    <string name="welcome_sync_leave_early_continue">කෙසේ වෙතත් ඉදිරියට යන්න</string>
+    <string name="welcome_battery_header">පසුබිමේදීත් ආරක්ෂිතව සිටින්න</string>
+    <string name="welcome_battery_summary">බලශක්තිය ඉතිරි කිරීමට Android හට පසුබිමේදී AdAway හි VPN නතර කළ හැක, එය නිහඬව දැන්වීම් අවහිර කිරීම නවතා දැමිය හැක. AdAway දිගටම ක්‍රියාත්මක වීමට බැටරි ප්‍රශස්තකරණය නොසලකා හැරීමට ඉඩ දෙන්න.</string>
+    <string name="welcome_battery_action">ඉඩ දෙන්න</string>
+    <string name="welcome_battery_granted">ඉඩ දී ඇත ✓</string>
+    <string name="welcome_battery_footnote_prefix">ඔබට මෙය පසුව ඕනෑම වේලාවක වෙනස් කළ හැක:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android සැකසීම්</item>
+        <item>යෙදුම්</item>
+        <item>AdAway</item>
+        <item>බැටරිය</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">තවත් දෙයක්: ඔබේ දුරකථනයේම බැටරි කළමනාකරු</string>
+    <string name="welcome_oem_battery_summary">සමහර දුරකථන වෙළඳ නාමවල AdAway ද අවහිර කළ හැකි තමන්ගේම බැටරි කළමනාකරුවක් ඇත. ඔබේ දුරකථනයේ පරීක්ෂා කළ යුතු දේ මෙන්න:</string>
+    <string name="welcome_oem_battery_action">යෙදුම් තොරතුරු විවෘත කරන්න</string>
+    <string name="welcome_oem_battery_open_failed">යෙදුම් තොරතුරු තිරය විවෘත කිරීමට නොහැකි විය. එය Android සැකසීම් › යෙදුම් › AdAway වෙතින් අතින් විවෘත කරන්න.</string>
+    <string name="welcome_oem_battery_disclaimer">මේවා සාමාන්‍ය මග පෙන්වීම් මිස නිවැරදි මාර්ගෝපදේශයක් නොවේ: වචන සහ ස්ථානය දුරකථන ආකෘතිය සහ Android අනුවාදය අනුව වෙනස් විය හැක.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>යෙදුම් තොරතුරු</item>
+        <item>බැටරිය</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">“පසුබිම් භාවිත සීමා” › “කිසිදා නිදා නොගන්නා යෙදුම්” වැනි දෙයක් සොයා, AdAway එම ලැයිස්තුවට එක් කරන්න.</string>
+    <string name="welcome_oem_battery_secondary_oneui">“ස්වයංක්‍රීය ප්‍රශස්තකරණය” සැකසුමක් තිබේදැයි ද පරීක්ෂා කර, තිබේ නම් “අවශ්‍ය වූ විට යළි ආරම්භ කරන්න” අක්‍රීය කරන්න.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>යෙදුම් තොරතුරු</item>
+        <item>බැටරි සුරැකුම</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">“සීමා නැත” තෝරන්න.</string>
+    <string name="welcome_oem_battery_secondary_miui">“ස්වයංක්‍රීය ආරම්භය” ද සක්‍රීය කරන්න (නව අනුවාදවල “පසුබිම් ස්වයංක්‍රීය ආරම්භය”).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>යෙදුම් තොරතුරු</item>
+        <item>බැටරි භාවිතය</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">“පසුබිම් ක්‍රියාකාරකම්වලට ඉඩ දෙන්න” තෝරන්න (සමහර විට “සීමා නැත” ලෙස පෙන්වයි).</string>
+    <string name="welcome_oem_battery_secondary_coloros">බලෙන් නවත්වා පසුව ද AdAway හට තනිවම යළි ආරම්භ විය හැකි වන පරිදි, AdAway සඳහා “ස්වයං-දියත් කිරීම” ස්විචයක් ද සොයන්න (බොහෝ විට සැකසීම් › යෙදුම් යටතේ).</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>යෙදුම් තොරතුරු</item>
+        <item>බැටරිය</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">“යෙදුම් දියත් කිරීම” සොයා, “ස්වයංක්‍රීයව කළමනාකරණය කරන්න” අක්‍රීය කර, ඉන්පසු “ස්වයං-දියත් කිරීම”, “ද්විතීයික දියත් කිරීම” සහ “පසුබිමේ ධාවනය කරන්න” යන විකල්ප 3ම සක්‍රීය කරන්න.</string>
+    <string name="welcome_oem_battery_secondary_emui">මෑත යෙදුම් තිරයේ AdAway ද අගුළු දමන්න (අගුලක් දිස් වන තෙක් එහි කාඩ්පත පහළට අදින්න).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>යෙදුම් තොරතුරු</item>
+        <item>බැටරි භාවිතය</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">පසුබිම් බල භාවිත විකල්පයක් සොයා, “පසුබිම් බල භාවිතය සීමා නොකරන්න” තෝරන්න (“ස්මාර්ට් පාලනය” නොවේ).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">AdAway සඳහා “ස්වයංක්‍රීය ආරම්භය” සැකසුමක් ද සොයන්න, බොහෝ විට සැකසීම් › යෙදුම් යටතේ.</string>
+    <string name="welcome_oem_battery_label_generic">වෙනත් වෙළඳ නාමයක්</string>
+    <string name="welcome_oem_battery_tip_generic">යෙදුම් තොරතුරු තුළ බැටරි හෝ පසුබිම් ක්‍රියාකාරකම් සැකසුමක් සොයා, AdAway සීමා කර නොමැති බව තහවුරු කරගන්න.</string>
+    <string name="welcome_back_button">ආපසු</string>
+    <string name="welcome_next_button">ඊළඟ</string>
+    <string name="welcome_finish_button">අවසන් කරන්න</string>
+    <string name="tv_welcome_intro_subtitle">මෙම කෙටි විශාරදය මෙම උපාංගයේ දැන්වීම් අවහිර කිරීම සක්‍රීය කරයි.</string>
     <string name="tv_welcome_start_button">ආරම්භ කරන්න</string>
     <string name="tv_welcome_method_header">ඔබේ අවහිර කිරීමේ ක්‍රමය තෝරන්න</string>
-    <string name="tv_welcome_method_root_button">root භාවිතා කරන්න</string>
-    <string name="tv_welcome_method_root_body">වේගවත් සහ බැටරි ඉතිරි කරයි. root කළ උපාංගයක් අවශ්‍යයි.</string>
-    <string name="tv_welcome_method_vpn_button">VPN භාවිතා කරන්න</string>
-    <string name="tv_welcome_method_vpn_body">root නොමැතිව ක්‍රියා කරයි, ඕනෑම Android TV උපාංගයක් සමඟ ගැලපේ.</string>
-    <string name="tv_welcome_activate_header">දැන්වීම් අවහිර කිරීම ක්‍රියාත්මක කරන්න</string>
-    <string name="tv_welcome_activate_body">එය දේශීය VPN එකකි: එය ඔබේ ට්‍රැෆික් බාහිර සර්වරයක් හරහා යැවීමකින් තොරව, මෙම උපාංගයේම දැන්වීම් පෙරහන් කරයි.</string>
+    <string name="tv_welcome_method_root_button">Root භාවිත කරන්න</string>
+    <string name="tv_welcome_method_root_body">වේගවත් සහ බැටරියට මිත්‍රශීලී. Root කළ උපාංගයක් අවශ්‍යයි.</string>
+    <string name="tv_welcome_method_vpn_button">VPN භාවිත කරන්න</string>
+    <string name="tv_welcome_method_vpn_body">Root නොමැතිව ක්‍රියා කරයි, ඕනෑම Android TV උපාංගයකට ගැළපේ.</string>
+    <string name="tv_welcome_activate_header">දැන්වීම් අවහිර කිරීම සක්‍රීය කරන්න</string>
+    <string name="tv_welcome_activate_body">මෙය දේශීය VPN එකකි: ඔබේ ගමනාගමනය පිටත සේවාදායකයක් හරහා නොයවා, මෙම උපාංගයේ දැන්වීම් පෙරහන් කරයි.</string>
 </resources>

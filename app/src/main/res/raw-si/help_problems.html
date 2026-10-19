@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN එක තනිවම අක්‍රීය වේ</h2>
+<p>මෙය බොහෝ විට සිදු වන්නේ බැටරිය ඉතිරි කිරීමට පද්ධතිය VPN සේවාව නවත්වන නිසාය, බිඳ වැටීමක් නිසා නොවේ. ආක්‍රමණශීලී බල කළමනාකරණයක් ඇති OEM ROM වල (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung සහ තවත්) මෙය සුලභය.</p>
+<p>Android සැකසීම්වල AdAway සොයා: <cite>බැටරි ප්‍රශස්තකරණය</cite> <cite>සීමා රහිත</cite> (හෝ <cite>ප්‍රශස්ත නොකරන්න</cite>) ලෙස සකසන්න, ඔබේ ROM හි තිබේ නම් <cite>ස්වයංක්‍රීය ආරම්භය</cite>/<cite>ස්වයං-දියත් කිරීම</cite> සඳහා ඉඩ දෙන්න, සහ ස්වයිප් කර ඉවත් නොවන පරිදි AdAway මෑත යෙදුම් ලැයිස්තුවේ අගුළු දමන්න. AdAway හි VPN මනාපවල <cite>ආරම්භයේදී සක්‍රීය කරන්න</cite> ද සක්‍රීය බව තහවුරු කරගන්න.</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Wi-Fi සහ ජංගම දත්ත අතර මාරු වූ වහාම අන්තර්ජාලය නැත, නැතහොත් බ්‍රවුස් කිරීම මන්දගාමීය</h2>
+<p>ක්‍රියාකාරී ජාලය වෙනස් වූ විට, නව ජාලයෙන් DNS විසඳීමට උමග නැවත ගොඩනැගිය යුතුය. බ්‍රවුස් කිරීම තවමත් අක්‍රමවත් නම්, සම්බන්ධතාව මුල සිටම නැවත ගොඩනැගීමට <cite>මනාප › VPN පදනම් කරගත් දැන්වීම් අවහිර කරන්නා › VPN යළි සකසන්න</cite> විවෘත කරන්න. එය නැවත නැවතත් සිදු වේ නම්, රෝග විනිශ්චය ලොගයක් (පහත) ලබාගෙන වාර්තා කරන්න.</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>රෝග විනිශ්චය ලොගයක් නිර්යාත කරන්නේ කෙසේද?</h2>
+<p><cite>මනාප › VPN පදනම් කරගත් දැන්වීම් අවහිර කරන්නා › රෝග විනිශ්චය ලොගය</cite> විවෘත කරන්න. එය මෑත දෝෂ සහ VPN සිදුවීම් (ජාල මාරුවීම්, නැවත සම්බන්ධ වීම්, අසාර්ථක වීම්) සටහන් කරයි, ඔබේ බ්‍රවුස් කළ ඉතිහාසය නොවේ, තාක්ෂණික සිදුවීම් පමණි. හරියටම ඉහළින් ඇති <cite>රෝග විනිශ්චය ලොගය සටහන් කරන්න</cite> සක්‍රීය කරන තෙක් එය හිස්ව පවතී. ගැටලුවක් වාර්තා කිරීමේදී එය යැවීමට <cite>පිටපත් කරන්න</cite> හෝ <cite>බෙදා ගන්න</cite> භාවිත කරන්න. ඉඟිය: මුලින්ම එය <cite>හිස් කරන්න</cite>, පසුව ගැටලුව නැවත ඇති කරන්න, එවිට ලොගය අවධානය යොමු කළ දෙයකට සීමා වේ.</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome තවමත් දැන්වීම් පෙන්වයි</h2>
+<p>Chrome හට AdAway මඟහරින තමන්ගේම <cite>ආරක්ෂිත DNS</cite> (DNS-over-HTTPS) භාවිත කළ හැක. Chrome හි <cite>සැකසීම් › රහස්‍යතාව සහ ආරක්ෂාව › ආරක්ෂිත DNS භාවිත කරන්න</cite> විවෘත කර එය අක්‍රීය කරන්න. ඕනෑම යෙදුමක හෝ පද්ධතියේ <cite>පෞද්ගලික DNS</cite> සැකසුමකටද මෙය අදාළය. VPN ප්‍රකාරයේදී, AdAway හට DNS තනිවම සංකේතනය කළ හැක: නිති ප්‍රශ්න හි <cite>VPN භාවිත කරන DNS සේවාදායක මොනවාද?</cite> බලන්න.</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>සමහර දැන්වීම් තවමත් පෙන්වයි, නැතහොත් යෙදුමක් තවමත් දැන්වීම් පෙන්වයි</h2>
+<p>සත්කාරක නාමයක් ඔබේ මූලාශ්‍රවල නොමැති විය හැක, නැතහොත් යෙදුම තමන්ගේ දැන්වීම් තමා තුළම ඇතුළත් කර ඇති නිසා කිසිදු ඉල්ලීමක් සිදු නොවේ. යෙදුම විමසන දේ බැලීමට මුල් තිරයෙන් <cite>DNS ලොගය</cite> විවෘත කර, සැක සහිත සත්කාරක නාම ඔබේ <cite>අවහිර කළ</cite> ලැයිස්තුවට එක් කර, කිසිවක් බිඳ නොවැටෙන බව තහවුරු කරගන්න. සමහර යෙදුම් දැන්වීම් බාගත කළ පසු ඒවා හැඹිලිගත ද කරයි, එබැවින් Android සැකසීම්වල එම යෙදුමේ හැඹිලිය හිස් කිරීම උපකාරී විය හැක.</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway සක්‍රීය කළ පසු යෙදුමක් ක්‍රියා කිරීම නැවතුණි</h2>
+<p>යෙදුමකට අවශ්‍ය සත්කාරක නාමයක් අවහිර වූ විට සමහර යෙදුම් ක්‍රියා කිරීම ප්‍රතික්ෂේප කරයි. යෙදුමට අවශ්‍ය සත්කාරක නාමය සොයා ගැනීමට <cite>DNS ලොගය</cite> භාවිත කර, එය ඔබේ <cite>අවසර දුන්</cite> ලැයිස්තුවට එක් කරන්න, එවිට යෙදුම නැවත ක්‍රියා කළ යුතුය. ගැටලු සහිත බව දන්නා යෙදුම් <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">මෙහි</a> ලැයිස්තුගතව ඇත.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>hosts ගොනුව යෙදීම අසාර්ථක වේ (root ප්‍රකාරය)</h2>
+<p>මෑත Android අනුවාද කියවීම පමණක් කළ හැකි <code>/system</code> කොටසක් භාවිත කරයි, එබැවින් AdAway හට එහි කෙළින්ම ලිවිය නොහැක. ඔබ Magisk භාවිත කරන්නේ නම්, <cite>systemless hosts</cite> මොඩියුලය සක්‍රීය කර, උපාංගය යළි ආරම්භ කර, නැවත යොදන්න. ඔබ root භාවිත නොකරන්නේ නම්, පද්ධතිය වෙනස් කිරීම අවශ්‍ය නොවන VPN ප්‍රකාරයට මාරු වන්න.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>තවමත් විසඳුමක් නැද්ද?</h2>
+<p>රෝග විනිශ්චය ලොගයක් අමුණා, ගැටලුව මෙහි වාර්තා කරන්න: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

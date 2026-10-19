@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Simulan ang Pag-record</string>
-    <string name="log_start_recording_vpn_inactive">Simulan ang Pag-record (hindi aktibo ang VPN)</string>
-    <string name="log_stop_recording">Ihinto ang Pag-record</string>
+    <string name="log_toggle_recording_description">I-toggle ang pag-record ng log</string>
+    <string name="log_start_recording">Pindutin ang record para magsimulang mag-log ng mga kahilingan, mag-browse sa Web o gumamit ng mga app, pagkatapos ay bumalik o mag-swipe para i-refresh ang mga log.</string>
+    <string name="log_blocked_requests_ignored">\n\nHindi ila-log ang mga naka-block na kahilingan. I-disable muna ang pag-block ng ad kung gusto mo rin silang i-log.</string>
+    <string name="log_sort">Pagbukud-bukurin ang mga domain</string>
+    <string name="log_clear">I-clear ang log</string>
+    <string name="log_sort_alphabetical">Ayon sa alpabeto</string>
+    <string name="log_sort_top_level_domain">Ayon sa top-level domain</string>
+    <string name="log_block">Idagdag ang entry sa mga naka-block</string>
+    <string name="log_allow">Idagdag ang entry sa mga pinapayagan</string>
+    <string name="log_redirect">Idagdag ang entry sa mga naka-redirect</string>
+    <string name="log_redirect_dialog_title">I-redirect ang domain</string>
+    <string name="log_capture_failed">Hindi masimulan ang DNS capture.</string>
+    <string name="log_start_recording_button">Simulan ang pag-record</string>
+    <string name="log_start_recording_vpn_inactive">Simulan ang pag-record (hindi aktibo ang VPN)</string>
+    <string name="log_stop_recording">Itigil ang pag-record</string>
 </resources>

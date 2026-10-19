@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">ලොග් සටහන් කිරීම ක්‍රියාත්මක/නවතන්න</string>
+    <string name="log_start_recording">ඉල්ලීම් සටහන් කිරීම ආරම්භ කිරීමට පටිගත කිරීම ඔබා, වෙබ් බ්‍රවුස් කරන්න හෝ යෙදුම් භාවිත කරන්න, පසුව ලොග් නැවුම් කිරීමට ආපසු යන්න හෝ ස්වයිප් කරන්න.</string>
+    <string name="log_blocked_requests_ignored">\n\nඅවහිර කළ ඉල්ලීම් සටහන් නොවේ. ඒවා ද සටහන් කිරීමට අවශ්‍ය නම් මුලින්ම දැන්වීම් අවහිර කිරීම අක්‍රීය කරන්න.</string>
+    <string name="log_sort">ඩොමේන් පිළිවෙළට සකසන්න</string>
+    <string name="log_clear">ලොගය හිස් කරන්න</string>
+    <string name="log_sort_alphabetical">අකාරාදී පිළිවෙළට</string>
+    <string name="log_sort_top_level_domain">ඉහළම මට්ටමේ ඩොමේනය අනුව</string>
+    <string name="log_block">අවහිර ලැයිස්තුවට ඇතුළත් කිරීමක් එක් කරන්න</string>
+    <string name="log_allow">අවසර ලැයිස්තුවට ඇතුළත් කිරීමක් එක් කරන්න</string>
+    <string name="log_redirect">හරවා යැවීමේ ලැයිස්තුවට ඇතුළත් කිරීමක් එක් කරන්න</string>
+    <string name="log_redirect_dialog_title">ඩොමේනය හරවා යවන්න</string>
+    <string name="log_capture_failed">DNS ග්‍රහණය ආරම්භ කිරීමට නොහැකි විය.</string>
     <string name="log_start_recording_button">පටිගත කිරීම ආරම්භ කරන්න</string>
-    <string name="log_start_recording_vpn_inactive">පටිගත කිරීම ආරම්භ කරන්න (VPN සක්‍රිය නැත)</string>
-    <string name="log_stop_recording">පටිගත කිරීම නවත්වන්න</string>
+    <string name="log_start_recording_vpn_inactive">පටිගත කිරීම ආරම්භ කරන්න (VPN සක්‍රීය නැත)</string>
+    <string name="log_stop_recording">පටිගත කිරීම නවතන්න</string>
 </resources>

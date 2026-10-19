@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>Kusang nag-o-off ang VPN</h2>
+<p>Halos palaging ang system ang pumapatay sa VPN service para makatipid ng baterya, hindi pag-crash. Karaniwan ito sa mga OEM ROM na may agresibong power management (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, at iba pa).</p>
+<p>Sa mga setting ng Android, hanapin ang AdAway at: itakda ang <cite>pag-optimize ng baterya</cite> sa <cite>Walang restriction</cite> (o <cite>Huwag i-optimize</cite>), payagan ang <cite>autostart</cite>/<cite>auto-launch</cite> kung mayroon nito ang iyong ROM, at i-lock ang AdAway sa listahan ng mga kamakailang app para hindi ito mai-swipe palayo. Tiyakin din na naka-on ang <cite>I-enable sa pagsisimula</cite> sa mga kagustuhan ng VPN ng AdAway.</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Walang internet o mabagal ang pag-browse pagkatapos lumipat sa pagitan ng Wi-Fi at mobile</h2>
+<p>Kapag nagbago ang aktibong network, kailangang buuin muli ang tunnel para ma-resolve ang DNS mula sa bagong network. Kung nananatiling sira ang pag-browse, buksan ang <cite>Mga Kagustuhan › Ad blocker na batay sa VPN › I-reset ang VPN</cite> para buuin muli mula sa simula ang koneksyon. Kung paulit-ulit itong nangyayari, mag-capture ng log ng diagnostic (sa ibaba) at iulat ito.</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Paano ako mag-e-export ng log ng diagnostic?</h2>
+<p>Buksan ang <cite>Mga Kagustuhan › Ad blocker na batay sa VPN › Log ng diagnostic</cite>. Nire-record nito ang mga kamakailang error at event ng VPN (paglipat ng network, muling pagkonekta, pagkabigo), hindi ang history ng pag-browse mo, mga teknikal na event lang. Mananatili itong walang laman hanggang hindi mo ino-on ang <cite>I-record ang log ng diagnostic</cite> sa mismong itaas. Gamitin ang <cite>Kopyahin</cite> o <cite>Ibahagi</cite> para ipadala ito kapag nag-uulat ng problema. Tip: <cite>I-clear</cite> muna ito, saka ulitin ang isyu, para nakatuon ang log.</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Nagpapakita pa rin ng mga ad ang Chrome</h2>
+<p>Maaaring gamitin ng Chrome ang sarili nitong <cite>Secure DNS</cite> (DNS-over-HTTPS), na nilalampasan ang AdAway. Sa Chrome, buksan ang <cite>Mga Setting › Privacy at seguridad › Gumamit ng secure DNS</cite> at i-off ito. Ganoon din para sa anumang setting na <cite>Pribadong DNS</cite> ng app o ng system. Sa VPN mode, kaya ng AdAway na i-encrypt mismo ang DNS: tingnan ang <cite>Aling mga DNS server ang ginagamit ng VPN?</cite> sa FAQ.</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>May mga ad pa ring nakakalusot, o may app na nagpapakita pa rin ng mga ad</h2>
+<p>Maaaring wala sa iyong mga pinagmulan ang isang hostname, o isinasama ng app ang mga ad nito kaya walang kahilingang ginagawa. Buksan ang <cite>Log ng DNS</cite> mula sa home screen para makita kung ano ang tinatanong ng app, idagdag ang mga kahina-hinalang hostname sa iyong listahan ng <cite>Naka-block</cite>, at tiyaking walang masisira. May mga app ding nagka-cache ng mga ad pagkatapos i-download ang mga ito, kaya makakatulong ang pag-clear ng cache ng app na iyon sa mga setting ng Android.</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>Tumigil sa paggana ang isang app pagkatapos i-enable ang AdAway</h2>
+<p>Tumatangging gumana ang ilang app kapag naka-block ang hostname na kailangan nila. Gamitin ang <cite>Log ng DNS</cite> para malaman kung aling hostname ang kailangan ng app, idagdag ito sa iyong listahan ng <cite>Pinapayagan</cite>, at dapat gumana na ulit ang app. Nakalista <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">dito</a> ang mga kilalang problematikong app.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>Hindi nailalapat ang hosts file (root mode)</h2>
+<p>Read-only na <code>/system</code> partition ang ginagamit ng mga bagong bersyon ng Android, kaya hindi direktang makakasulat doon ang AdAway. Kung gumagamit ka ng Magisk, i-enable ang <cite>systemless hosts</cite> module, mag-reboot, at ilapat ulit. Kung hindi ka gumagamit ng root, lumipat na lang sa VPN mode, na hindi nangangailangan ng anumang pagbabago sa system.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>Hindi pa rin gumagana?</h2>
+<p>Iulat ang problema na may kalakip na log ng diagnostic sa <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

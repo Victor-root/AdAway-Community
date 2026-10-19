@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_root_missing_title">Kailangan ng Android na may root</string>
-    <string name="tv_welcome_intro_subtitle">Papaganahin ng maikling wizard na ito ang pag-block ng ads sa device na ito.</string>
+    <string name="welcome_first_step">Unang hakbang ng wizard</string>
+    <string name="welcome_second_step">Ikalawang hakbang ng wizard</string>
+    <string name="welcome_third_step">Ikatlong hakbang ng wizard</string>
+    <string name="welcome_fourth_step">Ikaapat na hakbang ng wizard</string>
+    <string name="welcome_method_header">Maligayang pagdating sa AdAway!</string>
+    <string name="welcome_method_summary">May dalawang paraan ng pag-block ng ad ang AdAway. Piliin ang gusto mo:</string>
+    <string name="welcome_root_method_title">Pag-block ng ad\nna batay sa root</string>
+    <string name="welcome_root_method_text1">Mas mabilis</string>
+    <string name="welcome_root_method_text2">Matipid sa baterya</string>
+    <string name="welcome_root_method_text3">Kailangan ng root</string>
+    <string name="welcome_vpn_method_title">Pag-block ng ad\nna batay sa VPN</string>
+    <string name="welcome_vpn_method_text1">Mas mabagal</string>
+    <string name="welcome_vpn_method_text2">Tumatakbo sa background</string>
+    <string name="welcome_vpn_method_text3">Mas compatible</string>
+    <string name="welcome_root_missing_title">Kailangan ng naka-root na Android</string>
+    <string name="welcome_root_missile_description">Hindi nahanap ang su binary o hindi mo pinayagan ang root permission para sa AdAway.\n\nMaaaring mangyari ito kapag hindi naka-root ang iyong device. May impormasyon kung paano i-root ang device mo sa wiki.lineageos.org o sa iba pang website tungkol sa Android.</string>
+    <string name="welcome_vpn_alwayson_title">Naka-enable ang Always-on VPN</string>
+    <string name="welcome_vpn_alwayson_description">Natukoy ng AdAway na aktibo sa ibang VPN ang setting na “Always-on VPN”.\n\nHinahadlangan nito ang AdAway na humiling ng access sa VPN. Pakidisable ang “Always-on VPN” sa kaukulang VPN at subukan ulit.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">Hindi nakahiling ng access sa VPN ang AdAway.\n\nMaaaring dahil ito sa ibang VPN na may aktibong setting na “Always-on VPN”. Pakisuri kung may VPN na naka-enable ang setting na ito at i-disable ito bago subukan ulit.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Buksan ang mga setting ng “VPN”</string>
+    <string name="welcome_method_pro_logo">Pro</string>
+    <string name="welcome_method_con_logo">Kontra</string>
+    <string name="welcome_sync_header">Nagsi-sync</string>
+    <string name="welcome_synced_header">Na-sync na!</string>
+    <string name="welcome_sync_summary">Dina-download ng AdAway mula sa mga online na pinagmulan ang mga ad network na iba-block. Maaari mo silang i-customize mamaya sa mga setting.</string>
+    <string name="welcome_sync_retry_logo">Subukang i-sync ulit</string>
+    <string name="welcome_sync_error">Hindi na-sync: %1$s Subukan ulit ngayon?</string>
+    <string name="welcome_sync_notifications">Maaari itong magpadala ng mga notification para ipakita ang status at kontrol ng pag-block ng ad, at para ipaalam ang available na update ng app (ilang beses lang sa isang taon). I-enable ang mga ito kung gusto mong manatiling napapanahon.</string>
+    <string name="welcome_sync_leave_early_title">Hindi pa tapos ang pag-sync</string>
+    <string name="welcome_sync_leave_early_message">Hindi pa tapos mag-download ang mga listahan ng pag-block. Maaari kang magpatuloy ngayon at itutuloy ito sa background, o maghintay dito hanggang matapos.</string>
+    <string name="welcome_sync_leave_early_wait">Maghintay</string>
+    <string name="welcome_sync_leave_early_continue">Magpatuloy pa rin</string>
+    <string name="welcome_battery_header">Manatiling protektado sa background</string>
+    <string name="welcome_battery_summary">Maaaring i-pause ng Android ang VPN ng AdAway sa background para makatipid ng kuryente, na maaaring tahimik na magpahinto sa pag-block ng ad. Payagan ang AdAway na balewalain ang battery optimization para patuloy itong tumakbo.</string>
+    <string name="welcome_battery_action">Payagan</string>
+    <string name="welcome_battery_granted">Pinayagan ✓</string>
+    <string name="welcome_battery_footnote_prefix">Maaari mo itong baguhin anumang oras mula sa</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Mga Setting ng Android</item>
+        <item>Mga App</item>
+        <item>AdAway</item>
+        <item>Baterya</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Isa pa: ang sariling battery manager ng iyong telepono</string>
+    <string name="welcome_oem_battery_summary">May sariling battery manager ang ilang brand ng telepono na maaari ring humarang sa AdAway. Narito ang dapat mong tingnan sa sarili mong telepono:</string>
+    <string name="welcome_oem_battery_action">Buksan ang impormasyon ng app</string>
+    <string name="welcome_oem_battery_open_failed">Hindi mabuksan ang screen ng impormasyon ng app. Buksan ito nang mano-mano mula sa Mga Setting ng Android → Mga App → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Mga pangkalahatang gabay ito, hindi eksaktong tagubilin: maaaring magkaiba ang mga salita at lokasyon depende sa modelo ng telepono at bersyon ng Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Impormasyon ng app</item>
+        <item>Baterya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Maghanap ng parang “Mga limitasyon sa paggamit sa background” › “Mga app na hindi kailanman natutulog”, pagkatapos ay idagdag ang AdAway sa listahang iyon.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Tingnan din kung may setting na “Awtomatikong pag-optimize” at i-off ang “I-restart kapag kailangan” kung mayroon.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Impormasyon ng app</item>
+        <item>Battery saver</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Piliin ang “Walang restriction”.</string>
+    <string name="welcome_oem_battery_secondary_miui">I-enable din ang “Autostart” (“Background autostart” sa mas bagong bersyon).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Impormasyon ng app</item>
+        <item>Paggamit ng baterya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Piliin ang “Payagan ang aktibidad sa background” (minsan ipinapakita bilang “Walang restriction”).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Maghanap din ng toggle na “Auto-launch” para sa AdAway (madalas sa Mga Setting › Mga App), para makapag-restart ito nang kusa pagkatapos itong sapilitang ihinto.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Impormasyon ng app</item>
+        <item>Baterya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Hanapin ang “App launch”, i-off ang “Manage automatically”, pagkatapos ay i-enable ang lahat ng 3: “Auto-launch”, “Secondary launch” at “Run in background”.</string>
+    <string name="welcome_oem_battery_secondary_emui">I-lock din ang AdAway sa screen ng mga kamakailang app (i-swipe pababa ang card nito hanggang lumabas ang padlock).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Impormasyon ng app</item>
+        <item>Paggamit ng baterya</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Maghanap ng opsyon sa paggamit ng kuryente sa background at piliin ang “Huwag higpitan ang paggamit ng kuryente sa background” (hindi ang “Smart control”).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Maghanap din ng setting na “Autostart” para sa AdAway, madalas sa Mga Setting › Mga App.</string>
+    <string name="welcome_oem_battery_label_generic">Ibang brand</string>
+    <string name="welcome_oem_battery_tip_generic">Maghanap sa impormasyon ng app ng setting ng baterya o aktibidad sa background at tiyaking hindi pinaghihigpitan ang AdAway.</string>
+    <string name="welcome_back_button">Bumalik</string>
+    <string name="welcome_next_button">Susunod</string>
+    <string name="welcome_finish_button">Tapusin</string>
+    <string name="tv_welcome_intro_subtitle">Ino-on ng maikling wizard na ito ang pag-block ng ad sa device na ito.</string>
     <string name="tv_welcome_start_button">Magsimula</string>
-    <string name="tv_welcome_method_header">Piliin ang iyong paraan ng pag-block</string>
-    <string name="tv_welcome_method_root_button">Gamitin ang root</string>
+    <string name="tv_welcome_method_header">Piliin ang paraan mo ng pag-block</string>
+    <string name="tv_welcome_method_root_button">Gumamit ng root</string>
     <string name="tv_welcome_method_root_body">Mas mabilis at matipid sa baterya. Kailangan ng naka-root na device.</string>
-    <string name="tv_welcome_method_vpn_button">Gamitin ang VPN</string>
-    <string name="tv_welcome_method_vpn_body">Gumagana nang walang root, tugma sa anumang Android TV device.</string>
-    <string name="tv_welcome_activate_header">I-on ang pag-block ng ads</string>
-    <string name="tv_welcome_activate_body">Ito ay local na VPN: sinasala nito ang mga ad sa device na ito, nang hindi dinadaan ang iyong trapiko sa isang panlabas na server.</string>
+    <string name="tv_welcome_method_vpn_button">Gumamit ng VPN</string>
+    <string name="tv_welcome_method_vpn_body">Gumagana nang walang root, compatible sa anumang Android TV device.</string>
+    <string name="tv_welcome_activate_header">I-on ang pag-block ng ad</string>
+    <string name="tv_welcome_activate_body">Isa itong lokal na VPN: sinasala nito ang mga ad sa device na ito nang hindi dinadaan ang iyong trapiko sa panlabas na server.</string>
 </resources>

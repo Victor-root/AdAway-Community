@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Kita sa pamamagitan ng mga advertisement</h2>
-<p>Mayroong isang madalas na sinasabing maling kuru-kuro na kung ang isang user ay hindi kailanman nag-click sa mga ad, ang pagharang sa kanila ay hindi makakasama sa isang site o aplikasyon sa pananalapi. Mali ito, kumikita rin ang mga developer sa pamamagitan lamang ng pagpapakita ng mga ad. Nasa sa iyo kung ha-harangan mo ang mga ad o hindi. Sa personal, hindi ako gagamit ng mga aplikasyon na nagpapakita ng mga ad dahil sa tingin ko ay nakakainis ang mga ito, kaya kung walang ad blocker hindi ko mai-install ang mga aplikasyon na ito.</p>
+<h2>Ano ang AdAway Community?</h2>
+<p>Ang AdAway Community ay isang hindi opisyal na fork ng AdAway na pinapanatili ng komunidad, ang open-source na ad blocker para sa Android. Bina-block nito ang mga ad at tracker sa buong system, para sa bawat app, nang walang account at walang sariling ad. Nakatuon ang fork na ito sa pagpapanatiling maaasahang gumagana ang app sa mga makabagong bersyon ng Android at sa mga OEM ROM.</p>
 
-<h2>Paano gumagana ang AdAway?</h2>
-<p>Ginagamit ng AdAway ang <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> upang harangan ang mga hostname, na naghahatid ng mga advertisement. Ang file ng host ay isang file na matatagpuan sa <code>/system/etc/hosts</code> na nagmamapa ng mga hostname sa mga IP address. Ito ay isang tradisyonal na paraan upang tukuyin ang hostname sa mga pares ng IP address nang hindi umaasa sa Domain Name System (DNS). Ang lahat ng hindi gustong hostname ay na-redirect sa <code>127.0.0.1</code> na nangangahulugang ituturo nila ang iyong sariling device.<br>
-Kung ang file ng mga host ay hindi maisusulat, ang isang fallback na solusyon ay ang paggamit ng builtin na serbisyo ng VPN. Sasalain nito ang mga koneksyon sa mga hindi gustong hostname at hahayaan ang iba na dumaan.</p>
+<h2>Paano ito nagba-block ng mga ad?</h2>
+<p>Gumagana ang AdAway sa isa sa dalawang mode:</p>
+<p><strong>VPN mode</strong> (hindi kailangan ng root): nagpapatakbo ang AdAway ng lokal na VPN sa mismong device na hindi kailanman nagpapadala ng iyong trapiko kahit saan. Mga DNS request lang ang sinusuri nito at ibinabasura ang mga tumutukoy sa mga hostname ng ad at tracker, habang pinapadaan ang lahat ng iba pa. Walang lumalabas sa iyong device.</p>
+<p><strong>Root mode</strong>: kung naka-root ang iyong device, maaari ring magsulat ang AdAway ng <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> sa <code>/system/etc/hosts</code>, na nagma-map sa <code>127.0.0.1</code> ng mga hindi gustong hostname para mag-resolve ang mga ito sa sarili mong device. Sa mga bagong bersyon ng Android, kailangan ng systemless hosts module (hal. Magisk).</p>
 
-<h2>Bakit kailangan kong i-restart ang Android para gumana ang mga pagbabago?</h2>
-<p>Ang Java sa Android ay nagpapanatili ng sarili nitong panloob na DNS cache. Ipapakita kaagad ng operating system ang bagong hosts file (i-verify iyon gamit ang ping sa command line) ngunit kakailanganin mong i-restart ang Android upang muling buuin ang DNS cache ng Java.</p>
+<h2>Aling mga DNS server ang ginagamit ng VPN?</h2>
+<p>Sa VPN mode, ang mga hostname na hindi naka-block ay nire-resolve ng mga DNS server na pipiliin mo sa <cite>Mga Kagustuhan › Ad blocker na batay sa VPN › Mga DNS server</cite>:</p>
+<p><strong>Mga DNS server ng network</strong> (default): ang mga server ng iyong Wi-Fi o mobile network. Kung walang ibinigay na magagamit ng AdAway ang network, babalik ito sa Cloudflare (<code>1.1.1.1</code>).<br/><strong>Mga custom na DNS server</strong>: ang mga IP address na ilalagay mo, pinaghihiwalay ng kuwit.<br/><strong>DNS over HTTPS</strong>: naka-encrypt ang mga kahilingan at ipinapadala sa Cloudflare, Google, Quad9 o sa <code>https://</code> address na ilalagay mo, kaya hindi ito mababasa o mababago ng iyong network.</p>
+<p>Pareho ang pagkakagana ng pag-block sa tatlo. Para manatiling encrypted ang DNS, gamitin dito ang DNS over HTTPS sa halip na ang setting ng Android na <cite>Pribadong DNS</cite>, na nilalampasan ang AdAway.</p>
 
-<h2>Paano gamitin ang webserver sa AdAway?</h2>
-<p><strong>Gagana rin ang AdAway nang hindi ginagamit ang webserver!</strong>
-<br><br>Maaari mong paganahin ang isang lokal na webserver sa mga kagustuhan ng AdAway upang sagutin ang mga kahilingan sa lokal na IP address na <code>127.0.0.1</code>. Nangangahulugan ito na ang mga kahilingan mula sa mga aplikasyon patungo sa mga server ng ad na na-redirect sa <code>127.0.0.1</code> ay sinasagot ng webserver ng AdAway.
-Ang ilang mga aplikasyon ay tumangging gumana, kapag ang mga server ng ad ay hindi maabot. Sa pamamaraang ito, muli silang maaabot, tumutugon nang may blangkong pahina at walang mga imahe ng ad.</p>
+<h2>Paano ako magba-block, magpapahintulot o magre-redirect ng hostname?</h2>
+<p>Mula sa home screen, may tatlong listahan kang mapamamahalaan:</p>
+<p><strong>Naka-block</strong>: mga hostname na dapat i-block (mga ad at tracker).<br/><strong>Pinapayagan</strong>: mga exception na ayaw mong ma-block kailanman, kahit nakalista ang mga ito sa isang pinagmulan.<br/><strong>Naka-redirect</strong>: mga hostname na gusto mong ituro sa isang partikular na IP address.</p>
+<p>Maaari mo ring buksan ang <cite>Log ng DNS</cite> mula sa home screen para makita sa real time kung anong mga hostname ang tinatanong ng mga app, pagkatapos ay i-block o payagan ang mga ito mismo roon.</p>
 
-<h2>Paano ko mai-block/i-unblock ang mga partikular na hostname?</h2>
-<p>Idagdag ang mga hostname na gusto mong i-block sa <cite>Naka-block</cite> na listahan mula sa <cite>homescreen</cite>. Bilang karagdagan, ang mga hostname na gusto mong ibukod mula sa pagba-block ay maaaring idagdag sa <cite>Allowed</cite> at ang mga hostname na gusto mong i-redirect sa isang partikular na IP address ay nabibilang sa <cite>Redirected</cite>.</p>
+<h2>Kailangan ko bang i-restart ang Android pagkatapos baguhin ang aking mga listahan?</h2>
+<p>Hindi. Agad na ilalapat ng AdAway ang pagbabago, pero maaaring patuloy na gamitin ng isang app na nakabukas na ang mga dati nitong koneksyon at ang sarili nitong cache. Isara ito nang ganap (Sapilitang ihinto sa mga setting ng Android ng app), at i-clear ang cache nito kung may lumalabas pa ring ad. Kailangan lang ng restart ng Android nang isang beses sa root mode, pagkatapos i-enable ang systemless hosts module ng Magisk.</p>
 
-<h2>San makikita ang mga ibang pinagmulang ng hosts?</h2>
-<p>Tignan <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Listahan ng mga ibang pinagmulang ng AdAway</a>.</p>
+<h2>Saan ako makakahanap ng mas maraming pinagmulan ng hosts?</h2>
+<p>May makatwirang mga default ang AdAway. Kung gusto mo pa ng iba, tingnan ang <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">listahan ng karagdagang pinagmulan ng hosts</a> na pinapanatili ng komunidad. Magdagdag ng mga pinagmulan nang katamtaman lang, dahil ang napakalaki o magkakapatong na mga listahan ay maaaring magdulot ng mga false positive na sumisira sa mga app.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Bakit umiiral ang fork na ito?</h2>
+<p>Isang mahusay na proyekto ang AdAway na may mahabang kasaysayan, pero matagal nang limitado ang aktibidad ng upstream sa mga release at review. May ilang bug fix at pull request na matagal na nanatiling bukas, kabilang ang mga isyung nakakaapekto sa katatagan ng VPN mode sa mga bagong bersyon ng Android at sa mga OEM ROM. Umiiral ang fork na ito para manatiling magagamit ang proyekto sa tulong ng mga ayos na pinapanatili ng komunidad, sa halip na hayaang hindi magamit ang mga pagpapabuting nasubukan na.</p>
 
-<h2>Tumulong sa pagsasalin at pagsumbong ng bugs</h2>
-<p>Pumunta sa <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Paano ako mag-uulat ng bug o magmumungkahi ng pagbabago?</h2>
+<p>Magbukas ng issue sa tracker ng fork: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Malaking tulong ang log ng diagnostic (tingnan ang tab na Mga Problema) kapag nag-uulat ng mga isyu sa VPN.</p>
 </body>
 </html>

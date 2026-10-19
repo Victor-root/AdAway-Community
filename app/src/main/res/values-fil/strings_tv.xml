@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Idagdag sa pinapayagan</string>
-    <string name="tv_dialog_add_to_blocked">Idagdag sa naka-block</string>
-    <string name="tv_dialog_remove_from_allowed">Alisin sa pinapayagan</string>
-    <string name="tv_dialog_remove_from_blocked">Alisin sa naka-block</string>
+    <string name="tv_dialog_add_to_allowed">Idagdag sa mga pinapayagan</string>
+    <string name="tv_dialog_add_to_blocked">Idagdag sa mga naka-block</string>
+    <string name="tv_dialog_remove_from_allowed">Alisin sa mga pinapayagan</string>
+    <string name="tv_dialog_remove_from_blocked">Alisin sa mga naka-block</string>
     <string name="tv_dialog_copy_hostname">Kopyahin ang hostname</string>
     <string name="tv_log_entry_status_description">Status ng domain</string>
-    <string name="tv_button_theme_light">Light mode</string>
-    <string name="tv_button_theme_dark">Dark mode</string>
+    <string name="tv_button_theme_light">Maliwanag na mode</string>
+    <string name="tv_button_theme_dark">Madilim na mode</string>
     <string name="tv_lists_empty">Wala pang entry sa listahang ito.</string>
     <string name="tv_dialog_search">Maghanap</string>
 </resources>
