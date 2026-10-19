@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_start_recording_button">Mula Merakam</string>
-    <string name="log_start_recording_vpn_inactive">Mula Merakam (VPN tidak aktif)</string>
-    <string name="log_stop_recording">Hentikan Rakaman</string>
+    <string name="log_toggle_recording_description">Togol perakaman log</string>
+    <string name="log_start_recording">Tekan rakam untuk mula mencatat permintaan, layari Web atau gunakan apl, kemudian kembali atau leret untuk memuat semula log.</string>
+    <string name="log_blocked_requests_ignored">\n\nPermintaan yang disekat tidak akan dicatat. Nyahdayakan penyekatan iklan dahulu jika anda mahu mencatatnya juga.</string>
+    <string name="log_sort">Isih domain</string>
+    <string name="log_clear">Kosongkan log</string>
+    <string name="log_sort_alphabetical">Isih mengikut abjad</string>
+    <string name="log_sort_top_level_domain">Isih mengikut domain peringkat teratas</string>
+    <string name="log_block">Tambah entri ke senarai sekat</string>
+    <string name="log_allow">Tambah entri ke senarai benarkan</string>
+    <string name="log_redirect">Tambah entri ke senarai ubah hala</string>
+    <string name="log_redirect_dialog_title">Ubah hala domain</string>
+    <string name="log_capture_failed">Penangkapan DNS tidak dapat dimulakan.</string>
+    <string name="log_start_recording_button">Mula merakam</string>
+    <string name="log_start_recording_vpn_inactive">Mula merakam (VPN tidak aktif)</string>
+    <string name="log_stop_recording">Henti merakam</string>
 </resources>

@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_title">Kemas kini AdAway</string>
     <string name="update_banner_title">Kemas kini tersedia</string>
     <string name="update_banner_subtitle">Ketik untuk memasang %1$s</string>
+    <string name="update_up_to_date_header">Anda sudah menggunakan versi terkini</string>
+    <string name="update_update_available_header">Kemas kini tersedia</string>
+    <string name="update_updating_header">Mengemas kini AdAway</string>
+    <string name="update_update_button">Kemas kini sekarang</string>
+    <string name="update_complete_label">Selesai</string>
+    <string name="update_last_changelog_title">Perubahan terkini</string>
+    <string name="update_new_changelog_title">Log perubahan</string>
+    <string name="update_download_failed">Kemas kini tidak dapat dimuat turun.</string>
+    <string name="update_install_failed">Kemas kini tidak dapat dipasang.</string>
     <string name="pref_update_check_now_update_available">Versi baharu tersedia: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Tiada kemas kini tersedia</string>
+    <string name="pref_update_check_now_failed">Pelayan kemas kini tidak dapat dihubungi</string>
     <string name="pref_update_install_summary">Pasang versi %1$s</string>
-    <string name="notification_channel_app_updates">Kemas kini aplikasi</string>
-    <string name="notification_channel_app_updates_description">Pemberitahuan apabila versi baharu aplikasi tersedia. Bisukan saluran ini untuk menyembunyikan amaran kemas kini aplikasi tanpa menjejaskan pemberitahuan lain.</string>
+    <string name="notification_channel_app_updates">Kemas kini apl</string>
+    <string name="notification_channel_app_updates_description">Pemberitahuan apabila versi baharu apl tersedia. Senyapkan saluran ini untuk mendiamkan makluman kemas kini apl tanpa menjejaskan pemberitahuan lain.</string>
+    <string name="notification_app_update_title">Kemas kini apl tersedia</string>
+    <string name="notification_app_update_text">Versi baharu AdAway tersedia untuk dimuat turun.</string>
 </resources>

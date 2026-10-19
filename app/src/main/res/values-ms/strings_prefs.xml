@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
+    <string name="pref_main_title">Pilihan</string>
+    <string name="pref_general_category">Umum</string>
+    <string name="pref_dark_theme">Tema gelap</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Cerah</item>
+        <item>Gelap</item>
+        <item>Lalai sistem</item>
+    </string-array>
+    <string name="pref_update_configuration">Kemas kini automatik</string>
+    <string name="pref_language">Bahasa</string>
+    <string name="pref_language_system">Bahasa sistem</string>
+    <string name="pref_ad_block_category">Penyekatan iklan</string>
+    <string name="pref_root_ad_blocker_configuration">Penyekat iklan berasaskan root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Penyekat iklan berasaskan VPN</string>
+    <string name="pref_enable_ipv6">Dayakan sokongan IPv6</string>
+    <string name="pref_backup_restore">Sandar / pulihkan peraturan sekatan</string>
+    <string name="pref_backup_restore_title">Sandaran &amp; pemulihan</string>
+    <string name="pref_backup">Sandaran</string>
+    <string name="pref_backup_summary">Sandarkan peraturan sekatan anda ke storan luaran</string>
+    <string name="pref_restore">Pulihkan</string>
+    <string name="pref_restore_summary">Pulihkan peraturan sekatan anda daripada fail sandaran</string>
+    <string name="import_success">Sandaran berjaya diimport daripada storan luaran anda.</string>
+    <string name="import_failed">Sandaran gagal diimport. Adakah formatnya betul?</string>
+    <string name="export_success">Sandaran berjaya dieksport ke fail “%s” pada storan luaran anda.</string>
+    <string name="export_failed">Fail sandaran “%s” gagal dieksport.</string>
+    <string name="pref_update_title">Kemas kini</string>
+    <string name="pref_update_enable_notifications">Pemberitahuan dilumpuhkan</string>
+    <string name="pref_update_enable_notifications_summary">Pemberitahuan apl tidak akan dipaparkan. Ketik untuk mendayakannya.</string>
+    <string name="pref_update_app_category">Kemas kini apl</string>
+    <string name="pref_update_check_app_startup">Semak kemas kini semasa permulaan</string>
+    <string name="pref_update_check_app_daily">Semak kemas kini secara berkala</string>
     <string name="pref_update_check_now">Semak sekarang</string>
     <string name="pref_update_install">Kemas kini sekarang</string>
+    <string name="pref_update_hosts_category">Kemas kini hosts</string>
+    <string name="pref_update_check">Semak kemas kini semasa permulaan</string>
+    <string name="pref_update_check_hosts_daily">Semak kemas kini secara berkala</string>
+    <string name="pref_update_sync_on_update">Segerak semasa kemas kini</string>
+    <string name="pref_update_sync_unmetered_only">Segerak pada rangkaian tanpa had data sahaja</string>
+    <string name="pref_vpn_service_on_boot">Dayakan semasa permulaan</string>
+    <string name="pref_vpn_service_monitor">Pantau sambungan</string>
+    <string name="pref_vpn_service_monitor_description">Semak keadaan rangkaian secara berkala untuk memulakan semula VPN apabila sambungan terputus.</string>
+    <string name="pref_vpn_excluded_apps">Apl yang dikecualikan</string>
+    <string name="pref_vpn_excluded_apps_description">Tetapkan apl yang tidak perlu menggunakan VPN supaya tiada sambungan disekat.</string>
+    <string name="pref_vpn_exclude_system_apps">Kecualikan apl sistem</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+        <item>Tiada</item>
+        <item>Semua kecuali pelayar</item>
+        <item>Semua</item>
     </string-array>
-    <string name="pref_vpn_reset">Tetapkan semula VPN</string>
-    <string name="pref_vpn_reset_description">Bina semula sambungan VPN dari awal. Gunakan ini jika VPN berhenti berfungsi (tiada akses internet atau ralat DNS).</string>
+    <string name="pref_vpn_dns">Pelayan DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Pelayan DNS rangkaian</item>
+        <item>Pelayan DNS tersuai</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Pelayan DNS tersuai</string>
+    <string name="pref_vpn_dns_custom_summary">Alamat IP, dipisahkan dengan koma</string>
+    <string name="pref_vpn_dns_custom_invalid">Alamat pelayan DNS tidak sah</string>
+    <string name="pref_vpn_doh">Pelayan DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Alamat tersuai</string>
+    <string name="pref_vpn_doh_address">Alamat DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Alamat DNS over HTTPS tidak sah</string>
+    <string name="pref_vpn_exclude_user_apps">Kecualikan apl pengguna</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Apl yang dikecualikan</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Pilih semua</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Nyahpilih semua</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Ikon apl</string>
+    <string name="pref_vpn_reset">Set semula VPN</string>
+    <string name="pref_vpn_reset_description">Bina semula sambungan VPN dari awal. Gunakan pilihan ini jika VPN berhenti berfungsi (tiada akses internet atau ralat DNS).</string>
     <string name="pref_vpn_reset_done">Sambungan VPN telah dibina semula.</string>
     <string name="pref_vpn_reset_not_running">VPN tidak berjalan.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Rakam log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Hidupkan sebelum menghasilkan semula masalah, kemudian eksport log di bawah. Mungkin sedikit memperlahankan peranti lama. Hanya peristiwa teknikal VPN dirakam, tidak pernah sejarah pelayaran atau data peribadi.</string>
     <string name="pref_vpn_diagnostic_log">Log diagnostik</string>
-    <string name="pref_vpn_diagnostic_log_description">Lihat, salin atau kongsi ralat dan peristiwa VPN terkini. Berguna semasa melaporkan masalah.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Belum ada peristiwa direkodkan.</string>
-    <string name="pref_vpn_diagnostic_log_share">Kongsi log diagnostik</string>
+    <string name="pref_vpn_diagnostic_log_description">Lihat, salin atau kongsi ralat dan peristiwa VPN yang terkini. Berguna apabila melaporkan masalah.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Belum ada peristiwa yang dirakam. Hidupkan “Rakam log diagnostik” di atas, kemudian cuba hasilkan semula masalah itu.</string>
+    <string name="pref_vpn_diagnostic_log_share">Kongsi</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Kongsi log diagnostik</string>
     <string name="pref_vpn_diagnostic_log_copy">Salin</string>
     <string name="pref_vpn_diagnostic_log_copied">Log diagnostik disalin ke papan keratan.</string>
     <string name="pref_vpn_diagnostic_log_clear">Kosongkan log diagnostik</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Padam peristiwa yang direkodkan. Lakukan ini sebelum menghasilkan semula masalah untuk menangkap jejak yang bersih.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Padam peristiwa yang dirakam. Lakukan ini sebelum menghasilkan semula masalah untuk mendapatkan jejak yang bersih.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Log diagnostik dikosongkan.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_root_open_hosts">Buka fail hosts</string>
+    <string name="hosts_file_unreadable">Fail hosts tidak dapat dibaca.</string>
+    <string name="pref_hosts_redirection_summary">Tentukan ke mana hos yang disekat diubah hala</string>
+    <string name="pref_redirection_ipv4">Tetapkan pengubahan hala IPv4</string>
+    <string name="pref_redirection_ipv6">Tetapkan pengubahan hala IPv6</string>
+    <string name="pref_redirection_invalid">Pengubahan hala tidak sah</string>
+    <string name="pref_webserver_summary">Pelayan web setempat mendengar pada alamat IP setempat untuk menjawab permintaan nama hos yang disekat. Ini boleh membantu mengelakkan apl daripada membeku apabila sambungan disekat.</string>
+    <string name="pref_webserver_enabled">Dayakan pelayan web</string>
+    <string name="pref_webserver_test">Uji pelayan web</string>
+    <string name="pref_webserver_certificate">Pasang sijil ditandatangani sendiri</string>
+    <string name="pref_webserver_state_not_running">Tidak berjalan</string>
+    <string name="pref_webserver_state_checking">Menyemak…</string>
+    <string name="pref_webserver_state_running_not_installed">Berjalan tetapi sijil belum dipasang</string>
+    <string name="pref_webserver_state_running_and_installed">Berjalan dan sijil telah dipasang</string>
+    <string name="pref_webserver_certificate_dialog_title">Pemasangan sijil secara manual</string>
+    <string name="pref_webserver_certificate_dialog_content">Bermula dengan Android 11 (R), apl tidak lagi boleh memasang pihak berkuasa sijil (CA) secara automatik.\n\nBuka tetapan “Keselamatan”, pilih “Penyulitan &amp; bukti kelayakan”, kemudian “Pasang sijil”. Di sana, pilih “Sijil CA” dan pilih fail sijil yang baru dieksport.</string>
+    <string name="pref_webserver_certificate_dialog_action">Buka tetapan “Keselamatan”</string>
+    <string name="pref_webserver_certificate_failed">Sijil tidak dapat disediakan.</string>
+    <string name="webserver_error_title">Pelayan web tidak dimulakan</string>
+    <string name="webserver_error_resources">Fail atau sijilnya tidak dapat disediakan.</string>
+    <string name="webserver_error_address_in_use">Apl lain sudah menggunakan port web (80 dan 443) pada peranti.</string>
+    <string name="webserver_error_start_failed">Pelayan tidak dapat dimulakan pada peranti ini.</string>
+    <string name="pref_webserver_icon">Gantikan ruang iklan kosong dengan ikon apl</string>
 </resources>
