@@ -22,4 +22,13 @@ class AppVersionTest {
         assertTrue(AppVersion("7.0.0-c") > AppVersion("7.0.0-beta2-c"))
         assertTrue(AppVersion("7.0.0-beta1-c") > AppVersion("6.6.1-c"))
     }
+
+    @Test
+    fun ordersThePreReleaseStages() {
+        assertTrue(AppVersion("7.0.0-alpha-c").isPreRelease)
+        assertTrue(AppVersion("7.0.0-alpha2-c") > AppVersion("7.0.0-alpha-c"))
+        assertTrue(AppVersion("7.0.0-beta-c") > AppVersion("7.0.0-alpha2-c"))
+        assertTrue(AppVersion("7.0.0-rc1-c") > AppVersion("7.0.0-beta3-c"))
+        assertTrue(AppVersion("7.0.0-c") > AppVersion("7.0.0-rc1-c"))
+    }
 }

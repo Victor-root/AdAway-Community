@@ -25,6 +25,9 @@ Each version has its own number that follows the [Semantic Versioning](https://s
 > [!IMPORTANT]
 > Update application version name (`appVersionName`) and code (`appVersionCode`) from the `gradle/libs.versions.toml` catalog file.
 
+A pre-release adds its stage to the version name, optionally followed by a number: `7.0.0-alpha-c`, `7.0.0-beta2-c` or `7.0.0-rc1-c`.
+The app then shows its stage in its name, such as "AdAway Alpha", and offers the next pre-releases as updates.
+
 ## 3. Updating the changelog
 
 The AdAway project provides [a global changelog](CHANGELOG.md).

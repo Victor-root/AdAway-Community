@@ -20,6 +20,12 @@ val keystoreProperties = Properties().apply {
 val signingKeys = listOf("storeFile", "storePassword", "keyAlias", "keyPassword")
 val hasSigningKey = signingKeys.all { !keystoreProperties.getProperty(it).isNullOrBlank() }
 
+// A pre-release names its stage after the app, as in "AdAway Alpha", for testers to tell it apart.
+val appVersionName = libs.versions.appVersionName.get()
+val preReleaseStage = mapOf("alpha" to "Alpha", "beta" to "Beta", "rc" to "RC").entries.firstOrNull { (word, _) ->
+    Regex("[a-z]+").findAll(appVersionName.substringAfter('-', "").lowercase()).any { it.value == word }
+}?.value
+
 android {
     namespace = "org.adaway"
     compileSdk {
@@ -34,7 +40,8 @@ android {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = libs.versions.appVersionCode.get().toInt()
-        versionName = libs.versions.appVersionName.get()
+        versionName = appVersionName
+        resValue("string", "app_name", listOfNotNull("AdAway", preReleaseStage).joinToString(" "))
     }
 
     signingConfigs {
@@ -68,6 +75,7 @@ android {
     buildFeatures {
         buildConfig = true
         compose = true
+        resValues = true
     }
 
     androidResources {
