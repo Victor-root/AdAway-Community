@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>안드로이드 9 이상의 환경에서 호스트 파일 복사에 실패됩니다</h2>
-<p>최신버전의 안드로이드는 <code>/system</code> 파티션을 읽기 모드만 사용하게 되어졌습니다.<br>
-만약 루팅을 Magisk로 하셨다면, 시스템 없는 호스트 모듈을 사용하도록 설정한 다음 재부팅하십시오.</p>
+<h2>VPN이 저절로 꺼집니다</h2>
+<p>대부분은 앱이 충돌한 것이 아니라 시스템이 배터리를 아끼려고 VPN 서비스를 종료한 경우입니다. 전원 관리가 공격적인 제조사 ROM(ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung 등)에서 흔히 발생합니다.</p>
+<p>Android 설정에서 AdAway를 찾아 다음과 같이 설정하세요. <cite>배터리 최적화</cite>를 <cite>제한 없음</cite>(또는 <cite>최적화하지 않음</cite>)으로 설정하고, ROM에 <cite>자동 시작</cite>/<cite>자동 실행</cite> 항목이 있다면 허용하고, 최근 앱 목록에서 AdAway를 잠가 밀어서 종료되지 않게 하세요. 또한 AdAway의 VPN 설정에서 <cite>시작할 때 사용</cite>이 켜져 있는지 확인하세요.</p>
 
-<h2>파티션 공간 부족</h2>
-<p>환경설정에서 대상 호스트 파일을 <code>/data/data/hosts</code> (혹은 <code>/data/hosts</code>)로 변경한 후 AdAway를 다시 적용하십시오.</p>
+<h2>Wi-Fi와 모바일 데이터를 전환한 직후 인터넷이 안 되거나 느립니다</h2>
+<p>사용 중인 네트워크가 바뀌면 새 네트워크에서 DNS를 확인할 수 있도록 터널을 다시 만들어야 합니다. 그래도 인터넷이 정상으로 돌아오지 않으면 <cite>설정 › VPN 기반 광고 차단 › VPN 재설정</cite>을 열어 연결을 처음부터 다시 만드세요. 같은 문제가 계속되면 진단 로그(아래 참고)를 기록하여 신고해 주세요.</p>
 
-<h2>Chrome에서 여전히 광고가 나옵니다</h2>
-<p>Chrome 설정에서 <cite>라이트 모드</cite>(이전에는 <cite>데이터 세이버</cite>로 명칭 됨)가 비활성화 되어있는지 확인하십시오. Chrome은 이 기능을 통해 전용 DNS 솔루션을 사용하고 AdAway를 우회할 수 있습니다.</p>
+<h2>진단 로그는 어떻게 내보내나요?</h2>
+<p><cite>설정 › VPN 기반 광고 차단 › 진단 로그</cite>를 여세요. 최근 오류와 VPN 이벤트(네트워크 전환, 재연결, 실패)만 기록하며, 인터넷 사용 기록은 남기지 않고 기술적인 이벤트만 담습니다. 바로 위의 <cite>진단 로그 기록</cite>을 켜기 전에는 비어 있습니다. 문제를 신고할 때는 <cite>복사</cite> 또는 <cite>공유</cite>로 보내세요. 팁: 먼저 <cite>진단 로그 삭제</cite>를 누른 다음 문제를 재현하면 필요한 내용만 기록됩니다.</p>
 
-<h2>XYZ 앱에서는 광고를 차단하지 않습니다!</h2>
-<p>일부 호스트 이름은 <cite>호스트 소스</cite>에서 일부 호스트 이름이 누락될 수 있거나 혹은 응용 프로그램이 인터넷에 액세스하지 않고 광고를 제공하기 위해 이미지만 사용했을지도 모릅니다.<br><br>
-AdAway에서 DNS 요청(메뉴-&gt;Log DNS 요청)을 로깅하여 차단해야 하는 추가 호스트 이름을 확인할 수 있습니다.
-<br><br>로그의 항목을 길게 눌러 의심스러운 호스트 이름을 개인 블랙리스트에 추가하고 <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub 문제 추적기</a>에서 확인한 후 이 호스트 이름을 보고하십시오.</p>
+<h2>Chrome에서 여전히 광고가 표시됩니다</h2>
+<p>Chrome은 AdAway를 우회하는 자체 <cite>보안 DNS</cite>(DNS over HTTPS)를 사용할 수 있습니다. Chrome에서 <cite>설정 › 개인정보 보호 및 보안 › 보안 DNS 사용</cite>을 열어 끄세요. 앱이나 시스템의 <cite>비공개 DNS</cite> 설정도 마찬가지입니다. VPN 모드에서는 AdAway가 DNS를 직접 암호화할 수 있습니다. FAQ의 <cite>VPN은 어떤 DNS 서버를 사용하나요?</cite>를 참고하세요.</p>
 
-<h2>캐시된 광고</h2>
-<p>간혹 앱이 다운로드 이후 광고를 캐싱합니다. 이로 인해 일부 앱에 광고가 잔존하게 됩니다. 이 문제를 피하려면 안드로이드의 앱 목록에서 해당 앱의 캐시를 삭제를 시도해보십시오.</p>
+<h2>일부 광고가 계속 나오거나 특정 앱에서 광고가 표시됩니다</h2>
+<p>소스에 호스트 이름이 없거나, 앱에 광고가 내장되어 있어 요청이 발생하지 않는 경우일 수 있습니다. 홈 화면에서 <cite>DNS 로그</cite>를 열어 앱이 어떤 요청을 보내는지 확인하고, 의심되는 호스트 이름을 <cite>차단됨</cite> 목록에 추가한 다음 문제가 생기지 않는지 확인하세요. 일부 앱은 광고를 다운로드한 뒤 캐시에 보관하므로 Android 설정에서 해당 앱의 캐시를 삭제하면 도움이 될 수 있습니다.</p>
 
-<h2>XYZ 앱은 더 이상 작동하지 않습니다!</h2>
-<p>일부 응용프로그램들은 광고를 제공해야 하는 호스트에 연결할 수 없을 때 AdAway에 의해 차단되거나 작동을 거부하는 호스트와 통신해야 합니다. 문제가 있는 알려진 응용 프로그램 목록을 확인하려면 <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a>에서 참조하십시오. 아니면, 필요한 호스트 이름을 찾아 <cite>사용자 목록</cite>에 있는 <cite>화이트리스트</cite>에 추가한 후 <a href="https://github.com/Victor-root/AdAway-Community/issues">AdAway 버그 트래커</a>에 보고하십시오.</p>
+<h2>AdAway를 켠 뒤 앱이 작동하지 않습니다</h2>
+<p>일부 앱은 필요한 호스트 이름이 차단되면 작동을 거부합니다. <cite>DNS 로그</cite>에서 앱에 필요한 호스트 이름을 찾아 <cite>허용됨</cite> 목록에 추가하면 앱이 다시 작동할 것입니다. 문제가 알려진 앱은 <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">여기</a>에 정리되어 있습니다.</p>
 
-<h2>안드로이드 4.4 이상에서는 작동하지 않음</h2>
-<p>환경설정에서 대상 호스트 파일을 <code>/data/data/hosts</code> 에서 <code>/data/hosts</code> 혹은 <code>/system/etc/hosts</code> 으로 변경한 후 AdAway를 다시 적용하십시오.</p>
+<h2>hosts 파일 적용에 실패합니다(루트 모드)</h2>
+<p>최신 Android 버전은 <code>/system</code> 파티션을 읽기 전용으로 사용하므로 AdAway가 직접 쓸 수 없습니다. Magisk를 사용한다면 <cite>systemless hosts</cite> 모듈을 켜고 재부팅한 다음 다시 적용하세요. 루트를 사용하지 않는다면 시스템을 수정하지 않는 VPN 모드를 대신 사용하세요.</p>
 
-<h2>웹 브라우저에서 뒤로 가기 버튼이 작동하지 않음</h2>
-<p>해결 방법으로 환경 설정에서 AdAway의 로컬 서버를 활성화 할 수 있습니다.</p>
-
+<h2>아직 해결되지 않았나요?</h2>
+<p>진단 로그를 첨부하여 <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>에 문제를 신고해 주세요.</p>
 </body>
 </html>

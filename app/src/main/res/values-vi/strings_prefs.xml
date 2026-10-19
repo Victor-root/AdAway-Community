@@ -1,84 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Tuỳ chỉnh</string>
+    <string name="pref_main_title">Tùy chọn</string>
     <string name="pref_general_category">Chung</string>
-    <string name="pref_dark_theme">Chế độ Đêm</string>
+    <string name="pref_dark_theme">Giao diện tối</string>
     <string-array name="pref_dark_theme_modes">
         <item>Sáng</item>
         <item>Tối</item>
         <item>Mặc định hệ thống</item>
     </string-array>
-    <string name="pref_update_configuration">Tự động cập nhật</string>
+    <string name="pref_update_configuration">Cập nhật tự động</string>
+    <string name="pref_language">Ngôn ngữ</string>
+    <string name="pref_language_system">Ngôn ngữ hệ thống</string>
     <string name="pref_ad_block_category">Chặn quảng cáo</string>
-    <string name="pref_root_ad_blocker_configuration">Chặn quảng cáo sử dụng quyền root </string>
-    <string name="pref_vpn_ad_blocker_configuration">Chặn quảng cáo sử dụng VPN</string>
-    <string name="pref_enable_ipv6">Bật IPv6</string>
-    <string name="pref_backup_restore">Sao lưu / khôi phục cài đặt</string>
-    <string name="pref_backup_restore_title">Sao lưu và khôi phục</string>
+    <string name="pref_root_ad_blocker_configuration">Chặn quảng cáo bằng root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Chặn quảng cáo bằng VPN</string>
+    <string name="pref_enable_ipv6">Bật hỗ trợ IPv6</string>
+    <string name="pref_backup_restore">Sao lưu / khôi phục quy tắc chặn</string>
+    <string name="pref_backup_restore_title">Sao lưu &amp; khôi phục</string>
     <string name="pref_backup">Sao lưu</string>
-    <string name="pref_backup_summary">Sao lưu cài đặt ra bộ nhớ ngoài </string>
+    <string name="pref_backup_summary">Sao lưu các quy tắc chặn của bạn vào bộ nhớ ngoài</string>
     <string name="pref_restore">Khôi phục</string>
-    <string name="pref_restore_summary">Khôi phục cài đặt từ tập tin sao lưu </string>
-    <string name="import_success">Đã nhập tệp sao lưu thành công từ bộ nhớ ngoài.</string>
-    <string name="export_success">Bản sao lưu được xuất thành công ra tập tin \'%s\' trên bộ nhớ ngoài.</string>
-    <string name="export_failed">Xuất tập tin sao lưu \'%s\' thất bại.</string>
+    <string name="pref_restore_summary">Khôi phục các quy tắc chặn của bạn từ tệp sao lưu</string>
+    <string name="import_success">Đã nhập bản sao lưu từ bộ nhớ ngoài của bạn.</string>
+    <string name="import_failed">Không thể nhập bản sao lưu. Định dạng của tệp có đúng không?</string>
+    <string name="export_success">Đã xuất bản sao lưu vào tệp “%s” trong bộ nhớ ngoài của bạn.</string>
+    <string name="export_failed">Không thể xuất tệp sao lưu “%s”.</string>
     <string name="pref_update_title">Cập nhật</string>
-    <string name="pref_update_enable_notifications">Thông báo bị vô hiệu hóa</string>
-    <string name="pref_update_enable_notifications_summary">Thông báo ứng dụng sẽ không hiển thị. Nhấn để kích hoạt chúng.</string>
+    <string name="pref_update_enable_notifications">Thông báo đang bị tắt</string>
+    <string name="pref_update_enable_notifications_summary">Ứng dụng sẽ không hiển thị thông báo. Nhấn để bật.</string>
     <string name="pref_update_app_category">Cập nhật ứng dụng</string>
-    <string name="pref_update_check_app_startup">Kiểm tra cập nhật khi khởi động</string>
-    <string name="pref_update_check_app_daily">Kiểm tra cập nhật mỗi ngày</string>
+    <string name="pref_update_check_app_startup">Kiểm tra bản cập nhật khi khởi động</string>
+    <string name="pref_update_check_app_daily">Kiểm tra bản cập nhật định kỳ</string>
     <string name="pref_update_check_now">Kiểm tra ngay</string>
     <string name="pref_update_install">Cập nhật ngay</string>
-    <string name="pref_update_hosts_category">Cập nhật tập tin miền</string>
-    <string name="pref_update_check">Kiểm tra cập nhật khi khởi động</string>
-    <string name="pref_update_check_hosts_daily">Kiểm tra cập nhật mỗi ngày</string>
-    <string name="pref_update_sync_on_update">Đồng bộ khi cập nhật</string>
-    <string name="pref_update_sync_unmetered_only">Chỉ đồng bộ bằng wi-fi </string>
-    <string name="pref_vpn_service_on_boot">Kích hoạt khi khởi động</string>
+    <string name="pref_update_hosts_category">Cập nhật hosts</string>
+    <string name="pref_update_check">Kiểm tra bản cập nhật khi khởi động</string>
+    <string name="pref_update_check_hosts_daily">Kiểm tra bản cập nhật định kỳ</string>
+    <string name="pref_update_sync_on_update">Đồng bộ khi có bản cập nhật</string>
+    <string name="pref_update_sync_unmetered_only">Chỉ đồng bộ trên mạng không giới hạn dữ liệu</string>
+    <string name="pref_vpn_service_on_boot">Bật khi khởi động</string>
     <string name="pref_vpn_service_monitor">Giám sát kết nối</string>
-    <string name="pref_vpn_service_monitor_description">Định kì kiểm tra tình trạng mạng để khởi động lại VPN khi mất kết nối.</string>
-    <string name="pref_vpn_excluded_apps">Các ứng dụng không bị chặn </string>
-    <string name="pref_vpn_excluded_apps_description">Tùy chỉnh các ứng dụng có thể sử dụng VPN</string>
-    <string name="pref_vpn_exclude_system_apps">Không chặn các ứng dụng hệ thống</string>
+    <string name="pref_vpn_service_monitor_description">Định kỳ kiểm tra trạng thái mạng để khởi động lại VPN khi bị ngắt kết nối.</string>
+    <string name="pref_vpn_excluded_apps">Ứng dụng bị loại trừ</string>
+    <string name="pref_vpn_excluded_apps_description">Chọn các ứng dụng không dùng VPN để kết nối của chúng không bị chặn.</string>
+    <string name="pref_vpn_exclude_system_apps">Loại trừ ứng dụng hệ thống</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
+        <item>Không</item>
+        <item>Tất cả trừ trình duyệt</item>
         <item>Tất cả</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">Các ứng dụng không bị chặn </string>
-    <string name="pref_vpn_exclude_user_apps_activity">Các ứng dụng không bị chặn </string>
+    <string name="pref_vpn_dns">Máy chủ DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Máy chủ DNS của mạng</item>
+        <item>Máy chủ DNS tùy chỉnh</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Máy chủ DNS tùy chỉnh</string>
+    <string name="pref_vpn_dns_custom_summary">Địa chỉ IP, cách nhau bằng dấu phẩy</string>
+    <string name="pref_vpn_dns_custom_invalid">Địa chỉ máy chủ DNS không hợp lệ</string>
+    <string name="pref_vpn_doh">Máy chủ DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Địa chỉ tùy chỉnh</string>
+    <string name="pref_vpn_doh_address">Địa chỉ DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Địa chỉ DNS over HTTPS không hợp lệ</string>
+    <string name="pref_vpn_exclude_user_apps">Loại trừ ứng dụng của người dùng</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Ứng dụng bị loại trừ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Chọn tất cả</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Bỏ chọn tất cả</string>
     <string name="pref_vpn_exclude_user_apps_icon">Biểu tượng ứng dụng</string>
     <string name="pref_vpn_reset">Đặt lại VPN</string>
-    <string name="pref_vpn_reset_description">Xây dựng lại kết nối VPN từ đầu. Sử dụng tùy chọn này nếu VPN ngừng hoạt động (không có truy cập internet hoặc lỗi DNS).</string>
-    <string name="pref_vpn_reset_done">Đã xây dựng lại kết nối VPN.</string>
-    <string name="pref_vpn_reset_not_running">VPN không chạy.</string>
+    <string name="pref_vpn_reset_description">Tạo lại kết nối VPN từ đầu. Hãy dùng khi VPN ngừng hoạt động (mất kết nối Internet hoặc lỗi DNS).</string>
+    <string name="pref_vpn_reset_done">Đã tạo lại kết nối VPN.</string>
+    <string name="pref_vpn_reset_not_running">VPN chưa chạy.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Ghi nhật ký chẩn đoán</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Hãy bật trước khi tái hiện sự cố, rồi xuất nhật ký ở bên dưới. Có thể làm chậm nhẹ các thiết bị cũ. Chỉ ghi các sự kiện kỹ thuật của VPN, không bao giờ ghi lịch sử duyệt web hay dữ liệu cá nhân.</string>
     <string name="pref_vpn_diagnostic_log">Nhật ký chẩn đoán</string>
     <string name="pref_vpn_diagnostic_log_description">Xem, sao chép hoặc chia sẻ các lỗi và sự kiện VPN gần đây. Hữu ích khi báo cáo sự cố.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Chưa có sự kiện nào được ghi lại.</string>
-    <string name="pref_vpn_diagnostic_log_share">Chia sẻ nhật ký chẩn đoán</string>
+    <string name="pref_vpn_diagnostic_log_empty">Chưa ghi nhận sự kiện nào. Hãy bật “Ghi nhật ký chẩn đoán” ở trên, rồi thử tái hiện sự cố.</string>
+    <string name="pref_vpn_diagnostic_log_share">Chia sẻ</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Chia sẻ nhật ký chẩn đoán</string>
     <string name="pref_vpn_diagnostic_log_copy">Sao chép</string>
-    <string name="pref_vpn_diagnostic_log_copied">Đã sao chép nhật ký chẩn đoán vào bảng nhớ tạm.</string>
+    <string name="pref_vpn_diagnostic_log_copied">Đã sao chép nhật ký chẩn đoán vào bộ nhớ tạm.</string>
     <string name="pref_vpn_diagnostic_log_clear">Xóa nhật ký chẩn đoán</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Xóa các sự kiện đã ghi. Hãy làm điều này trước khi tái hiện sự cố để thu được bản ghi sạch.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Xóa các sự kiện đã ghi. Hãy làm việc này trước khi tái hiện sự cố để có một bản ghi sạch.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Đã xóa nhật ký chẩn đoán.</string>
-    <string name="pref_root_open_hosts">Mở tập tin miền</string>
-    <string name="pref_hosts_redirection_summary">Tùy chọn điều hướng tập tin miền</string>
-    <string name="pref_redirection_ipv4">Điều hướng IPv4</string>
-    <string name="pref_redirection_ipv6">Điều hướng IPv6</string>
+    <string name="pref_root_open_hosts">Mở tệp hosts</string>
+    <string name="hosts_file_unreadable">Không thể đọc tệp hosts.</string>
+    <string name="pref_hosts_redirection_summary">Chọn nơi chuyển hướng các tên máy chủ bị chặn</string>
+    <string name="pref_redirection_ipv4">Cấu hình chuyển hướng IPv4</string>
+    <string name="pref_redirection_ipv6">Cấu hình chuyển hướng IPv6</string>
     <string name="pref_redirection_invalid">Chuyển hướng không hợp lệ</string>
-    <string name="pref_webserver_summary">Máy chủ web cục bộ sử dụng các địa chỉ IP để phản hồi các yêu cầu truy cập các tên miền đã bị chặn, giúp giải quyết việc treo ứng dụng do kết nối bị chặn.</string>
-    <string name="pref_webserver_enabled">Bật webserver</string>
-    <string name="pref_webserver_test">Thử nghiệm web server</string>
-    <string name="pref_webserver_certificate">Cài đặt chứng chỉ tự kí</string>
-    <string name="pref_webserver_state_not_running">Không hoạt động</string>
+    <string name="pref_webserver_summary">Máy chủ web cục bộ lắng nghe trên các địa chỉ IP cục bộ để phản hồi các yêu cầu tới tên máy chủ bị chặn. Có thể giúp tránh việc ứng dụng bị treo khi kết nối bị chặn.</string>
+    <string name="pref_webserver_enabled">Bật máy chủ web</string>
+    <string name="pref_webserver_test">Kiểm tra máy chủ web</string>
+    <string name="pref_webserver_certificate">Cài đặt chứng chỉ tự ký</string>
+    <string name="pref_webserver_state_not_running">Không chạy</string>
     <string name="pref_webserver_state_checking">Đang kiểm tra…</string>
-    <string name="pref_webserver_state_running_not_installed">Hoạt động nhưng chứng chỉ chưa được cài đặt</string>
-    <string name="pref_webserver_state_running_and_installed">Đang hoạt động và đã cài đặt chứng chỉ</string>
-    <string name="pref_webserver_certificate_dialog_title">Cài đặt thủ công chứng chỉ</string>
-    <string name="pref_webserver_certificate_dialog_content">Từ Android 11 (R) trở đi, ứng dụng sẽ không được phép tự cài đặt các chứng chỉ uỷ quyền (CA). \n\nVào cài đặt \"Bảo mật\", \"Mã hoá &amp; chứng chỉ\" rồi \"Cài đặt chứng chỉ\". Chọn \"Chứng chỉ CA\" và lựa chọn file chứng chỉ mới được xuất.</string>
-    <string name="pref_webserver_certificate_dialog_action">Mở cài đặt \"Bảo mật\"</string>
-    <string name="pref_webserver_icon">Đổi chỗ quảng cáo bằng icon ứng dụng</string>
+    <string name="pref_webserver_state_running_not_installed">Đang chạy nhưng chưa cài đặt chứng chỉ</string>
+    <string name="pref_webserver_state_running_and_installed">Đang chạy và đã cài đặt chứng chỉ</string>
+    <string name="pref_webserver_certificate_dialog_title">Cài đặt chứng chỉ thủ công</string>
+    <string name="pref_webserver_certificate_dialog_content">Từ Android 11 (R), ứng dụng không thể tự động cài đặt tổ chức phát hành chứng chỉ (CA) nữa.\n\nHãy vào phần cài đặt “Bảo mật”, chọn “Mã hóa và thông tin xác thực”, rồi chọn “Cài đặt chứng chỉ”. Tại đó, chọn “Chứng chỉ CA” và chọn tệp chứng chỉ vừa xuất.</string>
+    <string name="pref_webserver_certificate_dialog_action">Mở cài đặt “Bảo mật”</string>
+    <string name="pref_webserver_certificate_failed">Không thể chuẩn bị chứng chỉ.</string>
+    <string name="webserver_error_title">Máy chủ web chưa khởi động</string>
+    <string name="webserver_error_resources">Không thể chuẩn bị các tệp hoặc chứng chỉ của máy chủ.</string>
+    <string name="webserver_error_address_in_use">Một ứng dụng khác đang dùng các cổng web (80 và 443) của thiết bị.</string>
+    <string name="webserver_error_start_failed">Máy chủ không thể khởi động trên thiết bị này.</string>
+    <string name="pref_webserver_icon">Thay vùng quảng cáo trống bằng biểu tượng ứng dụng</string>
 </resources>

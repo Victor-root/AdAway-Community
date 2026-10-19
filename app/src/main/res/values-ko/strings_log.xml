@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">로그 기록 전환</string>
-    <string name="log_start_recording">기록을 눌러 요청 로그를 시작하고, 웹을 탐색하거나 앱을 사용한 다음 뒤로 돌아가거나 스와이프하여 로그를 새로 고칩니다.</string>
-    <string name="log_blocked_requests_ignored">\n\n차단된 요청은 로그를 남기지 않습니다. 이것들도 로그를 남기고 싶다면 먼저 광고차단을 비활성화하십시오.</string>
+    <string name="log_toggle_recording_description">로그 기록 켜기/끄기</string>
+    <string name="log_start_recording">기록 버튼을 눌러 요청 기록을 시작한 다음 웹을 탐색하거나 앱을 사용하고, 뒤로 가거나 스와이프하여 로그를 새로고침하세요.</string>
+    <string name="log_blocked_requests_ignored">\n\n차단된 요청은 기록되지 않습니다. 차단된 요청도 기록하려면 먼저 광고 차단을 끄세요.</string>
     <string name="log_sort">도메인 정렬</string>
     <string name="log_clear">로그 지우기</string>
-    <string name="log_sort_alphabetical">알파벳순 정렬</string>
-    <string name="log_sort_top_level_domain">레벨순 정렬</string>
-    <string name="log_block">블랙리스트에 추가</string>
-    <string name="log_allow">화이트리스트에 추가</string>
-    <string name="log_redirect">리다이렉트 리스트에 추가</string>
-    <string name="log_redirect_dialog_title">도메인 리다이렉트</string>
+    <string name="log_sort_alphabetical">가나다순 정렬</string>
+    <string name="log_sort_top_level_domain">최상위 도메인순 정렬</string>
+    <string name="log_block">차단 목록에 항목 추가</string>
+    <string name="log_allow">허용 목록에 항목 추가</string>
+    <string name="log_redirect">리디렉션 목록에 항목 추가</string>
+    <string name="log_redirect_dialog_title">도메인 리디렉션</string>
+    <string name="log_capture_failed">DNS 캡처를 시작하지 못했습니다.</string>
     <string name="log_start_recording_button">기록 시작</string>
-    <string name="log_start_recording_vpn_inactive">기록 시작 (VPN 비활성)</string>
+    <string name="log_start_recording_vpn_inactive">기록 시작(VPN 꺼짐)</string>
     <string name="log_stop_recording">기록 중지</string>
 </resources>

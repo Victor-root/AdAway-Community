@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="update_title">AdAway 업데이트</string>
-    <string name="update_banner_title">업데이트 사용 가능</string>
+    <string name="update_banner_title">업데이트 가능</string>
     <string name="update_banner_subtitle">탭하여 %1$s 설치</string>
     <string name="update_up_to_date_header">최신 버전입니다</string>
     <string name="update_update_available_header">업데이트 가능</string>
-    <string name="update_updating_header">AdAway를 업데이트 중</string>
-    <string name="update_update_button">지금 업데이트하기</string>
-    <string name="update_last_changelog_title">마지막 변경:</string>
-    <string name="update_new_changelog_title">변경사항:</string>
+    <string name="update_updating_header">AdAway 업데이트 중</string>
+    <string name="update_update_button">지금 업데이트</string>
+    <string name="update_complete_label">완료</string>
+    <string name="update_last_changelog_title">최근 변경 사항</string>
+    <string name="update_new_changelog_title">변경 내역</string>
+    <string name="update_download_failed">업데이트를 다운로드하지 못했습니다.</string>
+    <string name="update_install_failed">업데이트를 설치하지 못했습니다.</string>
     <string name="pref_update_check_now_update_available">새 버전 사용 가능: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">사용 가능한 업데이트가 없습니다</string>
+    <string name="pref_update_check_now_up_to_date">사용 가능한 업데이트 없음</string>
+    <string name="pref_update_check_now_failed">업데이트 서버에 연결할 수 없습니다</string>
     <string name="pref_update_install_summary">버전 %1$s 설치</string>
     <string name="notification_channel_app_updates">앱 업데이트</string>
-    <string name="notification_channel_app_updates_description">앱의 새 버전이 있을 때 알림. 이 채널을 음소거하면 다른 알림에 영향을 주지 않고 앱 업데이트 알림만 끌 수 있습니다.</string>
-    <string name="notification_app_update_title">앱 업데이트 사용가능</string>
-    <string name="notification_app_update_text">AdAway의 새로운 버전을 다운로드할 수 있습니다.</string>
+    <string name="notification_channel_app_updates_description">앱의 새 버전이 있을 때 알립니다. 이 채널을 끄면 다른 알림에는 영향을 주지 않고 앱 업데이트 알림만 받지 않습니다.</string>
+    <string name="notification_app_update_title">앱 업데이트 가능</string>
+    <string name="notification_app_update_text">AdAway의 새 버전을 다운로드할 수 있습니다.</string>
 </resources>

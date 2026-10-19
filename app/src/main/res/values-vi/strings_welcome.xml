@@ -1,41 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Bước đầu wizard</string>
-    <string name="welcome_second_step">Bước wizard thứ hai</string>
-    <string name="welcome_method_header">Chào mừng dến với AdAway!</string>
-    <string name="welcome_method_summary">AdAway cung cấp hai phương pháp chặn quảng cáo. Hãy chọn phương pháp phù hợp với bạn:</string>
-    <string name="welcome_root_method_title">Chặn quảng cáo sử dụng root  </string>
+    <string name="welcome_first_step">Bước thứ nhất của trình hướng dẫn</string>
+    <string name="welcome_second_step">Bước thứ hai của trình hướng dẫn</string>
+    <string name="welcome_third_step">Bước thứ ba của trình hướng dẫn</string>
+    <string name="welcome_fourth_step">Bước thứ tư của trình hướng dẫn</string>
+    <string name="welcome_method_header">Chào mừng đến với AdAway!</string>
+    <string name="welcome_method_summary">AdAway có hai phương pháp chặn quảng cáo. Hãy chọn phương pháp bạn thích:</string>
+    <string name="welcome_root_method_title">Chặn quảng cáo\nbằng root</string>
     <string name="welcome_root_method_text1">Nhanh hơn</string>
     <string name="welcome_root_method_text2">Tiết kiệm pin</string>
-    <string name="welcome_root_method_text3">Thiết bị cần được root</string>
-    <string name="welcome_vpn_method_title">Chặn quảng cáo sử dụng VPN</string>
+    <string name="welcome_root_method_text3">Cần root</string>
+    <string name="welcome_vpn_method_title">Chặn quảng cáo\nbằng VPN</string>
     <string name="welcome_vpn_method_text1">Chậm hơn</string>
-    <string name="welcome_vpn_method_text2">Chạy nền</string>
-    <string name="welcome_vpn_method_text3">Tương thích</string>
-    <string name="welcome_root_missing_title">Yêu cầu thiết bị đã được root</string>
-    <string name="welcome_root_missile_description">Chuỗi nhị phân SU không được tìm thấy hoặc AdAway chưa được cấp quyền root. Lỗi này có thể xảy ra do thiết bị của bạn chưa được root. Thông tin về cách root thiết bị có thể xem trên wiki.lineageos.org hoặc các website tương tự.</string>
-    <string name="welcome_method_pro_logo">Điểm cộng</string>
-    <string name="welcome_method_con_logo">Điểm trừ</string>
+    <string name="welcome_vpn_method_text2">Chạy ở chế độ nền</string>
+    <string name="welcome_vpn_method_text3">Tương thích rộng</string>
+    <string name="welcome_root_missing_title">Cần thiết bị Android đã root</string>
+    <string name="welcome_root_missile_description">Không tìm thấy tệp nhị phân su, hoặc bạn chưa cấp quyền root cho AdAway.\n\nĐiều này có thể xảy ra khi thiết bị của bạn chưa được root. Bạn có thể tìm thông tin về cách root thiết bị trên wiki.lineageos.org hoặc các trang web Android khác.</string>
+    <string name="welcome_vpn_alwayson_title">VPN luôn bật đã được bật</string>
+    <string name="welcome_vpn_alwayson_description">AdAway phát hiện một VPN khác đang bật tùy chọn “VPN luôn bật”.\n\nĐiều này khiến AdAway không thể yêu cầu quyền VPN. Vui lòng tắt “VPN luôn bật” trên VPN đó rồi thử lại.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway không thể yêu cầu quyền VPN.\n\nNguyên nhân có thể là một VPN khác đang bật tùy chọn “VPN luôn bật”. Vui lòng kiểm tra xem có VPN nào đang bật tùy chọn này không và tắt nó trước khi thử lại.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Mở cài đặt “VPN”</string>
+    <string name="welcome_method_pro_logo">Ưu điểm</string>
+    <string name="welcome_method_con_logo">Nhược điểm</string>
     <string name="welcome_sync_header">Đang đồng bộ</string>
-    <string name="welcome_synced_header">Đã đồng bộ</string>
-    <string name="welcome_sync_summary">AdAway tải xuống thông tin về các host quảng cáo để chặn chúng. Bạn có thể tùy chỉnh các host trong Cài đặt.</string>
+    <string name="welcome_synced_header">Đã đồng bộ!</string>
+    <string name="welcome_sync_summary">AdAway tải các mạng quảng cáo cần chặn từ những nguồn trực tuyến. Bạn có thể tùy chỉnh chúng sau trong phần Tùy chọn.</string>
     <string name="welcome_sync_retry_logo">Thử đồng bộ lại</string>
-    <string name="welcome_sync_error">Đồng bộ thất bại: %1$sThử lại ngay?</string>
-    <string name="welcome_sync_notifications">Nó có thể gửi thông báo để hiển thị trạng thái và kiểm soát khối quảng cáo cũng như thông báo về bản cập nhật ứng dụng có sẵn (một vài bản cập nhật mỗi năm). Kích hoạt chúng nếu bạn muốn luôn cập nhật.</string>
-    <string name="welcome_sync_leave_early_title">Đồng bộ chưa hoàn tất</string>
-    <string name="welcome_sync_leave_early_message">Việc tải xuống danh sách chặn chưa hoàn tất. Bạn có thể tiếp tục ngay bây giờ và nó sẽ tiếp tục chạy nền, hoặc chờ ở đây cho đến khi hoàn tất.</string>
+    <string name="welcome_sync_error">Không thể đồng bộ: %1$s Thử lại ngay?</string>
+    <string name="welcome_sync_notifications">AdAway có thể gửi thông báo để hiển thị trạng thái và điều khiển việc chặn quảng cáo, cũng như báo khi có bản cập nhật ứng dụng (vài lần mỗi năm). Hãy bật thông báo nếu bạn muốn luôn ở phiên bản mới nhất.</string>
+    <string name="welcome_sync_leave_early_title">Chưa đồng bộ xong</string>
+    <string name="welcome_sync_leave_early_message">Các danh sách chặn chưa tải xong. Bạn có thể tiếp tục ngay, việc tải sẽ chạy tiếp ở chế độ nền, hoặc chờ tại đây cho đến khi hoàn tất.</string>
     <string name="welcome_sync_leave_early_wait">Chờ</string>
     <string name="welcome_sync_leave_early_continue">Vẫn tiếp tục</string>
+    <string name="welcome_battery_header">Luôn được bảo vệ ở chế độ nền</string>
+    <string name="welcome_battery_summary">Android có thể tạm dừng VPN của AdAway ở chế độ nền để tiết kiệm điện, khiến việc chặn quảng cáo ngừng mà bạn không hay biết. Hãy cho phép AdAway bỏ qua tối ưu hóa pin để ứng dụng luôn chạy.</string>
+    <string name="welcome_battery_action">Cho phép</string>
+    <string name="welcome_battery_granted">Đã cho phép ✓</string>
+    <string name="welcome_battery_footnote_prefix">Bạn luôn có thể thay đổi điều này sau tại</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Cài đặt</item>
+        <item>Ứng dụng</item>
+        <item>AdAway</item>
+        <item>Pin</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Còn một việc nữa: trình quản lý pin riêng của điện thoại</string>
+    <string name="welcome_oem_battery_summary">Một số hãng điện thoại có trình quản lý pin riêng cũng có thể chặn AdAway. Sau đây là những mục cần kiểm tra trên máy của bạn:</string>
+    <string name="welcome_oem_battery_action">Mở thông tin ứng dụng</string>
+    <string name="welcome_oem_battery_open_failed">Không thể mở màn hình thông tin ứng dụng. Hãy mở thủ công từ Cài đặt → Ứng dụng → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Đây chỉ là các gợi ý chung, không phải hướng dẫn chính xác: cách diễn đạt và vị trí có thể khác nhau tùy mẫu điện thoại và phiên bản Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Thông tin ứng dụng</item>
+        <item>Pin</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Hãy tìm mục tương tự “Giới hạn sử dụng ở chế độ nền” › “Ứng dụng không bao giờ ngủ”, rồi thêm AdAway vào danh sách đó.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Đồng thời hãy xem có mục “Tối ưu hóa tự động” hay không, và tắt “Khởi động lại khi cần” nếu có.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Thông tin ứng dụng</item>
+        <item>Trình tiết kiệm pin</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Chọn “Không hạn chế”.</string>
+    <string name="welcome_oem_battery_secondary_miui">Đồng thời bật “Tự khởi động” (“Tự khởi động ở chế độ nền” trên các phiên bản mới hơn).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Thông tin ứng dụng</item>
+        <item>Mức sử dụng pin</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Chọn “Cho phép hoạt động ở chế độ nền” (đôi khi hiển thị là “Không hạn chế”).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Đồng thời hãy tìm công tắc “Tự khởi chạy” của AdAway (thường nằm trong Cài đặt › Ứng dụng), để ứng dụng có thể tự khởi động lại sau khi bị buộc dừng.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Thông tin ứng dụng</item>
+        <item>Pin</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Hãy tìm mục “Khởi chạy ứng dụng”, tắt “Quản lý tự động”, rồi bật cả 3 mục: “Tự khởi chạy”, “Khởi chạy phụ” và “Chạy trong nền”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Đồng thời hãy khóa AdAway trong màn hình ứng dụng gần đây (vuốt xuống trên thẻ của ứng dụng cho đến khi xuất hiện biểu tượng ổ khóa).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Thông tin ứng dụng</item>
+        <item>Mức sử dụng pin</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Hãy tìm tùy chọn nguồn điện ở chế độ nền và chọn “Không hạn chế mức dùng pin ở chế độ nền” (không phải “Kiểm soát thông minh”).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Đồng thời hãy tìm mục “Tự khởi động” của AdAway, thường nằm trong Cài đặt › Ứng dụng.</string>
+    <string name="welcome_oem_battery_label_generic">Hãng khác</string>
+    <string name="welcome_oem_battery_tip_generic">Hãy tìm trong thông tin ứng dụng một tùy chọn về pin hoặc hoạt động nền, và đảm bảo AdAway không bị hạn chế.</string>
     <string name="welcome_back_button">Quay lại</string>
     <string name="welcome_next_button">Tiếp theo</string>
-    <string name="welcome_finish_button">Hoàn thành</string>
+    <string name="welcome_finish_button">Hoàn tất</string>
     <string name="tv_welcome_intro_subtitle">Trình hướng dẫn ngắn này sẽ bật tính năng chặn quảng cáo trên thiết bị này.</string>
     <string name="tv_welcome_start_button">Bắt đầu</string>
-    <string name="tv_welcome_method_header">Chọn phương thức chặn của bạn</string>
-    <string name="tv_welcome_method_root_button">Sử dụng root</string>
-    <string name="tv_welcome_method_root_body">Nhanh hơn và tiết kiệm pin. Yêu cầu thiết bị đã root.</string>
-    <string name="tv_welcome_method_vpn_button">Sử dụng VPN</string>
+    <string name="tv_welcome_method_header">Chọn cách chặn quảng cáo</string>
+    <string name="tv_welcome_method_root_button">Dùng root</string>
+    <string name="tv_welcome_method_root_body">Nhanh và tiết kiệm pin. Cần thiết bị đã root.</string>
+    <string name="tv_welcome_method_vpn_button">Dùng VPN</string>
     <string name="tv_welcome_method_vpn_body">Hoạt động không cần root, tương thích với mọi thiết bị Android TV.</string>
     <string name="tv_welcome_activate_header">Bật chặn quảng cáo</string>
-    <string name="tv_welcome_activate_body">Đây là VPN cục bộ: nó lọc quảng cáo ngay trên thiết bị này, không định tuyến lưu lượng của bạn qua máy chủ bên ngoài.</string>
+    <string name="tv_welcome_activate_body">Đây là VPN cục bộ: nó lọc quảng cáo ngay trên thiết bị này, không chuyển lưu lượng của bạn qua một máy chủ bên ngoài.</string>
 </resources>

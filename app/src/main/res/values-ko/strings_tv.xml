@@ -2,12 +2,12 @@
 <resources>
     <string name="tv_dialog_add_to_allowed">허용 목록에 추가</string>
     <string name="tv_dialog_add_to_blocked">차단 목록에 추가</string>
-    <string name="tv_dialog_remove_from_allowed">허용 목록에서 제거</string>
-    <string name="tv_dialog_remove_from_blocked">차단 목록에서 제거</string>
+    <string name="tv_dialog_remove_from_allowed">허용 목록에서 삭제</string>
+    <string name="tv_dialog_remove_from_blocked">차단 목록에서 삭제</string>
     <string name="tv_dialog_copy_hostname">호스트 이름 복사</string>
     <string name="tv_log_entry_status_description">도메인 상태</string>
-    <string name="tv_button_theme_light">라이트 모드</string>
-    <string name="tv_button_theme_dark">다크 모드</string>
+    <string name="tv_button_theme_light">밝은 모드</string>
+    <string name="tv_button_theme_dark">어두운 모드</string>
     <string name="tv_lists_empty">이 목록에는 아직 항목이 없습니다.</string>
     <string name="tv_dialog_search">검색</string>
 </resources>

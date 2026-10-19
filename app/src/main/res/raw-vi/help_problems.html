@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Sao chép tệp miền thất bại trên Android 9+</h2>
-<p>Các phiên bản mới nhất của Android sử dụng phân vùng <code>/system</code> chỉ đọc.<br>
-Nếu bạn đang root bằng Magisk, hãy đảm bảo rằng bạn bật mô-đun systemless hosts và khởi động lại.</p>
+<h2>VPN tự tắt</h2>
+<p>Gần như luôn là do hệ thống tắt dịch vụ VPN để tiết kiệm pin, chứ không phải do ứng dụng gặp sự cố. Tình trạng này thường gặp trên các ROM của hãng có chế độ quản lý điện năng quá khắt khe (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung và các hãng khác).</p>
+<p>Trong phần cài đặt Android, hãy tìm AdAway rồi: đặt <cite>Tối ưu hóa pin</cite> thành <cite>Không hạn chế</cite> (hoặc <cite>Không tối ưu hóa</cite>), cho phép <cite>tự khởi động</cite>/<cite>tự khởi chạy</cite> nếu ROM của bạn có tùy chọn này, và khóa AdAway trong danh sách ứng dụng gần đây để không vô tình vuốt tắt. Đồng thời hãy đảm bảo <cite>Bật khi khởi động</cite> đang bật trong phần tùy chọn VPN của AdAway.</p>
 
-<h2>Không đủ dung lượng trên phân vùng</h2>
-<p>Hãy thử đổi tệp miền mục tiêu trong cài đặt thành <code>/data/data/hosts</code> (hoặc <code>/data/hosts</code>) và áp dụng lại AdAway.</p>
+<h2>Mất mạng hoặc duyệt web chậm ngay sau khi chuyển giữa Wi-Fi và dữ liệu di động</h2>
+<p>Khi mạng đang dùng thay đổi, đường hầm VPN phải được dựng lại để DNS được phân giải từ mạng mới. Nếu việc duyệt web vẫn không hoạt động, hãy mở <cite>Tùy chọn › Chặn quảng cáo bằng VPN › Đặt lại VPN</cite> để tạo lại kết nối từ đầu. Nếu tình trạng này cứ lặp lại, hãy ghi một nhật ký chẩn đoán (ở bên dưới) rồi báo cáo.</p>
+
+<h2>Làm thế nào để xuất nhật ký chẩn đoán?</h2>
+<p>Mở <cite>Tùy chọn › Chặn quảng cáo bằng VPN › Nhật ký chẩn đoán</cite>. Nhật ký ghi lại các lỗi và sự kiện VPN gần đây (chuyển mạng, kết nối lại, thất bại), không ghi lịch sử duyệt web của bạn, chỉ có các sự kiện kỹ thuật. Nhật ký sẽ để trống cho đến khi bạn bật <cite>Ghi nhật ký chẩn đoán</cite> ngay phía trên. Hãy dùng <cite>Sao chép</cite> hoặc <cite>Chia sẻ</cite> để gửi nhật ký khi báo cáo sự cố. Mẹo: hãy <cite>Xóa</cite> nhật ký trước, rồi mới tái hiện sự cố, để nhật ký gọn và đúng trọng tâm.</p>
 
 <h2>Chrome vẫn hiển thị quảng cáo</h2>
-<p>Hãy đảm bảo bạn tắt <cite>chế độ lite</cite> (trước kia được biết đến là <cite>trình tiết kiệm dữ liệu</cite>) trong cài đặt của Chrome. Tính năng này cho phép Chrome sử dụng giải pháp DNS riêng và vượt qua AdAway.</p>
+<p>Chrome có thể dùng <cite>DNS an toàn</cite> riêng của nó (DNS-over-HTTPS), khiến AdAway bị bỏ qua. Trong Chrome, hãy mở <cite>Cài đặt › Quyền riêng tư và bảo mật › Sử dụng DNS an toàn</cite> rồi tắt tùy chọn này. Điều tương tự cũng áp dụng cho mọi ứng dụng hoặc cài đặt <cite>DNS riêng tư</cite> của hệ thống. Ở chế độ VPN, AdAway có thể tự mã hóa DNS: xem <cite>VPN dùng những máy chủ DNS nào?</cite> trong phần Hỏi đáp.</p>
 
-<h2>Nó không chặn quảng cáo trong ứng dụng XYZ!</h2>
-<p>Một số tên miền có thể bị thiếu trong các tệp miền được cung cấp từ <cite>Nguồn miền</cite> hoặc ứng dụng đó đã tích hợp các hình ảnh để cung cấp quảng cáo mà không truy cập internet.<br><br>
-Bạn có thể ghi nhật ký các yêu cầu DNS (Menu-&gt;Ghi nhật ký các yêu cầu DNS) từ AdAway để tìm xem những tên miền bổ sung nào cần phải bị chặn.
-<br><br>Thêm các tên miền đáng nghi vào Danh sách đen của bạn bằng cách nhấn giữ các mục trong Nhật ký và báo cáo những tên miền đó khi bạn đã xác minh chúng trong <a href="https://github.com/Victor-root/AdAway-Community/issues">trình theo dõi vấn đề trên GitHub</a> của chúng tôi.</p>
+<h2>Một số quảng cáo vẫn lọt qua, hoặc một ứng dụng vẫn hiện quảng cáo</h2>
+<p>Có thể nguồn của bạn thiếu một tên máy chủ nào đó, hoặc ứng dụng nhúng sẵn quảng cáo nên không phát sinh yêu cầu nào. Hãy mở <cite>Nhật ký DNS</cite> từ màn hình chính để xem ứng dụng đang truy vấn những gì, thêm các tên máy chủ đáng ngờ vào danh sách <cite>Đã chặn</cite> của bạn, rồi kiểm tra xem có gì bị hỏng không. Một số ứng dụng còn lưu quảng cáo vào bộ nhớ đệm sau khi tải, nên việc xóa bộ nhớ đệm của ứng dụng đó trong cài đặt Android có thể giúp ích.</p>
 
-<h2>Các quảng cáo đã tạm lưu</h2>
-<p>Đôi lúc ứng dụng lưu giữ quảng cáo sau khi tải về. Điều này dẫn đến quảng cáo vẫn tồn tại trong một vài ứng dụng. Bạn có thể thử xoá bộ nhớ đệm của những ứng dụng này trong danh sách Ứng dụng của Android để ngăn chặn tình trạng này.</p>
+<h2>Một ứng dụng ngừng hoạt động sau khi bật AdAway</h2>
+<p>Một số ứng dụng từ chối hoạt động khi một tên máy chủ mà chúng cần bị chặn. Hãy dùng <cite>Nhật ký DNS</cite> để tìm tên máy chủ mà ứng dụng cần, thêm nó vào danh sách <cite>Được phép</cite> của bạn, và ứng dụng sẽ hoạt động trở lại. Các ứng dụng thường gặp vấn đề đã biết được liệt kê <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tại đây</a>.</p>
 
-<h2>Ứng dụng XYZ không còn hoạt động nữa!</h2>
-<p>Một số ứng dụng cần giao tiếp với tên miền bị AdAway chặn hoặc từ chối hoạt động khi không truy cập được các tên miền phục vụ quảng cáo. Hãy xem <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/dschuermann/ad-away/wiki/ProblematicApps</a> để xem danh sách các ứng dụng có vấn đề đã biết. Nếu không, hãy tìm hiểu xem những tên miền nào được cần đến và thêm chúng vào <cite>Danh sách trắng</cite> dưới <cite>Danh sách của bạn</cite> và báo cáo chúng trong <a href="https://github.com/Victor-root/AdAway-Community/issues">trình theo dõi lỗi của AdAway</a>.</p>
+<h2>Không áp dụng được tệp hosts (chế độ root)</h2>
+<p>Các phiên bản Android gần đây dùng phân vùng <code>/system</code> chỉ đọc, nên AdAway không thể ghi trực tiếp vào đó. Nếu bạn dùng Magisk, hãy bật module <cite>systemless hosts</cite>, khởi động lại rồi áp dụng lại. Nếu bạn không dùng root, hãy chuyển sang chế độ VPN, chế độ này không cần can thiệp vào hệ thống.</p>
 
-<h2>Không hoạt động trên Android 4.4+</h2>
-<p>Hãy thử đổi tệp miền mục tiêu trong cài đặt từ <code>/data/data/hosts</code> thành <code>/data/hosts</code> hoặc <code>/system/etc/hosts</code> và áp dụng lại AdAway.</p>
-
-<h2>Nút trở về trên trình duyệt hiện không hoạt động</h2>
-<p>Bạn có thể bật webserver cục bộ của AdAway trong tuỳ chỉnh để giải quyết.</p>
-
+<h2>Vẫn chưa giải quyết được?</h2>
+<p>Hãy báo cáo sự cố kèm nhật ký chẩn đoán tại <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>
