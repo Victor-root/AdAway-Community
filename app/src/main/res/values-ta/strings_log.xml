@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">பதிவைத் தொடங்கு / நிறுத்து</string>
+    <string name="log_start_recording">கோரிக்கைகளைப் பதிவு செய்யத் தொடங்க பதிவு பொத்தானை அழுத்துங்கள். பிறகு இணையத்தில் உலாவுங்கள் அல்லது ஆப்ஸைப் பயன்படுத்துங்கள், அதன் பின் பதிவுகளைப் புதுப்பிக்க பின்செல்லுங்கள் அல்லது ஸ்வைப் செய்யுங்கள்.</string>
+    <string name="log_blocked_requests_ignored">\n\nதடுக்கப்பட்ட கோரிக்கைகள் பதிவு செய்யப்படாது. அவற்றையும் பதிவு செய்ய விரும்பினால், முதலில் விளம்பரத் தடுப்பை முடக்கவும்.</string>
+    <string name="log_sort">டொமைன்களை வரிசைப்படுத்து</string>
+    <string name="log_clear">பதிவை அழி</string>
+    <string name="log_sort_alphabetical">அகர வரிசை</string>
+    <string name="log_sort_top_level_domain">உயர்நிலை டொமைன் வரிசை</string>
+    <string name="log_block">தடுப்புப் பட்டியலில் உள்ளீட்டைச் சேர்</string>
+    <string name="log_allow">அனுமதிப் பட்டியலில் உள்ளீட்டைச் சேர்</string>
+    <string name="log_redirect">திசைதிருப்பல் பட்டியலில் உள்ளீட்டைச் சேர்</string>
+    <string name="log_redirect_dialog_title">டொமைனைத் திசைதிருப்பு</string>
+    <string name="log_capture_failed">DNS கோரிக்கைகளைப் பிடிக்கத் தொடங்க முடியவில்லை.</string>
     <string name="log_start_recording_button">பதிவைத் தொடங்கு</string>
     <string name="log_start_recording_vpn_inactive">பதிவைத் தொடங்கு (VPN செயலில் இல்லை)</string>
     <string name="log_stop_recording">பதிவை நிறுத்து</string>

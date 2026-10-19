@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN தானாகவே அணைந்துவிடுகிறது</h2>
+<p>இது பெரும்பாலும் செயலிழப்பு அல்ல. பேட்டரியைச் சேமிக்க சிஸ்டம் VPN சேவையை நிறுத்துவதே காரணம். தீவிர மின் மேலாண்மை கொண்ட உற்பத்தியாளர் ROM களில் (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung மற்றும் பிற) இது வழக்கமாக நடக்கிறது.</p>
+<p>Android அமைப்புகளில் AdAway ஐக் கண்டுபிடித்து, <cite>பேட்டரி மேம்படுத்தல்</cite> அமைப்பை <cite>கட்டுப்பாடுகள் இல்லை</cite> (அல்லது <cite>மேம்படுத்த வேண்டாம்</cite>) என மாற்றவும். உங்கள் ROM இல் இருந்தால் <cite>தானியங்கு தொடக்கம்</cite> / <cite>தானியங்கு தொடங்குதல்</cite> ஐ அனுமதிக்கவும். AdAway ஸ்வைப் செய்து மூடப்படாமல் இருக்க, சமீபத்திய ஆப்ஸ் பட்டியலில் அதைப் பூட்டவும். மேலும், AdAway இன் VPN விருப்பத்தேர்வுகளில் <cite>தொடக்கத்தில் இயக்கு</cite> இயக்கப்பட்டுள்ளதா என்பதையும் சரிபார்க்கவும்.</p>
 
-<h2>பகுதிகளாகப் பிரிக்க இடம் போதாது</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>வைஃபைக்கும் மொபைல் டேட்டாவுக்கும் மாறிய உடனே இணையம் இல்லை அல்லது உலாவல் மெதுவாக உள்ளது</h2>
+<p>செயலில் உள்ள நெட்வொர்க் மாறும்போது, புதிய நெட்வொர்க்கிலிருந்து DNS தீர்க்கப்படுவதற்காக VPN டனல் மீண்டும் உருவாக்கப்பட வேண்டும். உலாவல் தொடர்ந்து சரியாகாவிட்டால், <cite>விருப்பத்தேர்வுகள் › VPN › VPN ஐ மீட்டமை</cite> என்பதைத் திறந்து இணைப்பை முதலிலிருந்து மீண்டும் உருவாக்கவும். இது தொடர்ந்து நிகழ்ந்தால், கண்டறிதல் பதிவைச் சேகரித்து (கீழே பார்க்கவும்) புகாரளிக்கவும்.</p>
 
-<h2>ஆண்ட்ராய்டு 4.4 மற்றும் அதற்கு மேல் வேலை செய்யாது</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>கண்டறிதல் பதிவை எப்படி ஏற்றுமதி செய்வது?</h2>
+<p><cite>விருப்பத்தேர்வுகள் › VPN › கண்டறிதல் பதிவு</cite> என்பதைத் திறக்கவும். இது சமீபத்திய பிழைகளையும் VPN நிகழ்வுகளையும் (நெட்வொர்க் மாற்றங்கள், மீண்டும் இணைத்தல்கள், தோல்விகள்) பதிவு செய்கிறது. உங்கள் உலாவல் வரலாற்றை அல்ல, தொழில்நுட்ப நிகழ்வுகளை மட்டுமே பதிவு செய்கிறது. மேலே உள்ள <cite>கண்டறிதல் பதிவைச் சேகரி</cite> என்பதை இயக்கும் வரை இது காலியாகவே இருக்கும். சிக்கலைப் புகாரளிக்கும்போது அதை அனுப்ப <cite>நகலெடு</cite> அல்லது <cite>பகிர்</cite> ஐப் பயன்படுத்தவும். குறிப்பு: முதலில் அதை <cite>அழி</cite>, பிறகு சிக்கலை மீண்டும் உருவாக்குங்கள். அப்போது பதிவு தெளிவாக இருக்கும்.</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome இல் இன்னும் விளம்பரங்கள் தெரிகின்றன</h2>
+<p>Chrome தனக்கே உரிய <cite>பாதுகாப்பான DNS</cite> (DNS-over-HTTPS) ஐப் பயன்படுத்தலாம், இது AdAway ஐத் தவிர்த்துவிடும். Chrome இல் <cite>அமைப்புகள் › தனியுரிமையும் பாதுகாப்பும் › பாதுகாப்பான DNS ஐப் பயன்படுத்து</cite> என்பதைத் திறந்து அதை அணைக்கவும். எந்த ஆப்ஸ் அல்லது சிஸ்டத்தின் <cite>தனிப்பட்ட DNS</cite> அமைப்புக்கும் இதுவே பொருந்தும். VPN பயன்முறையில் AdAway ஆலேயே DNS ஐ என்கிரிப்ட் செய்ய முடியும்: FAQ இல் உள்ள <cite>VPN எந்த DNS சேவையகங்களைப் பயன்படுத்துகிறது?</cite> என்பதைப் பார்க்கவும்.</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>சில விளம்பரங்கள் இன்னும் தெரிகின்றன, அல்லது ஓர் ஆப்ஸ் இன்னும் விளம்பரங்களைக் காட்டுகிறது</h2>
+<p>உங்கள் மூலங்களில் ஒரு ஹோஸ்ட் பெயர் விடுபட்டிருக்கலாம், அல்லது ஆப்ஸ் தனது விளம்பரங்களைத் தானே உள்ளடக்கியிருப்பதால் எந்தக் கோரிக்கையும் அனுப்பப்படாமல் இருக்கலாம். முகப்புத் திரையிலிருந்து <cite>DNS பதிவு</cite> ஐத் திறந்து ஆப்ஸ் எதைக் கேட்கிறது என்று பாருங்கள். சந்தேகத்துக்குரிய ஹோஸ்ட் பெயர்களை உங்கள் <cite>தடுக்கப்பட்டவை</cite> பட்டியலில் சேர்த்து, எதுவும் செயலிழக்கவில்லை என்பதை உறுதிசெய்யுங்கள். சில ஆப்ஸ் விளம்பரங்களைப் பதிவிறக்கிய பிறகு தற்காலிகமாகச் சேமித்து வைக்கும். எனவே Android அமைப்புகளில் அந்த ஆப்ஸின் தற்காலிகச் சேமிப்பை அழிப்பது உதவலாம்.</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway ஐ இயக்கிய பிறகு ஓர் ஆப்ஸ் வேலை செய்வதை நிறுத்தியது</h2>
+<p>தேவையான ஹோஸ்ட் பெயர் தடுக்கப்பட்டால், சில ஆப்ஸ் வேலை செய்ய மறுக்கும். அந்த ஆப்ஸுக்குத் தேவையான ஹோஸ்ட் பெயரைக் கண்டறிய <cite>DNS பதிவு</cite> ஐப் பயன்படுத்தி, அதை உங்கள் <cite>அனுமதிக்கப்பட்டவை</cite> பட்டியலில் சேர்க்கவும். அப்போது ஆப்ஸ் மீண்டும் வேலை செய்யும். சிக்கல் ஏற்படுத்தும் ஆப்ஸ் <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">இங்கே</a> பட்டியலிடப்பட்டுள்ளன.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>hosts கோப்பைச் செயல்படுத்த முடியவில்லை (root பயன்முறை)</h2>
+<p>சமீபத்திய Android பதிப்புகள் படிக்க மட்டுமேயான <code>/system</code> பகிர்வைப் பயன்படுத்துவதால், AdAway ஆல் அதில் நேரடியாக எழுத முடியாது. நீங்கள் Magisk ஐப் பயன்படுத்தினால், <cite>systemless hosts</cite> மாட்யூலை இயக்கி, சாதனத்தை மறுதொடக்கம் செய்து, மீண்டும் செயல்படுத்தவும். நீங்கள் root ஐப் பயன்படுத்தவில்லை என்றால், சிஸ்டத்தில் எந்த மாற்றமும் தேவைப்படாத VPN பயன்முறைக்கு மாறவும்.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>இன்னும் தீர்வு கிடைக்கவில்லையா?</h2>
+<p>சிக்கலை, கண்டறிதல் பதிவை இணைத்து <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> இல் புகாரளிக்கவும்.</p>
 </body>
 </html>

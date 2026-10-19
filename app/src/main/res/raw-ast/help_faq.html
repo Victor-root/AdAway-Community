@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Income by advertisements</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>¿Qué ye AdAway Community?</h2>
+<p>AdAway Community ye una bifurcación non oficial d’AdAway, el bloqueador de publicidá de códigu abiertu pa Android, caltenida pola comunidá. Bloquia la publicidá y los rastrexadores en tol sistema, pa toles aplicaciones, ensin cuenta nin publicidá propia. Esta bifurcación procura que l’aplicación siga furrulando de manera fiable nes versiones modernes d’Android y nes ROM de los fabricantes.</p>
 
-<h2>¿Cómo funciona AdAway?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>¿Cómo bloquia la publicidá?</h2>
+<p>AdAway furrula en dos moos:</p>
+<p><strong>Mou VPN</strong> (ensin root): AdAway executa una VPN llocal nel propiu preséu que nunca unvia el to tráficu a nenguna parte. Namás inspecciona les solicitúes DNS y descarta les que apunten a nomes d’host de publicidá y rastrexadores, dexando pasar tolo demás. Nada sal del to preséu.</p>
+<p><strong>Mou root</strong>: si el to preséu tien root, AdAway pue escribir un <a href="http://en.wikipedia.org/wiki/Hosts_file">ficheru hosts</a> en <code>/system/etc/hosts</code>, que asocia los nomes d’host non deseyaos con <code>127.0.0.1</code> pa que se resuelvan al to propiu preséu. Nes versiones recientes d’Android fai falta un módulu de hosts ensin modificar el sistema (por exemplu Magisk).</p>
 
-<h2>¿Por qué tengo de reaniciar Android pa que los cambeos faigan efeutu?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>¿Qué sirvidores DNS usa la VPN?</h2>
+<p>Nel mou VPN, los nomes d’host que nun se bloquien resuélvenlos los sirvidores DNS que escueyas en <cite>Preferencies › Bloqueador de publicidá con VPN › Sirvidores DNS</cite>:</p>
+<p><strong>Sirvidores DNS de la rede</strong> (predetermináu): los sirvidores de la to rede Wi-Fi o móvil. Si la rede nun da nengunu que AdAway pueda usar, recurre a Cloudflare (<code>1.1.1.1</code>).<br/><strong>Sirvidores DNS personalizaos</strong>: les direiciones IP que introduzas, separtaes por comes.<br/><strong>DNS over HTTPS</strong>: les solicitúes cífrense y unvíense a Cloudflare, Google, Quad9 o a la direición <code>https://</code> que introduzas, de manera que la to rede nun pueda lleelas nin modificales.</p>
+<p>El bloquéu furrula igual colos tres. Pa caltener el DNS cifráu, usa equí DNS over HTTPS en cuantes del axuste <cite>DNS priváu</cite> d’Android, que sortega AdAway.</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>¿Cómo bloquio, permito o redirixo un nome d’host?</h2>
+<p>Dende la pantalla d’aniciu xestiones tres llistes:</p>
+<p><strong>Bloquiaos</strong>: nomes d’host que tienen de bloquiase (publicidá y rastrexadores).<br/><strong>Permitíos</strong>: esceiciones que nunca quies que se bloquien, magar que una fonte los llistie.<br/><strong>Redirixíos</strong>: nomes d’host que quies que apunten a una direición IP concreta.</p>
+<p>Tamién pues abrir el <cite>Rexistru DNS</cite> dende la pantalla d’aniciu pa ver en tiempu real qué nomes d’host consulten les aplicaciones, y bloquialos o permitilos direutamente dende ellí.</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>¿Tengo de reaniciar Android dempués de cambiar les mios llistes?</h2>
+<p>Non. AdAway aplica’l cambéu al momentu, pero una aplicación que yá taba abierta pue siguir usando les sos conexones antigües y la so propia caché. Zárrala del tou (Forciar parada nos axustes d’Android de l’aplicación) y llimpia la so caché si entá se ve publicidá. Namás fai falta reaniciar Android una vez nel mou root, dempués d’activar el módulu «systemless hosts» de Magisk.</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>¿Ónde puedo atopar más fontes de hosts?</h2>
+<p>AdAway inclúi una configuración predeterminada razonable. Si quies más, mira la <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">llista de fontes de hosts adicionales</a> caltenida pola comunidá. Amiesta más fontes con moderación, porque les llistes mui grandes o que se solapen pueden causar falsos positivos que rompan aplicaciones.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>¿Por qué esiste esta bifurcación?</h2>
+<p>AdAway ye un proyeutu escelente y con una llarga hestoria, pero va tiempu que l’actividá de publicación y revisión nel proyeutu orixinal ye limitada. Dalgunes correiciones d’errores y solicitúes de cambéu llevaron muncho tiempu abiertes, incluyíos problemes que afeutaben a la estabilidá del mou VPN nes versiones recientes d’Android y nes ROM de los fabricantes. Esta bifurcación esiste pa caltener el proyeutu utilizable con correiciones caltenides pola comunidá, en cuantes de dexar ensin usar meyores que yá se probaron.</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>¿Cómo informo d’un fallu o suxero un cambéu?</h2>
+<p>Abre una incidencia nel xestor de la bifurcación: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Un rexistru de diagnósticu (mira la llingüeta Problemes) ayuda muncho al informar de problemes de la VPN.</p>
 </body>
 </html>

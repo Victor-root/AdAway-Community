@@ -2,27 +2,108 @@
 <resources>
     <string name="pref_main_title">Preferencies</string>
     <string name="pref_general_category">Xeneral</string>
-    <string name="pref_dark_theme">Estilu escuru</string>
+    <string name="pref_dark_theme">Tema escuru</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>Claro</item>
+        <item>Escuru</item>
+        <item>Predetermináu del sistema</item>
+    </string-array>
+    <string name="pref_update_configuration">Anovamientos automáticos</string>
+    <string name="pref_language">Llingua</string>
+    <string name="pref_language_system">Llingua del sistema</string>
+    <string name="pref_ad_block_category">Bloquéu de publicidá</string>
+    <string name="pref_root_ad_blocker_configuration">Bloqueador de publicidá con root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Bloqueador de publicidá con VPN</string>
+    <string name="pref_enable_ipv6">Activar la compatibilidá con IPv6</string>
+    <string name="pref_backup_restore">Copia de seguridá y restauración de les regles de bloquéu</string>
+    <string name="pref_backup_restore_title">Copia de seguridá y restauración</string>
+    <string name="pref_backup">Copia de seguridá</string>
+    <string name="pref_backup_summary">Guarda nel almacenamientu esternu una copia de les tos regles de bloquéu</string>
+    <string name="pref_restore">Restaurar</string>
+    <string name="pref_restore_summary">Restaura les tos regles de bloquéu dende un ficheru de copia de seguridá</string>
+    <string name="import_success">La copia de seguridá importóse correutamente dende’l to almacenamientu esternu.</string>
+    <string name="import_failed">Nun se pudo importar la copia de seguridá. ¿El formatu ye correutu?</string>
+    <string name="export_success">La copia de seguridá esportóse correutamente al ficheru «%s» del to almacenamientu esternu.</string>
+    <string name="export_failed">Nun se pudo esportar el ficheru de copia de seguridá «%s».</string>
+    <string name="pref_update_title">Anovamientos</string>
+    <string name="pref_update_enable_notifications">Les notificaciones tán desactivaes</string>
+    <string name="pref_update_enable_notifications_summary">Nun se van amosar les notificaciones de l’aplicación. Toca pa activales.</string>
+    <string name="pref_update_app_category">Anovamientos de l’aplicación</string>
+    <string name="pref_update_check_app_startup">Comprobar si hai anovamientos al aniciar</string>
+    <string name="pref_update_check_app_daily">Comprobar periódicamente si hai anovamientos</string>
     <string name="pref_update_check_now">Comprobar agora</string>
     <string name="pref_update_install">Anovar agora</string>
-    <string name="pref_vpn_excluded_apps_description">Configura les aplicaciones que nun deberíen usar la VPN pa que nenguna conexón se bloquie.</string>
+    <string name="pref_update_hosts_category">Anovamientos de los hosts</string>
+    <string name="pref_update_check">Comprobar si hai anovamientos al aniciar</string>
+    <string name="pref_update_check_hosts_daily">Comprobar periódicamente si hai anovamientos</string>
+    <string name="pref_update_sync_on_update">Sincronizar al anovar</string>
+    <string name="pref_update_sync_unmetered_only">Sincronizar solo en redes ensin llende de datos</string>
+    <string name="pref_vpn_service_on_boot">Activar al aniciar</string>
+    <string name="pref_vpn_service_monitor">Vixilar la conexón</string>
+    <string name="pref_vpn_service_monitor_description">Comprueba periódicamente l’estáu de la rede pa reaniciar la VPN si se desconecta.</string>
+    <string name="pref_vpn_excluded_apps">Aplicaciones escluyíes</string>
+    <string name="pref_vpn_excluded_apps_description">Configura qué aplicaciones nun deben usar la VPN pa que nun se bloquie nenguna conexón.</string>
+    <string name="pref_vpn_exclude_system_apps">Escluyir les aplicaciones del sistema</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+        <item>Nenguna</item>
+        <item>Toes menos los navegadores</item>
+        <item>Toes</item>
     </string-array>
+    <string name="pref_vpn_dns">Sirvidores DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Sirvidores DNS de la rede</item>
+        <item>Sirvidores DNS personalizaos</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Sirvidores DNS personalizaos</string>
+    <string name="pref_vpn_dns_custom_summary">Direiciones IP, separtaes por comes</string>
+    <string name="pref_vpn_dns_custom_invalid">Direición de sirvidor DNS non válida</string>
+    <string name="pref_vpn_doh">Sirvidor DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Direición personalizada</string>
+    <string name="pref_vpn_doh_address">Direición DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Direición DNS over HTTPS non válida</string>
+    <string name="pref_vpn_exclude_user_apps">Escluyir les aplicaciones d’usuariu</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Aplicaciones escluyíes</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Esbillar too</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Desmarcar too</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Icona de l’aplicación</string>
     <string name="pref_vpn_reset">Reaniciar la VPN</string>
-    <string name="pref_vpn_reset_description">Reconstruyi la conexón VPN dende cero. Usa esto si la VPN dexa de furrular (ensin accesu a internet o con errores DNS).</string>
+    <string name="pref_vpn_reset_description">Reconstrúi la conexón VPN dende cero. Usa esta opción si la VPN dexa de furrular (ensin accesu a internet o con errores de DNS).</string>
     <string name="pref_vpn_reset_done">Reconstruyóse la conexón VPN.</string>
-    <string name="pref_vpn_reset_not_running">La VPN nun ta activa.</string>
+    <string name="pref_vpn_reset_not_running">La VPN nun ta n’execución.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Grabar el rexistru de diagnósticu</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Activa esta opción enantes de reproducir un problema y esporta’l darréu. Pue ralentizar un poco los preseos más vieyos. Namás graba eventos téunicos de la VPN, nunca l’historial de navegación nin datos personales.</string>
     <string name="pref_vpn_diagnostic_log">Rexistru de diagnósticu</string>
-    <string name="pref_vpn_diagnostic_log_description">Ver, copiar o compartir los errores y eventos recientes de la VPN. Ye útil al informar d\'un problema.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Entá nun se rexistró dengún eventu.</string>
-    <string name="pref_vpn_diagnostic_log_share">Compartir el rexistru de diagnósticu</string>
+    <string name="pref_vpn_diagnostic_log_description">Mira, copia o comparte los errores y eventos recientes de la VPN. Ye útil al informar d’un problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Entá nun se grabó nengún eventu. Activa «Grabar el rexistru de diagnósticu» más arriba y intenta reproducir el problema.</string>
+    <string name="pref_vpn_diagnostic_log_share">Compartir</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Compartir el rexistru de diagnósticu</string>
     <string name="pref_vpn_diagnostic_log_copy">Copiar</string>
-    <string name="pref_vpn_diagnostic_log_copied">Copióse\'l rexistru de diagnósticu nel cartafueyu.</string>
+    <string name="pref_vpn_diagnostic_log_copied">Copióse’l rexistru de diagnósticu nel cartafueyu.</string>
     <string name="pref_vpn_diagnostic_log_clear">Llimpiar el rexistru de diagnósticu</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Desaniciar los eventos rexistraos. Fai esto enantes de reproducir un problema pa capturar un rastru llimpiu.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Llimpióse\'l rexistru de diagnósticu.</string>
-    <string name="pref_root_open_hosts">Ficheru hosts</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Desanicia los eventos grabaos. Faelo enantes de reproducir un problema pa capturar un rastru llimpiu.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Llimpióse’l rexistru de diagnósticu.</string>
+    <string name="pref_root_open_hosts">Abrir el ficheru hosts</string>
+    <string name="hosts_file_unreadable">Nun se pudo lleer el ficheru hosts.</string>
+    <string name="pref_hosts_redirection_summary">Define a ónde redirixir los hosts bloquiaos</string>
+    <string name="pref_redirection_ipv4">Configurar la redirección IPv4</string>
+    <string name="pref_redirection_ipv6">Configurar la redirección IPv6</string>
+    <string name="pref_redirection_invalid">Redirección non válida</string>
+    <string name="pref_webserver_summary">El sirvidor web llocal escucha nes direiciones IP llocales pa responder a les solicitúes de nomes d’host bloquiaos. Pue ayudar si una aplicación se cuelga cuando se bloquia una conexón.</string>
+    <string name="pref_webserver_enabled">Activar el sirvidor web</string>
+    <string name="pref_webserver_test">Probar el sirvidor web</string>
+    <string name="pref_webserver_certificate">Instalar el certificáu autofirmáu</string>
+    <string name="pref_webserver_state_not_running">Nun ta n’execución</string>
+    <string name="pref_webserver_state_checking">Comprobando…</string>
+    <string name="pref_webserver_state_running_not_installed">N’execución, pero el certificáu nun ta instaláu</string>
+    <string name="pref_webserver_state_running_and_installed">N’execución y certificáu instaláu</string>
+    <string name="pref_webserver_certificate_dialog_title">Instalación manual del certificáu</string>
+    <string name="pref_webserver_certificate_dialog_content">Dende Android 11 (R), les aplicaciones yá nun puen instalar automáticamente una autoridá de certificación (CA).\n\nVes a los axustes de «Seguridá», «Cifráu y credenciales» y dempués «Instalar un certificáu». Equí, escueye «Certificáu CA» y esbilla’l ficheru de certificáu esportáu agora mesmo.</string>
+    <string name="pref_webserver_certificate_dialog_action">Abrir los axustes de «Seguridá»</string>
+    <string name="pref_webserver_certificate_failed">Nun se pudo preparar el certificáu.</string>
+    <string name="webserver_error_title">El sirvidor web nun s’aniciú</string>
+    <string name="webserver_error_resources">Nun se pudieron preparar los sos ficheros o el so certificáu.</string>
+    <string name="webserver_error_address_in_use">Otra aplicación yá usa los puertos web (80 y 443) del preséu.</string>
+    <string name="webserver_error_start_failed">Nun se pudo aniciar nesti preséu.</string>
+    <string name="pref_webserver_icon">Trocar l’espaciu publicitariu en blanco pola icona de l’aplicación</string>
 </resources>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">அனுமதிக்கப்பட்டவற்றில் சேர்</string>
-    <string name="tv_dialog_add_to_blocked">தடுக்கப்பட்டவற்றில் சேர்</string>
-    <string name="tv_dialog_remove_from_allowed">அனுமதிக்கப்பட்டவற்றிலிருந்து அகற்று</string>
-    <string name="tv_dialog_remove_from_blocked">தடுக்கப்பட்டவற்றிலிருந்து அகற்று</string>
-    <string name="tv_dialog_copy_hostname">ஹோஸ்ட்பெயரை நகலெடு</string>
+    <string name="tv_dialog_add_to_allowed">அனுமதிப் பட்டியலில் சேர்</string>
+    <string name="tv_dialog_add_to_blocked">தடுப்புப் பட்டியலில் சேர்</string>
+    <string name="tv_dialog_remove_from_allowed">அனுமதிப் பட்டியலிலிருந்து நீக்கு</string>
+    <string name="tv_dialog_remove_from_blocked">தடுப்புப் பட்டியலிலிருந்து நீக்கு</string>
+    <string name="tv_dialog_copy_hostname">ஹோஸ்ட் பெயரை நகலெடு</string>
     <string name="tv_log_entry_status_description">டொமைன் நிலை</string>
-    <string name="tv_button_theme_light">வெளிர் பயன்முறை</string>
-    <string name="tv_button_theme_dark">இருள் பயன்முறை</string>
+    <string name="tv_button_theme_light">லைட் பயன்முறை</string>
+    <string name="tv_button_theme_dark">டார்க் பயன்முறை</string>
     <string name="tv_lists_empty">இந்தப் பட்டியலில் இன்னும் உள்ளீடுகள் இல்லை.</string>
     <string name="tv_dialog_search">தேடு</string>
 </resources>

@@ -1,31 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Preferences</string>
-    <string name="pref_backup_restore_title">காப்புப்பிரதி &amp; மீட்டமை</string>
-    <string name="pref_backup">காப்புப்பிரதி</string>
-    <string name="pref_backup_summary">உங்கள் தடுப்பு விதிகளை வெளிப்புற சேமிப்பகத்துக்கு காப்புப்பிரதி எடுக்கவும்</string>
-    <string name="pref_restore">மீட்டெடு</string>
-    <string name="pref_restore_summary">காப்புப்பிரதி கோப்பிலிருந்து உங்கள் தடுப்பு விதிகளை மீட்டெடு</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_main_title">விருப்பத்தேர்வுகள்</string>
+    <string name="pref_general_category">பொது</string>
+    <string name="pref_dark_theme">டார்க் தீம்</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>லைட்</item>
+        <item>டார்க்</item>
+        <item>சிஸ்டம் இயல்புநிலை</item>
     </string-array>
+    <string name="pref_update_configuration">தானியங்கு புதுப்பிப்புகள்</string>
+    <string name="pref_language">மொழி</string>
+    <string name="pref_language_system">சிஸ்டம் மொழி</string>
+    <string name="pref_ad_block_category">விளம்பரத் தடுப்பு</string>
+    <string name="pref_root_ad_blocker_configuration">root அடிப்படையிலான விளம்பரத் தடுப்பான்</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN அடிப்படையிலான விளம்பரத் தடுப்பான்</string>
+    <string name="pref_enable_ipv6">IPv6 ஆதரவை இயக்கு</string>
+    <string name="pref_backup_restore">தடுப்பு விதிகளைக் காப்புப்பிரதி எடு / மீட்டெடு</string>
+    <string name="pref_backup_restore_title">காப்புப்பிரதி &amp; மீட்டெடுப்பு</string>
+    <string name="pref_backup">காப்புப்பிரதி</string>
+    <string name="pref_backup_summary">உங்கள் தடுப்பு விதிகளை வெளிப்புறச் சேமிப்பகத்தில் காப்புப்பிரதி எடுக்கவும்</string>
+    <string name="pref_restore">மீட்டெடு</string>
+    <string name="pref_restore_summary">காப்புப்பிரதி கோப்பிலிருந்து உங்கள் தடுப்பு விதிகளை மீட்டெடுக்கவும்</string>
+    <string name="import_success">காப்புப்பிரதி உங்கள் வெளிப்புறச் சேமிப்பகத்திலிருந்து வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது.</string>
+    <string name="import_failed">காப்புப்பிரதியை இறக்குமதி செய்ய முடியவில்லை. அதன் வடிவம் சரியானதா?</string>
+    <string name="export_success">காப்புப்பிரதி உங்கள் வெளிப்புறச் சேமிப்பகத்தில் “%s” கோப்பாக வெற்றிகரமாக ஏற்றுமதி செய்யப்பட்டது.</string>
+    <string name="export_failed">காப்புப்பிரதி கோப்பு “%s” ஐ ஏற்றுமதி செய்ய முடியவில்லை.</string>
+    <string name="pref_update_title">புதுப்பிப்புகள்</string>
+    <string name="pref_update_enable_notifications">அறிவிப்புகள் முடக்கப்பட்டுள்ளன</string>
+    <string name="pref_update_enable_notifications_summary">ஆப்ஸ் அறிவிப்புகள் காட்டப்படாது. அவற்றை இயக்கத் தட்டவும்.</string>
+    <string name="pref_update_app_category">ஆப்ஸ் புதுப்பிப்புகள்</string>
+    <string name="pref_update_check_app_startup">தொடக்கத்தில் புதுப்பிப்பைச் சரிபார்</string>
+    <string name="pref_update_check_app_daily">அவ்வப்போது புதுப்பிப்பைச் சரிபார்</string>
+    <string name="pref_update_check_now">இப்போது சரிபார்</string>
+    <string name="pref_update_install">இப்போது புதுப்பி</string>
+    <string name="pref_update_hosts_category">hosts புதுப்பிப்புகள்</string>
+    <string name="pref_update_check">தொடக்கத்தில் புதுப்பிப்பைச் சரிபார்</string>
+    <string name="pref_update_check_hosts_daily">அவ்வப்போது புதுப்பிப்பைச் சரிபார்</string>
+    <string name="pref_update_sync_on_update">புதுப்பிக்கும்போது ஒத்திசை</string>
+    <string name="pref_update_sync_unmetered_only">அளவிடப்படாத நெட்வொர்க்கில் மட்டும் ஒத்திசை</string>
+    <string name="pref_vpn_service_on_boot">தொடக்கத்தில் இயக்கு</string>
+    <string name="pref_vpn_service_monitor">இணைப்பைக் கண்காணி</string>
+    <string name="pref_vpn_service_monitor_description">இணைப்பு துண்டிக்கப்பட்டால் VPN ஐ மீண்டும் தொடங்க, நெட்வொர்க் நிலையை அவ்வப்போது சரிபார்க்கும்.</string>
+    <string name="pref_vpn_excluded_apps">விலக்கப்பட்ட ஆப்ஸ்</string>
+    <string name="pref_vpn_excluded_apps_description">எந்த ஆப்ஸ் VPN ஐப் பயன்படுத்தக் கூடாது என்பதை அமைக்கவும். அவற்றின் இணைப்புகள் தடுக்கப்படாது.</string>
+    <string name="pref_vpn_exclude_system_apps">சிஸ்டம் ஆப்ஸை விலக்கு</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>எதுவுமில்லை</item>
+        <item>உலாவிகள் தவிர அனைத்தும்</item>
+        <item>அனைத்தும்</item>
+    </string-array>
+    <string name="pref_vpn_dns">DNS சேவையகங்கள்</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>நெட்வொர்க் DNS சேவையகங்கள்</item>
+        <item>தனிப்பயன் DNS சேவையகங்கள்</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">தனிப்பயன் DNS சேவையகங்கள்</string>
+    <string name="pref_vpn_dns_custom_summary">IP முகவரிகள், கமாவால் பிரிக்கப்பட்டவை</string>
+    <string name="pref_vpn_dns_custom_invalid">DNS சேவையக முகவரி தவறானது</string>
+    <string name="pref_vpn_doh">DNS over HTTPS சேவையகம்</string>
+    <string name="pref_vpn_doh_custom">தனிப்பயன் முகவரி</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS முகவரி</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPS முகவரி தவறானது</string>
+    <string name="pref_vpn_exclude_user_apps">பயனர் ஆப்ஸை விலக்கு</string>
+    <string name="pref_vpn_exclude_user_apps_activity">விலக்கப்பட்ட ஆப்ஸ்</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">அனைத்தையும் தேர்ந்தெடு</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">தேர்வை நீக்கு</string>
+    <string name="pref_vpn_exclude_user_apps_icon">ஆப்ஸ் ஐகான்</string>
     <string name="pref_vpn_reset">VPN ஐ மீட்டமை</string>
     <string name="pref_vpn_reset_description">VPN இணைப்பை முதலிலிருந்து மீண்டும் உருவாக்கவும். VPN வேலை செய்வதை நிறுத்தினால் (இணைய அணுகல் இல்லை அல்லது DNS பிழைகள்) இதைப் பயன்படுத்தவும்.</string>
     <string name="pref_vpn_reset_done">VPN இணைப்பு மீண்டும் உருவாக்கப்பட்டது.</string>
     <string name="pref_vpn_reset_not_running">VPN இயங்கவில்லை.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">கண்டறிதல் பதிவைச் சேகரி</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">சிக்கலை மீண்டும் உருவாக்கும் முன் இதை இயக்கவும், பிறகு கீழே ஏற்றுமதி செய்யவும். பழைய சாதனங்களில் சற்று வேகம் குறையலாம். VPN தொடர்பான தொழில்நுட்ப நிகழ்வுகளை மட்டுமே பதிவு செய்கிறது, உலாவல் வரலாற்றையோ தனிப்பட்ட தரவையோ ஒருபோதும் பதிவு செய்யாது.</string>
     <string name="pref_vpn_diagnostic_log">கண்டறிதல் பதிவு</string>
-    <string name="pref_vpn_diagnostic_log_description">சமீபத்திய பிழைகள் மற்றும் VPN நிகழ்வுகளைப் பார்க்கவும், நகலெடுக்கவும் அல்லது பகிரவும். சிக்கலைப் புகாரளிக்கும்போது பயனுள்ளது.</string>
-    <string name="pref_vpn_diagnostic_log_empty">இதுவரை எந்த நிகழ்வும் பதிவு செய்யப்படவில்லை.</string>
-    <string name="pref_vpn_diagnostic_log_share">கண்டறிதல் பதிவைப் பகிர்</string>
+    <string name="pref_vpn_diagnostic_log_description">சமீபத்திய பிழைகள் மற்றும் VPN நிகழ்வுகளைப் பார்க்கவும், நகலெடுக்கவும் அல்லது பகிரவும். சிக்கலைப் புகாரளிக்கும்போது பயனுள்ளதாக இருக்கும்.</string>
+    <string name="pref_vpn_diagnostic_log_empty">இதுவரை எந்த நிகழ்வும் பதிவு செய்யப்படவில்லை. மேலே உள்ள “கண்டறிதல் பதிவைச் சேகரி” என்பதை இயக்கி, சிக்கலை மீண்டும் உருவாக்கிப் பாருங்கள்.</string>
+    <string name="pref_vpn_diagnostic_log_share">பகிர்</string>
+    <string name="pref_vpn_diagnostic_log_share_title">கண்டறிதல் பதிவைப் பகிர்</string>
     <string name="pref_vpn_diagnostic_log_copy">நகலெடு</string>
     <string name="pref_vpn_diagnostic_log_copied">கண்டறிதல் பதிவு கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது.</string>
     <string name="pref_vpn_diagnostic_log_clear">கண்டறிதல் பதிவை அழி</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">பதிவு செய்யப்பட்ட நிகழ்வுகளை நீக்கவும். ஒரு தூய்மையான தடத்தைப் பிடிக்க, சிக்கலை மீண்டும் உருவாக்கும் முன் இதைச் செய்யவும்.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">பதிவு செய்யப்பட்ட நிகழ்வுகளை நீக்கவும். தெளிவான பதிவு கிடைக்க, சிக்கலை மீண்டும் உருவாக்கும் முன் இதைச் செய்யவும்.</string>
     <string name="pref_vpn_diagnostic_log_cleared">கண்டறிதல் பதிவு அழிக்கப்பட்டது.</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_root_open_hosts">hosts கோப்பைத் திற</string>
+    <string name="hosts_file_unreadable">hosts கோப்பைப் படிக்க முடியவில்லை.</string>
+    <string name="pref_hosts_redirection_summary">தடுக்கப்பட்ட ஹோஸ்ட்கள் எங்கே திசைதிருப்பப்பட வேண்டும் என்பதை வரையறுக்கவும்</string>
+    <string name="pref_redirection_ipv4">IPv4 திசைதிருப்பலை அமை</string>
+    <string name="pref_redirection_ipv6">IPv6 திசைதிருப்பலை அமை</string>
+    <string name="pref_redirection_invalid">திசைதிருப்பல் தவறானது</string>
+    <string name="pref_webserver_summary">உள்ளூர் வலை சேவையகம், தடுக்கப்பட்ட ஹோஸ்ட் பெயர் கோரிக்கைகளுக்குப் பதிலளிக்க உள்ளூர் IP முகவரிகளைக் கண்காணிக்கும். தடுக்கப்பட்ட இணைப்பால் ஆப்ஸ் உறைவதைத் தவிர்க்க இது உதவலாம்.</string>
     <string name="pref_webserver_enabled">வலை சேவையகத்தை இயக்கு</string>
+    <string name="pref_webserver_test">வலை சேவையகத்தைச் சோதி</string>
+    <string name="pref_webserver_certificate">சுயகையொப்பச் சான்றிதழை நிறுவு</string>
+    <string name="pref_webserver_state_not_running">இயங்கவில்லை</string>
+    <string name="pref_webserver_state_checking">சரிபார்க்கிறது…</string>
+    <string name="pref_webserver_state_running_not_installed">இயங்குகிறது, ஆனால் சான்றிதழ் நிறுவப்படவில்லை</string>
+    <string name="pref_webserver_state_running_and_installed">இயங்குகிறது, சான்றிதழ் நிறுவப்பட்டுள்ளது</string>
+    <string name="pref_webserver_certificate_dialog_title">சான்றிதழைக் கைமுறையாக நிறுவுதல்</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11 (R) முதல், சான்றிதழ் அதிகாரத்தை (CA) ஆப்ஸ்களால் தானாக நிறுவ முடியாது.\n\n“பாதுகாப்பு” அமைப்புகளுக்குச் சென்று, “என்கிரிப்ஷன் &amp; அனுமதிச்சான்றுகள்” என்பதையும் பின்னர் “சான்றிதழை நிறுவு” என்பதையும் தேர்ந்தெடுக்கவும். அங்கு “CA சான்றிதழ்” என்பதைத் தேர்ந்தெடுத்து, புதிதாக ஏற்றுமதி செய்யப்பட்ட சான்றிதழ் கோப்பைத் தேர்ந்தெடுக்கவும்.</string>
+    <string name="pref_webserver_certificate_dialog_action">“பாதுகாப்பு” அமைப்புகளைத் திற</string>
+    <string name="pref_webserver_certificate_failed">சான்றிதழைத் தயார்படுத்த முடியவில்லை.</string>
+    <string name="webserver_error_title">வலை சேவையகம் தொடங்கவில்லை</string>
+    <string name="webserver_error_resources">அதன் கோப்புகளையோ சான்றிதழையோ தயார்படுத்த முடியவில்லை.</string>
+    <string name="webserver_error_address_in_use">சாதனத்தின் வலை போர்ட்களை (80 மற்றும் 443) வேறொரு ஆப்ஸ் ஏற்கெனவே பயன்படுத்துகிறது.</string>
+    <string name="webserver_error_start_failed">இந்தச் சாதனத்தில் அதைத் தொடங்க முடியவில்லை.</string>
+    <string name="pref_webserver_icon">காலியான விளம்பர இடத்தை ஆப்ஸ் ஐகானால் மாற்று</string>
 </resources>

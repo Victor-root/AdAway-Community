@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>La VPN apáguase sola</h2>
+<p>Casi siempre ye’l sistema el que para’l serviciu de la VPN pa aforrar batería, non un fallu de l’aplicación. Ye habitual nes ROM de los fabricantes con una xestión d’enerxía agresiva (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung y otres).</p>
+<p>Nos axustes d’Android, atopa AdAway y: pon la <cite>optimización de la batería</cite> en <cite>Ensin restricciones</cite> (o <cite>Nun optimizar</cite>), permite l’<cite>aniciu automáticu</cite> o el <cite>llanzamientu automáticu</cite> si la to ROM lu tien, y bloquia AdAway na llista d’aplicaciones recientes pa que nun se zarre al desplazalu. Comprueba tamién que <cite>Activar al aniciar</cite> tea activáu nes preferencies de la VPN d’AdAway.</p>
 
-<h2>Nun hai espaciu abondo na patición</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Ensin internet o con navegación lenta xusto dempués de cambiar ente Wi-Fi y datos móviles</h2>
+<p>Cuando cambia la rede activa, el túnel tien de reconstruyise pa que’l DNS se resuelva dende la rede nueva. Si la navegación sigue sin furrular, abre <cite>Preferencies › Bloqueador de publicidá con VPN › Reaniciar la VPN</cite> pa reconstruyir la conexón dende cero. Si sigue asocediendo, captura un rexistru de diagnósticu (equí abaxo) y informa del problema.</p>
 
-<h2>Nun furrula n'Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>¿Cómo esporto un rexistru de diagnósticu?</h2>
+<p>Abre <cite>Preferencies › Bloqueador de publicidá con VPN › Rexistru de diagnósticu</cite>. Graba los errores y eventos recientes de la VPN (cambeos de rede, reconexones, fallos), non l’historial de navegación: namás eventos téunicos. Permanez baleru hasta que actives <cite>Grabar el rexistru de diagnósticu</cite>, xusto enriba. Usa <cite>Copiar</cite> o <cite>Compartir</cite> pa unviálu al informar d’un problema. Conseyu: primero usa <cite>Llimpiar</cite>, dempués reproduz el problema, asina el rexistru va ser más concretu.</p>
 
-<h2>¡Nun bloquia los anuncios na aplicación XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome sigue amosando publicidá</h2>
+<p>Chrome pue usar el so propiu <cite>DNS seguru</cite> (DNS over HTTPS), que esquiva AdAway. En Chrome, abre <cite>Axustes › Privacidá y seguridá › Usar DNS seguru</cite> y desactívalu. Lo mesmo val pa cualquier axuste de <cite>DNS priváu</cite> d’una aplicación o del sistema. Nel mou VPN, AdAway pue cifrar él mesmu’l DNS: mira <cite>¿Qué sirvidores DNS usa la VPN?</cite> na FAQ.</p>
 
-<h2>Anuncios na caché</h2>
-<p>Dalcuando delles aplicaciones atroxen na caché los anuncios dempués de baxalos. Esto conduz a que queden anuncios de delles aplicaciones. Pues intentar desaniciar la caché pa eses aplicaciones na llista d'aplicaciones d'Android pa burllase d'esti problema.</p>
+<h2>Dalguna publicidá sigue pasando, o una aplicación sigue amosándola</h2>
+<p>Pue que falte un nome d’host nes tos fontes, o que l’aplicación lleve la publicidá integrada y nun faiga nenguna solicitú. Abre’l <cite>Rexistru DNS</cite> dende la pantalla d’aniciu pa ver qué consulta l’aplicación, amiesta los nomes d’host sospechosos a la to llista de <cite>Bloquiaos</cite> y comprueba que nun se rompa nada. Dalgunes aplicaciones tamién guarden la publicidá na caché dempués de descargala, polo que llimpiar la caché d’esa aplicación nos axustes d’Android pue ayudar.</p>
 
-<h2>¡L'aplicación XYZ yá nun furrula más!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>Una aplicación dexó de furrular dempués d’activar AdAway</h2>
+<p>Dalgunes aplicaciones refuguen funcionar cuando se bloquia un nome d’host que necesiten. Usa’l <cite>Rexistru DNS</cite> pa atopar qué nome d’host necesita l’aplicación, amiéstalu a la to llista de <cite>Permitíos</cite> y l’aplicación tendría de furrular otra vuelta. Les aplicaciones problemátiques conocíes tán llistaes <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">equí</a>.</p>
 
-<h2>El botón Atrás nun ta furrulando nos restoladores web</h2>
-<p>Pues habilitar el sirvidor llocal d'AdAway nes preferencies como una igua alternativa.</p>
+<h2>Falla l’aplicación del ficheru hosts (mou root)</h2>
+<p>Les versiones recientes d’Android usen una partición <code>/system</code> de namás llectura, polo que AdAway nun pue escribir ellí direutamente. Si uses Magisk, activa’l módulu <cite>systemless hosts</cite>, reanicia y aplica otra vuelta. Si nun uses root, pasa meyor al mou VPN, que nun requier modificar el sistema.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>¿Entá tienes problemes?</h2>
+<p>Informa del problema axuntando un rexistru de diagnósticu en <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

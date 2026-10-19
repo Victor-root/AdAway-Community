@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_title">Anovamientu d’AdAway</string>
     <string name="update_banner_title">Anovamientu disponible</string>
     <string name="update_banner_subtitle">Toca pa instalar %1$s</string>
+    <string name="update_up_to_date_header">Tas al día</string>
     <string name="update_update_available_header">Anovamientu disponible</string>
-    <string name="pref_update_check_now_update_available">Nueva versión disponible: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Nun hai anovamientos disponibles</string>
+    <string name="update_updating_header">Anovando AdAway</string>
+    <string name="update_update_button">Anovar agora</string>
+    <string name="update_complete_label">Completo</string>
+    <string name="update_last_changelog_title">Postreros cambeos</string>
+    <string name="update_new_changelog_title">Rexistru de cambeos</string>
+    <string name="update_download_failed">Nun se pudo descargar l’anovamientu.</string>
+    <string name="update_install_failed">Nun se pudo instalar l’anovamientu.</string>
+    <string name="pref_update_check_now_update_available">Versión nueva disponible: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">Nun hai nengún anovamientu disponible</string>
+    <string name="pref_update_check_now_failed">Nun se pudo algamar el sirvidor d’anovamientos</string>
     <string name="pref_update_install_summary">Instalar la versión %1$s</string>
     <string name="notification_channel_app_updates">Anovamientos de l’aplicación</string>
-    <string name="notification_channel_app_updates_description">Avisu cuando hai una nueva versión de l’aplicación. Silencia esta canal pa anubrir los avisos d’anovamientu de l’aplicación ensin afectar a otres notificaciones.</string>
+    <string name="notification_channel_app_updates_description">Avisu cuando hai disponible una versión nueva de l’aplicación. Silencia esti canal pa nun recibir los avisos d’anovamientos de l’aplicación ensin afectar a les demás notificaciones.</string>
+    <string name="notification_app_update_title">Anovamientu de l’aplicación disponible</string>
+    <string name="notification_app_update_text">Hai disponible pa descargar una versión nueva d’AdAway.</string>
 </resources>

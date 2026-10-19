@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Income by advertisements</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>AdAway Community څه شی دی؟</h2>
+<p>AdAway Community د AdAway غیررسمي فورک (بېله شوې بڼه) دی چې د ټولنې لخوا ساتل کېږي، د Android لپاره د خلاصې سرچینې اعلان بندوونکی. دا اعلانونه او تعقیبوونکي په ټول سیسټم کې، د ټولو اپلېکېشنونو لپاره بندوي، پرته له حساب او پرته له دې چې خپل اعلانونه ولري. دا فورک پر دې تمرکز کوي چې اپلېکېشن په نویو Android نسخو او د تولیدونکو په ROM کې په باوري ډول کار وکړي.</p>
 
-<h2>How does AdAway work?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>دا اعلانونه څنګه بندوي؟</h2>
+<p>AdAway په دوو حالتونو کې کار کوي:</p>
+<p><strong>VPN حالت</strong> (root ته اړتیا نشته): AdAway په وسیله کې یو ځايي VPN چلوي چې ستاسو ترافیک هېڅکله بل چېرته نه لېږي. دا یوازې د DNS غوښتنې ګوري او هغه غوښتنې غورځوي چې د اعلان او تعقیبوونکو کوربه نومونو ته اشاره کوي، او پاتې ټول پرېږدي چې تېر شي. هېڅ شی ستاسو له وسیلې نه وځي.</p>
+<p><strong>root حالت</strong>: که ستاسو وسیله root شوې وي، AdAway کولای شي پر ځای یې یوه <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts دوتنه</a> په <code>/system/etc/hosts</code> کې ولیکي، چې ناغوښتل شوي کوربه نومونه <code>127.0.0.1</code> ته نقشه کوي ترڅو ستاسو پر خپله وسیله حل شي. په نوي Android کې د systemless hosts ماډل (لکه Magisk) اړین دی.</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>VPN کوم DNS سرورونه کاروي؟</h2>
+<p>د VPN په حالت کې، هغه کوربه نومونه چې بند نه وي د هغو DNS سرورونو لخوا حل کېږي چې تاسو په <cite>غوراوي › د VPN پر بنسټ اعلان بندوونکی › د DNS سرورونه</cite> کې ټاکئ:</p>
+<p><strong>د شبکې DNS سرورونه</strong> (ډیفالټ): ستاسو د Wi-Fi یا ګرځنده شبکې سرورونه. که شبکه هېڅ داسې سرور ورنکړي چې AdAway یې وکاروي، دا Cloudflare (<code>1.1.1.1</code>) ته راګرځي.<br/><strong>ځانګړي DNS سرورونه</strong>: هغه IP پتې چې تاسو یې دننه کوئ، په کوما (،) سره جلا شوې.<br/><strong>DNS over HTTPS</strong>: غوښتنې کوډ کېږي او Cloudflare، Google، Quad9 یا هغه <code>https://</code> پتې ته لېږل کېږي چې تاسو یې ورکوئ، نو ستاسو شبکه نشي کولای هغه ولولي یا بدلې کړي.</p>
+<p>بندول په ټولو دریو حالتونو کې یو شان کار کوي. د کوډ شوي DNS د ساتلو لپاره، دلته DNS over HTTPS وکاروئ، نه د Android <cite>خصوصي DNS</cite> امستنه، چې AdAway تېروي.</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>یو کوربه نوم څنګه بند کړم، اجازه ورکړم یا بل لوري ته یې واړوم؟</h2>
+<p>د کور پاڼې څخه تاسو درې لېستونه مدیریت کوئ:</p>
+<p><strong>بندېدلي</strong>: هغه کوربه نومونه چې باید بند شي (اعلانونه او تعقیبوونکي).<br/><strong>اجازه ورکړل شوي</strong>: هغه استثناوې چې نه غواړئ هېڅکله بندې شي، حتی که یوه سرچینه یې لېست کړي.<br/><strong>اړول شوي</strong>: هغه کوربه نومونه چې غواړئ یوې ځانګړې IP پتې ته اشاره وکړي.</p>
+<p>تاسو کولای شئ د کور پاڼې څخه <cite>د DNS یادښت</cite> هم پرانیزئ ترڅو په ریښتیني وخت کې وګورئ اپلېکېشنونه کوم کوربه نومونه پوښتي، بیا یې له همدې ځایه مستقیم بند یا اجازه ورکړئ.</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>ایا د لېستونو له بدلولو وروسته باید Android بیا پیل کړم؟</h2>
+<p>نه. AdAway بدلون سمدستي پلي کوي، خو یو اپلېکېشن چې دمخه پرانیستل شوی وي کېدای شي خپلې زړې اړیکې او خپل کېش وکاروي. هغه په بشپړه توګه وتړئ (د اپلېکېشن په Android امستنو کې په زوره درول)، او که اعلانونه لا هم ښکاري، کېش یې پاک کړئ. د Android بیا پیل یوازې یو ځل د root په حالت کې اړین دی، وروسته له دې چې د Magisk systemless hosts ماډل فعال کړئ.</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>نورې hosts سرچینې چېرته ومومم؟</h2>
+<p>AdAway معقولې ډیفالټ سرچینې لري. که نورې غواړئ، د ټولنې لخوا ساتل کېدونکی <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">د اضافي hosts سرچینو لېست</a> وګورئ. نورې سرچینې په احتیاط سره ورزیاتې کړئ، ځکه ډېر لوی یا یو بل پوښوونکي لېستونه کېدای شي غلط بندېدنې رامنځته کړي چې اپلېکېشنونه خراب کړي.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>دا فورک ولې شته؟</h2>
+<p>AdAway یوه ښه پروژه ده چې اوږد تاریخ لري، خو د اصلي پروژې د خپرونو او بیاکتنو فعالیت یوه موده راهیسې محدود دی. ځینې تېروتنې او د بدلون غوښتنې (pull requests) د اوږدې مودې لپاره پرانیستې پاتې شوې، په شمول د هغو ستونزو چې په نویو Android نسخو او د تولیدونکو په ROM کې د VPN حالت پر ثبات اغېز کوي. دا فورک د دې لپاره شته چې پروژه د ټولنې لخوا ساتل شویو سمونونو سره د کارونې وړ وساتي، نه دا چې ازمول شوي ښه والي بې کاره پاتې شي.</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>یوه تېروتنه څنګه راپور کړم یا بدلون وړاندیز کړم؟</h2>
+<p>د فورک د ستونزو په پاڼه کې یوه موضوع پرانیزئ: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. د VPN د ستونزو د راپور ورکولو پر مهال تشخیصي یادښت («ستونزې» ټب وګورئ) ډېره مرسته کوي.</p>
 </body>
 </html>

@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN پخپله بندېږي</h2>
+<p>دا نږدې تل هغه مهال وي چې سیسټم د بیټرۍ د سپمولو لپاره د VPN خدمت وژني، نه دا چې اپلېکېشن ټکر شوی وي. دا د هغو تولیدونکو په ROM کې عام دی چې د بریښنا سخت مدیریت لري (ColorOS/Oppo، MIUI/Xiaomi، EMUI/Huawei، OneUI/Samsung او نور).</p>
+<p>د Android په امستنو کې AdAway ومومئ او: <cite>د بیټرۍ اصلاح</cite> په <cite>بې محدودیته</cite> (یا <cite>اصلاح مه کوئ</cite>) وټاکئ، که ستاسو ROM لري <cite>اتوماتیک پیل</cite>/<cite>ځان پیل</cite> ته اجازه ورکړئ، او AdAway د وروستیو اپلېکېشنونو په لېست کې قفل کړئ ترڅو ونه ایستل شي. همدارنګه ډاډ ترلاسه کړئ چې د AdAway په VPN غوراوو کې <cite>د پیل پر مهال فعالول</cite> چالان دی.</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>د Wi-Fi او ګرځنده ډیټا ترمنځ له بدلولو سمدستي وروسته انټرنیټ نشته یا ورو دی</h2>
+<p>کله چې فعاله شبکه بدله شي، تونل باید بیا جوړ شي ترڅو DNS له نوې شبکې حل شي. که لټون خراب پاتې شي، <cite>غوراوي › د VPN پر بنسټ اعلان بندوونکی › VPN بیا تنظیمول</cite> پرانیزئ ترڅو اړیکه له سره جوړه شي. که دا بیا بیا پېښ شي، تشخیصي یادښت ونیسئ (لاندې) او راپور یې ورکړئ.</p>
 
-<h2>Chrome still displays ads</h2>
-<p>Ensure you disable <cite>lite mode</cite> (previously known as <cite>data saver</cite>) from Chrome settings. This features allows Chrome to use private DNS solution and bypass AdAway.</p>
+<h2>تشخیصي یادښت څنګه صادر کړم؟</h2>
+<p><cite>غوراوي › د VPN پر بنسټ اعلان بندوونکی › تشخیصي یادښت</cite> پرانیزئ. دا وروستۍ تېروتنې او VPN پېښې (د شبکې بدلونونه، بیا نښلېدنې، ناکامۍ) ثبتوي، نه ستاسو د کتنې تاریخچه، یوازې تخنیکي پېښې. دا تر هغه تش پاتې کېږي چې تاسو لږ پورته <cite>د تشخیصي یادښت ثبتول</cite> چالان نه کړئ. د ستونزې د راپور ورکولو پر مهال یې د لېږلو لپاره <cite>کاپي کول</cite> یا <cite>شریکول</cite> وکاروئ. ګټور مشوره: لومړی یې <cite>د تشخیصي یادښت پاکول</cite> وکړئ، بیا ستونزه بیا رامنځته کړئ، ترڅو یادښت متمرکز وي.</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in our <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub issue tracker</a>.</p>
+<h2>Chrome لا هم اعلانونه ښیي</h2>
+<p>Chrome کولای شي خپل <cite>خوندي DNS</cite> (DNS-over-HTTPS) وکاروي، چې AdAway تېروي. په Chrome کې <cite>امستنې › محرمیت او امنیت › خوندي DNS وکاروئ</cite> پرانیزئ او بند یې کړئ. دا د هر اپلېکېشن یا سیسټم <cite>خصوصي DNS</cite> امستنې ته هم ګټه لري. د VPN په حالت کې، AdAway کولای شي DNS پخپله کوډ کړي: په «ډېرو پوښتنو» برخه کې <cite>VPN کوم DNS سرورونه کاروي؟</cite> وګورئ.</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>ځینې اعلانونه لا هم تېرېږي، یا یو اپلېکېشن لا هم اعلانونه ښیي</h2>
+<p>کېدای شي یو کوربه نوم ستاسو په سرچینو کې نه وي، یا اپلېکېشن خپل اعلانونه په ځان کې رانغاړي نو هېڅ غوښتنه نه کېږي. د کوربه پاڼې څخه <cite>د DNS یادښت</cite> پرانیزئ ترڅو وګورئ اپلېکېشن څه پوښتي، مشکوک کوربه نومونه خپل <cite>بندېدلي</cite> لېست ته ورزیات کړئ، او تصدیق کړئ چې هېڅ نه خرابېږي. ځینې اپلېکېشنونه اعلانونه د ډاونلوډ وروسته کېش هم کوي، نو د Android په امستنو کې د هغه اپلېکېشن د کېش پاکول مرسته کولای شي.</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>AdAway له فعالولو وروسته یو اپلېکېشن کار ودراوه</h2>
+<p>ځینې اپلېکېشنونه له کار کولو ډډه کوي کله چې هغه کوربه نوم بند وي چې ورته اړین دی. د <cite>د DNS یادښت</cite> په مرسته ومومئ چې اپلېکېشن کوم کوربه نوم ته اړتیا لري، خپل <cite>اجازه ورکړل شوي</cite> لېست ته یې ورزیات کړئ، او اپلېکېشن باید بیا کار وکړي. پېژندل شوي ستونزمن اپلېکېشنونه <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">دلته</a> لېست شوي دي.</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>د hosts دوتنې پلي کول ناکامېږي (root حالت)</h2>
+<p>د Android وروستۍ نسخې یوازې لوستونکې <code>/system</code> برخه کاروي، نو AdAway نشي کولای مستقیم هلته ولیکي. که تاسو Magisk کاروئ، <cite>systemless hosts</cite> ماډل فعال کړئ، وسیله بیا پیل کړئ او بیا پلي کړئ. که root نه کاروئ، پر ځای یې د VPN حالت وکاروئ، چې د سیسټم هېڅ بدلون ته اړتیا نه لري.</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>لا هم ستونزه شته؟</h2>
+<p>ستونزه د تشخیصي یادښت سره یو ځای په <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> کې راپور کړئ.</p>
 </body>
 </html>

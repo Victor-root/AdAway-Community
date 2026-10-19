@@ -1,23 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">غورتياوې </string>
-    <string name="import_success">شاتړ په بريالي توګه له بهرنۍ زېرمې راوړل شو.</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string name="pref_vpn_reset">VPN بیا تنظیم کړئ</string>
-    <string name="pref_vpn_reset_description">د VPN اړیکه له سره جوړه کړئ. دا هغه وخت وکاروئ چې VPN کار ودروي (د انټرنیټ لاسرسی نشته یا د DNS تېروتنې).</string>
+    <string name="pref_main_title">غوراوي</string>
+    <string name="pref_general_category">عمومي</string>
+    <string name="pref_dark_theme">تیاره تم</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>روښانه</item>
+        <item>تیاره</item>
+        <item>د سیسټم ډیفالټ</item>
+    </string-array>
+    <string name="pref_update_configuration">اتوماتیکې تازه کېدنې</string>
+    <string name="pref_language">ژبه</string>
+    <string name="pref_language_system">د سیسټم ژبه</string>
+    <string name="pref_ad_block_category">د اعلانونو بندول</string>
+    <string name="pref_root_ad_blocker_configuration">د root پر بنسټ اعلان بندوونکی</string>
+    <string name="pref_vpn_ad_blocker_configuration">د VPN پر بنسټ اعلان بندوونکی</string>
+    <string name="pref_enable_ipv6">د IPv6 ملاتړ فعالول</string>
+    <string name="pref_backup_restore">د بندولو قواعدو بیک اپ / بیرته راګرځول</string>
+    <string name="pref_backup_restore_title">بیک اپ او بیرته راګرځول</string>
+    <string name="pref_backup">بیک اپ</string>
+    <string name="pref_backup_summary">ستاسو د بندولو قواعد بهرنۍ زېرمې ته بیک اپ کړئ</string>
+    <string name="pref_restore">بیرته راګرځول</string>
+    <string name="pref_restore_summary">ستاسو د بندولو قواعد د بیک اپ دوتنې څخه بیرته راوګرځوئ</string>
+    <string name="import_success">بیک اپ په بریالیتوب سره ستاسو له بهرنۍ زېرمې څخه وارد شو.</string>
+    <string name="import_failed">بیک اپ وارد نه شو. ایا بڼه یې سمه ده؟</string>
+    <string name="export_success">بیک اپ په بریالیتوب سره ستاسو په بهرنۍ زېرمه کې «%s» دوتنې ته صادر شو.</string>
+    <string name="export_failed">د بیک اپ دوتنه «%s» صادره نه شوه.</string>
+    <string name="pref_update_title">تازه کېدنې</string>
+    <string name="pref_update_enable_notifications">خبرتیاوې بندې دي</string>
+    <string name="pref_update_enable_notifications_summary">د اپلېکېشن خبرتیاوې نه ښودل کېږي. د فعالولو لپاره یې ټک کړئ.</string>
+    <string name="pref_update_app_category">د اپلېکېشن تازه کېدنې</string>
+    <string name="pref_update_check_app_startup">د پیل پر مهال د تازه نسخې لپاره کتنه</string>
+    <string name="pref_update_check_app_daily">په منظم ډول د تازه نسخې لپاره کتنه</string>
+    <string name="pref_update_check_now">اوس کتنه</string>
+    <string name="pref_update_install">اوس تازه کول</string>
+    <string name="pref_update_hosts_category">د hosts تازه کېدنې</string>
+    <string name="pref_update_check">د پیل پر مهال د تازه نسخې لپاره کتنه</string>
+    <string name="pref_update_check_hosts_daily">په منظم ډول د تازه نسخې لپاره کتنه</string>
+    <string name="pref_update_sync_on_update">د تازه کېدو پر مهال همغږي کول</string>
+    <string name="pref_update_sync_unmetered_only">یوازې په نامحدوده شبکه کې همغږي کول</string>
+    <string name="pref_vpn_service_on_boot">د پیل پر مهال فعالول</string>
+    <string name="pref_vpn_service_monitor">د اړیکې څارنه</string>
+    <string name="pref_vpn_service_monitor_description">د شبکې حالت په منظم ډول وګورئ ترڅو VPN د قطع کېدو پر مهال بیا پیل شي.</string>
+    <string name="pref_vpn_excluded_apps">ایستل شوي اپلېکېشنونه</string>
+    <string name="pref_vpn_excluded_apps_description">وټاکئ کوم اپلېکېشنونه باید VPN ونه کاروي، ترڅو د هغوی اړیکې بندې نه شي.</string>
+    <string name="pref_vpn_exclude_system_apps">سیسټمي اپلېکېشنونه ایستل</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>هېڅ</item>
+        <item>ټول پرته له براوزرونو</item>
+        <item>ټول</item>
+    </string-array>
+    <string name="pref_vpn_dns">د DNS سرورونه</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>د شبکې DNS سرورونه</item>
+        <item>ځانګړي DNS سرورونه</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">ځانګړي DNS سرورونه</string>
+    <string name="pref_vpn_dns_custom_summary">IP پتې، چې په کوما (،) سره جلا شوې وي</string>
+    <string name="pref_vpn_dns_custom_invalid">د DNS سرور پته ناسمه ده</string>
+    <string name="pref_vpn_doh">د DNS over HTTPS سرور</string>
+    <string name="pref_vpn_doh_custom">ځانګړې پته</string>
+    <string name="pref_vpn_doh_address">د DNS over HTTPS پته</string>
+    <string name="pref_vpn_doh_invalid">د DNS over HTTPS پته ناسمه ده</string>
+    <string name="pref_vpn_exclude_user_apps">د کارونکي اپلېکېشنونه ایستل</string>
+    <string name="pref_vpn_exclude_user_apps_activity">ایستل شوي اپلېکېشنونه</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">ټول ټاکل</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">ټاکنه لغوه کول</string>
+    <string name="pref_vpn_exclude_user_apps_icon">د اپلېکېشن انځورکوڼه</string>
+    <string name="pref_vpn_reset">VPN بیا تنظیمول</string>
+    <string name="pref_vpn_reset_description">د VPN اړیکه له سره جوړه کړئ. که VPN کار ودروي (انټرنیټ نه وي یا د DNS تېروتنې رامنځته شي) دا وکاروئ.</string>
     <string name="pref_vpn_reset_done">د VPN اړیکه بیا جوړه شوه.</string>
-    <string name="pref_vpn_reset_not_running">VPN روان نه دی.</string>
+    <string name="pref_vpn_reset_not_running">VPN نه چلېږي.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">د تشخیصي یادښت ثبتول</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">د ستونزې له بیا رامنځته کولو مخکې یې چالان کړئ، بیا یې لاندې صادر کړئ. په زړو وسایلو کې ښایي لږ ورو کار وکړي. یوازې تخنیکي VPN پېښې ثبتوي، هېڅکله د کتنې تاریخچه یا شخصي معلومات نه.</string>
     <string name="pref_vpn_diagnostic_log">تشخیصي یادښت</string>
-    <string name="pref_vpn_diagnostic_log_description">وروستۍ تېروتنې او د VPN پېښې وګورئ، کاپي یا شریکې کړئ. د یوې ستونزې د راپور ورکولو پرمهال ګټور دی.</string>
-    <string name="pref_vpn_diagnostic_log_empty">تر اوسه هېڅ پېښه نه ده ثبت شوې.</string>
-    <string name="pref_vpn_diagnostic_log_share">تشخیصي یادښت شریک کړئ</string>
-    <string name="pref_vpn_diagnostic_log_copy">کاپي</string>
+    <string name="pref_vpn_diagnostic_log_description">وروستۍ تېروتنې او VPN پېښې وګورئ، کاپي یا شریکې کړئ. د ستونزې د راپور ورکولو پر مهال ګټور دی.</string>
+    <string name="pref_vpn_diagnostic_log_empty">تر اوسه هېڅ پېښه نه ده ثبت شوې. پورته «د تشخیصي یادښت ثبتول» چالان کړئ، بیا هڅه وکړئ ستونزه بیا رامنځته کړئ.</string>
+    <string name="pref_vpn_diagnostic_log_share">شریکول</string>
+    <string name="pref_vpn_diagnostic_log_share_title">تشخیصي یادښت شریکول</string>
+    <string name="pref_vpn_diagnostic_log_copy">کاپي کول</string>
     <string name="pref_vpn_diagnostic_log_copied">تشخیصي یادښت کلیپبورډ ته کاپي شو.</string>
-    <string name="pref_vpn_diagnostic_log_clear">تشخیصي یادښت پاک کړئ</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">ثبت شوې پېښې پاکې کړئ. دا د یوې ستونزې له بیا رامنځته کولو مخکې وکړئ ترڅو پاک اثر ونیسئ.</string>
+    <string name="pref_vpn_diagnostic_log_clear">د تشخیصي یادښت پاکول</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">ثبت شوې پېښې ړنګې کړئ. دا د ستونزې له بیا رامنځته کولو مخکې وکړئ ترڅو پاک اثر ترلاسه شي.</string>
     <string name="pref_vpn_diagnostic_log_cleared">تشخیصي یادښت پاک شو.</string>
-    <string name="pref_root_open_hosts">د hosts دوتنه پرانیځئ</string>
-    <string name="pref_webserver_enabled">ګورت پالنګر سالول</string>
-    <string name="pref_webserver_state_not_running">نه ځغلي</string>
+    <string name="pref_root_open_hosts">د hosts دوتنې پرانیستل</string>
+    <string name="hosts_file_unreadable">د hosts دوتنه ولوستل نه شوه.</string>
+    <string name="pref_hosts_redirection_summary">وټاکئ چې بند شوي کوربه کوم لوري ته اړول کېږي</string>
+    <string name="pref_redirection_ipv4">د IPv4 اړونې تنظیمول</string>
+    <string name="pref_redirection_ipv6">د IPv6 اړونې تنظیمول</string>
+    <string name="pref_redirection_invalid">ناسمه اړونه</string>
+    <string name="pref_webserver_summary">ځايي ویب سرور په ځايي IP پتو غوږ نیسي ترڅو د بند شوو کوربه نومونو غوښتنو ته ځواب ورکړي. کېدای شي د بندې اړیکې پر مهال د اپلېکېشن د کنګلېدو په مخنیوي کې مرسته وکړي.</string>
+    <string name="pref_webserver_enabled">ویب سرور فعالول</string>
+    <string name="pref_webserver_test">ویب سرور ازمول</string>
+    <string name="pref_webserver_certificate">ځان لاسلیک شوی سند نصبول</string>
+    <string name="pref_webserver_state_not_running">نه چلېږي</string>
+    <string name="pref_webserver_state_checking">څېړل کېږي…</string>
+    <string name="pref_webserver_state_running_not_installed">چلېږي، خو سند نصب شوی نه دی</string>
+    <string name="pref_webserver_state_running_and_installed">چلېږي او سند نصب شوی دی</string>
+    <string name="pref_webserver_certificate_dialog_title">د سند لاسي نصب</string>
+    <string name="pref_webserver_certificate_dialog_content">له Android 11 (R) راهیسې اپلېکېشنونه نور نشي کولای د تصدیق مرجع (CA) سند په اتوماتیک ډول نصب کړي.\n\nد «امنیت» امستنو ته لاړ شئ، بیا «کوډ کول او اسناد» او بیا «سند نصبول» ته ورشئ. له هغه ځایه «CA سند» وټاکئ او نوې صادر شوې سند دوتنه غوره کړئ.</string>
+    <string name="pref_webserver_certificate_dialog_action">د «امنیت» امستنې پرانیستل</string>
+    <string name="pref_webserver_certificate_failed">سند چمتو نه شو.</string>
+    <string name="webserver_error_title">ویب سرور پیل نه شو</string>
+    <string name="webserver_error_resources">د ویب سرور دوتنې یا سند چمتو نه شو.</string>
+    <string name="webserver_error_address_in_use">بل اپلېکېشن لا دمخه د وسیلې ویب پورټونه (80 او 443) کاروي.</string>
+    <string name="webserver_error_start_failed">په دې وسیله کې پیل نه شو.</string>
+    <string name="pref_webserver_icon">د خالي اعلان ځای د اپلېکېشن انځورکوڼې سره بدلول</string>
 </resources>

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_sort">شپولو اڼل </string>
-    <string name="log_clear">خبرال پاکول</string>
-    <string name="log_sort_alphabetical">آبڅیز اڼل</string>
-    <string name="log_block">تور لړ کښې د ننوت زیاتول</string>
-    <string name="log_allow">سپين لړ کښې د ننوت زیاتول</string>
-    <string name="log_start_recording_button">ثبتول پیل کړئ</string>
-    <string name="log_start_recording_vpn_inactive">ثبتول پیل کړئ (VPN فعال نه دی)</string>
-    <string name="log_stop_recording">ثبتول ودروئ</string>
+    <string name="log_toggle_recording_description">د یادښت ثبتول چالانول یا بندول</string>
+    <string name="log_start_recording">د غوښتنو د ثبتولو د پیل لپاره د ثبت تڼۍ ووهئ، ویب وګورئ یا اپلېکېشنونه وکاروئ، بیا یادښتونو د تازه کولو لپاره بېرته ورشئ یا ښکته ښوروئ.</string>
+    <string name="log_blocked_requests_ignored">\n\nبندې شوې غوښتنې نه ثبتېږي. که غواړئ هغه هم ثبت شي، لومړی د اعلانونو بندول غیر فعال کړئ.</string>
+    <string name="log_sort">ډومینونه ترتیبول</string>
+    <string name="log_clear">یادښت پاکول</string>
+    <string name="log_sort_alphabetical">په الفبايي ډول ترتیب</string>
+    <string name="log_sort_top_level_domain">د لوړې کچې ډومین له مخې ترتیب</string>
+    <string name="log_block">توکی تور لېست ته ورزیاتول</string>
+    <string name="log_allow">توکی سپین لېست ته ورزیاتول</string>
+    <string name="log_redirect">توکی د اړونې لېست ته ورزیاتول</string>
+    <string name="log_redirect_dialog_title">ډومین اړول</string>
+    <string name="log_capture_failed">د DNS نیول پیل نه شول.</string>
+    <string name="log_start_recording_button">ثبتول پیلول</string>
+    <string name="log_start_recording_vpn_inactive">ثبتول پیلول (VPN فعال نه دی)</string>
+    <string name="log_stop_recording">ثبتول ودرول</string>
 </resources>

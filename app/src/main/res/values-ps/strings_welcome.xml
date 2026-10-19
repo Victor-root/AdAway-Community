@@ -1,17 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_method_header">اډاوې ته ښه راغلاست!</string>
-    <string name="welcome_root_method_text1">لاګړندى</string>
-    <string name="welcome_back_button">شا</string>
-    <string name="welcome_next_button">بل </string>
-    <string name="welcome_finish_button">پاينه </string>
-    <string name="tv_welcome_intro_subtitle">دا لنډ برنامه به پدې وسیله کې د اعلاناتو بندول فعال کړي.</string>
-    <string name="tv_welcome_start_button">پیل</string>
-    <string name="tv_welcome_method_header">خپل بندولو میتود وټاکئ</string>
-    <string name="tv_welcome_method_root_button">روټ وکاروئ</string>
-    <string name="tv_welcome_method_root_body">ګړندی او د بیټرۍ خوندي کوونکی. روټ شوی وسیله ته اړتیا لري.</string>
-    <string name="tv_welcome_method_vpn_button">VPN وکاروئ</string>
-    <string name="tv_welcome_method_vpn_body">پرته له روټ څخه کار کوي، د هرې Android TV وسیلې سره مطابقت لري.</string>
-    <string name="tv_welcome_activate_header">د اعلاناتو بندول فعال کړئ</string>
-    <string name="tv_welcome_activate_body">دا یو محلي VPN دی: دا ستاسو ترافیک د بهرني سرور له لارې لیږلو پرته، په همدې وسیله کې اعلانات فلټر کوي.</string>
+    <string name="welcome_first_step">د لارښود لومړی ګام</string>
+    <string name="welcome_second_step">د لارښود دوهم ګام</string>
+    <string name="welcome_third_step">د لارښود درېیم ګام</string>
+    <string name="welcome_fourth_step">د لارښود څلورم ګام</string>
+    <string name="welcome_method_header">AdAway ته ښه راغلاست!</string>
+    <string name="welcome_method_summary">AdAway د اعلانونو د بندولو دوه طریقې وړاندې کوي. هغه وټاکئ چې خوښ مو وي:</string>
+    <string name="welcome_root_method_title">د root پر بنسټ\nاعلان بندول</string>
+    <string name="welcome_root_method_text1">چټک</string>
+    <string name="welcome_root_method_text2">د بیټرۍ لپاره دوستانه</string>
+    <string name="welcome_root_method_text3">root اړین دی</string>
+    <string name="welcome_vpn_method_title">د VPN پر بنسټ\nاعلان بندول</string>
+    <string name="welcome_vpn_method_text1">ورو</string>
+    <string name="welcome_vpn_method_text2">په شاليد کې چلېږي</string>
+    <string name="welcome_vpn_method_text3">مطابقت</string>
+    <string name="welcome_root_missing_title">root شوی Android اړین دی</string>
+    <string name="welcome_root_missile_description">یا د su بائنري دوتنه ونه موندل شوه یا تاسو AdAway ته د root اجازه نه ده ورکړې.\n\nدا هغه مهال کېدای شي چې ستاسو وسیله root شوې نه وي. د خپلې وسیلې د root کولو په اړه معلومات کولای شئ په wiki.lineageos.org یا د Android په نورو وېب پاڼو کې ومومئ.</string>
+    <string name="welcome_vpn_alwayson_title">تل چالان VPN فعال دی</string>
+    <string name="welcome_vpn_alwayson_description">AdAway وموند چې بل VPN د «تل چالان VPN» امستنه فعاله کړې ده.\n\nدا AdAway له دې مخنیوی کوي چې د VPN لاسرسی وغواړي. مهرباني وکړئ په اړوند VPN کې «تل چالان VPN» غیر فعال کړئ او بیا هڅه وکړئ.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway د VPN لاسرسي په غوښتنه کې ناکام شو.\n\nدا کېدای شي له دې امله وي چې بل VPN د «تل چالان VPN» امستنه فعاله کړې ده. مهرباني وکړئ وګورئ چې کوم VPN دا امستنه فعاله لري او مخکې له بیا هڅې یې غیر فعاله کړئ.</string>
+    <string name="welcome_vpn_alwayson_settings_action">د «VPN» امستنې پرانیستل</string>
+    <string name="welcome_method_pro_logo">ګټه</string>
+    <string name="welcome_method_con_logo">زیان</string>
+    <string name="welcome_sync_header">همغږي کېږي</string>
+    <string name="welcome_synced_header">همغږي شو!</string>
+    <string name="welcome_sync_summary">AdAway د بندولو لپاره د اعلاني شبکو لېست له آنلاین سرچینو ډاونلوډوي. تاسو یې وروسته په امستنو کې تنظیمولای شئ.</string>
+    <string name="welcome_sync_retry_logo">د همغږۍ بیا هڅه</string>
+    <string name="welcome_sync_error">همغږي ناکامه شوه: %1$s ایا اوس بیا هڅه وکړو؟</string>
+    <string name="welcome_sync_notifications">دا کولای شي د اعلان بندولو د حالت د ښودلو او کنټرول لپاره، او د اپلېکېشن د شته تازه کېدنو د خبرولو لپاره (په کال کې څو ځله) خبرتیاوې ولېږي. که غواړئ تازه پاتې شئ، فعالې یې کړئ.</string>
+    <string name="welcome_sync_leave_early_title">همغږي لا نه ده بشپړه شوې</string>
+    <string name="welcome_sync_leave_early_message">د بندولو لېستونو ډاونلوډ لا نه دی بشپړ شوی. تاسو کولای شئ همدا اوس دوام ورکړئ او دا به په شاليد کې روان وي، یا دلته تر بشپړېدو پورې انتظار وکړئ.</string>
+    <string name="welcome_sync_leave_early_wait">انتظار</string>
+    <string name="welcome_sync_leave_early_continue">بیا هم دوام</string>
+    <string name="welcome_battery_header">په شاليد کې خوندي پاتې شئ</string>
+    <string name="welcome_battery_summary">Android کولای شي د بریښنا د سپمولو لپاره د AdAway VPN په شاليد کې ودروي، چې کېدای شي د اعلانونو بندول په خاموشۍ سره ودروي. AdAway ته اجازه ورکړئ چې د بیټرۍ اصلاح ته پام ونه کړي ترڅو روان پاتې شي.</string>
+    <string name="welcome_battery_action">اجازه ورکول</string>
+    <string name="welcome_battery_granted">اجازه ورکړل شوه ✓</string>
+    <string name="welcome_battery_footnote_prefix">تاسو تل کولای شئ دا وروسته له دې ځای بدل کړئ:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>د Android امستنې</item>
+        <item>اپلېکېشنونه</item>
+        <item>AdAway</item>
+        <item>بیټرۍ</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">یو شی نور: ستاسو د ګرځنده تلیفون خپل د بیټرۍ مدیر</string>
+    <string name="welcome_oem_battery_summary">ځینې د ګرځنده تلیفون برانډونه خپل د بیټرۍ مدیر لري چې کولای شي AdAway هم بند کړي. دلته هغه څه دي چې په خپل ګرځنده کې یې باید وګورئ:</string>
+    <string name="welcome_oem_battery_action">د اپلېکېشن معلومات پرانیستل</string>
+    <string name="welcome_oem_battery_open_failed">د اپلېکېشن د معلوماتو پاڼه پرانیستل نه شوه. لاسي ډول یې د Android امستنې › اپلېکېشنونه › AdAway څخه پرانیزئ.</string>
+    <string name="welcome_oem_battery_disclaimer">دا عمومي لارښوونې دي، دقیق لارښود نه دی: ټکي او ځای کېدای شي د ګرځنده د ماډل او د Android د نسخې له مخې توپیر ولري.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>د اپلېکېشن معلومات</item>
+        <item>بیټرۍ</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">داسې څه ولټوئ لکه «د شاليد کارونې محدودیتونه» › «هېڅکله نه ویده کېدونکي اپلېکېشنونه»، بیا AdAway همدې لېست ته ورزیات کړئ.</string>
+    <string name="welcome_oem_battery_secondary_oneui">همدارنګه د «اتوماتیکه اصلاح» امستنه وګورئ او که شته وي، «کله چې اړتیا وي بیا پیل» بند کړئ.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>د اپلېکېشن معلومات</item>
+        <item>د بیټرۍ سپما</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">«بې محدودیته» وټاکئ.</string>
+    <string name="welcome_oem_battery_secondary_miui">همدارنګه «اتوماتیک پیل» («په شاليد کې اتوماتیک پیل» په نویو نسخو کې) فعال کړئ.</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>د اپلېکېشن معلومات</item>
+        <item>د بیټرۍ کارونه</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">«د شاليد فعالیت ته اجازه» وټاکئ (کله ناکله «بې محدودیته» ښودل کېږي).</string>
+    <string name="welcome_oem_battery_secondary_coloros">همدارنګه د AdAway لپاره د «ځان پیل» بدلون ولټوئ (اکثرا د امستنې › اپلېکېشنونو لاندې)، ترڅو وروسته له په زوره درولو بیا ځان پیل کړي.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>د اپلېکېشن معلومات</item>
+        <item>بیټرۍ</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">«د اپلېکېشن پیل» ولټوئ، «په اتوماتیک ډول مدیریت» بند کړئ، بیا ټول 3 فعال کړئ: «ځان پیل»، «دوهم پیل» او «په شاليد کې چلول».</string>
+    <string name="welcome_oem_battery_secondary_emui">همدارنګه AdAway د وروستیو اپلېکېشنونو په پاڼه کې قفل کړئ (د هغه کارت پر مخ ښکته ښوروئ تر هغه چې قفل ښکاره شي).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>د اپلېکېشن معلومات</item>
+        <item>د بیټرۍ کارونه</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">د شاليد د بریښنا یو انتخاب ولټوئ او «د شاليد د بریښنا کارونه مه محدودوئ» وټاکئ («هوښیار کنټرول» نه).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">همدارنګه د AdAway لپاره د «اتوماتیک پیل» امستنه ولټوئ، اکثرا د امستنې › اپلېکېشنونو لاندې.</string>
+    <string name="welcome_oem_battery_label_generic">بل برانډ</string>
+    <string name="welcome_oem_battery_tip_generic">د اپلېکېشن په معلوماتو کې د بیټرۍ یا د شاليد د فعالیت امستنه ولټوئ او ډاډ ترلاسه کړئ چې AdAway محدود شوی نه دی.</string>
+    <string name="welcome_back_button">شاته</string>
+    <string name="welcome_next_button">بل</string>
+    <string name="welcome_finish_button">بشپړول</string>
+    <string name="tv_welcome_intro_subtitle">دا لنډ لارښود په دې وسیله کې د اعلانونو بندول چالانوي.</string>
+    <string name="tv_welcome_start_button">پیلول</string>
+    <string name="tv_welcome_method_header">د بندولو طریقه وټاکئ</string>
+    <string name="tv_welcome_method_root_button">root کارول</string>
+    <string name="tv_welcome_method_root_body">چټک او د بیټرۍ لپاره دوستانه. root شوې وسیلې ته اړتیا لري.</string>
+    <string name="tv_welcome_method_vpn_button">VPN کارول</string>
+    <string name="tv_welcome_method_vpn_body">پرته له root کار کوي، د هرې Android TV وسیلې سره مطابقت لري.</string>
+    <string name="tv_welcome_activate_header">د اعلانونو بندول چالانول</string>
+    <string name="tv_welcome_activate_body">دا یو ځايي VPN دی: اعلانونه په همدې وسیله کې فلټروي، پرته له دې چې ستاسو ترافیک بهرني سرور ته ولېږي.</string>
 </resources>

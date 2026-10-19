@@ -1,12 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_welcome_intro_subtitle">இந்தச் சிறிய வழிகாட்டி இந்தச் சாதனத்தில் விளம்பரத் தடுப்பை இயக்கும்.</string>
-    <string name="tv_welcome_start_button">தொடங்குக</string>
-    <string name="tv_welcome_method_header">உங்கள் தடுப்பு முறையைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="tv_welcome_method_root_button">ரூட் பயன்படுத்தவும்</string>
-    <string name="tv_welcome_method_root_body">வேகமானது மற்றும் பேட்டரி சிக்கனமானது. ரூட் செய்யப்பட்ட சாதனம் தேவை.</string>
-    <string name="tv_welcome_method_vpn_button">VPN பயன்படுத்தவும்</string>
-    <string name="tv_welcome_method_vpn_body">ரூட் இல்லாமல் இயங்குகிறது, எந்தவொரு Android TV சாதனத்துடனும் இணக்கமானது.</string>
-    <string name="tv_welcome_activate_header">விளம்பரத் தடுப்பை இயக்கு</string>
-    <string name="tv_welcome_activate_body">இது ஒரு உள்ளூர் VPN: இது உங்கள் டிராஃபிக்கை வெளிப்புற சேவையகம் வழியாக அனுப்பாமல், இந்தச் சாதனத்திலேயே விளம்பரங்களை வடிகட்டுகிறது.</string>
+    <string name="welcome_first_step">வழிகாட்டியின் முதல் படி</string>
+    <string name="welcome_second_step">வழிகாட்டியின் இரண்டாம் படி</string>
+    <string name="welcome_third_step">வழிகாட்டியின் மூன்றாம் படி</string>
+    <string name="welcome_fourth_step">வழிகாட்டியின் நான்காம் படி</string>
+    <string name="welcome_method_header">AdAway க்கு வரவேற்கிறோம்!</string>
+    <string name="welcome_method_summary">AdAway இரண்டு விளம்பரத் தடுப்பு முறைகளை வழங்குகிறது. உங்களுக்கு ஏற்றதைத் தேர்ந்தெடுக்கவும்:</string>
+    <string name="welcome_root_method_title">root அடிப்படையிலான\nவிளம்பரத் தடுப்பு</string>
+    <string name="welcome_root_method_text1">வேகமானது</string>
+    <string name="welcome_root_method_text2">பேட்டரிக்கு உகந்தது</string>
+    <string name="welcome_root_method_text3">root தேவை</string>
+    <string name="welcome_vpn_method_title">VPN அடிப்படையிலான\nவிளம்பரத் தடுப்பு</string>
+    <string name="welcome_vpn_method_text1">மெதுவானது</string>
+    <string name="welcome_vpn_method_text2">பின்னணியில் இயங்கும்</string>
+    <string name="welcome_vpn_method_text3">இணக்கத்தன்மை</string>
+    <string name="welcome_root_missing_title">root செய்யப்பட்ட Android தேவை</string>
+    <string name="welcome_root_missile_description">su பைனரி கிடைக்கவில்லை, அல்லது AdAway க்கு root அனுமதியை நீங்கள் வழங்கவில்லை.\n\nஉங்கள் சாதனம் root செய்யப்படாதபோது இது நிகழலாம். சாதனத்தை root செய்வது குறித்த தகவல்களை wiki.lineageos.org அல்லது பிற Android இணையதளங்களில் காணலாம்.</string>
+    <string name="welcome_vpn_alwayson_title">எப்போதும் இயங்கும் VPN இயக்கப்பட்டுள்ளது</string>
+    <string name="welcome_vpn_alwayson_description">வேறொரு VPN இல் “எப்போதும் இயங்கும் VPN” அமைப்பு செயலில் இருப்பதை AdAway கண்டறிந்தது.\n\nஇதனால் VPN அணுகலை AdAway ஆல் கோர முடியாது. அந்த VPN இல் “எப்போதும் இயங்கும் VPN” ஐ முடக்கி, மீண்டும் முயலவும்.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">VPN அணுகலை AdAway ஆல் கோர முடியவில்லை.\n\nவேறொரு VPN இல் “எப்போதும் இயங்கும் VPN” அமைப்பு செயலில் இருப்பதே இதற்குக் காரணமாக இருக்கலாம். ஏதேனும் VPN இல் இந்த அமைப்பு இயக்கப்பட்டுள்ளதா எனப் பார்த்து, மீண்டும் முயலும் முன் அதை முடக்கவும்.</string>
+    <string name="welcome_vpn_alwayson_settings_action">“VPN” அமைப்புகளைத் திற</string>
+    <string name="welcome_method_pro_logo">நன்மைகள்</string>
+    <string name="welcome_method_con_logo">குறைகள்</string>
+    <string name="welcome_sync_header">ஒத்திசைக்கிறது</string>
+    <string name="welcome_synced_header">ஒத்திசைவு முடிந்தது!</string>
+    <string name="welcome_sync_summary">தடுக்க வேண்டிய விளம்பர நெட்வொர்க்குகளை AdAway இணைய மூலங்களிலிருந்து பதிவிறக்குகிறது. அவற்றைப் பின்னர் விருப்பத்தேர்வுகளில் தனிப்பயனாக்கலாம்.</string>
+    <string name="welcome_sync_retry_logo">மீண்டும் ஒத்திசை</string>
+    <string name="welcome_sync_error">ஒத்திசைக்க முடியவில்லை: %1$s இப்போதே மீண்டும் முயலவா?</string>
+    <string name="welcome_sync_notifications">விளம்பரத் தடுப்பின் நிலையையும் கட்டுப்பாடுகளையும் காட்டவும், ஆப்ஸ் புதுப்பிப்பு கிடைக்கும்போது (ஆண்டுக்குச் சில முறை) தெரிவிக்கவும் இது அறிவிப்புகளை அனுப்பலாம். புதுப்பித்த நிலையில் இருக்க விரும்பினால் அவற்றை இயக்கவும்.</string>
+    <string name="welcome_sync_leave_early_title">ஒத்திசைவு இன்னும் முடியவில்லை</string>
+    <string name="welcome_sync_leave_early_message">தடுப்புப் பட்டியல்களின் பதிவிறக்கம் இன்னும் முடியவில்லை. இப்போதே தொடரலாம், அது பின்னணியில் தொடர்ந்து நடக்கும். அல்லது முடியும் வரை இங்கேயே காத்திருக்கலாம்.</string>
+    <string name="welcome_sync_leave_early_wait">காத்திரு</string>
+    <string name="welcome_sync_leave_early_continue">எப்படியும் தொடர்</string>
+    <string name="welcome_battery_header">பின்னணியிலும் பாதுகாப்புடன் இருங்கள்</string>
+    <string name="welcome_battery_summary">மின்சக்தியைச் சேமிக்க, Android பின்னணியில் AdAway இன் VPN ஐ இடைநிறுத்தலாம். இதனால் விளம்பரத் தடுப்பு அமைதியாக நின்றுவிடக்கூடும். AdAway தொடர்ந்து இயங்க, பேட்டரி மேம்படுத்தலைப் புறக்கணிக்க அதை அனுமதிக்கவும்.</string>
+    <string name="welcome_battery_action">அனுமதி</string>
+    <string name="welcome_battery_granted">அனுமதிக்கப்பட்டது ✓</string>
+    <string name="welcome_battery_footnote_prefix">இதை எப்போது வேண்டுமானாலும் இங்கிருந்து மாற்றலாம்:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android அமைப்புகள்</item>
+        <item>ஆப்ஸ்</item>
+        <item>AdAway</item>
+        <item>பேட்டரி</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">இன்னும் ஒன்று: உங்கள் ஃபோனின் சொந்த பேட்டரி மேலாளர்</string>
+    <string name="welcome_oem_battery_summary">சில ஃபோன் பிராண்டுகளில் தனிப்பட்ட பேட்டரி மேலாளர் இருக்கும், அதுவும் AdAway ஐத் தடுக்கலாம். உங்கள் ஃபோனில் எதைச் சரிபார்க்க வேண்டும் என்பது இதோ:</string>
+    <string name="welcome_oem_battery_action">ஆப்ஸ் தகவலைத் திற</string>
+    <string name="welcome_oem_battery_open_failed">ஆப்ஸ் தகவல் திரையைத் திறக்க முடியவில்லை. Android அமைப்புகள் → ஆப்ஸ் → AdAway என்பதில் கைமுறையாகத் திறக்கவும்.</string>
+    <string name="welcome_oem_battery_disclaimer">இவை பொதுவான குறிப்புகள், துல்லியமான வழிகாட்டி அல்ல: சொற்களும் இடமும் ஃபோன் மாடல் மற்றும் Android பதிப்பைப் பொறுத்து மாறுபடலாம்.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>ஆப்ஸ் தகவல்</item>
+        <item>பேட்டரி</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">“பின்னணிப் பயன்பாட்டு வரம்புகள்” › “ஒருபோதும் உறங்காத ஆப்ஸ்” போன்ற ஒன்றைத் தேடி, அந்தப் பட்டியலில் AdAway ஐச் சேர்க்கவும்.</string>
+    <string name="welcome_oem_battery_secondary_oneui">“தானியங்கு மேம்படுத்தல்” அமைப்பையும் பார்த்து, இருந்தால் “தேவைப்படும்போது மறுதொடக்கம்” ஐ முடக்கவும்.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>ஆப்ஸ் தகவல்</item>
+        <item>பேட்டரி சேமிப்பான்</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">“கட்டுப்பாடுகள் இல்லை” என்பதைத் தேர்ந்தெடுக்கவும்.</string>
+    <string name="welcome_oem_battery_secondary_miui">“தானியங்கு தொடக்கம்” ஐயும் இயக்கவும் (புதிய பதிப்புகளில் “பின்னணி தானியங்கு தொடக்கம்”).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>ஆப்ஸ் தகவல்</item>
+        <item>பேட்டரி பயன்பாடு</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">“பின்னணிச் செயல்பாட்டை அனுமதி” என்பதைத் தேர்ந்தெடுக்கவும் (சில நேரங்களில் “கட்டுப்பாடுகள் இல்லை” என்று காட்டப்படும்).</string>
+    <string name="welcome_oem_battery_secondary_coloros">AdAway க்கான “தானியங்கு தொடக்கம்” மாற்றுவிசையையும் தேடவும் (பெரும்பாலும் அமைப்புகள் › ஆப்ஸ் என்பதில் இருக்கும்). இதனால் கட்டாயமாக நிறுத்தப்பட்ட பிறகும் அது தானாக மீண்டும் தொடங்க முடியும்.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>ஆப்ஸ் தகவல்</item>
+        <item>பேட்டரி</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">“ஆப் தொடக்கம்” என்பதைத் தேடி, “தானாக நிர்வகி” ஐ முடக்கவும். பிறகு மூன்றையும் இயக்கவும்: “தானியங்கு தொடக்கம்”, “இரண்டாம் நிலை தொடக்கம்” மற்றும் “பின்னணியில் இயக்கு”.</string>
+    <string name="welcome_oem_battery_secondary_emui">சமீபத்திய ஆப்ஸ் திரையில் AdAway ஐப் பூட்டவும் (பூட்டுச் சின்னம் தோன்றும் வரை அதன் கார்டைக் கீழ்நோக்கி இழுக்கவும்).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>ஆப்ஸ் தகவல்</item>
+        <item>பேட்டரி பயன்பாடு</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">பின்னணி மின் பயன்பாட்டு விருப்பத்தைத் தேடி, “பின்னணி மின் பயன்பாட்டைக் கட்டுப்படுத்த வேண்டாம்” என்பதைத் தேர்ந்தெடுக்கவும் (“ஸ்மார்ட் கட்டுப்பாடு” அல்ல).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">AdAway க்கான “தானியங்கு தொடக்கம்” அமைப்பையும் தேடவும், இது பெரும்பாலும் அமைப்புகள் › ஆப்ஸ் என்பதில் இருக்கும்.</string>
+    <string name="welcome_oem_battery_label_generic">பிற பிராண்டுகள்</string>
+    <string name="welcome_oem_battery_tip_generic">ஆப்ஸ் தகவலில் பேட்டரி அல்லது பின்னணிச் செயல்பாடு தொடர்பான அமைப்பைத் தேடி, AdAway கட்டுப்படுத்தப்படவில்லை என்பதை உறுதிசெய்யவும்.</string>
+    <string name="welcome_back_button">பின்செல்</string>
+    <string name="welcome_next_button">அடுத்து</string>
+    <string name="welcome_finish_button">முடி</string>
+    <string name="tv_welcome_intro_subtitle">இந்தச் சிறிய வழிகாட்டி இந்தச் சாதனத்தில் விளம்பரத் தடுப்பை இயக்குகிறது.</string>
+    <string name="tv_welcome_start_button">தொடங்குங்கள்</string>
+    <string name="tv_welcome_method_header">தடுப்பு முறையைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="tv_welcome_method_root_button">root ஐப் பயன்படுத்து</string>
+    <string name="tv_welcome_method_root_body">வேகமானது, பேட்டரிக்கு உகந்தது. root செய்யப்பட்ட சாதனம் தேவை.</string>
+    <string name="tv_welcome_method_vpn_button">VPN ஐப் பயன்படுத்து</string>
+    <string name="tv_welcome_method_vpn_body">root இல்லாமல் செயல்படும், எல்லா Android TV சாதனங்களுடனும் இணக்கமானது.</string>
+    <string name="tv_welcome_activate_header">விளம்பரத் தடுப்பை இயக்குங்கள்</string>
+    <string name="tv_welcome_activate_body">இது உள்ளூர் VPN: உங்கள் போக்குவரத்தை வெளிச் சேவையகம் வழியாக அனுப்பாமல், இந்தச் சாதனத்திலேயே விளம்பரங்களை வடிகட்டுகிறது.</string>
 </resources>

@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_root_missing_title">Riquese\'l permisu root</string>
-    <string name="tv_welcome_intro_subtitle">Esti curtiu asistente activa\'l bloquéu d\'anuncios nesti preséu.</string>
+    <string name="welcome_first_step">Primer pasu del asistente</string>
+    <string name="welcome_second_step">Segundu pasu del asistente</string>
+    <string name="welcome_third_step">Tercer pasu del asistente</string>
+    <string name="welcome_fourth_step">Cuartu pasu del asistente</string>
+    <string name="welcome_method_header">¡Bienveníu a AdAway!</string>
+    <string name="welcome_method_summary">AdAway ufre dos métodos de bloquéu de publicidá. Escueye’l que prefieras:</string>
+    <string name="welcome_root_method_title">Bloquéu de\npublicidá con root</string>
+    <string name="welcome_root_method_text1">Más rápidu</string>
+    <string name="welcome_root_method_text2">Aforra batería</string>
+    <string name="welcome_root_method_text3">Requier root</string>
+    <string name="welcome_vpn_method_title">Bloquéu de\npublicidá con VPN</string>
+    <string name="welcome_vpn_method_text1">Más lentu</string>
+    <string name="welcome_vpn_method_text2">Funciona en segundu planu</string>
+    <string name="welcome_vpn_method_text3">Compatibilidá</string>
+    <string name="welcome_root_missing_title">Fai falta un Android con root</string>
+    <string name="welcome_root_missile_description">O nun s’atopó’l binariu su o nun concediste a AdAway el permisu de root.\n\nEsto pue asoceder si’l to preséu nun tien root. Atopes información sobre cómo facer root nel to preséu en wiki.lineageos.org o n’otros sitios web sobre Android.</string>
+    <string name="welcome_vpn_alwayson_title">VPN siempre activada detectada</string>
+    <string name="welcome_vpn_alwayson_description">AdAway detectó qu’otra VPN tien activada l’opción «VPN siempre activada».\n\nEsto torga que AdAway pida accesu a la VPN. Desactiva «VPN siempre activada» na otra VPN y inténtalo otra vuelta.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway nun pudo pidir accesu a la VPN.\n\nPue ser porque otra VPN tien activada l’opción «VPN siempre activada». Comprueba si dalguna VPN tien esta opción activada y desactívala enantes d’intentalo otra vuelta.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Abrir los axustes de la VPN</string>
+    <string name="welcome_method_pro_logo">Ventaya</string>
+    <string name="welcome_method_con_logo">Inconveniente</string>
+    <string name="welcome_sync_header">Sincronizando</string>
+    <string name="welcome_synced_header">¡Sincronizáu!</string>
+    <string name="welcome_sync_summary">AdAway descarga dende fontes en llinia les redes publicitaries que bloquia. Pues personalizales dempués nes preferencies.</string>
+    <string name="welcome_sync_retry_logo">Reintentar la sincronización</string>
+    <string name="welcome_sync_error">Falló la sincronización: %1$s ¿Reintentar agora?</string>
+    <string name="welcome_sync_notifications">Pue unviar notificaciones pa amosar l’estáu y el control del bloquéu de publicidá, y pa avisar de los anovamientos disponibles de l’aplicación (unos pocos al añu). Actívales si quies mantenete al día.</string>
+    <string name="welcome_sync_leave_early_title">La sincronización entá nun terminó</string>
+    <string name="welcome_sync_leave_early_message">Entá nun terminó la descarga de les llistes de bloquéu. Pues siguir agora y va continuar en segundu planu, o esperar equí hasta que termine.</string>
+    <string name="welcome_sync_leave_early_wait">Esperar</string>
+    <string name="welcome_sync_leave_early_continue">Siguir igualmente</string>
+    <string name="welcome_battery_header">Caltién la protección en segundu planu</string>
+    <string name="welcome_battery_summary">Android pue posar la VPN d’AdAway en segundu planu pa aforrar batería, lo que pue parar el bloquéu de publicidá ensin avisu. Permite que AdAway inore l’optimización de la batería pa que siga en marcha.</string>
+    <string name="welcome_battery_action">Permitir</string>
+    <string name="welcome_battery_granted">Permitíu ✓</string>
+    <string name="welcome_battery_footnote_prefix">Siempre pues cambiar esto más sero dende</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Axustes d’Android</item>
+        <item>Aplicaciones</item>
+        <item>AdAway</item>
+        <item>Batería</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Una cosa más: el xestor de batería del to teléfonu</string>
+    <string name="welcome_oem_battery_summary">Dalgunes marques de teléfonos tienen el so propiu xestor de batería, que tamién pue torgar AdAway. Esto ye lo que tienes de revisar nel to:</string>
+    <string name="welcome_oem_battery_action">Abrir la información de l’aplicación</string>
+    <string name="welcome_oem_battery_open_failed">Nun se pudo abrir la pantalla d’información de l’aplicación. Ábrila a mano dende Axustes d’Android → Aplicaciones → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Estes son indicaciones xenerales, non una guía exacta: los nomes y la ubicación pueden variar según el modelu de teléfonu y la versión d’Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Información de l’aplicación</item>
+        <item>Batería</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Busca daqué como «Llendes d’usu en segundu planu» › «Aplicaciones que nunca se duermen», y amiesta AdAway a esa llista.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Comprueba tamién si hai un axuste «Optimización automática» y desactiva «Reaniciar cuando faiga falta» si apaez.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Información de l’aplicación</item>
+        <item>Aforrador de batería</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Escueye «Ensin restricciones».</string>
+    <string name="welcome_oem_battery_secondary_miui">Activa tamién «Aniciu automáticu» («Aniciu automáticu en segundu planu» nes versiones más nueves).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Información de l’aplicación</item>
+        <item>Usu de la batería</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Escueye «Permitir l’actividá en segundu planu» (a veces apaez como «Ensin restricciones»).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Busca tamién un interruptor «Llanzamientu automáticu» pa AdAway (a cada tanto en Axustes › Aplicaciones), pa que pueda reaniciase dempués de forciar la so parada.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Información de l’aplicación</item>
+        <item>Batería</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Busca «Llanzamientu d’aplicaciones», desactiva «Xestionar automáticamente» y activa los 3: «Llanzamientu automáticu», «Llanzamientu secundariu» y «Execución en segundu planu».</string>
+    <string name="welcome_oem_battery_secondary_emui">Bloquia tamién AdAway na pantalla d’aplicaciones recientes (arrastra la so tarxeta escontra abaxo hasta que apaeza un candáu).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Información de l’aplicación</item>
+        <item>Usu de la batería</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Busca una opción d’enerxía en segundu planu y escueye «Nun restrinxir l’usu d’enerxía en segundu planu» (non «Control intelixente»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Busca tamién un axuste «Aniciu automáticu» pa AdAway, a cada tanto en Axustes › Aplicaciones.</string>
+    <string name="welcome_oem_battery_label_generic">Otra marca</string>
+    <string name="welcome_oem_battery_tip_generic">Busca na información de l’aplicación un axuste de batería o d’actividá en segundu planu y comprueba que AdAway nun tea restrinxíu.</string>
+    <string name="welcome_back_button">Atrás</string>
+    <string name="welcome_next_button">Siguiente</string>
+    <string name="welcome_finish_button">Terminar</string>
+    <string name="tv_welcome_intro_subtitle">Esti asistente curtiu activa’l bloquéu de publicidá nesti preséu.</string>
     <string name="tv_welcome_start_button">Entamar</string>
-    <string name="tv_welcome_method_header">Escueyi\'l to métodu de bloquéu</string>
+    <string name="tv_welcome_method_header">Escueye’l métodu de bloquéu</string>
     <string name="tv_welcome_method_root_button">Usar root</string>
-    <string name="tv_welcome_method_root_body">Más rápidu y aforra batería. Requier un preséu rooteáu.</string>
+    <string name="tv_welcome_method_root_body">Más rápidu y aforrador de batería. Requier un preséu con root.</string>
     <string name="tv_welcome_method_vpn_button">Usar VPN</string>
     <string name="tv_welcome_method_vpn_body">Funciona ensin root, compatible con cualquier preséu Android TV.</string>
-    <string name="tv_welcome_activate_header">Activar el bloquéu d\'anuncios</string>
-    <string name="tv_welcome_activate_body">Ye una VPN llocal: fitra anuncios nesti preséu, ensin unviar el to tráficu per un sirvidor esternu.</string>
+    <string name="tv_welcome_activate_header">Activar el bloquéu de publicidá</string>
+    <string name="tv_welcome_activate_body">Ye una VPN llocal: peñera la publicidá nesti preséu ensin pasar el to tráficu por un sirvidor esternu.</string>
 </resources>

@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">AdAway புதுப்பிப்பு</string>
+    <string name="update_banner_title">புதுப்பிப்பு உள்ளது</string>
+    <string name="update_banner_subtitle">%1$s ஐ நிறுவத் தட்டவும்</string>
+    <string name="update_up_to_date_header">நீங்கள் புதுப்பித்த நிலையில் உள்ளீர்கள்</string>
+    <string name="update_update_available_header">புதுப்பிப்பு உள்ளது</string>
+    <string name="update_updating_header">AdAway ஐப் புதுப்பிக்கிறது</string>
+    <string name="update_update_button">இப்போது புதுப்பி</string>
+    <string name="update_complete_label">முடிந்தது</string>
+    <string name="update_last_changelog_title">சமீபத்திய மாற்றங்கள்</string>
+    <string name="update_new_changelog_title">மாற்றங்களின் பதிவு</string>
+    <string name="update_download_failed">புதுப்பிப்பைப் பதிவிறக்க முடியவில்லை.</string>
+    <string name="update_install_failed">புதுப்பிப்பை நிறுவ முடியவில்லை.</string>
+    <string name="pref_update_check_now_update_available">புதிய பதிப்பு கிடைக்கிறது: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">புதுப்பிப்பு எதுவும் இல்லை</string>
+    <string name="pref_update_check_now_failed">புதுப்பிப்புச் சேவையகத்தை அடைய முடியவில்லை</string>
+    <string name="pref_update_install_summary">பதிப்பு %1$s ஐ நிறுவு</string>
+    <string name="notification_channel_app_updates">ஆப்ஸ் புதுப்பிப்புகள்</string>
+    <string name="notification_channel_app_updates_description">ஆப்ஸின் புதிய பதிப்பு கிடைக்கும்போது அறிவிக்கும். மற்ற அறிவிப்புகளைப் பாதிக்காமல் ஆப்ஸ் புதுப்பிப்பு எச்சரிக்கைகளை அமைதியாக்க, இந்தச் சேனலை ஒலியடக்கவும்.</string>
+    <string name="notification_app_update_title">ஆப்ஸ் புதுப்பிப்பு உள்ளது</string>
+    <string name="notification_app_update_text">AdAway இன் புதிய பதிப்பு பதிவிறக்கத்துக்குக் கிடைக்கிறது.</string>
 </resources>

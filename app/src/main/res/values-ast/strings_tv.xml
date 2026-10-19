@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Amestar a los permitíos</string>
-    <string name="tv_dialog_add_to_blocked">Amestar a los bloquiaos</string>
-    <string name="tv_dialog_remove_from_allowed">Quitar de los permitíos</string>
-    <string name="tv_dialog_remove_from_blocked">Quitar de los bloquiaos</string>
-    <string name="tv_dialog_copy_hostname">Copiar el nome del host</string>
+    <string name="tv_dialog_add_to_allowed">Amestar a permitíos</string>
+    <string name="tv_dialog_add_to_blocked">Amestar a bloquiaos</string>
+    <string name="tv_dialog_remove_from_allowed">Quitar de permitíos</string>
+    <string name="tv_dialog_remove_from_blocked">Quitar de bloquiaos</string>
+    <string name="tv_dialog_copy_hostname">Copiar nome d’host</string>
     <string name="tv_log_entry_status_description">Estáu del dominiu</string>
-    <string name="tv_button_theme_light">Mou claru</string>
+    <string name="tv_button_theme_light">Mou claro</string>
     <string name="tv_button_theme_dark">Mou escuru</string>
     <string name="tv_lists_empty">Entá nun hai entraes nesta llista.</string>
     <string name="tv_dialog_search">Guetar</string>

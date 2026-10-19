@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>விளம்பரங்கள் மூலம் வருமானம்</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>AdAway Community என்றால் என்ன?</h2>
+<p>AdAway Community என்பது Android க்கான திறந்த மூல விளம்பரத் தடுப்பானான AdAway இன் அதிகாரப்பூர்வமற்ற, சமூகம் பராமரிக்கும் ஃபோர்க் (fork) ஆகும். இது கணக்கு எதுவும் இல்லாமல், தனக்கென விளம்பரங்கள் எதுவும் இல்லாமல், எல்லா ஆப்ஸுக்கும் சிஸ்டம் முழுவதும் விளம்பரங்களையும் டிராக்கர்களையும் தடுக்கிறது. நவீன Android பதிப்புகளிலும் உற்பத்தியாளர் ROM களிலும் ஆப்ஸ் நம்பகமாகச் செயல்படுவதை உறுதிசெய்வதில் இந்த ஃபோர்க் கவனம் செலுத்துகிறது.</p>
 
-<h2>How does AdAway work?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>இது விளம்பரங்களை எப்படித் தடுக்கிறது?</h2>
+<p>AdAway இரண்டு முறைகளில் ஒன்றில் செயல்படுகிறது:</p>
+<p><strong>VPN பயன்முறை</strong> (root தேவையில்லை): AdAway சாதனத்திலேயே ஒரு உள்ளூர் VPN ஐ இயக்குகிறது. அது உங்கள் போக்குவரத்தை எங்கும் அனுப்பாது. DNS கோரிக்கைகளை மட்டும் பார்த்து, விளம்பரம் மற்றும் டிராக்கர் ஹோஸ்ட் பெயர்களுக்கான கோரிக்கைகளை நிறுத்திவிட்டு, மற்ற அனைத்தையும் அனுமதிக்கிறது. எதுவும் உங்கள் சாதனத்தை விட்டு வெளியேறாது.</p>
+<p><strong>root பயன்முறை</strong>: உங்கள் சாதனம் root செய்யப்பட்டிருந்தால், AdAway அதற்குப் பதிலாக ஒரு <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts கோப்பை</a> <code>/system/etc/hosts</code> இல் எழுதலாம். தேவையற்ற ஹோஸ்ட் பெயர்கள் <code>127.0.0.1</code> க்கு இணைக்கப்படுவதால், அவை உங்கள் சாதனத்தையே சுட்டும். சமீபத்திய Android இல் systemless hosts மாட்யூல் (எ.கா. Magisk) தேவை.</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>VPN எந்த DNS சேவையகங்களைப் பயன்படுத்துகிறது?</h2>
+<p>VPN பயன்முறையில், தடுக்கப்படாத ஹோஸ்ட் பெயர்கள், <cite>விருப்பத்தேர்வுகள் › VPN அடிப்படையிலான விளம்பரத் தடுப்பான் › DNS சேவையகங்கள்</cite> என்பதில் நீங்கள் தேர்ந்தெடுக்கும் DNS சேவையகங்களால் தீர்க்கப்படுகின்றன:</p>
+<p><strong>நெட்வொர்க் DNS சேவையகங்கள்</strong> (இயல்புநிலை): உங்கள் வைஃபை அல்லது மொபைல் நெட்வொர்க்கின் சேவையகங்கள். AdAway பயன்படுத்தக்கூடிய எதையும் நெட்வொர்க் வழங்கவில்லை என்றால், Cloudflare (<code>1.1.1.1</code>) பயன்படுத்தப்படும்.<br/><strong>தனிப்பயன் DNS சேவையகங்கள்</strong>: நீங்கள் உள்ளிடும் IP முகவரிகள், கமாவால் பிரிக்கப்பட்டவை.<br/><strong>DNS over HTTPS</strong>: கோரிக்கைகள் என்கிரிப்ட் செய்யப்பட்டு Cloudflare, Google, Quad9 அல்லது நீங்கள் உள்ளிடும் <code>https://</code> முகவரிக்கு அனுப்பப்படுகின்றன. எனவே உங்கள் நெட்வொர்க்கால் அவற்றைப் படிக்கவோ மாற்றவோ முடியாது.</p>
+<p>மூன்றிலும் தடுப்பு ஒரே விதமாகச் செயல்படும். என்கிரிப்ட் செய்யப்பட்ட DNS ஐத் தக்கவைக்க, AdAway ஐத் தவிர்க்கும் Android இன் <cite>தனிப்பட்ட DNS</cite> அமைப்புக்குப் பதிலாக, இங்கே DNS over HTTPS ஐப் பயன்படுத்துங்கள்.</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>ஹோஸ்ட் பெயரை எப்படித் தடுப்பது, அனுமதிப்பது அல்லது திசைதிருப்புவது?</h2>
+<p>முகப்புத் திரையிலிருந்து மூன்று பட்டியல்களை நிர்வகிக்கலாம்:</p>
+<p><strong>தடுக்கப்பட்டவை</strong>: தடுக்கப்பட வேண்டிய ஹோஸ்ட் பெயர்கள் (விளம்பரங்கள் மற்றும் டிராக்கர்கள்).<br/><strong>அனுமதிக்கப்பட்டவை</strong>: ஒரு மூலம் பட்டியலிட்டிருந்தாலும் ஒருபோதும் தடுக்கப்படக் கூடாத விதிவிலக்குகள்.<br/><strong>திசைதிருப்பப்பட்டவை</strong>: குறிப்பிட்ட IP முகவரிக்குச் சுட்ட வேண்டிய ஹோஸ்ட் பெயர்கள்.</p>
+<p>ஆப்ஸ் நிகழ்நேரத்தில் எந்த ஹோஸ்ட் பெயர்களைக் கேட்கின்றன என்பதைப் பார்க்க, முகப்புத் திரையிலிருந்து <cite>DNS பதிவு</cite> ஐயும் திறக்கலாம். பிறகு அங்கிருந்தே அவற்றைத் தடுக்கலாம் அல்லது அனுமதிக்கலாம்.</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>பட்டியல்களை மாற்றிய பிறகு Android ஐ மறுதொடக்கம் செய்ய வேண்டுமா?</h2>
+<p>இல்லை. AdAway மாற்றத்தை உடனே செயல்படுத்துகிறது. ஆனால் ஏற்கெனவே திறந்திருக்கும் ஆப்ஸ் தனது பழைய இணைப்புகளையும் சொந்தத் தற்காலிகச் சேமிப்பையும் தொடர்ந்து பயன்படுத்தக்கூடும். அதை முழுமையாக மூடி (அந்த ஆப்ஸின் Android அமைப்புகளில் கட்டாயமாக நிறுத்து), விளம்பரங்கள் இன்னும் தெரிந்தால் அதன் தற்காலிகச் சேமிப்பை அழிக்கவும். root பயன்முறையில் Magisk இன் systemless hosts மாட்யூலை இயக்கிய பிறகு மட்டும், Android ஐ ஒருமுறை மறுதொடக்கம் செய்ய வேண்டும்.</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>மேலும் hosts மூலங்களை எங்கே கண்டுபிடிப்பது?</h2>
+<p>AdAway பொருத்தமான இயல்புநிலை மூலங்களுடன் வருகிறது. இன்னும் வேண்டுமெனில், சமூகம் பராமரிக்கும் <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">கூடுதல் hosts மூலங்களின் பட்டியலைப்</a> பாருங்கள். மிகப் பெரிய அல்லது ஒன்றையொன்று மீண்டும் மீண்டும் உள்ளடக்கும் பட்டியல்கள் தவறான தடுப்புகளை ஏற்படுத்தி ஆப்ஸ் செயலிழக்கக்கூடும் என்பதால், கூடுதல் மூலங்களைக் குறைவாகவே சேர்க்கவும்.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>இந்த ஃபோர்க் ஏன் உள்ளது?</h2>
+<p>AdAway நீண்ட வரலாறு கொண்ட சிறந்த திட்டம். ஆனால் சிறிது காலமாக, மூலத் திட்டத்தில் வெளியீடுகளும் மதிப்பாய்வுகளும் குறைவாகவே நடந்து வருகின்றன. சில பிழைத் திருத்தங்களும் இழுப்புக் கோரிக்கைகளும் நீண்ட நாட்களாகத் திறந்தே இருந்தன. அவற்றில் சமீபத்திய Android பதிப்புகளிலும் உற்பத்தியாளர் ROM களிலும் VPN பயன்முறையின் நிலைத்தன்மையைப் பாதிக்கும் சிக்கல்களும் அடங்கும். சோதிக்கப்பட்ட மேம்பாடுகள் பயன்படுத்தப்படாமல் கிடப்பதற்குப் பதிலாக, சமூகம் பராமரிக்கும் திருத்தங்களுடன் இந்தத் திட்டத்தைத் தொடர்ந்து பயன்படுத்தக்கூடியதாக வைத்திருக்க இந்த ஃபோர்க் உள்ளது.</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>பிழையை எப்படிப் புகாரளிப்பது அல்லது மாற்றத்தை எப்படிப் பரிந்துரைப்பது?</h2>
+<p>இந்த ஃபோர்க்கின் டிராக்கரில் ஒரு சிக்கலைப் பதிவு செய்யுங்கள்: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. VPN சிக்கல்களைப் புகாரளிக்கும்போது கண்டறிதல் பதிவு (சிக்கல்கள் தாவலைப் பார்க்கவும்) மிகவும் உதவும்.</p>
 </body>
 </html>
