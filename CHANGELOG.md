@@ -10,14 +10,23 @@
 * Generate the web server certificate on each device instead of shipping a shared one
 * Keep your settings, lists and hosts sources when updating from 6.x, and keep reading 6.x backup files
 * Keep the translations of 6.x; the texts new in this version are only in English and French so far
+* Write the hosts file without holding every entry in memory
+* Show the pre-release stage in the app name, such as "AdAway Alpha"
 
 ### ➕ Added
 
 * 🔐 Add DNS over HTTPS to the VPN, with Cloudflare, Google, Quad9 or a custom server
 * 🧭 Add custom DNS servers to the VPN
-* ⚠️ Show why a hosts source failed to sync, from a missing network to an HTTP error or a list too large
+* ⚠️ Show why a hosts source failed to sync, from a missing network or a server too slow to answer to an HTTP error or a list too large, and list each failed source when none could be synced
+* 🔁 Retry a hosts source download by itself after a passing network failure
+* 🗣️ Pick the app language in the preferences, on every Android version
+* 📜 Show the licenses of the components the app is built with in the help
 * ↩️ Add an undo after deleting a hosts source or a list entry on mobile
 * ⚡ Offer to turn ad blocking on when applying changes while it is off
+
+### 🐛 Fixed
+
+* Read the hosts lists that block with an address of the 0.0.0.0/8 range, such as 0.0.0.1
 
 ## [6.6.1-c] - 2026-09-11
 
