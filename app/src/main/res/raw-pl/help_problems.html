@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Kopiowanie pliku hosts nie powiodło się na Androidzie 9+</h2>
-<p>Najnowsze wersje Androida używają partycji <code>/system</code> jako tylko do odczytu.<br>
-Jeśli używasz Magisk jako roota, upewnij się, że włączyłeś bezsystemowy moduł hostów, a następnie uruchom ponownie.</p>
+<h2>VPN wyłącza się sam</h2>
+<p>Prawie zawsze to system zamyka usługę VPN, aby oszczędzać baterię, a nie awaria. Jest to częste w nakładkach producentów z agresywnym zarządzaniem energią (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung i innych).</p>
+<p>W ustawieniach Androida znajdź AdAway i: w pozycji <cite>Optymalizacja baterii</cite> wybierz <cite>Bez ograniczeń</cite> (lub <cite>Nie optymalizuj</cite>), zezwól na <cite>Autostart</cite> lub <cite>Automatyczne uruchamianie</cite>, jeśli nakładka producenta je ma, i zablokuj AdAway na liście ostatnich aplikacji, aby nie został zamknięty przez przeciągnięcie. Upewnij się też, że opcja <cite>Włączaj przy uruchomieniu</cite> jest włączona w ustawieniach VPN w AdAway.</p>
 
-<h2>Brak wystarczającego miejsca na partycji</h2>
-<p>Spróbuj zmienić docelowy plik hosts w preferencjach na <code>/data/data/hosts</code> (lub <code>/data/hosts</code>) i ponownie zastosuj AdAway.</p>
+<h2>Brak internetu lub wolne przeglądanie zaraz po przełączeniu między Wi-Fi a siecią komórkową</h2>
+<p>Gdy zmienia się aktywna sieć, tunel musi zostać odbudowany, aby DNS był rozwiązywany z nowej sieci. Jeśli przeglądanie nadal nie działa, otwórz <cite>Ustawienia › Blokowanie reklam przez VPN › Zresetuj VPN</cite>, aby odbudować połączenie od zera. Jeśli problem się powtarza, zapisz dziennik diagnostyczny (poniżej) i zgłoś go.</p>
 
-<h2>Nie działa na systemie Android 4.4+</h2>
-<p>Spróbuj zmienić docelowy plik hosts w preferencjach z <code>/data/data/hosts</code> na <code>/data/hosts</code> lub <code>/system/etc/hosts</code> i ponownie zastosuj AdAway.</p>
+<h2>Jak wyeksportować dziennik diagnostyczny?</h2>
+<p>Otwórz <cite>Ustawienia › Blokowanie reklam przez VPN › Dziennik diagnostyczny</cite>. Zapisuje on ostatnie błędy i zdarzenia VPN (przełączenia sieci, ponowne połączenia, awarie), a nie historię przeglądania, tylko zdarzenia techniczne. Pozostaje pusty, dopóki nie włączysz opcji <cite>Zapisuj dziennik diagnostyczny</cite> tuż powyżej. Użyj <cite>Kopiuj</cite> lub <cite>Udostępnij</cite>, aby go wysłać przy zgłaszaniu problemu. Wskazówka: najpierw użyj <cite>Wyczyść</cite>, a potem odtwórz problem, aby dziennik był przejrzysty.</p>
 
-<h2>Nie blokuje reklam w aplikacji XYZ!</h2>
-<p>Niektóre nazwy hostów mogą być niedostępne w dostarczonych plikach hostów ze <cite>źródeł hostów</cite> lub aplikacja zawiera załączone treści, aby wyświetlać reklamy bez dostępu do internetu.<br><br>
-Możesz rejestrować żądania DNS (Menu-&gt;Rejestruj żądania DNS) od AdAway, aby dowiedzieć się, które dodatkowe nazwy hostów muszą być blokowane.
-<br><br>Dodaj podejrzane nazwy hostów do swojej Czarnej listy przez długie naciśnięcie wpisów w dzienniku i zgłoś te nazwy hostów po ich zweryfikowaniu w temacie <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> na forum <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome nadal pokazuje reklamy</h2>
+<p>Chrome może używać własnego <cite>Bezpiecznego DNS</cite> (DNS over HTTPS), który omija AdAway. W Chrome otwórz <cite>Ustawienia › Prywatność i bezpieczeństwo › Używaj bezpiecznego DNS</cite> i wyłącz tę opcję. To samo dotyczy każdej aplikacji lub systemowego ustawienia <cite>Prywatny DNS</cite>. W trybie VPN AdAway może sam szyfrować DNS: zobacz <cite>Z jakich serwerów DNS korzysta VPN?</cite> w FAQ.</p>
 
-<h2>Reklamy buforowane</h2>
-<p>Zdarza się, że aplikacje cachują reklamy po pobraniu. Prowadzi to do tego, że pomimo blokowania, reklamy nadal są wyświetlane w niektórych aplikacjach. W celu usunięcia problemu możesz spróbować usunąć pamięć podręczną tych aplikacji.</p>
+<h2>Część reklam nadal się wyświetla albo aplikacja nadal je pokazuje</h2>
+<p>Być może w Twoich źródłach brakuje jakiejś nazwy hosta albo aplikacja ma reklamy wbudowane i nie wysyła żadnego zapytania. Otwórz <cite>Dziennik DNS</cite> na ekranie głównym, aby zobaczyć, o co pyta aplikacja, dodaj podejrzane nazwy hostów do listy <cite>Zablokowane</cite> i sprawdź, czy nic się nie psuje. Niektóre aplikacje zapisują też pobrane reklamy w pamięci podręcznej, więc pomóc może wyczyszczenie pamięci podręcznej tej aplikacji w ustawieniach Androida.</p>
 
-<h2>Aplikacja XYZ nie działa teraz prawidłowo!</h2>
-<p>Niektóre aplikacje muszą komunikować się z nazwą hosta zablokowaną przez AdAway lub odmówić pracy, gdy nazwy hostów, które powinny wyświetlać reklamy, są niedostępne. Zobacz <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> aby uzyskać listę znanych aplikacji, które mają problemy. W przeciwnym razie sprawdź, które nazwy hostów są potrzebne i dodaj je do <cite>Białej listy</cite> pod <cite>Twoimi listami</cite> i zgłoś je do <a href="https://github.com/Victor-root/AdAway-Community/issues">modułu śledzenia błędów AdAway</a>.</p>
+<h2>Aplikacja przestała działać po włączeniu AdAway</h2>
+<p>Niektóre aplikacje odmawiają działania, gdy zablokowana jest potrzebna im nazwa hosta. Otwórz <cite>Dziennik DNS</cite>, aby sprawdzić, jakiej nazwy hosta potrzebuje aplikacja, dodaj ją do listy <cite>Dozwolone</cite>, a aplikacja powinna znów działać. Znane problematyczne aplikacje są wymienione <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tutaj</a>.</p>
 
-<h2>Nie działa przycisk Wstecz w przeglądarkach internetowych</h2>
-<p>Możesz włączyć w opcjach lokalny serwer www jako tymczasowe rozwiązanie problemu.</p>
+<h2>Zastosowanie pliku hosts nie powiodło się (tryb root)</h2>
+<p>Nowsze wersje Androida używają partycji <code>/system</code> tylko do odczytu, więc AdAway nie może na niej bezpośrednio zapisywać. Jeśli używasz Magisk, włącz moduł <cite>systemless hosts</cite>, uruchom urządzenie ponownie i zastosuj plik jeszcze raz. Jeśli nie korzystasz z roota, przełącz się na tryb VPN, który nie wymaga modyfikacji systemu.</p>
 
-<h2>Nie działa przycisk Wstecz w przeglądarkach internetowych</h2>
-<p>Możesz włączyć w opcjach lokalny serwer www jako tymczasowe rozwiązanie problemu.</p>
-
+<h2>Nadal nie działa?</h2>
+<p>Zgłoś problem z dołączonym dziennikiem diagnostycznym pod adresem <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

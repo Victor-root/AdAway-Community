@@ -4,7 +4,7 @@
     <string name="tv_dialog_add_to_blocked">Engellenenlere ekle</string>
     <string name="tv_dialog_remove_from_allowed">İzin verilenlerden kaldır</string>
     <string name="tv_dialog_remove_from_blocked">Engellenenlerden kaldır</string>
-    <string name="tv_dialog_copy_hostname">Alan adını kopyala</string>
+    <string name="tv_dialog_copy_hostname">Ana makine adını kopyala</string>
     <string name="tv_log_entry_status_description">Alan adı durumu</string>
     <string name="tv_button_theme_light">Açık mod</string>
     <string name="tv_button_theme_dark">Koyu mod</string>

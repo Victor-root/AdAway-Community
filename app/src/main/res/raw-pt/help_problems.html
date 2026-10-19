@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>A VPN desliga-se sozinha</h2>
+<p>Quase sempre, isto deve-se ao sistema, que encerra o serviço de VPN para poupar bateria, e não a uma falha da aplicação. É frequente em ROM de fabricantes com uma gestão de energia agressiva (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, entre outras).</p>
+<p>Nas definições do Android, procure o AdAway e: defina a <cite>otimização da bateria</cite> como <cite>Sem restrições</cite> (ou <cite>Não otimizar</cite>), permita o <cite>arranque automático</cite>/<cite>início automático</cite> se a sua ROM o oferecer e bloqueie o AdAway na lista de aplicações recentes, para que não seja fechado ao deslizar. Certifique-se também de que a opção <cite>Ativar no arranque</cite> está ativada nas preferências de VPN do AdAway.</p>
 
-<h2>Espaço insuficiente na partição</h2>
-<p>Tente alterar o ficheiro hosts de destino nas preferências para <code>/data/data/hosts</code> (ou <code>/data/hosts</code>) e aplique o AdAway novamente.</p>
+<h2>Sem Internet ou navegação lenta logo após alternar entre Wi-Fi e dados móveis</h2>
+<p>Quando a rede ativa muda, o túnel tem de ser reconstruído para que o DNS seja resolvido a partir da nova rede. Se a navegação continuar a falhar, abra <cite>Preferências › Bloqueador de anúncios por VPN › Repor VPN</cite> para reconstruir a ligação de raiz. Se o problema se repetir, obtenha um registo de diagnóstico (mais abaixo) e comunique-o.</p>
 
-<h2>Não funciona no Android 4.4+</h2>
-<p>Tente alterar o ficheiro hosts de destino nas preferências de <code>/data/data/hosts</code> para <code>/data/hosts</code>ou <code>/system/etc/hosts</code> e aplique o AdAway novamente.</p>
+<h2>Como exporto um registo de diagnóstico?</h2>
+<p>Abra <cite>Preferências › Bloqueador de anúncios por VPN › Registo de diagnóstico</cite>. Regista os erros e os eventos recentes da VPN (mudanças de rede, religações, falhas), mas não o seu histórico de navegação: apenas eventos técnicos. Fica vazio enquanto não ativar a opção <cite>Gravar registo de diagnóstico</cite>, logo acima. Utilize <cite>Copiar</cite> ou <cite>Partilhar</cite> para o enviar ao comunicar um problema. Dica: comece por <cite>Limpar registo de diagnóstico</cite> e só depois reproduza o problema, para que o registo fique focado.</p>
 
-<h2>Não bloqueia anúncios na aplicação XYZ!</h2>
-<p>Alguns nomes de hospedeiros podem estar ausentes nos ficheiros de hospedeiros fornecidos das <cite>Fontes de Hospedeiros</cite> ou a aplicação agrupou as imagens para fornecer anúncios sem aceder à Internet. <br><br>
-Pode registar pedidos de DNS (Menu-&gt;Registar pedidos de DNS) a partir do AdAway para descobrir quais os nomes de hospedeiros adicionais que devem ser bloqueados.
-<br><br>Adicione os nomes de hospedeiros suspeitos à sua própria Lista Negra com um premir longo nas entradas no Registo e reporte esses nomes de hospedeiros quando os tiver verificado na <a href="http://forum.hosts-file.net/viewforum.php?f=9">Caixa de Entrada dos Hospedeiros (Hosts Inbox)</a> do Fórum em <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>O Chrome continua a mostrar anúncios</h2>
+<p>O Chrome pode utilizar o seu próprio <cite>DNS seguro</cite> (DNS over HTTPS), que contorna o AdAway. No Chrome, abra <cite>Definições › Privacidade e segurança › Utilizar DNS seguro</cite> e desative-o. O mesmo se aplica a qualquer definição de <cite>DNS privado</cite> de uma aplicação ou do sistema. No modo VPN, o AdAway pode encriptar o DNS por si: consulte <cite>Que servidores DNS utiliza a VPN?</cite> nas FAQ.</p>
 
-<h2>Anúncios em cache</h2>
-<p>Por vezes, as aplicações colocam anúncios em cache depois de os descarregarem. Isto faz com que fiquem alguns anúncios nalgumas aplicações. Poderá tentar remover a cache destas aplicações na lista de aplicações do Android para resolver este problema.</p>
+<h2>Alguns anúncios continuam a aparecer, ou uma aplicação continua a mostrá-los</h2>
+<p>Pode faltar um nome de anfitrião nas suas fontes, ou a aplicação inclui os anúncios no seu interior e, por isso, não faz qualquer pedido. Abra o <cite>Registo DNS</cite> no ecrã inicial para ver o que a aplicação está a consultar, adicione os nomes de anfitrião suspeitos à lista <cite>Bloqueados</cite> e verifique que nada deixa de funcionar. Algumas aplicações também guardam os anúncios em cache depois de os transferirem, pelo que limpar a cache dessa aplicação nas definições do Android pode ajudar.</p>
 
-<h2>A aplicação XYZ já não funciona!</h2>
-<p>Algumas aplicações precisam de comunicar com um nome de hospedeiro que é bloqueado pelo AdAway ou recusa-se a funcionar quando os nomes de hospedeiro que deveriam fornecer os anúncios não estão ao alcance. Consulte <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> para obter uma lista de aplicações conhecidas que têm problemas. Caso contrário, descubra quais os nomes de hospedeiro necessários e adicione-os à sua <cite>Lista Branca</cite> em <cite>As Suas Listas</cite> e comunique-as no <a href="https://github.com/Victor-root/AdAway-Community/issues">registo de problemas do AdAway</a>.</p>
+<h2>Uma aplicação deixou de funcionar depois de ativar o AdAway</h2>
+<p>Algumas aplicações recusam-se a funcionar quando um nome de anfitrião de que precisam está bloqueado. Utilize o <cite>Registo DNS</cite> para descobrir de que nome de anfitrião a aplicação precisa, adicione-o à lista <cite>Permitidos</cite> e a aplicação deverá voltar a funcionar. As aplicações problemáticas conhecidas estão listadas <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">aqui</a>.</p>
 
-<h2>O botão de retroceder nos navegadores web não funciona</h2>
-<p>Em alternativa, pode ativar o servidor web local do AdAway nas preferências.</p>
+<h2>Falha ao aplicar o ficheiro hosts (modo root)</h2>
+<p>As versões recentes do Android utilizam uma partição <code>/system</code> só de leitura, pelo que o AdAway não consegue escrever nela diretamente. Se utiliza o Magisk, ative o módulo <cite>systemless hosts</cite>, reinicie e aplique novamente. Se não utiliza root, mude para o modo VPN, que não requer qualquer modificação do sistema.</p>
 
-<h2>O botão de retroceder nos navegadores web não funciona</h2>
-<p>Em alternativa, pode ativar o servidor web local do AdAway nas preferências.</p>
-
+<h2>Continua com problemas?</h2>
+<p>Comunique o problema, com um registo de diagnóstico anexado, em <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

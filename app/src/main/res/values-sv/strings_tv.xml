@@ -8,6 +8,6 @@
     <string name="tv_log_entry_status_description">Domänstatus</string>
     <string name="tv_button_theme_light">Ljust läge</string>
     <string name="tv_button_theme_dark">Mörkt läge</string>
-    <string name="tv_lists_empty">Inga poster i listan än.</string>
+    <string name="tv_lists_empty">Det finns inga poster i den här listan ännu.</string>
     <string name="tv_dialog_search">Sök</string>
 </resources>

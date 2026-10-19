@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Перемкнути запис журналу</string>
-    <string name="log_start_recording">Натисніть «Запис», щоб почати реєструвати запити, переглядайте веб-сторінки або використовуйте програми, а потім поверніться назад або проведіть пальцем, щоб оновити журнали.</string>
-    <string name="log_blocked_requests_ignored">Заблоковані запити не будуть реєструватися. Спочатку вимкніть блокування реклами, якщо ви також хочете зареєструвати їх.</string>
+    <string name="log_toggle_recording_description">Увімкнути або вимкнути запис журналу</string>
+    <string name="log_start_recording">Натисніть запис, щоб почати журналювання запитів, потім користуйтеся інтернетом або додатками й повертайтеся назад або проведіть пальцем, щоб оновити журнал.</string>
+    <string name="log_blocked_requests_ignored">\n\nЗаблоковані запити не журналюються. Щоб побачити й їх, спершу вимкніть блокування реклами.</string>
     <string name="log_sort">Сортувати домени</string>
     <string name="log_clear">Очистити журнал</string>
-    <string name="log_sort_alphabetical">Сортування за алфавітом</string>
-    <string name="log_sort_top_level_domain">Сортування за найвищим рівнем домену</string>
-    <string name="log_block">Додати запис в Чорний список</string>
-    <string name="log_allow">Додати запис в Білий список</string>
-    <string name="log_redirect">Додати запис в Список перенаправлень</string>
+    <string name="log_sort_alphabetical">За алфавітом</string>
+    <string name="log_sort_top_level_domain">За доменом верхнього рівня</string>
+    <string name="log_block">Додати запис до чорного списку</string>
+    <string name="log_allow">Додати запис до білого списку</string>
+    <string name="log_redirect">Додати запис до списку перенаправлень</string>
     <string name="log_redirect_dialog_title">Перенаправити домен</string>
+    <string name="log_capture_failed">Не вдалося почати перехоплення DNS.</string>
     <string name="log_start_recording_button">Почати запис</string>
-    <string name="log_start_recording_vpn_inactive">Почати запис (VPN не активний)</string>
+    <string name="log_start_recording_vpn_inactive">Почати запис (VPN неактивний)</string>
     <string name="log_stop_recording">Зупинити запис</string>
 </resources>

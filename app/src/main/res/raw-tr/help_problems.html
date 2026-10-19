@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Hosts dosyasının kopyası Android 9+ sürümünde başarısız</h2>
-<p>Android'in en son sürümlerinde salt okunur <code>/system</code> bölümü kullanılır.<br>
-Kök erişimi çözümü olarak Magisk kullanıyorsanız, sistemsiz hosts modülünü etkinleştirdiğinizden emin olun ve yeniden başlatın.</p>
+<h2>VPN kendiliğinden kapanıyor</h2>
+<p>Bu neredeyse her zaman bir çökme değil, sistemin pil tasarrufu için VPN hizmetini kapatmasıdır. Güç yönetimi agresif olan üretici ROM’larında sık görülür (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung ve diğerleri).</p>
+<p>Android ayarlarında AdAway’i bulun ve şunları yapın: <cite>Pil optimizasyonu</cite> ayarını <cite>Kısıtlanmamış</cite> (veya <cite>Optimize etme</cite>) olarak belirleyin, ROM’unuzda varsa <cite>otomatik başlatma</cite> (<cite>arka planda otomatik başlatma</cite>) iznini verin ve AdAway’i son uygulamalar listesinde kilitleyin; böylece kaydırılıp kapatılmaz. Ayrıca AdAway’in VPN tercihlerinde <cite>Açılışta etkinleştir</cite> seçeneğinin açık olduğundan emin olun.</p>
 
-<h2>Bölümde yeterli alan yok</h2>
-<p>Tercihler doğrultusunda ayarlardan hedef host kaynak dosyasını <code>/data/data/hosts</code> (veya <code>/data/hosts</code>) olarak değiştirin ve AdAway'i tekrar uygulayın.</p>
+<h2>Wi-Fi ile mobil veri arasında geçişten hemen sonra internet yok veya gezinti yavaş</h2>
+<p>Etkin ağ değiştiğinde, DNS’in yeni ağdan çözümlenebilmesi için tünelin yeniden kurulması gerekir. Gezinti hâlâ bozuksa <cite>Tercihler › VPN tabanlı reklam engelleyici › VPN’i sıfırla</cite> yolunu açarak bağlantıyı baştan kurun. Sorun tekrarlanırsa bir tanılama günlüğü alın (aşağıda) ve bildirin.</p>
 
-<h2>Chrome hala reklam gösteriyor</h2>
-<p>Chrome ayarlarından <cite>lite modunu</cite> (daha önce <cite>veri tasarrufu</cite> olarak biliniyordu) devre dışı bıraktığınızdan emin olun. Bu özellikler Chrome'un özel DNS çözümünü kullanmasına ve AdAway'i atlatmasına olanak tanır.</p>
+<h2>Tanılama günlüğünü nasıl dışa aktarırım?</h2>
+<p><cite>Tercihler › VPN tabanlı reklam engelleyici › Tanılama günlüğü</cite> yolunu açın. Günlük, son hataları ve VPN olaylarını (ağ değişiklikleri, yeniden bağlanmalar, başarısızlıklar) kaydeder; gezinti geçmişinizi değil, yalnızca teknik olayları. Hemen yukarıdaki <cite>Tanılama günlüğünü kaydet</cite> seçeneğini açana kadar boş kalır. Bir sorun bildirirken göndermek için <cite>Kopyala</cite> veya <cite>Paylaş</cite> düğmesini kullanın. İpucu: önce günlüğü <cite>Temizle</cite>, sonra sorunu yeniden oluşturun; böylece günlük yalnızca konuyla ilgili olur.</p>
 
-<h2>XYZ! uygulamasındaki reklamları engellemez!</h2>
-<p>Bazı ana bilgisayar adları, <cite>Hosts Kaynaklarından</cite> sağlanan hosts dosyalarında eksik olabilir veya uygulama, internete erişmeden reklam sağlamak için görüntüleri bir araya getirmiştir.<br><br>
-Hangi ek host adlarının engellenmesi gerektiğini öğrenmek için AdAway'den DNS isteklerini (Menü0-&gt;DNS İsteklerini Günlüğe Kaydet) AdAway'den kaydedebilirsiniz.
-<br><br>Günlükteki girişlere uzun süre basarak şüpheli ana makine adlarını kendi Kara Listenize ekleyin ve <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub sorun izleyicimizde</a> doğruladığınız zaman bu ana makine adlarını bildirin.</p>
+<h2>Chrome hâlâ reklam gösteriyor</h2>
+<p>Chrome, AdAway’i atlayan kendi <cite>Güvenli DNS</cite> özelliğini (DNS over HTTPS) kullanabilir. Chrome’da <cite>Ayarlar › Gizlilik ve güvenlik › Güvenli DNS kullan</cite> yolunu açın ve kapatın. Aynısı, herhangi bir uygulamanın ya da sistemin <cite>Özel DNS</cite> ayarı için de geçerlidir. VPN modunda AdAway DNS’i kendisi şifreleyebilir: SSS bölümündeki <cite>VPN hangi DNS sunucularını kullanıyor?</cite> başlığına bakın.</p>
 
-<h2>Önbelleğe Alınmış Reklamlar</h2>
-<p>Bazen yüklemeden sonra uygulamalar reklamları önbelleğe ekleyebilir. Bu bazı uygulamalarda reklam görülmesine neden olabilir. Bu uygulamaların önbelleklerini Android'in uygulama listesine giderek temizleyebilir ve bu sorunu çözebilirsiniz.</p>
+<h2>Bazı reklamlar hâlâ geçiyor veya bir uygulama hâlâ reklam gösteriyor</h2>
+<p>Bir ana makine adı kaynaklarınızda eksik olabilir ya da uygulama reklamlarını kendi içinde barındırdığı için hiçbir istek yapılmıyor olabilir. Uygulamanın neleri sorguladığını görmek için ana ekrandan <cite>DNS günlüğü</cite> bölümünü açın, şüpheli ana makine adlarını <cite>Engellenenler</cite> listenize ekleyin ve hiçbir şeyin bozulmadığını doğrulayın. Bazı uygulamalar reklamları indirdikten sonra önbelleğe de alır; bu durumda Android ayarlarından o uygulamanın önbelleğini temizlemek işe yarayabilir.</p>
 
-<h2>XYZ uygulaması artık çalışmıyor!</h2>
-<p>Bazı uygulamalar AdAway tarafından engellenmiş sunucu adlarıyla iletişim kurmalıdır, reklam servisi için kullanılan sunucu adına ulaşamazsa çalışmayı reddeder. Bu soruna sahip bilinen uygulamaların listesi için <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/dschuermann/ad-away/wiki/ProblematicApps</a> adresine bakın. Bunun dışında, hangi sunucu adlarının gerekli olduğunu bulun ve <cite>Beyazlisteye</cite> ekleyin, bu liste <cite>Listeleriniz</cite> altındadır ve <a href="https://github.com/Victor-root/AdAway-Community/issues">AdAway'in hata izleyicisine</a> bildirin.</p>
+<h2>AdAway’i etkinleştirdikten sonra bir uygulama çalışmaz oldu</h2>
+<p>Bazı uygulamalar, ihtiyaç duydukları bir ana makine adı engellendiğinde çalışmayı reddeder. Uygulamanın hangi ana makine adına ihtiyaç duyduğunu bulmak için <cite>DNS günlüğü</cite> bölümünü kullanın, bunu <cite>İzin verilenler</cite> listenize ekleyin; uygulama yeniden çalışmalıdır. Sorun çıkaran bilinen uygulamaların listesi <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">burada</a>.</p>
 
-<h2>Android 4.4+ sürümlerinde çalışmaz</h2>
-<p>Ayarlardan host kaynak dosya ayarını <code>/data/data/hosts</code>'dan  <code>/data/hosts</code> ya da<code>/system/etc/hosts</code>'a değiştirin ve AdAway'i tekrar uygulayın.</p>
+<h2>Hosts dosyası uygulanamıyor (root modu)</h2>
+<p>Yeni Android sürümleri salt okunur bir <code>/system</code> bölümü kullanır; bu yüzden AdAway oraya doğrudan yazamaz. Magisk kullanıyorsanız <cite>systemless hosts</cite> modülünü etkinleştirin, cihazı yeniden başlatın ve yeniden uygulayın. Root kullanmıyorsanız bunun yerine sistemde değişiklik gerektirmeyen VPN moduna geçin.</p>
 
-<h2>Web tarayıcısında geri tuşu çalışmıyor</h2>
-<p>AdAway'in kendi yerel web sunucusunu geçici çözüm olarak tercihlerden etkinleştirebilirsiniz.</p>
-
+<h2>Hâlâ çözülmedi mi?</h2>
+<p>Sorunu, bir tanılama günlüğü ekleyerek <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a> adresinde bildirin.</p>
 </body>
 </html>

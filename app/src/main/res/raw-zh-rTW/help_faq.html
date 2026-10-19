@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>廣告收入</h2>
-<p>很多人誤以為，如果用戶不點擊廣告，那麼阻擋它們就不會對網站或應用程式造成財務損失。這是錯誤的，開發者僅僅通過顯示廣告也能賺錢。是否阻擋廣告取決於你。我個人不會使用顯示廣告的應用程式，因為我覺得它們非常煩人，所以如果沒有廣告阻擋器，我就不會安裝這些應用程式。</p>
+<h2>什麼是 AdAway Community？</h2>
+<p>AdAway Community 是 AdAway（Android 上的開放原始碼廣告封鎖器）由社群維護的非官方分支。它能在整個系統中封鎖廣告和追蹤器，對所有應用程式都有效，不需要帳號，本身也沒有任何廣告。這個分支的重點，是讓應用程式在新版 Android 和各家廠商的 ROM 上持續穩定運作。</p>
 
-<h2>AdAway 是如何運作的？</h2>
-<p>AdAway 利用 <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts 檔案</a>來阻擋提供廣告的主機名稱。hosts 檔案是一個位於 <code>/system/etc/hosts</code> 的檔案，用於將主機名稱映射到 IP 位址。這是一種傳統的方式，用於定義主機名稱與 IP 位址配對，而不依賴於網域名稱系統（DNS）。所有不想要的主機名稱都會被重新導向到 <code>127.0.0.1</code>，這意味著它們將指向你自己的裝置。<br>
- 如果 hosts 檔案不可寫入，則可以使用內置的 VPN 服務作為後備解決方案。它會過濾到不想要的主機名稱的連接，其他的則可以正常通過。</p>
+<h2>它是如何封鎖廣告的？</h2>
+<p>AdAway 有兩種運作模式：</p>
+<p><strong>VPN 模式</strong>（不需要 root）：AdAway 會在裝置上執行本機 VPN，你的流量不會被送到任何地方。它只檢查 DNS 要求，並攔截指向廣告和追蹤器主機名稱的要求，其他要求則一律放行。所有資料都不會離開你的裝置。</p>
+<p><strong>root 模式</strong>：如果你的裝置已 root，AdAway 也可以改為將 <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts 檔案</a>寫入 <code>/system/etc/hosts</code>，把不想看到的主機名稱對應到 <code>127.0.0.1</code>，讓它們解析到你自己的裝置。在新版 Android 上，需要搭配 systemless hosts 模組（例如 Magisk）。</p>
 
-<h2>為什麼我需要重新啟動 Android 才能使變更生效？</h2>
-<p>Android 上的 Java 擁有自己的內部 DNS 快取。作業系統將立即反映新的 hosts 檔案（可以用命令列上的 ping 來驗證），但你需要重新啟動 Android 以重建 Java 的 DNS 快取。</p>
+<h2>VPN 使用哪些 DNS 伺服器？</h2>
+<p>在 VPN 模式下，沒有被封鎖的主機名稱會由你在<cite>偏好設定 › VPN 模式廣告封鎖器 › DNS 伺服器</cite>中選擇的 DNS 伺服器負責解析：</p>
+<p><strong>網路 DNS 伺服器</strong>（預設）：使用你的 Wi-Fi 或行動網路提供的伺服器。如果網路沒有提供 AdAway 可用的伺服器，就會改用 Cloudflare（<code>1.1.1.1</code>）。<br/><strong>自訂 DNS 伺服器</strong>：使用你輸入的 IP 位址，並以逗號分隔。<br/><strong>DNS over HTTPS</strong>：要求會經過加密，並傳送到 Cloudflare、Google、Quad9 或你輸入的 <code>https://</code> 位址，因此你的網路無法讀取或竄改這些要求。</p>
+<p>這三種方式的封鎖效果都相同。如果想使用加密的 DNS，請在這裡選擇 DNS over HTTPS，而不要使用 Android 的<cite>私人 DNS</cite>設定，因為它會繞過 AdAway。</p>
 
-<h2>如何使用 AdAway 中的網頁伺服器？</h2>
-<p><strong>AdAway 也可以在不使用網頁伺服器的情況下運作！</strong>
-<br><br>你可以在 AdAway 的偏好設定中啟用一個本機網頁伺服器，以回應指向本機 IP 位址 <code>127.0.0.1</code> 的請求。這意味著從應用程式到廣告伺服器的請求，如果被重新導向到 <code>127.0.0.1</code>，將由 AdAway 的網頁伺服器回應。 
-<br>有些應用程式在廣告伺服器無法連接時會拒絕工作。使用這種方法，它們將再次可以連接，但會回應一個空白頁面和沒有廣告圖片。</p>
+<h2>如何封鎖、允許或重新導向某個主機名稱？</h2>
+<p>你可以在主畫面管理三份清單：</p>
+<p><strong>已封鎖</strong>：要封鎖的主機名稱（廣告和追蹤器）。<br/><strong>已允許</strong>：你絕不想封鎖的例外項目，即使某個來源將它們列入也一樣。<br/><strong>已重新導向</strong>：你想指向特定 IP 位址的主機名稱。</p>
+<p>你也可以在主畫面開啟<cite>DNS 記錄</cite>，即時查看各應用程式正在查詢哪些主機名稱，並直接在那裡封鎖或允許它們。</p>
 
-<h2>如何阻擋/取消阻擋特定主機名稱？</h2>
-<p>從<cite>主畫面</cite>的<cite>阻擋</cite>清單裡，您可以加入您想要阻擋的主機名稱。此外，如果有主機名稱您不想阻擋，可以將其加入到<cite>允許</cite>。若您想將特定的主機名稱重新導向至某一特定 IP 位址，則將其加入到<cite>重新導向</cite>即可。</p>
+<h2>變更清單後需要重新啟動 Android 嗎？</h2>
+<p>不需要。AdAway 會立即套用變更，但已開啟的應用程式可能仍會沿用原有的連線和自己的快取。請將它完全關閉（在該應用程式的 Android 設定中選擇強制停止），如果仍然出現廣告，再清除它的快取。只有在 root 模式下，啟用 Magisk 的 systemless hosts 模組之後，才需要重新啟動一次 Android。</p>
 
-<h2>要找到更多的 hosts 來源，該如何操作？</h2>
-<p>請參見 <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">AdAway 的額外 hosts 來源清單</a>。</p>
+<h2>哪裡可以找到更多 hosts 來源？</h2>
+<p>AdAway 已內建一組合理的預設來源。如果你想要更多，請參閱由社群維護的<a href="https://github.com/AdAway/AdAway/wiki/HostsSources">其他 hosts 來源清單</a>。請節制地新增來源，因為過大或內容重疊的清單可能造成誤判，導致應用程式無法使用。</p>
 
-<h2>為什麼會有這個分支</h2>
-<p>AdAway 是一個歷史悠久的優秀專案，但一段時間以來上游的發布和審查活動較為有限。<br/>一些 Bug 和 Pull Request 長期未關閉，包括影響近期 Android 版本和 OEM ROM 上 VPN 模式穩定性的問題。<br/>這個分支的存在是為了透過社群維護的修復保持專案可用，而不是讓經過測試的改進閒置不用。</p>
+<h2>為什麼會有這個分支？</h2>
+<p>AdAway 是一個歷史悠久的優秀專案，但上游的版本發布和審查已有一段時間不太活躍。部分錯誤修正和 pull request 長期處於未處理狀態，其中包括影響新版 Android 和各家廠商 ROM 上 VPN 模式穩定性的問題。這個分支的目的，是用社群維護的修正讓專案維持可用，不讓已測試過的改進被擱置。</p>
 
-<h2>需要幫助翻譯或回報臭蟲？</h2>
-<p>請前往 <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>。</p>
+<h2>如何回報錯誤或提出修改建議？</h2>
+<p>請到這個分支的問題追蹤頁面提出 issue：<a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>。回報 VPN 問題時，附上診斷記錄（請見「疑難排解」分頁）會很有幫助。</p>
 </body>
 </html>

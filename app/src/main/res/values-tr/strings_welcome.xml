@@ -1,41 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Kurulumun ilk aşaması</string>
-    <string name="welcome_second_step">Kurulumun ikinci aşaması</string>
-    <string name="welcome_method_header">AdAway\'e hoş geldiniz!</string>
-    <string name="welcome_method_summary">AdAway iki reklam engelleme yöntemi sunar. Beğendiğiniz birini seçin:</string>
-    <string name="welcome_root_method_title">Kök erişimi tabanlı\nreklam engelleyici</string>
+    <string name="welcome_first_step">Sihirbazın birinci adımı</string>
+    <string name="welcome_second_step">Sihirbazın ikinci adımı</string>
+    <string name="welcome_third_step">Sihirbazın üçüncü adımı</string>
+    <string name="welcome_fourth_step">Sihirbazın dördüncü adımı</string>
+    <string name="welcome_method_header">AdAway’e hoş geldiniz!</string>
+    <string name="welcome_method_summary">AdAway iki reklam engelleme yöntemi sunar. Size uygun olanı seçin:</string>
+    <string name="welcome_root_method_title">Root tabanlı\nreklam engelleme</string>
     <string name="welcome_root_method_text1">Daha hızlı</string>
     <string name="welcome_root_method_text2">Pil dostu</string>
-    <string name="welcome_root_method_text3">Kök erişimi gerekli</string>
-    <string name="welcome_vpn_method_title">VPN tabanlı\nreklam engelleyici</string>
+    <string name="welcome_root_method_text3">Root gerekir</string>
+    <string name="welcome_vpn_method_title">VPN tabanlı\nreklam engelleme</string>
     <string name="welcome_vpn_method_text1">Daha yavaş</string>
-    <string name="welcome_vpn_method_text2">Arka planda çalıştır</string>
+    <string name="welcome_vpn_method_text2">Arka planda çalışır</string>
     <string name="welcome_vpn_method_text3">Uyumluluk</string>
-    <string name="welcome_root_missing_title">Kök erişimli Android gerekli</string>
-    <string name="welcome_root_missile_description">Su binary dosyası bulunamadı veya AdAway için kök erişimi izni sağlanmadı.\n\nEğer cihazınızda kök erişimi sağlanmadıysa bu yaşanabilir. Ayrıntılı bilgi ve cihazınızda nasıl kök erişimi sağlanacağını öğrenmek için wiki.lineageos.org veya diğer Android web sitelerini ziyaret edebilirsiniz.</string>
-    <string name="welcome_method_pro_logo">Pro</string>
-    <string name="welcome_method_con_logo">Con</string>
+    <string name="welcome_root_missing_title">Root’lu Android gerekli</string>
+    <string name="welcome_root_missile_description">Ya su ikili dosyası bulunamadı ya da AdAway’e root izni vermediniz.\n\nBu durum, cihazınızda root yoksa yaşanabilir. Cihazınıza nasıl root atılacağına dair bilgileri wiki.lineageos.org adresinde veya diğer Android sitelerinde bulabilirsiniz.</string>
+    <string name="welcome_vpn_alwayson_title">Her zaman açık VPN etkin</string>
+    <string name="welcome_vpn_alwayson_description">AdAway, başka bir VPN’de “Her zaman açık VPN” ayarının etkin olduğunu algıladı.\n\nBu durum AdAway’in VPN erişimi istemesini engeller. Lütfen ilgili VPN’de “Her zaman açık VPN” ayarını devre dışı bırakın ve yeniden deneyin.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway VPN erişimi isteyemedi.\n\nBunun nedeni, başka bir VPN’de “Her zaman açık VPN” ayarının etkin olması olabilir. Lütfen bu ayarın herhangi bir VPN’de açık olup olmadığını denetleyin ve yeniden denemeden önce kapatın.</string>
+    <string name="welcome_vpn_alwayson_settings_action">“VPN” ayarlarını aç</string>
+    <string name="welcome_method_pro_logo">Avantaj</string>
+    <string name="welcome_method_con_logo">Dezavantaj</string>
     <string name="welcome_sync_header">Eşitleniyor</string>
     <string name="welcome_synced_header">Eşitlendi!</string>
-    <string name="welcome_sync_summary">AdAway, çevrimiçi kaynaklardan engellemek için reklam ağlarını indirir. Bunları daha sonra ayarlardan özelleştirebilirsiniz.</string>
-    <string name="welcome_sync_retry_logo">Eşitlemeyi tekrar dene</string>
-    <string name="welcome_sync_error">%1$ssenkronize edilemedi. Tekrar denensin mi?</string>
-    <string name="welcome_sync_notifications">Reklam bloğu durumunu ve kontrolünü görüntülemek ve mevcut uygulama güncellemesi hakkında bilgi vermek için (yılda birkaç kez) bildirimler gönderebilir. Güncel kalmak istiyorsanız bunları etkinleştirin.</string>
-    <string name="welcome_sync_leave_early_title">Senkronizasyon henüz tamamlanmadı</string>
-    <string name="welcome_sync_leave_early_message">Engelleme listelerinin indirilmesi henüz tamamlanmadı. Şimdi devam edebilirsiniz, arka planda devam edecektir, ya da tamamlanana kadar burada bekleyebilirsiniz.</string>
+    <string name="welcome_sync_summary">AdAway, engellenecek reklam ağlarını çevrimiçi kaynaklardan indirir. Bunları daha sonra tercihlerden özelleştirebilirsiniz.</string>
+    <string name="welcome_sync_retry_logo">Eşitlemeyi yeniden dene</string>
+    <string name="welcome_sync_error">Eşitleme başarısız oldu: %1$s. Şimdi yeniden denensin mi?</string>
+    <string name="welcome_sync_notifications">AdAway, reklam engelleme durumunu göstermek ve denetlemek, ayrıca uygulama güncellemelerinden haberdar etmek (yılda birkaç kez) için bildirim gönderebilir. Güncel kalmak istiyorsanız bildirimleri etkinleştirin.</string>
+    <string name="welcome_sync_leave_early_title">Eşitleme henüz bitmedi</string>
+    <string name="welcome_sync_leave_early_message">Engelleme listelerinin indirilmesi henüz bitmedi. Şimdi devam edebilirsiniz, indirme arka planda sürer. İsterseniz bitene kadar burada bekleyebilirsiniz.</string>
     <string name="welcome_sync_leave_early_wait">Bekle</string>
     <string name="welcome_sync_leave_early_continue">Yine de devam et</string>
+    <string name="welcome_battery_header">Arka planda da korunun</string>
+    <string name="welcome_battery_summary">Android, güç tasarrufu için AdAway’in VPN’ini arka planda duraklatabilir; bu da reklam engellemeyi fark ettirmeden durdurabilir. AdAway’in çalışmaya devam etmesi için pil optimizasyonunu yok saymasına izin verin.</string>
+    <string name="welcome_battery_action">İzin ver</string>
+    <string name="welcome_battery_granted">İzin verildi ✓</string>
+    <string name="welcome_battery_footnote_prefix">Bunu daha sonra her zaman şuradan değiştirebilirsiniz</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android Ayarları</item>
+        <item>Uygulamalar</item>
+        <item>AdAway</item>
+        <item>Pil</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Bir şey daha: telefonunuzun kendi pil yöneticisi</string>
+    <string name="welcome_oem_battery_summary">Bazı telefon markalarının AdAway’i de engelleyebilen kendi pil yöneticisi vardır. Telefonunuzda şunlara bakın:</string>
+    <string name="welcome_oem_battery_action">Uygulama bilgilerini aç</string>
+    <string name="welcome_oem_battery_open_failed">Uygulama bilgileri ekranı açılamadı. Android Ayarları › Uygulamalar › AdAway yolundan elle açın.</string>
+    <string name="welcome_oem_battery_disclaimer">Bunlar kesin bir kılavuz değil, genel ipuçlarıdır: ifadeler ve konum, telefon modeline ve Android sürümüne göre değişebilir.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Uygulama bilgileri</item>
+        <item>Pil</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">“Arka planda kullanım sınırları” › “Uyumayan uygulamalar” gibi bir seçenek arayın, ardından AdAway’i bu listeye ekleyin.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Ayrıca “Otomatik optimizasyon” ayarına bakın ve varsa “Gerektiğinde yeniden başlat” seçeneğini kapatın.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Uygulama bilgileri</item>
+        <item>Pil tasarrufu</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">“Kısıtlama yok” seçeneğini seçin.</string>
+    <string name="welcome_oem_battery_secondary_miui">Ayrıca “Otomatik başlatma” seçeneğini etkinleştirin (yeni sürümlerde “Arka planda otomatik başlatma”).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Uygulama bilgileri</item>
+        <item>Pil kullanımı</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">“Arka plan etkinliğine izin ver” seçeneğini seçin (bazen “Kısıtlama yok” olarak görünür).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Ayrıca AdAway için “Otomatik başlatma” anahtarını arayın (genellikle Ayarlar › Uygulamalar altında). Böylece zorla durdurulduktan sonra kendini yeniden başlatabilir.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Uygulama bilgileri</item>
+        <item>Pil</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">“Uygulama başlatma” seçeneğini bulun, “Otomatik yönet” seçeneğini kapatın, ardından 3 seçeneğin tümünü etkinleştirin: “Otomatik başlatma”, “İkincil başlatma” ve “Arka planda çalıştır”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Ayrıca AdAway’i Son uygulamalar ekranında kilitleyin (kartını, bir asma kilit simgesi görünene kadar aşağı kaydırın).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Uygulama bilgileri</item>
+        <item>Pil kullanımı</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Arka plan güç seçeneğini bulun ve “Arka plan güç kullanımını kısıtlama” seçeneğini seçin (“Akıllı kontrol” değil).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Ayrıca AdAway için “Otomatik başlatma” ayarını arayın; genellikle Ayarlar › Uygulamalar altındadır.</string>
+    <string name="welcome_oem_battery_label_generic">Diğer markalar</string>
+    <string name="welcome_oem_battery_tip_generic">Uygulama bilgilerinde pil veya arka plan etkinliği ayarını arayın ve AdAway’in kısıtlanmadığından emin olun.</string>
     <string name="welcome_back_button">Geri</string>
     <string name="welcome_next_button">İleri</string>
-    <string name="welcome_finish_button">Tamamlandı</string>
-    <string name="tv_welcome_intro_subtitle">Bu kısa sihirbaz, bu cihazda reklam engellemeyi açacak.</string>
-    <string name="tv_welcome_start_button">Başla</string>
+    <string name="welcome_finish_button">Bitir</string>
+    <string name="tv_welcome_intro_subtitle">Bu kısa sihirbaz, bu cihazda reklam engellemeyi açar.</string>
+    <string name="tv_welcome_start_button">Başlayın</string>
     <string name="tv_welcome_method_header">Engelleme yönteminizi seçin</string>
     <string name="tv_welcome_method_root_button">Root kullan</string>
-    <string name="tv_welcome_method_root_body">Daha hızlı ve pil dostu. Root\'lu bir cihaz gerektirir.</string>
+    <string name="tv_welcome_method_root_body">Daha hızlı ve pil dostu. Root’lu bir cihaz gerektirir.</string>
     <string name="tv_welcome_method_vpn_button">VPN kullan</string>
-    <string name="tv_welcome_method_vpn_body">Root olmadan çalışır, herhangi bir Android TV cihazıyla uyumludur.</string>
-    <string name="tv_welcome_activate_header">Reklam engellemeyi aç</string>
-    <string name="tv_welcome_activate_body">Bu yerel bir VPN\'dir: trafiğinizi harici bir sunucudan geçirmeden, reklamları doğrudan bu cihazda filtreler.</string>
+    <string name="tv_welcome_method_vpn_body">Root gerektirmeden çalışır, her Android TV cihazıyla uyumludur.</string>
+    <string name="tv_welcome_activate_header">Reklam engellemeyi açın</string>
+    <string name="tv_welcome_activate_body">Bu yerel bir VPN’dir: trafiğinizi dış bir sunucudan geçirmeden bu cihazdaki reklamları filtreler.</string>
 </resources>

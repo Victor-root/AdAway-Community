@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Guiden första steget</string>
-    <string name="welcome_second_step">Guiden andra steget</string>
+    <string name="welcome_first_step">Guidens första steg</string>
+    <string name="welcome_second_step">Guidens andra steg</string>
+    <string name="welcome_third_step">Guidens tredje steg</string>
+    <string name="welcome_fourth_step">Guidens fjärde steg</string>
     <string name="welcome_method_header">Välkommen till AdAway!</string>
-    <string name="welcome_method_summary">AdAway tillhandahåller två annonsblockeringsmetoder. Välj den du gillar:</string>
-    <string name="welcome_root_method_title">Root-baserad\nannonsblockering</string>
+    <string name="welcome_method_summary">AdAway erbjuder två metoder för annonsblockering. Välj den du föredrar:</string>
+    <string name="welcome_root_method_title">Rootbaserad\nannonsblockering</string>
     <string name="welcome_root_method_text1">Snabbare</string>
-    <string name="welcome_root_method_text2">Batterivänlig</string>
+    <string name="welcome_root_method_text2">Skonsam mot batteriet</string>
     <string name="welcome_root_method_text3">Root krävs</string>
     <string name="welcome_vpn_method_title">VPN-baserad\nannonsblockering</string>
     <string name="welcome_vpn_method_text1">Långsammare</string>
-    <string name="welcome_vpn_method_text2">Kör i bakgrunden</string>
+    <string name="welcome_vpn_method_text2">Körs i bakgrunden</string>
     <string name="welcome_vpn_method_text3">Kompatibilitet</string>
     <string name="welcome_root_missing_title">Rootad Android krävs</string>
-    <string name="welcome_root_missile_description">Antingen så kunde binärfilen för su inte hittas eller så tillät du inte root-åtkomst för AdAway.\n\nDetta kan hända när din enhet inte är rootad. Du kan hitta mer information om hur du rootar din enhet på wiki.lineageos.org eller andra Android-webbplatser.</string>
-    <string name="welcome_method_pro_logo">Pro</string>
-    <string name="welcome_method_con_logo">Con</string>
+    <string name="welcome_root_missile_description">Antingen hittades inte su-binären eller så gav du inte AdAway root-behörighet.\n\nDet kan hända om enheten inte är rootad. Du hittar information om hur man rootar en enhet på wiki.lineageos.org eller andra Android-webbplatser.</string>
+    <string name="welcome_vpn_alwayson_title">Always-on VPN är aktiverat</string>
+    <string name="welcome_vpn_alwayson_description">AdAway upptäckte att ett annat VPN har inställningen ”Always-on VPN” aktiv.\n\nDet hindrar AdAway från att begära VPN-åtkomst. Inaktivera ”Always-on VPN” för det andra VPN:et och försök igen.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway kunde inte begära VPN-åtkomst.\n\nDet kan bero på att ett annat VPN har inställningen ”Always-on VPN” aktiv. Kontrollera om något VPN har den inställningen aktiverad och inaktivera den innan du försöker igen.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Öppna inställningarna för ”VPN”</string>
+    <string name="welcome_method_pro_logo">Plus</string>
+    <string name="welcome_method_con_logo">Minus</string>
     <string name="welcome_sync_header">Synkroniserar</string>
-    <string name="welcome_synced_header">Synkroniserad!</string>
-    <string name="welcome_sync_summary">AdAway laddar ner annonsnätverk att blockera från online-källor. Du kan anpassa dem senare i inställningarna.</string>
+    <string name="welcome_synced_header">Synkroniserat!</string>
+    <string name="welcome_sync_summary">AdAway laddar ned annonsnätverk att blockera från källor på nätet. Du kan anpassa dem senare i inställningarna.</string>
     <string name="welcome_sync_retry_logo">Försök synkronisera igen</string>
-    <string name="welcome_sync_error">Det gick inte att synkronisera: %1$s Försöka igen?</string>
-    <string name="welcome_back_button">Bakåt</string>
+    <string name="welcome_sync_error">Det gick inte att synkronisera: %1$s Försöka igen nu?</string>
+    <string name="welcome_sync_notifications">Appen kan skicka aviseringar som visar status för annonsblockeringen och låter dig styra den, och som meddelar när en appuppdatering finns (några per år). Aktivera dem om du vill hålla dig uppdaterad.</string>
+    <string name="welcome_sync_leave_early_title">Synkroniseringen är inte klar</string>
+    <string name="welcome_sync_leave_early_message">Blockeringslistorna har inte laddats ned färdigt. Du kan fortsätta nu, så pågår nedladdningen i bakgrunden, eller vänta här tills den är klar.</string>
+    <string name="welcome_sync_leave_early_wait">Vänta</string>
+    <string name="welcome_sync_leave_early_continue">Fortsätt ändå</string>
+    <string name="welcome_battery_header">Ha skyddet igång i bakgrunden</string>
+    <string name="welcome_battery_summary">Android kan pausa AdAways VPN i bakgrunden för att spara ström, vilket kan stoppa annonsblockeringen utan att du märker det. Låt AdAway bortse från batterioptimering så att det fortsätter att köras.</string>
+    <string name="welcome_battery_action">Tillåt</string>
+    <string name="welcome_battery_granted">Tillåtet ✓</string>
+    <string name="welcome_battery_footnote_prefix">Du kan alltid ändra detta senare under</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android-inställningar</item>
+        <item>Appar</item>
+        <item>AdAway</item>
+        <item>Batteri</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">En sak till: telefonens egen batterihanterare</string>
+    <string name="welcome_oem_battery_summary">Vissa telefonmärken har en egen batterihanterare som också kan stoppa AdAway. Så här kontrollerar du på din:</string>
+    <string name="welcome_oem_battery_action">Öppna appinfo</string>
+    <string name="welcome_oem_battery_open_failed">Det gick inte att öppna appinfo. Öppna den manuellt via Android-inställningar › Appar › AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Det här är allmänna tips och ingen exakt guide: formuleringar och placering kan variera mellan telefonmodeller och Android-versioner.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Appinfo</item>
+        <item>Batteri</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Leta efter något i stil med ”Begränsningar för bakgrundsanvändning” › ”Appar som aldrig försätts i viloläge” och lägg till AdAway i den listan.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Kontrollera också om det finns en inställning för ”Automatisk optimering” och stäng i så fall av ”Starta om vid behov”.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Appinfo</item>
+        <item>Batterisparläge</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Välj ”Inga begränsningar”.</string>
+    <string name="welcome_oem_battery_secondary_miui">Aktivera också ”Autostart” (”Autostart i bakgrunden” i nyare versioner).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Appinfo</item>
+        <item>Batterianvändning</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Välj ”Tillåt bakgrundsaktivitet” (visas ibland som ”Inga begränsningar”).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Leta också efter ett reglage för ”Automatisk start” för AdAway (ofta under Inställningar › Appar), så att appen kan starta om sig själv efter att ha tvingats avsluta.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Appinfo</item>
+        <item>Batteri</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Leta efter ”Appstart”, stäng av ”Hantera automatiskt” och aktivera sedan alla tre: ”Autostart”, ”Sekundär start” och ”Kör i bakgrunden”.</string>
+    <string name="welcome_oem_battery_secondary_emui">Lås också AdAway i listan över senaste appar (dra nedåt på appens kort tills ett hänglås visas).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Appinfo</item>
+        <item>Batterianvändning</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Leta efter ett alternativ för strömanvändning i bakgrunden och välj ”Begränsa inte strömanvändning i bakgrunden” (inte ”Smart kontroll”).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Leta också efter en inställning för ”Autostart” för AdAway, ofta under Inställningar › Appar.</string>
+    <string name="welcome_oem_battery_label_generic">Annat märke</string>
+    <string name="welcome_oem_battery_tip_generic">Leta i appinfo efter en inställning för batteri eller bakgrundsaktivitet och se till att AdAway inte är begränsat.</string>
+    <string name="welcome_back_button">Tillbaka</string>
     <string name="welcome_next_button">Nästa</string>
-    <string name="welcome_finish_button">Avsluta</string>
-    <string name="tv_welcome_intro_subtitle">Den här korta guiden slår på annonsblockering på den här enheten.</string>
+    <string name="welcome_finish_button">Slutför</string>
+    <string name="tv_welcome_intro_subtitle">Den här korta guiden slår på annonsblockeringen på den här enheten.</string>
     <string name="tv_welcome_start_button">Kom igång</string>
-    <string name="tv_welcome_method_header">Välj din blockeringsmetod</string>
+    <string name="tv_welcome_method_header">Välj blockeringsmetod</string>
     <string name="tv_welcome_method_root_button">Använd root</string>
-    <string name="tv_welcome_method_root_body">Snabbare och batterivänligt. Kräver en rootad enhet.</string>
+    <string name="tv_welcome_method_root_body">Snabbare och skonsamt mot batteriet. Kräver en rootad enhet.</string>
     <string name="tv_welcome_method_vpn_button">Använd VPN</string>
-    <string name="tv_welcome_method_vpn_body">Fungerar utan root, kompatibel med alla Android TV-enheter.</string>
-    <string name="tv_welcome_activate_header">Slå på annonsblockering</string>
-    <string name="tv_welcome_activate_body">Det är en lokal VPN: den filtrerar annonser på själva enheten, utan att skicka din trafik via en extern server.</string>
+    <string name="tv_welcome_method_vpn_body">Fungerar utan root och är kompatibelt med alla Android TV-enheter.</string>
+    <string name="tv_welcome_activate_header">Slå på annonsblockeringen</string>
+    <string name="tv_welcome_activate_body">Det är ett lokalt VPN: det filtrerar annonser på den här enheten utan att din trafik skickas via en extern server.</string>
 </resources>

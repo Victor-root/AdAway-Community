@@ -6,79 +6,104 @@
     <string-array name="pref_dark_theme_modes">
         <item>Claro</item>
         <item>Escuro</item>
-        <item>Pré-definição do sistema</item>
+        <item>Predefinição do sistema</item>
     </string-array>
     <string name="pref_update_configuration">Atualizações automáticas</string>
+    <string name="pref_language">Idioma</string>
+    <string name="pref_language_system">Idioma do sistema</string>
     <string name="pref_ad_block_category">Bloqueio de anúncios</string>
-    <string name="pref_root_ad_blocker_configuration">Bloqueador de anúncios baseado em acesso root</string>
-    <string name="pref_vpn_ad_blocker_configuration">Bloqueador de anúncios baseado em VPN</string>
-    <string name="pref_enable_ipv6">Ativar IPv6</string>
-    <string name="pref_backup_restore">Guardar cópia de segurança / restaurar regras de bloqueio</string>
-    <string name="pref_backup_restore_title">Backup e restauro</string>
-    <string name="pref_backup">Backup</string>
-    <string name="pref_backup_summary">Fazer backup para armazenamento externo das regras de bloqueio</string>
+    <string name="pref_root_ad_blocker_configuration">Bloqueador de anúncios com root</string>
+    <string name="pref_vpn_ad_blocker_configuration">Bloqueador de anúncios por VPN</string>
+    <string name="pref_enable_ipv6">Ativar o suporte para IPv6</string>
+    <string name="pref_backup_restore">Cópia de segurança e restauro das regras de bloqueio</string>
+    <string name="pref_backup_restore_title">Cópia de segurança e restauro</string>
+    <string name="pref_backup">Cópia de segurança</string>
+    <string name="pref_backup_summary">Guarde as suas regras de bloqueio no armazenamento externo</string>
     <string name="pref_restore">Restaurar</string>
-    <string name="pref_restore_summary">Restaurar regras de bloqueio do ficheiro de backup</string>
-    <string name="import_success">Cópia de segurança importada com sucesso do seu armazenamento externo.</string>
-    <string name="export_success">Cópia de segurança exportada com sucesso para o ficheiro \'%s\' no seu armazenamento externo.</string>
-    <string name="export_failed">Não foi possível exportar o ficheiro da cópia de segurança \'%s\'. </string>
+    <string name="pref_restore_summary">Restaure as suas regras de bloqueio a partir de um ficheiro de cópia de segurança</string>
+    <string name="import_success">A cópia de segurança foi importada com êxito do armazenamento externo.</string>
+    <string name="import_failed">Não foi possível importar a cópia de segurança. O formato está correto?</string>
+    <string name="export_success">A cópia de segurança foi exportada com êxito para o ficheiro «%s» no armazenamento externo.</string>
+    <string name="export_failed">Não foi possível exportar o ficheiro de cópia de segurança «%s».</string>
     <string name="pref_update_title">Atualizações</string>
     <string name="pref_update_enable_notifications">As notificações estão desativadas</string>
-    <string name="pref_update_enable_notifications_summary">As notificações da aplicação não serão exibidas. Toca aqui para ativá-las.</string>
+    <string name="pref_update_enable_notifications_summary">As notificações da aplicação não serão apresentadas. Toque para as ativar.</string>
     <string name="pref_update_app_category">Atualizações da aplicação</string>
-    <string name="pref_update_check_app_startup">Verificar atualizações ao iniciar</string>
-    <string name="pref_update_check_app_daily">Verificar atualizações diariamente</string>
-    <string name="pref_update_check_now">Verificar agora</string>
+    <string name="pref_update_check_app_startup">Procurar atualizações ao iniciar</string>
+    <string name="pref_update_check_app_daily">Procurar atualizações periodicamente</string>
+    <string name="pref_update_check_now">Procurar agora</string>
     <string name="pref_update_install">Atualizar agora</string>
-    <string name="pref_update_hosts_category">Atualização de hosts</string>
-    <string name="pref_update_check">Verificar atualizações ao iniciar</string>
-    <string name="pref_update_check_hosts_daily">Verificar atualizações periodicamente</string>
+    <string name="pref_update_hosts_category">Atualizações de hosts</string>
+    <string name="pref_update_check">Procurar atualizações ao iniciar</string>
+    <string name="pref_update_check_hosts_daily">Procurar atualizações periodicamente</string>
     <string name="pref_update_sync_on_update">Sincronizar ao atualizar</string>
-    <string name="pref_update_sync_unmetered_only">Sincronizar apenas em redes sem limites de tráfego</string>
-    <string name="pref_vpn_service_on_boot">Ativar ao iniciar</string>
-    <string name="pref_vpn_service_monitor">Monitorizar conexão</string>
-    <string name="pref_vpn_service_monitor_description">Verificar periodicamente o estado da rede para reiniciar a VPN em cao de desconexão.</string>
+    <string name="pref_update_sync_unmetered_only">Sincronizar apenas em redes sem tráfego limitado</string>
+    <string name="pref_vpn_service_on_boot">Ativar no arranque</string>
+    <string name="pref_vpn_service_monitor">Monitorizar a ligação</string>
+    <string name="pref_vpn_service_monitor_description">Verificar periodicamente o estado da rede para reiniciar a VPN se a ligação for perdida.</string>
     <string name="pref_vpn_excluded_apps">Aplicações excluídas</string>
-    <string name="pref_vpn_excluded_apps_description">Configurar quais aplicações não deverão usar a VPN para que nenhuma conexão seja bloqueada.</string>
-    <string name="pref_vpn_exclude_system_apps">Excluir aplicações de sistema</string>
+    <string name="pref_vpn_excluded_apps_description">Configurar as aplicações que não devem utilizar a VPN, para que nenhuma ligação seja bloqueada.</string>
+    <string name="pref_vpn_exclude_system_apps">Excluir aplicações do sistema</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
         <item>Nenhuma</item>
         <item>Todas, exceto navegadores</item>
         <item>Todas</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">Excluir aplicações de utilizador</string>
+    <string name="pref_vpn_dns">Servidores DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Servidores DNS da rede</item>
+        <item>Servidores DNS personalizados</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Servidores DNS personalizados</string>
+    <string name="pref_vpn_dns_custom_summary">Endereços IP, separados por vírgulas</string>
+    <string name="pref_vpn_dns_custom_invalid">Endereço de servidor DNS inválido</string>
+    <string name="pref_vpn_doh">Servidor DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Endereço personalizado</string>
+    <string name="pref_vpn_doh_address">Endereço DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Endereço DNS over HTTPS inválido</string>
+    <string name="pref_vpn_exclude_user_apps">Excluir aplicações do utilizador</string>
     <string name="pref_vpn_exclude_user_apps_activity">Aplicações excluídas</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Selecionar tudo</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">De-selecionar tudo</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Desmarcar tudo</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ícone da aplicação</string>
     <string name="pref_vpn_reset">Repor VPN</string>
-    <string name="pref_vpn_reset_description">Reconstruir a ligação VPN de raiz. Utilize esta opção se a VPN deixar de funcionar (sem acesso à Internet ou erros de DNS).</string>
+    <string name="pref_vpn_reset_description">Reconstruir a ligação VPN de raiz. Utilize esta opção se a VPN deixar de funcionar (sem acesso à Internet ou com erros de DNS).</string>
     <string name="pref_vpn_reset_done">Ligação VPN reconstruída.</string>
     <string name="pref_vpn_reset_not_running">A VPN não está em execução.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Gravar registo de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Ative esta opção antes de reproduzir um problema e exporte depois o registo mais abaixo. Pode abrandar ligeiramente os dispositivos mais antigos. Regista apenas eventos técnicos da VPN, nunca o histórico de navegação nem dados pessoais.</string>
     <string name="pref_vpn_diagnostic_log">Registo de diagnóstico</string>
-    <string name="pref_vpn_diagnostic_log_description">Veja, copie ou partilhe os erros recentes e eventos da VPN. Útil ao comunicar um problema.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Ainda não foi registado nenhum evento.</string>
-    <string name="pref_vpn_diagnostic_log_share">Partilhar registo de diagnóstico</string>
+    <string name="pref_vpn_diagnostic_log_description">Ver, copiar ou partilhar os erros e os eventos recentes da VPN. Útil para comunicar um problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Ainda não foi registado nenhum evento. Ative a opção «Gravar registo de diagnóstico» acima e tente reproduzir o problema.</string>
+    <string name="pref_vpn_diagnostic_log_share">Partilhar</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Partilhar registo de diagnóstico</string>
     <string name="pref_vpn_diagnostic_log_copy">Copiar</string>
     <string name="pref_vpn_diagnostic_log_copied">Registo de diagnóstico copiado para a área de transferência.</string>
     <string name="pref_vpn_diagnostic_log_clear">Limpar registo de diagnóstico</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Elimine os eventos registados. Faça isto antes de reproduzir um problema para obter um rasto limpo.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Eliminar os eventos registados. Faça-o antes de reproduzir um problema para obter um registo limpo.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Registo de diagnóstico limpo.</string>
-    <string name="pref_root_open_hosts">Abrir ficheiro de hosts</string>
-    <string name="pref_hosts_redirection_summary">Definir para onde redirecionar hosts bloqueados</string>
-    <string name="pref_redirection_ipv4">Configurar redirecionamento de IPv4</string>
-    <string name="pref_redirection_ipv6">Configurar redirecionamento de IPv6</string>
+    <string name="pref_root_open_hosts">Abrir ficheiro hosts</string>
+    <string name="hosts_file_unreadable">Não foi possível ler o ficheiro hosts.</string>
+    <string name="pref_hosts_redirection_summary">Definir para onde redirecionar os anfitriões bloqueados</string>
+    <string name="pref_redirection_ipv4">Configurar o redirecionamento IPv4</string>
+    <string name="pref_redirection_ipv6">Configurar o redirecionamento IPv6</string>
     <string name="pref_redirection_invalid">Redirecionamento inválido</string>
-    <string name="pref_webserver_summary">O servidor web local escuta os endereços IP locais para responder a pedidos de hostnames bloqueados. Isto poderá ajudar com o congelamento de aplicações com conexões bloqueadas.</string>
-    <string name="pref_webserver_enabled">Ativar servidor web</string>
-    <string name="pref_webserver_test">Testar servidor web</string>
-    <string name="pref_webserver_certificate">Instalar certificado auto-assinado</string>
+    <string name="pref_webserver_summary">O servidor Web local escuta nos endereços IP locais para responder aos pedidos dos nomes de anfitrião bloqueados. Pode ajudar a evitar que as aplicações encravem quando uma ligação é bloqueada.</string>
+    <string name="pref_webserver_enabled">Ativar servidor Web</string>
+    <string name="pref_webserver_test">Testar servidor Web</string>
+    <string name="pref_webserver_certificate">Instalar certificado autoassinado</string>
     <string name="pref_webserver_state_not_running">Não está em execução</string>
     <string name="pref_webserver_state_checking">A verificar…</string>
     <string name="pref_webserver_state_running_not_installed">Em execução, mas o certificado não está instalado</string>
-    <string name="pref_webserver_state_running_and_installed">Em execução, com certificado instalado</string>
-    <string name="pref_webserver_certificate_dialog_title">Instalação manual de certificado</string>
-    <string name="pref_webserver_certificate_dialog_content">A partir do Android 11 (R), a aplicação não pode instalar automaticamente a autoridade de certificação (CA).\n\nVai às configurações de \"Segurança\", \"Encriptação e credenciais\" e, de seguida, \"Instalar um certificado\". A partir daí, escolhe \"Certificado CA\" e seleciona o ficheiro de certificado recém-exportado.</string>
-    <string name="pref_webserver_certificate_dialog_action">Abre as configurações de \"Segurança\"</string>
-    <string name="pref_webserver_icon">Substituir espaço vazio do anúncio pelo ícone da aplicação</string>
+    <string name="pref_webserver_state_running_and_installed">Em execução e com o certificado instalado</string>
+    <string name="pref_webserver_certificate_dialog_title">Instalação manual do certificado</string>
+    <string name="pref_webserver_certificate_dialog_content">A partir do Android 11 (R), as aplicações já não podem instalar automaticamente uma autoridade de certificação (AC).\n\nVá às definições de «Segurança», depois a «Encriptação e credenciais» e a «Instalar um certificado». Aí, escolha «Certificado de CA» e selecione o ficheiro de certificado que acabou de exportar.</string>
+    <string name="pref_webserver_certificate_dialog_action">Abrir definições de «Segurança»</string>
+    <string name="pref_webserver_certificate_failed">Não foi possível preparar o certificado.</string>
+    <string name="webserver_error_title">Servidor Web não iniciado</string>
+    <string name="webserver_error_resources">Não foi possível preparar os respetivos ficheiros ou o certificado.</string>
+    <string name="webserver_error_address_in_use">Outra aplicação já utiliza as portas Web (80 e 443) do dispositivo.</string>
+    <string name="webserver_error_start_failed">Não foi possível iniciar neste dispositivo.</string>
+    <string name="pref_webserver_icon">Substituir o espaço publicitário em branco pelo ícone da aplicação</string>
 </resources>

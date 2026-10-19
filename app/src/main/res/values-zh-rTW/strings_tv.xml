@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tv_dialog_add_to_allowed">加入允許清單</string>
-    <string name="tv_dialog_add_to_blocked">加入阻擋清單</string>
+    <string name="tv_dialog_add_to_blocked">加入封鎖清單</string>
     <string name="tv_dialog_remove_from_allowed">從允許清單移除</string>
-    <string name="tv_dialog_remove_from_blocked">從阻擋清單移除</string>
-    <string name="tv_dialog_copy_hostname">複製網域</string>
+    <string name="tv_dialog_remove_from_blocked">從封鎖清單移除</string>
+    <string name="tv_dialog_copy_hostname">複製主機名稱</string>
     <string name="tv_log_entry_status_description">網域狀態</string>
     <string name="tv_button_theme_light">淺色模式</string>
     <string name="tv_button_theme_dark">深色模式</string>
-    <string name="tv_lists_empty">此清單中尚無項目。</string>
+    <string name="tv_lists_empty">這個清單中尚無項目。</string>
     <string name="tv_dialog_search">搜尋</string>
 </resources>

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Stänga av/sätt på logginspelning</string>
-    <string name="log_start_recording">Tryck på spela in för att börja logga förfrågningar, surfa på webben eller använd appar, gå sedan tillbaka eller svep för att uppdatera loggarna.</string>
-    <string name="log_blocked_requests_ignored">\n\nBlockerade förfrågningar kommer inte att loggas. Inaktivera annonsblockering först om du också vill logga dem.</string>
-    <string name="log_sort">Sortera domänerna</string>
+    <string name="log_toggle_recording_description">Slå på/av loggning</string>
+    <string name="log_start_recording">Tryck på inspelningsknappen för att börja logga förfrågningar, surfa på webben eller använd appar. Gå sedan tillbaka eller svep för att uppdatera loggarna.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlockerade förfrågningar loggas inte. Inaktivera annonsblockeringen först om du vill logga dem också.</string>
+    <string name="log_sort">Sortera domäner</string>
     <string name="log_clear">Rensa loggen</string>
     <string name="log_sort_alphabetical">Alfabetisk sortering</string>
-    <string name="log_sort_top_level_domain">Toppleveldomän</string>
-    <string name="log_block">Lägg till post till svartlistan</string>
-    <string name="log_allow">Lägg till post till vitlistan</string>
-    <string name="log_redirect">Lägg till post till omdirigeringslista</string>
+    <string name="log_sort_top_level_domain">Sortering efter toppdomän</string>
+    <string name="log_block">Lägg till post i svartlistan</string>
+    <string name="log_allow">Lägg till post i vitlistan</string>
+    <string name="log_redirect">Lägg till post i omdirigeringslistan</string>
     <string name="log_redirect_dialog_title">Omdirigera domän</string>
-    <string name="log_start_recording_button">Börja spela in</string>
-    <string name="log_start_recording_vpn_inactive">Börja spela in (VPN inte aktivt)</string>
-    <string name="log_stop_recording">Sluta spela in</string>
+    <string name="log_capture_failed">Det gick inte att starta DNS-inspelningen.</string>
+    <string name="log_start_recording_button">Starta inspelning</string>
+    <string name="log_start_recording_vpn_inactive">Starta inspelning (VPN inte aktivt)</string>
+    <string name="log_stop_recording">Stoppa inspelning</string>
 </resources>

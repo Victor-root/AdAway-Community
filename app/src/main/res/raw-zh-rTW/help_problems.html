@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>在 Android 9+ 上複製 hosts 檔案失敗</h2>
-<p>新版的 Android 使用唯讀的 <code>/system</code> 分割區<br>。
-如果您使用 Magisk 作為 root 解決方案，請確保啟用無系統 hosts 模組，然後重新啟動手機。</p>
+<h2>VPN 自己關閉了</h2>
+<p>這幾乎都是系統為了省電而終止 VPN 服務，而不是應用程式當機。在電源管理較積極的各家手機廠商 ROM 上很常見（ColorOS/Oppo、MIUI/Xiaomi、EMUI/Huawei、OneUI/Samsung 等）。</p>
+<p>請在 Android 設定中找到 AdAway，然後進行下列調整：將<cite>電池最佳化</cite>設為<cite>不受限制</cite>（或<cite>不要最佳化</cite>）；如果你的 ROM 有<cite>自動啟動</cite>或<cite>自動執行</cite>選項，請予以允許；並在最近使用的應用程式清單中鎖定 AdAway，避免被滑掉。另外也請確認 AdAway 的 VPN 偏好設定中已開啟<cite>開機時啟用</cite>。</p>
 
-<h2>分割區空間不足</h2>
-<p>嘗試在偏好設定中將目標 hosts 檔案更改為 <code>/data/data/hosts</code>（或 <code>/data/hosts</code>），然後再次應用 AdAway。</p>
+<h2>在 Wi-Fi 和行動數據之間切換後，無法上網或網速變慢</h2>
+<p>當使用中的網路改變時，通道必須重新建立，DNS 才會改由新的網路解析。如果瀏覽狀況持續異常，請開啟<cite>偏好設定 › VPN 模式廣告封鎖器 › 重設 VPN</cite>，從頭重新建立連線。如果問題一再發生，請擷取診斷記錄（見下方）並回報。</p>
+
+<h2>如何匯出診斷記錄？</h2>
+<p>開啟<cite>偏好設定 › VPN 模式廣告封鎖器 › 診斷記錄</cite>。它會記錄近期的錯誤與 VPN 事件（網路切換、重新連線、失敗），不會記錄你的瀏覽記錄，只有技術事件。在你開啟正上方的<cite>啟用診斷記錄</cite>之前，記錄會一直是空的。回報問題時，請用<cite>複製</cite>或<cite>分享</cite>來傳送記錄。小提醒：請先<cite>清除</cite>記錄，再重現問題，這樣記錄會更精準。</p>
 
 <h2>Chrome 仍然顯示廣告</h2>
-<p>請在 Chrome 設定中停用<cite>lite 模式</cite>（以前稱為<cite>data saver</cite>）。此功能使 Chrome 可以使用私有 DNS 解決方案，從而繞過 AdAway。</p>
+<p>Chrome 可能會使用自己的<cite>安全 DNS</cite>（DNS over HTTPS），這會繞過 AdAway。請在 Chrome 中開啟<cite>設定 › 隱私權和安全性 › 使用安全 DNS</cite>並將它關閉。任何應用程式的相關設定或系統的<cite>私人 DNS</cite>設定也是一樣。在 VPN 模式下，AdAway 可以自行加密 DNS：請參閱常見問題中的<cite>VPN 使用哪些 DNS 伺服器？</cite></p>
 
-<h2>某個應用程式中未阻擋廣告！</h2>
-<p>某些主機名稱可能在「主機源」所提供的 <cite>hosts 來源</cite>中缺失，或者是應用程式將廣告圖片直接嵌入，因此不需要網路存取。 <br><br>
-您可以透過 AdAway 的記錄 DNS 請求（選單 -&gt; 記錄 DNS 請求）功能，找出還需要被阻擋的額外主機名稱。
-<br><br>透過長按記錄中的項目，將可疑的主機名稱加入您自己的「黑名單」，並在驗證後報告到我們的 <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub 問題追蹤系統</a>。</p>
+<h2>仍有部分廣告出現，或某個應用程式仍顯示廣告</h2>
+<p>你的來源中可能缺少某個主機名稱，或是該應用程式將廣告內建在程式中，因此不會發出任何要求。請在主畫面開啟<cite>DNS 記錄</cite>，查看該應用程式正在查詢什麼，把可疑的主機名稱加入你的<cite>已封鎖</cite>清單，並確認沒有造成其他功能異常。有些應用程式在下載廣告後也會將它們快取，因此在 Android 設定中清除該應用程式的快取也許有幫助。</p>
 
-<h2>已存於快取中的廣告</h2>
-<p>有時，應用程式會在下載後快取廣告，導致某些應用程式內仍然出現廣告。您可以嘗試在 Android 的應用程式清單中刪除這些應用程式的快取，以解決此問題。</p>
+<h2>啟用 AdAway 後，某個應用程式無法使用</h2>
+<p>有些應用程式在它需要的主機名稱遭到封鎖時會拒絕運作。請用<cite>DNS 記錄</cite>找出該應用程式需要哪個主機名稱，將它加入你的<cite>已允許</cite>清單，應用程式應該就能恢復正常。已知會有問題的應用程式列在<a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">這裡</a>。</p>
 
-<h2>某個應用程式失效了！</h2>
-<p>有些應用程式需要與 AdAway 所阻擋的某個主機名稱進行通訊，或者在應該提供廣告的主機名稱無法連接時會拒絕運行。請前往 <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> 查看已知有問題的應用程式清單。或者，找出需要的主機名稱並將其加入<cite>您的</cite><cite>白名單</cite>，然後報告到 <a href="https://github.com/Victor-root/AdAway-Community/issues">AdAway 的問題追蹤系統</a>。</p>
+<h2>套用 hosts 檔案失敗（root 模式）</h2>
+<p>新版 Android 的 <code>/system</code> 分割區是唯讀的，因此 AdAway 無法直接寫入。如果你使用 Magisk，請啟用<cite>systemless hosts</cite>模組，重新開機後再套用一次。如果你沒有使用 root，請改用 VPN 模式，它不需要修改系統。</p>
 
-<h2>無法在 Android 4.4+ 中執行</h2>
-<p>嘗試在偏好設定中更改目標 hosts 檔案的路徑，從 <code>/data/data/hosts</code> 改為 <code>/data/hosts</code> 或 <code>/system/etc/hosts</code>，然後重新套用 AdAway。</p>
-
-<h2>退出功能在瀏覽網頁時是無效的。</h2>
-<p>可在 AdAway 的設定中啟用本地網頁伺服器作為解決辦法。</p>
-
+<h2>還是無法解決？</h2>
+<p>請將問題回報到 <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>，並附上診斷記錄。</p>
 </body>
 </html>

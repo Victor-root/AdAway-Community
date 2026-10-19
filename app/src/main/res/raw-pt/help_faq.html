@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Rendimento com anúncios</h2>
-<p>Existe uma ideia errada muito repetida de que, se um utilizador nunca clicar em anúncios, bloqueá-los não vai prejudicar um site ou aplicação financeiramente. Isto é errado; os programadores também ganham dinheiro apenas por mostrar anúncios. Cabe-lhe a si decidir bloquear anúncios ou não. Pessoalmente, não utilizaria aplicações que mostram anúncios, visto que as acho muito irritantes, portanto, sem um bloqueador de anúncios, não instalaria estas aplicações.</p>
+<h2>O que é o AdAway Community?</h2>
+<p>O AdAway Community é um fork não oficial do AdAway, mantido pela comunidade, o bloqueador de anúncios de código aberto para Android. Bloqueia anúncios e rastreadores em todo o sistema, para todas as aplicações, sem conta e sem anúncios próprios. Este fork dedica-se a manter a aplicação a funcionar de forma fiável nas versões recentes do Android e nas ROM dos fabricantes.</p>
 
-<h2>Como funciona o AdAway?</h2>
-<p>O AdAway usa o <a href="http://en.wikipedia.org/wiki/Hosts_file">ficheiro de hosts</a> para bloquear nomes de hosts que veiculam anúncios. O ficheiro de hosts é um ficheiro encontrado em <code>/system/etc/hosts</code> que mapeia nomes de host para endereços IP.  É uma maneira tradicional de definir pares de nome de host para endereços IP sem depender do DNS (Sistema de Nomes de Domínio). Todos os nomes de host indesejados são redirecionados para <code>127.0.0.1</code>, o que significa que eles irão apontar para o seu próprio dispositivo. <br>
-Se o ficheiro hosts não for gravável, uma solução alternativa é usar o serviço de VPN interno. Ele filtrará as conexões com nomes de host indesejados e permitirá que outros passem.</p>
+<h2>Como bloqueia os anúncios?</h2>
+<p>O AdAway funciona num de dois modos:</p>
+<p><strong>Modo VPN</strong> (não requer root): o AdAway executa no próprio dispositivo uma VPN local, que nunca envia o seu tráfego para lado nenhum. Limita-se a analisar os pedidos DNS e a descartar os que apontam para nomes de anfitrião de anúncios e rastreadores, deixando passar tudo o resto. Nada sai do seu dispositivo.</p>
+<p><strong>Modo root</strong>: se o seu dispositivo tiver root, o AdAway pode, em alternativa, escrever um <a href="http://en.wikipedia.org/wiki/Hosts_file">ficheiro hosts</a> em <code>/system/etc/hosts</code>, associando os nomes de anfitrião indesejados a <code>127.0.0.1</code>, de modo a que sejam resolvidos para o seu próprio dispositivo. Nas versões recentes do Android, é necessário um módulo systemless hosts (por exemplo, o Magisk).</p>
 
-<h2>Porque tenho de reiniciar o Android para as alterações entrarem em efeito?</h2>
-<p>No Android, o Java mantém a sua própria cache interna de DNS. O sistema operativo refletirá o novo ficheiro de hosts imediatamente (verifique com um ping na linha de comandos), mas terá de reiniciar o Android para reconstruir a cache de DNS do Java.</p>
+<h2>Que servidores DNS utiliza a VPN?</h2>
+<p>No modo VPN, os nomes de anfitrião que não são bloqueados são resolvidos pelos servidores DNS que escolher em <cite>Preferências › Bloqueador de anúncios por VPN › Servidores DNS</cite>:</p>
+<p><strong>Servidores DNS da rede</strong> (predefinição): os servidores da sua rede Wi-Fi ou móvel. Se a rede não fornecer nenhum que o AdAway possa utilizar, recorre à Cloudflare (<code>1.1.1.1</code>).<br/><strong>Servidores DNS personalizados</strong>: os endereços IP que introduzir, separados por vírgulas.<br/><strong>DNS over HTTPS</strong>: os pedidos são encriptados e enviados para a Cloudflare, a Google, o Quad9 ou o endereço <code>https://</code> que introduzir, para que a sua rede não os possa ler nem alterar.</p>
+<p>O bloqueio funciona da mesma forma com os três. Para manter o DNS encriptado, utilize aqui o DNS over HTTPS em vez da definição <cite>DNS privado</cite> do Android, que contorna o AdAway.</p>
 
-<h2>Como utilizar o servidor web do AdAway?</h2>
-<p><strong>AdAway também irá funcionar sem utilizar o servidor da Web!</strong>
-<br><br>Pode ativar um servidor da Web local nas preferências do AdAway para responder aos pedidos para o endereço de IP local <code>127.0.0.1</code>. Isto significa que os pedidos das aplicações para os servidores da Web que forem redirecionados para <code>127.0.0.1</code> serão respondidos pelo servidor da Web do AdAway.
-<br>Algumas aplicações recusam-se a funcionar quando os servidores de anúncios não se encontram alcançáveis. Com este método, estes irão estar novamente alcançáveis, respondendo com uma página em branco sem imagens de anúncios.</p>
+<h2>Como bloqueio, permito ou redireciono um nome de anfitrião?</h2>
+<p>No ecrã inicial, gere três listas:</p>
+<p><strong>Bloqueados</strong>: os nomes de anfitrião que devem ser bloqueados (anúncios e rastreadores).<br/><strong>Permitidos</strong>: as exceções que nunca quer bloquear, mesmo que uma fonte as inclua.<br/><strong>Redirecionados</strong>: os nomes de anfitrião que quer encaminhar para um endereço IP específico.</p>
+<p>Também pode abrir o <cite>Registo DNS</cite> no ecrã inicial para ver, em tempo real, que nomes de anfitrião as aplicações estão a consultar e bloqueá-los ou permiti-los diretamente a partir daí.</p>
 
-<h2>Como é que eu posso bloquear/desbloquear nomes de hospedeiro específicos?</h2>
-<p>Adicione os nomes de host que deseja bloquear na lista <cite>Bloqueado</cite> no <cite>ecrã inicial</cite>.  Adicionalmente, os nomes de host que deseja excluir do bloqueio podem ser adicionados ao <cite>Permitido</cite> e os nomes de host que deseja redirecionar para um endereço IP específico pertencem ao <cite>Redirecionado</cite>.</p>
+<h2>Preciso de reiniciar o Android depois de alterar as minhas listas?</h2>
+<p>Não. O AdAway aplica a alteração de imediato, mas uma aplicação que já estivesse aberta pode continuar a utilizar as ligações anteriores e a sua própria cache. Feche-a por completo (Forçar paragem, nas definições do Android para a aplicação) e limpe a respetiva cache se continuarem a aparecer anúncios. Só é necessário reiniciar o Android uma vez no modo root, depois de ativar o módulo systemless hosts do Magisk.</p>
 
-<h2>Onde é que eu encontro mais fontes de hospedeiros?</h2>
-<p>Consulte a <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">lista de fontes de hosts adicionais para o AdAway</a>.</p>
+<h2>Onde posso encontrar mais fontes de hosts?</h2>
+<p>O AdAway já inclui predefinições adequadas. Se quiser mais, consulte a <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">lista de fontes de hosts adicionais</a> mantida pela comunidade. Adicione mais fontes com moderação, porque listas muito grandes ou sobrepostas podem causar falsos positivos que impedem o funcionamento de aplicações.</p>
 
-<h2>Por que este fork existe</h2>
-<p>AdAway é um ótimo projeto com uma longa história, mas a atividade de lançamento e revisão upstream tem sido limitada há algum tempo.<br/>Alguns bugs e pull requests permanecem abertos há muito tempo, incluindo problemas que afetam a estabilidade do modo VPN em versões recentes do Android e ROMs OEM.<br/>Este fork existe para manter o projeto utilizável com correções mantidas pela comunidade, em vez de deixar melhorias testadas sem uso.</p>
+<h2>Porque existe este fork?</h2>
+<p>O AdAway é um excelente projeto, com uma longa história, mas a atividade de versões e de revisão do projeto original tem sido reduzida há algum tempo. Algumas correções de erros e pedidos de integração ficaram abertos durante muito tempo, incluindo problemas que afetam a estabilidade do modo VPN nas versões recentes do Android e nas ROM dos fabricantes. Este fork existe para manter o projeto utilizável com correções mantidas pela comunidade, em vez de deixar melhorias já testadas por aproveitar.</p>
 
-<h2>Ajude a traduzir/relatar erros</h2>
-<p>Por favor, visite <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Como comunico um erro ou sugiro uma alteração?</h2>
+<p>Abra uma ocorrência (issue) no sistema de acompanhamento do fork: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Um registo de diagnóstico (consulte o separador Problemas) ajuda muito ao comunicar problemas de VPN.</p>
 </body>
 </html>

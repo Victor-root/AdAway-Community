@@ -3,11 +3,11 @@
     <string name="tv_dialog_add_to_allowed">Додати до дозволених</string>
     <string name="tv_dialog_add_to_blocked">Додати до заблокованих</string>
     <string name="tv_dialog_remove_from_allowed">Вилучити з дозволених</string>
-    <string name="tv_dialog_remove_from_blocked">Вилучити з заблокованих</string>
-    <string name="tv_dialog_copy_hostname">Копіювати домен</string>
-    <string name="tv_log_entry_status_description">Статус домену</string>
-    <string name="tv_button_theme_light">Світла тема</string>
-    <string name="tv_button_theme_dark">Темна тема</string>
-    <string name="tv_lists_empty">У цьому списку поки немає записів.</string>
+    <string name="tv_dialog_remove_from_blocked">Вилучити із заблокованих</string>
+    <string name="tv_dialog_copy_hostname">Копіювати ім’я хоста</string>
+    <string name="tv_log_entry_status_description">Стан домену</string>
+    <string name="tv_button_theme_light">Світлий режим</string>
+    <string name="tv_button_theme_dark">Темний режим</string>
+    <string name="tv_lists_empty">У цьому списку ще немає записів.</string>
     <string name="tv_dialog_search">Пошук</string>
 </resources>

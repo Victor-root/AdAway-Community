@@ -1,41 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Перший крок</string>
-    <string name="welcome_second_step">Другий крок</string>
+    <string name="welcome_first_step">Перший крок майстра</string>
+    <string name="welcome_second_step">Другий крок майстра</string>
+    <string name="welcome_third_step">Третій крок майстра</string>
+    <string name="welcome_fourth_step">Четвертий крок майстра</string>
     <string name="welcome_method_header">Вітаємо в AdAway!</string>
-    <string name="welcome_method_summary">AdAway надає два способи блокування реклами. Виберіть один:</string>
-    <string name="welcome_root_method_title">Блокування\nчерез рут</string>
-    <string name="welcome_root_method_text1">Швидший</string>
-    <string name="welcome_root_method_text2">Ощадливий до батареї</string>
-    <string name="welcome_root_method_text3">Потрібен рут</string>
-    <string name="welcome_vpn_method_title">Блокування\nчерез VPN</string>
-    <string name="welcome_vpn_method_text1">Повільніший</string>
-    <string name="welcome_vpn_method_text2">Працює в фоні</string>
+    <string name="welcome_method_summary">AdAway пропонує два способи блокування реклами. Виберіть той, що вам до вподоби:</string>
+    <string name="welcome_root_method_title">Блокування реклами\nчерез root</string>
+    <string name="welcome_root_method_text1">Швидше</string>
+    <string name="welcome_root_method_text2">Економить заряд акумулятора</string>
+    <string name="welcome_root_method_text3">Потрібен root</string>
+    <string name="welcome_vpn_method_title">Блокування реклами\nчерез VPN</string>
+    <string name="welcome_vpn_method_text1">Повільніше</string>
+    <string name="welcome_vpn_method_text2">Працює у фоновому режимі</string>
     <string name="welcome_vpn_method_text3">Сумісність</string>
-    <string name="welcome_root_missing_title">Необхідні права суперкористувача (root)</string>
-    <string name="welcome_root_missile_description">Неможливо знайти бінарний файл su, або ви не надали AdAway рут права.\n\nЦе може трапитися, якщо ваш пристрій не рутовано. Ви можете дізнатися, як поставити рут права на ваш пристрій на wiki.lineageos.org або інших сайтах про Android.</string>
-    <string name="welcome_method_pro_logo">Переваги</string>
-    <string name="welcome_method_con_logo">Недоліки</string>
+    <string name="welcome_root_missing_title">Потрібен Android із root-доступом</string>
+    <string name="welcome_root_missile_description">Або не вдалося знайти двійковий файл su, або ви не надали AdAway root-доступ.\n\nТак буває, якщо на пристрої не отримано root-доступ. Як це зробити, можна дізнатися на wiki.lineageos.org або на інших сайтах про Android.</string>
+    <string name="welcome_vpn_alwayson_title">Постійний VPN увімкнено</string>
+    <string name="welcome_vpn_alwayson_description">AdAway виявив, що для іншого VPN активне налаштування «Постійний VPN».\n\nЦе не дає AdAway запитати доступ до VPN. Вимкніть «Постійний VPN» для відповідного VPN і повторіть спробу.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway не вдалося запитати доступ до VPN.\n\nМожливо, для іншого VPN активне налаштування «Постійний VPN». Перевірте, чи є такий VPN, і вимкніть це налаштування, перш ніж повторити спробу.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Відкрити налаштування «VPN»</string>
+    <string name="welcome_method_pro_logo">Плюси</string>
+    <string name="welcome_method_con_logo">Мінуси</string>
     <string name="welcome_sync_header">Синхронізація</string>
     <string name="welcome_synced_header">Синхронізовано!</string>
-    <string name="welcome_sync_summary">AdAway завантажує мережі оголошень, які потрібно блокувати. Ви можете змінити їх в налаштуваннях.</string>
+    <string name="welcome_sync_summary">AdAway завантажує з онлайн-джерел списки рекламних мереж, які потрібно блокувати. Пізніше ви зможете змінити їх у налаштуваннях.</string>
     <string name="welcome_sync_retry_logo">Повторити синхронізацію</string>
-    <string name="welcome_sync_error">Не вдалося синхронізувати:\n %1$s .\n Повторити?</string>
-    <string name="welcome_sync_notifications">Може надсилати сповіщення для відображення стану контролю та блокування реклами , а також сповіщати про доступні оновлення додатку (декілька разів на рік). Увімкніть, якщо хочете бути в курсі подій.</string>
-    <string name="welcome_sync_leave_early_title">Синхронізація ще не завершена</string>
-    <string name="welcome_sync_leave_early_message">Завантаження списків блокування ще не завершено. Ви можете продовжити зараз, і воно триватиме у фоновому режимі, або зачекати тут, доки не завершиться.</string>
+    <string name="welcome_sync_error">Не вдалося синхронізувати: %1$s. Повторити зараз?</string>
+    <string name="welcome_sync_notifications">AdAway може надсилати сповіщення про стан блокування реклами та керування нею, а також про доступні оновлення додатка (кілька разів на рік). Увімкніть їх, якщо хочете завжди мати свіжу версію.</string>
+    <string name="welcome_sync_leave_early_title">Синхронізацію ще не завершено</string>
+    <string name="welcome_sync_leave_early_message">Списки блокування ще не завантажено повністю. Ви можете продовжити зараз, і завантаження триватиме у фоновому режимі, або зачекати тут до завершення.</string>
     <string name="welcome_sync_leave_early_wait">Зачекати</string>
-    <string name="welcome_sync_leave_early_continue">Все одно продовжити</string>
+    <string name="welcome_sync_leave_early_continue">Усе одно продовжити</string>
+    <string name="welcome_battery_header">Захист у фоновому режимі</string>
+    <string name="welcome_battery_summary">Android може призупиняти VPN AdAway у фоновому режимі, щоб заощадити заряд, і тоді блокування реклами може непомітно припинитися. Дозвольте AdAway ігнорувати оптимізацію акумулятора, щоб він працював без перерв.</string>
+    <string name="welcome_battery_action">Дозволити</string>
+    <string name="welcome_battery_granted">Дозволено ✓</string>
+    <string name="welcome_battery_footnote_prefix">Змінити це можна будь-коли пізніше в розділі</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Налаштування Android</item>
+        <item>Додатки</item>
+        <item>AdAway</item>
+        <item>Акумулятор</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">І ще дещо: власний менеджер акумулятора вашого телефона</string>
+    <string name="welcome_oem_battery_summary">Деякі виробники телефонів мають власний менеджер акумулятора, який теж може блокувати AdAway. Ось що варто перевірити на вашому пристрої:</string>
+    <string name="welcome_oem_battery_action">Відкрити інформацію про додаток</string>
+    <string name="welcome_oem_battery_open_failed">Не вдалося відкрити екран інформації про додаток. Відкрийте його вручну: Налаштування Android → Додатки → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Це лише загальні підказки, а не точна інструкція: назви та розташування пунктів можуть відрізнятися залежно від моделі телефона й версії Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Відомості про додаток</item>
+        <item>Акумулятор</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Знайдіть пункт на зразок «Обмеження використання у фоновому режимі» › «Додатки, що ніколи не переходять у режим сну», а потім додайте AdAway до цього списку.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Також перевірте, чи є налаштування «Автоматична оптимізація», і вимкніть у ньому «Перезапускати за потреби».</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Про додаток</item>
+        <item>Економія заряду</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Виберіть «Без обмежень».</string>
+    <string name="welcome_oem_battery_secondary_miui">Також увімкніть «Автозапуск» («Автозапуск у фоновому режимі» у новіших версіях).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Інформація про додаток</item>
+        <item>Використання акумулятора</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Виберіть «Дозволити активність у фоновому режимі» (іноді це «Без обмежень»).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Також знайдіть перемикач «Автозапуск» для AdAway (часто в розділі Налаштування › Додатки), щоб він міг перезапускатися після примусової зупинки.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Інформація про додаток</item>
+        <item>Акумулятор</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Знайдіть «Запуск додатків», вимкніть «Керувати автоматично», а потім увімкніть усі три параметри: «Автозапуск», «Додатковий запуск» і «Робота у фоновому режимі».</string>
+    <string name="welcome_oem_battery_secondary_emui">Також закріпіть AdAway на екрані нещодавніх додатків (потягніть його картку вниз, доки не з’явиться замок).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Інформація про додаток</item>
+        <item>Використання акумулятора</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Знайдіть параметр споживання енергії у фоновому режимі та виберіть «Не обмежувати споживання енергії у фоновому режимі» (а не «Розумне керування»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Також знайдіть налаштування «Автозапуск» для AdAway, часто в розділі Налаштування › Додатки.</string>
+    <string name="welcome_oem_battery_label_generic">Інший виробник</string>
+    <string name="welcome_oem_battery_tip_generic">Знайдіть в інформації про додаток налаштування акумулятора або активності у фоновому режимі й переконайтеся, що для AdAway немає обмежень.</string>
     <string name="welcome_back_button">Назад</string>
-    <string name="welcome_next_button">Вперед</string>
-    <string name="welcome_finish_button">Завершити</string>
+    <string name="welcome_next_button">Далі</string>
+    <string name="welcome_finish_button">Готово</string>
     <string name="tv_welcome_intro_subtitle">Цей короткий майстер увімкне блокування реклами на цьому пристрої.</string>
     <string name="tv_welcome_start_button">Почати</string>
-    <string name="tv_welcome_method_header">Виберіть метод блокування</string>
+    <string name="tv_welcome_method_header">Виберіть спосіб блокування</string>
     <string name="tv_welcome_method_root_button">Використати root</string>
-    <string name="tv_welcome_method_root_body">Швидше та економніше для батареї. Потрібен пристрій з root-доступом.</string>
+    <string name="tv_welcome_method_root_body">Швидше та економить заряд акумулятора. Потрібен пристрій із root-доступом.</string>
     <string name="tv_welcome_method_vpn_button">Використати VPN</string>
-    <string name="tv_welcome_method_vpn_body">Працює без root, сумісний з будь-яким пристроєм Android TV.</string>
-    <string name="tv_welcome_activate_header">Увімкнути блокування реклами</string>
-    <string name="tv_welcome_activate_body">Це локальний VPN: він фільтрує рекламу прямо на пристрої, не спрямовуючи ваш трафік через зовнішній сервер.</string>
+    <string name="tv_welcome_method_vpn_body">Працює без root, сумісний із будь-яким пристроєм Android TV.</string>
+    <string name="tv_welcome_activate_header">Увімкніть блокування реклами</string>
+    <string name="tv_welcome_activate_body">Це локальний VPN: він фільтрує рекламу на самому пристрої, не спрямовуючи ваш трафік через зовнішній сервер.</string>
 </resources>

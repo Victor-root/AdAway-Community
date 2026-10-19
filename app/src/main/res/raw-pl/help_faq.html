@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Dochód z reklam</h2>
-<p>Istnieje mylne przekonanie, że jeśli użytkownik nie klika na reklamy, to zablokowanie ich nie naraża autora programu na straty finansowe. Jest to nieprawdą, gdyż deweloperzy zarabiają również poprzez samo wyświetlanie reklam. Do Ciebie należy decyzja czy blokować je czy nie. 
-Osobiście (autor) nie korzystałbym z aplikacji, które wyświetlają reklamy, ponieważ uważam je za bardzo denerwujące. Tak więc bez blokera reklam nie zainstalowałbym tych aplikacji.</p>
+<h2>Czym jest AdAway Community?</h2>
+<p>AdAway Community to nieoficjalny fork AdAway, rozwijany przez społeczność. AdAway to bloker reklam open source dla Androida. Blokuje reklamy i trackery w całym systemie, we wszystkich aplikacjach, bez konta i bez własnych reklam. Ten fork dba o to, aby aplikacja działała niezawodnie na nowoczesnych wersjach Androida i w nakładkach producentów.</p>
 
-<h2>Jak działa AdAway?</h2>
-<p>AdAway używa <a href="http://en.wikipedia.org/wiki/Hosts_file">pliku hosts</a> do blokowania nazw hostów, które wyświetlają reklamy. Plik hosts jest plikiem znajdującym się w <code>/system/etc/hosts</code>, który mapuje nazwy hostów na adresy IP. Jest to tradycyjny sposób definiowania nazw hostów na pary IP bez polegania na systemie Domain Name System (DNS). Wszystkie niechciane nazwy hostów są przekierowywane do <code>127.0.0.1</code>, co oznacza, że ​​wskażą na twoje własne urządzenie.<br>Jeżeli plik hosts nie jest zapisywalny, zapasowym rozwiązaniem jest użycie wbudowanego VPN. Przefiltruje połączenia do niechcianych nazw hostów i pozwoli pozostałym przejść.</p>
+<h2>Jak blokuje reklamy?</h2>
+<p>AdAway działa w jednym z dwóch trybów:</p>
+<p><strong>Tryb VPN</strong> (bez roota): AdAway uruchamia na urządzeniu lokalny VPN, który nigdzie nie wysyła Twojego ruchu. Sprawdza wyłącznie zapytania DNS i odrzuca te, które prowadzą do nazw hostów reklam i trackerów, a całą resztę przepuszcza. Nic nie opuszcza Twojego urządzenia.</p>
+<p><strong>Tryb root</strong>: jeśli urządzenie ma roota, AdAway może zamiast tego zapisać <a href="http://en.wikipedia.org/wiki/Hosts_file">plik hosts</a> w <code>/system/etc/hosts</code>, który przypisuje niechciane nazwy hostów do <code>127.0.0.1</code>, dzięki czemu wskazują one na Twoje własne urządzenie. W nowszych wersjach Androida wymagany jest moduł systemless hosts (np. Magisk).</p>
 
-<h2>Dlaczego powinienem zrestartować system Android, aby zmiany przyniosły efekt?</h2>
-<p>Java w Androidzie utrzymuje własną wewnętrzną podręczną pamięć DNS. System operacyjny od razu wykryje nowy plik hosts (możesz to sprawdzić poleceniem ping w wierszu poleceń). Konieczny będzie jednak restart systemu Android w celu odbudowy pamięci podręcznej DNS Javy.</p>
+<h2>Z jakich serwerów DNS korzysta VPN?</h2>
+<p>W trybie VPN nazwy hostów, które nie są blokowane, są rozwiązywane przez serwery DNS wybrane w <cite>Ustawienia › Blokowanie reklam przez VPN › Serwery DNS</cite>:</p>
+<p><strong>Serwery DNS sieci</strong> (domyślnie): serwery Twojej sieci Wi-Fi lub komórkowej. Jeśli sieć nie podaje żadnych, których AdAway może użyć, korzysta z Cloudflare (<code>1.1.1.1</code>).<br/><strong>Własne serwery DNS</strong>: adresy IP, które wpiszesz, oddzielone przecinkami.<br/><strong>DNS over HTTPS</strong>: zapytania są szyfrowane i wysyłane do Cloudflare, Google, Quad9 lub pod adres <code>https://</code>, który wpiszesz, więc Twoja sieć nie może ich odczytać ani zmienić.</p>
+<p>Blokowanie działa tak samo we wszystkich trzech przypadkach. Aby zachować szyfrowany DNS, użyj tutaj DNS over HTTPS, a nie ustawienia Androida <cite>Prywatny DNS</cite>, które omija AdAway.</p>
 
-<h2>Jak użyć lokalnego serwera www w AdAway?</h2>
-<p><strong>AdAway będzie działać również bez korzystania z serwera www!</strong> 
-<br><br> Możesz włączyć lokalny serwer www w preferencjach AdAway, aby odbierać żądania do lokalnego adresu IP <code>127.0.0.1</code>. Oznacza to, że żądania od aplikacji do serwerów reklamowych, które są przekierowywane do <code>127.0.0.1</code>, są odbierane przez serwer AdAway. 
-<br>Niektóre aplikacje nie działają, gdy serwery reklam są niedostępne. Dzięki tej metodzie będą ponownie dostępne, odpowiadając pustą stroną i bez reklam.</p>
+<h2>Jak zablokować nazwę hosta, zezwolić na nią lub ją przekierować?</h2>
+<p>Na ekranie głównym zarządzasz trzema listami:</p>
+<p><strong>Zablokowane</strong>: nazwy hostów, które mają być blokowane (reklamy i trackery).<br/><strong>Dozwolone</strong>: wyjątki, których nigdy nie chcesz blokować, nawet jeśli któreś źródło je zawiera.<br/><strong>Przekierowane</strong>: nazwy hostów, które mają wskazywać na wybrany adres IP.</p>
+<p>Możesz też otworzyć <cite>Dziennik DNS</cite> na ekranie głównym, aby na żywo zobaczyć, o jakie nazwy hostów pytają aplikacje, a następnie zablokować je lub zezwolić na nie bezpośrednio stamtąd.</p>
 
-<h2>Jak mogę zablokować/odblokować określone nazwy hostów?</h2>
-<p>Dodaj nazwy hostów, które chcesz zablokować do listy<cite>Zablokowanych</cite> w <cite>swoich listach</cite>. Ponadto nazwy hostów, które chcesz wykluczyć z blokowania, można dodać do <cite>Dozwolonych</cite>, a nazwy hostów, które chcesz przekierować do określonego adresu IP, do <cite>Przekierowanych</cite>.</p>
+<h2>Czy muszę uruchomić Androida ponownie po zmianie list?</h2>
+<p>Nie. AdAway stosuje zmianę od razu, ale aplikacja, która była już otwarta, może nadal korzystać ze starych połączeń i własnej pamięci podręcznej. Zamknij ją całkowicie (Wymuś zatrzymanie w ustawieniach Androida dla tej aplikacji) i wyczyść jej pamięć podręczną, jeśli reklamy nadal się wyświetlają. Ponowne uruchomienie Androida jest potrzebne tylko raz w trybie root, po włączeniu modułu Magisk systemless hosts.</p>
 
-<h2>Gdzie znajdę wiecej źródeł hostów?</h2>
-<p>Zobacz: <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Lista dodatkowych plików hosts dla AdAway</a>.</p>
+<h2>Gdzie znaleźć więcej źródeł hosts?</h2>
+<p>AdAway ma rozsądne ustawienia domyślne. Jeśli chcesz więcej, zajrzyj do utrzymywanej przez społeczność <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">listy dodatkowych źródeł hosts</a>. Dodawaj kolejne źródła z umiarem, ponieważ bardzo duże lub nakładające się listy mogą powodować fałszywe blokady, które psują działanie aplikacji.</p>
 
-<h2>Dlaczego istnieje ten fork</h2>
-<p>AdAway to świetny projekt z długą historią, ale aktywność wydawnicza i recenzowania w upstreamie jest od jakiegoś czasu ograniczona.<br/>Niektóre błędy i pull requesty pozostają otwarte przez długi czas, w tym problemy wpływające na stabilność trybu VPN w najnowszych wersjach Androida i ROM-ach OEM.<br/>Ten fork istnieje, aby utrzymać projekt w użyciu dzięki poprawkom utrzymywanym przez społeczność, zamiast pozostawiać przetestowane ulepszenia niewykorzystane.</p>
+<h2>Dlaczego powstał ten fork?</h2>
+<p>AdAway to świetny projekt z długą historią, ale aktywność wydawnicza i recenzyjna w projekcie źródłowym od pewnego czasu jest ograniczona. Niektóre poprawki błędów i propozycje zmian (pull requesty) długo pozostawały otwarte, w tym problemy wpływające na stabilność trybu VPN w nowszych wersjach Androida i w nakładkach producentów. Ten fork powstał po to, aby projekt pozostał użyteczny dzięki poprawkom tworzonym przez społeczność, zamiast zostawiać przetestowane ulepszenia niewykorzystane.</p>
 
-<h2>Pomóż przetłumaczyć/zgłoś błędy</h2>
-<p>Przejdź na stronę <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Jak zgłosić błąd lub zaproponować zmianę?</h2>
+<p>Utwórz zgłoszenie w systemie zgłoszeń forka: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Dziennik diagnostyczny (zobacz kartę Problemy) bardzo pomaga przy zgłaszaniu problemów z VPN.</p>
 </body>
 </html>

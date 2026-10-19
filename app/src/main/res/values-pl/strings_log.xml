@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Przełącz rejestrowanie dziennika</string>
-    <string name="log_start_recording">Naciśnij rekord, aby rozpocząć rejestrowanie żądań, przeglądaj Internet lub korzystaj z aplikacji, a następnie wróć lub przesuń palcem, aby odświeżyć dzienniki.</string>
-    <string name="log_blocked_requests_ignored">\n\nZablokowane żądania nie będą rejestrowane. Najpierw wyłącz blokowanie reklam, jeśli chcesz je również rejestrować.</string>
+    <string name="log_toggle_recording_description">Włącz lub wyłącz zapisywanie dziennika</string>
+    <string name="log_start_recording">Naciśnij nagrywanie, aby zacząć rejestrować zapytania, przeglądaj internet lub korzystaj z aplikacji, a potem wróć lub przeciągnij ekran, aby odświeżyć dziennik.</string>
+    <string name="log_blocked_requests_ignored">\n\nZablokowane zapytania nie będą rejestrowane. Jeśli chcesz rejestrować także je, najpierw wyłącz blokowanie reklam.</string>
     <string name="log_sort">Sortuj domeny</string>
     <string name="log_clear">Wyczyść dziennik</string>
     <string name="log_sort_alphabetical">Sortuj alfabetycznie</string>
-    <string name="log_sort_top_level_domain">Sortuj rosnąco</string>
-    <string name="log_block">Dodaj wpis do czarnej listy</string>
-    <string name="log_allow">Dodaj wpis do białej listy</string>
-    <string name="log_redirect">Dodaj wpis do listy przekierowań</string>
+    <string name="log_sort_top_level_domain">Sortuj według domeny najwyższego poziomu</string>
+    <string name="log_block">Dodaj wpis do zablokowanych</string>
+    <string name="log_allow">Dodaj wpis do dozwolonych</string>
+    <string name="log_redirect">Dodaj wpis do przekierowanych</string>
     <string name="log_redirect_dialog_title">Przekieruj domenę</string>
+    <string name="log_capture_failed">Nie udało się uruchomić przechwytywania DNS.</string>
     <string name="log_start_recording_button">Rozpocznij nagrywanie</string>
     <string name="log_start_recording_vpn_inactive">Rozpocznij nagrywanie (VPN nieaktywny)</string>
     <string name="log_stop_recording">Zatrzymaj nagrywanie</string>

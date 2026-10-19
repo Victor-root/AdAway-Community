@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="log_toggle_recording_description">Günlük kaydını aç/kapat</string>
-    <string name="log_start_recording">İstekleri günlüğe kaydetmeye başlamak, Web\'de gezinmek veya uygulamaları kullanmak için kaydet\'e basın, ardından geri dönün veya günlükleri yenilemek için kaydırın.</string>
-    <string name="log_blocked_requests_ignored">\n\nEngellenen istekler günlüğe kaydedilmez. Onları da günlüğe kaydetmek istiyorsanız, önce reklam engellemeyi devre dışı bırakın.</string>
-    <string name="log_sort">Alanları sırala</string>
+    <string name="log_start_recording">İstekleri kaydetmeye başlamak için kayıt düğmesine basın, web’de gezinin veya uygulamaları kullanın, ardından günlükleri yenilemek için geri dönün ya da ekranı kaydırın.</string>
+    <string name="log_blocked_requests_ignored">\n\nEngellenen istekler günlüğe kaydedilmez. Bunları da kaydetmek istiyorsanız önce reklam engellemeyi devre dışı bırakın.</string>
+    <string name="log_sort">Alan adlarını sırala</string>
     <string name="log_clear">Günlüğü temizle</string>
     <string name="log_sort_alphabetical">Alfabetik sıralama</string>
-    <string name="log_sort_top_level_domain">Üst düzey alan adı sıralaması</string>
-    <string name="log_block">Kara listeye giriş ekle</string>
-    <string name="log_allow">Beyaz listeye giriş ekle</string>
-    <string name="log_redirect">Yönlendirme listesine giriş ekle</string>
-    <string name="log_redirect_dialog_title">Alanadı yönlendir</string>
-    <string name="log_start_recording_button">Kaydı Başlat</string>
-    <string name="log_start_recording_vpn_inactive">Kaydı Başlat (VPN etkin değil)</string>
-    <string name="log_stop_recording">Kaydı Durdur</string>
+    <string name="log_sort_top_level_domain">Üst düzey alan adına göre sıralama</string>
+    <string name="log_block">Girişi kara listeye ekle</string>
+    <string name="log_allow">Girişi beyaz listeye ekle</string>
+    <string name="log_redirect">Girişi yönlendirme listesine ekle</string>
+    <string name="log_redirect_dialog_title">Alan adını yönlendir</string>
+    <string name="log_capture_failed">DNS yakalama başlatılamadı.</string>
+    <string name="log_start_recording_button">Kaydı başlat</string>
+    <string name="log_start_recording_vpn_inactive">Kaydı başlat (VPN etkin değil)</string>
+    <string name="log_stop_recording">Kaydı durdur</string>
 </resources>

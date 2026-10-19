@@ -5,9 +5,9 @@
     <string name="tv_dialog_remove_from_allowed">Usuń z dozwolonych</string>
     <string name="tv_dialog_remove_from_blocked">Usuń z zablokowanych</string>
     <string name="tv_dialog_copy_hostname">Kopiuj nazwę hosta</string>
-    <string name="tv_log_entry_status_description">Status domeny</string>
+    <string name="tv_log_entry_status_description">Stan domeny</string>
     <string name="tv_button_theme_light">Tryb jasny</string>
     <string name="tv_button_theme_dark">Tryb ciemny</string>
-    <string name="tv_lists_empty">Na tej liście nie ma jeszcze żadnych wpisów.</string>
+    <string name="tv_lists_empty">Ta lista nie zawiera jeszcze wpisów.</string>
     <string name="tv_dialog_search">Szukaj</string>
 </resources>
