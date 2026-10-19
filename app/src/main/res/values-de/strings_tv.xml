@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Zu Gestatteten hinzufügen</string>
-    <string name="tv_dialog_add_to_blocked">Zu Blockierten hinzufügen</string>
-    <string name="tv_dialog_remove_from_allowed">Aus Gestatteten entfernen</string>
-    <string name="tv_dialog_remove_from_blocked">Aus Blockierten entfernen</string>
+    <string name="tv_dialog_add_to_allowed">Zu „Erlaubt“ hinzufügen</string>
+    <string name="tv_dialog_add_to_blocked">Zu „Blockiert“ hinzufügen</string>
+    <string name="tv_dialog_remove_from_allowed">Aus „Erlaubt“ entfernen</string>
+    <string name="tv_dialog_remove_from_blocked">Aus „Blockiert“ entfernen</string>
     <string name="tv_dialog_copy_hostname">Hostnamen kopieren</string>
-    <string name="tv_log_entry_status_description">Domänenstatus</string>
+    <string name="tv_log_entry_status_description">Domain-Status</string>
     <string name="tv_button_theme_light">Heller Modus</string>
     <string name="tv_button_theme_dark">Dunkler Modus</string>
-    <string name="tv_lists_empty">Noch keine Einträge in dieser Liste.</string>
+    <string name="tv_lists_empty">In dieser Liste gibt es noch keine Einträge.</string>
     <string name="tv_dialog_search">Suchen</string>
 </resources>

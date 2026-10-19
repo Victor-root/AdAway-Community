@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">最初のウィザード</string>
-    <string name="welcome_second_step">次のウィザード</string>
-    <string name="welcome_method_header">AdAwayへようこそ!</string>
-    <string name="welcome_method_summary">AdAwayには2つの広告ブロック方法があります。好きな方を選んでください。</string>
-    <string name="welcome_root_method_title">Root based\nad blocking</string>
+    <string name="welcome_first_step">ウィザードのステップ1</string>
+    <string name="welcome_second_step">ウィザードのステップ2</string>
+    <string name="welcome_third_step">ウィザードのステップ3</string>
+    <string name="welcome_fourth_step">ウィザードのステップ4</string>
+    <string name="welcome_method_header">AdAwayへようこそ！</string>
+    <string name="welcome_method_summary">AdAwayには2つの広告ブロック方式があります。お好みの方式をお選びください。</string>
+    <string name="welcome_root_method_title">root方式の\n広告ブロック</string>
     <string name="welcome_root_method_text1">高速</string>
-    <string name="welcome_root_method_text2">バッテリーに優しい</string>
-    <string name="welcome_root_method_text3">Rootが必要</string>
-    <string name="welcome_vpn_method_title">VPN based\nad blocking</string>
+    <string name="welcome_root_method_text2">省電力</string>
+    <string name="welcome_root_method_text3">rootが必要</string>
+    <string name="welcome_vpn_method_title">VPN方式の\n広告ブロック</string>
     <string name="welcome_vpn_method_text1">低速</string>
     <string name="welcome_vpn_method_text2">バックグラウンドで動作</string>
     <string name="welcome_vpn_method_text3">互換性が高い</string>
     <string name="welcome_root_missing_title">root化されたAndroidが必要です</string>
-    <string name="welcome_root_missile_description">suのバイナリが見つからなかったか、AdAwayにroot権限が許可されていないかのどちらかです。\n\nこれは、お使いのデバイスがroot化されていない場合に発生する可能性があります。デバイスをroot化する方法については、wiki.lineageos.orgやその他のAndroidのウェブサイトで確認できます。</string>
-    <string name="welcome_method_pro_logo">Pro</string>
-    <string name="welcome_method_con_logo">Con</string>
+    <string name="welcome_root_missile_description">suバイナリが見つからないか、AdAwayにroot権限が許可されていません。\n\nこれは、端末がroot化されていない場合に起こることがあります。端末をroot化する方法は、wiki.lineageos.orgやその他のAndroid関連サイトで調べられます。</string>
+    <string name="welcome_vpn_alwayson_title">常時接続VPNが有効です</string>
+    <string name="welcome_vpn_alwayson_description">別のVPNで「常時接続VPN」の設定が有効になっていることをAdAwayが検出しました。\n\nこのため、AdAwayはVPNへのアクセスを要求できません。該当するVPNの「常時接続VPN」を無効にして、もう一度お試しください。</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAwayはVPNへのアクセスを要求できませんでした。\n\n別のVPNで「常時接続VPN」の設定が有効になっていることが原因の可能性があります。いずれかのVPNでこの設定が有効になっていないか確認し、無効にしてからもう一度お試しください。</string>
+    <string name="welcome_vpn_alwayson_settings_action">「VPN」の設定を開く</string>
+    <string name="welcome_method_pro_logo">長所</string>
+    <string name="welcome_method_con_logo">短所</string>
     <string name="welcome_sync_header">同期中</string>
-    <string name="welcome_synced_header">同期しました!</string>
-    <string name="welcome_sync_summary">AdAwayは、オンラインソースからブロックする広告ネットワークをダウンロードします。後から設定でカスタマイズすることができます。</string>
-    <string name="welcome_sync_retry_logo">Retry sync</string>
-    <string name="welcome_sync_error">同期失敗: %1$s リトライしますか?</string>
+    <string name="welcome_synced_header">同期が完了しました！</string>
+    <string name="welcome_sync_summary">AdAwayは、ブロックする広告ネットワークの一覧をオンラインのソースからダウンロードします。ソースは後から設定でカスタマイズできます。</string>
+    <string name="welcome_sync_retry_logo">同期を再試行</string>
+    <string name="welcome_sync_error">同期に失敗しました（%1$s）。再試行しますか？</string>
+    <string name="welcome_sync_notifications">通知では、広告ブロックの状態の表示や操作のほか、アプリの更新のお知らせ（年に数回）をお届けします。常に最新の状態に保ちたい場合は、有効にしてください。</string>
+    <string name="welcome_sync_leave_early_title">同期はまだ完了していません</string>
+    <string name="welcome_sync_leave_early_message">ブロックリストのダウンロードがまだ終わっていません。このまま続行してもバックグラウンドでダウンロードは続きます。ここで完了を待つこともできます。</string>
+    <string name="welcome_sync_leave_early_wait">待つ</string>
+    <string name="welcome_sync_leave_early_continue">このまま続行</string>
+    <string name="welcome_battery_header">バックグラウンドでも保護を維持</string>
+    <string name="welcome_battery_summary">Androidは節電のため、バックグラウンドにあるAdAwayのVPNを一時停止することがあり、気付かないうちに広告ブロックが止まる場合があります。AdAwayが動作し続けるように、バッテリーの最適化の対象外にすることを許可してください。</string>
+    <string name="welcome_battery_action">許可</string>
+    <string name="welcome_battery_granted">許可済み ✓</string>
+    <string name="welcome_battery_footnote_prefix">この設定は、あとから次の場所でいつでも変更できます：</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Androidの設定</item>
+        <item>アプリ</item>
+        <item>AdAway</item>
+        <item>バッテリー</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">もう1つ確認を：お使いのスマートフォン独自のバッテリー管理</string>
+    <string name="welcome_oem_battery_summary">一部のメーカーのスマートフォンには独自のバッテリー管理機能があり、AdAwayの動作が制限されることがあります。お使いの機種で確認する項目は次のとおりです。</string>
+    <string name="welcome_oem_battery_action">アプリ情報を開く</string>
+    <string name="welcome_oem_battery_open_failed">アプリ情報の画面を開けませんでした。Androidの「設定」 › 「アプリ」 › 「AdAway」から手動で開いてください。</string>
+    <string name="welcome_oem_battery_disclaimer">これらは一般的な目安であり、正確な手順ではありません。表記や場所は、機種やAndroidのバージョンによって異なる場合があります。</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>アプリ情報</item>
+        <item>バッテリー</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">「バックグラウンド使用の制限」 › 「スリープ状態にしないアプリ」のような項目を探し、そのリストにAdAwayを追加してください。</string>
+    <string name="welcome_oem_battery_secondary_oneui">「自動最適化」の設定がある場合は、あわせて確認し、「必要に応じて再起動」をオフにしてください。</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>アプリ情報</item>
+        <item>バッテリーセーバー</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">「制限なし」を選択してください。</string>
+    <string name="welcome_oem_battery_secondary_miui">「自動起動」（新しいバージョンでは「バックグラウンドでの自動起動」）も有効にしてください。</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>アプリ情報</item>
+        <item>バッテリー使用量</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">「バックグラウンドでの動作を許可」を選択してください（「制限なし」と表示される場合もあります）。</string>
+    <string name="welcome_oem_battery_secondary_coloros">AdAwayの「自動起動」のスイッチも確認してください（多くは「設定」 › 「アプリ」にあります）。強制停止された後に自動で再起動できるようになります。</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>アプリ情報</item>
+        <item>バッテリー</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">「アプリの起動管理」を探し、「自動的に管理」をオフにして、「自動起動」「関連起動」「バックグラウンドで実行」の3つをすべて有効にしてください。</string>
+    <string name="welcome_oem_battery_secondary_emui">最近使ったタスクの画面でAdAwayをロックしてください（カードを下にスワイプして、南京錠のアイコンが表示されるまで続けます）。</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>アプリ情報</item>
+        <item>バッテリー使用量</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">バックグラウンドの電力消費に関する項目を探し、「バックグラウンドの電力消費を制限しない」を選択してください（「スマート制御」ではありません）。</string>
+    <string name="welcome_oem_battery_secondary_funtouch">AdAwayの「自動起動」の設定も探してください。多くは「設定」 › 「アプリ」にあります。</string>
+    <string name="welcome_oem_battery_label_generic">その他のメーカー</string>
+    <string name="welcome_oem_battery_tip_generic">アプリ情報で、バッテリーやバックグラウンド動作に関する設定を探し、AdAwayが制限されていないことを確認してください。</string>
     <string name="welcome_back_button">戻る</string>
     <string name="welcome_next_button">次へ</string>
     <string name="welcome_finish_button">完了</string>
-    <string name="tv_welcome_intro_subtitle">この短いウィザードで、この端末の広告ブロックをオンにします。</string>
-    <string name="tv_welcome_start_button">はじめる</string>
-    <string name="tv_welcome_method_header">ブロック方法を選択してください</string>
-    <string name="tv_welcome_method_root_button">root を使用</string>
-    <string name="tv_welcome_method_root_body">より高速でバッテリーに優しい。root化されたデバイスが必要です。</string>
-    <string name="tv_welcome_method_vpn_button">VPN を使用</string>
-    <string name="tv_welcome_method_vpn_body">root不要で動作し、あらゆるAndroid TVデバイスに対応しています。</string>
+    <string name="tv_welcome_intro_subtitle">この簡単なウィザードで、この端末の広告ブロックをオンにします。</string>
+    <string name="tv_welcome_start_button">始める</string>
+    <string name="tv_welcome_method_header">ブロック方式を選択</string>
+    <string name="tv_welcome_method_root_button">rootを使用</string>
+    <string name="tv_welcome_method_root_body">高速で省電力です。root化された端末が必要です。</string>
+    <string name="tv_welcome_method_vpn_button">VPNを使用</string>
+    <string name="tv_welcome_method_vpn_body">rootなしで動作し、あらゆるAndroid TV端末に対応します。</string>
     <string name="tv_welcome_activate_header">広告ブロックをオンにする</string>
-    <string name="tv_welcome_activate_body">これはローカルVPNです。通信を外部サーバーに送ることなく、この端末上で広告をフィルタリングします。</string>
+    <string name="tv_welcome_activate_body">ローカルVPNです。通信を外部のサーバーに経由させることなく、この端末上で広告をフィルタリングします。</string>
 </resources>

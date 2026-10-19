@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">設定</string>
-    <string name="pref_general_category">一般</string>
+    <string name="pref_general_category">全般</string>
     <string name="pref_dark_theme">ダークテーマ</string>
     <string-array name="pref_dark_theme_modes">
         <item>ライト</item>
@@ -9,76 +9,101 @@
         <item>システムのデフォルト</item>
     </string-array>
     <string name="pref_update_configuration">自動更新</string>
-    <string name="pref_ad_block_category">広告ブロッキング</string>
-    <string name="pref_root_ad_blocker_configuration">Root based ad blocker</string>
-    <string name="pref_vpn_ad_blocker_configuration">VPN based ad blocker</string>
-    <string name="pref_enable_ipv6">IPv6 サポートの有効化</string>
-    <string name="pref_backup_restore">ブロックルールのバックアップ/リストア</string>
-    <string name="pref_backup_restore_title">バックアップ &amp; リストア</string>
+    <string name="pref_language">言語</string>
+    <string name="pref_language_system">システムの言語</string>
+    <string name="pref_ad_block_category">広告ブロック</string>
+    <string name="pref_root_ad_blocker_configuration">root方式の広告ブロッカー</string>
+    <string name="pref_vpn_ad_blocker_configuration">VPN方式の広告ブロッカー</string>
+    <string name="pref_enable_ipv6">IPv6のサポートを有効にする</string>
+    <string name="pref_backup_restore">ブロックルールのバックアップと復元</string>
+    <string name="pref_backup_restore_title">バックアップと復元</string>
     <string name="pref_backup">バックアップ</string>
-    <string name="pref_backup_summary">ブロックルールを外部ストレージにバックアップ</string>
-    <string name="pref_restore">リストア</string>
-    <string name="pref_restore_summary">バックアップファイルからブロックルールを復元</string>
-    <string name="import_success">外部ストレージからバックアップが正常にインポートされました。</string>
-    <string name="export_success">バックアップは、外部ストレージ上の \'%s\' へ正常にエクスポートされました。</string>
-    <string name="export_failed">バックアップ\'%s\'のエクスポートに失敗しました。</string>
-    <string name="pref_update_title">アップデート</string>
-    <string name="pref_update_enable_notifications">通知がオフされています</string>
-    <string name="pref_update_enable_notifications_summary">アプリケーションの通知は表示されません。タップして有効にする。</string>
-    <string name="pref_update_app_category">アプリケーションの更新</string>
-    <string name="pref_update_check_app_startup">起動時にアップデートを確認する</string>
-    <string name="pref_update_check_app_daily">定期的なアップデートの確認</string>
+    <string name="pref_backup_summary">ブロックルールを外部ストレージにバックアップします</string>
+    <string name="pref_restore">復元</string>
+    <string name="pref_restore_summary">バックアップファイルからブロックルールを復元します</string>
+    <string name="import_success">外部ストレージからバックアップを読み込みました。</string>
+    <string name="import_failed">バックアップを読み込めませんでした。形式は正しいですか？</string>
+    <string name="export_success">バックアップを外部ストレージのファイル「%s」にエクスポートしました。</string>
+    <string name="export_failed">バックアップファイル「%s」をエクスポートできませんでした。</string>
+    <string name="pref_update_title">更新</string>
+    <string name="pref_update_enable_notifications">通知が無効です</string>
+    <string name="pref_update_enable_notifications_summary">アプリの通知が表示されません。タップして有効にします。</string>
+    <string name="pref_update_app_category">アプリの更新</string>
+    <string name="pref_update_check_app_startup">起動時に更新を確認</string>
+    <string name="pref_update_check_app_daily">定期的に更新を確認</string>
     <string name="pref_update_check_now">今すぐ確認</string>
     <string name="pref_update_install">今すぐ更新</string>
     <string name="pref_update_hosts_category">hostsの更新</string>
-    <string name="pref_update_check">起動時にアップデートを確認する</string>
-    <string name="pref_update_check_hosts_daily">定期的なアップデートの確認</string>
-    <string name="pref_update_sync_on_update">更新時に同期する</string>
-    <string name="pref_update_sync_unmetered_only">非課金ネットワークでのみ同期</string>
+    <string name="pref_update_check">起動時に更新を確認</string>
+    <string name="pref_update_check_hosts_daily">定期的に更新を確認</string>
+    <string name="pref_update_sync_on_update">更新時に同期</string>
+    <string name="pref_update_sync_unmetered_only">従量制でないネットワークでのみ同期</string>
     <string name="pref_vpn_service_on_boot">起動時に有効にする</string>
-    <string name="pref_vpn_service_monitor">接続を監視する</string>
-    <string name="pref_vpn_service_monitor_description">定期的にネットワークの状態を確認し、切断時にVPNを再起動します</string>
-    <string name="pref_vpn_excluded_apps">対象外のアプリケーション</string>
-    <string name="pref_vpn_excluded_apps_description">VPNを使用しないアプリケーションを設定すると、接続がブロックされなくなります</string>
-    <string name="pref_vpn_exclude_system_apps">システムアプリを除外する</string>
+    <string name="pref_vpn_service_monitor">接続を監視</string>
+    <string name="pref_vpn_service_monitor_description">ネットワークの状態を定期的に確認し、切断された場合はVPNを再起動します。</string>
+    <string name="pref_vpn_excluded_apps">除外するアプリ</string>
+    <string name="pref_vpn_excluded_apps_description">VPNを使用しないアプリを設定します。これらのアプリの通信はブロックされません。</string>
+    <string name="pref_vpn_exclude_system_apps">システムアプリを除外</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>除外しない</item>
-        <item>ブラウザを除くすべて</item>
+        <item>なし</item>
+        <item>ブラウザ以外すべて</item>
         <item>すべて</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">ユーザーアプリを除外する</string>
-    <string name="pref_vpn_exclude_user_apps_activity">対象外のアプリケーション</string>
+    <string name="pref_vpn_dns">DNSサーバー</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>ネットワークのDNSサーバー</item>
+        <item>カスタムDNSサーバー</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">カスタムDNSサーバー</string>
+    <string name="pref_vpn_dns_custom_summary">IPアドレスをカンマで区切って入力</string>
+    <string name="pref_vpn_dns_custom_invalid">DNSサーバーのアドレスが正しくありません</string>
+    <string name="pref_vpn_doh">DNS over HTTPSサーバー</string>
+    <string name="pref_vpn_doh_custom">カスタムアドレス</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPSのアドレス</string>
+    <string name="pref_vpn_doh_invalid">DNS over HTTPSのアドレスが正しくありません</string>
+    <string name="pref_vpn_exclude_user_apps">ユーザーアプリを除外</string>
+    <string name="pref_vpn_exclude_user_apps_activity">除外するアプリ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">すべて選択</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">すべての選択を解除</string>
-    <string name="pref_vpn_exclude_user_apps_icon">Application icon</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">すべて選択解除</string>
+    <string name="pref_vpn_exclude_user_apps_icon">アプリのアイコン</string>
     <string name="pref_vpn_reset">VPNをリセット</string>
-    <string name="pref_vpn_reset_description">VPN接続を一から再構築します。VPNが動作しなくなった場合（インターネットに接続できない、またはDNSエラー）に使用してください。</string>
-    <string name="pref_vpn_reset_done">VPN接続を再構築しました。</string>
-    <string name="pref_vpn_reset_not_running">VPNは実行されていません。</string>
+    <string name="pref_vpn_reset_description">VPN接続を一から作り直します。VPNが動作しなくなった場合（インターネットに接続できない、DNSエラーが出るなど）にお試しください。</string>
+    <string name="pref_vpn_reset_done">VPN接続を作り直しました。</string>
+    <string name="pref_vpn_reset_not_running">VPNは動作していません。</string>
+    <string name="pref_vpn_diagnostic_log_enabled">診断ログを記録</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">問題を再現する前にオンにし、その後、下の項目からエクスポートしてください。古い端末では動作がわずかに遅くなることがあります。記録されるのはVPNの技術的なイベントのみで、閲覧履歴や個人データは記録されません。</string>
     <string name="pref_vpn_diagnostic_log">診断ログ</string>
-    <string name="pref_vpn_diagnostic_log_description">最近のエラーやVPNイベントを表示、コピー、または共有します。問題を報告する際に役立ちます。</string>
-    <string name="pref_vpn_diagnostic_log_empty">まだイベントは記録されていません。</string>
-    <string name="pref_vpn_diagnostic_log_share">診断ログを共有</string>
+    <string name="pref_vpn_diagnostic_log_description">最近のエラーやVPNのイベントを表示、コピー、共有できます。問題を報告するときに役立ちます。</string>
+    <string name="pref_vpn_diagnostic_log_empty">まだイベントは記録されていません。上の「診断ログを記録」をオンにしてから、問題の再現をお試しください。</string>
+    <string name="pref_vpn_diagnostic_log_share">共有</string>
+    <string name="pref_vpn_diagnostic_log_share_title">診断ログを共有</string>
     <string name="pref_vpn_diagnostic_log_copy">コピー</string>
     <string name="pref_vpn_diagnostic_log_copied">診断ログをクリップボードにコピーしました。</string>
     <string name="pref_vpn_diagnostic_log_clear">診断ログを消去</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">記録されたイベントを削除します。きれいなトレースを取得するため、問題を再現する前に実行してください。</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">記録されたイベントを削除します。問題を再現する前に実行すると、余計な記録のないログを取得できます。</string>
     <string name="pref_vpn_diagnostic_log_cleared">診断ログを消去しました。</string>
     <string name="pref_root_open_hosts">hostsファイルを開く</string>
-    <string name="pref_hosts_redirection_summary">ブロックされたホストのリダイレクト先を定義します</string>
-    <string name="pref_redirection_ipv4">IPv4リダイレクト</string>
-    <string name="pref_redirection_ipv6">IPv6リダイレクト</string>
-    <string name="pref_redirection_invalid">無効なリダイレクト</string>
-    <string name="pref_webserver_summary">ローカルWebサーバーがブロックされたホスト名のリクエストに答えます。接続がブロックされた影響によるアプリのフリーズを防ぐことができます。</string>
+    <string name="hosts_file_unreadable">hostsファイルを読み取れませんでした。</string>
+    <string name="pref_hosts_redirection_summary">ブロックしたホストのリダイレクト先を指定します</string>
+    <string name="pref_redirection_ipv4">IPv4のリダイレクトを設定</string>
+    <string name="pref_redirection_ipv6">IPv6のリダイレクトを設定</string>
+    <string name="pref_redirection_invalid">リダイレクト先が正しくありません</string>
+    <string name="pref_webserver_summary">ローカルのWebサーバーがローカルIPアドレスで待ち受け、ブロックされたホスト名へのリクエストに応答します。ブロックされた接続でアプリがフリーズする場合に効果がある可能性があります。</string>
     <string name="pref_webserver_enabled">Webサーバーを有効にする</string>
-    <string name="pref_webserver_test">Webサーバーのテスト</string>
-    <string name="pref_webserver_certificate">自己署名証明書のインストール</string>
-    <string name="pref_webserver_state_not_running">実行していません</string>
+    <string name="pref_webserver_test">Webサーバーをテスト</string>
+    <string name="pref_webserver_certificate">自己署名証明書をインストール</string>
+    <string name="pref_webserver_state_not_running">停止中</string>
     <string name="pref_webserver_state_checking">確認中…</string>
-    <string name="pref_webserver_state_running_not_installed">実行中ですが証明書がインストールされていません</string>
-    <string name="pref_webserver_state_running_and_installed">実行中で証明書がインストールされています</string>
+    <string name="pref_webserver_state_running_not_installed">動作中（証明書は未インストール）</string>
+    <string name="pref_webserver_state_running_and_installed">動作中（証明書インストール済み）</string>
     <string name="pref_webserver_certificate_dialog_title">証明書の手動インストール</string>
-    <string name="pref_webserver_certificate_dialog_content">Android 11 (R)以降、アプリから認証局（CA）の自動インストールができなくなりました。\n\n\"セキュリティ\"設定の\"暗号化と認証情報\"から\"証明書のインストール\"を選択してください。そこから\"CA証明書\"を選択し、エクスポートした証明書ファイルを選択してください。</string>
-    <string name="pref_webserver_certificate_dialog_action">\"セキュリティ\"設定を開く</string>
-    <string name="pref_webserver_icon">空白になる広告スペースをアプリアイコンで置き換える</string>
+    <string name="pref_webserver_certificate_dialog_content">Android 11（R）以降では、アプリが認証局（CA）の証明書を自動でインストールすることはできません。\n\n「セキュリティ」の設定を開き、「暗号化と認証情報」から「証明書のインストール」を選択します。続いて「CA証明書」を選び、新しくエクスポートした証明書ファイルを指定してください。</string>
+    <string name="pref_webserver_certificate_dialog_action">「セキュリティ」の設定を開く</string>
+    <string name="pref_webserver_certificate_failed">証明書を準備できませんでした。</string>
+    <string name="webserver_error_title">Webサーバーを起動できませんでした</string>
+    <string name="webserver_error_resources">ファイルまたは証明書を準備できませんでした。</string>
+    <string name="webserver_error_address_in_use">別のアプリがすでに、この端末のWebポート（80と443）を使用しています。</string>
+    <string name="webserver_error_start_failed">この端末では起動できませんでした。</string>
+    <string name="pref_webserver_icon">広告の空白部分をアプリのアイコンに置き換える</string>
 </resources>

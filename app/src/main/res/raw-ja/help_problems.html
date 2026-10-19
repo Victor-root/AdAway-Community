@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Android 9以降でhostsファイルのコピーに失敗する</h2>
-<p>最新版のAndroidは、<code>/system</code>パーティションが読み取り専用で扱われます。<br>
-Magiskを使用している場合は、Systemless hostsモジュールを有効にしてから再起動してください。</p>
+<h2>VPNが勝手にオフになる</h2>
+<p>ほとんどの場合、原因はクラッシュではなく、バッテリーを節約するためにシステムがVPNサービスを終了させていることです。電源管理が厳しいメーカー独自のROM（ColorOS/Oppo、MIUI/Xiaomi、EMUI/Huawei、OneUI/Samsungなど）でよく起こります。</p>
+<p>Androidの設定でAdAwayを探し、次のように設定してください。<cite>バッテリーの最適化</cite>を<cite>制限なし</cite>（または<cite>最適化しない</cite>）にします。お使いのROMにある場合は<cite>自動起動</cite>（<cite>バックグラウンドでの自動起動</cite>）を許可します。スワイプで消されないように、最近使ったアプリの一覧でAdAwayをロックします。また、AdAwayのVPN設定で<cite>起動時に有効にする</cite>がオンになっていることも確認してください。</p>
 
-<h2>領域に十分な容量がありません</h2>
-<p>環境設定のターゲットホストファイルを<code>/data/data/hosts</code>（または<code>/data/hosts</code>）に変更し、再度AdAwayを適用してみてください</p>
+<h2>Wi-Fiとモバイルデータを切り替えた直後にインターネットに接続できない、または表示が遅い</h2>
+<p>使用中のネットワークが変わると、新しいネットワークからDNSを解決できるように、トンネルを作り直す必要があります。それでも閲覧できない場合は、<cite>設定 › VPN方式の広告ブロッカー › VPNをリセット</cite>を開いて、接続を一から作り直してください。繰り返し起こる場合は、診断ログ（下記）を取得して報告してください。</p>
 
-<h2>Android 4.4以降で動作しません</h2>
-<p>環境設定のターゲットホストファイルを<code>/data/data/hosts</code>から<code>/data/hosts</code>または<code>/system/etc/hosts</code>に変更し、再度AdAwayを適用してみてください</p>
+<h2>診断ログをエクスポートするには</h2>
+<p><cite>設定 › VPN方式の広告ブロッカー › 診断ログ</cite>を開きます。最近のエラーやVPNのイベント（ネットワークの切り替え、再接続、失敗など）が記録されます。閲覧履歴は記録されず、技術的なイベントだけが対象です。すぐ上にある<cite>診断ログを記録</cite>をオンにするまでは、空のままです。問題を報告するときは、<cite>コピー</cite>または<cite>共有</cite>で送信してください。ヒント：先に<cite>診断ログを消去</cite>してから問題を再現すると、必要な内容だけが記録されます。</p>
 
-<h2>あのアプリの広告をブロックしてくれない!</h2>
-<p>一部のホスト名は、提供された <cite>hostsソース</cite>から漏れていたり、画像を同梱していてネット接続なしに広告を表示する場合があるでしょう。<br><br>DNS要求をログに記録する(メニュー→DNS要求を記録する)ことで、ブロックすべきホスト名がわかります。
-<br><br>怪しげなホスト名は、ログ項目上で長押しするとブラックリストに追加出来ます。確認が取れたら<a href="http://hosts-file.net">hosts-file.net</a>の<a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a>フォーラムに報告してください。</p>
+<h2>Chromeで広告が表示される</h2>
+<p>Chromeは独自の<cite>セキュアDNS</cite>（DNS over HTTPS）を使うことがあり、その場合はAdAwayを経由しません。Chromeで<cite>設定 › プライバシーとセキュリティ › セキュアDNSを使用する</cite>を開き、オフにしてください。アプリやシステムの<cite>プライベートDNS</cite>設定についても同様です。VPN方式では、AdAway自身でDNSを暗号化できます。FAQの<cite>VPNはどのDNSサーバーを使用しますか？</cite>をご覧ください。</p>
 
-<h2>キャッシュされた広告</h2>
-<p>アプリにはダウンロードした広告データをキャッシュするものがあります。これにより一部のアプリでは広告が残ります。この問題を回避するには、Androidのアプリ一覧でアプリのキャッシュを削除してみてください。</p>
+<h2>一部の広告が表示される、またはアプリに広告が出る</h2>
+<p>ソースにホスト名が含まれていないか、アプリが広告を内蔵していてリクエストが発生しない可能性があります。ホーム画面から<cite>DNSログ</cite>を開いてアプリの問い合わせ先を確認し、疑わしいホスト名を<cite>ブロック済み</cite>リストに追加して、問題が起きないか確かめてください。アプリによっては、広告をダウンロードした後にキャッシュすることもあるため、Androidの設定でそのアプリのキャッシュを削除すると改善する場合があります。</p>
 
-<h2>あのアプリが動作しない!</h2>
-<p>一部のアプリは、AdAwayによってブロックされているホスト名と通信する必要があるものの、広告を配信するはずのホスト名に到達できない場合は、動作をやめてしまいます。 既知の問題のあるアプリのリストを入手するには、<a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a>を参照してください。 それ以外の場合は、必要なホスト名を見つけて、<cite>あなたのリスト</cite>の<cite>ホワイトリスト</cite>に追加して、<a href="https://github.com/Victor-root/AdAway-Community/issues">AdAwayのバグトラッカー</a>に報告してください。</p>
+<h2>AdAwayを有効にしたらアプリが動かなくなった</h2>
+<p>必要なホスト名がブロックされていると、動作しなくなるアプリがあります。<cite>DNSログ</cite>でそのアプリが必要とするホスト名を調べ、<cite>許可済み</cite>リストに追加すると、再び動作するはずです。問題が知られているアプリは<a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">こちら</a>に一覧があります。</p>
 
-<h2>ブラウザ内の戻るボタンが動作しない!</h2>
-<p>AdAwayのローカルウェブサーバーを設定で有効にしてください。</p>
+<h2>hostsファイルの適用に失敗する（root方式）</h2>
+<p>最近のAndroidでは<code>/system</code>パーティションが読み取り専用のため、AdAwayは直接書き込むことができません。Magiskを使用している場合は、<cite>systemless hosts</cite>モジュールを有効にして再起動し、もう一度適用してください。rootを使用していない場合は、システムを変更する必要のないVPN方式に切り替えてください。</p>
 
-<h2>ブラウザ内の戻るボタンが動作しない!</h2>
-<p>AdAwayのローカルウェブサーバーを設定で有効にしてください。</p>
-
+<h2>解決しませんか？</h2>
+<p>診断ログを添付して、<a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>で問題を報告してください。</p>
 </body>
 </html>

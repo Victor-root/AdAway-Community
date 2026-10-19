@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Protokollaufzeichnung umschalten</string>
-    <string name="log_start_recording">Drücken Sie „Aufzeichnen“, um die Protokollierung von Anfragen zu starten, stöbern Sie im Netz oder verwenden Sie Apps, kehren Sie danach hierher zurück oder wischen Sie nach unten, damit die Protokolle erneuert werden.</string>
-    <string name="log_blocked_requests_ignored">\n\nBlockierte Anfragen werden nicht protokolliert. Deaktivieren Sie zunächst den Werbeblocker, wenn Sie diese auch protokollieren möchten.</string>
-    <string name="log_sort">Domänen sortieren</string>
+    <string name="log_toggle_recording_description">Protokollaufzeichnung ein-/ausschalten</string>
+    <string name="log_start_recording">Tippe auf Aufnahme, um Anfragen zu protokollieren, surfe im Web oder nutze Apps und gehe dann zurück oder wische, um das Protokoll zu aktualisieren.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlockierte Anfragen werden nicht protokolliert. Deaktiviere zuerst die Werbeblockierung, wenn du sie ebenfalls protokollieren möchtest.</string>
+    <string name="log_sort">Domains sortieren</string>
     <string name="log_clear">Protokoll leeren</string>
-    <string name="log_sort_alphabetical">Alphabetische Sortierung</string>
-    <string name="log_sort_top_level_domain">Nach Top-Level-Domänen sortieren</string>
-    <string name="log_block">Eintrag zur Negativliste hinzufügen</string>
-    <string name="log_allow">Eintrag zur Positivliste hinzufügen</string>
-    <string name="log_redirect">Eintrag zur Umleitungsliste hinzufügen </string>
-    <string name="log_redirect_dialog_title">Domäne umleiten</string>
+    <string name="log_sort_alphabetical">Alphabetisch sortieren</string>
+    <string name="log_sort_top_level_domain">Nach Top-Level-Domain sortieren</string>
+    <string name="log_block">Eintrag zu „Blockiert“ hinzufügen</string>
+    <string name="log_allow">Eintrag zu „Erlaubt“ hinzufügen</string>
+    <string name="log_redirect">Eintrag zu „Umgeleitet“ hinzufügen</string>
+    <string name="log_redirect_dialog_title">Domain umleiten</string>
+    <string name="log_capture_failed">Die DNS-Aufzeichnung konnte nicht gestartet werden.</string>
     <string name="log_start_recording_button">Aufzeichnung starten</string>
     <string name="log_start_recording_vpn_inactive">Aufzeichnung starten (VPN nicht aktiv)</string>
-    <string name="log_stop_recording">Aufzeichnung stoppen</string>
+    <string name="log_stop_recording">Aufzeichnung beenden</string>
 </resources>

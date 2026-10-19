@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_title">AdAway aktualisieren</string>
-    <string name="update_banner_title">Aktualisierung verfügbar</string>
-    <string name="update_banner_subtitle">Zum Installieren von %1$s tippen</string>
-    <string name="update_up_to_date_header">Sie sind auf dem neusten Stand</string>
-    <string name="update_update_available_header">Aktualisierung verfügbar</string>
-    <string name="update_updating_header">Aktualisierung AdAway</string>
+    <string name="update_title">AdAway-Update</string>
+    <string name="update_banner_title">Update verfügbar</string>
+    <string name="update_banner_subtitle">Tippe, um %1$s zu installieren</string>
+    <string name="update_up_to_date_header">Du bist auf dem neuesten Stand</string>
+    <string name="update_update_available_header">Update verfügbar</string>
+    <string name="update_updating_header">AdAway wird aktualisiert</string>
     <string name="update_update_button">Jetzt aktualisieren</string>
-    <string name="update_complete_label">Vollständig</string>
+    <string name="update_complete_label">Abgeschlossen</string>
     <string name="update_last_changelog_title">Letzte Änderungen</string>
-    <string name="update_new_changelog_title">Änderungen</string>
+    <string name="update_new_changelog_title">Änderungsprotokoll</string>
+    <string name="update_download_failed">Das Update konnte nicht heruntergeladen werden.</string>
+    <string name="update_install_failed">Das Update konnte nicht installiert werden.</string>
     <string name="pref_update_check_now_update_available">Neue Version verfügbar: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">Keine Aktualisierung verfügbar</string>
+    <string name="pref_update_check_now_up_to_date">Kein Update verfügbar</string>
+    <string name="pref_update_check_now_failed">Der Update-Server ist nicht erreichbar</string>
     <string name="pref_update_install_summary">Version %1$s installieren</string>
-    <string name="notification_channel_app_updates">App-Aktualisierungen</string>
-    <string name="notification_channel_app_updates_description">Benachrichtigung, wenn eine neue Version der App verfügbar ist. Diesen Kanal stummschalten, um App-Aktualisierungshinweise auszublenden, ohne andere Benachrichtigungen zu beeinträchtigen.</string>
-    <string name="notification_app_update_title">App-Aktualisierung verfügbar</string>
-    <string name="notification_app_update_text">Neue Version von AdAway vorhanden</string>
+    <string name="notification_channel_app_updates">App-Updates</string>
+    <string name="notification_channel_app_updates_description">Benachrichtigung, wenn eine neue Version der App verfügbar ist. Schalte diesen Kanal stumm, um Hinweise auf App-Updates auszublenden, ohne andere Benachrichtigungen zu beeinträchtigen.</string>
+    <string name="notification_app_update_title">App-Update verfügbar</string>
+    <string name="notification_app_update_text">Eine neue Version von AdAway steht zum Download bereit.</string>
 </resources>

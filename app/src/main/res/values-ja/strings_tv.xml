@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">許可リストに追加</string>
-    <string name="tv_dialog_add_to_blocked">禁止リストに追加</string>
-    <string name="tv_dialog_remove_from_allowed">許可リストから削除</string>
-    <string name="tv_dialog_remove_from_blocked">禁止リストから削除</string>
+    <string name="tv_dialog_add_to_allowed">許可対象に追加</string>
+    <string name="tv_dialog_add_to_blocked">ブロック対象に追加</string>
+    <string name="tv_dialog_remove_from_allowed">許可対象から削除</string>
+    <string name="tv_dialog_remove_from_blocked">ブロック対象から削除</string>
     <string name="tv_dialog_copy_hostname">ホスト名をコピー</string>
     <string name="tv_log_entry_status_description">ドメインの状態</string>
     <string name="tv_button_theme_light">ライトモード</string>
     <string name="tv_button_theme_dark">ダークモード</string>
-    <string name="tv_lists_empty">このリストにはまだ項目がありません。</string>
+    <string name="tv_lists_empty">このリストにはまだエントリがありません。</string>
     <string name="tv_dialog_search">検索</string>
 </resources>
