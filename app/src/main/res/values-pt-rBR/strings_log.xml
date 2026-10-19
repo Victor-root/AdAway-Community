@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Ativar gravação do registro</string>
-    <string name="log_start_recording">Aperte gravar para começar a registrar solicitações, navegue a Web ou use aplicativos, então retorne ou deslize para atualizar os registros.</string>
-    <string name="log_blocked_requests_ignored">\n\nSolicitações bloqueadas não vão ser registradas. Desative o bloqueio de anúncios se quiser registrá-las também.</string>
-    <string name="log_sort">Classificar domínios</string>
+    <string name="log_toggle_recording_description">Alternar a gravação do registro</string>
+    <string name="log_start_recording">Toque em gravar para começar a registrar as solicitações, navegue na Web ou use aplicativos e depois volte ou deslize para atualizar o registro.</string>
+    <string name="log_blocked_requests_ignored">\n\nAs solicitações bloqueadas não serão registradas. Desative antes o bloqueio de anúncios se quiser registrá-las também.</string>
+    <string name="log_sort">Ordenar domínios</string>
     <string name="log_clear">Limpar registro</string>
     <string name="log_sort_alphabetical">Ordem alfabética</string>
-    <string name="log_sort_top_level_domain">Ordem de nível de domínio</string>
-    <string name="log_block">Adicionar entrada à lista negra</string>
-    <string name="log_allow">Adicionar entrada à lista branca</string>
+    <string name="log_sort_top_level_domain">Ordem por domínio de nível superior</string>
+    <string name="log_block">Adicionar entrada à lista de bloqueio</string>
+    <string name="log_allow">Adicionar entrada à lista de permissões</string>
     <string name="log_redirect">Adicionar entrada à lista de redirecionamento</string>
-    <string name="log_redirect_dialog_title">Redirecionamento de domínio</string>
+    <string name="log_redirect_dialog_title">Redirecionar domínio</string>
+    <string name="log_capture_failed">Não foi possível iniciar a captura de DNS.</string>
     <string name="log_start_recording_button">Iniciar gravação</string>
     <string name="log_start_recording_vpn_inactive">Iniciar gravação (VPN inativa)</string>
     <string name="log_stop_recording">Parar gravação</string>

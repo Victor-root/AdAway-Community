@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copia del file hosts fallita su Android 9+</h2>
-<p>Le ultime versioni di Android hanno la partizione <code>/system</code> di sola lettura.<br>
-Se stai usando Magisk come root manager assicurati di aver attivato il modulo 'Systemless Hosts' e fai un reboot.</p>
+<h2>La VPN si disattiva da sola</h2>
+<p>Quasi sempre è il sistema che interrompe il servizio VPN per risparmiare batteria, non un arresto anomalo. Succede spesso sulle ROM dei produttori con una gestione energetica aggressiva (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung e altre).</p>
+<p>Nelle impostazioni di Android cerca AdAway e: imposta l’<cite>ottimizzazione della batteria</cite> su <cite>Senza limitazioni</cite> (oppure <cite>Non ottimizzare</cite>), consenti l’<cite>avvio automatico</cite> o l’<cite>avvio automatico in background</cite> se la tua ROM lo prevede, e blocca AdAway nell’elenco delle app recenti per evitare di chiuderlo scorrendo. Assicurati anche che <cite>Attiva all’avvio</cite> sia attivo nelle preferenze VPN di AdAway.</p>
 
-<h2>Spazio insufficiente nella partizione</h2>
-<p>Prova a cambiare il percorso del file hosts nelle preferenze in <code>/data/data/hosts</code> (o <code>/data/hosts</code>) e applica di nuovo AdAway.</p>
+<h2>Nessuna connessione o navigazione lenta subito dopo il passaggio tra Wi-Fi e rete mobile</h2>
+<p>Quando la rete attiva cambia, il tunnel deve essere ricostruito affinché il DNS venga risolto dalla nuova rete. Se la navigazione continua a non funzionare, apri <cite>Preferenze › VPN › Reimposta VPN</cite> per ricostruire la connessione da zero. Se il problema si ripete, acquisisci un registro di diagnostica (vedi sotto) e segnalalo.</p>
 
-<h2>Chrome continua a mostrare le pubblicità</h2>
-<p>Assicurati di disabilitare la <cite>modalità lite</cite> (precedentemente nota come <cite>risparmio dati</cite>) dalle impostazioni di Chrome. Questa opzione permette a Chrome di usare i DNS privati ed eludere AdAway.</p>
+<h2>Come si esporta un registro di diagnostica?</h2>
+<p>Apri <cite>Preferenze › VPN › Registro di diagnostica</cite>. Registra gli errori e gli eventi VPN recenti (cambi di rete, riconnessioni, errori), non la tua cronologia di navigazione: solo eventi tecnici. Resta vuoto finché non attivi <cite>Registrazione diagnostica</cite>, subito sopra. Usa <cite>Copia</cite> o <cite>Condividi</cite> per inviarlo quando segnali un problema. Suggerimento: usa prima <cite>Cancella registro di diagnostica</cite>, poi riproduci il problema, così il registro sarà più mirato.</p>
 
-<h2>Non blocca le pubblicità nell'app XYZ!</h2>
-<p>Alcuni hostname potrebbero mancare nei file hosts forniti da <cite>Sorgenti host</cite> oppure l'applicazione dispone delle immagini per fornire annunci senza dover accedere a Internet.<br><br>
-Puoi registrare le richieste DNS (Menù-&gt;Log richieste DNS) da AdAway per scoprire quali hostname aggiuntivi devono essere bloccati.
-<br><br>Aggiungi gli hostnames sospetti alla tua Blacklist premendo a lungo le voci nel Log e segnala questi hostnames quando li hai verificati nel Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> di <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome mostra ancora pubblicità</h2>
+<p>Chrome può usare il proprio <cite>DNS sicuro</cite> (DNS over HTTPS), che aggira AdAway. In Chrome apri <cite>Impostazioni › Privacy e sicurezza › Usa DNS sicuro</cite> e disattivalo. Lo stesso vale per qualsiasi impostazione <cite>DNS privato</cite> di un’app o del sistema. In modalità VPN, AdAway può cifrare il DNS da solo: vedi <cite>Quali server DNS usa la VPN?</cite> nelle FAQ.</p>
 
-<h2>Pubblicità conservata nella cache</h2>
-<p>Alcune applicazioni conservano le pubblicità nella cache dopo il download. Questo fa sì che la pubblicità rimanga in alcune app. Provare ad eliminare la cache di queste applicazioni dalla Lista delle Applicazioni in impostazioni Android per risolvere questo problema.</p>
+<h2>Alcune pubblicità passano ancora, o un’app mostra ancora pubblicità</h2>
+<p>Potrebbe mancare un nome host nelle tue fonti, oppure l’app include le pubblicità al suo interno e quindi non fa alcuna richiesta. Apri il <cite>Registro DNS</cite> dalla schermata iniziale per vedere cosa interroga l’app, aggiungi i nomi host sospetti all’elenco <cite>Bloccati</cite> e verifica che non si rompa nulla. Alcune app memorizzano inoltre le pubblicità nella cache dopo averle scaricate, quindi può aiutare svuotare la cache dell’app nelle impostazioni di Android.</p>
 
-<h2>L'app XYZ non funziona più!</h2>
-<p>Alcune applicazioni devono comunicare con un hostname bloccato da AdAway o rifiutarsi di funzionare quando i nomi degli host, che dovrebbero pubblicare annunci, non sono raggiungibili. Consulta <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a>per ottenere un elenco di applicazioni note che hanno problemi. Altrimenti, scopri quali hostnames sono necessari e aggiungili alla tua <cite>Whitelist</cite> sotto <cite>Le tue liste</cite>e segnalali al <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker di AdAway</a>.</p>
+<h2>Un’app ha smesso di funzionare dopo l’attivazione di AdAway</h2>
+<p>Alcune app si rifiutano di funzionare quando un nome host di cui hanno bisogno è bloccato. Usa il <cite>Registro DNS</cite> per trovare quale nome host serve all’app, aggiungilo all’elenco <cite>Consentiti</cite> e l’app dovrebbe tornare a funzionare. Le app problematiche note sono elencate <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">qui</a>.</p>
 
-<h2>Non funziona in Android 4.4+</h2>
-<p>Prova a cambiare il percorso del file hosts nelle preferenze da <code>/data/data/hosts</code> a <code>/data/hosts</code> o <code>/system/etc/hosts</code> e applica di nuovo AdAway.</p>
+<h2>L’applicazione del file hosts non riesce (modalità root)</h2>
+<p>Le versioni recenti di Android usano una partizione <code>/system</code> in sola lettura, quindi AdAway non può scriverci direttamente. Se usi Magisk, attiva il modulo <cite>systemless hosts</cite>, riavvia e applica di nuovo. Se non usi il root, passa invece alla modalità VPN, che non richiede alcuna modifica del sistema.</p>
 
-<h2>Il pulsante indietro nei browser non funziona</h2>
-<p>Abilitare il web server locale di AdAway nelle preferenze per aggirare il problema.</p>
-
+<h2>Il problema persiste?</h2>
+<p>Segnala il problema allegando un registro di diagnostica su <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

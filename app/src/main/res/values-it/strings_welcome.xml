@@ -1,45 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Procedura Guida primo passo</string>
-    <string name="welcome_second_step">Procedura Guida secondo passo</string>
+    <string name="welcome_first_step">Primo passaggio della procedura guidata</string>
+    <string name="welcome_second_step">Secondo passaggio della procedura guidata</string>
+    <string name="welcome_third_step">Terzo passaggio della procedura guidata</string>
+    <string name="welcome_fourth_step">Quarto passaggio della procedura guidata</string>
     <string name="welcome_method_header">Benvenuto in AdAway!</string>
-    <string name="welcome_method_summary">AdAway ha due modalità per bloccare le pubblicità. Scegli quella che preferisci:</string>
-    <string name="welcome_root_method_title">Blocco pubblicità\ntramite root</string>
+    <string name="welcome_method_summary">AdAway offre due metodi per bloccare la pubblicità. Scegli quello che preferisci:</string>
+    <string name="welcome_root_method_title">Blocco pubblicità\ncon root</string>
     <string name="welcome_root_method_text1">Più veloce</string>
-    <string name="welcome_root_method_text2">Non ha impatto sulla batteria</string>
+    <string name="welcome_root_method_text2">Risparmia batteria</string>
     <string name="welcome_root_method_text3">Richiede il root</string>
-    <string name="welcome_vpn_method_title">Blocco pubblicità\ntramite VPN</string>
+    <string name="welcome_vpn_method_title">Blocco pubblicità\ncon VPN</string>
     <string name="welcome_vpn_method_text1">Più lento</string>
     <string name="welcome_vpn_method_text2">Esecuzione in background</string>
     <string name="welcome_vpn_method_text3">Compatibilità</string>
-    <string name="welcome_root_missing_title">Richiesto Android con root</string>
-    <string name="welcome_root_missile_description">Non è stato trovato il binario SU o non hai concesso i permessi di root ad AdAway.\n\nPuò succedere quando il tuo dispositivo non ha i permessi di root.\nPuoi trovare maggiori informazioni su come abilitarli per il tuo dispositivo su wiki.lineageos.org o su altri siti web riguardanti Android.</string>
-    <string name="welcome_vpn_alwayson_title">VPN always-on abilitata</string>
-    <string name="welcome_vpn_alwayson_description">AdAway ha rilevato che un\'altra VPN ha l\'impostazione \"VPN always-on\" attiva.\n\nCiò impedisce ad AdAway di richiedere l\'accesso VPN. Disattiva \"VPN always-on\" sulla VPN e riprova.</string>
-    <string name="welcome_vpn_alwayson_blocked_description">AdAway non è riuscito a richiedere l\'accesso alla VPN.\n\nPotrebbe dipendere dal fatto che un\'altra VPN ha l\'impostazione \"VPN always-on\" attiva. Controlla se una diversa VPN ha questa impostazione abilitata e disabilitala prima di riprovare.</string>
-    <string name="welcome_vpn_alwayson_settings_action">Apri Impostazioni \"VPN\"</string>
+    <string name="welcome_root_missing_title">Serve un Android con root</string>
+    <string name="welcome_root_missile_description">Il binario su non è stato trovato oppure non hai concesso ad AdAway l’autorizzazione root.\n\nPuò succedere quando il dispositivo non ha il root. Trovi informazioni su come ottenere il root sul tuo dispositivo su wiki.lineageos.org o su altri siti dedicati ad Android.</string>
+    <string name="welcome_vpn_alwayson_title">VPN sempre attiva abilitata</string>
+    <string name="welcome_vpn_alwayson_description">AdAway ha rilevato che su un’altra VPN è attiva l’impostazione «VPN sempre attiva».\n\nCiò impedisce ad AdAway di richiedere l’accesso alla VPN. Disattiva «VPN sempre attiva» sulla VPN in questione e riprova.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway non è riuscito a richiedere l’accesso alla VPN.\n\nPotrebbe dipendere dal fatto che su un’altra VPN è attiva l’impostazione «VPN sempre attiva». Controlla se qualche VPN ha questa impostazione abilitata e disattivala prima di riprovare.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Apri le impostazioni «VPN»</string>
     <string name="welcome_method_pro_logo">Pro</string>
     <string name="welcome_method_con_logo">Contro</string>
-    <string name="welcome_sync_header">Sincronizzazione in corso</string>
+    <string name="welcome_sync_header">Sincronizzazione</string>
     <string name="welcome_synced_header">Sincronizzato!</string>
-    <string name="welcome_sync_summary">AdAway scarica da sorgenti online le reti pubblicitarie da bloccare. Puoi personalizzarle dalle impostazioni</string>
-    <string name="welcome_sync_retry_logo">Riprova sincronizzazione</string>
-    <string name="welcome_sync_error">Sincronizzazione fallita: %1$s Vuoi riprovare adesso?</string>
-    <string name="welcome_sync_notifications">Può inviare notifiche per mostrare lo stato e i controlli del blocco pubblicità, e per segnalare la disponibilità di aggiornamenti dell\'app (poche volte all\'anno). Abilitale se vuoi rimanere aggiornato.</string>
+    <string name="welcome_sync_summary">AdAway scarica da fonti online le reti pubblicitarie da bloccare. Potrai personalizzarle in seguito dalle impostazioni.</string>
+    <string name="welcome_sync_retry_logo">Riprova la sincronizzazione</string>
+    <string name="welcome_sync_error">Sincronizzazione non riuscita: %1$s Riprovare ora?</string>
+    <string name="welcome_sync_notifications">AdAway può inviare notifiche per mostrare lo stato e i comandi del blocco pubblicità e per avvisarti degli aggiornamenti dell’app (pochi all’anno). Attivale se vuoi restare aggiornato.</string>
     <string name="welcome_sync_leave_early_title">Sincronizzazione non ancora terminata</string>
-    <string name="welcome_sync_leave_early_message">Il download delle liste di blocco non è ancora terminato. Puoi continuare ora e proseguirà in background, oppure aspettare qui finché non sarà completato.</string>
-    <string name="welcome_sync_leave_early_wait">Aspetta</string>
+    <string name="welcome_sync_leave_early_message">Il download degli elenchi di blocco non è ancora terminato. Puoi continuare ora e proseguirà in background, oppure attendere qui che finisca.</string>
+    <string name="welcome_sync_leave_early_wait">Attendi</string>
     <string name="welcome_sync_leave_early_continue">Continua comunque</string>
+    <string name="welcome_battery_header">Resta protetto in background</string>
+    <string name="welcome_battery_summary">Android può mettere in pausa la VPN di AdAway in background per risparmiare energia, interrompendo il blocco pubblicità senza avvisare. Consenti ad AdAway di ignorare l’ottimizzazione della batteria per mantenerlo attivo.</string>
+    <string name="welcome_battery_action">Consenti</string>
+    <string name="welcome_battery_granted">Consentito ✓</string>
+    <string name="welcome_battery_footnote_prefix">Potrai sempre cambiare questa scelta in seguito da</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Impostazioni di Android</item>
+        <item>App</item>
+        <item>AdAway</item>
+        <item>Batteria</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Ancora una cosa: il gestore della batteria del telefono</string>
+    <string name="welcome_oem_battery_summary">Alcuni produttori includono un proprio gestore della batteria che può bloccare anche AdAway. Ecco cosa controllare sul tuo telefono:</string>
+    <string name="welcome_oem_battery_action">Apri le informazioni app</string>
+    <string name="welcome_oem_battery_open_failed">Impossibile aprire la schermata delle informazioni sull’app. Aprila manualmente da Impostazioni di Android › App › AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Sono indicazioni generali, non una guida precisa: i nomi e la posizione delle voci possono variare in base al modello di telefono e alla versione di Android.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Informazioni sull’app</item>
+        <item>Batteria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Cerca qualcosa come «Limiti di utilizzo in background» › «App mai in sospensione», poi aggiungi AdAway a quell’elenco.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Controlla anche se c’è l’impostazione «Ottimizzazione automatica» e, se presente, disattiva «Riavvia quando necessario».</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Informazioni sull’app</item>
+        <item>Risparmio batteria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Scegli «Nessuna restrizione».</string>
+    <string name="welcome_oem_battery_secondary_miui">Attiva anche «Avvio automatico» («Avvio automatico in background» nelle versioni più recenti).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Informazioni sull’app</item>
+        <item>Utilizzo della batteria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Scegli «Consenti attività in background» (a volte indicato come «Nessuna restrizione»).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Cerca anche l’interruttore «Avvio automatico» per AdAway (spesso in Impostazioni › App), così potrà riavviarsi da solo dopo un arresto forzato.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Informazioni sull’app</item>
+        <item>Batteria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Cerca «Avvio app», disattiva «Gestisci automaticamente», poi abilita tutte e 3 le opzioni: «Avvio automatico», «Avvio secondario» ed «Esecuzione in background».</string>
+    <string name="welcome_oem_battery_secondary_emui">Blocca anche AdAway nella schermata delle app recenti (scorri verso il basso la sua scheda finché non compare un lucchetto).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Informazioni sull’app</item>
+        <item>Utilizzo della batteria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Cerca un’opzione per il consumo energetico in background e scegli «Non limitare il consumo in background» (non «Controllo intelligente»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Cerca anche l’impostazione «Avvio automatico» per AdAway, spesso in Impostazioni › App.</string>
+    <string name="welcome_oem_battery_label_generic">Altro produttore</string>
+    <string name="welcome_oem_battery_tip_generic">Cerca nelle informazioni dell’app un’impostazione relativa alla batteria o all’attività in background e assicurati che AdAway non sia limitato.</string>
     <string name="welcome_back_button">Indietro</string>
     <string name="welcome_next_button">Avanti</string>
     <string name="welcome_finish_button">Fine</string>
-    <string name="tv_welcome_intro_subtitle">Questa breve procedura guidata attiverà il blocco degli annunci su questo dispositivo.</string>
+    <string name="tv_welcome_intro_subtitle">Questa breve procedura guidata attiva il blocco pubblicità su questo dispositivo.</string>
     <string name="tv_welcome_start_button">Inizia</string>
-    <string name="tv_welcome_method_header">Scegli il tuo metodo di blocco</string>
-    <string name="tv_welcome_method_root_button">Usa root</string>
-    <string name="tv_welcome_method_root_body">Più veloce e rispettoso della batteria. Richiede un dispositivo rootato.</string>
-    <string name="tv_welcome_method_vpn_button">Usa VPN</string>
+    <string name="tv_welcome_method_header">Scegli il metodo di blocco</string>
+    <string name="tv_welcome_method_root_button">Usa il root</string>
+    <string name="tv_welcome_method_root_body">Più veloce e a basso consumo. Richiede un dispositivo con root.</string>
+    <string name="tv_welcome_method_vpn_button">Usa la VPN</string>
     <string name="tv_welcome_method_vpn_body">Funziona senza root, compatibile con qualsiasi dispositivo Android TV.</string>
-    <string name="tv_welcome_activate_header">Attiva il blocco degli annunci</string>
-    <string name="tv_welcome_activate_body">È una VPN locale: filtra gli annunci direttamente su questo dispositivo, senza instradare il tuo traffico attraverso un server esterno.</string>
+    <string name="tv_welcome_activate_header">Attiva il blocco pubblicità</string>
+    <string name="tv_welcome_activate_body">È una VPN locale: filtra la pubblicità su questo dispositivo, senza far passare il tuo traffico da un server esterno.</string>
 </resources>

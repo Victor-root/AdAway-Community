@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Kopieren van het hosts bestand mislukt onder Android 9+</h2>
-<p>De laatste versies van Android maken gebruik van read-only <code>/system</code> partitie.<br>
-Als je Magisk gebruikt als root oplossing, zorg er dan voor dat je de systemless hosts module inschakelt en dan opnieuw opstart.</p>
+<h2>De VPN gaat vanzelf uit</h2>
+<p>Meestal is het niet een crash, maar het systeem dat de VPN-service afsluit om batterij te besparen. Dit komt vaak voor op fabrikant-ROM’s met agressief energiebeheer (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung en andere).</p>
+<p>Zoek AdAway op in de Android-instellingen en doe het volgende: zet de <cite>batterijoptimalisatie</cite> op <cite>Onbeperkt</cite> (of <cite>Niet optimaliseren</cite>), sta <cite>automatisch starten</cite> (of <cite>automatisch opstarten</cite>) toe als je ROM dat aanbiedt, en vergrendel AdAway in de lijst met recente apps zodat de app niet per ongeluk wordt weggeveegd. Controleer ook of <cite>Inschakelen bij het opstarten</cite> aan staat in de VPN-voorkeuren van AdAway.</p>
 
-<h2>Niet genoeg ruimte op partitie</h2>
-<p>Probeer de gekozen locatie van het hosts-bestand in de voorkeuren te veranderen naar <code>/data/data/hosts</code> (of <code>/data/hosts</code>) en pas AdAway opnieuw toe.</p>
+<h2>Geen internet of trage verbinding direct na het wisselen tussen wifi en mobiel</h2>
+<p>Wanneer het actieve netwerk verandert, moet de tunnel opnieuw worden opgebouwd zodat DNS via het nieuwe netwerk wordt opgelost. Als surfen niet lukt, open dan <cite>Voorkeuren › Adblocker via VPN › VPN resetten</cite> om de verbinding helemaal opnieuw op te bouwen. Gebeurt het steeds opnieuw, leg dan een diagnostisch logboek vast (zie hieronder) en meld het probleem.</p>
 
-<h2>Werkt niet op Android 4.4 en hoger</h2>
-<p>Zorg ervoor dat je de <cite>lite mode</cite> (voorheen <cite>data saver</cite>) uitschakelt in de Chrome settings. Deze functionaliteit zorgt ervoor dat Chrome de prive DNS oplossing gebruikt en AdAway negeert.</p>
+<h2>Hoe exporteer ik een diagnostisch logboek?</h2>
+<p>Open <cite>Voorkeuren › Adblocker via VPN › Diagnostisch logboek</cite>. Daarin staan recente fouten en VPN-gebeurtenissen (netwerkwissels, herverbindingen, storingen), niet je browsegeschiedenis, alleen technische gebeurtenissen. Het logboek blijft leeg zolang je <cite>Diagnostisch logboek bijhouden</cite> er vlak boven niet hebt ingeschakeld. Gebruik <cite>Kopiëren</cite> of <cite>Delen</cite> om het te versturen bij een melding. Tip: gebruik eerst <cite>Diagnostisch logboek wissen</cite> en boots daarna het probleem na, zodat het logboek overzichtelijk blijft.</p>
 
-<h2>AdAway blokkeert geen reclames in applicatie XYZ!</h2>
-<p>Some hostnamen kunnen ontbreken in de standaard hosts files van de <cite>Hosts bronnen</cite> of the applicatie heeft de afbeeldingen gebundeld om advertenties te laten zien zonder internettoegang.<br><br>
-U kan DNS verzoeken (Menu-&gt;Log DNS Requests) van AdAway loggen om uit te zoeken welke aanvullende bronnen zouden moeten worden geblockt.
-<br><br>Voeg de verdachte hostnamen toe aan uw eigen zwarte lijst door de regels in het logbestand lang aan te raken en rapporteer deze hostnamen als ze bevestigd zijn op het forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome toont nog steeds advertenties</h2>
+<p>Chrome kan een eigen <cite>Beveiligde DNS</cite> gebruiken (DNS over HTTPS), waardoor AdAway wordt omzeild. Open in Chrome <cite>Instellingen › Privacy en beveiliging › Beveiligde DNS gebruiken</cite> en schakel dit uit. Hetzelfde geldt voor elke instelling <cite>Privé-DNS</cite> van een app of van het systeem. In VPN-modus kan AdAway DNS zelf versleutelen: zie <cite>Welke DNS-servers gebruikt de VPN?</cite> in de FAQ.</p>
 
-<h2>Reclames uit cache</h2>
-<p>Soms plaatsen applicaties reclames in hun cache na de download. Dit zorgt ervoor dat er soms reclames in apps achterblijven. U kunt proberen de cache van deze applicaties te verwijderen vanuit de lijst met apps om dit probleem te omzeilen.</p>
+<h2>Sommige advertenties komen nog door, of een app toont nog advertenties</h2>
+<p>Een hostnaam kan ontbreken in je bronnen, of de app bevat de advertenties zelf, zodat er geen verzoek wordt gedaan. Open het <cite>DNS-logboek</cite> op het startscherm om te zien welke verzoeken de app doet, voeg de verdachte hostnamen toe aan je lijst <cite>Geblokkeerd</cite> en controleer dat er niets kapotgaat. Sommige apps bewaren advertenties ook in hun cache nadat ze zijn gedownload, dus het wissen van de cache van die app in de Android-instellingen kan helpen.</p>
 
-<h2>Applicatie XYZ werkt niet meer!</h2>
-<p>Sommige applicaties moeten communiceren met een hostnaam die geblokkeerd is door AdAway en weigeren te werken wanneer de hostnamen die de advertenties doorgeven niet bereikbaar zijn. Zie <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> voor een lijst met bekende apps die deze problemen hebben. U kunt proberen uit te zoeken welke hostnamen nodig zijn en deze toevoegen aan uw <cite>witte lijst </cite> onder de optie <cite>Uw lijsten</cite>, en ze melden op de <a href="https://github.com/Victor-root/AdAway-Community/issues">bugtracker van AdAway</a>.</p>
+<h2>Een app werkt niet meer nadat ik AdAway heb ingeschakeld</h2>
+<p>Sommige apps weigeren te werken als een hostnaam die ze nodig hebben, is geblokkeerd. Zoek met het <cite>DNS-logboek</cite> uit welke hostnaam de app nodig heeft, voeg die toe aan je lijst <cite>Toegestaan</cite> en de app zou weer moeten werken. Bekende problematische apps staan <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">hier</a>.</p>
 
-<h2>De terugknop in webbrowsers werkt niet</h2>
-<p>U kunt AdAway's lokale webserver in de voorkeuren inschakelen als een tijdelijke oplossing.</p>
+<h2>Het hostsbestand toepassen mislukt (rootmodus)</h2>
+<p>Recente Android-versies gebruiken een alleen-lezen <code>/system</code>-partitie, dus AdAway kan daar niet rechtstreeks naar schrijven. Als je Magisk gebruikt, schakel dan de module <cite>systemless hosts</cite> in, start het apparaat opnieuw op en pas daarna opnieuw toe. Gebruik je geen root, schakel dan over op de VPN-modus, waarvoor het systeem niet hoeft te worden aangepast.</p>
 
-<h2>De terugknop in webbrowsers werkt niet</h2>
-<p>U kunt AdAway's lokale webserver in de voorkeuren inschakelen als een tijdelijke oplossing.</p>
-
+<h2>Nog steeds vast?</h2>
+<p>Meld het probleem met een diagnostisch logboek als bijlage op <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>
