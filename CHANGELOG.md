@@ -9,7 +9,7 @@
 * Replace the root web server (Mongoose) and the root DNS capture (tcpdump) with small Rust programs
 * Generate the web server certificate on each device instead of shipping a shared one
 * Keep your settings, lists and hosts sources when updating from 6.x, and keep reading 6.x backup files
-* Retranslate the whole app and its help from scratch into the 63 languages, with a consistent and natural tone
+* Retranslate the whole app and its help from scratch into 61 languages, with a consistent and natural tone
 * Write the hosts file without holding every entry in memory
 * Show the pre-release stage in the app name, such as "AdAway Alpha"
 
