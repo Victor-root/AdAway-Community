@@ -89,9 +89,9 @@
     <string name="sync_error_file_unreadable">filen kan ikke lenger leses, velg den på nytt</string>
     <string name="sync_error_storage">det kunne ikke skrives til enhetens lagring</string>
     <string name="update_error_no_network_title">Ingen internettforbindelse</string>
-    <string name="update_error_no_network_text">Kan ikke opprette forbindelse til internett. Sjekk tilkoblingen på enheten din.</string>
+    <string name="update_error_no_network_text">Kan ikke opprette forbindelse til nettet. Sjekk tilkoblingen på enheten din.</string>
     <string name="update_error_download_title">Kunne ikke laste ned hosts-kilde</string>
-    <string name="update_error_download_text">Ingen av de aktiverte hosts-kildene dine kan nås. Sjekk at du er riktig koblet til internett.</string>
+    <string name="update_error_download_text">Ingen av de aktiverte hosts-kildene dine kan nås. Sjekk at du er riktig koblet til nettet.</string>
     <string name="update_error_failed_source">• %1$s: %2$s</string>
     <string name="update_error_apply_title">Kunne ikke opprette privat fil</string>
     <string name="update_error_apply_text">Kan ikke opprette en privat fil for å bygge en ny hosts-fil. Sjekk hvor mye ledig plass enheten din har.</string>
