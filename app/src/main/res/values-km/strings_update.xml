@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_banner_title">Update available</string>
-    <string name="update_banner_subtitle">Tap to install %1$s</string>
-    <string name="update_update_available_header">រកឃើញមានជំនាន់ថ្មី</string>
-    <string name="pref_update_check_now_update_available">New version available: %1$s</string>
-    <string name="pref_update_check_now_up_to_date">No update available</string>
-    <string name="pref_update_install_summary">Install version %1$s</string>
-    <string name="notification_channel_app_updates">App updates</string>
-    <string name="notification_channel_app_updates_description">Notification when a new version of the app is available. Mute this channel to silence app-update alerts without affecting other notifications.</string>
+    <string name="update_title">ការធ្វើបច្ចុប្បន្នភាព AdAway</string>
+    <string name="update_banner_title">មានបច្ចុប្បន្នភាព</string>
+    <string name="update_banner_subtitle">ចុចដើម្បីដំឡើង %1$s</string>
+    <string name="update_up_to_date_header">អ្នកកំពុងប្រើកំណែថ្មីបំផុត</string>
+    <string name="update_update_available_header">មានបច្ចុប្បន្នភាព</string>
+    <string name="update_updating_header">កំពុងធ្វើបច្ចុប្បន្នភាព AdAway</string>
+    <string name="update_update_button">ធ្វើបច្ចុប្បន្នភាពឥឡូវនេះ</string>
+    <string name="update_complete_label">បានបញ្ចប់</string>
+    <string name="update_last_changelog_title">ការផ្លាស់ប្តូរចុងក្រោយ</string>
+    <string name="update_new_changelog_title">កំណត់ហេតុនៃការផ្លាស់ប្តូរ</string>
+    <string name="update_download_failed">មិនអាចទាញយកបច្ចុប្បន្នភាពបានទេ។</string>
+    <string name="update_install_failed">មិនអាចដំឡើងបច្ចុប្បន្នភាពបានទេ។</string>
+    <string name="pref_update_check_now_update_available">មានកំណែថ្មី: %1$s</string>
+    <string name="pref_update_check_now_up_to_date">មិនមានបច្ចុប្បន្នភាពទេ</string>
+    <string name="pref_update_check_now_failed">មិនអាចទាក់ទងម៉ាស៊ីនមេបច្ចុប្បន្នភាពបានទេ</string>
+    <string name="pref_update_install_summary">ដំឡើងកំណែ %1$s</string>
+    <string name="notification_channel_app_updates">ការធ្វើបច្ចុប្បន្នភាពកម្មវិធី</string>
+    <string name="notification_channel_app_updates_description">ការជូនដំណឹងនៅពេលមានកំណែថ្មីរបស់កម្មវិធី។ សូមបិទសំឡេងឆានែលនេះ ដើម្បីបិទការជូនដំណឹងអំពីបច្ចុប្បន្នភាពកម្មវិធី ដោយមិនប៉ះពាល់ដល់ការជូនដំណឹងផ្សេងទៀត។</string>
+    <string name="notification_app_update_title">មានបច្ចុប្បន្នភាពកម្មវិធី</string>
+    <string name="notification_app_update_text">មាន AdAway កំណែថ្មីសម្រាប់ទាញយក។</string>
 </resources>

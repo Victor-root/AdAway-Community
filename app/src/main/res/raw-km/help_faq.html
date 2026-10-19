@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Income by advertisements</h2>
-<p>There is an oft-stated misconception that if a user never clicks on ads, then blocking them won't hurt a site or application financially. This is wrong, developers also earn money by just displaying ads. It is up to you whether you block ads or not. Personally I would not use applications that display ads because I find them very annoying, so without an ad blocker I would not install these applications.</p>
+<h2>តើ AdAway Community ជាអ្វី?</h2>
+<p>AdAway Community គឺជា fork មិនផ្លូវការរបស់ AdAway ដែលថែទាំដោយសហគមន៍ ជាកម្មវិធីទប់ស្កាត់ពាណិជ្ជកម្មប្រភពបើកចំហសម្រាប់ Android។ វាទប់ស្កាត់ពាណិជ្ជកម្ម និងកម្មវិធីតាមដានទូទាំងប្រព័ន្ធ សម្រាប់គ្រប់កម្មវិធី ដោយមិនត្រូវការគណនី ហើយក៏គ្មានពាណិជ្ជកម្មផ្ទាល់ខ្លួនដែរ។ fork នេះផ្តោតលើការរក្សាឱ្យកម្មវិធីដំណើរការបានដោយភាពជឿជាក់នៅលើកំណែ Android ថ្មីៗ និង ROM របស់ក្រុមហ៊ុនផលិត។</p>
 
-<h2>How does AdAway work?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>តើវាទប់ស្កាត់ពាណិជ្ជកម្មដោយរបៀបណា?</h2>
+<p>AdAway ដំណើរការតាមរបៀបមួយក្នុងចំណោមពីរ:</p>
+<p><strong>របៀប VPN</strong> (មិនត្រូវការ root): AdAway ដំណើរការ VPN ក្នុងឧបករណ៍ ដែលមិនដែលបញ្ជូនចរាចរណ៍របស់អ្នកទៅកន្លែងណាឡើយ។ វាពិនិត្យតែសំណើ DNS ហើយទម្លាក់សំណើណាដែលចង្អុលទៅឈ្មោះ host របស់ពាណិជ្ជកម្ម និងកម្មវិធីតាមដាន ដោយទុកឱ្យអ្វីៗផ្សេងទៀតឆ្លងកាត់។ គ្មានអ្វីចេញពីឧបករណ៍របស់អ្នកឡើយ។</p>
+<p><strong>របៀប root</strong>: ប្រសិនបើឧបករណ៍របស់អ្នកបាន root AdAway អាចសរសេរ <a href="http://en.wikipedia.org/wiki/Hosts_file">ឯកសារ hosts</a> ទៅ <code>/system/etc/hosts</code> ជំនួសវិញ ដោយភ្ជាប់ឈ្មោះ host ដែលមិនចង់បានទៅ <code>127.0.0.1</code> ដើម្បីឱ្យវាត្រូវបានដោះស្រាយទៅឧបករណ៍របស់អ្នកផ្ទាល់។ នៅលើ Android ថ្មីៗ ត្រូវការម៉ូឌុល systemless hosts (ឧទាហរណ៍ Magisk)។</p>
 
-<h2>Why do I have to restart Android for changes to take effect?</h2>
-<p>Java on Android maintains its own internal DNS cache. The operating system will reflect the new hosts file immediately (verify that with ping on the command line) but you'll need to restart Android to rebuild the DNS cache of Java.</p>
+<h2>តើ VPN ប្រើម៉ាស៊ីនមេ DNS ណាខ្លះ?</h2>
+<p>នៅក្នុងរបៀប VPN ឈ្មោះ host ដែលមិនត្រូវបានទប់ស្កាត់ ត្រូវបានដោះស្រាយដោយម៉ាស៊ីនមេ DNS ដែលអ្នកជ្រើសរើសនៅក្នុង <cite>ការកំណត់ › កម្មវិធីទប់ស្កាត់ពាណិជ្ជកម្មតាម VPN › ម៉ាស៊ីនមេ DNS</cite>:</p>
+<p><strong>ម៉ាស៊ីនមេ DNS របស់បណ្តាញ</strong> (លំនាំដើម): ម៉ាស៊ីនមេរបស់បណ្តាញ Wi-Fi ឬបណ្តាញទូរសព្ទចល័តរបស់អ្នក។ ប្រសិនបើបណ្តាញមិនផ្តល់ម៉ាស៊ីនមេដែល AdAway អាចប្រើបាន វានឹងប្តូរទៅប្រើ Cloudflare (<code>1.1.1.1</code>)។<br/><strong>ម៉ាស៊ីនមេ DNS ផ្ទាល់ខ្លួន</strong>: អាសយដ្ឋាន IP ដែលអ្នកបញ្ចូល បំបែកដោយសញ្ញាក្បៀស។<br/><strong>DNS over HTTPS</strong>: សំណើត្រូវបានអ៊ិនគ្រីប ហើយផ្ញើទៅ Cloudflare, Google, Quad9 ឬអាសយដ្ឋាន <code>https://</code> ដែលអ្នកបញ្ចូល ដូច្នេះបណ្តាញរបស់អ្នកមិនអាចអាន ឬកែប្រែវាបានទេ។</p>
+<p>ការទប់ស្កាត់ដំណើរការដូចគ្នាជាមួយទាំងបី។ ដើម្បីរក្សា DNS ដែលបានអ៊ិនគ្រីប សូមប្រើ DNS over HTTPS នៅទីនេះ ជាជាងការកំណត់ <cite>DNS ឯកជន</cite> របស់ Android ដែលចៀសផុតពី AdAway។</p>
 
-<h2>How to use the webserver in AdAway?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>តើទប់ស្កាត់ អនុញ្ញាត ឬបញ្ជូនឈ្មោះ host បន្តដោយរបៀបណា?</h2>
+<p>ពីអេក្រង់ដើម អ្នកគ្រប់គ្រងបញ្ជីបី:</p>
+<p><strong>បានទប់ស្កាត់</strong>: ឈ្មោះ host ដែលត្រូវទប់ស្កាត់ (ពាណិជ្ជកម្ម និងកម្មវិធីតាមដាន)។<br/><strong>បានអនុញ្ញាត</strong>: ករណីលើកលែងដែលអ្នកមិនចង់ឱ្យត្រូវបានទប់ស្កាត់ឡើយ ទោះប្រភពណាមួយរាយវាក៏ដោយ។<br/><strong>បានបញ្ជូនបន្ត</strong>: ឈ្មោះ host ដែលអ្នកចង់ឱ្យចង្អុលទៅអាសយដ្ឋាន IP ជាក់លាក់មួយ។</p>
+<p>អ្នកក៏អាចបើក <cite>កំណត់ហេតុ DNS</cite> ពីអេក្រង់ដើម ដើម្បីមើលថាកម្មវិធីកំពុងស្នើឈ្មោះ host ណាខ្លះភ្លាមៗ រួចទប់ស្កាត់ ឬអនុញ្ញាតពួកវាដោយផ្ទាល់ពីទីនោះ។</p>
 
-<h2>How can I block/unblock specific hostnames?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>តើត្រូវចាប់ផ្តើម Android ឡើងវិញដែរឬទេ ក្រោយផ្លាស់ប្តូរបញ្ជី?</h2>
+<p>ទេ។ AdAway អនុវត្តការផ្លាស់ប្តូរភ្លាមៗ ប៉ុន្តែកម្មវិធីដែលបានបើករួចហើយអាចបន្តប្រើការតភ្ជាប់ចាស់ និងឃ្លាំងសម្ងាត់របស់វា។ សូមបិទវាឱ្យអស់ (បង្ខំឱ្យឈប់ នៅក្នុងការកំណត់ Android របស់កម្មវិធី) ហើយសម្អាតឃ្លាំងសម្ងាត់របស់វា ប្រសិនបើពាណិជ្ជកម្មនៅតែបង្ហាញ។ ត្រូវចាប់ផ្តើម Android ឡើងវិញតែម្តងគត់ក្នុងរបៀប root ក្រោយបើកម៉ូឌុល systemless hosts របស់ Magisk។</p>
 
-<h2>Where can I find more hosts sources?</h2>
-<p>See <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">List of additional hosts sources for AdAway</a>.</p>
+<h2>តើអាចរកប្រភព hosts បន្ថែមបាននៅឯណា?</h2>
+<p>AdAway មកជាមួយការកំណត់លំនាំដើមដែលសមហេតុផល។ ប្រសិនបើអ្នកចង់បានបន្ថែម សូមមើល<a href="https://github.com/AdAway/AdAway/wiki/HostsSources">បញ្ជីប្រភព hosts បន្ថែម</a>ដែលថែទាំដោយសហគមន៍។ សូមបន្ថែមប្រភពឱ្យតិចតួច ព្រោះបញ្ជីធំពេក ឬត្រួតគ្នា អាចបង្កការទប់ស្កាត់ខុសដែលធ្វើឱ្យកម្មវិធីដំណើរការមិនបាន។</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>ហេតុអ្វីបានជាមាន fork នេះ?</h2>
+<p>AdAway ជាគម្រោងដ៏ល្អដែលមានប្រវត្តិយូរលង់ ប៉ុន្តែសកម្មភាពចេញផ្សាយ និងត្រួតពិនិត្យនៅគម្រោងដើមបានមានកម្រិតអស់មួយរយៈហើយ។ ការជួសជុលកំហុស និង pull request មួយចំនួនបានស្ថិតនៅបើកយូរ រួមទាំងបញ្ហាដែលប៉ះពាល់ដល់ស្ថិរភាពរបៀប VPN នៅលើកំណែ Android ថ្មីៗ និង ROM របស់ក្រុមហ៊ុនផលិត។ fork នេះមានដើម្បីរក្សាឱ្យគម្រោងនៅតែប្រើបាន ជាមួយការជួសជុលដែលថែទាំដោយសហគមន៍ ជាជាងទុកឱ្យការកែលម្អដែលបានសាកល្បងហើយនៅទំនេរ។</p>
 
-<h2>Help translating/report bugs</h2>
-<p>Please go to <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>តើរាយការណ៍កំហុស ឬស្នើការផ្លាស់ប្តូរដោយរបៀបណា?</h2>
+<p>សូមបើកបញ្ហាមួយ (issue) នៅលើកន្លែងតាមដានរបស់ fork: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>។ កំណត់ហេតុវិនិច្ឆ័យ (មើលផ្ទាំងបញ្ហា) ជួយបានច្រើន នៅពេលរាយការណ៍បញ្ហា VPN។</p>
 </body>
 </html>

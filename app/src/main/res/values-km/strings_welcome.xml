@@ -1,13 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_root_missing_title">តម្រូវការ Root ទូរស័ព្ធ</string>
-    <string name="tv_welcome_intro_subtitle">អ្នកជំនួយការខ្លីនេះនឹងបើកការទប់ស្កាត់ការផ្សាយពាណិជ្ជកម្មនៅលើឧបករណ៍នេះ។</string>
-    <string name="tv_welcome_start_button">ចាប់ផ្ដើម</string>
+    <string name="welcome_first_step">ជំហានទីមួយនៃអ្នកជំនួយការ</string>
+    <string name="welcome_second_step">ជំហានទីពីរនៃអ្នកជំនួយការ</string>
+    <string name="welcome_third_step">ជំហានទីបីនៃអ្នកជំនួយការ</string>
+    <string name="welcome_fourth_step">ជំហានទីបួននៃអ្នកជំនួយការ</string>
+    <string name="welcome_method_header">ស្វាគមន៍មកកាន់ AdAway!</string>
+    <string name="welcome_method_summary">AdAway មានវិធីទប់ស្កាត់ពាណិជ្ជកម្មពីរបែប។ សូមជ្រើសរើសបែបដែលអ្នកពេញចិត្ត:</string>
+    <string name="welcome_root_method_title">ការទប់ស្កាត់ពាណិជ្ជកម្ម\nតាម root</string>
+    <string name="welcome_root_method_text1">លឿនជាង</string>
+    <string name="welcome_root_method_text2">សន្សំថ្ម</string>
+    <string name="welcome_root_method_text3">ត្រូវការ root</string>
+    <string name="welcome_vpn_method_title">ការទប់ស្កាត់ពាណិជ្ជកម្ម\nតាម VPN</string>
+    <string name="welcome_vpn_method_text1">យឺតជាង</string>
+    <string name="welcome_vpn_method_text2">ដំណើរការនៅផ្ទៃខាងក្រោយ</string>
+    <string name="welcome_vpn_method_text3">ភាពឆបគ្នា</string>
+    <string name="welcome_root_missing_title">ត្រូវការ Android ដែលបាន root</string>
+    <string name="welcome_root_missile_description">មិនអាចរកឃើញកម្មវិធី su ឬអ្នកមិនបានអនុញ្ញាតសិទ្ធិ root ដល់ AdAway ទេ។\n\nករណីនេះអាចកើតឡើងនៅពេលឧបករណ៍របស់អ្នកមិនទាន់បាន root។ អ្នកអាចរកព័ត៌មានអំពីរបៀប root ឧបករណ៍របស់អ្នកនៅ wiki.lineageos.org ឬគេហទំព័រ Android ផ្សេងទៀត។</string>
+    <string name="welcome_vpn_alwayson_title">VPN បើកជានិច្ចត្រូវបានបើក</string>
+    <string name="welcome_vpn_alwayson_description">AdAway បានរកឃើញថា VPN មួយទៀតបានបើកការកំណត់ «VPN បើកជានិច្ច»។\n\nនេះរារាំង AdAway មិនឱ្យស្នើសុំការចូលប្រើ VPN បាន។ សូមបិទ «VPN បើកជានិច្ច» នៅលើ VPN នោះ រួចព្យាយាមម្តងទៀត។</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway ស្នើសុំការចូលប្រើ VPN មិនបានទេ។\n\nវាអាចបណ្តាលមកពី VPN មួយទៀតបានបើកការកំណត់ «VPN បើកជានិច្ច»។ សូមពិនិត្យមើលថាតើ VPN ណាមួយបានបើកការកំណត់នេះឬអត់ ហើយបិទវាមុនពេលព្យាយាមម្តងទៀត។</string>
+    <string name="welcome_vpn_alwayson_settings_action">បើកការកំណត់ «VPN»</string>
+    <string name="welcome_method_pro_logo">គុណសម្បត្តិ</string>
+    <string name="welcome_method_con_logo">គុណវិបត្តិ</string>
+    <string name="welcome_sync_header">កំពុងធ្វើសមកាលកម្ម</string>
+    <string name="welcome_synced_header">បានធ្វើសមកាលកម្ម!</string>
+    <string name="welcome_sync_summary">AdAway ទាញយកបណ្តាញពាណិជ្ជកម្មដែលត្រូវទប់ស្កាត់ពីប្រភពលើអ៊ីនធឺណិត។ អ្នកអាចកែតម្រូវវាបានពេលក្រោយនៅក្នុងការកំណត់។</string>
+    <string name="welcome_sync_retry_logo">ព្យាយាមធ្វើសមកាលកម្មម្តងទៀត</string>
+    <string name="welcome_sync_error">ធ្វើសមកាលកម្មមិនបាន: %1$s។ ព្យាយាមម្តងទៀតឥឡូវនេះឬទេ?</string>
+    <string name="welcome_sync_notifications">វាអាចផ្ញើការជូនដំណឹងដើម្បីបង្ហាញស្ថានភាព និងការគ្រប់គ្រងការទប់ស្កាត់ពាណិជ្ជកម្ម ព្រមទាំងជូនដំណឹងអំពីបច្ចុប្បន្នភាពកម្មវិធី (ប៉ុន្មានដងក្នុងមួយឆ្នាំ)។ សូមបើកវា ប្រសិនបើអ្នកចង់ទទួលបានកំណែថ្មីជានិច្ច។</string>
+    <string name="welcome_sync_leave_early_title">ការធ្វើសមកាលកម្មមិនទាន់ចប់</string>
+    <string name="welcome_sync_leave_early_message">បញ្ជីទប់ស្កាត់មិនទាន់ទាញយករួចរាល់ទេ។ អ្នកអាចបន្តឥឡូវនេះ ហើយវានឹងបន្តនៅផ្ទៃខាងក្រោយ ឬរង់ចាំនៅទីនេះរហូតដល់រួចរាល់។</string>
+    <string name="welcome_sync_leave_early_wait">រង់ចាំ</string>
+    <string name="welcome_sync_leave_early_continue">បន្តទោះយ៉ាងណា</string>
+    <string name="welcome_battery_header">បន្តការពារនៅផ្ទៃខាងក្រោយ</string>
+    <string name="welcome_battery_summary">Android អាចផ្អាក VPN របស់ AdAway នៅផ្ទៃខាងក្រោយដើម្បីសន្សំថាមពល ដែលអាចធ្វើឱ្យការទប់ស្កាត់ពាណិជ្ជកម្មឈប់ដោយស្ងៀមស្ងាត់។ សូមអនុញ្ញាតឱ្យ AdAway មិនអើពើនឹងការបង្កើនប្រសិទ្ធភាពថ្ម ដើម្បីឱ្យវាបន្តដំណើរការ។</string>
+    <string name="welcome_battery_action">អនុញ្ញាត</string>
+    <string name="welcome_battery_granted">បានអនុញ្ញាត ✓</string>
+    <string name="welcome_battery_footnote_prefix">អ្នកអាចផ្លាស់ប្តូរវាបានជានិច្ចពេលក្រោយ ពី</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>ការកំណត់ Android</item>
+        <item>កម្មវិធី</item>
+        <item>AdAway</item>
+        <item>ថ្ម</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">មួយទៀត: កម្មវិធីគ្រប់គ្រងថ្មរបស់ទូរសព្ទអ្នក</string>
+    <string name="welcome_oem_battery_summary">ម៉ាកទូរសព្ទមួយចំនួនមានកម្មវិធីគ្រប់គ្រងថ្មផ្ទាល់ខ្លួន ដែលអាចរារាំង AdAway ផងដែរ។ នេះជាអ្វីដែលត្រូវពិនិត្យនៅលើទូរសព្ទរបស់អ្នក:</string>
+    <string name="welcome_oem_battery_action">បើកព័ត៌មានកម្មវិធី</string>
+    <string name="welcome_oem_battery_open_failed">មិនអាចបើកអេក្រង់ព័ត៌មានកម្មវិធីបានទេ។ សូមបើកវាដោយដៃពី ការកំណត់ Android › កម្មវិធី › AdAway។</string>
+    <string name="welcome_oem_battery_disclaimer">ទាំងនេះគ្រាន់តែជាការចង្អុលបង្ហាញទូទៅ មិនមែនជាការណែនាំច្បាស់លាស់ទេ ពាក្យ និងទីតាំងអាចខុសគ្នាតាមម៉ូដែលទូរសព្ទ និងកំណែ Android។</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>ព័ត៌មានកម្មវិធី</item>
+        <item>ថ្ម</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">រកអ្វីមួយដូចជា «ដែនកំណត់ការប្រើប្រាស់នៅផ្ទៃខាងក្រោយ» › «កម្មវិធីដែលមិនដែលដេក» រួចបន្ថែម AdAway ទៅក្នុងបញ្ជីនោះ។</string>
+    <string name="welcome_oem_battery_secondary_oneui">សូមពិនិត្យមើលការកំណត់ «ការបង្កើនប្រសិទ្ធភាពស្វ័យប្រវត្តិ» ផងដែរ ហើយបិទ «ចាប់ផ្តើមឡើងវិញនៅពេលចាំបាច់» ប្រសិនបើមាន។</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>ព័ត៌មានកម្មវិធី</item>
+        <item>កម្មវិធីសន្សំថ្ម</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">ជ្រើសរើស «គ្មានការដាក់កម្រិត»។</string>
+    <string name="welcome_oem_battery_secondary_miui">សូមបើក «ចាប់ផ្តើមស្វ័យប្រវត្តិ» ផងដែរ («ចាប់ផ្តើមស្វ័យប្រវត្តិនៅផ្ទៃខាងក្រោយ» នៅលើកំណែថ្មីៗ)។</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>ព័ត៌មានកម្មវិធី</item>
+        <item>ការប្រើប្រាស់ថ្ម</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">ជ្រើសរើស «អនុញ្ញាតសកម្មភាពនៅផ្ទៃខាងក្រោយ» (ពេលខ្លះបង្ហាញជា «គ្មានការដាក់កម្រិត»)។</string>
+    <string name="welcome_oem_battery_secondary_coloros">សូមរកមើលការបើកបិទ «ចាប់ផ្តើមដោយស្វ័យប្រវត្តិ» សម្រាប់ AdAway ផងដែរ (ជាញឹកញាប់នៅក្រោម ការកំណត់ › កម្មវិធី) ដើម្បីឱ្យវាអាចចាប់ផ្តើមខ្លួនឯងឡើងវិញក្រោយពីត្រូវបានបង្ខំឱ្យឈប់។</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>ព័ត៌មានកម្មវិធី</item>
+        <item>ថ្ម</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">រក «ការបើកកម្មវិធី» បិទ «គ្រប់គ្រងដោយស្វ័យប្រវត្តិ» រួចបើកទាំង 3: «ចាប់ផ្តើមដោយស្វ័យប្រវត្តិ» «ចាប់ផ្តើមបន្ទាប់បន្សំ» និង «ដំណើរការនៅផ្ទៃខាងក្រោយ»។</string>
+    <string name="welcome_oem_battery_secondary_emui">សូមចាក់សោ AdAway នៅក្នុងអេក្រង់កម្មវិធីថ្មីៗផងដែរ (អូសកាតរបស់វាចុះក្រោមរហូតដល់មានរូបសោបង្ហាញ)។</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>ព័ត៌មានកម្មវិធី</item>
+        <item>ការប្រើប្រាស់ថ្ម</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">រកជម្រើសថាមពលនៅផ្ទៃខាងក្រោយ ហើយជ្រើសរើស «កុំដាក់កម្រិតការប្រើថាមពលនៅផ្ទៃខាងក្រោយ» (មិនមែន «ការគ្រប់គ្រងឆ្លាតវៃ» ទេ)។</string>
+    <string name="welcome_oem_battery_secondary_funtouch">សូមរកមើលការកំណត់ «ចាប់ផ្តើមស្វ័យប្រវត្តិ» សម្រាប់ AdAway ផងដែរ ជាញឹកញាប់នៅក្រោម ការកំណត់ › កម្មវិធី។</string>
+    <string name="welcome_oem_battery_label_generic">ម៉ាកផ្សេងទៀត</string>
+    <string name="welcome_oem_battery_tip_generic">រកការកំណត់ថ្ម ឬសកម្មភាពនៅផ្ទៃខាងក្រោយក្នុងព័ត៌មានកម្មវិធី ហើយប្រាកដថា AdAway មិនត្រូវបានដាក់កម្រិតទេ។</string>
+    <string name="welcome_back_button">ថយក្រោយ</string>
+    <string name="welcome_next_button">បន្ទាប់</string>
+    <string name="welcome_finish_button">បញ្ចប់</string>
+    <string name="tv_welcome_intro_subtitle">អ្នកជំនួយការខ្លីនេះបើកការទប់ស្កាត់ពាណិជ្ជកម្មនៅលើឧបករណ៍នេះ។</string>
+    <string name="tv_welcome_start_button">ចាប់ផ្តើម</string>
     <string name="tv_welcome_method_header">ជ្រើសរើសវិធីទប់ស្កាត់របស់អ្នក</string>
     <string name="tv_welcome_method_root_button">ប្រើ root</string>
-    <string name="tv_welcome_method_root_body">លឿនជាង និងសន្សំសំចៃថ្ម។ ត្រូវការឧបករណ៍ដែលបាន root។</string>
+    <string name="tv_welcome_method_root_body">លឿនជាង និងសន្សំថ្ម។ ត្រូវការឧបករណ៍ដែលបាន root។</string>
     <string name="tv_welcome_method_vpn_button">ប្រើ VPN</string>
-    <string name="tv_welcome_method_vpn_body">ដំណើរការដោយមិនចាំបាច់ root ត្រូវគ្នាជាមួយឧបករណ៍ Android TV ណាមួយ។</string>
-    <string name="tv_welcome_activate_header">បើកការទប់ស្កាត់ការផ្សាយពាណិជ្ជកម្ម</string>
-    <string name="tv_welcome_activate_body">វាគឺជា VPN មូលដ្ឋាន៖ វាច្រោះការផ្សាយពាណិជ្ជកម្មនៅលើឧបករណ៍នេះផ្ទាល់ ដោយមិនបញ្ជូនចរាចរណ៍របស់អ្នកឆ្លងកាត់ម៉ាស៊ីនមេខាងក្រៅទេ។</string>
+    <string name="tv_welcome_method_vpn_body">ដំណើរការដោយមិនចាំបាច់ root ហើយឆបគ្នាជាមួយឧបករណ៍ Android TV ទាំងអស់។</string>
+    <string name="tv_welcome_activate_header">បើកការទប់ស្កាត់ពាណិជ្ជកម្ម</string>
+    <string name="tv_welcome_activate_body">នេះជា VPN ក្នុងឧបករណ៍: វាត្រងពាណិជ្ជកម្មនៅលើឧបករណ៍នេះ ដោយមិនបញ្ជូនចរាចរណ៍របស់អ្នកឆ្លងកាត់ម៉ាស៊ីនមេខាងក្រៅឡើយ។</string>
 </resources>

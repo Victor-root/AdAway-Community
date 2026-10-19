@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">បើក ឬបិទការថតកំណត់ហេតុ</string>
+    <string name="log_start_recording">ចុចប៊ូតុងថតដើម្បីចាប់ផ្តើមកត់ត្រាសំណើ បន្ទាប់មករុករកអ៊ីនធឺណិត ឬប្រើកម្មវិធី រួចថយក្រោយ ឬអូសដើម្បីផ្ទុកកំណត់ហេតុឡើងវិញ។</string>
+    <string name="log_blocked_requests_ignored">\n\nសំណើដែលត្រូវបានទប់ស្កាត់នឹងមិនត្រូវបានកត់ត្រាទេ។ សូមបិទការទប់ស្កាត់ពាណិជ្ជកម្មជាមុនសិន ប្រសិនបើអ្នកចង់កត់ត្រាសំណើទាំងនោះដែរ។</string>
+    <string name="log_sort">តម្រៀបដូមែន</string>
+    <string name="log_clear">សម្អាតកំណត់ហេតុ</string>
+    <string name="log_sort_alphabetical">តម្រៀបតាមអក្ខរក្រម</string>
+    <string name="log_sort_top_level_domain">តម្រៀបតាមដូមែនកម្រិតកំពូល</string>
+    <string name="log_block">បន្ថែមធាតុទៅក្នុងបញ្ជីទប់ស្កាត់</string>
+    <string name="log_allow">បន្ថែមធាតុទៅក្នុងបញ្ជីអនុញ្ញាត</string>
+    <string name="log_redirect">បន្ថែមធាតុទៅក្នុងបញ្ជីបញ្ជូនបន្ត</string>
+    <string name="log_redirect_dialog_title">បញ្ជូនដូមែនបន្ត</string>
+    <string name="log_capture_failed">ការចាប់យក DNS មិនអាចចាប់ផ្តើមបានទេ។</string>
     <string name="log_start_recording_button">ចាប់ផ្តើមថត</string>
-    <string name="log_start_recording_vpn_inactive">ចាប់ផ្តើមថត (VPN មិនដំណើរការ)</string>
-    <string name="log_stop_recording">បញ្ឈប់ការថត</string>
+    <string name="log_start_recording_vpn_inactive">ចាប់ផ្តើមថត (VPN មិនសកម្ម)</string>
+    <string name="log_stop_recording">ឈប់ថត</string>
 </resources>

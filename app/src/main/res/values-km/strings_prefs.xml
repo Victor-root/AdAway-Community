@@ -1,25 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_main_title">ការកំណត់</string>
-    <string name="pref_update_check_now">Check now</string>
-    <string name="pref_update_install">Update now</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>None</item>
-        <item>All except browsers</item>
-        <item>All</item>
+    <string name="pref_general_category">ទូទៅ</string>
+    <string name="pref_dark_theme">រចនាប័ទ្មងងឹត</string>
+    <string-array name="pref_dark_theme_modes">
+        <item>ភ្លឺ</item>
+        <item>ងងឹត</item>
+        <item>លំនាំដើមរបស់ប្រព័ន្ធ</item>
     </string-array>
+    <string name="pref_update_configuration">ការធ្វើបច្ចុប្បន្នភាពស្វ័យប្រវត្តិ</string>
+    <string name="pref_language">ភាសា</string>
+    <string name="pref_language_system">ភាសារបស់ប្រព័ន្ធ</string>
+    <string name="pref_ad_block_category">ការទប់ស្កាត់ពាណិជ្ជកម្ម</string>
+    <string name="pref_root_ad_blocker_configuration">កម្មវិធីទប់ស្កាត់ពាណិជ្ជកម្មតាម root</string>
+    <string name="pref_vpn_ad_blocker_configuration">កម្មវិធីទប់ស្កាត់ពាណិជ្ជកម្មតាម VPN</string>
+    <string name="pref_enable_ipv6">បើកការគាំទ្រ IPv6</string>
+    <string name="pref_backup_restore">បម្រុងទុក / ស្ដារច្បាប់ទប់ស្កាត់</string>
+    <string name="pref_backup_restore_title">បម្រុងទុក និងស្ដារ</string>
+    <string name="pref_backup">បម្រុងទុក</string>
+    <string name="pref_backup_summary">បម្រុងទុកច្បាប់ទប់ស្កាត់របស់អ្នកទៅកាន់ទំហំផ្ទុកខាងក្រៅ</string>
+    <string name="pref_restore">ស្ដារ</string>
+    <string name="pref_restore_summary">ស្ដារច្បាប់ទប់ស្កាត់របស់អ្នកពីឯកសារបម្រុងទុក</string>
+    <string name="import_success">បាននាំចូលឯកសារបម្រុងទុកពីទំហំផ្ទុកខាងក្រៅរបស់អ្នកដោយជោគជ័យ។</string>
+    <string name="import_failed">នាំចូលឯកសារបម្រុងទុកមិនបានទេ។ តើទ្រង់ទ្រាយរបស់វាត្រឹមត្រូវដែរឬទេ?</string>
+    <string name="export_success">បាននាំចេញឯកសារបម្រុងទុកទៅកាន់ឯកសារ «%s» នៅលើទំហំផ្ទុកខាងក្រៅរបស់អ្នកដោយជោគជ័យ។</string>
+    <string name="export_failed">នាំចេញឯកសារបម្រុងទុក «%s» មិនបានទេ។</string>
+    <string name="pref_update_title">ការធ្វើបច្ចុប្បន្នភាព</string>
+    <string name="pref_update_enable_notifications">ការជូនដំណឹងត្រូវបានបិទ</string>
+    <string name="pref_update_enable_notifications_summary">ការជូនដំណឹងរបស់កម្មវិធីនឹងមិនបង្ហាញទេ។ ចុចដើម្បីបើកវា។</string>
+    <string name="pref_update_app_category">ការធ្វើបច្ចុប្បន្នភាពកម្មវិធី</string>
+    <string name="pref_update_check_app_startup">ពិនិត្យរកបច្ចុប្បន្នភាពនៅពេលចាប់ផ្តើម</string>
+    <string name="pref_update_check_app_daily">ពិនិត្យរកបច្ចុប្បន្នភាពជាប្រចាំ</string>
+    <string name="pref_update_check_now">ពិនិត្យឥឡូវនេះ</string>
+    <string name="pref_update_install">ធ្វើបច្ចុប្បន្នភាពឥឡូវនេះ</string>
+    <string name="pref_update_hosts_category">ការធ្វើបច្ចុប្បន្នភាពប្រភព hosts</string>
+    <string name="pref_update_check">ពិនិត្យរកបច្ចុប្បន្នភាពនៅពេលចាប់ផ្តើម</string>
+    <string name="pref_update_check_hosts_daily">ពិនិត្យរកបច្ចុប្បន្នភាពជាប្រចាំ</string>
+    <string name="pref_update_sync_on_update">ធ្វើសមកាលកម្មពេលមានបច្ចុប្បន្នភាព</string>
+    <string name="pref_update_sync_unmetered_only">ធ្វើសមកាលកម្មតែលើបណ្តាញគ្មានកម្រិតទិន្នន័យ</string>
+    <string name="pref_vpn_service_on_boot">បើកនៅពេលចាប់ផ្តើម</string>
+    <string name="pref_vpn_service_monitor">តាមដានការតភ្ជាប់</string>
+    <string name="pref_vpn_service_monitor_description">ពិនិត្យស្ថានភាពបណ្តាញជាប្រចាំ ដើម្បីចាប់ផ្តើម VPN ឡើងវិញនៅពេលដាច់ការតភ្ជាប់។</string>
+    <string name="pref_vpn_excluded_apps">កម្មវិធីដែលបានដកចេញ</string>
+    <string name="pref_vpn_excluded_apps_description">កំណត់កម្មវិធីដែលមិនត្រូវប្រើ VPN ដើម្បីកុំឱ្យការតភ្ជាប់របស់វាត្រូវបានទប់ស្កាត់។</string>
+    <string name="pref_vpn_exclude_system_apps">ដកកម្មវិធីប្រព័ន្ធចេញ</string>
+    <string-array name="pref_vpn_excluded_system_apps_entries">
+        <item>គ្មាន</item>
+        <item>ទាំងអស់លើកលែងតែកម្មវិធីរុករក</item>
+        <item>ទាំងអស់</item>
+    </string-array>
+    <string name="pref_vpn_dns">ម៉ាស៊ីនមេ DNS</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>ម៉ាស៊ីនមេ DNS របស់បណ្តាញ</item>
+        <item>ម៉ាស៊ីនមេ DNS ផ្ទាល់ខ្លួន</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">ម៉ាស៊ីនមេ DNS ផ្ទាល់ខ្លួន</string>
+    <string name="pref_vpn_dns_custom_summary">អាសយដ្ឋាន IP បំបែកដោយសញ្ញាក្បៀស</string>
+    <string name="pref_vpn_dns_custom_invalid">អាសយដ្ឋានម៉ាស៊ីនមេ DNS មិនត្រឹមត្រូវ</string>
+    <string name="pref_vpn_doh">ម៉ាស៊ីនមេ DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">អាសយដ្ឋានផ្ទាល់ខ្លួន</string>
+    <string name="pref_vpn_doh_address">អាសយដ្ឋាន DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">អាសយដ្ឋាន DNS over HTTPS មិនត្រឹមត្រូវ</string>
+    <string name="pref_vpn_exclude_user_apps">ដកកម្មវិធីរបស់អ្នកប្រើចេញ</string>
+    <string name="pref_vpn_exclude_user_apps_activity">កម្មវិធីដែលបានដកចេញ</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">ជ្រើសរើសទាំងអស់</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">ដកការជ្រើសរើសទាំងអស់</string>
+    <string name="pref_vpn_exclude_user_apps_icon">រូបតំណាងកម្មវិធី</string>
     <string name="pref_vpn_reset">កំណត់ VPN ឡើងវិញ</string>
-    <string name="pref_vpn_reset_description">បង្កើតការតភ្ជាប់ VPN ឡើងវិញពីដំបូង។ ប្រើវានេះ ប្រសិនបើ VPN ឈប់ដំណើរការ (គ្មានការតភ្ជាប់អ៊ីនធឺណិត ឬមានកំហុស DNS)។</string>
+    <string name="pref_vpn_reset_description">បង្កើតការតភ្ជាប់ VPN ឡើងវិញពីដំបូង។ សូមប្រើវាប្រសិនបើ VPN ឈប់ដំណើរការ (គ្មានអ៊ីនធឺណិត ឬមានកំហុស DNS)។</string>
     <string name="pref_vpn_reset_done">បានបង្កើតការតភ្ជាប់ VPN ឡើងវិញ។</string>
     <string name="pref_vpn_reset_not_running">VPN មិនកំពុងដំណើរការទេ។</string>
+    <string name="pref_vpn_diagnostic_log_enabled">ថតកំណត់ហេតុវិនិច្ឆ័យ</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">សូមបើកមុនពេលធ្វើឱ្យបញ្ហាកើតឡើងម្តងទៀត រួចនាំចេញវានៅខាងក្រោម។ អាចធ្វើឱ្យឧបករណ៍ចាស់ៗយឺតបន្តិច។ ថតតែព្រឹត្តិការណ៍បច្ចេកទេសរបស់ VPN ប៉ុណ្ណោះ គ្មានប្រវត្តិរុករក ឬទិន្នន័យផ្ទាល់ខ្លួនឡើយ។</string>
     <string name="pref_vpn_diagnostic_log">កំណត់ហេតុវិនិច្ឆ័យ</string>
-    <string name="pref_vpn_diagnostic_log_description">មើល ចម្លង ឬចែករំលែកកំហុស និងព្រឹត្តិការណ៍ VPN ថ្មីៗ។ មានប្រយោជន៍ពេលរាយការណ៍បញ្ហា។</string>
-    <string name="pref_vpn_diagnostic_log_empty">មិនទាន់មានព្រឹត្តិការណ៍ណាមួយត្រូវបានកត់ត្រានៅឡើយទេ។</string>
-    <string name="pref_vpn_diagnostic_log_share">ចែករំលែកកំណត់ហេតុវិនិច្ឆ័យ</string>
+    <string name="pref_vpn_diagnostic_log_description">មើល ចម្លង ឬចែករំលែកកំហុស និងព្រឹត្តិការណ៍ VPN ថ្មីៗ។ មានប្រយោជន៍នៅពេលរាយការណ៍បញ្ហា។</string>
+    <string name="pref_vpn_diagnostic_log_empty">មិនទាន់មានព្រឹត្តិការណ៍ណាត្រូវបានថតទេ។ សូមបើក «ថតកំណត់ហេតុវិនិច្ឆ័យ» នៅខាងលើ រួចព្យាយាមធ្វើឱ្យបញ្ហាកើតឡើងម្តងទៀត។</string>
+    <string name="pref_vpn_diagnostic_log_share">ចែករំលែក</string>
+    <string name="pref_vpn_diagnostic_log_share_title">ចែករំលែកកំណត់ហេតុវិនិច្ឆ័យ</string>
     <string name="pref_vpn_diagnostic_log_copy">ចម្លង</string>
     <string name="pref_vpn_diagnostic_log_copied">បានចម្លងកំណត់ហេតុវិនិច្ឆ័យទៅក្តារតម្បៀតខ្ទាស់។</string>
     <string name="pref_vpn_diagnostic_log_clear">សម្អាតកំណត់ហេតុវិនិច្ឆ័យ</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">លុបព្រឹត្តិការណ៍ដែលបានកត់ត្រា។ ធ្វើវានេះ មុនពេលបង្កើតបញ្ហាឡើងវិញ ដើម្បីទទួលបានដាននៃដំណើរការស្អាត។</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">លុបព្រឹត្តិការណ៍ដែលបានថត។ សូមធ្វើបែបនេះមុនពេលធ្វើឱ្យបញ្ហាកើតឡើងម្តងទៀត ដើម្បីទទួលបានកំណត់ហេតុស្អាត។</string>
     <string name="pref_vpn_diagnostic_log_cleared">បានសម្អាតកំណត់ហេតុវិនិច្ឆ័យ។</string>
-    <string name="pref_root_open_hosts">Open hosts file</string>
+    <string name="pref_root_open_hosts">បើកឯកសារ hosts</string>
+    <string name="hosts_file_unreadable">មិនអាចអានឯកសារ hosts បានទេ។</string>
+    <string name="pref_hosts_redirection_summary">កំណត់គោលដៅបញ្ជូនបន្តរបស់ឈ្មោះ host ដែលត្រូវបានទប់ស្កាត់</string>
+    <string name="pref_redirection_ipv4">កំណត់ការបញ្ជូនបន្ត IPv4</string>
+    <string name="pref_redirection_ipv6">កំណត់ការបញ្ជូនបន្ត IPv6</string>
+    <string name="pref_redirection_invalid">ការបញ្ជូនបន្តមិនត្រឹមត្រូវ</string>
+    <string name="pref_webserver_summary">ម៉ាស៊ីនមេបណ្តាញក្នុងឧបករណ៍ស្តាប់នៅលើអាសយដ្ឋាន IP ក្នុងឧបករណ៍ ដើម្បីឆ្លើយតបសំណើរបស់ឈ្មោះ host ដែលត្រូវបានទប់ស្កាត់។ វាអាចជួយកុំឱ្យកម្មវិធីគាំងនៅពេលការតភ្ជាប់ត្រូវបានទប់ស្កាត់។</string>
+    <string name="pref_webserver_enabled">បើកម៉ាស៊ីនមេបណ្តាញ</string>
+    <string name="pref_webserver_test">សាកល្បងម៉ាស៊ីនមេបណ្តាញ</string>
+    <string name="pref_webserver_certificate">ដំឡើងវិញ្ញាបនបត្រចុះហត្ថលេខាដោយខ្លួនឯង</string>
+    <string name="pref_webserver_state_not_running">មិនដំណើរការ</string>
+    <string name="pref_webserver_state_checking">កំពុងពិនិត្យ…</string>
+    <string name="pref_webserver_state_running_not_installed">កំពុងដំណើរការ ប៉ុន្តែមិនទាន់បានដំឡើងវិញ្ញាបនបត្រ</string>
+    <string name="pref_webserver_state_running_and_installed">កំពុងដំណើរការ ហើយបានដំឡើងវិញ្ញាបនបត្រ</string>
+    <string name="pref_webserver_certificate_dialog_title">ដំឡើងវិញ្ញាបនបត្រដោយដៃ</string>
+    <string name="pref_webserver_certificate_dialog_content">ចាប់ពី Android 11 (R) តទៅ កម្មវិធីមិនអាចដំឡើងអាជ្ញាធរវិញ្ញាបនបត្រ (CA) ដោយស្វ័យប្រវត្តិបានទៀតទេ។\n\nសូមចូលទៅការកំណត់ «សុវត្ថិភាព» បន្ទាប់មក «ការអ៊ិនគ្រីប និងព័ត៌មានសម្ងាត់» រួចជ្រើសរើស «ដំឡើងវិញ្ញាបនបត្រ»។ ពីទីនោះ សូមជ្រើសរើស «វិញ្ញាបនបត្រ CA» ហើយជ្រើសរើសឯកសារវិញ្ញាបនបត្រដែលទើបនាំចេញ។</string>
+    <string name="pref_webserver_certificate_dialog_action">បើកការកំណត់ «សុវត្ថិភាព»</string>
+    <string name="pref_webserver_certificate_failed">មិនអាចរៀបចំវិញ្ញាបនបត្របានទេ។</string>
+    <string name="webserver_error_title">ម៉ាស៊ីនមេបណ្តាញមិនបានចាប់ផ្តើម</string>
+    <string name="webserver_error_resources">មិនអាចរៀបចំឯកសារ ឬវិញ្ញាបនបត្ររបស់វាបានទេ។</string>
+    <string name="webserver_error_address_in_use">កម្មវិធីផ្សេងកំពុងប្រើច្រកបណ្តាញ (80 និង 443) របស់ឧបករណ៍រួចហើយ។</string>
+    <string name="webserver_error_start_failed">វាមិនអាចចាប់ផ្តើមនៅលើឧបករណ៍នេះបានទេ។</string>
+    <string name="pref_webserver_icon">ជំនួសកន្លែងទំនេរនៃពាណិជ្ជកម្មដោយរូបតំណាងកម្មវិធី</string>
 </resources>

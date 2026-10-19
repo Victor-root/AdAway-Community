@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Copy of hosts file failed on Android 9+</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPN បិទដោយខ្លួនឯង</h2>
+<p>ស្ទើរតែជានិច្ច នេះគឺដោយសារប្រព័ន្ធបិទសេវា VPN ដើម្បីសន្សំថ្ម មិនមែនដោយសារកម្មវិធីគាំងទេ។ ករណីនេះកើតមានជាញឹកញាប់នៅលើ ROM របស់ក្រុមហ៊ុនផលិតដែលគ្រប់គ្រងថាមពលយ៉ាងតឹងរ៉ឹង (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung ហើយនិងផ្សេងទៀត)។</p>
+<p>នៅក្នុងការកំណត់ Android សូមរក AdAway រួចធ្វើដូចតទៅ: កំណត់ <cite>ការបង្កើនប្រសិទ្ធភាពថ្ម</cite> ទៅ <cite>គ្មានការដាក់កម្រិត</cite> (ឬ <cite>កុំបង្កើនប្រសិទ្ធភាព</cite>) អនុញ្ញាត <cite>ចាប់ផ្តើមស្វ័យប្រវត្តិ</cite>/<cite>ចាប់ផ្តើមដោយស្វ័យប្រវត្តិ</cite> ប្រសិនបើ ROM របស់អ្នកមាន ហើយចាក់សោ AdAway នៅក្នុងបញ្ជីកម្មវិធីថ្មីៗ ដើម្បីកុំឱ្យវាត្រូវបានអូសចោល។ សូមប្រាកដផងដែរថា <cite>បើកនៅពេលចាប់ផ្តើម</cite> ត្រូវបានបើកនៅក្នុងការកំណត់ VPN របស់ AdAway។</p>
 
-<h2>Not enough space on partition</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>គ្មានអ៊ីនធឺណិត ឬរុករកយឺត ភ្លាមៗក្រោយប្តូររវាង Wi-Fi និងទិន្នន័យចល័ត</h2>
+<p>នៅពេលបណ្តាញដែលកំពុងប្រើផ្លាស់ប្តូរ ផ្លូវតភ្ជាប់ត្រូវតែបង្កើតឡើងវិញ ដើម្បីឱ្យ DNS ត្រូវបានដោះស្រាយពីបណ្តាញថ្មី។ ប្រសិនបើការរុករកនៅតែមិនដំណើរការ សូមបើក <cite>ការកំណត់ › កម្មវិធីទប់ស្កាត់ពាណិជ្ជកម្មតាម VPN › កំណត់ VPN ឡើងវិញ</cite> ដើម្បីបង្កើតការតភ្ជាប់ឡើងវិញពីដំបូង។ ប្រសិនបើបញ្ហានៅតែកើតឡើងម្តងទៀត សូមថតកំណត់ហេតុវិនិច្ឆ័យ (ខាងក្រោម) ហើយរាយការណ៍។</p>
 
-<h2>Does not work on Android 4.4+</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>តើនាំចេញកំណត់ហេតុវិនិច្ឆ័យដោយរបៀបណា?</h2>
+<p>សូមបើក <cite>ការកំណត់ › កម្មវិធីទប់ស្កាត់ពាណិជ្ជកម្មតាម VPN › កំណត់ហេតុវិនិច្ឆ័យ</cite>។ វាកត់ត្រាកំហុស និងព្រឹត្តិការណ៍ VPN ថ្មីៗ (ការប្តូរបណ្តាញ ការតភ្ជាប់ឡើងវិញ ការបរាជ័យ) មិនមែនប្រវត្តិរុករករបស់អ្នកទេ គឺមានតែព្រឹត្តិការណ៍បច្ចេកទេសប៉ុណ្ណោះ។ វានៅទទេរហូតដល់អ្នកបើក <cite>ថតកំណត់ហេតុវិនិច្ឆ័យ</cite> ដែលនៅខាងលើវាភ្លាម។ សូមប្រើ <cite>ចម្លង</cite> ឬ <cite>ចែករំលែក</cite> ដើម្បីផ្ញើវានៅពេលរាយការណ៍បញ្ហា។ គន្លឹះ: សូមចុច <cite>សម្អាតកំណត់ហេតុវិនិច្ឆ័យ</cite> ជាមុនសិន រួចធ្វើឱ្យបញ្ហាកើតឡើងម្តងទៀត ដើម្បីឱ្យកំណត់ហេតុផ្តោតលើបញ្ហាតែមួយ។</p>
 
-<h2>It does not block ads in application XYZ!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in the Forum <a href="http://forum.hosts-file.net/viewforum.php?f=9">Hosts Inbox</a> of <a href="http://hosts-file.net">hosts-file.net</a>.</p>
+<h2>Chrome នៅតែបង្ហាញពាណិជ្ជកម្ម</h2>
+<p>Chrome អាចប្រើ <cite>DNS សុវត្ថិភាព</cite> ផ្ទាល់ខ្លួនរបស់វា (DNS-over-HTTPS) ដែលចៀសផុតពី AdAway។ នៅក្នុង Chrome សូមបើក <cite>ការកំណត់ › ឯកជនភាព និងសុវត្ថិភាព › ប្រើ DNS សុវត្ថិភាព</cite> រួចបិទវា។ ករណីដូចគ្នានេះក៏ត្រូវនឹងការកំណត់ <cite>DNS ឯកជន</cite> របស់កម្មវិធី ឬរបស់ប្រព័ន្ធដែរ។ នៅក្នុងរបៀប VPN AdAway អាចអ៊ិនគ្រីប DNS ដោយខ្លួនឯង: សូមមើល <cite>តើ VPN ប្រើម៉ាស៊ីនមេ DNS ណាខ្លះ?</cite> នៅក្នុងសំណួរញឹកញាប់។</p>
 
-<h2>Cached Advertisements</h2>
-<p>Sometimes applications cache advertisements after download. This leads to remaining advertisements in some applications. You can try to delete the cache for these applications in Android's Application list to circumvent this problem.</p>
+<h2>ពាណិជ្ជកម្មមួយចំនួននៅតែកាត់ចូលបាន ឬកម្មវិធីមួយនៅតែបង្ហាញពាណិជ្ជកម្ម</h2>
+<p>ឈ្មោះ host អាចបាត់ពីប្រភពរបស់អ្នក ឬកម្មវិធីបង្កប់ពាណិជ្ជកម្មរបស់វាដោយមិនបង្កើតសំណើ។ សូមបើក <cite>កំណត់ហេតុ DNS</cite> ពីអេក្រង់ដើម ដើម្បីមើលអ្វីដែលកម្មវិធីកំពុងស្នើ បន្ថែមឈ្មោះ host ដែលគួរឱ្យសង្ស័យទៅក្នុងបញ្ជី <cite>បានទប់ស្កាត់</cite> របស់អ្នក ហើយពិនិត្យថាគ្មានអ្វីខូច។ កម្មវិធីខ្លះក៏រក្សាទុកពាណិជ្ជកម្មក្នុងឃ្លាំងសម្ងាត់ក្រោយពីបានទាញយក ដូច្នេះការសម្អាតឃ្លាំងសម្ងាត់របស់កម្មវិធីនោះក្នុងការកំណត់ Android អាចជួយបាន។</p>
 
-<h2>Application XYZ is not working anymore!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>កម្មវិធីមួយឈប់ដំណើរការក្រោយបើក AdAway</h2>
+<p>កម្មវិធីខ្លះបដិសេធមិនដំណើរការ នៅពេលឈ្មោះ host ដែលវាត្រូវការត្រូវបានទប់ស្កាត់។ សូមប្រើ <cite>កំណត់ហេតុ DNS</cite> ដើម្បីរកមើលថាកម្មវិធីត្រូវការឈ្មោះ host ណា បន្ថែមវាទៅក្នុងបញ្ជី <cite>បានអនុញ្ញាត</cite> របស់អ្នក នោះកម្មវិធីគួរតែដំណើរការវិញ។ កម្មវិធីដែលមានបញ្ហាស្គាល់ត្រូវបានរាយ <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">នៅទីនេះ</a>។</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
+<h2>ការអនុវត្តឯកសារ hosts បរាជ័យ (របៀប root)</h2>
+<p>កំណែ Android ថ្មីៗប្រើភាគថាស <code>/system</code> ដែលអានបានតែប៉ុណ្ណោះ ដូច្នេះ AdAway មិនអាចសរសេរទៅទីនោះដោយផ្ទាល់បានទេ។ ប្រសិនបើអ្នកប្រើ Magisk សូមបើកម៉ូឌុល <cite>systemless hosts</cite> ចាប់ផ្តើមឧបករណ៍ឡើងវិញ រួចអនុវត្តម្តងទៀត។ ប្រសិនបើអ្នកមិនប្រើ root សូមប្តូរទៅរបៀប VPN វិញ ដែលមិនត្រូវការកែប្រែប្រព័ន្ធឡើយ។</p>
 
-<h2>The back button in web browsers is not working</h2>
-<p>You can enable AdAway's local webserver in preferences as a workaround.</p>
-
+<h2>នៅតែជាប់គាំងដែរឬ?</h2>
+<p>សូមរាយការណ៍បញ្ហាដោយភ្ជាប់កំណត់ហេតុវិនិច្ឆ័យនៅ <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>។</p>
 </body>
 </html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">បញ្ចូលទៅក្នុងបញ្ជីអនុញ្ញាត</string>
-    <string name="tv_dialog_add_to_blocked">បញ្ចូលទៅក្នុងបញ្ជីទប់ស្កាត់</string>
+    <string name="tv_dialog_add_to_allowed">បន្ថែមទៅក្នុងបញ្ជីអនុញ្ញាត</string>
+    <string name="tv_dialog_add_to_blocked">បន្ថែមទៅក្នុងបញ្ជីទប់ស្កាត់</string>
     <string name="tv_dialog_remove_from_allowed">ដកចេញពីបញ្ជីអនុញ្ញាត</string>
     <string name="tv_dialog_remove_from_blocked">ដកចេញពីបញ្ជីទប់ស្កាត់</string>
-    <string name="tv_dialog_copy_hostname">ចម្លងឈ្មោះម៉ាស៊ីន</string>
-    <string name="tv_log_entry_status_description">ស្ថានភាពដូមេន</string>
+    <string name="tv_dialog_copy_hostname">ចម្លងឈ្មោះ host</string>
+    <string name="tv_log_entry_status_description">ស្ថានភាពដូមែន</string>
     <string name="tv_button_theme_light">របៀបភ្លឺ</string>
     <string name="tv_button_theme_dark">របៀបងងឹត</string>
-    <string name="tv_lists_empty">មិនទាន់មានធាតុនៅក្នុងបញ្ជីនេះទេ។</string>
+    <string name="tv_lists_empty">មិនទាន់មានធាតុក្នុងបញ្ជីនេះទេ។</string>
     <string name="tv_dialog_search">ស្វែងរក</string>
 </resources>
