@@ -4,10 +4,10 @@
     <string name="tv_dialog_add_to_blocked">Dodaj u blokirane</string>
     <string name="tv_dialog_remove_from_allowed">Ukloni iz dopuštenih</string>
     <string name="tv_dialog_remove_from_blocked">Ukloni iz blokiranih</string>
-    <string name="tv_dialog_copy_hostname">Kopiraj naziv domaćina</string>
-    <string name="tv_log_entry_status_description">Stanje domene</string>
-    <string name="tv_button_theme_light">Svijetla tema</string>
-    <string name="tv_button_theme_dark">Tamna tema</string>
-    <string name="tv_lists_empty">Na ovom popisu još nema stavki.</string>
-    <string name="tv_dialog_search">Pretraži</string>
+    <string name="tv_dialog_copy_hostname">Kopiraj naziv hosta</string>
+    <string name="tv_log_entry_status_description">Status domene</string>
+    <string name="tv_button_theme_light">Svijetli način</string>
+    <string name="tv_button_theme_dark">Tamni način</string>
+    <string name="tv_lists_empty">Na ovom popisu još nema unosa.</string>
+    <string name="tv_dialog_search">Traži</string>
 </resources>

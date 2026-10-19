@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Hosts file kopijavimas nepavyko Android 9+</h2>
-<p>Paskiausios Android versijos nauja tik skaitomą <code>/system</code> particiją. <br>
-Jei naudojate Magisk kaip root sprendimą, įsitikinkite kad įjungėte ne sisteminį domeno hosts modulį ir perkovėte.</p>
+<h2>VPN išsijungia pats</h2>
+<p>Beveik visada tai sistema sustabdo VPN paslaugą, kad taupytų akumuliatorių, o ne strigimas. Tai dažna gamintojų ROM su agresyviu energijos valdymu (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung ir kituose).</p>
+<p>Android nustatymuose suraskite AdAway ir: nustatykite <cite>akumuliatoriaus optimizavimą</cite> į <cite>Neribojama</cite> (arba <cite>Neoptimizuoti</cite>), įjunkite <cite>Automatinis paleidimas</cite>/<cite>Automatinis paleidimas fone</cite>, jei jūsų ROM turi tokią parinktį, ir užfiksuokite AdAway naujausių programų sąraše, kad ji nebūtų nubraukta. Taip pat patikrinkite, ar AdAway VPN nuostatose įjungta <cite>Įjungti paleidžiant</cite>.</p>
 
-<h2>Neužtenka laisvos vietos jūsų pasirinktoje atmintyje</h2>
-<p>Pabandykite pakeisti hosts failą nustatymuose į <code>/data/data/hosts</code> (arba <code>/data/hosts</code>) ir įjungkite AdAway vėl.</p>
+<h2>Nėra interneto arba lėta naršymas iškart perjungus Wi-Fi ir mobiliuosius duomenis</h2>
+<p>Pasikeitus aktyviam tinklui, tunelį reikia sukurti iš naujo, kad DNS būtų išspręstas per naująjį tinklą. Jei naršymas vis dar neveikia, atidarykite <cite>Nuostatos › Reklamų blokatorius per VPN › Iš naujo nustatyti VPN</cite>, kad ryšys būtų sukurtas iš naujo. Jei tai kartojasi, užfiksuokite diagnostikos žurnalą (žemiau) ir praneškite apie problemą.</p>
 
-<h2>Chrome vistiek rodo reklamas</h2>
-<p>Išjungkite <cite>lengvajį lite rėžimą</cite> (dar žinomą kaip <cite>duomenų mažinimą</cite>) iš Chrome nustatymų. Ši funkcija leidžia Chrome naudoti privatų DNS serverį ir apeiti AdAway.</p>
+<h2>Kaip eksportuoti diagnostikos žurnalą?</h2>
+<p>Atidarykite <cite>Nuostatos › Reklamų blokatorius per VPN › Diagnostikos žurnalas</cite>. Jame įrašomos naujausios klaidos ir VPN įvykiai (tinklo perjungimai, pakartotiniai prisijungimai, gedimai), o ne jūsų naršymo istorija, tik techniniai įvykiai. Jis lieka tuščias, kol neįjungsite parinkties <cite>Įrašyti diagnostikos žurnalą</cite> iškart virš jo. Paspauskite <cite>Kopijuoti</cite> arba <cite>Bendrinti</cite>, kad jį išsiųstumėte pranešdami apie problemą. Patarimas: pirmiausia paspauskite <cite>Išvalyti</cite>, tada atkartokite problemą, kad žurnalas būtų tikslesnis.</p>
 
-<h2>Man neblokuoja reklamu AYZ programoje!</h2>
-<p>Kai kurie domeno adresai gali būti trūkti pateiktų hosts failų iš <cite>Hosts domeno šaltininiai</cite> arba applikacijos sujungė nuotraukas kad pateiktų reklamas be interneto prieigos <br><br>
-Jūs galite įrašyti DNS užklausas (Menu--&gt;Log DNS Užklausos) su AdAway kad matytumėte kokie papildomi domeno adresai gali būti blokuojami.
-<br><br>Pridėkite įtariamus domeno adresus į jūsų Juodąjį sąrašą ilgai palaikydami įvedimus Įrašuose Log ir praneškite šiuos adresus kai juos patvirtinote mūsų <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub probelmų sekėjas issue tracker</a>.</p>
+<h2>Chrome vis dar rodo reklamas</h2>
+<p>Chrome gali naudoti savo funkciją <cite>Saugusis DNS</cite> (DNS-over-HTTPS), kuri apeina AdAway. Chrome atidarykite <cite>Nustatymai › Privatumas ir sauga › Naudoti saugųjį DNS</cite> ir ją išjunkite. Tas pats galioja bet kuriam programos ar sistemos nustatymui <cite>Privatusis DNS</cite>. VPN režimu AdAway gali pati šifruoti DNS: žr. <cite>Kokius DNS serverius naudoja VPN?</cite> skiltyje DUK.</p>
 
-<h2>Reklamos laikinoje atmintyje</h2>
-<p>Kartais aplikacijos išsaugo reklamas po atsisiuntimo. Tai lemia likusias reklamas kai kuriose aplikacijose. Jūs galite bandyti ištrinti saugyklas cache šioms aplikacijoms Android applikacijų saraše kad apeiti šią problemą.</p>
+<h2>Dalis reklamų vis dar praeina arba programa vis dar rodo reklamas</h2>
+<p>Domeno gali trūkti jūsų šaltiniuose arba programa reklamas turi savyje, todėl užklausa nesiunčiama. Pagrindiniame ekrane atidarykite skiltį <cite>DNS žurnalas</cite>, kad pamatytumėte, ko programa teiraujasi, pridėkite įtartinus domenus į sąrašą <cite>Blokuojami</cite> ir patikrinkite, ar niekas nesugenda. Kai kurios programos taip pat išsaugo atsisiųstas reklamas talpykloje, todėl gali padėti programos talpyklos išvalymas Android nustatymuose.</p>
 
-<h2>Programa AYZ nebeveikia!</h2>
-<p>Kai kurios programos privalo komunikuoti su domenų adresais kurie yra blokuojami AdAway arba atsisako veikti kai reklamų naudojami adresai yra nepasiekiami. Žiūrėti <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> kad gautumėte sąrašą žinomų aplikacijų kurios turi problemų. Kitu atvėju, atraskite kurie adresai reikalingi ir juos pridėkite į savo <cite>Baltajį sąrašą</cite> kurie randasi <cite>Jūsų Sarašai</cite> ir pateikite juos <a href="https://github.com/Victor-root/AdAway-Community/issues">AdAway klaidų sekėjas</a>. </p>
+<h2>Programa nustojo veikti įjungus AdAway</h2>
+<p>Kai kurios programos atsisako veikti, kai užblokuojamas joms reikalingas domenas. Naudokite skiltį <cite>DNS žurnalas</cite>, kad rastumėte, kurio domeno programai reikia, pridėkite jį į sąrašą <cite>Leidžiami</cite>, ir programa turėtų vėl veikti. Žinomos problemiškos programos išvardytos <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">čia</a>.</p>
 
-<h2>Neveikia ant Android 4.4+</h2>
-<p>Pabandykite pakeisti taikomą hosts failą nustatymuose, iš <code>/data/data/hosts</code> į <code>/data/hosts</code> arba <code>/system/etc/hosts</code> ir įjungkite AdAway iš naujo.</p>
+<h2>Nepavyksta pritaikyti hosts failo (root režimas)</h2>
+<p>Naujesnės Android versijos naudoja tik skaitomą skaidinį <code>/system</code>, todėl AdAway negali tiesiogiai į jį rašyti. Jei naudojate Magisk, įjunkite modulį <cite>systemless hosts</cite>, paleiskite įrenginį iš naujo ir taikykite dar kartą. Jei nenaudojate root, verčiau pasirinkite VPN režimą, kuris nekeičia sistemos.</p>
 
-<h2>Naršyklėje mygtukas Atgal neveikia</h2>
-<p>Jūs galite įjungti AdAway lokalų web serverį nustatymuose kaip apėjimą.</p>
-
+<h2>Vis dar nepavyksta?</h2>
+<p>Praneškite apie problemą pridėdami diagnostikos žurnalą adresu <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

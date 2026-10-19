@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Uklj/Isklj bilježenje zapisa</string>
-    <string name="log_start_recording">Pritisnite tipku snimanja za pokretanje bilježenja zahtjeva, pregledavajte web ili koristite aplikacije, zatim se vratite natag ili povucite po zaslonu za osvježavanje.</string>
-    <string name="log_blocked_requests_ignored">\n\nBlokirani zahtjevi neće se bilježiti. Prvo onemogućite blokiranje oglasa ako želite i njih bilježiti.</string>
-    <string name="log_sort">Razvrstaj domene</string>
-    <string name="log_clear">Obriši zapis</string>
-    <string name="log_sort_alphabetical">Abecedno razvrstavanje</string>
-    <string name="log_sort_top_level_domain">Ravrstavanje najviše razine</string>
-    <string name="log_block">Dodaj unos u popis nedopuštenih</string>
-    <string name="log_allow">Dodaj unos u popis dopuštenih</string>
-    <string name="log_redirect">Dodaj unos u popis preusmjernih</string>
+    <string name="log_toggle_recording_description">Uključi ili isključi snimanje zapisnika</string>
+    <string name="log_start_recording">Pritisnite snimanje da biste počeli bilježiti zahtjeve, pregledavajte web ili koristite aplikacije, a zatim se vratite ili povucite prstom za osvježavanje zapisnika.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokirani zahtjevi neće se bilježiti. Ako želite bilježiti i njih, najprije isključite blokiranje oglasa.</string>
+    <string name="log_sort">Sortiraj domene</string>
+    <string name="log_clear">Očisti zapisnik</string>
+    <string name="log_sort_alphabetical">Abecedno sortiranje</string>
+    <string name="log_sort_top_level_domain">Sortiranje prema domeni najviše razine</string>
+    <string name="log_block">Dodaj unos na crni popis</string>
+    <string name="log_allow">Dodaj unos na bijeli popis</string>
+    <string name="log_redirect">Dodaj unos na popis preusmjeravanja</string>
     <string name="log_redirect_dialog_title">Preusmjeri domenu</string>
+    <string name="log_capture_failed">DNS snimanje nije se moglo pokrenuti.</string>
     <string name="log_start_recording_button">Pokreni snimanje</string>
     <string name="log_start_recording_vpn_inactive">Pokreni snimanje (VPN nije aktivan)</string>
     <string name="log_stop_recording">Zaustavi snimanje</string>

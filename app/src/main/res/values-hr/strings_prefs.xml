@@ -4,79 +4,106 @@
     <string name="pref_general_category">Općenito</string>
     <string name="pref_dark_theme">Tamna tema</string>
     <string-array name="pref_dark_theme_modes">
-        <item>Svjetla</item>
+        <item>Svijetla</item>
         <item>Tamna</item>
-        <item>Zadano sustavom</item>
+        <item>Zadano za sustav</item>
     </string-array>
     <string name="pref_update_configuration">Automatska ažuriranja</string>
+    <string name="pref_language">Jezik</string>
+    <string name="pref_language_system">Jezik sustava</string>
     <string name="pref_ad_block_category">Blokiranje oglasa</string>
-    <string name="pref_root_ad_blocker_configuration">Korijenski (root) temeljen blokator oglasa</string>
-    <string name="pref_vpn_ad_blocker_configuration">VPN temeljen blokator oglasa</string>
-    <string name="pref_enable_ipv6">Omogući IPv6 podršku</string>
-    <string name="pref_backup_restore">Sigurnosno kopiraj / Obnovi pravila blokiranja</string>
-    <string name="pref_backup_restore_title">Sigurnosno kopiranje i obnova</string>
-    <string name="pref_backup">Sigurnosno kopiraj</string>
-    <string name="pref_backup_summary">Sigurnosno kopirajte svoja pravila blokiranja na vanjsku pohranu</string>
-    <string name="pref_restore">Obnovi</string>
-    <string name="pref_restore_summary">Obnovite svoja pravila blokiranja iz datoteke sigurnosne kopije</string>
-    <string name="import_success">Sigurnosna kopija je uspješno uvezena iz vašeg uređaja vanjske pohrane.</string>
-    <string name="export_success">Sigurnosna kopija uspješno je izvezena u datoteku \'%s\'  na vašem uređaju vanjske pohrane.</string>
-    <string name="export_failed">Neuspjeli izvoz %s datoteke sigurnosne kopije.</string>
+    <string name="pref_root_ad_blocker_configuration">Blokator oglasa temeljen na rootu</string>
+    <string name="pref_vpn_ad_blocker_configuration">Blokator oglasa temeljen na VPN-u</string>
+    <string name="pref_enable_ipv6">Omogući podršku za IPv6</string>
+    <string name="pref_backup_restore">Sigurnosna kopija i vraćanje pravila blokiranja</string>
+    <string name="pref_backup_restore_title">Sigurnosna kopija i vraćanje</string>
+    <string name="pref_backup">Sigurnosna kopija</string>
+    <string name="pref_backup_summary">Spremite svoja pravila blokiranja na vanjsku pohranu</string>
+    <string name="pref_restore">Vrati</string>
+    <string name="pref_restore_summary">Vratite svoja pravila blokiranja iz datoteke sigurnosne kopije</string>
+    <string name="import_success">Sigurnosna kopija uspješno je uvezena s vaše vanjske pohrane.</string>
+    <string name="import_failed">Uvoz sigurnosne kopije nije uspio. Je li format ispravan?</string>
+    <string name="export_success">Sigurnosna kopija uspješno je izvezena u datoteku „%s“ na vašoj vanjskoj pohrani.</string>
+    <string name="export_failed">Izvoz datoteke sigurnosne kopije „%s“ nije uspio.</string>
     <string name="pref_update_title">Ažuriranja</string>
+    <string name="pref_update_enable_notifications">Obavijesti su onemogućene</string>
+    <string name="pref_update_enable_notifications_summary">Obavijesti aplikacije neće se prikazivati. Dodirnite da biste ih omogućili.</string>
     <string name="pref_update_app_category">Ažuriranja aplikacije</string>
     <string name="pref_update_check_app_startup">Provjeri ažuriranja pri pokretanju</string>
-    <string name="pref_update_check_app_daily">Povremeno provjeri ažuriranja</string>
+    <string name="pref_update_check_app_daily">Povremeno provjeravaj ažuriranja</string>
     <string name="pref_update_check_now">Provjeri sada</string>
     <string name="pref_update_install">Ažuriraj sada</string>
-    <string name="pref_update_hosts_category">Ažurianja poslužitelja</string>
+    <string name="pref_update_hosts_category">Ažuriranja datoteke hosts</string>
     <string name="pref_update_check">Provjeri ažuriranja pri pokretanju</string>
-    <string name="pref_update_check_hosts_daily">Povremeno provjeri ažuriranja</string>
-    <string name="pref_update_sync_on_update">Uskladi pri ažuriranju</string>
-    <string name="pref_update_sync_unmetered_only">Uskladi samo na mrežama s neograničenim podacima</string>
+    <string name="pref_update_check_hosts_daily">Povremeno provjeravaj ažuriranja</string>
+    <string name="pref_update_sync_on_update">Sinkroniziraj pri ažuriranju</string>
+    <string name="pref_update_sync_unmetered_only">Sinkroniziraj samo na mreži bez ograničenja podataka</string>
     <string name="pref_vpn_service_on_boot">Omogući pri pokretanju</string>
-    <string name="pref_vpn_service_monitor">Nadgledaj povezivanje</string>
-    <string name="pref_vpn_service_monitor_description">Povremeno provjeri stanje mreže za ponovno pokretanje VPN-a pri prekidanju povezivanja.</string>
+    <string name="pref_vpn_service_monitor">Prati vezu</string>
+    <string name="pref_vpn_service_monitor_description">Povremeno provjerava stanje mreže kako bi ponovno pokrenuo VPN nakon prekida veze.</string>
     <string name="pref_vpn_excluded_apps">Izuzete aplikacije</string>
-    <string name="pref_vpn_excluded_apps_description">Postavite koja aplikacija neće koristiti VPN tako da se povezivanja ne blokiraju</string>
-    <string name="pref_vpn_exclude_system_apps">Izuzmi aplikacije sustava</string>
+    <string name="pref_vpn_excluded_apps_description">Odredite koje aplikacije ne smiju koristiti VPN kako njihove veze ne bi bile blokirane.</string>
+    <string name="pref_vpn_exclude_system_apps">Izuzmi sistemske aplikacije</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
         <item>Nijedna</item>
-        <item>Sve osim web preglednika</item>
+        <item>Sve osim preglednika</item>
         <item>Sve</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">Izuzmi korisnikove aplikacije</string>
+    <string name="pref_vpn_dns">DNS poslužitelji</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>DNS poslužitelji mreže</item>
+        <item>Prilagođeni DNS poslužitelji</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Prilagođeni DNS poslužitelji</string>
+    <string name="pref_vpn_dns_custom_summary">IP adrese, odvojene zarezima</string>
+    <string name="pref_vpn_dns_custom_invalid">Nevaljana adresa DNS poslužitelja</string>
+    <string name="pref_vpn_doh">Poslužitelj za DNS over HTTPS</string>
+    <string name="pref_vpn_doh_custom">Prilagođena adresa</string>
+    <string name="pref_vpn_doh_address">Adresa za DNS over HTTPS</string>
+    <string name="pref_vpn_doh_invalid">Nevaljana adresa za DNS over HTTPS</string>
+    <string name="pref_vpn_exclude_user_apps">Izuzmi korisničke aplikacije</string>
     <string name="pref_vpn_exclude_user_apps_activity">Izuzete aplikacije</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Odaberi sve</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">Ukloni odabir svih</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Poništi odabir svih</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikacije</string>
-    <string name="pref_vpn_reset">Ponovno uspostavi VPN</string>
-    <string name="pref_vpn_reset_description">Ponovno uspostavite VPN vezu od početka. Upotrijebite ovo ako VPN prestane raditi (nema pristupa internetu ili DNS pogreške).</string>
+    <string name="pref_vpn_reset">Resetiraj VPN</string>
+    <string name="pref_vpn_reset_description">Ponovno uspostavlja VPN vezu od početka. Upotrijebite ovo ako VPN prestane raditi (nema pristupa internetu ili se pojavljuju DNS pogreške).</string>
     <string name="pref_vpn_reset_done">VPN veza je ponovno uspostavljena.</string>
     <string name="pref_vpn_reset_not_running">VPN nije pokrenut.</string>
-    <string name="pref_vpn_diagnostic_log">Dijagnostički zapis</string>
-    <string name="pref_vpn_diagnostic_log_description">Pregledajte, kopirajte ili podijelite nedavne pogreške i VPN događaje. Korisno pri prijavi problema.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Još nije zabilježen nijedan događaj.</string>
-    <string name="pref_vpn_diagnostic_log_share">Podijeli dijagnostički zapis</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Bilježi dijagnostički zapisnik</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Uključite prije nego što ponovite problem, a zatim izvezite zapisnik u nastavku. Može malo usporiti starije uređaje. Bilježi samo tehničke događaje VPN-a, nikad povijest pregledavanja ni osobne podatke.</string>
+    <string name="pref_vpn_diagnostic_log">Dijagnostički zapisnik</string>
+    <string name="pref_vpn_diagnostic_log_description">Pregledajte, kopirajte ili podijelite nedavne pogreške i događaje VPN-a. Korisno pri prijavi problema.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Još nije zabilježen nijedan događaj. Uključite „Bilježi dijagnostički zapisnik“ iznad, a zatim pokušajte ponoviti problem.</string>
+    <string name="pref_vpn_diagnostic_log_share">Podijeli</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Podijeli dijagnostički zapisnik</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopiraj</string>
-    <string name="pref_vpn_diagnostic_log_copied">Dijagnostički zapis kopiran je u međuspremnik.</string>
-    <string name="pref_vpn_diagnostic_log_clear">Očisti dijagnostički zapis</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Izbrišite zabilježene događaje. Učinite to prije ponavljanja problema kako biste dobili čist zapis.</string>
-    <string name="pref_vpn_diagnostic_log_cleared">Dijagnostički zapis je očišćen.</string>
-    <string name="pref_root_open_hosts">Otvori datoteku poslužitelja</string>
-    <string name="pref_hosts_redirection_summary">Odredite gdje će se preusmjeravati blokirani poslužitelji</string>
-    <string name="pref_redirection_ipv4">IPv4 preusmjeravanja</string>
-    <string name="pref_redirection_ipv6">IPv6 preusmjeravanja</string>
+    <string name="pref_vpn_diagnostic_log_copied">Dijagnostički zapisnik kopiran je u međuspremnik.</string>
+    <string name="pref_vpn_diagnostic_log_clear">Očisti dijagnostički zapisnik</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Briše zabilježene događaje. Učinite to prije nego što ponovite problem kako biste dobili čist zapis.</string>
+    <string name="pref_vpn_diagnostic_log_cleared">Dijagnostički zapisnik je očišćen.</string>
+    <string name="pref_root_open_hosts">Otvori datoteku hosts</string>
+    <string name="hosts_file_unreadable">Datoteku hosts nije bilo moguće pročitati.</string>
+    <string name="pref_hosts_redirection_summary">Odredite kamo se preusmjeravaju blokirani hostovi</string>
+    <string name="pref_redirection_ipv4">Postavi IPv4 preusmjeravanje</string>
+    <string name="pref_redirection_ipv6">Postavi IPv6 preusmjeravanje</string>
     <string name="pref_redirection_invalid">Nevaljano preusmjeravanje</string>
-    <string name="pref_webserver_summary">Lokalni web poslužitelj osluškuje lokalne IP adrese u svrhu odgovora na blokirane nazive poslužitelja. Može pomoći pri smrzavanju aplikacija kod blokiranih povezivanja.</string>
+    <string name="pref_webserver_summary">Lokalni web poslužitelj osluškuje na lokalnim IP adresama i odgovara na zahtjeve za blokirane nazive hostova. Može pomoći kad se aplikacija zamrzne zbog blokirane veze.</string>
     <string name="pref_webserver_enabled">Omogući web poslužitelj</string>
     <string name="pref_webserver_test">Testiraj web poslužitelj</string>
-    <string name="pref_webserver_certificate">Instaliraj samopotpisanu vjerodajnicu</string>
-    <string name="pref_webserver_state_not_running">Nije pokrenuto</string>
-    <string name="pref_webserver_state_checking">Provjeravanje…</string>
-    <string name="pref_webserver_state_running_not_installed">Pokrenuto ali vjerodajnica nije instalirana</string>
-    <string name="pref_webserver_state_running_and_installed">Pokrenuto i vjerodajnica je instalirana</string>
-    <string name="pref_webserver_certificate_dialog_title">Ručna instalacija vjerodajnice</string>
-    <string name="pref_webserver_certificate_dialog_content">Počevši od Androida 11 (R), aplikacije više ne mogu automatski instalirati izdavatelja vjerodajnice (CA).\n\nIdite u \"Sigurnost\" postavke, \"Šifriranje i vjerodajnice\" zatim \" Instaliraj vjerodajnicu\". Tada, odaberite \"CA vjerodajnica\" i odaberite novo izvezvenu datoteku vjerodajnice.</string>
-    <string name="pref_webserver_certificate_dialog_action">Otvori \"Sigurnost\" postavke</string>
-    <string name="pref_webserver_icon">Zamijeni prazan prostor s ikonom aplikacije</string>
+    <string name="pref_webserver_certificate">Instaliraj samopotpisani certifikat</string>
+    <string name="pref_webserver_state_not_running">Ne radi</string>
+    <string name="pref_webserver_state_checking">Provjera…</string>
+    <string name="pref_webserver_state_running_not_installed">Radi, ali certifikat nije instaliran</string>
+    <string name="pref_webserver_state_running_and_installed">Radi i certifikat je instaliran</string>
+    <string name="pref_webserver_certificate_dialog_title">Ručna instalacija certifikata</string>
+    <string name="pref_webserver_certificate_dialog_content">Od Androida 11 (R) aplikacije više ne mogu automatski instalirati certifikacijsko tijelo (CA).\n\nOtvorite postavke „Sigurnost“, zatim „Šifriranje i vjerodajnice“ pa „Instaliraj certifikat“. Ondje odaberite „CA certifikat“ i pronađite upravo izvezenu datoteku certifikata.</string>
+    <string name="pref_webserver_certificate_dialog_action">Otvori postavke „Sigurnost“</string>
+    <string name="pref_webserver_certificate_failed">Certifikat nije bilo moguće pripremiti.</string>
+    <string name="webserver_error_title">Web poslužitelj nije pokrenut</string>
+    <string name="webserver_error_resources">Njegove datoteke ili certifikat nije bilo moguće pripremiti.</string>
+    <string name="webserver_error_address_in_use">Druga aplikacija već koristi web portove (80 i 443) na uređaju.</string>
+    <string name="webserver_error_start_failed">Nije se mogao pokrenuti na ovom uređaju.</string>
+    <string name="pref_webserver_icon">Zamijeni prazan prostor oglasa ikonom aplikacije</string>
 </resources>

@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Huts egin du ostalari-fitxategia kopiatzeak Android 9+en</h2>
-<p>Latest versions of Android use read-only <code>/system</code> partition.<br>
-If you are using Magisk as root solution, ensure you enable the systemless hosts module then reboot.</p>
+<h2>VPNa bere kabuz itzaltzen da</h2>
+<p>Ia beti, sistemak VPN zerbitzua bateria aurrezteko ixten du; ez da kraskadura bat. Ohikoa da energia-kudeaketa zorrotza duten fabrikatzaileen ROMetan (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung eta beste batzuk).</p>
+<p>Androiden ezarpenetan, bilatu AdAway eta: ezarri <cite>bateriaren optimizazioa</cite> hauxe: <cite>Murriztapenik gabe</cite> (edo <cite>Ez optimizatu</cite>), baimendu <cite>abiarazte automatikoa</cite> edo <cite>auto-abiarazpena</cite> zure ROMak aukera hori badu, eta blokeatu AdAway azken aplikazioen zerrendan, ez dadin baztertu. Egiaztatu ere AdAway-ren VPN hobespenetan <cite>Gaitu abiaraztean</cite> aukera gaituta dagoela.</p>
 
-<h2>Ez dago nahikoa toki partizioan</h2>
-<p>Try changing the target hosts file in preferences to <code>/data/data/hosts</code> (or <code>/data/hosts</code>) and apply AdAway again.</p>
+<h2>Internetik ez dago edo nabigazioa motela da Wi-Fi eta datu mugikorren artean aldatu ondoren</h2>
+<p>Sare aktiboa aldatzen denean, tunela berreraiki behar da DNS sare berritik ebatz dadin. Nabigazioak huts egiten jarraitzen badu, ireki <cite>Hobespenak › VPN bidezko iragarki-blokeatzailea › Berrezarri VPNa</cite> konexioa hutsetik berreraikitzeko. Berriro gertatzen bada, grabatu diagnostiko-erregistro bat (behean) eta jakinarazi.</p>
 
-<h2>Chromek iragarkiak erakusten ditu oraindik ere</h2>
-<p>Ensure you disable <cite>lite mode</cite> (previously known as <cite>data saver</cite>) from Chrome settings. This features allows Chrome to use private DNS solution and bypass AdAway.</p>
+<h2>Nola esportatu diagnostiko-erregistro bat?</h2>
+<p>Ireki <cite>Hobespenak › VPN bidezko iragarki-blokeatzailea › Diagnostiko-erregistroa</cite>. Azken erroreak eta VPNaren gertaerak (sare-aldaketak, berriro konektatzeak, hutsegiteak) grabatzen ditu, ez zure nabigatzeko historia: gertaera teknikoak soilik. Hutsik egongo da goiko <cite>Grabatu diagnostiko-erregistroa</cite> aukera gaitzen duzun arte. Erabili <cite>Kopiatu</cite> edo <cite>Partekatu</cite> arazo bat jakinaraztean bidaltzeko. Aholkua: lehenik <cite>Garbitu diagnostiko-erregistroa</cite> sakatu, eta, ondoren, erreproduzitu arazoa, erregistroa zehatza izan dadin.</p>
 
-<h2>Ez du iragarkirik blokeatzen XYZ aplikazioan!</h2>
-<p>Some hostnames may be missing in the provided hosts files from the <cite>Hosts Sources</cite> or the application has bundled the images to provide ads without accessing the internet.<br><br>
-You can log DNS requests (Menu-&gt;Log DNS Requests) from AdAway to find out which additional hostnames have to be blocked.
-<br><br>Add the suspicious hostnames to your own Blacklist by long pressing the entries in the Log and report these hostnames when you have verified them in our <a href="https://github.com/Victor-root/AdAway-Community/issues">GitHub issue tracker</a>.</p>
+<h2>Chromek iragarkiak erakusten ditu oraindik</h2>
+<p>Chromek bere <cite>DNS segurua</cite> (DNS over HTTPS) erabil dezake, eta horrek AdAway saihesten du. Chromen, ireki <cite>Ezarpenak › Pribatutasuna eta segurtasuna › Erabili DNS segurua</cite> eta desgaitu. Gauza bera aplikazio edo sistemaren edozein <cite>DNS pribatua</cite> ezarpenentzat. VPN moduan, AdAway-k berak zifra dezake DNSa: ikusi <cite>Zein DNS zerbitzari erabiltzen ditu VPNak?</cite> Ohiko galderak fitxan.</p>
 
-<h2>Katxeatutako Iragarkiak</h2>
-<p>Batzuetan aplikazioek iragarkiak katxeatzen dituzte jeitsi ondoren. Honek zenbait aplikazioetan iragarkiak gelditzera eramaten du. Aplikazio hauen katxea ezabatzen saiatu zaitezke Android-en Aplikazio zerrendan arazo hau saihesteko.</p>
+<h2>Iragarki batzuk pasatzen dira oraindik, edo aplikazio batek iragarkiak erakusten ditu</h2>
+<p>Baliteke ostalari-izen bat zure iturrietan falta izatea, edo aplikazioak iragarkiak barnean txertatuta izatea eta, beraz, eskaerarik ez egitea. Ireki hasierako pantailako <cite>DNS erregistroa</cite> aplikazioak zer kontsultatzen duen ikusteko, gehitu ostalari-izen susmagarriak zure <cite>Blokeatuak</cite> zerrendara eta egiaztatu ez dela ezer hondatzen. Aplikazio batzuek, gainera, iragarkiak cachean gordetzen dituzte deskargatu ondoren; beraz, Androiden ezarpenetan aplikazio horren cachea garbitzeak lagun dezake.</p>
 
-<h2>XYZ aplikazioa ez dabil gehiago!</h2>
-<p>Some applications need to communicate with a hostname that is blocked by AdAway or refuse to work when the hostnames which should serve ads are not reachable. See <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">https://github.com/AdAway/AdAway/wiki/ProblematicApps</a> to get a list of known applications that have problems. Otherwise, find out which hostnames are needed and add them to your <cite>Whitelist</cite> under <cite>Your Lists</cite> and report them to the <a href="https://github.com/Victor-root/AdAway-Community/issues">bug tracker of AdAway</a>.</p>
+<h2>Aplikazio batek funtzionatzeari utzi dio AdAway gaitu ondoren</h2>
+<p>Aplikazio batzuek ez dute funtzionatzen behar duten ostalari-izen bat blokeatuta dagoenean. Erabili <cite>DNS erregistroa</cite> aplikazioak zer ostalari-izen behar duen jakiteko, gehitu zure <cite>Baimenduak</cite> zerrendara, eta aplikazioak berriro funtzionatu beharko luke. Arazoak ematen dituzten aplikazio ezagunen zerrenda <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">hemen</a> dago.</p>
 
-<h2>Ez dabil Android 4.4+en</h2>
-<p>Try changing the target hosts file in preferences from <code>/data/data/hosts</code> to <code>/data/hosts</code> or <code>/system/etc/hosts</code> and apply AdAway again.</p>
+<h2>Hosts fitxategia aplikatzeak huts egiten du (root modua)</h2>
+<p>Android bertsio berrienek irakurtzeko soilik den <code>/system</code> partizioa erabiltzen dute, beraz, AdAway-k ezin du bertan zuzenean idatzi. Magisk erabiltzen baduzu, gaitu <cite>systemless hosts</cite> modulua, berrabiarazi eta aplikatu berriro. Root erabiltzen ez baduzu, erabili VPN modua, sisteman aldaketarik behar ez duena.</p>
 
-<h2>Web nabigatzaileetako atzera botoiak ez du lan egiten</h2>
-<p>AdAway-ren tokiko web-zerbitzaria gaitu dezakezu hobespenetan aldibaterako konponbide bat bezala.</p>
-
+<h2>Oraindik trabatuta zaude?</h2>
+<p>Jakinarazi arazoa diagnostiko-erregistro bat erantsita hemen: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
 </body>
 </html>

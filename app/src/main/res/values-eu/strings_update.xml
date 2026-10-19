@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="update_title">AdAway eguneratzea</string>
-    <string name="update_banner_title">Eguneraketa erabilgarri</string>
+    <string name="update_title">AdAway eguneraketa</string>
+    <string name="update_banner_title">Eguneraketa eskuragarri</string>
     <string name="update_banner_subtitle">Sakatu %1$s instalatzeko</string>
-    <string name="update_up_to_date_header">Egunean zaude</string>
+    <string name="update_up_to_date_header">Eguneratuta zaude</string>
     <string name="update_update_available_header">Eguneraketa eskuragarri</string>
     <string name="update_updating_header">AdAway eguneratzen</string>
     <string name="update_update_button">Eguneratu orain</string>
+    <string name="update_complete_label">Amaituta</string>
     <string name="update_last_changelog_title">Azken aldaketak</string>
-    <string name="update_new_changelog_title">Aldaketa-oharra</string>
-    <string name="pref_update_check_now_update_available">Bertsio berria erabilgarri: %1$s</string>
+    <string name="update_new_changelog_title">Aldaketen erregistroa</string>
+    <string name="update_download_failed">Ezin izan da eguneraketa deskargatu.</string>
+    <string name="update_install_failed">Ezin izan da eguneraketa instalatu.</string>
+    <string name="pref_update_check_now_update_available">Bertsio berria eskuragarri: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Ez dago eguneraketarik</string>
+    <string name="pref_update_check_now_failed">Ezin izan da eguneraketa-zerbitzarira iritsi</string>
     <string name="pref_update_install_summary">Instalatu %1$s bertsioa</string>
     <string name="notification_channel_app_updates">Aplikazioaren eguneraketak</string>
-    <string name="notification_channel_app_updates_description">Jakinarazpena aplikazioaren bertsio berri bat erabilgarri dagoenean. Mututu kanal hau aplikazio-eguneraketen abisuak ezkutatzeko beste jakinarazpenei eragin gabe.</string>
+    <string name="notification_channel_app_updates_description">Aplikazioaren bertsio berri bat eskuragarri dagoenean jakinarazten du. Mututu kanal hau aplikazioaren eguneraketa-abisuak isilarazteko, beste jakinarazpenei eragin gabe.</string>
+    <string name="notification_app_update_title">Aplikazioaren eguneraketa eskuragarri</string>
+    <string name="notification_app_update_text">AdAway-ren bertsio berri bat deskargatzeko prest dago.</string>
 </resources>

@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Iragarkiengaitiko irabazia</h2>
-<p>Uste oso zabaldua dago erabiltzaileak ez badu inoiz iragarki batean klikatzen, hura blokeatzeak ez diola kalterik egiten gune edo aplikazio bati finantzari dagokionez. Hau okerra da, garatzaileek dirua ere irabazten dute iragarkiak erakutsiz. Zure esku dago iragarkiak blokeatzea edo ez. Nik neuk ez dut iragarkirik erakusten duen aplikaziorik erabiltzen oso eragozgarritzat hartzen ditudalako, hortaz iragarki blokeatzaile bat gabe ez nituzke aplikazio hauek ezarriko.</p>
+<h2>Zer da AdAway Community?</h2>
+<p>AdAway Community AdAway-ren fork ez-ofiziala da, komunitateak mantendua; AdAway Androiderako kode irekiko iragarki-blokeatzailea da. Iragarkiak eta jarraitzaileak sistema osoan blokeatzen ditu, aplikazio guztietan, konturik gabe eta berak iragarkirik erakutsi gabe. Fork honen helburua aplikazioak Android bertsio modernoetan eta fabrikatzaileen ROMetan fidagarritasunez funtzionatzen jarraitzea da.</p>
 
-<h2>Nola egiten du lan AdAway-ek?</h2>
-<p>AdAway uses the <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> to block hostnames, that serve advertisements. The hosts file is a file found in <code>/system/etc/hosts</code> that maps hostnames to IP addresses. It is a traditional way to define hostname to IP address pairs without relying on the Domain Name System (DNS). All unwanted hostnames are redirected to <code>127.0.0.1</code> which means they will point to your own device.<br>
-If the hosts file is not writable, a fallback solution is to use the builtin VPN service. It will filter connections to unwanted hostnames and let others go through.</p>
+<h2>Nola blokeatzen ditu iragarkiak?</h2>
+<p>AdAway-k bi modutan funtzionatzen du:</p>
+<p><strong>VPN modua</strong> (rootik behar gabe): AdAway-k gailuan bertan VPN lokal bat exekutatzen du, zure trafikoa inora bidaltzen ez duena. DNS eskaerak soilik aztertzen ditu eta iragarkien eta jarraitzaileen ostalari-izenetara doazenak baztertzen ditu, gainerako guztia pasatzen utziz. Ezer ez da gailutik ateratzen.</p>
+<p><strong>Root modua</strong>: zure gailuak root egina badago, AdAway-k <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts fitxategi</a> bat idatz dezake hemen: <code>/system/etc/hosts</code>, nahi ez diren ostalari-izenak <code>127.0.0.1</code> helbidera lotuz, zure gailu beraren aldera ebatz daitezen. Android berrienetan, systemless hosts modulu bat (adibidez, Magisk) behar da.</p>
 
-<h2>Zergaitik berrabiarazi behar dut Android aldaketek eragina izateko?</h2>
-<p>Java -k Android-en bere barneko DNS katxea mantentzen du. Sistema eragileak hostalari izen berriak berehala isladatuko ditu (egiaztatu ping bat eginez agindu lerroan) baina Android berrabiarazi beharko duzu Java-ren DNS katxea berreraikitzeko.</p>
+<h2>Zein DNS zerbitzari erabiltzen ditu VPNak?</h2>
+<p>VPN moduan, blokeatzen ez diren ostalari-izenak <cite>Hobespenak › VPN bidezko iragarki-blokeatzailea › DNS zerbitzariak</cite> atalean aukeratzen dituzun DNS zerbitzariek ebazten dituzte:</p>
+<p><strong>Sareko DNS zerbitzariak</strong> (lehenetsia): zure Wi-Fi edo sare mugikorraren zerbitzariak. Sareak AdAway-k erabil dezakeen zerbitzaririk ematen ez badu, Cloudflare erabiltzen du (<code>1.1.1.1</code>).<br/><strong>DNS zerbitzari pertsonalizatuak</strong>: zuk idazten dituzun IP helbideak, komaz bereizita.<br/><strong>DNS over HTTPS</strong>: eskaerak zifratu egiten dira eta Cloudflare, Google, Quad9 edo zuk idazten duzun <code>https://</code> helbidera bidaltzen dira, zure sareak irakurri edo alda ez ditzan.</p>
+<p>Blokeoak berdin funtzionatzen du hiru aukerekin. DNS zifratua mantentzeko, erabili hemen DNS over HTTPS, eta ez Androiden <cite>DNS pribatua</cite> ezarpena, AdAway saihesten baitu.</p>
 
-<h2>Nola erabili web-zerbitzaria AdAway-n?</h2>
-<p><strong>AdAway will also work without using the webserver!</strong>
-<br><br>You can enable a local webserver in preferences of AdAway to answer requests to the local IP address <code>127.0.0.1</code>. This means requests from applications to ad servers which are redirected to <code>127.0.0.1</code> are answered by AdAway's webserver.
-<br>Some applications refuse to work, when ad servers are not reachable. With this method they will be reachable again, replying with a blank page and no ad images.</p>
+<h2>Nola blokeatu, baimendu edo birbideratu ostalari-izen bat?</h2>
+<p>Hasierako pantailatik hiru zerrenda kudeatzen dituzu:</p>
+<p><strong>Blokeatuak</strong>: blokeatu behar diren ostalari-izenak (iragarkiak eta jarraitzaileak).<br/><strong>Baimenduak</strong>: inoiz blokeatzea nahi ez dituzun salbuespenak, iturri batek zerrendatzen baditu ere.<br/><strong>Birbideratuak</strong>: IP helbide jakin batera zuzendu nahi dituzun ostalari-izenak.</p>
+<p>Hasierako pantailatik <cite>DNS erregistroa</cite> ere ireki dezakezu, aplikazioek denbora errealean zer ostalari-izen kontsultatzen dituzten ikusteko, eta bertatik zuzenean blokeatu edo baimendu.</p>
 
-<h2>Nola blokeatu/desblokeatu ditzaket hostalari-izen jakinak?</h2>
-<p>Add the hostnames you want to block to the <cite>Blocked</cite> list from the<cite>homescreen</cite>. Additionally, hostnames you want to exclude from blocking can be added to the <cite>Allowed</cite> and hostnames you want to redirect to a specific IP address belong to the <cite>Redirected</cite>.</p>
+<h2>Androida berrabiarazi behar al dut zerrendak aldatu ondoren?</h2>
+<p>Ez. AdAway-k aldaketa berehala aplikatzen du, baina irekita zegoen aplikazio batek bere konexio zaharrak eta bere cachea erabiltzen jarrai dezake. Itxi guztiz (Behartu gelditzera, aplikazioaren Androiden ezarpenetan) eta garbitu bere cachea oraindik iragarkiak ageri badira. Androida berrabiarazi behar da root moduan soilik, behin, Magisken systemless hosts modulua gaitu ondoren.</p>
 
-<h2>Non aurkitu ditzaket hostalari iturburu gehiago?</h2>
-<p>Ikusi <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">AdAway-rako hostalari iturburu gehigarrien zerrenda</a>.</p>
+<h2>Non aurki ditzaket hosts iturri gehiago?</h2>
+<p>AdAway-k balio oneko lehenespenekin dator. Gehiago nahi badituzu, ikusi komunitateak mantentzen duen <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">hosts iturri gehigarrien zerrenda</a>. Gehitu iturri gehiago neurriz, zerrenda oso handiek edo bata bestearekin gainjartzen direnek positibo faltsuak sor ditzaketelako, eta horrek aplikazioak hondatzen ditu.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Zergatik dago fork hau?</h2>
+<p>AdAway proiektu bikaina da eta historia luzea du, baina jatorrizko proiektuaren bertsio-argitalpenen eta berrikuspenen jarduera mugatua izan da denbora batez. Akats-zuzenketa eta pull request batzuk luzaz irekita egon dira, Android bertsio berrietan eta fabrikatzaileen ROMetan VPN moduaren egonkortasunari eragiten zioten arazoak barne. Fork hau proiektua erabilgarri mantentzeko dago, komunitateak mantendutako zuzenketekin, probatutako hobekuntzak erabili gabe geratzen utzi beharrean.</p>
 
-<h2>Lagundu itzultzen/akatsak jakinarazten</h2>
-<p>Mesedez joan <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>-ra.</p>
+<h2>Nola jakinarazi akats bat edo proposatu aldaketa bat?</h2>
+<p>Ireki issue bat forkaren jarraipen-sisteman: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Diagnostiko-erregistro bat (ikusi Arazoak fitxa) asko lagungarria da VPN arazoak jakinarazteko.</p>
 </body>
 </html>

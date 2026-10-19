@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Prvi korak instalacije</string>
-    <string name="welcome_second_step">Drugi korak instalacije</string>
-    <string name="welcome_method_header">Dobrodošli u AdAway!</string>
-    <string name="welcome_method_summary">AdAway omogućuje dva načina blokiranja oglasa. Odaberite poželjni način:</string>
-    <string name="welcome_root_method_title">Root temeljeno\nblokiranje oglasa</string>
+    <string name="welcome_first_step">Prvi korak čarobnjaka</string>
+    <string name="welcome_second_step">Drugi korak čarobnjaka</string>
+    <string name="welcome_third_step">Treći korak čarobnjaka</string>
+    <string name="welcome_fourth_step">Četvrti korak čarobnjaka</string>
+    <string name="welcome_method_header">Dobro došli u AdAway!</string>
+    <string name="welcome_method_summary">AdAway nudi dvije metode blokiranja oglasa. Odaberite onu koja vam više odgovara:</string>
+    <string name="welcome_root_method_title">Blokiranje oglasa\ntemeljeno na rootu</string>
     <string name="welcome_root_method_text1">Brže</string>
-    <string name="welcome_root_method_text2">Baterijski prihvatljivije</string>
-    <string name="welcome_root_method_text3">Root je potreban</string>
-    <string name="welcome_vpn_method_title">VPN temeljeno\nblokiranje oglasa</string>
+    <string name="welcome_root_method_text2">Štedi bateriju</string>
+    <string name="welcome_root_method_text3">Potreban root</string>
+    <string name="welcome_vpn_method_title">Blokiranje oglasa\ntemeljeno na VPN-u</string>
     <string name="welcome_vpn_method_text1">Sporije</string>
-    <string name="welcome_vpn_method_text2">Pokreni u pozadini</string>
+    <string name="welcome_vpn_method_text2">Radi u pozadini</string>
     <string name="welcome_vpn_method_text3">Kompatibilnost</string>
-    <string name="welcome_root_missing_title">Potreban je rootani Android</string>
-    <string name="welcome_root_missile_description">Nemoguće je pronaći su izvršnu datoteku ili AdAway nema root dozvole.\n\nOvo se može dogoditi kada vaš uređaj nije rootan. \n Možete pronaći informacije o rootanju vašeg uređaja na wiki.lineageos.org ili na drugim Android web stranicama.</string>
+    <string name="welcome_root_missing_title">Potreban je Android s root pristupom</string>
+    <string name="welcome_root_missile_description">Ili nije pronađena binarna datoteka su, ili niste dopustili root pristup za AdAway.\n\nDo toga može doći ako vaš uređaj nema root pristup. Informacije o tome kako dobiti root pristup potražite na wiki.lineageos.org ili drugim web-stranicama o Androidu.</string>
+    <string name="welcome_vpn_alwayson_title">Uvijek uključen VPN je omogućen</string>
+    <string name="welcome_vpn_alwayson_description">AdAway je otkrio da je za drugi VPN aktivna postavka „Uvijek uključen VPN“.\n\nTo sprječava AdAway da zatraži pristup VPN-u. Isključite postavku „Uvijek uključen VPN“ za taj drugi VPN i pokušajte ponovno.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway nije uspio zatražiti pristup VPN-u.\n\nUzrok može biti to što je za drugi VPN aktivna postavka „Uvijek uključen VPN“. Provjerite ima li neki VPN uključenu tu postavku i isključite je prije novog pokušaja.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Otvori postavke „VPN“</string>
     <string name="welcome_method_pro_logo">Prednosti</string>
-    <string name="welcome_method_con_logo">Mane</string>
-    <string name="welcome_sync_header">Usklađivanje</string>
-    <string name="welcome_synced_header">Usklađeno!</string>
-    <string name="welcome_sync_summary">AdAway preuzima mrežna oglašavanja kako bi ih blokirao iz mrežnih izvora. Možete ih prilagoditi kasnije u postavkama.</string>
-    <string name="welcome_sync_retry_logo">Ponovno pokušaj uskladiti</string>
-    <string name="welcome_sync_error">Neuspjelo usklađivanje: %1$s Ponovno pokušaj odmah?</string>
+    <string name="welcome_method_con_logo">Nedostaci</string>
+    <string name="welcome_sync_header">Sinkronizacija</string>
+    <string name="welcome_synced_header">Sinkronizirano!</string>
+    <string name="welcome_sync_summary">AdAway preuzima s internetskih izvora popise oglasnih mreža koje treba blokirati. Kasnije ih možete prilagoditi u postavkama.</string>
+    <string name="welcome_sync_retry_logo">Ponovi sinkronizaciju</string>
+    <string name="welcome_sync_error">Sinkronizacija nije uspjela: %1$s Pokušati ponovno?</string>
+    <string name="welcome_sync_notifications">Može slati obavijesti o stanju blokiranja oglasa i upravljanju njime te o dostupnim ažuriranjima aplikacije (nekoliko godišnje). Omogućite ih ako želite ostati ažurni.</string>
+    <string name="welcome_sync_leave_early_title">Sinkronizacija još nije dovršena</string>
+    <string name="welcome_sync_leave_early_message">Popisi za blokiranje još se preuzimaju. Možete odmah nastaviti, a preuzimanje će se nastaviti u pozadini, ili pričekati ovdje da završi.</string>
+    <string name="welcome_sync_leave_early_wait">Pričekaj</string>
+    <string name="welcome_sync_leave_early_continue">Svejedno nastavi</string>
+    <string name="welcome_battery_header">Ostanite zaštićeni u pozadini</string>
+    <string name="welcome_battery_summary">Android može pauzirati VPN aplikacije AdAway u pozadini radi uštede energije, što može neprimjetno zaustaviti blokiranje oglasa. Dopustite da AdAway zanemari optimizaciju baterije kako bi nastavio raditi.</string>
+    <string name="welcome_battery_action">Dopusti</string>
+    <string name="welcome_battery_granted">Dopušteno ✓</string>
+    <string name="welcome_battery_footnote_prefix">Ovo uvijek možete promijeniti kasnije u izborniku</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Postavke Androida</item>
+        <item>Aplikacije</item>
+        <item>AdAway</item>
+        <item>Baterija</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Još nešto: upravitelj baterije na vašem telefonu</string>
+    <string name="welcome_oem_battery_summary">Neke marke telefona imaju vlastiti upravitelj baterije koji također može blokirati AdAway. Evo što treba provjeriti na vašem telefonu:</string>
+    <string name="welcome_oem_battery_action">Otvori informacije o aplikaciji</string>
+    <string name="welcome_oem_battery_open_failed">Zaslon s informacijama o aplikaciji nije bilo moguće otvoriti. Otvorite ga ručno: Postavke Androida → Aplikacije → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Ovo su opće smjernice, a ne točan vodič: nazivi i položaj mogu se razlikovati ovisno o modelu telefona i inačici Androida.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Informacije o aplikaciji</item>
+        <item>Baterija</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Potražite nešto poput „Ograničenja korištenja u pozadini“ › „Aplikacije koje nikad ne spavaju“, a zatim na taj popis dodajte AdAway.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Provjerite i postavku „Automatska optimizacija“ te isključite „Ponovno pokreni prema potrebi“ ako postoji.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Informacije o aplikaciji</item>
+        <item>Štednja baterije</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Odaberite „Bez ograničenja“.</string>
+    <string name="welcome_oem_battery_secondary_miui">Omogućite i „Automatsko pokretanje“ („Automatsko pokretanje u pozadini“ u novijim inačicama).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Informacije o aplikaciji</item>
+        <item>Korištenje baterije</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Odaberite „Dopusti aktivnost u pozadini“ (ponekad prikazano kao „Bez ograničenja“).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Potražite i prekidač „Automatsko pokretanje“ za AdAway (često u Postavke › Aplikacije) kako bi se mogao sam ponovno pokrenuti nakon prisilnog zaustavljanja.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Informacije o aplikaciji</item>
+        <item>Baterija</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Potražite „Pokretanje aplikacije“, isključite „Upravljaj automatski“, a zatim omogućite sve 3 opcije: „Automatsko pokretanje“, „Sekundarno pokretanje“ i „Rad u pozadini“.</string>
+    <string name="welcome_oem_battery_secondary_emui">Zaključajte AdAway i na zaslonu nedavnih aplikacija (povucite njegovu karticu prema dolje dok se ne pojavi lokot).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Informacije o aplikaciji</item>
+        <item>Korištenje baterije</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Potražite opciju potrošnje energije u pozadini i odaberite „Ne ograničavaj potrošnju energije u pozadini“ (a ne „Pametna kontrola“).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Potražite i postavku „Automatsko pokretanje“ za AdAway, često u Postavke › Aplikacije.</string>
+    <string name="welcome_oem_battery_label_generic">Druga marka</string>
+    <string name="welcome_oem_battery_tip_generic">U informacijama o aplikaciji potražite postavku baterije ili aktivnosti u pozadini i provjerite da AdAway nije ograničen.</string>
     <string name="welcome_back_button">Natrag</string>
-    <string name="welcome_next_button">Sljedeće</string>
+    <string name="welcome_next_button">Dalje</string>
     <string name="welcome_finish_button">Završi</string>
-    <string name="tv_welcome_intro_subtitle">Ovaj kratki čarobnjak uključit će blokiranje oglasa na ovom uređaju.</string>
+    <string name="tv_welcome_intro_subtitle">Ovaj kratki čarobnjak uključuje blokiranje oglasa na ovom uređaju.</string>
     <string name="tv_welcome_start_button">Započni</string>
     <string name="tv_welcome_method_header">Odaberite način blokiranja</string>
     <string name="tv_welcome_method_root_button">Koristi root</string>
-    <string name="tv_welcome_method_root_body">Brže i štedljivije za bateriju. Zahtijeva uređaj s rootom.</string>
+    <string name="tv_welcome_method_root_body">Brže i štedi bateriju. Zahtijeva uređaj s root pristupom.</string>
     <string name="tv_welcome_method_vpn_button">Koristi VPN</string>
     <string name="tv_welcome_method_vpn_body">Radi bez roota, kompatibilno sa svakim Android TV uređajem.</string>
-    <string name="tv_welcome_activate_header">Uključi blokiranje oglasa</string>
+    <string name="tv_welcome_activate_header">Uključite blokiranje oglasa</string>
     <string name="tv_welcome_activate_body">Riječ je o lokalnom VPN-u: filtrira oglase na ovom uređaju, bez usmjeravanja vašeg prometa preko vanjskog poslužitelja.</string>
 </resources>

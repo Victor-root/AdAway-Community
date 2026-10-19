@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Pirmas žingsnis</string>
-    <string name="welcome_second_step">Antras žingsnis</string>
-    <string name="welcome_method_header">Sveiki, čia AdAway!</string>
-    <string name="welcome_method_summary">AdAway teikia du reklamų blokavimo metodus. Pasirinkite norimą:</string>
-    <string name="welcome_root_method_title">Root pagrįstas\nad blokavimas</string>
+    <string name="welcome_first_step">Pirmas vedlio žingsnis</string>
+    <string name="welcome_second_step">Antras vedlio žingsnis</string>
+    <string name="welcome_third_step">Trečias vedlio žingsnis</string>
+    <string name="welcome_fourth_step">Ketvirtas vedlio žingsnis</string>
+    <string name="welcome_method_header">Sveiki atvykę į AdAway!</string>
+    <string name="welcome_method_summary">AdAway siūlo du reklamų blokavimo būdus. Pasirinkite jums labiau tinkantį:</string>
+    <string name="welcome_root_method_title">Reklamų blokavimas\nsu root teisėmis</string>
     <string name="welcome_root_method_text1">Greitesnis</string>
-    <string name="welcome_root_method_text2">Draugiškas baterijai</string>
-    <string name="welcome_root_method_text3">Root privalomas</string>
-    <string name="welcome_vpn_method_title">VPN pagrįstas\nad blokavimas</string>
+    <string name="welcome_root_method_text2">Taupo akumuliatorių</string>
+    <string name="welcome_root_method_text3">Reikalingas root</string>
+    <string name="welcome_vpn_method_title">Reklamų blokavimas\nper VPN</string>
     <string name="welcome_vpn_method_text1">Lėtesnis</string>
-    <string name="welcome_vpn_method_text2">Veikti fone</string>
+    <string name="welcome_vpn_method_text2">Veikia fone</string>
     <string name="welcome_vpn_method_text3">Suderinamumas</string>
-    <string name="welcome_root_missing_title">Root Android prieiga būtina!</string>
-    <string name="welcome_root_missile_description">Arba su binary nerasta arba jūs neleidote root leidimo AdAway.\n\nTai gali atsitikti kai jūsų įrenginys neturi root prieigos. Galite rasti daugiau informacijos kaip gauti root prieigą wiki.lineageos.org ar kituose Android puslapiuose</string>
-    <string name="welcome_method_pro_logo">Pro</string>
-    <string name="welcome_method_con_logo">Negatyvai</string>
-    <string name="welcome_sync_header">Sinchronizavimas</string>
-    <string name="welcome_synced_header">Susinchronizuota!</string>
-    <string name="welcome_sync_summary">AdAway atsiunčia reklamų adresus kad juos užblokuotų iš tinklo. Jūs galite juos pasirinkti veliau nustatymuose.</string>
-    <string name="welcome_sync_retry_logo">Bandyti sinchronizuoti iš naujo</string>
-    <string name="welcome_sync_error">Sinchronizacija nepavyko %1$s Bandyti iš naujo?</string>
+    <string name="welcome_root_missing_title">Reikalingas Android su root teisėmis</string>
+    <string name="welcome_root_missile_description">Arba nepavyko rasti vykdomojo failo „su“, arba neleidote AdAway root prieigos.\n\nTai gali nutikti, jei jūsų įrenginyje nėra root teisių. Informacijos, kaip gauti root teises, rasite wiki.lineageos.org ar kitose Android svetainėse.</string>
+    <string name="welcome_vpn_alwayson_title">Aptiktas kitas visada įjungtas VPN</string>
+    <string name="welcome_vpn_alwayson_description">AdAway aptiko, kad kitam VPN įjungtas nustatymas „Visada įjungtas VPN“.\n\nDėl to AdAway negali paprašyti VPN prieigos. Išjunkite nustatymą „Visada įjungtas VPN“ atitinkamame VPN ir bandykite dar kartą.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway nepavyko paprašyti VPN prieigos.\n\nTai gali būti dėl to, kad kitam VPN įjungtas nustatymas „Visada įjungtas VPN“. Patikrinkite, ar kuriam nors VPN šis nustatymas įjungtas, ir prieš bandydami dar kartą jį išjunkite.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Atidaryti „VPN“ nustatymus</string>
+    <string name="welcome_method_pro_logo">Privalumas</string>
+    <string name="welcome_method_con_logo">Trūkumas</string>
+    <string name="welcome_sync_header">Sinchronizuojama</string>
+    <string name="welcome_synced_header">Sinchronizuota!</string>
+    <string name="welcome_sync_summary">AdAway atsisiunčia blokuotinus reklamų tinklus iš internetinių šaltinių. Vėliau galėsite juos pritaikyti nuostatose.</string>
+    <string name="welcome_sync_retry_logo">Kartoti sinchronizavimą</string>
+    <string name="welcome_sync_error">Nepavyko sinchronizuoti: %1$s Bandyti dar kartą?</string>
+    <string name="welcome_sync_notifications">Programa gali siųsti pranešimus apie reklamų blokavimo būseną ir valdymą bei apie galimus programos atnaujinimus (keli per metus). Įjunkite juos, jei norite gauti naujausią versiją.</string>
+    <string name="welcome_sync_leave_early_title">Sinchronizavimas dar nebaigtas</string>
+    <string name="welcome_sync_leave_early_message">Blokavimo sąrašai dar nebaigti siųstis. Galite tęsti dabar, o atsisiuntimas vyks fone, arba palaukti čia, kol baigsis.</string>
+    <string name="welcome_sync_leave_early_wait">Laukti</string>
+    <string name="welcome_sync_leave_early_continue">Vis tiek tęsti</string>
+    <string name="welcome_battery_header">Likite apsaugoti fone</string>
+    <string name="welcome_battery_summary">Android gali pristabdyti AdAway VPN fone, kad taupytų energiją, ir taip tyliai sustabdyti reklamų blokavimą. Leiskite AdAway ignoruoti akumuliatoriaus optimizavimą, kad ji veiktų nuolat.</string>
+    <string name="welcome_battery_action">Leisti</string>
+    <string name="welcome_battery_granted">Leidžiama ✓</string>
+    <string name="welcome_battery_footnote_prefix">Tai visada galite pakeisti vėliau čia:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Android nustatymai</item>
+        <item>Programos</item>
+        <item>AdAway</item>
+        <item>Akumuliatorius</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Dar kai kas: jūsų telefono akumuliatoriaus tvarkyklė</string>
+    <string name="welcome_oem_battery_summary">Kai kurių gamintojų telefonuose yra sava akumuliatoriaus tvarkyklė, kuri taip pat gali blokuoti AdAway. Ką patikrinti savo telefone:</string>
+    <string name="welcome_oem_battery_action">Atidaryti programos informaciją</string>
+    <string name="welcome_oem_battery_open_failed">Nepavyko atidaryti programos informacijos ekrano. Atidarykite jį patys: Android nustatymai → Programos → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Tai bendros nuorodos, o ne tikslus vadovas: formuluotės ir vietos gali skirtis pagal telefono modelį ir Android versiją.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Programos informacija</item>
+        <item>Akumuliatorius</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Ieškokite kažko panašaus į „Fono naudojimo apribojimai“ › „Niekada neužmiegančios programos“, tada pridėkite AdAway į šį sąrašą.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Taip pat patikrinkite nustatymą „Automatinis optimizavimas“ ir, jei yra, išjunkite „Paleisti iš naujo prireikus“.</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Programos informacija</item>
+        <item>Akumuliatoriaus taupymo priemonė</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Pasirinkite „Be apribojimų“.</string>
+    <string name="welcome_oem_battery_secondary_miui">Taip pat įjunkite „Automatinis paleidimas“ (naujesnėse versijose „Automatinis paleidimas fone“).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Programos informacija</item>
+        <item>Akumuliatoriaus naudojimas</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Pasirinkite „Leisti veiklą fone“ (kartais rodoma kaip „Be apribojimų“).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Taip pat suraskite AdAway jungiklį „Automatinis paleidimas“ (dažnai skiltyje Nustatymai › Programos), kad ji galėtų pati pasileisti po priverstinio sustabdymo.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Programos informacija</item>
+        <item>Akumuliatorius</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Suraskite „Programos paleidimas“, išjunkite „Valdyti automatiškai“, tada įjunkite visus 3: „Automatinis paleidimas“, „Antrinis paleidimas“ ir „Vykdyti fone“.</string>
+    <string name="welcome_oem_battery_secondary_emui">Taip pat užfiksuokite AdAway naujausių programų ekrane (braukite žemyn per jos kortelę, kol atsiras spyna).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Programos informacija</item>
+        <item>Akumuliatoriaus naudojimas</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Suraskite energijos naudojimo fone parinktį ir pasirinkite „Neriboti energijos naudojimo fone“ (ne „Išmanusis valdymas“).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Taip pat suraskite AdAway nustatymą „Automatinis paleidimas“, dažnai skiltyje Nustatymai › Programos.</string>
+    <string name="welcome_oem_battery_label_generic">Kitas gamintojas</string>
+    <string name="welcome_oem_battery_tip_generic">Programos informacijoje suraskite akumuliatoriaus arba veiklos fone nustatymą ir įsitikinkite, kad AdAway neapribota.</string>
     <string name="welcome_back_button">Atgal</string>
-    <string name="welcome_next_button">Kitas</string>
-    <string name="welcome_finish_button">Pabaiga</string>
-    <string name="tv_welcome_intro_subtitle">Šis trumpas vediklis įjungs reklamų blokavimą šiame įrenginyje.</string>
+    <string name="welcome_next_button">Toliau</string>
+    <string name="welcome_finish_button">Baigti</string>
+    <string name="tv_welcome_intro_subtitle">Šis trumpas vedlys įjungia reklamų blokavimą šiame įrenginyje.</string>
     <string name="tv_welcome_start_button">Pradėti</string>
     <string name="tv_welcome_method_header">Pasirinkite blokavimo būdą</string>
     <string name="tv_welcome_method_root_button">Naudoti root</string>
-    <string name="tv_welcome_method_root_body">Greičiau ir taupiau baterijai. Reikalingas root teises turintis įrenginys.</string>
+    <string name="tv_welcome_method_root_body">Greitesnis ir taupo akumuliatorių. Reikalingas įrenginys su root teisėmis.</string>
     <string name="tv_welcome_method_vpn_button">Naudoti VPN</string>
-    <string name="tv_welcome_method_vpn_body">Veikia be root, suderinamas su bet kokiu Android TV įrenginiu.</string>
-    <string name="tv_welcome_activate_header">Įjungti reklamų blokavimą</string>
-    <string name="tv_welcome_activate_body">Tai vietinis VPN: jis filtruoja reklamas pačiame įrenginyje, nenukreipdamas jūsų srauto per išorinį serverį.</string>
+    <string name="tv_welcome_method_vpn_body">Veikia be root, suderinamas su bet kuriuo Android TV įrenginiu.</string>
+    <string name="tv_welcome_activate_header">Įjunkite reklamų blokavimą</string>
+    <string name="tv_welcome_activate_body">Tai vietinis VPN: jis filtruoja reklamas šiame įrenginyje ir nesiunčia jūsų srauto per išorinį serverį.</string>
 </resources>

@@ -1,41 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome_first_step">Laguntzailearen lehen pausua</string>
-    <string name="welcome_second_step">Laguntzailearen bigarren pausua</string>
+    <string name="welcome_first_step">Asistentearen lehen urratsa</string>
+    <string name="welcome_second_step">Asistentearen bigarren urratsa</string>
+    <string name="welcome_third_step">Asistentearen hirugarren urratsa</string>
+    <string name="welcome_fourth_step">Asistentearen laugarren urratsa</string>
     <string name="welcome_method_header">Ongi etorri AdAway-ra!</string>
-    <string name="welcome_method_summary">AdAwayk iragarkiak blokeatzeko bi metodo eskaintzen ditu. Aukeratu gustuko duzuna:</string>
-    <string name="welcome_root_method_title">Erroan oinarritutako blokeoa.</string>
+    <string name="welcome_method_summary">AdAway-k iragarkiak blokeatzeko bi metodo eskaintzen ditu. Aukeratu zure gustukoena:</string>
+    <string name="welcome_root_method_title">Root bidezko\niragarkien blokeoa</string>
     <string name="welcome_root_method_text1">Azkarragoa</string>
-    <string name="welcome_root_method_text2">Bateriarekiko lagungarria</string>
-    <string name="welcome_root_method_text3">Erroa beharrezkoa da</string>
-    <string name="welcome_vpn_method_title">VPNan oinarritutako blokeoa</string>
+    <string name="welcome_root_method_text2">Bateria aurrezten du</string>
+    <string name="welcome_root_method_text3">Root behar da</string>
+    <string name="welcome_vpn_method_title">VPN bidezko\niragarkien blokeoa</string>
     <string name="welcome_vpn_method_text1">Motelagoa</string>
-    <string name="welcome_vpn_method_text2">Atzeko planoan exekutatu</string>
+    <string name="welcome_vpn_method_text2">Atzeko planoan exekutatzen da</string>
     <string name="welcome_vpn_method_text3">Bateragarritasuna</string>
-    <string name="welcome_root_missing_title">Beharrezkoa Android errotua</string>
-    <string name="welcome_root_missile_description">Ezin izan da su binarioa aurkitu edo ez duzu root baimendu AdAway-rako.\n\nGailuaren fitxategi sistemako erroa atzitu ezin denean gerta daiteke. wiki.lineageos.org edo Android-i buruzko beste webgune batzuetan aurki dezakezu gailuaren fitxategi sistemako erroa nola atzitu.</string>
-    <string name="welcome_method_pro_logo">Alde</string>
-    <string name="welcome_method_con_logo">Kontra</string>
+    <string name="welcome_root_missing_title">Root egindako Android behar da</string>
+    <string name="welcome_root_missile_description">Ez da su bitarra aurkitu, edo ez diozu root baimenik eman AdAway-ri.\n\nHau gerta daiteke zure gailua root egina ez dagoenean. Gailuan root egiteko informazioa wiki.lineageos.org webgunean edo Androiden inguruko beste webgune batzuetan aurki dezakezu.</string>
+    <string name="welcome_vpn_alwayson_title">Beti aktibo dagoen VPNa gaituta dago</string>
+    <string name="welcome_vpn_alwayson_description">AdAway-k detektatu du beste VPN batek «Beti aktibo dagoen VPNa» ezarpena aktibo duela.\n\nHorrek eragozten du AdAway-k VPN sarbidea eskatzea. Desgaitu «Beti aktibo dagoen VPNa» VPN horretan eta saiatu berriro.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">AdAway-k ezin izan du VPN sarbidea eskatu.\n\nBeste VPN batek «Beti aktibo dagoen VPNa» ezarpena aktibo izatea izan daiteke arrazoia. Egiaztatu ea VPN batek ezarpen hori gaituta duen eta desgaitu ezazu berriro saiatu aurretik.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Ireki «VPN» ezarpenak</string>
+    <string name="welcome_method_pro_logo">Abantailak</string>
+    <string name="welcome_method_con_logo">Desabantailak</string>
     <string name="welcome_sync_header">Sinkronizatzen</string>
     <string name="welcome_synced_header">Sinkronizatuta!</string>
-    <string name="welcome_sync_summary">AdAway-k blokeatzeko iragarki-sareak deskargatzen ditu. Ezarpenetan moldatu ditzazkezu beranduago.</string>
+    <string name="welcome_sync_summary">AdAway-k blokeatu beharreko iragarki-sareak lineako iturrietatik deskargatzen ditu. Geroago hobespenetan pertsonaliza ditzakezu.</string>
     <string name="welcome_sync_retry_logo">Saiatu berriro sinkronizatzen</string>
-    <string name="welcome_sync_error">Huts egin du %1$s sinkronizatzeak. Berriro saiatu?</string>
-    <string name="welcome_sync_notifications">Jakinarazpenak bidal ditzakezu iragarkien eta kontrolaren blokeo-egoera erakusteko, bai eta eskuragarri dagoen aplikazioaren eguneratzearen berri emateko ere (gutxi batzuk urtean). Gaitu egunean egon nahi baduzu.</string>
-    <string name="welcome_sync_leave_early_title">Sinkronizazioa oraindik ez da amaitu</string>
-    <string name="welcome_sync_leave_early_message">Blokeo-zerrenden deskarga oraindik ez da amaitu. Orain jarrai dezakezu eta atzeko planoan jarraituko du, edo hemen itxaron amaitu arte.</string>
+    <string name="welcome_sync_error">Ezin izan da sinkronizatu: %1$s Berriro saiatu orain?</string>
+    <string name="welcome_sync_notifications">Jakinarazpenak bidal ditzake iragarkien blokeoaren egoera erakusteko eta kontrolatzeko, baita aplikazioaren eguneraketa eskuragarriez ohartarazteko ere (urtean gutxi batzuk). Gaitu itzazu eguneratuta egon nahi baduzu.</string>
+    <string name="welcome_sync_leave_early_title">Sinkronizazioa ez da amaitu oraindik</string>
+    <string name="welcome_sync_leave_early_message">Blokeo-zerrenden deskarga ez da amaitu. Orain jarrai dezakezu eta atzeko planoan jarraituko du, edo hemen itxaron dezakezu amaitu arte.</string>
     <string name="welcome_sync_leave_early_wait">Itxaron</string>
     <string name="welcome_sync_leave_early_continue">Jarraitu hala ere</string>
+    <string name="welcome_battery_header">Mantendu babestuta atzeko planoan</string>
+    <string name="welcome_battery_summary">Androidek AdAway-ren VPNa atzeko planoan pausa dezake energia aurrezteko, eta horrek isilean gelditu dezake iragarkien blokeoa. Baimendu AdAway-ri bateriaren optimizazioa alde batera uztea, martxan jarrai dezan.</string>
+    <string name="welcome_battery_action">Baimendu</string>
+    <string name="welcome_battery_granted">Baimenduta ✓</string>
+    <string name="welcome_battery_footnote_prefix">Hau geroago ere alda dezakezu hemendik:</string>
+    <string-array name="welcome_battery_footnote_path">
+        <item>Androiden ezarpenak</item>
+        <item>Aplikazioak</item>
+        <item>AdAway</item>
+        <item>Bateria</item>
+    </string-array>
+    <string name="welcome_oem_battery_header">Beste gauza bat: zure telefonoaren bateria-kudeatzailea</string>
+    <string name="welcome_oem_battery_summary">Telefono-marka batzuek bateria-kudeatzaile propioa dute, eta horrek ere AdAway blokea dezake. Hau da zurean egiaztatu beharrekoa:</string>
+    <string name="welcome_oem_battery_action">Ireki aplikazioaren informazioa</string>
+    <string name="welcome_oem_battery_open_failed">Ezin izan da aplikazioaren informazio-pantaila ireki. Ireki eskuz hemendik: Androiden ezarpenak → Aplikazioak → AdAway.</string>
+    <string name="welcome_oem_battery_disclaimer">Hauek orientabide orokorrak dira, ez gida zehatza: testuak eta kokalekuak alda daitezke telefono-ereduaren eta Android bertsioaren arabera.</string>
+    <string name="welcome_oem_battery_label_oneui">Samsung (One UI)</string>
+    <string-array name="welcome_oem_battery_path_oneui">
+        <item>Aplikazioaren informazioa</item>
+        <item>Bateria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_oneui">Bilatu honelako zerbait: «Atzeko planoko erabileraren mugak» › «Inoiz lo egiten ez duten aplikazioak», eta gehitu AdAway zerrenda horretan.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Begiratu ere «Optimizazio automatikoa» ezarpena eta, badago, desgaitu «Berrabiarazi behar denean».</string>
+    <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
+    <string-array name="welcome_oem_battery_path_miui">
+        <item>Aplikazioaren informazioa</item>
+        <item>Bateria-aurrezlea</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_miui">Aukeratu «Murriztapenik ez».</string>
+    <string name="welcome_oem_battery_secondary_miui">Gaitu ere «Abiarazte automatikoa» (bertsio berriagoetan, «Atzeko planoko abiarazte automatikoa»).</string>
+    <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
+    <string-array name="welcome_oem_battery_path_coloros">
+        <item>Aplikazioaren informazioa</item>
+        <item>Bateriaren erabilera</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_coloros">Aukeratu «Baimendu atzeko planoko jarduera» (batzuetan «Murriztapenik ez» gisa agertzen da).</string>
+    <string name="welcome_oem_battery_secondary_coloros">Bilatu ere AdAway-ren «Abiarazte automatikoa» etengailua (askotan Ezarpenak › Aplikazioak atalean), behartuta gelditu ondoren bere kabuz berrabiarazi ahal izan dadin.</string>
+    <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
+    <string-array name="welcome_oem_battery_path_emui">
+        <item>Aplikazioaren informazioa</item>
+        <item>Bateria</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_emui">Bilatu «Aplikazioen abiarazpena», desgaitu «Kudeatu automatikoki» eta, ondoren, gaitu hiru aukerak: «Abiarazte automatikoa», «Bigarren mailako abiarazpena» eta «Exekutatu atzeko planoan».</string>
+    <string name="welcome_oem_battery_secondary_emui">Blokeatu ere AdAway azken aplikazioen pantailan (irristatu behera bere txartelean, giltzarrapo bat agertu arte).</string>
+    <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
+    <string-array name="welcome_oem_battery_path_funtouch">
+        <item>Aplikazioaren informazioa</item>
+        <item>Bateriaren erabilera</item>
+    </string-array>
+    <string name="welcome_oem_battery_instruction_funtouch">Bilatu atzeko planoko energia-erabilerari buruzko aukera bat eta aukeratu «Ez murriztu atzeko planoko energia-erabilera» (ez «Kontrol adimenduna»).</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Bilatu ere AdAway-ren «Abiarazte automatikoa» ezarpena, askotan Ezarpenak › Aplikazioak atalean.</string>
+    <string name="welcome_oem_battery_label_generic">Beste marka bat</string>
+    <string name="welcome_oem_battery_tip_generic">Bilatu aplikazioaren informazioan bateriaren edo atzeko planoko jardueraren ezarpen bat eta ziurtatu AdAway ez dagoela murriztuta.</string>
     <string name="welcome_back_button">Atzera</string>
     <string name="welcome_next_button">Hurrengoa</string>
     <string name="welcome_finish_button">Amaitu</string>
-    <string name="tv_welcome_intro_subtitle">Morroi labur honek gailu honetan iragarkien blokeoa aktibatuko du.</string>
+    <string name="tv_welcome_intro_subtitle">Asistente labur honek iragarkien blokeoa gaituko du gailu honetan.</string>
     <string name="tv_welcome_start_button">Hasi</string>
     <string name="tv_welcome_method_header">Aukeratu blokeo-metodoa</string>
     <string name="tv_welcome_method_root_button">Erabili root</string>
-    <string name="tv_welcome_method_root_body">Azkarragoa eta bateria gehiago errespetatzen du. Root eginda dagoen gailua behar da.</string>
-    <string name="tv_welcome_method_vpn_button">Erabili VPN</string>
-    <string name="tv_welcome_method_vpn_body">Root gabe funtzionatzen du, edozein Android TV gailurekin bateragarria.</string>
-    <string name="tv_welcome_activate_header">Aktibatu iragarkien blokeoa</string>
-    <string name="tv_welcome_activate_body">VPN lokal bat da: iragarkiak gailu honetan bertan iragazten ditu, zure trafikoa kanpoko zerbitzari batetik bideratu gabe.</string>
+    <string name="tv_welcome_method_root_body">Azkarragoa eta bateria aurrezten du. Root egindako gailua behar da.</string>
+    <string name="tv_welcome_method_vpn_button">Erabili VPNa</string>
+    <string name="tv_welcome_method_vpn_body">Root gabe funtzionatzen du, Android TV gailu guztiekin bateragarria.</string>
+    <string name="tv_welcome_activate_header">Gaitu iragarkien blokeoa</string>
+    <string name="tv_welcome_activate_body">VPN lokal bat da: iragarkiak gailu honetan bertan iragazten ditu, zure trafikoa kanpoko zerbitzari batetik igaro gabe.</string>
 </resources>

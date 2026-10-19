@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="log_toggle_recording_description">Aktibatu/desaktibatu erregistroaren grabaketa</string>
+    <string name="log_start_recording">Sakatu grabatzeko botoia eskaerak erregistratzen hasteko, nabigatu Weban edo erabili aplikazioak, eta, ondoren, itzuli atzera edo irristatu erregistroa freskatzeko.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokeatutako eskaerak ez dira erregistratuko. Horiek ere erregistratu nahi badituzu, desgaitu lehenik iragarkien blokeoa.</string>
     <string name="log_sort">Ordenatu domeinuak</string>
-    <string name="log_clear">Garbitu egunkaria</string>
-    <string name="log_sort_alphabetical">Ordenatu alfabetikoki</string>
-    <string name="log_sort_top_level_domain">Ordenatu gai-mailako domeinukoki</string>
-    <string name="log_block">Gehitu sarrera zerrenda-beltzara</string>
-    <string name="log_allow">Gehitu sarrera zerrenda-zurira</string>
-    <string name="log_redirect">Gehitu sarrera birbidalketa zerrendara</string>
+    <string name="log_clear">Garbitu erregistroa</string>
+    <string name="log_sort_alphabetical">Ordena alfabetikoa</string>
+    <string name="log_sort_top_level_domain">Goi-mailako domeinuaren araberako ordena</string>
+    <string name="log_block">Gehitu sarrera blokeatuen zerrendara</string>
+    <string name="log_allow">Gehitu sarrera baimenduen zerrendara</string>
+    <string name="log_redirect">Gehitu sarrera birbideratuen zerrendara</string>
     <string name="log_redirect_dialog_title">Birbideratu domeinua</string>
+    <string name="log_capture_failed">Ezin izan da DNS kapturari hasiera eman.</string>
     <string name="log_start_recording_button">Hasi grabatzen</string>
     <string name="log_start_recording_vpn_inactive">Hasi grabatzen (VPNa ez dago aktibo)</string>
-    <string name="log_stop_recording">Gelditu grabatzea</string>
+    <string name="log_stop_recording">Gelditu grabaketa</string>
 </resources>

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_sort">Rūsiuoti domenus</string>
-    <string name="log_clear">Išvalyti surinktą informaciją</string>
-    <string name="log_sort_alphabetical">Alfabetinis rūšiavimas</string>
-    <string name="log_sort_top_level_domain">Viršutinio lygio domeno rūšiavimas</string>
-    <string name="log_block">Įdėti įėjima į juodą sąrašą</string>
-    <string name="log_allow">Įdėti įėjimą į baltajį sąrašą</string>
-    <string name="log_redirect">Įdėti įėjima į nukreipimo sąrašą</string>
+    <string name="log_toggle_recording_description">Įjungti / išjungti žurnalo įrašymą</string>
+    <string name="log_start_recording">Paspauskite įrašymo mygtuką, kad pradėtumėte registruoti užklausas, naršykite internete arba naudokite programas, tada grįžkite atgal arba perbraukite, kad atnaujintumėte žurnalą.</string>
+    <string name="log_blocked_requests_ignored">\n\nBlokuojamos užklausos nebus registruojamos. Jei norite registruoti ir jas, pirmiausia išjunkite reklamų blokavimą.</string>
+    <string name="log_sort">Rūšiuoti domenus</string>
+    <string name="log_clear">Išvalyti žurnalą</string>
+    <string name="log_sort_alphabetical">Rūšiuoti abėcėlės tvarka</string>
+    <string name="log_sort_top_level_domain">Rūšiuoti pagal aukščiausio lygio domeną</string>
+    <string name="log_block">Pridėti įrašą į blokuojamų sąrašą</string>
+    <string name="log_allow">Pridėti įrašą į leidžiamų sąrašą</string>
+    <string name="log_redirect">Pridėti įrašą į nukreipiamų sąrašą</string>
     <string name="log_redirect_dialog_title">Nukreipti domeną</string>
+    <string name="log_capture_failed">Nepavyko pradėti DNS fiksavimo.</string>
     <string name="log_start_recording_button">Pradėti įrašymą</string>
     <string name="log_start_recording_vpn_inactive">Pradėti įrašymą (VPN neaktyvus)</string>
-    <string name="log_stop_recording">Stabdyti įrašymą</string>
+    <string name="log_stop_recording">Sustabdyti įrašymą</string>
 </resources>

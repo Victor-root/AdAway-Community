@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tv_dialog_add_to_allowed">Pridėti prie leistų</string>
-    <string name="tv_dialog_add_to_blocked">Pridėti prie užblokuotų</string>
-    <string name="tv_dialog_remove_from_allowed">Pašalinti iš leistų</string>
-    <string name="tv_dialog_remove_from_blocked">Pašalinti iš užblokuotų</string>
-    <string name="tv_dialog_copy_hostname">Kopijuoti serverio vardą</string>
+    <string name="tv_dialog_add_to_allowed">Pridėti į leidžiamus</string>
+    <string name="tv_dialog_add_to_blocked">Pridėti į blokuojamus</string>
+    <string name="tv_dialog_remove_from_allowed">Pašalinti iš leidžiamų</string>
+    <string name="tv_dialog_remove_from_blocked">Pašalinti iš blokuojamų</string>
+    <string name="tv_dialog_copy_hostname">Kopijuoti domeno vardą</string>
     <string name="tv_log_entry_status_description">Domeno būsena</string>
     <string name="tv_button_theme_light">Šviesus režimas</string>
     <string name="tv_button_theme_dark">Tamsus režimas</string>

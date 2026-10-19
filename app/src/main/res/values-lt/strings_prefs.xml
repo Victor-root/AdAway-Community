@@ -1,77 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="pref_main_title">Nustatymai</string>
-    <string name="pref_general_category">Bendri</string>
-    <string name="pref_dark_theme">Tamsi tema</string>
+    <string name="pref_main_title">Nuostatos</string>
+    <string name="pref_general_category">Bendra</string>
+    <string name="pref_dark_theme">Tamsioji tema</string>
     <string-array name="pref_dark_theme_modes">
         <item>Šviesi</item>
         <item>Tamsi</item>
-        <item>Sistemos pasirinkta</item>
+        <item>Sistemos numatytoji</item>
     </string-array>
-    <string name="pref_update_configuration">Automatiniai naujinimai</string>
+    <string name="pref_update_configuration">Automatiniai atnaujinimai</string>
+    <string name="pref_language">Kalba</string>
+    <string name="pref_language_system">Sistemos kalba</string>
     <string name="pref_ad_block_category">Reklamų blokavimas</string>
-    <string name="pref_root_ad_blocker_configuration">Root pagrįstas\nad blokavimas</string>
-    <string name="pref_vpn_ad_blocker_configuration">VPN pagrįstas reklamų blokavimas</string>
-    <string name="pref_enable_ipv6">Įjungti IPv6</string>
-    <string name="pref_backup_restore">Padaryti atsarginę kopiją / atkurti blokavimo taisykles</string>
-    <string name="pref_backup_restore_title">Padaryti atsarginę kopiją; atkurti </string>
+    <string name="pref_root_ad_blocker_configuration">Reklamų blokatorius su root teisėmis</string>
+    <string name="pref_vpn_ad_blocker_configuration">Reklamų blokatorius per VPN</string>
+    <string name="pref_enable_ipv6">Įjungti IPv6 palaikymą</string>
+    <string name="pref_backup_restore">Blokavimo taisyklių atsarginė kopija / atkūrimas</string>
+    <string name="pref_backup_restore_title">Atsarginė kopija ir atkūrimas</string>
     <string name="pref_backup">Atsarginė kopija</string>
-    <string name="pref_backup_summary">Sukurti atsarginę kopiją į blokavimo taisyklių į išorinę duomenų laikmeną</string>
+    <string name="pref_backup_summary">Sukurkite blokavimo taisyklių atsarginę kopiją išorinėje saugykloje</string>
     <string name="pref_restore">Atkurti</string>
-    <string name="pref_restore_summary">Atkrurti jūsų blokavimo taisykles iš atsarginės kopijos</string>
-    <string name="import_success">Atsarginė kopija sėkmingai importuota iš jūsų išorinės atminties.</string>
-    <string name="export_success">Atsarginė kopija sėkmingai eksportuota į failą \'%s\' jūsų išorinėje saugykloje.</string>
-    <string name="export_failed">Nepavyko eksportuoti atsarginės kopijos failą%s</string>
+    <string name="pref_restore_summary">Atkurkite blokavimo taisykles iš atsarginės kopijos failo</string>
+    <string name="import_success">Atsarginė kopija sėkmingai importuota iš išorinės saugyklos.</string>
+    <string name="import_failed">Nepavyko importuoti atsarginės kopijos. Ar jos formatas teisingas?</string>
+    <string name="export_success">Atsarginė kopija sėkmingai eksportuota į failą „%s“ išorinėje saugykloje.</string>
+    <string name="export_failed">Nepavyko eksportuoti atsarginės kopijos failo „%s“.</string>
     <string name="pref_update_title">Atnaujinimai</string>
+    <string name="pref_update_enable_notifications">Pranešimai išjungti</string>
+    <string name="pref_update_enable_notifications_summary">Programos pranešimai nebus rodomi. Palieskite, kad juos įjungtumėte.</string>
     <string name="pref_update_app_category">Programos atnaujinimai</string>
-    <string name="pref_update_check_app_daily">Periodiškai ieškoti atnaujinimų</string>
+    <string name="pref_update_check_app_startup">Tikrinti, ar yra atnaujinimų, paleidžiant</string>
+    <string name="pref_update_check_app_daily">Reguliariai tikrinti, ar yra atnaujinimų</string>
     <string name="pref_update_check_now">Tikrinti dabar</string>
     <string name="pref_update_install">Atnaujinti dabar</string>
-    <string name="pref_update_hosts_category">Domeno hosts atnaujinimai</string>
-    <string name="pref_update_check_hosts_daily">Periodiškai ieškoti atnaujinimų</string>
-    <string name="pref_update_sync_on_update">Sinchronizuoti atnaujinimo metu</string>
-    <string name="pref_update_sync_unmetered_only">Sinchronizuoti tik neribotu tinklu</string>
-    <string name="pref_vpn_service_on_boot">Įjungti įjungimo metu</string>
-    <string name="pref_vpn_excluded_apps">Išskirtos aplikacijos</string>
-    <string name="pref_vpn_excluded_apps_description">Sukonfigūruoti kurios aplikacijos nenaudos VPN kad sujungimai nebūtų blokuojami.</string>
-    <string name="pref_vpn_exclude_system_apps">Išskirti sistemos aplikacijos</string>
+    <string name="pref_update_hosts_category">Hosts šaltinių atnaujinimai</string>
+    <string name="pref_update_check">Tikrinti, ar yra atnaujinimų, paleidžiant</string>
+    <string name="pref_update_check_hosts_daily">Reguliariai tikrinti, ar yra atnaujinimų</string>
+    <string name="pref_update_sync_on_update">Sinchronizuoti atnaujinus</string>
+    <string name="pref_update_sync_unmetered_only">Sinchronizuoti tik naudojant neribojamą tinklą</string>
+    <string name="pref_vpn_service_on_boot">Įjungti paleidžiant</string>
+    <string name="pref_vpn_service_monitor">Stebėti ryšį</string>
+    <string name="pref_vpn_service_monitor_description">Reguliariai tikrinti tinklo būseną, kad VPN būtų paleistas iš naujo, jei ryšys nutrūktų.</string>
+    <string name="pref_vpn_excluded_apps">Neįtrauktos programos</string>
+    <string name="pref_vpn_excluded_apps_description">Pasirinkite programas, kurios neturėtų naudoti VPN, kad jų ryšiai nebūtų blokuojami.</string>
+    <string name="pref_vpn_exclude_system_apps">Neįtraukti sistemos programų</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
-        <item>Nei viena</item>
-        <item>Visos išskyrus naršykles</item>
+        <item>Nė vienos</item>
+        <item>Visos, išskyrus naršykles</item>
         <item>Visos</item>
     </string-array>
-    <string name="pref_vpn_exclude_user_apps">Išskirti vartotojo aplikacijas</string>
-    <string name="pref_vpn_exclude_user_apps_activity">Išskirtos programos</string>
-    <string name="pref_vpn_exclude_user_apps_select_all">Pasirinkti visas</string>
-    <string name="pref_vpn_exclude_user_apps_deselect_all">Nebepasirinkti visų</string>
-    <string name="pref_vpn_exclude_user_apps_icon">Programos ikona</string>
-    <string name="pref_vpn_reset">Nustatyti VPN iš naujo</string>
-    <string name="pref_vpn_reset_description">Iš naujo sukurti VPN ryšį nuo pradžių. Naudokite tai, jei VPN nustoja veikti (nėra interneto prieigos arba DNS klaidos).</string>
+    <string name="pref_vpn_dns">DNS serveriai</string>
+    <string-array name="pref_vpn_dns_modes">
+        <item>Tinklo DNS serveriai</item>
+        <item>Pasirinktiniai DNS serveriai</item>
+        <item>DNS over HTTPS</item>
+    </string-array>
+    <string name="pref_vpn_dns_custom">Pasirinktiniai DNS serveriai</string>
+    <string name="pref_vpn_dns_custom_summary">IP adresai, atskirti kableliais</string>
+    <string name="pref_vpn_dns_custom_invalid">Netinkamas DNS serverio adresas</string>
+    <string name="pref_vpn_doh">DNS over HTTPS serveris</string>
+    <string name="pref_vpn_doh_custom">Pasirinktinis adresas</string>
+    <string name="pref_vpn_doh_address">DNS over HTTPS adresas</string>
+    <string name="pref_vpn_doh_invalid">Netinkamas DNS over HTTPS adresas</string>
+    <string name="pref_vpn_exclude_user_apps">Neįtraukti naudotojo programų</string>
+    <string name="pref_vpn_exclude_user_apps_activity">Neįtrauktos programos</string>
+    <string name="pref_vpn_exclude_user_apps_select_all">Pasirinkti viską</string>
+    <string name="pref_vpn_exclude_user_apps_deselect_all">Atžymėti viską</string>
+    <string name="pref_vpn_exclude_user_apps_icon">Programos piktograma</string>
+    <string name="pref_vpn_reset">Iš naujo nustatyti VPN</string>
+    <string name="pref_vpn_reset_description">Visiškai iš naujo sukurti VPN ryšį. Naudokite, jei VPN nustoja veikti (nėra interneto ryšio arba rodomos DNS klaidos).</string>
     <string name="pref_vpn_reset_done">VPN ryšys sukurtas iš naujo.</string>
     <string name="pref_vpn_reset_not_running">VPN neveikia.</string>
+    <string name="pref_vpn_diagnostic_log_enabled">Įrašyti diagnostikos žurnalą</string>
+    <string name="pref_vpn_diagnostic_log_enabled_description">Įjunkite prieš atkartodami problemą, tada eksportuokite žurnalą žemiau. Gali šiek tiek sulėtinti senesnius įrenginius. Įrašomi tik techniniai VPN įvykiai, niekada naršymo istorija ar asmens duomenys.</string>
     <string name="pref_vpn_diagnostic_log">Diagnostikos žurnalas</string>
-    <string name="pref_vpn_diagnostic_log_description">Peržiūrėkite, kopijuokite arba bendrinkite naujausias klaidas ir VPN įvykius. Naudinga pranešant apie problemą.</string>
-    <string name="pref_vpn_diagnostic_log_empty">Kol kas neužregistruota jokių įvykių.</string>
-    <string name="pref_vpn_diagnostic_log_share">Bendrinti diagnostikos žurnalą</string>
+    <string name="pref_vpn_diagnostic_log_description">Peržiūrėkite, nukopijuokite arba bendrinkite naujausias klaidas ir VPN įvykius. Naudinga pranešant apie problemą.</string>
+    <string name="pref_vpn_diagnostic_log_empty">Dar neįrašytas nė vienas įvykis. Aukščiau įjunkite „Įrašyti diagnostikos žurnalą“, tada pabandykite atkartoti problemą.</string>
+    <string name="pref_vpn_diagnostic_log_share">Bendrinti</string>
+    <string name="pref_vpn_diagnostic_log_share_title">Bendrinti diagnostikos žurnalą</string>
     <string name="pref_vpn_diagnostic_log_copy">Kopijuoti</string>
     <string name="pref_vpn_diagnostic_log_copied">Diagnostikos žurnalas nukopijuotas į iškarpinę.</string>
     <string name="pref_vpn_diagnostic_log_clear">Išvalyti diagnostikos žurnalą</string>
-    <string name="pref_vpn_diagnostic_log_clear_description">Ištrinti užregistruotus įvykius. Padarykite tai prieš atkurdami problemą, kad užfiksuotumėte švarų pėdsaką.</string>
+    <string name="pref_vpn_diagnostic_log_clear_description">Ištrinti įrašytus įvykius. Tai padarykite prieš atkartodami problemą, kad žurnalas būtų švarus.</string>
     <string name="pref_vpn_diagnostic_log_cleared">Diagnostikos žurnalas išvalytas.</string>
-    <string name="pref_root_open_hosts">Atidaryti host faila</string>
-    <string name="pref_hosts_redirection_summary">Pasirinkti kur nukreipti užblokuotus hosts domenus</string>
-    <string name="pref_redirection_ipv4">IPv4 nukreipimas</string>
-    <string name="pref_redirection_ipv6">IPv6 nukreipimas</string>
-    <string name="pref_webserver_summary">Lokalus web serveris klauso lokalių IP adresų ir blokuoja domenų adresų užklausas. Tai gali padėti su programos strigimu su blokuotu sujungimu.</string>
-    <string name="pref_webserver_enabled">Įjungti web serverį</string>
-    <string name="pref_webserver_test">Testuoti web serverį</string>
-    <string name="pref_webserver_certificate">Instaliuoti savo pažymėtus sertifikatus</string>
+    <string name="pref_root_open_hosts">Atidaryti hosts failą</string>
+    <string name="hosts_file_unreadable">Nepavyko nuskaityti hosts failo.</string>
+    <string name="pref_hosts_redirection_summary">Nurodykite, kur nukreipti blokuojamus domenus</string>
+    <string name="pref_redirection_ipv4">Nustatyti IPv4 nukreipimą</string>
+    <string name="pref_redirection_ipv6">Nustatyti IPv6 nukreipimą</string>
+    <string name="pref_redirection_invalid">Netinkamas nukreipimas</string>
+    <string name="pref_webserver_summary">Vietinis žiniatinklio serveris klauso vietinių IP adresų ir atsako į blokuojamų domenų užklausas. Tai gali padėti, jei programa stringa dėl užblokuoto ryšio.</string>
+    <string name="pref_webserver_enabled">Įjungti žiniatinklio serverį</string>
+    <string name="pref_webserver_test">Išbandyti žiniatinklio serverį</string>
+    <string name="pref_webserver_certificate">Įdiegti savarankiškai pasirašytą sertifikatą</string>
     <string name="pref_webserver_state_not_running">Neveikia</string>
     <string name="pref_webserver_state_checking">Tikrinama…</string>
-    <string name="pref_webserver_state_running_not_installed">Veikia bet serfikatas neįdiegtas</string>
-    <string name="pref_webserver_state_running_and_installed">Veikia, serifikatas instaliuotas</string>
-    <string name="pref_webserver_certificate_dialog_title">Sertifikato instrukcijos instaliavimas</string>
-    <string name="pref_webserver_certificate_dialog_content">Pradedant nuo Android 11 (R), programa nebegali automatiškai instaliuoti autorizacijos sertifikato (CA).n\n\ Eikite į \"Saugos\" nustatymus, \"Šifravimas ir Identifikacija\" tada \"Instaliuoti serfifikatą\". Nuo ten, pasirinkti \"CA sertifikatas\" ir naujai eksportuotą sertifikato failą.</string>
-    <string name="pref_webserver_certificate_dialog_action">Atverty \"Saugos\" nustatymus</string>
-    <string name="pref_webserver_icon">Pakeisti tuščios reklamos vietą su programėles ikona</string>
+    <string name="pref_webserver_state_running_not_installed">Veikia, bet sertifikatas neįdiegtas</string>
+    <string name="pref_webserver_state_running_and_installed">Veikia, sertifikatas įdiegtas</string>
+    <string name="pref_webserver_certificate_dialog_title">Rankinis sertifikato įdiegimas</string>
+    <string name="pref_webserver_certificate_dialog_content">Nuo Android 11 (R) programos nebegali automatiškai įdiegti liudijimų institucijos (CA) sertifikato.\n\nEikite į nustatymus „Sauga“, tada „Šifravimas ir prisijungimo duomenys“ ir „Įdiegti sertifikatą“. Ten pasirinkite „CA sertifikatas“ ir nurodykite ką tik eksportuotą sertifikato failą.</string>
+    <string name="pref_webserver_certificate_dialog_action">Atidaryti nustatymus „Sauga“</string>
+    <string name="pref_webserver_certificate_failed">Nepavyko paruošti sertifikato.</string>
+    <string name="webserver_error_title">Žiniatinklio serveris nepaleistas</string>
+    <string name="webserver_error_resources">Nepavyko paruošti jo failų arba sertifikato.</string>
+    <string name="webserver_error_address_in_use">Kita programa jau naudoja įrenginio žiniatinklio prievadus (80 ir 443).</string>
+    <string name="webserver_error_start_failed">Šiame įrenginyje jo paleisti nepavyko.</string>
+    <string name="pref_webserver_icon">Tuščią reklamos vietą pakeisti programos piktograma</string>
 </resources>

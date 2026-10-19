@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>Alga iš reklamų</h2>
-<p>Egzistuoja vienas nesusipratimas, jog jeigu vartotojas niekada nespaudžia ant reklamu, tada jas užblokavus niekuom nepakenks svetainės ar programos kūrejui finansiškai. Tai yra netiesa, kūrėjai taip pat uždirba vien už reklamos peržiūras. Aš asmeniškai niekada nenaudočiau programų kurios rodo reklamas, man tai labai įkyru, tad be reklamos blokuotojo aš nenaudočiau tų programų.</p>
+<h2>Kas yra AdAway Community?</h2>
+<p>AdAway Community yra neoficiali, bendruomenės prižiūrima AdAway atšaka, atvirojo kodo reklamų blokatoriaus, skirto Android. Jis blokuoja reklamas ir sekiklius visoje sistemoje, visose programose, be paskyros ir be savo reklamų. Ši atšaka daugiausia dėmesio skiria tam, kad programa patikimai veiktų naujose Android versijose ir gamintojų ROM.</p>
 
-<h2>Kaip veikia AdAway?</h2>
-<p>AdAway naudoja <a href="http://en.wikipedia.org/wiki/Hosts_file">Domeno hosts failą</a>  kad galėtų blokuoti reklamų domenus. Hosts failas yra <code>/system/etc/hosts</code> kuris nukreipia domenus į jų IP adresus. Tai yra tradiciškas būdas juos nukreipti nenaudojant DNS sistemos. Visi nenorimi domenai yra nukreipiami <code>127.0.0.1</code> tai reiškia kad jie eis per jūsų įrenginį. <br>
-Jei domeno failas nėra redaguojamas, kitas sprendimas yra naudoti įdiegtą VPN funkciją. Ji filtruos nenorimus sujungimus su domenais o kitus praleis.</p>
+<h2>Kaip jis blokuoja reklamas?</h2>
+<p>AdAway veikia vienu iš dviejų režimų:</p>
+<p><strong>VPN režimas</strong> (root nereikia): AdAway paleidžia vietinį VPN pačiame įrenginyje, kuris niekur nesiunčia jūsų srauto. Jis tikrina tik DNS užklausas ir atmeta tas, kurios nukreiptos į reklamų ir sekiklių domenus, o visa kita praleidžia. Nieko neišeina iš jūsų įrenginio.</p>
+<p><strong>Root režimas</strong>: jei jūsų įrenginyje yra root teisės, AdAway vietoj to gali įrašyti <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts failą</a> į <code>/system/etc/hosts</code>, nukreipdama nepageidaujamus domenus į <code>127.0.0.1</code>, kad jie būtų išspręsti į jūsų pačių įrenginį. Naujesnėse Android versijose reikalingas systemless hosts modulis (pavyzdžiui, Magisk).</p>
 
-<h2>Kodėl aš turiu perkrauti Android įrenginį kad įsigaliotų pakeitimai?</h2>
-<p>Java, Android platformoje palaiko savo vidinį DNS slėptuvėje cahce. Operatyvioji sistema pritaiko nauja domeno hosts failą iš karto (patvirtina tai su ping atsako komanda) bet jums reikės perkrauti Android įrenginį kad būtų rekonstruojama Java DNS saugykla.</p>
+<h2>Kokius DNS serverius naudoja VPN?</h2>
+<p>VPN režimu neblokuojamus domenus išsprendžia DNS serveriai, kuriuos pasirenkate skiltyje <cite>Nuostatos › Reklamų blokatorius per VPN › DNS serveriai</cite>:</p>
+<p><strong>Tinklo DNS serveriai</strong> (numatytieji): jūsų Wi-Fi ar mobiliojo tinklo serveriai. Jei tinklas nepateikia AdAway tinkamų serverių, naudojamas Cloudflare (<code>1.1.1.1</code>).<br/><strong>Pasirinktiniai DNS serveriai</strong>: jūsų įvesti IP adresai, atskirti kableliais.<br/><strong>DNS over HTTPS</strong>: užklausos šifruojamos ir siunčiamos į Cloudflare, Google, Quad9 arba jūsų įvestą <code>https://</code> adresą, todėl jūsų tinklas negali jų perskaityti ar pakeisti.</p>
+<p>Blokavimas veikia vienodai su visais trimis. Jei norite išlaikyti šifruotą DNS, čia naudokite DNS over HTTPS, o ne Android nustatymą <cite>Privatusis DNS</cite>, kuris apeina AdAway.</p>
 
-<h2>Kaip naudoti web serverį su AdAway?</h2>
-<p><strong>AdAway veiks ir nenaudojant web serverio!</strong>
-<br><br>Jūs galite įjungti lokalų web serverį AdAway nustatymuose kuris atsakys į lokalių IP adresą<code>127.0.0.1</code>. Tai reiškia kad užklausos iš aplikacijų į reklamų serverius kurios bus nukreiptos į <code>127.0.0.1</code> bus filtruojamos AdAway web serverio.
-<br>Kai kurios aplikacijos atsisako veikti kada reklamos serveris yra nepasiekiamas. Su šiuo metodu jos vėl veiks, tačiau atsakys su tuščiu puslapiu, be reklamos ir be reklamos nuotraukos.</p>
+<h2>Kaip užblokuoti, leisti arba nukreipti domeną?</h2>
+<p>Pagrindiniame ekrane tvarkote tris sąrašus:</p>
+<p><strong>Blokuojami</strong>: domenai, kurie turi būti blokuojami (reklamos ir sekikliai).<br/><strong>Leidžiami</strong>: išimtys, kurių niekada nenorite blokuoti, net jei jas nurodo šaltinis.<br/><strong>Nukreipiami</strong>: domenai, kuriuos norite nukreipti į konkretų IP adresą.</p>
+<p>Taip pat galite pagrindiniame ekrane atidaryti skiltį <cite>DNS žurnalas</cite>, kad realiuoju laiku matytumėte, kokių domenų programos teirautojasi, ir iš ten juos tiesiogiai užblokuoti ar leisti.</p>
 
-<h2>Kaip aš galiu užblokuoti/atblokuoti specifinius domeno adresus?</h2>
-<p>Pridėkite domenų adresus kuriuos jūs norite blokuoti į <cite>Užblokuoti</cite> sąrašą iš <cite>namų ekrano</cite>. Papildomai, domenų adresai kuriuos jūs norite išskirti iš blokavimo gali būti pridėti <cite>Leidžiami</cite> ir domenų adresai kuriuos norite nukreipti į specifišką IP adresą priklauso <cite>Nukreipti</cite>.</p>
+<h2>Ar po sąrašų pakeitimo reikia paleisti Android iš naujo?</h2>
+<p>Ne. AdAway pakeitimą pritaiko iš karto, tačiau jau atidaryta programa gali toliau naudoti senus ryšius ir savo talpyklą. Visiškai ją uždarykite (Priverstinai sustabdyti programos Android nustatymuose), o jei reklamos vis dar rodomos, išvalykite jos talpyklą. Android paleisti iš naujo reikia tik vieną kartą root režimu, įjungus Magisk modulį systemless hosts.</p>
 
-<h2>Kur aš galiu rasti daugiau host šaltinių?</h2>
-<p>Žiūrėkite <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">Sąrašas papildomų domenų šaltinių skirtų AdAway</a>.</p>
+<h2>Kur rasti daugiau hosts šaltinių?</h2>
+<p>AdAway pateikiama su tinkamais numatytaisiais šaltiniais. Jei norite daugiau, žr. bendruomenės prižiūrimą <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">papildomų hosts šaltinių sąrašą</a>. Šaltinių pridėkite nedaug, nes labai dideli arba besidubliuojantys sąrašai gali sukelti klaidingų blokavimų, dėl kurių programos sugenda.</p>
 
-<h2>Why this fork exists</h2>
-<p>AdAway is a great project with a long history, but upstream release and review activity has been limited for a while.<br/>Some bugs and pull requests have remained open for a long time, including issues affecting VPN-mode stability on recent Android versions and OEM ROMs.<br/>This fork exists to keep the project usable with community-maintained fixes instead of letting tested improvements sit unused.</p>
+<h2>Kodėl ši atšaka egzistuoja?</h2>
+<p>AdAway yra puikus projektas su ilga istorija, tačiau pagrindinio projekto leidimų ir peržiūrų aktyvumas jau kurį laiką nedidelis. Kai kurie klaidų taisymai ir pakeitimų pasiūlymai ilgai likdavo neišnagrinėti, įskaitant problemas, darančias įtaką VPN režimo stabilumui naujose Android versijose ir gamintojų ROM. Ši atšaka egzistuoja tam, kad projektas liktų naudojamas su bendruomenės prižiūrimais pataisymais, o išbandyti patobulinimai nesiliktų nenaudojami.</p>
 
-<h2>Padėkite išversti/praneškite apie klaidas</h2>
-<p>Pereikite į <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>
+<h2>Kaip pranešti apie klaidą arba pasiūlyti pakeitimą?</h2>
+<p>Sukurkite pranešimą atšakos sekimo sistemoje: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Pranešant apie VPN problemas labai padeda diagnostikos žurnalas (žr. skirtuką Problemos).</p>
 </body>
 </html>

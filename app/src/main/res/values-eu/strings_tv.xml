@@ -8,6 +8,6 @@
     <string name="tv_log_entry_status_description">Domeinuaren egoera</string>
     <string name="tv_button_theme_light">Modu argia</string>
     <string name="tv_button_theme_dark">Modu iluna</string>
-    <string name="tv_lists_empty">Zerrenda honetan ez dago oraindik sarrerarik.</string>
+    <string name="tv_lists_empty">Oraindik ez dago sarrerarik zerrenda honetan.</string>
     <string name="tv_dialog_search">Bilatu</string>
 </resources>
