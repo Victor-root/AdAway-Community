@@ -56,14 +56,17 @@ android {
     }
 
     buildTypes {
-        debug {
-            if (hasSigningKey) signingConfig = signingConfigs.getByName("release")
-        }
-        release {
+        // Both build types are optimized the same way, to measure and feel the real speed of the app.
+        // The debug one is no longer debuggable from Android Studio, but keeps its logs.
+        all {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
             if (hasSigningKey) signingConfig = signingConfigs.getByName("release")
+        }
+        debug {
+            isDebuggable = false
+            buildConfigField("boolean", "DEBUG", "true")
         }
     }
 
@@ -103,7 +106,8 @@ room {
 
 /**
  * Builds the Rust engine for every Android ABI with cargo-ndk, and the root processes next to it:
- * executables named like libraries, so that Android installs them with them.
+ * executables named like libraries, so that Android installs them with them. It is always built
+ * optimized, as the debug build of the app is.
  */
 abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations) : DefaultTask() {
     @get:InputFiles
@@ -119,9 +123,6 @@ abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations
     @get:Input
     abstract val minSdk: Property<Int>
 
-    @get:Input
-    abstract val release: Property<Boolean>
-
     @get:OutputDirectory
     abstract val outputDirectory: DirectoryProperty
 
@@ -135,14 +136,13 @@ abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations
             "x86" to "i686-linux-android",
             "x86_64" to "x86_64-linux-android",
         )
-        val profile = if (release.get()) listOf("--release") else emptyList()
         val result = exec.exec {
             workingDir = workspace.get().asFile
             environment("ANDROID_NDK_HOME", ndkDirectory.get().asFile.absolutePath)
             commandLine(
                 listOf("cargo", "ndk") + abis.keys.flatMap { listOf("-t", it) } +
                     listOf("--platform", minSdk.get().toString(), "-o", output.absolutePath, "build") +
-                    profile + listOf("-p", "adaway-android", "-p", "adaway-root"),
+                    listOf("--release", "-p", "adaway-android", "-p", "adaway-root"),
             )
             isIgnoreExitValue = true
         }
@@ -152,10 +152,9 @@ abstract class CargoNdkTask @Inject constructor(private val exec: ExecOperations
                     "(cargo install cargo-ndk --locked), see the error above.",
             )
         }
-        val profileDirectory = if (release.get()) "release" else "debug"
         for ((abi, target) in abis) {
             for (executable in listOf("adaway-webserver", "adaway-capture")) {
-                workspace.file("target/$target/$profileDirectory/$executable").get().asFile
+                workspace.file("target/$target/release/$executable").get().asFile
                     .copyTo(File(output, "$abi/lib${executable.replace('-', '_')}.so"), overwrite = true)
             }
         }
@@ -170,7 +169,6 @@ androidComponents {
             workspace.set(rustWorkspace)
             ndkDirectory.set(androidComponents.sdkComponents.ndkDirectory)
             minSdk.set(variant.minSdk.apiLevel)
-            release.set(variant.buildType == "release")
         }
         variant.sources.jniLibs?.addGeneratedSourceDirectory(cargoTask, CargoNdkTask::outputDirectory)
     }
