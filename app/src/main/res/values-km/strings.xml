@@ -59,6 +59,7 @@
     <string name="source_add">បន្ថែមប្រភព</string>
     <string name="source_edit">កែសម្រួលប្រភព</string>
     <string name="source_deleted">បានលុបប្រភព</string>
+    <string name="source_delete_confirmation">ប្រភពនេះ និងបញ្ជីរបស់វានឹងត្រូវបានលុប។ សកម្មភាពនេះមិនអាចត្រឡប់វិញបានទេ។</string>
     <string name="source_label">ស្លាក</string>
     <string name="source_label_required">ត្រូវការស្លាក</string>
     <string name="source_format">ទ្រង់ទ្រាយបញ្ជី</string>
@@ -138,7 +139,7 @@
     <string name="vpn_persistence_disabled">មិនបានកំណត់ VPN បើកជានិច្ចទេ។ AdAway រក្សាការដំណើរការដោយខ្លួនឯង។</string>
     <string name="vpn_persistence_lockdown">«ទប់ស្កាត់ការតភ្ជាប់ដោយគ្មាន VPN» ត្រូវបានបើក: កម្មវិធីដែលបានដកចេញពី VPN គ្មានអ៊ីនធឺណិតប្រើទេ។</string>
     <string name="vpn_persistence_message">AdAway គ្រប់គ្រងការចាប់ផ្តើមឧបករណ៍ឡើងវិញ ការបិទដោយសារអង្គចងចាំទាប និងការគាំងដោយខ្លួនឯងរួចហើយ ដូច្នេះក្នុងករណីភាគច្រើនមិនចាំបាច់រៀបចំអ្វីបន្ថែមទេ។\n\nប្រសិនបើ VPN ឈប់ដំណើរការដោយមិននឹកស្មាន សូមខ្ទាស់ AdAway ជា VPN បើកជានិច្ចរបស់ប្រព័ន្ធ Android ដើម្បីទទួលបានការធានាខ្ពស់បំផុត។</string>
-    <string name="vpn_persistence_adb_commands">ប្រសិនបើអេក្រង់ VPN របស់ប្រព័ន្ធត្រូវបានលាក់នៅលើទូរទស្សន៍របស់អ្នក សូមប្រើ ADB រួចចាប់ផ្តើមទូរទស្សន៍ឡើងវិញ:\n\n• បើកមុខងារបើកជានិច្ចសម្រាប់ AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• បិទមុខងារបើកជានិច្ច:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">ប្រសិនបើអេក្រង់ VPN របស់ប្រព័ន្ធត្រូវបានលាក់នៅលើទូរទស្សន៍របស់អ្នក សូមប្រើ ADB រួចចាប់ផ្តើមទូរទស្សន៍ឡើងវិញ:\n\n• បើកមុខងារបើកជានិច្ចសម្រាប់ AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• ពិនិត្យថាមុខងារនេះត្រូវបានបើក (ពាក្យបញ្ជានឹងបង្ហាញ %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• នៅលើទូរទស្សន៍មួយចំនួន ដូចជា TCL ត្រូវអនុញ្ញាតឱ្យ AdAway ចាប់ផ្តើមដោយស្វ័យប្រវត្តិផងដែរ:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• បិទមុខងារបើកជានិច្ច:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">ការកំណត់ VPN ត្រូវបានលាក់នៅលើ Android TV នេះ។ សូមប្រើពាក្យបញ្ជា ADB ដែលបានបង្ហាញ។</string>
     <string name="vpn_persistence_dismiss">យល់ហើយ</string>
     <string name="status_update_available">មានបច្ចុប្បន្នភាពប្រភព</string>

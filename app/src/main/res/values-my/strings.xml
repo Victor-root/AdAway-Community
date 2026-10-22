@@ -59,6 +59,7 @@
     <string name="source_add">ရင်းမြစ် ထည့်ရန်</string>
     <string name="source_edit">ရင်းမြစ်ကို တည်းဖြတ်ရန်</string>
     <string name="source_deleted">ရင်းမြစ်ကို ဖျက်ပြီးပါပြီ</string>
+    <string name="source_delete_confirmation">ဤရင်းမြစ်နှင့် ၎င်း၏စာရင်းကို ဖယ်ရှားပါမည်။ ဤလုပ်ဆောင်ချက်ကို ပြန်ပြင်၍ မရပါ။</string>
     <string name="source_label">အညွှန်း</string>
     <string name="source_label_required">အညွှန်း လိုအပ်ပါသည်</string>
     <string name="source_format">စာရင်းပုံစံ</string>
@@ -138,7 +139,7 @@
     <string name="vpn_persistence_disabled">အမြဲတမ်းဖွင့်ထားသော VPN ကို မသတ်မှတ်ထားပါ။ AdAway ၏ ကိုယ်ပိုင်ဆက်လက်လည်ပတ်စေမှုစနစ်က ကိုင်တွယ်ပေးပါသည်။</string>
     <string name="vpn_persistence_lockdown">“VPN မပါဘဲ ချိတ်ဆက်မှုများကို ပိတ်ဆို့ခြင်း” ကို ဖွင့်ထားသည်။ VPN မှ ချန်လှပ်ထားသော အက်ပ်များသည် အင်တာနက်ကို မသုံးနိုင်ပါ။</string>
     <string name="vpn_persistence_message">AdAway သည် စက်ပြန်စတင်ခြင်း၊ မမ်မိုရီနည်း၍ ရပ်သွားခြင်းနှင့် ပျက်ကျခြင်းများကို ကိုယ်တိုင် ကိုင်တွယ်ပြီးဖြစ်သောကြောင့် အများစုတွင် အပို ပြင်ဆင်မှု မလိုအပ်ပါ။\n\nVPN က မမျှော်လင့်ဘဲ ရပ်သွားပါက အသေချာဆုံးဖြစ်စေရန် AdAway ကို Android စနစ်၏ အမြဲတမ်းဖွင့်ထားသော VPN အဖြစ် သတ်မှတ်ပါ။</string>
-    <string name="vpn_persistence_adb_commands">သင့် TV တွင် စနစ်၏ VPN မျက်နှာပြင်ကို ဖျောက်ထားပါက ADB ကို သုံးပြီး TV ကို ပြန်စတင်ပါ။\n\n• AdAway အတွက် အမြဲတမ်းဖွင့်ထားခြင်းကို ဖွင့်ရန်:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• အမြဲတမ်းဖွင့်ထားခြင်းကို ပိတ်ရန်:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">သင့် TV တွင် စနစ်၏ VPN မျက်နှာပြင်ကို ဖျောက်ထားပါက ADB ကို သုံးပြီး TV ကို ပြန်စတင်ပါ။\n\n• AdAway အတွက် အမြဲတမ်းဖွင့်ထားခြင်းကို ဖွင့်ရန်:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• ဖွင့်ထားကြောင်း စစ်ဆေးရန် (အမိန့်က %1$s ဟု ပြန်ဖြေပါမည်):\n  adb shell settings get secure always_on_vpn_app\n\n• TCL ကဲ့သို့သော TV အချို့တွင် AdAway ကို အလိုအလျောက် စတင်ခွင့်လည်း ပြုရန်:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• အမြဲတမ်းဖွင့်ထားခြင်းကို ပိတ်ရန်:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">ဤ Android TV တွင် VPN ဆက်တင်များကို ဖျောက်ထားသည်။ ပြထားသော ADB အမိန့်များကို သုံးပါ။</string>
     <string name="vpn_persistence_dismiss">နားလည်ပါပြီ</string>
     <string name="status_update_available">ရင်းမြစ် အပ်ဒိတ် ရရှိနိုင်ပါသည်</string>

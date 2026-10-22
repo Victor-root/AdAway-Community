@@ -59,6 +59,7 @@
     <string name="source_add">ਸਰੋਤ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="source_edit">ਸਰੋਤ ਦਾ ਸੰਪਾਦਨ ਕਰੋ</string>
     <string name="source_deleted">ਸਰੋਤ ਮਿਟਾਇਆ ਗਿਆ</string>
+    <string name="source_delete_confirmation">ਇਹ ਸਰੋਤ ਅਤੇ ਇਸਦੀ ਸੂਚੀ ਹਟਾ ਦਿੱਤੀ ਜਾਵੇਗੀ। ਇਸ ਕਾਰਵਾਈ ਨੂੰ ਵਾਪਸ ਨਹੀਂ ਲਿਆ ਜਾ ਸਕਦਾ।</string>
     <string name="source_label">ਲੇਬਲ</string>
     <string name="source_label_required">ਲੇਬਲ ਲੋੜੀਂਦਾ ਹੈ</string>
     <string name="source_format">ਸੂਚੀ ਦਾ ਫਾਰਮੈਟ</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">ਹਮੇਸ਼ਾ-ਚਾਲੂ VPN ਸੈੱਟ ਨਹੀਂ ਹੈ। AdAway ਦੀ ਆਪਣੀ ਸਥਿਰਤਾ ਪ੍ਰਣਾਲੀ ਇਹ ਸੰਭਾਲ ਲੈਂਦੀ ਹੈ।</string>
     <string name="vpn_persistence_lockdown">“VPN ਤੋਂ ਬਿਨਾਂ ਕਨੈਕਸ਼ਨ ਬਲਾਕ ਕਰੋ” ਚਾਲੂ ਹੈ: VPN ਤੋਂ ਬਾਹਰ ਰੱਖੀਆਂ ਐਪਾਂ ਕੋਲ ਇੰਟਰਨੈੱਟ ਪਹੁੰਚ ਨਹੀਂ ਹੈ।</string>
     <string name="vpn_persistence_message">AdAway ਰੀਬੂਟ, ਘੱਟ ਮੈਮੋਰੀ ਕਾਰਨ ਬੰਦ ਹੋਣ ਅਤੇ ਕ੍ਰੈਸ਼ ਨੂੰ ਆਪਣੇ-ਆਪ ਸੰਭਾਲ ਲੈਂਦਾ ਹੈ, ਇਸ ਲਈ ਜ਼ਿਆਦਾਤਰ ਮਾਮਲਿਆਂ ਵਿੱਚ ਵਾਧੂ ਸੈੱਟਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ।\n\nਜੇ VPN ਕਦੇ ਅਚਾਨਕ ਬੰਦ ਹੋ ਜਾਵੇ, ਤਾਂ ਸਭ ਤੋਂ ਪੱਕੀ ਗਾਰੰਟੀ ਲਈ AdAway ਨੂੰ Android ਸਿਸਟਮ ਦੇ ਹਮੇਸ਼ਾ-ਚਾਲੂ VPN ਵਜੋਂ ਪਿੰਨ ਕਰੋ।</string>
-    <string name="vpn_persistence_adb_commands">ਜੇ ਤੁਹਾਡੇ TV ਉੱਤੇ ਸਿਸਟਮ ਦੀ VPN ਸਕ੍ਰੀਨ ਲੁਕੀ ਹੋਈ ਹੈ, ਤਾਂ ADB ਵਰਤੋ, ਫਿਰ TV ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ:\n\n• AdAway ਲਈ ਹਮੇਸ਼ਾ-ਚਾਲੂ ਕਰੋ:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• ਹਮੇਸ਼ਾ-ਚਾਲੂ ਬੰਦ ਕਰੋ:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">ਜੇ ਤੁਹਾਡੇ TV ਉੱਤੇ ਸਿਸਟਮ ਦੀ VPN ਸਕ੍ਰੀਨ ਲੁਕੀ ਹੋਈ ਹੈ, ਤਾਂ ADB ਵਰਤੋ, ਫਿਰ TV ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ:\n\n• AdAway ਲਈ ਹਮੇਸ਼ਾ-ਚਾਲੂ ਕਰੋ:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• ਜਾਂਚੋ ਕਿ ਇਹ ਚਾਲੂ ਹੈ (ਕਮਾਂਡ %1$s ਜਵਾਬ ਦਿੰਦੀ ਹੈ):\n  adb shell settings get secure always_on_vpn_app\n\n• ਕੁਝ TV ਉੱਤੇ, ਜਿਵੇਂ TCL ਵਾਲੇ, AdAway ਨੂੰ ਆਪਣੇ ਆਪ ਸ਼ੁਰੂ ਹੋਣ ਦੀ ਇਜਾਜ਼ਤ ਵੀ ਦਿਓ:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• ਹਮੇਸ਼ਾ-ਚਾਲੂ ਬੰਦ ਕਰੋ:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">ਇਸ Android TV ਉੱਤੇ VPN ਸੈਟਿੰਗਾਂ ਲੁਕੀਆਂ ਹੋਈਆਂ ਹਨ। ਦਿਖਾਏ ਗਏ ADB ਕਮਾਂਡ ਵਰਤੋ।</string>
     <string name="vpn_persistence_dismiss">ਸਮਝ ਗਿਆ</string>
     <string name="status_update_available">ਸਰੋਤ ਦਾ ਅੱਪਡੇਟ ਉਪਲਬਧ ਹੈ</string>

@@ -59,6 +59,7 @@
     <string name="source_add">Çavkaniyê zêde bike</string>
     <string name="source_edit">Çavkaniyê biguherîne</string>
     <string name="source_deleted">Çavkanî hate jêbirin</string>
+    <string name="source_delete_confirmation">Ev çavkanî û lîsteya wê dê werin jêbirin. Ev nayê vegerandin.</string>
     <string name="source_label">Etîket</string>
     <string name="source_label_required">Etîket pêwîst e</string>
     <string name="source_format">Formata lîsteyê</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">VPN-a her dem çalak nehatiye mîhengkirin. Domdariya hundirîn a AdAway wê birêve dibe.</string>
     <string name="vpn_persistence_lockdown">«Girêdanên bê VPN asteng bike» çalak e: sepanên ji VPN hatine îstîsnakirin nikarin bigihîjin înternetê.</string>
     <string name="vpn_persistence_message">AdAway ji nû ve vebûn, girtina ji ber kêmbûna bîrê û têkçûnan bi xwe birêve dibe, ji ber vê di piraniya rewşan de mîhengeke zêde pêwîst nîne.\n\nHeke VPN carna ji nişka ve bisekine, ji bo garantiya herî xurt AdAway wekî VPN-a her dem çalak a pergala Android hilbijêre.</string>
-    <string name="vpn_persistence_adb_commands">Heke dîmena VPN ya pergalê li ser TV-ya te veşartî ye, ADB bi kar bîne, paşê TV ji nû ve bide destpêkirin:\n\n• Ji bo AdAway «her dem çalak» çalak bike:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• «Her dem çalak» neçalak bike:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Heke dîmena VPN ya pergalê li ser TV-ya te veşartî ye, ADB bi kar bîne, paşê TV ji nû ve bide destpêkirin:\n\n• Ji bo AdAway «her dem çalak» çalak bike:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontrol bike ku çalak e (ferman %1$s vedigerîne):\n  adb shell settings get secure always_on_vpn_app\n\n• Li ser hin TV-yan, wek yên TCL, destûrê jî bide AdAway ku bi xwe dest pê bike:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• «Her dem çalak» neçalak bike:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Mîhengên VPN li ser vê Android TV veşartî ne. Fermanên ADB yên hatine nîşandan bi kar bîne.</string>
     <string name="vpn_persistence_dismiss">Baş e</string>
     <string name="status_update_available">Nûvekirina çavkaniyê heye</string>

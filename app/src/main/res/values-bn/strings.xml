@@ -59,6 +59,7 @@
     <string name="source_add">উৎস যোগ করুন</string>
     <string name="source_edit">উৎস সম্পাদনা করুন</string>
     <string name="source_deleted">উৎস মুছে ফেলা হয়েছে</string>
+    <string name="source_delete_confirmation">এই উৎস এবং এর তালিকা মুছে ফেলা হবে। এটি আর ফিরিয়ে আনা যাবে না।</string>
     <string name="source_label">লেবেল</string>
     <string name="source_label_required">লেবেল আবশ্যক</string>
     <string name="source_format">তালিকার ফরম্যাট</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">সর্বদা-চালু VPN সেট করা নেই। AdAway-এর নিজস্ব ব্যবস্থাই এটি সামলায়।</string>
     <string name="vpn_persistence_lockdown">‘VPN ছাড়া সংযোগ ব্লক করুন’ চালু আছে: VPN থেকে বাদ দেওয়া অ্যাপগুলোর ইন্টারনেট অ্যাক্সেস নেই।</string>
     <string name="vpn_persistence_message">AdAway রিবুট, কম মেমরির কারণে বন্ধ হয়ে যাওয়া এবং ক্র্যাশ নিজেই সামলে নেয়, তাই বেশিরভাগ ক্ষেত্রে বাড়তি কোনো সেটআপের প্রয়োজন নেই।\n\nVPN কখনও হঠাৎ বন্ধ হয়ে গেলে সবচেয়ে নির্ভরযোগ্য সুরক্ষার জন্য AdAway-কে Android সিস্টেমের সর্বদা-চালু VPN হিসেবে সেট করুন।</string>
-    <string name="vpn_persistence_adb_commands">আপনার টিভিতে সিস্টেমের VPN স্ক্রিন লুকানো থাকলে ADB ব্যবহার করুন, তারপর টিভি রিস্টার্ট করুন:\n\n• AdAway-এর জন্য সর্বদা-চালু সক্রিয় করতে:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• সর্বদা-চালু নিষ্ক্রিয় করতে:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">আপনার টিভিতে সিস্টেমের VPN স্ক্রিন লুকানো থাকলে ADB ব্যবহার করুন, তারপর টিভি রিস্টার্ট করুন:\n\n• AdAway-এর জন্য সর্বদা-চালু সক্রিয় করতে:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• এটি সক্রিয় আছে কিনা যাচাই করতে (কমান্ডটি %1$s দেখাবে):\n  adb shell settings get secure always_on_vpn_app\n\n• কিছু টিভিতে, যেমন TCL-এর টিভিতে, AdAway-কে নিজে থেকে চালু হওয়ার অনুমতিও দিতে:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• সর্বদা-চালু নিষ্ক্রিয় করতে:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">এই Android TV-তে VPN সেটিংস লুকানো আছে। দেখানো ADB কমান্ডগুলো ব্যবহার করুন।</string>
     <string name="vpn_persistence_dismiss">বুঝেছি</string>
     <string name="status_update_available">উৎসের আপডেট পাওয়া গেছে</string>
