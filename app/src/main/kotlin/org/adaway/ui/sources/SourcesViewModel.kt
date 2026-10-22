@@ -23,6 +23,14 @@ class SourcesViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch { repository.setEnabled(source.id, enabled) }
     }
 
+    /** Deletes [source] with no offer to undo, as the TV does. */
+    fun deleteForGood(source: SourceEntity) {
+        viewModelScope.launch {
+            repository.delete(source)
+            forgetDeleted(source)
+        }
+    }
+
     fun restore(source: SourceEntity) {
         viewModelScope.launch { repository.restore(source) }
     }

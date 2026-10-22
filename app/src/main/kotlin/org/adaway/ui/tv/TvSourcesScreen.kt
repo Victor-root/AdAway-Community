@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
 import org.adaway.data.db.SourceEntity
+import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.ApplyProgressSnackbar
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
@@ -43,12 +44,13 @@ import org.adaway.ui.theme.LocalAdAwayColors
 /** No source card focused: the add button is, as when the screen opens. */
 private const val NO_SOURCE = -1L
 
-/** The TV list of hosts sources: a card per source, whose choices enable or edit it. */
+/** The TV list of hosts sources: a card per source, whose choices enable, edit or delete it. */
 @Composable
 fun TvSourcesScreen(navigation: SourcesNavigation) {
     val viewModel = appViewModel(::SourcesViewModel)
     val sources by viewModel.sources.collectAsStateWithLifecycle()
     var selected by remember { mutableStateOf<Pair<SourceEntity, String>?>(null) }
+    var deleting by remember { mutableStateOf<Pair<SourceEntity, String>?>(null) }
     // The card focused last, focused again when coming back from the edit screen, as Android does.
     var focused by rememberSaveable { mutableLongStateOf(NO_SOURCE) }
     val addFocus = remember { FocusRequester() }
@@ -101,8 +103,21 @@ fun TvSourcesScreen(navigation: SourcesNavigation) {
             items = listOf(
                 DialogButton(stringResource(if (source.enabled) R.string.disable else R.string.enable), onClick = { viewModel.setEnabled(source, !source.enabled) }),
                 DialogButton(stringResource(R.string.edit), onClick = { navigation.edit(source.id) }),
+                DialogButton(stringResource(R.string.delete), onClick = { deleting = source to label }),
             ),
             onDismiss = { selected = null },
+        )
+    }
+    deleting?.let { (source, label) ->
+        AdAwayAlertDialog(
+            onDismissRequest = { deleting = null },
+            title = label,
+            message = stringResource(R.string.source_delete_confirmation),
+            confirmButton = DialogButton(stringResource(R.string.delete), onClick = {
+                deleting = null
+                viewModel.deleteForGood(source)
+            }),
+            dismissButton = DialogButton(stringResource(R.string.cancel), onClick = { deleting = null }),
         )
     }
     // Also when the card focused last is gone, its source deleted.

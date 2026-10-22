@@ -13,6 +13,15 @@ fun Context.startActivityOrTell(intent: Intent) = tellIfMissing { startActivity(
 /** As [startActivityOrTell], through a launcher of the screen. */
 fun <I> ActivityResultLauncher<I>.launchOrTell(input: I, context: Context) = context.tellIfMissing { launch(input) }
 
+/** Opens the screen of the launcher, or runs [fallback] when no app of the device can. */
+fun <I> ActivityResultLauncher<I>.launchOr(input: I, fallback: () -> Unit) {
+    try {
+        launch(input)
+    } catch (_: ActivityNotFoundException) {
+        fallback()
+    }
+}
+
 private fun Context.tellIfMissing(start: () -> Unit) {
     try {
         start()

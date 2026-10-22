@@ -61,6 +61,7 @@
     <string name="source_add">Add source</string>
     <string name="source_edit">Edit source</string>
     <string name="source_deleted">Source deleted</string>
+    <string name="source_delete_confirmation">This source and its list will be removed. This cannot be undone.</string>
     <string name="source_label">Label</string>
     <string name="source_label_required">Label required</string>
     <string name="source_format">List format</string>
@@ -141,7 +142,7 @@
     <string name="vpn_persistence_disabled">Always-on VPN not set. AdAway\'s built-in persistence handles it.</string>
     <string name="vpn_persistence_lockdown">\"Block connections without VPN\" is on: apps excluded from the VPN have no Internet access.</string>
     <string name="vpn_persistence_message">AdAway already handles reboots, low-memory kills and crashes on its own, so no extra setup is needed in most cases.\n\nIf the VPN ever stops unexpectedly, pin AdAway as the Android system Always-on VPN for the strongest guarantee.</string>
-    <string name="vpn_persistence_adb_commands">If the system VPN screen is hidden on your TV, use ADB, then restart the TV:\n\n• Enable always-on for AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Disable always-on:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">If the system VPN screen is hidden on your TV, use ADB, then restart the TV:\n\n• Enable always-on for AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Check that it is enabled (the command answers %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• On some TVs, such as TCL ones, also allow AdAway to start by itself:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Disable always-on:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN settings hidden on this Android TV. Use the ADB commands shown.</string>
     <string name="vpn_persistence_dismiss">Got it</string>
     <string name="status_update_available">Source update available</string>
