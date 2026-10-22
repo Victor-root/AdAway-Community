@@ -59,6 +59,7 @@
     <string name="source_add">เพิ่มแหล่งที่มา</string>
     <string name="source_edit">แก้ไขแหล่งที่มา</string>
     <string name="source_deleted">ลบแหล่งที่มาแล้ว</string>
+    <string name="source_delete_confirmation">แหล่งที่มานี้และรายการของแหล่งที่มาจะถูกลบ การดำเนินการนี้ไม่สามารถย้อนกลับได้</string>
     <string name="source_label">ชื่อเรียก</string>
     <string name="source_label_required">ต้องระบุชื่อเรียก</string>
     <string name="source_format">รูปแบบของรายการ</string>
@@ -138,7 +139,7 @@
     <string name="vpn_persistence_disabled">ยังไม่ได้ตั้งค่า VPN แบบเปิดตลอดเวลา ระบบคงการทำงานในตัวของ AdAway จะดูแลให้</string>
     <string name="vpn_persistence_lockdown">“บล็อกการเชื่อมต่อที่ไม่ใช้ VPN” เปิดอยู่: แอปที่ยกเว้นจาก VPN จะใช้อินเทอร์เน็ตไม่ได้</string>
     <string name="vpn_persistence_message">AdAway จัดการเรื่องการรีบูต การถูกปิดเพราะหน่วยความจำไม่พอ และการหยุดทำงานผิดปกติได้เองอยู่แล้ว ในกรณีส่วนใหญ่จึงไม่ต้องตั้งค่าเพิ่มเติม\n\nหาก VPN หยุดทำงานโดยไม่คาดคิด ให้ตั้ง AdAway เป็น VPN แบบเปิดตลอดเวลาของระบบ Android เพื่อความมั่นใจสูงสุด</string>
-    <string name="vpn_persistence_adb_commands">หากหน้าจอ VPN ของระบบถูกซ่อนบนทีวีของคุณ ให้ใช้ ADB แล้วรีสตาร์ททีวี:\n\n• เปิด VPN แบบเปิดตลอดเวลาสำหรับ AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• ปิด VPN แบบเปิดตลอดเวลา:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">หากหน้าจอ VPN ของระบบถูกซ่อนบนทีวีของคุณ ให้ใช้ ADB แล้วรีสตาร์ททีวี:\n\n• เปิด VPN แบบเปิดตลอดเวลาสำหรับ AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• ตรวจสอบว่าเปิดใช้งานแล้ว (คำสั่งจะตอบกลับเป็น %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• บนทีวีบางรุ่น เช่น ทีวี TCL ให้อนุญาตให้ AdAway เริ่มทำงานเองด้วย:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• ปิด VPN แบบเปิดตลอดเวลา:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">การตั้งค่า VPN ถูกซ่อนบน Android TV เครื่องนี้ ให้ใช้คำสั่ง ADB ที่แสดงไว้</string>
     <string name="vpn_persistence_dismiss">เข้าใจแล้ว</string>
     <string name="status_update_available">มีอัปเดตแหล่งที่มา</string>

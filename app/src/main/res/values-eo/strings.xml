@@ -59,6 +59,7 @@
     <string name="source_add">Aldoni fonton</string>
     <string name="source_edit">Redakti fonton</string>
     <string name="source_deleted">Fonto forigita</string>
+    <string name="source_delete_confirmation">Ĉi tiu fonto kaj ĝia listo estos forigitaj. Tio ne estas malfarebla.</string>
     <string name="source_label">Etikedo</string>
     <string name="source_label_required">Etikedo necesas</string>
     <string name="source_format">Formato de la listo</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Ĉiam ŝaltita VPN ne estas agordita. La propra persisto de AdAway sufiĉas.</string>
     <string name="vpn_persistence_lockdown">«Bloki konektojn sen VPN» estas ŝaltita: aplikaĵoj esceptitaj de la VPN ne havas interretan aliron.</string>
     <string name="vpn_persistence_message">AdAway mem jam prizorgas restartojn, haltigon pro manko de memoro kaj paneojn, do plia agordo plej ofte ne necesas.\n\nSe la VPN iam neatendite haltas, fiksu AdAway kiel la sisteman ĉiam ŝaltitan VPN por la plej forta garantio.</string>
-    <string name="vpn_persistence_adb_commands">Se la sistema VPN-ekrano estas kaŝita sur via televidilo, uzu ADB, poste restartigu la televidilon:\n\n• Ŝalti ĉiam ŝaltitan VPN por AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Malŝalti ĉiam ŝaltitan VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Se la sistema VPN-ekrano estas kaŝita sur via televidilo, uzu ADB, poste restartigu la televidilon:\n\n• Ŝalti ĉiam ŝaltitan VPN por AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontroli, ke ĝi estas ŝaltita (la komando respondas %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Ĉe iuj televidiloj, ekzemple tiuj de TCL, ankaŭ permesi al AdAway aŭtomate starti:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Malŝalti ĉiam ŝaltitan VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">La VPN-agordoj estas kaŝitaj sur ĉi tiu Android TV. Uzu la montritajn ADB-komandojn.</string>
     <string name="vpn_persistence_dismiss">Komprenite</string>
     <string name="status_update_available">Ĝisdatigo de fontoj disponeblas</string>

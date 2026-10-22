@@ -59,6 +59,7 @@
     <string name="source_add">Quelle hinzufügen</string>
     <string name="source_edit">Quelle bearbeiten</string>
     <string name="source_deleted">Quelle gelöscht</string>
+    <string name="source_delete_confirmation">Diese Quelle und ihre Liste werden gelöscht. Das kann nicht rückgängig gemacht werden.</string>
     <string name="source_label">Bezeichnung</string>
     <string name="source_label_required">Bezeichnung erforderlich</string>
     <string name="source_format">Listenformat</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Always-on-VPN ist nicht eingerichtet. AdAway sorgt mit seinem eigenen Dauerbetrieb dafür, dass das VPN läuft.</string>
     <string name="vpn_persistence_lockdown">„Verbindungen ohne VPN blockieren“ ist aktiviert: Vom VPN ausgeschlossene Apps haben keinen Internetzugang.</string>
     <string name="vpn_persistence_message">AdAway übersteht Neustarts, Beenden bei Speichermangel und Abstürze selbstständig, daher ist in den meisten Fällen keine weitere Einrichtung nötig.\n\nFalls das VPN dennoch einmal unerwartet stoppt, richte AdAway als Always-on-VPN von Android ein. Das ist die zuverlässigste Lösung.</string>
-    <string name="vpn_persistence_adb_commands">Falls die VPN-Einstellungen des Systems auf deinem Fernseher ausgeblendet sind, nutze ADB und starte den Fernseher anschließend neu:\n\n• Always-on für AdAway aktivieren:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Always-on deaktivieren:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Falls die VPN-Einstellungen des Systems auf deinem Fernseher ausgeblendet sind, nutze ADB und starte den Fernseher anschließend neu:\n\n• Always-on für AdAway aktivieren:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Prüfen, ob es aktiviert ist (der Befehl gibt %1$s aus):\n  adb shell settings get secure always_on_vpn_app\n\n• Auf manchen Fernsehern, etwa von TCL, AdAway außerdem den automatischen Start erlauben:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Always-on deaktivieren:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Die VPN-Einstellungen sind auf diesem Android TV ausgeblendet. Nutze die angezeigten ADB-Befehle.</string>
     <string name="vpn_persistence_dismiss">Verstanden</string>
     <string name="status_update_available">Quellen-Update verfügbar</string>

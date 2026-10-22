@@ -59,6 +59,7 @@
     <string name="source_add">Voeg bron by</string>
     <string name="source_edit">Wysig bron</string>
     <string name="source_deleted">Bron uitgevee</string>
+    <string name="source_delete_confirmation">Hierdie bron en sy lys sal uitgevee word. Dit kan nie ontdoen word nie.</string>
     <string name="source_label">Etiket</string>
     <string name="source_label_required">Etiket is verpligtend</string>
     <string name="source_format">Lysformaat</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Altyd-aan-VPN is nie ingestel nie. AdAway se ingeboude volharding hanteer dit.</string>
     <string name="vpn_persistence_lockdown">“Blokkeer verbindings sonder VPN” is aan: programme wat van die VPN uitgesluit is, het geen internettoegang nie.</string>
     <string name="vpn_persistence_message">AdAway hanteer reeds toestelherbegin, afsluitings weens te min geheue en foute op sy eie, so in die meeste gevalle is geen ekstra opstelling nodig nie.\n\nAs die VPN ooit onverwags ophou, pen AdAway as die Android-stelsel se Altyd-aan-VPN vas vir die sterkste waarborg.</string>
-    <string name="vpn_persistence_adb_commands">As die stelsel se VPN-skerm op jou TV versteek is, gebruik ADB en herbegin dan die TV:\n\n• Aktiveer altyd-aan vir AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Deaktiveer altyd-aan:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">As die stelsel se VPN-skerm op jou TV versteek is, gebruik ADB en herbegin dan die TV:\n\n• Aktiveer altyd-aan vir AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontroleer dat dit geaktiveer is (die opdrag antwoord %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Op sommige TV’s, soos dié van TCL, laat AdAway ook toe om vanself te begin:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Deaktiveer altyd-aan:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN-instellings is op hierdie Android TV versteek. Gebruik die ADB-opdragte wat gewys word.</string>
     <string name="vpn_persistence_dismiss">Het dit</string>
     <string name="status_update_available">Bronopdatering beskikbaar</string>

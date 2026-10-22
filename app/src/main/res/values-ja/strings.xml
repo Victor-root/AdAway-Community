@@ -59,6 +59,7 @@
     <string name="source_add">ソースを追加</string>
     <string name="source_edit">ソースを編集</string>
     <string name="source_deleted">ソースを削除しました</string>
+    <string name="source_delete_confirmation">このソースとそのリストが削除されます。この操作は元に戻せません。</string>
     <string name="source_label">ラベル</string>
     <string name="source_label_required">ラベルは必須です</string>
     <string name="source_format">リストの形式</string>
@@ -138,7 +139,7 @@
     <string name="vpn_persistence_disabled">常時接続VPNは設定されていません。AdAway内蔵の仕組みで動作を維持します。</string>
     <string name="vpn_persistence_lockdown">「VPNなしの接続をブロック」がオンです。VPNから除外されたアプリはインターネットに接続できません。</string>
     <string name="vpn_persistence_message">AdAwayは、再起動、メモリ不足による強制終了、クラッシュに自動で対処します。そのため、ほとんどの場合、追加の設定は必要ありません。\n\nVPNが予期せず停止する場合は、AdAwayをAndroidの常時接続VPNに設定すると、最も確実に動作し続けます。</string>
-    <string name="vpn_persistence_adb_commands">TVでシステムのVPN画面が非表示の場合は、ADBを使用し、その後TVを再起動してください。\n\n• AdAwayの常時接続を有効にする:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• 常時接続を無効にする:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">TVでシステムのVPN画面が非表示の場合は、ADBを使用し、その後TVを再起動してください。\n\n• AdAwayの常時接続を有効にする:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• 有効になっていることを確認する（コマンドが%1$sを返します）:\n  adb shell settings get secure always_on_vpn_app\n\n• TCLなど一部のTVでは、AdAwayの自動起動も許可する:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• 常時接続を無効にする:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">このAndroid TVではVPNの設定が非表示です。表示されているADBコマンドを使用してください。</string>
     <string name="vpn_persistence_dismiss">了解</string>
     <string name="status_update_available">ソースの更新があります</string>

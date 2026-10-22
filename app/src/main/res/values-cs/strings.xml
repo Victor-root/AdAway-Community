@@ -59,6 +59,7 @@
     <string name="source_add">Přidat zdroj</string>
     <string name="source_edit">Upravit zdroj</string>
     <string name="source_deleted">Zdroj smazán</string>
+    <string name="source_delete_confirmation">Tento zdroj a jeho seznam budou smazány. Tuto akci nelze vrátit zpět.</string>
     <string name="source_label">Název</string>
     <string name="source_label_required">Název je povinný</string>
     <string name="source_format">Formát seznamu</string>
@@ -141,7 +142,7 @@
     <string name="vpn_persistence_disabled">Trvalá síť VPN není nastavena. Trvalý běh zajišťuje vlastní mechanismus aplikace AdAway.</string>
     <string name="vpn_persistence_lockdown">Je zapnuto „Blokovat připojení bez sítě VPN“: aplikace vyloučené z VPN nemají přístup k internetu.</string>
     <string name="vpn_persistence_message">Aplikace AdAway si s restarty, ukončením při nedostatku paměti i pády poradí sama, takže ve většině případů není potřeba nic dalšího nastavovat.\n\nPokud se VPN přesto někdy neočekávaně zastaví, nastavte AdAway jako systémovou trvalou síť VPN Androidu, což je nejspolehlivější řešení.</string>
-    <string name="vpn_persistence_adb_commands">Pokud je na vaší televizi obrazovka VPN skrytá, použijte ADB a poté televizi restartujte:\n\n• Zapnutí trvalé sítě VPN pro AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Vypnutí trvalé sítě VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Pokud je na vaší televizi obrazovka VPN skrytá, použijte ADB a poté televizi restartujte:\n\n• Zapnutí trvalé sítě VPN pro AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Ověření, že je zapnutá (příkaz vrátí %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Na některých televizích, například od TCL, také povolení automatického spouštění AdAway:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Vypnutí trvalé sítě VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Nastavení VPN jsou na této televizi s Android TV skrytá. Použijte zobrazené příkazy ADB.</string>
     <string name="vpn_persistence_dismiss">Rozumím</string>
     <string name="status_update_available">K dispozici je aktualizace zdrojů</string>

@@ -59,6 +59,7 @@
     <string name="source_add">Gehitu iturria</string>
     <string name="source_edit">Editatu iturria</string>
     <string name="source_deleted">Iturria ezabatu da</string>
+    <string name="source_delete_confirmation">Iturri hau eta bere zerrenda ezabatu egingo dira. Ezin da desegin.</string>
     <string name="source_label">Etiketa</string>
     <string name="source_label_required">Etiketa beharrezkoa da</string>
     <string name="source_format">Zerrendaren formatua</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">«Beti aktibo dagoen VPNa» ez dago ezarrita. AdAway-ren iraunkortasun integratuak kudeatzen du.</string>
     <string name="vpn_persistence_lockdown">«Blokeatu VPNrik gabeko konexioak» gaituta dago: VPNtik kanpo utzitako aplikazioek ez dute Interneterako sarbiderik.</string>
     <string name="vpn_persistence_message">AdAway-k berak kudeatzen ditu berrabiarazteak, memoria-faltagatiko itxierak eta kraskadurak, beraz, kasu gehienetan ez da ezer gehiago konfiguratu behar.\n\nVPNa ustekabean gelditzen bada, ainguratu AdAway Androiden sistemako «Beti aktibo dagoen VPNa» gisa, bermerik sendoena izateko.</string>
-    <string name="vpn_persistence_adb_commands">Zure telebistan sistemako VPN pantaila ezkutatuta badago, erabili ADB eta, ondoren, berrabiarazi telebista:\n\n• Gaitu AdAway-rentzat beti aktibo modua:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Desgaitu beti aktibo modua:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Zure telebistan sistemako VPN pantaila ezkutatuta badago, erabili ADB eta, ondoren, berrabiarazi telebista:\n\n• Gaitu AdAway-rentzat beti aktibo modua:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Egiaztatu gaituta dagoela (komandoak %1$s erantzuten du):\n  adb shell settings get secure always_on_vpn_app\n\n• Telebista batzuetan, TCL markakoetan adibidez, baimendu AdAway-ri bere kabuz abiarazteko ere:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Desgaitu beti aktibo modua:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN ezarpenak ezkutatuta daude Android TV honetan. Erabili erakusten diren ADB komandoak.</string>
     <string name="vpn_persistence_dismiss">Ulertu dut</string>
     <string name="status_update_available">Iturrien eguneraketa eskuragarri</string>

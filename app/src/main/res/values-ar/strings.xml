@@ -59,6 +59,7 @@
     <string name="source_add">إضافة مصدر</string>
     <string name="source_edit">تعديل المصدر</string>
     <string name="source_deleted">تم حذف المصدر</string>
+    <string name="source_delete_confirmation">سيتم حذف هذا المصدر وقائمته. لا يمكن التراجع عن ذلك.</string>
     <string name="source_label">التسمية</string>
     <string name="source_label_required">التسمية مطلوبة</string>
     <string name="source_format">تنسيق القائمة</string>
@@ -143,7 +144,7 @@
     <string name="vpn_persistence_disabled">VPN دائم التشغيل غير مضبوط. يتولى AdAway الأمر بآلية الاستمرارية المدمجة فيه.</string>
     <string name="vpn_persistence_lockdown">«حظر الاتصالات بدون VPN» مفعّل: التطبيقات المستثناة من VPN لا يمكنها الوصول إلى الإنترنت.</string>
     <string name="vpn_persistence_message">يتعامل AdAway بنفسه مع إعادة التشغيل وإغلاق النظام للتطبيقات عند نقص الذاكرة والأعطال، لذلك لا حاجة إلى أي إعداد إضافي في معظم الحالات.\n\nإذا توقف VPN بشكل غير متوقع، فثبّت AdAway كشبكة VPN دائمة التشغيل في نظام Android للحصول على أقوى ضمان.</string>
-    <string name="vpn_persistence_adb_commands">إذا كانت شاشة VPN الخاصة بالنظام مخفية على التلفاز، فاستخدم ADB ثم أعد تشغيل التلفاز:\n\n• تفعيل الوضع الدائم لـ AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• تعطيل الوضع الدائم:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">إذا كانت شاشة VPN الخاصة بالنظام مخفية على التلفاز، فاستخدم ADB ثم أعد تشغيل التلفاز:\n\n• تفعيل الوضع الدائم لـ AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• التحقق من تفعيله (يُرجع الأمر %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• السماح أيضًا لـ AdAway بالتشغيل تلقائيًا على بعض أجهزة التلفاز، مثل أجهزة TCL:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• تعطيل الوضع الدائم:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">إعدادات VPN مخفية على جهاز Android TV هذا. استخدم أوامر ADB المعروضة.</string>
     <string name="vpn_persistence_dismiss">فهمت</string>
     <string name="status_update_available">يتوفر تحديث للمصادر</string>

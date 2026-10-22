@@ -59,6 +59,7 @@
     <string name="source_add">Thêm nguồn</string>
     <string name="source_edit">Sửa nguồn</string>
     <string name="source_deleted">Đã xóa nguồn</string>
+    <string name="source_delete_confirmation">Nguồn này và danh sách của nó sẽ bị xóa. Không thể hoàn tác thao tác này.</string>
     <string name="source_label">Nhãn</string>
     <string name="source_label_required">Cần có nhãn</string>
     <string name="source_format">Định dạng danh sách</string>
@@ -138,7 +139,7 @@
     <string name="vpn_persistence_disabled">Chưa đặt VPN luôn bật. Cơ chế duy trì tích hợp sẵn của AdAway sẽ đảm nhiệm việc này.</string>
     <string name="vpn_persistence_lockdown">Tùy chọn “Chặn các kết nối không dùng VPN” đang bật: các ứng dụng bị loại trừ khỏi VPN sẽ không có quyền truy cập Internet.</string>
     <string name="vpn_persistence_message">AdAway đã tự xử lý được các trường hợp khởi động lại máy, bị hệ thống tắt do thiếu bộ nhớ và sự cố, nên trong hầu hết trường hợp bạn không cần thiết lập thêm.\n\nNếu VPN vẫn dừng đột ngột, hãy ghim AdAway làm VPN luôn bật của hệ thống Android để được đảm bảo chắc chắn nhất.</string>
-    <string name="vpn_persistence_adb_commands">Nếu màn hình VPN của hệ thống bị ẩn trên TV của bạn, hãy dùng ADB, rồi khởi động lại TV:\n\n• Bật chế độ luôn bật cho AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Tắt chế độ luôn bật:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Nếu màn hình VPN của hệ thống bị ẩn trên TV của bạn, hãy dùng ADB, rồi khởi động lại TV:\n\n• Bật chế độ luôn bật cho AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kiểm tra xem chế độ đã bật chưa (lệnh trả về %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Trên một số TV, chẳng hạn TV TCL, cũng cho phép AdAway tự khởi động:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Tắt chế độ luôn bật:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Cài đặt VPN bị ẩn trên Android TV này. Hãy dùng các lệnh ADB được hiển thị.</string>
     <string name="vpn_persistence_dismiss">Đã hiểu</string>
     <string name="status_update_available">Có bản cập nhật nguồn</string>

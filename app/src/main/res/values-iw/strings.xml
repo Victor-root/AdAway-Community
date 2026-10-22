@@ -59,6 +59,7 @@
     <string name="source_add">הוספת מקור</string>
     <string name="source_edit">עריכת מקור</string>
     <string name="source_deleted">המקור נמחק</string>
+    <string name="source_delete_confirmation">המקור והרשימה שלו יימחקו. לא ניתן לבטל פעולה זו.</string>
     <string name="source_label">תווית</string>
     <string name="source_label_required">נדרשת תווית</string>
     <string name="source_format">פורמט הרשימה</string>
@@ -140,7 +141,7 @@
     <string name="vpn_persistence_disabled">VPN מופעל תמיד לא הוגדר. מנגנון ההתמדה המובנה של AdAway מטפל בכך.</string>
     <string name="vpn_persistence_lockdown">האפשרות \"חסימת חיבורים ללא VPN\" מופעלת: לאפליקציות שהוחרגו מה-VPN אין גישה לאינטרנט.</string>
     <string name="vpn_persistence_message">AdAway מטפל בעצמו באתחולים, בסגירת אפליקציות עקב מחסור בזיכרון ובקריסות, ולכן ברוב המקרים אין צורך בהגדרה נוספת.\n\nאם ה-VPN נעצר באופן בלתי צפוי, הצמד את AdAway כ-VPN מופעל תמיד של מערכת Android, כדי לקבל את האמינות המרבית.</string>
-    <string name="vpn_persistence_adb_commands">אם מסך ה-VPN של המערכת מוסתר בטלוויזיה שלך, השתמש ב-ADB ואז הפעל מחדש את הטלוויזיה:\n\n• הפעלת VPN מופעל תמיד עבור AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• השבתת VPN מופעל תמיד:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">אם מסך ה-VPN של המערכת מוסתר בטלוויזיה שלך, השתמש ב-ADB ואז הפעל מחדש את הטלוויזיה:\n\n• הפעלת VPN מופעל תמיד עבור AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• בדיקה שההגדרה מופעלת (הפקודה מחזירה %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• בחלק מהטלוויזיות, כמו טלוויזיות TCL, יש לאפשר גם הפעלה אוטומטית של AdAway:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• השבתת VPN מופעל תמיד:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">הגדרות ה-VPN מוסתרות ב-Android TV הזה. השתמש בפקודות ה-ADB המוצגות.</string>
     <string name="vpn_persistence_dismiss">הבנתי</string>
     <string name="status_update_available">קיים עדכון למקורות</string>

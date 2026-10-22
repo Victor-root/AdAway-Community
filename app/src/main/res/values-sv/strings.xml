@@ -59,6 +59,7 @@
     <string name="source_add">Lägg till källa</string>
     <string name="source_edit">Redigera källa</string>
     <string name="source_deleted">Källan har tagits bort</string>
+    <string name="source_delete_confirmation">Den här källan och dess lista tas bort. Det går inte att ångra.</string>
     <string name="source_label">Etikett</string>
     <string name="source_label_required">Etikett krävs</string>
     <string name="source_format">Listformat</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Always-on VPN är inte inställt. AdAways egen funktion för att hålla sig igång sköter det.</string>
     <string name="vpn_persistence_lockdown">”Blockera anslutningar utan VPN” är på: appar som är undantagna från VPN har ingen internetåtkomst.</string>
     <string name="vpn_persistence_message">AdAway hanterar redan omstarter, minnesbrist och krascher på egen hand, så ingen extra konfiguration behövs i de flesta fall.\n\nOm VPN ändå skulle sluta fungera oväntat kan du fästa AdAway som Androids Always-on VPN för bästa säkerhet.</string>
-    <string name="vpn_persistence_adb_commands">Om systemets VPN-skärm är dold på din TV, använd ADB och starta sedan om TV:n:\n\n• Aktivera always-on för AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Inaktivera always-on:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Om systemets VPN-skärm är dold på din TV, använd ADB och starta sedan om TV:n:\n\n• Aktivera always-on för AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontrollera att det är aktiverat (kommandot svarar %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• På vissa TV-apparater, till exempel från TCL, tillåt även AdAway att starta av sig själv:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Inaktivera always-on:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN-inställningarna är dolda på den här Android TV. Använd ADB-kommandona som visas.</string>
     <string name="vpn_persistence_dismiss">Uppfattat</string>
     <string name="status_update_available">Källuppdatering tillgänglig</string>

@@ -59,6 +59,7 @@
     <string name="source_add">Tilføj kilde</string>
     <string name="source_edit">Redigér kilde</string>
     <string name="source_deleted">Kilden er slettet</string>
+    <string name="source_delete_confirmation">Denne kilde og dens liste bliver slettet. Det kan ikke fortrydes.</string>
     <string name="source_label">Navn</string>
     <string name="source_label_required">Du skal angive et navn</string>
     <string name="source_format">Listeformat</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Altid aktiv VPN er ikke angivet. AdAways indbyggede beskyttelse mod afbrydelser tager sig af det.</string>
     <string name="vpn_persistence_lockdown">»Blokér forbindelser uden VPN« er slået til: apps, der er undtaget fra VPN, har ingen internetadgang.</string>
     <string name="vpn_persistence_message">AdAway håndterer allerede genstarter, lav hukommelse og nedbrud på egen hånd, så der er som regel ikke brug for ekstra opsætning.\n\nHvis VPN en dag stopper uventet, kan du vælge AdAway som systemets »Altid aktiv VPN« for at få den stærkeste sikring.</string>
-    <string name="vpn_persistence_adb_commands">Hvis systemets VPN-skærm er skjult på dit TV, så brug ADB, og genstart derefter TV’et:\n\n• Slå altid aktiv til for AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Slå altid aktiv fra:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Hvis systemets VPN-skærm er skjult på dit TV, så brug ADB, og genstart derefter TV’et:\n\n• Slå altid aktiv til for AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Tjek, at det er slået til (kommandoen returnerer %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• På nogle TV’er, f.eks. fra TCL, skal du også give AdAway lov til at starte af sig selv:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Slå altid aktiv fra:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN-indstillingerne er skjult på dette Android TV. Brug de viste ADB-kommandoer.</string>
     <string name="vpn_persistence_dismiss">Forstået</string>
     <string name="status_update_available">Kildeopdatering tilgængelig</string>

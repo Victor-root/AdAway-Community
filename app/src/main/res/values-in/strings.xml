@@ -59,6 +59,7 @@
     <string name="source_add">Tambah sumber</string>
     <string name="source_edit">Ubah sumber</string>
     <string name="source_deleted">Sumber dihapus</string>
+    <string name="source_delete_confirmation">Sumber ini beserta daftarnya akan dihapus. Tindakan ini tidak dapat dibatalkan.</string>
     <string name="source_label">Label</string>
     <string name="source_label_required">Label wajib diisi</string>
     <string name="source_format">Format daftar</string>
@@ -138,7 +139,7 @@
     <string name="vpn_persistence_disabled">VPN selalu aktif belum diatur. Mekanisme ketahanan bawaan AdAway yang menanganinya.</string>
     <string name="vpn_persistence_lockdown">“Blokir koneksi tanpa VPN” aktif: aplikasi yang dikecualikan dari VPN tidak memiliki akses internet.</string>
     <string name="vpn_persistence_message">AdAway sudah menangani sendiri mulai ulang perangkat, penghentian akibat memori rendah, dan crash, sehingga dalam kebanyakan kasus tidak diperlukan pengaturan tambahan.\n\nJika VPN sesekali berhenti secara tak terduga, sematkan AdAway sebagai VPN selalu aktif sistem Android untuk jaminan terkuat.</string>
-    <string name="vpn_persistence_adb_commands">Jika layar VPN sistem tersembunyi di TV Anda, gunakan ADB, lalu mulai ulang TV:\n\n• Aktifkan VPN selalu aktif untuk AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Nonaktifkan VPN selalu aktif:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Jika layar VPN sistem tersembunyi di TV Anda, gunakan ADB, lalu mulai ulang TV:\n\n• Aktifkan VPN selalu aktif untuk AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Pastikan VPN selalu aktif sudah diaktifkan (perintah akan menampilkan %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Di beberapa TV, seperti TV TCL, izinkan juga AdAway untuk mulai secara otomatis:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Nonaktifkan VPN selalu aktif:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Setelan VPN disembunyikan di Android TV ini. Gunakan perintah ADB yang ditampilkan.</string>
     <string name="vpn_persistence_dismiss">Mengerti</string>
     <string name="status_update_available">Pembaruan sumber tersedia</string>

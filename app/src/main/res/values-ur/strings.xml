@@ -59,6 +59,7 @@
     <string name="source_add">ماخذ شامل کریں</string>
     <string name="source_edit">ماخذ میں ترمیم کریں</string>
     <string name="source_deleted">ماخذ حذف ہو گیا</string>
+    <string name="source_delete_confirmation">یہ ماخذ اور اس کی فہرست حذف کر دیے جائیں گے۔ یہ عمل واپس نہیں کیا جا سکتا۔</string>
     <string name="source_label">لیبل</string>
     <string name="source_label_required">لیبل درکار ہے</string>
     <string name="source_format">فہرست کی فارمیٹ</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">ہمیشہ آن VPN سیٹ نہیں ہے۔ AdAway کا اپنا انتظام یہ کام سنبھالتا ہے۔</string>
     <string name="vpn_persistence_lockdown">“VPN کے بغیر کنکشن بلاک کریں” آن ہے: VPN سے خارج ایپس کو انٹرنیٹ تک رسائی نہیں ملے گی۔</string>
     <string name="vpn_persistence_message">AdAway ری بوٹ، کم میموری کی وجہ سے بند ہونے اور کریش کو خود سنبھال لیتا ہے، اس لیے اکثر صورتوں میں کسی اضافی سیٹ اپ کی ضرورت نہیں۔\n\nاگر VPN کبھی غیر متوقع طور پر رک جائے تو سب سے مضبوط ضمانت کے لیے AdAway کو Android کے سسٹم کے ہمیشہ آن VPN کے طور پر مقرر کریں۔</string>
-    <string name="vpn_persistence_adb_commands">اگر آپ کے TV پر سسٹم کی VPN اسکرین چھپی ہو تو ADB استعمال کریں، پھر TV دوبارہ شروع کریں:\n\n• AdAway کے لیے ہمیشہ آن فعال کریں:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• ہمیشہ آن غیر فعال کریں:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">اگر آپ کے TV پر سسٹم کی VPN اسکرین چھپی ہو تو ADB استعمال کریں، پھر TV دوبارہ شروع کریں:\n\n• AdAway کے لیے ہمیشہ آن فعال کریں:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• تصدیق کریں کہ یہ فعال ہے (کمانڈ کا جواب %1$s ہوگا):\n  adb shell settings get secure always_on_vpn_app\n\n• کچھ TV پر، جیسے TCL کے TV، AdAway کو خود بخود شروع ہونے کی اجازت بھی دیں:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• ہمیشہ آن غیر فعال کریں:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">اس Android TV پر VPN کی ترتیبات چھپی ہوئی ہیں۔ دکھائی گئی ADB کمانڈز استعمال کریں۔</string>
     <string name="vpn_persistence_dismiss">سمجھ گیا</string>
     <string name="status_update_available">ماخذ کی اپ ڈیٹ دستیاب ہے</string>

@@ -59,6 +59,7 @@
     <string name="source_add">Lisa allikas</string>
     <string name="source_edit">Muuda allikat</string>
     <string name="source_deleted">Allikas kustutati</string>
+    <string name="source_delete_confirmation">See allikas ja selle loend kustutatakse. Seda toimingut ei saa tagasi võtta.</string>
     <string name="source_label">Silt</string>
     <string name="source_label_required">Silt on kohustuslik</string>
     <string name="source_format">Loendi vorming</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Alati sees VPN ei ole seadistatud. AdAway enda püsivusmehhanism tuleb sellega toime.</string>
     <string name="vpn_persistence_lockdown">Valik „Blokeeri ühendused ilma VPN-ita“ on sees: VPN-ist välistatud rakendustel puudub internetiühendus.</string>
     <string name="vpn_persistence_message">AdAway tuleb taaskäivituste, mälupuuduse tõttu sulgemiste ja kokkujooksmistega ise toime, seega ei ole enamasti vaja midagi lisaks seadistada.\n\nKui VPN peaks ootamatult seiskuma, määra AdAway Androidi süsteemseks alati sees VPN-iks, et see oleks kõige töökindlam.</string>
-    <string name="vpn_persistence_adb_commands">Kui süsteemi VPN-i ekraan on sinu teleris peidetud, kasuta ADB-d ja taaskäivita seejärel teler:\n\n• Luba AdAway jaoks alati sees:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Keela alati sees:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Kui süsteemi VPN-i ekraan on sinu teleris peidetud, kasuta ADB-d ja taaskäivita seejärel teler:\n\n• Luba AdAway jaoks alati sees:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontrolli, et see on lubatud (käsk vastab %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Mõnel teleril, näiteks TCL-i omadel, luba AdAway’l ka ise käivituda:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Keela alati sees:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN-i seaded on selles Android TV-s peidetud. Kasuta kuvatud ADB käske.</string>
     <string name="vpn_persistence_dismiss">Selge</string>
     <string name="status_update_available">Allika värskendus on saadaval</string>

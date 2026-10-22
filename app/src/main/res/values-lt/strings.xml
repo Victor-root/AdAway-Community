@@ -59,6 +59,7 @@
     <string name="source_add">Pridėti šaltinį</string>
     <string name="source_edit">Redaguoti šaltinį</string>
     <string name="source_deleted">Šaltinis ištrintas</string>
+    <string name="source_delete_confirmation">Šis šaltinis ir jo sąrašas bus pašalinti. Šio veiksmo atšaukti negalima.</string>
     <string name="source_label">Pavadinimas</string>
     <string name="source_label_required">Pavadinimas privalomas</string>
     <string name="source_format">Sąrašo formatas</string>
@@ -141,7 +142,7 @@
     <string name="vpn_persistence_disabled">Visada įjungtas VPN nenustatytas. Veikimą užtikrina pati AdAway.</string>
     <string name="vpn_persistence_lockdown">Įjungta „Blokuoti ryšius be VPN“: programos, neįtrauktos į VPN, neturi interneto ryšio.</string>
     <string name="vpn_persistence_message">AdAway pati susitvarko su paleidimu iš naujo, atminties trūkumo sukeltu uždarymu ir strigimais, todėl daugeliu atvejų papildomų nustatymų nereikia.\n\nJei VPN kada nors netikėtai sustotų, nustatykite AdAway kaip Android sistemos visada įjungtą VPN, kad apsauga būtų patikimiausia.</string>
-    <string name="vpn_persistence_adb_commands">Jei sistemos VPN ekranas jūsų televizoriuje paslėptas, naudokite ADB, tada paleiskite televizorių iš naujo:\n\n• Įjungti visada įjungtą VPN AdAway programai:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Išjungti visada įjungtą VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Jei sistemos VPN ekranas jūsų televizoriuje paslėptas, naudokite ADB, tada paleiskite televizorių iš naujo:\n\n• Įjungti visada įjungtą VPN AdAway programai:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Patikrinti, ar jis įjungtas (komanda atsako %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Kai kuriuose televizoriuose, pavyzdžiui, TCL, taip pat leisti AdAway pasileisti savaime:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Išjungti visada įjungtą VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Šiame Android TV VPN nustatymai paslėpti. Naudokite rodomas ADB komandas.</string>
     <string name="vpn_persistence_dismiss">Supratau</string>
     <string name="status_update_available">Yra šaltinių atnaujinimas</string>

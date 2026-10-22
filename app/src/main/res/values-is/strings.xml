@@ -59,6 +59,7 @@
     <string name="source_add">Bæta við uppsprettu</string>
     <string name="source_edit">Breyta uppsprettu</string>
     <string name="source_deleted">Uppsprettu eytt</string>
+    <string name="source_delete_confirmation">Þessari uppsprettu og lista hennar verður eytt. Ekki er hægt að afturkalla þetta.</string>
     <string name="source_label">Merkimiði</string>
     <string name="source_label_required">Merkimiða vantar</string>
     <string name="source_format">Snið lista</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Alltaf virkt VPN er ekki stillt. AdAway sér sjálft um að halda VPN gangandi.</string>
     <string name="vpn_persistence_lockdown">Kveikt er á „Loka á tengingar án VPN“: forrit sem eru undanskilin VPN hafa engan netaðgang.</string>
     <string name="vpn_persistence_message">AdAway sér sjálft um endurræsingar, forrit sem Android lokar vegna minnisskorts og hrun, svo í flestum tilvikum þarf enga aukauppsetningu.\n\nEf VPN stöðvast óvænt skaltu festa AdAway sem „Alltaf virkt VPN“ í Android-kerfinu til að fá sterkustu trygginguna.</string>
-    <string name="vpn_persistence_adb_commands">Ef VPN-skjár kerfisins er falinn á sjónvarpinu þínu skaltu nota ADB og endurræsa síðan sjónvarpið:\n\n• Virkja alltaf virkt VPN fyrir AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Óvirkja alltaf virkt VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Ef VPN-skjár kerfisins er falinn á sjónvarpinu þínu skaltu nota ADB og endurræsa síðan sjónvarpið:\n\n• Virkja alltaf virkt VPN fyrir AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Athuga að það sé virkt (skipunin svarar %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Á sumum sjónvörpum, til dæmis frá TCL, þarf einnig að leyfa AdAway að ræsast sjálfkrafa:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Óvirkja alltaf virkt VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN-stillingar eru faldar á þessu Android-sjónvarpi. Notaðu ADB-skipanirnar sem eru sýndar.</string>
     <string name="vpn_persistence_dismiss">Skil það</string>
     <string name="status_update_available">Uppfærsla uppsprettna í boði</string>

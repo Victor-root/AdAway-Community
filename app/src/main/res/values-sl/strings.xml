@@ -59,6 +59,7 @@
     <string name="source_add">Dodaj vir</string>
     <string name="source_edit">Uredi vir</string>
     <string name="source_deleted">Vir je izbrisan</string>
+    <string name="source_delete_confirmation">Ta vir in njegov seznam bosta izbrisana. Tega ni mogoče razveljaviti.</string>
     <string name="source_label">Oznaka</string>
     <string name="source_label_required">Oznaka je obvezna</string>
     <string name="source_format">Oblika seznama</string>
@@ -141,7 +142,7 @@
     <string name="vpn_persistence_disabled">Vedno vklopljen VPN ni nastavljen. Za trajno delovanje poskrbi vgrajeni mehanizem AdAway.</string>
     <string name="vpn_persistence_lockdown">Možnost „Blokiraj povezave brez VPN-ja“ je vklopljena: aplikacije, izključene iz VPN-ja, nimajo dostopa do interneta.</string>
     <string name="vpn_persistence_message">AdAway sam poskrbi za ponovne zagone, ukinitve zaradi pomanjkanja pomnilnika in zrušitve, zato v večini primerov dodatna nastavitev ni potrebna.\n\nČe se VPN kdaj nepričakovano ustavi, AdAway pripnite kot sistemski vedno vklopljen VPN v Androidu za največjo zanesljivost.</string>
-    <string name="vpn_persistence_adb_commands">Če je sistemski zaslon VPN na vašem televizorju skrit, uporabite ADB, nato znova zaženite televizor:\n\n• Omogočite vedno vklopljen VPN za AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Onemogočite vedno vklopljen VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Če je sistemski zaslon VPN na vašem televizorju skrit, uporabite ADB, nato znova zaženite televizor:\n\n• Omogočite vedno vklopljen VPN za AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Preverite, ali je omogočen (ukaz vrne %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Na nekaterih televizorjih, na primer TCL, dovolite AdAwayu tudi samodejni zagon:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Onemogočite vedno vklopljen VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Nastavitve VPN so na tem Android TV skrite. Uporabite prikazane ukaze ADB.</string>
     <string name="vpn_persistence_dismiss">Razumem</string>
     <string name="status_update_available">Na voljo je posodobitev virov</string>

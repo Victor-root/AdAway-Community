@@ -59,6 +59,7 @@
     <string name="source_add">Kaynak ekle</string>
     <string name="source_edit">Kaynağı düzenle</string>
     <string name="source_deleted">Kaynak silindi</string>
+    <string name="source_delete_confirmation">Bu kaynak ve listesi silinecek. Bu işlem geri alınamaz.</string>
     <string name="source_label">Etiket</string>
     <string name="source_label_required">Etiket gerekli</string>
     <string name="source_format">Liste biçimi</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Her zaman açık VPN ayarlanmadı. AdAway’in yerleşik kalıcılık mekanizması bunu üstleniyor.</string>
     <string name="vpn_persistence_lockdown">“VPN olmadan bağlantıları engelle” açık: VPN dışında tutulan uygulamaların internet erişimi yok.</string>
     <string name="vpn_persistence_message">AdAway yeniden başlatmaları, bellek yetersizliği nedeniyle kapatılmayı ve çökmeleri kendi başına yönetir; bu yüzden çoğu durumda ek bir ayara gerek yoktur.\n\nVPN beklenmedik biçimde durursa en güçlü güvence için AdAway’i Android’in sistem genelindeki Her zaman açık VPN uygulaması olarak sabitleyin.</string>
-    <string name="vpn_persistence_adb_commands">TV’nizde sistem VPN ekranı gizliyse ADB kullanın, ardından TV’yi yeniden başlatın:\n\n• AdAway için Her zaman açık VPN’i etkinleştirin:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Her zaman açık VPN’i devre dışı bırakın:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">TV’nizde sistem VPN ekranı gizliyse ADB kullanın, ardından TV’yi yeniden başlatın:\n\n• AdAway için Her zaman açık VPN’i etkinleştirin:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Etkin olduğunu doğrulayın (komut %1$s yanıtını verir):\n  adb shell settings get secure always_on_vpn_app\n\n• TCL gibi bazı TV’lerde AdAway’in kendiliğinden başlamasına da izin verin:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Her zaman açık VPN’i devre dışı bırakın:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Bu Android TV’de VPN ayarları gizli. Gösterilen ADB komutlarını kullanın.</string>
     <string name="vpn_persistence_dismiss">Anladım</string>
     <string name="status_update_available">Kaynak güncellemesi mevcut</string>

@@ -59,6 +59,7 @@
     <string name="source_add">Adăugare sursă</string>
     <string name="source_edit">Editare sursă</string>
     <string name="source_deleted">Sursă ștearsă</string>
+    <string name="source_delete_confirmation">Această sursă și lista ei vor fi șterse. Acțiunea nu poate fi anulată.</string>
     <string name="source_label">Etichetă</string>
     <string name="source_label_required">Eticheta este obligatorie</string>
     <string name="source_format">Formatul listei</string>
@@ -140,7 +141,7 @@
     <string name="vpn_persistence_disabled">VPN-ul permanent nu este configurat. Mecanismul de menținere integrat în AdAway se ocupă de acest lucru.</string>
     <string name="vpn_persistence_lockdown">Opțiunea „Blocați conexiunile fără VPN” este activă: aplicațiile excluse din VPN nu au acces la internet.</string>
     <string name="vpn_persistence_message">AdAway gestionează deja singur repornirile, închiderile din lipsă de memorie și blocările, deci în majoritatea cazurilor nu este necesară nicio configurare suplimentară.\n\nDacă VPN-ul se oprește totuși neașteptat, fixați AdAway ca VPN permanent al sistemului Android pentru cea mai bună garanție.</string>
-    <string name="vpn_persistence_adb_commands">Dacă ecranul VPN al sistemului este ascuns pe televizorul dvs., folosiți ADB, apoi reporniți televizorul:\n\n• Activați VPN-ul permanent pentru AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Dezactivați VPN-ul permanent:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Dacă ecranul VPN al sistemului este ascuns pe televizorul dvs., folosiți ADB, apoi reporniți televizorul:\n\n• Activați VPN-ul permanent pentru AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Verificați dacă este activat (comanda răspunde %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Pe unele televizoare, cum ar fi cele TCL, permiteți-i și lui AdAway să pornească singur:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Dezactivați VPN-ul permanent:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Setările VPN sunt ascunse pe acest Android TV. Folosiți comenzile ADB afișate.</string>
     <string name="vpn_persistence_dismiss">Am înțeles</string>
     <string name="status_update_available">Actualizare de sursă disponibilă</string>

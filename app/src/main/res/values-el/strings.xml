@@ -56,6 +56,7 @@
     <string name="source_add">Προσθήκη πηγής</string>
     <string name="source_edit">Επεξεργασία πηγής</string>
     <string name="source_deleted">Η πηγή διαγράφηκε</string>
+    <string name="source_delete_confirmation">Αυτή η πηγή και η λίστα της θα διαγραφούν. Η ενέργεια αυτή δεν μπορεί να αναιρεθεί.</string>
     <string name="source_label">Ετικέτα</string>
     <string name="source_label_required">Απαιτείται ετικέτα</string>
     <string name="source_format">Μορφή λίστας</string>
@@ -134,7 +135,7 @@
     <string name="vpn_persistence_disabled">Το πάντα ενεργό VPN δεν έχει οριστεί. Η ενσωματωμένη διατήρηση του AdAway αναλαμβάνει το έργο.</string>
     <string name="vpn_persistence_lockdown">Η επιλογή «Αποκλεισμός συνδέσεων χωρίς VPN» είναι ενεργή: οι εφαρμογές που εξαιρούνται από το VPN δεν έχουν πρόσβαση στο διαδίκτυο.</string>
     <string name="vpn_persistence_message">Το AdAway διαχειρίζεται ήδη μόνο του τις επανεκκινήσεις, τους τερματισμούς λόγω χαμηλής μνήμης και τις διακοπές λειτουργίας, επομένως στις περισσότερες περιπτώσεις δεν χρειάζεται καμία επιπλέον ρύθμιση.\n\nΑν το VPN σταματήσει ποτέ απροσδόκητα, ορίστε το AdAway ως πάντα ενεργό VPN του συστήματος Android για τη μέγιστη εγγύηση.</string>
-    <string name="vpn_persistence_adb_commands">Αν η οθόνη VPN του συστήματος είναι κρυμμένη στην τηλεόρασή σας, χρησιμοποιήστε το ADB και έπειτα κάντε επανεκκίνηση της τηλεόρασης:\n\n• Ενεργοποίηση του πάντα ενεργού VPN για το AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Απενεργοποίηση του πάντα ενεργού VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Αν η οθόνη VPN του συστήματος είναι κρυμμένη στην τηλεόρασή σας, χρησιμοποιήστε το ADB και έπειτα κάντε επανεκκίνηση της τηλεόρασης:\n\n• Ενεργοποίηση του πάντα ενεργού VPN για το AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Έλεγχος ότι είναι ενεργοποιημένο (η εντολή επιστρέφει %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Σε ορισμένες τηλεοράσεις, όπως αυτές της TCL, επιτρέψτε επίσης στο AdAway να ξεκινά αυτόματα:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Απενεργοποίηση του πάντα ενεργού VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Οι ρυθμίσεις VPN είναι κρυμμένες σε αυτό το Android TV. Χρησιμοποιήστε τις εντολές ADB που εμφανίζονται.</string>
     <string name="vpn_persistence_dismiss">Το κατάλαβα</string>
     <string name="status_update_available">Διαθέσιμη ενημέρωση πηγής</string>

@@ -59,6 +59,7 @@
     <string name="source_add">Agregar fuente</string>
     <string name="source_edit">Editar fuente</string>
     <string name="source_deleted">Fuente eliminada</string>
+    <string name="source_delete_confirmation">Esta fuente y su lista se eliminarán. Esta acción no se puede deshacer.</string>
     <string name="source_label">Etiqueta</string>
     <string name="source_label_required">La etiqueta es obligatoria</string>
     <string name="source_format">Formato de la lista</string>
@@ -140,7 +141,7 @@
     <string name="vpn_persistence_disabled">La VPN siempre activa no está configurada. AdAway se encarga con su propia persistencia integrada.</string>
     <string name="vpn_persistence_lockdown">La opción “Bloquear conexiones sin VPN” está activada: las apps excluidas de la VPN no tienen acceso a Internet.</string>
     <string name="vpn_persistence_message">AdAway ya se encarga por sí solo de los reinicios, de los cierres por falta de memoria y de los fallos, así que en la mayoría de los casos no hace falta ninguna configuración adicional.\n\nSi la VPN llegara a detenerse de forma inesperada, fija AdAway como la VPN siempre activa del sistema Android para tener la mayor seguridad.</string>
-    <string name="vpn_persistence_adb_commands">Si la pantalla de VPN del sistema está oculta en tu TV, usa ADB y luego reinicia la TV:\n\n• Activar la VPN siempre activa para AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Desactivar la VPN siempre activa:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Si la pantalla de VPN del sistema está oculta en tu TV, usa ADB y luego reinicia la TV:\n\n• Activar la VPN siempre activa para AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Verificar que esté activada (el comando devuelve %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• En algunas TV, como las de TCL, permitir también que AdAway se inicie solo:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Desactivar la VPN siempre activa:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">La configuración de VPN está oculta en este Android TV. Usa los comandos ADB que se muestran.</string>
     <string name="vpn_persistence_dismiss">Entendido</string>
     <string name="status_update_available">Hay una actualización de fuentes disponible</string>

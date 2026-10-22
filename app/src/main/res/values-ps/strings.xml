@@ -59,6 +59,7 @@
     <string name="source_add">سرچینه ورزیاتول</string>
     <string name="source_edit">سرچینه سمول</string>
     <string name="source_deleted">سرچینه ړنګه شوه</string>
+    <string name="source_delete_confirmation">دا سرچینه او د هغې لېست به ړنګ شي. دا کار بېرته نشي اړول کېدای.</string>
     <string name="source_label">لیبل</string>
     <string name="source_label_required">لیبل اړین دی</string>
     <string name="source_format">د لېست بڼه</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">تل چالان VPN ټاکل شوی نه دی. د AdAway خپل دوام یې سمبالوي.</string>
     <string name="vpn_persistence_lockdown">«پرته له VPN اړیکې بندې کړئ» چالان دی: هغه اپلېکېشنونه چې له VPN څخه ایستل شوي، انټرنیټ نه لري.</string>
     <string name="vpn_persistence_message">AdAway بیا پیل، د حافظې د کمښت له امله وژل کېدل او ټکرونه پخپله سمبالوي، نو ډېری وختونه اضافي تنظیم ته اړتیا نشته.\n\nکه VPN کله هم په ناڅاپي ډول ودرېږي، د ډېر پیاوړي تضمین لپاره AdAway د Android د سیسټم تل چالان VPN په توګه ټاکئ.</string>
-    <string name="vpn_persistence_adb_commands">که ستاسو په تلویزیون کې د سیسټم VPN پاڼه پټه وي، ADB وکاروئ، بیا تلویزیون بیا پیل کړئ:\n\n• د AdAway لپاره تل چالان فعالول:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• تل چالان غیر فعالول:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">که ستاسو په تلویزیون کې د سیسټم VPN پاڼه پټه وي، ADB وکاروئ، بیا تلویزیون بیا پیل کړئ:\n\n• د AdAway لپاره تل چالان فعالول:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• کتل چې فعال دی (قومانده %1$s ځواب ورکوي):\n  adb shell settings get secure always_on_vpn_app\n\n• په ځینو تلویزیونونو کې، لکه د TCL، AdAway ته د خپله پیل کېدو اجازه هم ورکول:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• تل چالان غیر فعالول:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">د VPN امستنې پر دې Android TV کې پټې دي. ښودل شوې ADB قوماندې وکاروئ.</string>
     <string name="vpn_persistence_dismiss">پوه شوم</string>
     <string name="status_update_available">د سرچینې تازه کېدنه شته</string>

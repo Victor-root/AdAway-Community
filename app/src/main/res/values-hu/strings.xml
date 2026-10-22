@@ -59,6 +59,7 @@
     <string name="source_add">Forrás hozzáadása</string>
     <string name="source_edit">Forrás szerkesztése</string>
     <string name="source_deleted">Forrás törölve</string>
+    <string name="source_delete_confirmation">Ez a forrás és a listája törlődik. Ez a művelet nem vonható vissza.</string>
     <string name="source_label">Címke</string>
     <string name="source_label_required">A címke megadása kötelező</string>
     <string name="source_format">Lista formátuma</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">A „Mindig bekapcsolt VPN” nincs beállítva. Az AdAway saját, beépített megoldása gondoskodik a folyamatos működésről.</string>
     <string name="vpn_persistence_lockdown">A „VPN nélküli kapcsolatok letiltása” be van kapcsolva: a VPN-ből kizárt alkalmazásoknak nincs internetelérésük.</string>
     <string name="vpn_persistence_message">Az AdAway magától kezeli az újraindításokat, a memóriahiány miatti leállításokat és az összeomlásokat, ezért a legtöbb esetben nincs szükség további beállításra.\n\nHa a VPN valaha váratlanul leállna, rögzítse az AdAway-t az Android rendszerszintű „Mindig bekapcsolt VPN” megoldásaként, a lehető legmegbízhatóbb működés érdekében.</string>
-    <string name="vpn_persistence_adb_commands">Ha a rendszer VPN-képernyője el van rejtve a TV-n, használja az ADB-t, majd indítsa újra a TV-t:\n\n• A „Mindig bekapcsolt” mód bekapcsolása az AdAway számára:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• A „Mindig bekapcsolt” mód kikapcsolása:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Ha a rendszer VPN-képernyője el van rejtve a TV-n, használja az ADB-t, majd indítsa újra a TV-t:\n\n• A „Mindig bekapcsolt” mód bekapcsolása az AdAway számára:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Annak ellenőrzése, hogy be van-e kapcsolva (a parancs válasza %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Egyes TV-ken, például a TCL készülékeken, annak engedélyezése is, hogy az AdAway magától elinduljon:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• A „Mindig bekapcsolt” mód kikapcsolása:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">A VPN-beállítások el vannak rejtve ezen az Android TV-n. Használja a megjelenített ADB-parancsokat.</string>
     <string name="vpn_persistence_dismiss">Rendben</string>
     <string name="status_update_available">Forrásfrissítés érhető el</string>

@@ -56,6 +56,7 @@
     <string name="source_add">Додај извор</string>
     <string name="source_edit">Измени извор</string>
     <string name="source_deleted">Извор је обрисан</string>
+    <string name="source_delete_confirmation">Овај извор и његова листа биће обрисани. Ова радња се не може опозвати.</string>
     <string name="source_label">Назив</string>
     <string name="source_label_required">Назив је обавезан</string>
     <string name="source_format">Формат листе</string>
@@ -135,7 +136,7 @@
     <string name="vpn_persistence_disabled">Увек укључен VPN није подешен. Уграђена трајност апликације AdAway то решава сама.</string>
     <string name="vpn_persistence_lockdown">Опција „Блокирај везе без VPN-а“ је укључена: апликације изузете из VPN-а немају приступ интернету.</string>
     <string name="vpn_persistence_message">AdAway сам решава поновна покретања, гашења због недостатка меморије и падове, па у већини случајева није потребно никакво додатно подешавање.\n\nАко се VPN икада неочекивано заустави, подесите AdAway као системски „Увек укључен VPN“ за најпоузданију заштиту.</string>
-    <string name="vpn_persistence_adb_commands">Ако је системски екран VPN-а скривен на вашем TV-у, користите ADB, а затим поново покрените TV:\n\n• Укључите „Увек укључен VPN“ за AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Искључите „Увек укључен VPN“:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Ако је системски екран VPN-а скривен на вашем TV-у, користите ADB, а затим поново покрените TV:\n\n• Укључите „Увек укључен VPN“ за AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Проверите да ли је укључен (команда враћа %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• На неким TV уређајима, на пример TCL, дозволите и да се AdAway сам покреће:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Искључите „Увек укључен VPN“:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN подешавања су скривена на овом Android TV-у. Користите приказане ADB команде.</string>
     <string name="vpn_persistence_dismiss">Разумем</string>
     <string name="status_update_available">Доступно је ажурирање извора</string>

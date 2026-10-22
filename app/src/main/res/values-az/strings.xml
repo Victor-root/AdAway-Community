@@ -59,6 +59,7 @@
     <string name="source_add">Mənbə əlavə edin</string>
     <string name="source_edit">Mənbəni redaktə edin</string>
     <string name="source_deleted">Mənbə silindi</string>
+    <string name="source_delete_confirmation">Bu mənbə və onun siyahısı silinəcək. Bu əməliyyatı geri qaytarmaq mümkün deyil.</string>
     <string name="source_label">Etiket</string>
     <string name="source_label_required">Etiket tələb olunur</string>
     <string name="source_format">Siyahı formatı</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">«Həmişə aktiv VPN» təyin edilməyib. AdAway öz daxili davamlılıq mexanizmindən istifadə edir.</string>
     <string name="vpn_persistence_lockdown">«VPN olmadan bağlantıları blokla» aktivdir: VPN-dən istisna edilən tətbiqlərin internetə çıxışı yoxdur.</string>
     <string name="vpn_persistence_message">AdAway yenidən başlatmaları, yaddaş çatışmazlığı səbəbindən bağlanmaları və çökmələri özü idarə edir, ona görə də əksər hallarda əlavə quraşdırma lazım deyil.\n\nVPN gözlənilmədən dayanarsa, ən etibarlı nəticə üçün AdAway tətbiqini Android sisteminin «Həmişə aktiv VPN» ayarında seçin.</string>
-    <string name="vpn_persistence_adb_commands">VPN sistem ekranı televizorunuzda gizlidirsə, ADB-dən istifadə edin, sonra televizoru yenidən başladın:\n\n• AdAway üçün həmişə aktiv rejimi aktiv edin:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Həmişə aktiv rejimi deaktiv edin:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">VPN sistem ekranı televizorunuzda gizlidirsə, ADB-dən istifadə edin, sonra televizoru yenidən başladın:\n\n• AdAway üçün həmişə aktiv rejimi aktiv edin:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Aktiv olduğunu yoxlayın (əmr %1$s cavabını verir):\n  adb shell settings get secure always_on_vpn_app\n\n• Bəzi televizorlarda, məsələn, TCL televizorlarında, AdAway-in özbaşına başlamasına da icazə verin:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Həmişə aktiv rejimi deaktiv edin:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">VPN ayarları bu Android TV-də gizlidir. Göstərilən ADB əmrlərindən istifadə edin.</string>
     <string name="vpn_persistence_dismiss">Anladım</string>
     <string name="status_update_available">Mənbə yeniləməsi mövcuddur</string>

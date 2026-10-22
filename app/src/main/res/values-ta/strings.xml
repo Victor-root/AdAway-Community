@@ -59,6 +59,7 @@
     <string name="source_add">மூலத்தைச் சேர்</string>
     <string name="source_edit">மூலத்தைத் திருத்து</string>
     <string name="source_deleted">மூலம் நீக்கப்பட்டது</string>
+    <string name="source_delete_confirmation">இந்த மூலமும் அதன் பட்டியலும் நீக்கப்படும். இதைச் செயல்தவிர்க்க முடியாது.</string>
     <string name="source_label">லேபிள்</string>
     <string name="source_label_required">லேபிள் தேவை</string>
     <string name="source_format">பட்டியல் வடிவம்</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">எப்போதும் இயங்கும் VPN அமைக்கப்படவில்லை. AdAway இன் உள்ளமைந்த தொடர்ச்சி வசதி அதைக் கவனித்துக்கொள்கிறது.</string>
     <string name="vpn_persistence_lockdown">“VPN இல்லாத இணைப்புகளைத் தடு” இயக்கத்தில் உள்ளது: VPN இலிருந்து விலக்கப்பட்ட ஆப்ஸுக்கு இணைய அணுகல் இருக்காது.</string>
     <string name="vpn_persistence_message">மறுதொடக்கங்கள், நினைவகம் குறைவதால் ஏற்படும் நிறுத்தங்கள் மற்றும் செயலிழப்புகளை AdAway தானாகவே கையாளுகிறது. எனவே பெரும்பாலான நேரங்களில் கூடுதல் அமைப்பு தேவையில்லை.\n\nVPN எதிர்பாராமல் நின்றுபோனால், மிகவும் உறுதியான பாதுகாப்புக்கு AdAway ஐ Android சிஸ்டத்தின் எப்போதும் இயங்கும் VPN ஆக அமைக்கவும்.</string>
-    <string name="vpn_persistence_adb_commands">உங்கள் டிவியில் சிஸ்டம் VPN திரை மறைக்கப்பட்டிருந்தால், ADB ஐப் பயன்படுத்தி, பிறகு டிவியை மறுதொடக்கம் செய்யவும்:\n\n• AdAway க்கு எப்போதும் இயங்குவதை இயக்க:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• எப்போதும் இயங்குவதை முடக்க:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">உங்கள் டிவியில் சிஸ்டம் VPN திரை மறைக்கப்பட்டிருந்தால், ADB ஐப் பயன்படுத்தி, பிறகு டிவியை மறுதொடக்கம் செய்யவும்:\n\n• AdAway க்கு எப்போதும் இயங்குவதை இயக்க:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• இது இயக்கப்பட்டுள்ளதா எனச் சரிபார்க்க (கட்டளை %1$s எனப் பதிலளிக்கும்):\n  adb shell settings get secure always_on_vpn_app\n\n• TCL போன்ற சில டிவிகளில், AdAway தானாகத் தொடங்கவும் அனுமதிக்க:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• எப்போதும் இயங்குவதை முடக்க:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">இந்த Android TV இல் VPN அமைப்புகள் மறைக்கப்பட்டுள்ளன. காட்டப்பட்டுள்ள ADB கட்டளைகளைப் பயன்படுத்தவும்.</string>
     <string name="vpn_persistence_dismiss">புரிந்தது</string>
     <string name="status_update_available">மூல புதுப்பிப்பு உள்ளது</string>

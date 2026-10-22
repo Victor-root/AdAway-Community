@@ -59,6 +59,7 @@
     <string name="source_add">Shto burim</string>
     <string name="source_edit">Ndrysho burimin</string>
     <string name="source_deleted">Burimi u fshi</string>
+    <string name="source_delete_confirmation">Ky burim dhe lista e tij do të fshihen. Ky veprim nuk mund të zhbëhet.</string>
     <string name="source_label">Etiketa</string>
     <string name="source_label_required">Etiketa është e detyrueshme</string>
     <string name="source_format">Formati i listës</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">VPN-ja gjithmonë e aktivizuar nuk është vendosur. AdAway përdor mekanizmin e vet të integruar.</string>
     <string name="vpn_persistence_lockdown">«Blloko lidhjet pa VPN» është aktiv: aplikacionet e përjashtuara nga VPN-ja nuk kanë qasje në internet.</string>
     <string name="vpn_persistence_message">AdAway i menaxhon vetë rinisjet, mbylljet nga mungesa e kujtesës dhe ndalimet e papritura, ndaj në shumicën e rasteve nuk nevojitet asnjë konfigurim shtesë.\n\nNëse VPN-ja ndalon papritur, fiksojeni AdAway si VPN-në gjithmonë të aktivizuar të sistemit Android për garancinë më të fortë.</string>
-    <string name="vpn_persistence_adb_commands">Nëse ekrani i VPN-së së sistemit është i fshehur në televizorin tuaj, përdorni ADB, pastaj rinisni televizorin:\n\n• Aktivizo VPN-në gjithmonë të aktivizuar për AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Çaktivizo VPN-në gjithmonë të aktivizuar:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Nëse ekrani i VPN-së së sistemit është i fshehur në televizorin tuaj, përdorni ADB, pastaj rinisni televizorin:\n\n• Aktivizo VPN-në gjithmonë të aktivizuar për AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontrollo që është aktivizuar (komanda përgjigjet %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Në disa televizorë, si ata të TCL, lejo gjithashtu AdAway të niset vetë:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Çaktivizo VPN-në gjithmonë të aktivizuar:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Cilësimet e VPN-së janë të fshehura në këtë Android TV. Përdorni komandat ADB të shfaqura.</string>
     <string name="vpn_persistence_dismiss">E kuptova</string>
     <string name="status_update_available">Ka përditësim të burimeve</string>

@@ -59,6 +59,7 @@
     <string name="source_add">添加来源</string>
     <string name="source_edit">编辑来源</string>
     <string name="source_deleted">来源已删除</string>
+    <string name="source_delete_confirmation">此来源及其列表将被删除。此操作无法撤销。</string>
     <string name="source_label">标签</string>
     <string name="source_label_required">请填写标签</string>
     <string name="source_format">列表格式</string>
@@ -138,7 +139,7 @@
     <string name="vpn_persistence_disabled">未设置“始终开启的 VPN”。由 AdAway 的内置保活机制负责。</string>
     <string name="vpn_persistence_lockdown">“禁止没有 VPN 的连接”已开启：被排除在 VPN 之外的应用将无法访问互联网。</string>
     <string name="vpn_persistence_message">AdAway 能自行应对重启、内存不足时被系统清理以及崩溃等情况，因此大多数时候无需额外设置。\n\n如果 VPN 仍然意外停止，请将 AdAway 设为 Android 系统的“始终开启的 VPN”，以获得最可靠的保障。</string>
-    <string name="vpn_persistence_adb_commands">如果您的电视上隐藏了系统 VPN 界面，请使用 ADB，然后重启电视：\n\n• 为 AdAway 启用始终开启：\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• 停用始终开启：\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">如果您的电视上隐藏了系统 VPN 界面，请使用 ADB，然后重启电视：\n\n• 为 AdAway 启用始终开启：\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• 检查是否已启用（命令会返回 %1$s）：\n  adb shell settings get secure always_on_vpn_app\n\n• 在部分电视（如 TCL 电视）上，还需允许 AdAway 自动启动：\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• 停用始终开启：\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">此 Android TV 上隐藏了 VPN 设置。请使用所示的 ADB 命令。</string>
     <string name="vpn_persistence_dismiss">知道了</string>
     <string name="status_update_available">有可用的来源更新</string>

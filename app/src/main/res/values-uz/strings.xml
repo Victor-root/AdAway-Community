@@ -59,6 +59,7 @@
     <string name="source_add">Manba qoʻshish</string>
     <string name="source_edit">Manbani tahrirlash</string>
     <string name="source_deleted">Manba oʻchirildi</string>
+    <string name="source_delete_confirmation">Bu manba va uning roʻyxati oʻchiriladi. Bu amalni ortga qaytarib boʻlmaydi.</string>
     <string name="source_label">Nomi</string>
     <string name="source_label_required">Nomini kiritish shart</string>
     <string name="source_format">Roʻyxat formati</string>
@@ -139,7 +140,7 @@
     <string name="vpn_persistence_disabled">Doim yoniq VPN sozlanmagan. AdAway ilovasining oʻz mexanizmi uzluksiz ishlashni taʼminlaydi.</string>
     <string name="vpn_persistence_lockdown">«VPNsiz ulanishlarni bloklash» yoqilgan: VPNdan chiqarib tashlangan ilovalar internetga chiqa olmaydi.</string>
     <string name="vpn_persistence_message">AdAway qayta ishga tushirishlarni, xotira yetishmasligi tufayli yopilishlarni va nosozliklarni oʻzi hal qiladi, shuning uchun koʻp hollarda qoʻshimcha sozlash shart emas.\n\nAgar VPN kutilmaganda toʻxtab qolsa, eng ishonchli natija uchun AdAway ilovasini Androidning tizim darajasidagi Doim yoniq VPN sifatida belgilang.</string>
-    <string name="vpn_persistence_adb_commands">Televizoringizda tizimning VPN ekrani yashirilgan boʻlsa, ADB dan foydalaning, soʻng televizorni qayta ishga tushiring:\n\n• AdAway uchun doim yoniq rejimni yoqish:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Doim yoniq rejimni oʻchirish:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Televizoringizda tizimning VPN ekrani yashirilgan boʻlsa, ADB dan foydalaning, soʻng televizorni qayta ishga tushiring:\n\n• AdAway uchun doim yoniq rejimni yoqish:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Yoqilganini tekshirish (buyruq %1$s deb javob beradi):\n  adb shell settings get secure always_on_vpn_app\n\n• Baʼzi televizorlarda, masalan TCL televizorlarida, AdAway ning oʻz-oʻzidan ishga tushishiga ham ruxsat berish:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Doim yoniq rejimni oʻchirish:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Bu Android TVda VPN sozlamalari yashirilgan. Koʻrsatilgan ADB buyruqlaridan foydalaning.</string>
     <string name="vpn_persistence_dismiss">Tushunarli</string>
     <string name="status_update_available">Manba yangilanishi mavjud</string>
