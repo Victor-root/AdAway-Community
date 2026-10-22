@@ -1,6 +1,7 @@
 //! The final list loaded in memory, answering for each queried name.
 
 use std::collections::HashMap;
+use std::fs;
 use std::io;
 use std::net::IpAddr;
 use std::path::Path;
@@ -19,7 +20,7 @@ pub enum Verdict {
 /// What the compiled final list decides, as described in [`crate::compile`].
 #[derive(Default)]
 pub struct BlockList {
-    blocked: Vec<Box<str>>,
+    blocked: SortedNames,
     redirected: HashMap<Box<str>, IpAddr>,
     user_block_patterns: Vec<Pattern>,
     user_allowed: NameSet,
@@ -28,12 +29,10 @@ pub struct BlockList {
 impl BlockList {
     /// Loads the final list written by [`crate::compile::compile`]. A list never computed is empty.
     pub fn load(final_directory: &Path) -> io::Result<Self> {
-        let mut list = BlockList::default();
-        for line in rule::read_lines(&final_directory.join("blocked.txt"))? {
-            list.blocked.push(line.into_boxed_str());
-        }
-        // Already sorted by the compilation, but a sorted list is what makes the search correct.
-        list.blocked.sort_unstable();
+        let mut list = BlockList {
+            blocked: SortedNames::read(&final_directory.join("blocked.txt"))?,
+            ..BlockList::default()
+        };
         for line in rule::read_lines(&final_directory.join("redirected.txt"))? {
             if let Some((host, address)) = line.split_once(' ')
                 && let Ok(address) = address.parse()
@@ -64,11 +63,7 @@ impl BlockList {
     }
 
     fn is_blocked(&self, name: &str) -> bool {
-        let exact = self
-            .blocked
-            .binary_search_by(|host| (**host).cmp(name))
-            .is_ok();
-        exact
+        self.blocked.contains(name)
             || (self
                 .user_block_patterns
                 .iter()
@@ -77,9 +72,59 @@ impl BlockList {
     }
 }
 
+/// Millions of names kept in the text of their file, one per line, with where each one starts: a
+/// single allocation, about the size of the file, instead of one per name.
+#[derive(Default)]
+struct SortedNames {
+    text: String,
+    starts: Vec<u32>,
+}
+
+impl SortedNames {
+    /// Reads a file of one name per line, none if it does not exist.
+    fn read(path: &Path) -> io::Result<Self> {
+        let text = match fs::read_to_string(path) {
+            Ok(text) => text,
+            Err(error) if error.kind() == io::ErrorKind::NotFound => return Ok(Self::default()),
+            Err(error) => return Err(error),
+        };
+        if u32::try_from(text.len()).is_err() {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                "final list larger than 4 GB",
+            ));
+        }
+        let mut starts = Vec::with_capacity(text.bytes().filter(|&byte| byte == b'\n').count() + 1);
+        let mut start = 0;
+        for line in text.split_inclusive('\n') {
+            if !name_at(&text, start).is_empty() {
+                starts.push(start);
+            }
+            start += line.len() as u32;
+        }
+        // Already sorted by the compilation, but a sorted list is what makes the search correct.
+        starts
+            .sort_unstable_by(|&first, &second| name_at(&text, first).cmp(name_at(&text, second)));
+        Ok(Self { text, starts })
+    }
+
+    fn contains(&self, name: &str) -> bool {
+        self.starts
+            .binary_search_by(|&start| name_at(&self.text, start).cmp(name))
+            .is_ok()
+    }
+}
+
+/// The name of the line starting at `start`, without its line break.
+fn name_at(text: &str, start: u32) -> &str {
+    let rest = &text[start as usize..];
+    let line = rest.split_once('\n').map_or(rest, |(line, _)| line);
+    line.strip_suffix('\r').unwrap_or(line)
+}
+
 #[cfg(test)]
 mod tests {
-    use super::{BlockList, Verdict};
+    use super::{BlockList, SortedNames, Verdict};
     use crate::rule;
 
     #[test]
@@ -115,5 +160,22 @@ mod tests {
                 .verdict("ads.example.com"),
             Verdict::Allow
         );
+    }
+
+    #[test]
+    fn finds_the_names_of_an_unsorted_file() {
+        let directory = std::env::temp_dir().join(format!("adaway-names-{}", std::process::id()));
+        std::fs::create_dir_all(&directory).unwrap();
+        let path = directory.join("names.txt");
+        std::fs::write(&path, "zeta.com\n\nalpha.org\r\nmid.net").unwrap();
+
+        let names = SortedNames::read(&path).unwrap();
+
+        assert!(names.contains("alpha.org"));
+        assert!(names.contains("mid.net"));
+        assert!(names.contains("zeta.com"));
+        assert!(!names.contains(""));
+        assert!(!names.contains("alpha"));
+        std::fs::remove_dir_all(&directory).unwrap();
     }
 }

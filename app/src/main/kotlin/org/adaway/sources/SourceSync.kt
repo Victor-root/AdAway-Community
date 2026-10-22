@@ -159,7 +159,7 @@ class SourceSync(
     private fun now() = System.currentTimeMillis() / 1000
 
     companion object {
-        const val MAX_RULES = 2_000_000
+        const val MAX_RULES = 4_000_000
         private val RETRY_DELAYS_MILLIS = longArrayOf(2_000, 5_000)
 
         /** Request timeout, too many requests, and server side failures. */

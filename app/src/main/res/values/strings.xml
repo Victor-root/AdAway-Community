@@ -86,8 +86,8 @@
     <string name="sync_error_connection_lost">the connection was cut during the download</string>
     <string name="sync_error_secure_connection">the secure connection to the server failed</string>
     <string name="sync_error_http_status">the server answered with error %1$d</string>
-    <string name="sync_error_too_large">the list is larger than 50 MB</string>
-    <string name="sync_error_too_many_rules">the list has more than 2 million entries</string>
+    <string name="sync_error_too_large">the list is larger than %1$d MB</string>
+    <string name="sync_error_too_many_rules">the list has more than %1$s entries</string>
     <string name="sync_error_no_rules">no usable entry was found</string>
     <string name="sync_error_file_unreadable">the file can no longer be read, pick it again</string>
     <string name="sync_error_storage">the device storage could not be written</string>

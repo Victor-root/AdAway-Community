@@ -158,7 +158,8 @@ class SourceDownloader(private val context: Context) {
     }
 
     companion object {
-        const val MAX_LIST_BYTES = 50L * 1024 * 1024
+        const val MAX_LIST_MEGABYTES = 128
+        const val MAX_LIST_BYTES = MAX_LIST_MEGABYTES * 1024L * 1024
         private const val CONNECT_TIMEOUT_MILLIS = 30_000
         private const val READ_TIMEOUT_MILLIS = 60_000
         private const val BUFFER_SIZE = 64 * 1024

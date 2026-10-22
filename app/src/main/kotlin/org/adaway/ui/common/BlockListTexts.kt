@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import java.text.NumberFormat
 import kotlin.math.pow
 import kotlin.math.roundToLong
 import org.adaway.R
@@ -19,6 +20,8 @@ import org.adaway.data.db.SourceEntity
 import org.adaway.data.db.SyncError
 import org.adaway.root.RootError
 import org.adaway.root.RootStep
+import org.adaway.sources.SourceDownloader
+import org.adaway.sources.SourceSync
 import org.adaway.sources.UpdateProgress
 
 @StringRes
@@ -99,8 +102,11 @@ fun syncErrorText(error: SyncError, httpStatus: Int?): String = when (error) {
     SyncError.CONNECTION_LOST -> stringResource(R.string.sync_error_connection_lost)
     SyncError.SECURE_CONNECTION -> stringResource(R.string.sync_error_secure_connection)
     SyncError.HTTP_STATUS -> stringResource(R.string.sync_error_http_status, httpStatus ?: 0)
-    SyncError.TOO_LARGE -> stringResource(R.string.sync_error_too_large)
-    SyncError.TOO_MANY_RULES -> stringResource(R.string.sync_error_too_many_rules)
+    SyncError.TOO_LARGE -> stringResource(R.string.sync_error_too_large, SourceDownloader.MAX_LIST_MEGABYTES)
+    SyncError.TOO_MANY_RULES -> stringResource(
+        R.string.sync_error_too_many_rules,
+        NumberFormat.getIntegerInstance(LocalResources.current.configuration.locales[0]).format(SourceSync.MAX_RULES),
+    )
     SyncError.NO_RULES -> stringResource(R.string.sync_error_no_rules)
     SyncError.FILE_UNREADABLE -> stringResource(R.string.sync_error_file_unreadable)
     SyncError.STORAGE -> stringResource(R.string.sync_error_storage)
