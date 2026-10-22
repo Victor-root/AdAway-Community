@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">د ډاونلوډ پر مهال اړیکه پرې شوه</string>
     <string name="sync_error_secure_connection">له سرور سره خوندي اړیکه ناکامه شوه</string>
     <string name="sync_error_http_status">سرور د %1$d تېروتنې سره ځواب ورکړ</string>
-    <string name="sync_error_too_large">لېست له 50 MB څخه لوی دی</string>
-    <string name="sync_error_too_many_rules">لېست له 2 ملیونه څخه ډېر توکي لري</string>
+    <string name="sync_error_too_large">لېست له %1$d MB څخه لوی دی</string>
+    <string name="sync_error_too_many_rules">لېست له %1$s څخه ډېر توکي لري</string>
     <string name="sync_error_no_rules">هېڅ کارېدونکی توکی ونه موندل شو</string>
     <string name="sync_error_file_unreadable">دوتنه نور نشي لوستل کېدای، بیا یې وټاکئ</string>
     <string name="sync_error_storage">د وسیلې زېرمې ته لیکل ممکن نه وو</string>

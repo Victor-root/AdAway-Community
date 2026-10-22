@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ڈاؤن لوڈ کے دوران کنکشن ٹوٹ گیا</string>
     <string name="sync_error_secure_connection">سرور سے محفوظ کنکشن ناکام رہا</string>
     <string name="sync_error_http_status">سرور نے خرابی %1$d کے ساتھ جواب دیا</string>
-    <string name="sync_error_too_large">فہرست 50 MB سے بڑی ہے</string>
-    <string name="sync_error_too_many_rules">فہرست میں 20 لاکھ سے زیادہ اندراجات ہیں</string>
+    <string name="sync_error_too_large">فہرست %1$d MB سے بڑی ہے</string>
+    <string name="sync_error_too_many_rules">فہرست میں %1$s سے زیادہ اندراجات ہیں</string>
     <string name="sync_error_no_rules">کوئی قابل استعمال اندراج نہیں ملا</string>
     <string name="sync_error_file_unreadable">فائل اب پڑھی نہیں جا سکتی، اسے دوبارہ منتخب کریں</string>
     <string name="sync_error_storage">آلے کے اسٹوریج میں لکھا نہیں جا سکا</string>

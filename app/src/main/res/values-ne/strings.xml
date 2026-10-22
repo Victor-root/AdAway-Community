@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">डाउनलोडको बेला जडान टुट्यो</string>
     <string name="sync_error_secure_connection">सर्भरसँगको सुरक्षित जडान असफल भयो</string>
     <string name="sync_error_http_status">सर्भरले त्रुटि %1$d फर्कायो</string>
-    <string name="sync_error_too_large">सूची 50 MB भन्दा ठूलो छ</string>
-    <string name="sync_error_too_many_rules">सूचीमा 20 लाखभन्दा बढी प्रविष्टि छन्</string>
+    <string name="sync_error_too_large">सूची %1$d MB भन्दा ठूलो छ</string>
+    <string name="sync_error_too_many_rules">सूचीमा %1$s भन्दा बढी प्रविष्टि छन्</string>
     <string name="sync_error_no_rules">प्रयोग गर्न मिल्ने कुनै प्रविष्टि फेला परेन</string>
     <string name="sync_error_file_unreadable">फाइल अब पढ्न सकिँदैन, फेरि छान्नुहोस्</string>
     <string name="sync_error_storage">उपकरणको भण्डारणमा लेख्न सकिएन</string>

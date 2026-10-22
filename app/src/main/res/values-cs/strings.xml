@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">připojení se během stahování přerušilo</string>
     <string name="sync_error_secure_connection">zabezpečené připojení k serveru selhalo</string>
     <string name="sync_error_http_status">server odpověděl chybou %1$d</string>
-    <string name="sync_error_too_large">seznam je větší než 50 MB</string>
-    <string name="sync_error_too_many_rules">seznam obsahuje více než 2 miliony položek</string>
+    <string name="sync_error_too_large">seznam je větší než %1$d MB</string>
+    <string name="sync_error_too_many_rules">seznam obsahuje více než %1$s položek</string>
     <string name="sync_error_no_rules">nebyla nalezena žádná použitelná položka</string>
     <string name="sync_error_file_unreadable">soubor už nelze přečíst, vyberte ho znovu</string>
     <string name="sync_error_storage">do úložiště zařízení se nepodařilo zapsat</string>

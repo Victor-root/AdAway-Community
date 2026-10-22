@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">tengingin rofnaði meðan á niðurhali stóð</string>
     <string name="sync_error_secure_connection">örugga tengingin við þjóninn mistókst</string>
     <string name="sync_error_http_status">þjónninn svaraði með villu %1$d</string>
-    <string name="sync_error_too_large">listinn er stærri en 50 MB</string>
-    <string name="sync_error_too_many_rules">listinn inniheldur fleiri en 2 milljónir færslna</string>
+    <string name="sync_error_too_large">listinn er stærri en %1$d MB</string>
+    <string name="sync_error_too_many_rules">listinn inniheldur fleiri en %1$s færslur</string>
     <string name="sync_error_no_rules">engin nothæf færsla fannst</string>
     <string name="sync_error_file_unreadable">ekki er lengur hægt að lesa skrána, veldu hana aftur</string>
     <string name="sync_error_storage">ekki var hægt að skrifa á geymslu tækisins</string>

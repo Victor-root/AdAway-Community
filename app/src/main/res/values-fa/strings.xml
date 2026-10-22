@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">اتصال در حین دانلود قطع شد</string>
     <string name="sync_error_secure_connection">برقراری اتصال امن با سرور ناموفق بود</string>
     <string name="sync_error_http_status">سرور با خطای %1$d پاسخ داد</string>
-    <string name="sync_error_too_large">حجم فهرست بیشتر از ۵۰ مگابایت است</string>
-    <string name="sync_error_too_many_rules">فهرست بیش از ۲ میلیون مورد دارد</string>
+    <string name="sync_error_too_large">حجم فهرست بیشتر از %1$d مگابایت است</string>
+    <string name="sync_error_too_many_rules">فهرست بیش از %1$s مورد دارد</string>
     <string name="sync_error_no_rules">هیچ مورد قابل‌استفاده‌ای پیدا نشد</string>
     <string name="sync_error_file_unreadable">فایل دیگر قابل خواندن نیست، دوباره آن را انتخاب کنید</string>
     <string name="sync_error_storage">نوشتن روی حافظه دستگاه ممکن نبود</string>

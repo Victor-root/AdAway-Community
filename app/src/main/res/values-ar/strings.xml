@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">انقطع الاتصال أثناء التنزيل</string>
     <string name="sync_error_secure_connection">فشل الاتصال الآمن بالخادم</string>
     <string name="sync_error_http_status">ردّ الخادم بالخطأ %1$d</string>
-    <string name="sync_error_too_large">القائمة أكبر من 50 ميغابايت</string>
-    <string name="sync_error_too_many_rules">تحتوي القائمة على أكثر من مليوني إدخال</string>
+    <string name="sync_error_too_large">القائمة أكبر من %1$d ميغابايت</string>
+    <string name="sync_error_too_many_rules">تحتوي القائمة على أكثر من %1$s إدخال</string>
     <string name="sync_error_no_rules">لم يتم العثور على أي إدخال صالح للاستخدام</string>
     <string name="sync_error_file_unreadable">لم يعد بالإمكان قراءة الملف، اخترْه مرة أخرى</string>
     <string name="sync_error_storage">تعذّرت الكتابة في وحدة تخزين الجهاز</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">die verbinding is tydens die aflaai verbreek</string>
     <string name="sync_error_secure_connection">die veilige verbinding met die bediener het misluk</string>
     <string name="sync_error_http_status">die bediener het met fout %1$d geantwoord</string>
-    <string name="sync_error_too_large">die lys is groter as 50 MB</string>
-    <string name="sync_error_too_many_rules">die lys het meer as 2 miljoen inskrywings</string>
+    <string name="sync_error_too_large">die lys is groter as %1$d MB</string>
+    <string name="sync_error_too_many_rules">die lys het meer as %1$s inskrywings</string>
     <string name="sync_error_no_rules">geen bruikbare inskrywing is gevind nie</string>
     <string name="sync_error_file_unreadable">die lêer kan nie meer gelees word nie, kies dit weer</string>
     <string name="sync_error_storage">daar kon nie na die toestel se berging geskryf word nie</string>

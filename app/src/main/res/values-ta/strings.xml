@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">பதிவிறக்கத்தின்போது இணைப்பு துண்டிக்கப்பட்டது</string>
     <string name="sync_error_secure_connection">சேவையகத்துடனான பாதுகாப்பான இணைப்பு தோல்வியடைந்தது</string>
     <string name="sync_error_http_status">சேவையகம் %1$d பிழையுடன் பதிலளித்தது</string>
-    <string name="sync_error_too_large">பட்டியல் 50 MB ஐ விடப் பெரியது</string>
-    <string name="sync_error_too_many_rules">பட்டியலில் 20 லட்சத்துக்கும் மேற்பட்ட உள்ளீடுகள் உள்ளன</string>
+    <string name="sync_error_too_large">பட்டியல் %1$d MB ஐ விடப் பெரியது</string>
+    <string name="sync_error_too_many_rules">பட்டியலில் %1$s-க்கும் மேற்பட்ட உள்ளீடுகள் உள்ளன</string>
     <string name="sync_error_no_rules">பயன்படுத்தக்கூடிய உள்ளீடு எதுவும் கிடைக்கவில்லை</string>
     <string name="sync_error_file_unreadable">கோப்பை இனி படிக்க முடியவில்லை, மீண்டும் தேர்ந்தெடுக்கவும்</string>
     <string name="sync_error_storage">சாதனச் சேமிப்பகத்தில் எழுத முடியவில்லை</string>

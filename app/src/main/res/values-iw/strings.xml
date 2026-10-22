@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">החיבור נותק במהלך ההורדה</string>
     <string name="sync_error_secure_connection">החיבור המאובטח לשרת נכשל</string>
     <string name="sync_error_http_status">השרת השיב בשגיאה %1$d</string>
-    <string name="sync_error_too_large">הרשימה גדולה מ-50 MB</string>
-    <string name="sync_error_too_many_rules">ברשימה יש יותר מ-2 מיליון רשומות</string>
+    <string name="sync_error_too_large">הרשימה גדולה מ-%1$d MB</string>
+    <string name="sync_error_too_many_rules">ברשימה יש יותר מ-%1$s רשומות</string>
     <string name="sync_error_no_rules">לא נמצאה אף רשומה שמישה</string>
     <string name="sync_error_file_unreadable">לא ניתן עוד לקרוא את הקובץ, בחר אותו שוב</string>
     <string name="sync_error_storage">לא ניתן היה לכתוב באחסון המכשיר</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">conexiunea a fost întreruptă în timpul descărcării</string>
     <string name="sync_error_secure_connection">conexiunea securizată cu serverul a eșuat</string>
     <string name="sync_error_http_status">serverul a răspuns cu eroarea %1$d</string>
-    <string name="sync_error_too_large">lista depășește 50 MB</string>
-    <string name="sync_error_too_many_rules">lista conține peste 2 milioane de intrări</string>
+    <string name="sync_error_too_large">lista depășește %1$d MB</string>
+    <string name="sync_error_too_many_rules">lista conține peste %1$s de intrări</string>
     <string name="sync_error_no_rules">nu a fost găsită nicio intrare utilizabilă</string>
     <string name="sync_error_file_unreadable">fișierul nu mai poate fi citit, selectați-l din nou</string>
     <string name="sync_error_storage">nu s-a putut scrie în stocarea dispozitivului</string>

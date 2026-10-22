@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">endirmə zamanı bağlantı kəsildi</string>
     <string name="sync_error_secure_connection">serverlə təhlükəsiz bağlantı qurmaq alınmadı</string>
     <string name="sync_error_http_status">server %1$d xətası ilə cavab verdi</string>
-    <string name="sync_error_too_large">siyahı 50 MB-dan böyükdür</string>
-    <string name="sync_error_too_many_rules">siyahıda 2 milyondan çox qeyd var</string>
+    <string name="sync_error_too_large">siyahı %1$d MB-dan böyükdür</string>
+    <string name="sync_error_too_many_rules">siyahıda %1$s qeyddən çox var</string>
     <string name="sync_error_no_rules">istifadə oluna bilən heç bir qeyd tapılmadı</string>
     <string name="sync_error_file_unreadable">fayl artıq oxuna bilmir, onu yenidən seçin</string>
     <string name="sync_error_storage">cihazın yaddaşına yazmaq mümkün olmadı</string>

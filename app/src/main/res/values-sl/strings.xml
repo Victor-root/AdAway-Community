@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">povezava se je med prenosom prekinila</string>
     <string name="sync_error_secure_connection">varna povezava s strežnikom ni uspela</string>
     <string name="sync_error_http_status">strežnik je odgovoril z napako %1$d</string>
-    <string name="sync_error_too_large">seznam je večji od 50 MB</string>
-    <string name="sync_error_too_many_rules">seznam ima več kot 2 milijona vnosov</string>
+    <string name="sync_error_too_large">seznam je večji od %1$d MB</string>
+    <string name="sync_error_too_many_rules">seznam ima več kot %1$s vnosov</string>
     <string name="sync_error_no_rules">najden ni bil noben uporaben vnos</string>
     <string name="sync_error_file_unreadable">datoteke ni več mogoče prebrati, izberite jo znova</string>
     <string name="sync_error_storage">v pomnilnik naprave ni bilo mogoče pisati</string>

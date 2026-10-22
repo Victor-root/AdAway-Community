@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ডাউনলোডের সময় সংযোগ বিচ্ছিন্ন হয়ে গেছে</string>
     <string name="sync_error_secure_connection">সার্ভারের সঙ্গে নিরাপদ সংযোগ স্থাপন করা যায়নি</string>
     <string name="sync_error_http_status">সার্ভার %1$d ত্রুটি জানিয়েছে</string>
-    <string name="sync_error_too_large">তালিকাটি ৫০ এমবির চেয়ে বড়</string>
-    <string name="sync_error_too_many_rules">তালিকায় ২০ লক্ষের বেশি এন্ট্রি আছে</string>
+    <string name="sync_error_too_large">তালিকাটি %1$d এমবির চেয়ে বড়</string>
+    <string name="sync_error_too_many_rules">তালিকায় %1$sটির বেশি এন্ট্রি আছে</string>
     <string name="sync_error_no_rules">ব্যবহারযোগ্য কোনো এন্ট্রি পাওয়া যায়নি</string>
     <string name="sync_error_file_unreadable">ফাইলটি আর পড়া যাচ্ছে না, আবার বেছে নিন</string>
     <string name="sync_error_storage">ডিভাইসের স্টোরেজে লেখা যায়নি</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">връзката прекъсна по време на изтеглянето</string>
     <string name="sync_error_secure_connection">защитената връзка със сървъра не успя</string>
     <string name="sync_error_http_status">сървърът отговори с грешка %1$d</string>
-    <string name="sync_error_too_large">списъкът е по-голям от 50 MB</string>
-    <string name="sync_error_too_many_rules">списъкът съдържа повече от 2 милиона записа</string>
+    <string name="sync_error_too_large">списъкът е по-голям от %1$d MB</string>
+    <string name="sync_error_too_many_rules">списъкът съдържа повече от %1$s записа</string>
     <string name="sync_error_no_rules">не е намерен използваем запис</string>
     <string name="sync_error_file_unreadable">файлът вече не може да бъде прочетен, изберете го отново</string>
     <string name="sync_error_storage">не може да се записва в паметта на устройството</string>

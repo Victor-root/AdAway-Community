@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">yuklab olish vaqtida ulanish uzildi</string>
     <string name="sync_error_secure_connection">serverga xavfsiz ulanish amalga oshmadi</string>
     <string name="sync_error_http_status">server %1$d xatosi bilan javob berdi</string>
-    <string name="sync_error_too_large">roʻyxat 50 MB dan katta</string>
-    <string name="sync_error_too_many_rules">roʻyxatda 2 milliondan ortiq yozuv bor</string>
+    <string name="sync_error_too_large">roʻyxat %1$d MB dan katta</string>
+    <string name="sync_error_too_many_rules">roʻyxatda %1$s tadan ortiq yozuv bor</string>
     <string name="sync_error_no_rules">yaroqli yozuv topilmadi</string>
     <string name="sync_error_file_unreadable">faylni endi oʻqib boʻlmaydi, uni qaytadan tanlang</string>
     <string name="sync_error_storage">qurilma xotirasiga yozib boʻlmadi</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">다운로드 중 연결이 끊김</string>
     <string name="sync_error_secure_connection">서버와의 보안 연결에 실패함</string>
     <string name="sync_error_http_status">서버가 오류 %1$d(으)로 응답함</string>
-    <string name="sync_error_too_large">목록이 50MB보다 큼</string>
-    <string name="sync_error_too_many_rules">목록의 항목이 200만 개를 초과함</string>
+    <string name="sync_error_too_large">목록이 %1$dMB보다 큼</string>
+    <string name="sync_error_too_many_rules">목록의 항목이 %1$s개를 초과함</string>
     <string name="sync_error_no_rules">사용할 수 있는 항목을 찾지 못함</string>
     <string name="sync_error_file_unreadable">파일을 더 이상 읽을 수 없음(다시 선택해 주세요)</string>
     <string name="sync_error_storage">기기 저장소에 쓸 수 없음</string>

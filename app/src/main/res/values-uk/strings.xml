@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">з’єднання розірвалося під час завантаження</string>
     <string name="sync_error_secure_connection">не вдалося встановити захищене з’єднання із сервером</string>
     <string name="sync_error_http_status">сервер відповів помилкою %1$d</string>
-    <string name="sync_error_too_large">список більший за 50 МБ</string>
-    <string name="sync_error_too_many_rules">у списку понад 2 мільйони записів</string>
+    <string name="sync_error_too_large">список більший за %1$d МБ</string>
+    <string name="sync_error_too_many_rules">у списку понад %1$s записів</string>
     <string name="sync_error_no_rules">не знайдено жодного придатного запису</string>
     <string name="sync_error_file_unreadable">файл більше не можна прочитати, виберіть його знову</string>
     <string name="sync_error_storage">не вдалося записати дані у сховище пристрою</string>

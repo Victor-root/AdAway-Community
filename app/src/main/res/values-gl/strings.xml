@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">a conexión cortouse durante a descarga</string>
     <string name="sync_error_secure_connection">fallou a conexión segura co servidor</string>
     <string name="sync_error_http_status">o servidor respondeu co erro %1$d</string>
-    <string name="sync_error_too_large">a lista supera os 50 MB</string>
-    <string name="sync_error_too_many_rules">a lista ten máis de 2 millóns de entradas</string>
+    <string name="sync_error_too_large">a lista supera os %1$d MB</string>
+    <string name="sync_error_too_many_rules">a lista ten máis de %1$s entradas</string>
     <string name="sync_error_no_rules">non se atopou ningunha entrada utilizable</string>
     <string name="sync_error_file_unreadable">xa non se pode ler o ficheiro, selecciónao de novo</string>
     <string name="sync_error_storage">non se puido escribir no almacenamento do dispositivo</string>

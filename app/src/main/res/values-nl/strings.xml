@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">de verbinding is tijdens het downloaden verbroken</string>
     <string name="sync_error_secure_connection">de beveiligde verbinding met de server is mislukt</string>
     <string name="sync_error_http_status">de server antwoordde met fout %1$d</string>
-    <string name="sync_error_too_large">de lijst is groter dan 50 MB</string>
-    <string name="sync_error_too_many_rules">de lijst bevat meer dan 2 miljoen items</string>
+    <string name="sync_error_too_large">de lijst is groter dan %1$d MB</string>
+    <string name="sync_error_too_many_rules">de lijst bevat meer dan %1$s items</string>
     <string name="sync_error_no_rules">er is geen bruikbaar item gevonden</string>
     <string name="sync_error_file_unreadable">het bestand kan niet meer worden gelezen, kies het opnieuw</string>
     <string name="sync_error_storage">er kon niet naar de opslag van het apparaat worden geschreven</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">la konekto rompiĝis dum la elŝuto</string>
     <string name="sync_error_secure_connection">la sekura konekto al la servilo malsukcesis</string>
     <string name="sync_error_http_status">la servilo respondis per eraro %1$d</string>
-    <string name="sync_error_too_large">la listo pli grandas ol 50 MB</string>
-    <string name="sync_error_too_many_rules">la listo enhavas pli ol 2 milionojn da eroj</string>
+    <string name="sync_error_too_large">la listo pli grandas ol %1$d MB</string>
+    <string name="sync_error_too_many_rules">la listo enhavas pli ol %1$s erojn</string>
     <string name="sync_error_no_rules">neniu uzebla ero troviĝis</string>
     <string name="sync_error_file_unreadable">la dosiero ne plu legeblas, elektu ĝin denove</string>
     <string name="sync_error_storage">ne eblis skribi en la memoron de la aparato</string>

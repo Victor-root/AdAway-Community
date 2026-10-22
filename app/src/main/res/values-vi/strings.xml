@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">kết nối bị ngắt trong lúc tải xuống</string>
     <string name="sync_error_secure_connection">kết nối bảo mật tới máy chủ không thành công</string>
     <string name="sync_error_http_status">máy chủ trả về lỗi %1$d</string>
-    <string name="sync_error_too_large">danh sách lớn hơn 50 MB</string>
-    <string name="sync_error_too_many_rules">danh sách có hơn 2 triệu mục</string>
+    <string name="sync_error_too_large">danh sách lớn hơn %1$d MB</string>
+    <string name="sync_error_too_many_rules">danh sách có hơn %1$s mục</string>
     <string name="sync_error_no_rules">không tìm thấy mục nào dùng được</string>
     <string name="sync_error_file_unreadable">không còn đọc được tệp, hãy chọn lại</string>
     <string name="sync_error_storage">không thể ghi vào bộ nhớ của thiết bị</string>

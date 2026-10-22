@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">злучэнне перарвалася падчас спампоўкі</string>
     <string name="sync_error_secure_connection">не ўдалося ўсталяваць бяспечнае злучэнне з серверам</string>
     <string name="sync_error_http_status">сервер адказаў памылкай %1$d</string>
-    <string name="sync_error_too_large">спіс большы за 50 МБ</string>
-    <string name="sync_error_too_many_rules">у спісе больш за 2 мільёны запісаў</string>
+    <string name="sync_error_too_large">спіс большы за %1$d МБ</string>
+    <string name="sync_error_too_many_rules">у спісе больш за %1$s запісаў</string>
     <string name="sync_error_no_rules">не знойдзена ніводнага прыдатнага запісу</string>
     <string name="sync_error_file_unreadable">файл больш нельга прачытаць, выберыце яго зноў</string>
     <string name="sync_error_storage">не ўдалося запісаць даныя ў сховішча прылады</string>

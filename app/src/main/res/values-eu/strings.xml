@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">konexioa deskargan zehar eten da</string>
     <string name="sync_error_secure_connection">zerbitzariarekiko konexio segurua huts egin du</string>
     <string name="sync_error_http_status">zerbitzariak %1$d errorearekin erantzun du</string>
-    <string name="sync_error_too_large">zerrenda 50 MB baino handiagoa da</string>
-    <string name="sync_error_too_many_rules">zerrendak 2 milioi sarrera baino gehiago ditu</string>
+    <string name="sync_error_too_large">zerrenda %1$d MB baino handiagoa da</string>
+    <string name="sync_error_too_many_rules">zerrendak %1$s sarrera baino gehiago ditu</string>
     <string name="sync_error_no_rules">ez da sarrera erabilgarririk aurkitu</string>
     <string name="sync_error_file_unreadable">fitxategia ezin da gehiago irakurri, hautatu berriro</string>
     <string name="sync_error_storage">ezin izan da gailuaren biltegiratzean idatzi</string>

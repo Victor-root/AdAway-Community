@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">බාගත කිරීම අතරතුර සම්බන්ධතාව බිඳ වැටුණි</string>
     <string name="sync_error_secure_connection">සේවාදායකයට ආරක්ෂිත සම්බන්ධතාව අසාර්ථක විය</string>
     <string name="sync_error_http_status">සේවාදායකය %1$d දෝෂයක් සමඟ පිළිතුරු දුන්නේය</string>
-    <string name="sync_error_too_large">ලැයිස්තුව 50 MB ට වඩා විශාලයි</string>
-    <string name="sync_error_too_many_rules">ලැයිස්තුවේ ඇතුළත් කිරීම් මිලියන 2 කට වඩා ඇත</string>
+    <string name="sync_error_too_large">ලැයිස්තුව %1$d MB ට වඩා විශාලයි</string>
+    <string name="sync_error_too_many_rules">ලැයිස්තුවේ ඇතුළත් කිරීම් %1$s කට වඩා ඇත</string>
     <string name="sync_error_no_rules">භාවිත කළ හැකි ඇතුළත් කිරීමක් හමු නොවීය</string>
     <string name="sync_error_file_unreadable">ගොනුව තවදුරටත් කියවිය නොහැක, එය නැවත තෝරන්න</string>
     <string name="sync_error_storage">උපාංගයේ ආචයනයට ලිවීමට නොහැකි විය</string>

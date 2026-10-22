@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ഡൗൺലോഡിനിടെ കണക്ഷൻ മുറിഞ്ഞു</string>
     <string name="sync_error_secure_connection">സെർവറുമായുള്ള സുരക്ഷിത കണക്ഷൻ പരാജയപ്പെട്ടു</string>
     <string name="sync_error_http_status">സെർവർ %1$d എന്ന പിശക് നൽകി</string>
-    <string name="sync_error_too_large">ലിസ്റ്റ് 50 MB-യേക്കാൾ വലുതാണ്</string>
-    <string name="sync_error_too_many_rules">ലിസ്റ്റിൽ 20 ലക്ഷത്തിലധികം എൻട്രികൾ ഉണ്ട്</string>
+    <string name="sync_error_too_large">ലിസ്റ്റ് %1$d MB-യേക്കാൾ വലുതാണ്</string>
+    <string name="sync_error_too_many_rules">ലിസ്റ്റിൽ %1$s-ൽ അധികം എൻട്രികൾ ഉണ്ട്</string>
     <string name="sync_error_no_rules">ഉപയോഗിക്കാവുന്ന എൻട്രികളൊന്നും കണ്ടെത്തിയില്ല</string>
     <string name="sync_error_file_unreadable">ഫയൽ ഇനി വായിക്കാൻ കഴിയില്ല, വീണ്ടും തിരഞ്ഞെടുക്കുക</string>
     <string name="sync_error_storage">ഉപകരണത്തിന്റെ സംഭരണത്തിൽ എഴുതാൻ കഴിഞ്ഞില്ല</string>

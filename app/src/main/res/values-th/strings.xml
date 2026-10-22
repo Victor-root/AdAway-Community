@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">การเชื่อมต่อขาดระหว่างดาวน์โหลด</string>
     <string name="sync_error_secure_connection">การเชื่อมต่อที่ปลอดภัยกับเซิร์ฟเวอร์ล้มเหลว</string>
     <string name="sync_error_http_status">เซิร์ฟเวอร์ตอบกลับด้วยข้อผิดพลาด %1$d</string>
-    <string name="sync_error_too_large">รายการมีขนาดใหญ่กว่า 50 MB</string>
-    <string name="sync_error_too_many_rules">รายการมีมากกว่า 2 ล้านรายการย่อย</string>
+    <string name="sync_error_too_large">รายการมีขนาดใหญ่กว่า %1$d MB</string>
+    <string name="sync_error_too_many_rules">รายการมีมากกว่า %1$s รายการย่อย</string>
     <string name="sync_error_no_rules">ไม่พบรายการที่ใช้งานได้</string>
     <string name="sync_error_file_unreadable">ไม่สามารถอ่านไฟล์ได้อีก โปรดเลือกไฟล์ใหม่</string>
     <string name="sync_error_storage">เขียนข้อมูลลงที่เก็บข้อมูลของอุปกรณ์ไม่ได้</string>

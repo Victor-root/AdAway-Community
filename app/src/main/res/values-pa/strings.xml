@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ਡਾਊਨਲੋਡ ਦੌਰਾਨ ਕਨੈਕਸ਼ਨ ਟੁੱਟ ਗਿਆ</string>
     <string name="sync_error_secure_connection">ਸਰਵਰ ਨਾਲ ਸੁਰੱਖਿਅਤ ਕਨੈਕਸ਼ਨ ਅਸਫਲ ਰਿਹਾ</string>
     <string name="sync_error_http_status">ਸਰਵਰ ਨੇ ਗਲਤੀ %1$d ਨਾਲ ਜਵਾਬ ਦਿੱਤਾ</string>
-    <string name="sync_error_too_large">ਸੂਚੀ 50 MB ਤੋਂ ਵੱਡੀ ਹੈ</string>
-    <string name="sync_error_too_many_rules">ਸੂਚੀ ਵਿੱਚ 2 ਮਿਲੀਅਨ ਤੋਂ ਵੱਧ ਐਂਟਰੀਆਂ ਹਨ</string>
+    <string name="sync_error_too_large">ਸੂਚੀ %1$d MB ਤੋਂ ਵੱਡੀ ਹੈ</string>
+    <string name="sync_error_too_many_rules">ਸੂਚੀ ਵਿੱਚ %1$s ਤੋਂ ਵੱਧ ਐਂਟਰੀਆਂ ਹਨ</string>
     <string name="sync_error_no_rules">ਕੋਈ ਵਰਤੋਂਯੋਗ ਐਂਟਰੀ ਨਹੀਂ ਮਿਲੀ</string>
     <string name="sync_error_file_unreadable">ਫ਼ਾਈਲ ਹੁਣ ਪੜ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕਦੀ, ਇਸ ਨੂੰ ਦੁਬਾਰਾ ਚੁਣੋ</string>
     <string name="sync_error_storage">ਡੀਵਾਈਸ ਦੀ ਸਟੋਰੇਜ ਵਿੱਚ ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ</string>

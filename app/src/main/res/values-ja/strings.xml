@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ダウンロード中に接続が切断されました</string>
     <string name="sync_error_secure_connection">サーバーとのセキュアな接続に失敗しました</string>
     <string name="sync_error_http_status">サーバーがエラー%1$dを返しました</string>
-    <string name="sync_error_too_large">リストのサイズが50 MBを超えています</string>
-    <string name="sync_error_too_many_rules">リストのエントリが200万件を超えています</string>
+    <string name="sync_error_too_large">リストのサイズが%1$d MBを超えています</string>
+    <string name="sync_error_too_many_rules">リストのエントリが%1$s件を超えています</string>
     <string name="sync_error_no_rules">使用できるエントリが見つかりませんでした</string>
     <string name="sync_error_file_unreadable">ファイルを読み取れなくなりました。もう一度選択してください</string>
     <string name="sync_error_storage">端末のストレージに書き込めませんでした</string>

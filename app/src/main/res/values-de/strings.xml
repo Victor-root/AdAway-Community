@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">die Verbindung wurde während des Downloads unterbrochen</string>
     <string name="sync_error_secure_connection">die sichere Verbindung zum Server ist fehlgeschlagen</string>
     <string name="sync_error_http_status">der Server hat mit Fehler %1$d geantwortet</string>
-    <string name="sync_error_too_large">die Liste ist größer als 50 MB</string>
-    <string name="sync_error_too_many_rules">die Liste enthält mehr als 2 Millionen Einträge</string>
+    <string name="sync_error_too_large">die Liste ist größer als %1$d MB</string>
+    <string name="sync_error_too_many_rules">die Liste enthält mehr als %1$s Einträge</string>
     <string name="sync_error_no_rules">es wurde kein verwendbarer Eintrag gefunden</string>
     <string name="sync_error_file_unreadable">die Datei kann nicht mehr gelesen werden, wähle sie erneut aus</string>
     <string name="sync_error_storage">auf den Gerätespeicher konnte nicht geschrieben werden</string>

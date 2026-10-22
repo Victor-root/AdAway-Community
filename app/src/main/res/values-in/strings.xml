@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">koneksi terputus saat pengunduhan</string>
     <string name="sync_error_secure_connection">koneksi aman ke server gagal</string>
     <string name="sync_error_http_status">server menjawab dengan error %1$d</string>
-    <string name="sync_error_too_large">daftar berukuran lebih dari 50 MB</string>
-    <string name="sync_error_too_many_rules">daftar berisi lebih dari 2 juta entri</string>
+    <string name="sync_error_too_large">daftar berukuran lebih dari %1$d MB</string>
+    <string name="sync_error_too_many_rules">daftar berisi lebih dari %1$s entri</string>
     <string name="sync_error_no_rules">tidak ditemukan entri yang dapat digunakan</string>
     <string name="sync_error_file_unreadable">file tidak dapat dibaca lagi, pilih ulang file tersebut</string>
     <string name="sync_error_storage">tidak dapat menulis ke penyimpanan perangkat</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">veza je prekinuta tijekom preuzimanja</string>
     <string name="sync_error_secure_connection">sigurna veza s poslužiteljem nije uspjela</string>
     <string name="sync_error_http_status">poslužitelj je odgovorio pogreškom %1$d</string>
-    <string name="sync_error_too_large">popis je veći od 50 MB</string>
-    <string name="sync_error_too_many_rules">popis ima više od 2 milijuna unosa</string>
+    <string name="sync_error_too_large">popis je veći od %1$d MB</string>
+    <string name="sync_error_too_many_rules">popis ima više od %1$s unosa</string>
     <string name="sync_error_no_rules">nije pronađen nijedan upotrebljiv unos</string>
     <string name="sync_error_file_unreadable">datoteku više nije moguće pročitati, odaberite je ponovno</string>
     <string name="sync_error_storage">nije moguće zapisati u pohranu uređaja</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">соединение прервалось во время загрузки</string>
     <string name="sync_error_secure_connection">не удалось установить защищённое соединение с сервером</string>
     <string name="sync_error_http_status">сервер ответил ошибкой %1$d</string>
-    <string name="sync_error_too_large">список больше 50 МБ</string>
-    <string name="sync_error_too_many_rules">в списке больше 2 миллионов записей</string>
+    <string name="sync_error_too_large">список больше %1$d МБ</string>
+    <string name="sync_error_too_many_rules">в списке больше %1$s записей</string>
     <string name="sync_error_no_rules">не найдено ни одной подходящей записи</string>
     <string name="sync_error_file_unreadable">файл больше не читается, выберите его снова</string>
     <string name="sync_error_storage">не удалось записать данные в хранилище устройства</string>

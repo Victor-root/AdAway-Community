@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">la connexió s’ha interromput durant la baixada</string>
     <string name="sync_error_secure_connection">ha fallat la connexió segura amb el servidor</string>
     <string name="sync_error_http_status">el servidor ha respost amb l’error %1$d</string>
-    <string name="sync_error_too_large">la llista supera els 50 MB</string>
-    <string name="sync_error_too_many_rules">la llista té més de 2 milions d’entrades</string>
+    <string name="sync_error_too_large">la llista supera els %1$d MB</string>
+    <string name="sync_error_too_many_rules">la llista té més de %1$s entrades</string>
     <string name="sync_error_no_rules">no s’ha trobat cap entrada utilitzable</string>
     <string name="sync_error_file_unreadable">el fitxer ja no es pot llegir, torna a seleccionar-lo</string>
     <string name="sync_error_storage">no s’ha pogut escriure a l’emmagatzematge del dispositiu</string>

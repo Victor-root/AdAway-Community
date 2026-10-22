@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">anslutningen bröts under nedladdningen</string>
     <string name="sync_error_secure_connection">den säkra anslutningen till servern misslyckades</string>
     <string name="sync_error_http_status">servern svarade med felet %1$d</string>
-    <string name="sync_error_too_large">listan är större än 50 MB</string>
-    <string name="sync_error_too_many_rules">listan innehåller fler än 2 miljoner poster</string>
+    <string name="sync_error_too_large">listan är större än %1$d MB</string>
+    <string name="sync_error_too_many_rules">listan innehåller fler än %1$s poster</string>
     <string name="sync_error_no_rules">ingen användbar post hittades</string>
     <string name="sync_error_file_unreadable">filen kan inte längre läsas, välj den igen</string>
     <string name="sync_error_storage">det gick inte att skriva till enhetens lagring</string>

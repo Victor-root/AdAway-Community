@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">połączenie zostało przerwane podczas pobierania</string>
     <string name="sync_error_secure_connection">bezpieczne połączenie z serwerem nie powiodło się</string>
     <string name="sync_error_http_status">serwer odpowiedział błędem %1$d</string>
-    <string name="sync_error_too_large">lista jest większa niż 50 MB</string>
-    <string name="sync_error_too_many_rules">lista zawiera ponad 2 miliony wpisów</string>
+    <string name="sync_error_too_large">lista jest większa niż %1$d MB</string>
+    <string name="sync_error_too_many_rules">lista zawiera ponad %1$s wpisów</string>
     <string name="sync_error_no_rules">nie znaleziono żadnego użytecznego wpisu</string>
     <string name="sync_error_file_unreadable">nie można już odczytać pliku, wybierz go ponownie</string>
     <string name="sync_error_storage">nie udało się zapisać danych w pamięci urządzenia</string>

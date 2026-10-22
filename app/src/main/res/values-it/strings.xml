@@ -81,8 +81,8 @@
     <string name="sync_error_connection_lost">la connessione è stata interrotta durante il download</string>
     <string name="sync_error_secure_connection">connessione sicura al server non riuscita</string>
     <string name="sync_error_http_status">il server ha risposto con l’errore %1$d</string>
-    <string name="sync_error_too_large">l’elenco supera i 50 MB</string>
-    <string name="sync_error_too_many_rules">l’elenco contiene più di 2 milioni di voci</string>
+    <string name="sync_error_too_large">l’elenco supera i %1$d MB</string>
+    <string name="sync_error_too_many_rules">l’elenco contiene più di %1$s voci</string>
     <string name="sync_error_no_rules">nessuna voce utilizzabile trovata</string>
     <string name="sync_error_file_unreadable">il file non è più leggibile, selezionalo di nuovo</string>
     <string name="sync_error_storage">impossibile scrivere nella memoria del dispositivo</string>

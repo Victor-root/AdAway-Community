@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ការតភ្ជាប់ត្រូវបានកាត់ផ្តាច់ក្នុងអំឡុងពេលទាញយក</string>
     <string name="sync_error_secure_connection">ការតភ្ជាប់សុវត្ថិភាពទៅកាន់ម៉ាស៊ីនមេបរាជ័យ</string>
     <string name="sync_error_http_status">ម៉ាស៊ីនមេឆ្លើយតបដោយកំហុស %1$d</string>
-    <string name="sync_error_too_large">បញ្ជីធំជាង 50 MB</string>
-    <string name="sync_error_too_many_rules">បញ្ជីមានធាតុច្រើនជាង 2 លាន</string>
+    <string name="sync_error_too_large">បញ្ជីធំជាង %1$d MB</string>
+    <string name="sync_error_too_many_rules">បញ្ជីមានធាតុច្រើនជាង %1$s</string>
     <string name="sync_error_no_rules">រកមិនឃើញធាតុដែលអាចប្រើបានទេ</string>
     <string name="sync_error_file_unreadable">មិនអាចអានឯកសារបានទៀតទេ សូមជ្រើសរើសវាម្តងទៀត</string>
     <string name="sync_error_storage">មិនអាចសរសេរទៅទំហំផ្ទុករបស់ឧបករណ៍បានទេ</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ühendus katkes allalaadimise ajal</string>
     <string name="sync_error_secure_connection">turvaline ühendus serveriga ebaõnnestus</string>
     <string name="sync_error_http_status">server vastas veaga %1$d</string>
-    <string name="sync_error_too_large">loend on suurem kui 50 MB</string>
-    <string name="sync_error_too_many_rules">loendis on üle 2 miljoni kirje</string>
+    <string name="sync_error_too_large">loend on suurem kui %1$d MB</string>
+    <string name="sync_error_too_many_rules">loendis on üle %1$s kirje</string>
     <string name="sync_error_no_rules">kasutatavaid kirjeid ei leitud</string>
     <string name="sync_error_file_unreadable">faili ei saa enam lugeda, vali see uuesti</string>
     <string name="sync_error_storage">seadme mällu ei õnnestunud kirjutada</string>

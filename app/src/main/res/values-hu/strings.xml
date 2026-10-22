@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">a kapcsolat megszakadt a letöltés közben</string>
     <string name="sync_error_secure_connection">a kiszolgálóval létesített biztonságos kapcsolat sikertelen volt</string>
     <string name="sync_error_http_status">a kiszolgáló %1$d hibával válaszolt</string>
-    <string name="sync_error_too_large">a lista nagyobb 50 MB-nál</string>
-    <string name="sync_error_too_many_rules">a listában több mint 2 millió bejegyzés van</string>
+    <string name="sync_error_too_large">a lista nagyobb %1$d MB-nál</string>
+    <string name="sync_error_too_many_rules">a listában több mint %1$s bejegyzés van</string>
     <string name="sync_error_no_rules">nem található használható bejegyzés</string>
     <string name="sync_error_file_unreadable">a fájl már nem olvasható, jelölje ki újra</string>
     <string name="sync_error_storage">nem sikerült írni az eszköz tárhelyére</string>

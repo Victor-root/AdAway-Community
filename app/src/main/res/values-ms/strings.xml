@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">sambungan terputus semasa muat turun</string>
     <string name="sync_error_secure_connection">sambungan selamat ke pelayan gagal</string>
     <string name="sync_error_http_status">pelayan menjawab dengan ralat %1$d</string>
-    <string name="sync_error_too_large">senarai melebihi 50 MB</string>
-    <string name="sync_error_too_many_rules">senarai mempunyai lebih daripada 2 juta entri</string>
+    <string name="sync_error_too_large">senarai melebihi %1$d MB</string>
+    <string name="sync_error_too_many_rules">senarai mempunyai lebih daripada %1$s entri</string>
     <string name="sync_error_no_rules">tiada entri yang boleh digunakan ditemui</string>
     <string name="sync_error_file_unreadable">fail tidak lagi dapat dibaca, sila pilih semula</string>
     <string name="sync_error_storage">storan peranti tidak dapat ditulis</string>

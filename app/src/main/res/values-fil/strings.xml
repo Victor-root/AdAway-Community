@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">naputol ang koneksyon habang nagda-download</string>
     <string name="sync_error_secure_connection">nabigo ang secure na koneksyon sa server</string>
     <string name="sync_error_http_status">sumagot ang server ng error %1$d</string>
-    <string name="sync_error_too_large">mas malaki sa 50 MB ang listahan</string>
-    <string name="sync_error_too_many_rules">mahigit 2 milyong entry ang laman ng listahan</string>
+    <string name="sync_error_too_large">mas malaki sa %1$d MB ang listahan</string>
+    <string name="sync_error_too_many_rules">mahigit %1$s na entry ang laman ng listahan</string>
     <string name="sync_error_no_rules">walang nakitang magagamit na entry</string>
     <string name="sync_error_file_unreadable">hindi na mabasa ang file, piliin itong muli</string>
     <string name="sync_error_storage">hindi masulatan ang storage ng device</string>

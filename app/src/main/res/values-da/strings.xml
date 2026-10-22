@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">forbindelsen blev afbrudt under hentningen</string>
     <string name="sync_error_secure_connection">den sikre forbindelse til serveren mislykkedes</string>
     <string name="sync_error_http_status">serveren svarede med fejl %1$d</string>
-    <string name="sync_error_too_large">listen er større end 50 MB</string>
-    <string name="sync_error_too_many_rules">listen indeholder mere end 2 millioner poster</string>
+    <string name="sync_error_too_large">listen er større end %1$d MB</string>
+    <string name="sync_error_too_many_rules">listen indeholder mere end %1$s poster</string>
     <string name="sync_error_no_rules">der blev ikke fundet nogen brugbare poster</string>
     <string name="sync_error_file_unreadable">filen kan ikke længere læses, vælg den igen</string>
     <string name="sync_error_storage">der kunne ikke skrives til enhedens lager</string>

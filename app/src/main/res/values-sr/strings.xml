@@ -81,8 +81,8 @@
     <string name="sync_error_connection_lost">веза је прекинута током преузимања</string>
     <string name="sync_error_secure_connection">безбедна веза са сервером није успела</string>
     <string name="sync_error_http_status">сервер је одговорио грешком %1$d</string>
-    <string name="sync_error_too_large">листа је већа од 50 MB</string>
-    <string name="sync_error_too_many_rules">листа има више од 2 милиона ставки</string>
+    <string name="sync_error_too_large">листа је већа од %1$d MB</string>
+    <string name="sync_error_too_many_rules">листа има више од %1$s ставки</string>
     <string name="sync_error_no_rules">није пронађена ниједна употребљива ставка</string>
     <string name="sync_error_file_unreadable">датотека се више не може прочитати, изаберите је поново</string>
     <string name="sync_error_storage">није могуће писати у меморију уређаја</string>

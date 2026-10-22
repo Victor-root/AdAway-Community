@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">girêdan di dema daxistinê de qut bû</string>
     <string name="sync_error_secure_connection">girêdana ewle bi pêşkêşkerê re têk çû</string>
     <string name="sync_error_http_status">pêşkêşker bi çewtiya %1$d bersiv da</string>
-    <string name="sync_error_too_large">lîste ji 50 MB mezintir e</string>
-    <string name="sync_error_too_many_rules">lîste ji 2 mîlyon têketinan bêtir e</string>
+    <string name="sync_error_too_large">lîste ji %1$d MB mezintir e</string>
+    <string name="sync_error_too_many_rules">lîste ji %1$s têketinan bêtir e</string>
     <string name="sync_error_no_rules">tu têketineke bikêrhatî nehat dîtin</string>
     <string name="sync_error_file_unreadable">êdî pel nayê xwendin, dîsa hilbijêre</string>
     <string name="sync_error_storage">li bîrgeha amûrê nehat nivîsandin</string>

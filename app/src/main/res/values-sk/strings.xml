@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">pripojenie sa počas sťahovania prerušilo</string>
     <string name="sync_error_secure_connection">zabezpečené pripojenie k serveru zlyhalo</string>
     <string name="sync_error_http_status">server odpovedal chybou %1$d</string>
-    <string name="sync_error_too_large">zoznam je väčší ako 50 MB</string>
-    <string name="sync_error_too_many_rules">zoznam obsahuje viac ako 2 milióny záznamov</string>
+    <string name="sync_error_too_large">zoznam je väčší ako %1$d MB</string>
+    <string name="sync_error_too_many_rules">zoznam obsahuje viac ako %1$s záznamov</string>
     <string name="sync_error_no_rules">nenašiel sa žiadny použiteľný záznam</string>
     <string name="sync_error_file_unreadable">súbor sa už nedá prečítať, vyberte ho znova</string>
     <string name="sync_error_storage">do úložiska zariadenia sa nepodarilo zapisovať</string>

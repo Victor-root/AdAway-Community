@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">atsisiunčiant ryšys nutrūko</string>
     <string name="sync_error_secure_connection">nepavyko užmegzti saugaus ryšio su serveriu</string>
     <string name="sync_error_http_status">serveris atsakė klaida %1$d</string>
-    <string name="sync_error_too_large">sąrašas didesnis nei 50 MB</string>
-    <string name="sync_error_too_many_rules">sąraše yra daugiau nei 2 milijonai įrašų</string>
+    <string name="sync_error_too_large">sąrašas didesnis nei %1$d MB</string>
+    <string name="sync_error_too_many_rules">sąraše yra daugiau nei %1$s įrašų</string>
     <string name="sync_error_no_rules">nerastas nė vienas tinkamas įrašas</string>
     <string name="sync_error_file_unreadable">failo nebegalima nuskaityti, pasirinkite jį iš naujo</string>
     <string name="sync_error_storage">nepavyko įrašyti į įrenginio saugyklą</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">下載期間連線中斷</string>
     <string name="sync_error_secure_connection">與伺服器的安全連線失敗</string>
     <string name="sync_error_http_status">伺服器回應錯誤 %1$d</string>
-    <string name="sync_error_too_large">清單超過 50 MB</string>
-    <string name="sync_error_too_many_rules">清單的項目超過 200 萬筆</string>
+    <string name="sync_error_too_large">清單超過 %1$d MB</string>
+    <string name="sync_error_too_many_rules">清單的項目超過 %1$s 筆</string>
     <string name="sync_error_no_rules">找不到可用的項目</string>
     <string name="sync_error_file_unreadable">無法再讀取該檔案，請重新選取</string>
     <string name="sync_error_storage">無法寫入裝置儲存空間</string>

@@ -81,8 +81,8 @@
     <string name="sync_error_connection_lost">la conexón cortóse mientres la descarga</string>
     <string name="sync_error_secure_connection">falló la conexón segura col sirvidor</string>
     <string name="sync_error_http_status">el sirvidor respondió col error %1$d</string>
-    <string name="sync_error_too_large">la llista ye mayor de 50 MB</string>
-    <string name="sync_error_too_many_rules">la llista tien más de 2 millones d’entraes</string>
+    <string name="sync_error_too_large">la llista ye mayor de %1$d MB</string>
+    <string name="sync_error_too_many_rules">la llista tien más de %1$s entraes</string>
     <string name="sync_error_no_rules">nun s’atopó nenguna entrada utilizable</string>
     <string name="sync_error_file_unreadable">yá nun se pue lleer el ficheru, esbíllalu otra vuelta</string>
     <string name="sync_error_storage">nun se pudo escribir nel almacenamientu del preséu</string>

@@ -81,8 +81,8 @@
     <string name="sync_error_connection_lost">η σύνδεση διακόπηκε κατά τη λήψη</string>
     <string name="sync_error_secure_connection">η ασφαλής σύνδεση με τον διακομιστή απέτυχε</string>
     <string name="sync_error_http_status">ο διακομιστής απάντησε με σφάλμα %1$d</string>
-    <string name="sync_error_too_large">η λίστα είναι μεγαλύτερη από 50 MB</string>
-    <string name="sync_error_too_many_rules">η λίστα έχει περισσότερες από 2 εκατομμύρια καταχωρίσεις</string>
+    <string name="sync_error_too_large">η λίστα είναι μεγαλύτερη από %1$d MB</string>
+    <string name="sync_error_too_many_rules">η λίστα έχει περισσότερες από %1$s καταχωρίσεις</string>
     <string name="sync_error_no_rules">δεν βρέθηκε καμία αξιοποιήσιμη καταχώριση</string>
     <string name="sync_error_file_unreadable">το αρχείο δεν είναι πλέον αναγνώσιμο, επιλέξτε το ξανά</string>
     <string name="sync_error_storage">δεν ήταν δυνατή η εγγραφή στον χώρο αποθήκευσης της συσκευής</string>

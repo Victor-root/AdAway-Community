@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">lidhja u ndërpre gjatë shkarkimit</string>
     <string name="sync_error_secure_connection">lidhja e sigurt me serverin dështoi</string>
     <string name="sync_error_http_status">serveri u përgjigj me gabimin %1$d</string>
-    <string name="sync_error_too_large">lista është më e madhe se 50 MB</string>
-    <string name="sync_error_too_many_rules">lista ka më shumë se 2 milionë hyrje</string>
+    <string name="sync_error_too_large">lista është më e madhe se %1$d MB</string>
+    <string name="sync_error_too_many_rules">lista ka më shumë se %1$s hyrje</string>
     <string name="sync_error_no_rules">nuk u gjet asnjë hyrje e përdorshme</string>
     <string name="sync_error_file_unreadable">skedari nuk mund të lexohet më, zgjidheni sërish</string>
     <string name="sync_error_storage">në hapësirën ruajtëse të pajisjes nuk u arrit të shkruhej</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">下载过程中连接中断</string>
     <string name="sync_error_secure_connection">与服务器的安全连接失败</string>
     <string name="sync_error_http_status">服务器返回错误 %1$d</string>
-    <string name="sync_error_too_large">列表大小超过 50 MB</string>
-    <string name="sync_error_too_many_rules">列表包含超过 200 万个条目</string>
+    <string name="sync_error_too_large">列表大小超过 %1$d MB</string>
+    <string name="sync_error_too_many_rules">列表包含超过 %1$s 个条目</string>
     <string name="sync_error_no_rules">未找到可用的条目</string>
     <string name="sync_error_file_unreadable">文件已无法读取，请重新选择</string>
     <string name="sync_error_storage">无法写入设备存储</string>

@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">yhteys katkesi latauksen aikana</string>
     <string name="sync_error_secure_connection">suojattu yhteys palvelimeen epäonnistui</string>
     <string name="sync_error_http_status">palvelin vastasi virheellä %1$d</string>
-    <string name="sync_error_too_large">luettelo on suurempi kuin 50 Mt</string>
-    <string name="sync_error_too_many_rules">luettelossa on yli 2 miljoonaa merkintää</string>
+    <string name="sync_error_too_large">luettelo on suurempi kuin %1$d Mt</string>
+    <string name="sync_error_too_many_rules">luettelossa on yli %1$s merkintää</string>
     <string name="sync_error_no_rules">käyttökelpoisia merkintöjä ei löytynyt</string>
     <string name="sync_error_file_unreadable">tiedostoa ei voi enää lukea, valitse se uudelleen</string>
     <string name="sync_error_storage">laitteen tallennustilaan ei voitu kirjoittaa</string>

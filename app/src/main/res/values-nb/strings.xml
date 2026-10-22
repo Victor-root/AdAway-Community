@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">tilkoblingen ble brutt under nedlastingen</string>
     <string name="sync_error_secure_connection">den sikre tilkoblingen til serveren mislyktes</string>
     <string name="sync_error_http_status">serveren svarte med feil %1$d</string>
-    <string name="sync_error_too_large">listen er større enn 50 MB</string>
-    <string name="sync_error_too_many_rules">listen har mer enn 2 millioner oppføringer</string>
+    <string name="sync_error_too_large">listen er større enn %1$d MB</string>
+    <string name="sync_error_too_many_rules">listen har mer enn %1$s oppføringer</string>
     <string name="sync_error_no_rules">ingen brukbare oppføringer ble funnet</string>
     <string name="sync_error_file_unreadable">filen kan ikke lenger leses, velg den på nytt</string>
     <string name="sync_error_storage">det kunne ikke skrives til enhetens lagring</string>

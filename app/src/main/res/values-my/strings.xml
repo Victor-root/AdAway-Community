@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">ဒေါင်းလုဒ်လုပ်စဉ် ချိတ်ဆက်မှု ပြတ်တောက်သွားသည်</string>
     <string name="sync_error_secure_connection">ဆာဗာနှင့် လုံခြုံသော ချိတ်ဆက်မှု မအောင်မြင်ပါ</string>
     <string name="sync_error_http_status">ဆာဗာက အမှား %1$d ဖြင့် ပြန်ကြားသည်</string>
-    <string name="sync_error_too_large">စာရင်းသည် 50 MB ထက် ကြီးနေသည်</string>
-    <string name="sync_error_too_many_rules">စာရင်းတွင် ထည့်သွင်းချက် 2 သန်းထက် ပိုများနေသည်</string>
+    <string name="sync_error_too_large">စာရင်းသည် %1$d MB ထက် ကြီးနေသည်</string>
+    <string name="sync_error_too_many_rules">စာရင်းတွင် ထည့်သွင်းချက် %1$s ထက် ပိုများနေသည်</string>
     <string name="sync_error_no_rules">အသုံးပြုနိုင်သော ထည့်သွင်းချက် မတွေ့ပါ</string>
     <string name="sync_error_file_unreadable">ဖိုင်ကို မဖတ်နိုင်တော့ပါ၊ ပြန်ရွေးပါ</string>
     <string name="sync_error_storage">စက်၏ သိုလှောင်ခန်းသို့ ရေး၍ မရပါ</string>

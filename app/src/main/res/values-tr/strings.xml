@@ -84,8 +84,8 @@
     <string name="sync_error_connection_lost">indirme sırasında bağlantı kesildi</string>
     <string name="sync_error_secure_connection">sunucuyla güvenli bağlantı kurulamadı</string>
     <string name="sync_error_http_status">sunucu %1$d hatasıyla yanıt verdi</string>
-    <string name="sync_error_too_large">liste 50 MB’tan büyük</string>
-    <string name="sync_error_too_many_rules">listede 2 milyondan fazla girdi var</string>
+    <string name="sync_error_too_large">liste %1$d MB’tan büyük</string>
+    <string name="sync_error_too_many_rules">listede %1$s girdiden fazlası var</string>
     <string name="sync_error_no_rules">kullanılabilir bir girdi bulunamadı</string>
     <string name="sync_error_file_unreadable">dosya artık okunamıyor, yeniden seçin</string>
     <string name="sync_error_storage">cihazın depolama alanına yazılamadı</string>
