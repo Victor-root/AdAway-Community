@@ -25,6 +25,9 @@
 * 📜 Show the licenses of the components the app is built with in the help
 * ↩️ Add an undo after deleting a hosts source or a list entry on mobile
 * ⚡ Offer to turn ad blocking on when applying changes while it is off
+* 🗑️ Delete a hosts source from its menu on Android TV
+* 💾 Back up and restore on devices without a file picker, as some TVs
+* 📺 Tell how to check the always-on VPN with ADB, and how to let AdAway start by itself on TCL TVs
 
 ### 🐛 Fixed
 
