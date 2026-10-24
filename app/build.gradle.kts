@@ -1,4 +1,7 @@
 import com.android.build.api.variant.impl.VariantOutputImpl
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 import java.util.Properties
 import javax.inject.Inject
 
@@ -21,6 +24,18 @@ val keystoreProperties = Properties().apply {
 val signingKeys = listOf("storeFile", "storePassword", "keyAlias", "keyPassword")
 val hasSigningKey = signingKeys.all { !keystoreProperties.getProperty(it).isNullOrBlank() }
 
+/**
+ * The version code is the time of the last commit, `yyMMddHH` in UTC (26102416 for a commit of
+ * 2026-10-24 at 16 h): it grows with each commit without being edited, and stays the same for every
+ * build of a commit, as F-Droid needs. Without git, as from a source archive, the build time stands
+ * in.
+ */
+val appVersionCode = runCatching {
+    providers.exec { commandLine("git", "log", "-1", "--format=%ct") }.standardOutput.asText.get().trim().toLong()
+}.getOrElse { Instant.now().epochSecond }.let { seconds ->
+    DateTimeFormatter.ofPattern("yyMMddHH").withZone(ZoneOffset.UTC).format(Instant.ofEpochSecond(seconds)).toInt()
+}
+
 // A pre-release names its stage after the app, as in "AdAway Alpha", for testers to tell it apart.
 val appVersionName = libs.versions.appVersionName.get()
 val preReleaseStage = mapOf("alpha" to "Alpha", "beta" to "Beta", "rc" to "RC").entries.firstOrNull { (word, _) ->
@@ -40,7 +55,7 @@ android {
         applicationId = "org.adaway"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = libs.versions.appVersionCode.get().toInt()
+        versionCode = appVersionCode
         versionName = appVersionName
         resValue("string", "app_name", listOfNotNull("AdAway", preReleaseStage).joinToString(" "))
     }

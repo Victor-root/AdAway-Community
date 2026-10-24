@@ -23,7 +23,7 @@ While the overall score may be not perfect, each new release should not increase
 Each version has its own number that follows the [Semantic Versioning](https://semver.org/) principle (starting from version 4).
 
 > [!IMPORTANT]
-> Update application version name (`appVersionName`) and code (`appVersionCode`) from the `gradle/libs.versions.toml` catalog file.
+> Update application version name (`appVersionName`) from the `gradle/libs.versions.toml` catalog file. The version code needs no edit: it is the time of the last commit, as `yyMMddHH`.
 
 A pre-release adds its stage to the version name, optionally followed by a number: `7.0.0-alpha-c`, `7.0.0-beta2-c` or `7.0.0-rc1-c`.
 The app then shows its stage in its name, such as "AdAway Alpha", and offers the next pre-releases as updates.
