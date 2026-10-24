@@ -211,7 +211,7 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
                     style = AdAwayType.large.copy(color = white, fontWeight = FontWeight.Bold),
                     maxLines = 1,
                     // Clipped, not ellipsized: the size then fits the height too, not only the width.
-                    autoSize = TextAutoSize.StepBased(minFontSize = 13.sp, maxFontSize = 34.sp, stepSize = 1.sp),
+                    autoSize = TextAutoSize.StepBased(minFontSize = 13.sp, maxFontSize = 26.sp, stepSize = 1.sp),
                 )
             }
             BasicText(
@@ -238,7 +238,7 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
         val textHeight = (logo - 2 * gap).coerceAtLeast(0)
         val titleHeight = (textHeight / 2.4f).toInt()
         val versionAbove = version.height <= margin + gap
-        val titleRight = if (versionAbove) width - gap else width - margin - version.width - gap
+        val titleRight = if (versionAbove) width - margin else width - margin - version.width - gap
         val title = measurables[1].measure(Constraints.fixed((titleRight - textLeft).coerceAtLeast(0), titleHeight))
         val subtitle = measurables[2].measure(
             Constraints.fixed((width - gap - textLeft).coerceAtLeast(0), textHeight - titleHeight),
