@@ -25,6 +25,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
@@ -461,8 +463,14 @@ private fun StatCard(type: RuleType, count: Long, openLists: (RuleType) -> Unit,
     TvCard(onClick = { openLists(type) }, modifier = modifier) {
         Column(modifier = Modifier.fillMaxWidth().padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             PastelIcon(ruleTypeIcon(type), colors.pastel(type), contentDescription = label, size = 36.dp, padding = 9.dp)
-            // The raw count, without thousands separators.
-            Text(count.toString(), style = AdAwayType.headline6, fontWeight = FontWeight.Bold, color = colors.textPrimary, modifier = Modifier.padding(top = 6.dp))
+            // The raw count, without thousands separators, on one line however large.
+            BasicText(
+                text = count.toString(),
+                style = AdAwayType.headline6.copy(fontWeight = FontWeight.Bold, color = colors.textPrimary),
+                maxLines = 1,
+                autoSize = TextAutoSize.StepBased(minFontSize = 12.sp, maxFontSize = AdAwayType.headline6.fontSize, stepSize = 1.sp),
+                modifier = Modifier.padding(top = 6.dp),
+            )
             Text(label, style = AdAwayType.body2, color = colors.textPrimary)
             Text(
                 ruleTypeDescription(type),

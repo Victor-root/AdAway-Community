@@ -1,4 +1,5 @@
-//! Rules and the line format of the engine files: `B <host>`, `A <pattern>`, `R <host> <address>`.
+//! Rules and the line format of the engine files: `B <host>`, `D <domain>`, `A <pattern>`,
+//! `R <host> <address>`.
 
 use std::fs::{self, File};
 use std::io::{self, BufRead, BufReader, BufWriter, Write};
@@ -7,14 +8,20 @@ use std::path::Path;
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Rule {
     Blocked(String),
+    /// A domain blocked with all its subdomains, as an Adblock `||domain^` rule.
+    BlockedDomain(String),
     Allowed(String),
-    Redirected { host: String, address: String },
+    Redirected {
+        host: String,
+        address: String,
+    },
 }
 
 impl Rule {
     pub fn to_line(&self) -> String {
         match self {
             Rule::Blocked(host) => format!("B {host}"),
+            Rule::BlockedDomain(domain) => format!("D {domain}"),
             Rule::Allowed(pattern) => format!("A {pattern}"),
             Rule::Redirected { host, address } => format!("R {host} {address}"),
         }
@@ -24,6 +31,7 @@ impl Rule {
         let mut parts = line.split(' ');
         let rule = match (parts.next()?, parts.next()?, parts.next()) {
             ("B", host, None) => Rule::Blocked(host.to_owned()),
+            ("D", domain, None) => Rule::BlockedDomain(domain.to_owned()),
             ("A", pattern, None) => Rule::Allowed(pattern.to_owned()),
             ("R", host, Some(address)) => Rule::Redirected {
                 host: host.to_owned(),

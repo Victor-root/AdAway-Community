@@ -119,8 +119,8 @@ fn is_element_hiding(line: &str) -> bool {
 
 fn parse_block_line(line: &str, redirects: bool, collector: &mut Collector) {
     if let Some(domain) = adblock_domain(line) {
-        if let Some(host) = block_host(domain) {
-            collector.block(host);
+        if let Some(domain) = block_host(domain) {
+            collector.block_domain(domain);
         }
         return;
     }
@@ -146,8 +146,10 @@ fn parse_block_line(line: &str, redirects: bool, collector: &mut Collector) {
 
 fn parse_allow_line(line: &str, collector: &mut Collector) {
     let line = line.strip_prefix("@@").unwrap_or(line);
+    // As in Adblock, the rule also allows the subdomains.
     if let Some(domain) = adblock_domain(line) {
         if let Some(pattern) = hostname::normalize(domain, true) {
+            collector.allow(format!("*.{pattern}"));
             collector.allow(pattern);
         }
         return;
@@ -190,6 +192,7 @@ fn is_blocking_address(token: &str) -> bool {
 #[derive(Default)]
 struct Collector {
     blocked: Vec<String>,
+    blocked_domains: Vec<String>,
     allowed: Vec<String>,
     redirected: Vec<(String, String)>,
     redirected_hosts: HashSet<String>,
@@ -197,11 +200,15 @@ struct Collector {
 
 impl Collector {
     fn len(&self) -> usize {
-        self.blocked.len() + self.allowed.len() + self.redirected.len()
+        self.blocked.len() + self.blocked_domains.len() + self.allowed.len() + self.redirected.len()
     }
 
     fn block(&mut self, host: String) {
         self.blocked.push(host);
+    }
+
+    fn block_domain(&mut self, domain: String) {
+        self.blocked_domains.push(domain);
     }
 
     fn allow(&mut self, pattern: String) {
@@ -218,18 +225,22 @@ impl Collector {
     fn into_rules(self) -> Vec<Rule> {
         let Collector {
             mut blocked,
+            mut blocked_domains,
             mut allowed,
             mut redirected,
             ..
         } = self;
         blocked.sort_unstable();
         blocked.dedup();
+        blocked_domains.sort_unstable();
+        blocked_domains.dedup();
         allowed.sort_unstable();
         allowed.dedup();
         redirected.sort_unstable();
         blocked
             .into_iter()
             .map(Rule::Blocked)
+            .chain(blocked_domains.into_iter().map(Rule::BlockedDomain))
             .chain(allowed.into_iter().map(Rule::Allowed))
             .chain(
                 redirected
@@ -289,7 +300,13 @@ mod tests {
         let text = "! Adblock comment\n[Adblock Plus 2.0]\nads.example.com\n||tracker.example.net^\n\
                     ||options.example.org^$third-party\n||path.example.org/ad^\n\
                     news.example.org##.banner\nshop.example.org#@#.promo\nmail.example.org#?#.ad\n";
-        assert_eq!(blocked(text), ["ads.example.com", "tracker.example.net"]);
+        assert_eq!(
+            parse_text(text, BLOCK).unwrap(),
+            [
+                Rule::Blocked("ads.example.com".to_owned()),
+                Rule::BlockedDomain("tracker.example.net".to_owned()),
+            ]
+        );
     }
 
     #[test]
@@ -339,6 +356,7 @@ mod tests {
             rules,
             [
                 Rule::Allowed("*.example.com".to_owned()),
+                Rule::Allowed("*.good.net".to_owned()),
                 Rule::Allowed("good.net".to_owned()),
                 Rule::Allowed("safe.org".to_owned()),
             ]

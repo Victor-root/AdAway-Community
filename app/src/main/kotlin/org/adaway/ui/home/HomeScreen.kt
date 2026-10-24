@@ -278,8 +278,13 @@ private fun CounterCard(type: RuleType, count: Long, onClick: () -> Unit, modifi
                 modifier = Modifier.padding(start = 8.dp, top = 30.dp, end = 8.dp, bottom = 16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                // The raw count, without thousands separators.
-                Text(count.toString(), style = AdAwayType.large, fontWeight = FontWeight.Bold, color = colors.textPrimary, maxLines = 1)
+                // The raw count, without thousands separators, shrunk to fit a narrow card.
+                BasicText(
+                    text = count.toString(),
+                    style = AdAwayType.large.copy(fontWeight = FontWeight.Bold, color = colors.textPrimary),
+                    maxLines = 1,
+                    autoSize = TextAutoSize.StepBased(minFontSize = 12.sp, maxFontSize = AdAwayType.large.fontSize, stepSize = 1.sp),
+                )
                 Text(label, style = AdAwayType.small, color = colors.textSecondary)
                 BasicText(
                     text = ruleTypeDescription(type),

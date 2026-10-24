@@ -18,6 +18,7 @@
 
 * 🔐 Add DNS over HTTPS to the VPN, with Cloudflare, Google, Quad9 or a custom server
 * 🧭 Add custom DNS servers to the VPN
+* 📄 Read hosts lists with several names per line, plain domain lists and Adblock lists, whose `||domain^` rules also block the subdomains in VPN mode
 * ⚠️ Show why a hosts source failed to sync, from a missing network or a server too slow to answer to an HTTP error or a list too large, and list each failed source when none could be synced
 * 🔁 Retry a hosts source download by itself after a passing network failure
 * 🗣️ Pick the app language in the preferences, on every Android version

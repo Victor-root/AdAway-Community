@@ -2,13 +2,16 @@
 //!
 //! The user rules always win over the sources. Within each of these two layers, a redirection wins
 //! over an allow rule, which wins over a block rule. Block and redirect rules from sources match
-//! exact names only, while allow rules and user block rules may use wildcards.
+//! exact names only, except the domain rules of Adblock lists, which also block the subdomains.
+//! Allow rules and user block rules may use wildcards.
 //!
 //! Outputs, all sorted:
 //! - `final/blocked.txt`: names to block,
 //! - `final/redirected.txt`: `<host> <address>` redirections,
 //! - `final/patterns.txt`: user rules that must also be checked at query time (`B <pattern>`
 //!   block patterns, `A <pattern>` allow rules),
+//! - `final/domains.txt` and `final/source_allowed.txt`: the domain rules of the sources and their
+//!   allow rules, for the VPN to decide the subdomains, only known when queried,
 //! - `catalog/{blocked,allowed,redirected}.txt`: what the enabled sources contain, for display.
 
 use std::collections::{HashMap, HashSet};
@@ -79,11 +82,13 @@ pub fn compile(
 ) -> io::Result<Summary> {
     let mut sources = Layer::default();
     let mut source_blocked: Vec<String> = Vec::new();
+    let mut source_domains: Vec<String> = Vec::new();
     let mut source_allowed: Vec<String> = Vec::new();
     for file in source_files {
         for rule in rule::read_rules(file)? {
             match rule {
                 Rule::Blocked(host) => source_blocked.push(host),
+                Rule::BlockedDomain(domain) => source_domains.push(domain),
                 Rule::Allowed(pattern) => source_allowed.push(pattern),
                 Rule::Redirected { host, address } => {
                     sources.redirected.entry(host).or_insert(address);
@@ -93,6 +98,8 @@ pub fn compile(
     }
     source_blocked.sort_unstable();
     source_blocked.dedup();
+    source_domains.sort_unstable();
+    source_domains.dedup();
     source_allowed.sort_unstable();
     source_allowed.dedup();
     source_allowed
@@ -117,6 +124,7 @@ pub fn compile(
 
     let mut candidates: Vec<&str> = source_blocked
         .iter()
+        .chain(&source_domains)
         .chain(&user_blocked.exact)
         .chain(sources.redirected.keys())
         .chain(user.redirected.keys())
@@ -131,9 +139,7 @@ pub fn compile(
         let decision = user.decide(name, user_blocked.matches(name)).or_else(|| {
             sources.decide(
                 name,
-                source_blocked
-                    .binary_search_by(|host| host.as_str().cmp(name))
-                    .is_ok(),
+                contains(&source_blocked, name) || contains(&source_domains, name),
             )
         });
         match decision {
@@ -154,6 +160,10 @@ pub fn compile(
         )
         .collect();
     patterns.sort_unstable();
+
+    let mut catalog_blocked: Vec<&String> = source_blocked.iter().chain(&source_domains).collect();
+    catalog_blocked.sort_unstable();
+    catalog_blocked.dedup();
 
     let mut catalog_redirected: Vec<String> = sources
         .redirected
@@ -178,10 +188,21 @@ pub fn compile(
     rule::write_lines(&outputs.final_list.join("blocked.txt"), &blocked)?;
     rule::write_lines(&outputs.final_list.join("redirected.txt"), &redirected)?;
     rule::write_lines(&outputs.final_list.join("patterns.txt"), &patterns)?;
-    rule::write_lines(&outputs.catalog.join("blocked.txt"), &source_blocked)?;
+    rule::write_lines(&outputs.final_list.join("domains.txt"), &source_domains)?;
+    rule::write_lines(
+        &outputs.final_list.join("source_allowed.txt"),
+        &source_allowed,
+    )?;
+    rule::write_lines(&outputs.catalog.join("blocked.txt"), &catalog_blocked)?;
     rule::write_lines(&outputs.catalog.join("allowed.txt"), &source_allowed)?;
     rule::write_lines(&outputs.catalog.join("redirected.txt"), &catalog_redirected)?;
     Ok(summary)
+}
+
+fn contains(sorted: &[String], name: &str) -> bool {
+    sorted
+        .binary_search_by(|host| host.as_str().cmp(name))
+        .is_ok()
 }
 
 #[cfg(test)]
@@ -295,6 +316,40 @@ mod tests {
                 redirected: 0
             }
         );
+    }
+
+    #[test]
+    fn keeps_the_domain_rules_for_their_subdomains() {
+        let workspace = Workspace::new("domains");
+        let source = workspace.source(
+            "1",
+            &[
+                blocked("a.com"),
+                Rule::BlockedDomain("ads.net".to_owned()),
+                Rule::BlockedDomain("kept.org".to_owned()),
+                allowed("kept.org"),
+            ],
+        );
+
+        let summary = workspace.run(&[source], UserRules::default());
+
+        assert_eq!(
+            workspace.read("final/blocked.txt"),
+            strings(&["a.com", "ads.net"])
+        );
+        assert_eq!(
+            workspace.read("final/domains.txt"),
+            strings(&["ads.net", "kept.org"])
+        );
+        assert_eq!(
+            workspace.read("final/source_allowed.txt"),
+            strings(&["kept.org"])
+        );
+        assert_eq!(
+            workspace.read("catalog/blocked.txt"),
+            strings(&["a.com", "ads.net", "kept.org"])
+        );
+        assert_eq!(summary.blocked, 2);
     }
 
     #[test]

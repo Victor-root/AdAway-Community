@@ -24,6 +24,9 @@ pub struct BlockList {
     redirected: HashMap<Box<str>, IpAddr>,
     user_block_patterns: Vec<Pattern>,
     user_allowed: NameSet,
+    /// Domains blocked with their subdomains, and the allow rules of the sources that spare some.
+    blocked_domains: SortedNames,
+    source_allowed: NameSet,
 }
 
 impl BlockList {
@@ -31,8 +34,12 @@ impl BlockList {
     pub fn load(final_directory: &Path) -> io::Result<Self> {
         let mut list = BlockList {
             blocked: SortedNames::read(&final_directory.join("blocked.txt"))?,
+            blocked_domains: SortedNames::read(&final_directory.join("domains.txt"))?,
             ..BlockList::default()
         };
+        for pattern in rule::read_lines(&final_directory.join("source_allowed.txt"))? {
+            list.source_allowed.insert(pattern);
+        }
         for line in rule::read_lines(&final_directory.join("redirected.txt"))? {
             if let Some((host, address)) = line.split_once(' ')
                 && let Ok(address) = address.parse()
@@ -69,6 +76,16 @@ impl BlockList {
                 .iter()
                 .any(|pattern| pattern.matches(name))
                 && !self.user_allowed.matches(name))
+            || (self.in_blocked_domain(name)
+                && !self.user_allowed.matches(name)
+                && !self.source_allowed.matches(name))
+    }
+
+    /// Whether `name` is a blocked domain or one of its subdomains.
+    fn in_blocked_domain(&self, name: &str) -> bool {
+        std::iter::once(name)
+            .chain(name.match_indices('.').map(|(index, _)| &name[index + 1..]))
+            .any(|domain| self.blocked_domains.contains(domain))
     }
 }
 
@@ -139,9 +156,11 @@ mod tests {
         rule::write_lines(&directory.join("redirected.txt"), ["nas.lan 192.168.1.10"]).unwrap();
         rule::write_lines(
             &directory.join("patterns.txt"),
-            ["A good.ads.org", "B *.ads.org"],
+            ["A good.ads.org", "B *.ads.org", "A spared.tracking.io"],
         )
         .unwrap();
+        rule::write_lines(&directory.join("domains.txt"), ["tracking.io"]).unwrap();
+        rule::write_lines(&directory.join("source_allowed.txt"), ["*.cdn.tracking.io"]).unwrap();
 
         let list = BlockList::load(&directory).unwrap();
 
@@ -153,6 +172,11 @@ mod tests {
         );
         assert_eq!(list.verdict("x.ads.org"), Verdict::Block);
         assert_eq!(list.verdict("good.ads.org"), Verdict::Allow);
+        assert_eq!(list.verdict("tracking.io"), Verdict::Block);
+        assert_eq!(list.verdict("pixel.eu.tracking.io"), Verdict::Block);
+        assert_eq!(list.verdict("img.cdn.tracking.io"), Verdict::Allow);
+        assert_eq!(list.verdict("spared.tracking.io"), Verdict::Allow);
+        assert_eq!(list.verdict("nottracking.io"), Verdict::Allow);
         std::fs::remove_dir_all(&directory).unwrap();
         assert_eq!(
             BlockList::load(&directory)
