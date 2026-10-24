@@ -211,7 +211,7 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
                     style = AdAwayType.large.copy(color = white, fontWeight = FontWeight.Bold),
                     maxLines = 1,
                     // Clipped, not ellipsized: the size then fits the height too, not only the width.
-                    autoSize = TextAutoSize.StepBased(minFontSize = 13.sp, maxFontSize = 26.sp, stepSize = 1.sp),
+                    autoSize = TextAutoSize.StepBased(minFontSize = 13.sp, maxFontSize = AdAwayType.large.fontSize, stepSize = 1.sp),
                 )
             }
             BasicText(
