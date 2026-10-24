@@ -42,10 +42,7 @@ The AdAway project provides [a global changelog](CHANGELOG.md).
 The release apk must be built using the `release` flavor (not `debug`).
 Check the [contributing guide for building instructions](CONTRIBUTING.md#building-the-project).  
 
-> [!IMPORTANT]
-> Rename to release apk file to follow the format: `AdAway-<version_name>-<yyyymmdd>.apk`
- 
-Example: _AdAway-6.1.2-20220817.apk_ for the version 6.1.2 built the 08/17/22.
+The apk is named after the version, as the published releases: `AdAway.Community.v<version_name>.apk`, for instance _AdAway.Community.v7.0.0-c.apk_.
 
 ## 5. Distributing release
 

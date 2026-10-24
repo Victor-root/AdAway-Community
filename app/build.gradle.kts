@@ -1,3 +1,4 @@
+import com.android.build.api.variant.impl.VariantOutputImpl
 import java.util.Properties
 import javax.inject.Inject
 
@@ -171,6 +172,11 @@ androidComponents {
             minSdk.set(variant.minSdk.apiLevel)
         }
         variant.sources.jniLibs?.addGeneratedSourceDirectory(cargoTask, CargoNdkTask::outputDirectory)
+        // Named as the published GitHub releases, AdAway.Community.v7.0.0-c.apk, which the public
+        // variant API cannot do yet.
+        variant.outputs.forEach { output ->
+            (output as? VariantOutputImpl)?.outputFileName?.set("AdAway.Community.v$appVersionName.apk")
+        }
     }
 }
 
