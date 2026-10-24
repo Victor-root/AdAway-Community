@@ -186,8 +186,9 @@ private fun HomeLayout(state: HomeState, progress: UpdateProgress?, statusMessag
 
 /**
  * Brand color while blocking, gray otherwise; it also colors the status bar behind it. The title
- * and the subtitle share the logo height, weighted 1 to 1.4, each as large as it fits, and the
- * title stops before the version in the corner, which opens the update screen.
+ * and the subtitle share the logo height, weighted 1 to 1.4, each as large as it fits. The version,
+ * which opens the update screen, sits in the corner above the title, which then takes the whole
+ * width; with a font too large for that room, the title stops before it instead.
  */
 @Composable
 private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate: () -> Unit, modifier: Modifier) {
@@ -221,7 +222,7 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
             )
             Text(
                 text = BuildConfig.VERSION_NAME,
-                style = AdAwayType.medium,
+                style = AdAwayType.small,
                 color = white,
                 modifier = Modifier.clip(RoundedCornerShape(4.dp)).clickable(onClick = openUpdate).padding(2.dp),
             )
@@ -236,9 +237,9 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
         val textLeft = margin + logo + gap
         val textHeight = (logo - 2 * gap).coerceAtLeast(0)
         val titleHeight = (textHeight / 2.4f).toInt()
-        val title = measurables[1].measure(
-            Constraints.fixed((width - margin - version.width - gap - textLeft).coerceAtLeast(0), titleHeight),
-        )
+        val versionAbove = version.height <= margin + gap
+        val titleRight = if (versionAbove) width - gap else width - margin - version.width - gap
+        val title = measurables[1].measure(Constraints.fixed((titleRight - textLeft).coerceAtLeast(0), titleHeight))
         val subtitle = measurables[2].measure(
             Constraints.fixed((width - gap - textLeft).coerceAtLeast(0), textHeight - titleHeight),
         )
@@ -247,7 +248,7 @@ private fun Header(blockingOn: Boolean, logoSize: Dp, contentTop: Dp, openUpdate
             logoPlaceable.placeRelative(margin, top + margin)
             title.placeRelative(textLeft, top + margin + gap)
             subtitle.placeRelative(textLeft, top + margin + gap + titleHeight)
-            version.placeRelative(width - margin - version.width, top + gap)
+            version.placeRelative(width - margin - version.width, top + if (versionAbove) (margin + gap - version.height) / 2 else gap)
         }
     }
 }
