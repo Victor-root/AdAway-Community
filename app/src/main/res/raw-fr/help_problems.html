@@ -7,6 +7,9 @@ Garder une structure simple : titres h2 et paragraphes p, liens via <a href>. --
 <p>C'est presque toujours le système qui coupe le service RPV/VPN pour économiser la batterie, pas un plantage. C'est fréquent sur les ROM constructeurs à gestion d'énergie agressive (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, etc.).</p>
 <p>Dans les paramètres Android, trouvez AdAway et : réglez l'<cite>optimisation de la batterie</cite> sur <cite>Sans restriction</cite> (ou <cite>Ne pas optimiser</cite>), autorisez le <cite>démarrage automatique</cite> si votre ROM le propose, et verrouillez AdAway dans la liste des applications récentes pour ne pas le balayer. Vérifiez aussi que <cite>Activer au démarrage</cite> est coché dans les préférences RPV/VPN d'AdAway.</p>
 
+<h2>Sur Android TV, le RPV/VPN ne se relance pas après un redémarrage</h2>
+<p>Définissez AdAway comme <cite>VPN permanent</cite> d'Android. Beaucoup de TV masquent ce réglage : les commandes ADB qui le définissent sont affichées sur l'écran d'accueil d'AdAway, dans <cite>Persistance VPN</cite>. Sur certaines TV, comme celles de TCL, il faut aussi autoriser AdAway à démarrer tout seul, avec la commande prévue pour ces TV.</p>
+
 <h2>Pas d'internet ou navigation lente juste après un passage Wi-Fi ↔ données mobiles</h2>
 <p>Quand le réseau actif change, le tunnel doit être reconstruit pour que le DNS soit résolu depuis le nouveau réseau. Si la navigation reste cassée, ouvrez <cite>Préférences › VPN › Réinitialiser le RPV/VPN</cite> pour reconstruire la connexion. Si cela se reproduit, capturez un journal de diagnostic (ci-dessous) et signalez-le.</p>
 

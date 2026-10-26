@@ -7,6 +7,9 @@ Keep structure simple: h2 headings and p paragraphs, links via <a href>. -->
 <p>This is almost always the system killing the VPN service to save battery, not a crash. It is common on OEM ROMs with aggressive power management (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, and others).</p>
 <p>In Android settings, find AdAway and: set <cite>battery optimization</cite> to <cite>Unrestricted</cite> (or <cite>Don't optimize</cite>), allow <cite>autostart</cite>/<cite>auto-launch</cite> if your ROM has it, and lock AdAway in the recent-apps list so it is not swiped away. Also make sure <cite>Enable at startup</cite> is on in AdAway's VPN preferences.</p>
 
+<h2>On Android TV, the VPN does not start again after a restart</h2>
+<p>Set AdAway as the <cite>Always-on VPN</cite> of Android. Many TVs hide this setting: the ADB commands that set it are shown on the AdAway home screen, under <cite>VPN persistence</cite>. On some TVs, such as TCL ones, AdAway must also be allowed to start by itself, with the command given there for these TVs.</p>
+
 <h2>No internet or slow browsing right after switching between Wi-Fi and mobile</h2>
 <p>When the active network changes, the tunnel has to be rebuilt so DNS is resolved from the new network. If browsing stays broken, open <cite>Preferences, VPN, Reset VPN</cite> to rebuild the connection from scratch. If it keeps happening, capture a diagnostic log (below) and report it.</p>
 
