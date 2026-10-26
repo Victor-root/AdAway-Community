@@ -22,6 +22,9 @@
 <h2>Måste jag starta om Android när jag har ändrat mina listor?</h2>
 <p>Nej. AdAway tillämpar ändringen direkt, men en app som redan var öppen kan fortsätta använda sina gamla anslutningar och sin egen cache. Stäng den helt (Tvinga avstängning i appens Android-inställningar) och rensa dess cache om annonser fortfarande visas. Android behöver bara startas om en gång i root-läge, efter att Magisk-modulen systemless hosts har aktiverats.</p>
 
+<h2>Jag använder redan en annonsblockerare i webbläsaren: ska jag undanta webbläsaren från AdAway?</h2>
+<p>Nej, behåll båda. AdAway blockerar hela domäner, för alla appar. En blockerare i webbläsaren, som uBlock Origin eller den som är inbyggd i Vivaldi eller Brave, fungerar bara i webbläsaren, men den kan också dölja delar av en sida och blockera annonser från webbplatser som inte kan blockeras helt. Att undanta webbläsaren sparar nästan ingenting, eftersom AdAway kontrollerar ett namn nästan direkt, och webbläsaren skulle förlora skyddet från AdAway. Om webbläsaren använder sin egen säkra DNS, stäng av den (se fliken Problem): annars kringgår den AdAway.</p>
+
 <h2>Var hittar jag fler hosts-källor?</h2>
 <p>AdAway levereras med rimliga standardval. Om du vill ha fler kan du titta i den <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">lista över ytterligare hosts-källor</a> som communityn underhåller. Lägg till fler källor med måtta, eftersom mycket stora eller överlappande listor kan ge falska träffar som får appar att sluta fungera.</p>
 
