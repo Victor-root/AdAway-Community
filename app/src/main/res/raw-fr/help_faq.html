@@ -24,6 +24,9 @@ Garder une structure simple : titres h2 et paragraphes p, liens via <a href>. --
 <h2>Faut-il redémarrer Android après avoir modifié mes listes ?</h2>
 <p>Non. AdAway applique le changement tout de suite, mais une application déjà ouverte peut continuer à utiliser ses anciennes connexions et son propre cache. Fermez-la complètement (Forcer l'arrêt dans les paramètres Android de l'application), et videz son cache si des publicités s'affichent encore. Un redémarrage d'Android n'est nécessaire qu'une seule fois en mode root, après avoir activé le module systemless hosts de Magisk.</p>
 
+<h2>J'utilise déjà un bloqueur dans mon navigateur : faut-il exclure le navigateur d'AdAway ?</h2>
+<p>Non, gardez les deux. AdAway bloque des domaines entiers, pour toutes les applications. Un bloqueur de navigateur, comme uBlock Origin ou celui intégré à Vivaldi ou Brave, n'agit que dans le navigateur, mais il peut aussi masquer des éléments de page et bloquer des publicités servies par des sites qu'on ne peut pas bloquer en entier. Exclure le navigateur ne fait presque rien gagner, car AdAway vérifie un nom quasi instantanément, et lui ferait perdre la protection d'AdAway. Si le navigateur utilise son propre DNS sécurisé, désactivez-le (voir l'onglet Problèmes) : il contournerait AdAway.</p>
+
 <h2>Où trouver d'autres sources de hosts ?</h2>
 <p>AdAway est fourni avec des sources par défaut raisonnables. Pour aller plus loin, consultez la <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">liste de sources hosts supplémentaires</a> maintenue par la communauté. Ajoutez des sources avec parcimonie, car des listes très volumineuses ou redondantes peuvent provoquer des faux positifs qui cassent des applications.</p>
 

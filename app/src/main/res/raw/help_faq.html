@@ -24,6 +24,9 @@ Keep structure simple: h2 headings and p paragraphs, links via <a href>. -->
 <h2>Do I need to restart Android after changing my lists?</h2>
 <p>No. AdAway applies the change at once, but an app that was already open can keep using its old connections and its own cache. Close it completely (Force stop in the Android settings of the app), and clear its cache if ads still show. A restart of Android is only needed once in root mode, after enabling the Magisk systemless hosts module.</p>
 
+<h2>I already use an ad blocker in my browser: should I exclude the browser from AdAway?</h2>
+<p>No, keep both. AdAway blocks whole domains, for every app. A browser blocker, such as uBlock Origin or the one built into Vivaldi or Brave, only works in the browser, but it can also hide parts of a page and block ads served by sites that cannot be blocked as a whole. Excluding the browser saves almost nothing, since AdAway checks a name almost instantly, and it would lose the protection of AdAway. If the browser uses its own secure DNS, turn it off (see the Problems tab): it would bypass AdAway.</p>
+
 <h2>Where can I find more hosts sources?</h2>
 <p>AdAway ships with sensible defaults. If you want more, see the community-maintained <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">list of additional hosts sources</a>. Add more sources sparingly, because very large or overlapping lists can cause false positives that break apps.</p>
 
