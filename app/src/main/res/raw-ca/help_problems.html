@@ -5,6 +5,9 @@
 <p>Gairebé sempre és el sistema, que atura el servei de VPN per estalviar bateria, i no pas una fallada. És habitual en les ROM de fabricants amb una gestió d’energia agressiva (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung i d’altres).</p>
 <p>A la configuració d’Android, cerca AdAway i posa l’<cite>optimització de la bateria</cite> en <cite>Sense restriccions</cite> (o <cite>No optimitzis</cite>), permet l’<cite>inici automàtic</cite> (o <cite>inici automàtic en segon pla</cite>) si la teva ROM l’ofereix, i bloqueja AdAway a la llista d’aplicacions recents perquè no es tanqui en lliscar-lo. Comprova també que <cite>Activa en arrencar</cite> estigui activat a les preferències de la VPN d’AdAway.</p>
 
+<h2>A Android TV, la VPN no es torna a iniciar després d’un reinici</h2>
+<p>Defineix AdAway com a <cite>VPN sempre activada</cite> d’Android. Molts televisors amaguen aquest paràmetre: les ordres ADB que el configuren es mostren a la pantalla d’inici d’AdAway, a <cite>Persistència de la VPN</cite>. En alguns televisors, com els de TCL, també cal permetre que AdAway s’iniciï automàticament, amb l’ordre que s’hi indica per a aquests televisors.</p>
+
 <h2>No hi ha Internet o la navegació va lenta just després de canviar entre Wi-Fi i dades mòbils</h2>
 <p>Quan canvia la xarxa activa, cal reconstruir el túnel perquè el DNS es resolgui des de la nova xarxa. Si la navegació continua sense funcionar, obre <cite>Preferències › VPN › Restableix la VPN</cite> per reconstruir la connexió des de zero. Si continua passant, captura un registre de diagnòstic (més avall) i informa’n.</p>
 

@@ -5,6 +5,9 @@
 <p>Fast immer beendet das System den VPN-Dienst, um Akku zu sparen. Es handelt sich also nicht um einen Absturz. Das kommt häufig bei Hersteller-ROMs mit aggressiver Energieverwaltung vor (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung und andere).</p>
 <p>Suche in den Android-Einstellungen nach AdAway und stelle Folgendes ein: Setze die <cite>Akkuoptimierung</cite> auf <cite>Nicht eingeschränkt</cite> (oder <cite>Nicht optimieren</cite>), erlaube den <cite>Autostart</cite> bzw. <cite>Automatischen Start</cite>, falls deine ROM ihn anbietet, und sperre AdAway in der Liste der zuletzt verwendeten Apps, damit es nicht weggewischt wird. Achte außerdem darauf, dass in den VPN-Einstellungen von AdAway <cite>Beim Systemstart aktivieren</cite> eingeschaltet ist.</p>
 
+<h2>Auf Android TV startet das VPN nach einem Neustart nicht wieder</h2>
+<p>Lege AdAway in Android als <cite>Always-on-VPN</cite> fest. Viele Fernseher blenden diese Einstellung aus: Die ADB-Befehle, mit denen sie sich setzen lässt, werden auf dem Startbildschirm von AdAway unter <cite>VPN-Dauerbetrieb</cite> angezeigt. Auf manchen Fernsehern, etwa von TCL, muss AdAway außerdem der automatische Start erlaubt werden, mit dem dort für diese Fernseher angegebenen Befehl.</p>
+
 <h2>Kein Internet oder langsames Surfen direkt nach dem Wechsel zwischen WLAN und Mobilfunk</h2>
 <p>Wenn sich das aktive Netzwerk ändert, muss der Tunnel neu aufgebaut werden, damit DNS-Anfragen über das neue Netzwerk aufgelöst werden. Wenn das Surfen weiterhin nicht funktioniert, öffne <cite>Einstellungen › VPN-basierter Werbeblocker › VPN zurücksetzen</cite>, um die Verbindung von Grund auf neu aufzubauen. Wenn das immer wieder passiert, zeichne ein Diagnoseprotokoll auf (siehe unten) und melde das Problem.</p>
 

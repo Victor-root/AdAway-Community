@@ -5,6 +5,9 @@
 <p>这几乎总是系统为了省电而终止了 VPN 服务，而不是应用崩溃。在电源管理比较激进的厂商定制系统上很常见（ColorOS/Oppo、MIUI/Xiaomi、EMUI/Huawei、OneUI/Samsung 等）。</p>
 <p>请在 Android 设置中找到 AdAway，然后：将<cite>电池优化</cite>设为<cite>无限制</cite>（或<cite>不优化</cite>），如果您的系统提供<cite>自启动</cite>/<cite>自动启动</cite>选项，请予以允许，并在最近任务列表中锁定 AdAway，避免被划掉。同时请确认 AdAway 的 VPN 设置中已开启<cite>开机时启用</cite>。</p>
 
+<h2>在 Android TV 上，重启后 VPN 没有重新启动</h2>
+<p>请将 AdAway 设为 Android 的<cite>始终开启的 VPN</cite>。许多电视隐藏了此设置：用于设置它的 ADB 命令显示在 AdAway 主屏幕的<cite>VPN 持续运行</cite>中。在部分电视（如 TCL 电视）上，还需允许 AdAway 自动启动，可使用那里为这些电视提供的命令。</p>
+
 <h2>在 Wi-Fi 和移动网络之间切换后无法上网或网速很慢</h2>
 <p>当前网络发生变化时，VPN 隧道需要重新建立，才能通过新网络解析 DNS。如果浏览仍然异常，请打开<cite>设置 › 基于 VPN 的广告拦截 › 重置 VPN</cite>，彻底重建连接。如果问题反复出现，请记录一份诊断日志（见下文）并反馈。</p>
 

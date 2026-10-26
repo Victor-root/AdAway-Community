@@ -5,6 +5,9 @@
 <p>Det beror nästan alltid på att systemet avslutar VPN-tjänsten för att spara batteri, inte på en krasch. Det är vanligt i tillverkarnas egna Android-versioner med aggressiv strömhantering (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung med flera).</p>
 <p>Leta upp AdAway i Android-inställningarna och gör så här: ställ in <cite>Batterioptimering</cite> på <cite>Obegränsad</cite> (eller <cite>Optimera inte</cite>), tillåt <cite>Autostart</cite> eller <cite>Automatisk start</cite> om din Android-version har det, och lås AdAway i listan över senaste appar så att den inte sveps bort. Kontrollera också att <cite>Aktivera vid start</cite> är på i AdAways VPN-inställningar.</p>
 
+<h2>På Android TV startar VPN inte igen efter en omstart</h2>
+<p>Ställ in AdAway som <cite>Always-on VPN</cite> i Android. Många TV-apparater döljer den här inställningen: ADB-kommandona som ställer in den visas på AdAways startskärm, under <cite>Beständigt VPN</cite>. På vissa TV-apparater, till exempel från TCL, måste AdAway också tillåtas att starta av sig själv, med kommandot som anges där för dessa TV-apparater.</p>
+
 <h2>Inget internet eller långsam surfning direkt efter byte mellan Wi-Fi och mobildata</h2>
 <p>När det aktiva nätverket byts måste tunneln byggas upp på nytt, så att DNS slås upp via det nya nätverket. Om surfningen fortfarande inte fungerar öppnar du <cite>Inställningar › VPN-baserad annonsblockerare › Återställ VPN</cite> för att bygga upp anslutningen från grunden. Om det händer igen kan du spela in en diagnostiklogg (se nedan) och rapportera det.</p>
 
