@@ -126,12 +126,16 @@ class SourceRepository(
         private const val CONTENT = "content://"
         private val LINE_BREAKS = Regex("[\\r\\n]+")
 
+        /** The "https://" the field starts with, before a whole url pasted after it. */
+        private val PREFIX_BEFORE_PASTED_URL = Regex("^https://(?=[a-z]+://)", RegexOption.IGNORE_CASE)
+
         /** A label on a single line. */
         fun cleanLabel(label: String) = label.replace(LINE_BREAKS, " ").trim()
 
         /** Returns the url to store, or null unless it is an HTTPS url or a picked document. */
         fun normalizeUrl(input: String): String? {
-            val url = input.trim()
+            var url = input.trim()
+            while (PREFIX_BEFORE_PASTED_URL.containsMatchIn(url)) url = url.replaceFirst(PREFIX_BEFORE_PASTED_URL, "")
             return when {
                 url.startsWith(CONTENT) && url.length > CONTENT.length -> url
                 url.startsWith(HTTPS, ignoreCase = true) -> {

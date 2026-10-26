@@ -41,6 +41,12 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.input.key.KeyEventType
+import androidx.compose.ui.input.key.key
+import androidx.compose.ui.input.key.onPreviewKeyEvent
+import androidx.compose.ui.input.key.type
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.unit.dp
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -67,8 +73,26 @@ fun AdAwayTextField(
         textStyle = AdAwayType.subtitle1,
         shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp),
         colors = adAwayTextFieldColors(),
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth().keyboardOnRemoteOk(),
     )
+}
+
+/** The OK button of a TV remote, and the Enter keys acting as it. */
+val RemoteConfirmKeys = setOf(Key.DirectionCenter, Key.Enter, Key.NumPadEnter)
+
+/**
+ * On TV, the OK button of the remote opens the keyboard, which moving onto the field leaves closed.
+ * Some TVs, as TCL ones, do not open it by themselves.
+ */
+@Composable
+private fun Modifier.keyboardOnRemoteOk(): Modifier {
+    if (!LocalTelevision.current) return this
+    val keyboard = LocalSoftwareKeyboardController.current
+    return onPreviewKeyEvent { event ->
+        if (event.key !in RemoteConfirmKeys) return@onPreviewKeyEvent false
+        if (event.type == KeyEventType.KeyUp) keyboard?.show()
+        true
+    }
 }
 
 /**
@@ -103,7 +127,7 @@ private fun rememberTextFieldState(value: String, onValueChange: (String) -> Uni
 }
 
 /**
- * On TV, moving onto a field leaves the keyboard closed: the OK button of the remote opens it. Only
+ * On TV, moving onto a field leaves the keyboard closed, until [keyboardOnRemoteOk] opens it. Only
  * the fields editing a [TextFieldState] honor this.
  */
 @Composable
@@ -228,7 +252,8 @@ fun AdAwayEditText(
                     topLeft = Offset(0f, size.height + 8.dp.toPx() - stroke),
                     size = Size(size.width, stroke),
                 )
-            },
+            }
+            .keyboardOnRemoteOk(),
     )
 }
 

@@ -84,12 +84,14 @@ pub fn compile(
     let mut source_blocked: Vec<String> = Vec::new();
     let mut source_domains: Vec<String> = Vec::new();
     let mut source_allowed: Vec<String> = Vec::new();
+    let mut source_allowed_domains: Vec<String> = Vec::new();
     for file in source_files {
         for rule in rule::read_rules(file)? {
             match rule {
                 Rule::Blocked(host) => source_blocked.push(host),
                 Rule::BlockedDomain(domain) => source_domains.push(domain),
                 Rule::Allowed(pattern) => source_allowed.push(pattern),
+                Rule::AllowedDomain(domain) => source_allowed_domains.push(domain),
                 Rule::Redirected { host, address } => {
                     sources.redirected.entry(host).or_insert(address);
                 }
@@ -102,7 +104,21 @@ pub fn compile(
     source_domains.dedup();
     source_allowed.sort_unstable();
     source_allowed.dedup();
-    source_allowed
+    source_allowed_domains.sort_unstable();
+    source_allowed_domains.dedup();
+    // What the VPN checks at query time: the patterns, and each allowed domain with its subdomains.
+    let mut query_allowed: Vec<String> = source_allowed
+        .iter()
+        .cloned()
+        .chain(
+            source_allowed_domains
+                .iter()
+                .flat_map(|domain| [domain.clone(), format!("*.{domain}")]),
+        )
+        .collect();
+    query_allowed.sort_unstable();
+    query_allowed.dedup();
+    query_allowed
         .iter()
         .cloned()
         .for_each(|pattern| sources.allowed.insert(pattern));
@@ -172,8 +188,16 @@ pub fn compile(
         .collect();
     catalog_redirected.sort_unstable();
 
-    let allowed_count = source_allowed
+    let mut catalog_allowed: Vec<&String> = source_allowed
         .iter()
+        .chain(&source_allowed_domains)
+        .collect();
+    catalog_allowed.sort_unstable();
+    catalog_allowed.dedup();
+
+    let allowed_count = catalog_allowed
+        .iter()
+        .copied()
         .chain(&user_rules.allowed)
         .collect::<HashSet<_>>()
         .len();
@@ -191,10 +215,10 @@ pub fn compile(
     rule::write_lines(&outputs.final_list.join("domains.txt"), &source_domains)?;
     rule::write_lines(
         &outputs.final_list.join("source_allowed.txt"),
-        &source_allowed,
+        &query_allowed,
     )?;
     rule::write_lines(&outputs.catalog.join("blocked.txt"), &catalog_blocked)?;
-    rule::write_lines(&outputs.catalog.join("allowed.txt"), &source_allowed)?;
+    rule::write_lines(&outputs.catalog.join("allowed.txt"), &catalog_allowed)?;
     rule::write_lines(&outputs.catalog.join("redirected.txt"), &catalog_redirected)?;
     Ok(summary)
 }
@@ -350,6 +374,33 @@ mod tests {
             strings(&["a.com", "ads.net", "kept.org"])
         );
         assert_eq!(summary.blocked, 2);
+    }
+
+    #[test]
+    fn counts_an_allowed_domain_once_and_spares_its_subdomains() {
+        let workspace = Workspace::new("allowed-domains");
+        let source = workspace.source(
+            "1",
+            &[
+                blocked("good.net"),
+                blocked("cdn.good.net"),
+                blocked("ads.com"),
+                Rule::AllowedDomain("good.net".to_owned()),
+            ],
+        );
+
+        let summary = workspace.run(&[source], UserRules::default());
+
+        assert_eq!(workspace.read("final/blocked.txt"), strings(&["ads.com"]));
+        assert_eq!(
+            workspace.read("final/source_allowed.txt"),
+            strings(&["*.good.net", "good.net"])
+        );
+        assert_eq!(
+            workspace.read("catalog/allowed.txt"),
+            strings(&["good.net"])
+        );
+        assert_eq!(summary.allowed, 1);
     }
 
     #[test]

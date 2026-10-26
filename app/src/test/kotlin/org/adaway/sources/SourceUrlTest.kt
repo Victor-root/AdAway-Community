@@ -9,6 +9,7 @@ class SourceUrlTest {
     fun acceptsHttpsUrlsAndPickedDocuments() {
         assertEquals("https://example.org/hosts", SourceRepository.normalizeUrl("  https://example.org/hosts "))
         assertEquals("https://example.org/Hosts", SourceRepository.normalizeUrl("HTTPS://example.org/Hosts"))
+        assertEquals("https://example.org/hosts", SourceRepository.normalizeUrl("https://https://example.org/hosts"))
         assertEquals(
             "content://com.android.providers/document/42",
             SourceRepository.normalizeUrl("content://com.android.providers/document/42"),
@@ -17,7 +18,7 @@ class SourceUrlTest {
 
     @Test
     fun rejectsOtherLocations() {
-        for (url in listOf("", "https://", "http://example.org/hosts", "file:///sdcard/hosts", "content://",
+        for (url in listOf("", "https://", "http://example.org/hosts", "https://http://example.org/hosts", "file:///sdcard/hosts", "content://",
             "https://exa mple.org/hosts", "example.org/hosts")) {
             assertNull(url, SourceRepository.normalizeUrl(url))
         }

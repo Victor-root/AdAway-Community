@@ -139,16 +139,15 @@ fun ListsScreen(type: RuleType, userRules: List<UserRuleEntity>, sourceRules: La
         floatingActionButton = {
             AdAwayFab(painterResource(R.drawable.ic_add_black_24px), stringResource(R.string.rule_add)) { adding = true }
         },
+        // The offer to apply shows at once, under the one to undo the deletion.
         snackbar = {
-            val rule = deleted
-            if (rule != null) {
+            deleted?.let { rule ->
                 AdAwaySnackbar(stringResource(R.string.rule_deleted), actionLabel = stringResource(R.string.undo), onAction = {
                     viewModel.restore(rule)
                     deleted = null
                 })
-            } else {
-                ApplyConfigurationSnackbar(viewModel.applier)
             }
+            ApplyConfigurationSnackbar(viewModel.applier)
         },
     ) { padding ->
         LazyColumn(modifier = Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = padding.calculateBottomPadding() + 88.dp)) {

@@ -146,11 +146,9 @@ fn parse_block_line(line: &str, redirects: bool, collector: &mut Collector) {
 
 fn parse_allow_line(line: &str, collector: &mut Collector) {
     let line = line.strip_prefix("@@").unwrap_or(line);
-    // As in Adblock, the rule also allows the subdomains.
     if let Some(domain) = adblock_domain(line) {
-        if let Some(pattern) = hostname::normalize(domain, true) {
-            collector.allow(format!("*.{pattern}"));
-            collector.allow(pattern);
+        if let Some(domain) = hostname::normalize(domain, false) {
+            collector.allow_domain(domain);
         }
         return;
     }
@@ -194,13 +192,18 @@ struct Collector {
     blocked: Vec<String>,
     blocked_domains: Vec<String>,
     allowed: Vec<String>,
+    allowed_domains: Vec<String>,
     redirected: Vec<(String, String)>,
     redirected_hosts: HashSet<String>,
 }
 
 impl Collector {
     fn len(&self) -> usize {
-        self.blocked.len() + self.blocked_domains.len() + self.allowed.len() + self.redirected.len()
+        self.blocked.len()
+            + self.blocked_domains.len()
+            + self.allowed.len()
+            + self.allowed_domains.len()
+            + self.redirected.len()
     }
 
     fn block(&mut self, host: String) {
@@ -215,6 +218,10 @@ impl Collector {
         self.allowed.push(pattern);
     }
 
+    fn allow_domain(&mut self, domain: String) {
+        self.allowed_domains.push(domain);
+    }
+
     /// The first redirection of a host wins.
     fn redirect(&mut self, host: String, address: String) {
         if self.redirected_hosts.insert(host.clone()) {
@@ -227,6 +234,7 @@ impl Collector {
             mut blocked,
             mut blocked_domains,
             mut allowed,
+            mut allowed_domains,
             mut redirected,
             ..
         } = self;
@@ -236,12 +244,15 @@ impl Collector {
         blocked_domains.dedup();
         allowed.sort_unstable();
         allowed.dedup();
+        allowed_domains.sort_unstable();
+        allowed_domains.dedup();
         redirected.sort_unstable();
         blocked
             .into_iter()
             .map(Rule::Blocked)
             .chain(blocked_domains.into_iter().map(Rule::BlockedDomain))
             .chain(allowed.into_iter().map(Rule::Allowed))
+            .chain(allowed_domains.into_iter().map(Rule::AllowedDomain))
             .chain(
                 redirected
                     .into_iter()
@@ -356,9 +367,8 @@ mod tests {
             rules,
             [
                 Rule::Allowed("*.example.com".to_owned()),
-                Rule::Allowed("*.good.net".to_owned()),
-                Rule::Allowed("good.net".to_owned()),
                 Rule::Allowed("safe.org".to_owned()),
+                Rule::AllowedDomain("good.net".to_owned()),
             ]
         );
     }

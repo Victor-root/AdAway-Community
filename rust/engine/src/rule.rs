@@ -1,5 +1,5 @@
 //! Rules and the line format of the engine files: `B <host>`, `D <domain>`, `A <pattern>`,
-//! `R <host> <address>`.
+//! `S <domain>`, `R <host> <address>`.
 
 use std::fs::{self, File};
 use std::io::{self, BufRead, BufReader, BufWriter, Write};
@@ -11,6 +11,8 @@ pub enum Rule {
     /// A domain blocked with all its subdomains, as an Adblock `||domain^` rule.
     BlockedDomain(String),
     Allowed(String),
+    /// A domain allowed with all its subdomains, as an Adblock `@@||domain^` rule.
+    AllowedDomain(String),
     Redirected {
         host: String,
         address: String,
@@ -23,6 +25,7 @@ impl Rule {
             Rule::Blocked(host) => format!("B {host}"),
             Rule::BlockedDomain(domain) => format!("D {domain}"),
             Rule::Allowed(pattern) => format!("A {pattern}"),
+            Rule::AllowedDomain(domain) => format!("S {domain}"),
             Rule::Redirected { host, address } => format!("R {host} {address}"),
         }
     }
@@ -33,6 +36,7 @@ impl Rule {
             ("B", host, None) => Rule::Blocked(host.to_owned()),
             ("D", domain, None) => Rule::BlockedDomain(domain.to_owned()),
             ("A", pattern, None) => Rule::Allowed(pattern.to_owned()),
+            ("S", domain, None) => Rule::AllowedDomain(domain.to_owned()),
             ("R", host, Some(address)) => Rule::Redirected {
                 host: host.to_owned(),
                 address: address.to_owned(),

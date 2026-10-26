@@ -61,6 +61,7 @@ import kotlinx.coroutines.launch
 import org.adaway.BuildConfig
 import org.adaway.R
 import org.adaway.ui.common.AdAwayScreen
+import org.adaway.ui.common.RemoteConfirmKeys
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.LocalTelevision
@@ -80,7 +81,8 @@ fun HelpScreen(onBack: () -> Unit, openNotices: () -> Unit) {
     val pager = rememberPagerState { Tabs.size }
     val scope = rememberCoroutineScope()
     val tabs = remember { Tabs.map { FocusRequester() } }
-    val page = remember { FocusRequester() }
+    // One per page: the pager keeps a neighbor page while it scrolls, which the focus could reach.
+    val pages = remember { Tabs.map { FocusRequester() } }
     AdAwayScreen(title = stringResource(R.string.help), onBack = onBack) { padding ->
         Column(modifier = Modifier.fillMaxSize()) {
             TabRow(
@@ -88,10 +90,10 @@ fun HelpScreen(onBack: () -> Unit, openNotices: () -> Unit) {
                 onSelect = { scope.launch { pager.animateScrollToPage(it) } },
                 isTelevision = isTelevision,
                 tabs = tabs,
-                page = page,
+                pages = pages,
             )
             HorizontalPager(state = pager, modifier = Modifier.weight(1f)) { index ->
-                val pageFocus = PageFocus(isTelevision, page, tabs[pager.currentPage])
+                val pageFocus = PageFocus(isTelevision, pages[index], tabs[index])
                 Box(modifier = Modifier.fillMaxSize().padding(bottom = padding.calculateBottomPadding())) {
                     when (index) {
                         0 -> HelpPage(R.raw.help_faq, pageFocus)
@@ -123,7 +125,7 @@ private class PageFocus(val isTelevision: Boolean, val page: FocusRequester, val
 
 /** Fixed tabs of equal width, the selected one in red over a red line. */
 @Composable
-private fun TabRow(selected: Int, onSelect: (Int) -> Unit, isTelevision: Boolean, tabs: List<FocusRequester>, page: FocusRequester) {
+private fun TabRow(selected: Int, onSelect: (Int) -> Unit, isTelevision: Boolean, tabs: List<FocusRequester>, pages: List<FocusRequester>) {
     val colors = LocalAdAwayColors.current
     Row(modifier = Modifier.fillMaxWidth().background(colors.surface)) {
         Tabs.forEachIndexed { index, title ->
@@ -139,7 +141,7 @@ private fun TabRow(selected: Int, onSelect: (Int) -> Unit, isTelevision: Boolean
                                 .onFocusChanged { if (it.isFocused) onSelect(index) }
                                 .focusProperties {
                                     up = FocusRequester.Cancel
-                                    down = page
+                                    down = pages[index]
                                 }
                         } else {
                             Modifier
@@ -183,7 +185,7 @@ private fun PageColumn(
             .onPreviewKeyEvent { event ->
                 val step = scroll.viewportSize / 2f
                 when {
-                    onConfirm != null && event.key in CONFIRM_KEYS -> {
+                    onConfirm != null && event.key in RemoteConfirmKeys -> {
                         if (event.type == KeyEventType.KeyUp) onConfirm()
                         true
                     }
@@ -301,8 +303,6 @@ private fun TextLink(@StringRes text: Int, modifier: Modifier = Modifier, enable
         Text(stringResource(text), style = AdAwayType.small, color = LocalAdAwayColors.current.primary)
     }
 }
-
-private val CONFIRM_KEYS = setOf(Key.DirectionCenter, Key.Enter, Key.NumPadEnter)
 
 @Composable
 private fun HelpDivider(modifier: Modifier) {

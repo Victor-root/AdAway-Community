@@ -54,17 +54,16 @@ fun SourcesScreen(sources: List<Pair<SourceEntity, String>>, viewModel: SourcesV
         floatingActionButton = {
             AdAwayFab(painterResource(R.drawable.ic_add_black_24px), stringResource(R.string.source_add), onClick = navigation.add)
         },
+        // The offer to apply shows at once, under the one to undo the deletion.
         snackbar = {
-            val source = deleted
-            if (source != null) {
+            deleted?.let { source ->
                 AdAwaySnackbar(
                     stringResource(R.string.source_deleted),
                     actionLabel = stringResource(R.string.undo),
                     onAction = { viewModel.restore(source) },
                 )
-            } else {
-                ApplyConfigurationSnackbar(viewModel.applier)
             }
+            ApplyConfigurationSnackbar(viewModel.applier)
         },
     ) { padding ->
         LazyColumn(
