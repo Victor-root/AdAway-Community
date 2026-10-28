@@ -135,11 +135,11 @@
     <string name="home_toggle_blocking">Pozastaviť alebo obnoviť blokovanie reklám</string>
     <string name="home_enable_blocking">Zapnúť blokovanie reklám</string>
     <string name="home_disable_blocking">Vypnúť blokovanie reklám</string>
-    <string name="home_always_on_active">Vždy zapnutá sieť VPN je aktívna</string>
+    <string name="home_always_on_active">Stála VPN je aktívna</string>
     <string name="vpn_persistence_title">Trvalé VPN pripojenie</string>
     <string name="vpn_persistence_summary">Ponechať blokovanie reklám aktívne na pozadí</string>
     <string name="vpn_persistence_enabled">AdAway je nastavený ako vždy zapnutá sieť VPN. ✓</string>
-    <string name="vpn_persistence_disabled">Vždy zapnutá sieť VPN nie je nastavená. O nepretržitý chod sa stará vstavaná ochrana aplikácie AdAway.</string>
+    <string name="vpn_persistence_disabled">Stála VPN nie je nastavená. O nepretržitý chod sa stará vstavaná ochrana aplikácie AdAway.</string>
     <string name="vpn_persistence_lockdown">Možnosť „Blokovať pripojenia bez siete VPN“ je zapnutá: aplikácie vylúčené z VPN nemajú prístup k internetu.</string>
     <string name="vpn_persistence_message">AdAway si sám poradí s reštartmi, ukončením pri nedostatku pamäte aj pádmi, takže vo väčšine prípadov netreba nič ďalšie nastavovať.\n\nAk sa VPN niekedy nečakane zastaví, nastavte AdAway v Androide ako vždy zapnutú sieť VPN. Je to najspoľahlivejšie riešenie.</string>
     <string name="vpn_persistence_adb_commands">Ak je systémová obrazovka VPN na vašom televízore skrytá, použite ADB a potom televízor reštartujte:\n\n• Nastavenie AdAway ako vždy zapnutej siete VPN:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontrola nastavenia (príkaz vypíše %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Na niektorých televízoroch, napríklad TCL, treba aplikácii AdAway povoliť aj automatické spúšťanie:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Zrušenie vždy zapnutej siete VPN:\n  adb shell settings delete secure always_on_vpn_app</string>

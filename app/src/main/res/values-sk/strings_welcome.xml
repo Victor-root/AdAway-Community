@@ -16,9 +16,9 @@
     <string name="welcome_vpn_method_text3">Dobrá kompatibilita</string>
     <string name="welcome_root_missing_title">Vyžaduje sa Android s prístupom root</string>
     <string name="welcome_root_missile_description">Buď sa nenašiel binárny súbor su, alebo ste aplikácii AdAway nepovolili prístup root.\n\nTo sa môže stať, ak vaše zariadenie nemá root. Informácie o tom, ako získať root, nájdete na wiki.lineageos.org alebo na iných weboch o Androide.</string>
-    <string name="welcome_vpn_alwayson_title">Vždy zapnutá sieť VPN je aktívna</string>
-    <string name="welcome_vpn_alwayson_description">AdAway zistil, že iná VPN má zapnuté nastavenie „Vždy zapnutá sieť VPN“.\n\nTo bráni aplikácii AdAway požiadať o prístup VPN. Vypnite nastavenie „Vždy zapnutá sieť VPN“ pri príslušnej VPN a skúste to znova.</string>
-    <string name="welcome_vpn_alwayson_blocked_description">Aplikácii AdAway sa nepodarilo požiadať o prístup VPN.\n\nMôže to byť tým, že iná VPN má zapnuté nastavenie „Vždy zapnutá sieť VPN“. Skontrolujte, či niektorá VPN nemá toto nastavenie zapnuté, a pred ďalším pokusom ho vypnite.</string>
+    <string name="welcome_vpn_alwayson_title">Stála VPN je aktívna</string>
+    <string name="welcome_vpn_alwayson_description">AdAway zistil, že iná VPN má zapnuté nastavenie „Stála VPN“.\n\nTo bráni aplikácii AdAway požiadať o prístup VPN. Vypnite nastavenie „Stála VPN“ pri príslušnej VPN a skúste to znova.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">Aplikácii AdAway sa nepodarilo požiadať o prístup VPN.\n\nMôže to byť tým, že iná VPN má zapnuté nastavenie „Stála VPN“. Skontrolujte, či niektorá VPN nemá toto nastavenie zapnuté, a pred ďalším pokusom ho vypnite.</string>
     <string name="welcome_vpn_alwayson_settings_action">Otvoriť nastavenia VPN</string>
     <string name="welcome_method_pro_logo">Výhody</string>
     <string name="welcome_method_con_logo">Nevýhody</string>
@@ -61,7 +61,7 @@
         <item>Šetrič batérie</item>
     </string-array>
     <string name="welcome_oem_battery_instruction_miui">Vyberte „Bez obmedzení“.</string>
-    <string name="welcome_oem_battery_secondary_miui">Zapnite aj „Autoštart“ (v novších verziách „Automatické spustenie na pozadí“).</string>
+    <string name="welcome_oem_battery_secondary_miui">Zapnite aj „Automatické spúšťanie“.</string>
     <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
     <string-array name="welcome_oem_battery_path_coloros">
         <item>Informácie o aplikácii</item>

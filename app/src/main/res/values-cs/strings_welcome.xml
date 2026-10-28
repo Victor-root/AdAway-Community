@@ -53,21 +53,21 @@
         <item>Informace o aplikaci</item>
         <item>Baterie</item>
     </string-array>
-    <string name="welcome_oem_battery_instruction_oneui">Hledejte něco jako „Limity využití na pozadí“ › „Nikdy neuspávané aplikace“ a přidejte AdAway do tohoto seznamu.</string>
+    <string name="welcome_oem_battery_instruction_oneui">Hledejte něco jako „Omezení procesů na pozadí“ › „Nikdy neuspávané aplikace“ a přidejte AdAway do tohoto seznamu.</string>
     <string name="welcome_oem_battery_secondary_oneui">Zkontrolujte také nastavení „Automatická optimalizace“ a pokud tam je, vypněte „Restartovat v případě potřeby“.</string>
     <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
     <string-array name="welcome_oem_battery_path_miui">
         <item>Informace o aplikaci</item>
         <item>Spořič baterie</item>
     </string-array>
-    <string name="welcome_oem_battery_instruction_miui">Zvolte „Bez omezení“.</string>
+    <string name="welcome_oem_battery_instruction_miui">Zvolte „Žádné omezení“.</string>
     <string name="welcome_oem_battery_secondary_miui">Zapněte také „Automatické spouštění“ (v novějších verzích „Automatické spouštění na pozadí“).</string>
     <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
     <string-array name="welcome_oem_battery_path_coloros">
         <item>Informace o aplikaci</item>
         <item>Využití baterie</item>
     </string-array>
-    <string name="welcome_oem_battery_instruction_coloros">Zvolte „Povolit aktivitu na pozadí“ (někdy se zobrazuje jako „Bez omezení“).</string>
+    <string name="welcome_oem_battery_instruction_coloros">Zvolte „Povolit aktivitu na pozadí“ (někdy se zobrazuje jako „Žádné omezení“).</string>
     <string name="welcome_oem_battery_secondary_coloros">Hledejte také přepínač „Automatické spouštění“ pro AdAway (často v Nastavení › Aplikace), aby se aplikace mohla po vynuceném ukončení sama znovu spustit.</string>
     <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
     <string-array name="welcome_oem_battery_path_emui">
