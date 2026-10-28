@@ -1,9 +1,11 @@
 package org.adaway.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -33,6 +35,7 @@ import org.adaway.ui.sources.SourceEditScreen
 import org.adaway.ui.sources.SourcesNavigation
 import org.adaway.ui.sources.SourcesRoute
 import org.adaway.ui.theme.AdAwayTheme
+import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.tv.tvDestinations
 import org.adaway.ui.update.UpdateScreen
 import org.adaway.ui.welcome.WelcomeRoute
@@ -65,6 +68,8 @@ fun AdAwayApp(isTelevision: Boolean, destination: MutableStateFlow<Destination?>
         NavHost(
             navController = navController,
             startDestination = startDestination,
+            // The screens slide by a tenth of the width: the edge they uncover shows this, not the red window.
+            modifier = Modifier.background(LocalAdAwayColors.current.surface),
             enterTransition = { ScreenTransitions.enter },
             exitTransition = { ScreenTransitions.exit },
             popEnterTransition = { ScreenTransitions.popEnter },
