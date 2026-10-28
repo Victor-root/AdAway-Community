@@ -74,7 +74,7 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
                 stringResource(R.string.pref_backup),
                 stringResource(R.string.pref_backup_summary),
                 onClick = {
-                    export.launchOr(BACKUP_FILE_NAME) {
+                    export.launchOr(BACKUP_FILE_NAME, context) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                             exportToDownloads()
                         } else {
@@ -87,7 +87,7 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
                 R.drawable.ic_settings_backup_restore_24dp,
                 stringResource(R.string.pref_restore),
                 stringResource(R.string.pref_restore_summary),
-                onClick = { restore.launchOr(restoreMimeTypes()) { restoreWithFileManager.launchOrTell("*/*", context) } },
+                onClick = { restore.launchOr(restoreMimeTypes(), context) { restoreWithFileManager.launchOrTell("*/*", context) } },
             )
         }
     }
