@@ -183,7 +183,6 @@ private fun ColumnScope.ActivatePage(sync: WelcomeSync?, viewModel: WelcomeViewM
             val failure = when (sync) {
                 is WelcomeSync.Failed -> updateErrorTitle(sync.error)
                 is WelcomeSync.InstallFailed -> rootErrorTitle(sync.error)
-                else -> ""
             }
             Icon(painterResource(android.R.drawable.ic_dialog_alert), contentDescription = null, tint = Color.White, modifier = Modifier.size(56.dp))
             WhiteText(stringResource(R.string.welcome_sync_error, failure), AdAwayType.body1, maxWidth = 720.dp, modifier = Modifier.padding(top = 20.dp))
