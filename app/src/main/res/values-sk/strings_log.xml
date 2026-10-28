@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_toggle_recording_description">Prepnúť zaznamenávanie protokolu</string>
-    <string name="log_start_recording">Stlačením záznamu spustíte zaznamenávanie požiadaviek. Prehliadajte web alebo používajte aplikácie a potom sa vráťte späť alebo potiahnutím obnovte protokol.</string>
+    <string name="log_toggle_recording_description">Zapnúť alebo vypnúť zaznamenávanie</string>
+    <string name="log_start_recording">Klepnutím na tlačidlo záznamu spustíte zaznamenávanie požiadaviek. Potom prehliadajte web alebo používajte aplikácie a nakoniec sa vráťte späť alebo potiahnutím nadol protokol obnovte.</string>
     <string name="log_blocked_requests_ignored">\n\nBlokované požiadavky sa nezaznamenávajú. Ak chcete zaznamenávať aj tie, najprv vypnite blokovanie reklám.</string>
     <string name="log_sort">Zoradiť domény</string>
     <string name="log_clear">Vymazať protokol</string>
-    <string name="log_sort_alphabetical">Abecedné zoradenie</string>
-    <string name="log_sort_top_level_domain">Zoradenie podľa domény najvyššej úrovne</string>
+    <string name="log_sort_alphabetical">Zoradiť podľa abecedy</string>
+    <string name="log_sort_top_level_domain">Zoradiť podľa domény najvyššej úrovne</string>
     <string name="log_block">Pridať záznam do zoznamu blokovaných</string>
     <string name="log_allow">Pridať záznam do zoznamu povolených</string>
     <string name="log_redirect">Pridať záznam do zoznamu presmerovaných</string>

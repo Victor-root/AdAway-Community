@@ -2,29 +2,29 @@
 <html>
 <body>
 <h2>VPN sa vypína sama</h2>
-<p>Takmer vždy ide o systém, ktorý službu VPN ukončí kvôli úspore batérie, nie o pád aplikácie. Býva to bežné pri ROM od výrobcov s agresívnou správou napájania (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung a ďalšie).</p>
-<p>V nastaveniach Androidu nájdite AdAway a upravte tieto položky: <cite>Optimalizácia batérie</cite> nastavte na <cite>Bez obmedzení</cite> (alebo <cite>Neoptimalizovať</cite>), povoľte <cite>Autoštart</cite> alebo <cite>Automatické spustenie</cite>, ak ho vaša ROM ponúka, a zamknite AdAway v zozname nedávnych aplikácií, aby ho neodstránilo potiahnutie. Skontrolujte aj, či je v nastaveniach VPN v AdAway zapnuté <cite>Zapnúť pri spustení</cite>.</p>
+<p>Takmer vždy nejde o pád aplikácie, ale o systém, ktorý službu VPN ukončí, aby ušetril batériu. Bežne sa to stáva v nadstavbách od výrobcov telefónov s agresívnou správou napájania (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, One UI/Samsung a ďalšie).</p>
+<p>V nastaveniach Androidu nájdite AdAway a urobte toto: položku <cite>Optimalizácia batérie</cite> nastavte na <cite>Bez obmedzení</cite> (alebo <cite>Neoptimalizovať</cite>), povoľte <cite>Autoštart</cite> alebo <cite>Automatické spustenie</cite>, ak ho váš systém ponúka, a zamknite AdAway v zozname nedávnych aplikácií, aby sa nedal zavrieť potiahnutím. Skontrolujte aj, či je v nastaveniach VPN v aplikácii AdAway zapnutá možnosť <cite>Zapnúť po spustení zariadenia</cite>.</p>
 
 <h2>Na Android TV sa VPN po reštarte znova nespustí</h2>
-<p>V nastavení Androidu <cite>Vždy zapnutá VPN</cite> vyberte AdAway. Mnohé televízory toto nastavenie skrývajú: príkazy ADB, ktoré ho nastavia, sú zobrazené na domovskej obrazovke AdAway v časti <cite>Trvalosť VPN</cite>. Na niektorých televízoroch, napríklad TCL, treba AdAway tiež povoliť samostatné spúšťanie pomocou príkazu, ktorý je tam uvedený pre tieto televízory.</p>
+<p>V nastavení Androidu <cite>Vždy zapnutá VPN</cite> vyberte AdAway. Mnohé televízory toto nastavenie skrývajú: príkazy ADB, ktoré ho nastavia, nájdete na domovskej obrazovke AdAway v časti <cite>Trvalé VPN pripojenie</cite>. Na niektorých televízoroch, napríklad TCL, treba aplikácii AdAway povoliť aj automatické spúšťanie, a to príkazom, ktorý je tam uvedený pre tieto televízory.</p>
 
-<h2>Žiadny internet alebo pomalé prehliadanie hneď po prepnutí medzi Wi-Fi a mobilnými dátami</h2>
-<p>Keď sa zmení aktívna sieť, musí sa tunel vytvoriť znova, aby sa DNS riešilo z novej siete. Ak prehliadanie naďalej nefunguje, otvorte <cite>Nastavenia › Blokovanie reklám cez VPN › Resetovať VPN</cite> a pripojenie sa vytvorí od začiatku. Ak sa to opakuje, zachyťte diagnostický protokol (pozrite nižšie) a nahláste problém.</p>
+<h2>Internet nefunguje alebo je pomalý hneď po prepnutí medzi Wi-Fi a mobilnými dátami</h2>
+<p>Pri zmene aktívnej siete sa musí tunel vytvoriť znova, aby sa DNS prekladalo cez novú sieť. Ak prehliadanie naďalej nefunguje, otvorte <cite>Nastavenia › Blokovanie reklám cez VPN › Resetovať VPN</cite> a pripojenie sa vytvorí úplne odznova. Ak sa to opakuje, zaznamenajte diagnostický protokol (pozrite nižšie) a nahláste problém.</p>
 
 <h2>Ako exportovať diagnostický protokol?</h2>
-<p>Otvorte <cite>Nastavenia › Blokovanie reklám cez VPN › Diagnostický protokol</cite>. Zaznamenáva nedávne chyby a udalosti VPN (prepnutia siete, opätovné pripojenia, zlyhania), nie vašu históriu prehliadania, iba technické udalosti. Zostane prázdny, kým nezapnete možnosť <cite>Zaznamenávať diagnostický protokol</cite> tesne nad ním. Na odoslanie pri nahlasovaní problému použite <cite>Kopírovať</cite> alebo <cite>Zdieľať</cite>. Tip: najprv použite <cite>Vymazať</cite>, potom problém zopakujte, aby bol protokol prehľadný.</p>
+<p>Otvorte <cite>Nastavenia › Blokovanie reklám cez VPN › Diagnostický protokol</cite>. Protokol zaznamenáva nedávne chyby a udalosti VPN (zmeny siete, opätovné pripojenia, zlyhania): iba technické udalosti, nikdy nie vašu históriu prehliadania. Zostane prázdny, kým nezapnete možnosť <cite>Zaznamenávať diagnostický protokol</cite> tesne nad ním. Na odoslanie pri nahlasovaní problému použite <cite>Kopírovať</cite> alebo <cite>Zdieľať</cite>. Tip: protokol najprv vymažte pomocou <cite>Vymazať diagnostický protokol</cite>, potom problém znova vyvolajte, aby obsahoval iba to podstatné.</p>
 
 <h2>Chrome stále zobrazuje reklamy</h2>
-<p>Chrome môže používať vlastný <cite>Zabezpečený DNS</cite> (DNS over HTTPS), ktorý AdAway obchádza. V Chrome otvorte <cite>Nastavenia › Ochrana súkromia a zabezpečenie › Používať zabezpečený DNS</cite> a vypnite ho. To isté platí pre akékoľvek nastavenie <cite>Súkromný DNS</cite> v aplikácii alebo v systéme. V režime VPN dokáže AdAway DNS šifrovať sám: pozrite si <cite>Aké servery DNS používa VPN?</cite> v častých otázkach.</p>
+<p>Chrome môže používať vlastný <cite>Zabezpečený DNS</cite> (DNS over HTTPS), ktorý AdAway obchádza. V Chrome otvorte <cite>Nastavenia › Ochrana súkromia a zabezpečenie › Používať zabezpečený DNS</cite> a túto možnosť vypnite. To isté platí pre podobné nastavenia v iných aplikáciách aj pre systémové nastavenie <cite>Súkromný DNS</cite>. V režime VPN dokáže AdAway DNS šifrovať sám: pozrite si <cite>Aké servery DNS používa VPN?</cite> v častých otázkach.</p>
 
-<h2>Niektoré reklamy stále prechádzajú alebo ich aplikácia stále zobrazuje</h2>
-<p>V zdrojoch môže chýbať niektorý názov hostiteľa, alebo aplikácia obsahuje reklamy priamo v sebe, takže sa neodosiela žiadna požiadavka. Na domovskej obrazovke otvorte <cite>Protokol DNS</cite>, pozrite sa, na čo sa aplikácia pýta, pridajte podozrivé názvy hostiteľov do zoznamu <cite>Blokované</cite> a overte, či sa nič nepokazí. Niektoré aplikácie si reklamy po stiahnutí aj ukladajú do medzipamäte, preto môže pomôcť vymazať medzipamäť aplikácie v nastaveniach Androidu.</p>
+<h2>Niektoré reklamy stále prenikajú alebo ich aplikácia naďalej zobrazuje</h2>
+<p>V zdrojoch môže chýbať niektorý názov hostiteľa, alebo má aplikácia reklamy zabudované priamo v sebe, takže neodosiela žiadnu požiadavku. Na domovskej obrazovke otvorte <cite>Protokol DNS</cite>, pozrite sa, ktoré názvy hostiteľov aplikácia vyhľadáva, pridajte podozrivé názvy do zoznamu <cite>Blokované</cite> a overte, že sa nič nepokazilo. Niektoré aplikácie si reklamy po stiahnutí ukladajú aj do vyrovnávacej pamäte, preto môže pomôcť vymazať vyrovnávaciu pamäť aplikácie v nastaveniach Androidu.</p>
 
 <h2>Aplikácia po zapnutí AdAway prestala fungovať</h2>
-<p>Niektoré aplikácie odmietnu fungovať, ak je zablokovaný názov hostiteľa, ktorý potrebujú. V časti <cite>Protokol DNS</cite> zistite, ktorý názov hostiteľa aplikácia potrebuje, pridajte ho do zoznamu <cite>Povolené</cite> a aplikácia by mala opäť fungovať. Známe problémové aplikácie sú uvedené <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tu</a>.</p>
+<p>Niektoré aplikácie prestanú fungovať, ak je zablokovaný názov hostiteľa, ktorý potrebujú. V časti <cite>Protokol DNS</cite> zistite, ktorý názov hostiteľa aplikácia potrebuje, pridajte ho do zoznamu <cite>Povolené</cite> a aplikácia by mala opäť fungovať. Známe problémové aplikácie sú uvedené <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tu</a>.</p>
 
-<h2>Použitie súboru hosts zlyháva (režim root)</h2>
-<p>Nové verzie Androidu používajú oddiel <code>/system</code> len na čítanie, takže AdAway do neho nemôže zapisovať priamo. Ak používate Magisk, zapnite modul <cite>systemless hosts</cite>, reštartujte zariadenie a použite zmeny znova. Ak root nepoužívate, prejdite radšej na režim VPN, ktorý systém nijako neupravuje.</p>
+<h2>Súbor hosts sa nedá použiť (režim root)</h2>
+<p>Nové verzie Androidu používajú oddiel <code>/system</code> len na čítanie, takže AdAway doň nemôže priamo zapisovať. Ak používate Magisk, zapnite modul <cite>systemless hosts</cite>, reštartujte zariadenie a zmeny použite znova. Ak root nepoužívate, prejdite radšej na režim VPN, ktorý nevyžaduje žiadne úpravy systému.</p>
 
 <h2>Stále si neviete rady?</h2>
 <p>Nahláste problém s priloženým diagnostickým protokolom na <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>.</p>

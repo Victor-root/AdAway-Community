@@ -14,10 +14,10 @@
     <string name="update_install_failed">Aktualizáciu sa nepodarilo nainštalovať.</string>
     <string name="pref_update_check_now_update_available">Dostupná nová verzia: %1$s</string>
     <string name="pref_update_check_now_up_to_date">Nie je dostupná žiadna aktualizácia</string>
-    <string name="pref_update_check_now_failed">Server aktualizácií sa nepodarilo kontaktovať</string>
+    <string name="pref_update_check_now_failed">Nepodarilo sa spojiť so serverom aktualizácií</string>
     <string name="pref_update_install_summary">Nainštalovať verziu %1$s</string>
     <string name="notification_channel_app_updates">Aktualizácie aplikácie</string>
     <string name="notification_channel_app_updates_description">Upozornenie, keď je dostupná nová verzia aplikácie. Stlmením tohto kanála vypnete upozornenia na aktualizácie aplikácie bez vplyvu na ostatné upozornenia.</string>
     <string name="notification_app_update_title">Dostupná aktualizácia aplikácie</string>
-    <string name="notification_app_update_text">Je dostupná na stiahnutie nová verzia AdAway.</string>
+    <string name="notification_app_update_text">Na stiahnutie je k dispozícii nová verzia aplikácie AdAway.</string>
 </resources>
