@@ -37,12 +37,12 @@
     <string name="pref_update_check">Kontrolovať aktualizácie pri spustení</string>
     <string name="pref_update_check_hosts_daily">Pravidelne kontrolovať aktualizácie</string>
     <string name="pref_update_sync_on_update">Synchronizovať pri aktualizácii</string>
-    <string name="pref_update_sync_unmetered_only">Synchronizovať iba v sieti bez obmedzenia dát</string>
+    <string name="pref_update_sync_unmetered_only">Synchronizovať iba v nemeranej sieti</string>
     <string name="pref_vpn_service_on_boot">Zapnúť po spustení zariadenia</string>
     <string name="pref_vpn_service_monitor">Sledovať pripojenie</string>
     <string name="pref_vpn_service_monitor_description">Pravidelne kontroluje stav siete a po odpojení znova spustí VPN.</string>
     <string name="pref_vpn_excluded_apps">Vylúčené aplikácie</string>
-    <string name="pref_vpn_excluded_apps_description">Nastavte, ktoré aplikácie nemajú používať VPN, aby sa ich pripojenia neblokovali.</string>
+    <string name="pref_vpn_excluded_apps_description">Vyberte aplikácie, ktoré nemajú používať VPN, aby sa ich pripojenia neblokovali.</string>
     <string name="pref_vpn_exclude_system_apps">Vylúčiť systémové aplikácie</string>
     <string-array name="pref_vpn_excluded_system_apps_entries">
         <item>Žiadne</item>
@@ -68,7 +68,7 @@
     <string name="pref_vpn_exclude_user_apps_deselect_all">Zrušiť výber</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikácie</string>
     <string name="pref_vpn_reset">Resetovať VPN</string>
-    <string name="pref_vpn_reset_description">Vytvorí pripojenie VPN úplne odznova. Použite, ak VPN prestane fungovať (nejde internet alebo sa objavujú chyby DNS).</string>
+    <string name="pref_vpn_reset_description">Vytvorí pripojenie VPN úplne odznova. Použite túto možnosť, ak VPN prestane fungovať (nejde internet alebo sa objavujú chyby DNS).</string>
     <string name="pref_vpn_reset_done">Pripojenie VPN bolo vytvorené znova.</string>
     <string name="pref_vpn_reset_not_running">VPN nie je spustená.</string>
     <string name="pref_vpn_diagnostic_log_enabled">Zaznamenávať diagnostický protokol</string>

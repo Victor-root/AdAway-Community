@@ -135,14 +135,14 @@
     <string name="home_toggle_blocking">Pozastaviť alebo obnoviť blokovanie reklám</string>
     <string name="home_enable_blocking">Zapnúť blokovanie reklám</string>
     <string name="home_disable_blocking">Vypnúť blokovanie reklám</string>
-    <string name="home_always_on_active">Vždy zapnutá VPN je aktívna</string>
+    <string name="home_always_on_active">Vždy zapnutá sieť VPN je aktívna</string>
     <string name="vpn_persistence_title">Trvalé VPN pripojenie</string>
     <string name="vpn_persistence_summary">Ponechať blokovanie reklám aktívne na pozadí</string>
-    <string name="vpn_persistence_enabled">Vždy zapnutá VPN je pre AdAway nastavená. ✓</string>
-    <string name="vpn_persistence_disabled">Vždy zapnutá VPN nie je nastavená. O trvalý chod sa stará vstavaná ochrana aplikácie AdAway.</string>
-    <string name="vpn_persistence_lockdown">Možnosť „Blokovať pripojenia bez VPN“ je zapnutá: aplikácie vylúčené z VPN nemajú prístup k internetu.</string>
-    <string name="vpn_persistence_message">AdAway si sám poradí s reštartmi, ukončením pri nedostatku pamäte aj pádmi, takže vo väčšine prípadov netreba nič ďalšie nastavovať.\n\nAk sa VPN niekedy nečakane zastaví, nastavte AdAway v Androide ako vždy zapnutú VPN. Je to najspoľahlivejšie riešenie.</string>
-    <string name="vpn_persistence_adb_commands">Ak je systémová obrazovka VPN na vašom televízore skrytá, použite ADB a potom televízor reštartujte:\n\n• Nastavenie AdAway ako vždy zapnutej VPN:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontrola nastavenia (príkaz vypíše %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Na niektorých televízoroch, napríklad TCL, treba aplikácii AdAway povoliť aj automatické spúšťanie:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Zrušenie vždy zapnutej VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_enabled">AdAway je nastavený ako vždy zapnutá sieť VPN. ✓</string>
+    <string name="vpn_persistence_disabled">Vždy zapnutá sieť VPN nie je nastavená. O nepretržitý chod sa stará vstavaná ochrana aplikácie AdAway.</string>
+    <string name="vpn_persistence_lockdown">Možnosť „Blokovať pripojenia bez siete VPN“ je zapnutá: aplikácie vylúčené z VPN nemajú prístup k internetu.</string>
+    <string name="vpn_persistence_message">AdAway si sám poradí s reštartmi, ukončením pri nedostatku pamäte aj pádmi, takže vo väčšine prípadov netreba nič ďalšie nastavovať.\n\nAk sa VPN niekedy nečakane zastaví, nastavte AdAway v Androide ako vždy zapnutú sieť VPN. Je to najspoľahlivejšie riešenie.</string>
+    <string name="vpn_persistence_adb_commands">Ak je systémová obrazovka VPN na vašom televízore skrytá, použite ADB a potom televízor reštartujte:\n\n• Nastavenie AdAway ako vždy zapnutej siete VPN:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Kontrola nastavenia (príkaz vypíše %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Na niektorých televízoroch, napríklad TCL, treba aplikácii AdAway povoliť aj automatické spúšťanie:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Zrušenie vždy zapnutej siete VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Na tomto televízore s Android TV sú nastavenia VPN skryté. Použite zobrazené príkazy ADB.</string>
     <string name="vpn_persistence_dismiss">Rozumiem</string>
     <string name="status_update_available">Je dostupná aktualizácia zdrojov</string>
@@ -168,12 +168,12 @@
         <item quantity="other">%1$d zastaraných zdrojov</item>
     </plurals>
     <string name="hosts_source_installed">Nainštalované pred %1$s</string>
-    <string name="hosts_source_up_to_date">Aktuálne už %1$s</string>
-    <string name="hosts_source_need_update">Aktualizácia je k dispozícii už %1$s</string>
+    <string name="hosts_source_up_to_date">Aktuálne, posledná zmena pred %1$s</string>
+    <string name="hosts_source_need_update">Treba aktualizovať, nová verzia pred %1$s</string>
     <string name="hosts_source_last_update">Posledná aktualizácia pred %1$s</string>
     <string name="hosts_source_unknown_status">Stav aktualizácie je neznámy</string>
     <string name="hosts_source_disabled">Vypnuté</string>
-    <string name="hosts_source_few_minutes">pár min</string>
+    <string name="hosts_source_few_minutes">pár minútami</string>
     <string name="hosts_count">%1$s hostiteľov</string>
     <string name="configuration_changed">Konfigurácia sa zmenila. Je potrebné ju použiť.</string>
     <string name="configuration_installing">Uplatňuje sa nová konfigurácia…</string>
@@ -183,22 +183,22 @@
     <string name="apply_and_enable">Použiť a zapnúť</string>
     <string name="apply_only">Iba použiť</string>
     <plurals name="hosts_source_hours">
-        <item quantity="one">%1$d h</item>
-        <item quantity="few">%1$d h</item>
-        <item quantity="many">%1$d h</item>
-        <item quantity="other">%1$d h</item>
+        <item quantity="one">%1$d hodinou</item>
+        <item quantity="few">%1$d hodinami</item>
+        <item quantity="many">%1$d hodinami</item>
+        <item quantity="other">%1$d hodinami</item>
     </plurals>
     <plurals name="hosts_source_days">
-        <item quantity="one">%1$d d</item>
-        <item quantity="few">%1$d d</item>
-        <item quantity="many">%1$d d</item>
-        <item quantity="other">%1$d d</item>
+        <item quantity="one">%1$d dňom</item>
+        <item quantity="few">%1$d dňami</item>
+        <item quantity="many">%1$d dňami</item>
+        <item quantity="other">%1$d dňami</item>
     </plurals>
     <plurals name="hosts_source_months">
-        <item quantity="one">%1$d mes.</item>
-        <item quantity="few">%1$d mes.</item>
-        <item quantity="many">%1$d mes.</item>
-        <item quantity="other">%1$d mes.</item>
+        <item quantity="one">%1$d mesiacom</item>
+        <item quantity="few">%1$d mesiacmi</item>
+        <item quantity="many">%1$d mesiacmi</item>
+        <item quantity="other">%1$d mesiacmi</item>
     </plurals>
     <string name="lists_search_hint">Hľadať názov hostiteľa…</string>
     <string name="rule_actions_title">Upraviť záznam</string>

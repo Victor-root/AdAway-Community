@@ -6,8 +6,8 @@
     <string name="tv_dialog_remove_from_blocked">Odstrániť z blokovaných</string>
     <string name="tv_dialog_copy_hostname">Kopírovať názov hostiteľa</string>
     <string name="tv_log_entry_status_description">Stav domény</string>
-    <string name="tv_button_theme_light">Svetlý režim</string>
-    <string name="tv_button_theme_dark">Tmavý režim</string>
+    <string name="tv_button_theme_light">Svetlý motív</string>
+    <string name="tv_button_theme_dark">Tmavý motív</string>
     <string name="tv_lists_empty">V tomto zozname zatiaľ nie sú žiadne záznamy.</string>
     <string name="tv_dialog_search">Hľadať</string>
 </resources>

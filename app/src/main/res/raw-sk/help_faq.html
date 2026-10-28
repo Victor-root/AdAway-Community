@@ -11,8 +11,8 @@
 
 <h2>Aké servery DNS používa VPN?</h2>
 <p>V režime VPN sa neblokované názvy hostiteľov prekladajú cez servery DNS, ktoré si vyberiete v časti <cite>Nastavenia › Blokovanie reklám cez VPN › Servery DNS</cite>:</p>
-<p><strong>Servery DNS siete</strong> (predvolené): servery vašej siete Wi-Fi alebo mobilnej siete. Ak sieť neposkytne žiadny server, ktorý AdAway dokáže použiť, AdAway použije Cloudflare (<code>1.1.1.1</code>).<br/><strong>Vlastné servery DNS</strong>: adresy IP, ktoré zadáte, oddelené čiarkami.<br/><strong>DNS over HTTPS</strong>: požiadavky sa šifrujú a odosielajú službe Cloudflare, Google alebo Quad9, prípadne na adresu <code>https://</code>, ktorú zadáte, takže ich vaša sieť nemôže čítať ani meniť.</p>
-<p>Blokovanie funguje rovnako pri všetkých troch možnostiach. Ak chcete mať DNS šifrovaný, použite radšej túto možnosť DNS over HTTPS namiesto nastavenia Androidu <cite>Súkromný DNS</cite>, ktoré AdAway obchádza.</p>
+<p><strong>Servery DNS siete</strong> (predvolené): servery vašej siete Wi-Fi alebo mobilnej siete. Ak sieť neposkytne žiadny server, ktorý môže AdAway použiť, prepne sa AdAway na Cloudflare (<code>1.1.1.1</code>).<br/><strong>Vlastné servery DNS</strong>: adresy IP, ktoré zadáte, oddelené čiarkami.<br/><strong>DNS over HTTPS</strong>: požiadavky sa šifrujú a odosielajú službe Cloudflare, Google alebo Quad9, prípadne na adresu <code>https://</code>, ktorú zadáte, takže ich vaša sieť nemôže čítať ani meniť.</p>
+<p>Blokovanie funguje rovnako pri všetkých troch možnostiach. Ak chcete šifrované DNS, zvoľte radšej tu možnosť DNS over HTTPS, nie nastavenie Androidu <cite>Súkromné DNS</cite>, ktoré AdAway obchádza.</p>
 
 <h2>Ako zablokujem, povolím alebo presmerujem názov hostiteľa?</h2>
 <p>Na domovskej obrazovke spravujete tri zoznamy:</p>
@@ -23,7 +23,7 @@
 <p>Nie. AdAway zmenu uplatní okamžite, ale aplikácia, ktorá už bola otvorená, môže naďalej používať svoje staré pripojenia a vlastnú vyrovnávaciu pamäť. Úplne ju zatvorte (v nastaveniach Androidu pre túto aplikáciu klepnite na Vynútiť zastavenie) a ak sa reklamy stále zobrazujú, vymažte jej vyrovnávaciu pamäť. Reštart Androidu je potrebný iba raz v režime root, po zapnutí modulu Magisk systemless hosts.</p>
 
 <h2>V prehliadači už používam blokovač reklám: mám prehliadač vylúčiť z AdAway?</h2>
-<p>Nie, používajte oboje. AdAway blokuje celé domény, a to vo všetkých aplikáciách. Blokovač v prehliadači, napríklad uBlock Origin alebo ten zabudovaný vo Vivaldi či Brave, funguje iba v prehliadači, ale dokáže aj skryť časti stránky a zablokovať reklamy z webov, ktoré sa nedajú zablokovať celé. Vylúčením prehliadača takmer nič neušetríte, pretože AdAway overí názov takmer okamžite, a prehliadač by prišiel o ochranu AdAway. Ak prehliadač používa vlastný zabezpečený DNS, vypnite ho (pozrite kartu Problémy): inak by obchádzal AdAway.</p>
+<p>Nie, používajte oboje. AdAway blokuje celé domény, a to vo všetkých aplikáciách. Blokovač v prehliadači, napríklad uBlock Origin alebo ten zabudovaný vo Vivaldi či Brave, funguje iba v prehliadači, ale dokáže aj skryť časti stránky a zablokovať reklamy z webov, ktoré sa nedajú zablokovať celé. Vylúčením prehliadača takmer nič neušetríte, pretože AdAway overí názov takmer okamžite, a prehliadač by prišiel o ochranu AdAway. Ak prehliadač používa vlastné zabezpečené DNS, vypnite ho (pozrite kartu Problémy): inak by obchádzalo AdAway.</p>
 
 <h2>Kde nájdem ďalšie zdroje hosts?</h2>
 <p>AdAway sa dodáva s rozumnými predvolenými zdrojmi. Ak chcete viac, pozrite si komunitne udržiavaný <a href="https://github.com/AdAway/AdAway/wiki/HostsSources">zoznam ďalších zdrojov hosts</a>. Ďalšie zdroje pridávajte striedmo, pretože veľmi rozsiahle alebo prekrývajúce sa zoznamy môžu zablokovať aj to, čo nemajú, a narušiť fungovanie aplikácií.</p>
@@ -32,6 +32,6 @@
 <p>AdAway je skvelý projekt s dlhou históriou, no pôvodný projekt už nejaký čas len zriedka vydáva nové verzie a posudzuje navrhnuté zmeny. Niektoré opravy chýb a návrhy zmien zostali dlho otvorené, vrátane tých, ktoré sa týkajú stability režimu VPN v nových verziách Androidu a v nadstavbách od výrobcov telefónov. Táto verzia vznikla, aby bol projekt vďaka opravám od komunity naďalej použiteľný a overené vylepšenia nezostali ležať nevyužité.</p>
 
 <h2>Ako nahlásim chybu alebo navrhnem zmenu?</h2>
-<p>Vytvorte hlásenie na stránke tejto verzie na GitHube:<a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Pri hlásení problémov s VPN veľmi pomôže diagnostický protokol (pozrite kartu Problémy).</p>
+<p>Vytvorte hlásenie na stránke tejto verzie na GitHube: <a href="https://github.com/Victor-root/AdAway-Community/issues">https://github.com/Victor-root/AdAway-Community/issues</a>. Pri hlásení problémov s VPN veľmi pomôže diagnostický protokol (pozrite kartu Problémy).</p>
 </body>
 </html>
