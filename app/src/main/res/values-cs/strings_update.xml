@@ -5,7 +5,7 @@
     <string name="update_banner_subtitle">Klepnutím nainstalujete %1$s</string>
     <string name="update_up_to_date_header">Máte aktuální verzi</string>
     <string name="update_update_available_header">K dispozici je aktualizace</string>
-    <string name="update_updating_header">Aktualizace aplikace AdAway</string>
+    <string name="update_updating_header">Probíhá aktualizace aplikace AdAway</string>
     <string name="update_update_button">Aktualizovat nyní</string>
     <string name="update_complete_label">Hotovo</string>
     <string name="update_last_changelog_title">Poslední změny</string>
@@ -17,7 +17,7 @@
     <string name="pref_update_check_now_failed">Server aktualizací není dostupný</string>
     <string name="pref_update_install_summary">Nainstalovat verzi %1$s</string>
     <string name="notification_channel_app_updates">Aktualizace aplikace</string>
-    <string name="notification_channel_app_updates_description">Oznámení, když je k dispozici nová verze aplikace. Vypnutím tohoto kanálu ztišíte upozornění na aktualizace aplikace, aniž by to ovlivnilo ostatní oznámení.</string>
+    <string name="notification_channel_app_updates_description">Oznámení, když je k dispozici nová verze aplikace. Když tuto kategorii oznámení ztlumíte, upozornění na aktualizace aplikace budou tichá a ostatní oznámení tím neovlivníte.</string>
     <string name="notification_app_update_title">K dispozici je aktualizace aplikace</string>
     <string name="notification_app_update_text">Ke stažení je nová verze aplikace AdAway.</string>
 </resources>

@@ -13,13 +13,13 @@
     <string name="welcome_vpn_method_title">Blokování reklam\npřes VPN</string>
     <string name="welcome_vpn_method_text1">Pomalejší</string>
     <string name="welcome_vpn_method_text2">Běží na pozadí</string>
-    <string name="welcome_vpn_method_text3">Kompatibilita</string>
-    <string name="welcome_root_missing_title">Je vyžadován Android s přístupem root</string>
+    <string name="welcome_vpn_method_text3">Široká kompatibilita</string>
+    <string name="welcome_root_missing_title">Je potřeba Android s rootem</string>
     <string name="welcome_root_missile_description">Buď se nepodařilo najít binární soubor su, nebo jste aplikaci AdAway nepovolili přístup root.\n\nTo se může stát, když zařízení nemá root. Informace o tom, jak root získat, najdete na wiki.lineageos.org nebo na jiných webech o Androidu.</string>
     <string name="welcome_vpn_alwayson_title">Trvalá síť VPN je zapnutá</string>
-    <string name="welcome_vpn_alwayson_description">Aplikace AdAway zjistila, že u jiné VPN je zapnuté nastavení „Trvalá síť VPN“.\n\nTo aplikaci AdAway brání vyžádat si přístup k VPN. Vypněte u dané VPN nastavení „Trvalá síť VPN“ a zkuste to znovu.</string>
-    <string name="welcome_vpn_alwayson_blocked_description">Aplikaci AdAway se nepodařilo vyžádat přístup k VPN.\n\nPříčinou může být, že u jiné VPN je zapnuté nastavení „Trvalá síť VPN“. Zkontrolujte, zda ho nemá některá VPN zapnuté, a před dalším pokusem ho vypněte.</string>
-    <string name="welcome_vpn_alwayson_settings_action">Otevřít nastavení „VPN“</string>
+    <string name="welcome_vpn_alwayson_description">Aplikace AdAway zjistila, že u jiné VPN je zapnuté nastavení „Trvalá síť VPN“.\n\nTo aplikaci AdAway brání v tom, aby si vyžádala přístup k VPN. Vypněte u dané VPN nastavení „Trvalá síť VPN“ a zkuste to znovu.</string>
+    <string name="welcome_vpn_alwayson_blocked_description">Aplikaci AdAway se nepodařilo vyžádat si přístup k VPN.\n\nMůže to být tím, že jiná VPN má zapnuté nastavení „Trvalá síť VPN“. Zkontrolujte, zda ho některá VPN nemá zapnuté, a před dalším pokusem ho vypněte.</string>
+    <string name="welcome_vpn_alwayson_settings_action">Otevřít nastavení VPN</string>
     <string name="welcome_method_pro_logo">Výhody</string>
     <string name="welcome_method_con_logo">Nevýhody</string>
     <string name="welcome_sync_header">Synchronizace</string>
@@ -27,24 +27,24 @@
     <string name="welcome_sync_summary">AdAway stahuje z online zdrojů seznamy reklamních sítí, které se mají blokovat. Později si je můžete přizpůsobit v nastavení.</string>
     <string name="welcome_sync_retry_logo">Zkusit synchronizaci znovu</string>
     <string name="welcome_sync_error">Synchronizace selhala: %1$s Zkusit znovu?</string>
-    <string name="welcome_sync_notifications">Může posílat oznámení se stavem blokování reklam a jeho ovládáním a upozorňovat na dostupné aktualizace aplikace (několikrát ročně). Zapněte je, pokud chcete mít vždy aktuální verzi.</string>
+    <string name="welcome_sync_notifications">AdAway může zobrazovat oznámení se stavem a ovládáním blokování reklam a upozorňovat na nové verze aplikace (několikrát do roka). Zapněte je, pokud chcete mít vždy aktuální verzi.</string>
     <string name="welcome_sync_leave_early_title">Synchronizace ještě neskončila</string>
-    <string name="welcome_sync_leave_early_message">Blokovací seznamy se ještě nestáhly. Můžete pokračovat hned a stahování poběží na pozadí, nebo tu počkat, až bude hotovo.</string>
+    <string name="welcome_sync_leave_early_message">Blokovací seznamy se ještě stahují. Můžete pokračovat hned (stahování poběží dál na pozadí), nebo tu počkat, až skončí.</string>
     <string name="welcome_sync_leave_early_wait">Počkat</string>
     <string name="welcome_sync_leave_early_continue">Přesto pokračovat</string>
-    <string name="welcome_battery_header">Zůstaňte chráněni i na pozadí</string>
-    <string name="welcome_battery_summary">Android může kvůli úspoře energie pozastavit VPN aplikace AdAway na pozadí, čímž se blokování reklam může nepozorovaně zastavit. Povolte aplikaci AdAway ignorovat optimalizaci baterie, aby běžela dál.</string>
+    <string name="welcome_battery_header">Nepřetržitá ochrana i na pozadí</string>
+    <string name="welcome_battery_summary">Android může kvůli úspoře energie pozastavit VPN aplikace AdAway na pozadí a blokování reklam se pak bez upozornění zastaví. Povolte aplikaci AdAway ignorovat optimalizaci baterie, aby mohla běžet nepřetržitě.</string>
     <string name="welcome_battery_action">Povolit</string>
     <string name="welcome_battery_granted">Povoleno ✓</string>
-    <string name="welcome_battery_footnote_prefix">Kdykoli to můžete později změnit zde:</string>
+    <string name="welcome_battery_footnote_prefix">Později to můžete kdykoli změnit zde:</string>
     <string-array name="welcome_battery_footnote_path">
         <item>Nastavení Androidu</item>
         <item>Aplikace</item>
         <item>AdAway</item>
         <item>Baterie</item>
     </string-array>
-    <string name="welcome_oem_battery_header">Ještě jedna věc: správce baterie ve vašem telefonu</string>
-    <string name="welcome_oem_battery_summary">Některé značky telefonů mají vlastního správce baterie, který může aplikaci AdAway také blokovat. Co zkontrolovat u vašeho telefonu:</string>
+    <string name="welcome_oem_battery_header">Ještě jedna věc: vlastní správa baterie vašeho telefonu</string>
+    <string name="welcome_oem_battery_summary">Někteří výrobci telefonů mají vlastní správu baterie, která může aplikaci AdAway také omezovat. Co zkontrolovat u vašeho telefonu:</string>
     <string name="welcome_oem_battery_action">Otevřít informace o aplikaci</string>
     <string name="welcome_oem_battery_open_failed">Informace o aplikaci se nepodařilo otevřít. Otevřete je ručně v Nastavení Androidu → Aplikace → AdAway.</string>
     <string name="welcome_oem_battery_disclaimer">Jde o obecná doporučení, ne o přesný návod: názvy a umístění se mohou lišit podle modelu telefonu a verze Androidu.</string>
@@ -53,8 +53,8 @@
         <item>Informace o aplikaci</item>
         <item>Baterie</item>
     </string-array>
-    <string name="welcome_oem_battery_instruction_oneui">Hledejte něco jako „Omezení využití na pozadí“ › „Aplikace, které nikdy neusínají“ a přidejte tam AdAway.</string>
-    <string name="welcome_oem_battery_secondary_oneui">Zkontrolujte také nastavení „Automatická optimalizace“ a pokud existuje, vypněte „Restartovat podle potřeby“.</string>
+    <string name="welcome_oem_battery_instruction_oneui">Hledejte něco jako „Limity využití na pozadí“ › „Nikdy neuspávané aplikace“ a přidejte AdAway do tohoto seznamu.</string>
+    <string name="welcome_oem_battery_secondary_oneui">Zkontrolujte také nastavení „Automatická optimalizace“ a pokud tam je, vypněte „Restartovat v případě potřeby“.</string>
     <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
     <string-array name="welcome_oem_battery_path_miui">
         <item>Informace o aplikaci</item>
@@ -68,13 +68,13 @@
         <item>Využití baterie</item>
     </string-array>
     <string name="welcome_oem_battery_instruction_coloros">Zvolte „Povolit aktivitu na pozadí“ (někdy se zobrazuje jako „Bez omezení“).</string>
-    <string name="welcome_oem_battery_secondary_coloros">Hledejte také přepínač „Automatické spouštění“ pro AdAway (často v Nastavení › Aplikace), aby se aplikace mohla po vynuceném zastavení sama znovu spustit.</string>
+    <string name="welcome_oem_battery_secondary_coloros">Hledejte také přepínač „Automatické spouštění“ pro AdAway (často v Nastavení › Aplikace), aby se aplikace mohla po vynuceném ukončení sama znovu spustit.</string>
     <string name="welcome_oem_battery_label_emui">Huawei / Honor (EMUI / MagicOS)</string>
     <string-array name="welcome_oem_battery_path_emui">
         <item>Informace o aplikaci</item>
         <item>Baterie</item>
     </string-array>
-    <string name="welcome_oem_battery_instruction_emui">Najděte „Spouštění aplikací“, vypněte „Spravovat automaticky“ a poté zapněte všechny 3 možnosti: „Automatické spouštění“, „Sekundární spouštění“ a „Běh na pozadí“.</string>
+    <string name="welcome_oem_battery_instruction_emui">Najděte „Spouštění aplikací“, vypněte „Spravovat automaticky“ a poté zapněte všechny tři možnosti: „Automatické spouštění“, „Sekundární spouštění“ a „Běh na pozadí“.</string>
     <string name="welcome_oem_battery_secondary_emui">Zamkněte AdAway také v seznamu nedávných aplikací (přetáhněte jeho kartu dolů, dokud se neobjeví zámek).</string>
     <string name="welcome_oem_battery_label_funtouch">vivo / iQOO (Funtouch / OriginOS)</string>
     <string-array name="welcome_oem_battery_path_funtouch">
@@ -88,13 +88,13 @@
     <string name="welcome_back_button">Zpět</string>
     <string name="welcome_next_button">Další</string>
     <string name="welcome_finish_button">Dokončit</string>
-    <string name="tv_welcome_intro_subtitle">Tento krátký průvodce zapne na tomto zařízení blokování reklam.</string>
+    <string name="tv_welcome_intro_subtitle">Tento krátký průvodce vám pomůže zapnout blokování reklam na tomto zařízení.</string>
     <string name="tv_welcome_start_button">Začít</string>
     <string name="tv_welcome_method_header">Vyberte způsob blokování</string>
     <string name="tv_welcome_method_root_button">Použít root</string>
     <string name="tv_welcome_method_root_body">Rychlejší a šetrné k baterii. Vyžaduje zařízení s rootem.</string>
     <string name="tv_welcome_method_vpn_button">Použít VPN</string>
-    <string name="tv_welcome_method_vpn_body">Funguje bez rootu a je kompatibilní s každým zařízením s Android TV.</string>
+    <string name="tv_welcome_method_vpn_body">Funguje bez rootu na všech zařízeních s Android TV.</string>
     <string name="tv_welcome_activate_header">Zapnout blokování reklam</string>
-    <string name="tv_welcome_activate_body">Je to místní VPN: filtruje reklamy přímo na tomto zařízení, aniž by váš provoz posílala přes vnější server.</string>
+    <string name="tv_welcome_activate_body">Jde o místní VPN: reklamy filtruje přímo v tomto zařízení a váš provoz neposílá přes žádný vzdálený server.</string>
 </resources>
