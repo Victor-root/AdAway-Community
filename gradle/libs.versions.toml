@@ -1,5 +1,5 @@
 [versions]
-appVersionName = "7.0.0-alpha-c"
+appVersionName = "7.0.0-alpha2-c"
 
 minSdk = "26"
 compileSdk = "37"
