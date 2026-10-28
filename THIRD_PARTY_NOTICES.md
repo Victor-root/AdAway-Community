@@ -26,20 +26,32 @@ The components built into the native engine and the root processes.
 
 | Component | Published license | Applied license |
 | --- | --- | --- |
+| [atomic-waker](https://github.com/smol-rs/atomic-waker) | Apache-2.0 OR MIT | Apache-2.0 |
 | [base64](https://github.com/marshallpierce/rust-base64) | MIT OR Apache-2.0 | Apache-2.0 |
 | [bytes](https://github.com/tokio-rs/bytes) | MIT | MIT |
 | [cfg-if](https://github.com/rust-lang/cfg-if) | MIT OR Apache-2.0 | Apache-2.0 |
 | [combine](https://github.com/Marwes/combine) | MIT | MIT |
 | [deranged](https://github.com/jhpratt/deranged) | MIT OR Apache-2.0 | Apache-2.0 |
+| [equivalent](https://github.com/indexmap-rs/equivalent) | Apache-2.0 OR MIT | Apache-2.0 |
+| [fnv](https://github.com/servo/rust-fnv) | Apache-2.0 / MIT | Apache-2.0 |
+| [futures-core](https://github.com/rust-lang/futures-rs) | MIT OR Apache-2.0 | Apache-2.0 |
+| [futures-sink](https://github.com/rust-lang/futures-rs) | MIT OR Apache-2.0 | Apache-2.0 |
 | [getrandom](https://github.com/rust-random/getrandom) | MIT OR Apache-2.0 | Apache-2.0 |
+| [h2](https://github.com/hyperium/h2) | MIT | MIT |
+| [hashbrown](https://github.com/rust-lang/hashbrown) | MIT OR Apache-2.0 | Apache-2.0 |
+| [http](https://github.com/hyperium/http) | MIT OR Apache-2.0 | Apache-2.0 |
+| [indexmap](https://github.com/indexmap-rs/indexmap) | Apache-2.0 OR MIT | Apache-2.0 |
+| [itoa](https://github.com/dtolnay/itoa) | MIT OR Apache-2.0 | Apache-2.0 |
 | [jni](https://github.com/jni-rs/jni-rs) | MIT OR Apache-2.0 | Apache-2.0 |
 | [jni-sys](https://github.com/jni-rs/jni-sys) | MIT OR Apache-2.0 | Apache-2.0 |
 | [libc](https://github.com/rust-lang/libc) | MIT OR Apache-2.0 | Apache-2.0 |
 | [log](https://github.com/rust-lang/log) | MIT OR Apache-2.0 | Apache-2.0 |
 | [memchr](https://github.com/BurntSushi/memchr) | Unlicense OR MIT | MIT |
+| [mio](https://github.com/tokio-rs/mio) | MIT | MIT |
 | [num-conv](https://github.com/jhpratt/num-conv) | MIT OR Apache-2.0 | Apache-2.0 |
 | [once_cell](https://github.com/matklad/once_cell) | MIT OR Apache-2.0 | Apache-2.0 |
 | [pem](https://github.com/jcreekmore/pem-rs) | MIT | MIT |
+| [pin-project-lite](https://github.com/taiki-e/pin-project-lite) | Apache-2.0 OR MIT | Apache-2.0 |
 | [powerfmt](https://github.com/jhpratt/powerfmt) | MIT OR Apache-2.0 | Apache-2.0 |
 | [rcgen](https://github.com/rustls/rcgen) | MIT OR Apache-2.0 | Apache-2.0 |
 | [ring](https://github.com/briansmith/ring) | Apache-2.0 AND ISC | Apache-2.0 AND ISC |
@@ -48,10 +60,17 @@ The components built into the native engine and the root processes.
 | [rustls-webpki](https://github.com/rustls/webpki) | ISC | ISC |
 | [simd_cesu8](https://github.com/seancroach/simd_cesu8) | Apache-2.0 OR MIT | Apache-2.0 |
 | [simdutf8](https://github.com/rusticstuff/simdutf8) | MIT OR Apache-2.0 | Apache-2.0 |
+| [slab](https://github.com/tokio-rs/slab) | MIT | MIT |
+| [socket2](https://github.com/rust-lang/socket2) | MIT OR Apache-2.0 | Apache-2.0 |
 | [subtle](https://github.com/dalek-cryptography/subtle) | BSD-3-Clause | BSD-3-Clause |
 | [thiserror](https://github.com/dtolnay/thiserror) | MIT OR Apache-2.0 | Apache-2.0 |
 | [time](https://github.com/time-rs/time) | MIT OR Apache-2.0 | Apache-2.0 |
 | [time-core](https://github.com/time-rs/time) | MIT OR Apache-2.0 | Apache-2.0 |
+| [tokio](https://github.com/tokio-rs/tokio) | MIT | MIT |
+| [tokio-rustls](https://github.com/rustls/tokio-rustls) | MIT OR Apache-2.0 | Apache-2.0 |
+| [tokio-util](https://github.com/tokio-rs/tokio) | MIT | MIT |
+| [tracing](https://github.com/tokio-rs/tracing) | MIT | MIT |
+| [tracing-core](https://github.com/tokio-rs/tracing) | MIT | MIT |
 | [untrusted](https://github.com/briansmith/untrusted) | ISC | ISC |
 | [webpki-roots](https://github.com/rustls/webpki-roots) | CDLA-Permissive-2.0 | CDLA-Permissive-2.0 |
 | [yasna](https://github.com/qnighy/yasna.rs) | MIT OR Apache-2.0 | Apache-2.0 |
@@ -325,12 +344,66 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
+#### h2
+
+```text
+Copyright (c) 2017 h2 authors
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+```
+
 #### memchr
 
 ```text
 The MIT License (MIT)
 
 Copyright (c) 2015 Andrew Gallant
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+#### mio
+
+```text
+Copyright (c) 2014 Carl Lerche and other MIO contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -375,6 +448,148 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+
+#### slab
+
+```text
+Copyright (c) 2019 Carl Lerche
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+```
+
+#### tokio
+
+```text
+MIT License
+
+Copyright (c) Tokio Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+#### tokio-util
+
+```text
+MIT License
+
+Copyright (c) Tokio Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+#### tracing
+
+```text
+Copyright (c) 2019 Tokio Contributors
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+```
+
+#### tracing-core
+
+```text
+Copyright (c) 2019 Tokio Contributors
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
 ```
 
 ### ISC License

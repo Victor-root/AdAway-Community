@@ -1,6 +1,12 @@
-//! The HTTP/1.1 exchange of DNS over HTTPS (RFC 8484): a POST of the query, its answer in the body.
+//! The HTTP exchange of DNS over HTTPS (RFC 8484): a POST of the query, its answer in the body,
+//! over HTTP/2 or, with the servers that only speak it, HTTP/1.1.
 
-use std::io::{self, BufRead, Read, Write};
+use std::io;
+
+use bytes::Bytes;
+use h2::client::SendRequest;
+use http::{Request, StatusCode, header};
+use tokio::io::{AsyncBufRead, AsyncBufReadExt, AsyncReadExt, AsyncWrite, AsyncWriteExt};
 
 use crate::url::DohUrl;
 
@@ -15,20 +21,63 @@ pub struct Answer {
     pub keep_alive: bool,
 }
 
-pub fn write_query<W: Write>(stream: &mut W, url: &DohUrl, query: &[u8]) -> io::Result<()> {
+/// Sends the query as one more stream of the HTTP/2 connection, and returns the answer.
+pub async fn exchange_http2(
+    sender: SendRequest<Bytes>,
+    url: &DohUrl,
+    query: &[u8],
+) -> io::Result<Vec<u8>> {
+    let request = Request::post(format!("https://{}:{}{}", url.host, url.port, url.path))
+        .header(header::CONTENT_TYPE, MESSAGE_TYPE)
+        .header(header::ACCEPT, MESSAGE_TYPE)
+        // Cloudflare refuses a query without it.
+        .header(header::CONTENT_LENGTH, query.len())
+        .body(())
+        .map_err(io::Error::other)?;
+    let mut sender = sender.ready().await.map_err(io::Error::other)?;
+    let (response, mut body) = sender
+        .send_request(request, false)
+        .map_err(io::Error::other)?;
+    body.send_data(Bytes::copy_from_slice(query), true)
+        .map_err(io::Error::other)?;
+    let response = response.await.map_err(io::Error::other)?;
+    if response.status() != StatusCode::OK {
+        return Err(invalid(&format!(
+            "the server answered: {}",
+            response.status()
+        )));
+    }
+    let mut body = response.into_body();
+    let mut message = Vec::new();
+    while let Some(data) = body.data().await {
+        let data = data.map_err(io::Error::other)?;
+        if data.len() > MAX_BODY - message.len() {
+            return Err(invalid("answer too large"));
+        }
+        message.extend_from_slice(&data);
+        let _ = body.flow_control().release_capacity(data.len());
+    }
+    Ok(message)
+}
+
+pub async fn write_query<W: AsyncWrite + Unpin>(
+    stream: &mut W,
+    url: &DohUrl,
+    query: &[u8],
+) -> io::Result<()> {
     let head = format!(
         "POST {} HTTP/1.1\r\nHost: {}\r\nContent-Type: {MESSAGE_TYPE}\r\nAccept: {MESSAGE_TYPE}\r\nContent-Length: {}\r\n\r\n",
         url.path,
         url.host,
         query.len()
     );
-    stream.write_all(head.as_bytes())?;
-    stream.write_all(query)?;
-    stream.flush()
+    stream.write_all(head.as_bytes()).await?;
+    stream.write_all(query).await?;
+    stream.flush().await
 }
 
-pub fn read_answer<R: BufRead>(stream: &mut R) -> io::Result<Answer> {
-    let status = read_line(stream)?;
+pub async fn read_answer<R: AsyncBufRead + Unpin>(stream: &mut R) -> io::Result<Answer> {
+    let status = read_line(stream).await?;
     let mut parts = status.split(' ');
     let version = parts.next().unwrap_or_default();
     if !version.starts_with("HTTP/1.") {
@@ -39,7 +88,7 @@ pub fn read_answer<R: BufRead>(stream: &mut R) -> io::Result<Answer> {
     let mut length = None;
     let mut chunked = false;
     loop {
-        let line = read_line(stream)?;
+        let line = read_line(stream).await?;
         if line.is_empty() {
             break;
         }
@@ -57,17 +106,20 @@ pub fn read_answer<R: BufRead>(stream: &mut R) -> io::Result<Answer> {
         }
     }
     let message = match (chunked, length) {
-        (true, _) => read_chunked(stream)?,
+        (true, _) => read_chunked(stream).await?,
         (false, Some(length)) if length <= MAX_BODY => {
             let mut body = vec![0; length];
-            stream.read_exact(&mut body)?;
+            stream.read_exact(&mut body).await?;
             body
         }
         (false, Some(_)) => return Err(invalid("answer too large")),
         (false, None) => {
             keep_alive = false;
             let mut body = Vec::new();
-            stream.take(MAX_BODY as u64 + 1).read_to_end(&mut body)?;
+            stream
+                .take(MAX_BODY as u64 + 1)
+                .read_to_end(&mut body)
+                .await?;
             body
         }
     };
@@ -83,15 +135,15 @@ pub fn read_answer<R: BufRead>(stream: &mut R) -> io::Result<Answer> {
     })
 }
 
-fn read_chunked<R: BufRead>(stream: &mut R) -> io::Result<Vec<u8>> {
+async fn read_chunked<R: AsyncBufRead + Unpin>(stream: &mut R) -> io::Result<Vec<u8>> {
     let mut body = Vec::new();
     loop {
-        let line = read_line(stream)?;
+        let line = read_line(stream).await?;
         let size = usize::from_str_radix(line.split(';').next().unwrap_or_default().trim(), 16)
             .map_err(|_| invalid("bad chunk size"))?;
         if size == 0 {
             // Trailers, up to the empty line.
-            while !read_line(stream)?.is_empty() {}
+            while !read_line(stream).await?.is_empty() {}
             return Ok(body);
         }
         if size > MAX_BODY - body.len() {
@@ -99,17 +151,17 @@ fn read_chunked<R: BufRead>(stream: &mut R) -> io::Result<Vec<u8>> {
         }
         let start = body.len();
         body.resize(start + size, 0);
-        stream.read_exact(&mut body[start..])?;
-        if !read_line(stream)?.is_empty() {
+        stream.read_exact(&mut body[start..]).await?;
+        if !read_line(stream).await?.is_empty() {
             return Err(invalid("bad chunk end"));
         }
     }
 }
 
 /// A line without its end, which must come within [`MAX_LINE`] bytes.
-fn read_line<R: BufRead>(stream: &mut R) -> io::Result<String> {
+async fn read_line<R: AsyncBufRead + Unpin>(stream: &mut R) -> io::Result<String> {
     let mut line = String::new();
-    stream.take(MAX_LINE).read_line(&mut line)?;
+    stream.take(MAX_LINE).read_line(&mut line).await?;
     if !line.ends_with('\n') {
         return Err(io::Error::new(
             io::ErrorKind::UnexpectedEof,
@@ -125,19 +177,29 @@ fn invalid(reason: &str) -> io::Error {
 
 #[cfg(test)]
 mod tests {
-    use super::{read_answer, write_query};
+    use super::{Answer, read_answer, write_query};
     use crate::url::DohUrl;
-    use std::io::Cursor;
+    use std::io::{self, Cursor};
+
+    fn read(answer: &[u8]) -> io::Result<Answer> {
+        tokio::runtime::Builder::new_current_thread()
+            .build()
+            .unwrap()
+            .block_on(read_answer(&mut Cursor::new(answer)))
+    }
 
     #[test]
     fn posts_the_query() {
         let mut written = Vec::new();
-        write_query(
-            &mut written,
-            &DohUrl::parse("https://dns.example/q").unwrap(),
-            b"\x12\x34",
-        )
-        .unwrap();
+        tokio::runtime::Builder::new_current_thread()
+            .build()
+            .unwrap()
+            .block_on(write_query(
+                &mut written,
+                &DohUrl::parse("https://dns.example/q").unwrap(),
+                b"\x12\x34",
+            ))
+            .unwrap();
         assert_eq!(
             written,
             b"POST /q HTTP/1.1\r\nHost: dns.example\r\nContent-Type: application/dns-message\r\n\
@@ -147,38 +209,19 @@ mod tests {
 
     #[test]
     fn reads_an_answer_with_a_length_or_in_chunks() {
-        let answer = read_answer(&mut Cursor::new(
-            &b"HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabcNEXT"[..],
-        ))
-        .unwrap();
+        let answer = read(b"HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nabcNEXT").unwrap();
         assert_eq!(answer.message, b"abc");
         assert!(answer.keep_alive);
 
-        let chunked = b"HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nConnection: close\r\n\r\n2\r\nab\r\n1;x=y\r\nc\r\n0\r\n\r\n";
-        let answer = read_answer(&mut Cursor::new(&chunked[..])).unwrap();
+        let answer = read(b"HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nConnection: close\r\n\r\n2\r\nab\r\n1;x=y\r\nc\r\n0\r\n\r\n").unwrap();
         assert_eq!(answer.message, b"abc");
         assert!(!answer.keep_alive);
     }
 
     #[test]
     fn refuses_a_failure_or_a_broken_answer() {
-        assert!(
-            read_answer(&mut Cursor::new(
-                &b"HTTP/1.1 400 Bad Request\r\nContent-Length: 0\r\n\r\n"[..]
-            ))
-            .is_err()
-        );
-        assert!(
-            read_answer(&mut Cursor::new(
-                &b"HTTP/1.1 200 OK\r\nContent-Length: 9\r\n\r\nabc"[..]
-            ))
-            .is_err()
-        );
-        assert!(
-            read_answer(&mut Cursor::new(
-                &b"HTTP/1.1 200 OK\r\nContent-Length: 999999\r\n\r\n"[..]
-            ))
-            .is_err()
-        );
+        assert!(read(b"HTTP/1.1 400 Bad Request\r\nContent-Length: 0\r\n\r\n").is_err());
+        assert!(read(b"HTTP/1.1 200 OK\r\nContent-Length: 9\r\n\r\nabc").is_err());
+        assert!(read(b"HTTP/1.1 200 OK\r\nContent-Length: 999999\r\n\r\n").is_err());
     }
 }

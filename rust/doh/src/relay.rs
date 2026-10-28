@@ -1,34 +1,54 @@
 //! The relay between the VPN tunnel and a DNS over HTTPS server: to the tunnel, a datagram socket
-//! like the ones connected to the plain DNS servers; on the other side, each query goes to the
-//! server over one of a few kept-alive HTTPS connections. It stops once the tunnel closes its end.
+//! like the ones connected to the plain DNS servers; on the other side, the queries go to the
+//! server over one HTTP/2 connection, or over a few kept-alive HTTP/1.1 connections with the
+//! servers that only speak it. It stops once the tunnel closes its end.
 
-use std::io::{self, BufReader};
-use std::net::{IpAddr, SocketAddr, TcpStream};
+use std::future::Future;
+use std::io;
+use std::net::{IpAddr, SocketAddr};
 use std::os::fd::{AsRawFd, FromRawFd, OwnedFd};
-use std::sync::mpsc::{self, Receiver};
-use std::sync::{Arc, Mutex};
+use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 use std::thread;
 use std::time::Duration;
 
+use bytes::Bytes;
+use h2::client::SendRequest;
 use rustls::pki_types::{ServerName, TrustAnchor};
-use rustls::{ClientConfig, ClientConnection, RootCertStore, StreamOwned};
+use rustls::{ClientConfig, RootCertStore};
+use tokio::io::BufReader;
+use tokio::io::unix::AsyncFd;
+use tokio::net::TcpStream;
+use tokio::sync::Semaphore;
+use tokio_rustls::TlsConnector;
+use tokio_rustls::client::TlsStream;
 
 use crate::http;
 use crate::url::DohUrl;
 
-/// How many queries can be on their way at once.
+/// How many queries can be on their way at once over HTTP/1.1.
 const CONNECTIONS: usize = 4;
 const TIMEOUT: Duration = Duration::from_secs(5);
 const BUFFER_SIZE: usize = 65_536;
+const HTTP2: &[u8] = b"h2";
+const HTTP1: &[u8] = b"http/1.1";
 
-type Connection = BufReader<StreamOwned<ClientConnection, TcpStream>>;
+type Http1Connection = Box<BufReader<TlsStream<TcpStream>>>;
 
-/// What every connection to the server needs.
+/// A new connection, in the version of HTTP the server chose.
+enum Connection {
+    Http2(SendRequest<Bytes>),
+    Http1(Http1Connection),
+}
+
+/// What every connection to the server needs, and the connections kept for the next queries.
 struct Server {
     url: DohUrl,
     name: ServerName<'static>,
     addresses: Vec<IpAddr>,
-    tls: Arc<ClientConfig>,
+    tls: TlsConnector,
+    http2: Mutex<Option<SendRequest<Bytes>>>,
+    idle_http1: Mutex<Vec<Http1Connection>>,
+    http1_slots: Semaphore,
 }
 
 /// Starts the relay to the server at `url`, reached at one of `addresses`, and returns the end of
@@ -54,29 +74,19 @@ fn start_with(url: DohUrl, addresses: Vec<IpAddr>, tls: ClientConfig) -> io::Res
         url,
         name,
         addresses,
-        tls: Arc::new(tls),
+        tls: TlsConnector::from(Arc::new(tls)),
+        http2: Mutex::new(None),
+        idle_http1: Mutex::new(Vec::new()),
+        http1_slots: Semaphore::new(CONNECTIONS),
     });
     let (tunnel_end, relay_end) = socket_pair()?;
-    let relay_end = Arc::new(relay_end);
-    let (queries, pending) = mpsc::channel::<Vec<u8>>();
-    let pending = Arc::new(Mutex::new(pending));
-    for _ in 0..CONNECTIONS {
-        let (server, pending, relay_end) = (
-            Arc::clone(&server),
-            Arc::clone(&pending),
-            Arc::clone(&relay_end),
-        );
-        thread::spawn(move || answer_queries(&server, &pending, &relay_end));
-    }
-    // Ends when the tunnel closes its end, which also ends the connections once idle.
-    thread::spawn(move || {
-        let mut buffer = vec![0u8; BUFFER_SIZE];
-        while let Ok(Some(length)) = receive_query(&relay_end, &mut buffer) {
-            if length > 0 && queries.send(buffer[..length].to_vec()).is_err() {
-                break;
-            }
-        }
-    });
+    set_nonblocking(&relay_end)?;
+    let runtime = tokio::runtime::Builder::new_current_thread()
+        .enable_io()
+        .enable_time()
+        .build()?;
+    // Dropping the runtime once the tunnel closed its end also ends the connections.
+    thread::spawn(move || runtime.block_on(relay(server, relay_end)));
     Ok(tunnel_end)
 }
 
@@ -88,69 +98,121 @@ fn tls_config(roots: Vec<TrustAnchor<'static>>) -> io::Result<ClientConfig> {
             .map_err(io::Error::other)?
             .with_root_certificates(roots)
             .with_no_client_auth();
-    config.alpn_protocols = vec![b"http/1.1".to_vec()];
+    config.alpn_protocols = vec![HTTP2.to_vec(), HTTP1.to_vec()];
     Ok(config)
 }
 
-/// Sends the queries one after the other over a connection, made again when it fails.
-fn answer_queries(server: &Server, pending: &Mutex<Receiver<Vec<u8>>>, relay_end: &OwnedFd) {
-    let mut connection: Option<Connection> = None;
-    loop {
-        let query = match pending.lock().map(|pending| pending.recv()) {
-            Ok(Ok(query)) => query,
-            _ => return,
-        };
-        // A kept-alive connection the server closed meanwhile fails at once: one more try.
-        let answer = exchange(server, &mut connection, &query)
-            .or_else(|_| exchange(server, &mut connection, &query));
-        // An unanswered query is retried by the app itself.
-        if let Ok(answer) = answer {
-            let _ = send(relay_end, &answer);
-        }
-    }
-}
-
-fn exchange(
-    server: &Server,
-    connection: &mut Option<Connection>,
-    query: &[u8],
-) -> io::Result<Vec<u8>> {
-    let stream = match connection {
-        Some(stream) => stream,
-        None => connection.insert(connect(server)?),
+/// Answers each query of the tunnel on its own, until the tunnel closes its end.
+async fn relay(server: Arc<Server>, relay_end: OwnedFd) {
+    // SAFETY: the socket, owned by the AsyncFd, stays open and the same as long as it lives.
+    let Ok(socket) = (unsafe { AsyncFd::register(relay_end) }) else {
+        return;
     };
-    let result = http::write_query(stream.get_mut(), &server.url, query)
-        .and_then(|()| http::read_answer(stream));
-    match result {
-        Ok(answer) => {
-            if !answer.keep_alive {
-                *connection = None;
+    let socket = Arc::new(socket);
+    let mut buffer = vec![0u8; BUFFER_SIZE];
+    while let Ok(Some(length)) = receive_query(&socket, &mut buffer).await {
+        if length == 0 {
+            continue;
+        }
+        let query = buffer[..length].to_vec();
+        let (server, socket) = (Arc::clone(&server), Arc::clone(&socket));
+        tokio::spawn(async move {
+            // A kept-alive connection the server closed meanwhile fails at once: one more try.
+            let answer = match server.exchange(&query).await {
+                Ok(answer) => Ok(answer),
+                Err(_) => server.exchange(&query).await,
+            };
+            // An unanswered query is retried by the app itself.
+            if let Ok(answer) = answer {
+                let _ = send_answer(&socket, &answer).await;
             }
-            Ok(answer.message)
-        }
-        Err(error) => {
-            *connection = None;
-            Err(error)
-        }
+        });
     }
 }
 
-fn connect(server: &Server) -> io::Result<Connection> {
-    let mut last_error = io::Error::other("no address");
-    for address in &server.addresses {
-        match TcpStream::connect_timeout(&SocketAddr::new(*address, server.url.port), TIMEOUT) {
-            Ok(socket) => {
-                socket.set_read_timeout(Some(TIMEOUT))?;
-                socket.set_write_timeout(Some(TIMEOUT))?;
-                socket.set_nodelay(true)?;
-                let tls = ClientConnection::new(Arc::clone(&server.tls), server.name.clone())
-                    .map_err(io::Error::other)?;
-                return Ok(BufReader::new(StreamOwned::new(tls, socket)));
-            }
-            Err(error) => last_error = error,
+/// The outcome of `step`, or a time out error after [`TIMEOUT`].
+async fn within_timeout<T>(step: impl Future<Output = io::Result<T>>) -> io::Result<T> {
+    tokio::time::timeout(TIMEOUT, step)
+        .await
+        .unwrap_or_else(|_| Err(io::ErrorKind::TimedOut.into()))
+}
+
+impl Server {
+    async fn exchange(&self, query: &[u8]) -> io::Result<Vec<u8>> {
+        let shared = lock(&self.http2).clone();
+        if let Some(sender) = shared {
+            return self.exchange_http2(sender, query).await;
         }
+        let _slot = self.http1_slots.acquire().await.map_err(io::Error::other)?;
+        let idle = lock(&self.idle_http1).pop();
+        let mut connection = match idle {
+            Some(connection) => connection,
+            None => match self.connect().await? {
+                Connection::Http2(sender) => {
+                    *lock(&self.http2) = Some(sender.clone());
+                    return self.exchange_http2(sender, query).await;
+                }
+                Connection::Http1(connection) => connection,
+            },
+        };
+        let answer = within_timeout(async {
+            http::write_query(connection.get_mut(), &self.url, query).await?;
+            http::read_answer(&mut connection).await
+        })
+        .await?;
+        if answer.keep_alive {
+            lock(&self.idle_http1).push(connection);
+        }
+        Ok(answer.message)
     }
-    Err(last_error)
+
+    /// Forgets the HTTP/2 connection when it fails, for the next query to make a new one.
+    async fn exchange_http2(
+        &self,
+        sender: SendRequest<Bytes>,
+        query: &[u8],
+    ) -> io::Result<Vec<u8>> {
+        let result = within_timeout(http::exchange_http2(sender, &self.url, query)).await;
+        if result.is_err() {
+            *lock(&self.http2) = None;
+        }
+        result
+    }
+
+    async fn connect(&self) -> io::Result<Connection> {
+        let socket = self.connect_socket().await?;
+        socket.set_nodelay(true)?;
+        within_timeout(async {
+            let stream = self.tls.connect(self.name.clone(), socket).await?;
+            if stream.get_ref().1.alpn_protocol() == Some(HTTP2) {
+                let (sender, connection) = h2::client::handshake(stream)
+                    .await
+                    .map_err(io::Error::other)?;
+                tokio::spawn(connection);
+                Ok(Connection::Http2(sender))
+            } else {
+                Ok(Connection::Http1(Box::new(BufReader::new(stream))))
+            }
+        })
+        .await
+    }
+
+    async fn connect_socket(&self) -> io::Result<TcpStream> {
+        let mut last_error = io::Error::other("no address");
+        for address in &self.addresses {
+            match within_timeout(TcpStream::connect(SocketAddr::new(*address, self.url.port))).await
+            {
+                Ok(socket) => return Ok(socket),
+                Err(error) => last_error = error,
+            }
+        }
+        Err(last_error)
+    }
+}
+
+/// Nothing panics while holding these locks, so a poisoned one still holds sound data.
+fn lock<T>(mutex: &Mutex<T>) -> MutexGuard<'_, T> {
+    mutex.lock().unwrap_or_else(PoisonError::into_inner)
 }
 
 fn socket_pair() -> io::Result<(OwnedFd, OwnedFd)> {
@@ -171,23 +233,43 @@ fn socket_pair() -> io::Result<(OwnedFd, OwnedFd)> {
     Ok(unsafe { (OwnedFd::from_raw_fd(fds[0]), OwnedFd::from_raw_fd(fds[1])) })
 }
 
+fn set_nonblocking(socket: &OwnedFd) -> io::Result<()> {
+    // SAFETY: reads then sets the flags of one live descriptor.
+    let result = unsafe {
+        let flags = libc::fcntl(socket.as_raw_fd(), libc::F_GETFL);
+        if flags < 0 {
+            flags
+        } else {
+            libc::fcntl(socket.as_raw_fd(), libc::F_SETFL, flags | libc::O_NONBLOCK)
+        }
+    };
+    if result < 0 {
+        Err(io::Error::last_os_error())
+    } else {
+        Ok(())
+    }
+}
+
 /// Waits for the next message, empty ones included as the tunnel passes them on. None once the
 /// tunnel closed its end, which an empty read alone cannot tell.
-fn receive_query(socket: &OwnedFd, buffer: &mut [u8]) -> io::Result<Option<usize>> {
-    let mut ready = libc::pollfd {
-        fd: socket.as_raw_fd(),
-        events: libc::POLLIN,
-        revents: 0,
-    };
-    // SAFETY: polls one live descriptor.
-    while unsafe { libc::poll(&raw mut ready, 1, -1) } < 0 {
-        let error = io::Error::last_os_error();
-        if error.kind() != io::ErrorKind::Interrupted {
-            return Err(error);
+async fn receive_query(socket: &AsyncFd<OwnedFd>, buffer: &mut [u8]) -> io::Result<Option<usize>> {
+    loop {
+        let mut ready = socket.readable().await?;
+        let closed = ready.ready().is_read_closed();
+        if let Ok(length) = ready.try_io(|socket| receive(socket.get_ref(), buffer)) {
+            let length = length?;
+            return Ok((length > 0 || !closed).then_some(length));
         }
     }
-    let length = receive(socket, buffer)?;
-    Ok((length > 0 || ready.revents & libc::POLLHUP == 0).then_some(length))
+}
+
+async fn send_answer(socket: &AsyncFd<OwnedFd>, answer: &[u8]) -> io::Result<usize> {
+    loop {
+        let mut ready = socket.writable().await?;
+        if let Ok(result) = ready.try_io(|socket| send(socket.get_ref(), answer)) {
+            return result;
+        }
+    }
 }
 
 fn receive(socket: &OwnedFd, buffer: &mut [u8]) -> io::Result<usize> {
@@ -230,46 +312,82 @@ fn send(socket: &OwnedFd, data: &[u8]) -> io::Result<usize> {
 
 #[cfg(test)]
 mod tests {
-    use super::{receive, send, start_with, tls_config};
+    use super::{HTTP1, HTTP2, receive, send, start_with, tls_config};
     use crate::url::DohUrl;
+    use rustls::ServerConfig;
     use rustls::pki_types::{CertificateDer, PrivateKeyDer, PrivatePkcs8KeyDer};
-    use rustls::{ServerConfig, ServerConnection, StreamOwned};
-    use std::io::{BufRead, BufReader, Read, Write};
-    use std::net::{Ipv4Addr, TcpListener, TcpStream};
+    use std::net::{Ipv4Addr, TcpListener};
     use std::sync::Arc;
     use std::thread;
+    use tokio::io::{AsyncBufReadExt, AsyncReadExt, AsyncWriteExt, BufReader};
+    use tokio_rustls::TlsAcceptor;
 
-    /// A server answering each query with the query itself reversed, over kept-alive connections.
+    /// A server answering each query with the query itself reversed, over kept-alive connections,
+    /// in the versions of HTTP of `protocols`.
     fn serve_reversed(
         listener: TcpListener,
         certificate: CertificateDer<'static>,
         key: PrivateKeyDer<'static>,
+        protocols: &[&[u8]],
     ) {
-        let config = Arc::new(
+        let mut config =
             ServerConfig::builder_with_provider(Arc::new(rustls::crypto::ring::default_provider()))
                 .with_safe_default_protocol_versions()
                 .unwrap()
                 .with_no_client_auth()
                 .with_single_cert(vec![certificate], key)
-                .unwrap(),
-        );
-        for socket in listener.incoming() {
-            let connection = ServerConnection::new(Arc::clone(&config)).unwrap();
-            thread::spawn(move || {
-                answer_reversed(BufReader::new(StreamOwned::new(
-                    connection,
-                    socket.unwrap(),
-                )))
+                .unwrap();
+        config.alpn_protocols = protocols.iter().map(|protocol| protocol.to_vec()).collect();
+        let acceptor = TlsAcceptor::from(Arc::new(config));
+        listener.set_nonblocking(true).unwrap();
+        tokio::runtime::Builder::new_current_thread()
+            .enable_io()
+            .build()
+            .unwrap()
+            .block_on(async move {
+                let listener = tokio::net::TcpListener::from_std(listener).unwrap();
+                loop {
+                    let (socket, _) = listener.accept().await.unwrap();
+                    let acceptor = acceptor.clone();
+                    tokio::spawn(async move {
+                        let stream = acceptor.accept(socket).await.unwrap();
+                        if stream.get_ref().1.alpn_protocol() == Some(HTTP2) {
+                            answer_reversed_http2(stream).await;
+                        } else {
+                            answer_reversed_http1(BufReader::new(stream)).await;
+                        }
+                    });
+                }
+            });
+    }
+
+    async fn answer_reversed_http2(stream: tokio_rustls::server::TlsStream<tokio::net::TcpStream>) {
+        let mut connection = h2::server::handshake(stream).await.unwrap();
+        while let Some(Ok((request, mut respond))) = connection.accept().await {
+            tokio::spawn(async move {
+                let length = request.headers()[http::header::CONTENT_LENGTH].clone();
+                let mut body = request.into_body();
+                let mut query = Vec::new();
+                while let Some(data) = body.data().await {
+                    query.extend_from_slice(&data.unwrap());
+                }
+                assert_eq!(length, query.len().to_string());
+                query.reverse();
+                let response = http::Response::builder().status(200).body(()).unwrap();
+                let mut stream = respond.send_response(response, false).unwrap();
+                stream.send_data(query.into(), true).unwrap();
             });
         }
     }
 
-    fn answer_reversed(mut stream: BufReader<StreamOwned<ServerConnection, TcpStream>>) {
+    async fn answer_reversed_http1(
+        mut stream: BufReader<tokio_rustls::server::TlsStream<tokio::net::TcpStream>>,
+    ) {
         loop {
             let mut length = 0;
             loop {
                 let mut line = String::new();
-                if stream.read_line(&mut line).unwrap_or(0) == 0 {
+                if stream.read_line(&mut line).await.unwrap_or(0) == 0 {
                     return;
                 }
                 if let Some(value) = line.strip_prefix("Content-Length: ") {
@@ -280,17 +398,17 @@ mod tests {
                 }
             }
             let mut body = vec![0; length];
-            stream.read_exact(&mut body).unwrap();
+            stream.read_exact(&mut body).await.unwrap();
             body.reverse();
             let head = format!("HTTP/1.1 200 OK\r\nContent-Length: {}\r\n\r\n", body.len());
-            stream.get_mut().write_all(head.as_bytes()).unwrap();
-            stream.get_mut().write_all(&body).unwrap();
-            stream.get_mut().flush().unwrap();
+            stream.get_mut().write_all(head.as_bytes()).await.unwrap();
+            stream.get_mut().write_all(&body).await.unwrap();
+            stream.get_mut().flush().await.unwrap();
         }
     }
 
-    #[test]
-    fn relays_each_query_to_the_server_and_back() {
+    /// Relays a few queries to a server speaking the versions of HTTP of `protocols`.
+    fn relays_each_query_to_a_server_speaking(protocols: &'static [&'static [u8]]) {
         // A server certificate signed by an authority, as webpki wants it.
         let mut authority_params = rcgen::CertificateParams::new(Vec::new()).unwrap();
         authority_params.is_ca = rcgen::IsCa::Ca(rcgen::BasicConstraints::Unconstrained);
@@ -309,7 +427,7 @@ mod tests {
         let key = PrivateKeyDer::Pkcs8(PrivatePkcs8KeyDer::from(server_key.serialize_der()));
         let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0)).unwrap();
         let port = listener.local_addr().unwrap().port();
-        thread::spawn(move || serve_reversed(listener, certificate, key));
+        thread::spawn(move || serve_reversed(listener, certificate, key, protocols));
 
         let mut roots = rustls::RootCertStore::empty();
         roots.add(authority.der().clone()).unwrap();
@@ -330,5 +448,20 @@ mod tests {
             expected.reverse();
             assert_eq!(&buffer[..length], expected);
         }
+    }
+
+    #[test]
+    fn relays_each_query_over_http2() {
+        relays_each_query_to_a_server_speaking(&[HTTP2, HTTP1]);
+    }
+
+    #[test]
+    fn relays_each_query_over_http1_with_the_servers_that_only_speak_it() {
+        relays_each_query_to_a_server_speaking(&[HTTP1]);
+    }
+
+    #[test]
+    fn relays_each_query_over_http1_without_protocol_negotiation() {
+        relays_each_query_to_a_server_speaking(&[]);
     }
 }
