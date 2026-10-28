@@ -58,10 +58,10 @@
     <string name="welcome_oem_battery_label_miui">Xiaomi / Redmi / POCO (MIUI / HyperOS)</string>
     <string-array name="welcome_oem_battery_path_miui">
         <item>Informace o aplikaci</item>
-        <item>Úspora baterie</item>
+        <item>Spořič baterie</item>
     </string-array>
     <string name="welcome_oem_battery_instruction_miui">Zvolte „Bez omezení“.</string>
-    <string name="welcome_oem_battery_secondary_miui">Zapněte také „Automatické spuštění“ (v novějších verzích „Automatické spuštění na pozadí“).</string>
+    <string name="welcome_oem_battery_secondary_miui">Zapněte také „Automatické spouštění“ (v novějších verzích „Automatické spouštění na pozadí“).</string>
     <string name="welcome_oem_battery_label_coloros">Oppo / OnePlus / Realme (ColorOS)</string>
     <string-array name="welcome_oem_battery_path_coloros">
         <item>Informace o aplikaci</item>
@@ -82,7 +82,7 @@
         <item>Využití baterie</item>
     </string-array>
     <string name="welcome_oem_battery_instruction_funtouch">Najděte volbu pro spotřebu energie na pozadí a zvolte „Neomezovat spotřebu energie na pozadí“ (ne „Inteligentní řízení“).</string>
-    <string name="welcome_oem_battery_secondary_funtouch">Hledejte také nastavení „Automatické spuštění“ pro AdAway, často v Nastavení › Aplikace.</string>
+    <string name="welcome_oem_battery_secondary_funtouch">Hledejte také nastavení „Automatické spouštění“ pro AdAway, často v Nastavení › Aplikace.</string>
     <string name="welcome_oem_battery_label_generic">Jiná značka</string>
     <string name="welcome_oem_battery_tip_generic">V informacích o aplikaci najděte nastavení baterie nebo aktivity na pozadí a ujistěte se, že aplikace AdAway není omezená.</string>
     <string name="welcome_back_button">Zpět</string>

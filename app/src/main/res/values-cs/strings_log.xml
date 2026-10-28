@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="log_toggle_recording_description">Zapnout nebo vypnout záznam protokolu</string>
-    <string name="log_start_recording">Stisknutím tlačítka záznamu začnete zaznamenávat požadavky. Pak procházejte web nebo používejte aplikace, vraťte se zpět a protokol obnovte přetažením dolů.</string>
+    <string name="log_start_recording">Stisknutím tlačítka záznamu začnete zaznamenávat požadavky. Potom procházejte web nebo používejte aplikace. Protokol obnovíte návratem zpět nebo přetažením dolů.</string>
     <string name="log_blocked_requests_ignored">\n\nBlokované požadavky se nezaznamenávají. Chcete-li zaznamenávat i je, nejdřív vypněte blokování reklam.</string>
     <string name="log_sort">Seřadit domény</string>
     <string name="log_clear">Vymazat protokol</string>

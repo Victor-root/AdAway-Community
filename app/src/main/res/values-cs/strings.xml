@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_subtitle">Blokátor reklam s otevřeným kódem</string>
+    <string name="app_subtitle">Open source blokátor reklam</string>
     <string name="logo_description">Logo AdAway</string>
 
 
@@ -8,7 +8,7 @@
     <string name="vpn_settings_unavailable">Nastavení VPN není na tomto zařízení k dispozici.</string>
     <string name="close">Zavřít</string>
 
-    <string name="home_legacy_import_failed">Aplikaci AdAway se nepodařilo obnovit blokovací seznamy a vaše vlastní seznamy z předchozí verze. Pokud máte soubor zálohy, můžete ho obnovit v nastavení.</string>
+    <string name="home_legacy_import_failed">Aplikaci AdAway se nepodařilo obnovit blokovací seznamy a vaše vlastní seznamy z předchozí verze. Pokud máte zálohu, můžete ji obnovit v nastavení.</string>
     <string name="dismiss">Skrýt</string>
     <string name="notification_channel_source_updates">Aktualizace blokovacích seznamů</string>
     <string name="notification_channel_source_updates_description">Oznámení, když jsou k dispozici novější verze blokovacích seznamů.</string>
@@ -119,7 +119,7 @@
     <string name="notification_vpn_consent_title">Je potřeba oprávnění pro VPN</string>
     <string name="notification_vpn_consent_text">Klepnutím umožníte aplikaci AdAway znovu blokovat reklamy.</string>
     <string name="notification_vpn_refused_title">Blokování reklam je vypnuté</string>
-    <string name="notification_vpn_refused_text">Android zabránil aplikaci AdAway, aby blokování znovu spustila na pozadí. Klepnutím ho znovu zapnete.</string>
+    <string name="notification_vpn_refused_text">Android aplikaci AdAway nedovolil obnovit blokování na pozadí. Klepnutím ho znovu zapnete.</string>
     <string name="vpn_status_starting">spouští se</string>
     <string name="vpn_status_running">aktivní</string>
     <string name="vpn_status_waiting_for_network">čeká na síť</string>
@@ -142,7 +142,7 @@
     <string name="vpn_persistence_disabled">Trvalá síť VPN není nastavená. O nepřetržitý běh se stará AdAway sám.</string>
     <string name="vpn_persistence_lockdown">Volba „Blokovat připojení bez VPN“ je zapnutá: aplikace vyloučené z VPN nemají přístup k internetu.</string>
     <string name="vpn_persistence_message">AdAway si sám poradí s restarty zařízení, ukončením kvůli nedostatku paměti i pády, takže ve většině případů není potřeba nic dalšího nastavovat.\n\nPokud se VPN přesto někdy nečekaně vypne, nastavte AdAway v Androidu jako trvalou síť VPN. Je to nejspolehlivější řešení.</string>
-    <string name="vpn_persistence_adb_commands">Pokud televize systémovou obrazovku VPN skrývá, použijte ADB a potom televizi restartujte:\n\n• Zapnutí trvalé sítě VPN pro AdAway:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Ověření, že je zapnutá (příkaz vrátí %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Na některých televizích, například TCL, navíc povolení automatického spouštění AdAway:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Vypnutí trvalé sítě VPN:\n  adb shell settings delete secure always_on_vpn_app</string>
+    <string name="vpn_persistence_adb_commands">Pokud televize systémovou obrazovku VPN skrývá, použijte ADB a potom televizi restartujte:\n\n• Zapněte pro AdAway trvalou síť VPN:\n  adb shell settings put secure always_on_vpn_app %1$s\n\n• Ověřte, že je zapnutá (příkaz vrátí %1$s):\n  adb shell settings get secure always_on_vpn_app\n\n• Na některých televizích, například TCL, povolte AdAway také automatické spouštění:\n  adb shell cmd appops set %1$s APP_AUTO_START allow\n\n• Pokud chcete trvalou síť VPN vypnout:\n  adb shell settings delete secure always_on_vpn_app</string>
     <string name="vpn_persistence_tv_settings_unavailable">Nastavení VPN je na tomto zařízení Android TV skryté. Použijte zobrazené příkazy ADB.</string>
     <string name="vpn_persistence_dismiss">Rozumím</string>
     <string name="status_update_available">K dispozici je aktualizace zdrojů</string>
@@ -176,7 +176,7 @@
     <string name="hosts_source_few_minutes">několik minut</string>
     <string name="hosts_count">Počet hostitelů: %1$s</string>
     <string name="configuration_changed">Konfigurace se změnila. Změny je potřeba použít.</string>
-    <string name="configuration_installing">Používá se nová konfigurace…</string>
+    <string name="configuration_installing">Uplatňování nové konfigurace…</string>
     <string name="configuration_failed">Novou konfiguraci se nepodařilo použít.</string>
     <string name="apply_blocking_off_title">Blokování reklam je vypnuté</string>
     <string name="apply_blocking_off_text">Změny se projeví po zapnutí blokování reklam. Zapnout ho nyní?</string>
