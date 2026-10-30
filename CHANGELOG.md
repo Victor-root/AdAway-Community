@@ -13,6 +13,7 @@
 * Write the hosts file without holding every entry in memory
 * Accept hosts sources of up to 128 MB and 4 million entries, and keep the VPN list in about a third of the memory
 * Show the pre-release stage in the app name, such as "AdAway Alpha"
+* Show the logo and the app name on the Android TV banner
 
 ### ➕ Added
 
