@@ -30,13 +30,16 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
@@ -63,17 +66,18 @@ fun AdAwayTextField(
     singleLine: Boolean = true,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
 ) {
+    val (fieldKeyboardOptions, remoteKeyboard) = remoteKeyboard(keyboardOptions)
     TextField(
         state = rememberTextFieldState(value, onValueChange),
         label = { Text(label) },
         lineLimits = if (singleLine) TextFieldLineLimits.SingleLine else TextFieldLineLimits.Default,
         isError = error != null,
         supportingText = error?.let { { Text(it) } },
-        keyboardOptions = keyboardOptions.forDevice(),
+        keyboardOptions = fieldKeyboardOptions,
         textStyle = AdAwayType.subtitle1,
         shape = RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp),
         colors = adAwayTextFieldColors(),
-        modifier = modifier.fillMaxWidth().keyboardOnRemoteOk(),
+        modifier = modifier.fillMaxWidth().then(remoteKeyboard),
     )
 }
 
@@ -81,18 +85,26 @@ fun AdAwayTextField(
 val RemoteConfirmKeys = setOf(Key.DirectionCenter, Key.Enter, Key.NumPadEnter)
 
 /**
- * On TV, the OK button of the remote opens the keyboard, which moving onto the field leaves closed.
- * Some TVs, as TCL ones, do not open it by themselves.
+ * On TV, moving onto a field leaves the keyboard closed: the field then starts no input session.
+ * The OK button of the remote asks for one, which opens the keyboard, as a tap does on a phone;
+ * once there, it opens the keyboard again. Returns the keyboard options and the modifier of the
+ * field.
  */
 @Composable
-private fun Modifier.keyboardOnRemoteOk(): Modifier {
-    if (!LocalTelevision.current) return this
+private fun remoteKeyboard(options: KeyboardOptions): Pair<KeyboardOptions, Modifier> {
+    var requested by remember { mutableStateOf(false) }
     val keyboard = LocalSoftwareKeyboardController.current
-    return onPreviewKeyEvent { event ->
-        if (event.key !in RemoteConfirmKeys) return@onPreviewKeyEvent false
-        if (event.type == KeyEventType.KeyUp) keyboard?.show()
-        true
-    }
+    if (!LocalTelevision.current) return options to Modifier
+    val modifier = Modifier
+        .onFocusChanged { if (!it.hasFocus) requested = false }
+        .onPreviewKeyEvent { event ->
+            if (event.key !in RemoteConfirmKeys) return@onPreviewKeyEvent false
+            if (event.type == KeyEventType.KeyUp) {
+                if (requested) keyboard?.show() else requested = true
+            }
+            true
+        }
+    return (if (requested) options else options.copy(showKeyboardOnFocus = false)) to modifier
 }
 
 /**
@@ -125,13 +137,6 @@ private fun rememberTextFieldState(value: String, onValueChange: (String) -> Uni
     }
     return state
 }
-
-/**
- * On TV, moving onto a field leaves the keyboard closed, until [keyboardOnRemoteOk] opens it. Only
- * the fields editing a [TextFieldState] honor this.
- */
-@Composable
-private fun KeyboardOptions.forDevice() = if (LocalTelevision.current) copy(showKeyboardOnFocus = false) else this
 
 @Composable
 private fun adAwayTextFieldColors(): TextFieldColors {
@@ -229,10 +234,11 @@ fun AdAwayEditText(
     val interactions = remember { MutableInteractionSource() }
     val focused by interactions.collectIsFocusedAsState()
     val state = rememberTextFieldState(value, onValueChange)
+    val (fieldKeyboardOptions, remoteKeyboard) = remoteKeyboard(keyboardOptions)
     BasicTextField(
         state = state,
         lineLimits = TextFieldLineLimits.SingleLine,
-        keyboardOptions = keyboardOptions.forDevice(),
+        keyboardOptions = fieldKeyboardOptions,
         textStyle = AdAwayType.subtitle1.copy(color = colors.textPrimary),
         cursorBrush = SolidColor(colors.primary),
         interactionSource = interactions,
@@ -253,7 +259,7 @@ fun AdAwayEditText(
                     size = Size(size.width, stroke),
                 )
             }
-            .keyboardOnRemoteOk(),
+            .then(remoteKeyboard),
     )
 }
 
