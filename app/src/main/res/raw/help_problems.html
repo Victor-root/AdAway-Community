@@ -8,7 +8,14 @@ Keep structure simple: h2 headings and p paragraphs, links via <a href>. -->
 <p>In Android settings, find AdAway and: set <cite>battery optimization</cite> to <cite>Unrestricted</cite> (or <cite>Don't optimize</cite>), allow <cite>autostart</cite>/<cite>auto-launch</cite> if your ROM has it, and lock AdAway in the recent-apps list so it is not swiped away. Also make sure <cite>Enable at startup</cite> is on in AdAway's VPN preferences.</p>
 
 <h2>On Android TV, the VPN does not start again after a restart</h2>
-<p>Set AdAway as the <cite>Always-on VPN</cite> of Android. Many TVs hide this setting: the ADB commands that set it are shown on the AdAway home screen, under <cite>VPN persistence</cite>. On some TVs, such as TCL ones, AdAway must also be allowed to start by itself, with the command given there for these TVs.</p>
+<p>Set AdAway as the <cite>Always-on VPN</cite> of Android. Many TVs hide this setting: set it with ADB from a computer or a phone, then restart the TV. The TV also shows these commands on the AdAway home screen, under <cite>VPN persistence</cite>.</p>
+<p><strong>Enable</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Check</strong> (the command answers <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Disable</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>On some TVs, such as TCL ones, AdAway must also be allowed to start by itself:</p>
+<p><strong>Allow</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Check</strong> (the command answers <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Undo</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>No internet or slow browsing right after switching between Wi-Fi and mobile</h2>
 <p>When the active network changes, the tunnel has to be rebuilt so DNS is resolved from the new network. If browsing stays broken, open <cite>Preferences, VPN, Reset VPN</cite> to rebuild the connection from scratch. If it keeps happening, capture a diagnostic log (below) and report it.</p>

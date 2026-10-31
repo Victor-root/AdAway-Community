@@ -5,10 +5,17 @@ Garder une structure simple : titres h2 et paragraphes p, liens via <a href>. --
 <body>
 <h2>Le RPV/VPN se coupe tout seul</h2>
 <p>C'est presque toujours le système qui coupe le service RPV/VPN pour économiser la batterie, pas un plantage. C'est fréquent sur les ROM constructeurs à gestion d'énergie agressive (ColorOS/Oppo, MIUI/Xiaomi, EMUI/Huawei, OneUI/Samsung, etc.).</p>
-<p>Dans les paramètres Android, trouvez AdAway et : réglez l'<cite>optimisation de la batterie</cite> sur <cite>Sans restriction</cite> (ou <cite>Ne pas optimiser</cite>), autorisez le <cite>démarrage automatique</cite> si votre ROM le propose, et verrouillez AdAway dans la liste des applications récentes pour ne pas le balayer. Vérifiez aussi que <cite>Activer au démarrage</cite> est coché dans les préférences RPV/VPN d'AdAway.</p>
+<p>Dans les paramètres Android, trouvez AdAway et : réglez l'<cite>optimisation de la batterie</cite> sur <cite>Sans restriction</cite> (ou <cite>Ne pas optimiser</cite>), autorisez le <cite>démarrage automatique</cite> (ou <cite>lancement automatique</cite>) si votre ROM le propose, et verrouillez AdAway dans la liste des applications récentes pour ne pas le balayer. Vérifiez aussi que <cite>Activer au démarrage</cite> est coché dans les préférences RPV/VPN d'AdAway.</p>
 
 <h2>Sur Android TV, le RPV/VPN ne se relance pas après un redémarrage</h2>
-<p>Définissez AdAway comme <cite>VPN permanent</cite> d'Android. Beaucoup de TV masquent ce réglage : les commandes ADB qui le définissent sont affichées sur l'écran d'accueil d'AdAway, dans <cite>Persistance VPN</cite>. Sur certaines TV, comme celles de TCL, il faut aussi autoriser AdAway à démarrer tout seul, avec la commande prévue pour ces TV.</p>
+<p>Définissez AdAway comme <cite>VPN permanent</cite> d'Android. Beaucoup de TV masquent ce réglage : définissez-le avec ADB depuis un ordinateur ou un téléphone, puis redémarrez la TV. La TV affiche aussi ces commandes sur l'écran d'accueil d'AdAway, dans <cite>Persistance VPN</cite>.</p>
+<p><strong>Activer</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Vérifier</strong> (la commande répond <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Désactiver</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Sur certaines TV, comme celles de TCL, il faut aussi autoriser AdAway à démarrer tout seul :</p>
+<p><strong>Autoriser</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Vérifier</strong> (la commande répond <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Annuler</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Pas d'internet ou navigation lente juste après un passage Wi-Fi ↔ données mobiles</h2>
 <p>Quand le réseau actif change, le tunnel doit être reconstruit pour que le DNS soit résolu depuis le nouveau réseau. Si la navigation reste cassée, ouvrez <cite>Préférences › VPN › Réinitialiser le RPV/VPN</cite> pour reconstruire la connexion. Si cela se reproduit, capturez un journal de diagnostic (ci-dessous) et signalez-le.</p>

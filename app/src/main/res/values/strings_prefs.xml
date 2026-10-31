@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Backup / restore block rules</string>
     <string name="pref_backup_restore_title">Backup &amp; restore</string>
     <string name="pref_backup">Backup</string>
-    <string name="pref_backup_summary">Backup to external storage your block rules</string>
+    <string name="pref_backup_summary">Save your block rules to a file, or to the Download folder if the device has no file picker</string>
     <string name="pref_restore">Restore</string>
     <string name="pref_restore_summary">Restore your block rules from backup file</string>
-    <string name="import_success">Backup successfully imported from your external storage.</string>
+    <string name="import_success">Your block rules were restored.</string>
     <string name="import_failed">Failed to import backup. Is its format correct?</string>
-    <string name="export_success">Backup successfully exported to file \'%s\' on your external storage.</string>
+    <string name="export_success">Your block rules were saved to \'%s\'.</string>
     <string name="export_failed">Failed to export backup file \'%s\'.</string>
     <string name="pref_update_title">Updates</string>
     <string name="pref_update_enable_notifications">Notifications are disabled</string>

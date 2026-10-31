@@ -9,6 +9,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -18,7 +22,9 @@ import kotlinx.coroutines.launch
 import org.adaway.R
 import org.adaway.system.launchOr
 import org.adaway.system.launchOrTell
+import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.AdAwayScreen
+import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.prefs.BackupRestoreViewModel.Companion.BACKUP_FILE_NAME
 import org.adaway.ui.prefs.BackupRestoreViewModel.Companion.JSON_MIME_TYPE
@@ -34,27 +40,29 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
     val context = LocalContext.current
     val resources = LocalResources.current
     val scope = rememberCoroutineScope()
+    // Where the last backup went, told in a dialog that stays until read.
+    var savedTo by rememberSaveable { mutableStateOf<String?>(null) }
+    val exportFailed = { name: String ->
+        Toast.makeText(context, resources.getString(R.string.export_failed, name), Toast.LENGTH_LONG).show()
+    }
     val export = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument(JSON_MIME_TYPE)) { uri ->
         if (uri == null) return@rememberLauncherForActivityResult
         scope.launch {
             val name = viewModel.displayName(uri)
-            val message = if (viewModel.export(uri)) R.string.export_success else R.string.export_failed
-            Toast.makeText(context, resources.getString(message, name), Toast.LENGTH_LONG).show()
+            if (viewModel.export(uri)) savedTo = name else exportFailed(name)
         }
     }
     val exportToDownloads = {
         scope.launch {
             val path = viewModel.exportToDownloads()
-            val message = path?.let { resources.getString(R.string.export_success, it) }
-                ?: resources.getString(R.string.export_failed, BACKUP_FILE_NAME)
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+            if (path != null) savedTo = path else exportFailed(BACKUP_FILE_NAME)
         }
     }
     val storagePermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         if (granted) {
             exportToDownloads()
         } else {
-            Toast.makeText(context, resources.getString(R.string.export_failed, BACKUP_FILE_NAME), Toast.LENGTH_LONG).show()
+            exportFailed(BACKUP_FILE_NAME)
         }
     }
     val restoreFrom = { uri: Uri? ->
@@ -90,6 +98,14 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
                 onClick = { restore.launchOr(restoreMimeTypes(), context) { restoreWithFileManager.launchOrTell("*/*", context) } },
             )
         }
+    }
+    savedTo?.let { path ->
+        AdAwayAlertDialog(
+            onDismissRequest = { savedTo = null },
+            title = stringResource(R.string.pref_backup),
+            message = stringResource(R.string.export_success, path),
+            confirmButton = DialogButton(stringResource(R.string.close), onClick = { savedTo = null }),
+        )
     }
 }
 
