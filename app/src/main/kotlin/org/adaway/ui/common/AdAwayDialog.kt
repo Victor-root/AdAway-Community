@@ -31,10 +31,7 @@ import org.adaway.ui.theme.LocalAdAwayColors
 
 class DialogButton(val text: String, val onClick: () -> Unit, val enabled: Boolean = true)
 
-/**
- * The alert dialog of the 6.x interface: small corners, uppercase red buttons side by side, or
- * stacked when they do not fit on one line.
- */
+/** An alert dialog: its [message], and the uppercase red buttons side by side, or stacked when they do not fit on one line. */
 @Composable
 fun AdAwayAlertDialog(
     onDismissRequest: () -> Unit,
@@ -55,7 +52,7 @@ fun AdAwayAlertDialog(
     }
 }
 
-/** The 6.x dialog around any [content], placed under the title. [neutralButton] stands apart, at the start. */
+/** The rounded dialog of the app around any [content], placed under the title. [neutralButton] stands apart, at the start. */
 @Composable
 fun AdAwayDialog(
     onDismissRequest: () -> Unit,
@@ -70,7 +67,7 @@ fun AdAwayDialog(
     Dialog(onDismissRequest = onDismissRequest, properties = DialogProperties(usePlatformDefaultWidth = false)) {
         Surface(
             modifier = Modifier.padding(horizontal = 40.dp).widthIn(max = 560.dp),
-            shape = RoundedCornerShape(4.dp),
+            shape = RoundedCornerShape(28.dp),
             color = colors.dialogSurface,
             shadowElevation = 24.dp,
         ) {

@@ -3,10 +3,8 @@ package org.adaway.ui.prefs
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,12 +14,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonDefaults
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -36,12 +32,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
 import org.adaway.R
+import org.adaway.ui.common.AdAwayDialog
 import org.adaway.ui.common.AdAwayEditText
 import org.adaway.ui.common.DISABLED_ALPHA
 import org.adaway.ui.common.DialogButton
-import org.adaway.ui.common.DialogTextButton
 import org.adaway.ui.common.adAwaySwitchColors
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -120,29 +115,12 @@ fun SwitchPreference(
     }
 }
 
-/** The rounded 6.x preference dialog: its title, the [content] and the [buttons] at the end. */
-@Composable
-private fun PreferenceDialog(title: String, onDismiss: () -> Unit, buttons: List<DialogButton>, content: @Composable ColumnScope.() -> Unit) {
-    val colors = LocalAdAwayColors.current
-    Dialog(onDismissRequest = onDismiss) {
-        Surface(shape = RoundedCornerShape(28.dp), color = colors.dialogSurface) {
-            Column(modifier = Modifier.padding(top = 24.dp)) {
-                Text(title, style = AdAwayType.headline6, color = colors.textPrimary, modifier = Modifier.padding(horizontal = 24.dp))
-                content()
-                Row(modifier = Modifier.fillMaxWidth().padding(8.dp), horizontalArrangement = Arrangement.End) {
-                    buttons.forEach { DialogTextButton(it) }
-                }
-            }
-        }
-    }
-}
-
-/** The rounded 6.x preference dialog listing the choices, each with its radio button. */
+/** A preference dialog listing the choices, each with its radio button. */
 @Composable
 fun ChoiceDialog(title: String, choices: List<String>, selected: Int, onSelect: (Int) -> Unit, onDismiss: () -> Unit) {
     val colors = LocalAdAwayColors.current
-    PreferenceDialog(title, onDismiss, listOf(DialogButton(stringResource(R.string.cancel), onClick = onDismiss))) {
-        Column(modifier = Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState()).padding(top = 16.dp)) {
+    AdAwayDialog(onDismissRequest = onDismiss, title = title, confirmButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss)) {
+        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             choices.forEachIndexed { index, choice ->
                 Row(
                     modifier = Modifier
@@ -164,20 +142,7 @@ fun ChoiceDialog(title: String, choices: List<String>, selected: Int, onSelect: 
     }
 }
 
-/** The rounded 6.x preference dialog telling a [message], with its OK button. */
-@Composable
-fun MessageDialog(title: String, message: String, onDismiss: () -> Unit) {
-    PreferenceDialog(title, onDismiss, listOf(DialogButton(stringResource(android.R.string.ok), onClick = onDismiss))) {
-        Text(
-            message,
-            style = AdAwayType.subtitle1,
-            color = LocalAdAwayColors.current.textSecondary,
-            modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 24.dp),
-        )
-    }
-}
-
-/** The rounded 6.x preference dialog editing a text, with its OK button. */
+/** A preference dialog editing a text, with its OK button. */
 @Composable
 fun TextInputDialog(
     title: String,
@@ -186,15 +151,16 @@ fun TextInputDialog(
     onDismiss: () -> Unit,
 ) {
     var value by rememberSaveable { mutableStateOf(initialValue) }
-    val buttons = listOf(
-        DialogButton(stringResource(R.string.cancel), onClick = onDismiss),
-        DialogButton(stringResource(android.R.string.ok), onClick = { onDismiss(); onConfirm(value) }),
-    )
-    PreferenceDialog(title, onDismiss, buttons) {
+    AdAwayDialog(
+        onDismissRequest = onDismiss,
+        title = title,
+        confirmButton = DialogButton(stringResource(android.R.string.ok), onClick = { onDismiss(); onConfirm(value) }),
+        dismissButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss),
+    ) {
         AdAwayEditText(
             value = value,
             onValueChange = { value = it },
-            modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 24.dp),
+            modifier = Modifier.padding(horizontal = 24.dp),
         )
     }
 }
