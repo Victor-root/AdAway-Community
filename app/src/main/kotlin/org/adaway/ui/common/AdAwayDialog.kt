@@ -69,7 +69,6 @@ fun AdAwayDialog(
             modifier = Modifier.padding(horizontal = 40.dp).widthIn(max = 560.dp),
             shape = RoundedCornerShape(28.dp),
             color = colors.dialogSurface,
-            shadowElevation = 24.dp,
         ) {
             Column {
                 Row(
