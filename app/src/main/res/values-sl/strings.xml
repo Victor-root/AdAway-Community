@@ -220,4 +220,5 @@
     <string name="permission_send_command_description">Dovoli pošiljanje ukazov aplikaciji AdAway, na primer za omogočanje ali onemogočanje blokiranja oglasov v celotnem sistemu</string>
     <string name="menu_refresh">Osveži</string>
     <string name="activity_unavailable">Nobena aplikacija v tej napravi tega ne more odpreti.</string>
+    <string name="no_browser">V tej napravi ni nameščen noben spletni brskalnik.</string>
 </resources>

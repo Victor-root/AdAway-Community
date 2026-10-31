@@ -220,4 +220,5 @@
     <string name="permission_send_command_description">Zezwala na wysyłanie do AdAway poleceń, takich jak włączanie lub wyłączanie blokowania reklam w całym systemie</string>
     <string name="menu_refresh">Odśwież</string>
     <string name="activity_unavailable">Żadna aplikacja na tym urządzeniu nie może tego otworzyć.</string>
+    <string name="no_browser">Na tym urządzeniu nie zainstalowano żadnej przeglądarki internetowej.</string>
 </resources>

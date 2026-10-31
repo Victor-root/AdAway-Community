@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Salli komentojen lähettäminen AdAwaylle, esimerkiksi mainosten eston ottaminen käyttöön tai poistaminen käytöstä koko järjestelmässä</string>
     <string name="menu_refresh">Lataa uudelleen</string>
     <string name="activity_unavailable">Laitteella ei ole sovellusta, joka voisi avata tämän.</string>
+    <string name="no_browser">Laitteeseen ei ole asennettu verkkoselainta.</string>
 </resources>

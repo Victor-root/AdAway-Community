@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Parancsok küldésének engedélyezése az AdAway-nek, például a rendszerszintű hirdetésblokkolás be- vagy kikapcsolásához</string>
     <string name="menu_refresh">Frissítés</string>
     <string name="activity_unavailable">Az eszközön nincs olyan alkalmazás, amely ezt meg tudná nyitni.</string>
+    <string name="no_browser">Az eszközön nincs telepítve webböngésző.</string>
 </resources>

@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Leyfa að senda AdAway skipanir, eins og að virkja eða óvirkja auglýsingalokun á öllu kerfinu</string>
     <string name="menu_refresh">Endurnýja</string>
     <string name="activity_unavailable">Ekkert forrit á þessu tæki getur opnað þetta.</string>
+    <string name="no_browser">Enginn vafri er uppsettur á þessu tæki.</string>
 </resources>

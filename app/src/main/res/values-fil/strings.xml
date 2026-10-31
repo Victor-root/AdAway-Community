@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Payagang magpadala ng mga command sa AdAway, gaya ng pag-enable o pag-disable ng pag-block ng ad sa buong system</string>
     <string name="menu_refresh">I-refresh</string>
     <string name="activity_unavailable">Walang app sa device na ito na makakapagbukas nito.</string>
+    <string name="no_browser">Walang naka-install na web browser sa device na ito.</string>
 </resources>

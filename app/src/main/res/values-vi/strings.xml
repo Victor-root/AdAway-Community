@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">Cho phép gửi lệnh tới AdAway, chẳng hạn bật hoặc tắt tính năng chặn quảng cáo trên toàn hệ thống</string>
     <string name="menu_refresh">Làm mới</string>
     <string name="activity_unavailable">Không có ứng dụng nào trên thiết bị này có thể mở nội dung này.</string>
+    <string name="no_browser">Không có trình duyệt web nào được cài đặt trên thiết bị này.</string>
 </resources>

@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">시스템 전체 광고 차단을 켜거나 끄는 등 AdAway에 명령을 보내도록 허용합니다</string>
     <string name="menu_refresh">새로고침</string>
     <string name="activity_unavailable">이 기능을 열 수 있는 앱이 기기에 없습니다.</string>
+    <string name="no_browser">기기에 웹 브라우저가 설치되어 있지 않습니다.</string>
 </resources>

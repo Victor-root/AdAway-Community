@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Luba saata AdAway’le käske, näiteks süsteemiülese reklaamiblokeerimise sisse- või väljalülitamiseks</string>
     <string name="menu_refresh">Värskenda</string>
     <string name="activity_unavailable">Ükski selle seadme rakendus ei saa seda avada.</string>
+    <string name="no_browser">Selles seadmes pole ühtegi veebibrauserit installitud.</string>
 </resources>

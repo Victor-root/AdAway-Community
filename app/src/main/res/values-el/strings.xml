@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">Επιτρέπει την αποστολή εντολών στο AdAway, όπως η ενεργοποίηση ή η απενεργοποίηση του αποκλεισμού διαφημίσεων σε όλο το σύστημα</string>
     <string name="menu_refresh">Ανανέωση</string>
     <string name="activity_unavailable">Καμία εφαρμογή σε αυτήν τη συσκευή δεν μπορεί να το ανοίξει.</string>
+    <string name="no_browser">Δεν υπάρχει εγκατεστημένο πρόγραμμα περιήγησης ιστού σε αυτήν τη συσκευή.</string>
 </resources>

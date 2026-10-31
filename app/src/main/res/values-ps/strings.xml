@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">اجازه ورکړئ چې AdAway ته قوماندې ولېږل شي، لکه د ټول سیسټم د اعلانونو بندول فعالول یا غیر فعالول</string>
     <string name="menu_refresh">بیا لوډول</string>
     <string name="activity_unavailable">په دې وسیله کې هېڅ اپلېکېشن نشي کولای دا پرانیزي.</string>
+    <string name="no_browser">په دې وسیله کې هېڅ ویب براوزر نه دی نصب شوی.</string>
 </resources>

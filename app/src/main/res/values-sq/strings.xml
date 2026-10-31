@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Lejon dërgimin e komandave te AdAway, si aktivizimi ose çaktivizimi i bllokimit të reklamave në të gjithë sistemin</string>
     <string name="menu_refresh">Rifresko</string>
     <string name="activity_unavailable">Asnjë aplikacion në këtë pajisje nuk mund ta hapë këtë.</string>
+    <string name="no_browser">Në këtë pajisje nuk është instaluar asnjë shfletues uebi.</string>
 </resources>

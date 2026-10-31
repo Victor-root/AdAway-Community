@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">प्रणालीभर विज्ञापन ब्लक सक्षम वा असक्षम गर्ने जस्ता कमान्डहरू AdAway लाई पठाउन अनुमति दिनुहोस्</string>
     <string name="menu_refresh">रिफ्रेस गर्नुहोस्</string>
     <string name="activity_unavailable">यो खोल्न सक्ने कुनै एप यो उपकरणमा छैन।</string>
+    <string name="no_browser">यो उपकरणमा कुनै वेब ब्राउजर स्थापना गरिएको छैन।</string>
 </resources>

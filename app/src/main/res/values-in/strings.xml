@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">Izinkan pengiriman perintah ke AdAway, seperti mengaktifkan atau menonaktifkan pemblokiran iklan di seluruh sistem</string>
     <string name="menu_refresh">Segarkan</string>
     <string name="activity_unavailable">Tidak ada aplikasi di perangkat ini yang dapat membukanya.</string>
+    <string name="no_browser">Tidak ada browser web yang terpasang di perangkat ini.</string>
 </resources>

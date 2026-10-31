@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Toestaan om opdrachten naar AdAway te sturen, zoals het in- of uitschakelen van adblokkering voor het hele systeem</string>
     <string name="menu_refresh">Vernieuwen</string>
     <string name="activity_unavailable">Geen enkele app op dit apparaat kan dit openen.</string>
+    <string name="no_browser">Er is geen webbrowser geïnstalleerd op dit apparaat.</string>
 </resources>

@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Sistem miqyasında reklam bloklamanı aktiv və ya deaktiv etmək kimi əmrləri AdAway tətbiqinə göndərməyə icazə verir</string>
     <string name="menu_refresh">Yeniləyin</string>
     <string name="activity_unavailable">Bu cihazda bunu aça biləcək tətbiq yoxdur.</string>
+    <string name="no_browser">Bu cihazda veb brauzer quraşdırılmayıb.</string>
 </resources>

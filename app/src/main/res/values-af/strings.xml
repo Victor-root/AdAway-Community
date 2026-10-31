@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Laat toe dat opdragte soos die aan- of afskakel van stelselwye advertensieblokkering na AdAway gestuur word</string>
     <string name="menu_refresh">Verfris</string>
     <string name="activity_unavailable">Geen program op hierdie toestel kan dit oopmaak nie.</string>
+    <string name="no_browser">Geen webblaaier is op hierdie toestel geïnstalleer nie.</string>
 </resources>

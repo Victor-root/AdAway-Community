@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">सिस्टम भर में विज्ञापन ब्लॉकिंग चालू या बंद करने जैसे कमांड AdAway को भेजने की अनुमति दें</string>
     <string name="menu_refresh">रीफ़्रेश करें</string>
     <string name="activity_unavailable">इस डिवाइस पर कोई भी ऐप इसे नहीं खोल सकता।</string>
+    <string name="no_browser">इस डिवाइस पर कोई वेब ब्राउज़र इंस्टॉल नहीं है।</string>
 </resources>

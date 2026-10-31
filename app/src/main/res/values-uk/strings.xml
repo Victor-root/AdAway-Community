@@ -220,4 +220,5 @@
     <string name="permission_send_command_description">Дозволяє надсилати AdAway команди, як-от увімкнення або вимкнення блокування реклами в усій системі</string>
     <string name="menu_refresh">Оновити</string>
     <string name="activity_unavailable">Жоден додаток на цьому пристрої не може це відкрити.</string>
+    <string name="no_browser">На цьому пристрої не встановлено жодного веб-браузера.</string>
 </resources>

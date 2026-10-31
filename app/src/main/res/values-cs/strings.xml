@@ -220,4 +220,5 @@
     <string name="permission_send_command_description">Umožňuje posílat aplikaci AdAway příkazy, například zapnutí nebo vypnutí blokování reklam v celém systému</string>
     <string name="menu_refresh">Obnovit</string>
     <string name="activity_unavailable">V tomto zařízení není žádná aplikace, která by to dokázala otevřít.</string>
+    <string name="no_browser">V tomto zařízení není nainstalovaný žádný webový prohlížeč.</string>
 </resources>

@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Erlaubt das Senden von Befehlen an AdAway, etwa zum Aktivieren oder Deaktivieren der systemweiten Werbeblockierung</string>
     <string name="menu_refresh">Aktualisieren</string>
     <string name="activity_unavailable">Keine App auf diesem Gerät kann dies öffnen.</string>
+    <string name="no_browser">Auf diesem Gerät ist kein Webbrowser installiert.</string>
 </resources>

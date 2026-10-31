@@ -6,6 +6,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
+import androidx.annotation.StringRes
+import androidx.core.net.toUri
 import org.adaway.R
 
 /**
@@ -14,13 +16,20 @@ import org.adaway.R
  */
 private const val TV_STUBS_PACKAGE = "com.android.tv.frameworkpackagestubs"
 
-/** Opens [intent], telling the user when no app of the device can, as a TV without a file picker. */
-fun Context.startActivityOrTell(intent: Intent) {
-    if (!open(intent) { startActivity(intent) }) tellUnavailable()
+/**
+ * Opens [intent], telling the user with [unavailable] when no app of the device can, as a TV
+ * without a file picker.
+ */
+fun Context.startActivityOrTell(intent: Intent, @StringRes unavailable: Int = R.string.activity_unavailable) {
+    if (!open(intent) { startActivity(intent) }) tell(unavailable)
 }
 
+/** Opens [url] in a browser, telling the user when the device has none, as most TVs. */
+fun Context.openWebPage(url: String) = startActivityOrTell(Intent(Intent.ACTION_VIEW, url.toUri()), R.string.no_browser)
+
 /** As [startActivityOrTell], through a launcher of the screen. */
-fun <I> ActivityResultLauncher<I>.launchOrTell(input: I, context: Context) = launchOr(input, context, context::tellUnavailable)
+fun <I> ActivityResultLauncher<I>.launchOrTell(input: I, context: Context) =
+    launchOr(input, context) { context.tell(R.string.activity_unavailable) }
 
 /** Opens the screen of the launcher, or runs [fallback] when no app of the device can. */
 fun <I> ActivityResultLauncher<I>.launchOr(input: I, context: Context, fallback: () -> Unit) {
@@ -40,6 +49,6 @@ private fun Context.open(intent: Intent, start: () -> Unit): Boolean {
     }
 }
 
-private fun Context.tellUnavailable() {
-    Toast.makeText(this, R.string.activity_unavailable, Toast.LENGTH_LONG).show()
+private fun Context.tell(@StringRes message: Int) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
 }

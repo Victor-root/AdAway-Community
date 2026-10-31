@@ -16,7 +16,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.core.net.toUri
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.launch
@@ -26,6 +25,7 @@ import org.adaway.root.WebServer
 import org.adaway.root.WebServerError
 import org.adaway.root.WebServerState
 import org.adaway.system.launchOrTell
+import org.adaway.system.openWebPage
 import org.adaway.system.startActivityOrTell
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.DialogButton
@@ -77,13 +77,7 @@ fun WebServerPreferences(settings: AppSettings, enabled: Boolean) {
             },
         ),
         enabled = dependentEnabled,
-        onClick = {
-            try {
-                context.startActivity(Intent(Intent.ACTION_VIEW, WebServer.TEST_URL.toUri()))
-            } catch (_: ActivityNotFoundException) {
-                // No browser on the device.
-            }
-        },
+        onClick = { context.openWebPage(WebServer.TEST_URL) },
     )
     Preference(
         R.drawable.ic_verified_user_24dp,

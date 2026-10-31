@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">อนุญาตให้ส่งคำสั่งไปยัง AdAway เช่น เปิดหรือปิดการบล็อกโฆษณาทั้งระบบ</string>
     <string name="menu_refresh">รีเฟรช</string>
     <string name="activity_unavailable">ไม่มีแอปในอุปกรณ์นี้ที่เปิดสิ่งนี้ได้</string>
+    <string name="no_browser">ไม่มีเว็บเบราว์เซอร์ติดตั้งอยู่ในอุปกรณ์นี้</string>
 </resources>

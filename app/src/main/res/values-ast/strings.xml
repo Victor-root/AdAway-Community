@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">Permite unviar comandos a AdAway, como activar o desactivar el bloquéu de publicidá en tol sistema</string>
     <string name="menu_refresh">Refrescar</string>
     <string name="activity_unavailable">Nenguna aplicación d’esti preséu pue abrir esto.</string>
+    <string name="no_browser">Nun hai nengún restolador web instaláu nesti preséu.</string>
 </resources>

@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Permesi sendi komandojn al AdAway, ekzemple por ŝalti aŭ malŝalti la reklamblokadon en la tuta sistemo</string>
     <string name="menu_refresh">Aktualigi</string>
     <string name="activity_unavailable">Neniu aplikaĵo sur ĉi tiu aparato povas malfermi tion.</string>
+    <string name="no_browser">Neniu retumilo estas instalita sur ĉi tiu aparato.</string>
 </resources>

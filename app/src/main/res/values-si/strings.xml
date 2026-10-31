@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">පද්ධති පුරා දැන්වීම් අවහිර කිරීම සක්‍රීය හෝ අක්‍රීය කිරීම වැනි විධාන AdAway වෙත යැවීමට ඉඩ දෙන්න</string>
     <string name="menu_refresh">නැවුම් කරන්න</string>
     <string name="activity_unavailable">මෙය විවෘත කළ හැකි යෙදුමක් මෙම උපාංගයේ නැත.</string>
+    <string name="no_browser">මෙම උපාංගයේ වෙබ් බ්‍රව්සරයක් ස්ථාපනය කර නැත.</string>
 </resources>

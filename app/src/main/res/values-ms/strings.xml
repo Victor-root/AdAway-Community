@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">Benarkan penghantaran arahan kepada AdAway, seperti mendayakan atau menyahdayakan penyekatan iklan di seluruh sistem</string>
     <string name="menu_refresh">Muat semula</string>
     <string name="activity_unavailable">Tiada apl pada peranti ini yang dapat membukanya.</string>
+    <string name="no_browser">Tiada penyemak imbas web dipasang pada peranti ini.</string>
 </resources>

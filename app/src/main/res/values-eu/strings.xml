@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Baimendu AdAway-ri komandoak bidaltzea, esaterako sistema osoko iragarkien blokeoa gaitzeko edo desgaitzeko</string>
     <string name="menu_refresh">Freskatu</string>
     <string name="activity_unavailable">Gailu honetako aplikazio batek ere ezin du hau ireki.</string>
+    <string name="no_browser">Gailu honetan ez dago web-arakatzailerik instalatuta.</string>
 </resources>

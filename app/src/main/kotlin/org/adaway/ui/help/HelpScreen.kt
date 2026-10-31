@@ -1,14 +1,20 @@
 package org.adaway.ui.help
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import android.text.Html
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.Spanned
 import android.text.method.LinkMovementMethod
+import android.text.style.BackgroundColorSpan
+import android.text.style.ClickableSpan
+import android.text.style.URLSpan
 import android.util.TypedValue
+import android.view.View
 import android.widget.TextView
 import androidx.annotation.RawRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
@@ -31,8 +37,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -40,6 +49,8 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusProperties
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.key.Key
 import androidx.compose.ui.input.key.KeyEventType
@@ -47,6 +58,8 @@ import androidx.compose.ui.input.key.key
 import androidx.compose.ui.input.key.onPreviewKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.LayoutCoordinates
+import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.painterResource
@@ -56,15 +69,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.core.net.toUri
+import androidx.core.view.doOnLayout
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.adaway.BuildConfig
 import org.adaway.R
+import org.adaway.system.openWebPage
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.RemoteConfirmKeys
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.LocalTelevision
+import kotlin.math.roundToInt
 
 private const val REPOSITORY = "https://github.com/Victor-root/AdAway-Community"
 private const val UPSTREAM = "https://github.com/AdAway/AdAway"
@@ -165,15 +181,70 @@ private fun TabRow(selected: Int, onSelect: (Int) -> Unit, isTelevision: Boolean
 }
 
 /**
- * A scrolling page. On TV, the arrows scroll it by half its height, as Android scrolls a text, and
- * the OK button runs [onConfirm].
+ * A link of a page, which the remote can select and open: from [top] to [bottom] below the top of
+ * the layout [anchor] gives.
+ */
+private class PageLink(val anchor: () -> LayoutCoordinates?, val top: Int, val bottom: Int, val open: () -> Unit)
+
+/**
+ * The links of a page, by their order in it, and the one the remote selected. Moving selects the
+ * next link when it is in sight, or else scrolls, as a TV browser does.
+ */
+private class PageLinks {
+    val links = mutableMapOf<Int, PageLink>()
+    var selected by mutableStateOf<Int?>(null)
+
+    /** The scrolling content of the page, where the links are placed. */
+    var content: LayoutCoordinates? = null
+
+    /** Returns false when going up from the top of the page, which leaves it. */
+    fun move(down: Boolean, scroll: ScrollState, scope: CoroutineScope): Boolean {
+        val top = scroll.value
+        val bottom = top + scroll.viewportSize
+        val placed = links.mapNotNull { (index, link) -> placeOf(link)?.let { index to it } }.sortedBy { it.first }
+        val current = selected
+        val next = when {
+            down && current != null -> placed.firstOrNull { it.first > current }
+            down -> placed.firstOrNull { it.second.first >= top }
+            current != null -> placed.lastOrNull { it.first < current }
+            else -> placed.lastOrNull { it.second.last <= bottom }
+        }
+        val canScroll = if (down) scroll.canScrollForward else scroll.value > 0
+        when {
+            next != null && next.second.first >= top && next.second.last <= bottom -> selected = next.first
+            canScroll -> {
+                val step = scroll.viewportSize / 2 * if (down) 1 else -1
+                val newTop = (top + step).coerceIn(0, scroll.maxValue)
+                val place = placed.firstOrNull { it.first == current }?.second
+                if (place != null && (place.first < newTop || place.last > newTop + scroll.viewportSize)) selected = null
+                scope.launch { scroll.animateScrollBy(step.toFloat()) }
+            }
+            next != null -> selected = next.first
+            current != null -> selected = null
+            else -> return down
+        }
+        return true
+    }
+
+    /** Where [link] lies in the page, null while it is not laid out. */
+    private fun placeOf(link: PageLink): IntRange? {
+        val page = content?.takeIf { it.isAttached } ?: return null
+        val anchor = link.anchor()?.takeIf { it.isAttached } ?: return null
+        val y = page.localPositionOf(anchor, Offset.Zero).y.roundToInt()
+        return (y + link.top)..(y + link.bottom)
+    }
+}
+
+/**
+ * A scrolling page. On TV, the arrows move through its [links] and scroll it by half its height,
+ * as Android scrolls a text, and the OK button opens the link selected.
  */
 @Composable
 private fun PageColumn(
     focus: PageFocus,
+    links: PageLinks,
     modifier: Modifier = Modifier,
     horizontalAlignment: Alignment.Horizontal = Alignment.Start,
-    onConfirm: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     val scroll = rememberScrollState()
@@ -182,22 +253,17 @@ private fun PageColumn(
         Modifier
             .focusRequester(focus.page)
             .focusProperties { focus.tab?.let { up = it } }
+            .onFocusChanged { if (!it.isFocused) links.selected = null }
             .onPreviewKeyEvent { event ->
-                val step = scroll.viewportSize / 2f
                 when {
-                    onConfirm != null && event.key in RemoteConfirmKeys -> {
-                        if (event.type == KeyEventType.KeyUp) onConfirm()
+                    event.key in RemoteConfirmKeys -> {
+                        val link = links.selected?.let { links.links[it] } ?: return@onPreviewKeyEvent false
+                        if (event.type == KeyEventType.KeyUp) link.open()
                         true
                     }
                     event.type != KeyEventType.KeyDown -> false
-                    event.key == Key.DirectionDown -> {
-                        scope.launch { scroll.animateScrollBy(step) }
-                        true
-                    }
-                    event.key == Key.DirectionUp && scroll.value > 0 -> {
-                        scope.launch { scroll.animateScrollBy(-step) }
-                        true
-                    }
+                    event.key == Key.DirectionDown -> links.move(down = true, scroll, scope)
+                    event.key == Key.DirectionUp -> links.move(down = false, scroll, scope)
                     else -> false
                 }
             }
@@ -205,35 +271,78 @@ private fun PageColumn(
     } else {
         Modifier
     }
-    Column(modifier = Modifier.fillMaxSize().then(remote).verticalScroll(scroll).then(modifier), horizontalAlignment = horizontalAlignment, content = content)
+    Column(
+        modifier = Modifier.fillMaxSize().then(remote).verticalScroll(scroll).onGloballyPositioned { links.content = it }.then(modifier),
+        horizontalAlignment = horizontalAlignment,
+        content = content,
+    )
 }
 
-/** An HTML help page, rendered by Android as text with its titles and links, inert on TV. */
+/** A link of an HTML page, opened in a browser. */
+private class WebLinkSpan(private val url: String) : ClickableSpan() {
+    override fun onClick(widget: View) = widget.context.openWebPage(url)
+}
+
+/** The layout of the text of a page, which its links are placed in. */
+private class Anchor {
+    var coordinates: LayoutCoordinates? = null
+}
+
+/** An HTML help page, rendered by Android as text with its titles and links. */
 @Composable
 private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
     val resources = LocalResources.current
     val colors = LocalAdAwayColors.current
-    val html = remember(page) { resources.openRawResource(page).bufferedReader().use { it.readText() } }
-    PageColumn(focus, modifier = Modifier.padding(bottom = 24.dp)) {
+    val links = remember { PageLinks() }
+    val html = remember(page) {
+        val text = SpannableStringBuilder(Html.fromHtml(resources.openRawResource(page).bufferedReader().use { it.readText() }, Html.FROM_HTML_MODE_LEGACY))
+        text.getSpans(0, text.length, URLSpan::class.java).forEach { span ->
+            text.setSpan(WebLinkSpan(span.url), text.getSpanStart(span), text.getSpanEnd(span), text.getSpanFlags(span))
+            text.removeSpan(span)
+        }
+        text
+    }
+    val anchor = remember { Anchor() }
+    val selection = colors.primary.copy(alpha = 0.2f).toArgb()
+    PageColumn(focus, links, modifier = Modifier.padding(bottom = 24.dp)) {
         AndroidView(
             factory = { viewContext ->
                 TextView(viewContext).apply {
                     setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
                     setLineSpacing(0f, 1.25f)
-                    if (focus.isTelevision) {
-                        isFocusable = false
-                    } else {
-                        setTextIsSelectable(true)
-                        movementMethod = LinkMovementMethod.getInstance()
-                    }
+                    movementMethod = LinkMovementMethod.getInstance()
+                    // On TV, the page moves through the links: the text only takes the clicks of a mouse.
+                    if (focus.isTelevision) isFocusable = false else setTextIsSelectable(true)
                 }
             },
             update = { view ->
                 view.setTextColor(colors.textPrimary.toArgb())
                 view.setLinkTextColor(colors.primary.toArgb())
-                view.text = Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
+                val spans = html.getSpans(0, html.length, WebLinkSpan::class.java).sortedBy(html::getSpanStart)
+                val shown = SpannableString(html)
+                links.selected?.let { spans.getOrNull(it) }?.let { span ->
+                    shown.setSpan(BackgroundColorSpan(selection), html.getSpanStart(span), html.getSpanEnd(span), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
+                view.text = shown
+                view.doOnLayout {
+                    val layout = view.layout ?: return@doOnLayout
+                    links.links.clear()
+                    spans.forEachIndexed { index, span ->
+                        val first = layout.getLineForOffset(html.getSpanStart(span))
+                        val last = layout.getLineForOffset(html.getSpanEnd(span))
+                        links.links[index] = PageLink(
+                            anchor = anchor::coordinates,
+                            top = view.paddingTop + layout.getLineTop(first),
+                            bottom = view.paddingTop + layout.getLineBottom(last),
+                            open = { span.onClick(view) },
+                        )
+                    }
+                }
             },
-            modifier = Modifier.fillMaxWidth().padding(20.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp)
+                .onGloballyPositioned { anchor.coordinates = it },
         )
     }
 }
@@ -241,7 +350,9 @@ private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
 @Composable
 private fun AboutPage(focus: PageFocus, openNotices: () -> Unit) {
     val colors = LocalAdAwayColors.current
-    PageColumn(focus, modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally, onConfirm = openNotices) {
+    val context = LocalContext.current
+    val links = remember { PageLinks() }
+    PageColumn(focus, links, modifier = Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Box(modifier = Modifier.size(72.dp).clip(RoundedCornerShape(22)).background(colors.primary)) {
             Image(
                 painterResource(R.mipmap.icon_foreground),
@@ -260,10 +371,10 @@ private fun AboutPage(focus: PageFocus, openNotices: () -> Unit) {
             modifier = Modifier.padding(top = 16.dp),
         )
         HelpDivider(Modifier.padding(top = 24.dp, bottom = 8.dp))
-        Link(R.string.about_source_label, REPOSITORY, focus.isTelevision, Modifier.padding(top = 8.dp))
-        Link(R.string.about_issues_label, "$REPOSITORY/issues", focus.isTelevision)
-        Link(R.string.about_releases_label, "$REPOSITORY/releases", focus.isTelevision)
-        Link(R.string.about_upstream_label, UPSTREAM, focus.isTelevision)
+        TextLink(R.string.about_source_label, links, 0, Modifier.padding(top = 8.dp)) { context.openWebPage(REPOSITORY) }
+        TextLink(R.string.about_issues_label, links, 1) { context.openWebPage("$REPOSITORY/issues") }
+        TextLink(R.string.about_releases_label, links, 2) { context.openWebPage("$REPOSITORY/releases") }
+        TextLink(R.string.about_upstream_label, links, 3) { context.openWebPage(UPSTREAM) }
         HelpDivider(Modifier.padding(vertical = 8.dp))
         Text(
             stringResource(R.string.about_license_label),
@@ -272,35 +383,30 @@ private fun AboutPage(focus: PageFocus, openNotices: () -> Unit) {
             color = colors.textPrimary,
             modifier = Modifier.fillMaxWidth().padding(top = 8.dp).padding(horizontal = 4.dp),
         )
-        // On TV, the OK button of the page opens it.
-        TextLink(R.string.about_third_party_label, enabled = !focus.isTelevision, onClick = openNotices)
+        TextLink(R.string.about_third_party_label, links, 4, onClick = openNotices)
     }
 }
 
-/** A link to a web page. On TV, where a browser is rare, the page scrolls past it instead. */
+/** The link [index] of the page [links], highlighted when the remote selects it. */
 @Composable
-private fun Link(@StringRes text: Int, url: String, isTelevision: Boolean, modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    TextLink(text, modifier, enabled = !isTelevision) {
-        try {
-            context.startActivity(Intent(Intent.ACTION_VIEW, url.toUri()))
-        } catch (_: ActivityNotFoundException) {
-            // No browser on the device.
-        }
-    }
-}
-
-@Composable
-private fun TextLink(@StringRes text: Int, modifier: Modifier = Modifier, enabled: Boolean, onClick: () -> Unit) {
+private fun TextLink(@StringRes text: Int, links: PageLinks, index: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    val colors = LocalAdAwayColors.current
+    val isTelevision = LocalTelevision.current
     Box(
         modifier = modifier
             .fillMaxWidth()
             .defaultMinSize(minHeight = 48.dp)
-            .clickable(enabled = enabled, onClick = onClick)
+            .onGloballyPositioned { coordinates ->
+                links.links[index] = PageLink({ coordinates }, 0, coordinates.size.height, onClick)
+            }
+            .background(if (links.selected == index) colors.primary.copy(alpha = 0.2f) else Color.Transparent)
+            // On TV, the page moves through the links: they only take the clicks of a mouse.
+            .focusProperties { canFocus = !isTelevision }
+            .clickable(onClick = onClick)
             .padding(horizontal = 4.dp),
         contentAlignment = Alignment.CenterStart,
     ) {
-        Text(stringResource(text), style = AdAwayType.small, color = LocalAdAwayColors.current.primary)
+        Text(stringResource(text), style = AdAwayType.small, color = colors.primary)
     }
 }
 

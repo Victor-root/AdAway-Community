@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">সিস্টেম জুড়ে বিজ্ঞাপন ব্লক করা চালু বা বন্ধ করার মতো কমান্ড AdAway-কে পাঠানোর অনুমতি দিন</string>
     <string name="menu_refresh">রিফ্রেশ করুন</string>
     <string name="activity_unavailable">এই ডিভাইসের কোনো অ্যাপ এটি খুলতে পারে না।</string>
+    <string name="no_browser">এই ডিভাইসে কোনো ওয়েব ব্রাউজার ইনস্টল করা নেই।</string>
 </resources>

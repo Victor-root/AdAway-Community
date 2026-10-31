@@ -220,4 +220,5 @@
     <string name="permission_send_command_description">Дазваляе адпраўляць у AdAway каманды, напрыклад, уключэнне або адключэнне блакіроўкі рэкламы ва ўсёй сістэме</string>
     <string name="menu_refresh">Абнавіць</string>
     <string name="activity_unavailable">На гэтай прыладзе няма праграмы, якая можа гэта адкрыць.</string>
+    <string name="no_browser">На гэтай прыладзе не ўсталяваны вэб-браўзер.</string>
 </resources>

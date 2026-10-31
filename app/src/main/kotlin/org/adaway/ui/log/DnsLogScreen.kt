@@ -1,7 +1,5 @@
 package org.adaway.ui.log
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -41,7 +39,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.core.net.toUri
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
@@ -49,6 +46,7 @@ import org.adaway.data.db.RuleType
 import org.adaway.dnslog.DnsLogError
 import org.adaway.engine.Engine
 import org.adaway.system.copyHost
+import org.adaway.system.openWebPage
 import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.AdAwayDialog
 import org.adaway.ui.common.AdAwayEditText
@@ -158,13 +156,7 @@ private fun DnsLogRow(entry: DnsLogEntry, onSelect: (RuleType) -> Unit) {
                 .weight(1f)
                 .fillMaxSize()
                 .combinedClickable(
-                    onClick = {
-                        try {
-                            context.startActivity(Intent(Intent.ACTION_VIEW, "http://${entry.host}".toUri()))
-                        } catch (_: ActivityNotFoundException) {
-                            // No browser on the device.
-                        }
-                    },
+                    onClick = { context.openWebPage("http://${entry.host}") },
                     onLongClick = {
                         context.copyHost(entry.host)
                     },

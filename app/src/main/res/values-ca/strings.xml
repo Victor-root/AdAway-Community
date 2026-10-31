@@ -215,4 +215,5 @@
     <string name="permission_send_command_description">Permet enviar ordres a AdAway, com ara activar o desactivar el bloqueig d’anuncis a tot el sistema</string>
     <string name="menu_refresh">Actualitza</string>
     <string name="activity_unavailable">Cap aplicació d’aquest dispositiu pot obrir-ho.</string>
+    <string name="no_browser">No hi ha cap navegador web instal·lat en aquest dispositiu.</string>
 </resources>

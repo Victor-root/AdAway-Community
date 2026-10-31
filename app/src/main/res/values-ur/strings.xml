@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">AdAway کو کمانڈز بھیجنے کی اجازت دیں، جیسے پورے سسٹم میں اشتہارات کی بلاکنگ فعال یا غیر فعال کرنا</string>
     <string name="menu_refresh">ریفریش کریں</string>
     <string name="activity_unavailable">اس آلے پر کوئی ایپ اسے نہیں کھول سکتی۔</string>
+    <string name="no_browser">اس آلے پر کوئی ویب براؤزر انسٹال نہیں ہے۔</string>
 </resources>

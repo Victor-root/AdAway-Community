@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">اجازه می‌دهد دستوراتی مانند فعال یا غیرفعال کردن مسدودسازی تبلیغات در کل سیستم به AdAway ارسال شود</string>
     <string name="menu_refresh">تازه‌سازی</string>
     <string name="activity_unavailable">هیچ برنامه‌ای در این دستگاه نمی‌تواند این مورد را باز کند.</string>
+    <string name="no_browser">هیچ مرورگر وبی روی این دستگاه نصب نشده است.</string>
 </resources>

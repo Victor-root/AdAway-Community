@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">AdAway ਨੂੰ ਕਮਾਂਡ ਭੇਜਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ, ਜਿਵੇਂ ਕਿ ਸਿਸਟਮ-ਵਿਆਪੀ ਇਸ਼ਤਿਹਾਰ ਬਲਾਕ ਕਰਨਾ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰਨਾ</string>
     <string name="menu_refresh">ਰਿਫ੍ਰੈਸ਼ ਕਰੋ</string>
     <string name="activity_unavailable">ਇਸ ਡੀਵਾਈਸ ਉੱਤੇ ਕੋਈ ਵੀ ਐਪ ਇਸ ਨੂੰ ਖੋਲ੍ਹ ਨਹੀਂ ਸਕਦੀ।</string>
+    <string name="no_browser">ਇਸ ਡੀਵਾਈਸ ਉੱਤੇ ਕੋਈ ਵੈੱਬ ਬ੍ਰਾਊਜ਼ਰ ਸਥਾਪਤ ਨਹੀਂ ਹੈ।</string>
 </resources>

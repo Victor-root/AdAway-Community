@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">システム全体の広告ブロックの有効化や無効化など、AdAwayへのコマンド送信を許可します</string>
     <string name="menu_refresh">再読み込み</string>
     <string name="activity_unavailable">この端末には、これを開けるアプリがありません。</string>
+    <string name="no_browser">この端末にはウェブブラウザがインストールされていません。</string>
 </resources>

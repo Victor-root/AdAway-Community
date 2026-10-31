@@ -215,4 +215,5 @@
     <string name="permission_send_command_description">Permite enviar comandos a AdAway, como activar o desactivar el bloqueo de anuncios en todo el sistema</string>
     <string name="menu_refresh">Actualizar</string>
     <string name="activity_unavailable">Ninguna app de este dispositivo puede abrir esto.</string>
+    <string name="no_browser">No hay ningún navegador web instalado en este dispositivo.</string>
 </resources>

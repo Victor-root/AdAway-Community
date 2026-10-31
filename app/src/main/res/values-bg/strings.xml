@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Позволява изпращането на команди към AdAway, например включване или изключване на блокирането на реклами в цялата система</string>
     <string name="menu_refresh">Опресняване</string>
     <string name="activity_unavailable">Няма приложение на това устройство, което може да отвори това.</string>
+    <string name="no_browser">На това устройство няма инсталиран уеб браузър.</string>
 </resources>

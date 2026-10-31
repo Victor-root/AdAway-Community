@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Destûr bide ku ferman ji AdAway re werin şandin, wekî çalakkirin an neçalakkirina astengkirina reklaman a li seranserê pergalê</string>
     <string name="menu_refresh">Teze bike</string>
     <string name="activity_unavailable">Tu sepan li ser vê amûrê nikare vê veke.</string>
+    <string name="no_browser">Li ser vê amûrê tu gerokek webê nehatiye sazkirin.</string>
 </resources>

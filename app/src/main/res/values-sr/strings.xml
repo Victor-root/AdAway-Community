@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Омогућава слање команди апликацији AdAway, на пример за укључивање или искључивање блокирања огласа на целом систему</string>
     <string name="menu_refresh">Освежи</string>
     <string name="activity_unavailable">Ниједна апликација на овом уређају не може ово да отвори.</string>
+    <string name="no_browser">На овом уређају није инсталиран ниједан веб-прегледач.</string>
 </resources>

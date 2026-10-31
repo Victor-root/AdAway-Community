@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">允許傳送指令給 AdAway，例如啟用或停用全系統的廣告封鎖</string>
     <string name="menu_refresh">重新整理</string>
     <string name="activity_unavailable">這部裝置上沒有可開啟此內容的應用程式。</string>
+    <string name="no_browser">這部裝置上未安裝網頁瀏覽器。</string>
 </resources>

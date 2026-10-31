@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">AdAway ilovasiga buyruqlar yuborishga ruxsat berish, masalan, tizim miqyosida reklama bloklashni yoqish yoki oʻchirish</string>
     <string name="menu_refresh">Yangilash</string>
     <string name="activity_unavailable">Bu qurilmada buni ocha oladigan ilova yoʻq.</string>
+    <string name="no_browser">Bu qurilmada hech qanday veb-brauzer oʻrnatilmagan.</string>
 </resources>

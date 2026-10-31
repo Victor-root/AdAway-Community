@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">អនុញ្ញាតឱ្យផ្ញើពាក្យបញ្ជាទៅ AdAway ដូចជាការបើក ឬបិទការទប់ស្កាត់ពាណិជ្ជកម្មទូទាំងប្រព័ន្ធ</string>
     <string name="menu_refresh">ផ្ទុកឡើងវិញ</string>
     <string name="activity_unavailable">គ្មានកម្មវិធីណាមួយនៅលើឧបករណ៍នេះអាចបើកវាបានទេ។</string>
+    <string name="no_browser">មិនមានកម្មវិធីរុករកតំបន់បណ្ដាញត្រូវបានដំឡើងនៅលើឧបករណ៍នេះទេ។</string>
 </resources>

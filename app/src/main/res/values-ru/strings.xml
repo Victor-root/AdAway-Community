@@ -220,4 +220,5 @@
     <string name="permission_send_command_description">Разрешить отправлять в AdAway команды, например включать или отключать блокировку рекламы во всей системе</string>
     <string name="menu_refresh">Обновить</string>
     <string name="activity_unavailable">На этом устройстве нет приложения, которое могло бы это открыть.</string>
+    <string name="no_browser">На этом устройстве не установлен веб-браузер.</string>
 </resources>

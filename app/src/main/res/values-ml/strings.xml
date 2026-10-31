@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">സിസ്റ്റം മുഴുവൻ പരസ്യം തടയൽ പ്രവർത്തനക്ഷമമാക്കുകയോ പ്രവർത്തനരഹിതമാക്കുകയോ ചെയ്യുന്നതുപോലുള്ള കമാൻഡുകൾ AdAway-ലേക്ക് അയയ്ക്കാൻ അനുവദിക്കുക</string>
     <string name="menu_refresh">പുതുക്കുക</string>
     <string name="activity_unavailable">ഇത് തുറക്കാൻ കഴിയുന്ന ആപ്പുകളൊന്നും ഈ ഉപകരണത്തിൽ ഇല്ല.</string>
+    <string name="no_browser">ഈ ഉപകരണത്തിൽ വെബ് ബ്രൗസറൊന്നും ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല.</string>
 </resources>

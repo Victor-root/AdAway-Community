@@ -230,4 +230,5 @@
     <string name="permission_send_command_description">السماح بإرسال أوامر إلى AdAway، مثل تفعيل حظر الإعلانات أو تعطيله على مستوى النظام بأكمله</string>
     <string name="menu_refresh">إعادة تحميل</string>
     <string name="activity_unavailable">لا يوجد تطبيق على هذا الجهاز يمكنه فتح هذا.</string>
+    <string name="no_browser">لا يوجد متصفح ويب مثبّت على هذا الجهاز.</string>
 </resources>

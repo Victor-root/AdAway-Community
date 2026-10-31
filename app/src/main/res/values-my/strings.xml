@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">စနစ်တစ်ခုလုံးရှိ ကြော်ငြာပိတ်ဆို့ခြင်းကို ဖွင့်ခြင်း သို့မဟုတ် ပိတ်ခြင်းကဲ့သို့ အမိန့်များကို AdAway သို့ ပို့ရန် ခွင့်ပြုပါသည်</string>
     <string name="menu_refresh">ပြန်လည်ဆန်းသစ်ရန်</string>
     <string name="activity_unavailable">ဤစက်ရှိ မည်သည့်အက်ပ်ကမျှ ဤအရာကို မဖွင့်နိုင်ပါ။</string>
+    <string name="no_browser">ဤစက်တွင် ဝဘ်ဘရောက်ဇာ ထည့်သွင်းထားခြင်း မရှိပါ။</string>
 </resources>

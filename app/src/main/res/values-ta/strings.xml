@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">சிஸ்டம் முழுவதும் விளம்பரத் தடுப்பை இயக்குவது அல்லது முடக்குவது போன்ற கட்டளைகளை AdAway க்கு அனுப்ப அனுமதிக்கும்</string>
     <string name="menu_refresh">மீண்டும் ஏற்று</string>
     <string name="activity_unavailable">இதைத் திறக்கக்கூடிய ஆப்ஸ் எதுவும் இந்தச் சாதனத்தில் இல்லை.</string>
+    <string name="no_browser">இந்தச் சாதனத்தில் இணைய உலாவி எதுவும் நிறுவப்படவில்லை.</string>
 </resources>

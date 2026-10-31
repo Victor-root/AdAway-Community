@@ -210,4 +210,5 @@
     <string name="permission_send_command_description">Tillat å sende kommandoer til AdAway, for eksempel for å slå annonseblokkering for hele systemet på eller av</string>
     <string name="menu_refresh">Last inn på nytt</string>
     <string name="activity_unavailable">Ingen app på denne enheten kan åpne dette.</string>
+    <string name="no_browser">Ingen nettleser er installert på denne enheten.</string>
 </resources>

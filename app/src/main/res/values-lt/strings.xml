@@ -220,4 +220,5 @@
     <string name="permission_send_command_description">Leisti siųsti AdAway komandas, pavyzdžiui, įjungti ar išjungti reklamų blokavimą visoje sistemoje</string>
     <string name="menu_refresh">Atnaujinti</string>
     <string name="activity_unavailable">Šiame įrenginyje nėra programos, galinčios tai atidaryti.</string>
+    <string name="no_browser">Šiame įrenginyje neįdiegta jokia žiniatinklio naršyklė.</string>
 </resources>

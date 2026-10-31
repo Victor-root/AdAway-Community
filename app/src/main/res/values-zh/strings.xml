@@ -205,4 +205,5 @@
     <string name="permission_send_command_description">允许向 AdAway 发送命令，例如开启或关闭全系统的广告拦截</string>
     <string name="menu_refresh">刷新</string>
     <string name="activity_unavailable">此设备上没有可打开它的应用。</string>
+    <string name="no_browser">此设备上未安装网络浏览器。</string>
 </resources>
