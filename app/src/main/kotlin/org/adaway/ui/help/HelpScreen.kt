@@ -203,13 +203,15 @@ private class PageLinks {
         val bottom = top + scroll.viewportSize
         val placed = links.mapNotNull { (index, link) -> placeOf(link)?.let { index to it } }.sortedBy { it.first }
         val current = selected
+        val canScroll = if (down) scroll.canScrollForward else top > 0
         val next = when {
             down && current != null -> placed.firstOrNull { it.first > current }
             down -> placed.firstOrNull { it.second.first >= top }
             current != null -> placed.lastOrNull { it.first < current }
-            else -> placed.lastOrNull { it.second.last <= bottom }
+            // At the top, nothing selected, going up leaves the page.
+            canScroll -> placed.lastOrNull { it.second.last <= bottom }
+            else -> null
         }
-        val canScroll = if (down) scroll.canScrollForward else scroll.value > 0
         when {
             next != null && next.second.first >= top && next.second.last <= bottom -> selected = next.first
             canScroll -> {
@@ -220,7 +222,6 @@ private class PageLinks {
                 scope.launch { scroll.animateScrollBy(step.toFloat()) }
             }
             next != null -> selected = next.first
-            current != null -> selected = null
             else -> return down
         }
         return true
