@@ -7,7 +7,7 @@ compileSdkMinor = "2"
 targetSdk = "37"
 ndk = "30.0.16248370"
 
-agp = "9.4.1"
+agp = "9.5.0"
 kotlin = "2.4.21"
 ksp = "2.3.12"
 
