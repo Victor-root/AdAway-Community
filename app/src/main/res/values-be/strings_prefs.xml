@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Рэзервовая копія і аднаўленне правілаў блакіроўкі</string>
     <string name="pref_backup_restore_title">Рэзервовая копія і аднаўленне</string>
     <string name="pref_backup">Рэзервовая копія</string>
-    <string name="pref_backup_summary">Захаваць правілы блакіроўкі ў знешняе сховішча</string>
+    <string name="pref_backup_summary">Захаваць правілы блакіроўкі ў файл або ў папку Download, калі на прыладзе няма сродку выбару файлаў</string>
     <string name="pref_restore">Аднавіць</string>
     <string name="pref_restore_summary">Аднавіць правілы блакіроўкі з файла рэзервовай копіі</string>
-    <string name="import_success">Рэзервовая копія паспяхова імпартавана са знешняга сховішча.</string>
+    <string name="import_success">Правілы блакіроўкі адноўлены.</string>
     <string name="import_failed">Не ўдалося імпартаваць рэзервовую копію. Ці правільны яе фармат?</string>
-    <string name="export_success">Рэзервовая копія паспяхова экспартавана ў файл «%s» у знешнім сховішчы.</string>
+    <string name="export_success">Правілы блакіроўкі захаваны ў «%s».</string>
     <string name="export_failed">Не ўдалося экспартаваць файл рэзервовай копіі «%s».</string>
     <string name="pref_update_title">Абнаўленні</string>
     <string name="pref_update_enable_notifications">Апавяшчэнні адключаны</string>

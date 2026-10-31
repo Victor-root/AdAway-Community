@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Sao lưu / khôi phục quy tắc chặn</string>
     <string name="pref_backup_restore_title">Sao lưu &amp; khôi phục</string>
     <string name="pref_backup">Sao lưu</string>
-    <string name="pref_backup_summary">Sao lưu các quy tắc chặn của bạn vào bộ nhớ ngoài</string>
+    <string name="pref_backup_summary">Lưu các quy tắc chặn của bạn vào một tệp, hoặc vào thư mục Download nếu thiết bị không có trình chọn tệp</string>
     <string name="pref_restore">Khôi phục</string>
     <string name="pref_restore_summary">Khôi phục các quy tắc chặn của bạn từ tệp sao lưu</string>
-    <string name="import_success">Đã nhập bản sao lưu từ bộ nhớ ngoài của bạn.</string>
+    <string name="import_success">Đã khôi phục các quy tắc chặn của bạn.</string>
     <string name="import_failed">Không thể nhập bản sao lưu. Định dạng của tệp có đúng không?</string>
-    <string name="export_success">Đã xuất bản sao lưu vào tệp “%s” trong bộ nhớ ngoài của bạn.</string>
+    <string name="export_success">Đã lưu các quy tắc chặn của bạn vào “%s”.</string>
     <string name="export_failed">Không thể xuất tệp sao lưu “%s”.</string>
     <string name="pref_update_title">Cập nhật</string>
     <string name="pref_update_enable_notifications">Thông báo đang bị tắt</string>

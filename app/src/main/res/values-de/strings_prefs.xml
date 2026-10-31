@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Blockierregeln sichern / wiederherstellen</string>
     <string name="pref_backup_restore_title">Sicherung &amp; Wiederherstellung</string>
     <string name="pref_backup">Sicherung</string>
-    <string name="pref_backup_summary">Deine Blockierregeln auf dem externen Speicher sichern</string>
+    <string name="pref_backup_summary">Deine Blockierregeln in einer Datei sichern oder im Ordner Download, falls das Gerät keine Dateiauswahl hat</string>
     <string name="pref_restore">Wiederherstellen</string>
     <string name="pref_restore_summary">Deine Blockierregeln aus einer Sicherungsdatei wiederherstellen</string>
-    <string name="import_success">Die Sicherung wurde von deinem externen Speicher importiert.</string>
+    <string name="import_success">Deine Blockierregeln wurden wiederhergestellt.</string>
     <string name="import_failed">Die Sicherung konnte nicht importiert werden. Ist das Format korrekt?</string>
-    <string name="export_success">Die Sicherung wurde in die Datei „%s“ auf deinem externen Speicher exportiert.</string>
+    <string name="export_success">Deine Blockierregeln wurden in „%s“ gesichert.</string>
     <string name="export_failed">Die Sicherungsdatei „%s“ konnte nicht exportiert werden.</string>
     <string name="pref_update_title">Updates</string>
     <string name="pref_update_enable_notifications">Benachrichtigungen sind deaktiviert</string>

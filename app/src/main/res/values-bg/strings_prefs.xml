@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Резервно копие / възстановяване на правилата за блокиране</string>
     <string name="pref_backup_restore_title">Резервно копие и възстановяване</string>
     <string name="pref_backup">Резервно копие</string>
-    <string name="pref_backup_summary">Запазва правилата ви за блокиране във външната памет</string>
+    <string name="pref_backup_summary">Запазва правилата ви за блокиране във файл или в папката Download, ако устройството няма инструмент за избор на файлове</string>
     <string name="pref_restore">Възстановяване</string>
     <string name="pref_restore_summary">Възстановява правилата ви за блокиране от файл с резервно копие</string>
-    <string name="import_success">Резервното копие е импортирано успешно от външната памет.</string>
+    <string name="import_success">Правилата ви за блокиране бяха възстановени.</string>
     <string name="import_failed">Резервното копие не можа да бъде импортирано. Форматът му правилен ли е?</string>
-    <string name="export_success">Резервното копие е експортирано успешно във файла „%s“ във външната памет.</string>
+    <string name="export_success">Правилата ви за блокиране бяха запазени в „%s“.</string>
     <string name="export_failed">Файлът с резервно копие „%s“ не можа да бъде експортиран.</string>
     <string name="pref_update_title">Актуализации</string>
     <string name="pref_update_enable_notifications">Известията са изключени</string>

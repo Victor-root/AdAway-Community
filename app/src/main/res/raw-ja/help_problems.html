@@ -6,7 +6,14 @@
 <p>Androidの設定でAdAwayを探し、次のように設定してください。<cite>バッテリーの最適化</cite>を<cite>制限なし</cite>（または<cite>最適化しない</cite>）にします。お使いのROMにある場合は<cite>自動起動</cite>（<cite>バックグラウンドでの自動起動</cite>）を許可します。スワイプで消されないように、最近使ったアプリの一覧でAdAwayをロックします。また、AdAwayのVPN設定で<cite>起動時に有効にする</cite>がオンになっていることも確認してください。</p>
 
 <h2>Android TVで、再起動後にVPNがオンに戻らない</h2>
-<p>AdAwayをAndroidの<cite>常時接続VPN</cite>に設定してください。多くのTVではこの設定が非表示になっています。設定に使うADBコマンドは、AdAwayのホーム画面の<cite>VPNの常駐</cite>に表示されます。TCLなど一部のTVでは、AdAwayの自動起動も許可する必要があります。これらのTV向けのコマンドも同じ場所に表示されます。</p>
+<p>AdAwayをAndroidの<cite>常時接続VPN</cite>に設定してください。多くのTVではこの設定が非表示になっています。パソコンまたはスマートフォンからADBで設定し、その後TVを再起動してください。これらのコマンドは、TVのAdAwayホーム画面の<cite>VPNの常駐</cite>にも表示されます。</p>
+<p><strong>有効にする</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>確認する</strong>（コマンドが<tt><code>org.adaway</code></tt>を返します）<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>無効にする</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>TCLなど一部のTVでは、AdAwayの自動起動も許可する必要があります。</p>
+<p><strong>許可する</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>確認する</strong>（コマンドが<tt><code>allow</code></tt>を返します）<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>元に戻す</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Wi-Fiとモバイルデータを切り替えた直後にインターネットに接続できない、または表示が遅い</h2>
 <p>使用中のネットワークが変わると、新しいネットワークからDNSを解決できるように、トンネルを作り直す必要があります。それでも閲覧できない場合は、<cite>設定 › VPN方式の広告ブロッカー › VPNをリセット</cite>を開いて、接続を一から作り直してください。繰り返し起こる場合は、診断ログ（下記）を取得して報告してください。</p>

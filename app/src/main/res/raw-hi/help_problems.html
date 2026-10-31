@@ -6,7 +6,14 @@
 <p>Android सेटिंग में AdAway खोजें और ये करें: <cite>बैटरी ऑप्टिमाइज़ेशन</cite> को <cite>अप्रतिबंधित</cite> (या <cite>ऑप्टिमाइज़ न करें</cite>) पर सेट करें, अगर आपके ROM में <cite>ऑटोस्टार्ट</cite> या <cite>ऑटो-लॉन्च</cite> का विकल्प है तो उसकी अनुमति दें, और AdAway को हाल के ऐप्लिकेशन की सूची में लॉक कर दें ताकि वह स्वाइप करके हट न जाए। यह भी पक्का करें कि AdAway की VPN प्राथमिकताओं में <cite>स्टार्टअप पर चालू करें</cite> चालू है।</p>
 
 <h2>Android TV पर, रीस्टार्ट के बाद VPN फिर से शुरू नहीं होता</h2>
-<p>AdAway को Android का <cite>हमेशा चालू VPN</cite> सेट करें। कई TV यह सेटिंग छिपा देते हैं: इसे सेट करने वाली ADB कमांड AdAway की होम स्क्रीन पर, <cite>VPN हमेशा चालू रखना</cite> में दिखाई जाती हैं। कुछ TV पर, जैसे TCL वाले, AdAway को अपने-आप शुरू होने की अनुमति भी देनी होगी, वहीं इन TV के लिए दी गई कमांड से।</p>
+<p>AdAway को Android का <cite>हमेशा चालू VPN</cite> सेट करें। कई TV यह सेटिंग छिपा देते हैं: इसे किसी कंप्यूटर या फ़ोन से ADB के ज़रिए सेट करें, फिर TV को रीस्टार्ट करें। TV ये कमांड AdAway की होम स्क्रीन पर, <cite>VPN हमेशा चालू रखना</cite> में भी दिखाता है।</p>
+<p><strong>चालू करें</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>जांचें</strong> (कमांड का जवाब <tt><code>org.adaway</code></tt> होगा)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>बंद करें</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>कुछ TV पर, जैसे TCL वाले, AdAway को अपने-आप शुरू होने की अनुमति भी देनी होगी:</p>
+<p><strong>अनुमति दें</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>जांचें</strong> (कमांड का जवाब <tt><code>allow</code></tt> होगा)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>वापस लें</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>वाई-फ़ाई और मोबाइल डेटा के बीच बदलने के तुरंत बाद इंटरनेट नहीं चलता या धीमा चलता है</h2>
 <p>सक्रिय नेटवर्क बदलने पर टनल को दोबारा बनाना पड़ता है, ताकि DNS नए नेटवर्क से हल हो। अगर ब्राउज़िंग फिर भी ठीक न हो, तो कनेक्शन को शुरू से दोबारा बनाने के लिए <cite>प्राथमिकताएं › VPN › VPN रीसेट करें</cite> खोलें। अगर यह बार-बार हो, तो एक डायग्नोस्टिक लॉग (नीचे देखें) लें और उसकी रिपोर्ट करें।</p>

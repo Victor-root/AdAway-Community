@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Egin babeskopia / leheneratu blokeo-arauak</string>
     <string name="pref_backup_restore_title">Babeskopia eta leheneratzea</string>
     <string name="pref_backup">Babeskopia</string>
-    <string name="pref_backup_summary">Egin blokeo-arauen babeskopia kanpoko biltegiratzean</string>
+    <string name="pref_backup_summary">Egin blokeo-arauen babeskopia fitxategi batean, edo Download karpetan gailuak fitxategi-hautatzailerik ez badu</string>
     <string name="pref_restore">Leheneratu</string>
     <string name="pref_restore_summary">Leheneratu blokeo-arauak babeskopia-fitxategi batetik</string>
-    <string name="import_success">Babeskopia behar bezala inportatu da kanpoko biltegiratzetik.</string>
+    <string name="import_success">Zure blokeo-arauak leheneratu dira.</string>
     <string name="import_failed">Ezin izan da babeskopia inportatu. Formatua zuzena al da?</string>
-    <string name="export_success">Babeskopia behar bezala esportatu da kanpoko biltegiratzeko «%s» fitxategira.</string>
+    <string name="export_success">Zure blokeo-arauak hemen gorde dira: «%s».</string>
     <string name="export_failed">Ezin izan da «%s» babeskopia-fitxategia esportatu.</string>
     <string name="pref_update_title">Eguneraketak</string>
     <string name="pref_update_enable_notifications">Jakinarazpenak desgaituta daude</string>

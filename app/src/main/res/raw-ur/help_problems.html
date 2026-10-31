@@ -6,7 +6,14 @@
 <p>Android کی ترتیبات میں AdAway تلاش کریں اور یہ کریں: <cite>بیٹری آپٹیمائزیشن</cite> کو <cite>غیر محدود</cite> (یا <cite>آپٹیمائز نہ کریں</cite>) پر سیٹ کریں، اگر آپ کے روم میں ہو تو <cite>آٹو اسٹارٹ</cite> یا <cite>آٹو لانچ</cite> کی اجازت دیں، اور AdAway کو حالیہ ایپس کی فہرست میں لاک کریں تاکہ وہ سوائپ کر کے بند نہ ہو جائے۔ یہ بھی یقینی بنائیں کہ AdAway کی VPN ترجیحات میں <cite>شروع ہونے پر فعال کریں</cite> آن ہے۔</p>
 
 <h2>Android TV پر، دوبارہ شروع کرنے کے بعد VPN پھر سے شروع نہیں ہوتا</h2>
-<p>AdAway کو Android کا <cite>ہمیشہ آن VPN</cite> سیٹ کریں۔ بہت سے TV یہ ترتیب چھپا دیتے ہیں: اسے سیٹ کرنے والی ADB کمانڈز AdAway کی ہوم اسکرین پر، <cite>VPN کا استقلال</cite> کے تحت دکھائی جاتی ہیں۔ کچھ TV پر، جیسے TCL کے TV، AdAway کو خود بخود شروع ہونے کی اجازت بھی دینی ہوتی ہے، اس کمانڈ کے ذریعے جو وہاں ان TV کے لیے دی گئی ہے۔</p>
+<p>AdAway کو Android کا <cite>ہمیشہ آن VPN</cite> سیٹ کریں۔ بہت سے TV یہ ترتیب چھپا دیتے ہیں: اسے کمپیوٹر یا فون سے ADB کے ذریعے سیٹ کریں، پھر TV دوبارہ شروع کریں۔ TV یہ کمانڈز AdAway کی ہوم اسکرین پر، <cite>VPN کا استقلال</cite> کے تحت بھی دکھاتا ہے۔</p>
+<p><strong>فعال کریں</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>تصدیق کریں</strong> (کمانڈ کا جواب <tt><code>org.adaway</code></tt> ہوگا)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>غیر فعال کریں</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>کچھ TV پر، جیسے TCL کے TV، AdAway کو خود بخود شروع ہونے کی اجازت بھی دینی ہوتی ہے:</p>
+<p><strong>اجازت دیں</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>تصدیق کریں</strong> (کمانڈ کا جواب <tt><code>allow</code></tt> ہوگا)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>کالعدم کریں</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Wi-Fi اور موبائل ڈیٹا کے درمیان بدلنے کے فوراً بعد انٹرنیٹ نہیں چلتا یا براؤزنگ سست ہو جاتی ہے</h2>
 <p>جب فعال نیٹ ورک بدلتا ہے تو ٹنل کو دوبارہ بنانا پڑتا ہے تاکہ DNS نئے نیٹ ورک سے حل ہو۔ اگر براؤزنگ پھر بھی خراب رہے تو کنکشن کو شروع سے دوبارہ بنانے کے لیے <cite>ترجیحات › VPN پر مبنی اشتہار بلاکر › VPN ری سیٹ کریں</cite> کھولیں۔ اگر ایسا بار بار ہو تو تشخیصی لاگ (نیچے دیکھیں) حاصل کریں اور اس کی اطلاع دیں۔</p>

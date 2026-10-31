@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">தடுப்பு விதிகளைக் காப்புப்பிரதி எடு / மீட்டெடு</string>
     <string name="pref_backup_restore_title">காப்புப்பிரதி &amp; மீட்டெடுப்பு</string>
     <string name="pref_backup">காப்புப்பிரதி</string>
-    <string name="pref_backup_summary">உங்கள் தடுப்பு விதிகளை வெளிப்புறச் சேமிப்பகத்தில் காப்புப்பிரதி எடுக்கவும்</string>
+    <string name="pref_backup_summary">உங்கள் தடுப்பு விதிகளை ஒரு கோப்பில் சேமிக்கவும், அல்லது சாதனத்தில் கோப்புத் தேர்வி இல்லையெனில் Download கோப்புறையில் சேமிக்கவும்</string>
     <string name="pref_restore">மீட்டெடு</string>
     <string name="pref_restore_summary">காப்புப்பிரதி கோப்பிலிருந்து உங்கள் தடுப்பு விதிகளை மீட்டெடுக்கவும்</string>
-    <string name="import_success">காப்புப்பிரதி உங்கள் வெளிப்புறச் சேமிப்பகத்திலிருந்து வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது.</string>
+    <string name="import_success">உங்கள் தடுப்பு விதிகள் மீட்டெடுக்கப்பட்டன.</string>
     <string name="import_failed">காப்புப்பிரதியை இறக்குமதி செய்ய முடியவில்லை. அதன் வடிவம் சரியானதா?</string>
-    <string name="export_success">காப்புப்பிரதி உங்கள் வெளிப்புறச் சேமிப்பகத்தில் “%s” கோப்பாக வெற்றிகரமாக ஏற்றுமதி செய்யப்பட்டது.</string>
+    <string name="export_success">உங்கள் தடுப்பு விதிகள் “%s” இல் சேமிக்கப்பட்டன.</string>
     <string name="export_failed">காப்புப்பிரதி கோப்பு “%s” ஐ ஏற்றுமதி செய்ய முடியவில்லை.</string>
     <string name="pref_update_title">புதுப்பிப்புகள்</string>
     <string name="pref_update_enable_notifications">அறிவிப்புகள் முடக்கப்பட்டுள்ளன</string>

@@ -6,7 +6,14 @@
 <p>Android සැකසීම්වල AdAway සොයා: <cite>බැටරි ප්‍රශස්තකරණය</cite> <cite>සීමා රහිත</cite> (හෝ <cite>ප්‍රශස්ත නොකරන්න</cite>) ලෙස සකසන්න, ඔබේ ROM හි තිබේ නම් <cite>ස්වයංක්‍රීය ආරම්භය</cite>/<cite>ස්වයං-දියත් කිරීම</cite> සඳහා ඉඩ දෙන්න, සහ ස්වයිප් කර ඉවත් නොවන පරිදි AdAway මෑත යෙදුම් ලැයිස්තුවේ අගුළු දමන්න. AdAway හි VPN මනාපවල <cite>ආරම්භයේදී සක්‍රීය කරන්න</cite> ද සක්‍රීය බව තහවුරු කරගන්න.</p>
 
 <h2>Android TV හි, යළි ආරම්භ කිරීමෙන් පසු VPN එක නැවත ආරම්භ නොවේ</h2>
-<p>AdAway, Android හි <cite>සැම විටම සක්‍රීය VPN</cite> ලෙස සකසන්න. බොහෝ රූපවාහිනී මෙම සැකසීම සඟවයි: එය සකසන ADB විධාන AdAway මුල් තිරයේ, <cite>VPN නොකඩවා ක්‍රියාත්මක වීම</cite> යටතේ පෙන්වා ඇත. TCL වැනි සමහර රූපවාහිනීවල, එහි මෙම රූපවාහිනී සඳහා දී ඇති විධානය භාවිතයෙන්, AdAway හට තනිවම ආරම්භ වීමට ද ඉඩ දිය යුතුය.</p>
+<p>AdAway, Android හි <cite>සැම විටම සක්‍රීය VPN</cite> ලෙස සකසන්න. බොහෝ රූපවාහිනී මෙම සැකසීම සඟවයි: පරිගණකයකින් හෝ දුරකථනයකින් ADB භාවිතයෙන් එය සකසා, පසුව රූපවාහිනිය යළි ආරම්භ කරන්න. රූපවාහිනිය මෙම විධාන AdAway මුල් තිරයේ, <cite>VPN නොකඩවා ක්‍රියාත්මක වීම</cite> යටතේ ද පෙන්වයි.</p>
+<p><strong>සක්‍රීය කරන්න</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>පරීක්ෂා කරන්න</strong> (විධානය <tt><code>org.adaway</code></tt> ලෙස පිළිතුරු දෙයි)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>අක්‍රීය කරන්න</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>TCL වැනි සමහර රූපවාහිනීවල, AdAway හට තනිවම ආරම්භ වීමට ද ඉඩ දිය යුතුය:</p>
+<p><strong>ඉඩ දෙන්න</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>පරීක්ෂා කරන්න</strong> (විධානය <tt><code>allow</code></tt> ලෙස පිළිතුරු දෙයි)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>අහෝසි කරන්න</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Wi-Fi සහ ජංගම දත්ත අතර මාරු වූ වහාම අන්තර්ජාලය නැත, නැතහොත් බ්‍රවුස් කිරීම මන්දගාමීය</h2>
 <p>ක්‍රියාකාරී ජාලය වෙනස් වූ විට, නව ජාලයෙන් DNS විසඳීමට උමග නැවත ගොඩනැගිය යුතුය. බ්‍රවුස් කිරීම තවමත් අක්‍රමවත් නම්, සම්බන්ධතාව මුල සිටම නැවත ගොඩනැගීමට <cite>මනාප › VPN පදනම් කරගත් දැන්වීම් අවහිර කරන්නා › VPN යළි සකසන්න</cite> විවෘත කරන්න. එය නැවත නැවතත් සිදු වේ නම්, රෝග විනිශ්චය ලොගයක් (පහත) ලබාගෙන වාර්තා කරන්න.</p>

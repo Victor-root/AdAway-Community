@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Backup/restauração das regras de bloqueio</string>
     <string name="pref_backup_restore_title">Backup e restauração</string>
     <string name="pref_backup">Backup</string>
-    <string name="pref_backup_summary">Faça backup das suas regras de bloqueio no armazenamento externo</string>
+    <string name="pref_backup_summary">Salve suas regras de bloqueio em um arquivo, ou na pasta Download se o dispositivo não tiver seletor de arquivos</string>
     <string name="pref_restore">Restaurar</string>
     <string name="pref_restore_summary">Restaure suas regras de bloqueio a partir de um arquivo de backup</string>
-    <string name="import_success">Backup importado com sucesso do seu armazenamento externo.</string>
+    <string name="import_success">Suas regras de bloqueio foram restauradas.</string>
     <string name="import_failed">Falha ao importar o backup. O formato está correto?</string>
-    <string name="export_success">Backup exportado com sucesso para o arquivo “%s” no seu armazenamento externo.</string>
+    <string name="export_success">Suas regras de bloqueio foram salvas em “%s”.</string>
     <string name="export_failed">Falha ao exportar o arquivo de backup “%s”.</string>
     <string name="pref_update_title">Atualizações</string>
     <string name="pref_update_enable_notifications">As notificações estão desativadas</string>

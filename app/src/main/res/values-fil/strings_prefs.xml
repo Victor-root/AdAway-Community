@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">I-back up / i-restore ang mga panuntunan sa pag-block</string>
     <string name="pref_backup_restore_title">Backup at restore</string>
     <string name="pref_backup">Backup</string>
-    <string name="pref_backup_summary">I-back up sa external storage ang iyong mga panuntunan sa pag-block</string>
+    <string name="pref_backup_summary">I-back up ang iyong mga panuntunan sa pag-block sa isang file, o sa folder na Download kung walang file picker ang device</string>
     <string name="pref_restore">I-restore</string>
     <string name="pref_restore_summary">I-restore ang iyong mga panuntunan sa pag-block mula sa backup file</string>
-    <string name="import_success">Matagumpay na na-import ang backup mula sa iyong external storage.</string>
+    <string name="import_success">Na-restore ang iyong mga panuntunan sa pag-block.</string>
     <string name="import_failed">Hindi na-import ang backup. Tama ba ang format nito?</string>
-    <string name="export_success">Matagumpay na na-export ang backup sa file na “%s” sa iyong external storage.</string>
+    <string name="export_success">Na-save ang iyong mga panuntunan sa pag-block sa “%s”.</string>
     <string name="export_failed">Hindi na-export ang backup file na “%s”.</string>
     <string name="pref_update_title">Mga update</string>
     <string name="pref_update_enable_notifications">Naka-off ang mga notification</string>

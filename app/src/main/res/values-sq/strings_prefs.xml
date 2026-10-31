@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Kopje rezervë / rikthim i rregullave të bllokimit</string>
     <string name="pref_backup_restore_title">Kopje rezervë dhe rikthim</string>
     <string name="pref_backup">Kopje rezervë</string>
-    <string name="pref_backup_summary">Ruani rregullat e bllokimit në hapësirën e jashtme ruajtëse</string>
+    <string name="pref_backup_summary">Ruani rregullat e bllokimit në një skedar, ose në dosjen Download nëse pajisja nuk ka zgjedhës skedarësh</string>
     <string name="pref_restore">Rikthe</string>
     <string name="pref_restore_summary">Rikthejini rregullat e bllokimit nga një skedar kopjeje rezervë</string>
-    <string name="import_success">Kopja rezervë u importua me sukses nga hapësira juaj e jashtme ruajtëse.</string>
+    <string name="import_success">Rregullat tuaja të bllokimit u rikthyen.</string>
     <string name="import_failed">Importimi i kopjes rezervë dështoi. A është i saktë formati i saj?</string>
-    <string name="export_success">Kopja rezervë u eksportua me sukses te skedari «%s» në hapësirën tuaj të jashtme ruajtëse.</string>
+    <string name="export_success">Rregullat tuaja të bllokimit u ruajtën në «%s».</string>
     <string name="export_failed">Eksportimi i skedarit të kopjes rezervë «%s» dështoi.</string>
     <string name="pref_update_title">Përditësimet</string>
     <string name="pref_update_enable_notifications">Njoftimet janë çaktivizuar</string>

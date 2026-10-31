@@ -6,7 +6,14 @@
 <p>في إعدادات Android، ابحث عن AdAway ثم: اضبط <cite>تحسين البطارية</cite> على <cite>غير مقيّد</cite> (أو <cite>عدم التحسين</cite>)، واسمح بـ<cite>التشغيل التلقائي</cite> أو <cite>البدء التلقائي</cite> إن كان نظامك يوفّره، وثبّت AdAway في قائمة التطبيقات المستخدمة مؤخرًا حتى لا يُغلق بالسحب. وتأكد أيضًا من تفعيل <cite>التفعيل عند بدء التشغيل</cite> في تفضيلات VPN في AdAway.</p>
 
 <h2>على Android TV، لا يعود VPN إلى العمل بعد إعادة التشغيل</h2>
-<p>اضبط AdAway ليكون <cite>VPN دائم التشغيل</cite> في Android. تُخفي أجهزة تلفاز كثيرة هذا الإعداد: تظهر أوامر ADB التي تضبطه في الشاشة الرئيسية لتطبيق AdAway، ضمن <cite>استمرارية VPN</cite>. وعلى بعض أجهزة التلفاز، مثل أجهزة TCL، يجب أيضًا السماح لـ AdAway بالتشغيل تلقائيًا، باستخدام الأمر المخصص لهذه الأجهزة هناك.</p>
+<p>اضبط AdAway ليكون <cite>VPN دائم التشغيل</cite> في Android. تُخفي أجهزة تلفاز كثيرة هذا الإعداد: اضبطه باستخدام ADB من حاسوب أو هاتف، ثم أعد تشغيل التلفاز. يعرض التلفاز هذه الأوامر أيضًا في الشاشة الرئيسية لتطبيق AdAway، ضمن <cite>استمرارية VPN</cite>.</p>
+<p><strong>التفعيل</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>التحقق</strong> (يُرجع الأمر <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>التعطيل</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>على بعض أجهزة التلفاز، مثل أجهزة TCL، يجب أيضًا السماح لـ AdAway بالتشغيل تلقائيًا:</p>
+<p><strong>السماح</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>التحقق</strong> (يُرجع الأمر <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>التراجع</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>لا يوجد إنترنت أو التصفح بطيء بعد التبديل مباشرة بين Wi-Fi وبيانات الجوال</h2>
 <p>عند تغيّر الشبكة النشطة، يجب إعادة بناء النفق ليتم حل DNS من الشبكة الجديدة. إذا بقي التصفح معطلًا، فافتح <cite>التفضيلات › مانع الإعلانات عبر VPN › إعادة ضبط VPN</cite> لإعادة بناء الاتصال من الصفر. وإذا تكرر ذلك، فالتقط سجل تشخيص (انظر أدناه) وأبلغ عن المشكلة.</p>

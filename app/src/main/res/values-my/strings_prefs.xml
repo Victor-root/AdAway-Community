@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">ပိတ်ဆို့စည်းမျဉ်းများကို အရန်ကူးရန် / ပြန်လည်ရယူရန်</string>
     <string name="pref_backup_restore_title">အရန်ကူးခြင်းနှင့် ပြန်လည်ရယူခြင်း</string>
     <string name="pref_backup">အရန်ကူးရန်</string>
-    <string name="pref_backup_summary">သင့်ပိတ်ဆို့စည်းမျဉ်းများကို ပြင်ပသိုလှောင်ခန်းသို့ အရန်ကူးပါ</string>
+    <string name="pref_backup_summary">သင့်ပိတ်ဆို့စည်းမျဉ်းများကို ဖိုင်တစ်ခုထဲသို့ သိမ်းဆည်းပါ၊ စက်တွင် ဖိုင်ရွေးချယ်ကိရိယာ မရှိပါက Download ဖိုင်တွဲထဲသို့ သိမ်းဆည်းပါ</string>
     <string name="pref_restore">ပြန်လည်ရယူရန်</string>
     <string name="pref_restore_summary">အရန်ဖိုင်မှ သင့်ပိတ်ဆို့စည်းမျဉ်းများကို ပြန်လည်ရယူပါ</string>
-    <string name="import_success">အရန်ဖိုင်ကို သင့်ပြင်ပသိုလှောင်ခန်းမှ အောင်မြင်စွာ ပြန်လည်ထည့်သွင်းပြီးပါပြီ။</string>
+    <string name="import_success">သင့်ပိတ်ဆို့စည်းမျဉ်းများကို ပြန်လည်ရယူပြီးပါပြီ။</string>
     <string name="import_failed">အရန်ဖိုင်ကို ပြန်လည်ထည့်သွင်း၍ မရပါ။ ဖိုင်ပုံစံ မှန်ကန်ပါသလား။</string>
-    <string name="export_success">အရန်ဖိုင်ကို သင့်ပြင်ပသိုလှောင်ခန်းရှိ ‘%s’ ဖိုင်သို့ အောင်မြင်စွာ သိမ်းဆည်းပြီးပါပြီ။</string>
+    <string name="export_success">သင့်ပိတ်ဆို့စည်းမျဉ်းများကို ‘%s’ သို့ သိမ်းဆည်းပြီးပါပြီ။</string>
     <string name="export_failed">အရန်ဖိုင် ‘%s’ ကို သိမ်းဆည်း၍ မရပါ။</string>
     <string name="pref_update_title">အပ်ဒိတ်များ</string>
     <string name="pref_update_enable_notifications">အကြောင်းကြားချက်များကို ပိတ်ထားသည်</string>

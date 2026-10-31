@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">ബ്ലോക്ക് നിയമങ്ങൾ ബാക്കപ്പ് ചെയ്യുക / പുനഃസ്ഥാപിക്കുക</string>
     <string name="pref_backup_restore_title">ബാക്കപ്പും പുനഃസ്ഥാപിക്കലും</string>
     <string name="pref_backup">ബാക്കപ്പ്</string>
-    <string name="pref_backup_summary">നിങ്ങളുടെ ബ്ലോക്ക് നിയമങ്ങൾ ബാഹ്യ സംഭരണത്തിലേക്ക് ബാക്കപ്പ് ചെയ്യുക</string>
+    <string name="pref_backup_summary">നിങ്ങളുടെ ബ്ലോക്ക് നിയമങ്ങൾ ഒരു ഫയലിലേക്ക് സംരക്ഷിക്കുക, അല്ലെങ്കിൽ ഉപകരണത്തിൽ ഫയൽ പിക്കർ ഇല്ലെങ്കിൽ Download ഫോൾഡറിലേക്ക്</string>
     <string name="pref_restore">പുനഃസ്ഥാപിക്കുക</string>
     <string name="pref_restore_summary">ബാക്കപ്പ് ഫയലിൽ നിന്ന് നിങ്ങളുടെ ബ്ലോക്ക് നിയമങ്ങൾ പുനഃസ്ഥാപിക്കുക</string>
-    <string name="import_success">നിങ്ങളുടെ ബാഹ്യ സംഭരണത്തിൽ നിന്ന് ബാക്കപ്പ് വിജയകരമായി ഇമ്പോർട്ട് ചെയ്തു.</string>
+    <string name="import_success">നിങ്ങളുടെ ബ്ലോക്ക് നിയമങ്ങൾ പുനഃസ്ഥാപിച്ചു.</string>
     <string name="import_failed">ബാക്കപ്പ് ഇമ്പോർട്ട് ചെയ്യാൻ കഴിഞ്ഞില്ല. അതിന്റെ ഫോർമാറ്റ് ശരിയാണോ?</string>
-    <string name="export_success">നിങ്ങളുടെ ബാഹ്യ സംഭരണത്തിലെ “%s” ഫയലിലേക്ക് ബാക്കപ്പ് വിജയകരമായി എക്സ്പോർട്ട് ചെയ്തു.</string>
+    <string name="export_success">നിങ്ങളുടെ ബ്ലോക്ക് നിയമങ്ങൾ “%s” എന്നതിലേക്ക് സംരക്ഷിച്ചു.</string>
     <string name="export_failed">ബാക്കപ്പ് ഫയൽ “%s” എക്സ്പോർട്ട് ചെയ്യാൻ കഴിഞ്ഞില്ല.</string>
     <string name="pref_update_title">അപ്ഡേറ്റുകൾ</string>
     <string name="pref_update_enable_notifications">അറിയിപ്പുകൾ പ്രവർത്തനരഹിതമാണ്</string>

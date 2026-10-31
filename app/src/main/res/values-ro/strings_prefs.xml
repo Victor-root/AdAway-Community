@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Copie de rezervă / restaurare a regulilor de blocare</string>
     <string name="pref_backup_restore_title">Copie de rezervă și restaurare</string>
     <string name="pref_backup">Copie de rezervă</string>
-    <string name="pref_backup_summary">Salvați regulile de blocare în stocarea externă</string>
+    <string name="pref_backup_summary">Salvați regulile de blocare într-un fișier sau în dosarul Download dacă dispozitivul nu are selector de fișiere</string>
     <string name="pref_restore">Restaurare</string>
     <string name="pref_restore_summary">Restaurați regulile de blocare dintr-un fișier de rezervă</string>
-    <string name="import_success">Copia de rezervă a fost importată cu succes din stocarea externă.</string>
+    <string name="import_success">Regulile de blocare au fost restaurate.</string>
     <string name="import_failed">Importul copiei de rezervă a eșuat. Formatul este corect?</string>
-    <string name="export_success">Copia de rezervă a fost exportată cu succes în fișierul „%s” din stocarea externă.</string>
+    <string name="export_success">Regulile de blocare au fost salvate în „%s”.</string>
     <string name="export_failed">Exportul fișierului de rezervă „%s” a eșuat.</string>
     <string name="pref_update_title">Actualizări</string>
     <string name="pref_update_enable_notifications">Notificările sunt dezactivate</string>

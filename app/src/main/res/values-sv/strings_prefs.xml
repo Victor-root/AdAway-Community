@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Säkerhetskopiera/återställ blockeringsregler</string>
     <string name="pref_backup_restore_title">Säkerhetskopiering och återställning</string>
     <string name="pref_backup">Säkerhetskopiera</string>
-    <string name="pref_backup_summary">Säkerhetskopiera dina blockeringsregler till extern lagring</string>
+    <string name="pref_backup_summary">Spara dina blockeringsregler i en fil, eller i mappen Download om enheten saknar filväljare</string>
     <string name="pref_restore">Återställ</string>
     <string name="pref_restore_summary">Återställ dina blockeringsregler från en säkerhetskopia</string>
-    <string name="import_success">Säkerhetskopian har importerats från din externa lagring.</string>
+    <string name="import_success">Dina blockeringsregler har återställts.</string>
     <string name="import_failed">Det gick inte att importera säkerhetskopian. Är formatet korrekt?</string>
-    <string name="export_success">Säkerhetskopian har exporterats till filen ”%s” på din externa lagring.</string>
+    <string name="export_success">Dina blockeringsregler har sparats i ”%s”.</string>
     <string name="export_failed">Det gick inte att exportera säkerhetskopian ”%s”.</string>
     <string name="pref_update_title">Uppdateringar</string>
     <string name="pref_update_enable_notifications">Aviseringar är inaktiverade</string>

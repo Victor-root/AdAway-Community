@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Sikkerhedskopiér/gendan blokeringsregler</string>
     <string name="pref_backup_restore_title">Sikkerhedskopi og gendannelse</string>
     <string name="pref_backup">Sikkerhedskopiér</string>
-    <string name="pref_backup_summary">Sikkerhedskopiér dine blokeringsregler til ekstern lagerplads</string>
+    <string name="pref_backup_summary">Gem dine blokeringsregler i en fil eller i mappen Download, hvis enheden ikke har en filvælger</string>
     <string name="pref_restore">Gendan</string>
     <string name="pref_restore_summary">Gendan dine blokeringsregler fra en sikkerhedskopi</string>
-    <string name="import_success">Sikkerhedskopien blev importeret fra din eksterne lagerplads.</string>
+    <string name="import_success">Dine blokeringsregler blev gendannet.</string>
     <string name="import_failed">Sikkerhedskopien kunne ikke importeres. Er formatet korrekt?</string>
-    <string name="export_success">Sikkerhedskopien blev eksporteret til filen »%s« på din eksterne lagerplads.</string>
+    <string name="export_success">Dine blokeringsregler blev gemt i »%s«.</string>
     <string name="export_failed">Sikkerhedskopien »%s« kunne ikke eksporteres.</string>
     <string name="pref_update_title">Opdateringer</string>
     <string name="pref_update_enable_notifications">Notifikationer er slået fra</string>

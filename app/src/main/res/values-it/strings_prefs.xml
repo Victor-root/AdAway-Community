@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Backup e ripristino delle regole di blocco</string>
     <string name="pref_backup_restore_title">Backup e ripristino</string>
     <string name="pref_backup">Backup</string>
-    <string name="pref_backup_summary">Esegui il backup delle regole di blocco sulla memoria esterna</string>
+    <string name="pref_backup_summary">Salva le regole di blocco in un file, o nella cartella Download se il dispositivo non ha un selettore di file</string>
     <string name="pref_restore">Ripristina</string>
     <string name="pref_restore_summary">Ripristina le regole di blocco da un file di backup</string>
-    <string name="import_success">Backup importato correttamente dalla memoria esterna.</string>
+    <string name="import_success">Le tue regole di blocco sono state ripristinate.</string>
     <string name="import_failed">Importazione del backup non riuscita. Il formato è corretto?</string>
-    <string name="export_success">Backup esportato correttamente nel file «%s» sulla memoria esterna.</string>
+    <string name="export_success">Le tue regole di blocco sono state salvate in «%s».</string>
     <string name="export_failed">Impossibile esportare il file di backup «%s».</string>
     <string name="pref_update_title">Aggiornamenti</string>
     <string name="pref_update_enable_notifications">Le notifiche sono disattivate</string>

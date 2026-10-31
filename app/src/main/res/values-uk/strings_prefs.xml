@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Резервне копіювання й відновлення правил блокування</string>
     <string name="pref_backup_restore_title">Резервне копіювання й відновлення</string>
     <string name="pref_backup">Резервна копія</string>
-    <string name="pref_backup_summary">Зберегти правила блокування у зовнішньому сховищі</string>
+    <string name="pref_backup_summary">Зберегти правила блокування у файл або в папку Download, якщо на пристрої немає засобу вибору файлів</string>
     <string name="pref_restore">Відновити</string>
     <string name="pref_restore_summary">Відновити правила блокування з файлу резервної копії</string>
-    <string name="import_success">Резервну копію успішно імпортовано із зовнішнього сховища.</string>
+    <string name="import_success">Ваші правила блокування відновлено.</string>
     <string name="import_failed">Не вдалося імпортувати резервну копію. Чи правильний її формат?</string>
-    <string name="export_success">Резервну копію успішно експортовано у файл «%s» у зовнішньому сховищі.</string>
+    <string name="export_success">Ваші правила блокування збережено в «%s».</string>
     <string name="export_failed">Не вдалося експортувати файл резервної копії «%s».</string>
     <string name="pref_update_title">Оновлення</string>
     <string name="pref_update_enable_notifications">Сповіщення вимкнено</string>

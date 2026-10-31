@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Blokkolási szabályok mentése és visszaállítása</string>
     <string name="pref_backup_restore_title">Mentés és visszaállítás</string>
     <string name="pref_backup">Mentés</string>
-    <string name="pref_backup_summary">Blokkolási szabályok mentése külső tárhelyre</string>
+    <string name="pref_backup_summary">Blokkolási szabályok mentése fájlba, vagy a Download mappába, ha az eszközön nincs fájlválasztó</string>
     <string name="pref_restore">Visszaállítás</string>
     <string name="pref_restore_summary">Blokkolási szabályok visszaállítása mentésfájlból</string>
-    <string name="import_success">A mentés sikeresen importálva a külső tárhelyről.</string>
+    <string name="import_success">A blokkolási szabályok visszaállítva.</string>
     <string name="import_failed">A mentést nem sikerült importálni. Megfelelő a formátuma?</string>
-    <string name="export_success">A mentés sikeresen exportálva a külső tárhelyre, a fájl neve: „%s”.</string>
+    <string name="export_success">A blokkolási szabályok mentve ide: „%s”.</string>
     <string name="export_failed">A mentésfájl exportálása sikertelen: „%s”.</string>
     <string name="pref_update_title">Frissítések</string>
     <string name="pref_update_enable_notifications">Az értesítések ki vannak kapcsolva</string>

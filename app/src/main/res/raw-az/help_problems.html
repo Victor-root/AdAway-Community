@@ -6,7 +6,14 @@
 <p>Android ayarlarında AdAway tətbiqini tapın və bunları edin: <cite>batareya optimallaşdırması</cite> ayarını <cite>Məhdudiyyətsiz</cite> (və ya <cite>Optimallaşdırma</cite>) edin, ROM-unuzda varsa <cite>avtomatik başlatma</cite>/<cite>avtomatik işə salma</cite> seçiminə icazə verin və AdAway tətbiqini son tətbiqlər siyahısında kilidləyin ki, sürüşdürülərək bağlanmasın. Həmçinin AdAway tətbiqinin VPN tənzimləmələrində <cite>Başlanğıcda aktiv edin</cite> seçiminin aktiv olduğundan əmin olun.</p>
 
 <h2>Android TV-də yenidən başladıqdan sonra VPN yenidən işə düşmür</h2>
-<p>AdAway tətbiqini Android-in <cite>Həmişə aktiv VPN</cite> seçimi kimi təyin edin. Bir çox televizor bu ayarı gizlədir: onu təyin edən ADB əmrləri AdAway tətbiqinin əsas ekranında, <cite>VPN davamlılığı</cite> bölməsində göstərilir. Bəzi televizorlarda, məsələn, TCL televizorlarında, həmçinin orada bu televizorlar üçün verilmiş əmrlə AdAway-in özbaşına başlamasına icazə verilməlidir.</p>
+<p>AdAway tətbiqini Android-in <cite>Həmişə aktiv VPN</cite> seçimi kimi təyin edin. Bir çox televizor bu ayarı gizlədir: onu kompüter və ya telefondan ADB ilə təyin edin, sonra televizoru yenidən başladın. Televizor bu əmrləri həmçinin AdAway tətbiqinin əsas ekranında, <cite>VPN davamlılığı</cite> bölməsində göstərir.</p>
+<p><strong>Aktiv edin</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Yoxlayın</strong> (əmr <tt><code>org.adaway</code></tt> cavabını verir)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Deaktiv edin</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Bəzi televizorlarda, məsələn, TCL televizorlarında, AdAway-in özbaşına başlamasına da icazə verilməlidir:</p>
+<p><strong>İcazə verin</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Yoxlayın</strong> (əmr <tt><code>allow</code></tt> cavabını verir)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Geri qaytarın</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Wi-Fi ilə mobil internet arasında keçiddən sonra internet yoxdur və ya yavaşdır</h2>
 <p>Aktiv şəbəkə dəyişəndə DNS sorğularının yeni şəbəkədən həll olunması üçün tunel yenidən qurulmalıdır. Gəzinti hələ də işləmirsə, bağlantını sıfırdan yenidən qurmaq üçün <cite>Tənzimləmələr › VPN əsaslı reklam bloklayıcı › VPN-i sıfırlayın</cite> bölməsini açın. Bu, təkrar-təkrar baş verirsə, diaqnostika jurnalı toplayın (aşağıda) və problemi bildirin.</p>

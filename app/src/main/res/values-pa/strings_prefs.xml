@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">ਬਲਾਕ ਨਿਯਮਾਂ ਦਾ ਬੈਕਅੱਪ / ਬਹਾਲੀ</string>
     <string name="pref_backup_restore_title">ਬੈਕਅੱਪ ਅਤੇ ਬਹਾਲੀ</string>
     <string name="pref_backup">ਬੈਕਅੱਪ</string>
-    <string name="pref_backup_summary">ਆਪਣੇ ਬਲਾਕ ਨਿਯਮਾਂ ਦਾ ਬਾਹਰੀ ਸਟੋਰੇਜ ਵਿੱਚ ਬੈਕਅੱਪ ਲਓ</string>
+    <string name="pref_backup_summary">ਆਪਣੇ ਬਲਾਕ ਨਿਯਮ ਕਿਸੇ ਫ਼ਾਈਲ ਵਿੱਚ ਸੇਵ ਕਰੋ, ਜਾਂ ਜੇ ਡੀਵਾਈਸ ਵਿੱਚ ਫ਼ਾਈਲ ਪਿਕਰ ਨਹੀਂ ਹੈ ਤਾਂ Download ਫੋਲਡਰ ਵਿੱਚ</string>
     <string name="pref_restore">ਬਹਾਲ ਕਰੋ</string>
     <string name="pref_restore_summary">ਬੈਕਅੱਪ ਫ਼ਾਈਲ ਵਿੱਚੋਂ ਆਪਣੇ ਬਲਾਕ ਨਿਯਮ ਬਹਾਲ ਕਰੋ</string>
-    <string name="import_success">ਬੈਕਅੱਪ ਤੁਹਾਡੇ ਬਾਹਰੀ ਸਟੋਰੇਜ ਤੋਂ ਸਫਲਤਾਪੂਰਵਕ ਇੰਪੋਰਟ ਹੋ ਗਿਆ।</string>
+    <string name="import_success">ਤੁਹਾਡੇ ਬਲਾਕ ਨਿਯਮ ਬਹਾਲ ਹੋ ਗਏ।</string>
     <string name="import_failed">ਬੈਕਅੱਪ ਇੰਪੋਰਟ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਕੀ ਇਸ ਦਾ ਫਾਰਮੈਟ ਸਹੀ ਹੈ?</string>
-    <string name="export_success">ਬੈਕਅੱਪ ਤੁਹਾਡੇ ਬਾਹਰੀ ਸਟੋਰੇਜ ਵਿੱਚ ਫ਼ਾਈਲ “%s” ਵਜੋਂ ਸਫਲਤਾਪੂਰਵਕ ਐਕਸਪੋਰਟ ਹੋ ਗਿਆ।</string>
+    <string name="export_success">ਤੁਹਾਡੇ ਬਲਾਕ ਨਿਯਮ “%s” ਵਿੱਚ ਸੇਵ ਹੋ ਗਏ।</string>
     <string name="export_failed">ਬੈਕਅੱਪ ਫ਼ਾਈਲ “%s” ਐਕਸਪੋਰਟ ਨਹੀਂ ਹੋ ਸਕੀ।</string>
     <string name="pref_update_title">ਅੱਪਡੇਟ</string>
     <string name="pref_update_enable_notifications">ਸੂਚਨਾਵਾਂ ਬੰਦ ਹਨ</string>

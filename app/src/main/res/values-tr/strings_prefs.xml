@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Engelleme kurallarını yedekle / geri yükle</string>
     <string name="pref_backup_restore_title">Yedekle ve geri yükle</string>
     <string name="pref_backup">Yedekle</string>
-    <string name="pref_backup_summary">Engelleme kurallarınızı harici depolama alanına yedekleyin</string>
+    <string name="pref_backup_summary">Engelleme kurallarınızı bir dosyaya veya cihazda dosya seçici yoksa Download klasörüne kaydedin</string>
     <string name="pref_restore">Geri yükle</string>
     <string name="pref_restore_summary">Engelleme kurallarınızı yedek dosyasından geri yükleyin</string>
-    <string name="import_success">Yedek, harici depolama alanınızdan başarıyla içe aktarıldı.</string>
+    <string name="import_success">Engelleme kurallarınız geri yüklendi.</string>
     <string name="import_failed">Yedek içe aktarılamadı. Biçimi doğru mu?</string>
-    <string name="export_success">Yedek, harici depolama alanınızdaki “%s” dosyasına başarıyla aktarıldı.</string>
+    <string name="export_success">Engelleme kurallarınız “%s” konumuna kaydedildi.</string>
     <string name="export_failed">“%s” yedek dosyası dışa aktarılamadı.</string>
     <string name="pref_update_title">Güncellemeler</string>
     <string name="pref_update_enable_notifications">Bildirimler kapalı</string>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">차단 규칙 백업/복원</string>
     <string name="pref_backup_restore_title">백업 및 복원</string>
     <string name="pref_backup">백업</string>
-    <string name="pref_backup_summary">차단 규칙을 외부 저장소에 백업합니다</string>
+    <string name="pref_backup_summary">차단 규칙을 파일에 저장하거나, 파일 선택기가 없는 기기에서는 Download 폴더에 저장합니다</string>
     <string name="pref_restore">복원</string>
     <string name="pref_restore_summary">백업 파일에서 차단 규칙을 복원합니다</string>
-    <string name="import_success">외부 저장소에서 백업을 가져왔습니다.</string>
+    <string name="import_success">차단 규칙을 복원했습니다.</string>
     <string name="import_failed">백업을 가져오지 못했습니다. 형식이 올바른지 확인해 주세요.</string>
-    <string name="export_success">백업을 외부 저장소의 ‘%s’ 파일로 내보냈습니다.</string>
+    <string name="export_success">차단 규칙을 ‘%s’에 저장했습니다.</string>
     <string name="export_failed">백업 파일 ‘%s’을(를) 내보내지 못했습니다.</string>
     <string name="pref_update_title">업데이트</string>
     <string name="pref_update_enable_notifications">알림이 꺼져 있습니다</string>

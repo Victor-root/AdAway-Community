@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Blokavimo taisyklių atsarginė kopija / atkūrimas</string>
     <string name="pref_backup_restore_title">Atsarginė kopija ir atkūrimas</string>
     <string name="pref_backup">Atsarginė kopija</string>
-    <string name="pref_backup_summary">Sukurkite blokavimo taisyklių atsarginę kopiją išorinėje saugykloje</string>
+    <string name="pref_backup_summary">Išsaugokite blokavimo taisykles faile arba aplanke Download, jei įrenginyje nėra failų parinkiklio</string>
     <string name="pref_restore">Atkurti</string>
     <string name="pref_restore_summary">Atkurkite blokavimo taisykles iš atsarginės kopijos failo</string>
-    <string name="import_success">Atsarginė kopija sėkmingai importuota iš išorinės saugyklos.</string>
+    <string name="import_success">Jūsų blokavimo taisyklės atkurtos.</string>
     <string name="import_failed">Nepavyko importuoti atsarginės kopijos. Ar jos formatas teisingas?</string>
-    <string name="export_success">Atsarginė kopija sėkmingai eksportuota į failą „%s“ išorinėje saugykloje.</string>
+    <string name="export_success">Jūsų blokavimo taisyklės išsaugotos faile „%s“.</string>
     <string name="export_failed">Nepavyko eksportuoti atsarginės kopijos failo „%s“.</string>
     <string name="pref_update_title">Atnaujinimai</string>
     <string name="pref_update_enable_notifications">Pranešimai išjungti</string>

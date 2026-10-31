@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Zálohování a obnovení pravidel blokování</string>
     <string name="pref_backup_restore_title">Zálohování a obnovení</string>
     <string name="pref_backup">Zálohovat</string>
-    <string name="pref_backup_summary">Zálohovat pravidla blokování na externí úložiště</string>
+    <string name="pref_backup_summary">Uložit pravidla blokování do souboru. Pokud zařízení neumožňuje vybrat umístění, použije se složka Download.</string>
     <string name="pref_restore">Obnovit</string>
     <string name="pref_restore_summary">Obnovit pravidla blokování ze souboru zálohy</string>
-    <string name="import_success">Záloha byla úspěšně importována z externího úložiště.</string>
+    <string name="import_success">Pravidla blokování byla obnovena.</string>
     <string name="import_failed">Zálohu se nepodařilo importovat. Je ve správném formátu?</string>
-    <string name="export_success">Záloha byla úspěšně exportována do souboru „%s“ na externím úložišti.</string>
+    <string name="export_success">Pravidla blokování byla uložena do souboru „%s“.</string>
     <string name="export_failed">Soubor zálohy „%s“ se nepodařilo exportovat.</string>
     <string name="pref_update_title">Aktualizace</string>
     <string name="pref_update_enable_notifications">Oznámení jsou vypnutá</string>

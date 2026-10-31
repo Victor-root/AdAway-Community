@@ -6,7 +6,14 @@
 <p>Nas definições do Android, procure o AdAway e: defina a <cite>otimização da bateria</cite> como <cite>Sem restrições</cite> (ou <cite>Não otimizar</cite>), permita o <cite>arranque automático</cite>/<cite>início automático</cite> se a sua ROM o oferecer e bloqueie o AdAway na lista de aplicações recentes, para que não seja fechado ao deslizar. Certifique-se também de que a opção <cite>Ativar no arranque</cite> está ativada nas preferências de VPN do AdAway.</p>
 
 <h2>No Android TV, a VPN não volta a iniciar após um reinício</h2>
-<p>Defina o AdAway como <cite>VPN sempre ativa</cite> do Android. Muitos televisores ocultam esta definição: os comandos ADB que a configuram são apresentados no ecrã inicial do AdAway, em <cite>Persistência da VPN</cite>. Em alguns televisores, como os da TCL, também é necessário permitir que o AdAway arranque sozinho, com o comando indicado aí para esses televisores.</p>
+<p>Defina o AdAway como <cite>VPN sempre ativa</cite> do Android. Muitos televisores ocultam esta definição: configure-a com o ADB a partir de um computador ou de um telemóvel e reinicie depois o televisor. O televisor também apresenta estes comandos no ecrã inicial do AdAway, em <cite>Persistência da VPN</cite>.</p>
+<p><strong>Ativar</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Verificar</strong> (o comando responde <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Desativar</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Em alguns televisores, como os da TCL, também é necessário permitir que o AdAway arranque sozinho:</p>
+<p><strong>Permitir</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Verificar</strong> (o comando responde <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Anular</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Sem Internet ou navegação lenta logo após alternar entre Wi-Fi e dados móveis</h2>
 <p>Quando a rede ativa muda, o túnel tem de ser reconstruído para que o DNS seja resolvido a partir da nova rede. Se a navegação continuar a falhar, abra <cite>Preferências › Bloqueador de anúncios por VPN › Repor VPN</cite> para reconstruir a ligação de raiz. Se o problema se repetir, obtenha um registo de diagnóstico (mais abaixo) e comunique-o.</p>

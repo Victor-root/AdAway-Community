@@ -6,7 +6,14 @@
 <p>Leta upp AdAway i Android-inställningarna och gör så här: ställ in <cite>Batterioptimering</cite> på <cite>Obegränsad</cite> (eller <cite>Optimera inte</cite>), tillåt <cite>Autostart</cite> eller <cite>Automatisk start</cite> om din Android-version har det, och lås AdAway i listan över senaste appar så att den inte sveps bort. Kontrollera också att <cite>Aktivera vid start</cite> är på i AdAways VPN-inställningar.</p>
 
 <h2>På Android TV startar VPN inte igen efter en omstart</h2>
-<p>Ställ in AdAway som <cite>Always-on VPN</cite> i Android. Många TV-apparater döljer den här inställningen: ADB-kommandona som ställer in den visas på AdAways startskärm, under <cite>Beständigt VPN</cite>. På vissa TV-apparater, till exempel från TCL, måste AdAway också tillåtas att starta av sig själv, med kommandot som anges där för dessa TV-apparater.</p>
+<p>Ställ in AdAway som <cite>Always-on VPN</cite> i Android. Många TV-apparater döljer den här inställningen: ställ in den med ADB från en dator eller en telefon och starta sedan om TV:n. TV:n visar också dessa kommandon på AdAways startskärm, under <cite>Beständigt VPN</cite>.</p>
+<p><strong>Aktivera</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Kontrollera</strong> (kommandot svarar <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Inaktivera</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>På vissa TV-apparater, till exempel från TCL, måste AdAway också tillåtas att starta av sig själv:</p>
+<p><strong>Tillåt</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Kontrollera</strong> (kommandot svarar <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Ångra</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Inget internet eller långsam surfning direkt efter byte mellan Wi-Fi och mobildata</h2>
 <p>När det aktiva nätverket byts måste tunneln byggas upp på nytt, så att DNS slås upp via det nya nätverket. Om surfningen fortfarande inte fungerar öppnar du <cite>Inställningar › VPN-baserad annonsblockerare › Återställ VPN</cite> för att bygga upp anslutningen från grunden. Om det händer igen kan du spela in en diagnostiklogg (se nedan) och rapportera det.</p>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">גיבוי ושחזור של כללי החסימה</string>
     <string name="pref_backup_restore_title">גיבוי ושחזור</string>
     <string name="pref_backup">גיבוי</string>
-    <string name="pref_backup_summary">גיבוי כללי החסימה שלך לאחסון חיצוני</string>
+    <string name="pref_backup_summary">שמירת כללי החסימה שלך בקובץ, או בתיקייה Download אם אין במכשיר בורר קבצים</string>
     <string name="pref_restore">שחזור</string>
     <string name="pref_restore_summary">שחזור כללי החסימה שלך מקובץ גיבוי</string>
-    <string name="import_success">הגיבוי יובא בהצלחה מהאחסון החיצוני שלך.</string>
+    <string name="import_success">כללי החסימה שלך שוחזרו.</string>
     <string name="import_failed">ייבוא הגיבוי נכשל. האם הפורמט שלו תקין?</string>
-    <string name="export_success">הגיבוי יוצא בהצלחה לקובץ \"%s\" באחסון החיצוני שלך.</string>
+    <string name="export_success">כללי החסימה שלך נשמרו ב-\"%s\".</string>
     <string name="export_failed">ייצוא קובץ הגיבוי \"%s\" נכשל.</string>
     <string name="pref_update_title">עדכונים</string>
     <string name="pref_update_enable_notifications">ההתראות מושבתות</string>

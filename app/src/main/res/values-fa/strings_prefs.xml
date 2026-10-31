@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">پشتیبان‌گیری/بازیابی قوانین مسدودسازی</string>
     <string name="pref_backup_restore_title">پشتیبان‌گیری و بازیابی</string>
     <string name="pref_backup">پشتیبان‌گیری</string>
-    <string name="pref_backup_summary">از قوانین مسدودسازی خود روی حافظه خارجی نسخه پشتیبان تهیه کنید</string>
+    <string name="pref_backup_summary">قوانین مسدودسازی خود را در یک فایل ذخیره کنید، یا اگر دستگاه انتخابگر فایل ندارد، در پوشه Download</string>
     <string name="pref_restore">بازیابی</string>
     <string name="pref_restore_summary">قوانین مسدودسازی خود را از فایل پشتیبان بازیابی کنید</string>
-    <string name="import_success">نسخه پشتیبان با موفقیت از حافظه خارجی شما وارد شد.</string>
+    <string name="import_success">قوانین مسدودسازی شما بازیابی شد.</string>
     <string name="import_failed">وارد کردن نسخه پشتیبان ناموفق بود. آیا قالب آن درست است؟</string>
-    <string name="export_success">نسخه پشتیبان با موفقیت در فایل «%s» روی حافظه خارجی شما ذخیره شد.</string>
+    <string name="export_success">قوانین مسدودسازی شما در «%s» ذخیره شد.</string>
     <string name="export_failed">ذخیره فایل پشتیبان «%s» ناموفق بود.</string>
     <string name="pref_update_title">به‌روزرسانی‌ها</string>
     <string name="pref_update_enable_notifications">اعلان‌ها غیرفعال هستند</string>

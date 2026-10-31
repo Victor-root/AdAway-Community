@@ -6,7 +6,14 @@
 <p>Androiden ezarpenetan, bilatu AdAway eta: ezarri <cite>bateriaren optimizazioa</cite> hauxe: <cite>Murriztapenik gabe</cite> (edo <cite>Ez optimizatu</cite>), baimendu <cite>abiarazte automatikoa</cite> edo <cite>auto-abiarazpena</cite> zure ROMak aukera hori badu, eta blokeatu AdAway azken aplikazioen zerrendan, ez dadin baztertu. Egiaztatu ere AdAway-ren VPN hobespenetan <cite>Gaitu abiaraztean</cite> aukera gaituta dagoela.</p>
 
 <h2>Android TV-n, VPNa ez da berriro abiarazten berrabiarazi ondoren</h2>
-<p>Ezarri AdAway Androiden <cite>Beti aktibo dagoen VPNa</cite> gisa. Telebista askok ezarpen hori ezkutatzen dute: hura ezartzeko ADB komandoak AdAway-ren hasierako pantailan agertzen dira, <cite>VPNaren iraunkortasuna</cite> atalean. Telebista batzuetan, TCL markakoetan adibidez, AdAway-ri bere kabuz abiarazteko baimena ere eman behar zaio, telebista horientzat bertan ematen den komandoarekin.</p>
+<p>Ezarri AdAway Androiden <cite>Beti aktibo dagoen VPNa</cite> gisa. Telebista askok ezarpen hori ezkutatzen dute: ezarri ADB bidez ordenagailu edo telefono batetik eta, ondoren, berrabiarazi telebista. Telebistak AdAway-ren hasierako pantailan ere erakusten ditu komando hauek, <cite>VPNaren iraunkortasuna</cite> atalean.</p>
+<p><strong>Gaitu</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Egiaztatu</strong> (komandoak <tt><code>org.adaway</code></tt> erantzuten du)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Desgaitu</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Telebista batzuetan, TCL markakoetan adibidez, AdAway-ri bere kabuz abiarazteko baimena ere eman behar zaio:</p>
+<p><strong>Baimendu</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Egiaztatu</strong> (komandoak <tt><code>allow</code></tt> erantzuten du)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Desegin</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Internetik ez dago edo nabigazioa motela da Wi-Fi eta datu mugikorren artean aldatu ondoren</h2>
 <p>Sare aktiboa aldatzen denean, tunela berreraiki behar da DNS sare berritik ebatz dadin. Nabigazioak huts egiten jarraitzen badu, ireki <cite>Hobespenak › VPN bidezko iragarki-blokeatzailea › Berrezarri VPNa</cite> konexioa hutsetik berreraikitzeko. Berriro gertatzen bada, grabatu diagnostiko-erregistro bat (behean) eta jakinarazi.</p>

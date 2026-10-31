@@ -6,7 +6,14 @@
 <p>V nastavitvah Androida poiščite AdAway in naredite naslednje: v možnosti <cite>Optimizacija baterije</cite> izberite <cite>Neomejeno</cite> (ali <cite>Ne optimiziraj</cite>), dovolite <cite>samodejni zagon</cite> ali <cite>samodejno zaganjanje</cite>, če ju vaš ROM ima, in AdAway zaklenite na seznamu nedavnih aplikacij, da ga ne odstranite s potegom. Poskrbite tudi, da je v nastavitvah VPN aplikacije AdAway vklopljeno <cite>Omogoči ob zagonu</cite>.</p>
 
 <h2>V sistemu Android TV se VPN po ponovnem zagonu ne zažene znova</h2>
-<p>AdAway v Androidu nastavite kot <cite>Vedno vklopljen VPN</cite>. Veliko televizorjev to nastavitev skriva: ukazi ADB, ki jo nastavijo, so prikazani na začetnem zaslonu aplikacije AdAway, pod <cite>Trajno delovanje VPN-ja</cite>. Na nekaterih televizorjih, na primer TCL, morate AdAwayu dovoliti tudi samodejni zagon, z ukazom, ki je tam naveden za te televizorje.</p>
+<p>AdAway v Androidu nastavite kot <cite>Vedno vklopljen VPN</cite>. Veliko televizorjev to nastavitev skriva: nastavite jo z ADB iz računalnika ali telefona, nato znova zaženite televizor. Televizor te ukaze prikazuje tudi na začetnem zaslonu aplikacije AdAway, pod <cite>Trajno delovanje VPN-ja</cite>.</p>
+<p><strong>Omogočite</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Preverite</strong> (ukaz vrne <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Onemogočite</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Na nekaterih televizorjih, na primer TCL, morate AdAwayu dovoliti tudi samodejni zagon:</p>
+<p><strong>Dovolite</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Preverite</strong> (ukaz vrne <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Razveljavite</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Ni interneta ali je brskanje počasno takoj po preklopu med Wi-Fi in mobilnim omrežjem</h2>
 <p>Ko se aktivno omrežje spremeni, je treba tunel zgraditi znova, da se DNS razreši iz novega omrežja. Če brskanje ostane okvarjeno, odprite <cite>Nastavitve › Blokator oglasov na osnovi VPN › Ponastavi VPN</cite>, da povezavo zgradite znova od začetka. Če se to ponavlja, zajemite diagnostični dnevnik (spodaj) in težavo prijavite.</p>

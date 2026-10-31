@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">สำรอง/กู้คืนกฎการบล็อก</string>
     <string name="pref_backup_restore_title">สำรองและกู้คืน</string>
     <string name="pref_backup">สำรองข้อมูล</string>
-    <string name="pref_backup_summary">สำรองกฎการบล็อกของคุณไปยังที่เก็บข้อมูลภายนอก</string>
+    <string name="pref_backup_summary">บันทึกกฎการบล็อกของคุณลงในไฟล์ หรือลงในโฟลเดอร์ Download หากอุปกรณ์ไม่มีตัวเลือกไฟล์</string>
     <string name="pref_restore">กู้คืน</string>
     <string name="pref_restore_summary">กู้คืนกฎการบล็อกของคุณจากไฟล์สำรอง</string>
-    <string name="import_success">นำเข้าข้อมูลสำรองจากที่เก็บข้อมูลภายนอกเรียบร้อยแล้ว</string>
+    <string name="import_success">กู้คืนกฎการบล็อกของคุณแล้ว</string>
     <string name="import_failed">นำเข้าข้อมูลสำรองไม่สำเร็จ รูปแบบไฟล์ถูกต้องหรือไม่</string>
-    <string name="export_success">ส่งออกข้อมูลสำรองเป็นไฟล์ “%s” ในที่เก็บข้อมูลภายนอกเรียบร้อยแล้ว</string>
+    <string name="export_success">บันทึกกฎการบล็อกของคุณไปยัง “%s” แล้ว</string>
     <string name="export_failed">ส่งออกไฟล์สำรอง “%s” ไม่สำเร็จ</string>
     <string name="pref_update_title">การอัปเดต</string>
     <string name="pref_update_enable_notifications">การแจ้งเตือนปิดอยู่</string>

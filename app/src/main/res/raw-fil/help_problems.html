@@ -6,7 +6,14 @@
 <p>Sa mga setting ng Android, hanapin ang AdAway at: itakda ang <cite>pag-optimize ng baterya</cite> sa <cite>Walang restriction</cite> (o <cite>Huwag i-optimize</cite>), payagan ang <cite>autostart</cite>/<cite>auto-launch</cite> kung mayroon nito ang iyong ROM, at i-lock ang AdAway sa listahan ng mga kamakailang app para hindi ito mai-swipe palayo. Tiyakin din na naka-on ang <cite>I-enable sa pagsisimula</cite> sa mga kagustuhan ng VPN ng AdAway.</p>
 
 <h2>Sa Android TV, hindi muling nagsisimula ang VPN pagkatapos ng restart</h2>
-<p>Itakda ang AdAway bilang <cite>Always-on VPN</cite> ng Android. Itinatago ng maraming TV ang setting na ito: ipinapakita sa home screen ng AdAway, sa ilalim ng <cite>Pananatili ng VPN</cite>, ang mga ADB command na nagtatakda nito. Sa ilang TV, gaya ng mga TCL, kailangan ding payagan ang AdAway na kusang magsimula, gamit ang command na ibinigay doon para sa mga TV na ito.</p>
+<p>Itakda ang AdAway bilang <cite>Always-on VPN</cite> ng Android. Itinatago ng maraming TV ang setting na ito: itakda ito gamit ang ADB mula sa isang computer o telepono, pagkatapos ay i-restart ang TV. Ipinapakita rin ng TV ang mga command na ito sa home screen ng AdAway, sa ilalim ng <cite>Pananatili ng VPN</cite>.</p>
+<p><strong>I-enable</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Tingnan</strong> (sasagot ang command ng <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>I-disable</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Sa ilang TV, gaya ng mga TCL, kailangan ding payagan ang AdAway na kusang magsimula:</p>
+<p><strong>Payagan</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Tingnan</strong> (sasagot ang command ng <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>I-undo</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Walang internet o mabagal ang pag-browse pagkatapos lumipat sa pagitan ng Wi-Fi at mobile</h2>
 <p>Kapag nagbago ang aktibong network, kailangang buuin muli ang tunnel para ma-resolve ang DNS mula sa bagong network. Kung nananatiling sira ang pag-browse, buksan ang <cite>Mga Kagustuhan › Ad blocker na batay sa VPN › I-reset ang VPN</cite> para buuin muli mula sa simula ang koneksyon. Kung paulit-ulit itong nangyayari, mag-capture ng log ng diagnostic (sa ibaba) at iulat ito.</p>

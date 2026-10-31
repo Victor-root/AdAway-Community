@@ -6,7 +6,14 @@
 <p>Di setelan Android, temukan AdAway lalu: atur <cite>pengoptimalan baterai</cite> ke <cite>Tidak dibatasi</cite> (atau <cite>Jangan optimalkan</cite>), izinkan <cite>mulai otomatis</cite>/<cite>peluncuran otomatis</cite> jika ROM Anda menyediakannya, dan kunci AdAway di daftar aplikasi terbaru agar tidak tergeser. Pastikan juga <cite>Aktifkan saat perangkat dinyalakan</cite> aktif di preferensi VPN AdAway.</p>
 
 <h2>Di Android TV, VPN tidak aktif kembali setelah TV dimulai ulang</h2>
-<p>Atur AdAway sebagai <cite>VPN selalu aktif</cite> Android. Banyak TV menyembunyikan setelan ini: perintah ADB untuk mengaturnya ditampilkan di layar utama AdAway, di bagian <cite>Ketahanan VPN</cite>. Di beberapa TV, seperti TV TCL, AdAway juga harus diizinkan untuk mulai secara otomatis, dengan perintah yang disediakan di sana untuk TV tersebut.</p>
+<p>Atur AdAway sebagai <cite>VPN selalu aktif</cite> Android. Banyak TV menyembunyikan setelan ini: atur dengan ADB dari komputer atau ponsel, lalu mulai ulang TV. TV juga menampilkan perintah ini di layar utama AdAway, di bagian <cite>Ketahanan VPN</cite>.</p>
+<p><strong>Aktifkan</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Periksa</strong> (perintah akan menampilkan <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Nonaktifkan</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Di beberapa TV, seperti TV TCL, AdAway juga harus diizinkan untuk mulai secara otomatis:</p>
+<p><strong>Izinkan</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Periksa</strong> (perintah akan menampilkan <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Batalkan</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Tidak ada internet atau penelusuran lambat setelah berpindah antara Wi-Fi dan data seluler</h2>
 <p>Saat jaringan aktif berubah, terowongan VPN harus dibangun ulang agar DNS diselesaikan dari jaringan yang baru. Jika penelusuran tetap bermasalah, buka <cite>Preferensi › VPN › Setel ulang VPN</cite> untuk membangun ulang koneksi dari awal. Jika masalah terus berulang, rekam log diagnostik (lihat di bawah) dan laporkan.</p>

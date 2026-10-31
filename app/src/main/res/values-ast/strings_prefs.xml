@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Copia de seguridá y restauración de les regles de bloquéu</string>
     <string name="pref_backup_restore_title">Copia de seguridá y restauración</string>
     <string name="pref_backup">Copia de seguridá</string>
-    <string name="pref_backup_summary">Guarda nel almacenamientu esternu una copia de les tos regles de bloquéu</string>
+    <string name="pref_backup_summary">Guarda les tos regles de bloquéu nun ficheru, o na carpeta Download si’l preséu nun tien selector de ficheros</string>
     <string name="pref_restore">Restaurar</string>
     <string name="pref_restore_summary">Restaura les tos regles de bloquéu dende un ficheru de copia de seguridá</string>
-    <string name="import_success">La copia de seguridá importóse correutamente dende’l to almacenamientu esternu.</string>
+    <string name="import_success">Restauráronse les tos regles de bloquéu.</string>
     <string name="import_failed">Nun se pudo importar la copia de seguridá. ¿El formatu ye correutu?</string>
-    <string name="export_success">La copia de seguridá esportóse correutamente al ficheru «%s» del to almacenamientu esternu.</string>
+    <string name="export_success">Les tos regles de bloquéu guardáronse en «%s».</string>
     <string name="export_failed">Nun se pudo esportar el ficheru de copia de seguridá «%s».</string>
     <string name="pref_update_title">Anovamientos</string>
     <string name="pref_update_enable_notifications">Les notificaciones tán desactivaes</string>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Còpia de seguretat i restauració de les regles de bloqueig</string>
     <string name="pref_backup_restore_title">Còpia de seguretat i restauració</string>
     <string name="pref_backup">Còpia de seguretat</string>
-    <string name="pref_backup_summary">Fes una còpia de seguretat de les teves regles de bloqueig a l’emmagatzematge extern</string>
+    <string name="pref_backup_summary">Desa les teves regles de bloqueig en un fitxer, o a la carpeta Download si el dispositiu no té selector de fitxers</string>
     <string name="pref_restore">Restaura</string>
     <string name="pref_restore_summary">Restaura les teves regles de bloqueig des d’un fitxer de còpia de seguretat</string>
-    <string name="import_success">La còpia de seguretat s’ha importat correctament des de l’emmagatzematge extern.</string>
+    <string name="import_success">S’han restaurat les teves regles de bloqueig.</string>
     <string name="import_failed">No s’ha pogut importar la còpia de seguretat. El format és correcte?</string>
-    <string name="export_success">La còpia de seguretat s’ha exportat correctament al fitxer «%s» de l’emmagatzematge extern.</string>
+    <string name="export_success">Les teves regles de bloqueig s’han desat a «%s».</string>
     <string name="export_failed">No s’ha pogut exportar el fitxer de còpia de seguretat «%s».</string>
     <string name="pref_update_title">Actualitzacions</string>
     <string name="pref_update_enable_notifications">Les notificacions estan desactivades</string>

@@ -6,7 +6,14 @@
 <p>У налаштуваннях Android знайдіть AdAway і виконайте такі дії: установіть для <cite>оптимізації акумулятора</cite> значення <cite>Без обмежень</cite> (або <cite>Не оптимізувати</cite>), дозвольте <cite>автозапуск</cite> або <cite>автоматичний запуск</cite>, якщо ваша оболонка його має, і закріпіть AdAway у списку нещодавніх додатків, щоб його не змахнули. Також переконайтеся, що в налаштуваннях VPN в AdAway увімкнено <cite>Вмикати під час запуску</cite>.</p>
 
 <h2>На Android TV VPN не запускається знову після перезапуску</h2>
-<p>Налаштуйте AdAway як <cite>Постійний VPN</cite> в Android. Багато телевізорів приховують це налаштування: ADB-команди, які його задають, показано на головному екрані AdAway, у розділі <cite>Постійна робота VPN</cite>. На деяких телевізорах, наприклад TCL, також потрібно дозволити AdAway запускатися самостійно за допомогою команди, наведеної там для цих телевізорів.</p>
+<p>Налаштуйте AdAway як <cite>Постійний VPN</cite> в Android. Багато телевізорів приховують це налаштування: задайте його через ADB з комп’ютера або телефона, а потім перезапустіть телевізор. Телевізор також показує ці команди на головному екрані AdAway, у розділі <cite>Постійна робота VPN</cite>.</p>
+<p><strong>Увімкнути</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Перевірити</strong> (команда поверне <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Вимкнути</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>На деяких телевізорах, наприклад TCL, також потрібно дозволити AdAway запускатися самостійно:</p>
+<p><strong>Дозволити</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Перевірити</strong> (команда поверне <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Скасувати</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Немає інтернету або він повільний одразу після перемикання між Wi-Fi і мобільною мережею</h2>
 <p>Коли активна мережа змінюється, тунель потрібно перебудувати, щоб DNS-запити оброблялися через нову мережу. Якщо перегляд сторінок і далі не працює, відкрийте <cite>Налаштування › VPN › Скинути VPN</cite>, щоб перебудувати з’єднання з нуля. Якщо це повторюється, запишіть журнал діагностики (див. нижче) і повідомте про проблему.</p>

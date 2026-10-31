@@ -6,7 +6,14 @@
 <p>Finndu AdAway í Android-stillingunum og stilltu valkostinn <cite>Hagræðing rafhlöðu</cite> á <cite>Ótakmarkað</cite> (eða <cite>Ekki hagræða</cite>), leyfðu valkostinn <cite>Sjálfvirk ræsing</cite> (eða <cite>Sjálfvirk gangsetning</cite>) ef útgáfan þín býður upp á það og læstu AdAway á lista yfir nýleg forrit svo það sé ekki strokið burt. Gakktu líka úr skugga um að kveikt sé á <cite>Virkja við ræsingu</cite> í VPN-stillingum AdAway.</p>
 
 <h2>Á Android TV ræsist VPN ekki aftur eftir endurræsingu</h2>
-<p>Stilltu AdAway sem <cite>Alltaf virkt VPN</cite> í Android. Mörg sjónvörp fela þessa stillingu: ADB-skipanirnar sem stilla hana eru sýndar á heimaskjá AdAway, undir <cite>Viðvarandi VPN</cite>. Á sumum sjónvörpum, til dæmis frá TCL, þarf einnig að leyfa AdAway að ræsast sjálfkrafa, með skipuninni sem þar er gefin fyrir þessi sjónvörp.</p>
+<p>Stilltu AdAway sem <cite>Alltaf virkt VPN</cite> í Android. Mörg sjónvörp fela þessa stillingu: stilltu hana með ADB úr tölvu eða síma og endurræstu síðan sjónvarpið. Sjónvarpið sýnir þessar skipanir einnig á heimaskjá AdAway, undir <cite>Viðvarandi VPN</cite>.</p>
+<p><strong>Virkja</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Athuga</strong> (skipunin svarar <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Óvirkja</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Á sumum sjónvörpum, til dæmis frá TCL, þarf einnig að leyfa AdAway að ræsast sjálfkrafa:</p>
+<p><strong>Leyfa</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Athuga</strong> (skipunin svarar <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Afturkalla</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Ekkert net eða hæg vefskoðun rétt eftir skipti á milli Wi-Fi og farsímagagna</h2>
 <p>Þegar virka netið breytist þarf að byggja göngin upp aftur svo DNS-fyrirspurnir séu leystar af nýja netinu. Ef vefskoðun virkar enn ekki skaltu opna <cite>Stillingar › VPN › Endurstilla VPN</cite> til að byggja tenginguna upp frá grunni. Ef þetta gerist aftur og aftur skaltu skrá greiningarannál (sjá hér fyrir neðan) og tilkynna vandamálið.</p>

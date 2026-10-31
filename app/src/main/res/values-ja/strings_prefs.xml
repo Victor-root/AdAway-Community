@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">ブロックルールのバックアップと復元</string>
     <string name="pref_backup_restore_title">バックアップと復元</string>
     <string name="pref_backup">バックアップ</string>
-    <string name="pref_backup_summary">ブロックルールを外部ストレージにバックアップします</string>
+    <string name="pref_backup_summary">ブロックルールをファイルに保存します。ファイル選択画面がないデバイスでは、Downloadフォルダに保存します</string>
     <string name="pref_restore">復元</string>
     <string name="pref_restore_summary">バックアップファイルからブロックルールを復元します</string>
-    <string name="import_success">外部ストレージからバックアップを読み込みました。</string>
+    <string name="import_success">ブロックルールを復元しました。</string>
     <string name="import_failed">バックアップを読み込めませんでした。形式は正しいですか？</string>
-    <string name="export_success">バックアップを外部ストレージのファイル「%s」にエクスポートしました。</string>
+    <string name="export_success">ブロックルールを「%s」に保存しました。</string>
     <string name="export_failed">バックアップファイル「%s」をエクスポートできませんでした。</string>
     <string name="pref_update_title">更新</string>
     <string name="pref_update_enable_notifications">通知が無効です</string>

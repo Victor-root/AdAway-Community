@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">අවහිර නීතිවල උපස්ථය / ප්‍රතිස්ථාපනය</string>
     <string name="pref_backup_restore_title">උපස්ථ සහ ප්‍රතිස්ථාපන</string>
     <string name="pref_backup">උපස්ථය</string>
-    <string name="pref_backup_summary">ඔබේ අවහිර නීති බාහිර ආචයනයට උපස්ථ කරන්න</string>
+    <string name="pref_backup_summary">ඔබේ අවහිර නීති ගොනුවකට, හෝ උපාංගයට ගොනු තෝරකයක් නොමැති නම් Download ෆෝල්ඩරයට සුරකින්න</string>
     <string name="pref_restore">ප්‍රතිස්ථාපනය</string>
     <string name="pref_restore_summary">උපස්ථ ගොනුවකින් ඔබේ අවහිර නීති ප්‍රතිස්ථාපනය කරන්න</string>
-    <string name="import_success">උපස්ථය ඔබේ බාහිර ආචයනයෙන් සාර්ථකව ආයාත කරන ලදී.</string>
+    <string name="import_success">ඔබේ අවහිර නීති ප්‍රතිස්ථාපනය කරන ලදී.</string>
     <string name="import_failed">උපස්ථය ආයාත කිරීමට නොහැකි විය. එහි ආකෘතිය නිවැරදිද?</string>
-    <string name="export_success">උපස්ථය ඔබේ බාහිර ආචයනයේ “%s” ගොනුවට සාර්ථකව නිර්යාත කරන ලදී.</string>
+    <string name="export_success">ඔබේ අවහිර නීති “%s” වෙත සුරකින ලදී.</string>
     <string name="export_failed">“%s” උපස්ථ ගොනුව නිර්යාත කිරීමට නොහැකි විය.</string>
     <string name="pref_update_title">යාවත්කාලීන</string>
     <string name="pref_update_enable_notifications">දැනුම්දීම් අක්‍රීයයි</string>

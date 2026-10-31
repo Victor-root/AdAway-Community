@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Резервна копија и враћање правила блокирања</string>
     <string name="pref_backup_restore_title">Резервна копија и враћање</string>
     <string name="pref_backup">Резервна копија</string>
-    <string name="pref_backup_summary">Сачувајте правила блокирања на спољну меморију</string>
+    <string name="pref_backup_summary">Сачувајте правила блокирања у датотеку или у фасциклу Download ако уређај нема бирач датотека</string>
     <string name="pref_restore">Врати</string>
     <string name="pref_restore_summary">Вратите правила блокирања из датотеке резервне копије</string>
-    <string name="import_success">Резервна копија је успешно увезена са спољне меморије.</string>
+    <string name="import_success">Правила блокирања су враћена.</string>
     <string name="import_failed">Увоз резервне копије није успео. Да ли је њен формат исправан?</string>
-    <string name="export_success">Резервна копија је успешно извезена у датотеку „%s“ на спољној меморији.</string>
+    <string name="export_success">Правила блокирања су сачувана у „%s“.</string>
     <string name="export_failed">Извоз резервне копије у датотеку „%s“ није успео.</string>
     <string name="pref_update_title">Ажурирања</string>
     <string name="pref_update_enable_notifications">Обавештења су искључена</string>

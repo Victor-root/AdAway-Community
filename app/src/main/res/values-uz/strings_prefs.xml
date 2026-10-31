@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Bloklash qoidalarini zaxiralash / tiklash</string>
     <string name="pref_backup_restore_title">Zaxira nusxa va tiklash</string>
     <string name="pref_backup">Zaxira nusxa</string>
-    <string name="pref_backup_summary">Bloklash qoidalaringizdan tashqi xotiraga zaxira nusxa yarating</string>
+    <string name="pref_backup_summary">Bloklash qoidalaringizni faylga saqlang yoki qurilmada fayl tanlash oynasi boʻlmasa, Download jildiga saqlang</string>
     <string name="pref_restore">Tiklash</string>
     <string name="pref_restore_summary">Bloklash qoidalaringizni zaxira fayldan tiklang</string>
-    <string name="import_success">Zaxira nusxa tashqi xotiradan muvaffaqiyatli import qilindi.</string>
+    <string name="import_success">Bloklash qoidalaringiz tiklandi.</string>
     <string name="import_failed">Zaxira nusxani import qilib boʻlmadi. Uning formati toʻgʻrimi?</string>
-    <string name="export_success">Zaxira nusxa tashqi xotirangizdagi «%s» fayliga muvaffaqiyatli eksport qilindi.</string>
+    <string name="export_success">Bloklash qoidalaringiz «%s» manziliga saqlandi.</string>
     <string name="export_failed">Zaxira nusxani «%s» fayliga eksport qilib boʻlmadi.</string>
     <string name="pref_update_title">Yangilanishlar</string>
     <string name="pref_update_enable_notifications">Bildirishnomalar oʻchirilgan</string>

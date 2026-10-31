@@ -6,7 +6,14 @@
 <p>請在 Android 設定中找到 AdAway，然後進行下列調整：將<cite>電池最佳化</cite>設為<cite>不受限制</cite>（或<cite>不要最佳化</cite>）；如果你的 ROM 有<cite>自動啟動</cite>或<cite>自動執行</cite>選項，請予以允許；並在最近使用的應用程式清單中鎖定 AdAway，避免被滑掉。另外也請確認 AdAway 的 VPN 偏好設定中已開啟<cite>開機時啟用</cite>。</p>
 
 <h2>在 Android TV 上，重新啟動後 VPN 沒有再次啟動</h2>
-<p>請將 AdAway 設為 Android 的<cite>永遠開啟的 VPN</cite>。許多電視會隱藏這項設定：用來設定它的 ADB 指令會顯示在 AdAway 主畫面的<cite>VPN 持續運作</cite>中。在部分電視（例如 TCL 電視）上，也要允許 AdAway 自動啟動，請使用該處為這類電視提供的指令。</p>
+<p>請將 AdAway 設為 Android 的<cite>永遠開啟的 VPN</cite>。許多電視會隱藏這項設定：請從電腦或手機使用 ADB 進行設定，然後重新啟動電視。電視也會在 AdAway 主畫面的<cite>VPN 持續運作</cite>中顯示這些指令。</p>
+<p><strong>啟用</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>確認</strong>（指令會回傳 <tt><code>org.adaway</code></tt>）<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>停用</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>在部分電視（例如 TCL 電視）上，也要允許 AdAway 自動啟動：</p>
+<p><strong>允許</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>確認</strong>（指令會回傳 <tt><code>allow</code></tt>）<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>復原</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>在 Wi-Fi 和行動數據之間切換後，無法上網或網速變慢</h2>
 <p>當使用中的網路改變時，通道必須重新建立，DNS 才會改由新的網路解析。如果瀏覽狀況持續異常，請開啟<cite>偏好設定 › VPN 模式廣告封鎖器 › 重設 VPN</cite>，從頭重新建立連線。如果問題一再發生，請擷取診斷記錄（見下方）並回報。</p>

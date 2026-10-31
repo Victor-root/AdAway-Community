@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Cadangkan/pulihkan aturan pemblokiran</string>
     <string name="pref_backup_restore_title">Cadangkan &amp; pulihkan</string>
     <string name="pref_backup">Cadangkan</string>
-    <string name="pref_backup_summary">Cadangkan aturan pemblokiran Anda ke penyimpanan eksternal</string>
+    <string name="pref_backup_summary">Simpan aturan pemblokiran Anda ke file, atau ke folder Download jika perangkat tidak memiliki pemilih file</string>
     <string name="pref_restore">Pulihkan</string>
     <string name="pref_restore_summary">Pulihkan aturan pemblokiran Anda dari file cadangan</string>
-    <string name="import_success">Cadangan berhasil diimpor dari penyimpanan eksternal Anda.</string>
+    <string name="import_success">Aturan pemblokiran Anda telah dipulihkan.</string>
     <string name="import_failed">Gagal mengimpor cadangan. Apakah formatnya benar?</string>
-    <string name="export_success">Cadangan berhasil diekspor ke file “%s” di penyimpanan eksternal Anda.</string>
+    <string name="export_success">Aturan pemblokiran Anda telah disimpan ke “%s”.</string>
     <string name="export_failed">Gagal mengekspor file cadangan “%s”.</string>
     <string name="pref_update_title">Pembaruan</string>
     <string name="pref_update_enable_notifications">Notifikasi dinonaktifkan</string>

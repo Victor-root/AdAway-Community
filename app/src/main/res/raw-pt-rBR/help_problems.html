@@ -6,7 +6,14 @@
 <p>Nas configurações do Android, encontre o AdAway e: defina a <cite>otimização de bateria</cite> como <cite>Sem restrições</cite> (ou <cite>Não otimizar</cite>), permita o <cite>início automático</cite>/<cite>inicialização automática</cite> se a sua ROM tiver essa opção e bloqueie o AdAway na lista de apps recentes para que ele não seja removido ao deslizar. Verifique também se a opção <cite>Ativar ao iniciar</cite> está ativada nas preferências de VPN do AdAway.</p>
 
 <h2>No Android TV, a VPN não volta a iniciar após uma reinicialização</h2>
-<p>Defina o AdAway como <cite>VPN sempre ativa</cite> do Android. Muitas TVs ocultam essa configuração: os comandos ADB que a definem são exibidos na tela inicial do AdAway, em <cite>Persistência da VPN</cite>. Em algumas TVs, como as da TCL, também é preciso permitir que o AdAway inicie sozinho, com o comando indicado ali para essas TVs.</p>
+<p>Defina o AdAway como <cite>VPN sempre ativa</cite> do Android. Muitas TVs ocultam essa configuração: defina-a com o ADB a partir de um computador ou de um celular e depois reinicie a TV. A TV também exibe esses comandos na tela inicial do AdAway, em <cite>Persistência da VPN</cite>.</p>
+<p><strong>Ativar</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Verificar</strong> (o comando responde <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Desativar</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Em algumas TVs, como as da TCL, também é preciso permitir que o AdAway inicie sozinho:</p>
+<p><strong>Permitir</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Verificar</strong> (o comando responde <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Desfazer</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Sem Internet ou navegação lenta logo após alternar entre Wi-Fi e dados móveis</h2>
 <p>Quando a rede ativa muda, o túnel precisa ser reconstruído para que o DNS seja resolvido a partir da nova rede. Se a navegação continuar com problemas, abra <cite>Preferências › VPN › Redefinir VPN</cite> para reconstruir a conexão do zero. Se isso continuar acontecendo, grave um registro de diagnóstico (abaixo) e relate o problema.</p>

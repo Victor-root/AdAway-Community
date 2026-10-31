@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Αντίγραφο ασφαλείας / επαναφορά κανόνων αποκλεισμού</string>
     <string name="pref_backup_restore_title">Αντίγραφο ασφαλείας και επαναφορά</string>
     <string name="pref_backup">Αντίγραφο ασφαλείας</string>
-    <string name="pref_backup_summary">Αποθήκευση των κανόνων αποκλεισμού σας στον εξωτερικό χώρο αποθήκευσης</string>
+    <string name="pref_backup_summary">Αποθήκευση των κανόνων αποκλεισμού σας σε αρχείο ή στον φάκελο Download, αν η συσκευή δεν διαθέτει επιλογέα αρχείων</string>
     <string name="pref_restore">Επαναφορά</string>
     <string name="pref_restore_summary">Επαναφορά των κανόνων αποκλεισμού σας από αρχείο αντιγράφου ασφαλείας</string>
-    <string name="import_success">Το αντίγραφο ασφαλείας εισήχθη με επιτυχία από τον εξωτερικό χώρο αποθήκευσης.</string>
+    <string name="import_success">Οι κανόνες αποκλεισμού σας επαναφέρθηκαν.</string>
     <string name="import_failed">Η εισαγωγή του αντιγράφου ασφαλείας απέτυχε. Είναι σωστή η μορφή του;</string>
-    <string name="export_success">Το αντίγραφο ασφαλείας εξήχθη με επιτυχία στο αρχείο «%s» του εξωτερικού χώρου αποθήκευσης.</string>
+    <string name="export_success">Οι κανόνες αποκλεισμού σας αποθηκεύτηκαν στο «%s».</string>
     <string name="export_failed">Η εξαγωγή του αρχείου αντιγράφου ασφαλείας «%s» απέτυχε.</string>
     <string name="pref_update_title">Ενημερώσεις</string>
     <string name="pref_update_enable_notifications">Οι ειδοποιήσεις είναι απενεργοποιημένες</string>

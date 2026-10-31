@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">د بندولو قواعدو بیک اپ / بیرته راګرځول</string>
     <string name="pref_backup_restore_title">بیک اپ او بیرته راګرځول</string>
     <string name="pref_backup">بیک اپ</string>
-    <string name="pref_backup_summary">ستاسو د بندولو قواعد بهرنۍ زېرمې ته بیک اپ کړئ</string>
+    <string name="pref_backup_summary">ستاسو د بندولو قواعد یوې دوتنې ته خوندي کړئ، یا که وسیله د دوتنې ټاکونکی ونه لري د Download پوښۍ ته</string>
     <string name="pref_restore">بیرته راګرځول</string>
     <string name="pref_restore_summary">ستاسو د بندولو قواعد د بیک اپ دوتنې څخه بیرته راوګرځوئ</string>
-    <string name="import_success">بیک اپ په بریالیتوب سره ستاسو له بهرنۍ زېرمې څخه وارد شو.</string>
+    <string name="import_success">ستاسو د بندولو قواعد بیرته راوګرځول شول.</string>
     <string name="import_failed">بیک اپ وارد نه شو. ایا بڼه یې سمه ده؟</string>
-    <string name="export_success">بیک اپ په بریالیتوب سره ستاسو په بهرنۍ زېرمه کې «%s» دوتنې ته صادر شو.</string>
+    <string name="export_success">ستاسو د بندولو قواعد په «%s» کې خوندي شول.</string>
     <string name="export_failed">د بیک اپ دوتنه «%s» صادره نه شوه.</string>
     <string name="pref_update_title">تازه کېدنې</string>
     <string name="pref_update_enable_notifications">خبرتیاوې بندې دي</string>

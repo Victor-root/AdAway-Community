@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">備份 / 還原封鎖規則</string>
     <string name="pref_backup_restore_title">備份與還原</string>
     <string name="pref_backup">備份</string>
-    <string name="pref_backup_summary">將封鎖規則備份到外部儲存空間</string>
+    <string name="pref_backup_summary">將封鎖規則儲存到檔案；如果裝置沒有檔案選擇器，則儲存到 Download 資料夾</string>
     <string name="pref_restore">還原</string>
     <string name="pref_restore_summary">從備份檔還原封鎖規則</string>
-    <string name="import_success">已成功從外部儲存空間匯入備份。</string>
+    <string name="import_success">已還原你的封鎖規則。</string>
     <string name="import_failed">無法匯入備份，請確認格式是否正確。</string>
-    <string name="export_success">已成功將備份匯出至外部儲存空間的「%s」檔案。</string>
+    <string name="export_success">已將你的封鎖規則儲存至「%s」。</string>
     <string name="export_failed">無法匯出備份檔「%s」。</string>
     <string name="pref_update_title">更新</string>
     <string name="pref_update_enable_notifications">通知已關閉</string>

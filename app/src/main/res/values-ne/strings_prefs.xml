@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">ब्लक नियमहरूको ब्याकअप / पुनर्स्थापना</string>
     <string name="pref_backup_restore_title">ब्याकअप र पुनर्स्थापना</string>
     <string name="pref_backup">ब्याकअप</string>
-    <string name="pref_backup_summary">तपाईंका ब्लक नियमहरूको ब्याकअप बाह्य भण्डारणमा राख्नुहोस्</string>
+    <string name="pref_backup_summary">तपाईंका ब्लक नियमहरू फाइलमा सुरक्षित गर्नुहोस्, वा उपकरणमा फाइल पिकर छैन भने Download फोल्डरमा</string>
     <string name="pref_restore">पुनर्स्थापना</string>
     <string name="pref_restore_summary">ब्याकअप फाइलबाट तपाईंका ब्लक नियमहरू पुनर्स्थापना गर्नुहोस्</string>
-    <string name="import_success">तपाईंको बाह्य भण्डारणबाट ब्याकअप सफलतापूर्वक आयात गरियो।</string>
+    <string name="import_success">तपाईंका ब्लक नियमहरू पुनर्स्थापना गरिए।</string>
     <string name="import_failed">ब्याकअप आयात गर्न सकिएन। यसको ढाँचा सही छ?</string>
-    <string name="export_success">ब्याकअप तपाईंको बाह्य भण्डारणमा “%s” फाइलमा सफलतापूर्वक निर्यात गरियो।</string>
+    <string name="export_success">तपाईंका ब्लक नियमहरू “%s” मा सुरक्षित गरिए।</string>
     <string name="export_failed">ब्याकअप फाइल “%s” निर्यात गर्न सकिएन।</string>
     <string name="pref_update_title">अपडेट</string>
     <string name="pref_update_enable_notifications">सूचनाहरू असक्षम छन्</string>

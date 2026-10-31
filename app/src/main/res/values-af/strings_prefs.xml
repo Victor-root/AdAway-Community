@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Rugsteun / herstel blokkeerreëls</string>
     <string name="pref_backup_restore_title">Rugsteun en herstel</string>
     <string name="pref_backup">Rugsteun</string>
-    <string name="pref_backup_summary">Rugsteun jou blokkeerreëls na eksterne berging</string>
+    <string name="pref_backup_summary">Stoor jou blokkeerreëls in ’n lêer, of in die Download-vouer as die toestel nie ’n lêerkieser het nie</string>
     <string name="pref_restore">Herstel</string>
     <string name="pref_restore_summary">Herstel jou blokkeerreëls vanaf ’n rugsteunlêer</string>
-    <string name="import_success">Rugsteun suksesvol vanaf jou eksterne berging ingevoer.</string>
+    <string name="import_success">Jou blokkeerreëls is herstel.</string>
     <string name="import_failed">Kon nie die rugsteun invoer nie. Is die formaat korrek?</string>
-    <string name="export_success">Rugsteun suksesvol na die lêer “%s” op jou eksterne berging uitgevoer.</string>
+    <string name="export_success">Jou blokkeerreëls is in “%s” gestoor.</string>
     <string name="export_failed">Kon nie rugsteunlêer “%s” uitvoer nie.</string>
     <string name="pref_update_title">Opdaterings</string>
     <string name="pref_update_enable_notifications">Kennisgewings is gedeaktiveer</string>

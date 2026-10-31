@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Kopia zapasowa i przywracanie reguł blokowania</string>
     <string name="pref_backup_restore_title">Kopia zapasowa i przywracanie</string>
     <string name="pref_backup">Kopia zapasowa</string>
-    <string name="pref_backup_summary">Zapisz reguły blokowania w pamięci zewnętrznej</string>
+    <string name="pref_backup_summary">Zapisz reguły blokowania w pliku lub w folderze Download, jeśli urządzenie nie ma selektora plików</string>
     <string name="pref_restore">Przywróć</string>
     <string name="pref_restore_summary">Przywróć reguły blokowania z pliku kopii zapasowej</string>
-    <string name="import_success">Kopia zapasowa została zaimportowana z pamięci zewnętrznej.</string>
+    <string name="import_success">Twoje reguły blokowania zostały przywrócone.</string>
     <string name="import_failed">Nie udało się zaimportować kopii zapasowej. Czy jej format jest prawidłowy?</string>
-    <string name="export_success">Kopia zapasowa została wyeksportowana do pliku „%s” w pamięci zewnętrznej.</string>
+    <string name="export_success">Twoje reguły blokowania zostały zapisane w „%s”.</string>
     <string name="export_failed">Nie udało się wyeksportować pliku kopii zapasowej „%s”.</string>
     <string name="pref_update_title">Aktualizacje</string>
     <string name="pref_update_enable_notifications">Powiadomienia są wyłączone</string>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Savkopii / restaŭri blokregulojn</string>
     <string name="pref_backup_restore_title">Savkopio kaj restaŭro</string>
     <string name="pref_backup">Savkopio</string>
-    <string name="pref_backup_summary">Savkopii viajn blokregulojn al la ekstera memoro</string>
+    <string name="pref_backup_summary">Savkopii viajn blokregulojn en dosieron, aŭ en la dosierujon Download, se la aparato ne havas dosierelektilon</string>
     <string name="pref_restore">Restaŭri</string>
     <string name="pref_restore_summary">Restaŭri viajn blokregulojn el savkopia dosiero</string>
-    <string name="import_success">La savkopio estis sukcese importita el via ekstera memoro.</string>
+    <string name="import_success">Viaj blokreguloj estis restaŭritaj.</string>
     <string name="import_failed">Ne eblis importi la savkopion. Ĉu ĝia formato estas ĝusta?</string>
-    <string name="export_success">La savkopio estis sukcese eksportita al la dosiero «%s» en via ekstera memoro.</string>
+    <string name="export_success">Viaj blokreguloj estis konservitaj en «%s».</string>
     <string name="export_failed">Ne eblis eksporti la savkopian dosieron «%s».</string>
     <string name="pref_update_title">Ĝisdatigoj</string>
     <string name="pref_update_enable_notifications">Sciigoj estas malŝaltitaj</string>

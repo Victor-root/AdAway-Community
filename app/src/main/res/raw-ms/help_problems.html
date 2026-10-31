@@ -6,7 +6,14 @@
 <p>Dalam tetapan Android, cari AdAway dan: tetapkan <cite>pengoptimuman bateri</cite> kepada <cite>Tanpa had</cite> (atau <cite>Jangan optimumkan</cite>), benarkan <cite>autostart</cite>/<cite>lancar automatik</cite> jika ROM anda menyediakannya, dan kunci AdAway dalam senarai apl terkini supaya ia tidak tertutup apabila dileret. Pastikan juga <cite>Dayakan semasa permulaan</cite> dihidupkan dalam pilihan VPN AdAway.</p>
 
 <h2>Pada Android TV, VPN tidak bermula semula selepas TV dimulakan semula</h2>
-<p>Tetapkan AdAway sebagai <cite>VPN sentiasa hidup</cite> Android. Banyak TV menyembunyikan tetapan ini: arahan ADB untuk menetapkannya dipaparkan pada skrin utama AdAway, di bawah <cite>Kekekalan VPN</cite>. Pada sesetengah TV, seperti TV TCL, AdAway juga perlu dibenarkan bermula dengan sendirinya, menggunakan arahan yang disediakan di situ untuk TV tersebut.</p>
+<p>Tetapkan AdAway sebagai <cite>VPN sentiasa hidup</cite> Android. Banyak TV menyembunyikan tetapan ini: tetapkannya dengan ADB daripada komputer atau telefon, kemudian mulakan semula TV. TV juga memaparkan arahan ini pada skrin utama AdAway, di bawah <cite>Kekekalan VPN</cite>.</p>
+<p><strong>Dayakan</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Semak</strong> (arahan akan membalas <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Nyahdayakan</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Pada sesetengah TV, seperti TV TCL, AdAway juga perlu dibenarkan bermula dengan sendirinya:</p>
+<p><strong>Benarkan</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Semak</strong> (arahan akan membalas <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Buat asal</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Tiada internet atau pelayaran perlahan sejurus selepas bertukar antara Wi-Fi dan data mudah alih</h2>
 <p>Apabila rangkaian aktif berubah, terowong perlu dibina semula supaya DNS diselesaikan daripada rangkaian baharu. Jika pelayaran masih bermasalah, buka <cite>Pilihan › Penyekat iklan berasaskan VPN › Set semula VPN</cite> untuk membina semula sambungan dari awal. Jika masalah ini berulang, rakam log diagnostik (lihat di bawah) dan laporkannya.</p>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Sigurnosna kopija i vraćanje pravila blokiranja</string>
     <string name="pref_backup_restore_title">Sigurnosna kopija i vraćanje</string>
     <string name="pref_backup">Sigurnosna kopija</string>
-    <string name="pref_backup_summary">Spremite svoja pravila blokiranja na vanjsku pohranu</string>
+    <string name="pref_backup_summary">Spremite svoja pravila blokiranja u datoteku ili u mapu Download ako uređaj nema alat za odabir datoteka</string>
     <string name="pref_restore">Vrati</string>
     <string name="pref_restore_summary">Vratite svoja pravila blokiranja iz datoteke sigurnosne kopije</string>
-    <string name="import_success">Sigurnosna kopija uspješno je uvezena s vaše vanjske pohrane.</string>
+    <string name="import_success">Vaša su pravila blokiranja vraćena.</string>
     <string name="import_failed">Uvoz sigurnosne kopije nije uspio. Je li format ispravan?</string>
-    <string name="export_success">Sigurnosna kopija uspješno je izvezena u datoteku „%s“ na vašoj vanjskoj pohrani.</string>
+    <string name="export_success">Vaša su pravila blokiranja spremljena u „%s“.</string>
     <string name="export_failed">Izvoz datoteke sigurnosne kopije „%s“ nije uspio.</string>
     <string name="pref_update_title">Ažuriranja</string>
     <string name="pref_update_enable_notifications">Obavijesti su onemogućene</string>

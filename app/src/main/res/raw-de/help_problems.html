@@ -6,7 +6,14 @@
 <p>Suche in den Android-Einstellungen nach AdAway und stelle Folgendes ein: Setze die <cite>Akkuoptimierung</cite> auf <cite>Nicht eingeschränkt</cite> (oder <cite>Nicht optimieren</cite>), erlaube den <cite>Autostart</cite> bzw. <cite>Automatischen Start</cite>, falls deine ROM ihn anbietet, und sperre AdAway in der Liste der zuletzt verwendeten Apps, damit es nicht weggewischt wird. Achte außerdem darauf, dass in den VPN-Einstellungen von AdAway <cite>Beim Systemstart aktivieren</cite> eingeschaltet ist.</p>
 
 <h2>Auf Android TV startet das VPN nach einem Neustart nicht wieder</h2>
-<p>Lege AdAway in Android als <cite>Always-on-VPN</cite> fest. Viele Fernseher blenden diese Einstellung aus: Die ADB-Befehle, mit denen sie sich setzen lässt, werden auf dem Startbildschirm von AdAway unter <cite>VPN-Dauerbetrieb</cite> angezeigt. Auf manchen Fernsehern, etwa von TCL, muss AdAway außerdem der automatische Start erlaubt werden, mit dem dort für diese Fernseher angegebenen Befehl.</p>
+<p>Lege AdAway in Android als <cite>Always-on-VPN</cite> fest. Viele Fernseher blenden diese Einstellung aus: Setze sie mit ADB von einem Computer oder Smartphone aus und starte den Fernseher dann neu. Der Fernseher zeigt diese Befehle auch auf dem Startbildschirm von AdAway unter <cite>VPN-Dauerbetrieb</cite> an.</p>
+<p><strong>Aktivieren</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Prüfen</strong> (der Befehl gibt <tt><code>org.adaway</code></tt> aus)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Deaktivieren</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Auf manchen Fernsehern, etwa von TCL, muss AdAway außerdem der automatische Start erlaubt werden:</p>
+<p><strong>Erlauben</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Prüfen</strong> (der Befehl gibt <tt><code>allow</code></tt> aus)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Rückgängig machen</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Kein Internet oder langsames Surfen direkt nach dem Wechsel zwischen WLAN und Mobilfunk</h2>
 <p>Wenn sich das aktive Netzwerk ändert, muss der Tunnel neu aufgebaut werden, damit DNS-Anfragen über das neue Netzwerk aufgelöst werden. Wenn das Surfen weiterhin nicht funktioniert, öffne <cite>Einstellungen › VPN-basierter Werbeblocker › VPN zurücksetzen</cite>, um die Verbindung von Grund auf neu aufzubauen. Wenn das immer wieder passiert, zeichne ein Diagnoseprotokoll auf (siehe unten) und melde das Problem.</p>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Yedekkirin / vegerandina rêgezên astengkirinê</string>
     <string name="pref_backup_restore_title">Yedekkirin û vegerandin</string>
     <string name="pref_backup">Yedek</string>
-    <string name="pref_backup_summary">Rêgezên xwe yên astengkirinê li bîrgeha derve yedek bike</string>
+    <string name="pref_backup_summary">Rêgezên xwe yên astengkirinê li pelekê tomar bike, an jî heke hilbijêrê pelan li ser amûrê tune be, li peldanka Download</string>
     <string name="pref_restore">Vegerîne</string>
     <string name="pref_restore_summary">Rêgezên xwe yên astengkirinê ji pelê yedekê vegerîne</string>
-    <string name="import_success">Yedek bi serkeftî ji bîrgeha te ya derve hate wergirtin.</string>
+    <string name="import_success">Rêgezên te yên astengkirinê hatin vegerandin.</string>
     <string name="import_failed">Wergirtina yedekê têk çû. Gelo format rast e?</string>
-    <string name="export_success">Yedek bi serkeftî li pelê «%s» yê bîrgeha te ya derve hate hinardekirin.</string>
+    <string name="export_success">Rêgezên te yên astengkirinê li «%s» hatin tomarkirin.</string>
     <string name="export_failed">Hinardekirina pelê yedekê «%s» têk çû.</string>
     <string name="pref_update_title">Nûvekirin</string>
     <string name="pref_update_enable_notifications">Agahdarî neçalak in</string>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Sandar / pulihkan peraturan sekatan</string>
     <string name="pref_backup_restore_title">Sandaran &amp; pemulihan</string>
     <string name="pref_backup">Sandaran</string>
-    <string name="pref_backup_summary">Sandarkan peraturan sekatan anda ke storan luaran</string>
+    <string name="pref_backup_summary">Simpan peraturan sekatan anda ke fail, atau ke folder Download jika peranti tiada pemilih fail</string>
     <string name="pref_restore">Pulihkan</string>
     <string name="pref_restore_summary">Pulihkan peraturan sekatan anda daripada fail sandaran</string>
-    <string name="import_success">Sandaran berjaya diimport daripada storan luaran anda.</string>
+    <string name="import_success">Peraturan sekatan anda telah dipulihkan.</string>
     <string name="import_failed">Sandaran gagal diimport. Adakah formatnya betul?</string>
-    <string name="export_success">Sandaran berjaya dieksport ke fail “%s” pada storan luaran anda.</string>
+    <string name="export_success">Peraturan sekatan anda telah disimpan ke “%s”.</string>
     <string name="export_failed">Fail sandaran “%s” gagal dieksport.</string>
     <string name="pref_update_title">Kemas kini</string>
     <string name="pref_update_enable_notifications">Pemberitahuan dilumpuhkan</string>

@@ -6,7 +6,14 @@
 <p>Zoek AdAway op in de Android-instellingen en doe het volgende: zet de <cite>batterijoptimalisatie</cite> op <cite>Onbeperkt</cite> (of <cite>Niet optimaliseren</cite>), sta <cite>automatisch starten</cite> (of <cite>automatisch opstarten</cite>) toe als je ROM dat aanbiedt, en vergrendel AdAway in de lijst met recente apps zodat de app niet per ongeluk wordt weggeveegd. Controleer ook of <cite>Inschakelen bij het opstarten</cite> aan staat in de VPN-voorkeuren van AdAway.</p>
 
 <h2>Op Android TV start de VPN niet opnieuw na een herstart</h2>
-<p>Stel AdAway in als <cite>Altijd-aan-VPN</cite> van Android. Veel tv’s verbergen deze instelling: de ADB-opdrachten om die in te stellen staan op het startscherm van AdAway, onder <cite>VPN actief houden</cite>. Op sommige tv’s, zoals die van TCL, moet AdAway ook vanzelf mogen starten, met de opdracht die daar voor deze tv’s wordt gegeven.</p>
+<p>Stel AdAway in als <cite>Altijd-aan-VPN</cite> van Android. Veel tv’s verbergen deze instelling: stel die in met ADB vanaf een computer of telefoon en start de tv daarna opnieuw op. De tv toont deze opdrachten ook op het startscherm van AdAway, onder <cite>VPN actief houden</cite>.</p>
+<p><strong>Inschakelen</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Controleren</strong> (de opdracht geeft <tt><code>org.adaway</code></tt> terug)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Uitschakelen</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Op sommige tv’s, zoals die van TCL, moet AdAway ook vanzelf mogen starten:</p>
+<p><strong>Toestaan</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Controleren</strong> (de opdracht geeft <tt><code>allow</code></tt> terug)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Ongedaan maken</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Geen internet of trage verbinding direct na het wisselen tussen wifi en mobiel</h2>
 <p>Wanneer het actieve netwerk verandert, moet de tunnel opnieuw worden opgebouwd zodat DNS via het nieuwe netwerk wordt opgelost. Als surfen niet lukt, open dan <cite>Voorkeuren › Adblocker via VPN › VPN resetten</cite> om de verbinding helemaal opnieuw op te bouwen. Gebeurt het steeds opnieuw, leg dan een diagnostisch logboek vast (zie hieronder) en meld het probleem.</p>

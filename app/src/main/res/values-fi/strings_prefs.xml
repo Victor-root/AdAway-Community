@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Varmuuskopioi / palauta estosäännöt</string>
     <string name="pref_backup_restore_title">Varmuuskopiointi ja palautus</string>
     <string name="pref_backup">Varmuuskopioi</string>
-    <string name="pref_backup_summary">Varmuuskopioi estosäännöt ulkoiseen tallennustilaan</string>
+    <string name="pref_backup_summary">Varmuuskopioi estosäännöt tiedostoon tai Download-kansioon, jos laitteessa ei ole tiedostonvalitsinta</string>
     <string name="pref_restore">Palauta</string>
     <string name="pref_restore_summary">Palauta estosäännöt varmuuskopiotiedostosta</string>
-    <string name="import_success">Varmuuskopio tuotiin onnistuneesti ulkoisesta tallennustilasta.</string>
+    <string name="import_success">Estosääntösi palautettiin.</string>
     <string name="import_failed">Varmuuskopion tuonti epäonnistui. Onko sen muoto oikea?</string>
-    <string name="export_success">Varmuuskopio vietiin onnistuneesti ulkoisessa tallennustilassa olevaan tiedostoon ”%s”.</string>
+    <string name="export_success">Estosääntösi tallennettiin kohteeseen ”%s”.</string>
     <string name="export_failed">Varmuuskopiotiedoston ”%s” vienti epäonnistui.</string>
     <string name="pref_update_title">Päivitykset</string>
     <string name="pref_update_enable_notifications">Ilmoitukset on poistettu käytöstä</string>

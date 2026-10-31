@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Blokeerimisreeglite varundus / taastamine</string>
     <string name="pref_backup_restore_title">Varundus ja taastamine</string>
     <string name="pref_backup">Varundus</string>
-    <string name="pref_backup_summary">Varunda oma blokeerimisreeglid välisele mälule</string>
+    <string name="pref_backup_summary">Varunda oma blokeerimisreeglid faili või kausta Download, kui seadmel pole failivalijat</string>
     <string name="pref_restore">Taasta</string>
     <string name="pref_restore_summary">Taasta oma blokeerimisreeglid varukoopiafailist</string>
-    <string name="import_success">Varukoopia imporditi edukalt sinu välisest mälust.</string>
+    <string name="import_success">Sinu blokeerimisreeglid taastati.</string>
     <string name="import_failed">Varukoopia importimine ebaõnnestus. Kas selle vorming on õige?</string>
-    <string name="export_success">Varukoopia eksporditi edukalt faili „%s“ sinu välisel mälul.</string>
+    <string name="export_success">Sinu blokeerimisreeglid salvestati asukohta „%s“.</string>
     <string name="export_failed">Varukoopiafaili „%s“ eksportimine ebaõnnestus.</string>
     <string name="pref_update_title">Värskendused</string>
     <string name="pref_update_enable_notifications">Märguanded on välja lülitatud</string>

@@ -6,7 +6,14 @@
 <p>در تنظیمات اندروید، AdAway را پیدا کنید و این کارها را انجام دهید: <cite>بهینه‌سازی باتری</cite> را روی <cite>بدون محدودیت</cite> (یا <cite>بهینه نشود</cite>) بگذارید، اگر رام شما این گزینه را دارد <cite>شروع خودکار</cite> یا <cite>راه‌اندازی خودکار</cite> را مجاز کنید و AdAway را در فهرست برنامه‌های اخیر قفل کنید تا با کشیدن بسته نشود. همچنین مطمئن شوید گزینه <cite>فعال‌سازی هنگام راه‌اندازی دستگاه</cite> در تنظیمات VPN برنامه AdAway روشن است.</p>
 
 <h2>در Android TV، VPN پس از راه‌اندازی مجدد دوباره روشن نمی‌شود</h2>
-<p>AdAway را به‌عنوان <cite>VPN همیشه روشن</cite> اندروید تنظیم کنید. بسیاری از تلویزیون‌ها این تنظیم را پنهان می‌کنند: فرمان‌های ADB که آن را تنظیم می‌کنند در صفحه اصلی AdAway، در بخش <cite>پایداری VPN</cite> نمایش داده می‌شوند. در برخی تلویزیون‌ها، مانند تلویزیون‌های TCL، باید به AdAway اجازه راه‌اندازی خودکار هم بدهید، با فرمانی که همان‌جا برای این تلویزیون‌ها آمده است.</p>
+<p>AdAway را به‌عنوان <cite>VPN همیشه روشن</cite> اندروید تنظیم کنید. بسیاری از تلویزیون‌ها این تنظیم را پنهان می‌کنند: آن را با ADB از یک رایانه یا تلفن تنظیم کنید و سپس تلویزیون را دوباره راه‌اندازی کنید. تلویزیون این فرمان‌ها را در صفحه اصلی AdAway، در بخش <cite>پایداری VPN</cite> هم نمایش می‌دهد.</p>
+<p><strong>فعال کردن</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>بررسی</strong> (فرمان، <tt><code>org.adaway</code></tt> را برمی‌گرداند)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>غیرفعال کردن</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>در برخی تلویزیون‌ها، مانند تلویزیون‌های TCL، باید به AdAway اجازه راه‌اندازی خودکار هم بدهید:</p>
+<p><strong>اجازه دادن</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>بررسی</strong> (فرمان، <tt><code>allow</code></tt> را برمی‌گرداند)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>لغو</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>پس از جابه‌جایی بین Wi-Fi و داده تلفن همراه، اینترنت قطع یا کند است</h2>
 <p>وقتی شبکه فعال تغییر می‌کند، تونل باید دوباره ساخته شود تا DNS از شبکه جدید پاسخ بگیرد. اگر گشت‌وگذار همچنان مشکل دارد، <cite>تنظیمات › VPN › بازنشانی VPN</cite> را باز کنید تا اتصال از ابتدا ساخته شود. اگر این مشکل تکرار شد، یک گزارش عیب‌یابی (در ادامه) تهیه کنید و آن را گزارش دهید.</p>

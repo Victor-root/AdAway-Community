@@ -6,7 +6,14 @@
 <p>Android nustatymuose suraskite AdAway ir: nustatykite <cite>akumuliatoriaus optimizavimą</cite> į <cite>Neribojama</cite> (arba <cite>Neoptimizuoti</cite>), įjunkite <cite>Automatinis paleidimas</cite>/<cite>Automatinis paleidimas fone</cite>, jei jūsų ROM turi tokią parinktį, ir užfiksuokite AdAway naujausių programų sąraše, kad ji nebūtų nubraukta. Taip pat patikrinkite, ar AdAway VPN nuostatose įjungta <cite>Įjungti paleidžiant</cite>.</p>
 
 <h2>Android TV įrenginyje po paleidimo iš naujo VPN nebeįsijungia</h2>
-<p>Pasirinkite AdAway Android nustatyme <cite>Visada įjungtas VPN</cite>. Daugelis televizorių šį nustatymą slepia: jį įjungiančios ADB komandos rodomos AdAway pagrindiniame ekrane, skiltyje <cite>VPN veikimo užtikrinimas</cite>. Kai kuriuose televizoriuose, pavyzdžiui, TCL, AdAway taip pat reikia leisti pasileisti savaime, naudojant ten pateiktą komandą šiems televizoriams.</p>
+<p>Pasirinkite AdAway Android nustatyme <cite>Visada įjungtas VPN</cite>. Daugelis televizorių šį nustatymą slepia: nustatykite jį per ADB iš kompiuterio ar telefono, tada paleiskite televizorių iš naujo. Televizorius šias komandas taip pat rodo AdAway pagrindiniame ekrane, skiltyje <cite>VPN veikimo užtikrinimas</cite>.</p>
+<p><strong>Įjungti</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Patikrinti</strong> (komanda atsako <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Išjungti</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Kai kuriuose televizoriuose, pavyzdžiui, TCL, AdAway taip pat reikia leisti pasileisti savaime:</p>
+<p><strong>Leisti</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Patikrinti</strong> (komanda atsako <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Atšaukti</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Nėra interneto arba lėta naršymas iškart perjungus Wi-Fi ir mobiliuosius duomenis</h2>
 <p>Pasikeitus aktyviam tinklui, tunelį reikia sukurti iš naujo, kad DNS būtų išspręstas per naująjį tinklą. Jei naršymas vis dar neveikia, atidarykite <cite>Nuostatos › Reklamų blokatorius per VPN › Iš naujo nustatyti VPN</cite>, kad ryšys būtų sukurtas iš naujo. Jei tai kartojasi, užfiksuokite diagnostikos žurnalą (žemiau) ir praneškite apie problemą.</p>

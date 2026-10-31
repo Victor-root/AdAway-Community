@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Öryggisafrit / endurheimta lokunarreglur</string>
     <string name="pref_backup_restore_title">Öryggisafrit og endurheimt</string>
     <string name="pref_backup">Öryggisafrit</string>
-    <string name="pref_backup_summary">Taktu öryggisafrit af lokunarreglunum þínum á ytri geymslu</string>
+    <string name="pref_backup_summary">Vistaðu lokunarreglurnar þínar í skrá, eða í möppuna Download ef tækið býður ekki upp á skráaval</string>
     <string name="pref_restore">Endurheimta</string>
     <string name="pref_restore_summary">Endurheimtu lokunarreglurnar þínar úr öryggisafritsskrá</string>
-    <string name="import_success">Öryggisafritið var flutt inn úr ytri geymslunni þinni.</string>
+    <string name="import_success">Lokunarreglurnar þínar voru endurheimtar.</string>
     <string name="import_failed">Ekki tókst að flytja inn öryggisafritið. Er sniðið rétt?</string>
-    <string name="export_success">Öryggisafritið var flutt út í skrána „%s“ á ytri geymslunni þinni.</string>
+    <string name="export_success">Lokunarreglurnar þínar voru vistaðar í „%s“.</string>
     <string name="export_failed">Ekki tókst að flytja út öryggisafritsskrána „%s“.</string>
     <string name="pref_update_title">Uppfærslur</string>
     <string name="pref_update_enable_notifications">Slökkt er á tilkynningum</string>

@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Blokkeerregels back-uppen/herstellen</string>
     <string name="pref_backup_restore_title">Back-up en herstel</string>
     <string name="pref_backup">Back-up maken</string>
-    <string name="pref_backup_summary">Maak een back-up van je blokkeerregels op externe opslag</string>
+    <string name="pref_backup_summary">Sla je blokkeerregels op in een bestand, of in de map Download als het apparaat geen bestandskiezer heeft</string>
     <string name="pref_restore">Herstellen</string>
     <string name="pref_restore_summary">Herstel je blokkeerregels vanuit een back-upbestand</string>
-    <string name="import_success">De back-up is geïmporteerd vanaf je externe opslag.</string>
+    <string name="import_success">Je blokkeerregels zijn hersteld.</string>
     <string name="import_failed">De back-up kon niet worden geïmporteerd. Is de indeling correct?</string>
-    <string name="export_success">De back-up is geëxporteerd naar het bestand ‘%s’ op je externe opslag.</string>
+    <string name="export_success">Je blokkeerregels zijn opgeslagen in ‘%s’.</string>
     <string name="export_failed">Het back-upbestand ‘%s’ kon niet worden geëxporteerd.</string>
     <string name="pref_update_title">Updates</string>
     <string name="pref_update_enable_notifications">Meldingen zijn uitgeschakeld</string>

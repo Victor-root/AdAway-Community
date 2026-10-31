@@ -6,7 +6,14 @@
 <p>V nastavení Androidu najděte AdAway, nastavte <cite>optimalizaci baterie</cite> na <cite>Žádné omezení</cite> (nebo <cite>Neoptimalizovat</cite>), povolte <cite>automatické spouštění</cite> (nebo <cite>autostart</cite>), pokud ho váš systém nabízí, a zamkněte AdAway v seznamu nedávných aplikací, aby ho nešlo zavřít přejetím prstem. Ověřte také, že je v nastavení VPN aplikace AdAway zapnutá volba <cite>Zapnout při spuštění zařízení</cite>.</p>
 
 <h2>Na Android TV se VPN po restartu znovu nespustí</h2>
-<p>V nastavení Androidu zapněte pro AdAway volbu <cite>Trvalá síť VPN</cite>. Mnoho televizí toto nastavení skrývá: příkazy ADB, kterými ho lze zapnout, najdete na domovské obrazovce AdAway v části <cite>Trvalé VPN připojení</cite>. Na některých televizích, například TCL, je navíc potřeba povolit AdAway automatické spouštění, a to příkazem, který je tam pro tyto televize uvedený.</p>
+<p>V nastavení Androidu zapněte pro AdAway volbu <cite>Trvalá síť VPN</cite>. Mnoho televizí toto nastavení skrývá: v takovém případě ho zapněte pomocí ADB z počítače nebo telefonu a potom televizi restartujte. Tyto příkazy najdete i přímo v televizi, na domovské obrazovce aplikace AdAway v části <cite>Trvalé VPN připojení</cite>.</p>
+<p><strong>Zapnout</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Ověřit</strong> (příkaz vypíše <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Vypnout</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>U některých televizí, například značky TCL, je navíc potřeba povolit aplikaci AdAway automatické spouštění:</p>
+<p><strong>Povolit</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Ověřit</strong> (příkaz vypíše <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Vrátit zpět</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Po přepnutí mezi Wi-Fi a mobilními daty nefunguje internet nebo je prohlížení pomalé</h2>
 <p>Při změně aktivní sítě se musí tunel VPN vytvořit znovu, aby se DNS překládalo přes novou síť. Pokud prohlížení stále nefunguje, otevřete <cite>Nastavení › Blokování reklam přes VPN › Resetovat VPN</cite> a připojení se vytvoří úplně znovu. Pokud se to stává opakovaně, zaznamenejte diagnostický protokol (viz níže) a problém nahlaste.</p>

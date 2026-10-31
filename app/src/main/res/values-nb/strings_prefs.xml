@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Sikkerhetskopi og gjenoppretting av blokkeringsregler</string>
     <string name="pref_backup_restore_title">Sikkerhetskopi og gjenoppretting</string>
     <string name="pref_backup">Sikkerhetskopier</string>
-    <string name="pref_backup_summary">Sikkerhetskopier blokkeringsreglene dine til ekstern lagring</string>
+    <string name="pref_backup_summary">Lagre blokkeringsreglene dine i en fil, eller i Download-mappen hvis enheten ikke har en filvelger</string>
     <string name="pref_restore">Gjenopprett</string>
     <string name="pref_restore_summary">Gjenopprett blokkeringsreglene dine fra en sikkerhetskopifil</string>
-    <string name="import_success">Sikkerhetskopien ble importert fra den eksterne lagringen din.</string>
+    <string name="import_success">Blokkeringsreglene dine ble gjenopprettet.</string>
     <string name="import_failed">Kunne ikke importere sikkerhetskopien. Er formatet riktig?</string>
-    <string name="export_success">Sikkerhetskopien ble eksportert til filen «%s» på den eksterne lagringen din.</string>
+    <string name="export_success">Blokkeringsreglene dine ble lagret i «%s».</string>
     <string name="export_failed">Kunne ikke eksportere sikkerhetskopifilen «%s».</string>
     <string name="pref_update_title">Oppdateringer</string>
     <string name="pref_update_enable_notifications">Varsler er slått av</string>

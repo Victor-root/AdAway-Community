@@ -6,7 +6,14 @@
 <p>Nos axustes d’Android, atopa AdAway y: pon la <cite>optimización de la batería</cite> en <cite>Ensin restricciones</cite> (o <cite>Nun optimizar</cite>), permite l’<cite>aniciu automáticu</cite> o el <cite>llanzamientu automáticu</cite> si la to ROM lu tien, y bloquia AdAway na llista d’aplicaciones recientes pa que nun se zarre al desplazalu. Comprueba tamién que <cite>Activar al aniciar</cite> tea activáu nes preferencies de la VPN d’AdAway.</p>
 
 <h2>N’Android TV, la VPN nun torna a aniciase dempués d’un reaniciu</h2>
-<p>Configura AdAway como la <cite>VPN siempre activada</cite> d’Android. Munches teles anubren esti axuste: los comandos ADB que lu configuren amuésense na pantalla d’aniciu d’AdAway, en <cite>Persistencia de la VPN</cite>. En dalgunes teles, como les de TCL, tamién hai que permitir qu’AdAway s’anicie automáticamente, col comandu que s’indica ellí pa estes teles.</p>
+<p>Configura AdAway como la <cite>VPN siempre activada</cite> d’Android. Munches teles anubren esti axuste: configúralu con ADB dende un ordenador o un teléfonu y dempués reanicia la tele. La tele amuesa tamién estos comandos na pantalla d’aniciu d’AdAway, en <cite>Persistencia de la VPN</cite>.</p>
+<p><strong>Activar</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Comprobar</strong> (el comandu respuende <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Desactivar</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>En dalgunes teles, como les de TCL, tamién hai que permitir qu’AdAway s’anicie automáticamente:</p>
+<p><strong>Permitir</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Comprobar</strong> (el comandu respuende <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Desfacer</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Ensin internet o con navegación lenta xusto dempués de cambiar ente Wi-Fi y datos móviles</h2>
 <p>Cuando cambia la rede activa, el túnel tien de reconstruyise pa que’l DNS se resuelva dende la rede nueva. Si la navegación sigue sin furrular, abre <cite>Preferencies › Bloqueador de publicidá con VPN › Reaniciar la VPN</cite> pa reconstruyir la conexón dende cero. Si sigue asocediendo, captura un rexistru de diagnósticu (equí abaxo) y informa del problema.</p>

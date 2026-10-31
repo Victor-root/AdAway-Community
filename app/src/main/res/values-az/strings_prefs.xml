@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">Blok qaydalarının ehtiyat nüsxəsi / bərpası</string>
     <string name="pref_backup_restore_title">Ehtiyat nüsxə və bərpa</string>
     <string name="pref_backup">Ehtiyat nüsxə</string>
-    <string name="pref_backup_summary">Blok qaydalarınızın ehtiyat nüsxəsini xarici yaddaşa saxlayın</string>
+    <string name="pref_backup_summary">Blok qaydalarınızı fayla, cihazda fayl seçicisi yoxdursa, Download qovluğuna saxlayın</string>
     <string name="pref_restore">Bərpa edin</string>
     <string name="pref_restore_summary">Blok qaydalarınızı ehtiyat nüsxə faylından bərpa edin</string>
-    <string name="import_success">Ehtiyat nüsxə xarici yaddaşınızdan uğurla idxal edildi.</string>
+    <string name="import_success">Blok qaydalarınız bərpa edildi.</string>
     <string name="import_failed">Ehtiyat nüsxəni idxal etmək alınmadı. Formatı düzgündürmü?</string>
-    <string name="export_success">Ehtiyat nüsxə xarici yaddaşınızdakı «%s» faylına uğurla ixrac edildi.</string>
+    <string name="export_success">Blok qaydalarınız «%s» faylına saxlanıldı.</string>
     <string name="export_failed">«%s» ehtiyat nüsxə faylını ixrac etmək alınmadı.</string>
     <string name="pref_update_title">Yeniləmələr</string>
     <string name="pref_update_enable_notifications">Bildirişlər deaktivdir</string>

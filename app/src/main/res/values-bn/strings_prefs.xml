@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">ব্লকের নিয়মের ব্যাকআপ/পুনরুদ্ধার</string>
     <string name="pref_backup_restore_title">ব্যাকআপ ও পুনরুদ্ধার</string>
     <string name="pref_backup">ব্যাকআপ</string>
-    <string name="pref_backup_summary">আপনার ব্লকের নিয়মগুলো বাহ্যিক স্টোরেজে ব্যাকআপ করুন</string>
+    <string name="pref_backup_summary">আপনার ব্লকের নিয়মগুলো একটি ফাইলে সেভ করুন, অথবা ডিভাইসে ফাইল পিকার না থাকলে Download ফোল্ডারে</string>
     <string name="pref_restore">পুনরুদ্ধার</string>
     <string name="pref_restore_summary">ব্যাকআপ ফাইল থেকে আপনার ব্লকের নিয়মগুলো পুনরুদ্ধার করুন</string>
-    <string name="import_success">বাহ্যিক স্টোরেজ থেকে ব্যাকআপ সফলভাবে ইমপোর্ট করা হয়েছে।</string>
+    <string name="import_success">আপনার ব্লকের নিয়মগুলো পুনরুদ্ধার করা হয়েছে।</string>
     <string name="import_failed">ব্যাকআপ ইমপোর্ট করা যায়নি। এর ফরম্যাট কি সঠিক?</string>
-    <string name="export_success">বাহ্যিক স্টোরেজে ‘%s’ ফাইলে ব্যাকআপ সফলভাবে এক্সপোর্ট করা হয়েছে।</string>
+    <string name="export_success">আপনার ব্লকের নিয়মগুলো ‘%s’-এ সেভ করা হয়েছে।</string>
     <string name="export_failed">‘%s’ ব্যাকআপ ফাইলটি এক্সপোর্ট করা যায়নি।</string>
     <string name="pref_update_title">আপডেট</string>
     <string name="pref_update_enable_notifications">বিজ্ঞপ্তি বন্ধ আছে</string>

@@ -6,7 +6,14 @@
 <p>Na configuración de Android, busca AdAway e axusta a <cite>optimización da batería</cite> en <cite>Sen restricións</cite> (ou <cite>Non optimizar</cite>), permite o <cite>inicio automático</cite> ou a <cite>execución automática</cite> se a túa ROM o ofrece e bloquea AdAway na lista de aplicacións recentes para que non se peche ao deslizalo. Comproba tamén que <cite>Activar ao iniciar</cite> está activado nas preferencias de VPN de AdAway.</p>
 
 <h2>En Android TV, a VPN non se volve iniciar despois dun reinicio</h2>
-<p>Define AdAway como <cite>VPN sempre activada</cite> de Android. Moitas TV ocultan esta opción: os comandos ADB que a definen móstranse na pantalla de inicio de AdAway, en <cite>Persistencia da VPN</cite>. Nalgunhas TV, como as de TCL, tamén hai que permitir que AdAway se inicie por si só, co comando indicado alí para estas TV.</p>
+<p>Define AdAway como <cite>VPN sempre activada</cite> de Android. Moitas TV ocultan esta opción: defínea con ADB desde un ordenador ou un teléfono e despois reinicia a TV. A TV tamén mostra estes comandos na pantalla de inicio de AdAway, en <cite>Persistencia da VPN</cite>.</p>
+<p><strong>Activar</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Comprobar</strong> (o comando responde <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Desactivar</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Nalgunhas TV, como as de TCL, tamén hai que permitir que AdAway se inicie por si só:</p>
+<p><strong>Permitir</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Comprobar</strong> (o comando responde <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Desfacer</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Sen Internet ou navegación lenta ao cambiar entre wifi e datos móbiles</h2>
 <p>Cando cambia a rede activa, hai que reconstruír o túnel para que o DNS se resolva desde a nova rede. Se a navegación segue sen funcionar, abre <cite>Preferencias › VPN › Restablecer a VPN</cite> para reconstruír a conexión desde cero. Se segue pasando, captura un rexistro de diagnóstico (máis abaixo) e infórmanos.</p>

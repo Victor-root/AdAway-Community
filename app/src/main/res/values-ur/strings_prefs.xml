@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">بلاک اصولوں کا بیک اپ / بحالی</string>
     <string name="pref_backup_restore_title">بیک اپ اور بحالی</string>
     <string name="pref_backup">بیک اپ</string>
-    <string name="pref_backup_summary">اپنے بلاک اصولوں کا بیرونی اسٹوریج میں بیک اپ بنائیں</string>
+    <string name="pref_backup_summary">اپنے بلاک اصول کسی فائل میں محفوظ کریں، یا اگر آلے میں فائل منتخب کنندہ نہ ہو تو Download فولڈر میں</string>
     <string name="pref_restore">بحال کریں</string>
     <string name="pref_restore_summary">بیک اپ فائل سے اپنے بلاک اصول بحال کریں</string>
-    <string name="import_success">بیک اپ آپ کے بیرونی اسٹوریج سے کامیابی کے ساتھ درآمد ہو گیا۔</string>
+    <string name="import_success">آپ کے بلاک اصول بحال ہو گئے۔</string>
     <string name="import_failed">بیک اپ درآمد نہیں ہو سکا۔ کیا اس کی فارمیٹ درست ہے؟</string>
-    <string name="export_success">بیک اپ آپ کے بیرونی اسٹوریج میں فائل “%s” کے طور پر کامیابی کے ساتھ برآمد ہو گیا۔</string>
+    <string name="export_success">آپ کے بلاک اصول “%s” میں محفوظ ہو گئے۔</string>
     <string name="export_failed">بیک اپ فائل “%s” برآمد نہیں ہو سکی۔</string>
     <string name="pref_update_title">اپ ڈیٹس</string>
     <string name="pref_update_enable_notifications">اطلاعات بند ہیں</string>

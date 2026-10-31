@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">ब्लॉक नियमों का बैकअप / रिस्टोर</string>
     <string name="pref_backup_restore_title">बैकअप और रिस्टोर</string>
     <string name="pref_backup">बैकअप</string>
-    <string name="pref_backup_summary">अपने ब्लॉक नियमों का बाहरी स्टोरेज में बैकअप लें</string>
+    <string name="pref_backup_summary">अपने ब्लॉक नियम किसी फ़ाइल में सेव करें, या अगर डिवाइस में फ़ाइल पिकर नहीं है, तो Download फ़ोल्डर में</string>
     <string name="pref_restore">रिस्टोर करें</string>
     <string name="pref_restore_summary">बैकअप फ़ाइल से अपने ब्लॉक नियम रिस्टोर करें</string>
-    <string name="import_success">बैकअप आपके बाहरी स्टोरेज से इंपोर्ट हो गया।</string>
+    <string name="import_success">आपके ब्लॉक नियम रिस्टोर हो गए।</string>
     <string name="import_failed">बैकअप इंपोर्ट नहीं हो सका। क्या उसका फ़ॉर्मैट सही है?</string>
-    <string name="export_success">बैकअप आपके बाहरी स्टोरेज में “%s” फ़ाइल के रूप में एक्सपोर्ट हो गया।</string>
+    <string name="export_success">आपके ब्लॉक नियम “%s” में सेव हो गए।</string>
     <string name="export_failed">बैकअप फ़ाइल “%s” एक्सपोर्ट नहीं हो सकी।</string>
     <string name="pref_update_title">अपडेट</string>
     <string name="pref_update_enable_notifications">सूचनाएं बंद हैं</string>

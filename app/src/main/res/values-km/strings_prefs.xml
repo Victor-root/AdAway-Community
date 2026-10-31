@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">បម្រុងទុក / ស្ដារច្បាប់ទប់ស្កាត់</string>
     <string name="pref_backup_restore_title">បម្រុងទុក និងស្ដារ</string>
     <string name="pref_backup">បម្រុងទុក</string>
-    <string name="pref_backup_summary">បម្រុងទុកច្បាប់ទប់ស្កាត់របស់អ្នកទៅកាន់ទំហំផ្ទុកខាងក្រៅ</string>
+    <string name="pref_backup_summary">រក្សាទុកច្បាប់ទប់ស្កាត់របស់អ្នកទៅក្នុងឯកសារ ឬទៅក្នុងថត Download ប្រសិនបើឧបករណ៍គ្មានផ្ទាំងជ្រើសរើសឯកសារ</string>
     <string name="pref_restore">ស្ដារ</string>
     <string name="pref_restore_summary">ស្ដារច្បាប់ទប់ស្កាត់របស់អ្នកពីឯកសារបម្រុងទុក</string>
-    <string name="import_success">បាននាំចូលឯកសារបម្រុងទុកពីទំហំផ្ទុកខាងក្រៅរបស់អ្នកដោយជោគជ័យ។</string>
+    <string name="import_success">បានស្ដារច្បាប់ទប់ស្កាត់របស់អ្នកហើយ។</string>
     <string name="import_failed">នាំចូលឯកសារបម្រុងទុកមិនបានទេ។ តើទ្រង់ទ្រាយរបស់វាត្រឹមត្រូវដែរឬទេ?</string>
-    <string name="export_success">បាននាំចេញឯកសារបម្រុងទុកទៅកាន់ឯកសារ «%s» នៅលើទំហំផ្ទុកខាងក្រៅរបស់អ្នកដោយជោគជ័យ។</string>
+    <string name="export_success">បានរក្សាទុកច្បាប់ទប់ស្កាត់របស់អ្នកទៅកាន់ «%s» ហើយ។</string>
     <string name="export_failed">នាំចេញឯកសារបម្រុងទុក «%s» មិនបានទេ។</string>
     <string name="pref_update_title">ការធ្វើបច្ចុប្បន្នភាព</string>
     <string name="pref_update_enable_notifications">ការជូនដំណឹងត្រូវបានបិទ</string>

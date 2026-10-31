@@ -6,7 +6,14 @@
 <p>În setările Android, găsiți AdAway și: setați <cite>optimizarea bateriei</cite> pe <cite>Fără restricții</cite> (sau <cite>Nu optimizați</cite>), permiteți <cite>pornirea automată</cite>/<cite>lansarea automată</cite> dacă ROM-ul dvs. o oferă și blocați AdAway în lista de aplicații recente, ca să nu fie închis prin glisare. Verificați și dacă opțiunea <cite>Activare la pornire</cite> este activată în setările VPN ale AdAway.</p>
 
 <h2>Pe Android TV, VPN-ul nu mai pornește după o repornire</h2>
-<p>Setați AdAway ca <cite>VPN permanent</cite> în Android. Multe televizoare ascund această setare: comenzile ADB care o configurează sunt afișate pe ecranul principal AdAway, la <cite>Menținerea VPN-ului</cite>. Pe unele televizoare, cum ar fi cele TCL, trebuie să-i permiteți și lui AdAway să pornească singur, cu comanda indicată acolo pentru aceste televizoare.</p>
+<p>Setați AdAway ca <cite>VPN permanent</cite> în Android. Multe televizoare ascund această setare: configurați-o cu ADB de pe un computer sau un telefon, apoi reporniți televizorul. Televizorul afișează și aceste comenzi pe ecranul principal AdAway, la <cite>Menținerea VPN-ului</cite>.</p>
+<p><strong>Activați</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Verificați</strong> (comanda răspunde <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Dezactivați</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Pe unele televizoare, cum ar fi cele TCL, trebuie să-i permiteți și lui AdAway să pornească singur:</p>
+<p><strong>Permiteți</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Verificați</strong> (comanda răspunde <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Anulați</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Fără internet sau navigare lentă imediat după trecerea între Wi-Fi și date mobile</h2>
 <p>Când rețeaua activă se schimbă, tunelul trebuie reconstruit pentru ca DNS-ul să fie rezolvat din noua rețea. Dacă navigarea rămâne defectă, deschideți <cite>Setări › VPN › Resetați VPN-ul</cite> pentru a reconstrui conexiunea de la zero. Dacă problema se repetă, înregistrați un jurnal de diagnosticare (mai jos) și raportați-o.</p>

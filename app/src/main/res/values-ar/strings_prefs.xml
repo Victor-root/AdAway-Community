@@ -18,12 +18,12 @@
     <string name="pref_backup_restore">نسخ احتياطي واستعادة قواعد الحظر</string>
     <string name="pref_backup_restore_title">النسخ الاحتياطي والاستعادة</string>
     <string name="pref_backup">نسخ احتياطي</string>
-    <string name="pref_backup_summary">احفظ نسخة احتياطية من قواعد الحظر في وحدة التخزين الخارجية</string>
+    <string name="pref_backup_summary">احفظ قواعد الحظر في ملف، أو في مجلد Download إذا لم تتوفر في الجهاز أداة لاختيار الملفات</string>
     <string name="pref_restore">استعادة</string>
     <string name="pref_restore_summary">استعد قواعد الحظر من ملف نسخة احتياطية</string>
-    <string name="import_success">تم استيراد النسخة الاحتياطية بنجاح من وحدة التخزين الخارجية.</string>
+    <string name="import_success">تمت استعادة قواعد الحظر.</string>
     <string name="import_failed">تعذّر استيراد النسخة الاحتياطية. هل تنسيقها صحيح؟</string>
-    <string name="export_success">تم تصدير النسخة الاحتياطية بنجاح إلى الملف «%s» في وحدة التخزين الخارجية.</string>
+    <string name="export_success">تم حفظ قواعد الحظر في «%s».</string>
     <string name="export_failed">تعذّر تصدير ملف النسخة الاحتياطية «%s».</string>
     <string name="pref_update_title">التحديثات</string>
     <string name="pref_update_enable_notifications">الإشعارات معطّلة</string>

@@ -6,7 +6,14 @@
 <p>Android সেটিংসে AdAway খুঁজে নিন এবং এই কাজগুলো করুন: <cite>ব্যাটারি অপ্টিমাইজেশন</cite> সেট করুন <cite>সীমাবদ্ধ নয়</cite> (বা <cite>অপ্টিমাইজ করবেন না</cite>) অবস্থায়, আপনার ROM-এ থাকলে <cite>অটোস্টার্ট</cite>/<cite>অটো-লঞ্চ</cite>-এর অনুমতি দিন, এবং সাম্প্রতিক অ্যাপের তালিকায় AdAway-কে লক করে রাখুন, যাতে সোয়াইপ করে সরে না যায়। এছাড়া AdAway-এর VPN পছন্দসমূহে <cite>স্টার্টআপে চালু করুন</cite> চালু আছে কিনা দেখে নিন।</p>
 
 <h2>Android TV-তে রিস্টার্টের পর VPN আর নিজে থেকে চালু হয় না</h2>
-<p>AdAway-কে Android-এর <cite>সর্বদা-চালু VPN</cite> হিসেবে সেট করুন। অনেক টিভিতে এই সেটিংটি লুকানো থাকে: এটি সেট করার ADB কমান্ডগুলো AdAway-এর হোম স্ক্রিনে, <cite>VPN স্থায়িত্ব</cite>-এর অধীনে দেখানো হয়। কিছু টিভিতে, যেমন TCL-এর টিভিতে, সেখানে এই টিভিগুলোর জন্য দেওয়া কমান্ড দিয়ে AdAway-কে নিজে থেকে চালু হওয়ার অনুমতিও দিতে হবে।</p>
+<p>AdAway-কে Android-এর <cite>সর্বদা-চালু VPN</cite> হিসেবে সেট করুন। অনেক টিভিতে এই সেটিংটি লুকানো থাকে: কম্পিউটার বা ফোন থেকে ADB দিয়ে এটি সেট করুন, তারপর টিভি রিস্টার্ট করুন। টিভি AdAway-এর হোম স্ক্রিনে, <cite>VPN স্থায়িত্ব</cite>-এর অধীনেও এই কমান্ডগুলো দেখায়।</p>
+<p><strong>সক্রিয় করুন</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>যাচাই করুন</strong> (কমান্ডটি <tt><code>org.adaway</code></tt> দেখাবে)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>নিষ্ক্রিয় করুন</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>কিছু টিভিতে, যেমন TCL-এর টিভিতে, AdAway-কে নিজে থেকে চালু হওয়ার অনুমতিও দিতে হবে:</p>
+<p><strong>অনুমতি দিন</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>যাচাই করুন</strong> (কমান্ডটি <tt><code>allow</code></tt> দেখাবে)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>বাতিল করুন</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Wi-Fi আর মোবাইল নেটওয়ার্কের মধ্যে পরিবর্তনের পরপরই ইন্টারনেট নেই বা ব্রাউজিং ধীর</h2>
 <p>সক্রিয় নেটওয়ার্ক বদলে গেলে টানেলটি আবার তৈরি করতে হয়, যাতে নতুন নেটওয়ার্ক থেকে DNS সমাধান হয়। ব্রাউজিং ঠিক না হলে <cite>পছন্দসমূহ › VPN-ভিত্তিক বিজ্ঞাপন ব্লকার › VPN রিসেট করুন</cite> খুলে সংযোগটি গোড়া থেকে আবার তৈরি করুন। বারবার হতে থাকলে একটি ডায়াগনস্টিক লগ নিন (নিচে দেখুন) এবং সমস্যাটি জানান।</p>

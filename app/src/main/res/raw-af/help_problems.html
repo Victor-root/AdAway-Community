@@ -6,7 +6,14 @@
 <p>Soek AdAway in die Android-instellings en doen die volgende: stel <cite>batteryoptimalisering</cite> op <cite>Onbeperk</cite> (of <cite>Moenie optimaliseer nie</cite>), laat <cite>outostart</cite>/<cite>outo-begin</cite> toe as jou ROM dit het, en sluit AdAway in die lys van onlangse programme vas sodat dit nie weggeswiep word nie. Maak ook seker dat <cite>Aktiveer by opstart</cite> in AdAway se VPN-voorkeure aan is.</p>
 
 <h2>Op Android TV begin die VPN nie weer ná ’n herbegin nie</h2>
-<p>Stel AdAway as Android se <cite>Altyd-aan-VPN</cite> in. Baie TV’s versteek hierdie instelling: die ADB-opdragte wat dit instel, word op AdAway se tuisskerm onder <cite>VPN-volharding</cite> gewys. Op sommige TV’s, soos dié van TCL, moet AdAway ook toegelaat word om vanself te begin, met die opdrag wat daar vir hierdie TV’s gegee word.</p>
+<p>Stel AdAway as Android se <cite>Altyd-aan-VPN</cite> in. Baie TV’s versteek hierdie instelling: stel dit met ADB vanaf ’n rekenaar of ’n foon in, en herbegin dan die TV. Die TV wys hierdie opdragte ook op AdAway se tuisskerm, onder <cite>VPN-volharding</cite>.</p>
+<p><strong>Aktiveer</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>Kontroleer</strong> (die opdrag antwoord <tt><code>org.adaway</code></tt>)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>Deaktiveer</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>Op sommige TV’s, soos dié van TCL, moet AdAway ook toegelaat word om vanself te begin:</p>
+<p><strong>Laat toe</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>Kontroleer</strong> (die opdrag antwoord <tt><code>allow</code></tt>)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>Maak ongedaan</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>Geen internet of stadige blaai net nadat jy tussen Wi-Fi en mobiele data wissel</h2>
 <p>Wanneer die aktiewe netwerk verander, moet die tonnel herbou word sodat DNS vanaf die nuwe netwerk opgelos word. As blaai steeds nie werk nie, maak <cite>Voorkeure › VPN-gebaseerde advertensieblokkeerder › Stel VPN terug</cite> oop om die verbinding van voor af te herbou. As dit aanhou gebeur, teken ’n diagnostiese logboek aan (hieronder) en rapporteer dit.</p>

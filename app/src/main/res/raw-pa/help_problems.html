@@ -6,7 +6,14 @@
 <p>Android ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ AdAway ਨੂੰ ਲੱਭੋ ਅਤੇ: <cite>ਬੈਟਰੀ ਔਪਟੀਮਾਈਜ਼ੇਸ਼ਨ</cite> ਨੂੰ <cite>ਅਪ੍ਰਤਿਬੰਧਿਤ</cite> (ਜਾਂ <cite>ਔਪਟੀਮਾਈਜ਼ ਨਾ ਕਰੋ</cite>) ਉੱਤੇ ਸੈੱਟ ਕਰੋ, ਜੇ ਤੁਹਾਡੇ ROM ਵਿੱਚ ਹੋਵੇ ਤਾਂ <cite>ਆਟੋਸਟਾਰਟ</cite>/<cite>ਆਟੋ-ਲਾਂਚ</cite> ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ, ਅਤੇ AdAway ਨੂੰ ਹਾਲੀਆ ਐਪਾਂ ਦੀ ਸੂਚੀ ਵਿੱਚ ਲਾਕ ਕਰੋ ਤਾਂ ਜੋ ਇਹ ਸਵਾਈਪ ਕਰਕੇ ਬੰਦ ਨਾ ਹੋ ਜਾਵੇ। ਇਹ ਵੀ ਯਕੀਨੀ ਬਣਾਓ ਕਿ AdAway ਦੀਆਂ VPN ਤਰਜੀਹਾਂ ਵਿੱਚ <cite>ਸ਼ੁਰੂ ਹੋਣ ਸਮੇਂ ਚਾਲੂ ਕਰੋ</cite> ਚਾਲੂ ਹੈ।</p>
 
 <h2>Android TV ਉੱਤੇ, ਮੁੜ ਚਾਲੂ ਕਰਨ ਤੋਂ ਬਾਅਦ VPN ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਨਹੀਂ ਹੁੰਦਾ</h2>
-<p>AdAway ਨੂੰ Android ਦੇ <cite>ਹਮੇਸ਼ਾ-ਚਾਲੂ VPN</cite> ਵਜੋਂ ਸੈੱਟ ਕਰੋ। ਕਈ TV ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਲੁਕਾ ਕੇ ਰੱਖਦੇ ਹਨ: ਇਸ ਨੂੰ ਸੈੱਟ ਕਰਨ ਵਾਲੀਆਂ ADB ਕਮਾਂਡਾਂ AdAway ਦੀ ਹੋਮ ਸਕ੍ਰੀਨ ਉੱਤੇ, <cite>VPN ਦੀ ਸਥਿਰਤਾ</cite> ਹੇਠਾਂ ਦਿਖਾਈਆਂ ਗਈਆਂ ਹਨ। ਕੁਝ TV ਉੱਤੇ, ਜਿਵੇਂ TCL ਵਾਲੇ, ਉੱਥੇ ਇਨ੍ਹਾਂ TV ਲਈ ਦਿੱਤੀ ਗਈ ਕਮਾਂਡ ਨਾਲ AdAway ਨੂੰ ਆਪਣੇ ਆਪ ਸ਼ੁਰੂ ਹੋਣ ਦੀ ਇਜਾਜ਼ਤ ਵੀ ਦੇਣੀ ਪੈਂਦੀ ਹੈ।</p>
+<p>AdAway ਨੂੰ Android ਦੇ <cite>ਹਮੇਸ਼ਾ-ਚਾਲੂ VPN</cite> ਵਜੋਂ ਸੈੱਟ ਕਰੋ। ਕਈ TV ਇਸ ਸੈਟਿੰਗ ਨੂੰ ਲੁਕਾ ਕੇ ਰੱਖਦੇ ਹਨ: ਕਿਸੇ ਕੰਪਿਊਟਰ ਜਾਂ ਫ਼ੋਨ ਤੋਂ ADB ਨਾਲ ਇਸ ਨੂੰ ਸੈੱਟ ਕਰੋ, ਫਿਰ TV ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰੋ। TV ਇਹ ਕਮਾਂਡਾਂ AdAway ਦੀ ਹੋਮ ਸਕ੍ਰੀਨ ਉੱਤੇ, <cite>VPN ਦੀ ਸਥਿਰਤਾ</cite> ਹੇਠਾਂ ਵੀ ਦਿਖਾਉਂਦਾ ਹੈ।</p>
+<p><strong>ਚਾਲੂ ਕਰੋ</strong><br/><tt><code>adb shell settings put secure always_on_vpn_app org.adaway</code></tt></p>
+<p><strong>ਜਾਂਚੋ</strong> (ਕਮਾਂਡ <tt><code>org.adaway</code></tt> ਜਵਾਬ ਦਿੰਦੀ ਹੈ)<br/><tt><code>adb shell settings get secure always_on_vpn_app</code></tt></p>
+<p><strong>ਬੰਦ ਕਰੋ</strong><br/><tt><code>adb shell settings delete secure always_on_vpn_app</code></tt></p>
+<p>ਕੁਝ TV ਉੱਤੇ, ਜਿਵੇਂ TCL ਵਾਲੇ, AdAway ਨੂੰ ਆਪਣੇ ਆਪ ਸ਼ੁਰੂ ਹੋਣ ਦੀ ਇਜਾਜ਼ਤ ਵੀ ਦੇਣੀ ਪੈਂਦੀ ਹੈ:</p>
+<p><strong>ਇਜਾਜ਼ਤ ਦਿਓ</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START allow</code></tt></p>
+<p><strong>ਜਾਂਚੋ</strong> (ਕਮਾਂਡ <tt><code>allow</code></tt> ਜਵਾਬ ਦਿੰਦੀ ਹੈ)<br/><tt><code>adb shell cmd appops get org.adaway APP_AUTO_START</code></tt></p>
+<p><strong>ਅਣਕੀਤਾ ਕਰੋ</strong><br/><tt><code>adb shell cmd appops set org.adaway APP_AUTO_START default</code></tt></p>
 
 <h2>ਵਾਈ-ਫ਼ਾਈ ਅਤੇ ਮੋਬਾਈਲ ਡਾਟਾ ਵਿਚਕਾਰ ਬਦਲਣ ਤੋਂ ਤੁਰੰਤ ਬਾਅਦ ਇੰਟਰਨੈੱਟ ਨਹੀਂ ਚੱਲਦਾ ਜਾਂ ਬ੍ਰਾਊਜ਼ਿੰਗ ਹੌਲੀ ਹੈ</h2>
 <p>ਜਦੋਂ ਸਰਗਰਮ ਨੈੱਟਵਰਕ ਬਦਲਦਾ ਹੈ, ਤਾਂ ਟਨਲ ਨੂੰ ਦੁਬਾਰਾ ਬਣਾਉਣਾ ਪੈਂਦਾ ਹੈ ਤਾਂ ਜੋ DNS ਨਵੇਂ ਨੈੱਟਵਰਕ ਤੋਂ ਹੱਲ ਹੋਵੇ। ਜੇ ਬ੍ਰਾਊਜ਼ਿੰਗ ਫਿਰ ਵੀ ਠੀਕ ਨਹੀਂ ਹੁੰਦੀ, ਤਾਂ ਕਨੈਕਸ਼ਨ ਨੂੰ ਸ਼ੁਰੂ ਤੋਂ ਦੁਬਾਰਾ ਬਣਾਉਣ ਲਈ <cite>ਤਰਜੀਹਾਂ › VPN ਆਧਾਰਿਤ ਇਸ਼ਤਿਹਾਰ ਬਲਾਕਰ › VPN ਰੀਸੈੱਟ ਕਰੋ</cite> ਖੋਲ੍ਹੋ। ਜੇ ਇਹ ਵਾਰ-ਵਾਰ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਡਾਇਗਨੌਸਟਿਕ ਲੌਗ (ਹੇਠਾਂ) ਲਓ ਅਤੇ ਇਸ ਦੀ ਰਿਪੋਰਟ ਕਰੋ।</p>
