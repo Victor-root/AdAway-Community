@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.focus.focusProperties
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -36,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import org.adaway.R
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
+import org.adaway.ui.theme.LocalTelevision
 
 /**
  * A phone screen of the 6.x interface: the red app bar with its back arrow, the content, an optional
@@ -86,7 +88,9 @@ fun AdAwayAppBar(
             modifier = Modifier.fillMaxWidth().statusBarsPadding().height(56.dp).padding(horizontal = 4.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            IconButton(onClick = onNavigation) {
+            // On TV, the back button of the remote does the same: the focus starts on the content instead.
+            val isTelevision = LocalTelevision.current
+            IconButton(onClick = onNavigation, modifier = Modifier.focusProperties { canFocus = !isTelevision }) {
                 Icon(navigationIcon, contentDescription = navigationDescription, tint = colors.onPrimary)
             }
             title()
