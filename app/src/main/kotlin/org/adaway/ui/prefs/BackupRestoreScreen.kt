@@ -22,9 +22,7 @@ import kotlinx.coroutines.launch
 import org.adaway.R
 import org.adaway.system.launchOr
 import org.adaway.system.launchOrTell
-import org.adaway.ui.common.AdAwayAlertDialog
 import org.adaway.ui.common.AdAwayScreen
-import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.appViewModel
 import org.adaway.ui.prefs.BackupRestoreViewModel.Companion.BACKUP_FILE_NAME
 import org.adaway.ui.prefs.BackupRestoreViewModel.Companion.JSON_MIME_TYPE
@@ -100,11 +98,10 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
         }
     }
     savedTo?.let { path ->
-        AdAwayAlertDialog(
-            onDismissRequest = { savedTo = null },
+        MessageDialog(
             title = stringResource(R.string.pref_backup),
             message = stringResource(R.string.export_success, path),
-            confirmButton = DialogButton(stringResource(R.string.close), onClick = { savedTo = null }),
+            onDismiss = { savedTo = null },
         )
     }
 }

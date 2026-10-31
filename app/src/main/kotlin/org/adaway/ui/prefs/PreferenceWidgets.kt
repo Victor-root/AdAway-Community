@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -119,38 +120,60 @@ fun SwitchPreference(
     }
 }
 
-/** The rounded 6.x preference dialog listing the choices, each with its radio button. */
+/** The rounded 6.x preference dialog: its title, the [content] and the [buttons] at the end. */
 @Composable
-fun ChoiceDialog(title: String, choices: List<String>, selected: Int, onSelect: (Int) -> Unit, onDismiss: () -> Unit) {
+private fun PreferenceDialog(title: String, onDismiss: () -> Unit, buttons: List<DialogButton>, content: @Composable ColumnScope.() -> Unit) {
     val colors = LocalAdAwayColors.current
     Dialog(onDismissRequest = onDismiss) {
         Surface(shape = RoundedCornerShape(28.dp), color = colors.dialogSurface) {
             Column(modifier = Modifier.padding(top = 24.dp)) {
                 Text(title, style = AdAwayType.headline6, color = colors.textPrimary, modifier = Modifier.padding(horizontal = 24.dp))
-                Column(modifier = Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState()).padding(top = 16.dp)) {
-                    choices.forEachIndexed { index, choice ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .selectable(selected = index == selected, role = Role.RadioButton) { onSelect(index); onDismiss() }
-                                .padding(horizontal = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            RadioButton(
-                                selected = index == selected,
-                                onClick = null,
-                                colors = RadioButtonDefaults.colors(selectedColor = colors.primary, unselectedColor = colors.textSecondary),
-                                modifier = Modifier.padding(12.dp),
-                            )
-                            Text(choice, style = AdAwayType.subtitle1, color = colors.textPrimary)
-                        }
-                    }
-                }
+                content()
                 Row(modifier = Modifier.fillMaxWidth().padding(8.dp), horizontalArrangement = Arrangement.End) {
-                    DialogTextButton(DialogButton(stringResource(R.string.cancel), onClick = onDismiss))
+                    buttons.forEach { DialogTextButton(it) }
                 }
             }
         }
+    }
+}
+
+/** The rounded 6.x preference dialog listing the choices, each with its radio button. */
+@Composable
+fun ChoiceDialog(title: String, choices: List<String>, selected: Int, onSelect: (Int) -> Unit, onDismiss: () -> Unit) {
+    val colors = LocalAdAwayColors.current
+    PreferenceDialog(title, onDismiss, listOf(DialogButton(stringResource(R.string.cancel), onClick = onDismiss))) {
+        Column(modifier = Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState()).padding(top = 16.dp)) {
+            choices.forEachIndexed { index, choice ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .selectable(selected = index == selected, role = Role.RadioButton) { onSelect(index); onDismiss() }
+                        .padding(horizontal = 12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    RadioButton(
+                        selected = index == selected,
+                        onClick = null,
+                        colors = RadioButtonDefaults.colors(selectedColor = colors.primary, unselectedColor = colors.textSecondary),
+                        modifier = Modifier.padding(12.dp),
+                    )
+                    Text(choice, style = AdAwayType.subtitle1, color = colors.textPrimary)
+                }
+            }
+        }
+    }
+}
+
+/** The rounded 6.x preference dialog telling a [message], with its OK button. */
+@Composable
+fun MessageDialog(title: String, message: String, onDismiss: () -> Unit) {
+    PreferenceDialog(title, onDismiss, listOf(DialogButton(stringResource(android.R.string.ok), onClick = onDismiss))) {
+        Text(
+            message,
+            style = AdAwayType.subtitle1,
+            color = LocalAdAwayColors.current.textSecondary,
+            modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 24.dp),
+        )
     }
 }
 
@@ -162,23 +185,17 @@ fun TextInputDialog(
     onConfirm: (String) -> Unit,
     onDismiss: () -> Unit,
 ) {
-    val colors = LocalAdAwayColors.current
     var value by rememberSaveable { mutableStateOf(initialValue) }
-    Dialog(onDismissRequest = onDismiss) {
-        Surface(shape = RoundedCornerShape(28.dp), color = colors.dialogSurface) {
-            Column(modifier = Modifier.padding(top = 24.dp)) {
-                Text(title, style = AdAwayType.headline6, color = colors.textPrimary, modifier = Modifier.padding(horizontal = 24.dp))
-                AdAwayEditText(
-                    value = value,
-                    onValueChange = { value = it },
-                    modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 24.dp),
-                )
-                Row(modifier = Modifier.fillMaxWidth().padding(8.dp), horizontalArrangement = Arrangement.End) {
-                    DialogTextButton(DialogButton(stringResource(R.string.cancel), onClick = onDismiss))
-                    DialogTextButton(DialogButton(stringResource(android.R.string.ok), onClick = { onDismiss(); onConfirm(value) }))
-                }
-            }
-        }
+    val buttons = listOf(
+        DialogButton(stringResource(R.string.cancel), onClick = onDismiss),
+        DialogButton(stringResource(android.R.string.ok), onClick = { onDismiss(); onConfirm(value) }),
+    )
+    PreferenceDialog(title, onDismiss, buttons) {
+        AdAwayEditText(
+            value = value,
+            onValueChange = { value = it },
+            modifier = Modifier.padding(start = 24.dp, top = 16.dp, end = 24.dp),
+        )
     }
 }
 
