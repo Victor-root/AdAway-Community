@@ -14,6 +14,7 @@
 * Accept hosts sources of up to 128 MB and 4 million entries, and keep the VPN list in about a third of the memory
 * Show the pre-release stage in the app name, such as "AdAway Alpha"
 * Show the logo and the app name on the Android TV banner
+* Round the corners of the dialogs
 
 ### ➕ Added
 
@@ -28,7 +29,8 @@
 * ⚡ Offer to turn ad blocking on when applying changes while it is off
 * 🗑️ Delete a hosts source from its menu on Android TV
 * 💾 Back up and restore on devices without a file picker, as some TVs
-* 📺 Tell how to check the always-on VPN with ADB, and how to let AdAway start by itself on TCL TVs
+* 📺 Tell how to check the always-on VPN with ADB, and how to let AdAway start by itself on TCL TVs, also in the help where a phone can copy the commands
+* 🔗 Open the help links with the TV remote, and tell when the device has no browser
 
 ### 🐛 Fixed
 
