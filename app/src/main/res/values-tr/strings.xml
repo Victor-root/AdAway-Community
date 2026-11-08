@@ -30,6 +30,7 @@
     <string name="home_allowed_description">İstisnalar</string>
     <string name="home_redirected_description">Özel kurallar</string>
     <string name="host_copied">Ana makine panoya kopyalandı</string>
+    <string name="command_copied">Komut panoya kopyalandı</string>
     <string name="lists_title">Listeleriniz</string>
     <string name="lists_search">Ana makineleri filtrele</string>
     <string name="lists_search_clear">Temizle</string>

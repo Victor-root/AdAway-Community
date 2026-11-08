@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Iznimke</string>
     <string name="home_redirected_description">Prilagođena pravila</string>
     <string name="host_copied">Host je kopiran u međuspremnik</string>
+    <string name="command_copied">Naredba je kopirana u međuspremnik</string>
     <string name="lists_title">Vaši popisi</string>
     <string name="lists_search">Filtriraj hostove</string>
     <string name="lists_search_clear">Očisti</string>

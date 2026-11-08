@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Wyjątki</string>
     <string name="home_redirected_description">Własne reguły</string>
     <string name="host_copied">Skopiowano host do schowka</string>
+    <string name="command_copied">Skopiowano polecenie do schowka</string>
     <string name="lists_title">Twoje listy</string>
     <string name="lists_search">Filtruj hosty</string>
     <string name="lists_search_clear">Wyczyść</string>

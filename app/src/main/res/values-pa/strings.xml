@@ -30,6 +30,7 @@
     <string name="home_allowed_description">ਅਪਵਾਦ</string>
     <string name="home_redirected_description">ਕਸਟਮ ਨਿਯਮ</string>
     <string name="host_copied">ਹੋਸਟ ਕਲਿੱਪਬੋਰਡ ਉੱਤੇ ਕਾਪੀ ਕੀਤਾ ਗਿਆ</string>
+    <string name="command_copied">ਕਮਾਂਡ ਕਲਿੱਪਬੋਰਡ ਉੱਤੇ ਕਾਪੀ ਕੀਤੀ ਗਈ</string>
     <string name="lists_title">ਤੁਹਾਡੀਆਂ ਸੂਚੀਆਂ</string>
     <string name="lists_search">ਹੋਸਟ ਫਿਲਟਰ ਕਰੋ</string>
     <string name="lists_search_clear">ਸਾਫ਼ ਕਰੋ</string>

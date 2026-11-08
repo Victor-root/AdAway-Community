@@ -30,6 +30,7 @@
     <string name="home_allowed_description">استثنائیں</string>
     <string name="home_redirected_description">حسب ضرورت اصول</string>
     <string name="host_copied">ہوسٹ کلپ بورڈ پر کاپی ہو گیا</string>
+    <string name="command_copied">کمانڈ کلپ بورڈ پر کاپی ہو گئی</string>
     <string name="lists_title">آپ کی فہرستیں</string>
     <string name="lists_search">ہوسٹس فلٹر کریں</string>
     <string name="lists_search_clear">صاف کریں</string>

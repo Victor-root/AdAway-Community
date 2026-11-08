@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Exceptions</string>
     <string name="home_redirected_description">Règles personnalisées</string>
     <string name="host_copied">L’hôte a été copié dans le presse-papiers</string>
+    <string name="command_copied">La commande a été copiée dans le presse-papiers</string>
     <string name="lists_title">Vos listes</string>
     <string name="lists_search">Filtrer les hôtes</string>
     <string name="lists_search_clear">Effacer</string>

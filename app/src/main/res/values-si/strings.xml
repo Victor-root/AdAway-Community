@@ -30,6 +30,7 @@
     <string name="home_allowed_description">ව්‍යතිරේක</string>
     <string name="home_redirected_description">අභිරුචි නීති</string>
     <string name="host_copied">සත්කාරකය පසුරු පුවරුවට පිටපත් කරන ලදී</string>
+    <string name="command_copied">විධානය පසුරු පුවරුවට පිටපත් කරන ලදී</string>
     <string name="lists_title">ඔබේ ලැයිස්තු</string>
     <string name="lists_search">සත්කාරක පෙරන්න</string>
     <string name="lists_search_clear">හිස් කරන්න</string>

@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Undantag</string>
     <string name="home_redirected_description">Egna regler</string>
     <string name="host_copied">Värden har kopierats till urklipp</string>
+    <string name="command_copied">Kommandot har kopierats till urklipp</string>
     <string name="lists_title">Dina listor</string>
     <string name="lists_search">Filtrera värdar</string>
     <string name="lists_search_clear">Rensa</string>

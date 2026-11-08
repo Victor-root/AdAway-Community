@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Excepții</string>
     <string name="home_redirected_description">Reguli personalizate</string>
     <string name="host_copied">Gazda a fost copiată în clipboard</string>
+    <string name="command_copied">Comanda a fost copiată în clipboard</string>
     <string name="lists_title">Listele dvs.</string>
     <string name="lists_search">Filtrare gazde</string>
     <string name="lists_search_clear">Ștergeți</string>

@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Kivételek</string>
     <string name="home_redirected_description">Egyéni szabályok</string>
     <string name="host_copied">A gazdagép a vágólapra másolva</string>
+    <string name="command_copied">A parancs a vágólapra másolva</string>
     <string name="lists_title">Saját listák</string>
     <string name="lists_search">Gazdagépek szűrése</string>
     <string name="lists_search_clear">Törlés</string>

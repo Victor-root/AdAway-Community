@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Výnimky</string>
     <string name="home_redirected_description">Vlastné pravidlá</string>
     <string name="host_copied">Hostiteľ bol skopírovaný do schránky</string>
+    <string name="command_copied">Príkaz bol skopírovaný do schránky</string>
     <string name="lists_title">Vaše zoznamy</string>
     <string name="lists_search">Filtrovať hostiteľov</string>
     <string name="lists_search_clear">Vymazať</string>

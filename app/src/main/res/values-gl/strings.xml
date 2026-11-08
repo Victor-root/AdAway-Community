@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Excepcións</string>
     <string name="home_redirected_description">Regras personalizadas</string>
     <string name="host_copied">Host copiado no portapapeis</string>
+    <string name="command_copied">Orde copiada no portapapeis</string>
     <string name="lists_title">As túas listas</string>
     <string name="lists_search">Filtrar hosts</string>
     <string name="lists_search_clear">Borrar</string>

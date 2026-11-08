@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Изключения</string>
     <string name="home_redirected_description">Собствени правила</string>
     <string name="host_copied">Хостът е копиран в клипборда</string>
+    <string name="command_copied">Командата е копирана в клипборда</string>
     <string name="lists_title">Вашите списъци</string>
     <string name="lists_search">Филтриране на хостове</string>
     <string name="lists_search_clear">Изчистване</string>

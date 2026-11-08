@@ -27,6 +27,7 @@
     <string name="home_allowed_description">Изузеци</string>
     <string name="home_redirected_description">Прилагођена правила</string>
     <string name="host_copied">Хост је копиран у привремену меморију</string>
+    <string name="command_copied">Команда је копирана у привремену меморију</string>
     <string name="lists_title">Ваше листе</string>
     <string name="lists_search">Филтрирај хостове</string>
     <string name="lists_search_clear">Обриши</string>

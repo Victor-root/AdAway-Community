@@ -30,6 +30,7 @@
     <string name="home_allowed_description">ករណីលើកលែង</string>
     <string name="home_redirected_description">ច្បាប់ផ្ទាល់ខ្លួន</string>
     <string name="host_copied">បានចម្លងឈ្មោះ host ទៅក្តារតម្បៀតខ្ទាស់</string>
+    <string name="command_copied">បានចម្លងពាក្យបញ្ជាទៅក្តារតម្បៀតខ្ទាស់</string>
     <string name="lists_title">បញ្ជីរបស់អ្នក</string>
     <string name="lists_search">ត្រងឈ្មោះ host</string>
     <string name="lists_search_clear">សម្អាត</string>

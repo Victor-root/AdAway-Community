@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Pengecualian</string>
     <string name="home_redirected_description">Aturan khusus</string>
     <string name="host_copied">Host disalin ke papan klip</string>
+    <string name="command_copied">Perintah disalin ke papan klip</string>
     <string name="lists_title">Daftar Anda</string>
     <string name="lists_search">Filter host</string>
     <string name="lists_search_clear">Hapus</string>

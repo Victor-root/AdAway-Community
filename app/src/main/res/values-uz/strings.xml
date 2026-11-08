@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Istisnolar</string>
     <string name="home_redirected_description">Maxsus qoidalar</string>
     <string name="host_copied">Host almashish buferiga nusxalandi</string>
+    <string name="command_copied">Buyruq almashish buferiga nusxalandi</string>
     <string name="lists_title">Roʻyxatlaringiz</string>
     <string name="lists_search">Hostlarni filtrlash</string>
     <string name="lists_search_clear">Tozalash</string>

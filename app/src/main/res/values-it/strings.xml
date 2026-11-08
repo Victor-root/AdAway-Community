@@ -27,6 +27,7 @@
     <string name="home_allowed_description">Eccezioni</string>
     <string name="home_redirected_description">Regole personalizzate</string>
     <string name="host_copied">Host copiato negli appunti</string>
+    <string name="command_copied">Comando copiato negli appunti</string>
     <string name="lists_title">I tuoi elenchi</string>
     <string name="lists_search">Filtra host</string>
     <string name="lists_search_clear">Cancella</string>

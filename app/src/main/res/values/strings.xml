@@ -32,6 +32,7 @@
     <string name="home_allowed_description">Exceptions</string>
     <string name="home_redirected_description">Custom rules</string>
     <string name="host_copied">Host copied to clipboard</string>
+    <string name="command_copied">Command copied to clipboard</string>
     <string name="lists_title">Your lists</string>
     <string name="lists_search">Filter hosts</string>
     <string name="lists_search_clear">Clear</string>

@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Esceptoj</string>
     <string name="home_redirected_description">Propraj reguloj</string>
     <string name="host_copied">Gastigonomo kopiita al la tondujo</string>
+    <string name="command_copied">Komando kopiita al la tondujo</string>
     <string name="lists_title">Viaj listoj</string>
     <string name="lists_search">Filtri gastigonomojn</string>
     <string name="lists_search_clear">Vakigi</string>

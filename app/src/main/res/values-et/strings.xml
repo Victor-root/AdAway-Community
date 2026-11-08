@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Erandid</string>
     <string name="home_redirected_description">Kohandatud reeglid</string>
     <string name="host_copied">Host kopeeriti lõikelauale</string>
+    <string name="command_copied">Käsk kopeeriti lõikelauale</string>
     <string name="lists_title">Sinu loendid</string>
     <string name="lists_search">Filtreeri hoste</string>
     <string name="lists_search_clear">Tühjenda</string>

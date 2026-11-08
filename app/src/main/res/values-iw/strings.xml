@@ -30,6 +30,7 @@
     <string name="home_allowed_description">חריגים</string>
     <string name="home_redirected_description">כללים מותאמים אישית</string>
     <string name="host_copied">המארח הועתק ללוח</string>
+    <string name="command_copied">הפקודה הועתקה ללוח</string>
     <string name="lists_title">הרשימות שלך</string>
     <string name="lists_search">סינון מארחים</string>
     <string name="lists_search_clear">נקה</string>

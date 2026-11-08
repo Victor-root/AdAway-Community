@@ -30,6 +30,7 @@
     <string name="home_allowed_description">ഒഴിവാക്കലുകൾ</string>
     <string name="home_redirected_description">ഇഷ്ടാനുസൃത നിയമങ്ങൾ</string>
     <string name="host_copied">ഹോസ്റ്റ് ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി</string>
+    <string name="command_copied">കമാൻഡ് ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി</string>
     <string name="lists_title">നിങ്ങളുടെ ലിസ്റ്റുകൾ</string>
     <string name="lists_search">ഹോസ്റ്റുകൾ ഫിൽട്ടർ ചെയ്യുക</string>
     <string name="lists_search_clear">മായ്ക്കുക</string>

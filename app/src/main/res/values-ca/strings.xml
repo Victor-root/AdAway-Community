@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Excepcions</string>
     <string name="home_redirected_description">Regles personalitzades</string>
     <string name="host_copied">Amfitrió copiat al porta-retalls</string>
+    <string name="command_copied">Ordre copiada al porta-retalls</string>
     <string name="lists_title">Les teves llistes</string>
     <string name="lists_search">Filtra els amfitrions</string>
     <string name="lists_search_clear">Esborra</string>

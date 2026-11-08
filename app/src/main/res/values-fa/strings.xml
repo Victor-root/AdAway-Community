@@ -30,6 +30,7 @@
     <string name="home_allowed_description">استثناها</string>
     <string name="home_redirected_description">قوانین سفارشی</string>
     <string name="host_copied">میزبان در کلیپ‌بورد کپی شد</string>
+    <string name="command_copied">فرمان در کلیپ‌بورد کپی شد</string>
     <string name="lists_title">فهرست‌های شما</string>
     <string name="lists_search">فیلتر میزبان‌ها</string>
     <string name="lists_search_clear">پاک کردن</string>

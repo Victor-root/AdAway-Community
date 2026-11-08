@@ -29,6 +29,7 @@
     <string name="home_allowed_description">Exceções</string>
     <string name="home_redirected_description">Regras personalizadas</string>
     <string name="host_copied">Host copiado para a área de transferência</string>
+    <string name="command_copied">Comando copiado para a área de transferência</string>
     <string name="lists_title">Suas listas</string>
     <string name="lists_search">Filtrar hosts</string>
     <string name="lists_search_clear">Limpar</string>

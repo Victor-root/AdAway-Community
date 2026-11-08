@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Ausnahmen</string>
     <string name="home_redirected_description">Eigene Regeln</string>
     <string name="host_copied">Host in die Zwischenablage kopiert</string>
+    <string name="command_copied">Befehl in die Zwischenablage kopiert</string>
     <string name="lists_title">Deine Listen</string>
     <string name="lists_search">Hosts filtern</string>
     <string name="lists_search_clear">Leeren</string>

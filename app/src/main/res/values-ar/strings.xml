@@ -30,6 +30,7 @@
     <string name="home_allowed_description">استثناءات</string>
     <string name="home_redirected_description">قواعد مخصّصة</string>
     <string name="host_copied">تم نسخ المضيف إلى الحافظة</string>
+    <string name="command_copied">تم نسخ الأمر إلى الحافظة</string>
     <string name="lists_title">قوائمك</string>
     <string name="lists_search">تصفية المضيفين</string>
     <string name="lists_search_clear">مسح</string>

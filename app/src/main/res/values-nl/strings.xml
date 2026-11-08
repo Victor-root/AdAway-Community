@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Uitzonderingen</string>
     <string name="home_redirected_description">Eigen regels</string>
     <string name="host_copied">Host gekopieerd naar klembord</string>
+    <string name="command_copied">Opdracht gekopieerd naar klembord</string>
     <string name="lists_title">Je lijsten</string>
     <string name="lists_search">Hosts filteren</string>
     <string name="lists_search_clear">Wissen</string>

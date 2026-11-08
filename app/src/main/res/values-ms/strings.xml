@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Pengecualian</string>
     <string name="home_redirected_description">Peraturan tersuai</string>
     <string name="host_copied">Hos disalin ke papan keratan</string>
+    <string name="command_copied">Arahan disalin ke papan keratan</string>
     <string name="lists_title">Senarai anda</string>
     <string name="lists_search">Tapis hos</string>
     <string name="lists_search_clear">Kosongkan</string>

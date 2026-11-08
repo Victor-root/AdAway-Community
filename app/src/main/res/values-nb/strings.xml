@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Unntak</string>
     <string name="home_redirected_description">Egne regler</string>
     <string name="host_copied">Vertsnavnet er kopiert til utklippstavlen</string>
+    <string name="command_copied">Kommandoen er kopiert til utklippstavlen</string>
     <string name="lists_title">Listene dine</string>
     <string name="lists_search">Filtrer vertsnavn</string>
     <string name="lists_search_clear">Tøm</string>

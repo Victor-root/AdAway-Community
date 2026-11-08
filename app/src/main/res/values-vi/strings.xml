@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Ngoại lệ</string>
     <string name="home_redirected_description">Quy tắc tùy chỉnh</string>
     <string name="host_copied">Đã sao chép tên máy chủ vào bộ nhớ tạm</string>
+    <string name="command_copied">Đã sao chép lệnh vào bộ nhớ tạm</string>
     <string name="lists_title">Danh sách của bạn</string>
     <string name="lists_search">Lọc tên máy chủ</string>
     <string name="lists_search_clear">Xóa</string>

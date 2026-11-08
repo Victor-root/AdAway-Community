@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Винятки</string>
     <string name="home_redirected_description">Власні правила</string>
     <string name="host_copied">Хост скопійовано в буфер обміну</string>
+    <string name="command_copied">Команду скопійовано в буфер обміну</string>
     <string name="lists_title">Ваші списки</string>
     <string name="lists_search">Фільтрувати хости</string>
     <string name="lists_search_clear">Очистити</string>

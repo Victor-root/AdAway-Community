@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Mga exception</string>
     <string name="home_redirected_description">Mga custom na panuntunan</string>
     <string name="host_copied">Nakopya ang host sa clipboard</string>
+    <string name="command_copied">Nakopya ang command sa clipboard</string>
     <string name="lists_title">Mga listahan mo</string>
     <string name="lists_search">I-filter ang mga host</string>
     <string name="lists_search_clear">I-clear</string>

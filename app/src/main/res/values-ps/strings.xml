@@ -30,6 +30,7 @@
     <string name="home_allowed_description">استثناوې</string>
     <string name="home_redirected_description">ځانګړي قواعد</string>
     <string name="host_copied">کوربه کلیپبورډ ته کاپي شو</string>
+    <string name="command_copied">کمانډ کلیپبورډ ته کاپي شو</string>
     <string name="lists_title">ستاسو لېستونه</string>
     <string name="lists_search">کوربه فلټرول</string>
     <string name="lists_search_clear">پاکول</string>

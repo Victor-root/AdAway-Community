@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Salbuespenak</string>
     <string name="home_redirected_description">Arau pertsonalizatuak</string>
     <string name="host_copied">Ostalaria arbelera kopiatu da</string>
+    <string name="command_copied">Komandoa arbelera kopiatu da</string>
     <string name="lists_title">Zure zerrendak</string>
     <string name="lists_search">Iragazi ostalariak</string>
     <string name="lists_search_clear">Garbitu</string>

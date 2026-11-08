@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Përjashtime</string>
     <string name="home_redirected_description">Rregulla të personalizuara</string>
     <string name="host_copied">Hosti u kopjua në kujtesën e fragmenteve</string>
+    <string name="command_copied">Komanda u kopjua në kujtesën e fragmenteve</string>
     <string name="lists_title">Listat tuaja</string>
     <string name="lists_search">Filtro hostet</string>
     <string name="lists_search_clear">Pastro</string>

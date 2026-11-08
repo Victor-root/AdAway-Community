@@ -30,6 +30,7 @@
     <string name="home_allowed_description">İstisnalar</string>
     <string name="home_redirected_description">Fərdi qaydalar</string>
     <string name="host_copied">Host mübadilə buferinə kopyalandı</string>
+    <string name="command_copied">Əmr mübadilə buferinə kopyalandı</string>
     <string name="lists_title">Siyahılarınız</string>
     <string name="lists_search">Hostları süzün</string>
     <string name="lists_search_clear">Təmizləyin</string>

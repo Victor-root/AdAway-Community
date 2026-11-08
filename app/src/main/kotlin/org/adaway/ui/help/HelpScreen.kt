@@ -1,12 +1,17 @@
 package org.adaway.ui.help
 
+import android.os.Build
 import android.text.Html
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.Spanned
+import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.BackgroundColorSpan
 import android.text.style.ClickableSpan
+import android.text.style.DynamicDrawableSpan
+import android.text.style.ImageSpan
+import android.text.style.TypefaceSpan
 import android.text.style.URLSpan
 import android.util.TypedValue
 import android.view.View
@@ -69,11 +74,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.core.content.ContextCompat
 import androidx.core.view.doOnLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.adaway.BuildConfig
 import org.adaway.R
+import org.adaway.system.copyAndTell
 import org.adaway.system.openWebPage
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.RemoteConfirmKeys
@@ -284,6 +291,28 @@ private class WebLinkSpan(private val url: String) : ClickableSpan() {
     override fun onClick(widget: View) = widget.context.openWebPage(url)
 }
 
+/** A button after an ADB command of the help, which copies the command. */
+private class CopySpan(private val command: String) : ClickableSpan() {
+    override fun onClick(widget: View) = widget.context.copyAndTell(command, R.string.command_copied)
+
+    // The icon alone shows the button: no link underline.
+    override fun updateDrawState(paint: TextPaint) = Unit
+}
+
+/** Where the text in monospace lies, the code of the help, from its start to its end. */
+private fun Spanned.codes(): List<IntRange> = getSpans(0, length, TypefaceSpan::class.java)
+    .filter { it.family == "monospace" }
+    .map { getSpanStart(it)..getSpanEnd(it) }
+
+/** The copy icon of [CopySpan], as tall as a line of [view], in [color]. */
+private fun copyIcon(view: TextView, color: Int): ImageSpan {
+    val size = view.lineHeight
+    val icon = checkNotNull(ContextCompat.getDrawable(view.context, R.drawable.ic_content_copy_24dp)).mutate()
+    icon.setTint(color)
+    icon.setBounds(0, 0, size, size)
+    return ImageSpan(icon, if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) DynamicDrawableSpan.ALIGN_CENTER else DynamicDrawableSpan.ALIGN_BOTTOM)
+}
+
 /** The layout of the text of a page, which its links are placed in. */
 private class Anchor {
     var coordinates: LayoutCoordinates? = null
@@ -301,10 +330,21 @@ private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
             text.setSpan(WebLinkSpan(span.url), text.getSpanStart(span), text.getSpanEnd(span), text.getSpanFlags(span))
             text.removeSpan(span)
         }
+        // On phones, where they can be pasted, the ADB commands get a button that copies them.
+        if (!focus.isTelevision) {
+            text.codes().sortedByDescending { it.first }.forEach { code ->
+                val command = text.substring(code.first, code.last)
+                if (command.startsWith("adb ")) {
+                    text.insert(code.last, " \uFFFC")
+                    text.setSpan(CopySpan(command), code.last + 1, code.last + 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
+            }
+        }
         text
     }
     val anchor = remember { Anchor() }
     val selection = colors.primary.copy(alpha = 0.2f).toArgb()
+    val codeBackground = colors.textPrimary.copy(alpha = 0.1f).toArgb()
     PageColumn(focus, links, modifier = Modifier.padding(bottom = 24.dp)) {
         AndroidView(
             factory = { viewContext ->
@@ -323,6 +363,12 @@ private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
                 view.setLinkTextColor(colors.primary.toArgb())
                 val spans = html.getSpans(0, html.length, WebLinkSpan::class.java).sortedBy(html::getSpanStart)
                 val shown = SpannableString(html)
+                html.codes().forEach { code ->
+                    shown.setSpan(BackgroundColorSpan(codeBackground), code.first, code.last, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
+                html.getSpans(0, html.length, CopySpan::class.java).forEach { span ->
+                    shown.setSpan(copyIcon(view, colors.primary.toArgb()), html.getSpanStart(span), html.getSpanEnd(span), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
                 links.selected?.let { spans.getOrNull(it) }?.let { span ->
                     shown.setSpan(BackgroundColorSpan(selection), html.getSpanStart(span), html.getSpanEnd(span), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
                 }

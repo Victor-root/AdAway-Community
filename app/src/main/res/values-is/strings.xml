@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Undantekningar</string>
     <string name="home_redirected_description">Sérsniðnar reglur</string>
     <string name="host_copied">Hýsill afritaður á klippiborðið</string>
+    <string name="command_copied">Skipun afrituð á klippiborðið</string>
     <string name="lists_title">Listarnir þínir</string>
     <string name="lists_search">Sía hýsla</string>
     <string name="lists_search_clear">Hreinsa</string>

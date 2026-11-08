@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Išimtys</string>
     <string name="home_redirected_description">Pasirinktinės taisyklės</string>
     <string name="host_copied">Domenas nukopijuotas į iškarpinę</string>
+    <string name="command_copied">Komanda nukopijuota į iškarpinę</string>
     <string name="lists_title">Jūsų sąrašai</string>
     <string name="lists_search">Filtruoti domenus</string>
     <string name="lists_search_clear">Išvalyti</string>

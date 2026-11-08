@@ -30,6 +30,7 @@
     <string name="home_allowed_description">ব্যতিক্রম</string>
     <string name="home_redirected_description">কাস্টম নিয়ম</string>
     <string name="host_copied">হোস্ট ক্লিপবোর্ডে কপি করা হয়েছে</string>
+    <string name="command_copied">কমান্ড ক্লিপবোর্ডে কপি করা হয়েছে</string>
     <string name="lists_title">আপনার তালিকা</string>
     <string name="lists_search">হোস্ট ফিল্টার করুন</string>
     <string name="lists_search_clear">মুছুন</string>

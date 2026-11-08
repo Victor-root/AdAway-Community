@@ -30,6 +30,7 @@
     <string name="home_allowed_description">ခြွင်းချက်များ</string>
     <string name="home_redirected_description">စိတ်ကြိုက်စည်းမျဉ်းများ</string>
     <string name="host_copied">hostname ကို ကလစ်ဘုတ်သို့ ကူးယူပြီးပါပြီ</string>
+    <string name="command_copied">အမိန့်ကို ကလစ်ဘုတ်သို့ ကူးယူပြီးပါပြီ</string>
     <string name="lists_title">သင့်စာရင်းများ</string>
     <string name="lists_search">hostname များကို စစ်ထုတ်ရန်</string>
     <string name="lists_search_clear">ရှင်းလင်းရန်</string>

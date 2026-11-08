@@ -30,6 +30,7 @@
     <string name="home_allowed_description">Izjeme</string>
     <string name="home_redirected_description">Pravila po meri</string>
     <string name="host_copied">Gostitelj je kopiran v odložišče</string>
+    <string name="command_copied">Ukaz je kopiran v odložišče</string>
     <string name="lists_title">Vaši seznami</string>
     <string name="lists_search">Filtriraj gostitelje</string>
     <string name="lists_search_clear">Počisti</string>

@@ -30,6 +30,7 @@
     <string name="home_allowed_description">अपवादहरू</string>
     <string name="home_redirected_description">आफ्नै नियमहरू</string>
     <string name="host_copied">होस्ट क्लिपबोर्डमा कपी गरियो</string>
+    <string name="command_copied">कमान्ड क्लिपबोर्डमा कपी गरियो</string>
     <string name="lists_title">तपाईंका सूचीहरू</string>
     <string name="lists_search">होस्ट फिल्टर गर्नुहोस्</string>
     <string name="lists_search_clear">खाली गर्नुहोस्</string>

@@ -30,6 +30,7 @@
     <string name="home_allowed_description">விதிவிலக்குகள்</string>
     <string name="home_redirected_description">தனிப்பயன் விதிகள்</string>
     <string name="host_copied">ஹோஸ்ட் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</string>
+    <string name="command_copied">கட்டளை கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</string>
     <string name="lists_title">உங்கள் பட்டியல்கள்</string>
     <string name="lists_search">ஹோஸ்ட்களை வடிகட்டு</string>
     <string name="lists_search_clear">அழி</string>

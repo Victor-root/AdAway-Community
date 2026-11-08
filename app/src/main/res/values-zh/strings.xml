@@ -30,6 +30,7 @@
     <string name="home_allowed_description">例外项</string>
     <string name="home_redirected_description">自定义规则</string>
     <string name="host_copied">主机名已复制到剪贴板</string>
+    <string name="command_copied">命令已复制到剪贴板</string>
     <string name="lists_title">您的列表</string>
     <string name="lists_search">筛选主机名</string>
     <string name="lists_search_clear">清除</string>
