@@ -311,9 +311,11 @@ private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
                 TextView(viewContext).apply {
                     setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
                     setLineSpacing(0f, 1.25f)
+                    // Selecting text replaces the movement of the links, which must come after it.
+                    if (!focus.isTelevision) setTextIsSelectable(true)
                     movementMethod = LinkMovementMethod.getInstance()
                     // On TV, the page moves through the links: the text only takes the clicks of a mouse.
-                    if (focus.isTelevision) isFocusable = false else setTextIsSelectable(true)
+                    if (focus.isTelevision) isFocusable = false
                 }
             },
             update = { view ->

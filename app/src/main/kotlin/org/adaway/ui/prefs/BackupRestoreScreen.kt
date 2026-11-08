@@ -95,7 +95,7 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
                 R.drawable.ic_settings_backup_restore_24dp,
                 stringResource(R.string.pref_restore),
                 stringResource(R.string.pref_restore_summary),
-                onClick = { restore.launchOr(restoreMimeTypes(), context) { restoreWithFileManager.launchOrTell("*/*", context) } },
+                onClick = { restore.launchOr(restoreMimeTypes(), context) { restoreWithFileManager.launchOrTell(restoreMimeTypes().first(), context) } },
             )
         }
     }
@@ -109,7 +109,11 @@ fun BackupRestoreScreen(onBack: () -> Unit) {
     }
 }
 
-/** Before Android 10, the file pickers do not all know the JSON type of a file. */
+/**
+ * Before Android 10, the file pickers do not all know the JSON type of a file. Any type is only
+ * asked before Android 9: later, it also wakes Android's photo picker, which, without the file
+ * picker of Android, hands the request back to itself endlessly.
+ */
 private fun restoreMimeTypes(): Array<String> = when {
     Build.VERSION.SDK_INT < Build.VERSION_CODES.P -> arrayOf("*/*")
     Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> arrayOf(JSON_MIME_TYPE, "application/octet-stream")
