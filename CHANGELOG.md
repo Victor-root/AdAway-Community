@@ -15,6 +15,7 @@
 * Show the pre-release stage in the app name, such as "AdAway Alpha"
 * Show the logo and the app name on the Android TV banner
 * Round the corners of the dialogs
+* List the excluded apps first when opening the list of apps to exclude from the VPN
 
 ### ➕ Added
 
@@ -31,6 +32,7 @@
 * 💾 Back up and restore on devices without a file picker, as some TVs
 * 📺 Tell how to check the always-on VPN with ADB, and how to let AdAway start by itself on TCL TVs, also in the help where a phone can copy the commands
 * 🔗 Open the help links with the TV remote, and tell when the device has no browser
+* 📝 Open the release notes from the version number on Android TV, as on phones
 
 ### 🐛 Fixed
 

@@ -94,7 +94,7 @@ import org.adaway.ui.theme.pastel
 import org.adaway.vpn.AlwaysOnMode
 
 /** The controls of the TV home the remote moves between. */
-private enum class HomeControl { TOGGLE, UPDATE, PERSISTENCE, THEME, BLOCKED, ALLOWED, REDIRECTED, SOURCES, SYNC, LOG, HELP, PREFERENCES }
+private enum class HomeControl { VERSION, TOGGLE, UPDATE, PERSISTENCE, THEME, BLOCKED, ALLOWED, REDIRECTED, SOURCES, SYNC, LOG, HELP, PREFERENCES }
 
 private enum class HomePart { HEADER, PROGRESS, STATUS, SHORTCUTS }
 
@@ -130,6 +130,7 @@ fun TvHomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNav
     val links: FocusProperties.(HomeControl) -> Unit = { control ->
         val to = focus::getValue
         when (control) {
+            HomeControl.VERSION -> down = to(HomeControl.REDIRECTED)
             HomeControl.TOGGLE -> {
                 right = to(HomeControl.BLOCKED)
                 down = to(if (appUpdate != null) HomeControl.UPDATE else rowEntry)
@@ -147,16 +148,19 @@ fun TvHomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNav
                 if (usesVpn) left = to(HomeControl.PERSISTENCE)
             }
             HomeControl.BLOCKED -> {
+                up = to(HomeControl.VERSION)
                 left = to(HomeControl.TOGGLE)
                 right = to(HomeControl.ALLOWED)
                 down = to(HomeControl.SOURCES)
             }
             HomeControl.ALLOWED -> {
+                up = to(HomeControl.VERSION)
                 left = to(HomeControl.BLOCKED)
                 right = to(HomeControl.REDIRECTED)
                 down = to(HomeControl.SOURCES)
             }
             HomeControl.REDIRECTED -> {
+                up = to(HomeControl.VERSION)
                 left = to(HomeControl.ALLOWED)
                 down = to(HomeControl.SOURCES)
             }
@@ -197,7 +201,7 @@ fun TvHomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNav
         val viewportHeight = constraints.maxHeight
         Layout(
             content = {
-                Header(Modifier.layoutId(HomePart.HEADER))
+                Header(navigation.openUpdate, control(HomeControl.VERSION), Modifier.layoutId(HomePart.HEADER))
                 if (busy) {
                     LinearProgressIndicator(
                         modifier = Modifier.layoutId(HomePart.PROGRESS).fillMaxWidth().height(3.dp),
@@ -362,8 +366,9 @@ fun TvHomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNav
     }
 }
 
+/** The header of the app, whose version opens the release notes, as on phones. */
 @Composable
-private fun Header(modifier: Modifier) {
+private fun Header(openUpdate: () -> Unit, versionModifier: Modifier, modifier: Modifier) {
     val colors = LocalAdAwayColors.current
     Row(
         modifier = modifier
@@ -379,7 +384,14 @@ private fun Header(modifier: Modifier) {
             Text(stringResource(R.string.app_subtitle), style = AdAwayType.caption, color = colors.onPrimary.copy(alpha = 0.85f))
         }
         Spacer(modifier = Modifier.weight(1f))
-        Text(stringResource(R.string.app_version, BuildConfig.VERSION_NAME), style = AdAwayType.body2, color = colors.onPrimary.copy(alpha = 0.85f))
+        CompositionLocalProvider(LocalRippleConfiguration provides highlight(colors.onPrimary, 0.6f)) {
+            Text(
+                stringResource(R.string.app_version, BuildConfig.VERSION_NAME),
+                style = AdAwayType.body2,
+                color = colors.onPrimary.copy(alpha = 0.85f),
+                modifier = versionModifier.clip(RoundedCornerShape(4.dp)).clickable(onClick = openUpdate).padding(horizontal = 8.dp, vertical = 4.dp),
+            )
+        }
     }
 }
 
