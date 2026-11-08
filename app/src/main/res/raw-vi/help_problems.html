@@ -28,7 +28,7 @@
 <p>Có thể nguồn của bạn thiếu một tên máy chủ nào đó, hoặc ứng dụng nhúng sẵn quảng cáo nên không phát sinh yêu cầu nào. Hãy mở <cite>Nhật ký DNS</cite> từ màn hình chính để xem ứng dụng đang truy vấn những gì, thêm các tên máy chủ đáng ngờ vào danh sách <cite>Đã chặn</cite> của bạn, rồi kiểm tra xem có gì bị hỏng không. Một số ứng dụng còn lưu quảng cáo vào bộ nhớ đệm sau khi tải, nên việc xóa bộ nhớ đệm của ứng dụng đó trong cài đặt Android có thể giúp ích.</p>
 
 <h2>Một ứng dụng ngừng hoạt động sau khi bật AdAway</h2>
-<p>Một số ứng dụng từ chối hoạt động khi một tên máy chủ mà chúng cần bị chặn. Hãy dùng <cite>Nhật ký DNS</cite> để tìm tên máy chủ mà ứng dụng cần, thêm nó vào danh sách <cite>Được phép</cite> của bạn, và ứng dụng sẽ hoạt động trở lại. Các ứng dụng thường gặp vấn đề đã biết được liệt kê <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tại đây</a>.</p>
+<p>Một số ứng dụng từ chối hoạt động khi một tên máy chủ mà chúng cần bị chặn. Hãy dùng <cite>Nhật ký DNS</cite> để tìm tên máy chủ mà ứng dụng cần, thêm nó vào danh sách <cite>Được phép</cite> của bạn, và ứng dụng sẽ hoạt động trở lại.</p>
 
 <h2>Không áp dụng được tệp hosts (chế độ root)</h2>
 <p>Các phiên bản Android gần đây dùng phân vùng <code>/system</code> chỉ đọc, nên AdAway không thể ghi trực tiếp vào đó. Nếu bạn dùng Magisk, hãy bật module <cite>systemless hosts</cite>, khởi động lại rồi áp dụng lại. Nếu bạn không dùng root, hãy chuyển sang chế độ VPN, chế độ này không cần can thiệp vào hệ thống.</p>

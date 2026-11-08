@@ -28,7 +28,7 @@
 <p>Ett värdnamn kan saknas i dina källor, eller så har appen annonserna inbyggda och gör därför ingen förfrågan. Öppna <cite>DNS-logg</cite> från startskärmen för att se vad appen frågar efter, lägg de misstänkta värdnamnen i din lista <cite>Blockerade</cite> och kontrollera att inget slutar fungera. Vissa appar sparar dessutom annonser i cacheminnet när de har laddat ned dem, så det kan hjälpa att rensa appens cache i Android-inställningarna.</p>
 
 <h2>En app slutade fungera efter att AdAway aktiverades</h2>
-<p>Vissa appar vägrar fungera när ett värdnamn de behöver är blockerat. Använd <cite>DNS-logg</cite> för att ta reda på vilket värdnamn appen behöver och lägg det i din lista <cite>Tillåtna</cite>, så bör appen fungera igen. Kända problematiska appar finns listade <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">här</a>.</p>
+<p>Vissa appar vägrar fungera när ett värdnamn de behöver är blockerat. Använd <cite>DNS-logg</cite> för att ta reda på vilket värdnamn appen behöver och lägg det i din lista <cite>Tillåtna</cite>, så bör appen fungera igen.</p>
 
 <h2>Det går inte att tillämpa hosts-filen (root-läge)</h2>
 <p>Nya Android-versioner använder en skrivskyddad partition <code>/system</code>, så AdAway kan inte skriva där direkt. Om du använder Magisk aktiverar du modulen <cite>systemless hosts</cite>, startar om och tillämpar igen. Om du inte använder root kan du i stället byta till VPN-läge, som inte kräver några ändringar i systemet.</p>

@@ -28,7 +28,7 @@
 <p>V zdrojoch môže chýbať niektorý názov hostiteľa, alebo má aplikácia reklamy zabudované priamo v sebe, takže neodosiela žiadnu požiadavku. Na domovskej obrazovke otvorte <cite>Protokol DNS</cite>, pozrite sa, ktoré názvy hostiteľov aplikácia vyhľadáva, pridajte podozrivé názvy do zoznamu <cite>Blokované</cite> a overte, že sa nič nepokazilo. Niektoré aplikácie si reklamy po stiahnutí ukladajú aj do vyrovnávacej pamäte, preto môže pomôcť vymazať vyrovnávaciu pamäť aplikácie v nastaveniach Androidu.</p>
 
 <h2>Aplikácia po zapnutí AdAway prestala fungovať</h2>
-<p>Niektoré aplikácie prestanú fungovať, ak je zablokovaný názov hostiteľa, ktorý potrebujú. V časti <cite>Protokol DNS</cite> zistite, ktorý názov hostiteľa aplikácia potrebuje, pridajte ho do zoznamu <cite>Povolené</cite> a aplikácia by mala opäť fungovať. Známe problémové aplikácie sú uvedené <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">tu</a>.</p>
+<p>Niektoré aplikácie prestanú fungovať, ak je zablokovaný názov hostiteľa, ktorý potrebujú. V časti <cite>Protokol DNS</cite> zistite, ktorý názov hostiteľa aplikácia potrebuje, pridajte ho do zoznamu <cite>Povolené</cite> a aplikácia by mala opäť fungovať.</p>
 
 <h2>Súbor hosts sa nedá použiť (režim root)</h2>
 <p>Nové verzie Androidu používajú oddiel <code>/system</code> len na čítanie, takže AdAway doň nemôže priamo zapisovať. Ak používate Magisk, zapnite modul <cite>systemless hosts</cite>, reštartujte zariadenie a zmeny použite znova. Ak root nepoužívate, prejdite radšej na režim VPN, ktorý nevyžaduje žiadne úpravy systému.</p>

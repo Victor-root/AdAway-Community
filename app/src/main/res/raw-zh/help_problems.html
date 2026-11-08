@@ -28,7 +28,7 @@
 <p>可能是您的来源中缺少某个主机名，也可能是应用把广告内置在自身中，不发出任何请求。请在主屏幕打开<cite>DNS 日志</cite>，查看该应用在查询什么，把可疑的主机名添加到您的<cite>已拦截</cite>列表，并确认没有影响应用正常使用。有些应用在下载广告后还会将其缓存，因此在 Android 设置中清除该应用的缓存可能会有帮助。</p>
 
 <h2>启用 AdAway 后某个应用无法使用了</h2>
-<p>当某个应用所需的主机名被拦截时，它可能拒绝运行。请使用<cite>DNS 日志</cite>找出该应用需要的主机名，将其添加到您的<cite>已允许</cite>列表，应用就应该能恢复正常。已知有问题的应用列在<a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">这里</a>。</p>
+<p>当某个应用所需的主机名被拦截时，它可能拒绝运行。请使用<cite>DNS 日志</cite>找出该应用需要的主机名，将其添加到您的<cite>已允许</cite>列表，应用就应该能恢复正常。</p>
 
 <h2>应用 hosts 文件失败（root 模式）</h2>
 <p>较新的 Android 版本使用只读的 <code>/system</code> 分区，因此 AdAway 无法直接写入其中。如果您使用 Magisk，请启用 <cite>systemless hosts</cite> 模块，重启后再次应用。如果您没有 root，请改用 VPN 模式，它不需要修改系统。</p>

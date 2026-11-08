@@ -28,7 +28,7 @@
 <p>Moguće je da host nedostaje u vašim izvorima ili da aplikacija ima ugrađene oglase pa se zahtjev uopće ne šalje. Otvorite <cite>DNS zapisnik</cite> na početnom zaslonu da vidite što aplikacija upituje, dodajte sumnjive hostove na popis <cite>Blokirani</cite> i provjerite da se ništa ne pokvari. Neke aplikacije nakon preuzimanja pohranjuju oglase u privremenu memoriju, pa može pomoći njezino brisanje za tu aplikaciju u postavkama Androida.</p>
 
 <h2>Aplikacija je prestala raditi nakon uključivanja aplikacije AdAway</h2>
-<p>Neke aplikacije ne rade kad je blokiran host koji im je potreban. Otvorite <cite>DNS zapisnik</cite> da biste pronašli koji host aplikacija treba, dodajte ga na popis <cite>Dopušteni</cite> i aplikacija bi trebala ponovno raditi. Poznate problematične aplikacije navedene su <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">ovdje</a>.</p>
+<p>Neke aplikacije ne rade kad je blokiran host koji im je potreban. Otvorite <cite>DNS zapisnik</cite> da biste pronašli koji host aplikacija treba, dodajte ga na popis <cite>Dopušteni</cite> i aplikacija bi trebala ponovno raditi.</p>
 
 <h2>Primjena datoteke hosts ne uspijeva (root način rada)</h2>
 <p>Novije inačice Androida koriste particiju <code>/system</code> samo za čitanje, pa AdAway ne može izravno pisati na nju. Ako koristite Magisk, omogućite modul <cite>systemless hosts</cite>, ponovno pokrenite uređaj i ponovno primijenite promjene. Ako ne koristite root, umjesto toga prijeđite na VPN način rada, koji ne mijenja sustav.</p>

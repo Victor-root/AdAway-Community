@@ -28,7 +28,7 @@
 <p>Puede que falte un nombre de host en tus fuentes, o que la aplicación incluya sus anuncios sin hacer ninguna solicitud. Abre el <cite>Registro DNS</cite> desde la pantalla de inicio para ver qué consulta la aplicación, añade los nombres de host sospechosos a tu lista de <cite>Bloqueados</cite> y comprueba que no deja de funcionar nada. Algunas aplicaciones también guardan los anuncios en caché tras descargarlos, así que borrar la caché de esa aplicación en los ajustes de Android puede ayudar.</p>
 
 <h2>Una aplicación dejó de funcionar al activar AdAway</h2>
-<p>Algunas aplicaciones se niegan a funcionar cuando se bloquea un nombre de host que necesitan. Usa el <cite>Registro DNS</cite> para averiguar qué nombre de host necesita la aplicación, añádelo a tu lista de <cite>Permitidos</cite> y la aplicación debería volver a funcionar. Las aplicaciones problemáticas conocidas aparecen <a href="https://github.com/AdAway/AdAway/wiki/ProblematicApps">aquí</a>.</p>
+<p>Algunas aplicaciones se niegan a funcionar cuando se bloquea un nombre de host que necesitan. Usa el <cite>Registro DNS</cite> para averiguar qué nombre de host necesita la aplicación, añádelo a tu lista de <cite>Permitidos</cite> y la aplicación debería volver a funcionar.</p>
 
 <h2>Falla la aplicación del archivo hosts (modo root)</h2>
 <p>Las versiones recientes de Android usan una partición <code>/system</code> de solo lectura, por lo que AdAway no puede escribir en ella directamente. Si usas Magisk, activa el módulo <cite>systemless hosts</cite>, reinicia y vuelve a aplicar. Si no usas root, cambia al modo VPN, que no requiere modificar el sistema.</p>
