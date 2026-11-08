@@ -31,8 +31,9 @@ class ExcludedAppsViewModel(private val container: AppContainer) : ViewModel() {
 
     init {
         viewModelScope.launch {
-            mutableExcluded.value = container.settingsRepository.settings.first().vpnExcludedApps
-            mutableApps.value = withContext(Dispatchers.IO) { loadUserApps() }
+            val excluded = container.settingsRepository.settings.first().vpnExcludedApps
+            mutableExcluded.value = excluded
+            mutableApps.value = withContext(Dispatchers.IO) { loadUserApps(excluded) }
             loaded = true
         }
     }
@@ -55,8 +56,11 @@ class ExcludedAppsViewModel(private val container: AppContainer) : ViewModel() {
         }
     }
 
-    /** Sorted by name, ignoring case and accents. */
-    private fun loadUserApps(): List<UserApp> {
+    /**
+     * The [excluded] apps first, then the others, each sorted by name, ignoring case and accents.
+     * The order stays while the user switches apps, so that none moves under the finger.
+     */
+    private fun loadUserApps(excluded: Set<String>): List<UserApp> {
         val context = container.applicationContext
         val packageManager = context.packageManager
         val installed = VpnExclusions.installedApplications(packageManager)
@@ -64,6 +68,6 @@ class ExcludedAppsViewModel(private val container: AppContainer) : ViewModel() {
         return installed
             .filter { it.flags and ApplicationInfo.FLAG_SYSTEM == 0 && it.packageName != context.packageName }
             .map { UserApp(it.packageName, it.loadLabel(packageManager).toString(), it) }
-            .sortedWith { first, second -> collator.compare(first.label, second.label) }
+            .sortedWith(compareBy<UserApp> { it.packageName !in excluded }.thenComparator { first, second -> collator.compare(first.label, second.label) })
     }
 }
