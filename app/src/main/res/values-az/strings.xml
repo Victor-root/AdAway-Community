@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktiv</string>
     <string name="vpn_status_waiting_for_network">şəbəkə gözlənilir</string>
     <string name="vpn_status_reconnecting">yenidən qoşulur</string>
+    <string name="vpn_status_dns_unreachable">aktiv, DNS serveri əlçatan deyil</string>
     <string name="vpn_status_stopped">dayandırılıb</string>
 
     <string name="home_blocking_enabled">Reklam bloklama: aktiv</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Başlayır…</string>
     <string name="home_blocking_waiting_for_network">Şəbəkə bağlantısı gözlənilir</string>
     <string name="home_blocking_reconnecting">Yenidən qoşulur…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS serveri bu şəbəkədə əlçatan deyil: Tənzimləmələr › DNS serverləri bölməsində başqasını seçin.</string>
     <string name="home_blocking_consent_required">VPN icazəsi lazımdır: onu vermək üçün reklam bloklamanı aktiv edin.</string>
     <string name="home_toggle_blocking">Reklam bloklamanı dayandırın/davam etdirin</string>
     <string name="home_enable_blocking">Reklam bloklamanı aktiv edin</string>

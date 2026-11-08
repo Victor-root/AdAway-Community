@@ -123,6 +123,7 @@
     <string name="vpn_status_running">çalak</string>
     <string name="vpn_status_waiting_for_network">li benda torê</string>
     <string name="vpn_status_reconnecting">ji nû ve girê dide</string>
+    <string name="vpn_status_dns_unreachable">çalak, pêşkêşkera DNS nayê gihîştin</string>
     <string name="vpn_status_stopped">sekiniye</string>
 
     <string name="home_blocking_enabled">Astengkirina reklaman: çalak</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Dest pê dike…</string>
     <string name="home_blocking_waiting_for_network">Li benda girêdana torê ye</string>
     <string name="home_blocking_reconnecting">Ji nû ve girê dide…</string>
+    <string name="home_blocking_dns_unreachable">Pêşkêşkera DNS over HTTPS li ser vê torê nayê gihîştin: di Vebijêrk › Pêşkêşkerên DNS de yekî din hilbijêre.</string>
     <string name="home_blocking_consent_required">Destûra VPN pêwîst e: ji bo ku bidî, astengkirina reklaman çalak bike.</string>
     <string name="home_toggle_blocking">Astengkirina reklaman bisekinîne/bidomîne</string>
     <string name="home_enable_blocking">Astengkirina reklaman çalak bike</string>

@@ -122,6 +122,7 @@
     <string name="vpn_status_running">aktif</string>
     <string name="vpn_status_waiting_for_network">menunggu jaringan</string>
     <string name="vpn_status_reconnecting">menyambung ulang</string>
+    <string name="vpn_status_dns_unreachable">aktif, server DNS tidak dapat dijangkau</string>
     <string name="vpn_status_stopped">berhenti</string>
 
     <string name="home_blocking_enabled">Pemblokiran iklan: aktif</string>
@@ -129,6 +130,7 @@
     <string name="home_blocking_starting">Memulai…</string>
     <string name="home_blocking_waiting_for_network">Menunggu koneksi jaringan</string>
     <string name="home_blocking_reconnecting">Menyambung ulang…</string>
+    <string name="home_blocking_dns_unreachable">Server DNS over HTTPS tidak dapat dijangkau di jaringan ini: pilih yang lain di Preferensi › Server DNS.</string>
     <string name="home_blocking_consent_required">Izin VPN diperlukan: aktifkan pemblokiran iklan untuk memberikannya.</string>
     <string name="home_toggle_blocking">Jeda/lanjutkan pemblokiran iklan</string>
     <string name="home_enable_blocking">Aktifkan pemblokiran iklan</string>

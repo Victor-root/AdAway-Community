@@ -6,6 +6,7 @@ import android.net.VpnService
 import android.os.Build
 import android.os.ParcelFileDescriptor
 import android.system.OsConstants
+import org.adaway.data.settings.DohServer
 import org.adaway.engine.Engine
 import org.adaway.system.Notifications
 import java.io.File
@@ -86,15 +87,28 @@ class TunnelBuilder(private val service: VpnService, private val finalDirectory:
         return upstreams
     }
 
-    /**
-     * Starts the relay to the DNS over HTTPS server, its name resolved by the network itself. The
-     * virtual server takes the family of the address used first.
-     */
+    /** Starts the relay to the DNS over HTTPS server. The virtual server takes the family of the address used first. */
     private fun startRelay(network: Network, url: String): Pair<InetAddress, ParcelFileDescriptor> {
-        val host = Engine.dohHost(url) ?: throw IllegalArgumentException("Invalid DNS over HTTPS address")
-        val addresses = network.getAllByName(host).toList()
+        val addresses = dohAddresses(network, url)
         val descriptor = ParcelFileDescriptor.adoptFd(Engine.startDohRelay(url, addresses.mapNotNull { it.hostAddress }.toTypedArray()))
         return addresses.first() to descriptor
+    }
+
+    /**
+     * Whether the DNS over HTTPS server at [url] takes a connection on [network]: some networks
+     * block the well-known ones. Blocks for the connection time.
+     */
+    fun dohReachable(network: Network, url: String): Boolean = try {
+        Engine.dohReachable(url, dohAddresses(network, url).mapNotNull { it.hostAddress }.toTypedArray())
+    } catch (_: IOException) {
+        false
+    }
+
+    /** The fixed addresses of a well-known server, or else those the network gives for its name. */
+    private fun dohAddresses(network: Network, url: String): List<InetAddress> {
+        DohServer.entries.firstOrNull { it.url == url }?.let { server -> return server.addresses.map(InetAddress::getByName) }
+        val host = Engine.dohHost(url) ?: throw IllegalArgumentException("Invalid DNS over HTTPS address")
+        return network.getAllByName(host).toList()
     }
 
     private fun configure(

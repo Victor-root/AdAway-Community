@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktibo</string>
     <string name="vpn_status_waiting_for_network">naghihintay ng network</string>
     <string name="vpn_status_reconnecting">kumokonekta muli</string>
+    <string name="vpn_status_dns_unreachable">aktibo, hindi maabot ang DNS server</string>
     <string name="vpn_status_stopped">huminto</string>
 
     <string name="home_blocking_enabled">Pag-block ng ad: naka-on</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Nagsisimula…</string>
     <string name="home_blocking_waiting_for_network">Naghihintay ng koneksyon sa network</string>
     <string name="home_blocking_reconnecting">Kumokonekta muli…</string>
+    <string name="home_blocking_dns_unreachable">Hindi maabot ang server ng DNS over HTTPS sa network na ito: pumili ng iba sa Mga Kagustuhan › Mga DNS server.</string>
     <string name="home_blocking_consent_required">Kailangan ng pahintulot sa VPN: i-on ang pag-block ng ad para ibigay ito.</string>
     <string name="home_toggle_blocking">I-pause/ituloy ang pag-block ng ad</string>
     <string name="home_enable_blocking">I-on ang pag-block ng ad</string>

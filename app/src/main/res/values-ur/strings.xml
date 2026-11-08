@@ -123,6 +123,7 @@
     <string name="vpn_status_running">فعال</string>
     <string name="vpn_status_waiting_for_network">نیٹ ورک کا انتظار</string>
     <string name="vpn_status_reconnecting">دوبارہ جڑ رہا ہے</string>
+    <string name="vpn_status_dns_unreachable">فعال، DNS سرور تک رسائی نہیں ہو رہی</string>
     <string name="vpn_status_stopped">رکا ہوا</string>
 
     <string name="home_blocking_enabled">اشتہارات کی بلاکنگ: فعال</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">شروع ہو رہا ہے…</string>
     <string name="home_blocking_waiting_for_network">نیٹ ورک کنکشن کا انتظار ہے</string>
     <string name="home_blocking_reconnecting">دوبارہ جڑ رہا ہے…</string>
+    <string name="home_blocking_dns_unreachable">اس نیٹ ورک پر DNS over HTTPS سرور تک رسائی نہیں ہو سکتی: ترجیحات › DNS سرورز میں کوئی اور منتخب کریں۔</string>
     <string name="home_blocking_consent_required">VPN کی اجازت درکار ہے: اجازت دینے کے لیے اشتہارات کی بلاکنگ آن کریں۔</string>
     <string name="home_toggle_blocking">اشتہارات کی بلاکنگ روکیں / دوبارہ شروع کریں</string>
     <string name="home_enable_blocking">اشتہارات کی بلاکنگ فعال کریں</string>

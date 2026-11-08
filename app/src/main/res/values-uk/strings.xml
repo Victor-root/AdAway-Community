@@ -125,6 +125,7 @@
     <string name="vpn_status_running">працює</string>
     <string name="vpn_status_waiting_for_network">очікування мережі</string>
     <string name="vpn_status_reconnecting">перепідключення</string>
+    <string name="vpn_status_dns_unreachable">працює, сервер DNS недоступний</string>
     <string name="vpn_status_stopped">зупинено</string>
 
     <string name="home_blocking_enabled">Блокування реклами: увімкнено</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Запуск…</string>
     <string name="home_blocking_waiting_for_network">Очікування мережевого з’єднання</string>
     <string name="home_blocking_reconnecting">Перепідключення…</string>
+    <string name="home_blocking_dns_unreachable">Сервер DNS over HTTPS недоступний у цій мережі: виберіть інший у розділі Налаштування › Сервери DNS.</string>
     <string name="home_blocking_consent_required">Потрібен дозвіл на VPN: увімкніть блокування реклами, щоб надати його.</string>
     <string name="home_toggle_blocking">Призупинити або відновити блокування реклами</string>
     <string name="home_enable_blocking">Увімкнути блокування реклами</string>

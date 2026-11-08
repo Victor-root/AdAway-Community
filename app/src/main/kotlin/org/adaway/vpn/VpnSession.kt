@@ -12,6 +12,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.adaway.data.DataInitializer
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.Settings
@@ -59,6 +60,7 @@ class VpnSession(
     private var tunnel: ActiveTunnel? = null
     private var rebuildJob: Job? = null
     private var interfaceCheckJob: Job? = null
+    private var dohCheckJob: Job? = null
 
     /** Set once the final status is published: from then on, a new session may start. */
     @Volatile
@@ -232,6 +234,7 @@ class VpnSession(
         built.run { exit -> scope.launch { onTunnelExit(built, exit) } }
         setStatus(VpnStatus.RUNNING)
         checkInterfacePeriodically()
+        checkDohServer(built)
     }
 
     private fun onTunnelExit(exited: ActiveTunnel, exit: Int) {
@@ -256,9 +259,29 @@ class VpnSession(
         }
     }
 
+    /**
+     * Tells when the DNS over HTTPS server of [running] takes no connection, as on the networks
+     * that block the well-known ones, and checks it again until it does.
+     */
+    private fun checkDohServer(running: ActiveTunnel) {
+        val selection = running.selection as? DnsUpstream.Https ?: return
+        dohCheckJob = scope.launch {
+            while (true) {
+                val reachable = withContext(Dispatchers.IO) { builder.dohReachable(running.network, selection.url) }
+                if (running !== tunnel) return@launch
+                if (!reachable) diagnosticLog.warn(VPN_LOG_TAG, "DNS over HTTPS server unreachable")
+                setStatus(if (reachable) VpnStatus.RUNNING else VpnStatus.DNS_UNREACHABLE)
+                if (reachable) return@launch
+                delay(DOH_CHECK_MILLIS)
+            }
+        }
+    }
+
     private fun closeTunnel() {
         interfaceCheckJob?.cancel()
         interfaceCheckJob = null
+        dohCheckJob?.cancel()
+        dohCheckJob = null
         tunnel?.close()
         tunnel = null
     }
@@ -320,5 +343,6 @@ class VpnSession(
 
     private companion object {
         const val INTERFACE_CHECK_MILLIS = 10_000L
+        const val DOH_CHECK_MILLIS = 60_000L
     }
 }

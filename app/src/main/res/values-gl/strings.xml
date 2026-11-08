@@ -123,6 +123,7 @@
     <string name="vpn_status_running">activa</string>
     <string name="vpn_status_waiting_for_network">agardando pola rede</string>
     <string name="vpn_status_reconnecting">reconectando</string>
+    <string name="vpn_status_dns_unreachable">activa, servidor DNS inaccesible</string>
     <string name="vpn_status_stopped">detida</string>
 
     <string name="home_blocking_enabled">Bloqueo de anuncios: activado</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Iniciando…</string>
     <string name="home_blocking_waiting_for_network">Agardando por unha conexión de rede</string>
     <string name="home_blocking_reconnecting">Reconectando…</string>
+    <string name="home_blocking_dns_unreachable">Non se pode acceder ao servidor DNS over HTTPS nesta rede: escolle outro en Preferencias › Servidores DNS.</string>
     <string name="home_blocking_consent_required">Fai falta permiso de VPN: activa o bloqueo de anuncios para concedelo.</string>
     <string name="home_toggle_blocking">Pausar ou retomar o bloqueo de anuncios</string>
     <string name="home_enable_blocking">Activar o bloqueo de anuncios</string>

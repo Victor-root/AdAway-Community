@@ -124,6 +124,7 @@
     <string name="vpn_status_running">activé</string>
     <string name="vpn_status_waiting_for_network">en attente du réseau</string>
     <string name="vpn_status_reconnecting">reconnexion</string>
+    <string name="vpn_status_dns_unreachable">activé, serveur DNS injoignable</string>
     <string name="vpn_status_stopped">arrêté</string>
 
     <string name="home_blocking_enabled">Blocage des publicités : activé</string>
@@ -131,6 +132,7 @@
     <string name="home_blocking_starting">Démarrage…</string>
     <string name="home_blocking_waiting_for_network">En attente d\'une connexion réseau</string>
     <string name="home_blocking_reconnecting">Reconnexion…</string>
+    <string name="home_blocking_dns_unreachable">Le serveur DNS over HTTPS est injoignable sur ce réseau : choisissez-en un autre dans Préférences › Serveurs DNS.</string>
     <string name="home_blocking_consent_required">Autorisation VPN nécessaire : activez le blocage pour l\'accorder.</string>
     <string name="home_toggle_blocking">Mettre en pause/Reprendre le blocage des publicités</string>
     <string name="home_enable_blocking">Activer le blocage des publicités</string>

@@ -120,12 +120,14 @@
     <string name="vpn_status_running">активан</string>
     <string name="vpn_status_waiting_for_network">чека мрежу</string>
     <string name="vpn_status_reconnecting">поново се повезује</string>
+    <string name="vpn_status_dns_unreachable">активан, DNS сервер није доступан</string>
     <string name="vpn_status_stopped">заустављен</string>
     <string name="home_blocking_enabled">Блокирање огласа: укључено</string>
     <string name="home_blocking_disabled">Блокирање огласа: искључено</string>
     <string name="home_blocking_starting">Покретање…</string>
     <string name="home_blocking_waiting_for_network">Чекање на мрежну везу</string>
     <string name="home_blocking_reconnecting">Поновно повезивање…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS сервер није доступан на овој мрежи: изаберите други у менију Подешавања › DNS сервери.</string>
     <string name="home_blocking_consent_required">Потребна је VPN дозвола: укључите блокирање огласа да бисте је одобрили.</string>
     <string name="home_toggle_blocking">Паузирај или настави блокирање огласа</string>
     <string name="home_enable_blocking">Укључи блокирање огласа</string>

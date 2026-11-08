@@ -125,6 +125,7 @@
     <string name="vpn_status_running">aktiven</string>
     <string name="vpn_status_waiting_for_network">čakanje na omrežje</string>
     <string name="vpn_status_reconnecting">ponovno povezovanje</string>
+    <string name="vpn_status_dns_unreachable">aktiven, strežnik DNS ni dosegljiv</string>
     <string name="vpn_status_stopped">ustavljen</string>
 
     <string name="home_blocking_enabled">Blokiranje oglasov: omogočeno</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Zagon…</string>
     <string name="home_blocking_waiting_for_network">Čakanje na omrežno povezavo</string>
     <string name="home_blocking_reconnecting">Ponovno povezovanje…</string>
+    <string name="home_blocking_dns_unreachable">Strežnik DNS over HTTPS v tem omrežju ni dosegljiv: izberite drugega v Nastavitve › Strežniki DNS.</string>
     <string name="home_blocking_consent_required">Potrebno je dovoljenje za VPN: vklopite blokiranje oglasov, da ga podelite.</string>
     <string name="home_toggle_blocking">Začasno ustavi ali nadaljuj blokiranje oglasov</string>
     <string name="home_enable_blocking">Omogoči blokiranje oglasov</string>

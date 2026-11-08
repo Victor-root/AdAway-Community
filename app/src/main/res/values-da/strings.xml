@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktiv</string>
     <string name="vpn_status_waiting_for_network">venter på netværk</string>
     <string name="vpn_status_reconnecting">genopretter forbindelsen</string>
+    <string name="vpn_status_dns_unreachable">aktiv, DNS-serveren kan ikke nås</string>
     <string name="vpn_status_stopped">stoppet</string>
 
     <string name="home_blocking_enabled">Annonceblokering: aktiveret</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Starter…</string>
     <string name="home_blocking_waiting_for_network">Venter på en netværksforbindelse</string>
     <string name="home_blocking_reconnecting">Genopretter forbindelsen…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS-serveren kan ikke nås på dette netværk: vælg en anden under Indstillinger › DNS-servere.</string>
     <string name="home_blocking_consent_required">VPN-tilladelse påkrævet: slå annonceblokeringen til for at give den.</string>
     <string name="home_toggle_blocking">Sæt annonceblokering på pause eller genoptag den</string>
     <string name="home_enable_blocking">Aktivér annonceblokering</string>

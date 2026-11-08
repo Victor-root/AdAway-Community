@@ -123,6 +123,7 @@
     <string name="vpn_status_running">активен</string>
     <string name="vpn_status_waiting_for_network">изчаква мрежа</string>
     <string name="vpn_status_reconnecting">свързва се отново</string>
+    <string name="vpn_status_dns_unreachable">активен, DNS сървърът е недостъпен</string>
     <string name="vpn_status_stopped">спрян</string>
 
     <string name="home_blocking_enabled">Блокиране на реклами: включено</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Стартиране…</string>
     <string name="home_blocking_waiting_for_network">Изчакване на мрежова връзка</string>
     <string name="home_blocking_reconnecting">Повторно свързване…</string>
+    <string name="home_blocking_dns_unreachable">Сървърът за DNS over HTTPS е недостъпен в тази мрежа: изберете друг от Настройки › DNS сървъри.</string>
     <string name="home_blocking_consent_required">Нужно е разрешение за VPN: включете блокирането на реклами, за да го дадете.</string>
     <string name="home_toggle_blocking">Пауза или продължаване на блокирането на реклами</string>
     <string name="home_enable_blocking">Включване на блокирането на реклами</string>

@@ -4,6 +4,9 @@ enum class VpnStatus {
     STOPPED,
     STARTING,
     RUNNING,
+
+    /** Running, but the DNS over HTTPS server does not take a connection on this network. */
+    DNS_UNREACHABLE,
     WAITING_FOR_NETWORK,
     RECONNECTING,
 
@@ -12,5 +15,6 @@ enum class VpnStatus {
     ;
 
     /** Whether the service runs, in the foreground, in this status. */
-    fun isServiceAlive() = this == STARTING || this == RUNNING || this == WAITING_FOR_NETWORK || this == RECONNECTING
+    fun isServiceAlive() =
+        this == STARTING || this == RUNNING || this == DNS_UNREACHABLE || this == WAITING_FOR_NETWORK || this == RECONNECTING
 }

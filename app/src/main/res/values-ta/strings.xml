@@ -123,6 +123,7 @@
     <string name="vpn_status_running">செயலில்</string>
     <string name="vpn_status_waiting_for_network">நெட்வொர்க்கிற்காகக் காத்திருக்கிறது</string>
     <string name="vpn_status_reconnecting">மீண்டும் இணைக்கிறது</string>
+    <string name="vpn_status_dns_unreachable">செயலில், DNS சேவையகத்தை அணுக முடியவில்லை</string>
     <string name="vpn_status_stopped">நிறுத்தப்பட்டது</string>
 
     <string name="home_blocking_enabled">விளம்பரத் தடுப்பு: இயக்கத்தில்</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">தொடங்குகிறது…</string>
     <string name="home_blocking_waiting_for_network">நெட்வொர்க் இணைப்புக்காகக் காத்திருக்கிறது</string>
     <string name="home_blocking_reconnecting">மீண்டும் இணைக்கிறது…</string>
+    <string name="home_blocking_dns_unreachable">இந்த நெட்வொர்க்கில் DNS over HTTPS சேவையகத்தை அணுக முடியவில்லை: விருப்பத்தேர்வுகள் › DNS சேவையகங்கள் என்பதில் வேறொன்றைத் தேர்ந்தெடுக்கவும்.</string>
     <string name="home_blocking_consent_required">VPN அனுமதி தேவை: அதை வழங்க விளம்பரத் தடுப்பை இயக்கவும்.</string>
     <string name="home_toggle_blocking">விளம்பரத் தடுப்பை இடைநிறுத்து / தொடர்</string>
     <string name="home_enable_blocking">விளம்பரத் தடுப்பை இயக்கு</string>

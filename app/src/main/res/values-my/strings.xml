@@ -122,6 +122,7 @@
     <string name="vpn_status_running">လည်ပတ်နေသည်</string>
     <string name="vpn_status_waiting_for_network">ကွန်ရက်ကို စောင့်နေသည်</string>
     <string name="vpn_status_reconnecting">ပြန်ချိတ်ဆက်နေသည်</string>
+    <string name="vpn_status_dns_unreachable">လည်ပတ်နေသည်၊ DNS ဆာဗာကို ဆက်သွယ်၍ မရပါ</string>
     <string name="vpn_status_stopped">ရပ်ထားသည်</string>
 
     <string name="home_blocking_enabled">ကြော်ငြာပိတ်ဆို့ခြင်း: ဖွင့်ထားသည်</string>
@@ -129,6 +130,7 @@
     <string name="home_blocking_starting">စတင်နေသည်…</string>
     <string name="home_blocking_waiting_for_network">ကွန်ရက်ချိတ်ဆက်မှုကို စောင့်နေသည်</string>
     <string name="home_blocking_reconnecting">ပြန်ချိတ်ဆက်နေသည်…</string>
+    <string name="home_blocking_dns_unreachable">ဤကွန်ရက်တွင် DNS over HTTPS ဆာဗာကို ဆက်သွယ်၍ မရပါ။ စိတ်ကြိုက်ဆက်တင်များ › DNS ဆာဗာများ တွင် အခြားတစ်ခုကို ရွေးပါ။</string>
     <string name="home_blocking_consent_required">VPN ခွင့်ပြုချက် လိုအပ်ပါသည်။ ခွင့်ပြုရန် ကြော်ငြာပိတ်ဆို့ခြင်းကို ဖွင့်ပါ။</string>
     <string name="home_toggle_blocking">ကြော်ငြာပိတ်ဆို့ခြင်းကို ခေတ္တရပ်/ပြန်စရန်</string>
     <string name="home_enable_blocking">ကြော်ငြာပိတ်ဆို့ခြင်းကို ဖွင့်ရန်</string>

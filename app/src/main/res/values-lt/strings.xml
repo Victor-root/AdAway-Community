@@ -125,6 +125,7 @@
     <string name="vpn_status_running">aktyvus</string>
     <string name="vpn_status_waiting_for_network">laukia tinklo</string>
     <string name="vpn_status_reconnecting">jungiasi iš naujo</string>
+    <string name="vpn_status_dns_unreachable">aktyvus, DNS serveris nepasiekiamas</string>
     <string name="vpn_status_stopped">sustabdytas</string>
 
     <string name="home_blocking_enabled">Reklamų blokavimas: įjungtas</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Paleidžiama…</string>
     <string name="home_blocking_waiting_for_network">Laukiama tinklo ryšio</string>
     <string name="home_blocking_reconnecting">Jungiamasi iš naujo…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS serveris šiame tinkle nepasiekiamas: pasirinkite kitą skiltyje Nuostatos › DNS serveriai.</string>
     <string name="home_blocking_consent_required">Reikalingas VPN leidimas: įjunkite reklamų blokavimą, kad jį suteiktumėte.</string>
     <string name="home_toggle_blocking">Pristabdyti / tęsti reklamų blokavimą</string>
     <string name="home_enable_blocking">Įjungti reklamų blokavimą</string>

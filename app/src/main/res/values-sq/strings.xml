@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktive</string>
     <string name="vpn_status_waiting_for_network">në pritje të rrjetit</string>
     <string name="vpn_status_reconnecting">duke u rilidhur</string>
+    <string name="vpn_status_dns_unreachable">aktive, serveri DNS nuk arrihet</string>
     <string name="vpn_status_stopped">e ndaluar</string>
 
     <string name="home_blocking_enabled">Bllokimi i reklamave: aktiv</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Duke u nisur…</string>
     <string name="home_blocking_waiting_for_network">Në pritje të një lidhjeje rrjeti</string>
     <string name="home_blocking_reconnecting">Duke u rilidhur…</string>
+    <string name="home_blocking_dns_unreachable">Serveri DNS over HTTPS nuk arrihet në këtë rrjet: zgjidhni një tjetër te Preferencat › Serverët DNS.</string>
     <string name="home_blocking_consent_required">Nevojitet leje për VPN: aktivizoni bllokimin e reklamave për ta dhënë.</string>
     <string name="home_toggle_blocking">Pusho/vazhdo bllokimin e reklamave</string>
     <string name="home_enable_blocking">Aktivizo bllokimin e reklamave</string>

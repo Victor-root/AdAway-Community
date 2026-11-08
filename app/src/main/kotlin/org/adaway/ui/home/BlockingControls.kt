@@ -21,6 +21,7 @@ fun blockingDetail(status: VpnStatus): Int? = when (status) {
     VpnStatus.STARTING -> R.string.home_blocking_starting
     VpnStatus.WAITING_FOR_NETWORK -> R.string.home_blocking_waiting_for_network
     VpnStatus.RECONNECTING -> R.string.home_blocking_reconnecting
+    VpnStatus.DNS_UNREACHABLE -> R.string.home_blocking_dns_unreachable
     VpnStatus.CONSENT_REQUIRED -> R.string.home_blocking_consent_required
     VpnStatus.RUNNING, VpnStatus.STOPPED -> null
 }

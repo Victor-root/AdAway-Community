@@ -153,6 +153,7 @@ object Notifications {
         VpnStatus.RUNNING -> R.string.vpn_status_running
         VpnStatus.WAITING_FOR_NETWORK -> R.string.vpn_status_waiting_for_network
         VpnStatus.RECONNECTING -> R.string.vpn_status_reconnecting
+        VpnStatus.DNS_UNREACHABLE -> R.string.vpn_status_dns_unreachable
         VpnStatus.STOPPED, VpnStatus.CONSENT_REQUIRED -> R.string.vpn_status_stopped
     }
 }

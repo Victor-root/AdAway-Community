@@ -122,6 +122,7 @@
     <string name="vpn_status_running">ทำงานอยู่</string>
     <string name="vpn_status_waiting_for_network">รอเครือข่าย</string>
     <string name="vpn_status_reconnecting">กำลังเชื่อมต่อใหม่</string>
+    <string name="vpn_status_dns_unreachable">ทำงานอยู่ แต่เข้าถึงเซิร์ฟเวอร์ DNS ไม่ได้</string>
     <string name="vpn_status_stopped">หยุดแล้ว</string>
 
     <string name="home_blocking_enabled">การบล็อกโฆษณา: เปิดอยู่</string>
@@ -129,6 +130,7 @@
     <string name="home_blocking_starting">กำลังเริ่มทำงาน…</string>
     <string name="home_blocking_waiting_for_network">กำลังรอการเชื่อมต่อเครือข่าย</string>
     <string name="home_blocking_reconnecting">กำลังเชื่อมต่อใหม่…</string>
+    <string name="home_blocking_dns_unreachable">เข้าถึงเซิร์ฟเวอร์ DNS over HTTPS บนเครือข่ายนี้ไม่ได้: โปรดเลือกเซิร์ฟเวอร์อื่นใน การตั้งค่า › เซิร์ฟเวอร์ DNS</string>
     <string name="home_blocking_consent_required">ต้องได้รับอนุญาตให้ใช้ VPN: เปิดการบล็อกโฆษณาเพื่ออนุญาต</string>
     <string name="home_toggle_blocking">หยุดชั่วคราว/เปิดการบล็อกโฆษณาต่อ</string>
     <string name="home_enable_blocking">เปิดการบล็อกโฆษณา</string>

@@ -123,6 +123,7 @@
     <string name="vpn_status_running">සක්‍රීයයි</string>
     <string name="vpn_status_waiting_for_network">ජාලය බලා සිටියි</string>
     <string name="vpn_status_reconnecting">නැවත සම්බන්ධ වෙමින්</string>
+    <string name="vpn_status_dns_unreachable">සක්‍රීයයි, DNS සේවාදායකයට ළඟා විය නොහැක</string>
     <string name="vpn_status_stopped">නැවතුණි</string>
 
     <string name="home_blocking_enabled">දැන්වීම් අවහිර කිරීම: සක්‍රීයයි</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">ආරම්භ වෙමින්…</string>
     <string name="home_blocking_waiting_for_network">ජාල සම්බන්ධතාවක් බලා සිටියි</string>
     <string name="home_blocking_reconnecting">නැවත සම්බන්ධ වෙමින්…</string>
+    <string name="home_blocking_dns_unreachable">මෙම ජාලයේ DNS over HTTPS සේවාදායකයට ළඟා විය නොහැක: මනාප › DNS සේවාදායක තුළ වෙනත් එකක් තෝරන්න.</string>
     <string name="home_blocking_consent_required">VPN අවසරය අවශ්‍යයි: එය ලබා දීමට දැන්වීම් අවහිර කිරීම සක්‍රීය කරන්න.</string>
     <string name="home_toggle_blocking">දැන්වීම් අවහිර කිරීම නවත්වන්න/නැවත ආරම්භ කරන්න</string>
     <string name="home_enable_blocking">දැන්වීම් අවහිර කිරීම සක්‍රීය කරන්න</string>

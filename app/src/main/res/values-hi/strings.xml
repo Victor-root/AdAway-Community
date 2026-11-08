@@ -123,6 +123,7 @@
     <string name="vpn_status_running">चालू है</string>
     <string name="vpn_status_waiting_for_network">नेटवर्क का इंतज़ार कर रहा है</string>
     <string name="vpn_status_reconnecting">दोबारा जुड़ रहा है</string>
+    <string name="vpn_status_dns_unreachable">चालू है, DNS सर्वर तक पहुंचा नहीं जा सकता</string>
     <string name="vpn_status_stopped">बंद है</string>
 
     <string name="home_blocking_enabled">विज्ञापन ब्लॉकिंग: चालू</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">शुरू हो रहा है…</string>
     <string name="home_blocking_waiting_for_network">नेटवर्क कनेक्शन का इंतज़ार है</string>
     <string name="home_blocking_reconnecting">दोबारा जुड़ रहा है…</string>
+    <string name="home_blocking_dns_unreachable">इस नेटवर्क पर DNS over HTTPS सर्वर तक पहुंचा नहीं जा सकता: प्राथमिकताएं › DNS सर्वर में कोई दूसरा चुनें।</string>
     <string name="home_blocking_consent_required">VPN की अनुमति चाहिए: अनुमति देने के लिए विज्ञापन ब्लॉकिंग चालू करें।</string>
     <string name="home_toggle_blocking">विज्ञापन ब्लॉकिंग रोकें या फिर शुरू करें</string>
     <string name="home_enable_blocking">विज्ञापन ब्लॉकिंग चालू करें</string>

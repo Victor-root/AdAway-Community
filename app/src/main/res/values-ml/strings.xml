@@ -123,6 +123,7 @@
     <string name="vpn_status_running">സജീവം</string>
     <string name="vpn_status_waiting_for_network">നെറ്റ്‌വർക്കിനായി കാത്തിരിക്കുന്നു</string>
     <string name="vpn_status_reconnecting">വീണ്ടും കണക്റ്റ് ചെയ്യുന്നു</string>
+    <string name="vpn_status_dns_unreachable">സജീവം, DNS സെർവറിൽ എത്താൻ കഴിയുന്നില്ല</string>
     <string name="vpn_status_stopped">നിർത്തി</string>
 
     <string name="home_blocking_enabled">പരസ്യം തടയൽ: പ്രവർത്തനക്ഷമം</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">ആരംഭിക്കുന്നു…</string>
     <string name="home_blocking_waiting_for_network">നെറ്റ്‌വർക്ക് കണക്ഷനായി കാത്തിരിക്കുന്നു</string>
     <string name="home_blocking_reconnecting">വീണ്ടും കണക്റ്റ് ചെയ്യുന്നു…</string>
+    <string name="home_blocking_dns_unreachable">ഈ നെറ്റ്‌വർക്കിൽ DNS over HTTPS സെർവറിൽ എത്താൻ കഴിയുന്നില്ല: മുൻഗണനകൾ › DNS സെർവറുകൾ എന്നതിൽ മറ്റൊന്ന് തിരഞ്ഞെടുക്കുക.</string>
     <string name="home_blocking_consent_required">VPN അനുമതി ആവശ്യമാണ്: അത് നൽകാൻ പരസ്യം തടയൽ ഓണാക്കുക.</string>
     <string name="home_toggle_blocking">പരസ്യം തടയൽ താൽക്കാലികമായി നിർത്തുക/തുടരുക</string>
     <string name="home_enable_blocking">പരസ്യം തടയൽ പ്രവർത്തനക്ഷമമാക്കുക</string>

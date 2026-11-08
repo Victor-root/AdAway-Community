@@ -125,6 +125,7 @@
     <string name="vpn_status_running">активен</string>
     <string name="vpn_status_waiting_for_network">ожидание сети</string>
     <string name="vpn_status_reconnecting">переподключение</string>
+    <string name="vpn_status_dns_unreachable">активен, DNS-сервер недоступен</string>
     <string name="vpn_status_stopped">остановлен</string>
 
     <string name="home_blocking_enabled">Блокировка рекламы: включена</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Запуск…</string>
     <string name="home_blocking_waiting_for_network">Ожидание подключения к сети</string>
     <string name="home_blocking_reconnecting">Переподключение…</string>
+    <string name="home_blocking_dns_unreachable">Сервер DNS over HTTPS недоступен в этой сети: выберите другой в разделе Настройки › DNS-серверы.</string>
     <string name="home_blocking_consent_required">Нужно разрешение VPN: включите блокировку рекламы, чтобы предоставить его.</string>
     <string name="home_toggle_blocking">Приостановить или возобновить блокировку рекламы</string>
     <string name="home_enable_blocking">Включить блокировку рекламы</string>

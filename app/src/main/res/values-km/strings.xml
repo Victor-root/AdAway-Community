@@ -122,6 +122,7 @@
     <string name="vpn_status_running">សកម្ម</string>
     <string name="vpn_status_waiting_for_network">រង់ចាំបណ្តាញ</string>
     <string name="vpn_status_reconnecting">កំពុងតភ្ជាប់ឡើងវិញ</string>
+    <string name="vpn_status_dns_unreachable">សកម្ម ប៉ុន្តែមិនអាចទាក់ទងម៉ាស៊ីនមេ DNS បានទេ</string>
     <string name="vpn_status_stopped">បានឈប់</string>
 
     <string name="home_blocking_enabled">ការទប់ស្កាត់ពាណិជ្ជកម្ម: បើក</string>
@@ -129,6 +130,7 @@
     <string name="home_blocking_starting">កំពុងចាប់ផ្តើម…</string>
     <string name="home_blocking_waiting_for_network">កំពុងរង់ចាំការតភ្ជាប់បណ្តាញ</string>
     <string name="home_blocking_reconnecting">កំពុងតភ្ជាប់ឡើងវិញ…</string>
+    <string name="home_blocking_dns_unreachable">មិនអាចទាក់ទងម៉ាស៊ីនមេ DNS over HTTPS នៅលើបណ្តាញនេះបានទេ: សូមជ្រើសរើសម៉ាស៊ីនមេផ្សេងទៀតនៅក្នុង ការកំណត់ › ម៉ាស៊ីនមេ DNS។</string>
     <string name="home_blocking_consent_required">ត្រូវការការអនុញ្ញាត VPN: សូមបើកការទប់ស្កាត់ពាណិជ្ជកម្មដើម្បីផ្តល់ការអនុញ្ញាតនេះ។</string>
     <string name="home_toggle_blocking">ផ្អាក ឬបន្តការទប់ស្កាត់ពាណិជ្ជកម្ម</string>
     <string name="home_enable_blocking">បើកការទប់ស្កាត់ពាណិជ្ជកម្ម</string>

@@ -125,6 +125,7 @@
     <string name="vpn_status_running">aktívna</string>
     <string name="vpn_status_waiting_for_network">čaká na sieť</string>
     <string name="vpn_status_reconnecting">pripája sa znova</string>
+    <string name="vpn_status_dns_unreachable">aktívna, server DNS je nedostupný</string>
     <string name="vpn_status_stopped">zastavená</string>
 
     <string name="home_blocking_enabled">Blokovanie reklám: zapnuté</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Spúšťa sa…</string>
     <string name="home_blocking_waiting_for_network">Čaká sa na pripojenie k sieti</string>
     <string name="home_blocking_reconnecting">Pripája sa znova…</string>
+    <string name="home_blocking_dns_unreachable">Server DNS over HTTPS je v tejto sieti nedostupný: vyberte iný v časti Nastavenia › Servery DNS.</string>
     <string name="home_blocking_consent_required">Vyžaduje sa povolenie VPN: udelíte ho zapnutím blokovania reklám.</string>
     <string name="home_toggle_blocking">Pozastaviť alebo obnoviť blokovanie reklám</string>
     <string name="home_enable_blocking">Zapnúť blokovanie reklám</string>

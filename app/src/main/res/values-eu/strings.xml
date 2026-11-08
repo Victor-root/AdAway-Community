@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktibo</string>
     <string name="vpn_status_waiting_for_network">sarearen zain</string>
     <string name="vpn_status_reconnecting">berriro konektatzen</string>
+    <string name="vpn_status_dns_unreachable">aktibo, DNS zerbitzaria ez dago eskuragarri</string>
     <string name="vpn_status_stopped">geldituta</string>
 
     <string name="home_blocking_enabled">Iragarkien blokeoa: gaituta</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Abiarazten…</string>
     <string name="home_blocking_waiting_for_network">Sare-konexioaren zain</string>
     <string name="home_blocking_reconnecting">Berriro konektatzen…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS zerbitzaria ez dago eskuragarri sare honetan: aukeratu beste bat Hobespenak › DNS zerbitzariak atalean.</string>
     <string name="home_blocking_consent_required">VPN baimena behar da: gaitu iragarkien blokeoa hura emateko.</string>
     <string name="home_toggle_blocking">Eten/berrekin iragarkien blokeoa</string>
     <string name="home_enable_blocking">Gaitu iragarkien blokeoa</string>

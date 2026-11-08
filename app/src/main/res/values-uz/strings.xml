@@ -123,6 +123,7 @@
     <string name="vpn_status_running">faol</string>
     <string name="vpn_status_waiting_for_network">tarmoq kutilmoqda</string>
     <string name="vpn_status_reconnecting">qayta ulanmoqda</string>
+    <string name="vpn_status_dns_unreachable">faol, DNS serverga ulanib boʻlmayapti</string>
     <string name="vpn_status_stopped">toʻxtatilgan</string>
 
     <string name="home_blocking_enabled">Reklama bloklash: yoqilgan</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Ishga tushmoqda…</string>
     <string name="home_blocking_waiting_for_network">Tarmoq ulanishi kutilmoqda</string>
     <string name="home_blocking_reconnecting">Qayta ulanmoqda…</string>
+    <string name="home_blocking_dns_unreachable">Bu tarmoqda DNS over HTTPS serveriga ulanib boʻlmayapti: Sozlamalar › DNS serverlar boʻlimida boshqasini tanlang.</string>
     <string name="home_blocking_consent_required">VPN uchun ruxsat kerak: uni berish uchun reklama bloklashni yoqing.</string>
     <string name="home_toggle_blocking">Reklama bloklashni toʻxtatish yoki davom ettirish</string>
     <string name="home_enable_blocking">Reklama bloklashni yoqish</string>

@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktiva</string>
     <string name="vpn_status_waiting_for_network">atendas reton</string>
     <string name="vpn_status_reconnecting">rekonektiĝas</string>
+    <string name="vpn_status_dns_unreachable">aktiva, DNS-servilo neatingebla</string>
     <string name="vpn_status_stopped">haltinta</string>
 
     <string name="home_blocking_enabled">Reklamblokado: ŝaltita</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Ekfunkciado…</string>
     <string name="home_blocking_waiting_for_network">Atendado de retkonekto</string>
     <string name="home_blocking_reconnecting">Rekonektado…</string>
+    <string name="home_blocking_dns_unreachable">La servilo de DNS over HTTPS ne estas atingebla en ĉi tiu reto: elektu alian en Preferoj › DNS-serviloj.</string>
     <string name="home_blocking_consent_required">VPN-permeso necesas: ŝaltu la reklamblokadon por doni ĝin.</string>
     <string name="home_toggle_blocking">Paŭzigi/daŭrigi la reklamblokadon</string>
     <string name="home_enable_blocking">Ŝalti reklamblokadon</string>

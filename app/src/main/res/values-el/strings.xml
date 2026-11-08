@@ -119,12 +119,14 @@
     <string name="vpn_status_running">ενεργό</string>
     <string name="vpn_status_waiting_for_network">αναμονή για δίκτυο</string>
     <string name="vpn_status_reconnecting">επανασύνδεση</string>
+    <string name="vpn_status_dns_unreachable">ενεργό, ο διακομιστής DNS δεν είναι προσβάσιμος</string>
     <string name="vpn_status_stopped">ανενεργό</string>
     <string name="home_blocking_enabled">Αποκλεισμός διαφημίσεων: ενεργός</string>
     <string name="home_blocking_disabled">Αποκλεισμός διαφημίσεων: ανενεργός</string>
     <string name="home_blocking_starting">Εκκίνηση…</string>
     <string name="home_blocking_waiting_for_network">Αναμονή για σύνδεση δικτύου</string>
     <string name="home_blocking_reconnecting">Επανασύνδεση…</string>
+    <string name="home_blocking_dns_unreachable">Ο διακομιστής DNS over HTTPS δεν είναι προσβάσιμος σε αυτό το δίκτυο: επιλέξτε άλλον στις Προτιμήσεις › Διακομιστές DNS.</string>
     <string name="home_blocking_consent_required">Απαιτείται άδεια VPN: ενεργοποιήστε τον αποκλεισμό διαφημίσεων για να την παραχωρήσετε.</string>
     <string name="home_toggle_blocking">Παύση/συνέχιση αποκλεισμού διαφημίσεων</string>
     <string name="home_enable_blocking">Ενεργοποίηση αποκλεισμού διαφημίσεων</string>

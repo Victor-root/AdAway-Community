@@ -124,6 +124,7 @@
     <string name="vpn_status_running">activ</string>
     <string name="vpn_status_waiting_for_network">se așteaptă rețeaua</string>
     <string name="vpn_status_reconnecting">se reconectează</string>
+    <string name="vpn_status_dns_unreachable">activ, server DNS inaccesibil</string>
     <string name="vpn_status_stopped">oprit</string>
 
     <string name="home_blocking_enabled">Blocarea reclamelor: activată</string>
@@ -131,6 +132,7 @@
     <string name="home_blocking_starting">Se pornește…</string>
     <string name="home_blocking_waiting_for_network">Se așteaptă o conexiune la rețea</string>
     <string name="home_blocking_reconnecting">Se reconectează…</string>
+    <string name="home_blocking_dns_unreachable">Serverul DNS over HTTPS nu poate fi accesat în această rețea: alegeți altul din Setări › Servere DNS.</string>
     <string name="home_blocking_consent_required">Permisiunea VPN este necesară: activați blocarea reclamelor pentru a o acorda.</string>
     <string name="home_toggle_blocking">Întrerupeți/reluați blocarea reclamelor</string>
     <string name="home_enable_blocking">Activați blocarea reclamelor</string>

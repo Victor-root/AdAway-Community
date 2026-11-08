@@ -123,6 +123,7 @@
     <string name="vpn_status_running">käytössä</string>
     <string name="vpn_status_waiting_for_network">odottaa verkkoa</string>
     <string name="vpn_status_reconnecting">yhdistää uudelleen</string>
+    <string name="vpn_status_dns_unreachable">käytössä, DNS-palvelimeen ei saada yhteyttä</string>
     <string name="vpn_status_stopped">pysäytetty</string>
 
     <string name="home_blocking_enabled">Mainosten esto: käytössä</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Käynnistyy…</string>
     <string name="home_blocking_waiting_for_network">Odotetaan verkkoyhteyttä</string>
     <string name="home_blocking_reconnecting">Yhdistetään uudelleen…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS -palvelimeen ei saada yhteyttä tässä verkossa: valitse toinen kohdasta Asetukset › DNS-palvelimet.</string>
     <string name="home_blocking_consent_required">VPN-lupa tarvitaan: ota mainosten esto käyttöön myöntääksesi sen.</string>
     <string name="home_toggle_blocking">Keskeytä tai jatka mainosten estoa</string>
     <string name="home_enable_blocking">Ota mainosten esto käyttöön</string>

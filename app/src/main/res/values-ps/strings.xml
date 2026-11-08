@@ -123,6 +123,7 @@
     <string name="vpn_status_running">فعال</string>
     <string name="vpn_status_waiting_for_network">د شبکې په تمه</string>
     <string name="vpn_status_reconnecting">بیا نښلېږي</string>
+    <string name="vpn_status_dns_unreachable">فعال، د DNS سرور ته لاسرسی نشته</string>
     <string name="vpn_status_stopped">ودرول شو</string>
 
     <string name="home_blocking_enabled">د اعلانونو بندول: فعال</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">پیلېږي…</string>
     <string name="home_blocking_waiting_for_network">د شبکې اړیکې په تمه</string>
     <string name="home_blocking_reconnecting">بیا نښلېږي…</string>
+    <string name="home_blocking_dns_unreachable">پر دې شبکه د DNS over HTTPS سرور ته لاسرسی نشته: په غوراوي › د DNS سرورونه کې بل سرور وټاکئ.</string>
     <string name="home_blocking_consent_required">د VPN اجازه اړینه ده: د ورکولو لپاره د اعلانونو بندول چالان کړئ.</string>
     <string name="home_toggle_blocking">د اعلانونو بندول ودرول یا بیا پیلول</string>
     <string name="home_enable_blocking">د اعلانونو بندول فعالول</string>

@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktiv</string>
     <string name="vpn_status_waiting_for_network">wartet auf Netzwerk</string>
     <string name="vpn_status_reconnecting">stellt Verbindung wieder her</string>
+    <string name="vpn_status_dns_unreachable">aktiv, DNS-Server nicht erreichbar</string>
     <string name="vpn_status_stopped">gestoppt</string>
 
     <string name="home_blocking_enabled">Werbeblockierung: aktiviert</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Wird gestartet…</string>
     <string name="home_blocking_waiting_for_network">Warten auf eine Netzwerkverbindung</string>
     <string name="home_blocking_reconnecting">Verbindung wird wiederhergestellt…</string>
+    <string name="home_blocking_dns_unreachable">Der DNS-over-HTTPS-Server ist in diesem Netzwerk nicht erreichbar: Wähle unter Einstellungen › DNS-Server einen anderen aus.</string>
     <string name="home_blocking_consent_required">VPN-Berechtigung erforderlich: Schalte die Werbeblockierung ein, um sie zu erteilen.</string>
     <string name="home_toggle_blocking">Werbeblockierung pausieren/fortsetzen</string>
     <string name="home_enable_blocking">Werbeblockierung aktivieren</string>

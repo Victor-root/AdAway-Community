@@ -125,6 +125,7 @@
     <string name="vpn_status_running">актыўны</string>
     <string name="vpn_status_waiting_for_network">чакае сетку</string>
     <string name="vpn_status_reconnecting">перападключаецца</string>
+    <string name="vpn_status_dns_unreachable">актыўны, DNS-сервер недаступны</string>
     <string name="vpn_status_stopped">спынены</string>
 
     <string name="home_blocking_enabled">Блакіроўка рэкламы: уключана</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Запуск…</string>
     <string name="home_blocking_waiting_for_network">Чаканне падключэння да сеткі</string>
     <string name="home_blocking_reconnecting">Паўторнае падключэнне…</string>
+    <string name="home_blocking_dns_unreachable">Сервер DNS over HTTPS недаступны ў гэтай сетцы: выберыце іншы ў раздзеле Налады › DNS-серверы.</string>
     <string name="home_blocking_consent_required">Патрэбны дазвол VPN: уключыце блакіроўку рэкламы, каб выдаць яго.</string>
     <string name="home_toggle_blocking">Прыпыніць або аднавіць блакіроўку рэкламы</string>
     <string name="home_enable_blocking">Уключыць блакіроўку рэкламы</string>

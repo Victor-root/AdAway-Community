@@ -119,12 +119,14 @@
     <string name="vpn_status_running">activa</string>
     <string name="vpn_status_waiting_for_network">esperando la rede</string>
     <string name="vpn_status_reconnecting">reconectándose</string>
+    <string name="vpn_status_dns_unreachable">activa, sirvidor DNS inaccesible</string>
     <string name="vpn_status_stopped">parada</string>
     <string name="home_blocking_enabled">Bloquéu de publicidá: activáu</string>
     <string name="home_blocking_disabled">Bloquéu de publicidá: desactiváu</string>
     <string name="home_blocking_starting">Aniciando…</string>
     <string name="home_blocking_waiting_for_network">Esperando una conexón de rede</string>
     <string name="home_blocking_reconnecting">Reconectando…</string>
+    <string name="home_blocking_dns_unreachable">Nun se pue algamar el sirvidor DNS over HTTPS nesta rede: escueyi otru en Preferencies › Sirvidores DNS.</string>
     <string name="home_blocking_consent_required">Fai falta el permisu de la VPN: activa’l bloquéu de publicidá pa concedelu.</string>
     <string name="home_toggle_blocking">Posar o reanudar el bloquéu de publicidá</string>
     <string name="home_enable_blocking">Activar el bloquéu de publicidá</string>

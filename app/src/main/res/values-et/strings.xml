@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktiivne</string>
     <string name="vpn_status_waiting_for_network">ootab võrku</string>
     <string name="vpn_status_reconnecting">ühendub uuesti</string>
+    <string name="vpn_status_dns_unreachable">aktiivne, DNS-server pole kättesaadav</string>
     <string name="vpn_status_stopped">peatatud</string>
 
     <string name="home_blocking_enabled">Reklaamiblokeering: sees</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Käivitumine…</string>
     <string name="home_blocking_waiting_for_network">Võrguühenduse ootamine</string>
     <string name="home_blocking_reconnecting">Uuesti ühendumine…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS-server pole selles võrgus kättesaadav: vali jaotises Seaded › DNS-serverid mõni teine.</string>
     <string name="home_blocking_consent_required">Vaja on VPN-i luba: selle andmiseks lülita reklaamiblokeering sisse.</string>
     <string name="home_toggle_blocking">Peata/jätka reklaamiblokeerimist</string>
     <string name="home_enable_blocking">Lülita reklaamiblokeering sisse</string>

@@ -123,6 +123,7 @@
     <string name="vpn_status_running">etkin</string>
     <string name="vpn_status_waiting_for_network">ağ bekleniyor</string>
     <string name="vpn_status_reconnecting">yeniden bağlanıyor</string>
+    <string name="vpn_status_dns_unreachable">etkin, DNS sunucusuna ulaşılamıyor</string>
     <string name="vpn_status_stopped">durduruldu</string>
 
     <string name="home_blocking_enabled">Reklam engelleme: etkin</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Başlatılıyor…</string>
     <string name="home_blocking_waiting_for_network">Ağ bağlantısı bekleniyor</string>
     <string name="home_blocking_reconnecting">Yeniden bağlanıyor…</string>
+    <string name="home_blocking_dns_unreachable">DNS over HTTPS sunucusuna bu ağda ulaşılamıyor: Tercihler › DNS sunucuları bölümünden başka bir sunucu seçin.</string>
     <string name="home_blocking_consent_required">VPN izni gerekli: vermek için reklam engellemeyi açın.</string>
     <string name="home_toggle_blocking">Reklam engellemeyi duraklat/sürdür</string>
     <string name="home_enable_blocking">Reklam engellemeyi etkinleştir</string>

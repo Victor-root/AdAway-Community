@@ -110,6 +110,12 @@ object Engine : RuleValidator {
      */
     external fun startDohRelay(url: String, addresses: Array<String>): Int
 
+    /**
+     * Whether the DNS over HTTPS server at [url] takes a connection at one of [addresses], as the
+     * relay makes it. Blocks for the connection time.
+     */
+    external fun dohReachable(url: String, addresses: Array<String>): Boolean
+
     /** Frees a handle whose tunnel is not running. */
     external fun destroyTunnel(handle: Long)
 

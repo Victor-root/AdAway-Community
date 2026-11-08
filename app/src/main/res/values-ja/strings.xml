@@ -122,6 +122,7 @@
     <string name="vpn_status_running">動作中</string>
     <string name="vpn_status_waiting_for_network">ネットワーク待機中</string>
     <string name="vpn_status_reconnecting">再接続中</string>
+    <string name="vpn_status_dns_unreachable">動作中、DNSサーバーに接続できません</string>
     <string name="vpn_status_stopped">停止</string>
 
     <string name="home_blocking_enabled">広告ブロック：有効</string>
@@ -129,6 +130,7 @@
     <string name="home_blocking_starting">起動しています…</string>
     <string name="home_blocking_waiting_for_network">ネットワーク接続を待っています</string>
     <string name="home_blocking_reconnecting">再接続しています…</string>
+    <string name="home_blocking_dns_unreachable">このネットワークではDNS over HTTPSサーバーに接続できません。「設定 › DNSサーバー」で別のサーバーを選んでください。</string>
     <string name="home_blocking_consent_required">VPNの許可が必要です。広告ブロックをオンにして許可してください。</string>
     <string name="home_toggle_blocking">広告ブロックの一時停止/再開</string>
     <string name="home_enable_blocking">広告ブロックを有効にする</string>

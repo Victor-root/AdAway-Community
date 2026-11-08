@@ -125,6 +125,7 @@
     <string name="vpn_status_running">active</string>
     <string name="vpn_status_waiting_for_network">wait for network</string>
     <string name="vpn_status_reconnecting">reconnecting</string>
+    <string name="vpn_status_dns_unreachable">active, DNS server unreachable</string>
     <string name="vpn_status_stopped">stopped</string>
 
     <string name="home_blocking_enabled">Ad-blocking: enabled</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Starting…</string>
     <string name="home_blocking_waiting_for_network">Waiting for a network connection</string>
     <string name="home_blocking_reconnecting">Reconnecting…</string>
+    <string name="home_blocking_dns_unreachable">The DNS over HTTPS server cannot be reached on this network: pick another one in Preferences, DNS servers.</string>
     <string name="home_blocking_consent_required">VPN permission needed: turn ad blocking on to grant it.</string>
     <string name="home_toggle_blocking">Pause/resume ad blocking</string>
     <string name="home_enable_blocking">Enable ad-blocking</string>

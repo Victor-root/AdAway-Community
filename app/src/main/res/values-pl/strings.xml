@@ -125,6 +125,7 @@
     <string name="vpn_status_running">aktywny</string>
     <string name="vpn_status_waiting_for_network">oczekiwanie na sieć</string>
     <string name="vpn_status_reconnecting">ponowne łączenie</string>
+    <string name="vpn_status_dns_unreachable">aktywny, serwer DNS nieosiągalny</string>
     <string name="vpn_status_stopped">zatrzymany</string>
 
     <string name="home_blocking_enabled">Blokowanie reklam: włączone</string>
@@ -132,6 +133,7 @@
     <string name="home_blocking_starting">Uruchamianie…</string>
     <string name="home_blocking_waiting_for_network">Oczekiwanie na połączenie z siecią</string>
     <string name="home_blocking_reconnecting">Ponowne łączenie…</string>
+    <string name="home_blocking_dns_unreachable">Serwer DNS over HTTPS jest nieosiągalny w tej sieci: wybierz inny w Ustawienia › Serwery DNS.</string>
     <string name="home_blocking_consent_required">Wymagane uprawnienie VPN: włącz blokowanie reklam, aby je przyznać.</string>
     <string name="home_toggle_blocking">Wstrzymaj lub wznów blokowanie reklam</string>
     <string name="home_enable_blocking">Włącz blokowanie reklam</string>

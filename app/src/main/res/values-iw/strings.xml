@@ -124,6 +124,7 @@
     <string name="vpn_status_running">פעיל</string>
     <string name="vpn_status_waiting_for_network">ממתין לרשת</string>
     <string name="vpn_status_reconnecting">מתחבר מחדש</string>
+    <string name="vpn_status_dns_unreachable">פעיל, אין גישה לשרת ה-DNS</string>
     <string name="vpn_status_stopped">עצור</string>
 
     <string name="home_blocking_enabled">חסימת פרסומות: מופעלת</string>
@@ -131,6 +132,7 @@
     <string name="home_blocking_starting">מתחיל…</string>
     <string name="home_blocking_waiting_for_network">ממתין לחיבור רשת</string>
     <string name="home_blocking_reconnecting">מתחבר מחדש…</string>
+    <string name="home_blocking_dns_unreachable">אין גישה לשרת DNS over HTTPS ברשת זו: בחר שרת אחר תחת העדפות › שרתי DNS.</string>
     <string name="home_blocking_consent_required">נדרשת הרשאת VPN: הפעל את חסימת הפרסומות כדי להעניק אותה.</string>
     <string name="home_toggle_blocking">השהיה/חידוש של חסימת הפרסומות</string>
     <string name="home_enable_blocking">הפעלת חסימת פרסומות</string>

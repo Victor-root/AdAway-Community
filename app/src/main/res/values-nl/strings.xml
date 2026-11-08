@@ -123,6 +123,7 @@
     <string name="vpn_status_running">actief</string>
     <string name="vpn_status_waiting_for_network">wacht op netwerk</string>
     <string name="vpn_status_reconnecting">verbinding wordt hersteld</string>
+    <string name="vpn_status_dns_unreachable">actief, DNS-server onbereikbaar</string>
     <string name="vpn_status_stopped">gestopt</string>
 
     <string name="home_blocking_enabled">Adblokkering: ingeschakeld</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Starten…</string>
     <string name="home_blocking_waiting_for_network">Wachten op een netwerkverbinding</string>
     <string name="home_blocking_reconnecting">Opnieuw verbinden…</string>
+    <string name="home_blocking_dns_unreachable">De DNS over HTTPS-server is op dit netwerk niet bereikbaar: kies een andere in Voorkeuren › DNS-servers.</string>
     <string name="home_blocking_consent_required">VPN-toestemming nodig: schakel adblokkering in om deze te verlenen.</string>
     <string name="home_toggle_blocking">Adblokkering pauzeren/hervatten</string>
     <string name="home_enable_blocking">Adblokkering inschakelen</string>

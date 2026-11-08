@@ -62,32 +62,35 @@ pub fn start(url: DohUrl, addresses: Vec<IpAddr>) -> io::Result<OwnedFd> {
 }
 
 fn start_with(url: DohUrl, addresses: Vec<IpAddr>, tls: ClientConfig) -> io::Result<OwnedFd> {
-    if addresses.is_empty() {
-        return Err(io::Error::new(
-            io::ErrorKind::InvalidInput,
-            "no address for the server",
-        ));
-    }
-    let name = ServerName::try_from(url.host.clone())
-        .map_err(|_| io::Error::new(io::ErrorKind::InvalidInput, "server name"))?;
-    let server = Arc::new(Server {
-        url,
-        name,
-        addresses,
-        tls: TlsConnector::from(Arc::new(tls)),
-        http2: Mutex::new(None),
-        idle_http1: Mutex::new(Vec::new()),
-        http1_slots: Semaphore::new(CONNECTIONS),
-    });
+    let server = Arc::new(Server::new(url, addresses, tls)?);
     let (tunnel_end, relay_end) = socket_pair()?;
     set_nonblocking(&relay_end)?;
-    let runtime = tokio::runtime::Builder::new_current_thread()
-        .enable_io()
-        .enable_time()
-        .build()?;
+    let runtime = runtime()?;
     // Dropping the runtime once the tunnel closed its end also ends the connections.
     thread::spawn(move || runtime.block_on(relay(server, relay_end)));
     Ok(tunnel_end)
+}
+
+/// Whether the server at `url` takes a connection at one of `addresses`, as the relay makes it.
+/// Some networks block the well-known servers. Blocks for the connection time.
+pub fn probe(url: DohUrl, addresses: Vec<IpAddr>) -> io::Result<bool> {
+    probe_with(
+        url,
+        addresses,
+        tls_config(webpki_roots::TLS_SERVER_ROOTS.to_vec())?,
+    )
+}
+
+fn probe_with(url: DohUrl, addresses: Vec<IpAddr>, tls: ClientConfig) -> io::Result<bool> {
+    let server = Server::new(url, addresses, tls)?;
+    Ok(runtime()?.block_on(server.connect()).is_ok())
+}
+
+fn runtime() -> io::Result<tokio::runtime::Runtime> {
+    tokio::runtime::Builder::new_current_thread()
+        .enable_io()
+        .enable_time()
+        .build()
 }
 
 fn tls_config(roots: Vec<TrustAnchor<'static>>) -> io::Result<ClientConfig> {
@@ -138,6 +141,26 @@ async fn within_timeout<T>(step: impl Future<Output = io::Result<T>>) -> io::Res
 }
 
 impl Server {
+    fn new(url: DohUrl, addresses: Vec<IpAddr>, tls: ClientConfig) -> io::Result<Self> {
+        if addresses.is_empty() {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidInput,
+                "no address for the server",
+            ));
+        }
+        let name = ServerName::try_from(url.host.clone())
+            .map_err(|_| io::Error::new(io::ErrorKind::InvalidInput, "server name"))?;
+        Ok(Server {
+            url,
+            name,
+            addresses,
+            tls: TlsConnector::from(Arc::new(tls)),
+            http2: Mutex::new(None),
+            idle_http1: Mutex::new(Vec::new()),
+            http1_slots: Semaphore::new(CONNECTIONS),
+        })
+    }
+
     async fn exchange(&self, query: &[u8]) -> io::Result<Vec<u8>> {
         let shared = lock(&self.http2).clone();
         if let Some(sender) = shared {
@@ -312,7 +335,7 @@ fn send(socket: &OwnedFd, data: &[u8]) -> io::Result<usize> {
 
 #[cfg(test)]
 mod tests {
-    use super::{HTTP1, HTTP2, receive, send, start_with, tls_config};
+    use super::{HTTP1, HTTP2, probe_with, receive, send, start_with, tls_config};
     use crate::url::DohUrl;
     use rustls::ServerConfig;
     use rustls::pki_types::{CertificateDer, PrivateKeyDer, PrivatePkcs8KeyDer};
@@ -407,8 +430,9 @@ mod tests {
         }
     }
 
-    /// Relays a few queries to a server speaking the versions of HTTP of `protocols`.
-    fn relays_each_query_to_a_server_speaking(protocols: &'static [&'static [u8]]) {
+    /// Starts a server speaking the versions of HTTP of `protocols` on localhost, and returns its
+    /// address and the authority that signed its certificate.
+    fn start_server(protocols: &'static [&'static [u8]]) -> (DohUrl, rustls::RootCertStore) {
         // A server certificate signed by an authority, as webpki wants it.
         let mut authority_params = rcgen::CertificateParams::new(Vec::new()).unwrap();
         authority_params.is_ca = rcgen::IsCa::Ca(rcgen::BasicConstraints::Unconstrained);
@@ -432,6 +456,12 @@ mod tests {
         let mut roots = rustls::RootCertStore::empty();
         roots.add(authority.der().clone()).unwrap();
         let url = DohUrl::parse(&format!("https://localhost:{port}/dns-query")).unwrap();
+        (url, roots)
+    }
+
+    /// Relays a few queries to a server speaking the versions of HTTP of `protocols`.
+    fn relays_each_query_to_a_server_speaking(protocols: &'static [&'static [u8]]) {
+        let (url, roots) = start_server(protocols);
         let tunnel_end = start_with(
             url,
             vec![Ipv4Addr::LOCALHOST.into()],
@@ -463,5 +493,32 @@ mod tests {
     #[test]
     fn relays_each_query_over_http1_without_protocol_negotiation() {
         relays_each_query_to_a_server_speaking(&[]);
+    }
+
+    #[test]
+    fn probes_whether_the_server_takes_a_connection() {
+        let (url, roots) = start_server(&[HTTP2, HTTP1]);
+        assert!(
+            probe_with(
+                url,
+                vec![Ipv4Addr::LOCALHOST.into()],
+                tls_config(roots.roots.clone()).unwrap()
+            )
+            .unwrap()
+        );
+
+        // A port nobody listens on, as a network blocking the server.
+        let closed = TcpListener::bind((Ipv4Addr::LOCALHOST, 0)).unwrap();
+        let port = closed.local_addr().unwrap().port();
+        drop(closed);
+        let url = DohUrl::parse(&format!("https://localhost:{port}/dns-query")).unwrap();
+        assert!(
+            !probe_with(
+                url,
+                vec![Ipv4Addr::LOCALHOST.into()],
+                tls_config(roots.roots).unwrap()
+            )
+            .unwrap()
+        );
     }
 }

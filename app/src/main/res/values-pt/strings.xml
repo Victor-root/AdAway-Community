@@ -124,6 +124,7 @@
     <string name="vpn_status_running">ativa</string>
     <string name="vpn_status_waiting_for_network">à espera da rede</string>
     <string name="vpn_status_reconnecting">a restabelecer a ligação</string>
+    <string name="vpn_status_dns_unreachable">ativa, servidor DNS inacessível</string>
     <string name="vpn_status_stopped">parada</string>
 
     <string name="home_blocking_enabled">Bloqueio de anúncios: ativado</string>
@@ -131,6 +132,7 @@
     <string name="home_blocking_starting">A iniciar…</string>
     <string name="home_blocking_waiting_for_network">A aguardar ligação à rede</string>
     <string name="home_blocking_reconnecting">A restabelecer a ligação…</string>
+    <string name="home_blocking_dns_unreachable">O servidor DNS over HTTPS está inacessível nesta rede: escolha outro em Preferências › Servidores DNS.</string>
     <string name="home_blocking_consent_required">Permissão de VPN necessária: ative o bloqueio de anúncios para a conceder.</string>
     <string name="home_toggle_blocking">Pausar/retomar o bloqueio de anúncios</string>
     <string name="home_enable_blocking">Ativar o bloqueio de anúncios</string>

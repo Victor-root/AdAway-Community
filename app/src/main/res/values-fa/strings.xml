@@ -123,6 +123,7 @@
     <string name="vpn_status_running">فعال</string>
     <string name="vpn_status_waiting_for_network">در انتظار شبکه</string>
     <string name="vpn_status_reconnecting">در حال اتصال مجدد</string>
+    <string name="vpn_status_dns_unreachable">فعال، سرور DNS در دسترس نیست</string>
     <string name="vpn_status_stopped">متوقف</string>
 
     <string name="home_blocking_enabled">مسدودسازی تبلیغات: فعال</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">در حال راه‌اندازی…</string>
     <string name="home_blocking_waiting_for_network">در انتظار اتصال شبکه</string>
     <string name="home_blocking_reconnecting">در حال اتصال مجدد…</string>
+    <string name="home_blocking_dns_unreachable">سرور DNS over HTTPS در این شبکه در دسترس نیست: از تنظیمات › سرورهای DNS سرور دیگری انتخاب کنید.</string>
     <string name="home_blocking_consent_required">مجوز VPN لازم است: برای دادن آن، مسدودسازی تبلیغات را روشن کنید.</string>
     <string name="home_toggle_blocking">توقف/ازسرگیری مسدودسازی تبلیغات</string>
     <string name="home_enable_blocking">فعال کردن مسدودسازی تبلیغات</string>

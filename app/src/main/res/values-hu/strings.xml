@@ -123,6 +123,7 @@
     <string name="vpn_status_running">aktív</string>
     <string name="vpn_status_waiting_for_network">hálózatra vár</string>
     <string name="vpn_status_reconnecting">újracsatlakozás</string>
+    <string name="vpn_status_dns_unreachable">aktív, a DNS-kiszolgáló nem érhető el</string>
     <string name="vpn_status_stopped">leállítva</string>
 
     <string name="home_blocking_enabled">Hirdetésblokkolás: bekapcsolva</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Indítás…</string>
     <string name="home_blocking_waiting_for_network">Várakozás a hálózati kapcsolatra</string>
     <string name="home_blocking_reconnecting">Újracsatlakozás…</string>
+    <string name="home_blocking_dns_unreachable">A DNS over HTTPS-kiszolgáló nem érhető el ezen a hálózaton: válasszon másikat a Beállítások › DNS-kiszolgálók menüpontban.</string>
     <string name="home_blocking_consent_required">VPN-engedély szükséges: kapcsolja be a hirdetésblokkolást az engedély megadásához.</string>
     <string name="home_toggle_blocking">Hirdetésblokkolás szüneteltetése/folytatása</string>
     <string name="home_enable_blocking">Hirdetésblokkolás bekapcsolása</string>

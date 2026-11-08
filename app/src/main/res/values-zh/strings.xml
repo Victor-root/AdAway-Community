@@ -122,6 +122,7 @@
     <string name="vpn_status_running">运行中</string>
     <string name="vpn_status_waiting_for_network">等待网络</string>
     <string name="vpn_status_reconnecting">正在重新连接</string>
+    <string name="vpn_status_dns_unreachable">运行中，无法连接 DNS 服务器</string>
     <string name="vpn_status_stopped">已停止</string>
 
     <string name="home_blocking_enabled">广告拦截：已开启</string>
@@ -129,6 +130,7 @@
     <string name="home_blocking_starting">正在启动…</string>
     <string name="home_blocking_waiting_for_network">正在等待网络连接</string>
     <string name="home_blocking_reconnecting">正在重新连接…</string>
+    <string name="home_blocking_dns_unreachable">此网络无法连接 DNS over HTTPS 服务器：请在“设置 › DNS 服务器”中选择其他服务器。</string>
     <string name="home_blocking_consent_required">需要 VPN 权限：开启广告拦截即可授予。</string>
     <string name="home_toggle_blocking">暂停/恢复广告拦截</string>
     <string name="home_enable_blocking">开启广告拦截</string>

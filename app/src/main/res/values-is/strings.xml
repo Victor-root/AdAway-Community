@@ -123,6 +123,7 @@
     <string name="vpn_status_running">virkt</string>
     <string name="vpn_status_waiting_for_network">bíður eftir neti</string>
     <string name="vpn_status_reconnecting">tengist aftur</string>
+    <string name="vpn_status_dns_unreachable">virkt, ekki næst samband við DNS-þjón</string>
     <string name="vpn_status_stopped">stöðvað</string>
 
     <string name="home_blocking_enabled">Auglýsingalokun: virk</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">Ræsist…</string>
     <string name="home_blocking_waiting_for_network">Bíð eftir nettengingu</string>
     <string name="home_blocking_reconnecting">Tengist aftur…</string>
+    <string name="home_blocking_dns_unreachable">Ekki næst samband við DNS over HTTPS-þjóninn á þessu neti: veldu annan í Stillingar › DNS-þjónar.</string>
     <string name="home_blocking_consent_required">VPN-heimild vantar: kveiktu á auglýsingalokun til að veita hana.</string>
     <string name="home_toggle_blocking">Gera hlé á auglýsingalokun eða halda áfram</string>
     <string name="home_enable_blocking">Virkja auglýsingalokun</string>

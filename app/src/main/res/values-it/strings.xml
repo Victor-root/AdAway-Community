@@ -120,12 +120,14 @@
     <string name="vpn_status_running">attiva</string>
     <string name="vpn_status_waiting_for_network">in attesa della rete</string>
     <string name="vpn_status_reconnecting">riconnessione in corso</string>
+    <string name="vpn_status_dns_unreachable">attiva, server DNS non raggiungibile</string>
     <string name="vpn_status_stopped">arrestata</string>
     <string name="home_blocking_enabled">Blocco pubblicità: attivo</string>
     <string name="home_blocking_disabled">Blocco pubblicità: disattivato</string>
     <string name="home_blocking_starting">Avvio in corso…</string>
     <string name="home_blocking_waiting_for_network">In attesa di una connessione di rete</string>
     <string name="home_blocking_reconnecting">Riconnessione in corso…</string>
+    <string name="home_blocking_dns_unreachable">Il server DNS over HTTPS non è raggiungibile su questa rete: scegline un altro in Preferenze › Server DNS.</string>
     <string name="home_blocking_consent_required">Serve l’autorizzazione VPN: attiva il blocco pubblicità per concederla.</string>
     <string name="home_toggle_blocking">Metti in pausa o riprendi il blocco pubblicità</string>
     <string name="home_enable_blocking">Attiva il blocco pubblicità</string>

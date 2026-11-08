@@ -127,6 +127,7 @@
     <string name="vpn_status_running">قيد التشغيل</string>
     <string name="vpn_status_waiting_for_network">بانتظار الشبكة</string>
     <string name="vpn_status_reconnecting">جارٍ إعادة الاتصال</string>
+    <string name="vpn_status_dns_unreachable">قيد التشغيل، تعذّر الوصول إلى خادم DNS</string>
     <string name="vpn_status_stopped">متوقف</string>
 
     <string name="home_blocking_enabled">حظر الإعلانات: مفعّل</string>
@@ -134,6 +135,7 @@
     <string name="home_blocking_starting">جارٍ البدء…</string>
     <string name="home_blocking_waiting_for_network">في انتظار اتصال بالشبكة</string>
     <string name="home_blocking_reconnecting">جارٍ إعادة الاتصال…</string>
+    <string name="home_blocking_dns_unreachable">تعذّر الوصول إلى خادم DNS عبر HTTPS على هذه الشبكة: اختر خادمًا آخر من التفضيلات › خوادم DNS.</string>
     <string name="home_blocking_consent_required">إذن VPN مطلوب: فعّل حظر الإعلانات لمنحه.</string>
     <string name="home_toggle_blocking">إيقاف حظر الإعلانات مؤقتًا أو استئنافه</string>
     <string name="home_enable_blocking">تفعيل حظر الإعلانات</string>

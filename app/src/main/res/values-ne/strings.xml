@@ -123,6 +123,7 @@
     <string name="vpn_status_running">सक्रिय</string>
     <string name="vpn_status_waiting_for_network">नेटवर्कको प्रतीक्षामा</string>
     <string name="vpn_status_reconnecting">पुन: जडान हुँदै</string>
+    <string name="vpn_status_dns_unreachable">सक्रिय, DNS सर्भरमा पुग्न सकिँदैन</string>
     <string name="vpn_status_stopped">रोकिएको</string>
 
     <string name="home_blocking_enabled">विज्ञापन ब्लक: सक्षम</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">सुरु हुँदै…</string>
     <string name="home_blocking_waiting_for_network">नेटवर्क जडानको प्रतीक्षा गरिँदै</string>
     <string name="home_blocking_reconnecting">पुन: जडान हुँदै…</string>
+    <string name="home_blocking_dns_unreachable">यो नेटवर्कमा DNS over HTTPS सर्भरमा पुग्न सकिँदैन: प्राथमिकताहरू › DNS सर्भरहरू मा अर्को छान्नुहोस्।</string>
     <string name="home_blocking_consent_required">VPN अनुमति आवश्यक छ: यो दिनका लागि विज्ञापन ब्लक सुरु गर्नुहोस्।</string>
     <string name="home_toggle_blocking">विज्ञापन ब्लक रोक्नुहोस् / पुन: सुरु गर्नुहोस्</string>
     <string name="home_enable_blocking">विज्ञापन ब्लक सक्षम पार्नुहोस्</string>

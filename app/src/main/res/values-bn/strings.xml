@@ -123,6 +123,7 @@
     <string name="vpn_status_running">সক্রিয়</string>
     <string name="vpn_status_waiting_for_network">নেটওয়ার্কের অপেক্ষায়</string>
     <string name="vpn_status_reconnecting">আবার সংযুক্ত হচ্ছে</string>
+    <string name="vpn_status_dns_unreachable">সক্রিয়, DNS সার্ভারে পৌঁছানো যাচ্ছে না</string>
     <string name="vpn_status_stopped">বন্ধ</string>
 
     <string name="home_blocking_enabled">বিজ্ঞাপন ব্লক: চালু</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">শুরু হচ্ছে…</string>
     <string name="home_blocking_waiting_for_network">নেটওয়ার্ক সংযোগের অপেক্ষায়</string>
     <string name="home_blocking_reconnecting">আবার সংযুক্ত হচ্ছে…</string>
+    <string name="home_blocking_dns_unreachable">এই নেটওয়ার্কে DNS over HTTPS সার্ভারে পৌঁছানো যাচ্ছে না: পছন্দসমূহ › DNS সার্ভার থেকে অন্য একটি বেছে নিন।</string>
     <string name="home_blocking_consent_required">VPN-এর অনুমতি প্রয়োজন: তা দিতে বিজ্ঞাপন ব্লক করা চালু করুন।</string>
     <string name="home_toggle_blocking">বিজ্ঞাপন ব্লক করা বিরতি দিন বা আবার শুরু করুন</string>
     <string name="home_enable_blocking">বিজ্ঞাপন ব্লক করা চালু করুন</string>

@@ -9,11 +9,14 @@ enum class SystemAppExclusion { NONE, ALL_EXCEPT_BROWSERS, ALL }
 /** Where the VPN sends the queries it lets through: the servers of the network, chosen ones, or one over HTTPS. */
 enum class VpnDnsMode { NETWORK, CUSTOM, HTTPS }
 
-/** Well-known DNS over HTTPS servers, by name. */
-enum class DohServer(val label: String, val url: String) {
-    CLOUDFLARE("Cloudflare", "https://cloudflare-dns.com/dns-query"),
-    GOOGLE("Google", "https://dns.google/dns-query"),
-    QUAD9("Quad9", "https://dns.quad9.net/dns-query"),
+/**
+ * Well-known DNS over HTTPS servers, by name, with the fixed [addresses] they publish: asking the
+ * network for them would let a network that blocks these servers by name cut the VPN off.
+ */
+enum class DohServer(val label: String, val url: String, val addresses: List<String>) {
+    CLOUDFLARE("Cloudflare", "https://cloudflare-dns.com/dns-query", listOf("1.1.1.1", "1.0.0.1", "2606:4700:4700::1111", "2606:4700:4700::1001")),
+    GOOGLE("Google", "https://dns.google/dns-query", listOf("8.8.8.8", "8.8.4.4", "2001:4860:4860::8888", "2001:4860:4860::8844")),
+    QUAD9("Quad9", "https://dns.quad9.net/dns-query", listOf("9.9.9.9", "149.112.112.112", "2620:fe::fe", "2620:fe::9")),
 }
 
 /** User settings. Every default here is also the default of the previous app versions. */

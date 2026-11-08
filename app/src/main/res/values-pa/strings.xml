@@ -123,6 +123,7 @@
     <string name="vpn_status_running">ਸਰਗਰਮ</string>
     <string name="vpn_status_waiting_for_network">ਨੈੱਟਵਰਕ ਦੀ ਉਡੀਕ</string>
     <string name="vpn_status_reconnecting">ਮੁੜ ਕਨੈਕਟ ਹੋ ਰਿਹਾ ਹੈ</string>
+    <string name="vpn_status_dns_unreachable">ਸਰਗਰਮ, DNS ਸਰਵਰ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਹੋ ਰਹੀ</string>
     <string name="vpn_status_stopped">ਰੁਕਿਆ ਹੋਇਆ</string>
 
     <string name="home_blocking_enabled">ਇਸ਼ਤਿਹਾਰ ਬਲਾਕ ਕਰਨਾ: ਚਾਲੂ</string>
@@ -130,6 +131,7 @@
     <string name="home_blocking_starting">ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ…</string>
     <string name="home_blocking_waiting_for_network">ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨ ਦੀ ਉਡੀਕ ਹੈ</string>
     <string name="home_blocking_reconnecting">ਮੁੜ ਕਨੈਕਟ ਹੋ ਰਿਹਾ ਹੈ…</string>
+    <string name="home_blocking_dns_unreachable">ਇਸ ਨੈੱਟਵਰਕ ਉੱਤੇ DNS over HTTPS ਸਰਵਰ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਹੋ ਸਕਦੀ: ਤਰਜੀਹਾਂ › DNS ਸਰਵਰ ਵਿੱਚ ਕੋਈ ਹੋਰ ਚੁਣੋ।</string>
     <string name="home_blocking_consent_required">VPN ਦੀ ਇਜਾਜ਼ਤ ਲੋੜੀਂਦੀ ਹੈ: ਇਹ ਦੇਣ ਲਈ ਇਸ਼ਤਿਹਾਰ ਬਲਾਕ ਕਰਨਾ ਚਾਲੂ ਕਰੋ।</string>
     <string name="home_toggle_blocking">ਇਸ਼ਤਿਹਾਰ ਬਲਾਕ ਕਰਨਾ ਰੋਕੋ ਜਾਂ ਮੁੜ ਚਾਲੂ ਕਰੋ</string>
     <string name="home_enable_blocking">ਇਸ਼ਤਿਹਾਰ ਬਲਾਕ ਕਰਨਾ ਚਾਲੂ ਕਰੋ</string>

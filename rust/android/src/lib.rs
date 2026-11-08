@@ -402,19 +402,46 @@ pub extern "system" fn Java_org_adaway_engine_Engine_startDohRelay<'caller>(
 ) -> jint {
     unowned_env
         .with_env(|env| -> Result<_, BridgeError> {
-            let url = DohUrl::parse(&url.try_to_string(env)?)
-                .map_err(|_| BridgeError::InvalidArgument("DNS over HTTPS address"))?;
-            let addresses = read_strings(env, &addresses)?
-                .iter()
-                .map(|address| {
-                    address
-                        .parse::<IpAddr>()
-                        .map_err(|_| BridgeError::InvalidArgument("server address"))
-                })
-                .collect::<Result<Vec<_>, _>>()?;
+            let (url, addresses) = doh_server(env, &url, &addresses)?;
             Ok(relay::start(url, addresses)?.into_raw_fd())
         })
         .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// Whether the DNS over HTTPS server at `url` takes a connection at one of `addresses`, as the
+/// relay makes it. Blocks for the connection time.
+#[unsafe(no_mangle)]
+pub extern "system" fn Java_org_adaway_engine_Engine_dohReachable<'caller>(
+    mut unowned_env: EnvUnowned<'caller>,
+    _this: JObject<'caller>,
+    url: JString<'caller>,
+    addresses: JObjectArray<'caller, JString<'caller>>,
+) -> jboolean {
+    unowned_env
+        .with_env(|env| -> Result<_, BridgeError> {
+            let (url, addresses) = doh_server(env, &url, &addresses)?;
+            Ok(relay::probe(url, addresses)?)
+        })
+        .resolve::<ThrowRuntimeExAndDefault>()
+}
+
+/// The DNS over HTTPS address and the server addresses given from Kotlin.
+fn doh_server(
+    env: &mut Env,
+    url: &JString,
+    addresses: &JObjectArray<JString>,
+) -> Result<(DohUrl, Vec<IpAddr>), BridgeError> {
+    let url = DohUrl::parse(&url.try_to_string(env)?)
+        .map_err(|_| BridgeError::InvalidArgument("DNS over HTTPS address"))?;
+    let addresses = read_strings(env, addresses)?
+        .iter()
+        .map(|address| {
+            address
+                .parse::<IpAddr>()
+                .map_err(|_| BridgeError::InvalidArgument("server address"))
+        })
+        .collect::<Result<Vec<_>, _>>()?;
+    Ok((url, addresses))
 }
 
 /// Recovers a handle created by `createTunnel` and not destroyed yet, as the Kotlin side guarantees.

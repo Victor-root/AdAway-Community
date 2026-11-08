@@ -201,7 +201,7 @@ fun TvHomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNav
         val viewportHeight = constraints.maxHeight
         Layout(
             content = {
-                Header(navigation.openUpdate, control(HomeControl.VERSION), Modifier.layoutId(HomePart.HEADER))
+                Header(navigation.openUpdate, Modifier.layoutId(HomePart.HEADER), versionModifier = control(HomeControl.VERSION))
                 if (busy) {
                     LinearProgressIndicator(
                         modifier = Modifier.layoutId(HomePart.PROGRESS).fillMaxWidth().height(3.dp),
@@ -368,7 +368,7 @@ fun TvHomeScreen(state: HomeState, viewModel: HomeViewModel, navigation: HomeNav
 
 /** The header of the app, whose version opens the release notes, as on phones. */
 @Composable
-private fun Header(openUpdate: () -> Unit, versionModifier: Modifier, modifier: Modifier) {
+private fun Header(openUpdate: () -> Unit, modifier: Modifier, versionModifier: Modifier) {
     val colors = LocalAdAwayColors.current
     Row(
         modifier = modifier

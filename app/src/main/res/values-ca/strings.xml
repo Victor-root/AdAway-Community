@@ -124,6 +124,7 @@
     <string name="vpn_status_running">activa</string>
     <string name="vpn_status_waiting_for_network">esperant la xarxa</string>
     <string name="vpn_status_reconnecting">es torna a connectar</string>
+    <string name="vpn_status_dns_unreachable">activa, servidor DNS inaccessible</string>
     <string name="vpn_status_stopped">aturada</string>
 
     <string name="home_blocking_enabled">Bloqueig d’anuncis: activat</string>
@@ -131,6 +132,7 @@
     <string name="home_blocking_starting">S’està iniciant…</string>
     <string name="home_blocking_waiting_for_network">S’està esperant una connexió de xarxa</string>
     <string name="home_blocking_reconnecting">Es torna a connectar…</string>
+    <string name="home_blocking_dns_unreachable">El servidor DNS over HTTPS no és accessible en aquesta xarxa: tria’n un altre a Preferències › Servidors DNS.</string>
     <string name="home_blocking_consent_required">Cal el permís de VPN: activa el bloqueig d’anuncis per concedir-lo.</string>
     <string name="home_toggle_blocking">Posa en pausa o reprèn el bloqueig d’anuncis</string>
     <string name="home_enable_blocking">Activa el bloqueig d’anuncis</string>

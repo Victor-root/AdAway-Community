@@ -122,6 +122,7 @@
     <string name="vpn_status_running">đang hoạt động</string>
     <string name="vpn_status_waiting_for_network">đang chờ mạng</string>
     <string name="vpn_status_reconnecting">đang kết nối lại</string>
+    <string name="vpn_status_dns_unreachable">đang hoạt động, không kết nối được máy chủ DNS</string>
     <string name="vpn_status_stopped">đã dừng</string>
 
     <string name="home_blocking_enabled">Chặn quảng cáo: đang bật</string>
@@ -129,6 +130,7 @@
     <string name="home_blocking_starting">Đang khởi động…</string>
     <string name="home_blocking_waiting_for_network">Đang chờ kết nối mạng</string>
     <string name="home_blocking_reconnecting">Đang kết nối lại…</string>
+    <string name="home_blocking_dns_unreachable">Không thể kết nối tới máy chủ DNS over HTTPS trên mạng này: hãy chọn máy chủ khác trong Tùy chọn › Máy chủ DNS.</string>
     <string name="home_blocking_consent_required">Cần quyền VPN: hãy bật chặn quảng cáo để cấp quyền.</string>
     <string name="home_toggle_blocking">Tạm dừng/tiếp tục chặn quảng cáo</string>
     <string name="home_enable_blocking">Bật chặn quảng cáo</string>
