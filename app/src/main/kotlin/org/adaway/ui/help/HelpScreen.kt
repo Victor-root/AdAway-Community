@@ -1,16 +1,12 @@
 package org.adaway.ui.help
 
-import android.os.Build
 import android.text.Html
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.Spanned
-import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.BackgroundColorSpan
 import android.text.style.ClickableSpan
-import android.text.style.DynamicDrawableSpan
-import android.text.style.ImageSpan
 import android.text.style.TypefaceSpan
 import android.text.style.URLSpan
 import android.util.TypedValue
@@ -39,6 +35,8 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -69,12 +67,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.core.content.ContextCompat
 import androidx.core.view.doOnLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -291,26 +289,47 @@ private class WebLinkSpan(private val url: String) : ClickableSpan() {
     override fun onClick(widget: View) = widget.context.openWebPage(url)
 }
 
-/** A button after an ADB command of the help, which copies the command. */
-private class CopySpan(private val command: String) : ClickableSpan() {
-    override fun onClick(widget: View) = widget.context.copyAndTell(command, R.string.command_copied)
-
-    // The icon alone shows the button: no link underline.
-    override fun updateDrawState(paint: TextPaint) = Unit
-}
-
 /** Where the text in monospace lies, the code of the help, from its start to its end. */
 private fun Spanned.codes(): List<IntRange> = getSpans(0, length, TypefaceSpan::class.java)
     .filter { it.family == "monospace" }
     .map { getSpanStart(it)..getSpanEnd(it) }
 
-/** The copy icon of [CopySpan], as tall as a line of [view], in [color]. */
-private fun copyIcon(view: TextView, color: Int): ImageSpan {
-    val size = view.lineHeight
-    val icon = checkNotNull(ContextCompat.getDrawable(view.context, R.drawable.ic_content_copy_24dp)).mutate()
-    icon.setTint(color)
-    icon.setBounds(0, 0, size, size)
-    return ImageSpan(icon, if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) DynamicDrawableSpan.ALIGN_CENTER else DynamicDrawableSpan.ALIGN_BOTTOM)
+/** A part of an HTML help page: some text with its links, or an ADB command in a code block. */
+private sealed interface HelpPart {
+    /** [firstLink] is the order in the page of the first link of the text. */
+    class Text(val text: Spanned, val firstLink: Int) : HelpPart
+
+    class Command(val command: String) : HelpPart
+}
+
+/** An ADB command, written alone in monospace in the help, which becomes a code block. */
+private val COMMAND = Regex("<tt><code>(adb [^<]*)</code></tt>")
+
+/** Splits [html] around its ADB commands, the texts rendered by Android with their links. */
+private fun helpParts(html: String): List<HelpPart> {
+    val parts = mutableListOf<HelpPart>()
+    var links = 0
+    fun addText(part: String) {
+        val text = SpannableStringBuilder(Html.fromHtml(part, Html.FROM_HTML_MODE_LEGACY))
+        text.getSpans(0, text.length, URLSpan::class.java).forEach { span ->
+            text.setSpan(WebLinkSpan(span.url), text.getSpanStart(span), text.getSpanEnd(span), text.getSpanFlags(span))
+            text.removeSpan(span)
+        }
+        // The space of the paragraphs around a code block is the block's own.
+        while (text.isNotEmpty() && text.first().isWhitespace()) text.delete(0, 1)
+        while (text.isNotEmpty() && text.last().isWhitespace()) text.delete(text.length - 1, text.length)
+        if (text.isEmpty()) return
+        parts += HelpPart.Text(text, links)
+        links += text.getSpans(0, text.length, WebLinkSpan::class.java).size
+    }
+    var start = 0
+    COMMAND.findAll(html).forEach { match ->
+        addText(html.substring(start, match.range.first))
+        parts += HelpPart.Command(Html.fromHtml(match.groupValues[1], Html.FROM_HTML_MODE_LEGACY).toString())
+        start = match.range.last + 1
+    }
+    addText(html.substring(start))
+    return parts
 }
 
 /** The layout of the text of a page, which its links are placed in. */
@@ -318,81 +337,105 @@ private class Anchor {
     var coordinates: LayoutCoordinates? = null
 }
 
-/** An HTML help page, rendered by Android as text with its titles and links. */
+/** An HTML help page, rendered by Android as text with its titles and links, its ADB commands in code blocks. */
 @Composable
 private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
     val resources = LocalResources.current
-    val colors = LocalAdAwayColors.current
     val links = remember { PageLinks() }
-    val html = remember(page) {
-        val text = SpannableStringBuilder(Html.fromHtml(resources.openRawResource(page).bufferedReader().use { it.readText() }, Html.FROM_HTML_MODE_LEGACY))
-        text.getSpans(0, text.length, URLSpan::class.java).forEach { span ->
-            text.setSpan(WebLinkSpan(span.url), text.getSpanStart(span), text.getSpanEnd(span), text.getSpanFlags(span))
-            text.removeSpan(span)
-        }
-        // On phones, where they can be pasted, the ADB commands get a button that copies them.
-        if (!focus.isTelevision) {
-            text.codes().sortedByDescending { it.first }.forEach { code ->
-                val command = text.substring(code.first, code.last)
-                if (command.startsWith("adb ")) {
-                    text.insert(code.last, " \uFFFC")
-                    text.setSpan(CopySpan(command), code.last + 1, code.last + 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                }
+    val parts = remember(page) { helpParts(resources.openRawResource(page).bufferedReader().use { it.readText() }) }
+    PageColumn(focus, links, modifier = Modifier.padding(start = 20.dp, top = 20.dp, end = 20.dp, bottom = 44.dp)) {
+        parts.forEach { part ->
+            when (part) {
+                is HelpPart.Text -> HelpText(part, focus.isTelevision, links)
+                is HelpPart.Command -> CommandBlock(part.command, focus.isTelevision)
             }
         }
-        text
     }
+}
+
+/** A text of a help page, whose links are those of [links] from [HelpPart.Text.firstLink] on. */
+@Composable
+private fun HelpText(part: HelpPart.Text, isTelevision: Boolean, links: PageLinks) {
+    val colors = LocalAdAwayColors.current
     val anchor = remember { Anchor() }
     val selection = colors.primary.copy(alpha = 0.2f).toArgb()
     val codeBackground = colors.textPrimary.copy(alpha = 0.1f).toArgb()
-    PageColumn(focus, links, modifier = Modifier.padding(bottom = 24.dp)) {
-        AndroidView(
-            factory = { viewContext ->
-                TextView(viewContext).apply {
-                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
-                    setLineSpacing(0f, 1.25f)
-                    // Selecting text replaces the movement of the links, which must come after it.
-                    if (!focus.isTelevision) setTextIsSelectable(true)
-                    movementMethod = LinkMovementMethod.getInstance()
-                    // On TV, the page moves through the links: the text only takes the clicks of a mouse.
-                    if (focus.isTelevision) isFocusable = false
+    val text = part.text
+    AndroidView(
+        factory = { viewContext ->
+            TextView(viewContext).apply {
+                setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
+                setLineSpacing(0f, 1.25f)
+                // Selecting text replaces the movement of the links, which must come after it.
+                if (!isTelevision) setTextIsSelectable(true)
+                movementMethod = LinkMovementMethod.getInstance()
+                // On TV, the page moves through the links: the text only takes the clicks of a mouse.
+                if (isTelevision) isFocusable = false
+            }
+        },
+        update = { view ->
+            view.setTextColor(colors.textPrimary.toArgb())
+            view.setLinkTextColor(colors.primary.toArgb())
+            val spans = text.getSpans(0, text.length, WebLinkSpan::class.java).sortedBy(text::getSpanStart)
+            val shown = SpannableString(text)
+            text.codes().forEach { code ->
+                shown.setSpan(BackgroundColorSpan(codeBackground), code.first, code.last, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+            links.selected?.let { spans.getOrNull(it - part.firstLink) }?.let { span ->
+                shown.setSpan(BackgroundColorSpan(selection), text.getSpanStart(span), text.getSpanEnd(span), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+            view.text = shown
+            view.doOnLayout {
+                val layout = view.layout ?: return@doOnLayout
+                spans.forEachIndexed { index, span ->
+                    val first = layout.getLineForOffset(text.getSpanStart(span))
+                    val last = layout.getLineForOffset(text.getSpanEnd(span))
+                    links.links[part.firstLink + index] = PageLink(
+                        anchor = anchor::coordinates,
+                        top = view.paddingTop + layout.getLineTop(first),
+                        bottom = view.paddingTop + layout.getLineBottom(last),
+                        open = { span.onClick(view) },
+                    )
                 }
-            },
-            update = { view ->
-                view.setTextColor(colors.textPrimary.toArgb())
-                view.setLinkTextColor(colors.primary.toArgb())
-                val spans = html.getSpans(0, html.length, WebLinkSpan::class.java).sortedBy(html::getSpanStart)
-                val shown = SpannableString(html)
-                html.codes().forEach { code ->
-                    shown.setSpan(BackgroundColorSpan(codeBackground), code.first, code.last, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                }
-                html.getSpans(0, html.length, CopySpan::class.java).forEach { span ->
-                    shown.setSpan(copyIcon(view, colors.primary.toArgb()), html.getSpanStart(span), html.getSpanEnd(span), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                }
-                links.selected?.let { spans.getOrNull(it) }?.let { span ->
-                    shown.setSpan(BackgroundColorSpan(selection), html.getSpanStart(span), html.getSpanEnd(span), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                }
-                view.text = shown
-                view.doOnLayout {
-                    val layout = view.layout ?: return@doOnLayout
-                    links.links.clear()
-                    spans.forEachIndexed { index, span ->
-                        val first = layout.getLineForOffset(html.getSpanStart(span))
-                        val last = layout.getLineForOffset(html.getSpanEnd(span))
-                        links.links[index] = PageLink(
-                            anchor = anchor::coordinates,
-                            top = view.paddingTop + layout.getLineTop(first),
-                            bottom = view.paddingTop + layout.getLineBottom(last),
-                            open = { span.onClick(view) },
-                        )
-                    }
-                }
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(20.dp)
-                .onGloballyPositioned { anchor.coordinates = it },
+            }
+        },
+        modifier = Modifier.fillMaxWidth().onGloballyPositioned { anchor.coordinates = it },
+    )
+}
+
+/** An ADB command in a code block, with a button that copies it on phones, where it can be pasted. */
+@Composable
+private fun CommandBlock(command: String, isTelevision: Boolean) {
+    val colors = LocalAdAwayColors.current
+    val context = LocalContext.current
+    Box(
+        modifier = Modifier
+            .padding(top = 6.dp, bottom = 16.dp)
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(8.dp))
+            .background(colors.textPrimary.copy(alpha = 0.08f)),
+    ) {
+        Text(
+            command,
+            fontFamily = FontFamily.Monospace,
+            fontSize = 13.sp,
+            lineHeight = 20.sp,
+            color = colors.textPrimary,
+            modifier = Modifier.padding(start = 14.dp, top = 12.dp, end = if (isTelevision) 14.dp else 48.dp, bottom = 12.dp),
         )
+        if (!isTelevision) {
+            IconButton(
+                onClick = { context.copyAndTell(command, R.string.command_copied) },
+                modifier = Modifier.align(Alignment.TopEnd).size(44.dp),
+            ) {
+                Icon(
+                    painterResource(R.drawable.ic_content_copy_24dp),
+                    contentDescription = stringResource(R.string.pref_vpn_diagnostic_log_copy),
+                    tint = colors.textSecondary,
+                    modifier = Modifier.size(20.dp),
+                )
+            }
+        }
     }
 }
 
