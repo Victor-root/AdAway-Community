@@ -105,7 +105,7 @@ fun TvListsScreen(type: RuleType) {
         } else {
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(user, key = { "user-${it.id}" }) { rule ->
-                    RuleRow(rule.host, rule.redirection, onClick = { selected = rule }, modifier = Modifier.alpha(if (rule.enabled) 1f else 0.5f))
+                    RuleRow(rule.host, rule.redirection, onClick = { selected = rule }, enabled = rule.enabled)
                 }
                 items(sourceCount) { index ->
                     val line = sourceRules[index] ?: return@items
@@ -139,12 +139,14 @@ fun TvListsScreen(type: RuleType) {
 }
 
 @Composable
-private fun RuleRow(host: String, redirection: String?, onClick: () -> Unit, modifier: Modifier = Modifier) {
+private fun RuleRow(host: String, redirection: String?, onClick: () -> Unit, enabled: Boolean = true) {
     val colors = LocalAdAwayColors.current
-    TvListRow(onClick = onClick, modifier = modifier) {
-        Text(host, style = AdAwayType.subtitle1, color = colors.textPrimary, maxLines = 1, overflow = TextOverflow.Ellipsis)
+    TvListRow(onClick = onClick) {
+        // A disabled rule fades, not the focus highlight, which stays as visible as on the others.
+        val fade = Modifier.alpha(if (enabled) 1f else DISABLED_ROW_ALPHA)
+        Text(host, style = AdAwayType.subtitle1, color = colors.textPrimary, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = fade)
         redirection?.takeIf { it.isNotEmpty() }?.let {
-            Text(it, style = AdAwayType.caption, color = colors.textSecondary, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(it, style = AdAwayType.caption, color = colors.textSecondary, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = fade)
         }
     }
 }
@@ -154,13 +156,14 @@ private fun RuleRow(host: String, redirection: String?, onClick: () -> Unit, mod
 private fun SearchDialog(viewModel: ListsViewModel, onDismiss: () -> Unit) {
     val filter by viewModel.filter.collectAsStateWithLifecycle()
     var text by rememberSaveable { mutableStateOf(filter) }
+    val search = DialogButton(stringResource(R.string.tv_dialog_search), onClick = {
+        onDismiss()
+        viewModel.search(text)
+    })
     AdAwayDialog(
         onDismissRequest = onDismiss,
         title = stringResource(R.string.lists_search),
-        confirmButton = DialogButton(stringResource(R.string.tv_dialog_search), onClick = {
-            onDismiss()
-            viewModel.search(text)
-        }),
+        confirmButton = search,
         dismissButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss),
         neutralButton = DialogButton(stringResource(R.string.lists_search_clear), onClick = {
             onDismiss()
@@ -173,6 +176,7 @@ private fun SearchDialog(viewModel: ListsViewModel, onDismiss: () -> Unit) {
                 { text = it },
                 hint = stringResource(R.string.lists_search_hint),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri, autoCorrectEnabled = false),
+                onDone = search::press,
             )
         }
     }

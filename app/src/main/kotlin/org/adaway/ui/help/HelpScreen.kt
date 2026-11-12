@@ -82,6 +82,7 @@ import org.adaway.system.copyAndTell
 import org.adaway.system.openWebPage
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.RemoteConfirmKeys
+import org.adaway.ui.common.remoteStep
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.LocalTelevision
@@ -220,7 +221,7 @@ private class PageLinks {
         when {
             next != null && next.second.first >= top && next.second.last <= bottom -> selected = next.first
             canScroll -> {
-                val step = scroll.viewportSize / 2 * if (down) 1 else -1
+                val step = scroll.remoteStep(down)
                 val newTop = (top + step).coerceIn(0, scroll.maxValue)
                 val place = placed.firstOrNull { it.first == current }?.second
                 if (place != null && (place.first < newTop || place.last > newTop + scroll.viewportSize)) selected = null
@@ -358,7 +359,8 @@ private fun HelpPage(@RawRes page: Int, focus: PageFocus) {
 private fun HelpText(part: HelpPart.Text, isTelevision: Boolean, links: PageLinks) {
     val colors = LocalAdAwayColors.current
     val anchor = remember { Anchor() }
-    val selection = colors.primary.copy(alpha = 0.2f).toArgb()
+    // As visible as the focus highlight of the other screens.
+    val selection = colors.textPrimary.copy(alpha = 0.2f).toArgb()
     val codeBackground = colors.textPrimary.copy(alpha = 0.1f).toArgb()
     val text = part.text
     AndroidView(

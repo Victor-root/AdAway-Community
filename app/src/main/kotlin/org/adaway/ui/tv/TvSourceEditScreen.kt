@@ -5,6 +5,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -18,6 +19,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusProperties
 import androidx.compose.ui.focus.focusRequester
@@ -70,7 +72,16 @@ fun TvSourceEditScreen(title: String, form: SourceForm, viewModel: SourceEditVie
             }
         },
     ) {
-        Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(20.dp)) {
+        Column(
+            modifier = Modifier
+                // Left and right stay in the form: from its edges, they would reach the header buttons.
+                .focusProperties {
+                    onExit = { if (requestedFocusDirection == FocusDirection.Left || requestedFocusDirection == FocusDirection.Right) cancelFocusChange() }
+                }
+                .focusGroup()
+                .verticalScroll(rememberScrollState())
+                .padding(20.dp),
+        ) {
             AdAwayTextField(
                 value = form.label,
                 onValueChange = { label -> viewModel.edit { it.copy(label = label) } },

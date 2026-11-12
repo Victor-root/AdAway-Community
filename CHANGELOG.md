@@ -37,6 +37,9 @@
 ### 🐛 Fixed
 
 * Read the hosts lists that block with an address of the 0.0.0.0/8 range, such as 0.0.0.1
+* Smooth the TV remote: back on the preference left when coming back to the list, on the current choice of a choice dialog, on a button of any other dialog, on the chosen option of the source form, without leaving it sideways, and through long dialog messages and release notes
+* Keep the TV remote on "Check now" while it checks, and show the focus on the welcome buttons, the disabled sources and rules, and the help links
+* Answer the search, rule and address dialogs with the confirming key of the keyboard
 
 ## [6.6.1-c] - 2026-09-11
 

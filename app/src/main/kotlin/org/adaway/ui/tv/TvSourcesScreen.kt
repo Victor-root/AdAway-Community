@@ -135,10 +135,10 @@ private fun SourceCard(source: SourceEntity, label: String, onClick: () -> Unit,
         onClick = onClick,
         modifier = modifier
             .padding(start = 8.dp, end = 8.dp, bottom = 8.dp)
-            .fillMaxWidth()
-            .alpha(if (source.enabled) 1f else 0.5f),
+            .fillMaxWidth(),
     ) {
-        Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
+        // A disabled source fades, not the focus highlight, which stays as visible as on the others.
+        Column(modifier = Modifier.fillMaxWidth().alpha(if (source.enabled) 1f else DISABLED_ROW_ALPHA).padding(16.dp)) {
             Text(label, style = AdAwayType.subtitle1, color = colors.textPrimary, maxLines = 1, overflow = TextOverflow.Ellipsis)
             Text(source.url, style = AdAwayType.caption, color = colors.textSecondary, maxLines = 1, overflow = TextOverflow.Ellipsis)
             Row {

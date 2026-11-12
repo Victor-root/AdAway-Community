@@ -6,8 +6,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -49,6 +47,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -210,8 +209,8 @@ private fun WelcomeButton(
     enabled: Boolean = true,
     focused: Boolean = false,
 ) {
-    val interactions = remember { MutableInteractionSource() }
-    val hasFocus by interactions.collectIsFocusedAsState()
+    // Read from the focus itself: it can reach the button before a collector of its interactions would start.
+    var hasFocus by remember { mutableStateOf(false) }
     val focus = remember { FocusRequester() }
     val content = if (enabled) BrandRed else BrandRed.copy(alpha = 0.7f)
     CompositionLocalProvider(LocalRippleConfiguration provides WelcomeButtonHighlight) {
@@ -219,11 +218,12 @@ private fun WelcomeButton(
             modifier = modifier
                 .padding(vertical = 6.dp)
                 .focusRequester(focus)
+                .onFocusChanged { hasFocus = it.isFocused }
                 .heightIn(min = 36.dp)
                 .clip(CircleShape)
                 .background(if (enabled) Color.White else Color.White.copy(alpha = 0.5f))
                 .border(3.dp, if (hasFocus) FocusRing else Color.Transparent, CircleShape)
-                .clickable(interactionSource = interactions, indication = ripple(), enabled = enabled, onClick = onClick)
+                .clickable(interactionSource = null, indication = ripple(), enabled = enabled, onClick = onClick)
                 .padding(horizontal = 32.dp, vertical = 6.dp),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,

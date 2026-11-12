@@ -23,9 +23,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
@@ -43,8 +46,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.appViewModel
+import org.adaway.ui.common.remoteScroll
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.BrandRed
+import org.adaway.ui.theme.LocalTelevision
 import org.adaway.ui.theme.RedNavigationBar
 
 /** The latest release and its changes, on the red background of the first launch screens. */
@@ -65,11 +70,13 @@ fun UpdateScreen(onBack: () -> Unit) {
     }
     val release = latest
     val updateAvailable = release?.isNewer == true
+    val scroll = rememberScrollState()
+    val changesFocus = remember { FocusRequester() }
     AdAwayScreen(title = stringResource(R.string.update_title), onBack = onBack) { padding ->
         BoxWithConstraints(modifier = Modifier.fillMaxSize().background(BrandRed).padding(padding)) {
             val iconSize = maxHeight * 0.2f
             Column(
-                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(bottom = 16.dp),
+                modifier = Modifier.fillMaxSize().verticalScroll(scroll).padding(bottom = 16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 // The logo of the launcher icon, whose background is this red.
@@ -122,8 +129,14 @@ fun UpdateScreen(onBack: () -> Unit) {
                         style = AdAwayType.medium,
                         color = Color.White,
                         textAlign = TextAlign.Justify,
-                        modifier = Modifier.fillMaxWidth().padding(start = 32.dp, top = 16.dp, end = 32.dp),
+                        // On TV, the remote reads the changes from there, and reaches the update button above.
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .focusRequester(changesFocus)
+                            .remoteScroll(scroll)
+                            .padding(start = 32.dp, top = 16.dp, end = 32.dp),
                     )
+                    if (LocalTelevision.current) LaunchedEffect(Unit) { changesFocus.requestFocus() }
                 }
             }
         }

@@ -71,8 +71,10 @@ fun UpdatesScreen(onBack: () -> Unit, openUpdate: () -> Unit) {
             Preference(
                 R.drawable.ic_refresh_24dp,
                 stringResource(R.string.pref_update_check_now),
-                enabled = !checking,
+                // Left enabled while checking, so that the remote does not lose its focus.
+                summary = if (checking) stringResource(R.string.progress_checking) else null,
                 onClick = {
+                    if (checking) return@Preference
                     checking = true
                     scope.launch {
                         val release = viewModel.checkAppUpdate()

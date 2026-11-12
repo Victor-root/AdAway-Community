@@ -177,6 +177,9 @@ fun TvCard(onClick: () -> Unit, modifier: Modifier = Modifier, content: @Composa
     }
 }
 
+/** Opacity of the texts of a disabled source or rule, still readable. */
+const val DISABLED_ROW_ALPHA = 0.5f
+
 /** A plain list row, highlighted across its width. */
 @Composable
 fun TvListRow(onClick: () -> Unit, modifier: Modifier = Modifier, content: @Composable ColumnScope.() -> Unit) {

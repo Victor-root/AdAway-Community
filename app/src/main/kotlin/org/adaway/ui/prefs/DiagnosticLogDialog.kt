@@ -21,6 +21,7 @@ import org.adaway.ui.common.AdAwayDialog
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
+import org.adaway.ui.theme.LocalTelevision
 
 /** Beyond, only the end of the log is shown, to keep the dialog fluid. It is still copied and shared whole. */
 private const val PREVIEW_CHARS = 20_000
@@ -56,7 +57,7 @@ fun DiagnosticLogDialog(log: String, onDismiss: () -> Unit) {
             })
         },
     ) {
-        SelectionContainer {
+        val text = @Composable {
             Text(
                 if (empty) stringResource(R.string.pref_vpn_diagnostic_log_empty) else preview(log),
                 style = AdAwayType.body2,
@@ -69,6 +70,8 @@ fun DiagnosticLogDialog(log: String, onDismiss: () -> Unit) {
                     .padding(horizontal = 24.dp, vertical = 8.dp),
             )
         }
+        // On TV, a selection would take the focus out of sight: the copy button is there instead.
+        if (LocalTelevision.current) text() else SelectionContainer { text() }
     }
 }
 

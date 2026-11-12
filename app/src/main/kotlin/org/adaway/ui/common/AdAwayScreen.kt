@@ -60,7 +60,7 @@ fun AdAwayScreen(
     Column(modifier = Modifier.fillMaxSize().background(colors.surface)) {
         topBar?.invoke() ?: AdAwayAppBar(onNavigation = onBack, actions = actions) { AppBarTitle(title) }
         Box(modifier = Modifier.weight(1f)) {
-            content(bottomInset)
+            RememberFocus { content(bottomInset) }
             Column(
                 modifier = Modifier.align(Alignment.BottomEnd).padding(bottom = bottomInset.calculateBottomPadding()),
                 horizontalAlignment = Alignment.End,

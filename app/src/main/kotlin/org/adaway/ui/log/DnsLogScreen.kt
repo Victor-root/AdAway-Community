@@ -190,22 +190,28 @@ private fun ListIcon(@DrawableRes icon: Int, @StringRes description: Int, active
 private fun RedirectDialog(onRedirect: (String) -> Unit, onDismiss: () -> Unit) {
     val colors = LocalAdAwayColors.current
     var address by rememberSaveable { mutableStateOf("") }
+    val add = DialogButton(
+        stringResource(R.string.add),
+        onClick = {
+            onDismiss()
+            onRedirect(address)
+        },
+        enabled = Engine.normalizeIpAddress(address) != null,
+    )
     AdAwayDialog(
         onDismissRequest = onDismiss,
         title = stringResource(R.string.log_redirect_dialog_title),
-        confirmButton = DialogButton(
-            stringResource(R.string.add),
-            onClick = {
-                onDismiss()
-                onRedirect(address)
-            },
-            enabled = Engine.normalizeIpAddress(address) != null,
-        ),
+        confirmButton = add,
         dismissButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss),
     ) {
         Column(modifier = Modifier.padding(start = 24.dp, end = 24.dp, bottom = 8.dp)) {
             Text(stringResource(R.string.rule_address), style = AdAwayType.medium, color = colors.textPrimary)
-            AdAwayEditText(address, { address = it }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri, autoCorrectEnabled = false))
+            AdAwayEditText(
+                address,
+                { address = it },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri, autoCorrectEnabled = false),
+                onDone = add::press,
+            )
         }
     }
 }

@@ -1,9 +1,11 @@
 package org.adaway.ui.common
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
 import androidx.compose.foundation.layout.Box
@@ -16,6 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.text.input.KeyboardActionHandler
 import androidx.compose.foundation.text.input.TextFieldLineLimits
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.rememberTextFieldState
@@ -39,6 +42,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusProperties
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
@@ -50,6 +56,7 @@ import androidx.compose.ui.input.key.key
 import androidx.compose.ui.input.key.onPreviewKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
@@ -168,9 +175,13 @@ private val ErrorRed = Color(0xFFB00020)
 @Composable
 fun <T> AdAwayToggleGroup(options: List<Pair<T, String>>, selected: T, onSelect: (T) -> Unit, modifier: Modifier = Modifier) {
     val colors = LocalAdAwayColors.current
-    Row(modifier = modifier.padding(vertical = 6.dp)) {
+    // Coming from above or below, the remote lands on the selected option, not on the nearest one.
+    val selectedFocus = remember { FocusRequester() }
+    Row(modifier = modifier.padding(vertical = 6.dp).focusProperties { onEnter = { selectedFocus.requestFocus() } }.focusGroup()) {
         options.forEachIndexed { index, (value, label) ->
             val checked = value == selected
+            val interactions = remember { MutableInteractionSource() }
+            val focused by interactions.collectIsFocusedAsState()
             val shape = RoundedCornerShape(
                 topStart = if (index == 0) 4.dp else 0.dp,
                 bottomStart = if (index == 0) 4.dp else 0.dp,
@@ -184,16 +195,27 @@ fun <T> AdAwayToggleGroup(options: List<Pair<T, String>>, selected: T, onSelect:
                     .height(36.dp)
                     .defaultMinSize(minWidth = 64.dp)
                     .clip(shape)
-                    .background(if (checked) colors.primary.copy(alpha = 0.12f) else Color.Transparent)
+                    .background(
+                        when {
+                            focused -> colors.textPrimary.copy(alpha = 0.2f)
+                            checked -> colors.primary.copy(alpha = 0.12f)
+                            else -> Color.Transparent
+                        },
+                    )
                     .border(BorderStroke(1.dp, if (checked) colors.primary else colors.textPrimary.copy(alpha = 0.12f)), shape)
-                    .clickable { onSelect(value) }
+                    .then(if (checked) Modifier.focusRequester(selectedFocus) else Modifier)
+                    .clickable(interactionSource = interactions, indication = LocalIndication.current) { onSelect(value) }
                     .padding(horizontal = 16.dp),
                 contentAlignment = Alignment.Center,
             ) {
                 Text(
                     label.uppercase(),
                     style = AdAwayType.button,
-                    color = if (checked) colors.primary else colors.textPrimary.copy(alpha = 0.6f),
+                    color = when {
+                        focused -> colors.textPrimary
+                        checked -> colors.primary
+                        else -> colors.textPrimary.copy(alpha = 0.6f)
+                    },
                 )
             }
         }
@@ -229,16 +251,19 @@ fun AdAwayEditText(
     modifier: Modifier = Modifier,
     hint: String? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
+    onDone: (() -> Unit)? = null,
 ) {
     val colors = LocalAdAwayColors.current
     val interactions = remember { MutableInteractionSource() }
     val focused by interactions.collectIsFocusedAsState()
     val state = rememberTextFieldState(value, onValueChange)
-    val (fieldKeyboardOptions, remoteKeyboard) = remoteKeyboard(keyboardOptions)
+    // The confirming key of the keyboard answers the dialog, as its button does.
+    val (fieldKeyboardOptions, remoteKeyboard) = remoteKeyboard(if (onDone != null) keyboardOptions.copy(imeAction = ImeAction.Done) else keyboardOptions)
     BasicTextField(
         state = state,
         lineLimits = TextFieldLineLimits.SingleLine,
         keyboardOptions = fieldKeyboardOptions,
+        onKeyboardAction = onDone?.let { done -> KeyboardActionHandler { done() } },
         textStyle = AdAwayType.subtitle1.copy(color = colors.textPrimary),
         cursorBrush = SolidColor(colors.primary),
         interactionSource = interactions,

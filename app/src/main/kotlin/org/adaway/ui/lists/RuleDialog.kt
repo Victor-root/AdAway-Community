@@ -39,22 +39,24 @@ fun RuleDialog(type: RuleType, rule: UserRuleEntity?, viewModel: ListsViewModel,
     }
     val error = ruleSaveErrorText(result)
     val fieldKeyboard = KeyboardOptions(keyboardType = KeyboardType.Uri, autoCorrectEnabled = false)
+    val save = DialogButton(
+        stringResource(if (rule == null) R.string.add else R.string.save),
+        onClick = { viewModel.save(rule, host, redirection) { saved -> if (saved == RuleSaveResult.Saved) onDismiss() else result = saved } },
+        enabled = viewModel.isValid(host, redirection),
+    )
     AdAwayDialog(
         onDismissRequest = onDismiss,
         title = stringResource(title),
-        confirmButton = DialogButton(
-            stringResource(if (rule == null) R.string.add else R.string.save),
-            onClick = { viewModel.save(rule, host, redirection) { saved -> if (saved == RuleSaveResult.Saved) onDismiss() else result = saved } },
-            enabled = viewModel.isValid(host, redirection),
-        ),
+        confirmButton = save,
         dismissButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss),
     ) {
         Column(modifier = Modifier.padding(horizontal = 24.dp)) {
             Text(stringResource(R.string.rule_host), style = AdAwayType.medium, color = colors.textPrimary)
-            AdAwayEditText(host, { host = it; result = null }, keyboardOptions = fieldKeyboard)
-            if (type == RuleType.REDIRECTED) {
+            val redirects = type == RuleType.REDIRECTED
+            AdAwayEditText(host, { host = it; result = null }, keyboardOptions = fieldKeyboard, onDone = if (redirects) null else save::press)
+            if (redirects) {
                 Text(stringResource(R.string.rule_address), style = AdAwayType.medium, color = colors.textPrimary, modifier = Modifier.padding(top = 8.dp))
-                AdAwayEditText(redirection, { redirection = it; result = null }, keyboardOptions = fieldKeyboard)
+                AdAwayEditText(redirection, { redirection = it; result = null }, keyboardOptions = fieldKeyboard, onDone = save::press)
             } else {
                 Text(stringResource(R.string.rule_wildcards_hint), style = AdAwayType.caption, color = colors.textSecondary)
             }

@@ -16,10 +16,18 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.unit.Constraints
@@ -28,8 +36,14 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
+import org.adaway.ui.theme.LocalTelevision
 
-class DialogButton(val text: String, val onClick: () -> Unit, val enabled: Boolean = true)
+class DialogButton(val text: String, val onClick: () -> Unit, val enabled: Boolean = true) {
+    /** Does what a press of the button does, nothing while it is disabled. */
+    fun press() {
+        if (enabled) onClick()
+    }
+}
 
 /** An alert dialog: its [message], and the uppercase red buttons side by side, or stacked when they do not fit on one line. */
 @Composable
@@ -43,12 +57,20 @@ fun AdAwayAlertDialog(
 ) {
     val colors = LocalAdAwayColors.current
     AdAwayDialog(onDismissRequest, title, confirmButton, dismissButton, icon) {
+        val scroll = rememberScrollState()
+        val messageFocus = remember { FocusRequester() }
         Text(
             message,
             style = AdAwayType.body2,
             color = colors.textPrimary.copy(alpha = 0.6f),
-            modifier = Modifier.verticalScroll(rememberScrollState()).padding(start = 24.dp, end = 24.dp, bottom = 24.dp),
+            modifier = Modifier
+                .focusRequester(messageFocus)
+                .remoteScroll(scroll)
+                .verticalScroll(scroll)
+                .padding(start = 24.dp, end = 24.dp, bottom = 24.dp),
         )
+        // On TV, a message longer than the dialog is read first, the arrows scrolling it down to the buttons.
+        if (LocalTelevision.current && scroll.viewportSize > 0 && scroll.maxValue > 0) LaunchedEffect(Unit) { messageFocus.requestFocus() }
     }
 }
 
@@ -64,7 +86,13 @@ fun AdAwayDialog(
     content: @Composable () -> Unit,
 ) {
     val colors = LocalAdAwayColors.current
+    val isTelevision = LocalTelevision.current
+    // On TV, a dialog whose content takes no focus starts on a button, so that OK answers it. The
+    // dismissing one when there is one, so that OK pressed out of habit changes nothing.
+    val initialButton = dismissButton ?: confirmButton
+    val buttonFocus = remember { FocusRequester() }
     Dialog(onDismissRequest = onDismissRequest, properties = DialogProperties(usePlatformDefaultWidth = false)) {
+        var contentFocused by remember { mutableStateOf(false) }
         Surface(
             modifier = Modifier.padding(horizontal = 40.dp).widthIn(max = 560.dp),
             shape = RoundedCornerShape(28.dp),
@@ -80,10 +108,13 @@ fun AdAwayDialog(
                     }
                     Text(title, style = AdAwayType.headline6, color = colors.textPrimary)
                 }
-                Box(modifier = Modifier.weight(1f, fill = false)) { content() }
-                DialogButtons(neutralButton, listOfNotNull(dismissButton, confirmButton), Modifier.fillMaxWidth().padding(8.dp))
+                Box(modifier = Modifier.weight(1f, fill = false).onFocusChanged { contentFocused = it.hasFocus }) { content() }
+                DialogButtons(neutralButton, listOfNotNull(dismissButton, confirmButton), Modifier.fillMaxWidth().padding(8.dp)) { button ->
+                    if (button === initialButton) Modifier.focusRequester(buttonFocus) else Modifier
+                }
             }
         }
+        if (isTelevision) LaunchedEffect(Unit) { if (!contentFocused) buttonFocus.requestFocus() }
     }
 }
 
@@ -92,9 +123,9 @@ fun AdAwayDialog(
  * each other, confirming first, when too wide.
  */
 @Composable
-private fun DialogButtons(neutral: DialogButton?, buttons: List<DialogButton>, modifier: Modifier) {
+private fun DialogButtons(neutral: DialogButton?, buttons: List<DialogButton>, modifier: Modifier, buttonModifier: (DialogButton) -> Modifier) {
     Layout(
-        content = { (listOfNotNull(neutral) + buttons).forEach { DialogTextButton(it) } },
+        content = { (listOfNotNull(neutral) + buttons).forEach { DialogTextButton(it, buttonModifier(it)) } },
         modifier = modifier,
     ) { measurables, constraints ->
         val gap = 8.dp.roundToPx()

@@ -21,13 +21,17 @@ import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -38,6 +42,7 @@ import org.adaway.ui.common.AdAwayEditText
 import org.adaway.ui.common.DISABLED_ALPHA
 import org.adaway.ui.common.DialogButton
 import org.adaway.ui.common.adAwaySwitchColors
+import org.adaway.ui.common.rememberedFocus
 import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 
@@ -76,7 +81,7 @@ fun Preference(
         modifier = Modifier
             .fillMaxWidth()
             .defaultMinSize(minHeight = 56.dp)
-            .then(if (onClick != null) Modifier.clickable(enabled = enabled, onClick = onClick) else Modifier)
+            .then(if (onClick != null) Modifier.rememberedFocus().clickable(enabled = enabled, onClick = onClick) else Modifier)
             .alpha(if (enabled) 1f else DISABLED_ALPHA)
             .padding(end = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -119,12 +124,15 @@ fun SwitchPreference(
 @Composable
 fun ChoiceDialog(title: String, choices: List<String>, selected: Int, onSelect: (Int) -> Unit, onDismiss: () -> Unit) {
     val colors = LocalAdAwayColors.current
+    // The remote starts on the current choice, so that OK keeps it.
+    val selectedFocus = remember { FocusRequester() }
     AdAwayDialog(onDismissRequest = onDismiss, title = title, confirmButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss)) {
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
             choices.forEachIndexed { index, choice ->
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .then(if (index == selected) Modifier.focusRequester(selectedFocus) else Modifier)
                         .selectable(selected = index == selected, role = Role.RadioButton) { onSelect(index); onDismiss() }
                         .padding(horizontal = 12.dp),
                     verticalAlignment = Alignment.CenterVertically,
@@ -140,6 +148,7 @@ fun ChoiceDialog(title: String, choices: List<String>, selected: Int, onSelect: 
             }
         }
     }
+    if (selected in choices.indices) LaunchedEffect(Unit) { selectedFocus.requestFocus() }
 }
 
 /** A preference dialog editing a text, with its OK button. */
@@ -151,16 +160,18 @@ fun TextInputDialog(
     onDismiss: () -> Unit,
 ) {
     var value by rememberSaveable { mutableStateOf(initialValue) }
+    val ok = DialogButton(stringResource(android.R.string.ok), onClick = { onDismiss(); onConfirm(value) })
     AdAwayDialog(
         onDismissRequest = onDismiss,
         title = title,
-        confirmButton = DialogButton(stringResource(android.R.string.ok), onClick = { onDismiss(); onConfirm(value) }),
+        confirmButton = ok,
         dismissButton = DialogButton(stringResource(R.string.cancel), onClick = onDismiss),
     ) {
         AdAwayEditText(
             value = value,
             onValueChange = { value = it },
             modifier = Modifier.padding(horizontal = 24.dp),
+            onDone = ok::press,
         )
     }
 }
