@@ -6,7 +6,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import org.adaway.R
 import org.adaway.ui.common.AdAwayAlertDialog
+import org.adaway.ui.common.CommandBlock
 import org.adaway.ui.common.DialogButton
+import org.adaway.ui.common.DialogMessage
 import org.adaway.ui.common.rememberOpenVpnSettings
 import org.adaway.ui.theme.LocalTelevision
 import org.adaway.vpn.AlwaysOnMode
@@ -50,10 +52,33 @@ fun VpnPersistenceDialog(mode: AlwaysOnMode, onDismiss: () -> Unit) {
     AdAwayAlertDialog(
         onDismissRequest = onDismiss,
         title = stringResource(R.string.vpn_persistence_title),
-        message = paragraphs.joinToString("\n\n"),
         confirmButton = DialogButton(stringResource(R.string.open_vpn_settings), onClick = {
             if (openVpnSettings() || !isTelevision) onDismiss()
         }),
         dismissButton = DialogButton(stringResource(R.string.vpn_persistence_dismiss), onClick = onDismiss),
-    )
+    ) {
+        messageParts(paragraphs.joinToString("\n\n")).forEach { (text, isCommand) ->
+            if (isCommand) CommandBlock(text) else DialogMessage(text)
+        }
+    }
+}
+
+/** Splits [message] around its ADB commands, each on a line of its own, the texts between them trimmed. */
+private fun messageParts(message: String): List<Pair<String, Boolean>> {
+    val parts = mutableListOf<Pair<String, Boolean>>()
+    val text = StringBuilder()
+    fun addText() {
+        text.toString().trim().takeIf { it.isNotEmpty() }?.let { parts += it to false }
+        text.clear()
+    }
+    message.lines().forEach { line ->
+        if (line.trimStart().startsWith("adb ")) {
+            addText()
+            parts += line.trim() to true
+        } else {
+            text.appendLine(line)
+        }
+    }
+    addText()
+    return parts
 }

@@ -3,6 +3,7 @@ package org.adaway.ui.common
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -55,23 +56,41 @@ fun AdAwayAlertDialog(
     dismissButton: DialogButton? = null,
     icon: Painter? = null,
 ) {
-    val colors = LocalAdAwayColors.current
+    AdAwayAlertDialog(onDismissRequest, title, confirmButton, dismissButton, icon) {
+        DialogMessage(message)
+    }
+}
+
+/** An alert dialog whose message is [content], as [DialogMessage] paragraphs and other blocks. */
+@Composable
+fun AdAwayAlertDialog(
+    onDismissRequest: () -> Unit,
+    title: String,
+    confirmButton: DialogButton,
+    dismissButton: DialogButton? = null,
+    icon: Painter? = null,
+    content: @Composable ColumnScope.() -> Unit,
+) {
     AdAwayDialog(onDismissRequest, title, confirmButton, dismissButton, icon) {
         val scroll = rememberScrollState()
         val messageFocus = remember { FocusRequester() }
-        Text(
-            message,
-            style = AdAwayType.body2,
-            color = colors.textPrimary.copy(alpha = 0.6f),
+        Column(
             modifier = Modifier
                 .focusRequester(messageFocus)
                 .remoteScroll(scroll)
                 .verticalScroll(scroll)
                 .padding(start = 24.dp, end = 24.dp, bottom = 24.dp),
+            content = content,
         )
         // On TV, a message longer than the dialog is read first, the arrows scrolling it down to the buttons.
         if (LocalTelevision.current && scroll.viewportSize > 0 && scroll.maxValue > 0) LaunchedEffect(Unit) { messageFocus.requestFocus() }
     }
+}
+
+/** A paragraph of the message of an alert dialog. */
+@Composable
+fun DialogMessage(text: String) {
+    Text(text, style = AdAwayType.body2, color = LocalAdAwayColors.current.textPrimary.copy(alpha = 0.6f))
 }
 
 /** The rounded dialog of the app around any [content], placed under the title. [neutralButton] stands apart, at the start. */
