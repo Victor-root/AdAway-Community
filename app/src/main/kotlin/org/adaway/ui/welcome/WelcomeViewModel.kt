@@ -98,7 +98,7 @@ class WelcomeViewModel(private val container: AppContainer) : ViewModel() {
     fun startSync() {
         mutableSync.value = WelcomeSync.Running
         viewModelScope.launch {
-            val error = container.blockListUpdater.syncAndApply(onlyPending = false)
+            val error = container.blockListUpdater.syncAndApply(onlyPending = false, inBackground = false)
             mutableSync.value = if (error != null) {
                 WelcomeSync.Failed(error)
             } else {

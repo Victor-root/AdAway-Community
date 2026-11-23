@@ -22,7 +22,7 @@ class SourceUpdateWorker(context: Context, parameters: WorkerParameters) : Corou
         val settings = container.settingsRepository.settings.first()
         if (container.blockListUpdater.checkForUpdates() != true) return Result.success()
         if (settings.sourcesAutoSync) {
-            container.blockListUpdater.syncAndApply(onlyPending = false)
+            container.blockListUpdater.syncAndApply(onlyPending = false, inBackground = true)
         } else {
             Notifications.showSourceUpdateAvailable(applicationContext)
         }

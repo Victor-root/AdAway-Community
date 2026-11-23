@@ -96,6 +96,21 @@ class VpnSession(
         }
     }
 
+    /**
+     * Closes the tunnel before building it again, unlike the rebuilds that replace it without a
+     * break: losing the VPN network is what makes the apps drop their connections and addresses.
+     */
+    fun reconnect() {
+        scope.launch {
+            if (tunnel == null) return@launch
+            diagnosticLog.info(VPN_LOG_TAG, "Reconnecting for the new list")
+            rebuildJob?.cancel()
+            closeTunnel()
+            throttle.reset()
+            rebuild()
+        }
+    }
+
     /** Applies a new final list to the running tunnel. A tunnel built later reads it anyway. */
     fun reloadRules() {
         scope.launch {

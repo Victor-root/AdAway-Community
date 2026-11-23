@@ -27,8 +27,8 @@ class BlockListUpdater(
     private val compiler: BlockListCompiler,
     private val statusMessages: StatusMessages,
     private val diagnosticLog: DiagnosticLog,
-    /** Called after each new final list, for the blocking in use to take it. */
-    private val onApplied: suspend () -> Unit,
+    /** Called after each new final list, for the blocking in use to take it, reconnecting unless in the background. */
+    private val onApplied: suspend (reconnect: Boolean) -> Unit,
 ) {
     private val mutex = Mutex()
     private val startupTasksStarted = AtomicBoolean(false)
@@ -41,14 +41,14 @@ class BlockListUpdater(
     val error: StateFlow<UpdateError?> = mutableError.asStateFlow()
 
     /** Downloads all the enabled sources, then applies. */
-    fun requestSync() = launchForScreen { syncAndApply(onlyPending = false) }
+    fun requestSync() = launchForScreen { syncAndApply(onlyPending = false, inBackground = false) }
 
     /**
      * Downloads the sources added or edited since their last read, applies, then runs [andThen]
      * unless it failed or another update was running.
      */
     fun requestApply(andThen: suspend () -> Unit = {}) = launchForScreen {
-        exclusive { syncAndApplyNow(onlyPending = true).also { if (it == null) andThen() } }
+        exclusive { syncAndApplyNow(onlyPending = true, inBackground = false).also { if (it == null) andThen() } }
     }
 
     /** On the first screen display of the process: reads new sources, or checks for updates. */
@@ -56,7 +56,7 @@ class BlockListUpdater(
         if (!startupTasksStarted.compareAndSet(false, true)) return
         scope.launch {
             when {
-                sourceSync.hasPendingSources() -> mutableError.value = syncAndApply(onlyPending = true)
+                sourceSync.hasPendingSources() -> mutableError.value = syncAndApply(onlyPending = true, inBackground = false)
                 checkForUpdates -> checkForUpdates()
             }
         }
@@ -78,10 +78,14 @@ class BlockListUpdater(
         }
     }
 
-    /** Returns the error, or null on success or when another update is already running. */
-    suspend fun syncAndApply(onlyPending: Boolean): UpdateError? = exclusive { syncAndApplyNow(onlyPending) }
+    /**
+     * Returns the error, or null on success or when another update is already running. An update
+     * [inBackground] keeps the VPN connected, as no one is waiting for the list to take effect.
+     */
+    suspend fun syncAndApply(onlyPending: Boolean, inBackground: Boolean): UpdateError? =
+        exclusive { syncAndApplyNow(onlyPending, inBackground) }
 
-    private suspend fun syncAndApplyNow(onlyPending: Boolean): UpdateError? {
+    private suspend fun syncAndApplyNow(onlyPending: Boolean, inBackground: Boolean): UpdateError? {
         val report = try {
             sourceSync.sync(onlyPending, ::publish)
         } catch (exception: SQLiteException) {
@@ -97,10 +101,10 @@ class BlockListUpdater(
             else -> null
         }
         // The line under the sources card leaves room for the error.
-        return (compile() ?: syncError)?.also { statusMessages.post(null) }
+        return (compile(inBackground) ?: syncError)?.also { statusMessages.post(null) }
     }
 
-    private suspend fun compile(): UpdateError? {
+    private suspend fun compile(inBackground: Boolean): UpdateError? {
         publish(UpdateProgress.Applying)
         try {
             compiler.compile()
@@ -110,7 +114,7 @@ class BlockListUpdater(
         }
         // Before the blocking takes it, so that its own steps come after.
         statusMessages.post(StatusMessage.Outcome(UpdateOutcome.APPLIED))
-        onApplied()
+        onApplied(!inBackground)
         return null
     }
 

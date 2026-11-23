@@ -90,10 +90,18 @@ class VpnController(
     /** As [enable], from a notification. */
     suspend fun enableInBackground() = notifyFailure(enable())
 
-    /** The running tunnel takes the new final list at once. A wanted VPN not running starts. */
-    suspend fun onBlockListApplied() {
+    /**
+     * The running tunnel takes the new final list at once. A wanted VPN not running starts. With
+     * [reconnect], the tunnel is closed and built again: Android and the browsers then forget the
+     * addresses they found before, which keep a site just blocked reachable for minutes.
+     */
+    suspend fun onBlockListApplied(reconnect: Boolean) {
         val running = session
-        if (running != null) running.reloadRules() else ensureRunningInBackground()
+        when {
+            running == null -> ensureRunningInBackground()
+            reconnect -> running.reconnect()
+            else -> running.reloadRules()
+        }
     }
 
     fun attach(session: VpnSession) {

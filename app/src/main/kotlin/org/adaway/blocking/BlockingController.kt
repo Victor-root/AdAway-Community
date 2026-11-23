@@ -63,10 +63,10 @@ class BlockingController(
         }
     }
 
-    /** The blocking on takes the new final list. */
-    suspend fun onBlockListApplied() {
+    /** The blocking on takes the new final list. [reconnect] is for the VPN, see [VpnController.onBlockListApplied]. */
+    suspend fun onBlockListApplied(reconnect: Boolean) {
         when (method()) {
-            BlockingMethod.VPN -> vpnController.onBlockListApplied()
+            BlockingMethod.VPN -> vpnController.onBlockListApplied(reconnect)
             BlockingMethod.ROOT -> rootController.reinstall()
             BlockingMethod.UNSET -> {}
         }
