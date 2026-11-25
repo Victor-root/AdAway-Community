@@ -37,7 +37,7 @@
     <string name="pref_update_check">ពិនិត្យរកបច្ចុប្បន្នភាពនៅពេលចាប់ផ្តើម</string>
     <string name="pref_update_check_hosts_daily">ពិនិត្យរកបច្ចុប្បន្នភាពជាប្រចាំ</string>
     <string name="pref_update_sync_on_update">ធ្វើសមកាលកម្មពេលមានបច្ចុប្បន្នភាព</string>
-    <string name="pref_update_sync_unmetered_only">ធ្វើសមកាលកម្មតែលើបណ្តាញគ្មានកម្រិតទិន្នន័យ</string>
+    <string name="pref_update_sync_unmetered_only">ពិនិត្យ និងធ្វើសមកាលកម្មតែលើបណ្តាញគ្មានកម្រិតទិន្នន័យ</string>
     <string name="pref_vpn_service_on_boot">បើកនៅពេលចាប់ផ្តើម</string>
     <string name="pref_vpn_service_monitor">តាមដានការតភ្ជាប់</string>
     <string name="pref_vpn_service_monitor_description">ពិនិត្យស្ថានភាពបណ្តាញជាប្រចាំ ដើម្បីចាប់ផ្តើម VPN ឡើងវិញនៅពេលដាច់ការតភ្ជាប់។</string>

@@ -57,6 +57,8 @@
     <string name="rules_allowed">מותרים</string>
     <string name="rules_redirected">מופנים</string>
     <string name="sources_title">מקורות hosts</string>
+    <string name="sources_enable_all">הפעלת הכול</string>
+    <string name="sources_disable_all">השבתת הכול</string>
     <string name="source_add">הוספת מקור</string>
     <string name="source_edit">עריכת מקור</string>
     <string name="source_deleted">המקור נמחק</string>

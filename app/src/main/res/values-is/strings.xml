@@ -57,6 +57,8 @@
     <string name="rules_allowed">Leyft</string>
     <string name="rules_redirected">Endurbeint</string>
     <string name="sources_title">Hosts-uppsprettur</string>
+    <string name="sources_enable_all">Gera allt virkt</string>
+    <string name="sources_disable_all">Gera allt óvirkt</string>
     <string name="source_add">Bæta við uppsprettu</string>
     <string name="source_edit">Breyta uppsprettu</string>
     <string name="source_deleted">Uppsprettu eytt</string>

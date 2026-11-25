@@ -54,6 +54,8 @@
     <string name="rules_allowed">Consentiti</string>
     <string name="rules_redirected">Reindirizzati</string>
     <string name="sources_title">Fonti hosts</string>
+    <string name="sources_enable_all">Attiva tutte</string>
+    <string name="sources_disable_all">Disattiva tutte</string>
     <string name="source_add">Aggiungi fonte</string>
     <string name="source_edit">Modifica fonte</string>
     <string name="source_deleted">Fonte eliminata</string>

@@ -14,5 +14,6 @@
     <string name="log_capture_failed">לכידת ה-DNS לא הצליחה להתחיל.</string>
     <string name="log_start_recording_button">התחלת הקלטה</string>
     <string name="log_start_recording_vpn_inactive">התחלת הקלטה (ה-VPN לא פעיל)</string>
+    <string name="log_vpn_inactive">חסימת הפרסומות כבויה: הפעל אותה כדי להקליט, כי ה-VPN שלה הוא שמתעד את הבקשות.</string>
     <string name="log_stop_recording">עצירת הקלטה</string>
 </resources>

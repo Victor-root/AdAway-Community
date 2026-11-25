@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Hindi masimulan ang DNS capture.</string>
     <string name="log_start_recording_button">Simulan ang pag-record</string>
     <string name="log_start_recording_vpn_inactive">Simulan ang pag-record (hindi aktibo ang VPN)</string>
+    <string name="log_vpn_inactive">Naka-off ang ad blocking: i-on ito para makapag-record, dahil ang VPN nito ang nakakapansin sa mga request.</string>
     <string name="log_stop_recording">Itigil ang pag-record</string>
 </resources>

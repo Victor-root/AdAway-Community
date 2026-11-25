@@ -57,6 +57,8 @@
     <string name="rules_allowed">បានអនុញ្ញាត</string>
     <string name="rules_redirected">បានបញ្ជូនបន្ត</string>
     <string name="sources_title">ប្រភព hosts</string>
+    <string name="sources_enable_all">បើកទាំងអស់</string>
+    <string name="sources_disable_all">បិទទាំងអស់</string>
     <string name="source_add">បន្ថែមប្រភព</string>
     <string name="source_edit">កែសម្រួលប្រភព</string>
     <string name="source_deleted">បានលុបប្រភព</string>

@@ -57,6 +57,8 @@
     <string name="rules_allowed">許可済み</string>
     <string name="rules_redirected">リダイレクト済み</string>
     <string name="sources_title">hostsソース</string>
+    <string name="sources_enable_all">すべて有効にする</string>
+    <string name="sources_disable_all">すべて無効にする</string>
     <string name="source_add">ソースを追加</string>
     <string name="source_edit">ソースを編集</string>
     <string name="source_deleted">ソースを削除しました</string>

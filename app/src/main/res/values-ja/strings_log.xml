@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNSキャプチャを開始できませんでした。</string>
     <string name="log_start_recording_button">記録を開始</string>
     <string name="log_start_recording_vpn_inactive">記録を開始（VPNは無効）</string>
+    <string name="log_vpn_inactive">広告ブロックがオフです。リクエストを記録するのはそのVPNなので、記録するにはオンにしてください。</string>
     <string name="log_stop_recording">記録を停止</string>
 </resources>

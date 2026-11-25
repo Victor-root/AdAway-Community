@@ -57,6 +57,8 @@
     <string name="rules_allowed">Dopušteni</string>
     <string name="rules_redirected">Preusmjereni</string>
     <string name="sources_title">Izvori datoteke hosts</string>
+    <string name="sources_enable_all">Omogući sve</string>
+    <string name="sources_disable_all">Onemogući sve</string>
     <string name="source_add">Dodaj izvor</string>
     <string name="source_edit">Uredi izvor</string>
     <string name="source_deleted">Izvor je izbrisan</string>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">Frissítések keresése indításkor</string>
     <string name="pref_update_check_hosts_daily">Frissítések rendszeres keresése</string>
     <string name="pref_update_sync_on_update">Szinkronizálás frissítéskor</string>
-    <string name="pref_update_sync_unmetered_only">Szinkronizálás csak korlátlan forgalmú hálózaton</string>
+    <string name="pref_update_sync_unmetered_only">Ellenőrzés és szinkronizálás csak korlátlan forgalmú hálózaton</string>
     <string name="pref_vpn_service_on_boot">Bekapcsolás indításkor</string>
     <string name="pref_vpn_service_monitor">Kapcsolat figyelése</string>
     <string name="pref_vpn_service_monitor_description">A hálózat állapotának rendszeres ellenőrzése, hogy a VPN megszakadás esetén újrainduljon.</string>

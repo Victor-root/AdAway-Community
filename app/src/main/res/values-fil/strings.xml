@@ -57,6 +57,8 @@
     <string name="rules_allowed">Pinapayagan</string>
     <string name="rules_redirected">Naka-redirect</string>
     <string name="sources_title">Mga pinagmulan ng hosts</string>
+    <string name="sources_enable_all">I-enable lahat</string>
+    <string name="sources_disable_all">I-disable lahat</string>
     <string name="source_add">Magdagdag ng pinagmulan</string>
     <string name="source_edit">I-edit ang pinagmulan</string>
     <string name="source_deleted">Nabura ang pinagmulan</string>

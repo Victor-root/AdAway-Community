@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Ekki tókst að ræsa DNS-upptökuna.</string>
     <string name="log_start_recording_button">Hefja skráningu</string>
     <string name="log_start_recording_vpn_inactive">Hefja skráningu (VPN ekki virkt)</string>
+    <string name="log_vpn_inactive">Slökkt er á auglýsingalokun: kveiktu á henni til að skrá, því það er VPN hennar sem tekur eftir beiðnunum.</string>
     <string name="log_stop_recording">Stöðva skráningu</string>
 </resources>

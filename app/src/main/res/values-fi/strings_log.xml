@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS-pyyntöjen kaappausta ei voitu aloittaa.</string>
     <string name="log_start_recording_button">Aloita tallennus</string>
     <string name="log_start_recording_vpn_inactive">Aloita tallennus (VPN ei ole käytössä)</string>
+    <string name="log_vpn_inactive">Mainosten esto on pois päältä: kytke se päälle tallentaaksesi, sillä sen VPN kirjaa pyynnöt.</string>
     <string name="log_stop_recording">Lopeta tallennus</string>
 </resources>

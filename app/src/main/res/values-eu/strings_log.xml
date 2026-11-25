@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Ezin izan da DNS kapturari hasiera eman.</string>
     <string name="log_start_recording_button">Hasi grabatzen</string>
     <string name="log_start_recording_vpn_inactive">Hasi grabatzen (VPNa ez dago aktibo)</string>
+    <string name="log_vpn_inactive">Iragarki-blokeoa desaktibatuta dago: aktibatu grabatzeko, bere VPNak jasotzen baititu eskaerak.</string>
     <string name="log_stop_recording">Gelditu grabaketa</string>
 </resources>

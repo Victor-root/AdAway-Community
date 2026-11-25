@@ -37,7 +37,7 @@
     <string name="pref_update_check">Leita að uppfærslu við ræsingu</string>
     <string name="pref_update_check_hosts_daily">Leita reglulega að uppfærslu</string>
     <string name="pref_update_sync_on_update">Samstilla við uppfærslu</string>
-    <string name="pref_update_sync_unmetered_only">Samstilla aðeins á ómældu neti</string>
+    <string name="pref_update_sync_unmetered_only">Athuga og samstilla aðeins á ómældu neti</string>
     <string name="pref_vpn_service_on_boot">Virkja við ræsingu</string>
     <string name="pref_vpn_service_monitor">Fylgjast með tengingu</string>
     <string name="pref_vpn_service_monitor_description">Athuga reglulega ástand netsins til að endurræsa VPN ef tengingin rofnar.</string>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">Otsi värskendust käivitamisel</string>
     <string name="pref_update_check_hosts_daily">Otsi värskendust regulaarselt</string>
     <string name="pref_update_sync_on_update">Sünkrooni värskenduse leidmisel</string>
-    <string name="pref_update_sync_unmetered_only">Sünkrooni ainult piiramatu andmemahuga võrgus</string>
+    <string name="pref_update_sync_unmetered_only">Kontrolli ja sünkrooni ainult piiramatu andmemahuga võrgus</string>
     <string name="pref_vpn_service_on_boot">Lülita seadme käivitamisel sisse</string>
     <string name="pref_vpn_service_monitor">Jälgi ühendust</string>
     <string name="pref_vpn_service_monitor_description">Kontrolli regulaarselt võrgu olekut, et VPN pärast katkemist uuesti käivitada.</string>

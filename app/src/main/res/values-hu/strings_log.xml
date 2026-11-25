@@ -14,5 +14,6 @@
     <string name="log_capture_failed">A DNS-rögzítést nem sikerült elindítani.</string>
     <string name="log_start_recording_button">Rögzítés indítása</string>
     <string name="log_start_recording_vpn_inactive">Rögzítés indítása (a VPN nem aktív)</string>
+    <string name="log_vpn_inactive">A hirdetésblokkolás ki van kapcsolva: a rögzítéshez kapcsolja be, mert a kéréseket a hirdetésblokkoló VPN-je jegyzi fel.</string>
     <string name="log_stop_recording">Rögzítés leállítása</string>
 </resources>

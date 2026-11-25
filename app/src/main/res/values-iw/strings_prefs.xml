@@ -37,7 +37,7 @@
     <string name="pref_update_check">בדיקת עדכון בעת ההפעלה</string>
     <string name="pref_update_check_hosts_daily">בדיקת עדכון מדי פעם</string>
     <string name="pref_update_sync_on_update">סנכרון בעת עדכון</string>
-    <string name="pref_update_sync_unmetered_only">סנכרון ברשת ללא הגבלת נתונים בלבד</string>
+    <string name="pref_update_sync_unmetered_only">בדיקה וסנכרון ברשתות ללא הגבלת נתונים בלבד</string>
     <string name="pref_vpn_service_on_boot">הפעלה בעת אתחול המכשיר</string>
     <string name="pref_vpn_service_monitor">מעקב אחר החיבור</string>
     <string name="pref_vpn_service_monitor_description">בדיקה תקופתית של מצב הרשת כדי להפעיל מחדש את ה-VPN לאחר ניתוק.</string>

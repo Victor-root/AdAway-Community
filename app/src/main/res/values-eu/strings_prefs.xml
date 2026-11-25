@@ -37,7 +37,7 @@
     <string name="pref_update_check">Bilatu eguneraketak abiaraztean</string>
     <string name="pref_update_check_hosts_daily">Bilatu eguneraketak aldizka</string>
     <string name="pref_update_sync_on_update">Sinkronizatu eguneratzean</string>
-    <string name="pref_update_sync_unmetered_only">Sinkronizatu neurtu gabeko sareetan soilik</string>
+    <string name="pref_update_sync_unmetered_only">Egiaztatu eta sinkronizatu neurtu gabeko sareetan soilik</string>
     <string name="pref_vpn_service_on_boot">Gaitu abiaraztean</string>
     <string name="pref_vpn_service_monitor">Zaindu konexioa</string>
     <string name="pref_vpn_service_monitor_description">Sarearen egoera aldizka egiaztatzen du, VPNa deskonektatzen bada berriro abiarazteko.</string>

@@ -57,6 +57,8 @@
     <string name="rules_allowed">अनुमत</string>
     <string name="rules_redirected">रीडायरेक्ट किए गए</string>
     <string name="sources_title">होस्ट स्रोत</string>
+    <string name="sources_enable_all">सभी चालू करें</string>
+    <string name="sources_disable_all">सभी बंद करें</string>
     <string name="source_add">स्रोत जोड़ें</string>
     <string name="source_edit">स्रोत संपादित करें</string>
     <string name="source_deleted">स्रोत मिटा दिया गया</string>

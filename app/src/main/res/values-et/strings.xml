@@ -57,6 +57,8 @@
     <string name="rules_allowed">Lubatud</string>
     <string name="rules_redirected">Ümbersuunatud</string>
     <string name="sources_title">Hosts-allikad</string>
+    <string name="sources_enable_all">Luba kõik</string>
+    <string name="sources_disable_all">Keela kõik</string>
     <string name="source_add">Lisa allikas</string>
     <string name="source_edit">Muuda allikat</string>
     <string name="source_deleted">Allikas kustutati</string>

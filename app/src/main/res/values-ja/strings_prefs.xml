@@ -37,7 +37,7 @@
     <string name="pref_update_check">起動時に更新を確認</string>
     <string name="pref_update_check_hosts_daily">定期的に更新を確認</string>
     <string name="pref_update_sync_on_update">更新時に同期</string>
-    <string name="pref_update_sync_unmetered_only">従量制でないネットワークでのみ同期</string>
+    <string name="pref_update_sync_unmetered_only">従量制でないネットワークでのみ確認と同期</string>
     <string name="pref_vpn_service_on_boot">起動時に有効にする</string>
     <string name="pref_vpn_service_monitor">接続を監視</string>
     <string name="pref_vpn_service_monitor_description">ネットワークの状態を定期的に確認し、切断された場合はVPNを再起動します。</string>

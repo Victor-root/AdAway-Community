@@ -57,6 +57,8 @@
     <string name="rules_allowed">Engedélyezett</string>
     <string name="rules_redirected">Átirányított</string>
     <string name="sources_title">Hosts-források</string>
+    <string name="sources_enable_all">Összes engedélyezése</string>
+    <string name="sources_disable_all">Összes letiltása</string>
     <string name="source_add">Forrás hozzáadása</string>
     <string name="source_edit">Forrás szerkesztése</string>
     <string name="source_deleted">Forrás törölve</string>

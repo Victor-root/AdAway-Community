@@ -37,7 +37,7 @@
     <string name="pref_update_check">स्टार्टअप पर अपडेट जांचें</string>
     <string name="pref_update_check_hosts_daily">नियमित रूप से अपडेट जांचें</string>
     <string name="pref_update_sync_on_update">अपडेट मिलने पर सिंक करें</string>
-    <string name="pref_update_sync_unmetered_only">सिर्फ़ बिना डेटा सीमा वाले नेटवर्क पर सिंक करें</string>
+    <string name="pref_update_sync_unmetered_only">सिर्फ़ बिना डेटा सीमा वाले नेटवर्क पर जांचें और सिंक करें</string>
     <string name="pref_vpn_service_on_boot">स्टार्टअप पर चालू करें</string>
     <string name="pref_vpn_service_monitor">कनेक्शन की निगरानी</string>
     <string name="pref_vpn_service_monitor_description">VPN बंद होने पर उसे दोबारा चालू करने के लिए नेटवर्क की स्थिति समय-समय पर जांची जाती है।</string>

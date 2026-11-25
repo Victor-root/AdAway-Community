@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Impossibile avviare l’acquisizione DNS.</string>
     <string name="log_start_recording_button">Avvia registrazione</string>
     <string name="log_start_recording_vpn_inactive">Avvia registrazione (VPN non attiva)</string>
+    <string name="log_vpn_inactive">Il blocco pubblicità è disattivato: attivalo per registrare, perché è la sua VPN a rilevare le richieste.</string>
     <string name="log_stop_recording">Interrompi registrazione</string>
 </resources>

@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS-päringute jäädvustamine ei käivitunud.</string>
     <string name="log_start_recording_button">Alusta salvestamist</string>
     <string name="log_start_recording_vpn_inactive">Alusta salvestamist (VPN ei ole aktiivne)</string>
+    <string name="log_vpn_inactive">Reklaamiblokeerimine on välja lülitatud: lülita see salvestamiseks sisse, sest päringuid märgib üles just selle VPN.</string>
     <string name="log_stop_recording">Peata salvestamine</string>
 </resources>

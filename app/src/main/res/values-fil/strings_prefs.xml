@@ -37,7 +37,7 @@
     <string name="pref_update_check">Tingnan kung may update sa pagsisimula</string>
     <string name="pref_update_check_hosts_daily">Pana-panahong tingnan kung may update</string>
     <string name="pref_update_sync_on_update">I-sync kapag may update</string>
-    <string name="pref_update_sync_unmetered_only">I-sync lang sa network na walang limitasyon sa data</string>
+    <string name="pref_update_sync_unmetered_only">I-check at i-sync lang sa mga network na walang limitasyon sa data</string>
     <string name="pref_vpn_service_on_boot">I-enable sa pagsisimula</string>
     <string name="pref_vpn_service_monitor">Subaybayan ang koneksyon</string>
     <string name="pref_vpn_service_monitor_description">Pana-panahong tingnan ang estado ng network para i-restart ang VPN kapag naputol ito.</string>

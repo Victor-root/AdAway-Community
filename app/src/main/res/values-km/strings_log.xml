@@ -14,5 +14,6 @@
     <string name="log_capture_failed">ការចាប់យក DNS មិនអាចចាប់ផ្តើមបានទេ។</string>
     <string name="log_start_recording_button">ចាប់ផ្តើមថត</string>
     <string name="log_start_recording_vpn_inactive">ចាប់ផ្តើមថត (VPN មិនសកម្ម)</string>
+    <string name="log_vpn_inactive">ការទប់ស្កាត់ពាណិជ្ជកម្មត្រូវបានបិទ: សូមបើកវាដើម្បីថត ព្រោះ VPN របស់វាជាអ្នកកត់ត្រាសំណើ។</string>
     <string name="log_stop_recording">ឈប់ថត</string>
 </resources>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">بررسی به‌روزرسانی هنگام اجرای برنامه</string>
     <string name="pref_update_check_hosts_daily">بررسی دوره‌ای به‌روزرسانی</string>
     <string name="pref_update_sync_on_update">همگام‌سازی هنگام به‌روزرسانی</string>
-    <string name="pref_update_sync_unmetered_only">همگام‌سازی فقط در شبکه بدون محدودیت داده</string>
+    <string name="pref_update_sync_unmetered_only">بررسی و همگام‌سازی فقط در شبکه بدون محدودیت داده</string>
     <string name="pref_vpn_service_on_boot">فعال‌سازی هنگام راه‌اندازی دستگاه</string>
     <string name="pref_vpn_service_monitor">پایش اتصال</string>
     <string name="pref_vpn_service_monitor_description">وضعیت شبکه به‌صورت دوره‌ای بررسی می‌شود تا پس از قطع اتصال، VPN دوباره راه‌اندازی شود.</string>

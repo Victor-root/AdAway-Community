@@ -14,5 +14,6 @@
     <string name="log_capture_failed">شروع ثبت درخواست‌های DNS ممکن نبود.</string>
     <string name="log_start_recording_button">شروع ضبط</string>
     <string name="log_start_recording_vpn_inactive">شروع ضبط (VPN فعال نیست)</string>
+    <string name="log_vpn_inactive">مسدودسازی تبلیغات خاموش است: برای ضبط آن را روشن کنید، چون VPN آن درخواست‌ها را ثبت می‌کند.</string>
     <string name="log_stop_recording">توقف ضبط</string>
 </resources>

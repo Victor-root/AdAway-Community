@@ -37,7 +37,7 @@
     <string name="pref_update_check">Periksa pembaruan saat dibuka</string>
     <string name="pref_update_check_hosts_daily">Periksa pembaruan secara berkala</string>
     <string name="pref_update_sync_on_update">Sinkronkan saat ada pembaruan</string>
-    <string name="pref_update_sync_unmetered_only">Sinkronkan hanya di jaringan tanpa batas kuota</string>
+    <string name="pref_update_sync_unmetered_only">Periksa dan sinkronkan hanya di jaringan tanpa batas kuota</string>
     <string name="pref_vpn_service_on_boot">Aktifkan saat perangkat dinyalakan</string>
     <string name="pref_vpn_service_monitor">Pantau koneksi</string>
     <string name="pref_vpn_service_monitor_description">Periksa status jaringan secara berkala untuk memulai ulang VPN saat koneksi terputus.</string>
