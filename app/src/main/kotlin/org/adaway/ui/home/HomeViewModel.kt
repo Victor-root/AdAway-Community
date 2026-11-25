@@ -1,5 +1,6 @@
 package org.adaway.ui.home
 
+import android.net.ConnectivityManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -85,7 +86,9 @@ class HomeViewModel(private val container: AppContainer) : ViewModel() {
         Notifications.cancelSourceUpdateAvailable(container.applicationContext)
         viewModelScope.launch {
             val settings = container.settingsRepository.settings.first()
-            updater.runStartupTasks(checkForUpdates = settings.sourcesCheckOnStartup)
+            val meteredRefused = settings.sourcesUnmeteredOnly &&
+                container.applicationContext.getSystemService(ConnectivityManager::class.java)?.isActiveNetworkMetered != false
+            updater.runStartupTasks(checkForUpdates = settings.sourcesCheckOnStartup && !meteredRefused)
             if (settings.appUpdateCheckOnStartup) container.appUpdater.checkOnStartup()
         }
         viewModelScope.launch {

@@ -27,6 +27,7 @@ import kotlinx.coroutines.delay
 import org.adaway.R
 import org.adaway.data.db.SourceEntity
 import org.adaway.ui.common.AdAwayFab
+import org.adaway.ui.common.AppBarAction
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.AdAwaySnackbar
 import org.adaway.ui.common.ApplyConfigurationSnackbar
@@ -51,6 +52,15 @@ fun SourcesScreen(sources: List<Pair<SourceEntity, String>>, viewModel: SourcesV
     AdAwayScreen(
         title = stringResource(R.string.sources_title),
         onBack = navigation.back,
+        actions = {
+            if (sources.isNotEmpty()) {
+                val allEnabled = sources.all { (source, _) -> source.enabled }
+                AppBarAction(
+                    painterResource(R.drawable.ic_done_all_24dp),
+                    stringResource(if (allEnabled) R.string.sources_disable_all else R.string.sources_enable_all),
+                ) { viewModel.toggleAll(sources.map { it.first }) }
+            }
+        },
         floatingActionButton = {
             AdAwayFab(painterResource(R.drawable.ic_add_black_24px), stringResource(R.string.source_add), onClick = navigation.add)
         },

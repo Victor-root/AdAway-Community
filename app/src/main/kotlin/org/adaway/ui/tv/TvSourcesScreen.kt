@@ -71,6 +71,14 @@ fun TvSourcesScreen(navigation: SourcesNavigation) {
                         .onFocusChanged { if (it.isFocused) focused = NO_SOURCE }
                         .padding(end = 8.dp),
                 )
+                sources?.takeIf { it.isNotEmpty() }?.let { all ->
+                    TvHeaderButton(
+                        stringResource(if (all.all(SourceEntity::enabled)) R.string.sources_disable_all else R.string.sources_enable_all),
+                        painterResource(R.drawable.ic_done_all_24dp),
+                        onClick = { viewModel.toggleAll(all) },
+                        modifier = Modifier.padding(end = 8.dp),
+                    )
+                }
                 if (pendingApply) TvApplyButton(viewModel.applier, afterApply = addFocus)
             }
         },

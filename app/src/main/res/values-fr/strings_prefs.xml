@@ -37,7 +37,7 @@
     <string name="pref_update_check">Vérifier la présence d’une mise à jour au démarrage</string>
     <string name="pref_update_check_hosts_daily">Vérifier régulièrement la présence de mises à jour</string>
     <string name="pref_update_sync_on_update">Synchroniser lors d’une mise à jour</string>
-    <string name="pref_update_sync_unmetered_only">Ne synchroniser que sur les réseaux sans limite de données</string>
+    <string name="pref_update_sync_unmetered_only">Ne vérifier et synchroniser que sur les réseaux sans limite de données</string>
     <string name="pref_vpn_service_on_boot">Activer au démarrage</string>
     <string name="pref_vpn_service_monitor">Surveiller la connexion</string>
     <string name="pref_vpn_service_monitor_description">Vérifier régulièrement l’état du réseau pour relancer le RPV/VPN après une déconnexion.</string>

@@ -59,6 +59,8 @@
     <string name="rules_allowed">Allowed</string>
     <string name="rules_redirected">Redirected</string>
     <string name="sources_title">Hosts sources</string>
+    <string name="sources_enable_all">Enable all</string>
+    <string name="sources_disable_all">Disable all</string>
     <string name="source_add">Add source</string>
     <string name="source_edit">Edit source</string>
     <string name="source_deleted">Source deleted</string>

@@ -93,6 +93,11 @@ class SourceRepository(
         state.markConfigurationChanged()
     }
 
+    suspend fun setAllEnabled(enabled: Boolean) {
+        dao.setAllEnabled(enabled)
+        state.markConfigurationChanged()
+    }
+
     suspend fun delete(source: SourceEntity) {
         dao.delete(source.id)
         mutableRecentlyDeleted.value = source

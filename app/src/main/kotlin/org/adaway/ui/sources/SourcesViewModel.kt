@@ -23,6 +23,12 @@ class SourcesViewModel(private val container: AppContainer) : ViewModel() {
         viewModelScope.launch { repository.setEnabled(source.id, enabled) }
     }
 
+    /** Disables every source when all are enabled, else enables them all. */
+    fun toggleAll(sources: List<SourceEntity>) {
+        val enabled = !sources.all(SourceEntity::enabled)
+        viewModelScope.launch { repository.setAllEnabled(enabled) }
+    }
+
     /** Deletes [source] with no offer to undo, as the TV does. */
     fun deleteForGood(source: SourceEntity) {
         viewModelScope.launch {

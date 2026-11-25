@@ -130,7 +130,12 @@ fun TvDnsLogScreen() {
             items(list, key = DnsLogEntry::host) { entry -> LogRow(entry, onClick = { selected = entry }) }
         }
         AnimatedVisibility(visible = entries != null && list.isEmpty(), enter = fadeIn(tween(FADE_MILLIS)), exit = fadeOut(tween(FADE_MILLIS))) {
-            TvEmptyText(stringResource(R.string.log_start_recording))
+            TvEmptyText(
+                listOfNotNull(
+                    stringResource(R.string.log_start_recording),
+                    if (vpnInactive) stringResource(R.string.log_vpn_inactive) else null,
+                ).joinToString("\n\n"),
+            )
         }
     }
     selected?.let { entry ->

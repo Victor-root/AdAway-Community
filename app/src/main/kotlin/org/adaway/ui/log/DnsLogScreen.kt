@@ -73,6 +73,7 @@ fun DnsLogScreen(onBack: () -> Unit) {
     val refreshing by viewModel.refreshing.collectAsStateWithLifecycle()
     val error by viewModel.error.collectAsStateWithLifecycle()
     val blockedRequestsIgnored by viewModel.blockedRequestsIgnored.collectAsStateWithLifecycle()
+    val vpnInactive by viewModel.vpnInactive.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var redirecting by rememberSaveable { mutableStateOf<String?>(null) }
     val resources = LocalResources.current
@@ -93,7 +94,13 @@ fun DnsLogScreen(onBack: () -> Unit) {
             AdAwayFab(
                 painterResource(if (recording) R.drawable.ic_pause_24dp else R.drawable.ic_record_24dp),
                 stringResource(R.string.log_toggle_recording_description),
-                viewModel::toggleRecording,
+                onClick = {
+                    if (vpnInactive) {
+                        Toast.makeText(context, resources.getString(R.string.log_vpn_inactive), Toast.LENGTH_LONG).show()
+                    } else {
+                        viewModel.toggleRecording()
+                    }
+                },
             )
         },
         snackbar = { ApplyConfigurationSnackbar(viewModel.applier) },
@@ -101,7 +108,7 @@ fun DnsLogScreen(onBack: () -> Unit) {
         PullToRefreshBox(isRefreshing = refreshing, onRefresh = viewModel::refresh, modifier = Modifier.fillMaxSize().padding(top = padding.calculateTopPadding())) {
             val list = entries.orEmpty()
             if (list.isEmpty()) {
-                EmptyLog(blockedRequestsIgnored)
+                EmptyLog(blockedRequestsIgnored, vpnInactive)
             } else {
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
@@ -131,8 +138,11 @@ fun DnsLogScreen(onBack: () -> Unit) {
 
 /** Scrollable, so that the pull to refresh works on it too. */
 @Composable
-private fun EmptyLog(blockedRequestsIgnored: Boolean) {
-    val text = stringResource(R.string.log_start_recording) + if (blockedRequestsIgnored) stringResource(R.string.log_blocked_requests_ignored) else ""
+private fun EmptyLog(blockedRequestsIgnored: Boolean, vpnInactive: Boolean) {
+    val text = listOfNotNull(
+        stringResource(R.string.log_start_recording),
+        if (vpnInactive) stringResource(R.string.log_vpn_inactive) else null,
+    ).joinToString("\n\n") + if (blockedRequestsIgnored) stringResource(R.string.log_blocked_requests_ignored) else ""
     Column(modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         Text(
             text,

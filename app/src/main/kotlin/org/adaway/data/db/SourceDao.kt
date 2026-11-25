@@ -45,6 +45,9 @@ interface SourceDao {
     @Query("UPDATE sources SET enabled = :enabled WHERE id = :id")
     suspend fun setEnabled(id: Long, enabled: Boolean)
 
+    @Query("UPDATE sources SET enabled = :enabled")
+    suspend fun setAllEnabled(enabled: Boolean)
+
     @Query("UPDATE sources SET updateAvailable = 1 WHERE id = :id")
     suspend fun markUpdateAvailable(id: Long)
 

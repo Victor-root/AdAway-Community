@@ -37,7 +37,7 @@
     <string name="pref_update_check">Check for update at startup</string>
     <string name="pref_update_check_hosts_daily">Periodically check for update</string>
     <string name="pref_update_sync_on_update">Sync on update</string>
-    <string name="pref_update_sync_unmetered_only">Sync on unmetered network only</string>
+    <string name="pref_update_sync_unmetered_only">Check and sync on unmetered networks only</string>
     <string name="pref_vpn_service_on_boot">Enable at startup</string>
     <string name="pref_vpn_service_monitor">Monitor connection</string>
     <string name="pref_vpn_service_monitor_description">Periodically check the network state to restart VPN on disconnection.</string>

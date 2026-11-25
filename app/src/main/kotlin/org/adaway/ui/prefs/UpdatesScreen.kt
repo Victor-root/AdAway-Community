@@ -110,7 +110,6 @@ fun UpdatesScreen(onBack: () -> Unit, openUpdate: () -> Unit) {
                 checked = current.sourcesPeriodicCheck,
                 onCheckedChange = { checked -> viewModel.update { it.copy(sourcesPeriodicCheck = checked) } },
             )
-            // Both depend on the periodic check.
             SwitchPreference(
                 R.drawable.ic_sync_24dp,
                 stringResource(R.string.pref_update_sync_on_update),
@@ -118,12 +117,13 @@ fun UpdatesScreen(onBack: () -> Unit, openUpdate: () -> Unit) {
                 onCheckedChange = { checked -> viewModel.update { it.copy(sourcesAutoSync = checked) } },
                 enabled = current.sourcesPeriodicCheck,
             )
+            // It holds back the startup check as well as the periodic one.
             SwitchPreference(
                 R.drawable.ic_wifi_24dp,
                 stringResource(R.string.pref_update_sync_unmetered_only),
                 checked = current.sourcesUnmeteredOnly,
                 onCheckedChange = { checked -> viewModel.update { it.copy(sourcesUnmeteredOnly = checked) } },
-                enabled = current.sourcesPeriodicCheck,
+                enabled = current.sourcesCheckOnStartup || current.sourcesPeriodicCheck,
             )
         }
     }

@@ -122,19 +122,20 @@ fun UpdateScreen(onBack: () -> Unit) {
                         stringResource(if (updateAvailable) R.string.update_new_changelog_title else R.string.update_last_changelog_title),
                         style = AdAwayType.large,
                         color = Color.White,
-                        modifier = Modifier.fillMaxWidth().padding(start = 32.dp, top = 32.dp, end = 32.dp),
+                        // On TV, the remote reads the changes from their title, and reaches the update button above.
+                        // The title takes the focus rather than the changes, which would scroll down to show them whole.
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .focusRequester(changesFocus)
+                            .remoteScroll(scroll)
+                            .padding(start = 32.dp, top = 32.dp, end = 32.dp),
                     )
                     Text(
                         markdown(release.changelog),
                         style = AdAwayType.medium,
                         color = Color.White,
                         textAlign = TextAlign.Justify,
-                        // On TV, the remote reads the changes from there, and reaches the update button above.
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .focusRequester(changesFocus)
-                            .remoteScroll(scroll)
-                            .padding(start = 32.dp, top = 16.dp, end = 32.dp),
+                        modifier = Modifier.fillMaxWidth().padding(start = 32.dp, top = 16.dp, end = 32.dp),
                     )
                     if (LocalTelevision.current) LaunchedEffect(Unit) { changesFocus.requestFocus() }
                 }

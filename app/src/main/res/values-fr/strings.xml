@@ -57,6 +57,8 @@
     <string name="rules_allowed">Autorisés</string>
     <string name="rules_redirected">Redirigés</string>
     <string name="sources_title">Sources de fichiers hosts</string>
+    <string name="sources_enable_all">Tout activer</string>
+    <string name="sources_disable_all">Tout désactiver</string>
     <string name="source_add">Ajouter une source</string>
     <string name="source_edit">Modifier une source</string>
     <string name="source_deleted">Source supprimée</string>

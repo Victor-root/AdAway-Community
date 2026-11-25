@@ -14,5 +14,6 @@
     <string name="log_capture_failed">The DNS capture could not start.</string>
     <string name="log_start_recording_button">Start Recording</string>
     <string name="log_start_recording_vpn_inactive">Start Recording (VPN not active)</string>
+    <string name="log_vpn_inactive">Ad blocking is off: turn it on to record, as its VPN is what notes the requests.</string>
     <string name="log_stop_recording">Stop Recording</string>
 </resources>
