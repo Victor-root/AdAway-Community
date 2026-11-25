@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS ക്യാപ്ചർ ആരംഭിക്കാൻ കഴിഞ്ഞില്ല.</string>
     <string name="log_start_recording_button">റെക്കോർഡിങ് ആരംഭിക്കുക</string>
     <string name="log_start_recording_vpn_inactive">റെക്കോർഡിങ് ആരംഭിക്കുക (VPN സജീവമല്ല)</string>
+    <string name="log_vpn_inactive">പരസ്യ തടയൽ ഓഫാണ്: റെക്കോർഡ് ചെയ്യാൻ അത് ഓണാക്കുക, കാരണം അഭ്യർത്ഥനകൾ രേഖപ്പെടുത്തുന്നത് അതിന്റെ VPN ആണ്.</string>
     <string name="log_stop_recording">റെക്കോർഡിങ് നിർത്തുക</string>
 </resources>

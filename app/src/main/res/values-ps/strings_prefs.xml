@@ -37,7 +37,7 @@
     <string name="pref_update_check">د پیل پر مهال د تازه نسخې لپاره کتنه</string>
     <string name="pref_update_check_hosts_daily">په منظم ډول د تازه نسخې لپاره کتنه</string>
     <string name="pref_update_sync_on_update">د تازه کېدو پر مهال همغږي کول</string>
-    <string name="pref_update_sync_unmetered_only">یوازې په نامحدوده شبکه کې همغږي کول</string>
+    <string name="pref_update_sync_unmetered_only">یوازې په نامحدوده شبکه کې کتل او همغږي کول</string>
     <string name="pref_vpn_service_on_boot">د پیل پر مهال فعالول</string>
     <string name="pref_vpn_service_monitor">د اړیکې څارنه</string>
     <string name="pref_vpn_service_monitor_description">د شبکې حالت په منظم ډول وګورئ ترڅو VPN د قطع کېدو پر مهال بیا پیل شي.</string>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">Se etter oppdatering ved oppstart</string>
     <string name="pref_update_check_hosts_daily">Se etter oppdatering jevnlig</string>
     <string name="pref_update_sync_on_update">Synkroniser ved oppdatering</string>
-    <string name="pref_update_sync_unmetered_only">Synkroniser bare på ikke-målte nettverk</string>
+    <string name="pref_update_sync_unmetered_only">Se etter oppdateringer og synkroniser bare på ikke-målte nettverk</string>
     <string name="pref_vpn_service_on_boot">Slå på ved oppstart</string>
     <string name="pref_vpn_service_monitor">Overvåk tilkoblingen</string>
     <string name="pref_vpn_service_monitor_description">Sjekker nettverksstatusen jevnlig for å starte VPN-en på nytt ved frakobling.</string>

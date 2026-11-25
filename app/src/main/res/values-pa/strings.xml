@@ -57,6 +57,8 @@
     <string name="rules_allowed">ਇਜਾਜ਼ਤ ਵਾਲੇ</string>
     <string name="rules_redirected">ਰੀਡਾਇਰੈਕਟ ਕੀਤੇ</string>
     <string name="sources_title">hosts ਸਰੋਤ</string>
+    <string name="sources_enable_all">ਸਭ ਚਾਲੂ ਕਰੋ</string>
+    <string name="sources_disable_all">ਸਭ ਬੰਦ ਕਰੋ</string>
     <string name="source_add">ਸਰੋਤ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="source_edit">ਸਰੋਤ ਦਾ ਸੰਪਾਦਨ ਕਰੋ</string>
     <string name="source_deleted">ਸਰੋਤ ਮਿਟਾਇਆ ਗਿਆ</string>

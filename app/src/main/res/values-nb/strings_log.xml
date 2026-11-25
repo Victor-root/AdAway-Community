@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS-opptaket kunne ikke starte.</string>
     <string name="log_start_recording_button">Start opptak</string>
     <string name="log_start_recording_vpn_inactive">Start opptak (VPN er ikke aktiv)</string>
+    <string name="log_vpn_inactive">Annonseblokkeringen er av: slå den på for å ta opp, siden det er VPN-en som registrerer forespørslene.</string>
     <string name="log_stop_recording">Stopp opptak</string>
 </resources>

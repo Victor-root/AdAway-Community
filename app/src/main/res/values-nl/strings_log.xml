@@ -14,5 +14,6 @@
     <string name="log_capture_failed">De DNS-opname kon niet worden gestart.</string>
     <string name="log_start_recording_button">Opname starten</string>
     <string name="log_start_recording_vpn_inactive">Opname starten (VPN niet actief)</string>
+    <string name="log_vpn_inactive">Adblokkering staat uit: zet die aan om op te nemen, want de VPN ervan legt de verzoeken vast.</string>
     <string name="log_stop_recording">Opname stoppen</string>
 </resources>

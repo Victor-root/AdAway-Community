@@ -57,6 +57,8 @@
     <string name="rules_allowed">Tillatt</string>
     <string name="rules_redirected">Omdirigert</string>
     <string name="sources_title">Hosts-kilder</string>
+    <string name="sources_enable_all">Slå på alle</string>
+    <string name="sources_disable_all">Slå av alle</string>
     <string name="source_add">Legg til kilde</string>
     <string name="source_edit">Rediger kilde</string>
     <string name="source_deleted">Kilden er slettet</string>

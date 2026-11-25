@@ -57,6 +57,8 @@
     <string name="rules_allowed">Leidžiami</string>
     <string name="rules_redirected">Nukreipiami</string>
     <string name="sources_title">Hosts šaltiniai</string>
+    <string name="sources_enable_all">Įjungti visus</string>
+    <string name="sources_disable_all">Išjungti visus</string>
     <string name="source_add">Pridėti šaltinį</string>
     <string name="source_edit">Redaguoti šaltinį</string>
     <string name="source_deleted">Šaltinis ištrintas</string>

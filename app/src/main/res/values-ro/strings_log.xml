@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Captura DNS nu a putut porni.</string>
     <string name="log_start_recording_button">Începeți înregistrarea</string>
     <string name="log_start_recording_vpn_inactive">Începeți înregistrarea (VPN inactiv)</string>
+    <string name="log_vpn_inactive">Blocarea reclamelor este dezactivată: activați-o pentru a înregistra, deoarece VPN-ul ei este cel care notează cererile.</string>
     <string name="log_stop_recording">Opriți înregistrarea</string>
 </resources>

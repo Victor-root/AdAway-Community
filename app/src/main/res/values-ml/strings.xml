@@ -57,6 +57,8 @@
     <string name="rules_allowed">അനുവദിച്ചവ</string>
     <string name="rules_redirected">വഴിതിരിച്ചുവിട്ടവ</string>
     <string name="sources_title">hosts ഉറവിടങ്ങൾ</string>
+    <string name="sources_enable_all">എല്ലാം പ്രവർത്തനക്ഷമമാക്കുക</string>
+    <string name="sources_disable_all">എല്ലാം പ്രവർത്തനരഹിതമാക്കുക</string>
     <string name="source_add">ഉറവിടം ചേർക്കുക</string>
     <string name="source_edit">ഉറവിടം എഡിറ്റ് ചെയ്യുക</string>
     <string name="source_deleted">ഉറവിടം ഇല്ലാതാക്കി</string>

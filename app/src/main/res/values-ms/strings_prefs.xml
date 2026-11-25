@@ -37,7 +37,7 @@
     <string name="pref_update_check">Semak kemas kini semasa permulaan</string>
     <string name="pref_update_check_hosts_daily">Semak kemas kini secara berkala</string>
     <string name="pref_update_sync_on_update">Segerak semasa kemas kini</string>
-    <string name="pref_update_sync_unmetered_only">Segerak pada rangkaian tanpa had data sahaja</string>
+    <string name="pref_update_sync_unmetered_only">Semak dan segerak pada rangkaian tanpa had data sahaja</string>
     <string name="pref_vpn_service_on_boot">Dayakan semasa permulaan</string>
     <string name="pref_vpn_service_monitor">Pantau sambungan</string>
     <string name="pref_vpn_service_monitor_description">Semak keadaan rangkaian secara berkala untuk memulakan semula VPN apabila sambungan terputus.</string>

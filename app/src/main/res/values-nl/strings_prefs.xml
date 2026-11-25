@@ -37,7 +37,7 @@
     <string name="pref_update_check">Bij het opstarten op updates controleren</string>
     <string name="pref_update_check_hosts_daily">Regelmatig op updates controleren</string>
     <string name="pref_update_sync_on_update">Synchroniseren bij een update</string>
-    <string name="pref_update_sync_unmetered_only">Alleen synchroniseren op netwerken zonder databeperking</string>
+    <string name="pref_update_sync_unmetered_only">Alleen op netwerken zonder databeperking controleren en synchroniseren</string>
     <string name="pref_vpn_service_on_boot">Inschakelen bij het opstarten</string>
     <string name="pref_vpn_service_monitor">Verbinding bewaken</string>
     <string name="pref_vpn_service_monitor_description">Controleer regelmatig de netwerkstatus om de VPN opnieuw te starten als de verbinding wegvalt.</string>

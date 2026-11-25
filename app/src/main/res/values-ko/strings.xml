@@ -57,6 +57,8 @@
     <string name="rules_allowed">허용됨</string>
     <string name="rules_redirected">리디렉션됨</string>
     <string name="sources_title">hosts 소스</string>
+    <string name="sources_enable_all">모두 사용</string>
+    <string name="sources_disable_all">모두 사용 안 함</string>
     <string name="source_add">소스 추가</string>
     <string name="source_edit">소스 편집</string>
     <string name="source_deleted">소스를 삭제했습니다</string>

@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Nie udało się uruchomić przechwytywania DNS.</string>
     <string name="log_start_recording_button">Rozpocznij nagrywanie</string>
     <string name="log_start_recording_vpn_inactive">Rozpocznij nagrywanie (VPN nieaktywny)</string>
+    <string name="log_vpn_inactive">Blokowanie reklam jest wyłączone: włącz je, aby nagrywać, ponieważ to jego VPN odnotowuje zapytania.</string>
     <string name="log_stop_recording">Zatrzymaj nagrywanie</string>
 </resources>

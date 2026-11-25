@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS ဖမ်းယူမှုကို စတင်၍ မရပါ။</string>
     <string name="log_start_recording_button">မှတ်တမ်းတင်ခြင်း စတင်ရန်</string>
     <string name="log_start_recording_vpn_inactive">မှတ်တမ်းတင်ခြင်း စတင်ရန် (VPN မလည်ပတ်ပါ)</string>
+    <string name="log_vpn_inactive">ကြော်ငြာပိတ်ဆို့ခြင်း ပိတ်ထားသည်။ မှတ်တမ်းတင်ရန် ၎င်းကို ဖွင့်ပါ၊ တောင်းဆိုမှုများကို မှတ်သားသည်မှာ ၎င်း၏ VPN ဖြစ်သောကြောင့် ဖြစ်သည်။</string>
     <string name="log_stop_recording">မှတ်တမ်းတင်ခြင်း ရပ်ရန်</string>
 </resources>

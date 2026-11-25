@@ -14,5 +14,6 @@
     <string name="log_capture_failed">د DNS نیول پیل نه شول.</string>
     <string name="log_start_recording_button">ثبتول پیلول</string>
     <string name="log_start_recording_vpn_inactive">ثبتول پیلول (VPN فعال نه دی)</string>
+    <string name="log_vpn_inactive">د اعلانونو بندول بند دی: د ثبتولو لپاره یې چالان کړئ، ځکه غوښتنې د هغه VPN ثبتوي.</string>
     <string name="log_stop_recording">ثبتول ودرول</string>
 </resources>

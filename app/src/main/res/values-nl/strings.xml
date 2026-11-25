@@ -57,6 +57,8 @@
     <string name="rules_allowed">Toegestaan</string>
     <string name="rules_redirected">Omgeleid</string>
     <string name="sources_title">Hostsbronnen</string>
+    <string name="sources_enable_all">Alles inschakelen</string>
+    <string name="sources_disable_all">Alles uitschakelen</string>
     <string name="source_add">Bron toevoegen</string>
     <string name="source_edit">Bron bewerken</string>
     <string name="source_deleted">Bron verwijderd</string>

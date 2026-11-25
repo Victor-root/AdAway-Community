@@ -37,7 +37,7 @@
     <string name="pref_update_check">Sprawdzaj aktualizacje przy uruchomieniu</string>
     <string name="pref_update_check_hosts_daily">Sprawdzaj aktualizacje okresowo</string>
     <string name="pref_update_sync_on_update">Synchronizuj przy aktualizacji</string>
-    <string name="pref_update_sync_unmetered_only">Synchronizuj tylko w sieci bez limitu danych</string>
+    <string name="pref_update_sync_unmetered_only">Sprawdzaj i synchronizuj tylko w sieci bez limitu danych</string>
     <string name="pref_vpn_service_on_boot">Włączaj przy uruchomieniu</string>
     <string name="pref_vpn_service_monitor">Monitoruj połączenie</string>
     <string name="pref_vpn_service_monitor_description">Okresowo sprawdza stan sieci, aby ponownie uruchomić VPN po rozłączeniu.</string>

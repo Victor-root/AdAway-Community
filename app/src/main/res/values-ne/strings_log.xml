@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS क्याप्चर सुरु हुन सकेन।</string>
     <string name="log_start_recording_button">रेकर्डिङ सुरु गर्नुहोस्</string>
     <string name="log_start_recording_vpn_inactive">रेकर्डिङ सुरु गर्नुहोस् (VPN सक्रिय छैन)</string>
+    <string name="log_vpn_inactive">विज्ञापन ब्लक गर्ने सुविधा बन्द छ: रेकर्ड गर्न यसलाई सक्रिय गर्नुहोस्, किनकि अनुरोधहरू यसको VPN ले नै देख्छ।</string>
     <string name="log_stop_recording">रेकर्डिङ रोक्नुहोस्</string>
 </resources>

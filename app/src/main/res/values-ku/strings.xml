@@ -57,6 +57,8 @@
     <string name="rules_allowed">Destûrdayî</string>
     <string name="rules_redirected">Beralîkirî</string>
     <string name="sources_title">Çavkaniyên hosts</string>
+    <string name="sources_enable_all">Hemûyan çalak bike</string>
+    <string name="sources_disable_all">Hemûyan neçalak bike</string>
     <string name="source_add">Çavkaniyê zêde bike</string>
     <string name="source_edit">Çavkaniyê biguherîne</string>
     <string name="source_deleted">Çavkanî hate jêbirin</string>

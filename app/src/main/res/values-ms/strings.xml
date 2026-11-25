@@ -57,6 +57,8 @@
     <string name="rules_allowed">Dibenarkan</string>
     <string name="rules_redirected">Diubah hala</string>
     <string name="sources_title">Sumber hosts</string>
+    <string name="sources_enable_all">Dayakan semua</string>
+    <string name="sources_disable_all">Nyahdayakan semua</string>
     <string name="source_add">Tambah sumber</string>
     <string name="source_edit">Edit sumber</string>
     <string name="source_deleted">Sumber dipadam</string>

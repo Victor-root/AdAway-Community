@@ -57,6 +57,8 @@
     <string name="rules_allowed">ခွင့်ပြုထားသည်</string>
     <string name="rules_redirected">ပြန်လွှဲထားသည်</string>
     <string name="sources_title">hosts ရင်းမြစ်များ</string>
+    <string name="sources_enable_all">အားလုံးဖွင့်ရန်</string>
+    <string name="sources_disable_all">အားလုံးပိတ်ရန်</string>
     <string name="source_add">ရင်းမြစ် ထည့်ရန်</string>
     <string name="source_edit">ရင်းမြစ်ကို တည်းဖြတ်ရန်</string>
     <string name="source_deleted">ရင်းမြစ်ကို ဖျက်ပြီးပါပြီ</string>

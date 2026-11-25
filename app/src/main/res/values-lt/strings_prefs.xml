@@ -37,7 +37,7 @@
     <string name="pref_update_check">Tikrinti, ar yra atnaujinimų, paleidžiant</string>
     <string name="pref_update_check_hosts_daily">Reguliariai tikrinti, ar yra atnaujinimų</string>
     <string name="pref_update_sync_on_update">Sinchronizuoti atnaujinus</string>
-    <string name="pref_update_sync_unmetered_only">Sinchronizuoti tik naudojant neribojamą tinklą</string>
+    <string name="pref_update_sync_unmetered_only">Tikrinti ir sinchronizuoti tik naudojant neribojamą tinklą</string>
     <string name="pref_vpn_service_on_boot">Įjungti paleidžiant</string>
     <string name="pref_vpn_service_monitor">Stebėti ryšį</string>
     <string name="pref_vpn_service_monitor_description">Reguliariai tikrinti tinklo būseną, kad VPN būtų paleistas iš naujo, jei ryšys nutrūktų.</string>

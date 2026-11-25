@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS 캡처를 시작하지 못했습니다.</string>
     <string name="log_start_recording_button">기록 시작</string>
     <string name="log_start_recording_vpn_inactive">기록 시작(VPN 꺼짐)</string>
+    <string name="log_vpn_inactive">광고 차단이 꺼져 있습니다. 요청은 VPN이 기록하므로 기록하려면 광고 차단을 켜세요.</string>
     <string name="log_stop_recording">기록 중지</string>
 </resources>

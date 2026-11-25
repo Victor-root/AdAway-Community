@@ -37,7 +37,7 @@
     <string name="pref_update_check">시작할 때 업데이트 확인</string>
     <string name="pref_update_check_hosts_daily">주기적으로 업데이트 확인</string>
     <string name="pref_update_sync_on_update">업데이트할 때 동기화</string>
-    <string name="pref_update_sync_unmetered_only">데이터 요금이 없는 네트워크에서만 동기화</string>
+    <string name="pref_update_sync_unmetered_only">데이터 요금이 없는 네트워크에서만 확인 및 동기화</string>
     <string name="pref_vpn_service_on_boot">시작할 때 사용</string>
     <string name="pref_vpn_service_monitor">연결 모니터링</string>
     <string name="pref_vpn_service_monitor_description">네트워크 상태를 주기적으로 확인하여 연결이 끊기면 VPN을 다시 시작합니다.</string>

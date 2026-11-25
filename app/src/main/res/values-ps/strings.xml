@@ -57,6 +57,8 @@
     <string name="rules_allowed">اجازه ورکړل شوي</string>
     <string name="rules_redirected">اړول شوي</string>
     <string name="sources_title">د hosts سرچینې</string>
+    <string name="sources_enable_all">ټول فعالول</string>
+    <string name="sources_disable_all">ټول غیرفعالول</string>
     <string name="source_add">سرچینه ورزیاتول</string>
     <string name="source_edit">سرچینه سمول</string>
     <string name="source_deleted">سرچینه ړنګه شوه</string>

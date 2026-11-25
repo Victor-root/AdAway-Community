@@ -37,7 +37,7 @@
     <string name="pref_update_check">Di destpêkê de nûvekirinê kontrol bike</string>
     <string name="pref_update_check_hosts_daily">Nûvekirinê bi rêkûpêk kontrol bike</string>
     <string name="pref_update_sync_on_update">Dema nûvekirinê hevdem bike</string>
-    <string name="pref_update_sync_unmetered_only">Tenê li ser torên bê sînorê daneyê hevdem bike</string>
+    <string name="pref_update_sync_unmetered_only">Tenê li ser torên bê sînorê daneyê kontrol bike û hevdem bike</string>
     <string name="pref_vpn_service_on_boot">Di destpêkê de çalak bike</string>
     <string name="pref_vpn_service_monitor">Girêdanê bişopîne</string>
     <string name="pref_vpn_service_monitor_description">Rewşa torê bi rêkûpêk kontrol bike da ku VPN piştî qutbûnê ji nû ve dest pê bike.</string>

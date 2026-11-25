@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS ਕੈਪਚਰ ਸ਼ੁਰੂ ਨਹੀਂ ਹੋ ਸਕਿਆ।</string>
     <string name="log_start_recording_button">ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ</string>
     <string name="log_start_recording_vpn_inactive">ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ (VPN ਸਰਗਰਮ ਨਹੀਂ)</string>
+    <string name="log_vpn_inactive">ਇਸ਼ਤਿਹਾਰ ਬਲਾਕਿੰਗ ਬੰਦ ਹੈ: ਰਿਕਾਰਡ ਕਰਨ ਲਈ ਇਸਨੂੰ ਚਾਲੂ ਕਰੋ, ਕਿਉਂਕਿ ਬੇਨਤੀਆਂ ਇਸ ਦਾ VPN ਹੀ ਦਰਜ ਕਰਦਾ ਹੈ।</string>
     <string name="log_stop_recording">ਰਿਕਾਰਡਿੰਗ ਬੰਦ ਕਰੋ</string>
 </resources>

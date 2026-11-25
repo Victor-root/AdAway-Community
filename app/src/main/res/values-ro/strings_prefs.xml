@@ -37,7 +37,7 @@
     <string name="pref_update_check">Căutare actualizări la pornire</string>
     <string name="pref_update_check_hosts_daily">Căutare periodică a actualizărilor</string>
     <string name="pref_update_sync_on_update">Sincronizare la actualizare</string>
-    <string name="pref_update_sync_unmetered_only">Sincronizare doar în rețele fără limită de date</string>
+    <string name="pref_update_sync_unmetered_only">Verificare și sincronizare doar în rețele fără limită de date</string>
     <string name="pref_vpn_service_on_boot">Activare la pornire</string>
     <string name="pref_vpn_service_monitor">Monitorizarea conexiunii</string>
     <string name="pref_vpn_service_monitor_description">Verifică periodic starea rețelei pentru a reporni VPN-ul după o deconectare.</string>

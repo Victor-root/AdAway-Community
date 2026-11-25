@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Nepavyko pradėti DNS fiksavimo.</string>
     <string name="log_start_recording_button">Pradėti įrašymą</string>
     <string name="log_start_recording_vpn_inactive">Pradėti įrašymą (VPN neaktyvus)</string>
+    <string name="log_vpn_inactive">Reklamų blokavimas išjungtas: įjunkite jį, kad galėtumėte įrašyti, nes užklausas fiksuoja jo VPN.</string>
     <string name="log_stop_recording">Sustabdyti įrašymą</string>
 </resources>

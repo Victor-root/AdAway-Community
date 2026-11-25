@@ -37,7 +37,7 @@
     <string name="pref_update_check">सुरु हुँदा अपडेट जाँच गर्नुहोस्</string>
     <string name="pref_update_check_hosts_daily">समय समयमा अपडेट जाँच गर्नुहोस्</string>
     <string name="pref_update_sync_on_update">अपडेट हुँदा सिङ्क गर्नुहोस्</string>
-    <string name="pref_update_sync_unmetered_only">मिटर नगरिएको नेटवर्कमा मात्र सिङ्क गर्नुहोस्</string>
+    <string name="pref_update_sync_unmetered_only">मिटर नगरिएको नेटवर्कमा मात्र जाँच र सिङ्क गर्नुहोस्</string>
     <string name="pref_vpn_service_on_boot">सुरु हुँदा सक्षम पार्नुहोस्</string>
     <string name="pref_vpn_service_monitor">जडानको निगरानी गर्नुहोस्</string>
     <string name="pref_vpn_service_monitor_description">VPN विच्छेद भएमा पुन: सुरु गर्न नेटवर्कको अवस्था समय समयमा जाँच गरिन्छ।</string>

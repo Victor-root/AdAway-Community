@@ -57,6 +57,8 @@
     <string name="rules_allowed">Permise</string>
     <string name="rules_redirected">Redirecționate</string>
     <string name="sources_title">Surse hosts</string>
+    <string name="sources_enable_all">Activați toate</string>
+    <string name="sources_disable_all">Dezactivați toate</string>
     <string name="source_add">Adăugare sursă</string>
     <string name="source_edit">Editare sursă</string>
     <string name="source_deleted">Sursă ștearsă</string>

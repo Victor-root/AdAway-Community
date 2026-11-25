@@ -37,7 +37,7 @@
     <string name="pref_update_check">ਸ਼ੁਰੂ ਹੋਣ ਸਮੇਂ ਅੱਪਡੇਟ ਦੀ ਜਾਂਚ ਕਰੋ</string>
     <string name="pref_update_check_hosts_daily">ਨਿਯਮਿਤ ਤੌਰ ਉੱਤੇ ਅੱਪਡੇਟ ਦੀ ਜਾਂਚ ਕਰੋ</string>
     <string name="pref_update_sync_on_update">ਅੱਪਡੇਟ ਹੋਣ ਉੱਤੇ ਸਿੰਕ ਕਰੋ</string>
-    <string name="pref_update_sync_unmetered_only">ਸਿਰਫ਼ ਅਣਮੀਟਰਡ ਨੈੱਟਵਰਕ ਉੱਤੇ ਸਿੰਕ ਕਰੋ</string>
+    <string name="pref_update_sync_unmetered_only">ਸਿਰਫ਼ ਅਣਮੀਟਰਡ ਨੈੱਟਵਰਕ ਉੱਤੇ ਜਾਂਚ ਅਤੇ ਸਿੰਕ ਕਰੋ</string>
     <string name="pref_vpn_service_on_boot">ਸ਼ੁਰੂ ਹੋਣ ਸਮੇਂ ਚਾਲੂ ਕਰੋ</string>
     <string name="pref_vpn_service_monitor">ਕਨੈਕਸ਼ਨ ਦੀ ਨਿਗਰਾਨੀ ਕਰੋ</string>
     <string name="pref_vpn_service_monitor_description">ਡਿਸਕਨੈਕਟ ਹੋਣ ਉੱਤੇ VPN ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰਨ ਲਈ ਨੈੱਟਵਰਕ ਦੀ ਸਥਿਤੀ ਨੂੰ ਨਿਯਮਿਤ ਤੌਰ ਉੱਤੇ ਜਾਂਚਦਾ ਹੈ।</string>

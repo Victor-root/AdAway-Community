@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Tomarkirina DNS nikaribû dest pê bike.</string>
     <string name="log_start_recording_button">Tomarkirinê dest pê bike</string>
     <string name="log_start_recording_vpn_inactive">Tomarkirinê dest pê bike (VPN çalak nîne)</string>
+    <string name="log_vpn_inactive">Astengkirina reklaman neçalak e: ji bo tomarkirinê wê çalak bike, ji ber ku daxwazan VPN-a wê dibîne.</string>
     <string name="log_stop_recording">Tomarkirinê bisekinîne</string>
 </resources>

@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Penangkapan DNS tidak dapat dimulakan.</string>
     <string name="log_start_recording_button">Mula merakam</string>
     <string name="log_start_recording_vpn_inactive">Mula merakam (VPN tidak aktif)</string>
+    <string name="log_vpn_inactive">Penyekatan iklan dimatikan: hidupkannya untuk merakam, kerana VPN-nya yang mencatat permintaan.</string>
     <string name="log_stop_recording">Henti merakam</string>
 </resources>

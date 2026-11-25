@@ -37,7 +37,7 @@
     <string name="pref_update_check">စတင်သည့်အခါ အပ်ဒိတ်ကို စစ်ဆေးရန်</string>
     <string name="pref_update_check_hosts_daily">အပ်ဒိတ်ကို အချိန်ကာလအလိုက် စစ်ဆေးရန်</string>
     <string name="pref_update_sync_on_update">အပ်ဒိတ်ရှိလျှင် ထပ်တူပြုရန်</string>
-    <string name="pref_update_sync_unmetered_only">ဒေတာကန့်သတ်မထားသော ကွန်ရက်တွင်သာ ထပ်တူပြုရန်</string>
+    <string name="pref_update_sync_unmetered_only">ဒေတာကန့်သတ်မထားသော ကွန်ရက်တွင်သာ စစ်ဆေးပြီး ထပ်တူပြုရန်</string>
     <string name="pref_vpn_service_on_boot">စတင်သည့်အခါ ဖွင့်ရန်</string>
     <string name="pref_vpn_service_monitor">ချိတ်ဆက်မှုကို စောင့်ကြည့်ရန်</string>
     <string name="pref_vpn_service_monitor_description">ချိတ်ဆက်မှု ပြတ်တောက်သွားပါက VPN ကို ပြန်စတင်ရန် ကွန်ရက်အခြေအနေကို အချိန်ကာလအလိုက် စစ်ဆေးပါသည်။</string>

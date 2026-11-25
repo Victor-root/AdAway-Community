@@ -37,7 +37,7 @@
     <string name="pref_update_check">ആരംഭിക്കുമ്പോൾ അപ്ഡേറ്റ് പരിശോധിക്കുക</string>
     <string name="pref_update_check_hosts_daily">ഇടയ്ക്കിടെ അപ്ഡേറ്റ് പരിശോധിക്കുക</string>
     <string name="pref_update_sync_on_update">അപ്ഡേറ്റ് ചെയ്യുമ്പോൾ സമന്വയിപ്പിക്കുക</string>
-    <string name="pref_update_sync_unmetered_only">ഡാറ്റ പരിധിയില്ലാത്ത നെറ്റ്‌വർക്കിൽ മാത്രം സമന്വയിപ്പിക്കുക</string>
+    <string name="pref_update_sync_unmetered_only">ഡാറ്റ പരിധിയില്ലാത്ത നെറ്റ്‌വർക്കിൽ മാത്രം പരിശോധിക്കുകയും സമന്വയിപ്പിക്കുകയും ചെയ്യുക</string>
     <string name="pref_vpn_service_on_boot">ആരംഭിക്കുമ്പോൾ പ്രവർത്തനക്ഷമമാക്കുക</string>
     <string name="pref_vpn_service_monitor">കണക്ഷൻ നിരീക്ഷിക്കുക</string>
     <string name="pref_vpn_service_monitor_description">കണക്ഷൻ നഷ്ടപ്പെട്ടാൽ VPN വീണ്ടും ആരംഭിക്കാൻ നെറ്റ്‌വർക്കിന്റെ നില ഇടയ്ക്കിടെ പരിശോധിക്കുക.</string>
