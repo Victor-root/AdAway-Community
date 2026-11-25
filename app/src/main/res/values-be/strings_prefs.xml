@@ -37,7 +37,7 @@
     <string name="pref_update_check">Правяраць абнаўленні пры запуску</string>
     <string name="pref_update_check_hosts_daily">Правяраць абнаўленні рэгулярна</string>
     <string name="pref_update_sync_on_update">Сінхранізаваць пры абнаўленні</string>
-    <string name="pref_update_sync_unmetered_only">Сінхранізаваць толькі праз сетку без ліміту трафіку</string>
+    <string name="pref_update_sync_unmetered_only">Правяраць і сінхранізаваць толькі праз сетку без ліміту трафіку</string>
     <string name="pref_vpn_service_on_boot">Уключаць пры запуску</string>
     <string name="pref_vpn_service_monitor">Сачыць за злучэннем</string>
     <string name="pref_vpn_service_monitor_description">Рэгулярна правяраць стан сеткі, каб перазапусціць VPN пасля адключэння.</string>

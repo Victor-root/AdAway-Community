@@ -57,6 +57,8 @@
     <string name="rules_allowed">Permesitaj</string>
     <string name="rules_redirected">Alidirektitaj</string>
     <string name="sources_title">Hosts-fontoj</string>
+    <string name="sources_enable_all">Ŝalti ĉiujn</string>
+    <string name="sources_disable_all">Malŝalti ĉiujn</string>
     <string name="source_add">Aldoni fonton</string>
     <string name="source_edit">Redakti fonton</string>
     <string name="source_deleted">Fonto forigita</string>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">Kyk by opstart vir opdaterings</string>
     <string name="pref_update_check_hosts_daily">Kyk gereeld vir opdaterings</string>
     <string name="pref_update_sync_on_update">Sinkroniseer by opdatering</string>
-    <string name="pref_update_sync_unmetered_only">Sinkroniseer net op ongemeterde netwerk</string>
+    <string name="pref_update_sync_unmetered_only">Kontroleer en sinkroniseer net op ongemeterde netwerke</string>
     <string name="pref_vpn_service_on_boot">Aktiveer by opstart</string>
     <string name="pref_vpn_service_monitor">Moniteer verbinding</string>
     <string name="pref_vpn_service_monitor_description">Kyk gereeld na die netwerktoestand om die VPN te herbegin wanneer die verbinding verbreek word.</string>

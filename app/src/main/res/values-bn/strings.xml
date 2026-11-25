@@ -57,6 +57,8 @@
     <string name="rules_allowed">অনুমোদিত</string>
     <string name="rules_redirected">রিডাইরেক্ট করা</string>
     <string name="sources_title">hosts উৎস</string>
+    <string name="sources_enable_all">সব চালু করুন</string>
+    <string name="sources_disable_all">সব বন্ধ করুন</string>
     <string name="source_add">উৎস যোগ করুন</string>
     <string name="source_edit">উৎস সম্পাদনা করুন</string>
     <string name="source_deleted">উৎস মুছে ফেলা হয়েছে</string>

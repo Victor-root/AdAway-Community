@@ -54,6 +54,8 @@
     <string name="rules_allowed">Επιτρεπόμενα</string>
     <string name="rules_redirected">Ανακατευθυνόμενα</string>
     <string name="sources_title">Πηγές hosts</string>
+    <string name="sources_enable_all">Ενεργοποίηση όλων</string>
+    <string name="sources_disable_all">Απενεργοποίηση όλων</string>
     <string name="source_add">Προσθήκη πηγής</string>
     <string name="source_edit">Επεξεργασία πηγής</string>
     <string name="source_deleted">Η πηγή διαγράφηκε</string>

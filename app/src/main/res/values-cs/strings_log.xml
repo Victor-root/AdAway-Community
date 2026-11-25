@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Záznam DNS se nepodařilo spustit.</string>
     <string name="log_start_recording_button">Spustit záznam</string>
     <string name="log_start_recording_vpn_inactive">Spustit záznam (VPN není aktivní)</string>
+    <string name="log_vpn_inactive">Blokování reklam je vypnuté: pro záznam ho zapněte, protože požadavky zaznamenává jeho VPN.</string>
     <string name="log_stop_recording">Zastavit záznam</string>
 </resources>

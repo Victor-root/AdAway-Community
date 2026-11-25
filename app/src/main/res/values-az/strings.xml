@@ -57,6 +57,8 @@
     <string name="rules_allowed">İcazə verilənlər</string>
     <string name="rules_redirected">Yönləndirilənlər</string>
     <string name="sources_title">Hosts mənbələri</string>
+    <string name="sources_enable_all">Hamısını aktiv edin</string>
+    <string name="sources_disable_all">Hamısını deaktiv edin</string>
     <string name="source_add">Mənbə əlavə edin</string>
     <string name="source_edit">Mənbəni redaktə edin</string>
     <string name="source_deleted">Mənbə silindi</string>

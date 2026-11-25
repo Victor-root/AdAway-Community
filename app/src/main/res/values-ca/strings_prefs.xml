@@ -37,7 +37,7 @@
     <string name="pref_update_check">Cerca actualitzacions en iniciar</string>
     <string name="pref_update_check_hosts_daily">Cerca actualitzacions periòdicament</string>
     <string name="pref_update_sync_on_update">Sincronitza en actualitzar</string>
-    <string name="pref_update_sync_unmetered_only">Sincronitza només amb xarxes sense límit de dades</string>
+    <string name="pref_update_sync_unmetered_only">Comprova i sincronitza només amb xarxes sense límit de dades</string>
     <string name="pref_vpn_service_on_boot">Activa en arrencar</string>
     <string name="pref_vpn_service_monitor">Supervisa la connexió</string>
     <string name="pref_vpn_service_monitor_description">Comprova periòdicament l’estat de la xarxa per reiniciar la VPN després d’una desconnexió.</string>

@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Nun se pudo aniciar la captura de DNS.</string>
     <string name="log_start_recording_button">Entamar la grabación</string>
     <string name="log_start_recording_vpn_inactive">Entamar la grabación (VPN inactiva)</string>
+    <string name="log_vpn_inactive">El bloquéu de publicidá ta desactiváu: actívalu pa grabar, porque la so VPN ye la que rexistra les solicitúes.</string>
     <string name="log_stop_recording">Parar la grabación</string>
 </resources>

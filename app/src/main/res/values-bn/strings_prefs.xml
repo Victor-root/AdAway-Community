@@ -37,7 +37,7 @@
     <string name="pref_update_check">স্টার্টআপে আপডেট খুঁজুন</string>
     <string name="pref_update_check_hosts_daily">নিয়মিত আপডেট খুঁজুন</string>
     <string name="pref_update_sync_on_update">আপডেটের সময় সিঙ্ক করুন</string>
-    <string name="pref_update_sync_unmetered_only">শুধু মিটারবিহীন নেটওয়ার্কে সিঙ্ক করুন</string>
+    <string name="pref_update_sync_unmetered_only">শুধু মিটারবিহীন নেটওয়ার্কে যাচাই ও সিঙ্ক করুন</string>
     <string name="pref_vpn_service_on_boot">স্টার্টআপে চালু করুন</string>
     <string name="pref_vpn_service_monitor">সংযোগ পর্যবেক্ষণ করুন</string>
     <string name="pref_vpn_service_monitor_description">সংযোগ বিচ্ছিন্ন হলে VPN আবার চালু করার জন্য নিয়মিত নেটওয়ার্কের অবস্থা পরীক্ষা করা হয়।</string>

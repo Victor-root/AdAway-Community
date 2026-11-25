@@ -57,6 +57,8 @@
     <string name="rules_allowed">Toegelaat</string>
     <string name="rules_redirected">Herlei</string>
     <string name="sources_title">Hosts-bronne</string>
+    <string name="sources_enable_all">Aktiveer almal</string>
+    <string name="sources_disable_all">Deaktiveer almal</string>
     <string name="source_add">Voeg bron by</string>
     <string name="source_edit">Wysig bron</string>
     <string name="source_deleted">Bron uitgevee</string>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">Başlanğıcda yeniləməni yoxlayın</string>
     <string name="pref_update_check_hosts_daily">Yeniləməni vaxtaşırı yoxlayın</string>
     <string name="pref_update_sync_on_update">Yeniləmə zamanı sinxronlaşdırın</string>
-    <string name="pref_update_sync_unmetered_only">Yalnız limitsiz şəbəkədə sinxronlaşdırın</string>
+    <string name="pref_update_sync_unmetered_only">Yalnız limitsiz şəbəkələrdə yoxlayın və sinxronlaşdırın</string>
     <string name="pref_vpn_service_on_boot">Başlanğıcda aktiv edin</string>
     <string name="pref_vpn_service_monitor">Bağlantını izləyin</string>
     <string name="pref_vpn_service_monitor_description">Bağlantı kəsildikdə VPN-i yenidən başlatmaq üçün şəbəkənin vəziyyəti vaxtaşırı yoxlanılır.</string>

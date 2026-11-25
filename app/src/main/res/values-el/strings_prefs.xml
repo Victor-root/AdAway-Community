@@ -37,7 +37,7 @@
     <string name="pref_update_check">Έλεγχος για ενημέρωση κατά την εκκίνηση</string>
     <string name="pref_update_check_hosts_daily">Περιοδικός έλεγχος για ενημέρωση</string>
     <string name="pref_update_sync_on_update">Συγχρονισμός κατά την ενημέρωση</string>
-    <string name="pref_update_sync_unmetered_only">Συγχρονισμός μόνο σε δίκτυο χωρίς χρέωση δεδομένων</string>
+    <string name="pref_update_sync_unmetered_only">Έλεγχος και συγχρονισμός μόνο σε δίκτυο χωρίς χρέωση δεδομένων</string>
     <string name="pref_vpn_service_on_boot">Ενεργοποίηση κατά την εκκίνηση</string>
     <string name="pref_vpn_service_monitor">Παρακολούθηση σύνδεσης</string>
     <string name="pref_vpn_service_monitor_description">Έλεγχος της κατάστασης του δικτύου ανά τακτά διαστήματα, ώστε να γίνεται επανεκκίνηση του VPN σε περίπτωση αποσύνδεσης.</string>

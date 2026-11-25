@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Не ўдалося запусціць захоп DNS-запытаў.</string>
     <string name="log_start_recording_button">Пачаць запіс</string>
     <string name="log_start_recording_vpn_inactive">Пачаць запіс (VPN не актыўны)</string>
+    <string name="log_vpn_inactive">Блакіроўка рэкламы выключана: уключыце яе, каб весці запіс, бо запыты фіксуе яе VPN.</string>
     <string name="log_stop_recording">Спыніць запіс</string>
 </resources>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">Проверка за актуализация при стартиране</string>
     <string name="pref_update_check_hosts_daily">Редовна проверка за актуализации</string>
     <string name="pref_update_sync_on_update">Синхронизиране при актуализация</string>
-    <string name="pref_update_sync_unmetered_only">Синхронизиране само през мрежи без ограничение на трафика</string>
+    <string name="pref_update_sync_unmetered_only">Проверка и синхронизиране само през мрежи без ограничение на трафика</string>
     <string name="pref_vpn_service_on_boot">Включване при стартиране</string>
     <string name="pref_vpn_service_monitor">Наблюдение на връзката</string>
     <string name="pref_vpn_service_monitor_description">Проверява периодично състоянието на мрежата, за да рестартира VPN при прекъсване на връзката.</string>

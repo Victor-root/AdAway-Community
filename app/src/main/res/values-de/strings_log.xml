@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Die DNS-Aufzeichnung konnte nicht gestartet werden.</string>
     <string name="log_start_recording_button">Aufzeichnung starten</string>
     <string name="log_start_recording_vpn_inactive">Aufzeichnung starten (VPN nicht aktiv)</string>
+    <string name="log_vpn_inactive">Die Werbeblockierung ist aus: Schalte sie ein, um aufzuzeichnen, denn nur ihr VPN sieht die Anfragen.</string>
     <string name="log_stop_recording">Aufzeichnung beenden</string>
 </resources>

@@ -57,6 +57,8 @@
     <string name="rules_allowed">Дазволеныя</string>
     <string name="rules_redirected">Перанакіраваныя</string>
     <string name="sources_title">Крыніцы hosts</string>
+    <string name="sources_enable_all">Уключыць усе</string>
+    <string name="sources_disable_all">Выключыць усе</string>
     <string name="source_add">Дадаць крыніцу</string>
     <string name="source_edit">Змяніць крыніцу</string>
     <string name="source_deleted">Крыніца выдалена</string>

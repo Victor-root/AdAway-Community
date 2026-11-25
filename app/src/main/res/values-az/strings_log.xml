@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS sorğularının qeydi başlaya bilmədi.</string>
     <string name="log_start_recording_button">Qeydi başladın</string>
     <string name="log_start_recording_vpn_inactive">Qeydi başladın (VPN aktiv deyil)</string>
+    <string name="log_vpn_inactive">Reklam bloklama söndürülüb: qeyd etmək üçün onu aktiv edin, çünki sorğuları onun VPN-i görür.</string>
     <string name="log_stop_recording">Qeydi dayandırın</string>
 </resources>

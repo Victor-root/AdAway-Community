@@ -14,5 +14,6 @@
     <string name="log_capture_failed">تعذّر بدء التقاط DNS.</string>
     <string name="log_start_recording_button">بدء التسجيل</string>
     <string name="log_start_recording_vpn_inactive">بدء التسجيل (VPN غير نشط)</string>
+    <string name="log_vpn_inactive">حظر الإعلانات متوقف: فعّله للتسجيل، لأن VPN الخاص به هو من يرصد الطلبات.</string>
     <string name="log_stop_recording">إيقاف التسجيل</string>
 </resources>

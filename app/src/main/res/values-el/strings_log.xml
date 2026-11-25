@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Δεν ήταν δυνατή η εκκίνηση της καταγραφής DNS.</string>
     <string name="log_start_recording_button">Έναρξη εγγραφής</string>
     <string name="log_start_recording_vpn_inactive">Έναρξη εγγραφής (το VPN δεν είναι ενεργό)</string>
+    <string name="log_vpn_inactive">Ο αποκλεισμός διαφημίσεων είναι απενεργοποιημένος: ενεργοποιήστε τον για καταγραφή, γιατί το VPN του είναι που εντοπίζει τα αιτήματα.</string>
     <string name="log_stop_recording">Διακοπή εγγραφής</string>
 </resources>

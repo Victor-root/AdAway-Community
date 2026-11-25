@@ -54,6 +54,8 @@
     <string name="rules_allowed">Permitíos</string>
     <string name="rules_redirected">Redirixíos</string>
     <string name="sources_title">Fontes de hosts</string>
+    <string name="sources_enable_all">Activar too</string>
+    <string name="sources_disable_all">Desactivar too</string>
     <string name="source_add">Amestar fonte</string>
     <string name="source_edit">Editar fonte</string>
     <string name="source_deleted">Fonte desaniciada</string>

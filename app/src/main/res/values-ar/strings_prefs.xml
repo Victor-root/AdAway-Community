@@ -37,7 +37,7 @@
     <string name="pref_update_check">التحقق من وجود تحديث عند بدء التشغيل</string>
     <string name="pref_update_check_hosts_daily">التحقق من وجود تحديث بشكل دوري</string>
     <string name="pref_update_sync_on_update">المزامنة عند التحديث</string>
-    <string name="pref_update_sync_unmetered_only">المزامنة على الشبكات غير المحدودة فقط</string>
+    <string name="pref_update_sync_unmetered_only">التحقق والمزامنة على الشبكات غير المحدودة فقط</string>
     <string name="pref_vpn_service_on_boot">التفعيل عند بدء التشغيل</string>
     <string name="pref_vpn_service_monitor">مراقبة الاتصال</string>
     <string name="pref_vpn_service_monitor_description">التحقق من حالة الشبكة بشكل دوري لإعادة تشغيل VPN عند انقطاع الاتصال.</string>

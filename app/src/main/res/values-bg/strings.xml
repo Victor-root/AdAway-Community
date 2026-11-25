@@ -57,6 +57,8 @@
     <string name="rules_allowed">Разрешени</string>
     <string name="rules_redirected">Пренасочени</string>
     <string name="sources_title">Източници на hosts</string>
+    <string name="sources_enable_all">Включване на всички</string>
+    <string name="sources_disable_all">Изключване на всички</string>
     <string name="source_add">Добавяне на източник</string>
     <string name="source_edit">Редактиране на източник</string>
     <string name="source_deleted">Източникът е изтрит</string>

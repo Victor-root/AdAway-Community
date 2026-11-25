@@ -57,6 +57,8 @@
     <string name="rules_allowed">Permesos</string>
     <string name="rules_redirected">Redirigits</string>
     <string name="sources_title">Fonts d’amfitrions</string>
+    <string name="sources_enable_all">Activa-ho tot</string>
+    <string name="sources_disable_all">Desactiva-ho tot</string>
     <string name="source_add">Afegeix una font</string>
     <string name="source_edit">Edita la font</string>
     <string name="source_deleted">Font suprimida</string>

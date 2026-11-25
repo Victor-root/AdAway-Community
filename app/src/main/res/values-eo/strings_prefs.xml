@@ -37,7 +37,7 @@
     <string name="pref_update_check">Kontroli ĝisdatigon ĉe starto</string>
     <string name="pref_update_check_hosts_daily">Kontroli ĝisdatigon periode</string>
     <string name="pref_update_sync_on_update">Sinkronigi post ĝisdatigo</string>
-    <string name="pref_update_sync_unmetered_only">Sinkronigi nur en reto sen datumlimo</string>
+    <string name="pref_update_sync_unmetered_only">Kontroli kaj sinkronigi nur en retoj sen datumlimo</string>
     <string name="pref_vpn_service_on_boot">Ŝalti ĉe starto</string>
     <string name="pref_vpn_service_monitor">Gvatadi la konekton</string>
     <string name="pref_vpn_service_monitor_description">Periode kontroli la staton de la reto por rekomenci la VPN post malkonekto.</string>

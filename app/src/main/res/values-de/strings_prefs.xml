@@ -37,7 +37,7 @@
     <string name="pref_update_check">Beim Start nach Updates suchen</string>
     <string name="pref_update_check_hosts_daily">Regelmäßig nach Updates suchen</string>
     <string name="pref_update_sync_on_update">Bei Update synchronisieren</string>
-    <string name="pref_update_sync_unmetered_only">Nur in nicht getakteten Netzwerken synchronisieren</string>
+    <string name="pref_update_sync_unmetered_only">Nur in nicht getakteten Netzwerken prüfen und synchronisieren</string>
     <string name="pref_vpn_service_on_boot">Beim Systemstart aktivieren</string>
     <string name="pref_vpn_service_monitor">Verbindung überwachen</string>
     <string name="pref_vpn_service_monitor_description">Prüft regelmäßig den Netzwerkstatus, um das VPN nach einer Trennung neu zu starten.</string>

@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Записът на DNS не можа да стартира.</string>
     <string name="log_start_recording_button">Начало на записа</string>
     <string name="log_start_recording_vpn_inactive">Начало на записа (VPN не е активен)</string>
+    <string name="log_vpn_inactive">Блокирането на реклами е изключено: включете го, за да записвате, защото заявките се виждат от неговия VPN.</string>
     <string name="log_stop_recording">Край на записа</string>
 </resources>

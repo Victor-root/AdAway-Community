@@ -14,5 +14,6 @@
     <string name="log_capture_failed">La DNS-kaptado ne povis komenciĝi.</string>
     <string name="log_start_recording_button">Komenci registradon</string>
     <string name="log_start_recording_vpn_inactive">Komenci registradon (VPN ne aktiva)</string>
+    <string name="log_vpn_inactive">Reklamblokado estas malŝaltita: ŝaltu ĝin por registri, ĉar ĝia VPN rimarkas la petojn.</string>
     <string name="log_stop_recording">Halti registradon</string>
 </resources>
