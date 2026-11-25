@@ -16,6 +16,8 @@
 * Show the logo and the app name on the Android TV banner
 * Round the corners of the dialogs
 * List the excluded apps first when opening the list of apps to exclude from the VPN
+* Point to well-known hosts lists in the help, which no longer warns against large lists
+* Hold back the startup check of the sources too on metered networks, when updates are limited to unmetered ones
 
 ### ➕ Added
 
@@ -33,6 +35,8 @@
 * 📺 Tell how to check the always-on VPN with ADB, and how to let AdAway start by itself on TCL TVs, each command in a gray block, also in the help where a button copies it on phones
 * 🔗 Open the help links with the TV remote, and tell when the device has no browser
 * 📝 Open the release notes from the version number on Android TV, as on phones
+* ☑️ Enable or disable all the hosts sources at once
+* 📋 Tell in the DNS log that it only records while ad blocking is on
 
 ### 🐛 Fixed
 
@@ -41,6 +45,7 @@
 * Keep the TV remote on "Check now" while it checks, and show the focus on the welcome buttons, the disabled sources and rules, and the help links
 * Answer the search, rule and address dialogs with the confirming key of the keyboard
 * Block a site at once when applying, even in a browser that had it open, by reconnecting the VPN
+* Open the release notes at their top on Android TV
 
 ## [6.6.1-c] - 2026-09-11
 
