@@ -37,7 +37,7 @@
     <string name="pref_update_check">ආරම්භයේදී යාවත්කාලීන පරීක්ෂා කරන්න</string>
     <string name="pref_update_check_hosts_daily">කලින් කලට යාවත්කාලීන පරීක්ෂා කරන්න</string>
     <string name="pref_update_sync_on_update">යාවත්කාලීනයේදී සමමුහුර්ත කරන්න</string>
-    <string name="pref_update_sync_unmetered_only">දත්ත සීමාවක් නැති ජාලයකදී පමණක් සමමුහුර්ත කරන්න</string>
+    <string name="pref_update_sync_unmetered_only">දත්ත සීමාවක් නැති ජාලයකදී පමණක් යාවත්කාලීන පරීක්ෂා කර සමමුහුර්ත කරන්න</string>
     <string name="pref_vpn_service_on_boot">ආරම්භයේදී සක්‍රීය කරන්න</string>
     <string name="pref_vpn_service_monitor">සම්බන්ධතාව නිරීක්ෂණය කරන්න</string>
     <string name="pref_vpn_service_monitor_description">විසන්ධි වූ විට VPN නැවත ආරම්භ කිරීම සඳහා ජාල තත්ත්වය කලින් කලට පරීක්ෂා කරයි.</string>

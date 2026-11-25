@@ -37,7 +37,7 @@
     <string name="pref_update_check">Ishga tushganda yangilanishni tekshirish</string>
     <string name="pref_update_check_hosts_daily">Yangilanishni vaqti-vaqti bilan tekshirish</string>
     <string name="pref_update_sync_on_update">Yangilanganda sinxronlash</string>
-    <string name="pref_update_sync_unmetered_only">Faqat trafik hisoblanmaydigan tarmoqda sinxronlash</string>
+    <string name="pref_update_sync_unmetered_only">Faqat trafik hisoblanmaydigan tarmoqda tekshirish va sinxronlash</string>
     <string name="pref_vpn_service_on_boot">Ishga tushganda yoqish</string>
     <string name="pref_vpn_service_monitor">Ulanishni kuzatish</string>
     <string name="pref_vpn_service_monitor_description">Aloqa uzilganda VPNni qayta ishga tushirish uchun tarmoq holatini vaqti-vaqti bilan tekshirib turadi.</string>

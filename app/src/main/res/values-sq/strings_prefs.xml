@@ -37,7 +37,7 @@
     <string name="pref_update_check">Kontrollo për përditësim gjatë nisjes</string>
     <string name="pref_update_check_hosts_daily">Kontrollo periodikisht për përditësime</string>
     <string name="pref_update_sync_on_update">Sinkronizo gjatë përditësimit</string>
-    <string name="pref_update_sync_unmetered_only">Sinkronizo vetëm në rrjet pa kufizim të dhënash</string>
+    <string name="pref_update_sync_unmetered_only">Kontrollo dhe sinkronizo vetëm në rrjete pa kufizim të dhënash</string>
     <string name="pref_vpn_service_on_boot">Aktivizo gjatë nisjes</string>
     <string name="pref_vpn_service_monitor">Monitoro lidhjen</string>
     <string name="pref_vpn_service_monitor_description">Kontrollo periodikisht gjendjen e rrjetit për të rinisur VPN-në pas një shkëputjeje.</string>

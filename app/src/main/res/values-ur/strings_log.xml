@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS کیپچر شروع نہیں ہو سکا۔</string>
     <string name="log_start_recording_button">ریکارڈنگ شروع کریں</string>
     <string name="log_start_recording_vpn_inactive">ریکارڈنگ شروع کریں (VPN فعال نہیں)</string>
+    <string name="log_vpn_inactive">اشتہار بلاکنگ بند ہے: ریکارڈ کرنے کے لیے اسے آن کریں، کیونکہ درخواستیں اسی کا VPN نوٹ کرتا ہے۔</string>
     <string name="log_stop_recording">ریکارڈنگ روکیں</string>
 </resources>

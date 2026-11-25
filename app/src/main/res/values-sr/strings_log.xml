@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS снимање није могло да почне.</string>
     <string name="log_start_recording_button">Започни снимање</string>
     <string name="log_start_recording_vpn_inactive">Започни снимање (VPN није активан)</string>
+    <string name="log_vpn_inactive">Блокирање огласа је искључено: укључите га да бисте снимали, јер захтеве бележи његов VPN.</string>
     <string name="log_stop_recording">Заустави снимање</string>
 </resources>

@@ -57,6 +57,8 @@
     <string name="rules_allowed">Povolené</string>
     <string name="rules_redirected">Presmerované</string>
     <string name="sources_title">Zdroje hosts</string>
+    <string name="sources_enable_all">Zapnúť všetky</string>
+    <string name="sources_disable_all">Vypnúť všetky</string>
     <string name="source_add">Pridať zdroj</string>
     <string name="source_edit">Upraviť zdroj</string>
     <string name="source_deleted">Zdroj bol odstránený</string>

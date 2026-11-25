@@ -37,7 +37,7 @@
     <string name="pref_update_check">ตรวจหาอัปเดตเมื่อเปิดแอป</string>
     <string name="pref_update_check_hosts_daily">ตรวจหาอัปเดตเป็นระยะ</string>
     <string name="pref_update_sync_on_update">ซิงค์เมื่อมีอัปเดต</string>
-    <string name="pref_update_sync_unmetered_only">ซิงค์เฉพาะเครือข่ายที่ไม่จำกัดปริมาณข้อมูล</string>
+    <string name="pref_update_sync_unmetered_only">ตรวจสอบและซิงค์เฉพาะเครือข่ายที่ไม่จำกัดปริมาณข้อมูล</string>
     <string name="pref_vpn_service_on_boot">เปิดใช้งานเมื่อเปิดเครื่อง</string>
     <string name="pref_vpn_service_monitor">ตรวจสอบการเชื่อมต่อ</string>
     <string name="pref_vpn_service_monitor_description">ตรวจสอบสถานะเครือข่ายเป็นระยะ เพื่อเริ่ม VPN ใหม่เมื่อการเชื่อมต่อหลุด</string>

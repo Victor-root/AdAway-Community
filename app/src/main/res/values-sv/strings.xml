@@ -57,6 +57,8 @@
     <string name="rules_allowed">Tillåtna</string>
     <string name="rules_redirected">Omdirigerade</string>
     <string name="sources_title">Hosts-källor</string>
+    <string name="sources_enable_all">Aktivera alla</string>
+    <string name="sources_disable_all">Inaktivera alla</string>
     <string name="source_add">Lägg till källa</string>
     <string name="source_edit">Redigera källa</string>
     <string name="source_deleted">Källan har tagits bort</string>

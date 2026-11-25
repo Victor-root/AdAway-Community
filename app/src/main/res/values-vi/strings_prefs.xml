@@ -37,7 +37,7 @@
     <string name="pref_update_check">Kiểm tra bản cập nhật khi khởi động</string>
     <string name="pref_update_check_hosts_daily">Kiểm tra bản cập nhật định kỳ</string>
     <string name="pref_update_sync_on_update">Đồng bộ khi có bản cập nhật</string>
-    <string name="pref_update_sync_unmetered_only">Chỉ đồng bộ trên mạng không giới hạn dữ liệu</string>
+    <string name="pref_update_sync_unmetered_only">Chỉ kiểm tra và đồng bộ trên mạng không giới hạn dữ liệu</string>
     <string name="pref_vpn_service_on_boot">Bật khi khởi động</string>
     <string name="pref_vpn_service_monitor">Giám sát kết nối</string>
     <string name="pref_vpn_service_monitor_description">Định kỳ kiểm tra trạng thái mạng để khởi động lại VPN khi bị ngắt kết nối.</string>

@@ -57,6 +57,8 @@
     <string name="rules_allowed">اجازت یافتہ</string>
     <string name="rules_redirected">ری ڈائریکٹ شدہ</string>
     <string name="sources_title">hosts ماخذ</string>
+    <string name="sources_enable_all">سب فعال کریں</string>
+    <string name="sources_disable_all">سب غیر فعال کریں</string>
     <string name="source_add">ماخذ شامل کریں</string>
     <string name="source_edit">ماخذ میں ترمیم کریں</string>
     <string name="source_deleted">ماخذ حذف ہو گیا</string>

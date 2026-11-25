@@ -57,6 +57,8 @@
     <string name="rules_allowed">අවසර දුන්</string>
     <string name="rules_redirected">හරවා යැවූ</string>
     <string name="sources_title">hosts මූලාශ්‍ර</string>
+    <string name="sources_enable_all">සියල්ල සක්‍රීය කරන්න</string>
+    <string name="sources_disable_all">සියල්ල අක්‍රීය කරන්න</string>
     <string name="source_add">මූලාශ්‍රයක් එක් කරන්න</string>
     <string name="source_edit">මූලාශ්‍රය සංස්කරණය කරන්න</string>
     <string name="source_deleted">මූලාශ්‍රය මකන ලදී</string>

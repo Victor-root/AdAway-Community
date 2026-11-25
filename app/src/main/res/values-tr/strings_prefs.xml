@@ -37,7 +37,7 @@
     <string name="pref_update_check">Açılışta güncellemeyi denetle</string>
     <string name="pref_update_check_hosts_daily">Güncellemeyi düzenli aralıklarla denetle</string>
     <string name="pref_update_sync_on_update">Güncellemede eşitle</string>
-    <string name="pref_update_sync_unmetered_only">Yalnızca ölçümsüz ağda eşitle</string>
+    <string name="pref_update_sync_unmetered_only">Yalnızca ölçümsüz ağlarda denetle ve eşitle</string>
     <string name="pref_vpn_service_on_boot">Açılışta etkinleştir</string>
     <string name="pref_vpn_service_monitor">Bağlantıyı izle</string>
     <string name="pref_vpn_service_monitor_description">Bağlantı kesilirse VPN’i yeniden başlatmak için ağ durumunu düzenli aralıklarla denetler.</string>

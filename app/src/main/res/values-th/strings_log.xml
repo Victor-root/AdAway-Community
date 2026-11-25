@@ -14,5 +14,6 @@
     <string name="log_capture_failed">เริ่มดักจับ DNS ไม่ได้</string>
     <string name="log_start_recording_button">เริ่มบันทึก</string>
     <string name="log_start_recording_vpn_inactive">เริ่มบันทึก (VPN ไม่ได้ทำงาน)</string>
+    <string name="log_vpn_inactive">การบล็อกโฆษณาปิดอยู่: ต้องเปิดก่อนจึงจะบันทึกได้ เพราะ VPN ของมันเป็นตัวจดคำขอไว้</string>
     <string name="log_stop_recording">หยุดบันทึก</string>
 </resources>

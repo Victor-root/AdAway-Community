@@ -57,6 +57,8 @@
     <string name="rules_allowed">Dovoljeni</string>
     <string name="rules_redirected">Preusmerjeni</string>
     <string name="sources_title">Viri hosts</string>
+    <string name="sources_enable_all">Omogoči vse</string>
+    <string name="sources_disable_all">Onemogoči vse</string>
     <string name="source_add">Dodaj vir</string>
     <string name="source_edit">Uredi vir</string>
     <string name="source_deleted">Vir je izbrisan</string>

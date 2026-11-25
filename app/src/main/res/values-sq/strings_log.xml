@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Kapja e kërkesave DNS nuk mundi të niset.</string>
     <string name="log_start_recording_button">Nis regjistrimin</string>
     <string name="log_start_recording_vpn_inactive">Nis regjistrimin (VPN jo aktive)</string>
+    <string name="log_vpn_inactive">Bllokimi i reklamave është i çaktivizuar: aktivizojeni për të regjistruar, sepse kërkesat i shënon VPN-ja e tij.</string>
     <string name="log_stop_recording">Ndalo regjistrimin</string>
 </resources>

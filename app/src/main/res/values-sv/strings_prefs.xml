@@ -37,7 +37,7 @@
     <string name="pref_update_check">Sök efter uppdatering vid start</string>
     <string name="pref_update_check_hosts_daily">Sök regelbundet efter uppdatering</string>
     <string name="pref_update_sync_on_update">Synkronisera vid uppdatering</string>
-    <string name="pref_update_sync_unmetered_only">Synkronisera endast på nätverk utan datagräns</string>
+    <string name="pref_update_sync_unmetered_only">Kontrollera och synkronisera endast på nätverk utan datagräns</string>
     <string name="pref_vpn_service_on_boot">Aktivera vid start</string>
     <string name="pref_vpn_service_monitor">Övervaka anslutningen</string>
     <string name="pref_vpn_service_monitor_description">Kontrollerar nätverksstatus regelbundet för att starta om VPN när anslutningen bryts.</string>

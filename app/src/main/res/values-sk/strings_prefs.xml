@@ -37,7 +37,7 @@
     <string name="pref_update_check">Kontrolovať aktualizácie pri spustení</string>
     <string name="pref_update_check_hosts_daily">Pravidelne kontrolovať aktualizácie</string>
     <string name="pref_update_sync_on_update">Synchronizovať pri aktualizácii</string>
-    <string name="pref_update_sync_unmetered_only">Synchronizovať iba v nemeranej sieti</string>
+    <string name="pref_update_sync_unmetered_only">Kontrolovať aktualizácie a synchronizovať iba v nemeraných sieťach</string>
     <string name="pref_vpn_service_on_boot">Zapnúť po spustení zariadenia</string>
     <string name="pref_vpn_service_monitor">Sledovať pripojenie</string>
     <string name="pref_vpn_service_monitor_description">Pravidelne kontroluje stav siete a po odpojení znova spustí VPN.</string>

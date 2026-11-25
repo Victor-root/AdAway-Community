@@ -54,6 +54,8 @@
     <string name="rules_allowed">Дозвољени</string>
     <string name="rules_redirected">Преусмерени</string>
     <string name="sources_title">Hosts извори</string>
+    <string name="sources_enable_all">Омогући све</string>
+    <string name="sources_disable_all">Онемогући све</string>
     <string name="source_add">Додај извор</string>
     <string name="source_edit">Измени извор</string>
     <string name="source_deleted">Извор је обрисан</string>

@@ -37,7 +37,7 @@
     <string name="pref_update_check">தொடக்கத்தில் புதுப்பிப்பைச் சரிபார்</string>
     <string name="pref_update_check_hosts_daily">அவ்வப்போது புதுப்பிப்பைச் சரிபார்</string>
     <string name="pref_update_sync_on_update">புதுப்பிக்கும்போது ஒத்திசை</string>
-    <string name="pref_update_sync_unmetered_only">அளவிடப்படாத நெட்வொர்க்கில் மட்டும் ஒத்திசை</string>
+    <string name="pref_update_sync_unmetered_only">அளவிடப்படாத நெட்வொர்க்கில் மட்டும் சரிபார்த்து ஒத்திசை</string>
     <string name="pref_vpn_service_on_boot">தொடக்கத்தில் இயக்கு</string>
     <string name="pref_vpn_service_monitor">இணைப்பைக் கண்காணி</string>
     <string name="pref_vpn_service_monitor_description">இணைப்பு துண்டிக்கப்பட்டால் VPN ஐ மீண்டும் தொடங்க, நெட்வொர்க் நிலையை அவ்வப்போது சரிபார்க்கும்.</string>

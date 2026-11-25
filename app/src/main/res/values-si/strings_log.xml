@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS ග්‍රහණය ආරම්භ කිරීමට නොහැකි විය.</string>
     <string name="log_start_recording_button">පටිගත කිරීම ආරම්භ කරන්න</string>
     <string name="log_start_recording_vpn_inactive">පටිගත කිරීම ආරම්භ කරන්න (VPN සක්‍රීය නැත)</string>
+    <string name="log_vpn_inactive">දැන්වීම් අවහිර කිරීම අක්‍රීයයි: පටිගත කිරීමට එය සක්‍රීය කරන්න, මන්ද ඉල්ලීම් සටහන් කරන්නේ එහි VPN එකයි.</string>
     <string name="log_stop_recording">පටිගත කිරීම නවතන්න</string>
 </resources>

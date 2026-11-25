@@ -57,6 +57,8 @@
     <string name="rules_allowed">Дозволені</string>
     <string name="rules_redirected">Перенаправлені</string>
     <string name="sources_title">Джерела hosts</string>
+    <string name="sources_enable_all">Увімкнути всі</string>
+    <string name="sources_disable_all">Вимкнути всі</string>
     <string name="source_add">Додати джерело</string>
     <string name="source_edit">Змінити джерело</string>
     <string name="source_deleted">Джерело видалено</string>

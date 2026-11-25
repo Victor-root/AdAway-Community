@@ -37,7 +37,7 @@
     <string name="pref_update_check">Провери ажурирање при покретању</string>
     <string name="pref_update_check_hosts_daily">Периодично проверавај ажурирања</string>
     <string name="pref_update_sync_on_update">Синхронизуј при ажурирању</string>
-    <string name="pref_update_sync_unmetered_only">Синхронизуј само на мрежи без ограничења података</string>
+    <string name="pref_update_sync_unmetered_only">Проверавај и синхронизуј само на мрежама без ограничења података</string>
     <string name="pref_vpn_service_on_boot">Омогући при покретању</string>
     <string name="pref_vpn_service_monitor">Надгледај везу</string>
     <string name="pref_vpn_service_monitor_description">Периодично проверава стање мреже да би поново покренуо VPN након прекида везе.</string>

@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Không thể bắt đầu thu thập DNS.</string>
     <string name="log_start_recording_button">Bắt đầu ghi</string>
     <string name="log_start_recording_vpn_inactive">Bắt đầu ghi (VPN chưa hoạt động)</string>
+    <string name="log_vpn_inactive">Tính năng chặn quảng cáo đang tắt: hãy bật để ghi, vì chính VPN của nó là thứ ghi nhận các yêu cầu.</string>
     <string name="log_stop_recording">Dừng ghi</string>
 </resources>

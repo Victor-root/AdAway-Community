@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS கோரிக்கைகளைப் பிடிக்கத் தொடங்க முடியவில்லை.</string>
     <string name="log_start_recording_button">பதிவைத் தொடங்கு</string>
     <string name="log_start_recording_vpn_inactive">பதிவைத் தொடங்கு (VPN செயலில் இல்லை)</string>
+    <string name="log_vpn_inactive">விளம்பரத் தடுப்பு அணைந்துள்ளது: பதிவு செய்ய அதை இயக்குங்கள், ஏனெனில் கோரிக்கைகளைக் குறிப்பது அதன் VPN தான்.</string>
     <string name="log_stop_recording">பதிவை நிறுத்து</string>
 </resources>

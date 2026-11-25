@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Не вдалося почати перехоплення DNS.</string>
     <string name="log_start_recording_button">Почати запис</string>
     <string name="log_start_recording_vpn_inactive">Почати запис (VPN неактивний)</string>
+    <string name="log_vpn_inactive">Блокування реклами вимкнено: увімкніть його, щоб вести запис, адже запити фіксує його VPN.</string>
     <string name="log_stop_recording">Зупинити запис</string>
 </resources>

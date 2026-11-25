@@ -14,5 +14,6 @@
     <string name="log_capture_failed">无法启动 DNS 捕获。</string>
     <string name="log_start_recording_button">开始记录</string>
     <string name="log_start_recording_vpn_inactive">开始记录（VPN 未运行）</string>
+    <string name="log_vpn_inactive">广告拦截已关闭：请先开启才能记录，因为请求是由它的 VPN 记录下来的。</string>
     <string name="log_stop_recording">停止记录</string>
 </resources>

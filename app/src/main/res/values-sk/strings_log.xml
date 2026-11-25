@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Zachytávanie DNS sa nepodarilo spustiť.</string>
     <string name="log_start_recording_button">Spustiť záznam</string>
     <string name="log_start_recording_vpn_inactive">Spustiť záznam (VPN nie je aktívna)</string>
+    <string name="log_vpn_inactive">Blokovanie reklám je vypnuté: zapnite ho, aby sa mohlo zaznamenávať, pretože požiadavky zaznamenáva jeho VPN.</string>
     <string name="log_stop_recording">Zastaviť záznam</string>
 </resources>

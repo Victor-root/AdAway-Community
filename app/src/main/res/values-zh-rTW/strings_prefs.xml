@@ -37,7 +37,7 @@
     <string name="pref_update_check">啟動時檢查更新</string>
     <string name="pref_update_check_hosts_daily">定期檢查更新</string>
     <string name="pref_update_sync_on_update">更新時同步</string>
-    <string name="pref_update_sync_unmetered_only">僅在非計量付費網路上同步</string>
+    <string name="pref_update_sync_unmetered_only">僅在非計量付費網路上檢查並同步</string>
     <string name="pref_vpn_service_on_boot">開機時啟用</string>
     <string name="pref_vpn_service_monitor">監控連線</string>
     <string name="pref_vpn_service_monitor_description">定期檢查網路狀態，並在連線中斷時重新啟動 VPN。</string>

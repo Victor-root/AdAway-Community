@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Zajema DNS ni bilo mogoče zagnati.</string>
     <string name="log_start_recording_button">Začni snemanje</string>
     <string name="log_start_recording_vpn_inactive">Začni snemanje (VPN ni aktiven)</string>
+    <string name="log_vpn_inactive">Blokiranje oglasov je izklopljeno: vklopite ga za snemanje, saj zahteve beleži njegov VPN.</string>
     <string name="log_stop_recording">Ustavi snemanje</string>
 </resources>

@@ -57,6 +57,8 @@
     <string name="rules_allowed">அனுமதிக்கப்பட்டவை</string>
     <string name="rules_redirected">திசைதிருப்பப்பட்டவை</string>
     <string name="sources_title">hosts மூலங்கள்</string>
+    <string name="sources_enable_all">அனைத்தையும் இயக்கு</string>
+    <string name="sources_disable_all">அனைத்தையும் முடக்கு</string>
     <string name="source_add">மூலத்தைச் சேர்</string>
     <string name="source_edit">மூலத்தைத் திருத்து</string>
     <string name="source_deleted">மூலம் நீக்கப்பட்டது</string>

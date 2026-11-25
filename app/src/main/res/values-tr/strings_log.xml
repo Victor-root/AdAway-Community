@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS yakalama başlatılamadı.</string>
     <string name="log_start_recording_button">Kaydı başlat</string>
     <string name="log_start_recording_vpn_inactive">Kaydı başlat (VPN etkin değil)</string>
+    <string name="log_vpn_inactive">Reklam engelleme kapalı: kayıt yapmak için açın, çünkü istekleri not eden onun VPN’idir.</string>
     <string name="log_stop_recording">Kaydı durdur</string>
 </resources>

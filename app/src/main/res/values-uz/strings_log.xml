@@ -14,5 +14,6 @@
     <string name="log_capture_failed">DNS yozuvini boshlab boʻlmadi.</string>
     <string name="log_start_recording_button">Yozuvni boshlash</string>
     <string name="log_start_recording_vpn_inactive">Yozuvni boshlash (VPN faol emas)</string>
+    <string name="log_vpn_inactive">Reklama bloklash oʻchiq: yozib borish uchun uni yoqing, chunki soʻrovlarni uning VPN xizmati qayd etadi.</string>
     <string name="log_stop_recording">Yozuvni toʻxtatish</string>
 </resources>

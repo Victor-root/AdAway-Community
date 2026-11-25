@@ -57,6 +57,8 @@
     <string name="rules_allowed">已允許</string>
     <string name="rules_redirected">已重新導向</string>
     <string name="sources_title">hosts 來源</string>
+    <string name="sources_enable_all">全部啟用</string>
+    <string name="sources_disable_all">全部停用</string>
     <string name="source_add">新增來源</string>
     <string name="source_edit">編輯來源</string>
     <string name="source_deleted">已刪除來源</string>

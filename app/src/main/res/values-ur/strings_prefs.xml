@@ -37,7 +37,7 @@
     <string name="pref_update_check">شروع ہونے پر اپ ڈیٹ چیک کریں</string>
     <string name="pref_update_check_hosts_daily">وقفے وقفے سے اپ ڈیٹ چیک کریں</string>
     <string name="pref_update_sync_on_update">اپ ڈیٹ پر مطابقت پذیری کریں</string>
-    <string name="pref_update_sync_unmetered_only">صرف غیر محدود نیٹ ورک پر مطابقت پذیری کریں</string>
+    <string name="pref_update_sync_unmetered_only">صرف غیر محدود نیٹ ورک پر اپ ڈیٹ چیک کریں اور مطابقت پذیری کریں</string>
     <string name="pref_vpn_service_on_boot">شروع ہونے پر فعال کریں</string>
     <string name="pref_vpn_service_monitor">کنکشن کی نگرانی</string>
     <string name="pref_vpn_service_monitor_description">کنکشن ٹوٹنے پر VPN دوبارہ شروع کرنے کے لیے نیٹ ورک کی حالت وقفے وقفے سے جانچی جاتی ہے۔</string>

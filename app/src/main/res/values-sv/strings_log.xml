@@ -14,5 +14,6 @@
     <string name="log_capture_failed">Det gick inte att starta DNS-inspelningen.</string>
     <string name="log_start_recording_button">Starta inspelning</string>
     <string name="log_start_recording_vpn_inactive">Starta inspelning (VPN inte aktivt)</string>
+    <string name="log_vpn_inactive">Annonsblockeringen är avstängd: slå på den för att spela in, eftersom det är dess VPN som noterar förfrågningarna.</string>
     <string name="log_stop_recording">Stoppa inspelning</string>
 </resources>
