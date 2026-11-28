@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Özel adres</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS adresi</string>
     <string name="pref_vpn_doh_invalid">Geçersiz DNS over HTTPS adresi</string>
-    <string name="pref_vpn_exclude_user_apps">Kullanıcı uygulamalarını hariç tut</string>
     <string name="pref_vpn_exclude_user_apps_activity">Hariç tutulan uygulamalar</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Tümünü seç</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Tüm seçimleri kaldır</string>
     <string name="pref_vpn_exclude_user_apps_icon">Uygulama simgesi</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Sistem uygulamalarını seç</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Sistem uygulamaları</string>
     <string name="excluded_apps_search">Uygulama ara</string>
     <string name="excluded_apps_search_hint">Ada göre ara…</string>
     <string name="excluded_apps_none_found">Bu aramayla eşleşen uygulama yok.</string>

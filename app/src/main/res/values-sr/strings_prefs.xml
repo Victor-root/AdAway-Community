@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Прилагођена адреса</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS адреса</string>
     <string name="pref_vpn_doh_invalid">Неисправна DNS over HTTPS адреса</string>
-    <string name="pref_vpn_exclude_user_apps">Изузми корисничке апликације</string>
     <string name="pref_vpn_exclude_user_apps_activity">Изузете апликације</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Изабери све</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Поништи избор</string>
     <string name="pref_vpn_exclude_user_apps_icon">Икона апликације</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Изабери системске апликације</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Системске апликације</string>
     <string name="excluded_apps_search">Претражи апликације</string>
     <string name="excluded_apps_search_hint">Претражи по имену…</string>
     <string name="excluded_apps_none_found">Ниједна апликација не одговара овој претрази.</string>

@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Προσαρμοσμένη διεύθυνση</string>
     <string name="pref_vpn_doh_address">Διεύθυνση DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Μη έγκυρη διεύθυνση DNS over HTTPS</string>
-    <string name="pref_vpn_exclude_user_apps">Εξαίρεση εφαρμογών χρήστη</string>
     <string name="pref_vpn_exclude_user_apps_activity">Εξαιρούμενες εφαρμογές</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Επιλογή όλων</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Κατάργηση επιλογής όλων</string>
     <string name="pref_vpn_exclude_user_apps_icon">Εικονίδιο εφαρμογής</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Επιλογή εφαρμογών συστήματος</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Εφαρμογές συστήματος</string>
     <string name="excluded_apps_search">Αναζήτηση εφαρμογών</string>
     <string name="excluded_apps_search_hint">Αναζήτηση με βάση το όνομα…</string>
     <string name="excluded_apps_none_found">Καμία εφαρμογή δεν ταιριάζει με αυτή την αναζήτηση.</string>

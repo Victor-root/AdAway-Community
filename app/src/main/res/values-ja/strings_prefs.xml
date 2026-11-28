@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">カスタムアドレス</string>
     <string name="pref_vpn_doh_address">DNS over HTTPSのアドレス</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPSのアドレスが正しくありません</string>
-    <string name="pref_vpn_exclude_user_apps">ユーザーアプリを除外</string>
     <string name="pref_vpn_exclude_user_apps_activity">除外するアプリ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">すべて選択</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">すべて選択解除</string>
     <string name="pref_vpn_exclude_user_apps_icon">アプリのアイコン</string>
-    <string name="pref_vpn_exclude_system_apps_choose">システムアプリを選択</string>
-    <string name="pref_vpn_exclude_system_apps_activity">システムアプリ</string>
     <string name="excluded_apps_search">アプリを検索</string>
     <string name="excluded_apps_search_hint">名前で検索…</string>
     <string name="excluded_apps_none_found">この検索に一致するアプリはありません。</string>

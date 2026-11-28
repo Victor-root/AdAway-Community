@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">כתובת מותאמת אישית</string>
     <string name="pref_vpn_doh_address">כתובת DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">כתובת DNS over HTTPS לא תקינה</string>
-    <string name="pref_vpn_exclude_user_apps">החרגת אפליקציות משתמש</string>
     <string name="pref_vpn_exclude_user_apps_activity">אפליקציות מוחרגות</string>
     <string name="pref_vpn_exclude_user_apps_select_all">בחירת הכול</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">ביטול הבחירה בכול</string>
     <string name="pref_vpn_exclude_user_apps_icon">סמל האפליקציה</string>
-    <string name="pref_vpn_exclude_system_apps_choose">בחירת אפליקציות מערכת</string>
-    <string name="pref_vpn_exclude_system_apps_activity">אפליקציות מערכת</string>
     <string name="excluded_apps_search">חיפוש אפליקציות</string>
     <string name="excluded_apps_search_hint">חיפוש לפי שם…</string>
     <string name="excluded_apps_none_found">אין אפליקציות התואמות לחיפוש זה.</string>

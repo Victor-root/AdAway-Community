@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Alamat tersuai</string>
     <string name="pref_vpn_doh_address">Alamat DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Alamat DNS over HTTPS tidak sah</string>
-    <string name="pref_vpn_exclude_user_apps">Kecualikan apl pengguna</string>
     <string name="pref_vpn_exclude_user_apps_activity">Apl yang dikecualikan</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Pilih semua</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Nyahpilih semua</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikon apl</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Pilih apl sistem</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Apl sistem</string>
     <string name="excluded_apps_search">Cari apl</string>
     <string name="excluded_apps_search_hint">Cari mengikut nama…</string>
     <string name="excluded_apps_none_found">Tiada apl sepadan dengan carian ini.</string>

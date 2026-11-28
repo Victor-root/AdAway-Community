@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">आफ्नै ठेगाना</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS को ठेगाना</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS को ठेगाना अमान्य छ</string>
-    <string name="pref_vpn_exclude_user_apps">प्रयोगकर्ताका एपहरू बहिष्कार गर्नुहोस्</string>
     <string name="pref_vpn_exclude_user_apps_activity">बहिष्कृत एपहरू</string>
     <string name="pref_vpn_exclude_user_apps_select_all">सबै चयन गर्नुहोस्</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">सबै चयन हटाउनुहोस्</string>
     <string name="pref_vpn_exclude_user_apps_icon">एपको आइकन</string>
-    <string name="pref_vpn_exclude_system_apps_choose">प्रणालीका एपहरू छान्नुहोस्</string>
-    <string name="pref_vpn_exclude_system_apps_activity">प्रणालीका एपहरू</string>
     <string name="excluded_apps_search">एपहरू खोज्नुहोस्</string>
     <string name="excluded_apps_search_hint">नामबाट खोज्नुहोस्…</string>
     <string name="excluded_apps_none_found">यो खोजसँग मिल्ने कुनै एप छैन।</string>

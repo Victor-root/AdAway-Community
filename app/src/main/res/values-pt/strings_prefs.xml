@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Endereço personalizado</string>
     <string name="pref_vpn_doh_address">Endereço DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Endereço DNS over HTTPS inválido</string>
-    <string name="pref_vpn_exclude_user_apps">Excluir aplicações do utilizador</string>
     <string name="pref_vpn_exclude_user_apps_activity">Aplicações excluídas</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Selecionar tudo</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Desmarcar tudo</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ícone da aplicação</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Escolher aplicações do sistema</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Aplicações do sistema</string>
     <string name="excluded_apps_search">Pesquisar aplicações</string>
     <string name="excluded_apps_search_hint">Pesquisar por nome…</string>
     <string name="excluded_apps_none_found">Nenhuma aplicação corresponde a esta pesquisa.</string>

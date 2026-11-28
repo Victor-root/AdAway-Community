@@ -19,7 +19,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.adaway.R
 import org.adaway.data.settings.BlockingMethod
-import org.adaway.data.settings.SystemAppExclusion
 import org.adaway.data.settings.ThemeMode
 import org.adaway.engine.Engine
 import org.adaway.system.appLanguage
@@ -36,8 +35,7 @@ import org.adaway.ui.theme.defaultThemeMode
 class PreferencesNavigation(
     val back: () -> Unit,
     val openUpdates: () -> Unit,
-    /** Opens the user apps to exclude from the VPN, or the system ones. */
-    val openExcludedApps: (system: Boolean) -> Unit,
+    val openExcludedApps: () -> Unit,
     val openHostsFile: () -> Unit,
     val openBackupRestore: () -> Unit,
 )
@@ -45,10 +43,7 @@ class PreferencesNavigation(
 /** The order of the dark theme choices. */
 private val ThemeModes = listOf(ThemeMode.LIGHT, ThemeMode.DARK, ThemeMode.SYSTEM)
 
-/** The order of the system app exclusion choices. */
-private val SystemAppExclusions = listOf(SystemAppExclusion.NONE, SystemAppExclusion.ALL_EXCEPT_BROWSERS, SystemAppExclusion.ALL, SystemAppExclusion.CHOSEN)
-
-private enum class PreferenceChoice { THEME, LANGUAGE, SYSTEM_APPS, IPV4_REDIRECTION, IPV6_REDIRECTION }
+private enum class PreferenceChoice { THEME, LANGUAGE, IPV4_REDIRECTION, IPV6_REDIRECTION }
 
 /**
  * The preferences, all on one screen as in 6.x. Only the section of the blocking method in use is
@@ -69,7 +64,6 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
     val resetNotRunning = stringResource(R.string.pref_vpn_reset_not_running)
     val diagnosticLogCleared = stringResource(R.string.pref_vpn_diagnostic_log_cleared)
     val themeChoices = stringArrayResource(R.array.pref_dark_theme_modes).toList()
-    val systemAppChoices = stringArrayResource(R.array.pref_vpn_excluded_system_apps_entries).toList()
     AdAwayScreen(title = stringResource(R.string.pref_main_title), onBack = navigation.back) { padding ->
         Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(padding)) {
             PreferenceCategory(stringResource(R.string.pref_general_category), divider = false)
@@ -99,22 +93,7 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 enabled = usesVpn,
             )
             Preference(null, null, summary = stringResource(R.string.pref_vpn_excluded_apps_description), enabled = usesVpn)
-            Preference(
-                R.drawable.ic_android_24dp,
-                stringResource(R.string.pref_vpn_exclude_system_apps),
-                summary = systemAppChoices[SystemAppExclusions.indexOf(current.vpnSystemAppExclusion)],
-                enabled = usesVpn,
-                onClick = { choice = PreferenceChoice.SYSTEM_APPS },
-            )
-            if (current.vpnSystemAppExclusion == SystemAppExclusion.CHOSEN) {
-                Preference(
-                    R.drawable.ic_android_24dp,
-                    stringResource(R.string.pref_vpn_exclude_system_apps_choose),
-                    enabled = usesVpn,
-                    onClick = { navigation.openExcludedApps(true) },
-                )
-            }
-            Preference(R.drawable.ic_apps_24dp, stringResource(R.string.pref_vpn_exclude_user_apps), enabled = usesVpn, onClick = { navigation.openExcludedApps(false) })
+            Preference(R.drawable.ic_apps_24dp, stringResource(R.string.pref_vpn_excluded_apps), enabled = usesVpn, onClick = navigation.openExcludedApps)
             VpnDnsPreferences(current, enabled = usesVpn, update = viewModel::update)
             Preference(
                 R.drawable.ic_restart_alt_24dp,
@@ -199,18 +178,6 @@ fun PreferencesScreen(navigation: PreferencesNavigation) {
                 onDismiss = { choice = null },
             )
         }
-        PreferenceChoice.SYSTEM_APPS -> ChoiceDialog(
-            title = stringResource(R.string.pref_vpn_exclude_system_apps),
-            choices = systemAppChoices,
-            selected = SystemAppExclusions.indexOf(current.vpnSystemAppExclusion),
-            onSelect = { index ->
-                val exclusion = SystemAppExclusions[index]
-                viewModel.update { it.copy(vpnSystemAppExclusion = exclusion) }
-                // Choosing them one by one goes on in their list.
-                if (exclusion == SystemAppExclusion.CHOSEN) navigation.openExcludedApps(true)
-            },
-            onDismiss = { choice = null },
-        )
         PreferenceChoice.IPV4_REDIRECTION, PreferenceChoice.IPV6_REDIRECTION -> {
             val ipv6 = choice == PreferenceChoice.IPV6_REDIRECTION
             TextInputDialog(

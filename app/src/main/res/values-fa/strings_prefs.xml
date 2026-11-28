@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">نشانی سفارشی</string>
     <string name="pref_vpn_doh_address">نشانی DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">نشانی DNS over HTTPS معتبر نیست</string>
-    <string name="pref_vpn_exclude_user_apps">مستثنا کردن برنامه‌های نصب‌شده</string>
     <string name="pref_vpn_exclude_user_apps_activity">برنامه‌های مستثنا</string>
     <string name="pref_vpn_exclude_user_apps_select_all">انتخاب همه</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">لغو انتخاب همه</string>
     <string name="pref_vpn_exclude_user_apps_icon">نماد برنامه</string>
-    <string name="pref_vpn_exclude_system_apps_choose">انتخاب برنامه‌های سیستمی</string>
-    <string name="pref_vpn_exclude_system_apps_activity">برنامه‌های سیستمی</string>
     <string name="excluded_apps_search">جستجوی برنامه‌ها</string>
     <string name="excluded_apps_search_hint">جستجو بر اساس نام…</string>
     <string name="excluded_apps_none_found">هیچ برنامه‌ای با این جستجو مطابقت ندارد.</string>

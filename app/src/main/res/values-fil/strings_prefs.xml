@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Custom na address</string>
     <string name="pref_vpn_doh_address">Address ng DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Di-wasto ang address ng DNS over HTTPS</string>
-    <string name="pref_vpn_exclude_user_apps">Huwag isama ang mga app ng user</string>
     <string name="pref_vpn_exclude_user_apps_activity">Mga hindi kasamang app</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Piliin lahat</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Alisin ang pagpili sa lahat</string>
     <string name="pref_vpn_exclude_user_apps_icon">Icon ng app</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Pumili ng mga system app</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Mga system app</string>
     <string name="excluded_apps_search">Maghanap ng mga app</string>
     <string name="excluded_apps_search_hint">Maghanap ayon sa pangalan…</string>
     <string name="excluded_apps_none_found">Walang app na tumutugma sa paghahanap na ito.</string>

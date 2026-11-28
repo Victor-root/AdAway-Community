@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Địa chỉ tùy chỉnh</string>
     <string name="pref_vpn_doh_address">Địa chỉ DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Địa chỉ DNS over HTTPS không hợp lệ</string>
-    <string name="pref_vpn_exclude_user_apps">Loại trừ ứng dụng của người dùng</string>
     <string name="pref_vpn_exclude_user_apps_activity">Ứng dụng bị loại trừ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Chọn tất cả</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Bỏ chọn tất cả</string>
     <string name="pref_vpn_exclude_user_apps_icon">Biểu tượng ứng dụng</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Chọn ứng dụng hệ thống</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Ứng dụng hệ thống</string>
     <string name="excluded_apps_search">Tìm ứng dụng</string>
     <string name="excluded_apps_search_hint">Tìm theo tên…</string>
     <string name="excluded_apps_none_found">Không có ứng dụng nào khớp với tìm kiếm này.</string>

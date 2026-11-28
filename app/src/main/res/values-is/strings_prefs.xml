@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Sérsniðið vistfang</string>
     <string name="pref_vpn_doh_address">Vistfang DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Ógilt vistfang DNS over HTTPS</string>
-    <string name="pref_vpn_exclude_user_apps">Undanskilja notendaforrit</string>
     <string name="pref_vpn_exclude_user_apps_activity">Undanskilin forrit</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Velja allt</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Afvelja allt</string>
     <string name="pref_vpn_exclude_user_apps_icon">Táknmynd forrits</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Velja kerfisforrit</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Kerfisforrit</string>
     <string name="excluded_apps_search">Leita að forritum</string>
     <string name="excluded_apps_search_hint">Leita eftir nafni…</string>
     <string name="excluded_apps_none_found">Ekkert forrit passar við þessa leit.</string>

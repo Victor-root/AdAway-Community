@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">អាសយដ្ឋានផ្ទាល់ខ្លួន</string>
     <string name="pref_vpn_doh_address">អាសយដ្ឋាន DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">អាសយដ្ឋាន DNS over HTTPS មិនត្រឹមត្រូវ</string>
-    <string name="pref_vpn_exclude_user_apps">ដកកម្មវិធីរបស់អ្នកប្រើចេញ</string>
     <string name="pref_vpn_exclude_user_apps_activity">កម្មវិធីដែលបានដកចេញ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">ជ្រើសរើសទាំងអស់</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">ដកការជ្រើសរើសទាំងអស់</string>
     <string name="pref_vpn_exclude_user_apps_icon">រូបតំណាងកម្មវិធី</string>
-    <string name="pref_vpn_exclude_system_apps_choose">ជ្រើសរើសកម្មវិធីប្រព័ន្ធ</string>
-    <string name="pref_vpn_exclude_system_apps_activity">កម្មវិធីប្រព័ន្ធ</string>
     <string name="excluded_apps_search">ស្វែងរកកម្មវិធី</string>
     <string name="excluded_apps_search_hint">ស្វែងរកតាមឈ្មោះ…</string>
     <string name="excluded_apps_none_found">គ្មានកម្មវិធីត្រូវនឹងការស្វែងរកនេះទេ។</string>

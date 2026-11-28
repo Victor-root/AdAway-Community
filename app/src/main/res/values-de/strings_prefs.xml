@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Eigene Adresse</string>
     <string name="pref_vpn_doh_address">DNS-over-HTTPS-Adresse</string>
     <string name="pref_vpn_doh_invalid">Ungültige DNS-over-HTTPS-Adresse</string>
-    <string name="pref_vpn_exclude_user_apps">Nutzer-Apps ausschließen</string>
     <string name="pref_vpn_exclude_user_apps_activity">Ausgeschlossene Apps</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Alle auswählen</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Alle abwählen</string>
     <string name="pref_vpn_exclude_user_apps_icon">App-Symbol</string>
-    <string name="pref_vpn_exclude_system_apps_choose">System-Apps auswählen</string>
-    <string name="pref_vpn_exclude_system_apps_activity">System-Apps</string>
     <string name="excluded_apps_search">Apps suchen</string>
     <string name="excluded_apps_search_hint">Nach Namen suchen…</string>
     <string name="excluded_apps_none_found">Keine App entspricht dieser Suche.</string>

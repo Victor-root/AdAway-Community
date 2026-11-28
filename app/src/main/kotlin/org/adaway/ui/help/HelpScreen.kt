@@ -77,6 +77,7 @@ import org.adaway.BuildConfig
 import org.adaway.R
 import org.adaway.system.openWebPage
 import org.adaway.ui.common.AdAwayScreen
+import org.adaway.ui.common.AdAwayTabRow
 import org.adaway.ui.common.CommandBlock
 import org.adaway.ui.common.RemoteConfirmKeys
 import org.adaway.ui.common.remoteStep
@@ -104,12 +105,24 @@ fun HelpScreen(onBack: () -> Unit, openNotices: () -> Unit) {
     val pages = remember { Tabs.map { FocusRequester() } }
     AdAwayScreen(title = stringResource(R.string.help), onBack = onBack) { padding ->
         Column(modifier = Modifier.fillMaxSize()) {
-            TabRow(
+            AdAwayTabRow(
+                titles = Tabs.map { stringResource(it) },
                 selected = pager.currentPage,
                 onSelect = { scope.launch { pager.animateScrollToPage(it) } },
-                isTelevision = isTelevision,
-                tabs = tabs,
-                pages = pages,
+                tabModifier = { index ->
+                    // On TV, moving on a tab opens it, and down leads into its page.
+                    if (isTelevision) {
+                        Modifier
+                            .focusRequester(tabs[index])
+                            .onFocusChanged { if (it.isFocused) scope.launch { pager.animateScrollToPage(index) } }
+                            .focusProperties {
+                                up = FocusRequester.Cancel
+                                down = pages[index]
+                            }
+                    } else {
+                        Modifier
+                    }
+                },
             )
             HorizontalPager(state = pager, modifier = Modifier.weight(1f)) { index ->
                 val pageFocus = PageFocus(isTelevision, pages[index], tabs[index])
@@ -141,47 +154,6 @@ fun NoticesScreen(onBack: () -> Unit) {
 
 /** On TV, the page takes the focus to scroll, and gives it back to its [tab], if any, from its top. */
 private class PageFocus(val isTelevision: Boolean, val page: FocusRequester, val tab: FocusRequester?)
-
-/** Fixed tabs of equal width, the selected one in red over a red line. */
-@Composable
-private fun TabRow(selected: Int, onSelect: (Int) -> Unit, isTelevision: Boolean, tabs: List<FocusRequester>, pages: List<FocusRequester>) {
-    val colors = LocalAdAwayColors.current
-    Row(modifier = Modifier.fillMaxWidth().background(colors.surface)) {
-        Tabs.forEachIndexed { index, title ->
-            val current = index == selected
-            Box(
-                modifier = Modifier
-                    .weight(1f)
-                    .height(48.dp)
-                    .then(
-                        if (isTelevision) {
-                            Modifier
-                                .focusRequester(tabs[index])
-                                .onFocusChanged { if (it.isFocused) onSelect(index) }
-                                .focusProperties {
-                                    up = FocusRequester.Cancel
-                                    down = pages[index]
-                                }
-                        } else {
-                            Modifier
-                        },
-                    )
-                    .clickable { onSelect(index) },
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(
-                    stringResource(title).uppercase(),
-                    style = AdAwayType.button,
-                    color = if (current) colors.primary else colors.textSecondary,
-                    maxLines = 1,
-                )
-                if (current) {
-                    Box(modifier = Modifier.align(Alignment.BottomCenter).fillMaxWidth().height(2.dp).background(colors.primary))
-                }
-            }
-        }
-    }
-}
 
 /**
  * A link of a page, which the remote can select and open: from [top] to [bottom] below the top of

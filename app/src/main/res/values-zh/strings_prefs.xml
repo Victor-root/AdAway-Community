@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">自定义地址</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS 地址</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS 地址无效</string>
-    <string name="pref_vpn_exclude_user_apps">排除用户应用</string>
     <string name="pref_vpn_exclude_user_apps_activity">排除的应用</string>
     <string name="pref_vpn_exclude_user_apps_select_all">全选</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">取消全选</string>
     <string name="pref_vpn_exclude_user_apps_icon">应用图标</string>
-    <string name="pref_vpn_exclude_system_apps_choose">选择系统应用</string>
-    <string name="pref_vpn_exclude_system_apps_activity">系统应用</string>
     <string name="excluded_apps_search">搜索应用</string>
     <string name="excluded_apps_search_hint">按名称搜索…</string>
     <string name="excluded_apps_none_found">没有符合此搜索的应用。</string>

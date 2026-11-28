@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">စိတ်ကြိုက်လိပ်စာ</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS လိပ်စာ</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS လိပ်စာ မမှန်ကန်ပါ</string>
-    <string name="pref_vpn_exclude_user_apps">အသုံးပြုသူအက်ပ်များကို ချန်လှပ်ရန်</string>
     <string name="pref_vpn_exclude_user_apps_activity">ချန်လှပ်ထားသော အက်ပ်များ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">အားလုံးရွေးရန်</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">ရွေးချယ်မှုအားလုံးကို ဖယ်ရန်</string>
     <string name="pref_vpn_exclude_user_apps_icon">အက်ပ်သင်္ကေတ</string>
-    <string name="pref_vpn_exclude_system_apps_choose">စနစ်အက်ပ်များကို ရွေးချယ်ရန်</string>
-    <string name="pref_vpn_exclude_system_apps_activity">စနစ်အက်ပ်များ</string>
     <string name="excluded_apps_search">အက်ပ်များ ရှာဖွေရန်</string>
     <string name="excluded_apps_search_hint">အမည်ဖြင့် ရှာဖွေရန်…</string>
     <string name="excluded_apps_none_found">ဤရှာဖွေမှုနှင့် ကိုက်ညီသော အက်ပ်မရှိပါ။</string>

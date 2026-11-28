@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Fərdi ünvan</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS ünvanı</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS ünvanı yanlışdır</string>
-    <string name="pref_vpn_exclude_user_apps">İstifadəçi tətbiqlərini istisna edin</string>
     <string name="pref_vpn_exclude_user_apps_activity">İstisna edilən tətbiqlər</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Hamısını seçin</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Seçimi ləğv edin</string>
     <string name="pref_vpn_exclude_user_apps_icon">Tətbiq ikonu</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Sistem tətbiqlərini seçin</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Sistem tətbiqləri</string>
     <string name="excluded_apps_search">Tətbiqləri axtarın</string>
     <string name="excluded_apps_search_hint">Ada görə axtarın…</string>
     <string name="excluded_apps_none_found">Bu axtarışa uyğun tətbiq yoxdur.</string>

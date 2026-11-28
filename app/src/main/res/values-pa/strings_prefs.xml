@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">ਕਸਟਮ ਪਤਾ</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS ਪਤਾ</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS ਦਾ ਪਤਾ ਅਵੈਧ ਹੈ</string>
-    <string name="pref_vpn_exclude_user_apps">ਵਰਤੋਂਕਾਰ ਐਪਾਂ ਨੂੰ ਬਾਹਰ ਰੱਖੋ</string>
     <string name="pref_vpn_exclude_user_apps_activity">ਬਾਹਰ ਰੱਖੀਆਂ ਐਪਾਂ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">ਸਭ ਚੁਣੋ</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">ਸਭ ਦੀ ਚੋਣ ਹਟਾਓ</string>
     <string name="pref_vpn_exclude_user_apps_icon">ਐਪ ਦਾ ਆਈਕਨ</string>
-    <string name="pref_vpn_exclude_system_apps_choose">ਸਿਸਟਮ ਐਪਾਂ ਚੁਣੋ</string>
-    <string name="pref_vpn_exclude_system_apps_activity">ਸਿਸਟਮ ਐਪਾਂ</string>
     <string name="excluded_apps_search">ਐਪਾਂ ਖੋਜੋ</string>
     <string name="excluded_apps_search_hint">ਨਾਮ ਨਾਲ ਖੋਜੋ…</string>
     <string name="excluded_apps_none_found">ਇਸ ਖੋਜ ਨਾਲ ਕੋਈ ਐਪ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ।</string>

@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Helbide pertsonalizatua</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS helbidea</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS helbidea ez da baliozkoa</string>
-    <string name="pref_vpn_exclude_user_apps">Baztertu erabiltzailearen aplikazioak</string>
     <string name="pref_vpn_exclude_user_apps_activity">Baztertutako aplikazioak</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Hautatu guztiak</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Desautatu guztiak</string>
     <string name="pref_vpn_exclude_user_apps_icon">Aplikazioaren ikonoa</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Hautatu sistemako aplikazioak</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Sistemako aplikazioak</string>
     <string name="excluded_apps_search">Bilatu aplikazioak</string>
     <string name="excluded_apps_search_hint">Bilatu izenaren arabera…</string>
     <string name="excluded_apps_none_found">Ez dago bilaketarekin bat datorren aplikaziorik.</string>

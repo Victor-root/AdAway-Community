@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Maxsus manzil</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS manzili</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS manzili yaroqsiz</string>
-    <string name="pref_vpn_exclude_user_apps">Foydalanuvchi ilovalarini chiqarib tashlash</string>
     <string name="pref_vpn_exclude_user_apps_activity">Chiqarib tashlangan ilovalar</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Barchasini tanlash</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Tanlovni bekor qilish</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ilova belgisi</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Tizim ilovalarini tanlash</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Tizim ilovalari</string>
     <string name="excluded_apps_search">Ilovalarni qidirish</string>
     <string name="excluded_apps_search_hint">Nomi orqali qidirish…</string>
     <string name="excluded_apps_none_found">Bu qidiruvga mos ilova topilmadi.</string>

@@ -10,10 +10,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.adaway.AppContainer
+import org.adaway.data.settings.SystemAppExclusion
 import org.adaway.vpn.VpnExclusions
 import java.text.Collator
 import java.text.Normalizer
@@ -22,21 +24,30 @@ import java.text.Normalizer
 data class ExcludableApp(val packageName: String, val label: String, val info: ApplicationInfo)
 
 /**
- * The user apps to exclude from the VPN, or the [system] ones. Both lists share one set of
- * excluded apps, saved when leaving the screen so that the tunnel is rebuilt once rather than at
- * each switch.
+ * The user apps and the system apps to exclude from the VPN, a tab each. Both lists share one set
+ * of excluded apps, saved when leaving the screen so that the tunnel is rebuilt once rather than at
+ * each switch. The system apps follow it only when [SystemAppExclusion.CHOSEN] is the way chosen
+ * for them, which is saved at once.
  */
-class ExcludedAppsViewModel(private val container: AppContainer, private val system: Boolean) : ViewModel() {
-    private val mutableApps = MutableStateFlow<List<ExcludableApp>?>(null)
+class ExcludedAppsViewModel(private val container: AppContainer) : ViewModel() {
+    private val mutableUserApps = MutableStateFlow<List<ExcludableApp>?>(null)
+    private val mutableSystemApps = MutableStateFlow<List<ExcludableApp>?>(null)
     private val mutableExcluded = MutableStateFlow<Set<String>>(emptySet())
     private val mutableFilter = MutableStateFlow("")
+    private val mutableSystemTab = MutableStateFlow(false)
     private var loaded = false
 
     val excluded: StateFlow<Set<String>> = mutableExcluded.asStateFlow()
     val filter: StateFlow<String> = mutableFilter.asStateFlow()
+    val systemTab: StateFlow<Boolean> = mutableSystemTab.asStateFlow()
 
-    /** The apps whose name or package contains the filter, ignoring case and accents. Null while loading. */
-    val apps: StateFlow<List<ExcludableApp>?> = combine(mutableApps, mutableFilter) { apps, filter ->
+    val systemExclusion: StateFlow<SystemAppExclusion?> = container.settingsRepository.settings
+        .map { it.vpnSystemAppExclusion }
+        .stateIn(viewModelScope, SharingStarted.Eagerly, null)
+
+    /** The apps of the tab shown whose name or package contains the filter, ignoring case and accents. Null while loading. */
+    val apps: StateFlow<List<ExcludableApp>?> = combine(mutableUserApps, mutableSystemApps, mutableSystemTab, mutableFilter) { user, system, systemTab, filter ->
+        val apps = if (systemTab) system else user
         val wanted = filter.searchable()
         if (wanted.isEmpty()) apps else apps?.filter { wanted in it.label.searchable() || wanted in it.packageName.searchable() }
     }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
@@ -45,13 +56,23 @@ class ExcludedAppsViewModel(private val container: AppContainer, private val sys
         viewModelScope.launch {
             val excluded = container.settingsRepository.settings.first().vpnExcludedApps
             mutableExcluded.value = excluded
-            mutableApps.value = withContext(Dispatchers.IO) { loadApps(excluded) }
+            val (system, user) = withContext(Dispatchers.IO) { loadApps(excluded) }.partition { it.info.flags and ApplicationInfo.FLAG_SYSTEM != 0 }
+            mutableUserApps.value = user
+            mutableSystemApps.value = system
             loaded = true
         }
     }
 
+    fun showSystemTab(system: Boolean) {
+        mutableSystemTab.value = system
+    }
+
     fun search(filter: String) {
         mutableFilter.value = filter
+    }
+
+    fun setSystemExclusion(exclusion: SystemAppExclusion) {
+        viewModelScope.launch { container.settingsRepository.update { it.copy(vpnSystemAppExclusion = exclusion) } }
     }
 
     fun setExcluded(packageName: String, excluded: Boolean) {
@@ -84,7 +105,7 @@ class ExcludedAppsViewModel(private val container: AppContainer, private val sys
         val installed = VpnExclusions.installedApplications(packageManager)
         val collator = Collator.getInstance().apply { strength = Collator.PRIMARY }
         return installed
-            .filter { (it.flags and ApplicationInfo.FLAG_SYSTEM != 0) == system && it.packageName != context.packageName }
+            .filter { it.packageName != context.packageName }
             .map { ExcludableApp(it.packageName, it.loadLabel(packageManager).toString(), it) }
             .sortedWith(compareBy<ExcludableApp> { it.packageName !in excluded }.thenComparator { first, second -> collator.compare(first.label, second.label) })
     }

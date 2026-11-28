@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">ഇഷ്ടാനുസൃത വിലാസം</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS വിലാസം</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS വിലാസം അസാധുവാണ്</string>
-    <string name="pref_vpn_exclude_user_apps">ഉപയോക്താവിന്റെ ആപ്പുകൾ ഒഴിവാക്കുക</string>
     <string name="pref_vpn_exclude_user_apps_activity">ഒഴിവാക്കിയ ആപ്പുകൾ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">തിരഞ്ഞെടുപ്പ് മാറ്റുക</string>
     <string name="pref_vpn_exclude_user_apps_icon">ആപ്പ് ഐക്കൺ</string>
-    <string name="pref_vpn_exclude_system_apps_choose">സിസ്റ്റം ആപ്പുകൾ തിരഞ്ഞെടുക്കുക</string>
-    <string name="pref_vpn_exclude_system_apps_activity">സിസ്റ്റം ആപ്പുകൾ</string>
     <string name="excluded_apps_search">ആപ്പുകൾ തിരയുക</string>
     <string name="excluded_apps_search_hint">പേര് ഉപയോഗിച്ച് തിരയുക…</string>
     <string name="excluded_apps_none_found">ഈ തിരയലുമായി പൊരുത്തപ്പെടുന്ന ആപ്പുകളൊന്നുമില്ല.</string>

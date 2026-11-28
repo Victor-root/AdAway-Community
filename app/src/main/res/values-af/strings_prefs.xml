@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Eie adres</string>
     <string name="pref_vpn_doh_address">DNS oor HTTPS-adres</string>
     <string name="pref_vpn_doh_invalid">Ongeldige DNS oor HTTPS-adres</string>
-    <string name="pref_vpn_exclude_user_apps">Sluit gebruikerprogramme uit</string>
     <string name="pref_vpn_exclude_user_apps_activity">Uitgesluite programme</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Kies almal</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Ontkies almal</string>
     <string name="pref_vpn_exclude_user_apps_icon">Programikoon</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Kies stelselprogramme</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Stelselprogramme</string>
     <string name="excluded_apps_search">Soek programme</string>
     <string name="excluded_apps_search_hint">Soek volgens naam…</string>
     <string name="excluded_apps_none_found">Geen program stem met hierdie soektog ooreen nie.</string>

@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Власна адреса</string>
     <string name="pref_vpn_doh_address">Адреса DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Недійсна адреса DNS over HTTPS</string>
-    <string name="pref_vpn_exclude_user_apps">Виключити додатки користувача</string>
     <string name="pref_vpn_exclude_user_apps_activity">Виключені додатки</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Вибрати все</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Скасувати вибір</string>
     <string name="pref_vpn_exclude_user_apps_icon">Значок додатка</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Вибрати системні додатки</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Системні додатки</string>
     <string name="excluded_apps_search">Пошук додатків</string>
     <string name="excluded_apps_search_hint">Пошук за назвою…</string>
     <string name="excluded_apps_none_found">Жоден додаток не відповідає пошуку.</string>

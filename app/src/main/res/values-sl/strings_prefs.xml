@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Naslov po meri</string>
     <string name="pref_vpn_doh_address">Naslov DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Neveljaven naslov DNS over HTTPS</string>
-    <string name="pref_vpn_exclude_user_apps">Izključi uporabniške aplikacije</string>
     <string name="pref_vpn_exclude_user_apps_activity">Izključene aplikacije</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Izberi vse</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Prekliči izbiro vseh</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikacije</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Izberi sistemske aplikacije</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Sistemske aplikacije</string>
     <string name="excluded_apps_search">Išči aplikacije</string>
     <string name="excluded_apps_search_hint">Iskanje po imenu…</string>
     <string name="excluded_apps_none_found">Nobena aplikacija ne ustreza iskanju.</string>

@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">사용자 지정 주소</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS 주소</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS 주소가 올바르지 않습니다</string>
-    <string name="pref_vpn_exclude_user_apps">사용자 앱 제외</string>
     <string name="pref_vpn_exclude_user_apps_activity">제외할 앱</string>
     <string name="pref_vpn_exclude_user_apps_select_all">모두 선택</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">모두 선택 해제</string>
     <string name="pref_vpn_exclude_user_apps_icon">앱 아이콘</string>
-    <string name="pref_vpn_exclude_system_apps_choose">시스템 앱 선택</string>
-    <string name="pref_vpn_exclude_system_apps_activity">시스템 앱</string>
     <string name="excluded_apps_search">앱 검색</string>
     <string name="excluded_apps_search_hint">이름으로 검색…</string>
     <string name="excluded_apps_none_found">검색과 일치하는 앱이 없습니다.</string>

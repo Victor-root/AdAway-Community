@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Oma osoite</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS -osoite</string>
     <string name="pref_vpn_doh_invalid">Virheellinen DNS over HTTPS -osoite</string>
-    <string name="pref_vpn_exclude_user_apps">Poissulje käyttäjän sovelluksia</string>
     <string name="pref_vpn_exclude_user_apps_activity">Poissuljetut sovellukset</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Valitse kaikki</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Poista kaikkien valinta</string>
     <string name="pref_vpn_exclude_user_apps_icon">Sovelluksen kuvake</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Valitse järjestelmäsovellukset</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Järjestelmäsovellukset</string>
     <string name="excluded_apps_search">Hae sovelluksia</string>
     <string name="excluded_apps_search_hint">Hae nimellä…</string>
     <string name="excluded_apps_none_found">Mikään sovellus ei vastaa hakua.</string>

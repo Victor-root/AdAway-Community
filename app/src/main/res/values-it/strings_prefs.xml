@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Indirizzo personalizzato</string>
     <string name="pref_vpn_doh_address">Indirizzo DNS over HTTPS</string>
     <string name="pref_vpn_doh_invalid">Indirizzo DNS over HTTPS non valido</string>
-    <string name="pref_vpn_exclude_user_apps">Escludi le app installate</string>
     <string name="pref_vpn_exclude_user_apps_activity">App escluse</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Seleziona tutto</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Deseleziona tutto</string>
     <string name="pref_vpn_exclude_user_apps_icon">Icona dell’app</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Scegli le app di sistema</string>
-    <string name="pref_vpn_exclude_system_apps_activity">App di sistema</string>
     <string name="excluded_apps_search">Cerca app</string>
     <string name="excluded_apps_search_hint">Cerca per nome…</string>
     <string name="excluded_apps_none_found">Nessuna app corrisponde a questa ricerca.</string>

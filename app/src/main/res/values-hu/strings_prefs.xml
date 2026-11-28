@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Egyéni cím</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS-cím</string>
     <string name="pref_vpn_doh_invalid">Érvénytelen DNS over HTTPS-cím</string>
-    <string name="pref_vpn_exclude_user_apps">Felhasználói alkalmazások kizárása</string>
     <string name="pref_vpn_exclude_user_apps_activity">Kizárt alkalmazások</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Összes kijelölése</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Kijelölés megszüntetése</string>
     <string name="pref_vpn_exclude_user_apps_icon">Az alkalmazás ikonja</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Rendszeralkalmazások kiválasztása</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Rendszeralkalmazások</string>
     <string name="excluded_apps_search">Alkalmazások keresése</string>
     <string name="excluded_apps_search_hint">Keresés név szerint…</string>
     <string name="excluded_apps_none_found">Egy alkalmazás sem felel meg a keresésnek.</string>

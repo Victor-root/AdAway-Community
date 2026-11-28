@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Pasirinktinis adresas</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS adresas</string>
     <string name="pref_vpn_doh_invalid">Netinkamas DNS over HTTPS adresas</string>
-    <string name="pref_vpn_exclude_user_apps">Neįtraukti naudotojo programų</string>
     <string name="pref_vpn_exclude_user_apps_activity">Neįtrauktos programos</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Pasirinkti viską</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Atžymėti viską</string>
     <string name="pref_vpn_exclude_user_apps_icon">Programos piktograma</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Pasirinkti sistemos programas</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Sistemos programos</string>
     <string name="excluded_apps_search">Ieškoti programų</string>
     <string name="excluded_apps_search_hint">Ieškoti pagal pavadinimą…</string>
     <string name="excluded_apps_none_found">Nėra programų, atitinkančių šią paiešką.</string>

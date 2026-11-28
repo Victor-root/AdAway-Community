@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">Egen adress</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS-adress</string>
     <string name="pref_vpn_doh_invalid">Ogiltig DNS over HTTPS-adress</string>
-    <string name="pref_vpn_exclude_user_apps">Undanta installerade appar</string>
     <string name="pref_vpn_exclude_user_apps_activity">Undantagna appar</string>
     <string name="pref_vpn_exclude_user_apps_select_all">Markera alla</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Avmarkera alla</string>
     <string name="pref_vpn_exclude_user_apps_icon">Appikon</string>
-    <string name="pref_vpn_exclude_system_apps_choose">Välj systemappar</string>
-    <string name="pref_vpn_exclude_system_apps_activity">Systemappar</string>
     <string name="excluded_apps_search">Sök appar</string>
     <string name="excluded_apps_search_hint">Sök på namn…</string>
     <string name="excluded_apps_none_found">Ingen app matchar sökningen.</string>

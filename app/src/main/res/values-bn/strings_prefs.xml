@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">কাস্টম ঠিকানা</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS ঠিকানা</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS ঠিকানাটি সঠিক নয়</string>
-    <string name="pref_vpn_exclude_user_apps">ব্যবহারকারীর অ্যাপ বাদ দিন</string>
     <string name="pref_vpn_exclude_user_apps_activity">বাদ দেওয়া অ্যাপ</string>
     <string name="pref_vpn_exclude_user_apps_select_all">সব নির্বাচন করুন</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">সব নির্বাচন বাতিল করুন</string>
     <string name="pref_vpn_exclude_user_apps_icon">অ্যাপের আইকন</string>
-    <string name="pref_vpn_exclude_system_apps_choose">সিস্টেম অ্যাপ বেছে নিন</string>
-    <string name="pref_vpn_exclude_system_apps_activity">সিস্টেম অ্যাপ</string>
     <string name="excluded_apps_search">অ্যাপ খুঁজুন</string>
     <string name="excluded_apps_search_hint">নাম দিয়ে খুঁজুন…</string>
     <string name="excluded_apps_none_found">এই অনুসন্ধানের সাথে কোনো অ্যাপ মেলেনি।</string>

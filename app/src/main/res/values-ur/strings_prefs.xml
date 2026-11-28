@@ -63,13 +63,10 @@
     <string name="pref_vpn_doh_custom">حسب ضرورت ایڈریس</string>
     <string name="pref_vpn_doh_address">DNS over HTTPS ایڈریس</string>
     <string name="pref_vpn_doh_invalid">DNS over HTTPS ایڈریس درست نہیں ہے</string>
-    <string name="pref_vpn_exclude_user_apps">صارف کی ایپس کو خارج کریں</string>
     <string name="pref_vpn_exclude_user_apps_activity">خارج کردہ ایپس</string>
     <string name="pref_vpn_exclude_user_apps_select_all">سب منتخب کریں</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">سب کا انتخاب ختم کریں</string>
     <string name="pref_vpn_exclude_user_apps_icon">ایپ کا آئیکن</string>
-    <string name="pref_vpn_exclude_system_apps_choose">سسٹم ایپس منتخب کریں</string>
-    <string name="pref_vpn_exclude_system_apps_activity">سسٹم ایپس</string>
     <string name="excluded_apps_search">ایپس تلاش کریں</string>
     <string name="excluded_apps_search_hint">نام سے تلاش کریں…</string>
     <string name="excluded_apps_none_found">اس تلاش سے کوئی ایپ مطابقت نہیں رکھتی۔</string>
