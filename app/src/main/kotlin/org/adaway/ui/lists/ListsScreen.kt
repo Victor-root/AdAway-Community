@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,8 +26,6 @@ import androidx.compose.foundation.layout.windowInsetsBottomHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -41,10 +38,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -64,6 +58,7 @@ import org.adaway.ui.common.AdAwayFab
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.AdAwaySnackbar
 import org.adaway.ui.common.AppBarAction
+import org.adaway.ui.common.AppBarSearchField
 import org.adaway.ui.common.AppBarTitle
 import org.adaway.ui.common.ApplyConfigurationSnackbar
 import org.adaway.ui.common.adAwayCheckboxColors
@@ -122,7 +117,7 @@ fun ListsScreen(type: RuleType, userRules: List<UserRuleEntity>, sourceRules: La
                     },
                 ) { AppBarTitle(stringResource(R.string.rule_actions_title)) }
                 searching -> AdAwayAppBar(onNavigation = { searching = false; viewModel.search("") }) {
-                    SearchField(filter, viewModel::search)
+                    AppBarSearchField(filter, stringResource(R.string.lists_search_hint), KeyboardType.Uri, viewModel::search)
                 }
                 else -> AdAwayAppBar(
                     onNavigation = onBack,
@@ -185,27 +180,6 @@ fun ListsScreen(type: RuleType, userRules: List<UserRuleEntity>, sourceRules: La
     }
     if (adding) RuleDialog(type, rule = null, viewModel, onDismiss = { adding = false })
     editing?.let { RuleDialog(type, rule = it, viewModel, onDismiss = { editing = null }) }
-}
-
-@Composable
-private fun RowScope.SearchField(filter: String, onSearch: (String) -> Unit) {
-    val colors = LocalAdAwayColors.current
-    val focus = remember { FocusRequester() }
-    LaunchedEffect(Unit) { focus.requestFocus() }
-    Box(modifier = Modifier.weight(1f).padding(start = 20.dp, end = 16.dp), contentAlignment = Alignment.CenterStart) {
-        if (filter.isEmpty()) {
-            Text(stringResource(R.string.lists_search_hint), style = AdAwayType.subtitle1, color = colors.onPrimary.copy(alpha = 0.7f))
-        }
-        BasicTextField(
-            value = filter,
-            onValueChange = onSearch,
-            singleLine = true,
-            textStyle = AdAwayType.subtitle1.copy(color = colors.onPrimary),
-            cursorBrush = SolidColor(colors.onPrimary),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri, autoCorrectEnabled = false),
-            modifier = Modifier.fillMaxWidth().focusRequester(focus),
-        )
-    }
 }
 
 @OptIn(ExperimentalFoundationApi::class)

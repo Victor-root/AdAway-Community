@@ -36,6 +36,7 @@ object VpnExclusions {
                 val browsers = browsers(packageManager) + WEB_SYSTEM_APPS
                 systemPackages.filter { it !in browsers }
             }
+            SystemAppExclusion.CHOSEN -> systemPackages.filter { it in settings.vpnExcludedApps }
         }
         val excludedUser = user.map { it.packageName }.filter { it in settings.vpnExcludedApps }
         return (excludedSystem + excludedUser).toSet()

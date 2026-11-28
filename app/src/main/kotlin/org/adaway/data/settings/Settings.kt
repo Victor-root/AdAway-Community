@@ -4,7 +4,8 @@ enum class BlockingMethod { UNSET, ROOT, VPN }
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
-enum class SystemAppExclusion { NONE, ALL_EXCEPT_BROWSERS, ALL }
+/** Which system apps the VPN leaves out: [CHOSEN] ones are those of the excluded apps that are system apps. */
+enum class SystemAppExclusion { NONE, ALL_EXCEPT_BROWSERS, ALL, CHOSEN }
 
 /** Where the VPN sends the queries it lets through: the servers of the network, chosen ones, or one over HTTPS. */
 enum class VpnDnsMode { NETWORK, CUSTOM, HTTPS }

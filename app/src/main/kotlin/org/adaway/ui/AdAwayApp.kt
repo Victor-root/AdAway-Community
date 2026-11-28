@@ -111,7 +111,7 @@ private fun NavGraphBuilder.sharedDestinations(navController: NavController) {
             PreferencesNavigation(
                 back = navController::popBackStack,
                 openUpdates = { navController.navigate(Updates) },
-                openExcludedApps = { navController.navigate(ExcludedApps) },
+                openExcludedApps = { system -> navController.navigate(ExcludedApps(system)) },
                 openHostsFile = { navController.navigate(SystemHosts) },
                 openBackupRestore = { navController.navigate(BackupRestore) },
             ),
@@ -121,7 +121,7 @@ private fun NavGraphBuilder.sharedDestinations(navController: NavController) {
     composable<ThirdPartyNotices> { NoticesScreen(onBack = navController::popBackStack) }
     composable<Updates> { UpdatesScreen(onBack = navController::popBackStack, openUpdate = { navController.navigate(AppUpdate) }) }
     composable<AppUpdate> { UpdateScreen(onBack = navController::popBackStack) }
-    composable<ExcludedApps> { ExcludedAppsScreen(onBack = navController::popBackStack) }
+    composable<ExcludedApps> { entry -> ExcludedAppsScreen(entry.toRoute<ExcludedApps>().system, onBack = navController::popBackStack) }
     composable<SystemHosts> { HostsFileScreen(onBack = navController::popBackStack) }
     composable<BackupRestore> { BackupRestoreScreen(onBack = navController::popBackStack) }
 }

@@ -31,8 +31,9 @@ internal data object ThirdPartyNotices
 @Serializable
 internal data object Updates
 
+/** The user apps to keep out of the VPN, or the [system] ones. */
 @Serializable
-internal data object ExcludedApps
+internal data class ExcludedApps(val system: Boolean = false)
 
 @Serializable
 internal data object SystemHosts

@@ -37,6 +37,8 @@
 * 📝 Open the release notes from the version number on Android TV, as on phones
 * ☑️ Enable or disable all the hosts sources at once
 * 📋 Tell in the DNS log that it only records while ad blocking is on
+* 🔍 Search the apps to exclude from the VPN, and select or deselect all the apps found at once
+* 📱 Choose one by one the system apps to exclude from the VPN
 
 ### 🐛 Fixed
 

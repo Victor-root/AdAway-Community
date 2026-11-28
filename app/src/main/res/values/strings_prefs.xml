@@ -48,6 +48,7 @@
         <item>None</item>
         <item>All except browsers</item>
         <item>All</item>
+        <item>Chosen ones</item>
     </string-array>
     <string name="pref_vpn_dns">DNS servers</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Select all</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Deselect all</string>
     <string name="pref_vpn_exclude_user_apps_icon">Application icon</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Choose system applications</string>
+    <string name="pref_vpn_exclude_system_apps_activity">System applications</string>
+    <string name="excluded_apps_search">Search applications</string>
+    <string name="excluded_apps_search_hint">Search by name…</string>
+    <string name="excluded_apps_none_found">No application matches this search.</string>
     <string name="pref_vpn_reset">Reset VPN</string>
     <string name="pref_vpn_reset_description">Rebuild the VPN connection from scratch. Use this if the VPN stops working (no internet access or DNS errors).</string>
     <string name="pref_vpn_reset_done">VPN connection rebuilt.</string>
