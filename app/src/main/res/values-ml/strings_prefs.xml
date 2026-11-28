@@ -48,6 +48,7 @@
         <item>ഒന്നുമില്ല</item>
         <item>ബ്രൗസറുകൾ ഒഴികെ എല്ലാം</item>
         <item>എല്ലാം</item>
+        <item>തിരഞ്ഞെടുത്തവ</item>
     </string-array>
     <string name="pref_vpn_dns">DNS സെർവറുകൾ</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">തിരഞ്ഞെടുപ്പ് മാറ്റുക</string>
     <string name="pref_vpn_exclude_user_apps_icon">ആപ്പ് ഐക്കൺ</string>
+    <string name="pref_vpn_exclude_system_apps_choose">സിസ്റ്റം ആപ്പുകൾ തിരഞ്ഞെടുക്കുക</string>
+    <string name="pref_vpn_exclude_system_apps_activity">സിസ്റ്റം ആപ്പുകൾ</string>
+    <string name="excluded_apps_search">ആപ്പുകൾ തിരയുക</string>
+    <string name="excluded_apps_search_hint">പേര് ഉപയോഗിച്ച് തിരയുക…</string>
+    <string name="excluded_apps_none_found">ഈ തിരയലുമായി പൊരുത്തപ്പെടുന്ന ആപ്പുകളൊന്നുമില്ല.</string>
     <string name="pref_vpn_reset">VPN പുനഃസജ്ജമാക്കുക</string>
     <string name="pref_vpn_reset_description">VPN കണക്ഷൻ ആദ്യം മുതൽ വീണ്ടും നിർമ്മിക്കുക. VPN പ്രവർത്തിക്കാതായാൽ (ഇന്റർനെറ്റ് ലഭിക്കാതിരിക്കുക അല്ലെങ്കിൽ DNS പിശകുകൾ വരിക) ഇത് ഉപയോഗിക്കുക.</string>
     <string name="pref_vpn_reset_done">VPN കണക്ഷൻ വീണ്ടും നിർമ്മിച്ചു.</string>

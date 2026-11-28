@@ -48,6 +48,7 @@
         <item>မရှိ</item>
         <item>ဘရောက်ဇာများမှလွဲ၍ အားလုံး</item>
         <item>အားလုံး</item>
+        <item>ရွေးချယ်ထားသည်များ</item>
     </string-array>
     <string name="pref_vpn_dns">DNS ဆာဗာများ</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">အားလုံးရွေးရန်</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">ရွေးချယ်မှုအားလုံးကို ဖယ်ရန်</string>
     <string name="pref_vpn_exclude_user_apps_icon">အက်ပ်သင်္ကေတ</string>
+    <string name="pref_vpn_exclude_system_apps_choose">စနစ်အက်ပ်များကို ရွေးချယ်ရန်</string>
+    <string name="pref_vpn_exclude_system_apps_activity">စနစ်အက်ပ်များ</string>
+    <string name="excluded_apps_search">အက်ပ်များ ရှာဖွေရန်</string>
+    <string name="excluded_apps_search_hint">အမည်ဖြင့် ရှာဖွေရန်…</string>
+    <string name="excluded_apps_none_found">ဤရှာဖွေမှုနှင့် ကိုက်ညီသော အက်ပ်မရှိပါ။</string>
     <string name="pref_vpn_reset">VPN ကို ပြန်လည်သတ်မှတ်ရန်</string>
     <string name="pref_vpn_reset_description">VPN ချိတ်ဆက်မှုကို အစမှ ပြန်လည်တည်ဆောက်ပါ။ VPN အလုပ်မလုပ်တော့ပါက (အင်တာနက်မရခြင်း သို့မဟုတ် DNS အမှားများ ဖြစ်ပါက) ဤလုပ်ဆောင်ချက်ကို သုံးပါ။</string>
     <string name="pref_vpn_reset_done">VPN ချိတ်ဆက်မှုကို ပြန်လည်တည်ဆောက်ပြီးပါပြီ။</string>

@@ -48,6 +48,7 @@
         <item>Nė vienos</item>
         <item>Visos, išskyrus naršykles</item>
         <item>Visos</item>
+        <item>Pasirinktos</item>
     </string-array>
     <string name="pref_vpn_dns">DNS serveriai</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Pasirinkti viską</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Atžymėti viską</string>
     <string name="pref_vpn_exclude_user_apps_icon">Programos piktograma</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Pasirinkti sistemos programas</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Sistemos programos</string>
+    <string name="excluded_apps_search">Ieškoti programų</string>
+    <string name="excluded_apps_search_hint">Ieškoti pagal pavadinimą…</string>
+    <string name="excluded_apps_none_found">Nėra programų, atitinkančių šią paiešką.</string>
     <string name="pref_vpn_reset">Iš naujo nustatyti VPN</string>
     <string name="pref_vpn_reset_description">Visiškai iš naujo sukurti VPN ryšį. Naudokite, jei VPN nustoja veikti (nėra interneto ryšio arba rodomos DNS klaidos).</string>
     <string name="pref_vpn_reset_done">VPN ryšys sukurtas iš naujo.</string>

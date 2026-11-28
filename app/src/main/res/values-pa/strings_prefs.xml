@@ -48,6 +48,7 @@
         <item>ਕੋਈ ਨਹੀਂ</item>
         <item>ਬ੍ਰਾਊਜ਼ਰਾਂ ਤੋਂ ਇਲਾਵਾ ਸਾਰੀਆਂ</item>
         <item>ਸਾਰੀਆਂ</item>
+        <item>ਚੁਣੀਆਂ ਹੋਈਆਂ</item>
     </string-array>
     <string name="pref_vpn_dns">DNS ਸਰਵਰ</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">ਸਭ ਚੁਣੋ</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">ਸਭ ਦੀ ਚੋਣ ਹਟਾਓ</string>
     <string name="pref_vpn_exclude_user_apps_icon">ਐਪ ਦਾ ਆਈਕਨ</string>
+    <string name="pref_vpn_exclude_system_apps_choose">ਸਿਸਟਮ ਐਪਾਂ ਚੁਣੋ</string>
+    <string name="pref_vpn_exclude_system_apps_activity">ਸਿਸਟਮ ਐਪਾਂ</string>
+    <string name="excluded_apps_search">ਐਪਾਂ ਖੋਜੋ</string>
+    <string name="excluded_apps_search_hint">ਨਾਮ ਨਾਲ ਖੋਜੋ…</string>
+    <string name="excluded_apps_none_found">ਇਸ ਖੋਜ ਨਾਲ ਕੋਈ ਐਪ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ।</string>
     <string name="pref_vpn_reset">VPN ਰੀਸੈੱਟ ਕਰੋ</string>
     <string name="pref_vpn_reset_description">VPN ਕਨੈਕਸ਼ਨ ਨੂੰ ਸ਼ੁਰੂ ਤੋਂ ਦੁਬਾਰਾ ਬਣਾਓ। ਜੇ VPN ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇ (ਇੰਟਰਨੈੱਟ ਨਾ ਚੱਲੇ ਜਾਂ DNS ਦੀਆਂ ਗਲਤੀਆਂ ਆਉਣ) ਤਾਂ ਇਸ ਦੀ ਵਰਤੋਂ ਕਰੋ।</string>
     <string name="pref_vpn_reset_done">VPN ਕਨੈਕਸ਼ਨ ਦੁਬਾਰਾ ਬਣਾ ਦਿੱਤਾ ਗਿਆ।</string>

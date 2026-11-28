@@ -48,6 +48,7 @@
         <item>없음</item>
         <item>브라우저를 제외한 모든 앱</item>
         <item>모든 앱</item>
+        <item>선택한 앱</item>
     </string-array>
     <string name="pref_vpn_dns">DNS 서버</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">모두 선택</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">모두 선택 해제</string>
     <string name="pref_vpn_exclude_user_apps_icon">앱 아이콘</string>
+    <string name="pref_vpn_exclude_system_apps_choose">시스템 앱 선택</string>
+    <string name="pref_vpn_exclude_system_apps_activity">시스템 앱</string>
+    <string name="excluded_apps_search">앱 검색</string>
+    <string name="excluded_apps_search_hint">이름으로 검색…</string>
+    <string name="excluded_apps_none_found">검색과 일치하는 앱이 없습니다.</string>
     <string name="pref_vpn_reset">VPN 재설정</string>
     <string name="pref_vpn_reset_description">VPN 연결을 처음부터 다시 만듭니다. VPN이 작동하지 않을 때(인터넷에 연결되지 않거나 DNS 오류가 발생할 때) 사용하세요.</string>
     <string name="pref_vpn_reset_done">VPN 연결을 다시 만들었습니다.</string>

@@ -48,6 +48,7 @@
         <item>Nenhum</item>
         <item>Todos, exceto navegadores</item>
         <item>Todos</item>
+        <item>Escolhidos</item>
     </string-array>
     <string name="pref_vpn_dns">Servidores DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Selecionar todos</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Desmarcar todos</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ícone do aplicativo</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Escolher aplicativos do sistema</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Aplicativos do sistema</string>
+    <string name="excluded_apps_search">Pesquisar aplicativos</string>
+    <string name="excluded_apps_search_hint">Pesquisar por nome…</string>
+    <string name="excluded_apps_none_found">Nenhum aplicativo corresponde a esta pesquisa.</string>
     <string name="pref_vpn_reset">Redefinir VPN</string>
     <string name="pref_vpn_reset_description">Reconstrói a conexão VPN do zero. Use esta opção se a VPN parar de funcionar (sem acesso à Internet ou com erros de DNS).</string>
     <string name="pref_vpn_reset_done">Conexão VPN reconstruída.</string>

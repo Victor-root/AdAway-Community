@@ -48,6 +48,7 @@
         <item>Ingen</item>
         <item>Alle unntatt nettlesere</item>
         <item>Alle</item>
+        <item>Valgte</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-servere</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Velg alle</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Fjern alle valg</string>
     <string name="pref_vpn_exclude_user_apps_icon">Appikon</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Velg systemapper</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Systemapper</string>
+    <string name="excluded_apps_search">Søk etter apper</string>
+    <string name="excluded_apps_search_hint">Søk etter navn …</string>
+    <string name="excluded_apps_none_found">Ingen apper samsvarer med søket.</string>
     <string name="pref_vpn_reset">Tilbakestill VPN</string>
     <string name="pref_vpn_reset_description">Bygg VPN-tilkoblingen opp på nytt fra bunnen av. Bruk dette hvis VPN-en slutter å fungere (ingen internettilgang eller DNS-feil).</string>
     <string name="pref_vpn_reset_done">VPN-tilkoblingen er bygd opp på nytt.</string>

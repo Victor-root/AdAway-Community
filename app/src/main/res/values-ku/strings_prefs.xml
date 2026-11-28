@@ -48,6 +48,7 @@
         <item>Tu yek</item>
         <item>Hemû ji bilî gerokan</item>
         <item>Hemû</item>
+        <item>Yên hilbijartî</item>
     </string-array>
     <string name="pref_vpn_dns">Pêşkêşkerên DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Hemûyan hilbijêre</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Hilbijartina hemûyan rake</string>
     <string name="pref_vpn_exclude_user_apps_icon">Îkona sepanê</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Sepanên pergalê hilbijêre</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Sepanên pergalê</string>
+    <string name="excluded_apps_search">Sepanan bigere</string>
+    <string name="excluded_apps_search_hint">Li gorî navê bigere…</string>
+    <string name="excluded_apps_none_found">Tu sepan bi vê lêgerînê re nagunce.</string>
     <string name="pref_vpn_reset">VPN ji nû ve ava bike</string>
     <string name="pref_vpn_reset_description">Girêdana VPN ji sifirê ji nû ve ava bike. Heke VPN dev ji xebatê berde (înternet tune ye an çewtiyên DNS hene), vê bi kar bîne.</string>
     <string name="pref_vpn_reset_done">Girêdana VPN ji nû ve hate avakirin.</string>

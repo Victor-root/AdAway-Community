@@ -48,6 +48,7 @@
         <item>Tiada</item>
         <item>Semua kecuali pelayar</item>
         <item>Semua</item>
+        <item>Yang dipilih</item>
     </string-array>
     <string name="pref_vpn_dns">Pelayan DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Pilih semua</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Nyahpilih semua</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikon apl</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Pilih apl sistem</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Apl sistem</string>
+    <string name="excluded_apps_search">Cari apl</string>
+    <string name="excluded_apps_search_hint">Cari mengikut nama…</string>
+    <string name="excluded_apps_none_found">Tiada apl sepadan dengan carian ini.</string>
     <string name="pref_vpn_reset">Set semula VPN</string>
     <string name="pref_vpn_reset_description">Bina semula sambungan VPN dari awal. Gunakan pilihan ini jika VPN berhenti berfungsi (tiada akses internet atau ralat DNS).</string>
     <string name="pref_vpn_reset_done">Sambungan VPN telah dibina semula.</string>

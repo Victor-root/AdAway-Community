@@ -48,6 +48,7 @@
         <item>Geen</item>
         <item>Alle, behalve browsers</item>
         <item>Alle</item>
+        <item>Gekozen apps</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-servers</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Alles selecteren</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Alles deselecteren</string>
     <string name="pref_vpn_exclude_user_apps_icon">App-pictogram</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Systeem-apps kiezen</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Systeem-apps</string>
+    <string name="excluded_apps_search">Apps zoeken</string>
+    <string name="excluded_apps_search_hint">Op naam zoeken…</string>
+    <string name="excluded_apps_none_found">Geen apps gevonden voor deze zoekopdracht.</string>
     <string name="pref_vpn_reset">VPN resetten</string>
     <string name="pref_vpn_reset_description">Bouw de VPN-verbinding helemaal opnieuw op. Gebruik dit als de VPN niet meer werkt (geen internettoegang of DNS-fouten).</string>
     <string name="pref_vpn_reset_done">De VPN-verbinding is opnieuw opgebouwd.</string>
