@@ -48,6 +48,7 @@
         <item>Neniun</item>
         <item>Ĉiujn krom retumiloj</item>
         <item>Ĉiujn</item>
+        <item>Elektitajn</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-serviloj</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Elekti ĉiujn</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Malelekti ĉiujn</string>
     <string name="pref_vpn_exclude_user_apps_icon">Piktogramo de la aplikaĵo</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Elekti sistemajn aplikaĵojn</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Sistemaj aplikaĵoj</string>
+    <string name="excluded_apps_search">Serĉi aplikaĵojn</string>
+    <string name="excluded_apps_search_hint">Serĉi laŭ nomo…</string>
+    <string name="excluded_apps_none_found">Neniu aplikaĵo kongruas kun ĉi tiu serĉo.</string>
     <string name="pref_vpn_reset">Restarigi VPN</string>
     <string name="pref_vpn_reset_description">Rekonstrui la VPN-konekton ekde nulo. Uzu tion, se la VPN ĉesas funkcii (neniu interreta aliro aŭ DNS-eraroj).</string>
     <string name="pref_vpn_reset_done">La VPN-konekto estas rekonstruita.</string>

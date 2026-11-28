@@ -48,6 +48,7 @@
         <item>Nenguna</item>
         <item>Toes menos los navegadores</item>
         <item>Toes</item>
+        <item>Les escoyíes</item>
     </string-array>
     <string name="pref_vpn_dns">Sirvidores DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Esbillar too</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Desmarcar too</string>
     <string name="pref_vpn_exclude_user_apps_icon">Icona de l’aplicación</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Escoyer aplicaciones del sistema</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Aplicaciones del sistema</string>
+    <string name="excluded_apps_search">Guetar aplicaciones</string>
+    <string name="excluded_apps_search_hint">Guetar por nome…</string>
+    <string name="excluded_apps_none_found">Denguna aplicación concasa con esta gueta.</string>
     <string name="pref_vpn_reset">Reaniciar la VPN</string>
     <string name="pref_vpn_reset_description">Reconstrúi la conexón VPN dende cero. Usa esta opción si la VPN dexa de furrular (ensin accesu a internet o con errores de DNS).</string>
     <string name="pref_vpn_reset_done">Reconstruyóse la conexón VPN.</string>

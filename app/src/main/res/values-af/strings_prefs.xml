@@ -48,6 +48,7 @@
         <item>Geen</item>
         <item>Almal behalwe blaaiers</item>
         <item>Almal</item>
+        <item>Gekose</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-bedieners</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Kies almal</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Ontkies almal</string>
     <string name="pref_vpn_exclude_user_apps_icon">Programikoon</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Kies stelselprogramme</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Stelselprogramme</string>
+    <string name="excluded_apps_search">Soek programme</string>
+    <string name="excluded_apps_search_hint">Soek volgens naam…</string>
+    <string name="excluded_apps_none_found">Geen program stem met hierdie soektog ooreen nie.</string>
     <string name="pref_vpn_reset">Stel VPN terug</string>
     <string name="pref_vpn_reset_description">Bou die VPN-verbinding van voor af weer op. Gebruik dit as die VPN ophou werk (geen internettoegang of DNS-foute).</string>
     <string name="pref_vpn_reset_done">VPN-verbinding herbou.</string>

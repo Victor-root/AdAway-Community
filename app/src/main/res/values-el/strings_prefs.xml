@@ -48,6 +48,7 @@
         <item>Καμία</item>
         <item>Όλες εκτός από τα προγράμματα περιήγησης</item>
         <item>Όλες</item>
+        <item>Επιλεγμένες</item>
     </string-array>
     <string name="pref_vpn_dns">Διακομιστές DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Επιλογή όλων</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Κατάργηση επιλογής όλων</string>
     <string name="pref_vpn_exclude_user_apps_icon">Εικονίδιο εφαρμογής</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Επιλογή εφαρμογών συστήματος</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Εφαρμογές συστήματος</string>
+    <string name="excluded_apps_search">Αναζήτηση εφαρμογών</string>
+    <string name="excluded_apps_search_hint">Αναζήτηση με βάση το όνομα…</string>
+    <string name="excluded_apps_none_found">Καμία εφαρμογή δεν ταιριάζει με αυτή την αναζήτηση.</string>
     <string name="pref_vpn_reset">Επαναφορά VPN</string>
     <string name="pref_vpn_reset_description">Δημιουργήστε ξανά τη σύνδεση VPN από την αρχή. Χρησιμοποιήστε το αν το VPN σταματήσει να λειτουργεί (χωρίς πρόσβαση στο διαδίκτυο ή με σφάλματα DNS).</string>
     <string name="pref_vpn_reset_done">Η σύνδεση VPN δημιουργήθηκε ξανά.</string>

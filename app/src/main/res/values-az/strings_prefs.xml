@@ -48,6 +48,7 @@
         <item>Heç biri</item>
         <item>Brauzerlər istisna olmaqla hamısı</item>
         <item>Hamısı</item>
+        <item>Seçilmişlər</item>
     </string-array>
     <string name="pref_vpn_dns">DNS serverləri</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Hamısını seçin</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Seçimi ləğv edin</string>
     <string name="pref_vpn_exclude_user_apps_icon">Tətbiq ikonu</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Sistem tətbiqlərini seçin</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Sistem tətbiqləri</string>
+    <string name="excluded_apps_search">Tətbiqləri axtarın</string>
+    <string name="excluded_apps_search_hint">Ada görə axtarın…</string>
+    <string name="excluded_apps_none_found">Bu axtarışa uyğun tətbiq yoxdur.</string>
     <string name="pref_vpn_reset">VPN-i sıfırlayın</string>
     <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yenidən qurun. VPN işləməyi dayandırdıqda (internetə çıxış yoxdur və ya DNS xətaları var) bundan istifadə edin.</string>
     <string name="pref_vpn_reset_done">VPN bağlantısı yenidən quruldu.</string>

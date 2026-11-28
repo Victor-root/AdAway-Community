@@ -48,6 +48,7 @@
         <item>Няма</item>
         <item>Усе, акрамя браўзераў</item>
         <item>Усе</item>
+        <item>Выбраныя</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-серверы</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Выбраць усе</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Зняць выбар з усіх</string>
     <string name="pref_vpn_exclude_user_apps_icon">Значок праграмы</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Выбраць сістэмныя праграмы</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Сістэмныя праграмы</string>
+    <string name="excluded_apps_search">Пошук праграм</string>
+    <string name="excluded_apps_search_hint">Пошук па назве…</string>
+    <string name="excluded_apps_none_found">Няма праграм, якія адпавядаюць гэтаму пошуку.</string>
     <string name="pref_vpn_reset">Скінуць VPN</string>
     <string name="pref_vpn_reset_description">Нанава пабудаваць VPN-злучэнне. Выкарыстоўвайце, калі VPN перастаў працаваць (няма доступу ў інтэрнэт або ўзнікаюць памылкі DNS).</string>
     <string name="pref_vpn_reset_done">VPN-злучэнне пабудавана нанава.</string>
