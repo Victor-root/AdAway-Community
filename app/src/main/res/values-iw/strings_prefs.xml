@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">אין אפליקציות התואמות לחיפוש זה.</string>
     <string name="excluded_apps_tab_user">אפליקציות משתמש</string>
     <string name="excluded_apps_tab_system">אפליקציות מערכת</string>
+    <string name="excluded_apps_choose_hint">כדי לבחור אפליקציות אחת-אחת, בחר \"נבחרות\" למעלה.</string>
     <string name="pref_vpn_reset">איפוס VPN</string>
     <string name="pref_vpn_reset_description">בניית חיבור ה-VPN מחדש מאפס. השתמש באפשרות הזו אם ה-VPN מפסיק לפעול (אין גישה לאינטרנט או שמופיעות שגיאות DNS).</string>
     <string name="pref_vpn_reset_done">חיבור ה-VPN נבנה מחדש.</string>

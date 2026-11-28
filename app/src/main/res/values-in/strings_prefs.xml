@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Tidak ada aplikasi yang cocok dengan pencarian ini.</string>
     <string name="excluded_apps_tab_user">Aplikasi pengguna</string>
     <string name="excluded_apps_tab_system">Aplikasi sistem</string>
+    <string name="excluded_apps_choose_hint">Untuk memilih aplikasi satu per satu, pilih “Yang dipilih” di atas.</string>
     <string name="pref_vpn_reset">Setel ulang VPN</string>
     <string name="pref_vpn_reset_description">Bangun ulang koneksi VPN dari awal. Gunakan ini jika VPN berhenti berfungsi (tidak ada akses internet atau terjadi error DNS).</string>
     <string name="pref_vpn_reset_done">Koneksi VPN dibangun ulang.</string>

@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Walang app na tumutugma sa paghahanap na ito.</string>
     <string name="excluded_apps_tab_user">Mga app ng user</string>
     <string name="excluded_apps_tab_system">Mga system app</string>
+    <string name="excluded_apps_choose_hint">Para piliin nang isa-isa ang mga app, piliin ang “Mga napili” sa itaas.</string>
     <string name="pref_vpn_reset">I-reset ang VPN</string>
     <string name="pref_vpn_reset_description">Buuin muli mula sa simula ang koneksyon ng VPN. Gamitin ito kung huminto sa paggana ang VPN (walang internet o may mga error sa DNS).</string>
     <string name="pref_vpn_reset_done">Nabuo muli ang koneksyon ng VPN.</string>

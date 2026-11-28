@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">لا يوجد تطبيق يطابق هذا البحث.</string>
     <string name="excluded_apps_tab_user">تطبيقات المستخدم</string>
     <string name="excluded_apps_tab_system">تطبيقات النظام</string>
+    <string name="excluded_apps_choose_hint">لاختيار التطبيقات واحدًا تلو الآخر، اختر “المختارة” أعلاه.</string>
     <string name="pref_vpn_reset">إعادة ضبط VPN</string>
     <string name="pref_vpn_reset_description">إعادة بناء اتصال VPN من الصفر. استخدم هذا الخيار إذا توقف VPN عن العمل (لا يوجد اتصال بالإنترنت أو ظهرت أخطاء DNS).</string>
     <string name="pref_vpn_reset_done">تمت إعادة بناء اتصال VPN.</string>

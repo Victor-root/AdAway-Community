@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Ekkert forrit passar við þessa leit.</string>
     <string name="excluded_apps_tab_user">Notendaforrit</string>
     <string name="excluded_apps_tab_system">Kerfisforrit</string>
+    <string name="excluded_apps_choose_hint">Til að velja forrit eitt og eitt skaltu velja „Valin“ hér fyrir ofan.</string>
     <string name="pref_vpn_reset">Endurstilla VPN</string>
     <string name="pref_vpn_reset_description">Byggja VPN-tenginguna upp frá grunni. Notaðu þetta ef VPN hættir að virka (enginn netaðgangur eða DNS-villur).</string>
     <string name="pref_vpn_reset_done">VPN-tengingin var endurbyggð.</string>

@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Bu axtarışa uyğun tətbiq yoxdur.</string>
     <string name="excluded_apps_tab_user">İstifadəçi tətbiqləri</string>
     <string name="excluded_apps_tab_system">Sistem tətbiqləri</string>
+    <string name="excluded_apps_choose_hint">Tətbiqləri tək-tək seçmək üçün yuxarıdan “Seçilmişlər” seçin.</string>
     <string name="pref_vpn_reset">VPN-i sıfırlayın</string>
     <string name="pref_vpn_reset_description">VPN bağlantısını sıfırdan yenidən qurun. VPN işləməyi dayandırdıqda (internetə çıxış yoxdur və ya DNS xətaları var) bundan istifadə edin.</string>
     <string name="pref_vpn_reset_done">VPN bağlantısı yenidən quruldu.</string>

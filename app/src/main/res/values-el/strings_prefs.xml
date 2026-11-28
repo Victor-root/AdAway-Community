@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Καμία εφαρμογή δεν ταιριάζει με αυτή την αναζήτηση.</string>
     <string name="excluded_apps_tab_user">Εφαρμογές χρήστη</string>
     <string name="excluded_apps_tab_system">Εφαρμογές συστήματος</string>
+    <string name="excluded_apps_choose_hint">Για να επιλέξετε μία προς μία τις εφαρμογές, επιλέξτε «Επιλεγμένες» παραπάνω.</string>
     <string name="pref_vpn_reset">Επαναφορά VPN</string>
     <string name="pref_vpn_reset_description">Δημιουργήστε ξανά τη σύνδεση VPN από την αρχή. Χρησιμοποιήστε το αν το VPN σταματήσει να λειτουργεί (χωρίς πρόσβαση στο διαδίκτυο ή με σφάλματα DNS).</string>
     <string name="pref_vpn_reset_done">Η σύνδεση VPN δημιουργήθηκε ξανά.</string>

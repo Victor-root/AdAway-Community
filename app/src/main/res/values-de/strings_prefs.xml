@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Keine App entspricht dieser Suche.</string>
     <string name="excluded_apps_tab_user">Nutzer-Apps</string>
     <string name="excluded_apps_tab_system">System-Apps</string>
+    <string name="excluded_apps_choose_hint">Um die Apps einzeln auszuwählen, wähle oben „Ausgewählte“.</string>
     <string name="pref_vpn_reset">VPN zurücksetzen</string>
     <string name="pref_vpn_reset_description">Baut die VPN-Verbindung von Grund auf neu auf. Nutze diese Option, wenn das VPN nicht mehr funktioniert (kein Internetzugang oder DNS-Fehler).</string>
     <string name="pref_vpn_reset_done">VPN-Verbindung neu aufgebaut.</string>

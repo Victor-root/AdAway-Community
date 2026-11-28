@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Ingen apps matcher denne søgning.</string>
     <string name="excluded_apps_tab_user">Brugerapps</string>
     <string name="excluded_apps_tab_system">Systemapps</string>
+    <string name="excluded_apps_choose_hint">Vælg »Valgte« ovenfor for at vælge apps én ad gangen.</string>
     <string name="pref_vpn_reset">Nulstil VPN</string>
     <string name="pref_vpn_reset_description">Opbyg VPN-forbindelsen helt forfra. Brug det, hvis VPN holder op med at virke (ingen internetadgang eller DNS-fejl).</string>
     <string name="pref_vpn_reset_done">VPN-forbindelsen er opbygget forfra.</string>
