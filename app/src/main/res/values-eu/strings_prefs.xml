@@ -70,7 +70,7 @@
     <string name="excluded_apps_search">Bilatu aplikazioak</string>
     <string name="excluded_apps_search_hint">Bilatu izenaren arabera…</string>
     <string name="excluded_apps_none_found">Ez dago bilaketarekin bat datorren aplikaziorik.</string>
-    <string name="excluded_apps_tab_user">Erabiltzaile-aplikazioak</string>
+    <string name="excluded_apps_tab_user">Erabiltzailearen aplikazioak</string>
     <string name="excluded_apps_tab_system">Sistemako aplikazioak</string>
     <string name="excluded_apps_system_hint">Sistemako aplikazioak banan-banan hautatzeko, aukeratu goian «Hautatutakoak».</string>
     <string name="pref_vpn_reset">Berrezarri VPNa</string>
