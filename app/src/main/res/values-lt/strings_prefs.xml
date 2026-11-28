@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Nėra programų, atitinkančių šią paiešką.</string>
     <string name="excluded_apps_tab_user">Naudotojo programos</string>
     <string name="excluded_apps_tab_system">Sistemos programos</string>
+    <string name="excluded_apps_choose_hint">Norėdami programas pasirinkti po vieną, aukščiau pasirinkite „Pasirinktos“.</string>
     <string name="pref_vpn_reset">Iš naujo nustatyti VPN</string>
     <string name="pref_vpn_reset_description">Visiškai iš naujo sukurti VPN ryšį. Naudokite, jei VPN nustoja veikti (nėra interneto ryšio arba rodomos DNS klaidos).</string>
     <string name="pref_vpn_reset_done">VPN ryšys sukurtas iš naujo.</string>

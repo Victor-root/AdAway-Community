@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Жоден додаток не відповідає пошуку.</string>
     <string name="excluded_apps_tab_user">Користувацькі</string>
     <string name="excluded_apps_tab_system">Системні</string>
+    <string name="excluded_apps_choose_hint">Щоб вибрати додатки по одному, виберіть вище «Вибрані».</string>
     <string name="pref_vpn_reset">Скинути VPN</string>
     <string name="pref_vpn_reset_description">Перебудувати VPN-з’єднання з нуля. Скористайтеся цим, якщо VPN перестав працювати (немає доступу до інтернету або виникають помилки DNS).</string>
     <string name="pref_vpn_reset_done">VPN-з’єднання перебудовано.</string>

@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">ਇਸ ਖੋਜ ਨਾਲ ਕੋਈ ਐਪ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ।</string>
     <string name="excluded_apps_tab_user">ਵਰਤੋਂਕਾਰ ਐਪਾਂ</string>
     <string name="excluded_apps_tab_system">ਸਿਸਟਮ ਐਪਾਂ</string>
+    <string name="excluded_apps_choose_hint">ਐਪਾਂ ਇੱਕ-ਇੱਕ ਕਰਕੇ ਚੁਣਨ ਲਈ ਉੱਪਰ “ਚੁਣੀਆਂ ਹੋਈਆਂ” ਚੁਣੋ।</string>
     <string name="pref_vpn_reset">VPN ਰੀਸੈੱਟ ਕਰੋ</string>
     <string name="pref_vpn_reset_description">VPN ਕਨੈਕਸ਼ਨ ਨੂੰ ਸ਼ੁਰੂ ਤੋਂ ਦੁਬਾਰਾ ਬਣਾਓ। ਜੇ VPN ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇ (ਇੰਟਰਨੈੱਟ ਨਾ ਚੱਲੇ ਜਾਂ DNS ਦੀਆਂ ਗਲਤੀਆਂ ਆਉਣ) ਤਾਂ ਇਸ ਦੀ ਵਰਤੋਂ ਕਰੋ।</string>
     <string name="pref_vpn_reset_done">VPN ਕਨੈਕਸ਼ਨ ਦੁਬਾਰਾ ਬਣਾ ਦਿੱਤਾ ਗਿਆ।</string>

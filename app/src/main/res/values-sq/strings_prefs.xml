@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Asnjë aplikacion nuk përputhet me këtë kërkim.</string>
     <string name="excluded_apps_tab_user">Të përdoruesit</string>
     <string name="excluded_apps_tab_system">Të sistemit</string>
+    <string name="excluded_apps_choose_hint">Për të zgjedhur aplikacionet një nga një, zgjidhni më lart «Të zgjedhurat».</string>
     <string name="pref_vpn_reset">Rivendos VPN-në</string>
     <string name="pref_vpn_reset_description">Rindërtoni lidhjen VPN nga e para. Përdoreni nëse VPN-ja nuk funksionon më (pa qasje në internet ose me gabime DNS).</string>
     <string name="pref_vpn_reset_done">Lidhja VPN u rindërtua.</string>

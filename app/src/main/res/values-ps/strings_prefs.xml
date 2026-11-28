@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">دې لټون سره هېڅ اپلېکېشن سمون نه خوري.</string>
     <string name="excluded_apps_tab_user">د کارونکي اپلېکېشنونه</string>
     <string name="excluded_apps_tab_system">سیسټمي اپلېکېشنونه</string>
+    <string name="excluded_apps_choose_hint">د اپلېکېشنونو د یو په یو غوره کولو لپاره پورته «ټاکل شوي» وټاکئ.</string>
     <string name="pref_vpn_reset">VPN بیا تنظیمول</string>
     <string name="pref_vpn_reset_description">د VPN اړیکه له سره جوړه کړئ. که VPN کار ودروي (انټرنیټ نه وي یا د DNS تېروتنې رامنځته شي) دا وکاروئ.</string>
     <string name="pref_vpn_reset_done">د VPN اړیکه بیا جوړه شوه.</string>

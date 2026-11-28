@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">ไม่มีแอปที่ตรงกับการค้นหานี้</string>
     <string name="excluded_apps_tab_user">แอปผู้ใช้</string>
     <string name="excluded_apps_tab_system">แอประบบ</string>
+    <string name="excluded_apps_choose_hint">หากต้องการเลือกแอปทีละแอป ให้เลือก “ที่เลือก” ด้านบน</string>
     <string name="pref_vpn_reset">รีเซ็ต VPN</string>
     <string name="pref_vpn_reset_description">สร้างการเชื่อมต่อ VPN ขึ้นใหม่ทั้งหมด ใช้เมื่อ VPN หยุดทำงาน (ไม่มีอินเทอร์เน็ตหรือเกิดข้อผิดพลาดเกี่ยวกับ DNS)</string>
     <string name="pref_vpn_reset_done">สร้างการเชื่อมต่อ VPN ใหม่แล้ว</string>

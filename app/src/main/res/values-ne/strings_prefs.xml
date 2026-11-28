@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">यो खोजसँग मिल्ने कुनै एप छैन।</string>
     <string name="excluded_apps_tab_user">प्रयोगकर्ता एपहरू</string>
     <string name="excluded_apps_tab_system">प्रणाली एपहरू</string>
+    <string name="excluded_apps_choose_hint">एपहरू एक-एक गरी छान्न माथि “छानिएकाहरू” छान्नुहोस्।</string>
     <string name="pref_vpn_reset">VPN रिसेट गर्नुहोस्</string>
     <string name="pref_vpn_reset_description">VPN जडान सुरुबाट नयाँ गरी बनाउनुहोस्। VPN ले काम गर्न छाडेमा (इन्टरनेट नचल्ने वा DNS त्रुटि आउने) यसको प्रयोग गर्नुहोस्।</string>
     <string name="pref_vpn_reset_done">VPN जडान पुन: बनाइयो।</string>

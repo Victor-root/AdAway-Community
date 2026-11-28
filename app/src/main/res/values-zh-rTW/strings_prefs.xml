@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">沒有符合此搜尋的應用程式。</string>
     <string name="excluded_apps_tab_user">使用者應用程式</string>
     <string name="excluded_apps_tab_system">系統應用程式</string>
+    <string name="excluded_apps_choose_hint">若要逐一選擇應用程式，請在上方選擇「已選擇的」。</string>
     <string name="pref_vpn_reset">重設 VPN</string>
     <string name="pref_vpn_reset_description">從頭重新建立 VPN 連線。如果 VPN 無法運作（無法連上網際網路或出現 DNS 錯誤），請使用這項功能。</string>
     <string name="pref_vpn_reset_done">已重新建立 VPN 連線。</string>

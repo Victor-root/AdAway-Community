@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Nobena aplikacija ne ustreza iskanju.</string>
     <string name="excluded_apps_tab_user">Uporabniške</string>
     <string name="excluded_apps_tab_system">Sistemske</string>
+    <string name="excluded_apps_choose_hint">Če želite aplikacije izbrati posamično, zgoraj izberite »Izbrane«.</string>
     <string name="pref_vpn_reset">Ponastavi VPN</string>
     <string name="pref_vpn_reset_description">Povezava VPN se zgradi znova. Uporabite, če VPN preneha delovati (ni dostopa do interneta ali so prisotne napake DNS).</string>
     <string name="pref_vpn_reset_done">Povezava VPN je zgrajena znova.</string>

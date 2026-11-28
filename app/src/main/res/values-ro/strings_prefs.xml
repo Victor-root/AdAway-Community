@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Nicio aplicație nu corespunde acestei căutări.</string>
     <string name="excluded_apps_tab_user">Utilizator</string>
     <string name="excluded_apps_tab_system">Sistem</string>
+    <string name="excluded_apps_choose_hint">Pentru a alege aplicațiile pe rând, selectați mai sus „Cele alese”.</string>
     <string name="pref_vpn_reset">Resetați VPN-ul</string>
     <string name="pref_vpn_reset_description">Reconstruiește de la zero conexiunea VPN. Folosiți această opțiune dacă VPN-ul nu mai funcționează (fără acces la internet sau cu erori DNS).</string>
     <string name="pref_vpn_reset_done">Conexiunea VPN a fost reconstruită.</string>

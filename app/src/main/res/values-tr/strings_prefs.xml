@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Bu aramayla eşleşen uygulama yok.</string>
     <string name="excluded_apps_tab_user">Kullanıcı</string>
     <string name="excluded_apps_tab_system">Sistem</string>
+    <string name="excluded_apps_choose_hint">Uygulamaları tek tek seçmek için yukarıdan “Seçilenler” seçeneğini işaretleyin.</string>
     <string name="pref_vpn_reset">VPN’i sıfırla</string>
     <string name="pref_vpn_reset_description">VPN bağlantısını baştan kurar. VPN çalışmayı bırakırsa (internet erişimi yok veya DNS hataları) bunu kullanın.</string>
     <string name="pref_vpn_reset_done">VPN bağlantısı yeniden kuruldu.</string>

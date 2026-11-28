@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Geen apps gevonden voor deze zoekopdracht.</string>
     <string name="excluded_apps_tab_user">Gebruikersapps</string>
     <string name="excluded_apps_tab_system">Systeem-apps</string>
+    <string name="excluded_apps_choose_hint">Kies hierboven “Gekozen apps” om apps één voor één te selecteren.</string>
     <string name="pref_vpn_reset">VPN resetten</string>
     <string name="pref_vpn_reset_description">Bouw de VPN-verbinding helemaal opnieuw op. Gebruik dit als de VPN niet meer werkt (geen internettoegang of DNS-fouten).</string>
     <string name="pref_vpn_reset_done">De VPN-verbinding is opnieuw opgebouwd.</string>

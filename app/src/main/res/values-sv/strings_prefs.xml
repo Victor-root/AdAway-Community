@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Ingen app matchar sökningen.</string>
     <string name="excluded_apps_tab_user">Användarappar</string>
     <string name="excluded_apps_tab_system">Systemappar</string>
+    <string name="excluded_apps_choose_hint">Om du vill välja apparna en och en, välj ”Valda” ovan.</string>
     <string name="pref_vpn_reset">Återställ VPN</string>
     <string name="pref_vpn_reset_description">Bygg upp VPN-anslutningen från grunden. Använd detta om VPN slutar fungera (ingen internetåtkomst eller DNS-fel).</string>
     <string name="pref_vpn_reset_done">VPN-anslutningen har byggts upp på nytt.</string>

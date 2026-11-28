@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">Tu sepan bi vê lêgerînê re nagunce.</string>
     <string name="excluded_apps_tab_user">Sepanên bikarhêner</string>
     <string name="excluded_apps_tab_system">Sepanên pergalê</string>
+    <string name="excluded_apps_choose_hint">Ji bo ku sepanan yek bi yek hilbijêrî, li jor «Yên hilbijartî» hilbijêre.</string>
     <string name="pref_vpn_reset">VPN ji nû ve ava bike</string>
     <string name="pref_vpn_reset_description">Girêdana VPN ji sifirê ji nû ve ava bike. Heke VPN dev ji xebatê berde (înternet tune ye an çewtiyên DNS hene), vê bi kar bîne.</string>
     <string name="pref_vpn_reset_done">Girêdana VPN ji nû ve hate avakirin.</string>

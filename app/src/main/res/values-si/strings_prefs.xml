@@ -73,6 +73,7 @@
     <string name="excluded_apps_none_found">මෙම සෙවුමට ගැළපෙන යෙදුමක් නැත.</string>
     <string name="excluded_apps_tab_user">පරිශීලක යෙදුම්</string>
     <string name="excluded_apps_tab_system">පද්ධති යෙදුම්</string>
+    <string name="excluded_apps_choose_hint">යෙදුම් එකින් එක තෝරන්න, ඉහළින් “තෝරාගත් ඒවා” තෝරන්න.</string>
     <string name="pref_vpn_reset">VPN යළි සකසන්න</string>
     <string name="pref_vpn_reset_description">VPN සම්බන්ධතාව මුල සිටම නැවත ගොඩනඟයි. VPN ක්‍රියා නොකරන්නේ නම් (අන්තර්ජාල ප්‍රවේශය නැති වීම හෝ DNS දෝෂ) මෙය භාවිත කරන්න.</string>
     <string name="pref_vpn_reset_done">VPN සම්බන්ධතාව නැවත ගොඩනඟන ලදී.</string>
