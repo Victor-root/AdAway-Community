@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Hae sovelluksia</string>
     <string name="excluded_apps_search_hint">Hae nimellä…</string>
     <string name="excluded_apps_none_found">Mikään sovellus ei vastaa hakua.</string>
+    <string name="excluded_apps_tab_user">Käyttäjän sovellukset</string>
+    <string name="excluded_apps_tab_system">Järjestelmäsovellukset</string>
+    <string name="excluded_apps_system_hint">Valitaksesi järjestelmäsovellukset yksitellen, valitse yllä ”Valitut”.</string>
     <string name="pref_vpn_reset">Nollaa VPN</string>
     <string name="pref_vpn_reset_description">Muodosta VPN-yhteys alusta alkaen uudelleen. Käytä tätä, jos VPN lakkaa toimimasta (ei internetyhteyttä tai DNS-virheitä).</string>
     <string name="pref_vpn_reset_done">VPN-yhteys muodostettu uudelleen.</string>

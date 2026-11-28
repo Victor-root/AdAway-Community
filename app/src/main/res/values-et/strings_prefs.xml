@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Otsi rakendusi</string>
     <string name="excluded_apps_search_hint">Otsi nime järgi…</string>
     <string name="excluded_apps_none_found">Ükski rakendus ei vasta otsingule.</string>
+    <string name="excluded_apps_tab_user">Kasutajarakendused</string>
+    <string name="excluded_apps_tab_system">Süsteemirakendused</string>
+    <string name="excluded_apps_system_hint">Süsteemirakenduste ükshaaval valimiseks vali ülal „Valitud“.</string>
     <string name="pref_vpn_reset">Lähtesta VPN</string>
     <string name="pref_vpn_reset_description">Ehita VPN-ühendus nullist uuesti üles. Kasuta seda, kui VPN lakkab töötamast (internetiühendus puudub või ilmnevad DNS-vead).</string>
     <string name="pref_vpn_reset_done">VPN-ühendus ehitati uuesti üles.</string>

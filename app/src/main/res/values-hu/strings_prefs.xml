@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Alkalmazások keresése</string>
     <string name="excluded_apps_search_hint">Keresés név szerint…</string>
     <string name="excluded_apps_none_found">Egy alkalmazás sem felel meg a keresésnek.</string>
+    <string name="excluded_apps_tab_user">Felhasználói alkalmazások</string>
+    <string name="excluded_apps_tab_system">Rendszeralkalmazások</string>
+    <string name="excluded_apps_system_hint">A rendszeralkalmazások egyenkénti kiválasztásához válassza fent „A kiválasztottak” lehetőséget.</string>
     <string name="pref_vpn_reset">VPN alaphelyzetbe állítása</string>
     <string name="pref_vpn_reset_description">A VPN-kapcsolat teljes újraépítése. Akkor használja, ha a VPN nem működik tovább (nincs internetelérés, vagy DNS-hibák jelentkeznek).</string>
     <string name="pref_vpn_reset_done">A VPN-kapcsolat újraépítve.</string>
