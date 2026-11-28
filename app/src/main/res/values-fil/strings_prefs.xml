@@ -48,6 +48,7 @@
         <item>Wala</item>
         <item>Lahat maliban sa mga browser</item>
         <item>Lahat</item>
+        <item>Mga napili</item>
     </string-array>
     <string name="pref_vpn_dns">Mga DNS server</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Piliin lahat</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Alisin ang pagpili sa lahat</string>
     <string name="pref_vpn_exclude_user_apps_icon">Icon ng app</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Pumili ng mga system app</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Mga system app</string>
+    <string name="excluded_apps_search">Maghanap ng mga app</string>
+    <string name="excluded_apps_search_hint">Maghanap ayon sa pangalan…</string>
+    <string name="excluded_apps_none_found">Walang app na tumutugma sa paghahanap na ito.</string>
     <string name="pref_vpn_reset">I-reset ang VPN</string>
     <string name="pref_vpn_reset_description">Buuin muli mula sa simula ang koneksyon ng VPN. Gamitin ito kung huminto sa paggana ang VPN (walang internet o may mga error sa DNS).</string>
     <string name="pref_vpn_reset_done">Nabuo muli ang koneksyon ng VPN.</string>

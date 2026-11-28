@@ -48,6 +48,7 @@
         <item>Nessuna</item>
         <item>Tutte tranne i browser</item>
         <item>Tutte</item>
+        <item>Selezionate</item>
     </string-array>
     <string name="pref_vpn_dns">Server DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Seleziona tutto</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Deseleziona tutto</string>
     <string name="pref_vpn_exclude_user_apps_icon">Icona dell’app</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Scegli le app di sistema</string>
+    <string name="pref_vpn_exclude_system_apps_activity">App di sistema</string>
+    <string name="excluded_apps_search">Cerca app</string>
+    <string name="excluded_apps_search_hint">Cerca per nome…</string>
+    <string name="excluded_apps_none_found">Nessuna app corrisponde a questa ricerca.</string>
     <string name="pref_vpn_reset">Reimposta VPN</string>
     <string name="pref_vpn_reset_description">Ricostruisce da zero la connessione VPN. Usalo se la VPN smette di funzionare (nessun accesso a Internet o errori DNS).</string>
     <string name="pref_vpn_reset_done">Connessione VPN ricostruita.</string>

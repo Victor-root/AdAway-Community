@@ -48,6 +48,7 @@
         <item>هیچ‌کدام</item>
         <item>همه به‌جز مرورگرها</item>
         <item>همه</item>
+        <item>انتخاب‌شده‌ها</item>
     </string-array>
     <string name="pref_vpn_dns">سرورهای DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">انتخاب همه</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">لغو انتخاب همه</string>
     <string name="pref_vpn_exclude_user_apps_icon">نماد برنامه</string>
+    <string name="pref_vpn_exclude_system_apps_choose">انتخاب برنامه‌های سیستمی</string>
+    <string name="pref_vpn_exclude_system_apps_activity">برنامه‌های سیستمی</string>
+    <string name="excluded_apps_search">جستجوی برنامه‌ها</string>
+    <string name="excluded_apps_search_hint">جستجو بر اساس نام…</string>
+    <string name="excluded_apps_none_found">هیچ برنامه‌ای با این جستجو مطابقت ندارد.</string>
     <string name="pref_vpn_reset">بازنشانی VPN</string>
     <string name="pref_vpn_reset_description">اتصال VPN را از ابتدا دوباره می‌سازد. اگر VPN از کار افتاد (قطع دسترسی به اینترنت یا خطاهای DNS)، از این گزینه استفاده کنید.</string>
     <string name="pref_vpn_reset_done">اتصال VPN دوباره ساخته شد.</string>

@@ -48,6 +48,7 @@
         <item>Bat ere ez</item>
         <item>Guztiak, nabigatzaileak izan ezik</item>
         <item>Guztiak</item>
+        <item>Hautatutakoak</item>
     </string-array>
     <string name="pref_vpn_dns">DNS zerbitzariak</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Hautatu guztiak</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Desautatu guztiak</string>
     <string name="pref_vpn_exclude_user_apps_icon">Aplikazioaren ikonoa</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Hautatu sistemako aplikazioak</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Sistemako aplikazioak</string>
+    <string name="excluded_apps_search">Bilatu aplikazioak</string>
+    <string name="excluded_apps_search_hint">Bilatu izenaren arabera…</string>
+    <string name="excluded_apps_none_found">Ez dago bilaketarekin bat datorren aplikaziorik.</string>
     <string name="pref_vpn_reset">Berrezarri VPNa</string>
     <string name="pref_vpn_reset_description">Berreraiki VPN konexioa hutsetik. Erabili hau VPNak funtzionatzeari uzten badio (Interneterako sarbiderik gabe edo DNS erroreekin).</string>
     <string name="pref_vpn_reset_done">VPN konexioa berreraiki da.</string>

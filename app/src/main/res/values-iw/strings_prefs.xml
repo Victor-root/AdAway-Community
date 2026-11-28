@@ -48,6 +48,7 @@
         <item>אף אחת</item>
         <item>כולן מלבד דפדפנים</item>
         <item>כולן</item>
+        <item>נבחרות</item>
     </string-array>
     <string name="pref_vpn_dns">שרתי DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">בחירת הכול</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">ביטול הבחירה בכול</string>
     <string name="pref_vpn_exclude_user_apps_icon">סמל האפליקציה</string>
+    <string name="pref_vpn_exclude_system_apps_choose">בחירת אפליקציות מערכת</string>
+    <string name="pref_vpn_exclude_system_apps_activity">אפליקציות מערכת</string>
+    <string name="excluded_apps_search">חיפוש אפליקציות</string>
+    <string name="excluded_apps_search_hint">חיפוש לפי שם…</string>
+    <string name="excluded_apps_none_found">אין אפליקציות התואמות לחיפוש זה.</string>
     <string name="pref_vpn_reset">איפוס VPN</string>
     <string name="pref_vpn_reset_description">בניית חיבור ה-VPN מחדש מאפס. השתמש באפשרות הזו אם ה-VPN מפסיק לפעול (אין גישה לאינטרנט או שמופיעות שגיאות DNS).</string>
     <string name="pref_vpn_reset_done">חיבור ה-VPN נבנה מחדש.</string>

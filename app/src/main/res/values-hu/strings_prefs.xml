@@ -48,6 +48,7 @@
         <item>Egyik sem</item>
         <item>Mind, a böngészők kivételével</item>
         <item>Mind</item>
+        <item>A kiválasztottak</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-kiszolgálók</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Összes kijelölése</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Kijelölés megszüntetése</string>
     <string name="pref_vpn_exclude_user_apps_icon">Az alkalmazás ikonja</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Rendszeralkalmazások kiválasztása</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Rendszeralkalmazások</string>
+    <string name="excluded_apps_search">Alkalmazások keresése</string>
+    <string name="excluded_apps_search_hint">Keresés név szerint…</string>
+    <string name="excluded_apps_none_found">Egy alkalmazás sem felel meg a keresésnek.</string>
     <string name="pref_vpn_reset">VPN alaphelyzetbe állítása</string>
     <string name="pref_vpn_reset_description">A VPN-kapcsolat teljes újraépítése. Akkor használja, ha a VPN nem működik tovább (nincs internetelérés, vagy DNS-hibák jelentkeznek).</string>
     <string name="pref_vpn_reset_done">A VPN-kapcsolat újraépítve.</string>

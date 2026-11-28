@@ -48,6 +48,7 @@
         <item>Mitte ühtegi</item>
         <item>Kõik peale brauserite</item>
         <item>Kõik</item>
+        <item>Valitud</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-serverid</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Vali kõik</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Tühista kõigi valik</string>
     <string name="pref_vpn_exclude_user_apps_icon">Rakenduse ikoon</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Vali süsteemirakendused</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Süsteemirakendused</string>
+    <string name="excluded_apps_search">Otsi rakendusi</string>
+    <string name="excluded_apps_search_hint">Otsi nime järgi…</string>
+    <string name="excluded_apps_none_found">Ükski rakendus ei vasta otsingule.</string>
     <string name="pref_vpn_reset">Lähtesta VPN</string>
     <string name="pref_vpn_reset_description">Ehita VPN-ühendus nullist uuesti üles. Kasuta seda, kui VPN lakkab töötamast (internetiühendus puudub või ilmnevad DNS-vead).</string>
     <string name="pref_vpn_reset_done">VPN-ühendus ehitati uuesti üles.</string>
