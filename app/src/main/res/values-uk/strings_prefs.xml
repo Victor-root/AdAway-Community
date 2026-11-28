@@ -48,6 +48,7 @@
         <item>Жодні</item>
         <item>Усі, крім браузерів</item>
         <item>Усі</item>
+        <item>Вибрані</item>
     </string-array>
     <string name="pref_vpn_dns">Сервери DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Вибрати все</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Скасувати вибір</string>
     <string name="pref_vpn_exclude_user_apps_icon">Значок додатка</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Вибрати системні додатки</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Системні додатки</string>
+    <string name="excluded_apps_search">Пошук додатків</string>
+    <string name="excluded_apps_search_hint">Пошук за назвою…</string>
+    <string name="excluded_apps_none_found">Жоден додаток не відповідає пошуку.</string>
     <string name="pref_vpn_reset">Скинути VPN</string>
     <string name="pref_vpn_reset_description">Перебудувати VPN-з’єднання з нуля. Скористайтеся цим, якщо VPN перестав працювати (немає доступу до інтернету або виникають помилки DNS).</string>
     <string name="pref_vpn_reset_done">VPN-з’єднання перебудовано.</string>

@@ -48,6 +48,7 @@
         <item>Hech biri</item>
         <item>Brauzerlardan tashqari barchasi</item>
         <item>Barchasi</item>
+        <item>Tanlanganlari</item>
     </string-array>
     <string name="pref_vpn_dns">DNS serverlar</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Barchasini tanlash</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Tanlovni bekor qilish</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ilova belgisi</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Tizim ilovalarini tanlash</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Tizim ilovalari</string>
+    <string name="excluded_apps_search">Ilovalarni qidirish</string>
+    <string name="excluded_apps_search_hint">Nomi orqali qidirish…</string>
+    <string name="excluded_apps_none_found">Bu qidiruvga mos ilova topilmadi.</string>
     <string name="pref_vpn_reset">VPNni qayta qurish</string>
     <string name="pref_vpn_reset_description">VPN ulanishini noldan qayta quradi. VPN ishlamay qolsa (internet yoʻq yoki DNS xatolari), shundan foydalaning.</string>
     <string name="pref_vpn_reset_done">VPN ulanishi qayta qurildi.</string>

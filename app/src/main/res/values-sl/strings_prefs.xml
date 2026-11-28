@@ -48,6 +48,7 @@
         <item>Nobene</item>
         <item>Vse razen brskalnikov</item>
         <item>Vse</item>
+        <item>Izbrane</item>
     </string-array>
     <string name="pref_vpn_dns">Strežniki DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Izberi vse</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Prekliči izbiro vseh</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikacije</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Izberi sistemske aplikacije</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Sistemske aplikacije</string>
+    <string name="excluded_apps_search">Išči aplikacije</string>
+    <string name="excluded_apps_search_hint">Iskanje po imenu…</string>
+    <string name="excluded_apps_none_found">Nobena aplikacija ne ustreza iskanju.</string>
     <string name="pref_vpn_reset">Ponastavi VPN</string>
     <string name="pref_vpn_reset_description">Povezava VPN se zgradi znova. Uporabite, če VPN preneha delovati (ni dostopa do interneta ali so prisotne napake DNS).</string>
     <string name="pref_vpn_reset_done">Povezava VPN je zgrajena znova.</string>

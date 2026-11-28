@@ -48,6 +48,7 @@
         <item>Žiadne</item>
         <item>Všetky okrem prehliadačov</item>
         <item>Všetky</item>
+        <item>Vybrané</item>
     </string-array>
     <string name="pref_vpn_dns">Servery DNS</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Vybrať všetko</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Zrušiť výber</string>
     <string name="pref_vpn_exclude_user_apps_icon">Ikona aplikácie</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Vybrať systémové aplikácie</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Systémové aplikácie</string>
+    <string name="excluded_apps_search">Hľadať aplikácie</string>
+    <string name="excluded_apps_search_hint">Hľadať podľa názvu…</string>
+    <string name="excluded_apps_none_found">Tomuto hľadaniu nezodpovedá žiadna aplikácia.</string>
     <string name="pref_vpn_reset">Resetovať VPN</string>
     <string name="pref_vpn_reset_description">Vytvorí pripojenie VPN úplne odznova. Použite túto možnosť, ak VPN prestane fungovať (nejde internet alebo sa objavujú chyby DNS).</string>
     <string name="pref_vpn_reset_done">Pripojenie VPN bolo vytvorené znova.</string>

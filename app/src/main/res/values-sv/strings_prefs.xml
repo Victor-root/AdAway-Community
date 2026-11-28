@@ -48,6 +48,7 @@
         <item>Inga</item>
         <item>Alla utom webbläsare</item>
         <item>Alla</item>
+        <item>Valda</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-servrar</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Markera alla</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Avmarkera alla</string>
     <string name="pref_vpn_exclude_user_apps_icon">Appikon</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Välj systemappar</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Systemappar</string>
+    <string name="excluded_apps_search">Sök appar</string>
+    <string name="excluded_apps_search_hint">Sök på namn…</string>
+    <string name="excluded_apps_none_found">Ingen app matchar sökningen.</string>
     <string name="pref_vpn_reset">Återställ VPN</string>
     <string name="pref_vpn_reset_description">Bygg upp VPN-anslutningen från grunden. Använd detta om VPN slutar fungera (ingen internetåtkomst eller DNS-fel).</string>
     <string name="pref_vpn_reset_done">VPN-anslutningen har byggts upp på nytt.</string>

@@ -48,6 +48,7 @@
         <item>無</item>
         <item>除瀏覽器以外的全部</item>
         <item>全部</item>
+        <item>已選擇的</item>
     </string-array>
     <string name="pref_vpn_dns">DNS 伺服器</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">全選</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">全部取消選取</string>
     <string name="pref_vpn_exclude_user_apps_icon">應用程式圖示</string>
+    <string name="pref_vpn_exclude_system_apps_choose">選擇系統應用程式</string>
+    <string name="pref_vpn_exclude_system_apps_activity">系統應用程式</string>
+    <string name="excluded_apps_search">搜尋應用程式</string>
+    <string name="excluded_apps_search_hint">依名稱搜尋…</string>
+    <string name="excluded_apps_none_found">沒有符合此搜尋的應用程式。</string>
     <string name="pref_vpn_reset">重設 VPN</string>
     <string name="pref_vpn_reset_description">從頭重新建立 VPN 連線。如果 VPN 無法運作（無法連上網際網路或出現 DNS 錯誤），請使用這項功能。</string>
     <string name="pref_vpn_reset_done">已重新建立 VPN 連線。</string>

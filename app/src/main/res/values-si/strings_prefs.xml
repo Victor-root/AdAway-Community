@@ -48,6 +48,7 @@
         <item>කිසිවක් නැත</item>
         <item>බ්‍රවුසර හැර සියල්ල</item>
         <item>සියල්ල</item>
+        <item>තෝරාගත් ඒවා</item>
     </string-array>
     <string name="pref_vpn_dns">DNS සේවාදායක</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">සියල්ල තෝරන්න</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">සියල්ල තේරීම ඉවත් කරන්න</string>
     <string name="pref_vpn_exclude_user_apps_icon">යෙදුම් නිරූපකය</string>
+    <string name="pref_vpn_exclude_system_apps_choose">පද්ධති යෙදුම් තෝරන්න</string>
+    <string name="pref_vpn_exclude_system_apps_activity">පද්ධති යෙදුම්</string>
+    <string name="excluded_apps_search">යෙදුම් සොයන්න</string>
+    <string name="excluded_apps_search_hint">නමින් සොයන්න…</string>
+    <string name="excluded_apps_none_found">මෙම සෙවුමට ගැළපෙන යෙදුමක් නැත.</string>
     <string name="pref_vpn_reset">VPN යළි සකසන්න</string>
     <string name="pref_vpn_reset_description">VPN සම්බන්ධතාව මුල සිටම නැවත ගොඩනඟයි. VPN ක්‍රියා නොකරන්නේ නම් (අන්තර්ජාල ප්‍රවේශය නැති වීම හෝ DNS දෝෂ) මෙය භාවිත කරන්න.</string>
     <string name="pref_vpn_reset_done">VPN සම්බන්ධතාව නැවත ගොඩනඟන ලදී.</string>

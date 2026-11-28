@@ -48,6 +48,7 @@
         <item>无</item>
         <item>除浏览器外的全部</item>
         <item>全部</item>
+        <item>已选择的</item>
     </string-array>
     <string name="pref_vpn_dns">DNS 服务器</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">全选</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">取消全选</string>
     <string name="pref_vpn_exclude_user_apps_icon">应用图标</string>
+    <string name="pref_vpn_exclude_system_apps_choose">选择系统应用</string>
+    <string name="pref_vpn_exclude_system_apps_activity">系统应用</string>
+    <string name="excluded_apps_search">搜索应用</string>
+    <string name="excluded_apps_search_hint">按名称搜索…</string>
+    <string name="excluded_apps_none_found">没有符合此搜索的应用。</string>
     <string name="pref_vpn_reset">重置 VPN</string>
     <string name="pref_vpn_reset_description">彻底重建 VPN 连接。如果 VPN 停止工作（无法上网或出现 DNS 错误），请使用此功能。</string>
     <string name="pref_vpn_reset_done">VPN 连接已重建。</string>

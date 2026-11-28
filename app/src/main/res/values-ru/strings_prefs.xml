@@ -48,6 +48,7 @@
         <item>Нет</item>
         <item>Все, кроме браузеров</item>
         <item>Все</item>
+        <item>Выбранные</item>
     </string-array>
     <string name="pref_vpn_dns">DNS-серверы</string>
     <string-array name="pref_vpn_dns_modes">
@@ -67,6 +68,11 @@
     <string name="pref_vpn_exclude_user_apps_select_all">Выбрать все</string>
     <string name="pref_vpn_exclude_user_apps_deselect_all">Снять выделение</string>
     <string name="pref_vpn_exclude_user_apps_icon">Значок приложения</string>
+    <string name="pref_vpn_exclude_system_apps_choose">Выбрать системные приложения</string>
+    <string name="pref_vpn_exclude_system_apps_activity">Системные приложения</string>
+    <string name="excluded_apps_search">Поиск приложений</string>
+    <string name="excluded_apps_search_hint">Поиск по названию…</string>
+    <string name="excluded_apps_none_found">Ни одно приложение не соответствует поиску.</string>
     <string name="pref_vpn_reset">Сбросить VPN</string>
     <string name="pref_vpn_reset_description">Заново создать VPN-подключение. Используйте это, если VPN перестал работать (нет доступа в интернет или возникают ошибки DNS).</string>
     <string name="pref_vpn_reset_done">VPN-подключение создано заново.</string>
