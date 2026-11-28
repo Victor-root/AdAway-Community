@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">অ্যাপ খুঁজুন</string>
     <string name="excluded_apps_search_hint">নাম দিয়ে খুঁজুন…</string>
     <string name="excluded_apps_none_found">এই অনুসন্ধানের সাথে কোনো অ্যাপ মেলেনি।</string>
+    <string name="excluded_apps_tab_user">ইউজার অ্যাপ</string>
+    <string name="excluded_apps_tab_system">সিস্টেম অ্যাপ</string>
+    <string name="excluded_apps_system_hint">সিস্টেম অ্যাপগুলো একটি একটি করে বেছে নিতে ওপরে “বাছাই করা” নির্বাচন করুন।</string>
     <string name="pref_vpn_reset">VPN রিসেট করুন</string>
     <string name="pref_vpn_reset_description">VPN সংযোগ গোড়া থেকে আবার তৈরি করুন। VPN কাজ করা বন্ধ করে দিলে (ইন্টারনেট না পেলে বা DNS ত্রুটি দেখা দিলে) এটি ব্যবহার করুন।</string>
     <string name="pref_vpn_reset_done">VPN সংযোগ আবার তৈরি করা হয়েছে।</string>

@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Soek programme</string>
     <string name="excluded_apps_search_hint">Soek volgens naam…</string>
     <string name="excluded_apps_none_found">Geen program stem met hierdie soektog ooreen nie.</string>
+    <string name="excluded_apps_tab_user">Gebruikerprogramme</string>
+    <string name="excluded_apps_tab_system">Stelselprogramme</string>
+    <string name="excluded_apps_system_hint">Om die stelselprogramme een vir een te kies, kies “Gekose” hierbo.</string>
     <string name="pref_vpn_reset">Stel VPN terug</string>
     <string name="pref_vpn_reset_description">Bou die VPN-verbinding van voor af weer op. Gebruik dit as die VPN ophou werk (geen internettoegang of DNS-foute).</string>
     <string name="pref_vpn_reset_done">VPN-verbinding herbou.</string>

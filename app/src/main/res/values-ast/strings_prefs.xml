@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Guetar aplicaciones</string>
     <string name="excluded_apps_search_hint">Guetar por nome…</string>
     <string name="excluded_apps_none_found">Denguna aplicación concasa con esta gueta.</string>
+    <string name="excluded_apps_tab_user">Aplicaciones d’usuariu</string>
+    <string name="excluded_apps_tab_system">Aplicaciones del sistema</string>
+    <string name="excluded_apps_system_hint">Pa escoyer les aplicaciones del sistema una a una, esbilla «Les escoyíes» damunt.</string>
     <string name="pref_vpn_reset">Reaniciar la VPN</string>
     <string name="pref_vpn_reset_description">Reconstrúi la conexón VPN dende cero. Usa esta opción si la VPN dexa de furrular (ensin accesu a internet o con errores de DNS).</string>
     <string name="pref_vpn_reset_done">Reconstruyóse la conexón VPN.</string>

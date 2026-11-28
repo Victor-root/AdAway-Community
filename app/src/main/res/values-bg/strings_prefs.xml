@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Търсене на приложения</string>
     <string name="excluded_apps_search_hint">Търсене по име…</string>
     <string name="excluded_apps_none_found">Няма приложение, отговарящо на това търсене.</string>
+    <string name="excluded_apps_tab_user">Потребителски приложения</string>
+    <string name="excluded_apps_tab_system">Системни приложения</string>
+    <string name="excluded_apps_system_hint">За да изберете системните приложения поотделно, изберете „Избраните“ по-горе.</string>
     <string name="pref_vpn_reset">Нулиране на VPN</string>
     <string name="pref_vpn_reset_description">Изгражда VPN връзката наново. Използвайте го, ако VPN спре да работи (няма достъп до интернет или възникват DNS грешки).</string>
     <string name="pref_vpn_reset_done">VPN връзката е изградена наново.</string>

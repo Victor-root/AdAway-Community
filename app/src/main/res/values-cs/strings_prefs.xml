@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Hledat aplikace</string>
     <string name="excluded_apps_search_hint">Hledat podle názvu…</string>
     <string name="excluded_apps_none_found">Tomuto hledání neodpovídá žádná aplikace.</string>
+    <string name="excluded_apps_tab_user">Uživatelské aplikace</string>
+    <string name="excluded_apps_tab_system">Systémové aplikace</string>
+    <string name="excluded_apps_system_hint">Chcete-li vybrat systémové aplikace jednotlivě, zvolte nahoře „Vybrané“.</string>
     <string name="pref_vpn_reset">Resetovat VPN</string>
     <string name="pref_vpn_reset_description">Vytvoří připojení VPN úplně znovu. Pomůže, když VPN přestane fungovat (nefunguje internet nebo se objevují chyby DNS).</string>
     <string name="pref_vpn_reset_done">Připojení VPN bylo znovu vytvořeno.</string>
