@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Претражи апликације</string>
     <string name="excluded_apps_search_hint">Претражи по имену…</string>
     <string name="excluded_apps_none_found">Ниједна апликација не одговара овој претрази.</string>
+    <string name="excluded_apps_tab_user">Корисничке</string>
+    <string name="excluded_apps_tab_system">Системске</string>
+    <string name="excluded_apps_system_hint">Да бисте системске апликације бирали једну по једну, изаберите изнад „Изабране“.</string>
     <string name="pref_vpn_reset">Ресетуј VPN</string>
     <string name="pref_vpn_reset_description">Поново изграђује VPN везу од почетка. Користите ово ако VPN престане да ради (нема приступа интернету или се јављају DNS грешке).</string>
     <string name="pref_vpn_reset_done">VPN веза је поново изграђена.</string>

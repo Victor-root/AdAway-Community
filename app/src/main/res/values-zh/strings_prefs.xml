@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">搜索应用</string>
     <string name="excluded_apps_search_hint">按名称搜索…</string>
     <string name="excluded_apps_none_found">没有符合此搜索的应用。</string>
+    <string name="excluded_apps_tab_user">用户应用</string>
+    <string name="excluded_apps_tab_system">系统应用</string>
+    <string name="excluded_apps_system_hint">要逐个选择系统应用，请在上方选择“已选择的”。</string>
     <string name="pref_vpn_reset">重置 VPN</string>
     <string name="pref_vpn_reset_description">彻底重建 VPN 连接。如果 VPN 停止工作（无法上网或出现 DNS 错误），请使用此功能。</string>
     <string name="pref_vpn_reset_done">VPN 连接已重建。</string>

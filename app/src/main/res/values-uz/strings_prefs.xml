@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Ilovalarni qidirish</string>
     <string name="excluded_apps_search_hint">Nomi orqali qidirish…</string>
     <string name="excluded_apps_none_found">Bu qidiruvga mos ilova topilmadi.</string>
+    <string name="excluded_apps_tab_user">Foydalanuvchi</string>
+    <string name="excluded_apps_tab_system">Tizim</string>
+    <string name="excluded_apps_system_hint">Tizim ilovalarini birma-bir tanlash uchun yuqorida “Tanlanganlari” ni tanlang.</string>
     <string name="pref_vpn_reset">VPNni qayta qurish</string>
     <string name="pref_vpn_reset_description">VPN ulanishini noldan qayta quradi. VPN ishlamay qolsa (internet yoʻq yoki DNS xatolari), shundan foydalaning.</string>
     <string name="pref_vpn_reset_done">VPN ulanishi qayta qurildi.</string>
