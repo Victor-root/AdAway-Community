@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">ആപ്പുകൾ തിരയുക</string>
     <string name="excluded_apps_search_hint">പേര് ഉപയോഗിച്ച് തിരയുക…</string>
     <string name="excluded_apps_none_found">ഈ തിരയലുമായി പൊരുത്തപ്പെടുന്ന ആപ്പുകളൊന്നുമില്ല.</string>
+    <string name="excluded_apps_tab_user">ഉപയോക്തൃ ആപ്പുകൾ</string>
+    <string name="excluded_apps_tab_system">സിസ്റ്റം ആപ്പുകൾ</string>
+    <string name="excluded_apps_system_hint">സിസ്റ്റം ആപ്പുകൾ ഓരോന്നായി തിരഞ്ഞെടുക്കാൻ മുകളിൽ “തിരഞ്ഞെടുത്തവ” തിരഞ്ഞെടുക്കുക.</string>
     <string name="pref_vpn_reset">VPN പുനഃസജ്ജമാക്കുക</string>
     <string name="pref_vpn_reset_description">VPN കണക്ഷൻ ആദ്യം മുതൽ വീണ്ടും നിർമ്മിക്കുക. VPN പ്രവർത്തിക്കാതായാൽ (ഇന്റർനെറ്റ് ലഭിക്കാതിരിക്കുക അല്ലെങ്കിൽ DNS പിശകുകൾ വരിക) ഇത് ഉപയോഗിക്കുക.</string>
     <string name="pref_vpn_reset_done">VPN കണക്ഷൻ വീണ്ടും നിർമ്മിച്ചു.</string>

@@ -70,6 +70,9 @@
     <string name="excluded_apps_search">Cari apl</string>
     <string name="excluded_apps_search_hint">Cari mengikut nama…</string>
     <string name="excluded_apps_none_found">Tiada apl sepadan dengan carian ini.</string>
+    <string name="excluded_apps_tab_user">Apl pengguna</string>
+    <string name="excluded_apps_tab_system">Apl sistem</string>
+    <string name="excluded_apps_system_hint">Untuk memilih apl sistem satu demi satu, pilih “Yang dipilih” di atas.</string>
     <string name="pref_vpn_reset">Set semula VPN</string>
     <string name="pref_vpn_reset_description">Bina semula sambungan VPN dari awal. Gunakan pilihan ini jika VPN berhenti berfungsi (tiada akses internet atau ralat DNS).</string>
     <string name="pref_vpn_reset_done">Sambungan VPN telah dibina semula.</string>
