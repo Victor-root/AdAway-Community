@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">除外するアプリ</string>
     <string name="pref_vpn_excluded_apps_description">VPNを使用しないアプリを設定します。これらのアプリの通信はブロックされません。</string>
     <string name="pref_vpn_exclude_system_apps">システムアプリを除外</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">ユーザーアプリを除外</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>なし</item>
         <item>ブラウザ以外すべて</item>
         <item>すべて</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">この検索に一致するアプリはありません。</string>
     <string name="excluded_apps_tab_user">ユーザーアプリ</string>
     <string name="excluded_apps_tab_system">システムアプリ</string>
-    <string name="excluded_apps_system_hint">システムアプリを個別に選ぶには、上の「選択したもの」を選んでください。</string>
     <string name="pref_vpn_reset">VPNをリセット</string>
     <string name="pref_vpn_reset_description">VPN接続を一から作り直します。VPNが動作しなくなった場合（インターネットに接続できない、DNSエラーが出るなど）にお試しください。</string>
     <string name="pref_vpn_reset_done">VPN接続を作り直しました。</string>

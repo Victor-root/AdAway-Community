@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Kizárt alkalmazások</string>
     <string name="pref_vpn_excluded_apps_description">Állítsa be, mely alkalmazások ne használják a VPN-t, így azok kapcsolatai nem lesznek blokkolva.</string>
     <string name="pref_vpn_exclude_system_apps">Rendszeralkalmazások kizárása</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Felhasználói alkalmazások kizárása</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Egyik sem</item>
         <item>Mind, a böngészők kivételével</item>
         <item>Mind</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Egy alkalmazás sem felel meg a keresésnek.</string>
     <string name="excluded_apps_tab_user">Felhasználói alkalmazások</string>
     <string name="excluded_apps_tab_system">Rendszeralkalmazások</string>
-    <string name="excluded_apps_system_hint">A rendszeralkalmazások egyenkénti kiválasztásához válassza fent „A kiválasztottak” lehetőséget.</string>
     <string name="pref_vpn_reset">VPN alaphelyzetbe állítása</string>
     <string name="pref_vpn_reset_description">A VPN-kapcsolat teljes újraépítése. Akkor használja, ha a VPN nem működik tovább (nincs internetelérés, vagy DNS-hibák jelentkeznek).</string>
     <string name="pref_vpn_reset_done">A VPN-kapcsolat újraépítve.</string>

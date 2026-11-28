@@ -51,7 +51,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.adaway.R
-import org.adaway.data.settings.SystemAppExclusion
+import org.adaway.data.settings.AppExclusion
 import org.adaway.ui.common.AdAwayAppBar
 import org.adaway.ui.common.AdAwayScreen
 import org.adaway.ui.common.AdAwayTabRow
@@ -63,12 +63,12 @@ import org.adaway.ui.theme.AdAwayType
 import org.adaway.ui.theme.LocalAdAwayColors
 import org.adaway.ui.theme.LocalTelevision
 
-/** The order of the ways to exclude the system apps, as the choices name them. */
-private val SystemAppExclusions = listOf(SystemAppExclusion.NONE, SystemAppExclusion.ALL_EXCEPT_BROWSERS, SystemAppExclusion.ALL, SystemAppExclusion.CHOSEN)
+/** The order of the ways to exclude the apps of a tab, as the choices name them. */
+private val AppExclusions = listOf(AppExclusion.NONE, AppExclusion.ALL_EXCEPT_BROWSERS, AppExclusion.ALL, AppExclusion.CHOSEN)
 
 /**
- * The apps kept out of the VPN, the user ones and the system ones in a tab each, a switch per app.
- * The system tab first tells how its apps are excluded, and lists them when they are chosen one by
+ * The apps kept out of the VPN, the user ones and the system ones in a tab each. Each tab first
+ * tells how its apps are excluded, and lists them, a switch per app, when they are chosen one by
  * one. The search keeps the apps whose name contains what is typed, and the menu selects all the
  * apps shown.
  */
@@ -79,13 +79,15 @@ fun ExcludedAppsScreen(onBack: () -> Unit) {
     val excluded by viewModel.excluded.collectAsStateWithLifecycle()
     val filter by viewModel.filter.collectAsStateWithLifecycle()
     val systemTab by viewModel.systemTab.collectAsStateWithLifecycle()
-    val systemExclusion by viewModel.systemExclusion.collectAsStateWithLifecycle()
+    val exclusion by viewModel.exclusion.collectAsStateWithLifecycle()
     val isTelevision = LocalTelevision.current
     var searching by rememberSaveable { mutableStateOf(filter.isNotEmpty()) }
-    var choosingSystemExclusion by rememberSaveable { mutableStateOf(false) }
-    val systemTabFocus = remember { FocusRequester() }
-    // The system apps are listed only when chosen one by one, and the search and menu only go with a list.
-    val listShown = !systemTab || systemExclusion == SystemAppExclusion.CHOSEN
+    var choosingExclusion by rememberSaveable { mutableStateOf(false) }
+    val tabFocus = remember { listOf(FocusRequester(), FocusRequester()) }
+    val exclusionTitle = stringResource(if (systemTab) R.string.pref_vpn_exclude_system_apps else R.string.pref_vpn_exclude_user_apps)
+    val choices = stringArrayResource(R.array.pref_vpn_excluded_apps_entries).toList()
+    // The apps are listed only when chosen one by one, and the search and menu only go with a list.
+    val listShown = exclusion == AppExclusion.CHOSEN
     val closeSearch = {
         searching = false
         viewModel.search("")
@@ -120,40 +122,38 @@ fun ExcludedAppsScreen(onBack: () -> Unit) {
                 tabModifier = { index ->
                     if (isTelevision) {
                         Modifier
-                            .then(if (index == 1) Modifier.focusRequester(systemTabFocus) else Modifier)
+                            .focusRequester(tabFocus[index])
                             .onFocusChanged { if (it.isFocused) viewModel.showSystemTab(index == 1) }
                     } else {
                         Modifier
                     }
                 },
             )
-            if (systemTab) {
-                val choices = stringArrayResource(R.array.pref_vpn_excluded_system_apps_entries).toList()
-                // Under both tabs, the remote would go up to the nearest one, the user tab: it goes back to its own.
-                Box(
-                    modifier = Modifier.onPreviewKeyEvent { event ->
-                        isTelevision && event.key == Key.DirectionUp && event.type == KeyEventType.KeyDown && systemTabFocus.requestFocus()
-                    },
-                ) {
-                    Preference(
-                        R.drawable.ic_android_24dp,
-                        stringResource(R.string.pref_vpn_exclude_system_apps),
-                        summary = systemExclusion?.let { choices[SystemAppExclusions.indexOf(it)] },
-                        onClick = { choosingSystemExclusion = true },
-                    )
-                }
+            // Under both tabs, the remote would go up to the nearest one: it goes back to the tab shown.
+            Box(
+                modifier = Modifier.onPreviewKeyEvent { event ->
+                    isTelevision && event.key == Key.DirectionUp && event.type == KeyEventType.KeyDown &&
+                        tabFocus[if (systemTab) 1 else 0].requestFocus()
+                },
+            ) {
+                Preference(
+                    if (systemTab) R.drawable.ic_android_24dp else R.drawable.ic_apps_24dp,
+                    exclusionTitle,
+                    summary = exclusion?.let { choices[AppExclusions.indexOf(it)] },
+                    onClick = { choosingExclusion = true },
+                )
             }
             val list = apps
             when {
+                exclusion == null || list == null -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator(color = LocalAdAwayColors.current.primary)
+                }
                 !listShown -> Text(
-                    stringResource(R.string.excluded_apps_system_hint),
+                    stringResource(R.string.excluded_apps_choose_hint),
                     style = AdAwayType.body2,
                     color = LocalAdAwayColors.current.textSecondary,
                     modifier = Modifier.padding(start = 16.dp, top = 8.dp, end = 16.dp),
                 )
-                list == null -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator(color = LocalAdAwayColors.current.primary)
-                }
                 list.isEmpty() -> Text(
                     stringResource(R.string.excluded_apps_none_found),
                     style = AdAwayType.body2,
@@ -168,13 +168,13 @@ fun ExcludedAppsScreen(onBack: () -> Unit) {
             }
         }
     }
-    if (choosingSystemExclusion) {
+    if (choosingExclusion) {
         ChoiceDialog(
-            title = stringResource(R.string.pref_vpn_exclude_system_apps),
-            choices = stringArrayResource(R.array.pref_vpn_excluded_system_apps_entries).toList(),
-            selected = SystemAppExclusions.indexOf(systemExclusion),
-            onSelect = { index -> viewModel.setSystemExclusion(SystemAppExclusions[index]) },
-            onDismiss = { choosingSystemExclusion = false },
+            title = exclusionTitle,
+            choices = choices,
+            selected = AppExclusions.indexOf(exclusion),
+            onSelect = { index -> viewModel.setExclusion(AppExclusions[index]) },
+            onDismiss = { choosingExclusion = false },
         )
     }
 }

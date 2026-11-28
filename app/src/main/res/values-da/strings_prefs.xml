@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Undtagne apps</string>
     <string name="pref_vpn_excluded_apps_description">Vælg de apps, der ikke skal bruge VPN, så deres forbindelser ikke blokeres.</string>
     <string name="pref_vpn_exclude_system_apps">Undtag systemapps</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Undtag brugerapps</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Ingen</item>
         <item>Alle undtagen browsere</item>
         <item>Alle</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Ingen apps matcher denne søgning.</string>
     <string name="excluded_apps_tab_user">Brugerapps</string>
     <string name="excluded_apps_tab_system">Systemapps</string>
-    <string name="excluded_apps_system_hint">Vælg »Valgte« ovenfor for at vælge systemapps én ad gangen.</string>
     <string name="pref_vpn_reset">Nulstil VPN</string>
     <string name="pref_vpn_reset_description">Opbyg VPN-forbindelsen helt forfra. Brug det, hvis VPN holder op med at virke (ingen internetadgang eller DNS-fejl).</string>
     <string name="pref_vpn_reset_done">VPN-forbindelsen er opbygget forfra.</string>

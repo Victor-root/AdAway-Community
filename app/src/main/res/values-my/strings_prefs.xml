@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">ချန်လှပ်ထားသော အက်ပ်များ</string>
     <string name="pref_vpn_excluded_apps_description">မည်သည့်အက်ပ်များက VPN ကို မသုံးရမည်ကို သတ်မှတ်ပါ။ ထိုအက်ပ်များ၏ ချိတ်ဆက်မှုများကို ပိတ်ဆို့မည် မဟုတ်ပါ။</string>
     <string name="pref_vpn_exclude_system_apps">စနစ်အက်ပ်များကို ချန်လှပ်ရန်</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">အသုံးပြုသူအက်ပ်များကို ချန်လှပ်ရန်</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>မရှိ</item>
         <item>ဘရောက်ဇာများမှလွဲ၍ အားလုံး</item>
         <item>အားလုံး</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">ဤရှာဖွေမှုနှင့် ကိုက်ညီသော အက်ပ်မရှိပါ။</string>
     <string name="excluded_apps_tab_user">အသုံးပြုသူအက်ပ်များ</string>
     <string name="excluded_apps_tab_system">စနစ်အက်ပ်များ</string>
-    <string name="excluded_apps_system_hint">စနစ်အက်ပ်များကို တစ်ခုချင်း ရွေးရန် အပေါ်တွင် “ရွေးချယ်ထားသည်များ” ကို ရွေးပါ။</string>
     <string name="pref_vpn_reset">VPN ကို ပြန်လည်သတ်မှတ်ရန်</string>
     <string name="pref_vpn_reset_description">VPN ချိတ်ဆက်မှုကို အစမှ ပြန်လည်တည်ဆောက်ပါ။ VPN အလုပ်မလုပ်တော့ပါက (အင်တာနက်မရခြင်း သို့မဟုတ် DNS အမှားများ ဖြစ်ပါက) ဤလုပ်ဆောင်ချက်ကို သုံးပါ။</string>
     <string name="pref_vpn_reset_done">VPN ချိတ်ဆက်မှုကို ပြန်လည်တည်ဆောက်ပြီးပါပြီ။</string>

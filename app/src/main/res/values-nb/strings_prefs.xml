@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Utelatte apper</string>
     <string name="pref_vpn_excluded_apps_description">Velg hvilke apper som ikke skal bruke VPN-en, slik at ingen av tilkoblingene deres blir blokkert.</string>
     <string name="pref_vpn_exclude_system_apps">Utelat systemapper</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Utelat brukerapper</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Ingen</item>
         <item>Alle unntatt nettlesere</item>
         <item>Alle</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Ingen apper samsvarer med søket.</string>
     <string name="excluded_apps_tab_user">Brukerapper</string>
     <string name="excluded_apps_tab_system">Systemapper</string>
-    <string name="excluded_apps_system_hint">Velg «Valgte» ovenfor for å velge systemappene enkeltvis.</string>
     <string name="pref_vpn_reset">Tilbakestill VPN</string>
     <string name="pref_vpn_reset_description">Bygg VPN-tilkoblingen opp på nytt fra bunnen av. Bruk dette hvis VPN-en slutter å fungere (ingen internettilgang eller DNS-feil).</string>
     <string name="pref_vpn_reset_done">VPN-tilkoblingen er bygd opp på nytt.</string>

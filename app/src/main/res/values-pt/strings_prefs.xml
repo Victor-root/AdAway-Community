@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Aplicações excluídas</string>
     <string name="pref_vpn_excluded_apps_description">Configurar as aplicações que não devem utilizar a VPN, para que nenhuma ligação seja bloqueada.</string>
     <string name="pref_vpn_exclude_system_apps">Excluir aplicações do sistema</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Excluir aplicações do utilizador</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Nenhuma</item>
         <item>Todas, exceto navegadores</item>
         <item>Todas</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Nenhuma aplicação corresponde a esta pesquisa.</string>
     <string name="excluded_apps_tab_user">Utilizador</string>
     <string name="excluded_apps_tab_system">Sistema</string>
-    <string name="excluded_apps_system_hint">Para escolher as aplicações do sistema uma a uma, selecione «Escolhidas» acima.</string>
     <string name="pref_vpn_reset">Repor VPN</string>
     <string name="pref_vpn_reset_description">Reconstruir a ligação VPN de raiz. Utilize esta opção se a VPN deixar de funcionar (sem acesso à Internet ou com erros de DNS).</string>
     <string name="pref_vpn_reset_done">Ligação VPN reconstruída.</string>

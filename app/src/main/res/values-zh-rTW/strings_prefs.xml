@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">排除的應用程式</string>
     <string name="pref_vpn_excluded_apps_description">設定哪些應用程式不使用 VPN，這些應用程式的連線就不會遭到封鎖。</string>
     <string name="pref_vpn_exclude_system_apps">排除系統應用程式</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">排除使用者應用程式</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>無</item>
         <item>除瀏覽器以外的全部</item>
         <item>全部</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">沒有符合此搜尋的應用程式。</string>
     <string name="excluded_apps_tab_user">使用者應用程式</string>
     <string name="excluded_apps_tab_system">系統應用程式</string>
-    <string name="excluded_apps_system_hint">若要逐一選擇系統應用程式，請在上方選擇「已選擇的」。</string>
     <string name="pref_vpn_reset">重設 VPN</string>
     <string name="pref_vpn_reset_description">從頭重新建立 VPN 連線。如果 VPN 無法運作（無法連上網際網路或出現 DNS 錯誤），請使用這項功能。</string>
     <string name="pref_vpn_reset_done">已重新建立 VPN 連線。</string>

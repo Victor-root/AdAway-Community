@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Исключённые приложения</string>
     <string name="pref_vpn_excluded_apps_description">Укажите приложения, которые не должны использовать VPN, чтобы их соединения не блокировались.</string>
     <string name="pref_vpn_exclude_system_apps">Исключить системные приложения</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Исключить пользовательские приложения</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Нет</item>
         <item>Все, кроме браузеров</item>
         <item>Все</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Ни одно приложение не соответствует поиску.</string>
     <string name="excluded_apps_tab_user">Пользовательские</string>
     <string name="excluded_apps_tab_system">Системные</string>
-    <string name="excluded_apps_system_hint">Чтобы выбрать системные приложения по одному, выберите «Выбранные» выше.</string>
     <string name="pref_vpn_reset">Сбросить VPN</string>
     <string name="pref_vpn_reset_description">Заново создать VPN-подключение. Используйте это, если VPN перестал работать (нет доступа в интернет или возникают ошибки DNS).</string>
     <string name="pref_vpn_reset_done">VPN-подключение создано заново.</string>

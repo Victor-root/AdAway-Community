@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Mga hindi kasamang app</string>
     <string name="pref_vpn_excluded_apps_description">Piliin kung aling mga app ang hindi dapat gumamit ng VPN para walang mabloke na koneksyon.</string>
     <string name="pref_vpn_exclude_system_apps">Huwag isama ang mga system app</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Huwag isama ang mga app ng user</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Wala</item>
         <item>Lahat maliban sa mga browser</item>
         <item>Lahat</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Walang app na tumutugma sa paghahanap na ito.</string>
     <string name="excluded_apps_tab_user">Mga app ng user</string>
     <string name="excluded_apps_tab_system">Mga system app</string>
-    <string name="excluded_apps_system_hint">Para piliin nang isa-isa ang mga system app, piliin ang “Mga napili” sa itaas.</string>
     <string name="pref_vpn_reset">I-reset ang VPN</string>
     <string name="pref_vpn_reset_description">Buuin muli mula sa simula ang koneksyon ng VPN. Gamitin ito kung huminto sa paggana ang VPN (walang internet o may mga error sa DNS).</string>
     <string name="pref_vpn_reset_done">Nabuo muli ang koneksyon ng VPN.</string>

@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Undantagna appar</string>
     <string name="pref_vpn_excluded_apps_description">Välj vilka appar som inte ska använda VPN, så att inga av deras anslutningar blockeras.</string>
     <string name="pref_vpn_exclude_system_apps">Undanta systemappar</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Undanta installerade appar</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Inga</item>
         <item>Alla utom webbläsare</item>
         <item>Alla</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Ingen app matchar sökningen.</string>
     <string name="excluded_apps_tab_user">Användarappar</string>
     <string name="excluded_apps_tab_system">Systemappar</string>
-    <string name="excluded_apps_system_hint">Om du vill välja systemapparna en och en, välj ”Valda” ovan.</string>
     <string name="pref_vpn_reset">Återställ VPN</string>
     <string name="pref_vpn_reset_description">Bygg upp VPN-anslutningen från grunden. Använd detta om VPN slutar fungera (ingen internetåtkomst eller DNS-fel).</string>
     <string name="pref_vpn_reset_done">VPN-anslutningen har byggts upp på nytt.</string>

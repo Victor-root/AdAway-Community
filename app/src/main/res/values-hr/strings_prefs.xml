@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Izuzete aplikacije</string>
     <string name="pref_vpn_excluded_apps_description">Odredite koje aplikacije ne smiju koristiti VPN kako njihove veze ne bi bile blokirane.</string>
     <string name="pref_vpn_exclude_system_apps">Izuzmi sistemske aplikacije</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Izuzmi korisničke aplikacije</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Nijedna</item>
         <item>Sve osim preglednika</item>
         <item>Sve</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Nijedna aplikacija ne odgovara ovoj pretrazi.</string>
     <string name="excluded_apps_tab_user">Korisničke aplikacije</string>
     <string name="excluded_apps_tab_system">Sistemske aplikacije</string>
-    <string name="excluded_apps_system_hint">Za odabir sistemskih aplikacija jednu po jednu odaberite „Odabrane“ iznad.</string>
     <string name="pref_vpn_reset">Resetiraj VPN</string>
     <string name="pref_vpn_reset_description">Ponovno uspostavlja VPN vezu od početka. Upotrijebite ovo ako VPN prestane raditi (nema pristupa internetu ili se pojavljuju DNS pogreške).</string>
     <string name="pref_vpn_reset_done">VPN veza je ponovno uspostavljena.</string>

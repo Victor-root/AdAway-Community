@@ -6,7 +6,7 @@ import org.adaway.data.db.SourceFormat
 import org.adaway.data.db.UserRuleEntity
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.Settings
-import org.adaway.data.settings.SystemAppExclusion
+import org.adaway.data.settings.AppExclusion
 import org.adaway.data.settings.ThemeMode
 import org.adaway.engine.RuleValidator
 import org.adaway.sources.SourceRepository
@@ -79,9 +79,9 @@ class LegacyConversion(private val validator: RuleValidator) {
             vpnStartOnBoot = boolean("vpnOnBoot", defaults.vpnStartOnBoot),
             vpnConnectionMonitor = boolean("vpnWatchdog", defaults.vpnConnectionMonitor),
             vpnSystemAppExclusion = when (string("excludeSystemAppFromVpn")) {
-                "allExceptBrowsers" -> SystemAppExclusion.ALL_EXCEPT_BROWSERS
-                "all" -> SystemAppExclusion.ALL
-                else -> SystemAppExclusion.NONE
+                "allExceptBrowsers" -> AppExclusion.ALL_EXCEPT_BROWSERS
+                "all" -> AppExclusion.ALL
+                else -> AppExclusion.NONE
             },
             vpnExcludedApps = excludedApps,
             ipv6Enabled = boolean("enableIpv6", defaults.ipv6Enabled),

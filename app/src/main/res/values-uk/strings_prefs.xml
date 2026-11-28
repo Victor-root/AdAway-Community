@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Виключені додатки</string>
     <string name="pref_vpn_excluded_apps_description">Укажіть, які додатки не повинні використовувати VPN, щоб їхні з’єднання не блокувалися.</string>
     <string name="pref_vpn_exclude_system_apps">Виключити системні додатки</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Виключити додатки користувача</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Жодні</item>
         <item>Усі, крім браузерів</item>
         <item>Усі</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Жоден додаток не відповідає пошуку.</string>
     <string name="excluded_apps_tab_user">Користувацькі</string>
     <string name="excluded_apps_tab_system">Системні</string>
-    <string name="excluded_apps_system_hint">Щоб вибрати системні додатки по одному, виберіть вище «Вибрані».</string>
     <string name="pref_vpn_reset">Скинути VPN</string>
     <string name="pref_vpn_reset_description">Перебудувати VPN-з’єднання з нуля. Скористайтеся цим, якщо VPN перестав працювати (немає доступу до інтернету або виникають помилки DNS).</string>
     <string name="pref_vpn_reset_done">VPN-з’єднання перебудовано.</string>

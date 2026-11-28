@@ -17,7 +17,7 @@ import org.adaway.data.DataInitializer
 import org.adaway.data.settings.BlockingMethod
 import org.adaway.data.settings.Settings
 import org.adaway.data.settings.SettingsRepository
-import org.adaway.data.settings.SystemAppExclusion
+import org.adaway.data.settings.AppExclusion
 import org.adaway.data.settings.VpnDnsMode
 import org.adaway.engine.Engine
 import org.adaway.system.DiagnosticLog
@@ -44,7 +44,8 @@ class VpnSession(
     private data class BuildSettings(
         val ipv6Enabled: Boolean,
         val monitor: Boolean,
-        val systemAppExclusion: SystemAppExclusion,
+        val systemAppExclusion: AppExclusion,
+        val userAppExclusion: AppExclusion,
         val excludedApps: Set<String>,
         val dnsMode: VpnDnsMode,
         val customDnsServers: List<String>,
@@ -343,6 +344,7 @@ class VpnSession(
         ipv6Enabled = settings.ipv6Enabled,
         monitor = settings.vpnConnectionMonitor,
         systemAppExclusion = settings.vpnSystemAppExclusion,
+        userAppExclusion = settings.vpnUserAppExclusion,
         excludedApps = settings.vpnExcludedApps,
         dnsMode = settings.vpnDnsMode,
         customDnsServers = settings.vpnCustomDnsServers,

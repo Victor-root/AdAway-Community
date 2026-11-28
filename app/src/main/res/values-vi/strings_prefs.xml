@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Ứng dụng bị loại trừ</string>
     <string name="pref_vpn_excluded_apps_description">Chọn các ứng dụng không dùng VPN để kết nối của chúng không bị chặn.</string>
     <string name="pref_vpn_exclude_system_apps">Loại trừ ứng dụng hệ thống</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Loại trừ ứng dụng của người dùng</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Không</item>
         <item>Tất cả trừ trình duyệt</item>
         <item>Tất cả</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Không có ứng dụng nào khớp với tìm kiếm này.</string>
     <string name="excluded_apps_tab_user">Người dùng</string>
     <string name="excluded_apps_tab_system">Hệ thống</string>
-    <string name="excluded_apps_system_hint">Để chọn từng ứng dụng hệ thống, hãy chọn “Đã chọn” ở trên.</string>
     <string name="pref_vpn_reset">Đặt lại VPN</string>
     <string name="pref_vpn_reset_description">Tạo lại kết nối VPN từ đầu. Hãy dùng khi VPN ngừng hoạt động (mất kết nối Internet hoặc lỗi DNS).</string>
     <string name="pref_vpn_reset_done">Đã tạo lại kết nối VPN.</string>

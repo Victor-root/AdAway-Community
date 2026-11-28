@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Poissuljetut sovellukset</string>
     <string name="pref_vpn_excluded_apps_description">Valitse sovellukset, jotka eivät käytä VPN:ää, jotta niiden yhteyksiä ei estetä.</string>
     <string name="pref_vpn_exclude_system_apps">Poissulje järjestelmäsovellukset</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Poissulje käyttäjän sovelluksia</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Ei mitään</item>
         <item>Kaikki paitsi selaimet</item>
         <item>Kaikki</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Mikään sovellus ei vastaa hakua.</string>
     <string name="excluded_apps_tab_user">Käyttäjän sovellukset</string>
     <string name="excluded_apps_tab_system">Järjestelmäsovellukset</string>
-    <string name="excluded_apps_system_hint">Valitaksesi järjestelmäsovellukset yksitellen, valitse yllä ”Valitut”.</string>
     <string name="pref_vpn_reset">Nollaa VPN</string>
     <string name="pref_vpn_reset_description">Muodosta VPN-yhteys alusta alkaen uudelleen. Käytä tätä, jos VPN lakkaa toimimasta (ei internetyhteyttä tai DNS-virheitä).</string>
     <string name="pref_vpn_reset_done">VPN-yhteys muodostettu uudelleen.</string>

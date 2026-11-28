@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">التطبيقات المستثناة</string>
     <string name="pref_vpn_excluded_apps_description">حدّد التطبيقات التي يجب ألا تستخدم VPN حتى لا يتم حظر أي اتصال.</string>
     <string name="pref_vpn_exclude_system_apps">استثناء تطبيقات النظام</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">استثناء تطبيقات المستخدم</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>بدون</item>
         <item>الكل باستثناء المتصفحات</item>
         <item>الكل</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">لا يوجد تطبيق يطابق هذا البحث.</string>
     <string name="excluded_apps_tab_user">تطبيقات المستخدم</string>
     <string name="excluded_apps_tab_system">تطبيقات النظام</string>
-    <string name="excluded_apps_system_hint">لاختيار تطبيقات النظام واحدًا تلو الآخر، اختر “المختارة” أعلاه.</string>
     <string name="pref_vpn_reset">إعادة ضبط VPN</string>
     <string name="pref_vpn_reset_description">إعادة بناء اتصال VPN من الصفر. استخدم هذا الخيار إذا توقف VPN عن العمل (لا يوجد اتصال بالإنترنت أو ظهرت أخطاء DNS).</string>
     <string name="pref_vpn_reset_done">تمت إعادة بناء اتصال VPN.</string>

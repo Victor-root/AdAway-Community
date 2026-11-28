@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">កម្មវិធីដែលបានដកចេញ</string>
     <string name="pref_vpn_excluded_apps_description">កំណត់កម្មវិធីដែលមិនត្រូវប្រើ VPN ដើម្បីកុំឱ្យការតភ្ជាប់របស់វាត្រូវបានទប់ស្កាត់។</string>
     <string name="pref_vpn_exclude_system_apps">ដកកម្មវិធីប្រព័ន្ធចេញ</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">ដកកម្មវិធីរបស់អ្នកប្រើចេញ</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>គ្មាន</item>
         <item>ទាំងអស់លើកលែងតែកម្មវិធីរុករក</item>
         <item>ទាំងអស់</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">គ្មានកម្មវិធីត្រូវនឹងការស្វែងរកនេះទេ។</string>
     <string name="excluded_apps_tab_user">កម្មវិធីអ្នកប្រើ</string>
     <string name="excluded_apps_tab_system">កម្មវិធីប្រព័ន្ធ</string>
-    <string name="excluded_apps_system_hint">ដើម្បីជ្រើសរើសកម្មវិធីប្រព័ន្ធម្តងមួយៗ សូមជ្រើស «ដែលបានជ្រើសរើស» នៅខាងលើ។</string>
     <string name="pref_vpn_reset">កំណត់ VPN ឡើងវិញ</string>
     <string name="pref_vpn_reset_description">បង្កើតការតភ្ជាប់ VPN ឡើងវិញពីដំបូង។ សូមប្រើវាប្រសិនបើ VPN ឈប់ដំណើរការ (គ្មានអ៊ីនធឺណិត ឬមានកំហុស DNS)។</string>
     <string name="pref_vpn_reset_done">បានបង្កើតការតភ្ជាប់ VPN ឡើងវិញ។</string>

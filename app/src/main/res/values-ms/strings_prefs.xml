@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Apl yang dikecualikan</string>
     <string name="pref_vpn_excluded_apps_description">Tetapkan apl yang tidak perlu menggunakan VPN supaya tiada sambungan disekat.</string>
     <string name="pref_vpn_exclude_system_apps">Kecualikan apl sistem</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Kecualikan apl pengguna</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Tiada</item>
         <item>Semua kecuali pelayar</item>
         <item>Semua</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Tiada apl sepadan dengan carian ini.</string>
     <string name="excluded_apps_tab_user">Apl pengguna</string>
     <string name="excluded_apps_tab_system">Apl sistem</string>
-    <string name="excluded_apps_system_hint">Untuk memilih apl sistem satu demi satu, pilih “Yang dipilih” di atas.</string>
     <string name="pref_vpn_reset">Set semula VPN</string>
     <string name="pref_vpn_reset_description">Bina semula sambungan VPN dari awal. Gunakan pilihan ini jika VPN berhenti berfungsi (tiada akses internet atau ralat DNS).</string>
     <string name="pref_vpn_reset_done">Sambungan VPN telah dibina semula.</string>

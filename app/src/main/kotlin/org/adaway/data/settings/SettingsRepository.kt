@@ -53,6 +53,7 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>, scope: C
             vpnStartOnBoot = preferences[Keys.vpnStartOnBoot] ?: defaults.vpnStartOnBoot,
             vpnConnectionMonitor = preferences[Keys.vpnConnectionMonitor] ?: defaults.vpnConnectionMonitor,
             vpnSystemAppExclusion = preferences.enum(Keys.vpnSystemAppExclusion) ?: defaults.vpnSystemAppExclusion,
+            vpnUserAppExclusion = preferences.enum(Keys.vpnUserAppExclusion) ?: defaults.vpnUserAppExclusion,
             vpnExcludedApps = preferences[Keys.vpnExcludedApps] ?: defaults.vpnExcludedApps,
             vpnDnsMode = preferences.enum(Keys.vpnDnsMode) ?: defaults.vpnDnsMode,
             vpnCustomDnsServers = preferences[Keys.vpnCustomDnsServers]?.split(LIST_SEPARATOR)?.filter { it.isNotEmpty() }
@@ -82,6 +83,7 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>, scope: C
         preferences[Keys.vpnStartOnBoot] = settings.vpnStartOnBoot
         preferences[Keys.vpnConnectionMonitor] = settings.vpnConnectionMonitor
         preferences[Keys.vpnSystemAppExclusion] = settings.vpnSystemAppExclusion.name
+        preferences[Keys.vpnUserAppExclusion] = settings.vpnUserAppExclusion.name
         preferences[Keys.vpnExcludedApps] = settings.vpnExcludedApps
         preferences[Keys.vpnDnsMode] = settings.vpnDnsMode.name
         preferences[Keys.vpnCustomDnsServers] = settings.vpnCustomDnsServers.joinToString(LIST_SEPARATOR)
@@ -118,6 +120,7 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>, scope: C
         val vpnStartOnBoot = booleanPreferencesKey("vpn_start_on_boot")
         val vpnConnectionMonitor = booleanPreferencesKey("vpn_connection_monitor")
         val vpnSystemAppExclusion = stringPreferencesKey("vpn_system_app_exclusion")
+        val vpnUserAppExclusion = stringPreferencesKey("vpn_user_app_exclusion")
         val vpnExcludedApps = stringSetPreferencesKey("vpn_excluded_apps")
         val vpnDnsMode = stringPreferencesKey("vpn_dns_mode")
         val vpnCustomDnsServers = stringPreferencesKey("vpn_custom_dns_servers")

@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">แอปที่ยกเว้น</string>
     <string name="pref_vpn_excluded_apps_description">กำหนดแอปที่ไม่ต้องใช้ VPN เพื่อไม่ให้การเชื่อมต่อของแอปเหล่านั้นถูกบล็อก</string>
     <string name="pref_vpn_exclude_system_apps">ยกเว้นแอประบบ</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">ยกเว้นแอปที่ผู้ใช้ติดตั้ง</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>ไม่มี</item>
         <item>ทั้งหมดยกเว้นเบราว์เซอร์</item>
         <item>ทั้งหมด</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">ไม่มีแอปที่ตรงกับการค้นหานี้</string>
     <string name="excluded_apps_tab_user">แอปผู้ใช้</string>
     <string name="excluded_apps_tab_system">แอประบบ</string>
-    <string name="excluded_apps_system_hint">หากต้องการเลือกแอประบบทีละแอป ให้เลือก “ที่เลือก” ด้านบน</string>
     <string name="pref_vpn_reset">รีเซ็ต VPN</string>
     <string name="pref_vpn_reset_description">สร้างการเชื่อมต่อ VPN ขึ้นใหม่ทั้งหมด ใช้เมื่อ VPN หยุดทำงาน (ไม่มีอินเทอร์เน็ตหรือเกิดข้อผิดพลาดเกี่ยวกับ DNS)</string>
     <string name="pref_vpn_reset_done">สร้างการเชื่อมต่อ VPN ใหม่แล้ว</string>

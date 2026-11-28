@@ -10,12 +10,11 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.adaway.AppContainer
-import org.adaway.data.settings.SystemAppExclusion
+import org.adaway.data.settings.AppExclusion
 import org.adaway.vpn.VpnExclusions
 import java.text.Collator
 import java.text.Normalizer
@@ -26,8 +25,8 @@ data class ExcludableApp(val packageName: String, val label: String, val info: A
 /**
  * The user apps and the system apps to exclude from the VPN, a tab each. Both lists share one set
  * of excluded apps, saved when leaving the screen so that the tunnel is rebuilt once rather than at
- * each switch. The system apps follow it only when [SystemAppExclusion.CHOSEN] is the way chosen
- * for them, which is saved at once.
+ * each switch. The apps of a tab follow it only when [AppExclusion.CHOSEN] is the way chosen for
+ * them, which is saved at once.
  */
 class ExcludedAppsViewModel(private val container: AppContainer) : ViewModel() {
     private val mutableUserApps = MutableStateFlow<List<ExcludableApp>?>(null)
@@ -41,9 +40,10 @@ class ExcludedAppsViewModel(private val container: AppContainer) : ViewModel() {
     val filter: StateFlow<String> = mutableFilter.asStateFlow()
     val systemTab: StateFlow<Boolean> = mutableSystemTab.asStateFlow()
 
-    val systemExclusion: StateFlow<SystemAppExclusion?> = container.settingsRepository.settings
-        .map { it.vpnSystemAppExclusion }
-        .stateIn(viewModelScope, SharingStarted.Eagerly, null)
+    /** How the apps of the tab shown are excluded. Null while loading. */
+    val exclusion: StateFlow<AppExclusion?> = combine(container.settingsRepository.settings, mutableSystemTab) { settings, systemTab ->
+        if (systemTab) settings.vpnSystemAppExclusion else settings.vpnUserAppExclusion
+    }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
 
     /** The apps of the tab shown whose name or package contains the filter, ignoring case and accents. Null while loading. */
     val apps: StateFlow<List<ExcludableApp>?> = combine(mutableUserApps, mutableSystemApps, mutableSystemTab, mutableFilter) { user, system, systemTab, filter ->
@@ -71,8 +71,14 @@ class ExcludedAppsViewModel(private val container: AppContainer) : ViewModel() {
         mutableFilter.value = filter
     }
 
-    fun setSystemExclusion(exclusion: SystemAppExclusion) {
-        viewModelScope.launch { container.settingsRepository.update { it.copy(vpnSystemAppExclusion = exclusion) } }
+    /** Sets how the apps of the tab shown are excluded. */
+    fun setExclusion(exclusion: AppExclusion) {
+        val systemTab = mutableSystemTab.value
+        viewModelScope.launch {
+            container.settingsRepository.update {
+                if (systemTab) it.copy(vpnSystemAppExclusion = exclusion) else it.copy(vpnUserAppExclusion = exclusion)
+            }
+        }
     }
 
     fun setExcluded(packageName: String, excluded: Boolean) {

@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">אפליקציות מוחרגות</string>
     <string name="pref_vpn_excluded_apps_description">קבע אילו אפליקציות לא ישתמשו ב-VPN, כדי שהחיבורים שלהן לא ייחסמו.</string>
     <string name="pref_vpn_exclude_system_apps">החרגת אפליקציות מערכת</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">החרגת אפליקציות משתמש</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>אף אחת</item>
         <item>כולן מלבד דפדפנים</item>
         <item>כולן</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">אין אפליקציות התואמות לחיפוש זה.</string>
     <string name="excluded_apps_tab_user">אפליקציות משתמש</string>
     <string name="excluded_apps_tab_system">אפליקציות מערכת</string>
-    <string name="excluded_apps_system_hint">כדי לבחור אפליקציות מערכת אחת-אחת, בחר \"נבחרות\" למעלה.</string>
     <string name="pref_vpn_reset">איפוס VPN</string>
     <string name="pref_vpn_reset_description">בניית חיבור ה-VPN מחדש מאפס. השתמש באפשרות הזו אם ה-VPN מפסיק לפעול (אין גישה לאינטרנט או שמופיעות שגיאות DNS).</string>
     <string name="pref_vpn_reset_done">חיבור ה-VPN נבנה מחדש.</string>

@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">बहिष्कृत एपहरू</string>
     <string name="pref_vpn_excluded_apps_description">कुन एपहरूले VPN प्रयोग गर्नु हुँदैन भनेर छान्नुहोस्, ताकि तिनका जडानहरू ब्लक नहुन्।</string>
     <string name="pref_vpn_exclude_system_apps">प्रणालीका एपहरू बहिष्कार गर्नुहोस्</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">प्रयोगकर्ताका एपहरू बहिष्कार गर्नुहोस्</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>कुनै पनि होइन</item>
         <item>ब्राउजर बाहेक सबै</item>
         <item>सबै</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">यो खोजसँग मिल्ने कुनै एप छैन।</string>
     <string name="excluded_apps_tab_user">प्रयोगकर्ता एपहरू</string>
     <string name="excluded_apps_tab_system">प्रणाली एपहरू</string>
-    <string name="excluded_apps_system_hint">प्रणालीका एपहरू एक-एक गरी छान्न माथि “छानिएकाहरू” छान्नुहोस्।</string>
     <string name="pref_vpn_reset">VPN रिसेट गर्नुहोस्</string>
     <string name="pref_vpn_reset_description">VPN जडान सुरुबाट नयाँ गरी बनाउनुहोस्। VPN ले काम गर्न छाडेमा (इन्टरनेट नचल्ने वा DNS त्रुटि आउने) यसको प्रयोग गर्नुहोस्।</string>
     <string name="pref_vpn_reset_done">VPN जडान पुन: बनाइयो।</string>

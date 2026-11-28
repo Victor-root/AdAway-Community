@@ -38,7 +38,7 @@
 * ☑️ Enable or disable all the hosts sources at once
 * 📋 Tell in the DNS log that it only records while ad blocking is on
 * 🔍 Search the apps to exclude from the VPN, and select or deselect all the apps found at once
-* 📱 Gather the apps to exclude from the VPN in one screen, the user and system ones in a tab each, and choose the system ones one by one
+* 📱 Gather the apps to exclude from the VPN in one screen, the user and system ones in a tab each, both excluded in the same ways: none, all but the browsers, all, or chosen one by one
 
 ### 🐛 Fixed
 

@@ -4,8 +4,8 @@ enum class BlockingMethod { UNSET, ROOT, VPN }
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
-/** Which system apps the VPN leaves out: [CHOSEN] ones are those of the excluded apps that are system apps. */
-enum class SystemAppExclusion { NONE, ALL_EXCEPT_BROWSERS, ALL, CHOSEN }
+/** Which apps of a kind, user or system, the VPN leaves out: [CHOSEN] ones are those of the excluded apps of that kind. */
+enum class AppExclusion { NONE, ALL_EXCEPT_BROWSERS, ALL, CHOSEN }
 
 /** Where the VPN sends the queries it lets through: the servers of the network, chosen ones, or one over HTTPS. */
 enum class VpnDnsMode { NETWORK, CUSTOM, HTTPS }
@@ -30,7 +30,8 @@ data class Settings(
     val vpnWanted: Boolean = false,
     val vpnStartOnBoot: Boolean = true,
     val vpnConnectionMonitor: Boolean = false,
-    val vpnSystemAppExclusion: SystemAppExclusion = SystemAppExclusion.NONE,
+    val vpnSystemAppExclusion: AppExclusion = AppExclusion.NONE,
+    val vpnUserAppExclusion: AppExclusion = AppExclusion.CHOSEN,
     val vpnExcludedApps: Set<String> = emptySet(),
     val vpnDnsMode: VpnDnsMode = VpnDnsMode.NETWORK,
     /** The addresses of the chosen DNS servers, in order. */

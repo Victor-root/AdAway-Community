@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Выключаныя праграмы</string>
     <string name="pref_vpn_excluded_apps_description">Выберыце праграмы, якія не павінны выкарыстоўваць VPN, каб іх злучэнні не блакіраваліся.</string>
     <string name="pref_vpn_exclude_system_apps">Выключыць сістэмныя праграмы</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Выключыць карыстальніцкія праграмы</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Няма</item>
         <item>Усе, акрамя браўзераў</item>
         <item>Усе</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Няма праграм, якія адпавядаюць гэтаму пошуку.</string>
     <string name="excluded_apps_tab_user">Праграмы карыстальніка</string>
     <string name="excluded_apps_tab_system">Сістэмныя праграмы</string>
-    <string name="excluded_apps_system_hint">Каб выбраць сістэмныя праграмы па адной, абярыце «Выбраныя» вышэй.</string>
     <string name="pref_vpn_reset">Скінуць VPN</string>
     <string name="pref_vpn_reset_description">Нанава пабудаваць VPN-злучэнне. Выкарыстоўвайце, калі VPN перастаў працаваць (няма доступу ў інтэрнэт або ўзнікаюць памылкі DNS).</string>
     <string name="pref_vpn_reset_done">VPN-злучэнне пабудавана нанава.</string>

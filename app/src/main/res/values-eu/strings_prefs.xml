@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Baztertutako aplikazioak</string>
     <string name="pref_vpn_excluded_apps_description">Aukeratu zein aplikaziok ez duten VPNa erabili behar, haien konexioak blokeatu ez daitezen.</string>
     <string name="pref_vpn_exclude_system_apps">Baztertu sistemako aplikazioak</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Baztertu erabiltzailearen aplikazioak</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Bat ere ez</item>
         <item>Guztiak, nabigatzaileak izan ezik</item>
         <item>Guztiak</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Ez dago bilaketarekin bat datorren aplikaziorik.</string>
     <string name="excluded_apps_tab_user">Erabiltzailearen aplikazioak</string>
     <string name="excluded_apps_tab_system">Sistemako aplikazioak</string>
-    <string name="excluded_apps_system_hint">Sistemako aplikazioak banan-banan hautatzeko, aukeratu goian «Hautatutakoak».</string>
     <string name="pref_vpn_reset">Berrezarri VPNa</string>
     <string name="pref_vpn_reset_description">Berreraiki VPN konexioa hutsetik. Erabili hau VPNak funtzionatzeari uzten badio (Interneterako sarbiderik gabe edo DNS erroreekin).</string>
     <string name="pref_vpn_reset_done">VPN konexioa berreraiki da.</string>

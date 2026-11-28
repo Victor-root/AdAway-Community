@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">বাদ দেওয়া অ্যাপ</string>
     <string name="pref_vpn_excluded_apps_description">যেসব অ্যাপ VPN ব্যবহার করবে না তা ঠিক করুন, যাতে সেগুলোর কোনো সংযোগ ব্লক না হয়।</string>
     <string name="pref_vpn_exclude_system_apps">সিস্টেম অ্যাপ বাদ দিন</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">ব্যবহারকারীর অ্যাপ বাদ দিন</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>কোনোটি নয়</item>
         <item>ব্রাউজার ছাড়া সব</item>
         <item>সব</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">এই অনুসন্ধানের সাথে কোনো অ্যাপ মেলেনি।</string>
     <string name="excluded_apps_tab_user">ইউজার অ্যাপ</string>
     <string name="excluded_apps_tab_system">সিস্টেম অ্যাপ</string>
-    <string name="excluded_apps_system_hint">সিস্টেম অ্যাপগুলো একটি একটি করে বেছে নিতে ওপরে “বাছাই করা” নির্বাচন করুন।</string>
     <string name="pref_vpn_reset">VPN রিসেট করুন</string>
     <string name="pref_vpn_reset_description">VPN সংযোগ গোড়া থেকে আবার তৈরি করুন। VPN কাজ করা বন্ধ করে দিলে (ইন্টারনেট না পেলে বা DNS ত্রুটি দেখা দিলে) এটি ব্যবহার করুন।</string>
     <string name="pref_vpn_reset_done">VPN সংযোগ আবার তৈরি করা হয়েছে।</string>

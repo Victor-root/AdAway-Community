@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Uitgesloten apps</string>
     <string name="pref_vpn_excluded_apps_description">Kies welke apps de VPN niet mogen gebruiken, zodat hun verbindingen niet worden geblokkeerd.</string>
     <string name="pref_vpn_exclude_system_apps">Systeem-apps uitsluiten</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Gebruikersapps uitsluiten</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Geen</item>
         <item>Alle, behalve browsers</item>
         <item>Alle</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Geen apps gevonden voor deze zoekopdracht.</string>
     <string name="excluded_apps_tab_user">Gebruikersapps</string>
     <string name="excluded_apps_tab_system">Systeem-apps</string>
-    <string name="excluded_apps_system_hint">Kies hierboven “Gekozen apps” om systeem-apps één voor één te selecteren.</string>
     <string name="pref_vpn_reset">VPN resetten</string>
     <string name="pref_vpn_reset_description">Bouw de VPN-verbinding helemaal opnieuw op. Gebruik dit als de VPN niet meer werkt (geen internettoegang of DNS-fouten).</string>
     <string name="pref_vpn_reset_done">De VPN-verbinding is opnieuw opgebouwd.</string>

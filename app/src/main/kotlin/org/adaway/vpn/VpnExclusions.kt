@@ -7,7 +7,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.net.toUri
 import org.adaway.data.settings.Settings
-import org.adaway.data.settings.SystemAppExclusion
+import org.adaway.data.settings.AppExclusion
 
 /** The apps kept out of the VPN, whose DNS queries are never filtered. */
 object VpnExclusions {
@@ -28,18 +28,17 @@ object VpnExclusions {
         val (system, user) = installedApplications(packageManager)
             .filter { it.packageName != context.packageName }
             .partition { it.flags and ApplicationInfo.FLAG_SYSTEM != 0 }
-        val systemPackages = system.map { it.packageName }
-        val excludedSystem = when (settings.vpnSystemAppExclusion) {
-            SystemAppExclusion.NONE -> emptyList()
-            SystemAppExclusion.ALL -> systemPackages
-            SystemAppExclusion.ALL_EXCEPT_BROWSERS -> {
-                val browsers = browsers(packageManager) + WEB_SYSTEM_APPS
-                systemPackages.filter { it !in browsers }
+        val browsers by lazy { browsers(packageManager) + WEB_SYSTEM_APPS }
+        fun excluded(apps: List<ApplicationInfo>, exclusion: AppExclusion): List<String> {
+            val packages = apps.map { it.packageName }
+            return when (exclusion) {
+                AppExclusion.NONE -> emptyList()
+                AppExclusion.ALL -> packages
+                AppExclusion.ALL_EXCEPT_BROWSERS -> packages.filter { it !in browsers }
+                AppExclusion.CHOSEN -> packages.filter { it in settings.vpnExcludedApps }
             }
-            SystemAppExclusion.CHOSEN -> systemPackages.filter { it in settings.vpnExcludedApps }
         }
-        val excludedUser = user.map { it.packageName }.filter { it in settings.vpnExcludedApps }
-        return (excludedSystem + excludedUser).toSet()
+        return (excluded(system, settings.vpnSystemAppExclusion) + excluded(user, settings.vpnUserAppExclusion)).toSet()
     }
 
     fun installedApplications(packageManager: PackageManager): List<ApplicationInfo> =

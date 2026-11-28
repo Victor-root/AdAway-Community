@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">خارج کردہ ایپس</string>
     <string name="pref_vpn_excluded_apps_description">وہ ایپس منتخب کریں جو VPN استعمال نہ کریں، تاکہ ان کے کنکشن بلاک نہ ہوں۔</string>
     <string name="pref_vpn_exclude_system_apps">سسٹم ایپس کو خارج کریں</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">صارف کی ایپس کو خارج کریں</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>کوئی نہیں</item>
         <item>براؤزرز کے علاوہ سب</item>
         <item>سب</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">اس تلاش سے کوئی ایپ مطابقت نہیں رکھتی۔</string>
     <string name="excluded_apps_tab_user">صارف ایپس</string>
     <string name="excluded_apps_tab_system">سسٹم ایپس</string>
-    <string name="excluded_apps_system_hint">سسٹم ایپس کو ایک ایک کر کے چننے کے لیے اوپر “منتخب کردہ” کو منتخب کریں۔</string>
     <string name="pref_vpn_reset">VPN ری سیٹ کریں</string>
     <string name="pref_vpn_reset_description">VPN کنکشن کو شروع سے دوبارہ بنائیں۔ اگر VPN کام کرنا بند کر دے (انٹرنیٹ تک رسائی نہ ہو یا DNS کی خرابیاں آئیں) تو اسے استعمال کریں۔</string>
     <string name="pref_vpn_reset_done">VPN کنکشن دوبارہ بن گیا۔</string>

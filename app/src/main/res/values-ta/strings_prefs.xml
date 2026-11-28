@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">விலக்கப்பட்ட ஆப்ஸ்</string>
     <string name="pref_vpn_excluded_apps_description">எந்த ஆப்ஸ் VPN ஐப் பயன்படுத்தக் கூடாது என்பதை அமைக்கவும். அவற்றின் இணைப்புகள் தடுக்கப்படாது.</string>
     <string name="pref_vpn_exclude_system_apps">சிஸ்டம் ஆப்ஸை விலக்கு</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">பயனர் ஆப்ஸை விலக்கு</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>எதுவுமில்லை</item>
         <item>உலாவிகள் தவிர அனைத்தும்</item>
         <item>அனைத்தும்</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">இந்தத் தேடலுக்குப் பொருந்தும் ஆப்ஸ் இல்லை.</string>
     <string name="excluded_apps_tab_user">பயனர் ஆப்ஸ்</string>
     <string name="excluded_apps_tab_system">சிஸ்டம் ஆப்ஸ்</string>
-    <string name="excluded_apps_system_hint">சிஸ்டம் ஆப்ஸை ஒவ்வொன்றாகத் தேர்ந்தெடுக்க, மேலே “தேர்ந்தெடுத்தவை” என்பதைத் தேர்வுசெய்யவும்.</string>
     <string name="pref_vpn_reset">VPN ஐ மீட்டமை</string>
     <string name="pref_vpn_reset_description">VPN இணைப்பை முதலிலிருந்து மீண்டும் உருவாக்கவும். VPN வேலை செய்வதை நிறுத்தினால் (இணைய அணுகல் இல்லை அல்லது DNS பிழைகள்) இதைப் பயன்படுத்தவும்.</string>
     <string name="pref_vpn_reset_done">VPN இணைப்பு மீண்டும் உருவாக்கப்பட்டது.</string>

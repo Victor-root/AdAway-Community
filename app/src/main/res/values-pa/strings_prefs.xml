@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">ਬਾਹਰ ਰੱਖੀਆਂ ਐਪਾਂ</string>
     <string name="pref_vpn_excluded_apps_description">ਚੁਣੋ ਕਿ ਕਿਹੜੀਆਂ ਐਪਾਂ VPN ਦੀ ਵਰਤੋਂ ਨਾ ਕਰਨ, ਤਾਂ ਜੋ ਉਨ੍ਹਾਂ ਦੇ ਕਨੈਕਸ਼ਨ ਬਲਾਕ ਨਾ ਹੋਣ।</string>
     <string name="pref_vpn_exclude_system_apps">ਸਿਸਟਮ ਐਪਾਂ ਨੂੰ ਬਾਹਰ ਰੱਖੋ</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">ਵਰਤੋਂਕਾਰ ਐਪਾਂ ਨੂੰ ਬਾਹਰ ਰੱਖੋ</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>ਕੋਈ ਨਹੀਂ</item>
         <item>ਬ੍ਰਾਊਜ਼ਰਾਂ ਤੋਂ ਇਲਾਵਾ ਸਾਰੀਆਂ</item>
         <item>ਸਾਰੀਆਂ</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">ਇਸ ਖੋਜ ਨਾਲ ਕੋਈ ਐਪ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ।</string>
     <string name="excluded_apps_tab_user">ਵਰਤੋਂਕਾਰ ਐਪਾਂ</string>
     <string name="excluded_apps_tab_system">ਸਿਸਟਮ ਐਪਾਂ</string>
-    <string name="excluded_apps_system_hint">ਸਿਸਟਮ ਐਪਾਂ ਇੱਕ-ਇੱਕ ਕਰਕੇ ਚੁਣਨ ਲਈ ਉੱਪਰ “ਚੁਣੀਆਂ ਹੋਈਆਂ” ਚੁਣੋ।</string>
     <string name="pref_vpn_reset">VPN ਰੀਸੈੱਟ ਕਰੋ</string>
     <string name="pref_vpn_reset_description">VPN ਕਨੈਕਸ਼ਨ ਨੂੰ ਸ਼ੁਰੂ ਤੋਂ ਦੁਬਾਰਾ ਬਣਾਓ। ਜੇ VPN ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇ (ਇੰਟਰਨੈੱਟ ਨਾ ਚੱਲੇ ਜਾਂ DNS ਦੀਆਂ ਗਲਤੀਆਂ ਆਉਣ) ਤਾਂ ਇਸ ਦੀ ਵਰਤੋਂ ਕਰੋ।</string>
     <string name="pref_vpn_reset_done">VPN ਕਨੈਕਸ਼ਨ ਦੁਬਾਰਾ ਬਣਾ ਦਿੱਤਾ ਗਿਆ।</string>

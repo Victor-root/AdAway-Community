@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Εξαιρούμενες εφαρμογές</string>
     <string name="pref_vpn_excluded_apps_description">Ρυθμίστε ποιες εφαρμογές δεν θα χρησιμοποιούν το VPN, ώστε να μην αποκλείονται οι συνδέσεις τους.</string>
     <string name="pref_vpn_exclude_system_apps">Εξαίρεση εφαρμογών συστήματος</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Εξαίρεση εφαρμογών χρήστη</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Καμία</item>
         <item>Όλες εκτός από τα προγράμματα περιήγησης</item>
         <item>Όλες</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">Καμία εφαρμογή δεν ταιριάζει με αυτή την αναζήτηση.</string>
     <string name="excluded_apps_tab_user">Εφαρμογές χρήστη</string>
     <string name="excluded_apps_tab_system">Εφαρμογές συστήματος</string>
-    <string name="excluded_apps_system_hint">Για να επιλέξετε μία προς μία τις εφαρμογές συστήματος, επιλέξτε «Επιλεγμένες» παραπάνω.</string>
     <string name="pref_vpn_reset">Επαναφορά VPN</string>
     <string name="pref_vpn_reset_description">Δημιουργήστε ξανά τη σύνδεση VPN από την αρχή. Χρησιμοποιήστε το αν το VPN σταματήσει να λειτουργεί (χωρίς πρόσβαση στο διαδίκτυο ή με σφάλματα DNS).</string>
     <string name="pref_vpn_reset_done">Η σύνδεση VPN δημιουργήθηκε ξανά.</string>

@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">ایستل شوي اپلېکېشنونه</string>
     <string name="pref_vpn_excluded_apps_description">وټاکئ کوم اپلېکېشنونه باید VPN ونه کاروي، ترڅو د هغوی اړیکې بندې نه شي.</string>
     <string name="pref_vpn_exclude_system_apps">سیسټمي اپلېکېشنونه ایستل</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">د کارونکي اپلېکېشنونه ایستل</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>هېڅ</item>
         <item>ټول پرته له براوزرونو</item>
         <item>ټول</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">دې لټون سره هېڅ اپلېکېشن سمون نه خوري.</string>
     <string name="excluded_apps_tab_user">د کارونکي اپلېکېشنونه</string>
     <string name="excluded_apps_tab_system">سیسټمي اپلېکېشنونه</string>
-    <string name="excluded_apps_system_hint">د سیسټمي اپلېکېشنونو د یو په یو غوره کولو لپاره پورته «ټاکل شوي» وټاکئ.</string>
     <string name="pref_vpn_reset">VPN بیا تنظیمول</string>
     <string name="pref_vpn_reset_description">د VPN اړیکه له سره جوړه کړئ. که VPN کار ودروي (انټرنیټ نه وي یا د DNS تېروتنې رامنځته شي) دا وکاروئ.</string>
     <string name="pref_vpn_reset_done">د VPN اړیکه بیا جوړه شوه.</string>

@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Excluded applications</string>
     <string name="pref_vpn_excluded_apps_description">Configure which applications should not use the VPN so no connections will be blocked.</string>
     <string name="pref_vpn_exclude_system_apps">Exclude system applications</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Exclude user applications</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>None</item>
         <item>All except browsers</item>
         <item>All</item>
@@ -72,7 +73,7 @@
     <string name="excluded_apps_none_found">No application matches this search.</string>
     <string name="excluded_apps_tab_user">User apps</string>
     <string name="excluded_apps_tab_system">System apps</string>
-    <string name="excluded_apps_system_hint">To pick the system apps one by one, choose “Chosen ones” above.</string>
+    <string name="excluded_apps_choose_hint">To pick the apps one by one, choose “Chosen ones” above.</string>
     <string name="pref_vpn_reset">Reset VPN</string>
     <string name="pref_vpn_reset_description">Rebuild the VPN connection from scratch. Use this if the VPN stops working (no internet access or DNS errors).</string>
     <string name="pref_vpn_reset_done">VPN connection rebuilt.</string>

@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">برنامه‌های مستثنا</string>
     <string name="pref_vpn_excluded_apps_description">مشخص کنید کدام برنامه‌ها از VPN استفاده نکنند تا اتصال آن‌ها مسدود نشود.</string>
     <string name="pref_vpn_exclude_system_apps">مستثنا کردن برنامه‌های سیستمی</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">مستثنا کردن برنامه‌های نصب‌شده</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>هیچ‌کدام</item>
         <item>همه به‌جز مرورگرها</item>
         <item>همه</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">هیچ برنامه‌ای با این جستجو مطابقت ندارد.</string>
     <string name="excluded_apps_tab_user">برنامه‌های کاربر</string>
     <string name="excluded_apps_tab_system">برنامه‌های سیستمی</string>
-    <string name="excluded_apps_system_hint">برای انتخاب تک‌به‌تک برنامه‌های سیستمی، در بالا «انتخاب‌شده‌ها» را انتخاب کنید.</string>
     <string name="pref_vpn_reset">بازنشانی VPN</string>
     <string name="pref_vpn_reset_description">اتصال VPN را از ابتدا دوباره می‌سازد. اگر VPN از کار افتاد (قطع دسترسی به اینترنت یا خطاهای DNS)، از این گزینه استفاده کنید.</string>
     <string name="pref_vpn_reset_done">اتصال VPN دوباره ساخته شد.</string>

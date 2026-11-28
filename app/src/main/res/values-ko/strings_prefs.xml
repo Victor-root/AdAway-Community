@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">제외할 앱</string>
     <string name="pref_vpn_excluded_apps_description">VPN을 사용하지 않을 앱을 선택하세요. 선택한 앱의 연결은 차단되지 않습니다.</string>
     <string name="pref_vpn_exclude_system_apps">시스템 앱 제외</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">사용자 앱 제외</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>없음</item>
         <item>브라우저를 제외한 모든 앱</item>
         <item>모든 앱</item>
@@ -72,7 +73,6 @@
     <string name="excluded_apps_none_found">검색과 일치하는 앱이 없습니다.</string>
     <string name="excluded_apps_tab_user">사용자 앱</string>
     <string name="excluded_apps_tab_system">시스템 앱</string>
-    <string name="excluded_apps_system_hint">시스템 앱을 하나씩 고르려면 위에서 “선택한 앱”을 선택하세요.</string>
     <string name="pref_vpn_reset">VPN 재설정</string>
     <string name="pref_vpn_reset_description">VPN 연결을 처음부터 다시 만듭니다. VPN이 작동하지 않을 때(인터넷에 연결되지 않거나 DNS 오류가 발생할 때) 사용하세요.</string>
     <string name="pref_vpn_reset_done">VPN 연결을 다시 만들었습니다.</string>

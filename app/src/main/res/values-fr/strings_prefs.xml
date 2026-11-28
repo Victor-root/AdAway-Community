@@ -44,7 +44,8 @@
     <string name="pref_vpn_excluded_apps">Applications exclues</string>
     <string name="pref_vpn_excluded_apps_description">Configurer les applis qui ne devraient pas utiliser le RPV/VPN, afin qu’aucune connexion ne soit bloquée.</string>
     <string name="pref_vpn_exclude_system_apps">Exclure les applications système</string>
-    <string-array name="pref_vpn_excluded_system_apps_entries">
+    <string name="pref_vpn_exclude_user_apps">Exclure les applications utilisateur</string>
+    <string-array name="pref_vpn_excluded_apps_entries">
         <item>Aucune</item>
         <item>Toutes, sauf les navigateurs</item>
         <item>Toutes</item>
@@ -72,7 +73,7 @@
     <string name="excluded_apps_none_found">Aucune application ne correspond à cette recherche.</string>
     <string name="excluded_apps_tab_user">Applis utilisateur</string>
     <string name="excluded_apps_tab_system">Applis système</string>
-    <string name="excluded_apps_system_hint">Pour choisir les applis système une par une, sélectionnez « Celles choisies » ci-dessus.</string>
+    <string name="excluded_apps_choose_hint">Pour choisir les applis une par une, sélectionnez « Celles choisies » ci-dessus.</string>
     <string name="pref_vpn_reset">Réinitialiser le RPV/VPN</string>
     <string name="pref_vpn_reset_description">Reconstruire entièrement la connexion RPV/VPN. À utiliser si le RPV/VPN ne fonctionne plus (pas d’accès à Internet ou erreurs DNS).</string>
     <string name="pref_vpn_reset_done">Connexion RPV/VPN reconstruite.</string>
